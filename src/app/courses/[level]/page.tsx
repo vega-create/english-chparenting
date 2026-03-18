@@ -6,8 +6,9 @@ export function generateStaticParams() {
   return COURSES.map(c => ({ level: c.slug }));
 }
 
-export function generateMetadata({ params }: { params: { level: string } }): Metadata {
-  const course = COURSES.find(c => c.slug === params.level);
+export async function generateMetadata({ params }: { params: Promise<{ level: string }> }): Promise<Metadata> {
+  const { level } = await params;
+  const course = COURSES.find(c => c.slug === level);
   if (!course) return { title: "課程未找到" };
   return {
     title: `L${course.level} ${course.island} ${course.islandEn} - ${course.description}`,
@@ -15,11 +16,12 @@ export function generateMetadata({ params }: { params: { level: string } }): Met
   };
 }
 
-export default function CourseDetailPage({ params }: { params: { level: string } }) {
-  const course = COURSES.find(c => c.slug === params.level);
+export default async function CourseDetailPage({ params }: { params: Promise<{ level: string }> }) {
+  const { level } = await params;
+  const course = COURSES.find(c => c.slug === level);
   if (!course) return <div className="min-h-screen flex items-center justify-center">課程未找到</div>;
 
-  const idx = COURSES.findIndex(c => c.slug === params.level);
+  const idx = COURSES.findIndex(c => c.slug === level);
   const prev = idx > 0 ? COURSES[idx - 1] : null;
   const next = idx < COURSES.length - 1 ? COURSES[idx + 1] : null;
 

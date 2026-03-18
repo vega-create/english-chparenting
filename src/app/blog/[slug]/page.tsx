@@ -6,8 +6,9 @@ export function generateStaticParams() {
   return BLOG_POSTS.map(p => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = BLOG_POSTS.find(p => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find(p => p.slug === slug);
   if (!post) return { title: "文章未找到" };
   const ogUrl = `https://english.chparenting.com/og/${post.slug}.svg`;
   return {
@@ -124,8 +125,9 @@ function formatInline(text: string) {
   });
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = BLOG_POSTS.find(p => p.slug === params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find(p => p.slug === slug);
   if (!post) return <div className="min-h-screen flex items-center justify-center">文章未找到</div>;
 
   const cat = BLOG_CATEGORIES.find(c => c.slug === post.category);
