@@ -248,7 +248,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="font-bold" style={{ color: "#2a2a2a" }}>薇佳媽媽</div>
             <div className="text-xs" style={{ color: "#999" }}>智慧媽咪國際有限公司 | 兩寶媽、英語教育推廣者</div>
             <div className="text-xs mt-1" style={{ color: "#bbb" }}>
-              也在 <a href="https://chparenting.com" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>親子成長日記</a> 和 <a href="https://mommystartup.com" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>媽咪創業日記</a> 分享育兒日常
+              也在 <a href="https://chparenting.com" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>媽媽生活復原力 Lab</a> 和 <a href="https://mommystartup.com" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>亞洲媽媽創業</a> 分享育兒日常
             </div>
           </div>
         </div>

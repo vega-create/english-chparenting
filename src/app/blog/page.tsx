@@ -116,10 +116,12 @@ export default function BlogPage() {
           <h3 className="font-black text-xl mb-3">📚 更多學習資源</h3>
           <p className="text-gray-500 text-sm mb-4">我們還有其他網站提供不同面向的育兒和學習資源</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://chparenting.com" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">🏠 親子成長日記</a>
-            <a href="https://learn.chparenting.com" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">📖 線上學習平台</a>
-            <a href="https://mommywisdom.tw" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">👩‍👧 媽咪智慧王</a>
-            <a href="https://mommystartup.com" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">💼 媽咪創業日記</a>
+            <a href="https://chparenting.com" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">🏠 媽媽生活復原力 Lab</a>
+            <a href="https://learn.chparenting.com" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">📖 親子多元學習</a>
+            <a href="https://mommywisdom.tw" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">👩‍👧 跟著媽咪團好康</a>
+            <a href="https://mommystartup.com" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">💼 亞洲媽媽創業</a>
+            <a href="https://aimommywisdom.com" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">🌐 官網</a>
+            <a href="https://vega-note.com" target="_blank" rel="noopener" className="glass rounded-full px-5 py-2 text-sm font-medium hover:bg-purple-50 no-underline text-gray-700">📝 學習筆記</a>
           </div>
         </div>
       </div>

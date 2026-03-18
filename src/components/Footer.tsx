@@ -34,10 +34,12 @@ export default function Footer() {
         <div>
           <h4 className="font-bold mb-3 text-gray-800">關聯網站</h4>
           <ul className="space-y-2 text-gray-500">
-            <li><a href="https://chparenting.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">親子成長日記 chparenting.com</a></li>
-            <li><a href="https://learn.chparenting.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">線上學習平台 learn.chparenting.com</a></li>
-            <li><a href="https://mommywisdom.tw" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">媽咪智慧王 mommywisdom.tw</a></li>
-            <li><a href="https://mommystartup.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">媽咪創業日記 mommystartup.com</a></li>
+            <li><a href="https://chparenting.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">媽媽生活復原力 Lab chparenting.com</a></li>
+            <li><a href="https://learn.chparenting.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">親子多元學習 learn.chparenting.com</a></li>
+            <li><a href="https://mommywisdom.tw" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">跟著媽咪團好康 mommywisdom.tw</a></li>
+            <li><a href="https://mommystartup.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">亞洲媽媽創業 mommystartup.com</a></li>
+            <li><a href="https://aimommywisdom.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">官網 aimommywisdom.com</a></li>
+            <li><a href="https://vega-note.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">學習筆記 vega-note.com</a></li>
           </ul>
         </div>
       </div>

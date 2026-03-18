@@ -281,7 +281,7 @@ export default function Home() {
             🗺️ 開始英語冒險（即將上線）
           </button>
           <p className="text-sm text-gray-400 mt-6">
-            ❤️ 由親子成長日記團隊開發
+            ❤️ 由智慧媽咪國際有限公司開發
           </p>
         </div>
       </section>
