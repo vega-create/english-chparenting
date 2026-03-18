@@ -9,21 +9,61 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = BLOG_POSTS.find(p => p.slug === params.slug);
   if (!post) return { title: "文章未找到" };
+  const ogUrl = `https://english.chparenting.com/og/${post.slug}.svg`;
   return {
     title: post.title,
     description: post.description,
-    openGraph: { title: post.title, description: post.description, type: "article" },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      url: `https://english.chparenting.com/blog/${post.slug}`,
+      siteName: "Adventure English 冒險英語",
+      images: [{ url: ogUrl, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [ogUrl],
+    },
   };
 }
 
-/* Simple markdown renderer (no external deps) */
+/* Extract headings for TOC */
+function extractTOC(md: string) {
+  const headings: { level: number; text: string; id: string }[] = [];
+  md.split("\n").forEach(line => {
+    const m2 = line.match(/^## (.+)$/);
+    const m3 = line.match(/^### (.+)$/);
+    if (m3) {
+      const text = m3[1];
+      const id = text.replace(/[^\w\u4e00-\u9fff]+/g, "-").toLowerCase();
+      headings.push({ level: 3, text, id });
+    } else if (m2) {
+      const text = m2[1];
+      const id = text.replace(/[^\w\u4e00-\u9fff]+/g, "-").toLowerCase();
+      headings.push({ level: 2, text, id });
+    }
+  });
+  return headings;
+}
+
+/* Simple markdown renderer */
 function renderMarkdown(md: string) {
   return md
     .split("\n\n")
     .map((block, i) => {
-      // Headings
-      if (block.startsWith("### ")) return <h3 key={i} className="text-lg font-black mt-8 mb-3">{block.slice(4)}</h3>;
-      if (block.startsWith("## ")) return <h2 key={i} className="text-xl font-black mt-10 mb-4">{block.slice(3)}</h2>;
+      if (block.startsWith("### ")) {
+        const text = block.slice(4);
+        const id = text.replace(/[^\w\u4e00-\u9fff]+/g, "-").toLowerCase();
+        return <h3 key={i} id={id} className="text-lg font-black mt-8 mb-3 scroll-mt-20">{text}</h3>;
+      }
+      if (block.startsWith("## ")) {
+        const text = block.slice(3);
+        const id = text.replace(/[^\w\u4e00-\u9fff]+/g, "-").toLowerCase();
+        return <h2 key={i} id={id} className="text-xl font-black mt-10 mb-4 scroll-mt-20">{text}</h2>;
+      }
 
       // Table
       if (block.includes("|") && block.includes("---")) {
@@ -75,7 +115,6 @@ function renderMarkdown(md: string) {
 }
 
 function formatInline(text: string) {
-  // Bold
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
@@ -91,6 +130,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   const cat = BLOG_CATEGORIES.find(c => c.slug === post.category);
   const relatedPosts = BLOG_POSTS.filter(p => p.slug !== post.slug).slice(0, 3);
+  const toc = extractTOC(post.content);
 
   return (
     <main className="min-h-screen py-12 px-4">
@@ -102,8 +142,22 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <span className="text-gray-600">{cat?.name}</span>
         </div>
 
+        {/* Cover Image */}
+        <div className={`bg-gradient-to-br ${post.cover.gradient} rounded-3xl p-10 md:p-16 text-center text-white mb-8 animate-slide-up relative overflow-hidden`}>
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-4 left-8 text-8xl rotate-12">🔤</div>
+            <div className="absolute bottom-4 right-8 text-8xl -rotate-12">📚</div>
+            <div className="absolute top-1/2 left-1/4 text-6xl">✨</div>
+          </div>
+          <div className="relative z-10">
+            <div className="text-7xl md:text-9xl mb-4">{post.cover.emoji}</div>
+            <div className="text-lg md:text-xl font-bold opacity-90">{post.cover.subtitle}</div>
+            <div className="text-sm opacity-70 mt-2">english.chparenting.com</div>
+          </div>
+        </div>
+
         {/* Article Header */}
-        <div className="mb-8 animate-slide-up">
+        <div className="mb-8">
           <div className="flex items-center gap-3 mb-4 text-sm text-gray-500">
             <span className="bg-purple-50 text-purple-700 rounded-full px-3 py-0.5 text-xs font-medium">{cat?.emoji} {cat?.name}</span>
             <span>{post.date}</span>
@@ -117,6 +171,22 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             ))}
           </div>
         </div>
+
+        {/* Table of Contents */}
+        {toc.length > 2 && (
+          <nav className="glass rounded-2xl p-5 mb-8">
+            <h3 className="font-black text-base mb-3">📋 文章目錄</h3>
+            <ul className="space-y-1.5">
+              {toc.map((h, i) => (
+                <li key={i} className={h.level === 3 ? "ml-5" : ""}>
+                  <a href={`#${h.id}`} className="text-sm text-purple-600 hover:text-purple-800 no-underline hover:underline">
+                    {h.level === 2 ? "📌 " : "· "}{h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
         {/* Article Body */}
         <div className="glass rounded-3xl p-6 md:p-10 mb-8">
@@ -143,15 +213,20 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
-        {/* Related posts */}
+        {/* Related posts with covers */}
         <section>
           <h3 className="text-xl font-black mb-4">📚 延伸閱讀</h3>
           <div className="grid sm:grid-cols-3 gap-4">
             {relatedPosts.map(rp => (
               <Link key={rp.slug} href={`/blog/${rp.slug}`} className="no-underline">
-                <div className="island-card glass rounded-2xl p-4 h-full">
-                  <div className="text-xs text-gray-500 mb-2">{rp.date}</div>
-                  <h4 className="font-bold text-sm text-gray-900 leading-snug">{rp.title}</h4>
+                <div className="island-card rounded-2xl overflow-hidden shadow-md h-full bg-white">
+                  <div className={`bg-gradient-to-br ${rp.cover.gradient} p-5 text-center text-white`}>
+                    <div className="text-3xl">{rp.cover.emoji}</div>
+                  </div>
+                  <div className="p-3">
+                    <div className="text-xs text-gray-500 mb-1">{rp.date}</div>
+                    <h4 className="font-bold text-xs text-gray-900 leading-snug">{rp.title}</h4>
+                  </div>
                 </div>
               </Link>
             ))}
