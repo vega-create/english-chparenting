@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const noto = Noto_Sans_TC({
   variable: "--font-noto",
@@ -9,9 +11,17 @@ const noto = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
-  title: "Adventure English | \u5192\u96AA\u82F1\u8A9E - \u5152\u7AE5\u7F8E\u8A9E\u4E92\u52D5\u5B78\u7FD2\u5E73\u53F0",
-  description: "\u5C08\u70BA\u53F0\u7063 5-12 \u6B72\u5152\u7AE5\u8A2D\u8A08\u7684\u514D\u8CBB\u7F8E\u8A9E\u81EA\u5B78\u5E73\u53F0\u3002AI \u4E92\u52D5\u53E3\u8AAA\u3001Spelling Bee\u3001\u9304\u97F3\u56DE\u653E\u3001\u904A\u6232\u5316\u5B78\u7FD2\uFF0C\u5F9E ABC \u5230\u82F1\u6AA2\u521D\u7D1A 288 \u5802\u8AB2\u5B8C\u6574\u65C5\u7A0B\u3002",
-  keywords: ["\u5152\u7AE5\u82F1\u6587", "\u5152\u7AE5\u7F8E\u8A9E", "\u514D\u8CBB\u82F1\u6587\u5B78\u7FD2", "\u5C0F\u5B78\u82F1\u6587", "phonics", "KK\u97F3\u6A19", "\u82F1\u6AA2\u521D\u7D1A"],
+  title: {
+    default: "Adventure English 冒險英語 | 兒童美語互動自學平台",
+    template: "%s | Adventure English 冒險英語",
+  },
+  description: "專為台灣 5-12 歲兒童設計的免費美語自學平台。AI 互動口說、Spelling Bee、錄音回放、遊戲化學習，從 ABC 到英檢初級 288 堂課完整旅程。",
+  keywords: ["兒童英文", "兒童美語", "免費英文學習", "小學英文", "phonics", "KK音標", "英檢初級", "自然發音", "英語學習", "Adventure English"],
+  openGraph: {
+    siteName: "Adventure English 冒險英語",
+    locale: "zh_TW",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <body className={`${noto.variable} font-sans antialiased`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
