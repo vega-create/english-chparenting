@@ -50,20 +50,28 @@ function extractTOC(md: string) {
   return headings;
 }
 
-/* Simple markdown renderer */
+/* Markdown renderer — outputs clean HTML, styled by .article-content CSS */
 function renderMarkdown(md: string) {
   return md
     .split("\n\n")
     .map((block, i) => {
+      // H4
+      if (block.startsWith("#### ")) {
+        const text = block.slice(5);
+        const id = text.replace(/[^\w\u4e00-\u9fff]+/g, "-").toLowerCase();
+        return <h4 key={i} id={id} className="scroll-mt-20">{text}</h4>;
+      }
+      // H3
       if (block.startsWith("### ")) {
         const text = block.slice(4);
         const id = text.replace(/[^\w\u4e00-\u9fff]+/g, "-").toLowerCase();
-        return <h3 key={i} id={id} className="text-lg font-black mt-8 mb-3 scroll-mt-20">{text}</h3>;
+        return <h3 key={i} id={id} className="scroll-mt-20">{text}</h3>;
       }
+      // H2
       if (block.startsWith("## ")) {
         const text = block.slice(3);
         const id = text.replace(/[^\w\u4e00-\u9fff]+/g, "-").toLowerCase();
-        return <h2 key={i} id={id} className="text-xl font-black mt-10 mb-4 scroll-mt-20">{text}</h2>;
+        return <h2 key={i} id={id} className="scroll-mt-20">{text}</h2>;
       }
 
       // Table
@@ -72,46 +80,51 @@ function renderMarkdown(md: string) {
         const headers = lines[0]?.split("|").filter(Boolean).map(h => h.trim());
         const rows = lines.slice(1).map(r => r.split("|").filter(Boolean).map(c => c.trim()));
         return (
-          <div key={i} className="overflow-x-auto my-4">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr>{headers?.map((h, j) => <th key={j} className="text-left py-2 px-3 bg-purple-50 border border-gray-200 font-bold">{h}</th>)}</tr>
-              </thead>
-              <tbody>
-                {rows.map((row, ri) => (
-                  <tr key={ri}>{row.map((cell, ci) => <td key={ci} className="py-2 px-3 border border-gray-200">{cell}</td>)}</tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <table key={i}>
+            <thead>
+              <tr>{headers?.map((h, j) => <th key={j}>{h}</th>)}</tr>
+            </thead>
+            <tbody>
+              {rows.map((row, ri) => (
+                <tr key={ri}>{row.map((cell, ci) => <td key={ci}>{formatInline(cell)}</td>)}</tr>
+              ))}
+            </tbody>
+          </table>
         );
       }
 
-      // Lists
+      // Unordered list
       if (block.match(/^- /m)) {
         const items = block.split("\n").filter(l => l.startsWith("- "));
         return (
-          <ul key={i} className="list-disc pl-6 space-y-1 text-gray-700 text-sm my-3">
+          <ul key={i}>
             {items.map((item, j) => <li key={j}>{formatInline(item.slice(2))}</li>)}
           </ul>
         );
       }
+      // Ordered list
       if (block.match(/^\d+\. /m)) {
         const items = block.split("\n").filter(l => l.match(/^\d+\. /));
         return (
-          <ol key={i} className="list-decimal pl-6 space-y-1 text-gray-700 text-sm my-3">
+          <ol key={i}>
             {items.map((item, j) => <li key={j}>{formatInline(item.replace(/^\d+\. /, ""))}</li>)}
           </ol>
         );
       }
 
-      // Blockquote
+      // Blockquote (supports multi-line)
       if (block.startsWith("> ")) {
-        return <blockquote key={i} className="border-l-4 border-purple-300 pl-4 py-2 my-4 bg-purple-50 rounded-r-xl text-sm text-purple-800 italic">{formatInline(block.slice(2))}</blockquote>;
+        const content = block.split("\n").map(l => l.replace(/^>\s?/, "")).join("\n");
+        return <blockquote key={i}><p>{formatInline(content)}</p></blockquote>;
+      }
+
+      // Horizontal rule
+      if (block.trim() === "---" || block.trim() === "***") {
+        return <hr key={i} />;
       }
 
       // Paragraph
-      return <p key={i} className="text-gray-700 text-sm leading-relaxed my-3">{formatInline(block)}</p>;
+      return <p key={i}>{formatInline(block)}</p>;
     });
 }
 
@@ -133,6 +146,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const cat = BLOG_CATEGORIES.find(c => c.slug === post.category);
   const relatedPosts = BLOG_POSTS.filter(p => p.slug !== post.slug).slice(0, 3);
   const toc = extractTOC(post.content);
+
+  const wordCount = post.content.length;
+  const dateStr = new Date(post.date).toLocaleDateString("zh-TW", { year: "numeric", month: "long", day: "numeric" });
 
   return (
     <main className="min-h-screen py-12 px-4">
@@ -158,30 +174,52 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
 
-        {/* Article Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-4 text-sm text-gray-500">
-            <span className="bg-purple-50 text-purple-700 rounded-full px-3 py-0.5 text-xs font-medium">{cat?.emoji} {cat?.name}</span>
-            <span>{post.date}</span>
+        {/* Article Header — blog_content style */}
+        <div className="article-content rounded-t-2xl rounded-b-none mb-0 pb-6" style={{ borderBottom: "2px solid #E8E5FA" }}>
+          {/* Category badge */}
+          {cat && (
+            <span className="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ background: "linear-gradient(135deg, #6C5CE7, #5A4BD1)" }}>
+              {cat.emoji} {cat.name}
+            </span>
+          )}
+
+          {/* Title */}
+          <h1 className="text-2xl md:text-3xl font-bold leading-tight mt-2" style={{ color: "#2a2a2a", margin: "8px 0 0" }}>
+            {post.title}
+          </h1>
+
+          {/* Description */}
+          <p className="mt-3 text-base" style={{ color: "#6a6a6a" }}>
+            {post.description}
+          </p>
+
+          {/* Meta */}
+          <div className="mt-4 flex flex-wrap items-center gap-3 text-sm" style={{ color: "#999" }}>
+            <span>{dateStr}</span>
+            <span>·</span>
+            <span>約 {wordCount} 字</span>
+            <span>·</span>
             <span>⏱ 閱讀 {post.readTime} 分鐘</span>
           </div>
-          <h1 className="text-2xl md:text-4xl font-black leading-snug mb-4">{post.title}</h1>
-          <p className="text-gray-500 text-lg leading-relaxed">{post.description}</p>
-          <div className="flex flex-wrap gap-1 mt-4">
+
+          {/* Tags */}
+          <div className="mt-3 flex flex-wrap gap-2">
             {post.tags.map(tag => (
-              <span key={tag} className="text-xs bg-gray-100 text-gray-500 rounded-full px-3 py-1">{tag}</span>
+              <span key={tag} className="rounded-full px-2.5 py-0.5 text-xs font-medium" style={{ background: "#E8E5FA", color: "#5A4BD1" }}>
+                {tag}
+              </span>
             ))}
           </div>
         </div>
 
         {/* Table of Contents */}
         {toc.length > 2 && (
-          <nav className="glass rounded-2xl p-5 mb-8">
-            <h3 className="font-black text-base mb-3">📋 文章目錄</h3>
-            <ul className="space-y-1.5">
+          <nav className="article-content rounded-none border-b-0 mb-0 pt-4 pb-6" style={{ borderBottom: "1px solid #f0ece8" }}>
+            <h3 className="font-bold text-base mb-3" style={{ color: "#2a2a2a", margin: 0, border: "none", padding: 0 }}>📋 文章目錄</h3>
+            <ul className="space-y-1.5 mt-3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {toc.map((h, i) => (
-                <li key={i} className={h.level === 3 ? "ml-5" : ""}>
-                  <a href={`#${h.id}`} className="text-sm text-purple-600 hover:text-purple-800 no-underline hover:underline">
+                <li key={i} style={{ marginLeft: h.level === 3 ? "20px" : 0, marginBottom: "4px" }}>
+                  <a href={`#${h.id}`} style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA", textDecoration: "none", fontSize: "14px" }}>
                     {h.level === 2 ? "📌 " : "· "}{h.text}
                   </a>
                 </li>
@@ -190,8 +228,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </nav>
         )}
 
-        {/* Article Body */}
-        <div className="glass rounded-3xl p-6 md:p-10 mb-8">
+        {/* Article Body — blog_content / Vibe SEO Writer style */}
+        <div className="article-content rounded-t-none rounded-b-2xl mb-8">
           {renderMarkdown(post.content)}
         </div>
 
@@ -203,14 +241,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <Link href="/" className="cta-btn px-8 py-3 text-base inline-block no-underline">🚀 了解更多</Link>
         </div>
 
-        {/* Author */}
-        <div className="glass rounded-2xl p-6 mb-8 flex items-center gap-4">
+        {/* Author — blog_content style author card */}
+        <div className="article-content rounded-2xl mb-8 flex items-center gap-4" style={{ padding: "24px 30px" }}>
           <div className="text-4xl">👩‍💻</div>
           <div>
-            <div className="font-bold">薇佳媽媽</div>
-            <div className="text-xs text-gray-500">智慧媽咪國際有限公司 | 兩寶媽、英語教育推廣者</div>
-            <div className="text-xs text-gray-400 mt-1">
-              也在 <a href="https://chparenting.com" className="text-purple-600 underline">親子成長日記</a> 和 <a href="https://mommystartup.com" className="text-purple-600 underline">媽咪創業日記</a> 分享育兒日常
+            <div className="font-bold" style={{ color: "#2a2a2a" }}>薇佳媽媽</div>
+            <div className="text-xs" style={{ color: "#999" }}>智慧媽咪國際有限公司 | 兩寶媽、英語教育推廣者</div>
+            <div className="text-xs mt-1" style={{ color: "#bbb" }}>
+              也在 <a href="https://chparenting.com" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>親子成長日記</a> 和 <a href="https://mommystartup.com" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>媽咪創業日記</a> 分享育兒日常
             </div>
           </div>
         </div>
