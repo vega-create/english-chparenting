@@ -20,10 +20,19 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
   },
+  metadataBase: new URL("https://english.chparenting.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     siteName: "Adventure English 冒險英語",
     locale: "zh_TW",
     type: "website",
+    url: "https://english.chparenting.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

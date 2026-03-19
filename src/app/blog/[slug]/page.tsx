@@ -11,15 +11,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = BLOG_POSTS.find(p => p.slug === slug);
   if (!post) return { title: "文章未找到" };
   const ogUrl = `https://english.chparenting.com/og/${post.slug}.svg`;
+  const canonicalUrl = `https://english.chparenting.com/blog/${post.slug}`;
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
-      url: `https://english.chparenting.com/blog/${post.slug}`,
+      url: canonicalUrl,
       siteName: "Adventure English 冒險英語",
+      locale: "zh_TW",
+      publishedTime: post.date,
+      authors: ["薇佳媽媽"],
+      tags: post.tags,
       images: [{ url: ogUrl, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
@@ -27,6 +35,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.title,
       description: post.description,
       images: [ogUrl],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
@@ -128,6 +140,37 @@ function renderMarkdown(md: string) {
     });
 }
 
+/* Extract FAQ pairs for schema */
+function extractFAQ(md: string): { question: string; answer: string }[] {
+  const faqs: { question: string; answer: string }[] = [];
+  const lines = md.split("\n");
+  let inFaq = false;
+  let currentQ = "";
+  let currentA: string[] = [];
+
+  for (const line of lines) {
+    if (line.match(/^## .*FAQ/i) || line.match(/^## 常見問題/)) {
+      inFaq = true;
+      continue;
+    }
+    if (inFaq && line.startsWith("## ")) break; // next H2 = end of FAQ
+
+    if (inFaq && line.startsWith("### ")) {
+      if (currentQ && currentA.length > 0) {
+        faqs.push({ question: currentQ, answer: currentA.join(" ").replace(/\*\*/g, "").trim() });
+      }
+      currentQ = line.slice(4).trim();
+      currentA = [];
+    } else if (inFaq && currentQ && line.trim()) {
+      currentA.push(line.trim());
+    }
+  }
+  if (currentQ && currentA.length > 0) {
+    faqs.push({ question: currentQ, answer: currentA.join(" ").replace(/\*\*/g, "").trim() });
+  }
+  return faqs;
+}
+
 function formatInline(text: string) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, i) => {
@@ -149,9 +192,55 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const wordCount = post.content.length;
   const dateStr = new Date(post.date).toLocaleDateString("zh-TW", { year: "numeric", month: "long", day: "numeric" });
+  const faqs = extractFAQ(post.content);
+  const canonicalUrl = `https://english.chparenting.com/blog/${post.slug}`;
+
+  // Article schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: `https://english.chparenting.com/og/${post.slug}.svg`,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { "@type": "Person", name: "薇佳媽媽", url: "https://aimommywisdom.com" },
+    publisher: { "@type": "Organization", name: "智慧媽咪國際有限公司", url: "https://aimommywisdom.com" },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    wordCount,
+    articleSection: cat?.name,
+    keywords: post.tags.join(", "),
+  };
+
+  // FAQ schema
+  const faqSchema = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(f => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  } : null;
+
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "首頁", item: "https://english.chparenting.com" },
+      { "@type": "ListItem", position: 2, name: "學習文章", item: "https://english.chparenting.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl },
+    ],
+  };
 
   return (
     <main className="min-h-screen py-12 px-4">
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
       <article className="max-w-3xl mx-auto">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
