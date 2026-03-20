@@ -171,11 +171,30 @@ function extractFAQ(md: string): { question: string; answer: string }[] {
   return faqs;
 }
 
-function formatInline(text: string) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
+function formatInline(text: string): React.ReactNode[] {
+  // Split on bold, italic, links, and inline code
+  const tokens = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
+  return tokens.map((part, i) => {
+    // Bold
     if (part.startsWith("**") && part.endsWith("**")) {
       return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    // Italic
+    if (part.startsWith("*") && part.endsWith("*") && !part.startsWith("**")) {
+      return <em key={i}>{part.slice(1, -1)}</em>;
+    }
+    // Link [text](url)
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const [, linkText, href] = linkMatch;
+      const isExternal = href.startsWith("http");
+      return isExternal
+        ? <a key={i} href={href} target="_blank" rel="noopener noreferrer">{linkText}</a>
+        : <Link key={i} href={href}>{linkText}</Link>;
+    }
+    // Inline code
+    if (part.startsWith("`") && part.endsWith("`")) {
+      return <code key={i}>{part.slice(1, -1)}</code>;
     }
     return part;
   });
