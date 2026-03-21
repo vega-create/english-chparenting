@@ -43,6 +43,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3493526929407874"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${noto.variable} font-sans antialiased`}>
         <Header />
         {children}
