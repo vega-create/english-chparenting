@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { speak } from '@/lib/speech';
+import { speak, speakChinese } from '@/lib/speech';
 
 interface Props {
   onComplete: () => void;
@@ -95,16 +95,19 @@ export default function Welcome({ onComplete }: Props) {
 
   const scene = WELCOME_SCENES[sceneIndex];
 
-  // 自動播放英文語音
+  // 自動播放中文語音引導
   useEffect(() => {
-    if (scene.dialogueEn) {
-      setTimeout(() => speak(scene.dialogueEn!, 0.75), 500);
-    }
-  }, [sceneIndex, scene.dialogueEn]);
+    // 先念中文對話
+    setTimeout(() => {
+      speakChinese(scene.dialogue.replace(/[😊😉👆🎉✅🚀]/g, ''), 0.9);
+    }, 500);
+  }, [sceneIndex, scene.dialogue]);
 
   function handleCharacterClick(index: number) {
     const char = CHARACTERS_INFO[index];
-    speak(char.intro, 0.75);
+    // 先念中文介紹，再念英文
+    speakChinese(char.introZh, 0.9);
+    setTimeout(() => speak(char.intro, 0.75), 2000);
     setShowCharacterDetail(index);
     setCharactersClicked(prev => new Set(prev).add(index));
   }

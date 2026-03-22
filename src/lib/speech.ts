@@ -78,3 +78,29 @@ export function speak(text: string, rate = 0.8) {
 
   window.speechSynthesis.speak(u);
 }
+
+// 中文語音（用於引導說明）
+export function speakChinese(text: string, rate = 0.9) {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+
+  window.speechSynthesis.cancel();
+
+  const voices = window.speechSynthesis.getVoices();
+
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-TW';
+  u.rate = rate;
+  u.pitch = 1.1;
+
+  // 找中文女聲
+  const zhVoice = voices.find(v =>
+    (v.lang === 'zh-TW' || v.lang === 'zh_TW' || v.lang.startsWith('zh')) &&
+    (v.name.includes('Mei-Jia') || v.name.includes('Ting-Ting') || v.name.includes('Google') || v.name.includes('Microsoft'))
+  ) || voices.find(v => v.lang === 'zh-TW' || v.lang === 'zh_TW') || voices.find(v => v.lang.startsWith('zh'));
+
+  if (zhVoice) {
+    u.voice = zhVoice;
+  }
+
+  window.speechSynthesis.speak(u);
+}
