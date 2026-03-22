@@ -2,13 +2,14 @@
 import { useState } from 'react';
 import { COURSES } from '@/data/courses';
 import { MISSIONS } from '@/data/missions';
+import Welcome from '@/components/mission/Welcome';
 import WakeUp from '@/components/mission/WakeUp';
 import Discover from '@/components/mission/Discover';
 import Challenge from '@/components/mission/Challenge';
 import TalkTime from '@/components/mission/TalkTime';
 import MissionComplete from '@/components/mission/MissionComplete';
 
-type Step = 'intro' | 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'complete';
+type Step = 'intro' | 'welcome' | 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'complete';
 
 const STEPS: { key: Step; label: string; icon: string; color: string }[] = [
   { key: 'wakeup', label: 'Wake Up!', icon: '🔔', color: 'bg-yellow-400' },
@@ -126,13 +127,17 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
             </div>
 
             <button
-              onClick={() => setStep(mission.id === 1 ? 'discover' : 'wakeup')}
+              onClick={() => setStep(mission.id === 1 ? 'welcome' : 'wakeup')}
               className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-10 py-4 rounded-full font-bold text-xl hover:from-yellow-500 hover:to-orange-500 transition-all active:scale-95 shadow-xl"
             >
               Let&apos;s Go! 出發！🚀
             </button>
             <p className="text-sm text-gray-400 mt-4">約 15-20 分鐘</p>
           </div>
+        )}
+
+        {step === 'welcome' && (
+          <Welcome onComplete={() => setStep('discover')} />
         )}
 
         {step === 'wakeup' && (
