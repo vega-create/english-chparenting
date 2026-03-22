@@ -122,6 +122,22 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ l
           </div>
         </section>
 
+        {/* 開始學習按鈕 */}
+        {course.level === 1 && (
+          <section className="mb-8">
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl p-8 text-center text-white">
+              <h2 className="text-2xl font-black mb-2">準備好了嗎？</h2>
+              <p className="text-white/80 mb-4">開始 Mission 1：Nice to Meet You!</p>
+              <Link
+                href={`/courses/${course.slug}/mission/1`}
+                className="inline-block bg-white text-orange-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition active:scale-95 shadow-lg no-underline"
+              >
+                🚀 Let&apos;s Go! 開始學習
+              </Link>
+            </div>
+          </section>
+        )}
+
         {/* How a lesson looks */}
         <section className="mb-8">
           <h2 className="text-xl font-black mb-4">🎮 每課學習流程（約 18 分鐘）</h2>
