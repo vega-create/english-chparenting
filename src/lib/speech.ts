@@ -79,8 +79,8 @@ export function speak(text: string, rate = 0.8) {
   window.speechSynthesis.speak(u);
 }
 
-// 中文語音（用於引導說明）
-export function speakChinese(text: string, rate = 0.9) {
+// 中文語音（用於引導說明）— 台灣腔、活潑女聲
+export function speakChinese(text: string, rate = 1.0) {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
 
   window.speechSynthesis.cancel();
@@ -90,16 +90,20 @@ export function speakChinese(text: string, rate = 0.9) {
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'zh-TW';
   u.rate = rate;
-  u.pitch = 1.1;
+  u.pitch = 1.3;  // 更高音調 = 更活潑可愛
 
-  // 找中文女聲
-  const zhVoice = voices.find(v =>
-    (v.lang === 'zh-TW' || v.lang === 'zh_TW' || v.lang.startsWith('zh')) &&
-    (v.name.includes('Mei-Jia') || v.name.includes('Ting-Ting') || v.name.includes('Google') || v.name.includes('Microsoft'))
-  ) || voices.find(v => v.lang === 'zh-TW' || v.lang === 'zh_TW') || voices.find(v => v.lang.startsWith('zh'));
+  // 嚴格只選 zh-TW 台灣女聲（避免抓到 zh-CN 大陸腔）
+  const twVoice =
+    // macOS 台灣女聲
+    voices.find(v => v.name === 'Mei-Jia' && (v.lang === 'zh-TW' || v.lang === 'zh_TW')) ||
+    // 任何明確標示 zh-TW 的聲音
+    voices.find(v => (v.lang === 'zh-TW' || v.lang === 'zh_TW') && v.name.includes('Google')) ||
+    voices.find(v => v.lang === 'zh-TW' || v.lang === 'zh_TW') ||
+    // 最後 fallback：zh-HK 比 zh-CN 更接近台灣腔
+    voices.find(v => v.lang === 'zh-HK' || v.lang === 'zh_HK');
 
-  if (zhVoice) {
-    u.voice = zhVoice;
+  if (twVoice) {
+    u.voice = twVoice;
   }
 
   window.speechSynthesis.speak(u);
