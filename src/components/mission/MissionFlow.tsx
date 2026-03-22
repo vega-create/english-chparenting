@@ -126,7 +126,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
             </div>
 
             <button
-              onClick={() => setStep('wakeup')}
+              onClick={() => setStep(mission.id === 1 ? 'discover' : 'wakeup')}
               className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-10 py-4 rounded-full font-bold text-xl hover:from-yellow-500 hover:to-orange-500 transition-all active:scale-95 shadow-xl"
             >
               Let&apos;s Go! 出發！🚀
