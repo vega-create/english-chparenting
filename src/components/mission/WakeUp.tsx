@@ -1,10 +1,20 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 
 interface Props {
   questions: QuizQuestion[];
   onComplete: (score: number) => void;
+}
+
+function speak(text: string, rate = 0.8) {
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = rate;
+    window.speechSynthesis.speak(u);
+  }
 }
 
 export default function WakeUp({ questions, onComplete }: Props) {
@@ -14,6 +24,17 @@ export default function WakeUp({ questions, onComplete }: Props) {
   const [showResult, setShowResult] = useState(false);
 
   const q = questions[current];
+
+  // 每題出現時自動播放答案音檔
+  const playAnswer = useCallback(() => {
+    if (q.type === 'listen-pick') {
+      setTimeout(() => speak(q.answer), 500);
+    }
+  }, [q]);
+
+  useEffect(() => {
+    playAnswer();
+  }, [current, playAnswer]);
 
   function handleSelect(option: string) {
     if (selected) return;
@@ -55,7 +76,19 @@ export default function WakeUp({ questions, onComplete }: Props) {
       {/* 題目 */}
       <div className="bg-white rounded-3xl p-8 shadow-lg border-2 border-yellow-200 max-w-xl mx-auto">
         {q.image && <div className="text-center text-5xl mb-4">{q.image}</div>}
-        <p className="text-xl font-bold text-center text-gray-800 mb-6">{q.question}</p>
+        <p className="text-xl font-bold text-center text-gray-800 mb-4">{q.question}</p>
+
+        {/* 聽力題播放按鈕 */}
+        {q.type === 'listen-pick' && (
+          <div className="text-center mb-4">
+            <button
+              onClick={() => speak(q.answer)}
+              className="bg-blue-100 text-blue-600 px-6 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95"
+            >
+              🔊 再聽一次
+            </button>
+          </div>
+        )}
 
         <div className="grid grid-cols-2 gap-3">
           {q.options?.map((option) => {
