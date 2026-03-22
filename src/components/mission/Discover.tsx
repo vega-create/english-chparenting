@@ -115,7 +115,13 @@ export default function Discover({ words, sentences, phonicsLetters, onComplete 
             {phonicsLetters.map((letter) => (
               <button
                 key={letter}
-                onClick={() => speak(letter.charAt(0), 0.6)}
+                onClick={() => {
+                  const upper = letter.charAt(0).toUpperCase();
+                  const lower = letter.charAt(0).toLowerCase();
+                  speak(`Capital ${upper}.`, 0.7);
+                  setTimeout(() => speak(`Lowercase ${lower}.`, 0.7), 1500);
+                  setTimeout(() => speak(`${upper} says ${lower}.`, 0.7), 3000);
+                }}
                 className="w-24 h-24 bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl flex items-center justify-center text-4xl font-black text-green-700 border-2 border-green-300 hover:scale-110 transition-all active:scale-95 shadow-md"
               >
                 {letter}
