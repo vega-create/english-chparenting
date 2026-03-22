@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { speak } from '@/lib/speech';
 
 interface Props {
   prompts: string[];
@@ -14,14 +15,7 @@ export default function TalkTime({ prompts, onComplete }: Props) {
 
   const prompt = prompts[current];
 
-  function speak(text: string) {
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
-      u.rate = 0.8;
-      window.speechSynthesis.speak(u);
-    }
-  }
+  // speak imported from @/lib/speech
 
   function startListening() {
     if (typeof window === 'undefined') return;

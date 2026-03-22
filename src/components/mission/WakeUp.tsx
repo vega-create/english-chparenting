@@ -1,20 +1,11 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import type { QuizQuestion } from '@/data/missions';
+import { speak } from '@/lib/speech';
 
 interface Props {
   questions: QuizQuestion[];
   onComplete: (score: number) => void;
-}
-
-function speak(text: string, rate = 0.8) {
-  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US';
-    u.rate = rate;
-    window.speechSynthesis.speak(u);
-  }
 }
 
 export default function WakeUp({ questions, onComplete }: Props) {

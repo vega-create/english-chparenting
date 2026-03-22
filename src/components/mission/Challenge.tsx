@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import type { QuizQuestion } from '@/data/missions';
+import { speak } from '@/lib/speech';
 
 interface Props {
   challenges: QuizQuestion[];
@@ -26,14 +27,7 @@ export default function Challenge({ challenges, onComplete }: Props) {
   const q = challenges[current];
   const info = typeLabel[q.type] || typeLabel['fill-blank'];
 
-  function speak(text: string) {
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
-      u.rate = 0.8;
-      window.speechSynthesis.speak(u);
-    }
-  }
+  // speak imported from @/lib/speech
 
   function handleAnswer(answer: string) {
     if (showResult) return;

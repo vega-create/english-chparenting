@@ -1,18 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { speak } from '@/lib/speech';
 
 interface Props {
   onComplete: () => void;
-}
-
-function speak(text: string, rate = 0.8) {
-  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US';
-    u.rate = rate;
-    window.speechSynthesis.speak(u);
-  }
 }
 
 interface Scene {

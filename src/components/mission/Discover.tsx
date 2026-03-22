@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene } from '@/data/missions';
+import { speak } from '@/lib/speech';
 
 interface Props {
   story: StoryScene[];
@@ -8,16 +9,6 @@ interface Props {
   sentences: Sentence[];
   phonicsLetters: string[];
   onComplete: () => void;
-}
-
-function speak(text: string, rate = 0.8) {
-  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US';
-    u.rate = rate;
-    window.speechSynthesis.speak(u);
-  }
 }
 
 type Phase = 'story' | 'words' | 'phonics' | 'sentences';
