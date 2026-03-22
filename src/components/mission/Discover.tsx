@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import type { Word, Sentence, StoryScene } from '@/data/missions';
 import { speak } from '@/lib/speech';
 
@@ -18,9 +18,15 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
-  const [wordStep, setWordStep] = useState<'card' | 'example' | 'repeat'>('card');
+  const [cardFlipped, setCardFlipped] = useState(false);
+  const [showExample, setShowExample] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const [recordedUrl, setRecordedUrl] = useState<string | null>(null);
+  const [showCompare, setShowCompare] = useState(false);
   const [currentSentence, setCurrentSentence] = useState(0);
   const [sentenceRepeated, setSentenceRepeated] = useState(false);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
 
   const scene = story[storyIndex];
   const word = words[currentWord];
@@ -37,17 +43,77 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
     playStory();
   }, [storyIndex, playStory]);
 
+  // 錄音功能
+  async function startRecording() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const recorder = new MediaRecorder(stream);
+      chunksRef.current = [];
+
+      recorder.ondataavailable = (e) => {
+        if (e.data.size > 0) chunksRef.current.push(e.data);
+      };
+
+      recorder.onstop = () => {
+        const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
+        const url = URL.createObjectURL(blob);
+        setRecordedUrl(url);
+        setIsRecording(false);
+        setShowCompare(true);
+        stream.getTracks().forEach(t => t.stop());
+      };
+
+      mediaRecorderRef.current = recorder;
+      recorder.start();
+      setIsRecording(true);
+      setRecordedUrl(null);
+      setShowCompare(false);
+
+      // 自動 3 秒後停止
+      setTimeout(() => {
+        if (recorder.state === 'recording') recorder.stop();
+      }, 3000);
+    } catch {
+      // 沒有麥克風權限，跳過錄音
+      setShowCompare(true);
+    }
+  }
+
+  function stopRecording() {
+    if (mediaRecorderRef.current?.state === 'recording') {
+      mediaRecorderRef.current.stop();
+    }
+  }
+
+  function playRecording() {
+    if (recordedUrl) {
+      const audio = new Audio(recordedUrl);
+      audio.play();
+    }
+  }
+
+  function nextWord() {
+    setCardFlipped(false);
+    setShowExample(false);
+    setRecordedUrl(null);
+    setShowCompare(false);
+    if (currentWord < words.length - 1) {
+      setCurrentWord(c => c + 1);
+    } else {
+      setPhase('phonics');
+    }
+  }
+
   // ===== Phase 1: 故事課文 =====
   if (phase === 'story') {
     return (
       <div className="animate-slide-up">
         <div className="text-center mb-4">
           <p className="text-sm font-medium text-purple-500 bg-purple-50 inline-block px-4 py-1 rounded-full">
-            📖 Story Time 故事時間
+            📖 Story Time
           </p>
         </div>
 
-        {/* 進度 */}
         <div className="flex gap-1 mb-6">
           {story.map((_, i) => (
             <div key={i} className={`h-2 flex-1 rounded-full transition-all ${
@@ -56,10 +122,8 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
           ))}
         </div>
 
-        {/* 場景圖 */}
         <div className="text-center text-8xl mb-4">{scene.image}</div>
 
-        {/* 對話泡泡 */}
         <div className="max-w-xl mx-auto mb-6">
           <div className="flex items-start gap-3">
             <div className="text-5xl flex-shrink-0">{scene.character}</div>
@@ -84,7 +148,6 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
                 })}
               </p>
 
-              {/* 翻譯切換 */}
               {showTranslation ? (
                 <p className="text-gray-500 text-sm animate-slide-up">{scene.dialogueZh}</p>
               ) : (
@@ -92,39 +155,29 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
                   onClick={() => setShowTranslation(true)}
                   className="text-xs text-gray-400 hover:text-purple-500 transition"
                 >
-                  👀 看中文翻譯
+                  👀 翻譯
                 </button>
               )}
             </div>
           </div>
         </div>
 
-        {/* 操作 */}
         <div className="flex justify-center gap-3">
-          <button
-            onClick={() => speak(scene.dialogue, 0.75)}
-            className="bg-purple-100 text-purple-600 px-6 py-3 rounded-2xl font-bold hover:bg-purple-200 transition active:scale-95"
-          >
-            🔊 再聽一次
+          <button onClick={() => speak(scene.dialogue, 0.75)}
+            className="bg-purple-100 text-purple-600 px-6 py-3 rounded-2xl font-bold hover:bg-purple-200 transition active:scale-95">
+            🔊
           </button>
-          <button
-            onClick={() => speak(scene.dialogue, 0.5)}
-            className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95"
-          >
-            🐢 慢速
+          <button onClick={() => speak(scene.dialogue, 0.5)}
+            className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
+            🐢
           </button>
-          <button
-            onClick={() => {
-              setShowTranslation(false);
-              if (storyIndex < story.length - 1) {
-                setStoryIndex(i => i + 1);
-              } else {
-                setPhase('words');
-              }
-            }}
-            className="bg-green-500 text-white px-6 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95"
-          >
-            {storyIndex < story.length - 1 ? '下一幕 ▶' : '學單字！📝'}
+          <button onClick={() => {
+            setShowTranslation(false);
+            if (storyIndex < story.length - 1) setStoryIndex(i => i + 1);
+            else setPhase('words');
+          }}
+            className="bg-green-500 text-white px-6 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+            {storyIndex < story.length - 1 ? '▶' : '📝'}
           </button>
         </div>
 
@@ -135,13 +188,13 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
     );
   }
 
-  // ===== Phase 2: 單字深度學習 =====
+  // ===== Phase 2: 閃卡單字學習 =====
   if (phase === 'words') {
     return (
       <div className="animate-slide-up">
         <div className="text-center mb-4">
           <p className="text-sm font-medium text-blue-500 bg-blue-50 inline-block px-4 py-1 rounded-full">
-            📝 Word Time 學單字 ({currentWord + 1}/{words.length})
+            📝 Word Time ({currentWord + 1}/{words.length})
           </p>
         </div>
 
@@ -153,98 +206,149 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
           ))}
         </div>
 
-        <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-200 max-w-md mx-auto">
-          {/* Step 1: 單字卡 */}
-          {wordStep === 'card' && (
-            <div className="text-center animate-slide-up">
-              <div className="text-7xl mb-4">{word.image}</div>
-              <p className="text-5xl font-black text-gray-800 mb-3">{word.en}</p>
-              <p className="text-xl text-gray-500 mb-2">{word.zh}</p>
+        {/* 閃卡 */}
+        <div className="max-w-sm mx-auto mb-6" style={{ perspective: '1000px' }}>
+          <div
+            onClick={() => {
+              if (!cardFlipped) {
+                setCardFlipped(true);
+                speak(word.en, 0.6);
+              }
+            }}
+            className="relative cursor-pointer transition-transform duration-500"
+            style={{
+              transformStyle: 'preserve-3d',
+              transform: cardFlipped ? 'rotateY(180deg)' : 'rotateY(0)',
+              minHeight: '280px',
+            }}
+          >
+            {/* 正面：圖片 */}
+            <div
+              className="absolute inset-0 bg-white rounded-3xl shadow-xl border-2 border-blue-200 flex flex-col items-center justify-center p-8"
+              style={{ backfaceVisibility: 'hidden' }}
+            >
+              <div className="text-9xl mb-4">{word.image}</div>
+              <p className="text-gray-400 text-sm">👆 tap!</p>
+            </div>
+
+            {/* 背面：英文 + 發音 */}
+            <div
+              className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl shadow-xl border-2 border-blue-300 flex flex-col items-center justify-center p-8"
+              style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+            >
+              <div className="text-6xl mb-3">{word.image}</div>
+              <p className="text-4xl font-black text-gray-800 mb-2">{word.en}</p>
               {word.phonics && (
-                <p className="text-sm text-blue-500 bg-blue-50 inline-block px-3 py-1 rounded-full mb-4">
-                  Phonics: {word.phonics}
+                <p className="text-sm text-blue-500 bg-blue-100 px-3 py-1 rounded-full mb-2">
+                  🔤 {word.phonics}
                 </p>
               )}
-              <div className="flex justify-center gap-3 mt-4">
-                <button
-                  onClick={() => speak(word.en, 0.6)}
-                  className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95"
-                >
-                  🔊 聽發音
-                </button>
-                <button
-                  onClick={() => { speak(word.en, 0.6); setWordStep('example'); }}
-                  className="bg-green-500 text-white px-5 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95"
-                >
-                  看例句 ▶
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Step 2: 例句 */}
-          {wordStep === 'example' && (
-            <div className="text-center animate-slide-up">
-              <div className="text-5xl mb-3">{word.image}</div>
-              <p className="text-2xl font-black text-gray-800 mb-2">{word.en}</p>
-              <div className="bg-blue-50 rounded-2xl p-4 mb-4">
-                <p className="text-lg font-bold text-blue-800 mb-1">
-                  {word.exampleSentence || `I say ${word.en}.`}
-                </p>
-                <p className="text-sm text-blue-500">
-                  {word.exampleZh || word.zh}
-                </p>
-              </div>
-              <div className="flex justify-center gap-3">
-                <button
-                  onClick={() => speak(word.exampleSentence || `I say ${word.en}.`, 0.7)}
-                  className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95"
-                >
-                  🔊 聽例句
-                </button>
-                <button
-                  onClick={() => setWordStep('repeat')}
-                  className="bg-green-500 text-white px-5 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95"
-                >
-                  跟著念 🗣
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Step 3: 跟讀 */}
-          {wordStep === 'repeat' && (
-            <div className="text-center animate-slide-up">
-              <div className="text-5xl mb-2">🦜</div>
-              <p className="text-sm text-green-500 font-bold mb-3">Polly: Repeat after me!</p>
-              <p className="text-4xl font-black text-gray-800 mb-2">{word.en}</p>
-              <p className="text-lg text-gray-500 mb-4">{word.zh}</p>
-
               <button
-                onClick={() => speak(word.en, 0.6)}
-                className="bg-green-100 text-green-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-green-200 transition active:scale-95 mb-3 block mx-auto"
+                onClick={(e) => { e.stopPropagation(); speak(word.en, 0.5); }}
+                className="mt-2 bg-blue-500 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-600 transition active:scale-95"
               >
-                🔊 聽 → 跟著念
-              </button>
-
-              <p className="text-xs text-gray-400 mb-4">聽完之後大聲念一次吧！</p>
-
-              <button
-                onClick={() => {
-                  setWordStep('card');
-                  if (currentWord < words.length - 1) {
-                    setCurrentWord(c => c + 1);
-                  } else {
-                    setPhase('phonics');
-                  }
-                }}
-                className="bg-green-500 text-white px-6 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95"
-              >
-                {currentWord < words.length - 1 ? '下一個單字 ▶' : 'Phonics 時間！🔤'}
+                🔊
               </button>
             </div>
-          )}
+          </div>
         </div>
+
+        {/* 翻卡後的操作 */}
+        {cardFlipped && !showExample && !showCompare && (
+          <div className="flex justify-center gap-3 animate-slide-up">
+            <button
+              onClick={() => speak(word.en, 0.5)}
+              className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
+              🔊
+            </button>
+            <button
+              onClick={() => { setShowExample(true); speak(word.exampleSentence || word.en, 0.7); }}
+              className="bg-orange-100 text-orange-600 px-5 py-3 rounded-2xl font-bold hover:bg-orange-200 transition active:scale-95">
+              📖
+            </button>
+            <button
+              onClick={() => { speak(word.en, 0.6); setTimeout(() => startRecording(), 1500); }}
+              className="bg-green-500 text-white px-5 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+              🎤
+            </button>
+          </div>
+        )}
+
+        {/* 錄音中 */}
+        {isRecording && (
+          <div className="text-center animate-slide-up">
+            <div className="flex justify-center gap-2 mb-3">
+              <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse" />
+              <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+              <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
+            </div>
+            <p className="text-red-500 font-bold text-lg mb-3">🎤 Recording...</p>
+            <button onClick={stopRecording}
+              className="bg-red-500 text-white px-6 py-3 rounded-2xl font-bold hover:bg-red-600 transition active:scale-95">
+              ⏹ Stop
+            </button>
+          </div>
+        )}
+
+        {/* 例句 */}
+        {showExample && !showCompare && (
+          <div className="max-w-md mx-auto animate-slide-up">
+            <div className="bg-orange-50 rounded-2xl p-5 border-2 border-orange-200 mb-4">
+              <p className="text-lg font-bold text-gray-800 mb-1">
+                {word.exampleSentence || `I say ${word.en}.`}
+              </p>
+            </div>
+            <div className="flex justify-center gap-3">
+              <button onClick={() => speak(word.exampleSentence || word.en, 0.7)}
+                className="bg-orange-100 text-orange-600 px-5 py-3 rounded-2xl font-bold hover:bg-orange-200 transition active:scale-95">
+                🔊
+              </button>
+              <button onClick={() => { speak(word.en, 0.6); setTimeout(() => startRecording(), 1500); }}
+                className="bg-green-500 text-white px-5 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+                🎤
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* 錄音比對結果 */}
+        {showCompare && (
+          <div className="max-w-md mx-auto animate-slide-up">
+            <div className="bg-white rounded-2xl p-5 border-2 border-green-200 shadow-md mb-4">
+              <p className="text-center font-bold text-gray-700 mb-4">🎧 Compare!</p>
+              <div className="flex justify-center gap-4">
+                <button onClick={() => speak(word.en, 0.6)}
+                  className="flex-1 bg-blue-100 text-blue-600 px-4 py-4 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95 text-center">
+                  <span className="text-2xl block mb-1">🦊</span>
+                  Model
+                </button>
+                {recordedUrl ? (
+                  <button onClick={playRecording}
+                    className="flex-1 bg-green-100 text-green-600 px-4 py-4 rounded-2xl font-bold hover:bg-green-200 transition active:scale-95 text-center">
+                    <span className="text-2xl block mb-1">🧒</span>
+                    My Voice
+                  </button>
+                ) : (
+                  <div className="flex-1 bg-gray-100 text-gray-400 px-4 py-4 rounded-2xl font-bold text-center">
+                    <span className="text-2xl block mb-1">🧒</span>
+                    Skipped
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="flex justify-center gap-3">
+              <button onClick={() => { setShowCompare(false); setRecordedUrl(null); speak(word.en, 0.6); setTimeout(() => startRecording(), 1500); }}
+                className="bg-yellow-100 text-yellow-700 px-5 py-3 rounded-2xl font-bold hover:bg-yellow-200 transition active:scale-95">
+                🔄
+              </button>
+              <button onClick={nextWord}
+                className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+                {currentWord < words.length - 1 ? '▶' : '🔤'}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -255,22 +359,19 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
       <div className="animate-slide-up">
         <div className="text-center mb-4">
           <p className="text-sm font-medium text-green-500 bg-green-50 inline-block px-4 py-1 rounded-full">
-            🔤 Phonics Time 字母發音
+            🔤 Phonics Time
           </p>
         </div>
 
         <div className="text-center mb-6">
           <div className="inline-block text-5xl mb-2">🦜</div>
           <p className="text-lg font-bold text-gray-700">
-            Polly: &ldquo;Repeat after me! 跟我念！&rdquo;
+            Polly: &ldquo;Repeat after me!&rdquo;
           </p>
         </div>
 
         <div className="bg-white rounded-3xl p-8 shadow-lg border-2 border-green-200 max-w-xl mx-auto">
-          <h3 className="text-xl font-bold text-center text-gray-700 mb-6">
-            Today&apos;s Letters 今天的字母
-          </h3>
-          <div className="flex justify-center gap-6 mb-4">
+          <div className="flex justify-center gap-6 mb-6">
             {phonicsLetters.map((letter) => (
               <button
                 key={letter}
@@ -288,15 +389,13 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
             ))}
           </div>
           <p className="text-center text-sm text-gray-400 mb-6">
-            點擊字母聽：大寫 → 小寫 → 字母音
+            👆 Tap to hear!
           </p>
 
           <div className="text-center">
-            <button
-              onClick={() => setPhase('sentences')}
-              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-green-600 transition active:scale-95"
-            >
-              學句子！💬
+            <button onClick={() => setPhase('sentences')}
+              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-green-600 transition active:scale-95">
+              💬 ▶
             </button>
           </div>
         </div>
@@ -309,14 +408,14 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
     <div className="animate-slide-up">
       <div className="text-center mb-4">
         <p className="text-sm font-medium text-orange-500 bg-orange-50 inline-block px-4 py-1 rounded-full">
-          💬 Sentence Time 學句子 ({currentSentence + 1}/{sentences.length})
+          💬 Sentence Time ({currentSentence + 1}/{sentences.length})
         </p>
       </div>
 
       <div className="text-center mb-4">
         <div className="inline-block text-5xl mb-2">🐻</div>
         <p className="text-lg font-bold text-gray-700">
-          Benny: &ldquo;Let&apos;s read! 來讀句子！&rdquo;
+          Benny: &ldquo;Let&apos;s read!&rdquo;
         </p>
       </div>
 
@@ -329,59 +428,39 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
       </div>
 
       <div className="bg-white rounded-3xl p-8 shadow-lg border-2 border-orange-200 max-w-xl mx-auto">
-        <p className="text-2xl font-bold text-center text-gray-800 mb-2 leading-relaxed">
+        <p className="text-2xl font-bold text-center text-gray-800 mb-6 leading-relaxed">
           {sentence.en}
         </p>
-        <p className="text-lg text-center text-gray-500 mb-6">{sentence.zh}</p>
 
         {!sentenceRepeated ? (
-          <div className="space-y-3">
-            {/* 先聽 */}
-            <button
-              onClick={() => speak(sentence.en, 0.7)}
-              className="w-full bg-orange-100 text-orange-600 px-6 py-4 rounded-2xl font-bold hover:bg-orange-200 transition active:scale-95"
-            >
-              🔊 Step 1：先聽句子
+          <div className="flex justify-center gap-3">
+            <button onClick={() => speak(sentence.en, 0.7)}
+              className="bg-orange-100 text-orange-600 px-6 py-4 rounded-2xl font-bold hover:bg-orange-200 transition active:scale-95">
+              🔊
             </button>
-            <button
-              onClick={() => speak(sentence.en, 0.5)}
-              className="w-full bg-blue-50 text-blue-500 px-6 py-3 rounded-2xl font-medium hover:bg-blue-100 transition active:scale-95"
-            >
-              🐢 聽慢速版
+            <button onClick={() => speak(sentence.en, 0.5)}
+              className="bg-blue-50 text-blue-500 px-5 py-4 rounded-2xl font-medium hover:bg-blue-100 transition active:scale-95">
+              🐢
             </button>
-            {/* 跟讀 */}
-            <button
-              onClick={() => { speak(sentence.en, 0.7); setSentenceRepeated(true); }}
-              className="w-full bg-green-500 text-white px-6 py-4 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95"
-            >
-              🗣 Step 2：跟著念！
+            <button onClick={() => { speak(sentence.en, 0.7); setSentenceRepeated(true); }}
+              className="bg-green-500 text-white px-6 py-4 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+              🎤
             </button>
           </div>
         ) : (
           <div className="text-center animate-slide-up">
-            <p className="text-green-600 font-bold text-lg mb-4">
-              ⭐ Great job! 念得太棒了！
-            </p>
-            <button
-              onClick={() => {
-                setSentenceRepeated(false);
-                if (currentSentence < sentences.length - 1) {
-                  setCurrentSentence(c => c + 1);
-                } else {
-                  onComplete();
-                }
-              }}
-              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95"
-            >
-              {currentSentence < sentences.length - 1 ? '下一句 ▶' : '開始挑戰！🎮'}
+            <p className="text-green-600 font-bold text-lg mb-4">⭐ Great!</p>
+            <button onClick={() => {
+              setSentenceRepeated(false);
+              if (currentSentence < sentences.length - 1) setCurrentSentence(c => c + 1);
+              else onComplete();
+            }}
+              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+              {currentSentence < sentences.length - 1 ? '▶' : '🎮'}
             </button>
           </div>
         )}
       </div>
-
-      <p className="text-center text-sm text-gray-400 mt-4">
-        {currentSentence + 1} / {sentences.length}
-      </p>
     </div>
   );
 }
