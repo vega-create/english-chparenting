@@ -70,7 +70,7 @@ export function speak(text: string, rate = 0.8) {
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'en-US';
   u.rate = rate;
-  u.pitch = 1.1;  // 稍微提高音調，更溫柔
+  u.pitch = 1.2;  // 活潑明亮的語調
 
   if (femaleVoice) {
     u.voice = femaleVoice;

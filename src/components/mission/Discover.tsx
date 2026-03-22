@@ -203,7 +203,7 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
                       s.dialogue
                     )}
                   </p>
-                  {isActive && showTranslation && (
+                  {showTranslation && (
                     <p className="text-gray-400 text-xs mt-1 animate-slide-up">{s.dialogueZh}</p>
                   )}
                 </div>
@@ -221,17 +221,14 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
             className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
             🐢
           </button>
-          {!showTranslation ? (
-            <button onClick={() => setShowTranslation(true)}
-              className="bg-gray-100 text-gray-500 px-5 py-3 rounded-2xl font-bold hover:bg-gray-200 transition active:scale-95">
-              👀
-            </button>
-          ) : (
-            <button onClick={() => setShowTranslation(false)}
-              className="bg-purple-100 text-purple-500 px-5 py-3 rounded-2xl font-bold hover:bg-purple-200 transition active:scale-95">
-              🙈
-            </button>
-          )}
+          <button onClick={() => setShowTranslation(!showTranslation)}
+            className={`px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${
+              showTranslation
+                ? 'bg-purple-500 text-white hover:bg-purple-600'
+                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+            }`}>
+            {showTranslation ? '中 ✓' : '中'}
+          </button>
           <button onClick={() => {
             setShowTranslation(false);
             if (storyIndex < story.length - 1) {
