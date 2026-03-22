@@ -104,8 +104,17 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
     }
   }
 
-  // ===== Phase 1: 故事課文 =====
+  // ===== Phase 1: 對話故事（全篇 + 點擊播放 + 動畫） =====
   if (phase === 'story') {
+    const animationClass: Record<string, string> = {
+      wave: 'animate-wave',
+      bounce: 'animate-bounce',
+      shake: 'animate-shake',
+      spin: 'animate-spin',
+      float: 'animate-float',
+      tada: 'animate-tada',
+    };
+
     return (
       <div className="animate-slide-up">
         <div className="text-center mb-4">
@@ -114,76 +123,129 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
           </p>
         </div>
 
-        <div className="flex gap-1 mb-6">
-          {story.map((_, i) => (
-            <div key={i} className={`h-2 flex-1 rounded-full transition-all ${
-              i < storyIndex ? 'bg-green-400' : i === storyIndex ? 'bg-purple-400' : 'bg-gray-200'
-            }`} />
-          ))}
-        </div>
+        {/* 動畫場景區 */}
+        <div className="bg-gradient-to-b from-blue-100 to-purple-50 rounded-3xl p-6 mb-6 min-h-[180px] flex flex-col items-center justify-center relative overflow-hidden">
+          {/* 場景背景 */}
+          <div className="text-7xl mb-2">{scene.image}</div>
 
-        <div className="text-center text-8xl mb-4">{scene.image}</div>
-
-        <div className="max-w-xl mx-auto mb-6">
-          <div className="flex items-start gap-3">
-            <div className="text-5xl flex-shrink-0">{scene.character}</div>
-            <div className="bg-white rounded-3xl rounded-tl-none px-6 py-5 border-2 border-purple-200 flex-1 shadow-md">
-              <p className="text-xs text-purple-400 font-bold mb-2">{scene.characterName}</p>
-              <p className="text-xl font-bold text-gray-800 leading-relaxed mb-2">
-                {scene.dialogue.split(' ').map((w, i) => {
-                  const isHighlight = scene.highlightWords?.some(hw =>
-                    w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
-                    hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
-                  );
-                  return (
-                    <span key={i}>
-                      <span
-                        className={isHighlight ? 'text-purple-600 bg-purple-50 px-1 rounded cursor-pointer hover:bg-purple-100' : ''}
-                        onClick={() => isHighlight && speak(w.replace(/[.,!?]/g, ''), 0.6)}
-                      >
-                        {w}
-                      </span>{' '}
-                    </span>
-                  );
-                })}
-              </p>
-
-              {showTranslation ? (
-                <p className="text-gray-500 text-sm animate-slide-up">{scene.dialogueZh}</p>
-              ) : (
-                <button
-                  onClick={() => setShowTranslation(true)}
-                  className="text-xs text-gray-400 hover:text-purple-500 transition"
-                >
-                  👀 翻譯
-                </button>
-              )}
-            </div>
+          {/* 場景 emoji 動畫 */}
+          <div className="flex gap-4 text-4xl">
+            {scene.sceneEmojis.map((emoji, i) => (
+              <span
+                key={`${storyIndex}-${i}`}
+                className={`inline-block ${animationClass[scene.animation] || 'animate-bounce'}`}
+                style={{
+                  animationDelay: `${i * 0.15}s`,
+                  animationDuration: '1s',
+                  animationIterationCount: storyIndex === story.length - 1 && scene.animation === 'bounce' ? 'infinite' : '3',
+                }}
+              >
+                {emoji}
+              </span>
+            ))}
           </div>
         </div>
 
+        {/* 完整對話列表 */}
+        <div className="max-w-xl mx-auto space-y-3 mb-6">
+          {story.map((s, i) => {
+            const isActive = i === storyIndex;
+            const isPast = i < storyIndex;
+
+            return (
+              <button
+                key={i}
+                onClick={() => {
+                  setStoryIndex(i);
+                  setShowTranslation(false);
+                  speak(s.dialogue, 0.75);
+                }}
+                className={`w-full text-left flex items-start gap-3 p-4 rounded-2xl transition-all ${
+                  isActive
+                    ? 'bg-white border-2 border-purple-400 shadow-lg scale-[1.02]'
+                    : isPast
+                    ? 'bg-green-50 border-2 border-green-200 opacity-80'
+                    : 'bg-gray-50 border-2 border-gray-100 opacity-50'
+                }`}
+              >
+                <span className="text-3xl flex-shrink-0">
+                  {isPast ? '✅' : s.character}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-gray-400 font-bold">{s.characterName}</p>
+                  <p className={`font-bold leading-relaxed ${
+                    isActive ? 'text-gray-800 text-lg' : 'text-gray-600 text-sm'
+                  }`}>
+                    {isActive ? (
+                      // 活躍句子：重點單字標色
+                      s.dialogue.split(' ').map((w, wi) => {
+                        const isHighlight = s.highlightWords?.some(hw =>
+                          w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
+                          hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
+                        );
+                        return (
+                          <span key={wi}>
+                            <span
+                              className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded' : ''}
+                              onClick={(e) => {
+                                if (isHighlight) {
+                                  e.stopPropagation();
+                                  speak(w.replace(/[.,!?]/g, ''), 0.5);
+                                }
+                              }}
+                            >
+                              {w}
+                            </span>{' '}
+                          </span>
+                        );
+                      })
+                    ) : (
+                      s.dialogue
+                    )}
+                  </p>
+                  {isActive && showTranslation && (
+                    <p className="text-gray-400 text-xs mt-1 animate-slide-up">{s.dialogueZh}</p>
+                  )}
+                </div>
+                {isActive && (
+                  <span className="text-purple-400 text-xl flex-shrink-0">🔊</span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 操作列 */}
         <div className="flex justify-center gap-3">
-          <button onClick={() => speak(scene.dialogue, 0.75)}
-            className="bg-purple-100 text-purple-600 px-6 py-3 rounded-2xl font-bold hover:bg-purple-200 transition active:scale-95">
-            🔊
-          </button>
           <button onClick={() => speak(scene.dialogue, 0.5)}
             className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
             🐢
           </button>
+          {!showTranslation ? (
+            <button onClick={() => setShowTranslation(true)}
+              className="bg-gray-100 text-gray-500 px-5 py-3 rounded-2xl font-bold hover:bg-gray-200 transition active:scale-95">
+              👀
+            </button>
+          ) : (
+            <button onClick={() => setShowTranslation(false)}
+              className="bg-purple-100 text-purple-500 px-5 py-3 rounded-2xl font-bold hover:bg-purple-200 transition active:scale-95">
+              🙈
+            </button>
+          )}
           <button onClick={() => {
             setShowTranslation(false);
-            if (storyIndex < story.length - 1) setStoryIndex(i => i + 1);
-            else setPhase('words');
+            if (storyIndex < story.length - 1) {
+              const next = storyIndex + 1;
+              setStoryIndex(next);
+              speak(story[next].dialogue, 0.75);
+            } else {
+              setPhase('words');
+            }
           }}
-            className="bg-green-500 text-white px-6 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+            className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
             {storyIndex < story.length - 1 ? '▶' : '📝'}
           </button>
         </div>
-
-        <p className="text-center text-sm text-gray-400 mt-4">
-          {storyIndex + 1} / {story.length}
-        </p>
       </div>
     );
   }

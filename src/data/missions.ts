@@ -19,6 +19,10 @@ export interface StoryScene {
   dialogue: string;
   dialogueZh: string;
   highlightWords?: string[];
+  // 動畫場景：多個 emoji 組成動畫
+  sceneEmojis: string[];
+  // 動畫類型
+  animation: 'wave' | 'bounce' | 'shake' | 'spin' | 'float' | 'tada';
 }
 
 export interface QuizQuestion {
@@ -66,6 +70,8 @@ const L1_M1: Mission = {
       dialogue: "Hi! I'm Finn. Welcome to Rainbow Valley!",
       dialogueZh: '嗨！我是 Finn。歡迎來到彩虹谷！',
       highlightWords: ['Hi', 'Finn', 'Welcome'],
+      sceneEmojis: ['🦊', '👋', '🌈', '🏝️', '✨'],
+      animation: 'wave',
     },
     {
       image: '🏝️',
@@ -74,6 +80,8 @@ const L1_M1: Mission = {
       dialogue: "Hello! My name is Coco. Nice to meet you!",
       dialogueZh: '你好！我的名字是 Coco。很高興認識你！',
       highlightWords: ['Hello', 'name', 'Nice to meet you'],
+      sceneEmojis: ['🐱', '📛', '🤝', '😊'],
+      animation: 'bounce',
     },
     {
       image: '🌺',
@@ -82,6 +90,8 @@ const L1_M1: Mission = {
       dialogue: "Hi there! I'm Polly! What's your name?",
       dialogueZh: '嗨！我是 Polly！你叫什麼名字？',
       highlightWords: ['Hi', 'name'],
+      sceneEmojis: ['🦜', '❓', '📛', '🎤'],
+      animation: 'shake',
     },
     {
       image: '📚',
@@ -90,6 +100,8 @@ const L1_M1: Mission = {
       dialogue: "Hello, friend! I'm Benny. Are you ready to learn?",
       dialogueZh: '你好，朋友！我是 Benny。準備好學習了嗎？',
       highlightWords: ['Hello', 'friend', 'ready'],
+      sceneEmojis: ['🐻', '🤝', '📚', '✏️', '🎒'],
+      animation: 'float',
     },
     {
       image: '✨',
@@ -98,6 +110,8 @@ const L1_M1: Mission = {
       dialogue: "Yes! Let's go! Please follow me!",
       dialogueZh: '好！我們出發吧！請跟著我！',
       highlightWords: ['Yes', 'Please'],
+      sceneEmojis: ['🐰', '✅', '👉', '🚶', '✨'],
+      animation: 'tada',
     },
     {
       image: '👋',
@@ -106,6 +120,8 @@ const L1_M1: Mission = {
       dialogue: "Great! We are all friends now. Let's start our adventure!",
       dialogueZh: '太好了！我們都是朋友了。開始我們的冒險吧！',
       highlightWords: ['friends', 'adventure'],
+      sceneEmojis: ['🦊', '🐱', '🦜', '🐻', '🐰'],
+      animation: 'bounce',
     },
   ],
 
