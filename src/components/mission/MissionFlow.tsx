@@ -140,7 +140,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'discover' && (
-          <Discover words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} onComplete={() => setStep('challenge')} />
+          <Discover story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} onComplete={() => setStep('challenge')} />
         )}
 
         {step === 'challenge' && (
