@@ -168,8 +168,8 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
                     : 'bg-gray-50 border-2 border-gray-100 opacity-50'
                 }`}
               >
-                <span className="text-3xl flex-shrink-0">
-                  {isPast ? '✅' : s.character}
+                <span className="flex-shrink-0">
+                  {isPast ? <span className="text-3xl">✅</span> : <img src={`/characters/${s.characterKey || 'finn'}/${s.characterKey || 'finn'}-${s.characterAction || 'talk'}.png`} alt={s.characterName} className="w-28 h-28 object-contain" />}
                 </span>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-gray-400 font-bold">{s.characterName}</p>
@@ -378,7 +378,7 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
               <div className="flex justify-center gap-4">
                 <button onClick={() => speak(word.en, 0.6)}
                   className="flex-1 bg-blue-100 text-blue-600 px-4 py-4 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95 text-center">
-                  <span className="text-2xl block mb-1">🦊</span>
+                  <img src="/characters/finn/finn-talk.png" alt="Finn" className="w-20 h-20 object-contain mx-auto mb-1" />
                   Model
                 </button>
                 {recordedUrl ? (
@@ -423,7 +423,7 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
         </div>
 
         <div className="text-center mb-6">
-          <div className="inline-block text-5xl mb-2">🦜</div>
+          <img src="/characters/polly/polly-sing.png" alt="Polly" className="inline-block w-40 h-40 object-contain mb-2" />
           <p className="text-lg font-bold text-gray-700">
             Polly: &ldquo;Repeat after me!&rdquo;
           </p>
@@ -472,7 +472,7 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
       </div>
 
       <div className="text-center mb-4">
-        <div className="inline-block text-5xl mb-2">🐻</div>
+        <img src="/characters/benny/benny-read.png" alt="Benny" className="inline-block w-40 h-40 object-contain mb-2" />
         <p className="text-lg font-bold text-gray-700">
           Benny: &ldquo;Let&apos;s read!&rdquo;
         </p>

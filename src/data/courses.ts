@@ -22,13 +22,43 @@ export interface Course {
 }
 
 export const WORLDS = [
-  { name: "彩虹谷", emoji: "🌈", nameEn: "Rainbow Valley", levels: [1, 2], color: "from-red-100 to-orange-100" },
-  { name: "友善小鎮", emoji: "🏡", nameEn: "Friendly Town", levels: [3, 4], color: "from-yellow-100 to-amber-100" },
-  { name: "海洋灣", emoji: "🌊", nameEn: "Ocean Bay", levels: [5, 6], color: "from-cyan-100 to-blue-100" },
-  { name: "故事城堡", emoji: "🏰", nameEn: "Story Castle", levels: [7, 8], color: "from-purple-100 to-violet-100" },
-  { name: "探索大陸", emoji: "🌍", nameEn: "Discovery Land", levels: [9, 10], color: "from-green-100 to-emerald-100" },
-  { name: "冠軍峰", emoji: "🎓", nameEn: "Champion Peak", levels: [11, 12], color: "from-pink-100 to-rose-100" },
+  { name: "彩虹谷", emoji: "🌈", nameEn: "Rainbow Valley", levels: [1, 2], color: "from-red-100 to-orange-100", image: "/images/worlds/world-rainbow-valley.png" },
+  { name: "友善小鎮", emoji: "🏡", nameEn: "Friendly Town", levels: [3, 4], color: "from-yellow-100 to-amber-100", image: "/images/worlds/world-friendly-town.png" },
+  { name: "海洋灣", emoji: "🌊", nameEn: "Ocean Bay", levels: [5, 6], color: "from-cyan-100 to-blue-100", image: "/images/worlds/world-ocean-bay.png" },
+  { name: "故事城堡", emoji: "🏰", nameEn: "Story Castle", levels: [7, 8], color: "from-purple-100 to-violet-100", image: "/images/worlds/world-story-castle.png" },
+  { name: "探索大陸", emoji: "🌍", nameEn: "Discovery Land", levels: [9, 10], color: "from-green-100 to-emerald-100", image: "/images/worlds/world-explorer-land.png" },
+  { name: "冠軍峰", emoji: "🎓", nameEn: "Champion Peak", levels: [11, 12], color: "from-pink-100 to-rose-100", image: "/images/worlds/world-champion-peak.png" },
 ];
+
+export const ISLAND_IMAGES: Record<number, string> = {
+  1: "/images/islands/island-letter.png",
+  2: "/images/islands/island-sound.png",
+  3: "/images/islands/island-market.png",
+  4: "/images/islands/island-school.png",
+  5: "/images/islands/island-coral.png",
+  6: "/images/islands/island-lighthouse.png",
+  7: "/images/islands/island-grammar.png",
+  8: "/images/islands/island-question.png",
+  9: "/images/islands/island-time.png",
+  10: "/images/islands/island-future.png",
+  11: "/images/islands/island-challenge.png",
+  12: "/images/islands/island-victory.png",
+};
+
+export const BADGE_IMAGES: Record<number, string> = {
+  1: "/images/badges/badge-l1.png",
+  2: "/images/badges/badge-l2.png",
+  3: "/images/badges/badge-l3.png",
+  4: "/images/badges/badge-l4.png",
+  5: "/images/badges/badge-l5.png",
+  6: "/images/badges/badge-l6.png",
+  7: "/images/badges/badge-l7.png",
+  8: "/images/badges/badge-l8.png",
+  9: "/images/badges/badge-l9.png",
+  10: "/images/badges/badge-l10.png",
+  11: "/images/badges/badge-l11.png",
+  12: "/images/badges/badge-l12.png",
+};
 
 export const COURSES: Course[] = [
   {
@@ -190,9 +220,9 @@ export const COURSES: Course[] = [
 ];
 
 export const CHARACTERS = [
-  { emoji: "🦊", name: "Finn", role: "探險隊長", skill: "課程引導", color: "orange" },
-  { emoji: "🐱", name: "Coco", role: "聽力高手", skill: "聽力訓練", color: "blue" },
-  { emoji: "🦜", name: "Polly", role: "口說達人", skill: "口說練習", color: "green" },
-  { emoji: "🐻", name: "Benny", role: "閱讀博士", skill: "閱讀理解", color: "purple" },
-  { emoji: "🐰", name: "Ruby", role: "寫作天才", skill: "拼寫寫作", color: "pink" },
+  { emoji: "🦊", name: "Finn", key: "finn", role: "探險隊長", skill: "課程引導", color: "orange" },
+  { emoji: "🐱", name: "Coco", key: "coco", role: "聽力高手", skill: "聽力訓練", color: "blue" },
+  { emoji: "🦜", name: "Polly", key: "polly", role: "口說達人", skill: "口說練習", color: "green" },
+  { emoji: "🐻", name: "Benny", key: "benny", role: "閱讀博士", skill: "閱讀理解", color: "purple" },
+  { emoji: "🐰", name: "Ruby", key: "ruby", role: "寫作天才", skill: "拼寫寫作", color: "pink" },
 ];

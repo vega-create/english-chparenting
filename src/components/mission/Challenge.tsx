@@ -8,12 +8,12 @@ interface Props {
   onComplete: (score: number, total: number) => void;
 }
 
-const typeLabel: Record<string, { icon: string; label: string; character: string }> = {
-  'listen-pick': { icon: '🎧', label: '聽力挑戰', character: '🐱' },
-  'speak': { icon: '🗣', label: '口說挑戰', character: '🦜' },
-  'match': { icon: '🔗', label: '配對挑戰', character: '🐻' },
-  'spell': { icon: '✍️', label: '拼寫挑戰', character: '🐰' },
-  'fill-blank': { icon: '📝', label: '填空挑戰', character: '🦊' },
+const typeLabel: Record<string, { icon: string; label: string; characterKey: string; characterAction: string }> = {
+  'listen-pick': { icon: '🎧', label: '聽力挑戰', characterKey: 'coco', characterAction: 'listen' },
+  'speak': { icon: '🗣', label: '口說挑戰', characterKey: 'polly', characterAction: 'sing' },
+  'match': { icon: '🔗', label: '配對挑戰', characterKey: 'benny', characterAction: 'read' },
+  'spell': { icon: '✍️', label: '拼寫挑戰', characterKey: 'ruby', characterAction: 'write' },
+  'fill-blank': { icon: '📝', label: '填空挑戰', characterKey: 'finn', characterAction: 'talk' },
 };
 
 export default function Challenge({ challenges, onComplete }: Props) {
@@ -73,7 +73,7 @@ export default function Challenge({ challenges, onComplete }: Props) {
 
       {/* 角色 + 題型 */}
       <div className="text-center mb-4">
-        <div className="inline-block text-5xl mb-1">{info.character}</div>
+        <img src={`/characters/${info.characterKey}/${info.characterKey}-${info.characterAction}.png`} alt={info.label} className="inline-block w-40 h-40 object-contain mb-1" />
         <p className="text-sm font-medium text-gray-500">
           {info.icon} {info.label}
         </p>

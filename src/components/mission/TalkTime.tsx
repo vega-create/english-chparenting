@@ -79,7 +79,7 @@ export default function TalkTime({ prompts, onComplete }: Props) {
       <div className="max-w-xl mx-auto">
         {/* Finn 問問題 */}
         <div className="flex items-start gap-3 mb-6">
-          <div className="text-5xl flex-shrink-0">🦊</div>
+          <img src="/characters/finn/finn-talk.png" alt="Finn" className="w-40 h-40 object-contain flex-shrink-0" />
           <div className="bg-blue-50 rounded-3xl rounded-tl-none px-6 py-4 border-2 border-blue-200 flex-1">
             <p className="text-lg font-bold text-gray-800">{prompt}</p>
             <button

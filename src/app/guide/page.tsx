@@ -10,6 +10,7 @@ export default function GuidePage() {
     <main className="min-h-screen py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12 animate-slide-up">
+          <img src="/images/guide/vega-book.png" alt="Vega" className="w-28 h-28 md:w-36 md:h-36 mx-auto mb-4 object-contain animate-float" />
           <h1 className="text-3xl md:text-5xl font-black mb-3">
             <span className="gradient-text">使用說明</span> 📖
           </h1>
@@ -69,14 +70,14 @@ export default function GuidePage() {
           <h2 className="text-2xl font-black mb-6 flex items-center gap-2">🤝 學習夥伴</h2>
           <div className="grid sm:grid-cols-5 gap-3">
             {[
-              { emoji: "🦊", name: "Finn", role: "探險隊長", job: "負責開場、串場、總結。是你的冒險領隊！" },
-              { emoji: "🐱", name: "Coco", role: "聽力高手", job: "負責聽力訓練。「Listen carefully!」是她的口頭禪。" },
-              { emoji: "🦜", name: "Polly", role: "口說達人", job: "負責口說練習和對話。最有耐心的老師。" },
-              { emoji: "🐻", name: "Benny", role: "閱讀博士", job: "負責閱讀理解。喜歡說故事給你聽。" },
-              { emoji: "🐰", name: "Ruby", role: "寫作天才", job: "負責拼寫和寫作。Spelling Bee 冠軍！" },
+              { key: "finn", name: "Finn", role: "探險隊長", job: "負責開場、串場、總結。是你的冒險領隊！" },
+              { key: "coco", name: "Coco", role: "聽力高手", job: "負責聽力訓練。「Listen carefully!」是她的口頭禪。" },
+              { key: "polly", name: "Polly", role: "口說達人", job: "負責口說練習和對話。最有耐心的老師。" },
+              { key: "benny", name: "Benny", role: "閱讀博士", job: "負責閱讀理解。喜歡說故事給你聽。" },
+              { key: "ruby", name: "Ruby", role: "寫作天才", job: "負責拼寫和寫作。Spelling Bee 冠軍！" },
             ].map(c => (
               <div key={c.name} className="glass rounded-2xl p-4 text-center">
-                <div className="text-4xl mb-2">{c.emoji}</div>
+                <img src={`/characters/${c.key}/${c.key}-normal.png`} alt={c.name} className="w-40 h-40 mx-auto mb-2 object-contain" />
                 <div className="font-bold">{c.name}</div>
                 <div className="text-xs text-gray-500 mb-1">{c.role}</div>
                 <p className="text-xs text-gray-500">{c.job}</p>

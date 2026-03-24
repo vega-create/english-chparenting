@@ -9,6 +9,8 @@ interface Props {
 interface Scene {
   bg: string;
   character: string;
+  characterKey: string;
+  characterAction: string;
   characterName: string;
   dialogue: string;
   dialogueEn?: string;
@@ -21,6 +23,8 @@ const WELCOME_SCENES: Scene[] = [
   {
     bg: '🏝️',
     character: '🦊',
+    characterKey: 'finn',
+    characterAction: 'wave',
     characterName: 'Finn',
     dialogue: '嗨！歡迎來到 Adventure English！\n我是 Finn，你的冒險夥伴！\n我會用中文幫你介紹這裡怎麼玩 😊',
     dialogueEn: 'Welcome to Adventure English!',
@@ -29,6 +33,8 @@ const WELCOME_SCENES: Scene[] = [
   {
     bg: '🌈',
     character: '🦊',
+    characterKey: 'finn',
+    characterAction: 'happy',
     characterName: 'Finn',
     dialogue: '在這裡，學英文就像玩遊戲一樣好玩！\n聽故事、看圖片、跟著念，\n不知不覺就學會英文了！',
     dialogueEn: "Learning English is fun here!",
@@ -37,6 +43,8 @@ const WELCOME_SCENES: Scene[] = [
   {
     bg: '🚪',
     character: '🦊',
+    characterKey: 'finn',
+    characterAction: 'talk',
     characterName: 'Finn',
     dialogue: '先來認識你的五個好朋友吧！\n他們每個人都有不同的超能力喔！\n👆 點點看他們，聽他們自我介紹！',
     action: 'click-characters',
@@ -45,6 +53,8 @@ const WELCOME_SCENES: Scene[] = [
   {
     bg: '📋',
     character: '🦊',
+    characterKey: 'finn',
+    characterAction: 'talk',
     characterName: 'Finn',
     dialogue: '每一課都有 5 個關卡，\n就像闖關遊戲一樣！\n👆 點點看每個關卡是什麼！',
     action: 'click-steps',
@@ -53,6 +63,8 @@ const WELCOME_SCENES: Scene[] = [
   {
     bg: '⭐',
     character: '🦊',
+    characterKey: 'finn',
+    characterAction: 'thumbsup',
     characterName: 'Finn',
     dialogue: '答對題目就能得到星星 ⭐\n集滿星星還有寶石 💎 可以收集！\n👆 試試看點星星！',
     action: 'click-star',
@@ -61,6 +73,8 @@ const WELCOME_SCENES: Scene[] = [
   {
     bg: '🚀',
     character: '🦊',
+    characterKey: 'finn',
+    characterAction: 'happy',
     characterName: 'Finn',
     dialogue: '太棒了！準備好了嗎？\n接下來 Finn 會開始用英文跟你說話喔！\n別擔心，聽不懂可以按「中」看翻譯 😉',
     dialogueEn: "Let's go! I'll speak English now. Ready?",
@@ -69,11 +83,11 @@ const WELCOME_SCENES: Scene[] = [
 ];
 
 const CHARACTERS_INFO = [
-  { emoji: '🦊', name: 'Finn', role: '探險隊長', intro: "Hi! I'm Finn! Let's go on an adventure!", introZh: '嗨！我是 Finn！一起去冒險吧！', skill: '帶你上課、講故事' },
-  { emoji: '🐱', name: 'Coco', role: '聽力高手', intro: "Hello! I'm Coco. Listen carefully!", introZh: '你好！我是 Coco。仔細聽喔！', skill: '教你「聽」英文' },
-  { emoji: '🦜', name: 'Polly', role: '口說達人', intro: "Hi there! I'm Polly! Repeat after me!", introZh: '嗨！我是 Polly！跟著我念！', skill: '教你「說」英文' },
-  { emoji: '🐻', name: 'Benny', role: '閱讀博士', intro: "Hello, friend! I'm Benny. Let's read!", introZh: '你好朋友！我是 Benny。一起讀吧！', skill: '教你「讀」英文' },
-  { emoji: '🐰', name: 'Ruby', role: '寫作天才', intro: "Hi! I'm Ruby! Let's write together!", introZh: '嗨！我是 Ruby！一起寫吧！', skill: '教你「寫」英文' },
+  { key: 'finn', name: 'Finn', role: '探險隊長', intro: "Hi! I'm Finn! Let's go on an adventure!", introZh: '嗨！我是 Finn！一起去冒險吧！', skill: '帶你上課、講故事' },
+  { key: 'coco', name: 'Coco', role: '聽力高手', intro: "Hello! I'm Coco. Listen carefully!", introZh: '你好！我是 Coco。仔細聽喔！', skill: '教你「聽」英文' },
+  { key: 'polly', name: 'Polly', role: '口說達人', intro: "Hi there! I'm Polly! Repeat after me!", introZh: '嗨！我是 Polly！跟著我念！', skill: '教你「說」英文' },
+  { key: 'benny', name: 'Benny', role: '閱讀博士', intro: "Hello, friend! I'm Benny. Let's read!", introZh: '你好朋友！我是 Benny。一起讀吧！', skill: '教你「讀」英文' },
+  { key: 'ruby', name: 'Ruby', role: '寫作天才', intro: "Hi! I'm Ruby! Let's write together!", introZh: '嗨！我是 Ruby！一起寫吧！', skill: '教你「寫」英文' },
 ];
 
 const STEPS_INFO = [
@@ -157,7 +171,7 @@ export default function Welcome({ onComplete }: Props) {
       {/* 角色對話 */}
       <div className="max-w-xl mx-auto mb-6">
         <div className="flex items-start gap-3">
-          <div className="text-5xl flex-shrink-0">{scene.character}</div>
+          <img src={`/characters/${scene.characterKey}/${scene.characterKey}-${scene.characterAction}.png`} alt={scene.characterName} className="w-40 h-40 object-contain flex-shrink-0" />
           <div className="bg-white rounded-3xl rounded-tl-none px-6 py-5 border-2 border-purple-200 flex-1 shadow-md">
             <p className="text-xs text-purple-400 font-bold mb-2">{scene.characterName}</p>
             <p className="text-lg font-bold text-gray-800 leading-relaxed whitespace-pre-line">
@@ -180,11 +194,11 @@ export default function Welcome({ onComplete }: Props) {
               <button
                 key={char.name}
                 onClick={() => handleCharacterClick(i)}
-                className={`text-5xl transition-all hover:scale-125 active:scale-95 ${
+                className={`transition-all hover:scale-125 active:scale-95 ${
                   charactersClicked.has(i) ? 'opacity-100 scale-110' : 'opacity-60 grayscale'
                 }`}
               >
-                {char.emoji}
+                <img src={`/characters/${char.key}/${char.key}-wave.png`} alt={char.name} className="w-32 h-32 object-contain" />
               </button>
             ))}
           </div>
@@ -192,7 +206,7 @@ export default function Welcome({ onComplete }: Props) {
           {showCharacterDetail !== null && (
             <div className="bg-white rounded-2xl p-5 border-2 border-purple-100 shadow-md animate-slide-up">
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-4xl">{CHARACTERS_INFO[showCharacterDetail].emoji}</span>
+                <img src={`/characters/${CHARACTERS_INFO[showCharacterDetail].key}/${CHARACTERS_INFO[showCharacterDetail].key}-talk.png`} alt={CHARACTERS_INFO[showCharacterDetail].name} className="w-32 h-32 object-contain" />
                 <div>
                   <p className="font-black text-lg text-gray-800">{CHARACTERS_INFO[showCharacterDetail].name}</p>
                   <p className="text-sm text-purple-500 font-medium">{CHARACTERS_INFO[showCharacterDetail].role}</p>

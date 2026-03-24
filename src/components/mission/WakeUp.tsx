@@ -58,7 +58,7 @@ export default function WakeUp({ questions, onComplete }: Props) {
 
       {/* 角色提示 */}
       <div className="text-center mb-6">
-        <div className="inline-block text-6xl mb-2 animate-bounce">🦊</div>
+        <img src="/characters/finn/finn-talk.png" alt="Finn" className="inline-block w-44 h-44 object-contain mb-2 animate-bounce" />
         <p className="text-lg font-bold text-gray-700">
           Finn: &ldquo;Let&apos;s warm up! 來暖身吧！&rdquo;
         </p>

@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">🦊</span>
+            <img src="/characters/finn/finn-normal.png" alt="Finn" className="w-10 h-10 object-contain" />
             <span className="font-black text-lg text-purple-800">Adventure English</span>
           </div>
           <p className="text-gray-500 leading-relaxed">

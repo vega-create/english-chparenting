@@ -36,7 +36,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-6xl mb-4">🦊</p>
+          <img src="/characters/finn/finn-normal.png" alt="Finn" className="w-24 h-24 mx-auto mb-4 object-contain" />
           <p className="text-xl text-gray-600">找不到這個任務</p>
           <a href={`/courses/${levelSlug}`} className="text-blue-500 underline mt-4 inline-block">
             回到課程
@@ -120,9 +120,9 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
               <p className="text-sm text-gray-400">Phonics: {mission.phonicsLetters.join(', ')}</p>
             </div>
 
-            <div className="flex justify-center gap-4 mb-6 text-4xl">
-              {['🦊', '🐱', '🦜', '🐻', '🐰'].map((c, i) => (
-                <span key={c} className="animate-bounce" style={{ animationDelay: `${i * 0.1}s` }}>{c}</span>
+            <div className="flex justify-center gap-4 mb-6">
+              {['finn', 'coco', 'polly', 'benny', 'ruby'].map((c, i) => (
+                <img key={c} src={`/characters/${c}/${c}-normal.png`} alt={c} className="w-28 h-28 object-contain animate-bounce" style={{ animationDelay: `${i * 0.1}s` }} />
               ))}
             </div>
 

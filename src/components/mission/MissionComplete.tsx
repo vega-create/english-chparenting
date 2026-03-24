@@ -89,7 +89,8 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
         {/* 角色祝賀 */}
         <div className="bg-orange-50 rounded-3xl p-4 max-w-md mx-auto mb-6 border border-orange-200">
           <p className="text-lg">
-            🦊 Finn: &ldquo;{starCount === 3 ? 'PERFECT! You are amazing!' : starCount === 2 ? 'Great job! Keep going!' : 'Good try! Practice makes perfect!'}&rdquo;
+            <img src="/characters/finn/finn-happy.png" alt="Finn" className="inline w-28 h-28 object-contain mr-2" />
+            Finn: &ldquo;{starCount === 3 ? 'PERFECT! You are amazing!' : starCount === 2 ? 'Great job! Keep going!' : 'Good try! Practice makes perfect!'}&rdquo;
           </p>
         </div>
 

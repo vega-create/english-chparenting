@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "專為台灣 5-12 歲兒童設計的免費美語自學平台。AI 互動口說、Spelling Bee、錄音回放、遊戲化學習，從 ABC 到英檢初級 288 堂課完整旅程。",
   keywords: ["兒童英文", "兒童美語", "免費英文學習", "小學英文", "phonics", "KK音標", "英檢初級", "自然發音", "英語學習", "Adventure English"],
   icons: {
-    icon: "/icon.svg",
+    icon: "/icon.png",
   },
   metadataBase: new URL("https://english.chparenting.com"),
   alternates: {

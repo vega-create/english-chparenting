@@ -17,7 +17,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 glass border-b border-gray-200/60">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
         <Link href="/" className="flex items-center gap-2 no-underline">
-          <span className="text-xl">🦊</span>
+          <img src="/characters/finn/finn-normal.png" alt="Finn" className="w-10 h-10 object-contain" />
           <span className="font-black text-lg text-purple-800">Adventure English</span>
         </Link>
         {/* Desktop Nav */}

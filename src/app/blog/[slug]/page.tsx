@@ -343,7 +343,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         {/* CTA */}
         <div className="text-center bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 mb-8 border border-purple-100">
-          <div className="text-3xl mb-3">🦊🐱🦜🐻🐰</div>
+          <div className="flex justify-center gap-2 mb-3">
+            <img src="/characters/finn/finn-happy.png" alt="Finn" className="w-10 h-10 object-contain" />
+            <img src="/characters/coco/coco-clap.png" alt="Coco" className="w-10 h-10 object-contain" />
+            <img src="/characters/polly/polly-cheer.png" alt="Polly" className="w-10 h-10 object-contain" />
+            <img src="/characters/benny/benny-wave.png" alt="Benny" className="w-10 h-10 object-contain" />
+            <img src="/characters/ruby/ruby-star.png" alt="Ruby" className="w-10 h-10 object-contain" />
+          </div>
           <h3 className="text-xl font-black mb-2">想讓孩子免費學英文？</h3>
           <p className="text-gray-500 text-sm mb-4">Adventure English 冒險英語：288 堂課、AI 互動口說、遊戲化學習，完全免費！</p>
           <Link href="/" className="cta-btn px-8 py-3 text-base inline-block no-underline">🚀 了解更多</Link>

@@ -20,11 +20,11 @@ export default function CoursesPage() {
 
         {/* Skill legend */}
         <div className="glass rounded-2xl p-5 mb-10 flex flex-wrap justify-center gap-4 text-sm">
-          <span className="flex items-center gap-1">🎧 <strong>聽力</strong>（Coco 貓咪）</span>
-          <span className="flex items-center gap-1">🗣️ <strong>口說</strong>（Polly 鸚鵡）</span>
-          <span className="flex items-center gap-1">📖 <strong>閱讀</strong>（Benny 小熊）</span>
-          <span className="flex items-center gap-1">✍️ <strong>寫作</strong>（Ruby 兔兔）</span>
-          <span className="flex items-center gap-1">🦊 <strong>引導</strong>（Finn 狐狸）</span>
+          <span className="flex items-center gap-1"><img src="/characters/coco/coco-listen.png" alt="Coco" className="w-8 h-8 object-contain" /> <strong>聽力</strong>（Coco 貓咪）</span>
+          <span className="flex items-center gap-1"><img src="/characters/polly/polly-sing.png" alt="Polly" className="w-8 h-8 object-contain" /> <strong>口說</strong>（Polly 鸚鵡）</span>
+          <span className="flex items-center gap-1"><img src="/characters/benny/benny-read.png" alt="Benny" className="w-8 h-8 object-contain" /> <strong>閱讀</strong>（Benny 小熊）</span>
+          <span className="flex items-center gap-1"><img src="/characters/ruby/ruby-write.png" alt="Ruby" className="w-8 h-8 object-contain" /> <strong>寫作</strong>（Ruby 兔兔）</span>
+          <span className="flex items-center gap-1"><img src="/characters/finn/finn-normal.png" alt="Finn" className="w-8 h-8 object-contain" /> <strong>引導</strong>（Finn 狐狸）</span>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
