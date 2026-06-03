@@ -1,0 +1,13 @@
+# robots.txt for english.chparenting.com
+# Adventure English — 兒童美語互動自學平台
+# Policy: allow all well-behaved crawlers (search + AI) for discoverability.
+
+# Content Signals (contentsignals.org, RFC draft-romm-aipref-contentsignals)
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /preview/
+
+Sitemap: https://english.chparenting.com/sitemap.xml
