@@ -38,7 +38,7 @@ export default function LayeredBanner() {
       {/* ===== Top Nav 桌機（純 CSS） ===== */}
       <header className="relative z-30 hidden md:block bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-yellow-200/50">
         <div className="max-w-[1400px] mx-auto px-4 py-2 flex items-center gap-2">
-          <Link href="/preview/layered" className="flex items-center gap-1 no-underline flex-shrink-0" onClick={() => playClick()}>
+          <Link href="/" className="flex items-center gap-1 no-underline flex-shrink-0" onClick={() => playClick()}>
             <div className="font-black text-lg lg:text-xl bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent leading-none whitespace-nowrap">
               Adventure<br />English
             </div>
@@ -66,7 +66,7 @@ export default function LayeredBanner() {
       {/* ===== Top Nav 手機 ===== */}
       <header className="relative z-30 md:hidden bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-between px-4 py-2 border-b-2 border-yellow-200/50">
         <button onClick={() => { playOpen(); setMobileMenu(true); }} className="w-9 h-9 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-xl">☰</button>
-        <Link href="/preview/layered" className="font-black text-lg bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent leading-none no-underline text-center">
+        <Link href="/" className="font-black text-lg bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent leading-none no-underline text-center">
           Adventure<br />English
         </Link>
         <button className="w-9 h-9 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-lg">🔔</button>

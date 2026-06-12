@@ -65,7 +65,7 @@ export default function AdventureMapPage() {
       background: "linear-gradient(180deg, #cbe6ff 0%, #ffd5e8 35%, #fff0a8 65%, #b8dec0 100%)",
     }}>
       {/* 上方工具列 */}
-      <Link href="/preview/layered" className="fixed top-3 left-3 z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
+      <Link href="/" className="fixed top-3 left-3 z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
         ← 返回
       </Link>
       <div className="fixed top-3 right-3 z-50 flex gap-2">
