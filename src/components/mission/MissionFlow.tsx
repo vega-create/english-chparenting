@@ -1,7 +1,9 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { COURSES } from '@/data/courses';
 import { MISSIONS } from '@/data/missions';
+import { stopSpeaking } from '@/lib/speech';
+import { getLevelFromMissionId } from '@/lib/vega-audio';
 import Welcome from '@/components/mission/Welcome';
 import WakeUp from '@/components/mission/WakeUp';
 import Discover from '@/components/mission/Discover';
@@ -31,6 +33,11 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const [step, setStep] = useState<Step>('intro');
   const [warmupScore, setWarmupScore] = useState(0);
   const [challengeScore, setChallengeScore] = useState(0);
+
+  // Stop TTS on step change and unmount
+  useEffect(() => {
+    return () => stopSpeaking();
+  }, [step]);
 
   if (!course || !mission) {
     return (
@@ -91,7 +98,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
       <div className="max-w-3xl mx-auto px-4 py-8">
         {step === 'intro' && (
           <div className="animate-slide-up text-center">
-            <div className="text-8xl mb-4">{mission.themeEmoji}</div>
+            <img src="/images/guide/vega-point.webp" alt="Vega" className="w-32 h-32 mx-auto mb-4 object-contain animate-float" />
             <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-gray-100 max-w-md mx-auto mb-6">
               <p className="text-sm text-gray-400 mb-1">
                 {course.worldEmoji} {course.world} · {course.island}
@@ -149,7 +156,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'challenge' && (
-          <Challenge challenges={mission.challenges} onComplete={(score) => { setChallengeScore(score); setStep('talktime'); }} />
+          <Challenge challenges={mission.challenges} praiseLevel={getLevelFromMissionId(levelSlug)} onComplete={(score) => { setChallengeScore(score); setStep('talktime'); }} />
         )}
 
         {step === 'talktime' && (

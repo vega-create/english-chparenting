@@ -60,6 +60,11 @@ if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
   window.speechSynthesis.onvoiceschanged = loadVoices;
 }
 
+export function stopSpeaking() {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+}
+
 export function speak(text: string, rate = 0.8) {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
 

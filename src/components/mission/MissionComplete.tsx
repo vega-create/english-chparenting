@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { QuizQuestion } from '@/data/missions';
+import { playPraise, getLevelFromMissionId } from '@/lib/vega-audio';
 
 interface Props {
   missionTitle: string;
@@ -21,6 +22,11 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
 
   const starPercent = Math.round((stars / maxStars) * 100);
   const starCount = starPercent >= 90 ? 3 : starPercent >= 70 ? 2 : 1;
+
+  // 進到結算畫面時播 Miss Vega 鼓勵語音
+  useEffect(() => {
+    playPraise(getLevelFromMissionId(courseSlug));
+  }, [courseSlug]);
 
   function handleQuizAnswer(answer: string) {
     if (showResult) return;

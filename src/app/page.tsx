@@ -1,6 +1,10 @@
+import { CharacterPlayButton } from "@/components/VegaAudio";
+import WelcomeModal from "@/components/WelcomeModal";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <WelcomeModal />
       {/* ─── Hero Section ─── */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
         {/* Background decorations */}
@@ -23,45 +27,80 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-yellow-100 opacity-15 blur-3xl"></div>
         </div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto animate-slide-up">
-          {/* 桌面版：排成一列 */}
-          <div className="hidden md:flex justify-center gap-3 mb-6">
-            <img src="/characters/finn/finn-wave.png" alt="Finn" title="Finn 探險狐狸" className="w-40 h-40 lg:w-52 lg:h-52 object-contain animate-float" />
-            <img src="/characters/coco/coco-wave.png" alt="Coco" title="Coco 聽力貓咪" className="w-40 h-40 lg:w-52 lg:h-52 object-contain animate-float-delay" />
-            <img src="/characters/polly/polly-wave.png" alt="Polly" title="Polly 口說鸚鵡" className="w-40 h-40 lg:w-52 lg:h-52 object-contain animate-float-delay2" />
-            <img src="/characters/benny/benny-wave.png" alt="Benny" title="Benny 閱讀小熊" className="w-40 h-40 lg:w-52 lg:h-52 object-contain animate-float" />
-            <img src="/characters/ruby/ruby-wave.png" alt="Ruby" title="Ruby 寫作兔兔" className="w-40 h-40 lg:w-52 lg:h-52 object-contain animate-float-delay" />
-          </div>
-          {/* 手機版：隱藏排列，角色散落在背景（見下方 absolute 區塊） */}
-          <div className="md:hidden mb-6" />
-
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-3 leading-tight">
+        <div className="relative z-10 text-center max-w-5xl mx-auto animate-slide-up">
+          {/* 標題 */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-4 leading-none tracking-tight">
             <span className="gradient-text">Adventure English</span>
           </h1>
-          <h2 className="text-xl md:text-3xl font-bold text-purple-800 mb-5">
+          <h2 className="text-2xl md:text-4xl font-black text-purple-800 mb-6">
             ✨ 冒險英語 🗺️
           </h2>
-          <div className="text-base md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-loose space-y-2">
-            <p>專為台灣 <strong className="text-purple-700">5-12 歲</strong>小朋友設計的</p>
-            <p><strong className="text-purple-700 text-lg md:text-2xl">免費英語自學平台</strong></p>
-            <p className="text-sm md:text-lg text-gray-500">5 個動物好朋友陪你闖關<br className="md:hidden" />從 ABC 一路冒險到英檢初級！</p>
+
+          {/* 品牌定位句 */}
+          <p className="text-base md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
+            透過 <span className="text-purple-700 font-bold">AI</span>、
+            <span className="text-pink-600 font-bold">故事</span>、
+            <span className="text-amber-600 font-bold">任務</span> 與
+            <span className="text-emerald-600 font-bold">冒險世界</span>，
+            <br className="hidden md:block" />
+            陪伴孩子快樂學習英文的 Web App
+          </p>
+
+          {/* 👑 Miss Vega 主角 */}
+          <div className="flex justify-center mb-2 relative">
+            <div className="relative inline-block">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-3xl md:text-4xl drop-shadow-lg z-10">👑</span>
+              <img
+                src="/images/guide/vega-book.webp"
+                alt="Miss Vega"
+                title="Miss Vega 的智慧引導"
+                className="w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 object-contain animate-float drop-shadow-xl"
+              />
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-purple-100 text-purple-800 text-xs md:text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap shadow">
+                Miss Vega
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 relative">
-            <img src="/images/guide/vega-point.png" alt="Vega" className="hidden md:block absolute -left-40 bottom-0 w-32 h-32 object-contain animate-float" />
-            <button className="cta-btn px-10 py-4 text-lg md:text-xl animate-pulse-glow">
-              🚀 開始冒險（即將上線）
-            </button>
+          {/* 🦊 五個動物朋友 */}
+          <div className="flex justify-center items-end flex-wrap gap-2 md:gap-4 mt-8 mb-10">
+            {[
+              { key: "finn", img: "/characters/finn/finn-wave.png", name: "Finn", emoji: "🦊", animate: "animate-float" },
+              { key: "coco", img: "/characters/coco/coco-wave.png", name: "Coco", emoji: "🐱", animate: "animate-float-delay" },
+              { key: "polly", img: "/characters/polly/polly-wave.png", name: "Polly", emoji: "🦜", animate: "animate-float-delay2" },
+              { key: "benny", img: "/characters/benny/benny-wave.png", name: "Benny", emoji: "🐻", animate: "animate-float" },
+              { key: "ruby", img: "/characters/ruby/ruby-wave.png", name: "Ruby", emoji: "🐰", animate: "animate-float-delay" },
+            ].map(c => (
+              <div key={c.key} className="flex flex-col items-center group cursor-pointer">
+                <img
+                  src={c.img}
+                  alt={c.name}
+                  title={`${c.emoji} ${c.name}`}
+                  className={`w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain ${c.animate} group-hover:scale-110 transition-transform`}
+                />
+                <div className="mt-1 bg-white/80 text-purple-800 text-xs md:text-sm font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+                  <span>{c.emoji}</span><span>{c.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA 按鈕 */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <a href="/courses/l1-letter-island/mission/1" className="cta-btn px-10 py-4 text-lg md:text-xl animate-pulse-glow no-underline">
+              🎮 免費試玩第一課
+            </a>
             <a href="#features" className="cta-btn-secondary px-8 py-4 text-lg no-underline">
               👀 看看怎麼學
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span className="glass px-4 py-2 rounded-full">✅ 完全免費</span>
-            <span className="glass px-4 py-2 rounded-full">✅ 不需家長陪讀</span>
-            <span className="glass px-4 py-2 rounded-full">✅ AI 互動口說</span>
-            <span className="glass px-4 py-2 rounded-full">✅ 288 堂系統課程</span>
+          {/* 特色標籤 */}
+          <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-600">
+            <span className="glass px-4 py-2 rounded-full">🤖 AI 互動</span>
+            <span className="glass px-4 py-2 rounded-full">📖 故事冒險</span>
+            <span className="glass px-4 py-2 rounded-full">🎯 任務挑戰</span>
+            <span className="glass px-4 py-2 rounded-full">🆓 完全免費</span>
           </div>
         </div>
 
@@ -87,7 +126,8 @@ export default function Home() {
               { key: "benny", name: "Benny", role: "閱讀博士", skill: "📖 閱讀理解", color: "from-purple-100 to-purple-50", border: "border-purple-200" },
               { key: "ruby", name: "Ruby", role: "寫作天才", skill: "✍️ 拼寫寫作", color: "from-pink-100 to-pink-50", border: "border-pink-200" },
             ].map((c) => (
-              <div key={c.name} className={`island-card bg-gradient-to-b ${c.color} ${c.border} border-2 rounded-3xl p-5 text-center`}>
+              <div key={c.name} className={`island-card bg-gradient-to-b ${c.color} ${c.border} border-2 rounded-3xl p-5 text-center relative`}>
+                <CharacterPlayButton characterKey={c.key} className="absolute top-3 right-3 w-9 h-9 z-10" />
                 <img src={`/characters/${c.key}/${c.key}-normal.png`} alt={c.name} className="w-44 h-44 md:w-52 md:h-52 mx-auto mb-3 object-contain" />
                 <div className="font-black text-lg">{c.name}</div>
                 <div className="text-sm text-gray-500 mb-2">{c.role}</div>
@@ -108,14 +148,14 @@ export default function Home() {
 
           <div className="grid md:grid-cols-5 gap-4">
             {[
-              { step: "1", img: "/images/steps/step-wakeup.png", title: "Wake Up!", desc: "暖身遊戲，喚醒耳朵", time: "2-3 min", color: "bg-yellow-50 border-yellow-300" },
-              { step: "2", img: "/images/steps/step-discover.png", title: "Discover", desc: "動畫學新單字和句型", time: "5-8 min", color: "bg-blue-50 border-blue-300" },
-              { step: "3", img: "/images/steps/step-challenge.png", title: "Challenge", desc: "闖關遊戲瘋狂練習", time: "5-8 min", color: "bg-green-50 border-green-300" },
-              { step: "4", img: "/images/steps/step-talktime.png", title: "Talk Time", desc: "AI 對話，真的開口說", time: "3-5 min", color: "bg-purple-50 border-purple-300" },
-              { step: "5", img: "/images/steps/step-complete.png", title: "Mission Done!", desc: "拿星星寶石，寵物成長", time: "1-2 min", color: "bg-pink-50 border-pink-300" },
+              { step: "1", emoji: "🔔", title: "Wake Up!", desc: "暖身遊戲，喚醒耳朵", time: "2-3 min", color: "bg-yellow-50 border-yellow-300", numColor: "bg-yellow-400" },
+              { step: "2", emoji: "📖", title: "Discover", desc: "動畫學新單字和句型", time: "5-8 min", color: "bg-blue-50 border-blue-300", numColor: "bg-blue-400" },
+              { step: "3", emoji: "🎮", title: "Challenge", desc: "闖關遊戲瘋狂練習", time: "5-8 min", color: "bg-green-50 border-green-300", numColor: "bg-green-400" },
+              { step: "4", emoji: "💬", title: "Talk Time", desc: "AI 對話，真的開口說", time: "3-5 min", color: "bg-purple-50 border-purple-300", numColor: "bg-purple-400" },
+              { step: "5", emoji: "⭐", title: "Mission Done!", desc: "拿星星寶石，寵物成長", time: "1-2 min", color: "bg-pink-50 border-pink-300", numColor: "bg-pink-400" },
             ].map((s) => (
               <div key={s.step} className={`island-card ${s.color} border-2 rounded-3xl p-5 text-center`}>
-                <img src={s.img} alt={s.title} className="w-24 h-24 mx-auto mb-2 object-contain" />
+                <div className={`w-14 h-14 ${s.numColor} rounded-full flex items-center justify-center mx-auto mb-2 text-white font-black text-2xl shadow-lg`}>{s.step}</div>
                 <div className="text-xs font-bold text-gray-400 mb-1">STEP {s.step}</div>
                 <div className="font-black text-lg mb-1">{s.title}</div>
                 <div className="text-sm text-gray-600 mb-2">{s.desc}</div>
@@ -136,14 +176,14 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { img: "/images/skills/skill-listening.png", title: "聽力闖關", items: ["聽音選圖", "聽寫挑戰", "聲音配對"], color: "from-blue-500 to-blue-400" },
-              { img: "/images/skills/skill-speaking.png", title: "口說冒險", items: ["AI 對話練習", "錄音回放比對", "跟讀挑戰"], color: "from-green-500 to-green-400" },
-              { img: "/images/skills/skill-reading.png", title: "閱讀任務", items: ["故事閱讀", "連連看配對", "克漏字填空"], color: "from-purple-500 to-purple-400" },
-              { img: "/images/skills/skill-writing.png", title: "拼寫大師", items: ["Spelling Bee", "拖拉拼單字", "造句練習"], color: "from-pink-500 to-pink-400" },
+              { icon: "🎧", title: "聽力闖關", items: ["聽音選圖", "聽寫挑戰", "聲音配對"], color: "from-blue-500 to-blue-400" },
+              { icon: "🗣️", title: "口說冒險", items: ["AI 對話練習", "錄音回放比對", "跟讀挑戰"], color: "from-green-500 to-green-400" },
+              { icon: "📖", title: "閱讀任務", items: ["故事閱讀", "連連看配對", "克漏字填空"], color: "from-purple-500 to-purple-400" },
+              { icon: "✍️", title: "拼寫大師", items: ["Spelling Bee", "拖拉拼單字", "造句練習"], color: "from-pink-500 to-pink-400" },
             ].map((g) => (
               <div key={g.title} className="island-card bg-white rounded-3xl overflow-hidden shadow-lg">
                 <div className={`bg-gradient-to-r ${g.color} p-6 text-center text-white`}>
-                  <img src={g.img} alt={g.title} className="w-24 h-24 mx-auto mb-2 object-contain" />
+                  <div className="text-5xl mb-2">{g.icon}</div>
                   <div className="font-black text-xl">{g.title}</div>
                 </div>
                 <div className="p-5">
@@ -170,12 +210,12 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { world: "彩虹谷", img: "/images/worlds/world-rainbow-valley.png", islands: [{name: "L1 Letter Island 字母島", img: "/images/islands/island-letter.png"}, {name: "L2 Sound Island 聲音島", img: "/images/islands/island-sound.png"}], desc: "認識 26 字母 + Phonics 自然發音", color: "from-red-50 to-orange-50", border: "border-red-200", tag: "初學者" },
-              { world: "友善小鎮", img: "/images/worlds/world-friendly-town.png", islands: [{name: "L3 Market Street 市場街", img: "/images/islands/island-market.png"}, {name: "L4 School Road 學校路", img: "/images/islands/island-school.png"}], desc: "日常單字 + 簡單句型", color: "from-yellow-50 to-amber-50", border: "border-yellow-200", tag: "生活會話" },
-              { world: "海洋灣", img: "/images/worlds/world-ocean-bay.png", islands: [{name: "L5 Coral Beach 珊瑚灘", img: "/images/islands/island-coral.png"}, {name: "L6 Lighthouse Point 燈塔角", img: "/images/islands/island-lighthouse.png"}], desc: "閱讀短文 + 進階對話", color: "from-cyan-50 to-blue-50", border: "border-cyan-200", tag: "閱讀起步" },
-              { world: "故事城堡", img: "/images/worlds/world-story-castle.png", islands: [{name: "L7 Grammar Gate 文法門", img: "/images/islands/island-grammar.png"}, {name: "L8 Question Tower 問題塔", img: "/images/islands/island-question.png"}], desc: "文法結構 + 疑問句精通", color: "from-purple-50 to-violet-50", border: "border-purple-200", tag: "文法養成" },
-              { world: "探索大陸", img: "/images/worlds/world-explorer-land.png", islands: [{name: "L9 Time Travel Path 時光道", img: "/images/islands/island-time.png"}, {name: "L10 Future Bridge 未來橋", img: "/images/islands/island-future.png"}], desc: "時態 + 長篇閱讀寫作", color: "from-green-50 to-emerald-50", border: "border-green-200", tag: "進階挑戰" },
-              { world: "冠軍峰", img: "/images/worlds/world-champion-peak.png", islands: [{name: "L11 Challenge Arena 挑戰場", img: "/images/islands/island-challenge.png"}, {name: "L12 Victory Summit 勝利峰", img: "/images/islands/island-victory.png"}], desc: "英檢模擬 + 總複習", color: "from-pink-50 to-rose-50", border: "border-pink-200", tag: "英檢衝刺" },
+              { world: "彩虹谷", img: "/images/worlds/world-rainbow-valley.webp", islands: [{name: "L1 Letter Island 字母島", img: "/images/islands/island-letter.webp"}, {name: "L2 Sound Island 聲音島", img: "/images/islands/island-sound.webp"}], desc: "認識 26 字母 + Phonics 自然發音", color: "from-red-50 to-orange-50", border: "border-red-200", tag: "初學者" },
+              { world: "友善小鎮", img: "/images/worlds/world-friendly-town.webp", islands: [{name: "L3 Market Street 市場街", img: "/images/islands/island-market.webp"}, {name: "L4 School Road 學校路", img: "/images/islands/island-school.webp"}], desc: "日常單字 + 簡單句型", color: "from-yellow-50 to-amber-50", border: "border-yellow-200", tag: "生活會話" },
+              { world: "海洋灣", img: "/images/worlds/world-ocean-bay.webp", islands: [{name: "L5 Coral Beach 珊瑚灘", img: "/images/islands/island-coral.webp"}, {name: "L6 Lighthouse Point 燈塔角", img: "/images/islands/island-lighthouse.webp"}], desc: "閱讀短文 + 進階對話", color: "from-cyan-50 to-blue-50", border: "border-cyan-200", tag: "閱讀起步" },
+              { world: "故事城堡", img: "/images/worlds/world-story-castle.webp", islands: [{name: "L7 Grammar Gate 文法門", img: "/images/islands/island-grammar.webp"}, {name: "L8 Question Tower 問題塔", img: "/images/islands/island-question.webp"}], desc: "文法結構 + 疑問句精通", color: "from-purple-50 to-violet-50", border: "border-purple-200", tag: "文法養成" },
+              { world: "探索大陸", img: "/images/worlds/world-explorer-land.webp", islands: [{name: "L9 Time Travel Path 時光道", img: "/images/islands/island-time.webp"}, {name: "L10 Future Bridge 未來橋", img: "/images/islands/island-future.webp"}], desc: "時態 + 長篇閱讀寫作", color: "from-green-50 to-emerald-50", border: "border-green-200", tag: "進階挑戰" },
+              { world: "冠軍峰", img: "/images/worlds/world-champion-peak.webp", islands: [{name: "L11 Challenge Arena 挑戰場", img: "/images/islands/island-challenge.webp"}, {name: "L12 Victory Summit 勝利峰", img: "/images/islands/island-victory.webp"}], desc: "英檢模擬 + 總複習", color: "from-pink-50 to-rose-50", border: "border-pink-200", tag: "英檢衝刺" },
             ].map((w) => (
               <div key={w.world} className={`island-card bg-gradient-to-br ${w.color} ${w.border} border-2 rounded-3xl p-6`}>
                 <div className="flex items-center justify-between mb-3">
@@ -208,10 +248,10 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { img: "/images/rewards/star.png", title: "星星 & 寶石", desc: "每答對就拿星星，累積寶石可以買裝備佈置小屋", color: "bg-yellow-100 border-yellow-200" },
-              { img: "/images/pets/dragon/dragon-egg.png", title: "學習寵物", desc: "選一隻寵物蛋，學越多它就長越大，從蛋到究極進化！", color: "bg-green-100 border-green-200" },
-              { img: "/images/badges/badge-l1.png", title: "島嶼徽章", desc: "完成每座島嶼收集專屬徽章，12 個全收集成為冠軍", color: "bg-purple-100 border-purple-200" },
-              { img: "/images/certs/cert-graduate.png", title: "電子證書", desc: "每個里程碑產出精美證書，家長可下載分享到社群", color: "bg-pink-100 border-pink-200" },
+              { img: "/images/rewards/star.webp", title: "星星 & 寶石", desc: "每答對就拿星星，累積寶石可以買裝備佈置小屋", color: "bg-yellow-100 border-yellow-200" },
+              { img: "/images/pets/dragon/dragon-egg.webp", title: "學習寵物", desc: "選一隻寵物蛋，學越多它就長越大，從蛋到究極進化！", color: "bg-green-100 border-green-200" },
+              { img: "/images/badges/badge-l1.webp", title: "島嶼徽章", desc: "完成每座島嶼收集專屬徽章，12 個全收集成為冠軍", color: "bg-purple-100 border-purple-200" },
+              { img: "/images/certs/cert-graduate.webp", title: "電子證書", desc: "每個里程碑產出精美證書，家長可下載分享到社群", color: "bg-pink-100 border-pink-200" },
             ].map((r) => (
               <div key={r.title} className={`island-card ${r.color} rounded-3xl p-6 text-center border`}>
                 <img src={r.img} alt={r.title} className="w-32 h-32 mx-auto mb-3 object-contain" />
@@ -227,7 +267,7 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <img src="/images/guide/vega-book.png" alt="Vega" className="w-20 h-20 md:w-28 md:h-28 object-contain animate-float" />
+            <img src="/images/guide/vega-book.webp" alt="Vega" className="w-20 h-20 md:w-28 md:h-28 object-contain animate-float" />
             <div>
               <h2 className="text-3xl md:text-4xl font-black">
                 給爸爸媽媽 <span className="gradient-text">最安心</span>
@@ -298,10 +338,10 @@ export default function Home() {
             完全免費・不用信用卡・隨時開始
           </p>
           <div className="relative inline-block">
-            <button className="cta-btn px-12 py-5 text-xl animate-pulse-glow">
-              🗺️ 開始英語冒險（即將上線）
-            </button>
-            <img src="/images/guide/vega-point.png" alt="Vega" className="absolute -right-20 -bottom-4 w-16 h-16 md:w-20 md:h-20 object-contain animate-float hidden sm:block" />
+            <a href="/courses/l1-letter-island/mission/1" className="cta-btn px-12 py-5 text-xl animate-pulse-glow no-underline inline-block">
+              🗺️ 開始英語冒險
+            </a>
+            <img src="/images/guide/vega-point.webp" alt="Vega" className="absolute -right-20 -bottom-4 w-16 h-16 md:w-20 md:h-20 object-contain animate-float hidden sm:block" />
           </div>
           <p className="text-sm text-gray-400 mt-6">
             ❤️ 由智慧媽咪國際有限公司開發

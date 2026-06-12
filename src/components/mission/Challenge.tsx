@@ -2,10 +2,13 @@
 import { useState } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
+import { playStar, playClick } from '@/lib/sfx';
+import { playPraise } from '@/lib/vega-audio';
 
 interface Props {
   challenges: QuizQuestion[];
   onComplete: (score: number, total: number) => void;
+  praiseLevel?: 'low' | 'mid' | 'high';
 }
 
 const typeLabel: Record<string, { icon: string; label: string; characterKey: string; characterAction: string }> = {
@@ -16,7 +19,7 @@ const typeLabel: Record<string, { icon: string; label: string; characterKey: str
   'fill-blank': { icon: '📝', label: '填空挑戰', characterKey: 'finn', characterAction: 'talk' },
 };
 
-export default function Challenge({ challenges, onComplete }: Props) {
+export default function Challenge({ challenges, onComplete, praiseLevel = 'low' }: Props) {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -34,9 +37,14 @@ export default function Challenge({ challenges, onComplete }: Props) {
     setSelected(answer);
     const correct = answer.toLowerCase().trim() === q.answer.toLowerCase().trim();
     if (correct) {
+      playStar();
+      const newCombo = combo + 1;
+      // 連對 3、5 題時播 Miss Vega 的鼓勵語音
+      if (newCombo === 3 || newCombo === 5) playPraise(praiseLevel);
       setScore(s => s + 1);
-      setCombo(c => c + 1);
+      setCombo(newCombo);
     } else {
+      playClick();
       setCombo(0);
     }
     setShowResult(true);
