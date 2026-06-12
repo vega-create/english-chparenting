@@ -73,7 +73,7 @@ export default function LayeredBanner() {
       </header>
 
       {/* ===== Hero 分層（手機+iPad:直式 / 桌機(xl+):16:9 寬螢幕） ===== */}
-      <section className="relative w-full overflow-hidden min-h-[640px] sm:min-h-[720px] md:min-h-[780px] lg:min-h-[820px] xl:min-h-0 xl:aspect-[16/9] xl:max-h-[calc(100vh-60px)]">
+      <section className="relative w-full overflow-hidden min-h-[640px] sm:min-h-[720px] md:min-h-[780px] lg:min-h-[820px] xl:min-h-[860px]">
         {/* Layer 1: 背景圖（不動）*/}
         <img
           src="/images/maps/bg-sky-castles.webp"
@@ -249,9 +249,9 @@ export default function LayeredBanner() {
                 style={{
                   fontFamily: 'var(--font-noto), "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif',
                   fontWeight: 900,
-                  fontSize: "clamp(24px, 5vw, 64px)",
+                  fontSize: "clamp(20px, 5vw, 64px)",
                   color: "#4338ca",
-                  letterSpacing: "0.03em",
+                  letterSpacing: "0.02em",
                   lineHeight: 1.15,
                 }}
               >
