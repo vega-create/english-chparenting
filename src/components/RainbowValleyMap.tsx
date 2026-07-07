@@ -16,20 +16,20 @@ interface LevelDef {
   emoji: string;
 }
 
-// 12 關固定資料（名稱、目標、對白） — 位置依裝置在下方獨立定義
+// 12 關固定資料（對齊字母島 L1 M1–M12）— 位置依裝置在下方獨立定義
 const LEVELS_BASE = [
-  { id: 1,  name: "彩虹入口",   nameEn: "Rainbow Gate",     goal: "認識 Adventure English 的操作方式",   npcLine: "歡迎來到彩虹谷！我是 Miss Vega，跟我一起冒險學英文吧～",                          emoji: "🌈" },
-  { id: 2,  name: "字母花園",   nameEn: "Letter Garden",    goal: "認識字母 A B C D E F",                npcLine: "聞聞看！這些花會說出字母的名字喔～A is for Apple！",                              emoji: "🌸" },
-  { id: 3,  name: "ABC 瀑布",   nameEn: "ABC Falls",        goal: "認識字母 G H I J K L",                npcLine: "聽！瀑布在唱字母歌～G、H、I、J、K、L！",                                          emoji: "💦" },
-  { id: 4,  name: "彩虹橋",     nameEn: "Rainbow Bridge",   goal: "認識字母 M N O P Q R",                npcLine: "踩著彩虹橋走過去！每塊磚都是一個字母～",                                          emoji: "🌉" },
-  { id: 5,  name: "聲音森林",   nameEn: "Sound Forest",     goal: "認識字母 S T U V W X Y Z",            npcLine: "森林裡的鳥兒會幫你唸字母！STUVWXYZ～",                                            emoji: "🌳" },
-  { id: 6,  name: "魔法山洞",   nameEn: "Magic Cave",       goal: "複習 26 個字母",                       npcLine: "山洞裡藏著 26 顆水晶，每顆都是一個字母，你能收集齊嗎？",                          emoji: "🔮" },
-  { id: 7,  name: "字母神殿",   nameEn: "Letter Temple",    goal: "認識字母音 (Phonics)",                 npcLine: "字母不只有名字，還有自己的聲音！A 不只是「ㄟ」，還會 /æ/ 喔～",                   emoji: "🏛️" },
-  { id: 8,  name: "聲音湖",     nameEn: "Sound Lake",       goal: "短母音 A E I O U",                     npcLine: "湖面會回音！跟我一起唸：/æ/ /e/ /ɪ/ /ɑ/ /ʌ/",                                    emoji: "🌊" },
-  { id: 9,  name: "拼讀小徑",   nameEn: "Phonics Path",     goal: "CVC 拼讀：cat / bat / hat",            npcLine: "三個音拼一個字！c-a-t → cat 貓咪！b-a-t → bat 蝙蝠！",                             emoji: "🐈" },
-  { id: 10, name: "拼讀森林",   nameEn: "Phonics Forest",   goal: "CVC 拼讀：dog / pig / sun",            npcLine: "繼續挑戰！d-o-g → dog！p-i-g → pig！s-u-n → sun！",                                emoji: "🐶" },
-  { id: 11, name: "彩虹競技場", nameEn: "Rainbow Arena",    goal: "綜合挑戰：字母 + 字母音 + CVC",        npcLine: "勇士！這是最後的試煉場，把學過的全部用出來吧！",                                  emoji: "⚔️" },
-  { id: 12, name: "彩虹守護龍", nameEn: "Rainbow Dragon",   goal: "彩虹谷 Boss 挑戰！集滿星星擊敗守護龍", npcLine: "我是守護彩虹的龍！想通過？先讓我看看你學會了什麼吧 🐉🌈",                         emoji: "🐉" },
+  { id: 1,  name: "彩虹入口",   nameEn: "Rainbow Gate",   goal: "認識 5 位夥伴，學會打招呼",            npcLine: "歡迎來到彩虹谷！我是 Miss Vega，先來認識大家、學會說 Hello 吧～",              emoji: "🌈" },
+  { id: 2,  name: "字母沙灘",   nameEn: "Letter Beach",   goal: "字母 A B C D：apple, ball, cat, dog",  npcLine: "沙灘洞窟藏著字母 A 到 D！A is for Apple 🍎",                                    emoji: "🏖️" },
+  { id: 3,  name: "字母森林",   nameEn: "Letter Forest",  goal: "字母 E F G H：egg, fish, goat, hat",   npcLine: "走進字母森林，找找 E、F、G、H 開頭的東西！",                                    emoji: "🌲" },
+  { id: 4,  name: "字母山丘",   nameEn: "Letter Hills",   goal: "字母 I J K L：igloo, jam, kite, lion", npcLine: "爬上字母山丘！I、J、K、L 在等你～L is for Lion 🦁",                             emoji: "⛰️" },
+  { id: 5,  name: "篝火晚會",   nameEn: "Campfire Song",  goal: "唱字母歌，複習 A 到 L",                 npcLine: "坐到營火旁，一起唱字母歌複習 A 到 L！🎵",                                       emoji: "🔥" },
+  { id: 6,  name: "燈塔海邊",   nameEn: "Lighthouse Bay", goal: "字母 M N O P：moon, nest, orange, pig",npcLine: "走到燈塔海邊，找 M、N、O、P！M is for Moon 🌙",                                 emoji: "🌊" },
+  { id: 7,  name: "字母城堡",   nameEn: "Letter Castle",  goal: "字母 Q R S T：queen, rabbit, sun, tiger",npcLine: "推開城堡大門！Q、R、S、T 住在這裡～Q is for Queen 👑",                          emoji: "🏰" },
+  { id: 8,  name: "字母雲端",   nameEn: "Sky Letters",    goal: "字母 U V W X：umbrella, van, watch, fox",npcLine: "飛上雲端找字母 U、V、W、X！",                                                   emoji: "☁️" },
+  { id: 9,  name: "字母之巔",   nameEn: "Letter Peak",    goal: "字母 Y Z：yoyo, zebra（A–Z 完成！）",  npcLine: "最後兩個字母 Y 和 Z 在山頂！完成就會 26 個字母囉～",                            emoji: "🏔️" },
+  { id: 10, name: "星空音樂會", nameEn: "Starry Concert", goal: "唱完整字母歌，複習 M 到 Z",             npcLine: "星空下開音樂會，唱完整的 ABC 歌！🌟",                                           emoji: "🌟" },
+  { id: 11, name: "字母工坊",   nameEn: "Letter Workshop",goal: "大小寫配對 + 字母書寫",                 npcLine: "來字母工坊！把大寫和小寫配對，練習寫字母～",                                    emoji: "✏️" },
+  { id: 12, name: "彩虹守護龍", nameEn: "Rainbow Dragon", goal: "A–Z 總驗收！擊敗守護龍拿字母徽章",     npcLine: "我是守護彩虹的龍！用上你所有字母 A 到 Z，打敗我吧 🐉🌈",                        emoji: "🐉" },
 ];
 
 // === 三種裝置的地圖配置（圖檔、比例、12 關位置）===
@@ -840,7 +840,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
                 ) : (
                   <div className="space-y-2">
                     <Link
-                      href={`/adventure-map/rainbow-valley/lesson/${openLevel.id}`}
+                      href={`/courses/l1-letter-island/mission/${openLevel.id}`}
                       onClick={() => playStar()}
                       className="block w-full py-3.5 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white font-black rounded-2xl shadow-lg active:scale-95 text-base text-center no-underline"
                     >
