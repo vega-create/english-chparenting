@@ -2,7 +2,9 @@ export interface Word {
   en: string;
   zh: string;
   image: string;
-  phonics?: string;
+  phonics?: string;        // 代表字母（如 'Aa'）
+  kk?: string;             // KK 音標
+  phonicsSound?: string;   // 自然發音重點音（如 '/æ/'）
   exampleSentence?: string;
   exampleZh?: string;
 }
@@ -184,7 +186,98 @@ const L1_M1: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1];
+// L1 Mission 2: A to D（字母的開始）— 官方字 apple/ball/cat/dog + KK/自然發音
+const L1_M2: Mission = {
+  id: 2,
+  slug: 'm2-a-to-d',
+  level: 1,
+  title: '字母的開始 A–D',
+  titleEn: 'A to D',
+  theme: '字母島・沙灘洞窟',
+  themeEmoji: '🏖️',
+
+  story: [
+    {
+      image: '🏖️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn',
+      dialogue: "Welcome to the Beach Cave! Let's find letters A, B, C, D!",
+      dialogueZh: '歡迎來到沙灘洞窟！我們來找字母 A、B、C、D！',
+      highlightWords: ['A', 'B', 'C', 'D'], sceneEmojis: ['🏖️', '🕳️', '🔤', '✨'], animation: 'wave',
+    },
+    {
+      image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco',
+      dialogue: "Look! An apple! A is for Apple!",
+      dialogueZh: '看！一顆蘋果！A 是 Apple（蘋果）！',
+      highlightWords: ['apple', 'A'], sceneEmojis: ['🍎', '🅰️', '😋'], animation: 'bounce',
+    },
+    {
+      image: '⚽', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly',
+      dialogue: "A ball! B is for Ball! Let's play!",
+      dialogueZh: '一顆球！B 是 Ball（球）！一起玩！',
+      highlightWords: ['ball', 'B'], sceneEmojis: ['⚽', '🅱️', '🎉'], animation: 'tada',
+    },
+    {
+      image: '🐱', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny',
+      dialogue: "Meow! A cat! C is for Cat!",
+      dialogueZh: '喵！一隻貓！C 是 Cat（貓）！',
+      highlightWords: ['cat', 'C'], sceneEmojis: ['🐱', '🔤', '🐾'], animation: 'float',
+    },
+    {
+      image: '🐶', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby',
+      dialogue: "Woof! A dog! D is for Dog!",
+      dialogueZh: '汪！一隻狗！D 是 Dog（狗）！',
+      highlightWords: ['dog', 'D'], sceneEmojis: ['🐶', '🦴', '✨'], animation: 'shake',
+    },
+    {
+      image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn',
+      dialogue: "Great job! A, B, C, D! You found all the letters!",
+      dialogueZh: '太棒了！A、B、C、D！你把字母都找到了！',
+      highlightWords: ['A', 'B', 'C', 'D'], sceneEmojis: ['🎉', '🏆', '🔤'], animation: 'bounce',
+    },
+  ],
+
+  // 單字（對齊 wordbank，帶 KK 音標 + 自然發音重點音）
+  words: [
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: 'Aa', kk: '[ˈæpl̩]', phonicsSound: '/æ/', exampleSentence: 'A is for apple.', exampleZh: 'A 是 apple。' },
+    { en: 'ball', zh: '球', image: '⚽', phonics: 'Bb', kk: '[bɔl]', phonicsSound: '/b/', exampleSentence: 'B is for ball.', exampleZh: 'B 是 ball。' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: 'Cc', kk: '[kæt]', phonicsSound: '/k/', exampleSentence: 'C is for cat.', exampleZh: 'C 是 cat。' },
+    { en: 'dog', zh: '狗', image: '🐶', phonics: 'Dd', kk: '[dɔɡ]', phonicsSound: '/d/', exampleSentence: 'D is for dog.', exampleZh: 'D 是 dog。' },
+  ],
+  sentences: [
+    { en: 'A is for Apple.', zh: 'A 是 Apple（蘋果）。' },
+    { en: 'B is for Ball.', zh: 'B 是 Ball（球）。' },
+    { en: 'C is for Cat.', zh: 'C 是 Cat（貓）。' },
+    { en: 'D is for Dog.', zh: 'D 是 Dog（狗）。' },
+    { en: 'What is this?', zh: '這是什麼？' },
+    { en: 'It is a cat.', zh: '這是一隻貓。' },
+  ],
+  phonicsLetters: ['Aa', 'Bb', 'Cc', 'Dd'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '聽聽看，這是哪個字母？', options: ['A', 'B', 'C', 'D'], answer: 'A', image: '🔤' },
+    { type: 'match', question: '🍎 蘋果是哪個字？', options: ['apple', 'ball', 'cat', 'dog'], answer: 'apple' },
+    { type: 'listen-pick', question: '哪個是 "ball" 球？', options: ['🍎', '⚽', '🐱', '🐶'], answer: '⚽' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🍎', '⚽', '🐱', '🐶'], answer: '🐱', image: '🎧' },
+    { type: 'match', question: '配對：字母配圖片', options: ['A-🍎', 'B-⚽', 'C-🐱', 'D-🐶'], answer: 'A-🍎' },
+    { type: 'spell', question: '拼拼看：c _ t（貓）', answer: 'cat', image: '✍️' },
+    { type: 'speak', question: '跟著念：Dog!', answer: 'Dog', image: '🗣' },
+    { type: 'fill-blank', question: '___ is for apple.', options: ['A', 'B', 'C', 'D'], answer: 'A' },
+    { type: 'listen-pick', question: 'Ball 球 的開頭是哪個字母？', options: ['A', 'B', 'C', 'D'], answer: 'B', image: '⚽' },
+  ],
+  talkTimePrompts: [
+    "A is for apple! Can you say 'apple'?",
+    "B is for ball! Do you like to play ball?",
+    "C is for cat! Can you meow like a cat? Meow!",
+    "D is for dog! Can you say 'dog'? Woof!",
+  ],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '"A" 開頭的字是？', options: ['apple', 'ball', 'cat', 'dog'], answer: 'apple' },
+    { type: 'fill-blank', question: 'C is for ___.', options: ['cat', 'dog', 'ball', 'apple'], answer: 'cat' },
+    { type: 'match', question: '🐶 狗是哪個字母開頭？', options: ['A', 'B', 'C', 'D'], answer: 'D' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);

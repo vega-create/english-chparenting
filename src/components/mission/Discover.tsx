@@ -302,6 +302,11 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
                   🔤 {word.phonics}
                 </p>
               )}
+              {word.kk && (
+                <p className="text-sm text-purple-600 bg-purple-100 px-3 py-1 rounded-full mb-2">
+                  KK {word.kk}{word.phonicsSound ? ` · 音 ${word.phonicsSound}` : ''}
+                </p>
+              )}
               <button
                 onClick={(e) => { e.stopPropagation(); speak(word.en, 0.5); }}
                 className="mt-2 bg-blue-500 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-600 transition active:scale-95"
