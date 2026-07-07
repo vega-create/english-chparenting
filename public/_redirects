@@ -1,1 +1,4 @@
 /preview/layered  /home  301
+/map  /adventure-map  301
+/preview/*  /  301
+/preview  /  301

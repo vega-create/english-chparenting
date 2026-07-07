@@ -402,7 +402,7 @@ export default function LayeredBanner() {
             {[
               { img: "today-task",    btn: "前往任務",     btnIcon: "📜", href: "/courses", color: "from-orange-400 to-amber-500", shadow: "rgba(234,88,12,0.4)" },
               { img: "my-cabin",      btn: "進入小屋",     btnIcon: "🏠", href: "/adventure-map", color: "from-emerald-400 to-green-600", shadow: "rgba(5,150,105,0.4)" },
-              { img: "achievements",  btn: "查看全部",     btnIcon: "🏆", href: "/preview", color: "from-blue-500 to-indigo-600",   shadow: "rgba(37,99,235,0.4)" },
+              { img: "achievements",  btn: "查看全部",     btnIcon: "🏆", href: "/adventure-map", color: "from-blue-500 to-indigo-600",   shadow: "rgba(37,99,235,0.4)" },
               { img: "parent-center", btn: "前往家長中心", btnIcon: "👨‍👩‍👧", href: "/guide",  color: "from-pink-500 to-rose-600",     shadow: "rgba(225,29,72,0.4)" },
             ].map((card, i) => (
               <motion.div
