@@ -284,7 +284,7 @@ export default function LayeredBanner() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="flex flex-wrap gap-5 md:gap-6 justify-center w-full relative z-10 mt-2"
             >
-              <Link href="/preview/v4" onClick={() => playStar()} className="no-underline">
+              <Link href="/adventure-map" onClick={() => playStar()} className="no-underline">
                 <motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}

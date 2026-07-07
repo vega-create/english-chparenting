@@ -5,7 +5,7 @@ import { VegaMuteButton } from "@/components/VegaAudio";
 
 const NAV = [
   { href: "/", label: "首頁" },
-  { href: "/map", label: "🗺️ 學習地圖" },
+  { href: "/adventure-map", label: "🗺️ 冒險地圖" },
   { href: "/guide", label: "📖 使用說明" },
   { href: "/blog", label: "✏️ 學習文章" },
   { href: "/books", label: "📕 推薦書單" },

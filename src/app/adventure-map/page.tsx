@@ -343,7 +343,7 @@ export default function AdventureMapPage() {
                 {/* 互動按鈕 — World 1 走客製化彩虹谷地圖，其他走通用 lesson 列表 */}
                 {unlocked ? (
                   <Link
-                    href={world.id === 1 ? "/adventure-map/rainbow-valley" : `/adventure-map/world/${world.id}`}
+                    href={world.id === 1 ? "/courses/l1-letter-island" : `/adventure-map/world/${world.id}`}
                     onClick={() => playStar()}
                     className="absolute inset-0 cursor-pointer no-underline"
                   >
