@@ -3563,7 +3563,267 @@ const L4_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15];
+const L4_M16: Mission = {
+  id: 16, slug: 'l4-m16-past-intro', level: 4, title: '過去式入門', titleEn: 'Past Tense Intro', theme: '學校路・昨天做了什麼', themeEmoji: '⏪',
+  focus: '動詞過去式入門：原形 → 過去式（play→played, go→went）先接觸',
+  story: [
+    { image: '⏪', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Today I play. Yesterday I played!", dialogueZh: '今天我玩。昨天我玩了！', highlightWords: ['play', 'played'], sceneEmojis: ['🎮', '⏪', '✨'], animation: 'wave' },
+    { image: '🏫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Today I go to school. Yesterday I went too!", dialogueZh: '今天我去學校。昨天我也去了！', highlightWords: ['go', 'went'], sceneEmojis: ['🏫', '⏪', '😊'], animation: 'bounce' },
+    { image: '🍎', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "I eat an apple. I ate it yesterday!", dialogueZh: '我吃蘋果。我昨天吃了！', highlightWords: ['eat', 'ate'], sceneEmojis: ['🍎', '⏪', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Past tense! We add -ed or change the word!", dialogueZh: '過去式！加 -ed 或把字變一下！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '⏪'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'play', zh: '玩（原形）', image: '🎮', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'I play now.', exampleZh: '我現在玩。' },
+    { en: 'played', zh: '玩了（過去）', image: '⏪', phonics: '', kk: '[pled]', phonicsSound: '', exampleSentence: 'I played yesterday.', exampleZh: '我昨天玩了。' },
+    { en: 'go', zh: '去（原形）', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '', exampleSentence: 'I go to school.', exampleZh: '我去學校。' },
+    { en: 'went', zh: '去了（過去）', image: '⏪', phonics: '', kk: '[wɛnt]', phonicsSound: '', exampleSentence: 'I went to school.', exampleZh: '我去了學校。' },
+    { en: 'eat', zh: '吃（原形）', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '', exampleSentence: 'I eat lunch.', exampleZh: '我吃午餐。' },
+    { en: 'ate', zh: '吃了（過去）', image: '⏪', phonics: '', kk: '[et]', phonicsSound: '', exampleSentence: 'I ate lunch.', exampleZh: '我吃了午餐。' },
+    { en: 'look', zh: '看（原形）', image: '👀', phonics: '', kk: '[lʊk]', phonicsSound: '', exampleSentence: 'I look at it.', exampleZh: '我看它。' },
+    { en: 'looked', zh: '看了（過去）', image: '⏪', phonics: '', kk: '[lʊkt]', phonicsSound: '', exampleSentence: 'I looked at it.', exampleZh: '我看了它。' },
+    { en: 'yesterday', zh: '昨天', image: '📅', phonics: '', kk: '[ˈjɛstɚˌde]', phonicsSound: '', exampleSentence: 'I played yesterday.', exampleZh: '我昨天玩了。' },
+    { en: 'today', zh: '今天', image: '📆', phonics: '', kk: '[təˈde]', phonicsSound: '', exampleSentence: 'I play today.', exampleZh: '我今天玩。' },
+  ],
+  sentences: [
+    { en: 'Today I play.', zh: '今天我玩。' }, { en: 'Yesterday I played.', zh: '昨天我玩了。' }, { en: 'I go to school.', zh: '我去學校。' }, { en: 'I went to school yesterday.', zh: '我昨天去了學校。' }, { en: 'Did you play?', zh: '你玩了嗎？' }, { en: 'Yes, I played!', zh: '是的，我玩了！' },
+  ],
+  phonicsLetters: ['play → played'],
+  warmUpQuestions: [
+    { type: 'match', question: 'play 的過去式是？', options: ['played', 'plays', 'playing', 'play'], answer: 'played' },
+    { type: 'match', question: 'go 的過去式是？（不規則）', options: ['went', 'goed', 'goes', 'going'], answer: 'went' },
+    { type: 'match', question: 'eat 的過去式是？（不規則）', options: ['ate', 'eated', 'eats', 'eating'], answer: 'ate' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選字：點你聽到的字', options: ['played', 'went', 'ate', 'looked'], answer: 'went', image: '🎧' },
+    { type: 'match', question: '配對：原形→過去式', options: ['play-played', 'go-went', 'eat-ate', 'look-looked'], answer: 'play-played' },
+    { type: 'fill-blank', question: 'Yesterday I ___ to school.（去·過去）', options: ['went', 'go', 'goes', 'going'], answer: 'went' },
+    { type: 'fill-blank', question: 'Yesterday I ___ an apple.（吃·過去）', options: ['ate', 'eat', 'eats', 'eating'], answer: 'ate' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Yesterday I played.', 'Today I play.', 'I went to school.', 'I ate lunch.'], answer: 'Yesterday I played.', image: '🎧' },
+    { type: 'read', question: 'What did Coco do yesterday?（Coco 昨天做了什麼？）', passage: 'Yesterday Coco went to school.\nShe played with friends.\nShe ate a big lunch!', options: ['went to school', 'stayed home', 'watched TV', 'slept all day'], answer: 'went to school' },
+  ],
+  talkTimePrompts: ["Say: Today I play. Yesterday I played.", "What did you eat yesterday? I ate ___.", "Where did you go? I went to ___.", "Change it: Yesterday I ___ (played/went/ate)."],
+  reviewQuiz: [
+    { type: 'match', question: 'look 的過去式是？', options: ['looked', 'looks', 'looking', 'look'], answer: 'looked' },
+    { type: 'fill-blank', question: 'Yesterday I ___ with my friends.（玩·過去）', options: ['played', 'play', 'plays', 'playing'], answer: 'played' },
+    { type: 'match', question: 'eat 的過去式是？', options: ['ate', 'eated', 'eats', 'eaten'], answer: 'ate' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Today I play games. Yesterday I played too!", lineZh: '今天我玩遊戲。昨天我也玩了！' },
+    { speaker: 'Coco', line: "I went to school yesterday. Did you?", lineZh: '我昨天去了學校。你呢？' },
+    { speaker: 'Polly', line: "Yes! And I ate a big lunch!", lineZh: '有！而且我吃了一頓大餐！' },
+    { speaker: 'Benny', line: "Past tense is fun! play, played!", lineZh: '過去式好好玩！play、played！' },
+  ],
+};
+
+const L4_M17: Mission = {
+  id: 17, slug: 'l4-m17-school-mix', level: 4, title: '學校情境綜合', titleEn: 'School Mix', theme: '學校路・我的一天', themeEmoji: '🏫',
+  focus: '綜合運用 be / like / have / can 在學校情境',
+  story: [
+    { image: '🏫', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I am a student. I like school!", dialogueZh: '我是學生。我喜歡學校！', highlightWords: ['am', 'like'], sceneEmojis: ['🏫', '📚', '✨'], animation: 'wave' },
+    { image: '🎒', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have a bag. I can read a book!", dialogueZh: '我有書包。我會讀書！', highlightWords: ['have', 'can'], sceneEmojis: ['🎒', '📖', '😊'], animation: 'bounce' },
+    { image: '🍱', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "It is lunch time. I am hungry!", dialogueZh: '午餐時間到了。我餓了！', highlightWords: ['am'], sceneEmojis: ['🍱', '😋', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "School is fun! We learn together!", dialogueZh: '學校好好玩！我們一起學習！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🏫'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'school', zh: '學校', image: '🏫', phonics: '', kk: '[skul]', phonicsSound: '', exampleSentence: 'I like school.', exampleZh: '我喜歡學校。' },
+    { en: 'class', zh: '班級·課', image: '👨‍🏫', phonics: '', kk: '[klæs]', phonicsSound: '', exampleSentence: 'My class is fun.', exampleZh: '我的班很好玩。' },
+    { en: 'lunch', zh: '午餐', image: '🍱', phonics: '', kk: '[lʌntʃ]', phonicsSound: '', exampleSentence: 'It is lunch time.', exampleZh: '午餐時間到了。' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'I have a book.', exampleZh: '我有書。' },
+    { en: 'friend', zh: '朋友', image: '🧑‍🤝‍🧑', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'He is my friend.', exampleZh: '他是我朋友。' },
+    { en: 'teacher', zh: '老師', image: '👩‍🏫', phonics: '', kk: '[ˈtitʃɚ]', phonicsSound: '', exampleSentence: 'She is my teacher.', exampleZh: '她是我老師。' },
+    { en: 'learn', zh: '學習', image: '🧠', phonics: '', kk: '[lɝn]', phonicsSound: '', exampleSentence: 'We learn English.', exampleZh: '我們學英文。' },
+    { en: 'read', zh: '閱讀', image: '📚', phonics: '', kk: '[rid]', phonicsSound: '', exampleSentence: 'I can read.', exampleZh: '我會閱讀。' },
+    { en: 'fun', zh: '好玩的', image: '🎉', phonics: '', kk: '[fʌn]', phonicsSound: '', exampleSentence: 'School is fun.', exampleZh: '學校很好玩。' },
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy.', exampleZh: '我很開心。' },
+  ],
+  sentences: [
+    { en: 'I am a student.', zh: '我是學生。' }, { en: 'I like my school.', zh: '我喜歡我的學校。' }, { en: 'I have a book and a bag.', zh: '我有書和書包。' }, { en: 'I can read and write.', zh: '我會讀也會寫。' }, { en: 'Do you like your class?', zh: '你喜歡你的班嗎？' }, { en: 'School is fun!', zh: '學校很好玩！' },
+  ],
+  phonicsLetters: ['school mix'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ a student.（be動詞）', options: ['am', 'like', 'have', 'can'], answer: 'am' },
+    { type: 'fill-blank', question: 'I ___ a book.（有）', options: ['have', 'am', 'like', 'is'], answer: 'have' },
+    { type: 'match', question: '🍱 是什麼？', options: ['lunch', 'class', 'book', 'school'], answer: 'lunch' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🏫', '🍱', '📖', '👩‍🏫'], answer: '👩‍🏫', image: '🎧' },
+    { type: 'match', question: '配對：字配圖', options: ['school-🏫', 'lunch-🍱', 'book-📖', 'teacher-👩‍🏫'], answer: 'school-🏫' },
+    { type: 'fill-blank', question: 'I ___ read a book.（會）', options: ['can', 'am', 'have', 'is'], answer: 'can' },
+    { type: 'spell', question: '拼拼看：sch _ ol（學校）', answer: 'school', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I like my school.', 'I have a school.', 'I am a school.', 'Do you like school?'], answer: 'I like my school.', image: '🎧' },
+    { type: 'read', question: 'What can Finn do?（Finn 會什麼？）', passage: 'Finn is a student.\nHe likes school.\nHe can read and write.', options: ['read and write', 'cook', 'fly', 'drive'], answer: 'read and write' },
+  ],
+  talkTimePrompts: ["Tell me about school: I am ___. I like ___.", "Say what you have: I have ___.", "Say what you can do at school.", "Is school fun? Yes/No, why?"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'She ___ my teacher.（be動詞）', options: ['is', 'am', 'have', 'can'], answer: 'is' },
+    { type: 'match', question: '🧠 學習 的英文？', options: ['learn', 'read', 'fun', 'class'], answer: 'learn' },
+    { type: 'fill-blank', question: 'Do you ___ your class?（喜歡）', options: ['like', 'am', 'is', 'can'], answer: 'like' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "I am a student. I like school!", lineZh: '我是學生。我喜歡學校！' },
+    { speaker: 'Coco', line: "Me too! I have many books.", lineZh: '我也是！我有很多書。' },
+    { speaker: 'Benny', line: "I can read fast. It is lunch time now!", lineZh: '我讀得快。現在午餐時間！' },
+    { speaker: 'Finn', line: "School is fun. Let's learn together!", lineZh: '學校好好玩。我們一起學習！' },
+  ],
+};
+
+const L4_M18: Mission = {
+  id: 18, slug: 'l4-m18-classroom-talk', level: 4, title: '教室對話', titleEn: 'Classroom Talk', theme: '學校路・上課囉', themeEmoji: '🔔',
+  focus: '教室用語與對話：Sit down. Stand up. Open your book. Listen.',
+  story: [
+    { image: '🔔', character: '👩‍🏫', characterKey: 'ruby', characterAction: 'talk', characterName: 'Miss Ruby', dialogue: "Good morning, class! Please sit down.", dialogueZh: '早安，同學們！請坐下。', highlightWords: ['sit down'], sceneEmojis: ['🔔', '🪑', '✨'], animation: 'wave' },
+    { image: '📖', character: '👩‍🏫', characterKey: 'ruby', characterAction: 'write', characterName: 'Miss Ruby', dialogue: "Open your book. Look at page one.", dialogueZh: '打開書。看第一頁。', highlightWords: ['Open', 'Look'], sceneEmojis: ['📖', '👀', '😊'], animation: 'bounce' },
+    { image: '👂', character: '🐱', characterKey: 'coco', characterAction: 'listen', characterName: 'Coco', dialogue: "Listen, please! I can hear the teacher.", dialogueZh: '請聽！我聽得到老師。', highlightWords: ['Listen'], sceneEmojis: ['👂', '🔊', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '👩‍🏫', characterKey: 'ruby', characterAction: 'star', characterName: 'Miss Ruby', dialogue: "Great class! Thank you, everyone!", dialogueZh: '很棒的一課！謝謝大家！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔔'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'sit down', zh: '坐下', image: '🪑', phonics: '', kk: '[sɪt daʊn]', phonicsSound: '', exampleSentence: 'Please sit down.', exampleZh: '請坐下。' },
+    { en: 'stand up', zh: '站起來', image: '🧍', phonics: '', kk: '[stænd ʌp]', phonicsSound: '', exampleSentence: 'Please stand up.', exampleZh: '請站起來。' },
+    { en: 'open', zh: '打開', image: '📖', phonics: '', kk: '[ˈopən]', phonicsSound: '', exampleSentence: 'Open your book.', exampleZh: '打開你的書。' },
+    { en: 'close', zh: '關上', image: '📕', phonics: '', kk: '[kloz]', phonicsSound: '', exampleSentence: 'Close the door.', exampleZh: '關門。' },
+    { en: 'listen', zh: '聽', image: '👂', phonics: '', kk: '[ˈlɪsn̩]', phonicsSound: '', exampleSentence: 'Listen, please.', exampleZh: '請聽。' },
+    { en: 'look', zh: '看', image: '👀', phonics: '', kk: '[lʊk]', phonicsSound: '', exampleSentence: 'Look at the board.', exampleZh: '看黑板。' },
+    { en: 'quiet', zh: '安靜', image: '🤫', phonics: '', kk: '[ˈkwaɪət]', phonicsSound: '', exampleSentence: 'Be quiet, please.', exampleZh: '請安靜。' },
+    { en: 'please', zh: '請', image: '🙏', phonics: '', kk: '[pliz]', phonicsSound: '', exampleSentence: 'Sit down, please.', exampleZh: '請坐下。' },
+    { en: 'thank you', zh: '謝謝', image: '🙇', phonics: '', kk: '[θæŋk ju]', phonicsSound: '', exampleSentence: 'Thank you!', exampleZh: '謝謝你！' },
+    { en: 'page', zh: '頁', image: '📄', phonics: '', kk: '[pedʒ]', phonicsSound: '', exampleSentence: 'Look at page one.', exampleZh: '看第一頁。' },
+  ],
+  sentences: [
+    { en: 'Please sit down.', zh: '請坐下。' }, { en: 'Stand up, please.', zh: '請站起來。' }, { en: 'Open your book.', zh: '打開你的書。' }, { en: 'Listen, please.', zh: '請聽。' }, { en: 'Look at page one.', zh: '看第一頁。' }, { en: 'Thank you, teacher!', zh: '謝謝老師！' },
+  ],
+  phonicsLetters: ['classroom talk'],
+  warmUpQuestions: [
+    { type: 'match', question: '🪑 動作是？', options: ['sit down', 'stand up', 'open', 'close'], answer: 'sit down' },
+    { type: 'match', question: '👂 動作是？', options: ['listen', 'look', 'open', 'quiet'], answer: 'listen' },
+    { type: 'match', question: '🙏 是什麼？', options: ['please', 'thank you', 'open', 'page'], answer: 'please' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🪑', '🧍', '👂', '👀'], answer: '🧍', image: '🎧' },
+    { type: 'match', question: '配對：指令配圖', options: ['sit down-🪑', 'stand up-🧍', 'open-📖', 'listen-👂'], answer: 'sit down-🪑' },
+    { type: 'fill-blank', question: '___ your book.（打開）', options: ['Open', 'Close', 'Listen', 'Sit'], answer: 'Open' },
+    { type: 'spell', question: '拼拼看：list _ n（聽）', answer: 'listen', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Please sit down.', 'Please stand up.', 'Open your book.', 'Listen, please.'], answer: 'Please sit down.', image: '🎧' },
+    { type: 'read', question: 'What does the teacher say first?（老師先說什麼？）', passage: 'The teacher comes in.\nShe says, "Good morning! Please sit down."\nThen she says, "Open your book."', options: ['Please sit down.', 'Open your book.', 'Stand up.', 'Go home.'], answer: 'Please sit down.' },
+  ],
+  talkTimePrompts: ["Give a command: Please ___.", "Say: Open your book. / Close the door.", "Say 'thank you' to your teacher.", "Play teacher: tell the class to sit down!"],
+  reviewQuiz: [
+    { type: 'match', question: '🤫 是什麼？', options: ['quiet', 'listen', 'look', 'open'], answer: 'quiet' },
+    { type: 'fill-blank', question: '___ at the board.（看）', options: ['Look', 'Listen', 'Open', 'Sit'], answer: 'Look' },
+    { type: 'spell', question: '拼拼看：pl _ ase（請）', answer: 'please', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Miss Ruby', line: "Good morning! Please sit down.", lineZh: '早安！請坐下。' },
+    { speaker: 'Coco', line: "Good morning, teacher!", lineZh: '早安，老師！' },
+    { speaker: 'Miss Ruby', line: "Open your book. Look at page one.", lineZh: '打開書。看第一頁。' },
+    { speaker: 'Benny', line: "Yes! Thank you, teacher!", lineZh: '好！謝謝老師！' },
+  ],
+};
+
+const L4_M19: Mission = {
+  id: 19, slug: 'l4-m19-reading', level: 4, title: '學校閱讀', titleEn: 'School Reading', theme: '學校路・故事時間', themeEmoji: '📖',
+  focus: '綜合閱讀：把 be/like/have/can 讀成一個上學小故事',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a story about a school day!", dialogueZh: '我們來讀一個上學日的故事！', highlightWords: ['story'], sceneEmojis: ['📖', '🏫', '✨'], animation: 'wave' },
+    { image: '🦊', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "This is Finn. He is a student. He likes school.", dialogueZh: '這是 Finn。他是學生。他喜歡學校。', highlightWords: ['is', 'likes'], sceneEmojis: ['🦊', '🎒', '😊'], animation: 'bounce' },
+    { image: '📚', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "He has a book. He can read very well!", dialogueZh: '他有一本書。他讀得很好！', highlightWords: ['has', 'can'], sceneEmojis: ['📚', '👀', '🎉'], animation: 'float' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read a whole story! Amazing reader!", dialogueZh: '你讀完整個故事了！了不起的讀者！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'story', zh: '故事', image: '📖', phonics: '', kk: '[ˈstɔri]', phonicsSound: '', exampleSentence: 'a fun story', exampleZh: '一個有趣的故事' },
+    { en: 'day', zh: '一天', image: '📅', phonics: '', kk: '[de]', phonicsSound: '', exampleSentence: 'a school day', exampleZh: '上學日' },
+    { en: 'student', zh: '學生', image: '🧑‍🎓', phonics: '', kk: '[ˈstudn̩t]', phonicsSound: '', exampleSentence: 'He is a student.', exampleZh: '他是學生。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'He likes school.', exampleZh: '他喜歡學校。' },
+    { en: 'have', zh: '有', image: '🤲', phonics: '', kk: '[hæv]', phonicsSound: '', exampleSentence: 'He has a book.', exampleZh: '他有一本書。' },
+    { en: 'read', zh: '閱讀', image: '📚', phonics: '', kk: '[rid]', phonicsSound: '', exampleSentence: 'He can read.', exampleZh: '他會閱讀。' },
+    { en: 'friend', zh: '朋友', image: '🧑‍🤝‍🧑', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'He has friends.', exampleZh: '他有朋友。' },
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'He is happy.', exampleZh: '他很開心。' },
+    { en: 'play', zh: '玩', image: '🎮', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'They play together.', exampleZh: '他們一起玩。' },
+    { en: 'good', zh: '好的', image: '👍', phonics: '', kk: '[ɡʊd]', phonicsSound: '', exampleSentence: 'a good day', exampleZh: '美好的一天' },
+  ],
+  sentences: [
+    { en: 'Finn is a student.', zh: 'Finn 是學生。' }, { en: 'He likes school.', zh: '他喜歡學校。' }, { en: 'He has a book and a bag.', zh: '他有書和書包。' }, { en: 'He can read and write.', zh: '他會讀也會寫。' }, { en: 'He plays with friends.', zh: '他和朋友玩。' }, { en: 'Finn is happy!', zh: 'Finn 很開心！' },
+  ],
+  phonicsLetters: ['reading'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: 'Finn 是什麼？', options: ['a student', 'a teacher', 'a dog', 'a book'], answer: 'a student' },
+    { type: 'listen-pick', question: 'Finn 喜歡什麼？', options: ['school', 'candy', 'sleep', 'TV'], answer: 'school' },
+    { type: 'match', question: '📚 read 是什麼意思？', options: ['閱讀', '寫字', '玩', '跑'], answer: '閱讀' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What can Finn do?（Finn 會什麼？）', passage: 'Finn is a student.\nHe likes school.\nHe has a book.\nHe can read and write.', options: ['read and write', 'swim and fly', 'cook and drive', 'sing and dance'], answer: 'read and write' },
+    { type: 'read', question: 'How does Finn feel?（Finn 的感覺？）', passage: 'Finn plays with his friends.\nThey have fun at school.\nFinn is very happy!', options: ['happy', 'sad', 'angry', 'tired'], answer: 'happy' },
+    { type: 'fill-blank', question: 'Finn ___ a book.（有·第三人稱）', options: ['has', 'have', 'is', 'like'], answer: 'has' },
+    { type: 'fill-blank', question: 'He ___ school.（喜歡·第三人稱）', options: ['likes', 'like', 'is', 'has'], answer: 'likes' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['He can read and write.', 'He can swim and fly.', 'He likes school.', 'He has a book.'], answer: 'He can read and write.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：st _ ry（故事）', answer: 'story', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the story about Finn.", "What does Finn have?", "What can Finn do?", "Make your own: I am ___. I like ___. I can ___."],
+  reviewQuiz: [
+    { type: 'read', question: 'Does Finn like school?（Finn 喜歡學校嗎？）', passage: 'Finn is a happy student.\nHe likes school a lot.\nHe reads every day.', options: ['Yes', 'No', 'Maybe', 'Never'], answer: 'Yes' },
+    { type: 'fill-blank', question: 'He ___ happy.（be動詞）', options: ['is', 'am', 'are', 'has'], answer: 'is' },
+    { type: 'match', question: 'play 是什麼意思？', options: ['玩', '讀', '寫', '跑'], answer: '玩' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "This is Finn. He is a student.", lineZh: '這是 Finn。他是學生。' },
+    { speaker: 'Finn', line: "I like school! I have a book.", lineZh: '我喜歡學校！我有一本書。' },
+    { speaker: 'Benny', line: "Can Finn read?", lineZh: 'Finn 會閱讀嗎？' },
+    { speaker: 'Finn', line: "Yes, I can! I play with friends. I'm happy!", lineZh: '是的，我會！我和朋友玩。我很開心！' },
+  ],
+};
+
+const L4_M20: Mission = {
+  id: 20, slug: 'l4-m20-boss', level: 4, title: '學校路大魔王', titleEn: 'School Boss', theme: '學校路・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：be / like / have / can ＋ 疑問句 ＋ 介系詞 ＋ 過去式入門',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The School Boss is here! Use all your English!", dialogueZh: '學校大魔王來了！用上你所有的英文！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏫'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am, I like, I have, I can — I know them all!", dialogueZh: 'I am、I like、I have、I can —— 我全會了！', highlightWords: [], sceneEmojis: ['💪', '📚', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the School Badge!", dialogueZh: '你打敗大魔王了！獲得學校徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🌊', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished School Road! On to Coral Beach!", dialogueZh: '你完成了學校路！前進珊瑚灘！', highlightWords: [], sceneEmojis: ['🌊', '🏖️', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy.', exampleZh: '我很開心。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like it.', exampleZh: '我喜歡。' },
+    { en: 'have', zh: '有', image: '🤲', phonics: '', kk: '[hæv]', phonicsSound: '', exampleSentence: 'I have a book.', exampleZh: '我有書。' },
+    { en: 'can', zh: '會·能', image: '💪', phonics: '', kk: '[kæn]', phonicsSound: '', exampleSentence: 'I can swim.', exampleZh: '我會游泳。' },
+    { en: 'teacher', zh: '老師', image: '👩‍🏫', phonics: '', kk: '[ˈtitʃɚ]', phonicsSound: '', exampleSentence: 'She is a teacher.', exampleZh: '她是老師。' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'This is a book.', exampleZh: '這是書。' },
+    { en: 'on', zh: '在…上面', image: '⬆️', phonics: '', kk: '[ɑn]', phonicsSound: '', exampleSentence: 'on the desk', exampleZh: '在書桌上' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: 'I can swim.', exampleZh: '我會游泳。' },
+    { en: 'went', zh: '去了（過去）', image: '⏪', phonics: '', kk: '[wɛnt]', phonicsSound: '', exampleSentence: 'I went to school.', exampleZh: '我去了學校。' },
+    { en: 'fine', zh: '很好的', image: '👍', phonics: '', kk: '[faɪn]', phonicsSound: '', exampleSentence: 'I am fine.', exampleZh: '我很好。' },
+  ],
+  sentences: [
+    { en: 'I am happy and I like school.', zh: '我很開心，我喜歡學校。' }, { en: 'I have a book. I can read it.', zh: '我有一本書。我會讀它。' }, { en: 'Where is the cat? It is on the desk.', zh: '貓在哪？在書桌上。' }, { en: 'Can you swim? Yes, I can!', zh: '你會游泳嗎？是的，我會！' }, { en: 'I went to school yesterday.', zh: '我昨天去了學校。' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ happy.（be動詞）', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'fill-blank', question: 'Can you swim? Yes, I ___.', options: ['can', 'do', 'am', 'is'], answer: 'can' },
+    { type: 'fill-blank', question: 'The book is ___ the desk.（上面）', options: ['on', 'in', 'under', 'is'], answer: 'on' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['❤️', '📖', '🏊', '👩‍🏫'], answer: '🏊', image: '🎧' },
+    { type: 'fill-blank', question: 'Do you ___ pizza?（喜歡·問句）', options: ['like', 'am', 'is', 'can'], answer: 'like' },
+    { type: 'fill-blank', question: 'She ___ a teacher.（be動詞）', options: ['is', 'am', 'are', 'do'], answer: 'is' },
+    { type: 'match', question: 'go 的過去式是？', options: ['went', 'goed', 'goes', 'going'], answer: 'went' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Can you swim?', 'Do you swim?', 'I can swim.', 'Are you swimming?'], answer: 'Can you swim?', image: '🎧' },
+    { type: 'read', question: 'What can the student do?（學生會什麼？）', passage: 'I am a student.\nI have a book and a pen.\nI can read and write.\nI went to school yesterday.', options: ['read and write', 'fly and swim', 'cook and drive', 'sing and paint'], answer: 'read and write' },
+  ],
+  talkTimePrompts: ["Tell me about you: I am ___, I like ___, I have ___, I can ___.", "Ask 3 questions: Are you…? Do you…? Can you…?", "Say where your bag is.", "You beat the School Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ a book. I can read it.（有）', options: ['have', 'am', 'like', 'is'], answer: 'have' },
+    { type: 'fill-blank', question: '___ is the cat? It is on the desk.', options: ['Where', 'What', 'Who', 'Do'], answer: 'Where' },
+    { type: 'read', question: 'Where did the student go?（學生去了哪？）', passage: 'Yesterday I went to school.\nI played with my friends.\nWe were very happy.', options: ['to school', 'to the zoo', 'home', 'to the sea'], answer: 'to school' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The School Boss says: tell me about you!", lineZh: '學校大魔王說：介紹你自己！' },
+    { speaker: 'Coco', line: "I am happy! I like school! I can swim!", lineZh: '我很開心！我喜歡學校！我會游泳！' },
+    { speaker: 'Ruby', line: "You beat the Boss! School champion!", lineZh: '你打敗大魔王了！學校冠軍！' },
+    { speaker: 'Finn', line: "On to Coral Beach! Let's learn adjectives!", lineZh: '前進珊瑚灘！我們來學形容詞！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
