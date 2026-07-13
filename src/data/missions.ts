@@ -53,6 +53,16 @@ export interface Mission {
   challenges: QuizQuestion[];
   talkTimePrompts: string[];
   reviewQuiz: QuizQuestion[];
+  // ── v2 新格式（L2 起）選填 ──
+  focus?: string;              // 該課重點（phonics 樣式 / 文法點）
+  videoScript?: VideoLine[];   // 對話影片腳本（角色輪流；留給 Vega 拍/生）
+}
+
+// 對話影片腳本一行
+export interface VideoLine {
+  speaker: string;   // 角色名（Finn/Coco… 或新角色）
+  line: string;      // 英文台詞
+  lineZh: string;    // 中文
 }
 
 // L1 Mission 1: Nice to Meet You!
@@ -685,7 +695,270 @@ const L1_M12: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12];
+/* ============================================================
+   L2 聲音島 Sound Island — 完整自然發音（新格式 v2：focus + 影片腳本）
+============================================================ */
+
+const L2_M1: Mission = {
+  id: 1, slug: 'l2-m1-blending', level: 2, title: '拼讀入門', titleEn: 'Blending', theme: '聲音島・拼讀港口', themeEmoji: '🔊',
+  focus: '拼讀 blending：把 3 個音一個一個拼成一個字（c-a-t → cat）',
+  story: [
+    { image: '🔊', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Sound Island! Today we learn to blend sounds!", dialogueZh: '歡迎來到聲音島！今天我們學把音拼起來！', highlightWords: ['blend', 'sounds'], sceneEmojis: ['🔊', '🏝️', '✨'], animation: 'wave' },
+    { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Listen: c... a... t... cat! Three sounds make one word!", dialogueZh: '聽：c… a… t… cat！三個音拼成一個字！', highlightWords: ['cat'], sceneEmojis: ['🔤', '🐱', '👂'], animation: 'bounce' },
+    { image: '☀️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "s... u... n... sun! You try it!", dialogueZh: 's… u… n… sun！換你試試！', highlightWords: ['sun'], sceneEmojis: ['☀️', '🔤', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Great! Now you can blend sounds into words!", dialogueZh: '太棒了！現在你會把音拼成字了！', highlightWords: ['blend'], sceneEmojis: ['🎉', '🏆', '🔊'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cat', zh: '貓', image: '🐱', phonics: 'c-a-t', kk: '[kæt]', phonicsSound: '/k/ /æ/ /t/', exampleSentence: 'The cat is here.', exampleZh: '貓在這裡。' },
+    { en: 'hat', zh: '帽子', image: '🎩', phonics: 'h-a-t', kk: '[hæt]', phonicsSound: '/h/ /æ/ /t/', exampleSentence: 'I see a hat.', exampleZh: '我看到一頂帽子。' },
+    { en: 'sun', zh: '太陽', image: '☀️', phonics: 's-u-n', kk: '[sʌn]', phonicsSound: '/s/ /ʌ/ /n/', exampleSentence: 'The sun is hot.', exampleZh: '太陽很熱。' },
+    { en: 'bus', zh: '公車', image: '🚌', phonics: 'b-u-s', kk: '[bʌs]', phonicsSound: '/b/ /ʌ/ /s/', exampleSentence: 'The bus is big.', exampleZh: '公車很大。' },
+    { en: 'pig', zh: '豬', image: '🐷', phonics: 'p-i-g', kk: '[pɪɡ]', phonicsSound: '/p/ /ɪ/ /ɡ/', exampleSentence: 'The pig is pink.', exampleZh: '豬是粉紅色的。' },
+    { en: 'big', zh: '大的', image: '🔵', phonics: 'b-i-g', kk: '[bɪɡ]', phonicsSound: '/b/ /ɪ/ /ɡ/', exampleSentence: 'It is big.', exampleZh: '它很大。' },
+    { en: 'dog', zh: '狗', image: '🐶', phonics: 'd-o-g', kk: '[dɔɡ]', phonicsSound: '/d/ /ɔ/ /ɡ/', exampleSentence: 'The dog can run.', exampleZh: '狗會跑。' },
+    { en: 'box', zh: '箱子', image: '📦', phonics: 'b-o-x', kk: '[bɑks]', phonicsSound: '/b/ /ɑ/ /ks/', exampleSentence: 'Open the box.', exampleZh: '打開箱子。' },
+    { en: 'bed', zh: '床', image: '🛏️', phonics: 'b-e-d', kk: '[bɛd]', phonicsSound: '/b/ /ɛ/ /d/', exampleSentence: 'I sleep in my bed.', exampleZh: '我睡在床上。' },
+    { en: 'red', zh: '紅色', image: '🔴', phonics: 'r-e-d', kk: '[rɛd]', phonicsSound: '/r/ /ɛ/ /d/', exampleSentence: 'The apple is red.', exampleZh: '蘋果是紅色的。' },
+  ],
+  sentences: [
+    { en: 'c-a-t → cat', zh: 'c-a-t 拼成 cat' }, { en: 's-u-n → sun', zh: 's-u-n 拼成 sun' }, { en: 'What is this?', zh: '這是什麼？' }, { en: 'It is a cat.', zh: '這是一隻貓。' }, { en: 'Is it a dog?', zh: '這是一隻狗嗎？' }, { en: 'Yes, it is. / No, it isn\'t.', zh: '是的。／不是。' },
+  ],
+  phonicsLetters: ['blending'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: 'c-a-t 拼起來是？', options: ['cat', 'dog', 'sun', 'pig'], answer: 'cat', image: '🐱' },
+    { type: 'listen-pick', question: 's-u-n 拼起來是？', options: ['bus', 'sun', 'six', 'sit'], answer: 'sun', image: '☀️' },
+    { type: 'match', question: '🐷 豬是哪個字？', options: ['pig', 'dog', 'cat', 'bus'], answer: 'pig' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🐱', '🐶', '☀️', '🐷'], answer: '🐶', image: '🎧' },
+    { type: 'spell', question: '拼拼看：c _ t（貓）', answer: 'cat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s _ n（太陽）', answer: 'sun', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['cat-🐱', 'dog-🐶', 'sun-☀️', 'pig-🐷'], answer: 'cat-🐱' },
+    { type: 'speak', question: '跟著拼：b-u-s → Bus!', answer: 'Bus', image: '🗣' },
+    { type: 'fill-blank', question: 'The ___ is hot.（太陽）', options: ['sun', 'bed', 'box', 'dog'], answer: 'sun' },
+  ],
+  talkTimePrompts: ["Can you blend c-a-t?", "What is s-u-n?", "Say a word that starts with /b/.", "You can blend sounds! Great!"],
+  reviewQuiz: [
+    { type: 'spell', question: '拼拼看：d _ g（狗）', answer: 'dog', image: '✍️' },
+    { type: 'listen-pick', question: 'b-i-g 拼起來是？', options: ['big', 'bag', 'bug', 'bed'], answer: 'big' },
+    { type: 'match', question: '📦 箱子是哪個字？', options: ['box', 'bus', 'bed', 'big'], answer: 'box' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Look! c... a... t. What word is it?", lineZh: '看！c… a… t。是什麼字？' },
+    { speaker: 'Coco', line: "It's a cat! Meow!", lineZh: '是 cat（貓）！喵！' },
+    { speaker: 'Finn', line: "Now try: s... u... n.", lineZh: '現在試試：s… u… n。' },
+    { speaker: 'Coco', line: "Sun! I did it!", lineZh: 'Sun（太陽）！我做到了！' },
+  ],
+};
+
+const L2_M2: Mission = {
+  id: 2, slug: 'l2-m2-short-a', level: 2, title: '短母音 a', titleEn: 'Short a', theme: '聲音島・短音 a 沙灘', themeEmoji: '🅰️',
+  focus: '短母音 a /æ/：-at / -an / -ap 家族',
+  story: [
+    { image: '🅰️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter a says /æ/! Like in cat!", dialogueZh: '字母 a 發 /æ/ 的音！像 cat 一樣！', highlightWords: ['a', 'cat'], sceneEmojis: ['🅰️', '🐱', '✨'], animation: 'wave' },
+    { image: '🦇', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "cat, hat, bat — they all have /æ/!", dialogueZh: 'cat、hat、bat —— 都有 /æ/！', highlightWords: ['cat', 'hat', 'bat'], sceneEmojis: ['🐱', '🎩', '🦇'], animation: 'bounce' },
+    { image: '🪭', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "man, can, fan — /æ/ again!", dialogueZh: 'man、can、fan —— 又是 /æ/！', highlightWords: ['man', 'can', 'fan'], sceneEmojis: ['🪭', '🥫', '🔤'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You found the /æ/ sound! Well done!", dialogueZh: '你找到 /æ/ 的音了！做得好！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🅰️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cat', zh: '貓', image: '🐱', phonics: 'a /æ/', kk: '[kæt]', phonicsSound: '/æ/', exampleSentence: 'A cat sat.', exampleZh: '一隻貓坐著。' },
+    { en: 'hat', zh: '帽子', image: '🎩', phonics: 'a /æ/', kk: '[hæt]', phonicsSound: '/æ/', exampleSentence: 'A red hat.', exampleZh: '一頂紅帽子。' },
+    { en: 'bat', zh: '蝙蝠', image: '🦇', phonics: 'a /æ/', kk: '[bæt]', phonicsSound: '/æ/', exampleSentence: 'The bat is black.', exampleZh: '蝙蝠是黑色的。' },
+    { en: 'map', zh: '地圖', image: '🗺️', phonics: 'a /æ/', kk: '[mæp]', phonicsSound: '/æ/', exampleSentence: 'Look at the map.', exampleZh: '看地圖。' },
+    { en: 'bag', zh: '袋子', image: '👜', phonics: 'a /æ/', kk: '[bæɡ]', phonicsSound: '/æ/', exampleSentence: 'My bag is big.', exampleZh: '我的袋子很大。' },
+    { en: 'fan', zh: '扇子', image: '🪭', phonics: 'a /æ/', kk: '[fæn]', phonicsSound: '/æ/', exampleSentence: 'The fan is on.', exampleZh: '電扇開著。' },
+    { en: 'can', zh: '罐子', image: '🥫', phonics: 'a /æ/', kk: '[kæn]', phonicsSound: '/æ/', exampleSentence: 'It is a can.', exampleZh: '這是一個罐子。' },
+    { en: 'man', zh: '男人', image: '👨', phonics: 'a /æ/', kk: '[mæn]', phonicsSound: '/æ/', exampleSentence: 'The man is tall.', exampleZh: '這個男人很高。' },
+    { en: 'cap', zh: '鴨舌帽', image: '🧢', phonics: 'a /æ/', kk: '[kæp]', phonicsSound: '/æ/', exampleSentence: 'A blue cap.', exampleZh: '一頂藍帽子。' },
+    { en: 'rat', zh: '老鼠', image: '🐀', phonics: 'a /æ/', kk: '[ræt]', phonicsSound: '/æ/', exampleSentence: 'The rat is fast.', exampleZh: '老鼠很快。' },
+  ],
+  sentences: [
+    { en: 'A cat has a hat.', zh: '貓有一頂帽子。' }, { en: 'The bat is in the bag.', zh: '蝙蝠在袋子裡。' }, { en: 'Is it a cat?', zh: '這是貓嗎？' }, { en: 'Yes, it is a cat.', zh: '是的，這是貓。' }, { en: 'Can you see the map?', zh: '你看得到地圖嗎？' }, { en: 'The man has a cap.', zh: '男人有一頂帽子。' },
+  ],
+  phonicsLetters: ['a /æ/'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有 /æ/ 的音？', options: ['cat', 'dog', 'sun', 'pig'], answer: 'cat', image: '🅰️' },
+    { type: 'match', question: '🎩 帽子是哪個字？', options: ['hat', 'bat', 'map', 'bag'], answer: 'hat' },
+    { type: 'spell', question: '拼拼看：b _ t（蝙蝠）', answer: 'bat', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🐱', '🎩', '🦇', '🗺️'], answer: '🦇', image: '🎧' },
+    { type: 'spell', question: '拼拼看：c _ t（貓）', answer: 'cat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m _ p（地圖）', answer: 'map', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['fan-🪭', 'can-🥫', 'cap-🧢', 'rat-🐀'], answer: 'fan-🪭' },
+    { type: 'fill-blank', question: 'The ___ is black.（蝙蝠）', options: ['bat', 'cat', 'hat', 'map'], answer: 'bat' },
+    { type: 'speak', question: '跟著念：Cat, hat, bat!', answer: 'Cat', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say three words with /æ/.", "What has /æ/: cat or dog?", "Can you find a hat?", "Great job with short a!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "bag" 袋子？', options: ['👜', '🎩', '🧢', '🗺️'], answer: '👜' },
+    { type: 'spell', question: '拼拼看：f _ n（扇子）', answer: 'fan', image: '✍️' },
+    { type: 'match', question: '🐀 老鼠是哪個字？', options: ['rat', 'cat', 'bat', 'can'], answer: 'rat' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Look, a cat with a hat!", lineZh: '看，一隻戴帽子的貓！' },
+    { speaker: 'Polly', line: "cat, hat — they rhyme! /æ/!", lineZh: 'cat、hat —— 押韻！/æ/！' },
+    { speaker: 'Coco', line: "And a bat in a bag!", lineZh: '還有袋子裡的蝙蝠！' },
+    { speaker: 'Polly', line: "bat, bag — /æ/ again! So fun!", lineZh: 'bat、bag —— 又是 /æ/！好好玩！' },
+  ],
+};
+
+const L2_M3: Mission = {
+  id: 3, slug: 'l2-m3-short-e', level: 2, title: '短母音 e', titleEn: 'Short e', theme: '聲音島・短音 e 森林', themeEmoji: '🇪',
+  focus: '短母音 e /ɛ/：-ed / -en / -et 家族',
+  story: [
+    { image: '🛏️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter e says /ɛ/! Like in bed!", dialogueZh: '字母 e 發 /ɛ/ 的音！像 bed 一樣！', highlightWords: ['e', 'bed'], sceneEmojis: ['🛏️', '🔤', '✨'], animation: 'wave' },
+    { image: '🖊️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "bed, pen, red — all /ɛ/!", dialogueZh: 'bed、pen、red —— 都是 /ɛ/！', highlightWords: ['bed', 'pen', 'red'], sceneEmojis: ['🛏️', '🖊️', '🔴'], animation: 'bounce' },
+    { image: '🐔', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "hen, ten, net — /ɛ/ too!", dialogueZh: 'hen、ten、net —— 也是 /ɛ/！', highlightWords: ['hen', 'ten', 'net'], sceneEmojis: ['🐔', '🔟', '🥅'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know short e now! Amazing!", dialogueZh: '你會短母音 e 了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔤'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'bed', zh: '床', image: '🛏️', phonics: 'e /ɛ/', kk: '[bɛd]', phonicsSound: '/ɛ/', exampleSentence: 'I go to bed.', exampleZh: '我去睡覺。' },
+    { en: 'pen', zh: '筆', image: '🖊️', phonics: 'e /ɛ/', kk: '[pɛn]', phonicsSound: '/ɛ/', exampleSentence: 'A red pen.', exampleZh: '一支紅筆。' },
+    { en: 'red', zh: '紅色', image: '🔴', phonics: 'e /ɛ/', kk: '[rɛd]', phonicsSound: '/ɛ/', exampleSentence: 'It is red.', exampleZh: '它是紅色的。' },
+    { en: 'hen', zh: '母雞', image: '🐔', phonics: 'e /ɛ/', kk: '[hɛn]', phonicsSound: '/ɛ/', exampleSentence: 'The hen is fat.', exampleZh: '母雞很胖。' },
+    { en: 'ten', zh: '十', image: '🔟', phonics: 'e /ɛ/', kk: '[tɛn]', phonicsSound: '/ɛ/', exampleSentence: 'I am ten.', exampleZh: '我十歲。' },
+    { en: 'net', zh: '網子', image: '🥅', phonics: 'e /ɛ/', kk: '[nɛt]', phonicsSound: '/ɛ/', exampleSentence: 'A big net.', exampleZh: '一個大網子。' },
+    { en: 'leg', zh: '腿', image: '🦵', phonics: 'e /ɛ/', kk: '[lɛɡ]', phonicsSound: '/ɛ/', exampleSentence: 'My leg hurts.', exampleZh: '我的腿痛。' },
+    { en: 'wet', zh: '濕的', image: '💧', phonics: 'e /ɛ/', kk: '[wɛt]', phonicsSound: '/ɛ/', exampleSentence: 'The dog is wet.', exampleZh: '狗濕濕的。' },
+    { en: 'jet', zh: '噴射機', image: '✈️', phonics: 'e /ɛ/', kk: '[dʒɛt]', phonicsSound: '/ɛ/', exampleSentence: 'The jet is fast.', exampleZh: '噴射機很快。' },
+    { en: 'get', zh: '得到', image: '🫴', phonics: 'e /ɛ/', kk: '[ɡɛt]', phonicsSound: '/ɛ/', exampleSentence: 'Get the pen.', exampleZh: '拿那支筆。' },
+  ],
+  sentences: [
+    { en: 'The hen is on the bed.', zh: '母雞在床上。' }, { en: 'I have ten pens.', zh: '我有十支筆。' }, { en: 'Is the pen red?', zh: '這支筆是紅色的嗎？' }, { en: 'Yes, it is red.', zh: '是的，它是紅色的。' }, { en: 'The net is wet.', zh: '網子濕了。' }, { en: 'Can you get the pen?', zh: '你可以拿那支筆嗎？' },
+  ],
+  phonicsLetters: ['e /ɛ/'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有 /ɛ/ 的音？', options: ['bed', 'cat', 'pig', 'sun'], answer: 'bed', image: '🔤' },
+    { type: 'match', question: '🐔 母雞是哪個字？', options: ['hen', 'pen', 'net', 'ten'], answer: 'hen' },
+    { type: 'spell', question: '拼拼看：r _ d（紅色）', answer: 'red', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🛏️', '🖊️', '🐔', '🥅'], answer: '🐔', image: '🎧' },
+    { type: 'spell', question: '拼拼看：b _ d（床）', answer: 'bed', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n _ t（網子）', answer: 'net', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['pen-🖊️', 'ten-🔟', 'leg-🦵', 'jet-✈️'], answer: 'pen-🖊️' },
+    { type: 'fill-blank', question: 'I am ___ years old.（十）', options: ['ten', 'red', 'bed', 'wet'], answer: 'ten' },
+    { type: 'speak', question: '跟著念：Bed, pen, red!', answer: 'Bed', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say three words with /ɛ/.", "What is red in your bag?", "How old are you? I am ___.", "Great job with short e!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "net" 網子？', options: ['🥅', '🐔', '🛏️', '✈️'], answer: '🥅' },
+    { type: 'spell', question: '拼拼看：h _ n（母雞）', answer: 'hen', image: '✍️' },
+    { type: 'match', question: '🦵 腿是哪個字？', options: ['leg', 'net', 'jet', 'wet'], answer: 'leg' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A hen is on my bed!", lineZh: '一隻母雞在我床上！' },
+    { speaker: 'Ruby', line: "hen, bed — /ɛ/! Get the hen!", lineZh: 'hen、bed —— /ɛ/！去抓母雞！' },
+    { speaker: 'Benny', line: "I have a net!", lineZh: '我有一個網子！' },
+    { speaker: 'Ruby', line: "net — /ɛ/ too! Catch it!", lineZh: 'net —— 也是 /ɛ/！抓住牠！' },
+  ],
+};
+
+const L2_M4: Mission = {
+  id: 4, slug: 'l2-m4-short-i', level: 2, title: '短母音 i', titleEn: 'Short i', theme: '聲音島・短音 i 山洞', themeEmoji: '🇮',
+  focus: '短母音 i /ɪ/：-ig / -it / -in 家族',
+  story: [
+    { image: '🐷', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter i says /ɪ/! Like in pig!", dialogueZh: '字母 i 發 /ɪ/ 的音！像 pig 一樣！', highlightWords: ['i', 'pig'], sceneEmojis: ['🐷', '🔤', '✨'], animation: 'wave' },
+    { image: '🔢', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "pig, big, dig — all /ɪ/!", dialogueZh: 'pig、big、dig —— 都是 /ɪ/！', highlightWords: ['pig', 'big', 'dig'], sceneEmojis: ['🐷', '🔵', '⛏️'], animation: 'bounce' },
+    { image: '📌', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "sit, hit, six — /ɪ/ too!", dialogueZh: 'sit、hit、six —— 也是 /ɪ/！', highlightWords: ['sit', 'hit', 'six'], sceneEmojis: ['🪑', '👊', '6️⃣'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Short i — you got it! Super!", dialogueZh: '短母音 i —— 你會了！超厲害！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔤'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'pig', zh: '豬', image: '🐷', phonics: 'i /ɪ/', kk: '[pɪɡ]', phonicsSound: '/ɪ/', exampleSentence: 'The pig is big.', exampleZh: '豬很大。' },
+    { en: 'big', zh: '大的', image: '🔵', phonics: 'i /ɪ/', kk: '[bɪɡ]', phonicsSound: '/ɪ/', exampleSentence: 'A big pig.', exampleZh: '一隻大豬。' },
+    { en: 'dig', zh: '挖', image: '⛏️', phonics: 'i /ɪ/', kk: '[dɪɡ]', phonicsSound: '/ɪ/', exampleSentence: 'Dogs dig.', exampleZh: '狗會挖洞。' },
+    { en: 'sit', zh: '坐', image: '🪑', phonics: 'i /ɪ/', kk: '[sɪt]', phonicsSound: '/ɪ/', exampleSentence: 'Sit down.', exampleZh: '坐下。' },
+    { en: 'hit', zh: '打', image: '👊', phonics: 'i /ɪ/', kk: '[hɪt]', phonicsSound: '/ɪ/', exampleSentence: 'Hit the ball.', exampleZh: '打球。' },
+    { en: 'six', zh: '六', image: '6️⃣', phonics: 'i /ɪ/', kk: '[sɪks]', phonicsSound: '/ɪ/', exampleSentence: 'I have six.', exampleZh: '我有六個。' },
+    { en: 'pin', zh: '別針', image: '📌', phonics: 'i /ɪ/', kk: '[pɪn]', phonicsSound: '/ɪ/', exampleSentence: 'A small pin.', exampleZh: '一根小別針。' },
+    { en: 'lip', zh: '嘴唇', image: '👄', phonics: 'i /ɪ/', kk: '[lɪp]', phonicsSound: '/ɪ/', exampleSentence: 'Red lips.', exampleZh: '紅嘴唇。' },
+    { en: 'win', zh: '贏', image: '🏆', phonics: 'i /ɪ/', kk: '[wɪn]', phonicsSound: '/ɪ/', exampleSentence: 'We can win!', exampleZh: '我們可以贏！' },
+    { en: 'kid', zh: '小孩', image: '🧒', phonics: 'i /ɪ/', kk: '[kɪd]', phonicsSound: '/ɪ/', exampleSentence: 'The kid is happy.', exampleZh: '小孩很開心。' },
+  ],
+  sentences: [
+    { en: 'The big pig can dig.', zh: '大豬會挖洞。' }, { en: 'Sit on the mat.', zh: '坐在墊子上。' }, { en: 'Is it big?', zh: '它很大嗎？' }, { en: 'Yes, it is big.', zh: '是的，它很大。' }, { en: 'I have six pins.', zh: '我有六根別針。' }, { en: 'Can the kid win?', zh: '這小孩會贏嗎？' },
+  ],
+  phonicsLetters: ['i /ɪ/'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有 /ɪ/ 的音？', options: ['pig', 'cat', 'bed', 'sun'], answer: 'pig', image: '🔤' },
+    { type: 'match', question: '🪑 坐是哪個字？', options: ['sit', 'hit', 'pin', 'six'], answer: 'sit' },
+    { type: 'spell', question: '拼拼看：b _ g（大的）', answer: 'big', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🐷', '🪑', '📌', '6️⃣'], answer: '📌', image: '🎧' },
+    { type: 'spell', question: '拼拼看：p _ g（豬）', answer: 'pig', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s _ x（六）', answer: 'six', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['win-🏆', 'lip-👄', 'kid-🧒', 'dig-⛏️'], answer: 'win-🏆' },
+    { type: 'fill-blank', question: 'The pig is ___.（大的）', options: ['big', 'six', 'sit', 'pin'], answer: 'big' },
+    { type: 'speak', question: '跟著念：Pig, big, dig!', answer: 'Pig', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say three words with /ɪ/.", "How old are you? Can you say six?", "What is big?", "Great job with short i!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "six" 六？', options: ['6️⃣', '🐷', '📌', '🪑'], answer: '6️⃣' },
+    { type: 'spell', question: '拼拼看：s _ t（坐）', answer: 'sit', image: '✍️' },
+    { type: 'match', question: '🧒 小孩是哪個字？', options: ['kid', 'pig', 'lip', 'win'], answer: 'kid' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "A big pig can dig!", lineZh: '大豬會挖洞！' },
+    { speaker: 'Coco', line: "big, pig, dig — /ɪ/! Look!", lineZh: 'big、pig、dig —— /ɪ/！看！' },
+    { speaker: 'Finn', line: "Sit and count to six!", lineZh: '坐下數到六！' },
+    { speaker: 'Coco', line: "sit, six — /ɪ/ again! Fun!", lineZh: 'sit、six —— 又是 /ɪ/！好玩！' },
+  ],
+};
+
+const L2_M5: Mission = {
+  id: 5, slug: 'l2-m5-review-aei', level: 2, title: '拼讀複習① a e i', titleEn: 'Review a e i', theme: '聲音島・拼讀擂台', themeEmoji: '🎯',
+  focus: '複習短母音 a /æ/、e /ɛ/、i /ɪ/ 的分辨與拼讀',
+  story: [
+    { image: '🎯', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Let's review a, e, i! Listen carefully!", dialogueZh: '我們複習 a、e、i！仔細聽！', highlightWords: ['a', 'e', 'i'], sceneEmojis: ['🎯', '🔤', '👂'], animation: 'wave' },
+    { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "cat /æ/, bed /ɛ/, pig /ɪ/ — different sounds!", dialogueZh: 'cat /æ/、bed /ɛ/、pig /ɪ/ —— 不同的音！', highlightWords: ['cat', 'bed', 'pig'], sceneEmojis: ['🐱', '🛏️', '🐷'], animation: 'bounce' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can hear the difference! Champion!", dialogueZh: '你聽得出差別了！冠軍！', highlightWords: [], sceneEmojis: ['🏆', '🎉', '🎯'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cat', zh: '貓', image: '🐱', phonics: 'a /æ/', kk: '[kæt]', phonicsSound: '/æ/', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'bat', zh: '蝙蝠', image: '🦇', phonics: 'a /æ/', kk: '[bæt]', phonicsSound: '/æ/', exampleSentence: 'a bat', exampleZh: '一隻蝙蝠' },
+    { en: 'bed', zh: '床', image: '🛏️', phonics: 'e /ɛ/', kk: '[bɛd]', phonicsSound: '/ɛ/', exampleSentence: 'a bed', exampleZh: '一張床' },
+    { en: 'pen', zh: '筆', image: '🖊️', phonics: 'e /ɛ/', kk: '[pɛn]', phonicsSound: '/ɛ/', exampleSentence: 'a pen', exampleZh: '一支筆' },
+    { en: 'pig', zh: '豬', image: '🐷', phonics: 'i /ɪ/', kk: '[pɪɡ]', phonicsSound: '/ɪ/', exampleSentence: 'a pig', exampleZh: '一隻豬' },
+    { en: 'six', zh: '六', image: '6️⃣', phonics: 'i /ɪ/', kk: '[sɪks]', phonicsSound: '/ɪ/', exampleSentence: 'six', exampleZh: '六' },
+    { en: 'hat', zh: '帽子', image: '🎩', phonics: 'a /æ/', kk: '[hæt]', phonicsSound: '/æ/', exampleSentence: 'a hat', exampleZh: '一頂帽子' },
+    { en: 'net', zh: '網子', image: '🥅', phonics: 'e /ɛ/', kk: '[nɛt]', phonicsSound: '/ɛ/', exampleSentence: 'a net', exampleZh: '一個網子' },
+    { en: 'sit', zh: '坐', image: '🪑', phonics: 'i /ɪ/', kk: '[sɪt]', phonicsSound: '/ɪ/', exampleSentence: 'sit', exampleZh: '坐' },
+    { en: 'red', zh: '紅色', image: '🔴', phonics: 'e /ɛ/', kk: '[rɛd]', phonicsSound: '/ɛ/', exampleSentence: 'red', exampleZh: '紅色' },
+  ],
+  sentences: [
+    { en: 'A cat on a bed.', zh: '床上的貓。' }, { en: 'A pig with a hat.', zh: '戴帽子的豬。' }, { en: 'Is it a cat or a pig?', zh: '這是貓還是豬？' }, { en: 'It is a cat.', zh: '這是一隻貓。' }, { en: 'The pen is red.', zh: '這支筆是紅色的。' }, { en: 'Sit on the bed.', zh: '坐在床上。' },
+  ],
+  phonicsLetters: ['a /æ/', 'e /ɛ/', 'i /ɪ/'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '"cat" 是哪個母音？', options: ['a', 'e', 'i', 'o'], answer: 'a', image: '🐱' },
+    { type: 'listen-pick', question: '"bed" 是哪個母音？', options: ['a', 'e', 'i', 'u'], answer: 'e', image: '🛏️' },
+    { type: 'listen-pick', question: '"pig" 是哪個母音？', options: ['a', 'e', 'i', 'o'], answer: 'i', image: '🐷' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🐱', '🛏️', '🐷', '🥅'], answer: '🐷', image: '🎧' },
+    { type: 'spell', question: '拼拼看：c _ t（貓）', answer: 'cat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b _ d（床）', answer: 'bed', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p _ g（豬）', answer: 'pig', image: '✍️' },
+    { type: 'match', question: '配對：字配母音', options: ['cat-a', 'bed-e', 'pig-i', 'hat-a'], answer: 'cat-a' },
+    { type: 'fill-blank', question: 'Which has /ɛ/? ___', options: ['bed', 'cat', 'pig', 'six'], answer: 'bed' },
+  ],
+  talkTimePrompts: ["Say a word with /æ/.", "Say a word with /ɛ/.", "Say a word with /ɪ/.", "You are a phonics champion!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個字有 /æ/？', options: ['hat', 'bed', 'pig', 'net'], answer: 'hat' },
+    { type: 'listen-pick', question: '哪個字有 /ɪ/？', options: ['sit', 'bed', 'cat', 'red'], answer: 'sit' },
+    { type: 'match', question: '🥅 網子是哪個母音？', options: ['e', 'a', 'i', 'o'], answer: 'e' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "cat, bed, pig — listen to the middle sound!", lineZh: 'cat、bed、pig —— 聽中間的音！' },
+    { speaker: 'Coco', line: "/æ/, /ɛ/, /ɪ/ — all different!", lineZh: '/æ/、/ɛ/、/ɪ/ —— 都不一樣！' },
+    { speaker: 'Polly', line: "Can you sort them?", lineZh: '你能分類嗎？' },
+    { speaker: 'Coco', line: "Yes! I'm a phonics champion!", lineZh: '可以！我是拼讀冠軍！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
