@@ -2782,7 +2782,268 @@ const L3_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20];
+// ===================== L4 學校路 School Road（A1・基本句型 be/like/have/can） =====================
+const L4_M1: Mission = {
+  id: 1, slug: 'l4-m1-i-am', level: 4, title: 'I am + 感覺', titleEn: 'I am…', theme: '學校路・心情站', themeEmoji: '😊',
+  focus: '句型 I am + 形容詞；句型代換 I am ___.（happy/hungry…）',
+  story: [
+    { image: '🏫', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Good morning! Welcome to School Road!", dialogueZh: '早安！歡迎來到學校路！', highlightWords: ['morning'], sceneEmojis: ['🏫', '🌅', '✨'], animation: 'wave' },
+    { image: '😊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am happy! Are you happy too?", dialogueZh: '我很開心！你也開心嗎？', highlightWords: ['happy'], sceneEmojis: ['😊', '💛', '🎉'], animation: 'bounce' },
+    { image: '🍎', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I am hungry! It is lunch time!", dialogueZh: '我好餓！午餐時間到了！', highlightWords: ['hungry'], sceneEmojis: ['🍎', '🍱', '😋'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Now you can say how you feel! I am great!", dialogueZh: '現在你會說自己的感覺了！我超棒！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '😊'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy.', exampleZh: '我很開心。' },
+    { en: 'sad', zh: '難過的', image: '😢', phonics: '', kk: '[sæd]', phonicsSound: '', exampleSentence: 'I am sad.', exampleZh: '我很難過。' },
+    { en: 'hungry', zh: '餓的', image: '🍽️', phonics: '', kk: '[ˈhʌŋɡri]', phonicsSound: '', exampleSentence: 'I am hungry.', exampleZh: '我餓了。' },
+    { en: 'thirsty', zh: '渴的', image: '🥤', phonics: '', kk: '[ˈθɝsti]', phonicsSound: '', exampleSentence: 'I am thirsty.', exampleZh: '我渴了。' },
+    { en: 'tired', zh: '累的', image: '😩', phonics: '', kk: '[taɪrd]', phonicsSound: '', exampleSentence: 'I am tired.', exampleZh: '我很累。' },
+    { en: 'sleepy', zh: '想睡的', image: '😴', phonics: '', kk: '[ˈslipi]', phonicsSound: '', exampleSentence: 'I am sleepy.', exampleZh: '我想睡。' },
+    { en: 'hot', zh: '熱的', image: '🥵', phonics: '', kk: '[hɑt]', phonicsSound: '', exampleSentence: 'I am hot.', exampleZh: '我好熱。' },
+    { en: 'cold', zh: '冷的', image: '🥶', phonics: '', kk: '[kold]', phonicsSound: '', exampleSentence: 'I am cold.', exampleZh: '我好冷。' },
+    { en: 'angry', zh: '生氣的', image: '😠', phonics: '', kk: '[ˈæŋɡri]', phonicsSound: '', exampleSentence: 'I am angry.', exampleZh: '我很生氣。' },
+    { en: 'fine', zh: '很好的', image: '👍', phonics: '', kk: '[faɪn]', phonicsSound: '', exampleSentence: 'I am fine.', exampleZh: '我很好。' },
+  ],
+  sentences: [
+    { en: 'I am happy.', zh: '我很開心。' }, { en: 'I am hungry.', zh: '我餓了。' }, { en: 'Are you tired?', zh: '你累嗎？' }, { en: 'Yes, I am.', zh: '是的，我累了。' }, { en: 'I am not sad.', zh: '我不難過。' }, { en: 'How are you?', zh: '你好嗎？' },
+  ],
+  phonicsLetters: ['I am ___'],
+  warmUpQuestions: [
+    { type: 'match', question: '😊 是什麼感覺？', options: ['happy', 'sad', 'cold', 'tired'], answer: 'happy' },
+    { type: 'match', question: '🍽️ 餓了怎麼說？', options: ['hungry', 'thirsty', 'sleepy', 'hot'], answer: 'hungry' },
+    { type: 'fill-blank', question: 'I ___ happy.（be動詞）', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的感覺', options: ['😊', '😢', '😴', '😠'], answer: '😢', image: '🎧' },
+    { type: 'match', question: '配對：感覺配圖', options: ['happy-😊', 'sad-😢', 'cold-🥶', 'angry-😠'], answer: 'happy-😊' },
+    { type: 'fill-blank', question: '句型代換：I am ___.（渴了）', options: ['thirsty', 'happy', 'tired', 'fine'], answer: 'thirsty' },
+    { type: 'spell', question: '拼拼看：h _ ppy（開心）', answer: 'happy', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am hungry.', 'I am happy.', 'I am angry.', 'Are you hungry?'], answer: 'I am hungry.', image: '🎧' },
+    { type: 'read', question: 'How does Coco feel?（Coco 的感覺？）', passage: 'It is morning.\nCoco is at school.\nCoco is happy!', options: ['happy', 'sad', 'tired', 'hungry'], answer: 'happy' },
+  ],
+  talkTimePrompts: ["How are you today? I am ___.", "Say: I am happy!", "Are you hungry? Yes, I am. / No, I'm not.", "Change the word: I am ___ (tired/hot/fine)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ fine, thank you.', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'match', question: '😴 想睡怎麼說？', options: ['sleepy', 'hungry', 'angry', 'cold'], answer: 'sleepy' },
+    { type: 'spell', question: '拼拼看：s _ d（難過）', answer: 'sad', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Good morning, Coco! How are you?", lineZh: '早安 Coco！你好嗎？' },
+    { speaker: 'Coco', line: "I am happy! And I am hungry!", lineZh: '我很開心！而且我餓了！' },
+    { speaker: 'Benny', line: "Me too! I am hungry and tired.", lineZh: '我也是！我又餓又累。' },
+    { speaker: 'Finn', line: "It is lunch time! Let's eat!", lineZh: '午餐時間到了！我們去吃吧！' },
+  ],
+};
+
+const L4_M2: Mission = {
+  id: 2, slug: 'l4-m2-pronouns-be', level: 4, title: '代名詞 + be', titleEn: 'He is / She is', theme: '學校路・介紹夥伴', themeEmoji: '👥',
+  focus: '主格代名詞 I/you/he/she/it/we/they ＋ be 變化（am/is/are）',
+  story: [
+    { image: '👦', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I am Finn. He is Benny. She is Coco.", dialogueZh: '我是 Finn。他是 Benny。她是 Coco。', highlightWords: ['I', 'He', 'She'], sceneEmojis: ['🦊', '🐻', '🐱'], animation: 'wave' },
+    { image: '🦜', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "You are my friend! We are a team!", dialogueZh: '你是我的朋友！我們是一隊！', highlightWords: ['You', 'We'], sceneEmojis: ['🦜', '🤝', '🎉'], animation: 'tada' },
+    { image: '🐰', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "They are my friends. It is a fun class!", dialogueZh: '他們是我的朋友。這是個好玩的班！', highlightWords: ['They', 'It'], sceneEmojis: ['👫', '🏫', '⭐'], animation: 'bounce' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "I, you, he, she — now you know them all!", dialogueZh: 'I、you、he、she —— 現在你都會了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '👥'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'I', zh: '我', image: '🙋', phonics: '', kk: '[aɪ]', phonicsSound: '', exampleSentence: 'I am Finn.', exampleZh: '我是 Finn。' },
+    { en: 'you', zh: '你', image: '👉', phonics: '', kk: '[ju]', phonicsSound: '', exampleSentence: 'You are nice.', exampleZh: '你很好。' },
+    { en: 'he', zh: '他', image: '👦', phonics: '', kk: '[hi]', phonicsSound: '', exampleSentence: 'He is Benny.', exampleZh: '他是 Benny。' },
+    { en: 'she', zh: '她', image: '👧', phonics: '', kk: '[ʃi]', phonicsSound: '', exampleSentence: 'She is Coco.', exampleZh: '她是 Coco。' },
+    { en: 'it', zh: '它', image: '📦', phonics: '', kk: '[ɪt]', phonicsSound: '', exampleSentence: 'It is a book.', exampleZh: '這是一本書。' },
+    { en: 'we', zh: '我們', image: '👫', phonics: '', kk: '[wi]', phonicsSound: '', exampleSentence: 'We are friends.', exampleZh: '我們是朋友。' },
+    { en: 'they', zh: '他們', image: '👨‍👩‍👧', phonics: '', kk: '[ðe]', phonicsSound: '', exampleSentence: 'They are happy.', exampleZh: '他們很開心。' },
+    { en: 'am', zh: '是（我）', image: '1️⃣', phonics: '', kk: '[æm]', phonicsSound: '', exampleSentence: 'I am here.', exampleZh: '我在這裡。' },
+    { en: 'is', zh: '是（他/她/它）', image: '3️⃣', phonics: '', kk: '[ɪz]', phonicsSound: '', exampleSentence: 'He is tall.', exampleZh: '他很高。' },
+    { en: 'are', zh: '是（你/我們/他們）', image: '🔢', phonics: '', kk: '[ɑr]', phonicsSound: '', exampleSentence: 'You are kind.', exampleZh: '你很善良。' },
+  ],
+  sentences: [
+    { en: 'I am a student.', zh: '我是學生。' }, { en: 'He is my friend.', zh: '他是我的朋友。' }, { en: 'She is happy.', zh: '她很開心。' }, { en: 'We are a team.', zh: '我們是一隊。' }, { en: 'Are they here?', zh: '他們在這裡嗎？' }, { en: 'Yes, they are.', zh: '是的，他們在。' },
+  ],
+  phonicsLetters: ['I/you/he/she'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'He ___ my friend.', options: ['is', 'am', 'are', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'I ___ a student.', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'fill-blank', question: 'You ___ nice.', options: ['are', 'am', 'is', 'be'], answer: 'are' },
+  ],
+  challenges: [
+    { type: 'match', question: '「她」的英文是？', options: ['she', 'he', 'it', 'they'], answer: 'she' },
+    { type: 'fill-blank', question: 'She ___ Coco.（be動詞）', options: ['is', 'am', 'are', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'We ___ friends.（be動詞）', options: ['are', 'am', 'is', 'be'], answer: 'are' },
+    { type: 'spell', question: '拼拼看：th _ y（他們）', answer: 'they', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['He is my friend.', 'She is my friend.', 'They are my friends.', 'We are friends.'], answer: 'He is my friend.', image: '🎧' },
+    { type: 'read', question: 'Who is Coco?（Coco 是誰？）', passage: 'This is Finn. He is a fox.\nThat is Coco. She is a cat.\nThey are friends.', options: ['a cat', 'a fox', 'a bear', 'a bird'], answer: 'a cat' },
+  ],
+  talkTimePrompts: ["Point and say: He is ___. / She is ___.", "Say: We are friends!", "Introduce a friend: This is ___. He/She is ___.", "Change the word: ___ is happy (He/She/It)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'They ___ happy.（be動詞）', options: ['are', 'am', 'is', 'be'], answer: 'are' },
+    { type: 'match', question: '「他」的英文是？', options: ['he', 'she', 'we', 'it'], answer: 'he' },
+    { type: 'fill-blank', question: 'It ___ a book.（be動詞）', options: ['is', 'am', 'are', 'be'], answer: 'is' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Hi! I am Finn. This is Benny.", lineZh: '嗨！我是 Finn。這是 Benny。' },
+    { speaker: 'Coco', line: "He is Benny. She is me, Coco!", lineZh: '他是 Benny。她是我，Coco！' },
+    { speaker: 'Polly', line: "We are all friends. They are nice!", lineZh: '我們都是朋友。他們人很好！' },
+    { speaker: 'Finn', line: "I, you, he, she, we, they! Great team!", lineZh: 'I、you、he、she、we、they！好棒的一隊！' },
+  ],
+};
+
+const L4_M3: Mission = {
+  id: 3, slug: 'l4-m3-be-questions', level: 4, title: 'be 疑問句', titleEn: 'Are you…?', theme: '學校路・問問看', themeEmoji: '❓',
+  focus: 'Yes/No 疑問：Are you…? Is he…? 短答 Yes, I am. / No, he isn\'t.',
+  story: [
+    { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Are you a student? Yes, I am!", dialogueZh: '你是學生嗎？是的，我是！', highlightWords: ['Are', 'am'], sceneEmojis: ['❓', '🎒', '✨'], animation: 'wave' },
+    { image: '🐻', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Is he your teacher? No, he isn't. He is my friend.", dialogueZh: '他是你的老師嗎？不，他不是。他是我朋友。', highlightWords: ['Is', "isn't"], sceneEmojis: ['🐻', '🙅', '😊'], animation: 'shake' },
+    { image: '😊', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Is she happy? Yes, she is!", dialogueZh: '她開心嗎？是的，她開心！', highlightWords: ['Is', 'is'], sceneEmojis: ['😊', '👧', '💛'], animation: 'bounce' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Now you can ask and answer! Great job!", dialogueZh: '現在你會問也會答了！做得好！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '❓'], animation: 'tada' },
+  ],
+  words: [
+    { en: 'teacher', zh: '老師', image: '👩‍🏫', phonics: '', kk: '[ˈtitʃɚ]', phonicsSound: '', exampleSentence: 'She is a teacher.', exampleZh: '她是老師。' },
+    { en: 'student', zh: '學生', image: '🧑‍🎓', phonics: '', kk: '[ˈstudn̩t]', phonicsSound: '', exampleSentence: 'I am a student.', exampleZh: '我是學生。' },
+    { en: 'friend', zh: '朋友', image: '🧑‍🤝‍🧑', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'He is my friend.', exampleZh: '他是我朋友。' },
+    { en: 'boy', zh: '男孩', image: '👦', phonics: '', kk: '[bɔɪ]', phonicsSound: '', exampleSentence: 'Is he a boy?', exampleZh: '他是男孩嗎？' },
+    { en: 'girl', zh: '女孩', image: '👧', phonics: '', kk: '[ɡɝl]', phonicsSound: '', exampleSentence: 'She is a girl.', exampleZh: '她是女孩。' },
+    { en: 'yes', zh: '是的', image: '✅', phonics: '', kk: '[jɛs]', phonicsSound: '', exampleSentence: 'Yes, I am.', exampleZh: '是的，我是。' },
+    { en: 'no', zh: '不是', image: '❌', phonics: '', kk: '[no]', phonicsSound: '', exampleSentence: "No, he isn't.", exampleZh: '不，他不是。' },
+    { en: 'isn\'t', zh: '不是（他/她）', image: '🚫', phonics: '', kk: '[ˈɪznt]', phonicsSound: '', exampleSentence: "She isn't sad.", exampleZh: '她不難過。' },
+    { en: 'am not', zh: '不是（我）', image: '🙅', phonics: '', kk: '[æm nɑt]', phonicsSound: '', exampleSentence: "I am not tired.", exampleZh: '我不累。' },
+    { en: 'nice', zh: '好的·友善的', image: '🥰', phonics: '', kk: '[naɪs]', phonicsSound: '', exampleSentence: 'You are nice.', exampleZh: '你人很好。' },
+  ],
+  sentences: [
+    { en: 'Are you a student?', zh: '你是學生嗎？' }, { en: 'Yes, I am.', zh: '是的，我是。' }, { en: 'Is he a teacher?', zh: '他是老師嗎？' }, { en: "No, he isn't.", zh: '不，他不是。' }, { en: 'Is she happy?', zh: '她開心嗎？' }, { en: 'Yes, she is.', zh: '是的，她開心。' },
+  ],
+  phonicsLetters: ['Are you…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ you a student?（疑問·你）', options: ['Are', 'Is', 'Am', 'Be'], answer: 'Are' },
+    { type: 'fill-blank', question: '___ he a teacher?（疑問·他）', options: ['Is', 'Are', 'Am', 'Be'], answer: 'Is' },
+    { type: 'match', question: '👩‍🏫 是誰？', options: ['teacher', 'student', 'friend', 'boy'], answer: 'teacher' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的人', options: ['👩‍🏫', '🧑‍🎓', '👦', '👧'], answer: '🧑‍🎓', image: '🎧' },
+    { type: 'fill-blank', question: 'Are you tired? ___, I am.（肯定短答）', options: ['Yes', 'No', 'Not', 'Is'], answer: 'Yes' },
+    { type: 'fill-blank', question: 'Is he sad? No, he ___.（否定短答）', options: ["isn't", 'is', 'am', 'are'], answer: "isn't" },
+    { type: 'spell', question: '拼拼看：fri _ nd（朋友）', answer: 'friend', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Is he a teacher?', 'Are you a teacher?', 'Is she a teacher?', 'He is a teacher.'], answer: 'Is he a teacher?', image: '🎧' },
+    { type: 'read', question: 'Is the teacher a boy?（老師是男生嗎？）', passage: 'This is my teacher.\nShe is a girl.\nShe is very nice.', options: ['No', 'Yes', 'Maybe', 'Sad'], answer: 'No' },
+  ],
+  talkTimePrompts: ["Ask a friend: Are you happy?", "Answer: Yes, I am. / No, I'm not.", "Ask about someone: Is he/she a student?", "Change it: Is she ___? (a teacher / happy / tired)"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ she your friend?（疑問·她）', options: ['Is', 'Are', 'Am', 'Be'], answer: 'Is' },
+    { type: 'fill-blank', question: 'Are you hungry? Yes, I ___.', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'match', question: '❌ 不是 的英文？', options: ['no', 'yes', 'nice', 'boy'], answer: 'no' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Are you a student?", lineZh: '你是學生嗎？' },
+    { speaker: 'Coco', line: "Yes, I am! Is he a teacher?", lineZh: '是的，我是！他是老師嗎？' },
+    { speaker: 'Polly', line: "No, he isn't. He is my friend Benny.", lineZh: '不，他不是。他是我朋友 Benny。' },
+    { speaker: 'Benny', line: "Yes! I am a student too!", lineZh: '對！我也是學生！' },
+  ],
+};
+
+const L4_M4: Mission = {
+  id: 4, slug: 'l4-m4-this-that', level: 4, title: 'This / That + 物品', titleEn: 'This is / That is', theme: '學校路・我的書包', themeEmoji: '🎒',
+  focus: 'This is / That is / These are / Those are ＋ 教室物品',
+  story: [
+    { image: '🎒', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "This is my book. That is your pen.", dialogueZh: '這是我的書。那是你的筆。', highlightWords: ['This', 'That'], sceneEmojis: ['📖', '🖊️', '✨'], animation: 'wave' },
+    { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "These are books. Those are bags!", dialogueZh: '這些是書。那些是書包！', highlightWords: ['These', 'Those'], sceneEmojis: ['📚', '🎒', '😊'], animation: 'bounce' },
+    { image: '✏️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What is this? It is a pencil!", dialogueZh: '這是什麼？這是一枝鉛筆！', highlightWords: ['this'], sceneEmojis: ['✏️', '❓', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "This, that, these, those — you did it!", dialogueZh: 'This、that、these、those —— 你做到了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🎒'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'this', zh: '這個', image: '👉', phonics: '', kk: '[ðɪs]', phonicsSound: '', exampleSentence: 'This is a book.', exampleZh: '這是一本書。' },
+    { en: 'that', zh: '那個', image: '👆', phonics: '', kk: '[ðæt]', phonicsSound: '', exampleSentence: 'That is a pen.', exampleZh: '那是一枝筆。' },
+    { en: 'these', zh: '這些', image: '👐', phonics: '', kk: '[ðiz]', phonicsSound: '', exampleSentence: 'These are books.', exampleZh: '這些是書。' },
+    { en: 'those', zh: '那些', image: '🙌', phonics: '', kk: '[ðoz]', phonicsSound: '', exampleSentence: 'Those are bags.', exampleZh: '那些是書包。' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'This is my book.', exampleZh: '這是我的書。' },
+    { en: 'pen', zh: '筆', image: '🖊️', phonics: '', kk: '[pɛn]', phonicsSound: '', exampleSentence: 'That is a pen.', exampleZh: '那是一枝筆。' },
+    { en: 'pencil', zh: '鉛筆', image: '✏️', phonics: '', kk: '[ˈpɛnsl̩]', phonicsSound: '', exampleSentence: 'It is a pencil.', exampleZh: '這是一枝鉛筆。' },
+    { en: 'bag', zh: '書包', image: '🎒', phonics: '', kk: '[bæɡ]', phonicsSound: '', exampleSentence: 'This is my bag.', exampleZh: '這是我的書包。' },
+    { en: 'desk', zh: '書桌', image: '🪑', phonics: '', kk: '[dɛsk]', phonicsSound: '', exampleSentence: 'That is a desk.', exampleZh: '那是一張書桌。' },
+    { en: 'ruler', zh: '尺', image: '📏', phonics: '', kk: '[ˈrulɚ]', phonicsSound: '', exampleSentence: 'This is a ruler.', exampleZh: '這是一把尺。' },
+  ],
+  sentences: [
+    { en: 'This is a book.', zh: '這是一本書。' }, { en: 'That is a pen.', zh: '那是一枝筆。' }, { en: 'These are bags.', zh: '這些是書包。' }, { en: 'What is this?', zh: '這是什麼？' }, { en: 'Is that your desk?', zh: '那是你的書桌嗎？' }, { en: 'Yes, it is.', zh: '是的，它是。' },
+  ],
+  phonicsLetters: ['This is…'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ is a book.（這·單）', options: ['This', 'These', 'Those', 'Are'], answer: 'This' },
+    { type: 'fill-blank', question: '___ are bags.（這些·複）', options: ['These', 'This', 'That', 'Is'], answer: 'These' },
+    { type: 'match', question: '✏️ 是什麼？', options: ['pencil', 'pen', 'book', 'ruler'], answer: 'pencil' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的文具', options: ['📖', '🖊️', '✏️', '📏'], answer: '📏', image: '🎧' },
+    { type: 'match', question: '配對：文具配圖', options: ['book-📖', 'pen-🖊️', 'bag-🎒', 'desk-🪑'], answer: 'book-📖' },
+    { type: 'fill-blank', question: '句型代換：___ is a pen.（那·單）', options: ['That', 'These', 'Those', 'Are'], answer: 'That' },
+    { type: 'spell', question: '拼拼看：p _ ncil（鉛筆）', answer: 'pencil', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['These are books.', 'This is a book.', 'Those are books.', 'That is a book.'], answer: 'These are books.', image: '🎧' },
+    { type: 'read', question: 'What is on the desk?（書桌上是什麼？）', passage: 'This is my desk.\nThat is my bag.\nA book and a pen are on the desk.', options: ['a book and a pen', 'a bag', 'a ruler', 'a pencil'], answer: 'a book and a pen' },
+  ],
+  talkTimePrompts: ["Point near: This is a ___.", "Point far: That is a ___.", "Ask: What is this?", "Change it: These are ___. (books/pens/bags)"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ are bags (far).（那些）', options: ['Those', 'These', 'This', 'Is'], answer: 'Those' },
+    { type: 'match', question: '🎒 是什麼？', options: ['bag', 'desk', 'book', 'ruler'], answer: 'bag' },
+    { type: 'spell', question: '拼拼看：r _ ler（尺）', answer: 'ruler', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "This is my book. What is that?", lineZh: '這是我的書。那是什麼？' },
+    { speaker: 'Benny', line: "That is my bag. These are my pens.", lineZh: '那是我的書包。這些是我的筆。' },
+    { speaker: 'Coco', line: "Wow! Those are nice pencils!", lineZh: '哇！那些是很棒的鉛筆！' },
+    { speaker: 'Ruby', line: "Thank you! This is fun!", lineZh: '謝謝！這好好玩！' },
+  ],
+};
+
+const L4_M5: Mission = {
+  id: 5, slug: 'l4-m5-review-be', level: 4, title: 'Review① be 動詞', titleEn: 'Review: be', theme: '學校路・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：I am / He is / They are ＋ 疑問短答 ＋ this/that',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! I am, you are, he is!", dialogueZh: '來複習！I am、you are、he is！', highlightWords: ['am', 'are', 'is'], sceneEmojis: ['🔄', '📚', '✨'], animation: 'wave' },
+    { image: '❓', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Are you ready? Yes, I am!", dialogueZh: '你準備好了嗎？是的，我準備好了！', highlightWords: ['Are', 'am'], sceneEmojis: ['❓', '💪', '😊'], animation: 'bounce' },
+    { image: '🎒', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "This is a book. These are bags. Well done!", dialogueZh: '這是書。這些是書包。做得好！', highlightWords: ['This', 'These'], sceneEmojis: ['📖', '🎒', '⭐'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know your be verbs! Amazing!", dialogueZh: '你會 be 動詞了！太厲害了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy.', exampleZh: '我很開心。' },
+    { en: 'tired', zh: '累的', image: '😩', phonics: '', kk: '[taɪrd]', phonicsSound: '', exampleSentence: 'He is tired.', exampleZh: '他很累。' },
+    { en: 'he', zh: '他', image: '👦', phonics: '', kk: '[hi]', phonicsSound: '', exampleSentence: 'He is my friend.', exampleZh: '他是我朋友。' },
+    { en: 'she', zh: '她', image: '👧', phonics: '', kk: '[ʃi]', phonicsSound: '', exampleSentence: 'She is nice.', exampleZh: '她人很好。' },
+    { en: 'they', zh: '他們', image: '👨‍👩‍👧', phonics: '', kk: '[ðe]', phonicsSound: '', exampleSentence: 'They are here.', exampleZh: '他們在這裡。' },
+    { en: 'teacher', zh: '老師', image: '👩‍🏫', phonics: '', kk: '[ˈtitʃɚ]', phonicsSound: '', exampleSentence: 'She is a teacher.', exampleZh: '她是老師。' },
+    { en: 'student', zh: '學生', image: '🧑‍🎓', phonics: '', kk: '[ˈstudn̩t]', phonicsSound: '', exampleSentence: 'I am a student.', exampleZh: '我是學生。' },
+    { en: 'this', zh: '這個', image: '👉', phonics: '', kk: '[ðɪs]', phonicsSound: '', exampleSentence: 'This is a book.', exampleZh: '這是一本書。' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'This is my book.', exampleZh: '這是我的書。' },
+    { en: 'friend', zh: '朋友', image: '🧑‍🤝‍🧑', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'We are friends.', exampleZh: '我們是朋友。' },
+  ],
+  sentences: [
+    { en: 'I am a student.', zh: '我是學生。' }, { en: 'She is my teacher.', zh: '她是我的老師。' }, { en: 'Are they happy?', zh: '他們開心嗎？' }, { en: 'Yes, they are.', zh: '是的，他們開心。' }, { en: 'This is my book.', zh: '這是我的書。' }, { en: 'He is not tired.', zh: '他不累。' },
+  ],
+  phonicsLetters: ['review be'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'She ___ a teacher.', options: ['is', 'am', 'are', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'They ___ my friends.', options: ['are', 'am', 'is', 'be'], answer: 'are' },
+    { type: 'fill-blank', question: 'I ___ happy.', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的人', options: ['👩‍🏫', '🧑‍🎓', '👦', '👧'], answer: '👩‍🏫', image: '🎧' },
+    { type: 'fill-blank', question: 'He ___ tired.（be動詞）', options: ['is', 'am', 'are', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'Are you a student? Yes, I ___.', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'spell', question: '拼拼看：st _ dent（學生）', answer: 'student', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['She is my teacher.', 'He is my teacher.', 'They are teachers.', 'She is a student.'], answer: 'She is my teacher.', image: '🎧' },
+    { type: 'read', question: 'Are they sad?（他們難過嗎？）', passage: 'Finn and Coco are at school.\nThey are with friends.\nThey are very happy!', options: ['No, they are happy', 'Yes, they are sad', 'They are tired', 'They are hungry'], answer: 'No, they are happy' },
+  ],
+  talkTimePrompts: ["Say: I am a student.", "Introduce: He is / She is my friend.", "Ask and answer: Are you happy? Yes, I am.", "Point: This is my ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'We ___ friends.（be動詞）', options: ['are', 'am', 'is', 'be'], answer: 'are' },
+    { type: 'fill-blank', question: '___ she happy?（疑問·她）', options: ['Is', 'Are', 'Am', 'Be'], answer: 'Is' },
+    { type: 'read', question: 'Who is a teacher?（誰是老師？）', passage: 'Coco is a student.\nMiss Vega is a teacher.\nBenny is a student.', options: ['Miss Vega', 'Coco', 'Benny', 'Finn'], answer: 'Miss Vega' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Are you ready to review?", lineZh: '準備好複習了嗎？' },
+    { speaker: 'Coco', line: "Yes, I am! I am a student.", lineZh: '是的！我是學生。' },
+    { speaker: 'Ruby', line: "She is my friend. They are nice.", lineZh: '她是我朋友。他們人很好。' },
+    { speaker: 'Finn', line: "Great! You know your be verbs!", lineZh: '太棒了！你會 be 動詞了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
