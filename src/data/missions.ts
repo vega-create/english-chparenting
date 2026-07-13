@@ -2517,7 +2517,267 @@ const L3_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15];
+const L3_M16: Mission = {
+  id: 16, slug: 'l3-m16-articles', level: 3, title: '冠詞 a / an / the', titleEn: 'a / an / the', theme: '市場街・冠詞魔法', themeEmoji: '🎩',
+  focus: 'a（子音前）、an（母音前）、the（特定的那個）',
+  story: [
+    { image: '🎩', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Magic words! a, an, the — before nouns!", dialogueZh: '魔法字！a、an、the —— 放名詞前面！', highlightWords: ['a', 'an', 'the'], sceneEmojis: ['🎩', '🔤', '✨'], animation: 'wave' },
+    { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "a dog, an apple — 'an' before a,e,i,o,u!", dialogueZh: 'a dog、an apple —— 母音前用 an！', highlightWords: ['a', 'an'], sceneEmojis: ['🐶', '🍎', '😊'], animation: 'bounce' },
+    { image: '👉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "the dog — that special one we know!", dialogueZh: 'the dog —— 我們知道的那隻特定的！', highlightWords: ['the'], sceneEmojis: ['👉', '🐶', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "a, an, the — you're a grammar star!", dialogueZh: 'a、an、the —— 你是文法之星！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🎩'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'a dog', zh: '一隻狗', image: '🐶', phonics: '', kk: '[ə dɔɡ]', phonicsSound: 'a+子音', exampleSentence: 'I see a dog.', exampleZh: '我看到一隻狗。' },
+    { en: 'a cat', zh: '一隻貓', image: '🐱', phonics: '', kk: '[ə kæt]', phonicsSound: 'a+子音', exampleSentence: 'It is a cat.', exampleZh: '這是一隻貓。' },
+    { en: 'a ball', zh: '一顆球', image: '⚽', phonics: '', kk: '[ə bɔl]', phonicsSound: 'a+子音', exampleSentence: 'a red ball', exampleZh: '一顆紅球' },
+    { en: 'an apple', zh: '一顆蘋果', image: '🍎', phonics: '', kk: '[ən ˈæpl̩]', phonicsSound: 'an+母音', exampleSentence: 'an apple', exampleZh: '一顆蘋果' },
+    { en: 'an egg', zh: '一顆蛋', image: '🥚', phonics: '', kk: '[ən ɛɡ]', phonicsSound: 'an+母音', exampleSentence: 'an egg', exampleZh: '一顆蛋' },
+    { en: 'an orange', zh: '一顆柳橙', image: '🍊', phonics: '', kk: '[ən ˈɔrɪndʒ]', phonicsSound: 'an+母音', exampleSentence: 'an orange', exampleZh: '一顆柳橙' },
+    { en: 'an umbrella', zh: '一把傘', image: '☂️', phonics: '', kk: '[ən ʌmˈbrɛlə]', phonicsSound: 'an+母音', exampleSentence: 'an umbrella', exampleZh: '一把傘' },
+    { en: 'the sun', zh: '太陽', image: '☀️', phonics: '', kk: '[ðə sʌn]', phonicsSound: 'the+特定', exampleSentence: 'the sun', exampleZh: '（那個）太陽' },
+    { en: 'the moon', zh: '月亮', image: '🌙', phonics: '', kk: '[ðə mun]', phonicsSound: 'the+特定', exampleSentence: 'the moon', exampleZh: '（那個）月亮' },
+    { en: 'the dog', zh: '那隻狗', image: '🐕', phonics: '', kk: '[ðə dɔɡ]', phonicsSound: 'the+特定', exampleSentence: 'the dog is big', exampleZh: '那隻狗很大' },
+  ],
+  sentences: [
+    { en: 'I have a cat.', zh: '我有一隻貓。' }, { en: 'I have an apple.', zh: '我有一顆蘋果。' }, { en: 'The sun is hot.', zh: '（那個）太陽很熱。' }, { en: 'Is it a dog or an egg?', zh: '這是狗還是蛋？' }, { en: 'It is an egg.', zh: '這是一顆蛋。' }, { en: 'Look at the moon!', zh: '看那個月亮！' },
+  ],
+  phonicsLetters: ['a', 'an', 'the'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ dog（狗）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'fill-blank', question: '___ apple（蘋果）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: '___ egg（蛋）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'It is ___ orange.（柳橙）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: 'I have ___ ball.（球）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'fill-blank', question: 'Look at ___ sun!（特定）', options: ['the', 'a', 'an', 'is'], answer: 'the' },
+    { type: 'fill-blank', question: '___ umbrella（傘）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'match', question: '配對：冠詞用法', options: ['a-dog', 'an-egg', 'the-sun', 'an-apple'], answer: 'a-dog' },
+    { type: 'speak', question: '跟著念：A cat, an apple!', answer: 'A cat', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say 'a' or 'an': ___ apple, ___ cat.", "Point and say: an egg, a ball.", "Look at the sun! Say it.", "Make a sentence with 'the'."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I see ___ umbrella.', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: '___ moon is bright tonight.', options: ['The', 'A', 'An', 'Is'], answer: 'The' },
+    { type: 'fill-blank', question: 'It is ___ cat.', options: ['a', 'an', 'the', 'two'], answer: 'a' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I have a dog and an apple.", lineZh: '我有一隻狗和一顆蘋果。' },
+    { speaker: 'Benny', line: "a dog, an apple — a or an?", lineZh: 'a dog、an apple —— a 還是 an？' },
+    { speaker: 'Coco', line: "'an' before a, e, i, o, u! Look at the moon!", lineZh: '母音前用 an！看那個月亮！' },
+    { speaker: 'Benny', line: "the moon — the special one! Got it!", lineZh: 'the moon —— 特定的那個！懂了！' },
+  ],
+};
+
+const L3_M17: Mission = {
+  id: 17, slug: 'l3-m17-plurals', level: 3, title: '名詞複數', titleEn: 'Plurals', theme: '市場街・數量魔法', themeEmoji: '➕',
+  focus: '複數規則：+s、+es（box→boxes）、不規則（foot→feet）',
+  story: [
+    { image: '➕', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "More than one? Add -s! cat → cats!", dialogueZh: '不只一個？加 -s！cat → cats！', highlightWords: ['-s', 'cats'], sceneEmojis: ['➕', '🐱', '✨'], animation: 'wave' },
+    { image: '📦', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "box → boxes! Add -es after x, s, sh, ch!", dialogueZh: 'box → boxes！x、s、sh、ch 後加 -es！', highlightWords: ['boxes', '-es'], sceneEmojis: ['📦', '📦', '😊'], animation: 'bounce' },
+    { image: '🦶', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "But foot → feet! Some are special!", dialogueZh: '但 foot → feet！有些是特別的！', highlightWords: ['foot', 'feet'], sceneEmojis: ['🦶', '🦶', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "One or many — you can say both! Great!", dialogueZh: '一個或很多 —— 你都會了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '➕'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cats', zh: '貓（複）', image: '🐱', phonics: '', kk: '+s', phonicsSound: '規則 +s', exampleSentence: 'two cats', exampleZh: '兩隻貓' },
+    { en: 'dogs', zh: '狗（複）', image: '🐶', phonics: '', kk: '+s', phonicsSound: '規則 +s', exampleSentence: 'three dogs', exampleZh: '三隻狗' },
+    { en: 'apples', zh: '蘋果（複）', image: '🍎', phonics: '', kk: '+s', phonicsSound: '規則 +s', exampleSentence: 'five apples', exampleZh: '五顆蘋果' },
+    { en: 'boxes', zh: '箱子（複）', image: '📦', phonics: '', kk: '+es', phonicsSound: 'x 後 +es', exampleSentence: 'two boxes', exampleZh: '兩個箱子' },
+    { en: 'buses', zh: '公車（複）', image: '🚌', phonics: '', kk: '+es', phonicsSound: 's 後 +es', exampleSentence: 'two buses', exampleZh: '兩台公車' },
+    { en: 'dishes', zh: '盤子（複）', image: '🍽️', phonics: '', kk: '+es', phonicsSound: 'sh 後 +es', exampleSentence: 'three dishes', exampleZh: '三個盤子' },
+    { en: 'foxes', zh: '狐狸（複）', image: '🦊', phonics: '', kk: '+es', phonicsSound: 'x 後 +es', exampleSentence: 'two foxes', exampleZh: '兩隻狐狸' },
+    { en: 'feet', zh: '腳（複，不規則）', image: '🦶', phonics: '', kk: 'foot→feet', phonicsSound: '不規則', exampleSentence: 'two feet', exampleZh: '兩隻腳' },
+    { en: 'children', zh: '小孩（複，不規則）', image: '🧒', phonics: '', kk: 'child→children', phonicsSound: '不規則', exampleSentence: 'many children', exampleZh: '很多小孩' },
+    { en: 'mice', zh: '老鼠（複，不規則）', image: '🐭', phonics: '', kk: 'mouse→mice', phonicsSound: '不規則', exampleSentence: 'three mice', exampleZh: '三隻老鼠' },
+  ],
+  sentences: [
+    { en: 'One cat, two cats.', zh: '一隻貓，兩隻貓。' }, { en: 'One box, two boxes.', zh: '一個箱子，兩個箱子。' }, { en: 'One foot, two feet.', zh: '一隻腳，兩隻腳。' }, { en: 'How many apples?', zh: '有幾顆蘋果？' }, { en: 'There are five apples.', zh: '有五顆蘋果。' }, { en: 'I see three mice!', zh: '我看到三隻老鼠！' },
+  ],
+  phonicsLetters: ['plurals'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'one dog, two ___', options: ['dogs', 'dog', 'doges', 'dogz'], answer: 'dogs' },
+    { type: 'fill-blank', question: 'one box, two ___', options: ['boxes', 'boxs', 'box', 'boxies'], answer: 'boxes' },
+    { type: 'fill-blank', question: 'one foot, two ___（不規則）', options: ['feet', 'foots', 'feets', 'foot'], answer: 'feet' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'one bus, two ___', options: ['buses', 'buss', 'bus', 'buss'], answer: 'buses' },
+    { type: 'fill-blank', question: 'one dish, two ___', options: ['dishes', 'dishs', 'dish', 'dishies'], answer: 'dishes' },
+    { type: 'fill-blank', question: 'one child, two ___（不規則）', options: ['children', 'childs', 'childrens', 'childes'], answer: 'children' },
+    { type: 'match', question: '配對：單數→複數', options: ['cat-cats', 'box-boxes', 'foot-feet', 'mouse-mice'], answer: 'cat-cats' },
+    { type: 'fill-blank', question: 'There are five ___.（蘋果）', options: ['apples', 'apple', 'applees', 'applz'], answer: 'apples' },
+    { type: 'speak', question: '跟著念：Cats, boxes, feet!', answer: 'Cats', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say the plural: cat → ?", "Say the plural: box → ?", "How many feet do you have?", "Count: one apple, two apples..."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'one fox, two ___', options: ['foxes', 'foxs', 'fox', 'foxies'], answer: 'foxes' },
+    { type: 'fill-blank', question: 'one mouse, two ___（不規則）', options: ['mice', 'mouses', 'mouse', 'mices'], answer: 'mice' },
+    { type: 'match', question: 'dish 的複數是？', options: ['dishes', 'dishs', 'dish', 'dishies'], answer: 'dishes' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "One cat, two cats. Add -s!", lineZh: '一隻貓，兩隻貓。加 -s！' },
+    { speaker: 'Benny', line: "But box becomes boxes! -es!", lineZh: '但 box 變 boxes！加 -es！' },
+    { speaker: 'Coco', line: "And foot becomes feet! Tricky!", lineZh: '還有 foot 變 feet！很狡猾！' },
+    { speaker: 'Benny', line: "One foot, two feet! I remember!", lineZh: '一隻腳，兩隻腳！我記得了！' },
+  ],
+};
+
+const L3_M18: Mission = {
+  id: 18, slug: 'l3-m18-this-these', level: 3, title: 'This / These', titleEn: 'This & These', theme: '市場街・指指看', themeEmoji: '👉',
+  focus: 'This is（近·單）/ These are（近·複）；That / Those（遠）',
+  story: [
+    { image: '👉', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "This is near! That is far! Point and say!", dialogueZh: 'This 是近的！That 是遠的！指指看說說看！', highlightWords: ['This', 'That'], sceneEmojis: ['👉', '👆', '✨'], animation: 'wave' },
+    { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "This is an apple. These are apples!", dialogueZh: '這是一顆蘋果。這些是蘋果！', highlightWords: ['This', 'These'], sceneEmojis: ['🍎', '🍎', '😊'], animation: 'bounce' },
+    { image: '🐶', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "That is a dog. Those are dogs over there!", dialogueZh: '那是一隻狗。那些是那邊的狗！', highlightWords: ['That', 'Those'], sceneEmojis: ['🐶', '🐶', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "This, these, that, those — you did it!", dialogueZh: 'This、these、that、those —— 你做到了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '👉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'this', zh: '這個（近·單）', image: '👉', phonics: '', kk: '[ðɪs]', phonicsSound: '近·單', exampleSentence: 'This is a cat.', exampleZh: '這是一隻貓。' },
+    { en: 'these', zh: '這些（近·複）', image: '👉', phonics: '', kk: '[ðiz]', phonicsSound: '近·複', exampleSentence: 'These are cats.', exampleZh: '這些是貓。' },
+    { en: 'that', zh: '那個（遠·單）', image: '👆', phonics: '', kk: '[ðæt]', phonicsSound: '遠·單', exampleSentence: 'That is a dog.', exampleZh: '那是一隻狗。' },
+    { en: 'those', zh: '那些（遠·複）', image: '👆', phonics: '', kk: '[ðoz]', phonicsSound: '遠·複', exampleSentence: 'Those are dogs.', exampleZh: '那些是狗。' },
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'This is an apple.', exampleZh: '這是一顆蘋果。' },
+    { en: 'apples', zh: '蘋果（複）', image: '🍎', phonics: '', kk: '', phonicsSound: '', exampleSentence: 'These are apples.', exampleZh: '這些是蘋果。' },
+    { en: 'dog', zh: '狗', image: '🐶', phonics: '', kk: '[dɔɡ]', phonicsSound: '', exampleSentence: 'That is a dog.', exampleZh: '那是一隻狗。' },
+    { en: 'dogs', zh: '狗（複）', image: '🐶', phonics: '', kk: '', phonicsSound: '', exampleSentence: 'Those are dogs.', exampleZh: '那些是狗。' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'This is my book.', exampleZh: '這是我的書。' },
+    { en: 'books', zh: '書（複）', image: '📚', phonics: '', kk: '', phonicsSound: '', exampleSentence: 'These are my books.', exampleZh: '這些是我的書。' },
+  ],
+  sentences: [
+    { en: 'This is a cat.', zh: '這是一隻貓。' }, { en: 'These are cats.', zh: '這些是貓。' }, { en: 'That is a dog.', zh: '那是一隻狗。' }, { en: 'Those are dogs.', zh: '那些是狗。' }, { en: 'What is this?', zh: '這是什麼？' }, { en: 'What are these?', zh: '這些是什麼？' },
+  ],
+  phonicsLetters: ['this', 'these', 'that', 'those'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ is a cat.（這·單）', options: ['This', 'These', 'Those', 'Are'], answer: 'This' },
+    { type: 'fill-blank', question: '___ are cats.（這些·複）', options: ['These', 'This', 'That', 'Is'], answer: 'These' },
+    { type: 'fill-blank', question: '___ is a dog (far).（那·單）', options: ['That', 'This', 'These', 'Are'], answer: 'That' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: '___ are apples.（這些）', options: ['These', 'This', 'That', 'Is'], answer: 'These' },
+    { type: 'fill-blank', question: '___ are dogs (far).（那些）', options: ['Those', 'That', 'This', 'Is'], answer: 'Those' },
+    { type: 'fill-blank', question: 'This ___ my book.（be動詞·單）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'These ___ my books.（be動詞·複）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+    { type: 'match', question: '配對：近遠單複', options: ['this-近單', 'these-近複', 'that-遠單', 'those-遠複'], answer: 'this-近單' },
+    { type: 'speak', question: '跟著說：This is a cat!', answer: 'This is a cat', image: '🗣' },
+  ],
+  talkTimePrompts: ["Point near: This is ___.", "Point to many: These are ___.", "Point far: That is ___.", "What is this? / What are these?"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ are books.（這些）', options: ['These', 'This', 'That', 'Is'], answer: 'These' },
+    { type: 'fill-blank', question: 'That ___ a dog.（be動詞）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'match', question: 'these 是？', options: ['近·複數', '近·單數', '遠·複數', '遠·單數'], answer: '近·複數' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "This is an apple. These are apples!", lineZh: '這是一顆蘋果。這些是蘋果！' },
+    { speaker: 'Benny', line: "this — one, these — many! Got it!", lineZh: 'this —— 一個，these —— 很多！懂了！' },
+    { speaker: 'Coco', line: "That is a dog, over there!", lineZh: '那是一隻狗，在那邊！' },
+    { speaker: 'Benny', line: "And those are dogs! Far away!", lineZh: '那些是狗！在遠方！' },
+  ],
+};
+
+const L3_M19: Mission = {
+  id: 19, slug: 'l3-m19-reading', level: 3, title: '市場街閱讀', titleEn: 'Market Reading', theme: '市場街・故事時間', themeEmoji: '📖',
+  focus: '綜合閱讀：把顏色/數字/食物/動物/句型讀成一個小故事',
+  story: [
+    { image: '📖', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's read a story about Market Street!", dialogueZh: '我們來讀一個市場街的故事！', highlightWords: ['story'], sceneEmojis: ['📖', '🏡', '✨'], animation: 'wave' },
+    { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "This is Coco. Coco has two red apples and a cat.", dialogueZh: '這是 Coco。Coco 有兩顆紅蘋果和一隻貓。', highlightWords: ['two', 'red', 'apples', 'cat'], sceneEmojis: ['🐱', '🍎', '🍎'], animation: 'bounce' },
+    { image: '🦜', character: '🦜', characterKey: 'polly', characterAction: 'read', characterName: 'Polly', dialogue: "Coco likes the apples. She does not like fish.", dialogueZh: 'Coco 喜歡蘋果。她不喜歡魚。', highlightWords: ['likes', 'not'], sceneEmojis: ['🍎', '❤️', '🐟'], animation: 'float' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You read a whole story! Amazing reader!", dialogueZh: '你讀完整個故事了！了不起的讀者！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'story', zh: '故事', image: '📖', phonics: '', kk: '[ˈstɔri]', phonicsSound: '', exampleSentence: 'a fun story', exampleZh: '一個有趣的故事' },
+    { en: 'market', zh: '市場', image: '🏪', phonics: '', kk: '[ˈmɑrkɪt]', phonicsSound: '', exampleSentence: 'the market', exampleZh: '市場' },
+    { en: 'has', zh: '有（第三人稱）', image: '🤲', phonics: '', kk: '[hæz]', phonicsSound: '', exampleSentence: 'She has a cat.', exampleZh: '她有一隻貓。' },
+    { en: 'likes', zh: '喜歡（第三人稱）', image: '❤️', phonics: '', kk: '[laɪks]', phonicsSound: '', exampleSentence: 'He likes apples.', exampleZh: '他喜歡蘋果。' },
+    { en: 'red', zh: '紅色', image: '🔴', phonics: '', kk: '[rɛd]', phonicsSound: '', exampleSentence: 'red apples', exampleZh: '紅蘋果' },
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'two apples', exampleZh: '兩顆蘋果' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: '', kk: '[kæt]', phonicsSound: '', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'fish', zh: '魚', image: '🐟', phonics: '', kk: '[fɪʃ]', phonicsSound: '', exampleSentence: 'fish', exampleZh: '魚' },
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'She is happy.', exampleZh: '她很開心。' },
+    { en: 'good', zh: '好的', image: '👍', phonics: '', kk: '[ɡʊd]', phonicsSound: '', exampleSentence: 'a good day', exampleZh: '美好的一天' },
+  ],
+  sentences: [
+    { en: 'This is Coco.', zh: '這是 Coco。' }, { en: 'Coco has two red apples.', zh: 'Coco 有兩顆紅蘋果。' }, { en: 'She has a cat.', zh: '她有一隻貓。' }, { en: 'Coco likes the apples.', zh: 'Coco 喜歡蘋果。' }, { en: 'She does not like fish.', zh: '她不喜歡魚。' }, { en: 'Coco is happy!', zh: 'Coco 很開心！' },
+  ],
+  phonicsLetters: ['reading'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '故事裡 Coco 有幾顆蘋果？', options: ['two', 'one', 'three', 'five'], answer: 'two' },
+    { type: 'listen-pick', question: '蘋果是什麼顏色？', options: ['red', 'blue', 'green', 'yellow'], answer: 'red' },
+    { type: 'listen-pick', question: 'Coco 有什麼寵物？', options: ['a cat', 'a dog', 'a fish', 'a bird'], answer: 'a cat' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: 'Coco 喜歡什麼？', options: ['apples', 'fish', 'meat', 'soup'], answer: 'apples' },
+    { type: 'listen-pick', question: 'Coco 不喜歡什麼？', options: ['fish', 'apples', 'cat', 'red'], answer: 'fish' },
+    { type: 'fill-blank', question: 'Coco ___ two red apples.（有·第三人稱）', options: ['has', 'have', 'is', 'like'], answer: 'has' },
+    { type: 'fill-blank', question: 'She ___ the apples.（喜歡·第三人稱）', options: ['likes', 'like', 'is', 'has'], answer: 'likes' },
+    { type: 'listen-pick', question: '故事最後 Coco 覺得怎樣？', options: ['happy', 'sad', 'hungry', 'tired'], answer: 'happy' },
+    { type: 'speak', question: '跟著讀：Coco has two apples!', answer: 'Coco has two apples', image: '🗣' },
+  ],
+  talkTimePrompts: ["Retell the story about Coco.", "What does Coco have?", "What does Coco like?", "Make your own story: I have ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Coco ___ happy.（be動詞）', options: ['is', 'are', 'am', 'has'], answer: 'is' },
+    { type: 'listen-pick', question: 'How many apples does Coco have?', options: ['two', 'three', 'one', 'four'], answer: 'two' },
+    { type: 'fill-blank', question: 'She does not ___ fish.（喜歡）', options: ['like', 'likes', 'is', 'has'], answer: 'like' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "This is Coco. She has two red apples.", lineZh: '這是 Coco。她有兩顆紅蘋果。' },
+    { speaker: 'Coco', line: "I like apples! I have a cat too.", lineZh: '我喜歡蘋果！我也有一隻貓。' },
+    { speaker: 'Finn', line: "Does Coco like fish?", lineZh: 'Coco 喜歡魚嗎？' },
+    { speaker: 'Coco', line: "No, I don't like fish. I'm happy!", lineZh: '不，我不喜歡魚。我很開心！' },
+  ],
+};
+
+const L3_M20: Mission = {
+  id: 20, slug: 'l3-m20-boss', level: 3, title: '市場街大魔王', titleEn: 'Market Boss', theme: '市場街・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：顏色/數字/食物/動物/身體/家人/衣服＋冠詞/複數/疑問句',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Market Boss is here! Use all your words!", dialogueZh: '市場大魔王來了！用上你所有的單字！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏪'], animation: 'shake' },
+    { image: '💪', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Colors, numbers, food, animals — you know them all!", dialogueZh: '顏色、數字、食物、動物 —— 你全會了！', highlightWords: [], sceneEmojis: ['💪', '🌈', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Market Badge!", dialogueZh: '你打敗大魔王了！獲得市場徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🎓', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Market Street! On to School Road!", dialogueZh: '你完成了市場街！前進學校路！', highlightWords: [], sceneEmojis: ['🎓', '🏫', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'red', zh: '紅色', image: '🔴', phonics: '', kk: '[rɛd]', phonicsSound: '', exampleSentence: 'red', exampleZh: '紅色' },
+    { en: 'three', zh: '三', image: '3️⃣', phonics: '', kk: '[θri]', phonicsSound: '', exampleSentence: 'three', exampleZh: '三' },
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'an apple', exampleZh: '一顆蘋果' },
+    { en: 'dog', zh: '狗', image: '🐶', phonics: '', kk: '[dɔɡ]', phonicsSound: '', exampleSentence: 'a dog', exampleZh: '一隻狗' },
+    { en: 'eye', zh: '眼睛', image: '👁️', phonics: '', kk: '[aɪ]', phonicsSound: '', exampleSentence: 'two eyes', exampleZh: '兩隻眼睛' },
+    { en: 'mom', zh: '媽媽', image: '👩', phonics: '', kk: '[mɑm]', phonicsSound: '', exampleSentence: 'my mom', exampleZh: '我的媽媽' },
+    { en: 'shirt', zh: '襯衫', image: '👕', phonics: '', kk: '[ʃɝt]', phonicsSound: '', exampleSentence: 'a shirt', exampleZh: '一件襯衫' },
+    { en: 'ball', zh: '球', image: '⚽', phonics: '', kk: '[bɔl]', phonicsSound: '', exampleSentence: 'a ball', exampleZh: '一顆球' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like it.', exampleZh: '我喜歡。' },
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy!', exampleZh: '我很開心！' },
+  ],
+  sentences: [
+    { en: 'I have three red apples.', zh: '我有三顆紅蘋果。' }, { en: 'This is my mom.', zh: '這是我的媽媽。' }, { en: 'Do you like the dog?', zh: '你喜歡那隻狗嗎？' }, { en: 'Yes, I do!', zh: '是的！' }, { en: 'I can talk about food and animals!', zh: '我會講食物和動物了！' }, { en: 'I am so happy!', zh: '我好開心！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'match', question: '🔴 是什麼顏色？', options: ['red', 'blue', 'green', 'yellow'], answer: 'red' },
+    { type: 'fill-blank', question: 'I have ___ apple.（冠詞）', options: ['an', 'a', 'the', 'two'], answer: 'an' },
+    { type: 'fill-blank', question: 'two ___（狗複數）', options: ['dogs', 'dog', 'doges', 'dogz'], answer: 'dogs' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🔴', '🍎', '🐶', '👕'], answer: '🐶', image: '🎧' },
+    { type: 'fill-blank', question: 'This is ___ mom.（我的）', options: ['my', 'a', 'an', 'is'], answer: 'my' },
+    { type: 'fill-blank', question: 'Do you ___ the dog?（喜歡）', options: ['like', 'is', 'are', 'a'], answer: 'like' },
+    { type: 'match', question: '配對：字配圖', options: ['eye-👁️', 'ball-⚽', 'shirt-👕', 'apple-🍎'], answer: 'eye-👁️' },
+    { type: 'fill-blank', question: 'I have three red ___.（蘋果複數）', options: ['apples', 'apple', 'an apple', 'applz'], answer: 'apples' },
+    { type: 'speak', question: '跟著說：I have three red apples!', answer: 'I have three red apples', image: '🗣' },
+  ],
+  talkTimePrompts: ["Tell me: your favorite color, food, and animal!", "Introduce your family in English!", "What are you wearing?", "You beat the Market Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'match', question: '3️⃣ 是哪個數字？', options: ['three', 'two', 'five', 'ten'], answer: 'three' },
+    { type: 'fill-blank', question: 'It is ___ egg.（冠詞）', options: ['an', 'a', 'the', 'two'], answer: 'an' },
+    { type: 'fill-blank', question: 'I ___ happy!（be動詞）', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Market Boss says: describe this!", lineZh: '市場大魔王說：描述這個！' },
+    { speaker: 'Benny', line: "I have three red apples and a dog!", lineZh: '我有三顆紅蘋果和一隻狗！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Market champion!", lineZh: '你打敗大魔王了！市場冠軍！' },
+    { speaker: 'Finn', line: "On to School Road! Let's learn sentences!", lineZh: '前進學校路！我們來學句型！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
