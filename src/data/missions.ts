@@ -1217,7 +1217,266 @@ const L2_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10];
+const L2_M11: Mission = {
+  id: 11, slug: 'l2-m11-long-a', level: 2, title: '長母音 a', titleEn: 'Long a', theme: '聲音島・魔法 e 城堡', themeEmoji: '✨',
+  focus: '長母音 a /e/：a_e（magic e）、ai、ay',
+  story: [
+    { image: '🎂', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Magic e makes a say its name! cap → cape!", dialogueZh: '魔法 e 讓 a 唸自己的名字！cap → cape！', highlightWords: ['a_e'], sceneEmojis: ['✨', '🔤', '🎂'], animation: 'wave' },
+    { image: '🌧️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "cake, name, rain — long a /e/!", dialogueZh: 'cake、name、rain —— 長母音 a /e/！', highlightWords: ['cake', 'name', 'rain'], sceneEmojis: ['🎂', '🏷️', '🌧️'], animation: 'bounce' },
+    { image: '🌈', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "day, play, say — ay is /e/ too!", dialogueZh: 'day、play、say —— ay 也是 /e/！', highlightWords: ['day', 'play', 'say'], sceneEmojis: ['☀️', '🎮', '💬'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Long a — three ways! You got it!", dialogueZh: '長母音 a —— 三種拼法！你會了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '✨'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cake', zh: '蛋糕', image: '🎂', phonics: 'a_e /e/', kk: '[kek]', phonicsSound: '/e/', exampleSentence: 'a big cake', exampleZh: '一個大蛋糕' },
+    { en: 'name', zh: '名字', image: '🏷️', phonics: 'a_e /e/', kk: '[nem]', phonicsSound: '/e/', exampleSentence: 'my name', exampleZh: '我的名字' },
+    { en: 'game', zh: '遊戲', image: '🎮', phonics: 'a_e /e/', kk: '[ɡem]', phonicsSound: '/e/', exampleSentence: 'play a game', exampleZh: '玩遊戲' },
+    { en: 'gate', zh: '大門', image: '🚪', phonics: 'a_e /e/', kk: '[ɡet]', phonicsSound: '/e/', exampleSentence: 'open the gate', exampleZh: '打開大門' },
+    { en: 'rain', zh: '雨', image: '🌧️', phonics: 'ai /e/', kk: '[ren]', phonicsSound: '/e/', exampleSentence: 'in the rain', exampleZh: '在雨中' },
+    { en: 'train', zh: '火車', image: '🚂', phonics: 'ai /e/', kk: '[tren]', phonicsSound: '/e/', exampleSentence: 'a fast train', exampleZh: '一輛快火車' },
+    { en: 'day', zh: '天', image: '☀️', phonics: 'ay /e/', kk: '[de]', phonicsSound: '/e/', exampleSentence: 'a sunny day', exampleZh: '晴天' },
+    { en: 'play', zh: '玩', image: '⚽', phonics: 'ay /e/', kk: '[ple]', phonicsSound: '/e/', exampleSentence: 'Let\'s play!', exampleZh: '我們來玩！' },
+    { en: 'say', zh: '說', image: '💬', phonics: 'ay /e/', kk: '[se]', phonicsSound: '/e/', exampleSentence: 'Say hello.', exampleZh: '說哈囉。' },
+    { en: 'lake', zh: '湖', image: '🏞️', phonics: 'a_e /e/', kk: '[lek]', phonicsSound: '/e/', exampleSentence: 'a big lake', exampleZh: '一個大湖' },
+  ],
+  sentences: [
+    { en: 'We play a game in the rain.', zh: '我們在雨中玩遊戲。' }, { en: 'The train is by the lake.', zh: '火車在湖邊。' }, { en: 'What is your name?', zh: '你叫什麼名字？' }, { en: 'My name is Sam.', zh: '我的名字是 Sam。' }, { en: 'Can you say your name?', zh: '你能說你的名字嗎？' }, { en: 'Let\'s eat cake!', zh: '我們來吃蛋糕！' },
+  ],
+  phonicsLetters: ['a_e', 'ai', 'ay'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有長母音 a /e/？', options: ['cake', 'cat', 'cup', 'box'], answer: 'cake', image: '🎂' },
+    { type: 'match', question: '🚂 火車是哪個字？', options: ['train', 'rain', 'play', 'game'], answer: 'train' },
+    { type: 'spell', question: '拼拼看：c _ ke（蛋糕）', answer: 'cake', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🎂', '🌧️', '🚂', '🎮'], answer: '🌧️', image: '🎧' },
+    { type: 'spell', question: '拼拼看：r _ in（雨）', answer: 'rain', image: '✍️' },
+    { type: 'spell', question: '拼拼看：pl _ y（玩）', answer: 'play', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['gate-🚪', 'day-☀️', 'lake-🏞️', 'name-🏷️'], answer: 'gate-🚪' },
+    { type: 'fill-blank', question: 'Let\'s ___ a game.（玩）', options: ['play', 'rain', 'say', 'cake'], answer: 'play' },
+    { type: 'speak', question: '跟著念：Cake, rain, day!', answer: 'Cake', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say a word with long a.", "What is your name?", "Do you like to play games?", "Great job with long a!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "cake" 蛋糕？', options: ['🎂', '🚂', '🌧️', '🚪'], answer: '🎂' },
+    { type: 'spell', question: '拼拼看：d _ y（天）', answer: 'day', image: '✍️' },
+    { type: 'match', question: '⚽ 玩是哪個字？', options: ['play', 'say', 'day', 'rain'], answer: 'play' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "It's a rainy day. Let's play a game!", lineZh: '今天下雨。我們來玩遊戲！' },
+    { speaker: 'Polly', line: "rain, day, play — long a /e/!", lineZh: 'rain、day、play —— 長母音 a /e/！' },
+    { speaker: 'Coco', line: "And eat cake by the lake!", lineZh: '還有在湖邊吃蛋糕！' },
+    { speaker: 'Polly', line: "cake, lake — magic e! Yum!", lineZh: 'cake、lake —— 魔法 e！好吃！' },
+  ],
+};
+
+const L2_M12: Mission = {
+  id: 12, slug: 'l2-m12-long-e', level: 2, title: '長母音 e', titleEn: 'Long e', theme: '聲音島・綠樹林', themeEmoji: '🌳',
+  focus: '長母音 e /i/：ee、ea、e_e',
+  story: [
+    { image: '🌳', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Two e's say /i/! see, tree!", dialogueZh: '兩個 e 發 /i/！see、tree！', highlightWords: ['ee'], sceneEmojis: ['🌳', '🔤', '✨'], animation: 'wave' },
+    { image: '🐝', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "bee, see, green — ee is /i/!", dialogueZh: 'bee、see、green —— ee 是 /i/！', highlightWords: ['bee', 'see', 'green'], sceneEmojis: ['🐝', '👀', '🟢'], animation: 'bounce' },
+    { image: '🍵', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "sea, tea, eat — ea is /i/ too!", dialogueZh: 'sea、tea、eat —— ea 也是 /i/！', highlightWords: ['sea', 'tea', 'eat'], sceneEmojis: ['🌊', '🍵', '🍽️'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Long e — done! You read like a pro!", dialogueZh: '長母音 e —— 完成！你讀得像高手！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'tree', zh: '樹', image: '🌳', phonics: 'ee /i/', kk: '[tri]', phonicsSound: '/i/', exampleSentence: 'a tall tree', exampleZh: '一棵高樹' },
+    { en: 'bee', zh: '蜜蜂', image: '🐝', phonics: 'ee /i/', kk: '[bi]', phonicsSound: '/i/', exampleSentence: 'a busy bee', exampleZh: '一隻忙碌的蜜蜂' },
+    { en: 'see', zh: '看見', image: '👀', phonics: 'ee /i/', kk: '[si]', phonicsSound: '/i/', exampleSentence: 'I can see.', exampleZh: '我看得見。' },
+    { en: 'green', zh: '綠色', image: '🟢', phonics: 'ee /i/', kk: '[ɡrin]', phonicsSound: '/i/', exampleSentence: 'a green tree', exampleZh: '一棵綠樹' },
+    { en: 'three', zh: '三', image: '3️⃣', phonics: 'ee /i/', kk: '[θri]', phonicsSound: '/i/', exampleSentence: 'I have three.', exampleZh: '我有三個。' },
+    { en: 'sea', zh: '海', image: '🌊', phonics: 'ea /i/', kk: '[si]', phonicsSound: '/i/', exampleSentence: 'in the sea', exampleZh: '在海裡' },
+    { en: 'tea', zh: '茶', image: '🍵', phonics: 'ea /i/', kk: '[ti]', phonicsSound: '/i/', exampleSentence: 'hot tea', exampleZh: '熱茶' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: 'ea /i/', kk: '[it]', phonicsSound: '/i/', exampleSentence: 'Let\'s eat.', exampleZh: '我們來吃。' },
+    { en: 'meat', zh: '肉', image: '🍖', phonics: 'ea /i/', kk: '[mit]', phonicsSound: '/i/', exampleSentence: 'I eat meat.', exampleZh: '我吃肉。' },
+    { en: 'read', zh: '閱讀', image: '📖', phonics: 'ea /i/', kk: '[rid]', phonicsSound: '/i/', exampleSentence: 'read a book', exampleZh: '讀一本書' },
+  ],
+  sentences: [
+    { en: 'I see a bee in the tree.', zh: '我看到樹上有一隻蜜蜂。' }, { en: 'Let\'s eat meat and drink tea.', zh: '我們來吃肉、喝茶。' }, { en: 'Can you see the sea?', zh: '你看得到海嗎？' }, { en: 'Yes, I can see it.', zh: '是的，我看得到。' }, { en: 'How many trees?', zh: '有幾棵樹？' }, { en: 'I see three trees.', zh: '我看到三棵樹。' },
+  ],
+  phonicsLetters: ['ee', 'ea'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有長母音 e /i/？', options: ['tree', 'cat', 'box', 'cup'], answer: 'tree', image: '🌳' },
+    { type: 'match', question: '🐝 蜜蜂是哪個字？', options: ['bee', 'see', 'tea', 'sea'], answer: 'bee' },
+    { type: 'spell', question: '拼拼看：s _ _（看見）', answer: 'see', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🌳', '🐝', '🌊', '🍵'], answer: '🐝', image: '🎧' },
+    { type: 'spell', question: '拼拼看：tr _ _（樹）', answer: 'tree', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e _ t（吃）', answer: 'eat', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['sea-🌊', 'tea-🍵', 'meat-🍖', 'read-📖'], answer: 'sea-🌊' },
+    { type: 'fill-blank', question: 'I ___ a book.（閱讀）', options: ['read', 'eat', 'see', 'tea'], answer: 'read' },
+    { type: 'speak', question: '跟著念：Tree, bee, sea!', answer: 'Tree', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say a word with long e.", "Can you see a tree?", "Do you like tea?", "Great job with long e!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "tree" 樹？', options: ['🌳', '🐝', '🌊', '🍖'], answer: '🌳' },
+    { type: 'spell', question: '拼拼看：s _ _（海）', answer: 'sea', image: '✍️' },
+    { type: 'match', question: '🍖 肉是哪個字？', options: ['meat', 'eat', 'tea', 'read'], answer: 'meat' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I see a bee in the green tree!", lineZh: '我看到綠樹上有一隻蜜蜂！' },
+    { speaker: 'Coco', line: "bee, see, tree, green — long e /i/!", lineZh: 'bee、see、tree、green —— 長母音 e /i/！' },
+    { speaker: 'Benny', line: "Let's eat meat by the sea.", lineZh: '我們去海邊吃肉。' },
+    { speaker: 'Coco', line: "eat, meat, sea — ea is /i/!", lineZh: 'eat、meat、sea —— ea 是 /i/！' },
+  ],
+};
+
+const L2_M13: Mission = {
+  id: 13, slug: 'l2-m13-long-i', level: 2, title: '長母音 i', titleEn: 'Long i', theme: '聲音島・星空高塔', themeEmoji: '🌙',
+  focus: '長母音 i /aɪ/：i_e、igh、y',
+  story: [
+    { image: '🚲', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Magic e again! bike, kite — long i /aɪ/!", dialogueZh: '又是魔法 e！bike、kite —— 長母音 i /aɪ/！', highlightWords: ['i_e'], sceneEmojis: ['🚲', '🪁', '✨'], animation: 'wave' },
+    { image: '🌙', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "night, light, high — igh is /aɪ/!", dialogueZh: 'night、light、high —— igh 是 /aɪ/！', highlightWords: ['night', 'light', 'high'], sceneEmojis: ['🌙', '💡', '⬆️'], animation: 'bounce' },
+    { image: '☁️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "sky, fly, my — y is /aɪ/ too!", dialogueZh: 'sky、fly、my —— y 也是 /aɪ/！', highlightWords: ['sky', 'fly', 'my'], sceneEmojis: ['☁️', '🦋', '🙋'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Long i — you fly high! Amazing!", dialogueZh: '長母音 i —— 你飛得高！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '✨'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'bike', zh: '腳踏車', image: '🚲', phonics: 'i_e /aɪ/', kk: '[baɪk]', phonicsSound: '/aɪ/', exampleSentence: 'ride a bike', exampleZh: '騎腳踏車' },
+    { en: 'kite', zh: '風箏', image: '🪁', phonics: 'i_e /aɪ/', kk: '[kaɪt]', phonicsSound: '/aɪ/', exampleSentence: 'fly a kite', exampleZh: '放風箏' },
+    { en: 'nine', zh: '九', image: '9️⃣', phonics: 'i_e /aɪ/', kk: '[naɪn]', phonicsSound: '/aɪ/', exampleSentence: 'I am nine.', exampleZh: '我九歲。' },
+    { en: 'five', zh: '五', image: '5️⃣', phonics: 'i_e /aɪ/', kk: '[faɪv]', phonicsSound: '/aɪ/', exampleSentence: 'give me five', exampleZh: '擊掌' },
+    { en: 'night', zh: '夜晚', image: '🌙', phonics: 'igh /aɪ/', kk: '[naɪt]', phonicsSound: '/aɪ/', exampleSentence: 'good night', exampleZh: '晚安' },
+    { en: 'light', zh: '燈光', image: '💡', phonics: 'igh /aɪ/', kk: '[laɪt]', phonicsSound: '/aɪ/', exampleSentence: 'turn on the light', exampleZh: '開燈' },
+    { en: 'high', zh: '高的', image: '⬆️', phonics: 'igh /aɪ/', kk: '[haɪ]', phonicsSound: '/aɪ/', exampleSentence: 'so high', exampleZh: '好高' },
+    { en: 'sky', zh: '天空', image: '☁️', phonics: 'y /aɪ/', kk: '[skaɪ]', phonicsSound: '/aɪ/', exampleSentence: 'in the sky', exampleZh: '在天空' },
+    { en: 'fly', zh: '飛', image: '🦋', phonics: 'y /aɪ/', kk: '[flaɪ]', phonicsSound: '/aɪ/', exampleSentence: 'Birds fly.', exampleZh: '鳥會飛。' },
+    { en: 'my', zh: '我的', image: '🙋', phonics: 'y /aɪ/', kk: '[maɪ]', phonicsSound: '/aɪ/', exampleSentence: 'my bike', exampleZh: '我的腳踏車' },
+  ],
+  sentences: [
+    { en: 'My kite can fly high.', zh: '我的風箏能飛得高。' }, { en: 'I ride my bike at night.', zh: '我晚上騎腳踏車。' }, { en: 'Can you fly a kite?', zh: '你會放風箏嗎？' }, { en: 'Yes, I can.', zh: '是的，我會。' }, { en: 'How old are you?', zh: '你幾歲？' }, { en: 'I am nine.', zh: '我九歲。' },
+  ],
+  phonicsLetters: ['i_e', 'igh', 'y'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有長母音 i /aɪ/？', options: ['bike', 'big', 'box', 'bed'], answer: 'bike', image: '🚲' },
+    { type: 'match', question: '🪁 風箏是哪個字？', options: ['kite', 'bike', 'night', 'sky'], answer: 'kite' },
+    { type: 'spell', question: '拼拼看：sk _（天空）', answer: 'sky', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🚲', '🪁', '🌙', '☁️'], answer: '🪁', image: '🎧' },
+    { type: 'spell', question: '拼拼看：b _ ke（腳踏車）', answer: 'bike', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n _ ght（夜晚）', answer: 'night', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['light-💡', 'fly-🦋', 'nine-9️⃣', 'high-⬆️'], answer: 'light-💡' },
+    { type: 'fill-blank', question: 'Birds can ___.（飛）', options: ['fly', 'bike', 'night', 'my'], answer: 'fly' },
+    { type: 'speak', question: '跟著念：Bike, night, sky!', answer: 'Bike', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say a word with long i.", "Can you ride a bike?", "What do you see in the sky?", "Great job with long i!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "kite" 風箏？', options: ['🪁', '🚲', '🌙', '💡'], answer: '🪁' },
+    { type: 'spell', question: '拼拼看：fl _（飛）', answer: 'fly', image: '✍️' },
+    { type: 'match', question: '🌙 夜晚是哪個字？', options: ['night', 'light', 'high', 'sky'], answer: 'night' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "My kite can fly high in the sky!", lineZh: '我的風箏能在天空飛得高！' },
+    { speaker: 'Polly', line: "kite, fly, high, sky — long i /aɪ/!", lineZh: 'kite、fly、high、sky —— 長母音 i /aɪ/！' },
+    { speaker: 'Finn', line: "At night, I ride my bike.", lineZh: '晚上，我騎我的腳踏車。' },
+    { speaker: 'Polly', line: "night, bike — long i again!", lineZh: 'night、bike —— 又是長母音 i！' },
+  ],
+};
+
+const L2_M14: Mission = {
+  id: 14, slug: 'l2-m14-long-o', level: 2, title: '長母音 o', titleEn: 'Long o', theme: '聲音島・雪船港', themeEmoji: '⛵',
+  focus: '長母音 o /o/：o_e、oa、ow',
+  story: [
+    { image: '👃', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Magic e! nose, home — long o /o/!", dialogueZh: '魔法 e！nose、home —— 長母音 o /o/！', highlightWords: ['o_e'], sceneEmojis: ['👃', '🏠', '✨'], animation: 'wave' },
+    { image: '⛵', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "boat, coat, road — oa is /o/!", dialogueZh: 'boat、coat、road —— oa 是 /o/！', highlightWords: ['boat', 'coat', 'road'], sceneEmojis: ['⛵', '🧥', '🛣️'], animation: 'bounce' },
+    { image: '❄️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "snow, slow, grow — ow is /o/ too!", dialogueZh: 'snow、slow、grow —— ow 也是 /o/！', highlightWords: ['snow', 'slow', 'grow'], sceneEmojis: ['❄️', '🐌', '🌱'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Long o — you grow smarter! Great!", dialogueZh: '長母音 o —— 你越來越聰明！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '✨'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'nose', zh: '鼻子', image: '👃', phonics: 'o_e /o/', kk: '[noz]', phonicsSound: '/o/', exampleSentence: 'my nose', exampleZh: '我的鼻子' },
+    { en: 'home', zh: '家', image: '🏠', phonics: 'o_e /o/', kk: '[hom]', phonicsSound: '/o/', exampleSentence: 'go home', exampleZh: '回家' },
+    { en: 'rose', zh: '玫瑰', image: '🌹', phonics: 'o_e /o/', kk: '[roz]', phonicsSound: '/o/', exampleSentence: 'a red rose', exampleZh: '一朵紅玫瑰' },
+    { en: 'bone', zh: '骨頭', image: '🦴', phonics: 'o_e /o/', kk: '[bon]', phonicsSound: '/o/', exampleSentence: 'a dog bone', exampleZh: '一根狗骨頭' },
+    { en: 'boat', zh: '小船', image: '⛵', phonics: 'oa /o/', kk: '[bot]', phonicsSound: '/o/', exampleSentence: 'a small boat', exampleZh: '一艘小船' },
+    { en: 'coat', zh: '外套', image: '🧥', phonics: 'oa /o/', kk: '[kot]', phonicsSound: '/o/', exampleSentence: 'a warm coat', exampleZh: '一件暖外套' },
+    { en: 'road', zh: '馬路', image: '🛣️', phonics: 'oa /o/', kk: '[rod]', phonicsSound: '/o/', exampleSentence: 'a long road', exampleZh: '一條長路' },
+    { en: 'snow', zh: '雪', image: '❄️', phonics: 'ow /o/', kk: '[sno]', phonicsSound: '/o/', exampleSentence: 'white snow', exampleZh: '白雪' },
+    { en: 'slow', zh: '慢的', image: '🐌', phonics: 'ow /o/', kk: '[slo]', phonicsSound: '/o/', exampleSentence: 'a slow snail', exampleZh: '一隻慢蝸牛' },
+    { en: 'grow', zh: '生長', image: '🌱', phonics: 'ow /o/', kk: '[ɡro]', phonicsSound: '/o/', exampleSentence: 'Plants grow.', exampleZh: '植物會長大。' },
+  ],
+  sentences: [
+    { en: 'The boat is slow on the road.', zh: '船在路上慢慢走。' }, { en: 'I go home in the snow.', zh: '我在雪中回家。' }, { en: 'Is it a boat?', zh: '這是一艘船嗎？' }, { en: 'Yes, it is a boat.', zh: '是的，這是一艘船。' }, { en: 'Do you have a coat?', zh: '你有外套嗎？' }, { en: 'Roses grow slow.', zh: '玫瑰長得慢。' },
+  ],
+  phonicsLetters: ['o_e', 'oa', 'ow'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有長母音 o /o/？', options: ['nose', 'box', 'dog', 'hot'], answer: 'nose', image: '👃' },
+    { type: 'match', question: '⛵ 小船是哪個字？', options: ['boat', 'coat', 'road', 'home'], answer: 'boat' },
+    { type: 'spell', question: '拼拼看：sn _ _（雪）', answer: 'snow', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['👃', '⛵', '🧥', '❄️'], answer: '🧥', image: '🎧' },
+    { type: 'spell', question: '拼拼看：h _ me（家）', answer: 'home', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b _ at（小船）', answer: 'boat', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['rose-🌹', 'bone-🦴', 'road-🛣️', 'grow-🌱'], answer: 'rose-🌹' },
+    { type: 'fill-blank', question: 'It is cold. I need a ___.（外套）', options: ['coat', 'boat', 'road', 'nose'], answer: 'coat' },
+    { type: 'speak', question: '跟著念：Nose, boat, snow!', answer: 'Nose', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say a word with long o.", "Do you have a coat?", "Can you touch your nose?", "Great job with long o!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "boat" 小船？', options: ['⛵', '🧥', '🛣️', '🌹'], answer: '⛵' },
+    { type: 'spell', question: '拼拼看：r _ ad（馬路）', answer: 'road', image: '✍️' },
+    { type: 'match', question: '❄️ 雪是哪個字？', options: ['snow', 'slow', 'grow', 'home'], answer: 'snow' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "The boat is slow on the road home.", lineZh: '船在回家的路上慢慢走。' },
+    { speaker: 'Coco', line: "boat, road, home, slow — long o /o/!", lineZh: 'boat、road、home、slow —— 長母音 o /o/！' },
+    { speaker: 'Ruby', line: "It's cold! Wear your coat in the snow!", lineZh: '好冷！在雪中穿上外套！' },
+    { speaker: 'Coco', line: "coat, snow — long o again!", lineZh: 'coat、snow —— 又是長母音 o！' },
+  ],
+};
+
+const L2_M15: Mission = {
+  id: 15, slug: 'l2-m15-review-long', level: 2, title: '拼讀複習③ 長母音', titleEn: 'Review Long Vowels', theme: '聲音島・長音音樂廳', themeEmoji: '🎼',
+  focus: '複習長母音 a/e/i/o（magic e + 母音組合）',
+  story: [
+    { image: '🎼', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Review time! Long vowels say their names!", dialogueZh: '複習時間！長母音唸自己的名字！', highlightWords: [], sceneEmojis: ['🎼', '🔤', '🎉'], animation: 'wave' },
+    { image: '🎵', character: '🦜', characterKey: 'polly', characterAction: 'sing', characterName: 'Polly', dialogue: "cake /e/, tree /i/, bike /aɪ/, boat /o/!", dialogueZh: 'cake /e/、tree /i/、bike /aɪ/、boat /o/！', highlightWords: [], sceneEmojis: ['🎵', '🎶', '⭐'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Short and long — you know both! Champion!", dialogueZh: '短音長音 —— 你都會了！冠軍！', highlightWords: [], sceneEmojis: ['🏆', '🎉', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cake', zh: '蛋糕', image: '🎂', phonics: 'a_e /e/', kk: '[kek]', phonicsSound: '/e/', exampleSentence: 'cake', exampleZh: '蛋糕' },
+    { en: 'rain', zh: '雨', image: '🌧️', phonics: 'ai /e/', kk: '[ren]', phonicsSound: '/e/', exampleSentence: 'rain', exampleZh: '雨' },
+    { en: 'tree', zh: '樹', image: '🌳', phonics: 'ee /i/', kk: '[tri]', phonicsSound: '/i/', exampleSentence: 'tree', exampleZh: '樹' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: 'ea /i/', kk: '[it]', phonicsSound: '/i/', exampleSentence: 'eat', exampleZh: '吃' },
+    { en: 'bike', zh: '腳踏車', image: '🚲', phonics: 'i_e /aɪ/', kk: '[baɪk]', phonicsSound: '/aɪ/', exampleSentence: 'bike', exampleZh: '腳踏車' },
+    { en: 'sky', zh: '天空', image: '☁️', phonics: 'y /aɪ/', kk: '[skaɪ]', phonicsSound: '/aɪ/', exampleSentence: 'sky', exampleZh: '天空' },
+    { en: 'boat', zh: '小船', image: '⛵', phonics: 'oa /o/', kk: '[bot]', phonicsSound: '/o/', exampleSentence: 'boat', exampleZh: '小船' },
+    { en: 'snow', zh: '雪', image: '❄️', phonics: 'ow /o/', kk: '[sno]', phonicsSound: '/o/', exampleSentence: 'snow', exampleZh: '雪' },
+    { en: 'night', zh: '夜晚', image: '🌙', phonics: 'igh /aɪ/', kk: '[naɪt]', phonicsSound: '/aɪ/', exampleSentence: 'night', exampleZh: '夜晚' },
+    { en: 'home', zh: '家', image: '🏠', phonics: 'o_e /o/', kk: '[hom]', phonicsSound: '/o/', exampleSentence: 'home', exampleZh: '家' },
+  ],
+  sentences: [
+    { en: 'I ride my bike home.', zh: '我騎腳踏車回家。' }, { en: 'I see a tree in the rain.', zh: '我在雨中看到一棵樹。' }, { en: 'Is it a boat?', zh: '這是一艘船嗎？' }, { en: 'No, it is a bike.', zh: '不，這是一輛腳踏車。' }, { en: 'What do you see in the sky?', zh: '你在天空看到什麼？' }, { en: 'I eat cake at home.', zh: '我在家吃蛋糕。' },
+  ],
+  phonicsLetters: ['a_e', 'ai', 'ay', 'ee', 'ea', 'i_e', 'igh', 'y', 'o_e', 'oa', 'ow'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '"cake" 是長母音還是短母音？', options: ['長母音', '短母音'], answer: '長母音', image: '🎂' },
+    { type: 'listen-pick', question: '哪個是長母音 i /aɪ/？', options: ['bike', 'big', 'pig', 'sit'], answer: 'bike', image: '🚲' },
+    { type: 'match', question: '🌳 樹是哪個母音？', options: ['long e', 'long a', 'long i', 'long o'], answer: 'long e' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🎂', '🌳', '🚲', '⛵'], answer: '🚲', image: '🎧' },
+    { type: 'spell', question: '拼拼看：c _ ke（蛋糕）', answer: 'cake', image: '✍️' },
+    { type: 'spell', question: '拼拼看：tr _ _（樹）', answer: 'tree', image: '✍️' },
+    { type: 'match', question: '配對：字配長母音', options: ['cake-a', 'tree-e', 'bike-i', 'boat-o'], answer: 'cake-a' },
+    { type: 'fill-blank', question: 'Which is long o? ___', options: ['boat', 'bike', 'tree', 'cake'], answer: 'boat' },
+    { type: 'speak', question: '跟著念：Cake, tree, bike, boat!', answer: 'Cake', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say a long a word.", "Say a long e word.", "Say a long i and long o word.", "You can read long vowels!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是長母音 e /i/？', options: ['tree', 'bed', 'ten', 'net'], answer: 'tree' },
+    { type: 'match', question: '⛵ 小船是哪個長母音？', options: ['long o', 'long a', 'long e', 'long i'], answer: 'long o' },
+    { type: 'spell', question: '拼拼看：b _ ke（腳踏車）', answer: 'bike', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "cake, tree, bike, boat — say their names!", lineZh: 'cake、tree、bike、boat —— 唸出名字！' },
+    { speaker: 'Coco', line: "/e/ /i/ /aɪ/ /o/ — long vowels!", lineZh: '/e/ /i/ /aɪ/ /o/ —— 長母音！' },
+    { speaker: 'Polly', line: "Short is /æ/, long is /e/. Can you hear?", lineZh: '短音 /æ/，長音 /e/。聽得出來嗎？' },
+    { speaker: 'Coco', line: "Yes! I can read both now!", lineZh: '可以！我兩種都會讀了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
