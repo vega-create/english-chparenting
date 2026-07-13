@@ -5,19 +5,23 @@ import { speak } from "@/lib/speech";
 
 type Filter = "all" | "irregular" | "regular";
 
+const LEVELS = [4, 5, 6, 7, 8, 9, 10, 11];
+
 export default function VerbsPage() {
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
+  const [level, setLevel] = useState<number>(0); // 0 = 全部等級
 
   const list = useMemo(() => {
     const kw = q.trim().toLowerCase();
     return VERBS.filter(v => {
       if (filter === "irregular" && v.reg) return false;
       if (filter === "regular" && !v.reg) return false;
+      if (level !== 0 && v.lv !== level) return false;
       if (!kw) return true;
       return v.base.includes(kw) || v.past.toLowerCase().includes(kw) || v.pp.toLowerCase().includes(kw) || v.zh.includes(kw);
     });
-  }, [q, filter]);
+  }, [q, filter, level]);
 
   const irregCount = VERBS.filter(v => !v.reg).length;
   const regCount = VERBS.length - irregCount;
@@ -64,6 +68,16 @@ export default function VerbsPage() {
               </button>
             ))}
           </div>
+          {/* 等級篩選 */}
+          <div className="flex gap-1.5 mt-2.5 justify-center flex-wrap items-center">
+            <span className="text-xs font-black text-gray-400 mr-1">等級</span>
+            <button onClick={() => setLevel(0)}
+              className={`px-3 py-1 rounded-full text-xs font-black transition ${level === 0 ? "bg-amber-500 text-white shadow" : "bg-amber-50 text-amber-700 hover:bg-amber-100"}`}>全部</button>
+            {LEVELS.map(n => (
+              <button key={n} onClick={() => setLevel(n)}
+                className={`px-3 py-1 rounded-full text-xs font-black transition ${level === n ? "bg-amber-500 text-white shadow" : "bg-amber-50 text-amber-700 hover:bg-amber-100"}`}>L{n}</button>
+            ))}
+          </div>
         </div>
 
         {/* 說明 */}
@@ -89,7 +103,10 @@ export default function VerbsPage() {
               <button onClick={() => speak(v.base, 0.6)} className="text-left font-black text-lg text-purple-700 hover:underline">{v.base}</button>
               <button onClick={() => speak(v.past.replace(" / ", " "), 0.6)} className={`text-left font-bold ${v.reg ? "text-gray-700" : "text-amber-700"} hover:underline`}>{v.past}</button>
               <button onClick={() => speak(v.pp, 0.6)} className={`text-left font-bold ${v.reg ? "text-gray-700" : "text-amber-700"} hover:underline`}>{v.pp}</button>
-              <span className="text-sm text-gray-500 col-span-2 sm:col-span-1">{v.zh}</span>
+              <span className="text-sm text-gray-500 col-span-2 sm:col-span-1 flex items-center gap-2">
+                {v.zh}
+                <span className="text-[10px] font-black text-amber-600 bg-amber-100 px-1.5 py-0.5 rounded">L{v.lv}</span>
+              </span>
               <button onClick={() => sayAll(v)} className="justify-self-end w-9 h-9 rounded-full bg-white shadow flex items-center justify-center hover:scale-110 transition" title="唸三態">🔊</button>
             </div>
           ))}
@@ -99,7 +116,7 @@ export default function VerbsPage() {
         </div>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          共 {VERBS.length} 個常用動詞 ｜ 不規則動詞務必背熟三態！
+          顯示 {list.length} / {VERBS.length} 個動詞 ｜ 不規則動詞務必背熟三態！
         </p>
       </div>
     </main>
