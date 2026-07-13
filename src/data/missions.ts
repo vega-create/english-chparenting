@@ -1736,7 +1736,270 @@ const L2_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20];
+/* ============================================================
+   L3 市場街 Market Street — 生活單字＋冠詞＋複數＋疑問句（標準課型範本）
+============================================================ */
+
+const L3_M1: Mission = {
+  id: 1, slug: 'l3-m1-colors-1', level: 3, title: '顏色①', titleEn: 'Colors 1', theme: '市場街・彩虹攤位', themeEmoji: '🌈',
+  focus: '10 個顏色單字；句型 It is + 顏色；冠詞 a + 顏色 + 名詞',
+  story: [
+    { image: '🌈', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Market Street! Look at the colors!", dialogueZh: '歡迎來到市場街！看看這些顏色！', highlightWords: ['colors'], sceneEmojis: ['🌈', '🏡', '✨'], animation: 'wave' },
+    { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "It is a red apple! Red, red, red!", dialogueZh: '這是一顆紅蘋果！紅、紅、紅！', highlightWords: ['red', 'apple'], sceneEmojis: ['🍎', '🔴', '😊'], animation: 'bounce' },
+    { image: '🫐', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "It is blue! I like blue and green!", dialogueZh: '這是藍色！我喜歡藍色和綠色！', highlightWords: ['blue', 'green'], sceneEmojis: ['🔵', '🟢', '🎉'], animation: 'tada' },
+    { image: '🎨', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "So many colors! Now you know them all!", dialogueZh: '好多顏色！現在你都認識了！', highlightWords: [], sceneEmojis: ['🎨', '🏆', '🌈'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'red', zh: '紅色', image: '🔴', phonics: '', kk: '[rɛd]', phonicsSound: '', exampleSentence: 'a red apple', exampleZh: '一顆紅蘋果' },
+    { en: 'blue', zh: '藍色', image: '🔵', phonics: '', kk: '[blu]', phonicsSound: '', exampleSentence: 'a blue car', exampleZh: '一輛藍車' },
+    { en: 'yellow', zh: '黃色', image: '🟡', phonics: '', kk: '[ˈjɛlo]', phonicsSound: '', exampleSentence: 'a yellow sun', exampleZh: '一個黃太陽' },
+    { en: 'green', zh: '綠色', image: '🟢', phonics: '', kk: '[ɡrin]', phonicsSound: '', exampleSentence: 'a green tree', exampleZh: '一棵綠樹' },
+    { en: 'black', zh: '黑色', image: '⚫', phonics: '', kk: '[blæk]', phonicsSound: '', exampleSentence: 'a black cat', exampleZh: '一隻黑貓' },
+    { en: 'white', zh: '白色', image: '⚪', phonics: '', kk: '[waɪt]', phonicsSound: '', exampleSentence: 'a white dog', exampleZh: '一隻白狗' },
+    { en: 'pink', zh: '粉紅色', image: '🩷', phonics: '', kk: '[pɪŋk]', phonicsSound: '', exampleSentence: 'a pink pig', exampleZh: '一隻粉紅豬' },
+    { en: 'purple', zh: '紫色', image: '🟣', phonics: '', kk: '[ˈpɝpl]', phonicsSound: '', exampleSentence: 'a purple grape', exampleZh: '一顆紫葡萄' },
+    { en: 'orange', zh: '橘色', image: '🟠', phonics: '', kk: '[ˈɔrɪndʒ]', phonicsSound: '', exampleSentence: 'an orange ball', exampleZh: '一顆橘球' },
+    { en: 'brown', zh: '棕色', image: '🟤', phonics: '', kk: '[braʊn]', phonicsSound: '', exampleSentence: 'a brown bear', exampleZh: '一隻棕熊' },
+  ],
+  sentences: [
+    { en: 'It is red.', zh: '它是紅色的。' }, { en: 'It is a blue car.', zh: '這是一輛藍車。' }, { en: 'What color is it?', zh: '它是什麼顏色？' }, { en: 'It is green.', zh: '它是綠色的。' }, { en: 'I like red and blue.', zh: '我喜歡紅色和藍色。' }, { en: 'Do you like yellow?', zh: '你喜歡黃色嗎？' },
+  ],
+  phonicsLetters: ['colors'],
+  warmUpQuestions: [
+    { type: 'match', question: '🔴 是什麼顏色？', options: ['red', 'blue', 'green', 'black'], answer: 'red' },
+    { type: 'match', question: '🟢 是什麼顏色？', options: ['green', 'red', 'yellow', 'pink'], answer: 'green' },
+    { type: 'listen-pick', question: '哪個是 "blue" 藍色？', options: ['🔵', '🔴', '🟡', '🟢'], answer: '🔵' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選色：點你聽到的顏色', options: ['🔴', '🔵', '🟡', '🟢'], answer: '🟡', image: '🎧' },
+    { type: 'match', question: '配對：顏色配圖', options: ['red-🔴', 'blue-🔵', 'green-🟢', 'black-⚫'], answer: 'red-🔴' },
+    { type: 'spell', question: '拼拼看：r _ d（紅色）', answer: 'red', image: '✍️' },
+    { type: 'fill-blank', question: 'It is a ___ apple.（紅色）', options: ['red', 'blue', 'green', 'black'], answer: 'red' },
+    { type: 'fill-blank', question: 'The tree is ___.（綠色）', options: ['green', 'red', 'pink', 'white'], answer: 'green' },
+    { type: 'speak', question: '跟著念：Red, blue, green!', answer: 'Red', image: '🗣' },
+  ],
+  talkTimePrompts: ["What is your favorite color?", "What color is an apple?", "Point to something blue!", "Say three colors you like!"],
+  reviewQuiz: [
+    { type: 'match', question: '⚫ 是什麼顏色？', options: ['black', 'white', 'brown', 'blue'], answer: 'black' },
+    { type: 'fill-blank', question: 'It is a ___ bear.（棕色）', options: ['brown', 'pink', 'purple', 'red'], answer: 'brown' },
+    { type: 'listen-pick', question: '哪個是 "pink" 粉紅色？', options: ['🩷', '🟣', '🟠', '🟡'], answer: '🩷' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Look! A red apple and a green tree!", lineZh: '看！一顆紅蘋果和一棵綠樹！' },
+    { speaker: 'Polly', line: "I like blue! What color do you like?", lineZh: '我喜歡藍色！你喜歡什麼顏色？' },
+    { speaker: 'Coco', line: "I like pink and purple!", lineZh: '我喜歡粉紅色和紫色！' },
+    { speaker: 'Polly', line: "So many colors on Market Street!", lineZh: '市場街好多顏色！' },
+  ],
+};
+
+const L3_M2: Mission = {
+  id: 2, slug: 'l3-m2-colors-2', level: 3, title: '顏色② 問答', titleEn: 'Colors Q&A', theme: '市場街・顏色遊戲', themeEmoji: '🎨',
+  focus: '句型：Is it red? Yes, it is. / No, it isn\'t. What color is it?',
+  story: [
+    { image: '🎨', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Let's play a color game! Ask and answer!", dialogueZh: '我們玩顏色遊戲！問和答！', highlightWords: ['ask', 'answer'], sceneEmojis: ['🎨', '❓', '✨'], animation: 'wave' },
+    { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Is it red? Yes, it is!", dialogueZh: '它是紅色的嗎？是的！', highlightWords: ['Is', 'red'], sceneEmojis: ['🍎', '✅', '😊'], animation: 'bounce' },
+    { image: '🍌', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Is it red? No, it isn't. It is yellow!", dialogueZh: '它是紅色的嗎？不，不是。它是黃色的！', highlightWords: ['No', 'yellow'], sceneEmojis: ['🍌', '❌', '🟡'], animation: 'shake' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Great questions and answers! Well done!", dialogueZh: '很棒的問答！做得好！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🎨'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'red', zh: '紅色', image: '🔴', phonics: '', kk: '[rɛd]', phonicsSound: '', exampleSentence: 'Is it red?', exampleZh: '它是紅色的嗎？' },
+    { en: 'yellow', zh: '黃色', image: '🟡', phonics: '', kk: '[ˈjɛlo]', phonicsSound: '', exampleSentence: 'It is yellow.', exampleZh: '它是黃色的。' },
+    { en: 'blue', zh: '藍色', image: '🔵', phonics: '', kk: '[blu]', phonicsSound: '', exampleSentence: 'Is it blue?', exampleZh: '它是藍色的嗎？' },
+    { en: 'green', zh: '綠色', image: '🟢', phonics: '', kk: '[ɡrin]', phonicsSound: '', exampleSentence: 'It is green.', exampleZh: '它是綠色的。' },
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'a red apple', exampleZh: '一顆紅蘋果' },
+    { en: 'banana', zh: '香蕉', image: '🍌', phonics: '', kk: '[bəˈnænə]', phonicsSound: '', exampleSentence: 'a yellow banana', exampleZh: '一根黃香蕉' },
+    { en: 'ball', zh: '球', image: '⚽', phonics: '', kk: '[bɔl]', phonicsSound: '', exampleSentence: 'a blue ball', exampleZh: '一顆藍球' },
+    { en: 'leaf', zh: '葉子', image: '🍃', phonics: '', kk: '[lif]', phonicsSound: '', exampleSentence: 'a green leaf', exampleZh: '一片綠葉' },
+    { en: 'yes', zh: '是的', image: '✅', phonics: '', kk: '[jɛs]', phonicsSound: '', exampleSentence: 'Yes, it is.', exampleZh: '是的。' },
+    { en: 'no', zh: '不是', image: '❌', phonics: '', kk: '[no]', phonicsSound: '', exampleSentence: 'No, it isn\'t.', exampleZh: '不，不是。' },
+  ],
+  sentences: [
+    { en: 'Is it red?', zh: '它是紅色的嗎？' }, { en: 'Yes, it is.', zh: '是的，它是。' }, { en: 'No, it isn\'t.', zh: '不，它不是。' }, { en: 'What color is it?', zh: '它是什麼顏色？' }, { en: 'It is yellow.', zh: '它是黃色的。' }, { en: 'The banana is yellow.', zh: '香蕉是黃色的。' },
+  ],
+  phonicsLetters: ['colors'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: 'Is the apple red? （蘋果是紅的嗎）', options: ['Yes, it is.', 'No, it isn\'t.'], answer: 'Yes, it is.', image: '🍎' },
+    { type: 'listen-pick', question: 'Is the banana blue?（香蕉是藍的嗎）', options: ['No, it isn\'t.', 'Yes, it is.'], answer: 'No, it isn\'t.', image: '🍌' },
+    { type: 'match', question: '🍌 香蕉是什麼顏色？', options: ['yellow', 'red', 'blue', 'green'], answer: 'yellow' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'Is it red? ___, it is.', options: ['Yes', 'No', 'What', 'It'], answer: 'Yes' },
+    { type: 'fill-blank', question: 'Is it blue? No, it ___.', options: ["isn't", 'is', 'are', 'am'], answer: "isn't" },
+    { type: 'fill-blank', question: '___ color is it?（什麼）', options: ['What', 'Is', 'Yes', 'No'], answer: 'What' },
+    { type: 'match', question: '配對：問句配答句', options: ['Is it red?-Yes, it is.', 'What color?-It is blue.'], answer: 'Is it red?-Yes, it is.' },
+    { type: 'listen-pick', question: '哪個是綠葉？', options: ['🍃', '🍎', '🍌', '⚽'], answer: '🍃' },
+    { type: 'speak', question: '跟著問：Is it red?', answer: 'Is it red', image: '🗣' },
+  ],
+  talkTimePrompts: ["Is your bag red?", "What color is the sky?", "Ask me: What color is it?", "Answer: Is an apple red?"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Is it yellow? Yes, ___ is.', options: ['it', 'is', 'no', 'what'], answer: 'it' },
+    { type: 'match', question: '⚽ 藍球 — Is it blue?', options: ['Yes, it is.', 'No, it isn\'t.'], answer: 'Yes, it is.' },
+    { type: 'fill-blank', question: 'The leaf is ___.（綠色）', options: ['green', 'red', 'yellow', 'blue'], answer: 'green' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Is it red?", lineZh: '它是紅色的嗎？' },
+    { speaker: 'Benny', line: "Yes, it is! It's a red apple.", lineZh: '是的！這是一顆紅蘋果。' },
+    { speaker: 'Coco', line: "Is the banana red?", lineZh: '香蕉是紅色的嗎？' },
+    { speaker: 'Benny', line: "No, it isn't. It's yellow!", lineZh: '不，不是。它是黃色的！' },
+  ],
+};
+
+const L3_M3: Mission = {
+  id: 3, slug: 'l3-m3-numbers-1', level: 3, title: '數字 1–10', titleEn: 'Numbers 1–10', theme: '市場街・數數攤', themeEmoji: '🔢',
+  focus: '數字 one–ten；句型 How many? / I have + 數字 + 名詞',
+  story: [
+    { image: '🔢', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Let's count! One, two, three!", dialogueZh: '我們來數數！一、二、三！', highlightWords: ['count'], sceneEmojis: ['🔢', '☝️', '✨'], animation: 'wave' },
+    { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "One apple, two apples, three apples!", dialogueZh: '一顆蘋果、兩顆蘋果、三顆蘋果！', highlightWords: ['One', 'two', 'three'], sceneEmojis: ['🍎', '🍎', '🍎'], animation: 'bounce' },
+    { image: '🖐️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Count to ten! ...eight, nine, ten!", dialogueZh: '數到十！…八、九、十！', highlightWords: ['ten'], sceneEmojis: ['🖐️', '🔟', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can count to ten! Great job!", dialogueZh: '你會數到十了！做得好！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔢'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'one', zh: '一', image: '1️⃣', phonics: '', kk: '[wʌn]', phonicsSound: '', exampleSentence: 'one cat', exampleZh: '一隻貓' },
+    { en: 'two', zh: '二', image: '2️⃣', phonics: '', kk: '[tu]', phonicsSound: '', exampleSentence: 'two dogs', exampleZh: '兩隻狗' },
+    { en: 'three', zh: '三', image: '3️⃣', phonics: '', kk: '[θri]', phonicsSound: '', exampleSentence: 'three pens', exampleZh: '三支筆' },
+    { en: 'four', zh: '四', image: '4️⃣', phonics: '', kk: '[fɔr]', phonicsSound: '', exampleSentence: 'four apples', exampleZh: '四顆蘋果' },
+    { en: 'five', zh: '五', image: '5️⃣', phonics: '', kk: '[faɪv]', phonicsSound: '', exampleSentence: 'five fingers', exampleZh: '五根手指' },
+    { en: 'six', zh: '六', image: '6️⃣', phonics: '', kk: '[sɪks]', phonicsSound: '', exampleSentence: 'six eggs', exampleZh: '六顆蛋' },
+    { en: 'seven', zh: '七', image: '7️⃣', phonics: '', kk: '[ˈsɛvən]', phonicsSound: '', exampleSentence: 'seven stars', exampleZh: '七顆星星' },
+    { en: 'eight', zh: '八', image: '8️⃣', phonics: '', kk: '[et]', phonicsSound: '', exampleSentence: 'eight fish', exampleZh: '八條魚' },
+    { en: 'nine', zh: '九', image: '9️⃣', phonics: '', kk: '[naɪn]', phonicsSound: '', exampleSentence: 'nine cars', exampleZh: '九輛車' },
+    { en: 'ten', zh: '十', image: '🔟', phonics: '', kk: '[tɛn]', phonicsSound: '', exampleSentence: 'ten toes', exampleZh: '十根腳趾' },
+  ],
+  sentences: [
+    { en: 'How many apples?', zh: '有幾顆蘋果？' }, { en: 'I have three apples.', zh: '我有三顆蘋果。' }, { en: 'Count to ten!', zh: '數到十！' }, { en: 'There are five cats.', zh: '有五隻貓。' }, { en: 'How many dogs?', zh: '有幾隻狗？' }, { en: 'Two dogs.', zh: '兩隻狗。' },
+  ],
+  phonicsLetters: ['numbers'],
+  warmUpQuestions: [
+    { type: 'match', question: '3️⃣ 是哪個數字？', options: ['three', 'two', 'four', 'five'], answer: 'three' },
+    { type: 'match', question: '🔟 是哪個數字？', options: ['ten', 'nine', 'eight', 'seven'], answer: 'ten' },
+    { type: 'listen-pick', question: '哪個是 "five" 五？', options: ['5️⃣', '4️⃣', '6️⃣', '3️⃣'], answer: '5️⃣' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選數字', options: ['1️⃣', '2️⃣', '3️⃣', '4️⃣'], answer: '3️⃣', image: '🎧' },
+    { type: 'fill-blank', question: 'one, two, ___, four', options: ['three', 'five', 'six', 'ten'], answer: 'three' },
+    { type: 'fill-blank', question: 'eight, nine, ___', options: ['ten', 'seven', 'one', 'six'], answer: 'ten' },
+    { type: 'match', question: '配對：數字配圖', options: ['one-1️⃣', 'five-5️⃣', 'ten-🔟', 'two-2️⃣'], answer: 'one-1️⃣' },
+    { type: 'fill-blank', question: 'I have ___ eggs.（六）', options: ['six', 'two', 'ten', 'one'], answer: 'six' },
+    { type: 'speak', question: '數數看：One, two, three!', answer: 'One', image: '🗣' },
+  ],
+  talkTimePrompts: ["Count from one to ten!", "How old are you?", "How many fingers do you have?", "How many pens are in your bag?"],
+  reviewQuiz: [
+    { type: 'match', question: '7️⃣ 是哪個數字？', options: ['seven', 'six', 'eight', 'nine'], answer: 'seven' },
+    { type: 'fill-blank', question: 'four, five, ___, seven', options: ['six', 'three', 'eight', 'ten'], answer: 'six' },
+    { type: 'listen-pick', question: 'How many? 🍎🍎', options: ['two', 'one', 'three', 'four'], answer: 'two' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "How many apples? Let's count!", lineZh: '有幾顆蘋果？我們來數！' },
+    { speaker: 'Polly', line: "One, two, three! Three apples!", lineZh: '一、二、三！三顆蘋果！' },
+    { speaker: 'Coco', line: "How old are you?", lineZh: '你幾歲？' },
+    { speaker: 'Polly', line: "I am seven! Count with me!", lineZh: '我七歲！跟我一起數！' },
+  ],
+};
+
+const L3_M4: Mission = {
+  id: 4, slug: 'l3-m4-numbers-2', level: 3, title: '數字 11–20', titleEn: 'Numbers 11–20', theme: '市場街・大數字塔', themeEmoji: '🔢',
+  focus: '數字 eleven–twenty；句型 How many are there? There are + 數字',
+  story: [
+    { image: '🔢', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Bigger numbers! Eleven, twelve, thirteen!", dialogueZh: '更大的數字！十一、十二、十三！', highlightWords: ['eleven', 'twelve'], sceneEmojis: ['🔢', '🗼', '✨'], animation: 'wave' },
+    { image: '⭐', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "There are twelve stars! Count them!", dialogueZh: '有十二顆星星！數數看！', highlightWords: ['twelve', 'stars'], sceneEmojis: ['⭐', '🔢', '😊'], animation: 'bounce' },
+    { image: '🎈', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "...eighteen, nineteen, twenty! Twenty balloons!", dialogueZh: '…十八、十九、二十！二十顆氣球！', highlightWords: ['twenty'], sceneEmojis: ['🎈', '🔢', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can count to twenty! Amazing!", dialogueZh: '你會數到二十了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔢'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'eleven', zh: '十一', image: '1️⃣1️⃣', phonics: '', kk: '[ɪˈlɛvən]', phonicsSound: '', exampleSentence: 'eleven cats', exampleZh: '十一隻貓' },
+    { en: 'twelve', zh: '十二', image: '1️⃣2️⃣', phonics: '', kk: '[twɛlv]', phonicsSound: '', exampleSentence: 'twelve stars', exampleZh: '十二顆星星' },
+    { en: 'thirteen', zh: '十三', image: '1️⃣3️⃣', phonics: '', kk: '[θɝˈtin]', phonicsSound: '', exampleSentence: 'thirteen books', exampleZh: '十三本書' },
+    { en: 'fourteen', zh: '十四', image: '1️⃣4️⃣', phonics: '', kk: '[fɔrˈtin]', phonicsSound: '', exampleSentence: 'fourteen eggs', exampleZh: '十四顆蛋' },
+    { en: 'fifteen', zh: '十五', image: '1️⃣5️⃣', phonics: '', kk: '[fɪfˈtin]', phonicsSound: '', exampleSentence: 'fifteen apples', exampleZh: '十五顆蘋果' },
+    { en: 'sixteen', zh: '十六', image: '1️⃣6️⃣', phonics: '', kk: '[sɪksˈtin]', phonicsSound: '', exampleSentence: 'sixteen fish', exampleZh: '十六條魚' },
+    { en: 'seventeen', zh: '十七', image: '1️⃣7️⃣', phonics: '', kk: '[ˌsɛvənˈtin]', phonicsSound: '', exampleSentence: 'seventeen dots', exampleZh: '十七個點' },
+    { en: 'eighteen', zh: '十八', image: '1️⃣8️⃣', phonics: '', kk: '[eˈtin]', phonicsSound: '', exampleSentence: 'eighteen cars', exampleZh: '十八輛車' },
+    { en: 'nineteen', zh: '十九', image: '1️⃣9️⃣', phonics: '', kk: '[naɪnˈtin]', phonicsSound: '', exampleSentence: 'nineteen pens', exampleZh: '十九支筆' },
+    { en: 'twenty', zh: '二十', image: '2️⃣0️⃣', phonics: '', kk: '[ˈtwɛnti]', phonicsSound: '', exampleSentence: 'twenty balloons', exampleZh: '二十顆氣球' },
+  ],
+  sentences: [
+    { en: 'How many are there?', zh: '有幾個？' }, { en: 'There are twelve.', zh: '有十二個。' }, { en: 'Count to twenty!', zh: '數到二十！' }, { en: 'There are fifteen apples.', zh: '有十五顆蘋果。' }, { en: 'How many stars are there?', zh: '有幾顆星星？' }, { en: 'Twenty stars.', zh: '二十顆星星。' },
+  ],
+  phonicsLetters: ['numbers'],
+  warmUpQuestions: [
+    { type: 'match', question: '「十二」的英文是？', options: ['twelve', 'twenty', 'thirteen', 'eleven'], answer: 'twelve' },
+    { type: 'match', question: '「二十」的英文是？', options: ['twenty', 'twelve', 'thirteen', 'eleven'], answer: 'twenty' },
+    { type: 'fill-blank', question: 'ten, eleven, ___', options: ['twelve', 'twenty', 'two', 'thirteen'], answer: 'twelve' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'twelve, thirteen, ___', options: ['fourteen', 'twenty', 'ten', 'fifteen'], answer: 'fourteen' },
+    { type: 'fill-blank', question: 'eighteen, nineteen, ___', options: ['twenty', 'ten', 'twelve', 'eleven'], answer: 'twenty' },
+    { type: 'match', question: '配對：數字配字', options: ['11-eleven', '15-fifteen', '20-twenty', '13-thirteen'], answer: '11-eleven' },
+    { type: 'fill-blank', question: 'There are ___ stars.（十二）', options: ['twelve', 'twenty', 'two', 'ten'], answer: 'twelve' },
+    { type: 'listen-pick', question: '聽音選數字', options: ['1️⃣5️⃣', '1️⃣2️⃣', '2️⃣0️⃣', '1️⃣1️⃣'], answer: '1️⃣5️⃣', image: '🎧' },
+    { type: 'speak', question: '數數看：Eleven, twelve, thirteen!', answer: 'Eleven', image: '🗣' },
+  ],
+  talkTimePrompts: ["Count from eleven to twenty!", "How many students in your class?", "How many are there? (show fingers)", "Count the stars with me!"],
+  reviewQuiz: [
+    { type: 'match', question: '「十五」的英文是？', options: ['fifteen', 'fifty', 'fourteen', 'sixteen'], answer: 'fifteen' },
+    { type: 'fill-blank', question: 'thirteen, fourteen, ___', options: ['fifteen', 'twenty', 'ten', 'twelve'], answer: 'fifteen' },
+    { type: 'fill-blank', question: 'There ___ twenty balloons.', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "How many stars are there?", lineZh: '有幾顆星星？' },
+    { speaker: 'Polly', line: "Let's count! ...eleven, twelve! Twelve stars!", lineZh: '我們來數！…十一、十二！十二顆星星！' },
+    { speaker: 'Coco', line: "And twenty balloons!", lineZh: '還有二十顆氣球！' },
+    { speaker: 'Polly', line: "Wow, that's a lot! Twenty!", lineZh: '哇，好多！二十！' },
+  ],
+};
+
+const L3_M5: Mission = {
+  id: 5, slug: 'l3-m5-review-color-num', level: 3, title: '複習① 顏色數字', titleEn: 'Review Colors & Numbers', theme: '市場街・彩色市集', themeEmoji: '🎪',
+  focus: '複習顏色＋數字；整合句型 How many ___? / What color?',
+  story: [
+    { image: '🎪', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Big review! Colors and numbers together!", dialogueZh: '大複習！顏色和數字一起！', highlightWords: [], sceneEmojis: ['🎪', '🌈', '🔢'], animation: 'wave' },
+    { image: '🎈', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Three red balloons and two blue balloons!", dialogueZh: '三顆紅氣球和兩顆藍氣球！', highlightWords: ['Three', 'red', 'two', 'blue'], sceneEmojis: ['🎈', '🔴', '🔵'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know colors and numbers! Champion!", dialogueZh: '你會顏色和數字了！冠軍！', highlightWords: [], sceneEmojis: ['🏆', '🎉', '🎪'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'red', zh: '紅色', image: '🔴', phonics: '', kk: '[rɛd]', phonicsSound: '', exampleSentence: 'three red apples', exampleZh: '三顆紅蘋果' },
+    { en: 'blue', zh: '藍色', image: '🔵', phonics: '', kk: '[blu]', phonicsSound: '', exampleSentence: 'two blue balls', exampleZh: '兩顆藍球' },
+    { en: 'green', zh: '綠色', image: '🟢', phonics: '', kk: '[ɡrin]', phonicsSound: '', exampleSentence: 'green', exampleZh: '綠色' },
+    { en: 'yellow', zh: '黃色', image: '🟡', phonics: '', kk: '[ˈjɛlo]', phonicsSound: '', exampleSentence: 'yellow', exampleZh: '黃色' },
+    { en: 'three', zh: '三', image: '3️⃣', phonics: '', kk: '[θri]', phonicsSound: '', exampleSentence: 'three', exampleZh: '三' },
+    { en: 'five', zh: '五', image: '5️⃣', phonics: '', kk: '[faɪv]', phonicsSound: '', exampleSentence: 'five', exampleZh: '五' },
+    { en: 'ten', zh: '十', image: '🔟', phonics: '', kk: '[tɛn]', phonicsSound: '', exampleSentence: 'ten', exampleZh: '十' },
+    { en: 'twelve', zh: '十二', image: '1️⃣2️⃣', phonics: '', kk: '[twɛlv]', phonicsSound: '', exampleSentence: 'twelve', exampleZh: '十二' },
+    { en: 'balloon', zh: '氣球', image: '🎈', phonics: '', kk: '[bəˈlun]', phonicsSound: '', exampleSentence: 'a red balloon', exampleZh: '一顆紅氣球' },
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'three apples', exampleZh: '三顆蘋果' },
+  ],
+  sentences: [
+    { en: 'Three red balloons.', zh: '三顆紅氣球。' }, { en: 'How many blue balls?', zh: '有幾顆藍球？' }, { en: 'There are five.', zh: '有五顆。' }, { en: 'What color is it?', zh: '它是什麼顏色？' }, { en: 'Is it red? Yes, it is.', zh: '它是紅色的嗎？是的。' }, { en: 'I have ten yellow pens.', zh: '我有十支黃筆。' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'match', question: '🔴 是什麼顏色？', options: ['red', 'blue', 'green', 'yellow'], answer: 'red' },
+    { type: 'match', question: '5️⃣ 是哪個數字？', options: ['five', 'four', 'six', 'ten'], answer: 'five' },
+    { type: 'listen-pick', question: 'How many? 🎈🎈🎈', options: ['three', 'two', 'four', 'five'], answer: 'three' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'There are ___ red apples. 🍎🍎🍎', options: ['three', 'two', 'five', 'ten'], answer: 'three' },
+    { type: 'match', question: '配對：顏色配圖', options: ['blue-🔵', 'green-🟢', 'yellow-🟡', 'red-🔴'], answer: 'blue-🔵' },
+    { type: 'fill-blank', question: 'What ___ is it? It is blue.', options: ['color', 'many', 'is', 'are'], answer: 'color' },
+    { type: 'fill-blank', question: 'How ___ balls?（幾個）', options: ['many', 'color', 'much', 'old'], answer: 'many' },
+    { type: 'listen-pick', question: '聽音選：two blue balloons', options: ['🎈🎈', '🎈', '🎈🎈🎈', '🍎🍎'], answer: '🎈🎈' },
+    { type: 'speak', question: '跟著念：Three red apples!', answer: 'Three red apples', image: '🗣' },
+  ],
+  talkTimePrompts: ["How many red things can you see?", "What color is your bag?", "Count your fingers by color!", "Say: two green apples!"],
+  reviewQuiz: [
+    { type: 'match', question: '1️⃣2️⃣ 是哪個數字？', options: ['twelve', 'twenty', 'two', 'ten'], answer: 'twelve' },
+    { type: 'fill-blank', question: 'I have ___ yellow pens.（十）', options: ['ten', 'red', 'blue', 'color'], answer: 'ten' },
+    { type: 'listen-pick', question: 'How many? 🍎🍎🍎🍎🍎', options: ['five', 'four', 'three', 'six'], answer: 'five' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Look, three red balloons and two blue!", lineZh: '看，三顆紅氣球和兩顆藍的！' },
+    { speaker: 'Coco', line: "How many balloons? Five!", lineZh: '有幾顆氣球？五顆！' },
+    { speaker: 'Polly', line: "What color do you like?", lineZh: '你喜歡什麼顏色？' },
+    { speaker: 'Coco', line: "I like the red ones! Three, please!", lineZh: '我喜歡紅色的！三顆，謝謝！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
