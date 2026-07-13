@@ -1999,7 +1999,266 @@ const L3_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5];
+const L3_M6: Mission = {
+  id: 6, slug: 'l3-m6-food-1', level: 3, title: '食物①', titleEn: 'Food 1', theme: '市場街・美食攤', themeEmoji: '🍎',
+  focus: '10 個食物單字；冠詞 a / an（a banana, an egg）',
+  story: [
+    { image: '🍎', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Yummy food on Market Street! Let's see!", dialogueZh: '市場街有好吃的食物！來看看！', highlightWords: ['food'], sceneEmojis: ['🍎', '🍌', '✨'], animation: 'wave' },
+    { image: '🍌', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "A banana! But an egg — use 'an' before a, e, i, o, u!", dialogueZh: '一根香蕉！但 an egg —— 母音前面用 an！', highlightWords: ['a', 'an', 'egg'], sceneEmojis: ['🍌', '🥚', '😊'], animation: 'bounce' },
+    { image: '🍞', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Bread, milk, rice — I'm hungry!", dialogueZh: '麵包、牛奶、米飯 —— 我餓了！', highlightWords: ['bread', 'milk', 'rice'], sceneEmojis: ['🍞', '🥛', '🍚'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Now you know food words and a/an! Great!", dialogueZh: '現在你會食物單字和 a/an 了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🍎'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'an apple', exampleZh: '一顆蘋果' },
+    { en: 'banana', zh: '香蕉', image: '🍌', phonics: '', kk: '[bəˈnænə]', phonicsSound: '', exampleSentence: 'a banana', exampleZh: '一根香蕉' },
+    { en: 'rice', zh: '米飯', image: '🍚', phonics: '', kk: '[raɪs]', phonicsSound: '', exampleSentence: 'rice', exampleZh: '米飯' },
+    { en: 'bread', zh: '麵包', image: '🍞', phonics: '', kk: '[brɛd]', phonicsSound: '', exampleSentence: 'bread', exampleZh: '麵包' },
+    { en: 'milk', zh: '牛奶', image: '🥛', phonics: '', kk: '[mɪlk]', phonicsSound: '', exampleSentence: 'a glass of milk', exampleZh: '一杯牛奶' },
+    { en: 'egg', zh: '蛋', image: '🥚', phonics: '', kk: '[ɛɡ]', phonicsSound: '', exampleSentence: 'an egg', exampleZh: '一顆蛋' },
+    { en: 'fish', zh: '魚', image: '🐟', phonics: '', kk: '[fɪʃ]', phonicsSound: '', exampleSentence: 'fish', exampleZh: '魚' },
+    { en: 'meat', zh: '肉', image: '🍖', phonics: '', kk: '[mit]', phonicsSound: '', exampleSentence: 'meat', exampleZh: '肉' },
+    { en: 'soup', zh: '湯', image: '🍲', phonics: '', kk: '[sup]', phonicsSound: '', exampleSentence: 'hot soup', exampleZh: '熱湯' },
+    { en: 'cake', zh: '蛋糕', image: '🎂', phonics: '', kk: '[kek]', phonicsSound: '', exampleSentence: 'a cake', exampleZh: '一個蛋糕' },
+  ],
+  sentences: [
+    { en: 'It is an apple.', zh: '這是一顆蘋果。' }, { en: 'It is a banana.', zh: '這是一根香蕉。' }, { en: 'I want bread and milk.', zh: '我要麵包和牛奶。' }, { en: 'Is it an egg?', zh: '這是一顆蛋嗎？' }, { en: 'Yes, it is.', zh: '是的。' }, { en: 'I like cake!', zh: '我喜歡蛋糕！' },
+  ],
+  phonicsLetters: ['food', 'a / an'],
+  warmUpQuestions: [
+    { type: 'match', question: '🍎 是哪個食物？', options: ['apple', 'banana', 'bread', 'egg'], answer: 'apple' },
+    { type: 'fill-blank', question: '___ egg（冠詞）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: '___ banana（冠詞）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的食物', options: ['🍎', '🍌', '🍞', '🥛'], answer: '🍞', image: '🎧' },
+    { type: 'match', question: '配對：食物配圖', options: ['fish-🐟', 'meat-🍖', 'soup-🍲', 'cake-🎂'], answer: 'fish-🐟' },
+    { type: 'fill-blank', question: 'It is ___ apple.（冠詞）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'spell', question: '拼拼看：mi _ k（牛奶）', answer: 'milk', image: '✍️' },
+    { type: 'fill-blank', question: 'I want ___ egg.（冠詞）', options: ['an', 'a', 'the', 'two'], answer: 'an' },
+    { type: 'speak', question: '跟著念：Apple, banana, bread!', answer: 'Apple', image: '🗣' },
+  ],
+  talkTimePrompts: ["What food do you like?", "Do you like rice?", "Say: a banana, an egg.", "What do you eat for breakfast?"],
+  reviewQuiz: [
+    { type: 'match', question: '🥚 是哪個食物？', options: ['egg', 'meat', 'soup', 'rice'], answer: 'egg' },
+    { type: 'fill-blank', question: 'It is ___ orange.（冠詞）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'listen-pick', question: '哪個是 "cake" 蛋糕？', options: ['🎂', '🍞', '🍲', '🍖'], answer: '🎂' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "It's an apple and a banana!", lineZh: '這是一顆蘋果和一根香蕉！' },
+    { speaker: 'Benny', line: "an apple, a banana — a or an?", lineZh: 'an apple、a banana —— a 還是 an？' },
+    { speaker: 'Coco', line: "'an' before a, e, i, o, u! an egg!", lineZh: '母音前用 an！an egg！' },
+    { speaker: 'Benny', line: "I want soup and bread. Yum!", lineZh: '我要湯和麵包。好吃！' },
+  ],
+};
+
+const L3_M7: Mission = {
+  id: 7, slug: 'l3-m7-food-2', level: 3, title: '食物② 喜好', titleEn: 'Food & Like', theme: '市場街・點餐區', themeEmoji: '🍽️',
+  focus: '句型 I like / I don\'t like / Do you like…?；冠詞 the',
+  story: [
+    { image: '🍽️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Do you like pizza? Tell me what you like!", dialogueZh: '你喜歡披薩嗎？告訴我你喜歡什麼！', highlightWords: ['like'], sceneEmojis: ['🍽️', '🍕', '✨'], animation: 'wave' },
+    { image: '🍕', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I like pizza! I like the noodles too!", dialogueZh: '我喜歡披薩！我也喜歡那個麵！', highlightWords: ['like', 'the'], sceneEmojis: ['🍕', '🍜', '😋'], animation: 'bounce' },
+    { image: '🥦', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "I don't like broccoli. Do you like it?", dialogueZh: '我不喜歡花椰菜。你喜歡嗎？', highlightWords: ["don't like"], sceneEmojis: ['🥦', '❌', '🤔'], animation: 'shake' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Now you can talk about food you like!", dialogueZh: '現在你會說你喜歡的食物了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🍽️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'pizza', zh: '披薩', image: '🍕', phonics: '', kk: '[ˈpitsə]', phonicsSound: '', exampleSentence: 'I like pizza.', exampleZh: '我喜歡披薩。' },
+    { en: 'noodles', zh: '麵', image: '🍜', phonics: '', kk: '[ˈnudlz]', phonicsSound: '', exampleSentence: 'hot noodles', exampleZh: '熱麵' },
+    { en: 'water', zh: '水', image: '💧', phonics: '', kk: '[ˈwɔtɚ]', phonicsSound: '', exampleSentence: 'cold water', exampleZh: '冷水' },
+    { en: 'juice', zh: '果汁', image: '🧃', phonics: '', kk: '[dʒus]', phonicsSound: '', exampleSentence: 'apple juice', exampleZh: '蘋果汁' },
+    { en: 'broccoli', zh: '花椰菜', image: '🥦', phonics: '', kk: '[ˈbrɑkəli]', phonicsSound: '', exampleSentence: 'green broccoli', exampleZh: '綠花椰菜' },
+    { en: 'carrot', zh: '紅蘿蔔', image: '🥕', phonics: '', kk: '[ˈkærət]', phonicsSound: '', exampleSentence: 'an orange carrot', exampleZh: '一根橘蘿蔔' },
+    { en: 'ice cream', zh: '冰淇淋', image: '🍦', phonics: '', kk: '[aɪs krim]', phonicsSound: '', exampleSentence: 'I like ice cream.', exampleZh: '我喜歡冰淇淋。' },
+    { en: 'candy', zh: '糖果', image: '🍬', phonics: '', kk: '[ˈkændi]', phonicsSound: '', exampleSentence: 'sweet candy', exampleZh: '甜糖果' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like it.', exampleZh: '我喜歡。' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '', exampleSentence: 'Let\'s eat!', exampleZh: '我們來吃！' },
+  ],
+  sentences: [
+    { en: 'I like pizza.', zh: '我喜歡披薩。' }, { en: "I don't like broccoli.", zh: '我不喜歡花椰菜。' }, { en: 'Do you like juice?', zh: '你喜歡果汁嗎？' }, { en: 'Yes, I do. / No, I don\'t.', zh: '是的。／不。' }, { en: 'Pass me the water, please.', zh: '請把水遞給我。' }, { en: 'I like the ice cream!', zh: '我喜歡那個冰淇淋！' },
+  ],
+  phonicsLetters: ['food', 'the'],
+  warmUpQuestions: [
+    { type: 'match', question: '🍕 是哪個食物？', options: ['pizza', 'noodles', 'juice', 'candy'], answer: 'pizza' },
+    { type: 'listen-pick', question: 'Do you like ice cream? （你喜歡冰淇淋嗎）', options: ['Yes, I do.', 'No, I don\'t.'], answer: 'Yes, I do.', image: '🍦' },
+    { type: 'fill-blank', question: 'I ___ pizza.（喜歡）', options: ['like', 'is', 'are', 'the'], answer: 'like' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的食物', options: ['🍕', '🍜', '🧃', '🥦'], answer: '🍜', image: '🎧' },
+    { type: 'fill-blank', question: 'I ___ like broccoli.（不）', options: ["don't", 'not', 'no', 'am'], answer: "don't" },
+    { type: 'fill-blank', question: '___ you like juice?（助動詞）', options: ['Do', 'Is', 'Are', 'The'], answer: 'Do' },
+    { type: 'match', question: '配對：食物配圖', options: ['carrot-🥕', 'candy-🍬', 'water-💧', 'juice-🧃'], answer: 'carrot-🥕' },
+    { type: 'fill-blank', question: 'Pass me ___ water.（冠詞）', options: ['the', 'a', 'an', 'is'], answer: 'the' },
+    { type: 'speak', question: '跟著說：I like pizza!', answer: 'I like pizza', image: '🗣' },
+  ],
+  talkTimePrompts: ["What food do you like?", "Do you like broccoli?", "I like ___. What about you?", "Do you like ice cream or candy?"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Do you like juice? Yes, I ___.', options: ['do', 'am', 'is', 'like'], answer: 'do' },
+    { type: 'match', question: '🍦 是哪個食物？', options: ['ice cream', 'candy', 'pizza', 'noodles'], answer: 'ice cream' },
+    { type: 'fill-blank', question: 'I ___ like carrots.（不喜歡）', options: ["don't", 'not', 'no', 'am'], answer: "don't" },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Do you like pizza?", lineZh: '你喜歡披薩嗎？' },
+    { speaker: 'Polly', line: "Yes, I do! But I don't like broccoli.", lineZh: '喜歡！但我不喜歡花椰菜。' },
+    { speaker: 'Coco', line: "Do you like ice cream?", lineZh: '你喜歡冰淇淋嗎？' },
+    { speaker: 'Polly', line: "Yes! I love the ice cream here!", lineZh: '喜歡！我愛這裡的冰淇淋！' },
+  ],
+};
+
+const L3_M8: Mission = {
+  id: 8, slug: 'l3-m8-animals-1', level: 3, title: '動物①', titleEn: 'Animals 1', theme: '市場街・寵物角', themeEmoji: '🐾',
+  focus: '10 個動物單字；句型 It is a + 動物 / I have a + 動物',
+  story: [
+    { image: '🐾', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "So many animals! A dog, a cat, a bird!", dialogueZh: '好多動物！一隻狗、一隻貓、一隻鳥！', highlightWords: ['dog', 'cat', 'bird'], sceneEmojis: ['🐶', '🐱', '🐦'], animation: 'wave' },
+    { image: '🐰', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have a rabbit! It is white!", dialogueZh: '我有一隻兔子！牠是白色的！', highlightWords: ['rabbit'], sceneEmojis: ['🐰', '⚪', '😊'], animation: 'bounce' },
+    { image: '🦁', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "A lion and a tiger! Roar! They are big!", dialogueZh: '一隻獅子和一隻老虎！吼！牠們很大！', highlightWords: ['lion', 'tiger'], sceneEmojis: ['🦁', '🐯', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Now you know ten animals! Amazing!", dialogueZh: '現在你會十種動物了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🐾'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'dog', zh: '狗', image: '🐶', phonics: '', kk: '[dɔɡ]', phonicsSound: '', exampleSentence: 'a big dog', exampleZh: '一隻大狗' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: '', kk: '[kæt]', phonicsSound: '', exampleSentence: 'a black cat', exampleZh: '一隻黑貓' },
+    { en: 'bird', zh: '鳥', image: '🐦', phonics: '', kk: '[bɝd]', phonicsSound: '', exampleSentence: 'a little bird', exampleZh: '一隻小鳥' },
+    { en: 'fish', zh: '魚', image: '🐟', phonics: '', kk: '[fɪʃ]', phonicsSound: '', exampleSentence: 'a gold fish', exampleZh: '一條金魚' },
+    { en: 'rabbit', zh: '兔子', image: '🐰', phonics: '', kk: '[ˈræbɪt]', phonicsSound: '', exampleSentence: 'a white rabbit', exampleZh: '一隻白兔' },
+    { en: 'bear', zh: '熊', image: '🐻', phonics: '', kk: '[bɛr]', phonicsSound: '', exampleSentence: 'a brown bear', exampleZh: '一隻棕熊' },
+    { en: 'pig', zh: '豬', image: '🐷', phonics: '', kk: '[pɪɡ]', phonicsSound: '', exampleSentence: 'a pink pig', exampleZh: '一隻粉紅豬' },
+    { en: 'duck', zh: '鴨子', image: '🦆', phonics: '', kk: '[dʌk]', phonicsSound: '', exampleSentence: 'a yellow duck', exampleZh: '一隻黃鴨' },
+    { en: 'lion', zh: '獅子', image: '🦁', phonics: '', kk: '[ˈlaɪən]', phonicsSound: '', exampleSentence: 'a big lion', exampleZh: '一隻大獅子' },
+    { en: 'tiger', zh: '老虎', image: '🐯', phonics: '', kk: '[ˈtaɪɡɚ]', phonicsSound: '', exampleSentence: 'a strong tiger', exampleZh: '一隻強壯的老虎' },
+  ],
+  sentences: [
+    { en: 'It is a dog.', zh: '這是一隻狗。' }, { en: 'I have a cat.', zh: '我有一隻貓。' }, { en: 'The rabbit is white.', zh: '兔子是白色的。' }, { en: 'Is it a bird?', zh: '這是一隻鳥嗎？' }, { en: 'Yes, it is a bird.', zh: '是的，這是一隻鳥。' }, { en: 'The lion is big.', zh: '獅子很大。' },
+  ],
+  phonicsLetters: ['animals'],
+  warmUpQuestions: [
+    { type: 'match', question: '🐶 是哪個動物？', options: ['dog', 'cat', 'pig', 'bird'], answer: 'dog' },
+    { type: 'match', question: '🦁 是哪個動物？', options: ['lion', 'tiger', 'bear', 'cat'], answer: 'lion' },
+    { type: 'listen-pick', question: '哪個是 "rabbit" 兔子？', options: ['🐰', '🐷', '🦆', '🐻'], answer: '🐰' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動物', options: ['🐶', '🐱', '🐦', '🐟'], answer: '🐦', image: '🎧' },
+    { type: 'match', question: '配對：動物配圖', options: ['pig-🐷', 'duck-🦆', 'bear-🐻', 'tiger-🐯'], answer: 'pig-🐷' },
+    { type: 'spell', question: '拼拼看：d _ g（狗）', answer: 'dog', image: '✍️' },
+    { type: 'fill-blank', question: 'It is ___ cat.（冠詞）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'fill-blank', question: 'The ___ is big.（獅子）', options: ['lion', 'bird', 'fish', 'duck'], answer: 'lion' },
+    { type: 'speak', question: '跟著念：Dog, cat, bird!', answer: 'Dog', image: '🗣' },
+  ],
+  talkTimePrompts: ["What is your favorite animal?", "Do you have a pet?", "Can you make a lion sound?", "Point to a bird!"],
+  reviewQuiz: [
+    { type: 'match', question: '🐻 是哪個動物？', options: ['bear', 'pig', 'dog', 'lion'], answer: 'bear' },
+    { type: 'fill-blank', question: 'I have ___ dog.（冠詞）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'listen-pick', question: '哪個是 "tiger" 老虎？', options: ['🐯', '🦁', '🐻', '🐷'], answer: '🐯' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I have a white rabbit! Do you have a pet?", lineZh: '我有一隻白兔！你有寵物嗎？' },
+    { speaker: 'Benny', line: "Yes! I have a big dog and a cat.", lineZh: '有！我有一隻大狗和一隻貓。' },
+    { speaker: 'Coco', line: "Look, a lion and a tiger!", lineZh: '看，一隻獅子和一隻老虎！' },
+    { speaker: 'Benny', line: "Roar! They are so big!", lineZh: '吼！牠們好大！' },
+  ],
+};
+
+const L3_M9: Mission = {
+  id: 9, slug: 'l3-m9-animals-2', level: 3, title: '動物② 複數', titleEn: 'Animals & Plurals', theme: '市場街・動物農場', themeEmoji: '🐔',
+  focus: '名詞複數 -s（two dogs）；句型 How many? / They are…',
+  story: [
+    { image: '🐔', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "One dog, two dogs! Add -s for more!", dialogueZh: '一隻狗，兩隻狗！多的加 -s！', highlightWords: ['dogs', '-s'], sceneEmojis: ['🐶', '🐶', '✨'], animation: 'wave' },
+    { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Three cats! They are black.", dialogueZh: '三隻貓！牠們是黑色的。', highlightWords: ['cats', 'They'], sceneEmojis: ['🐱', '🐱', '🐱'], animation: 'bounce' },
+    { image: '🦆', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "How many ducks? Five ducks!", dialogueZh: '有幾隻鴨子？五隻鴨子！', highlightWords: ['ducks'], sceneEmojis: ['🦆', '🔢', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "One or many — you can say both! Great!", dialogueZh: '一個或很多 —— 你都會說了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🐔'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'dogs', zh: '狗（複數）', image: '🐶', phonics: '', kk: '[dɔɡz]', phonicsSound: '', exampleSentence: 'two dogs', exampleZh: '兩隻狗' },
+    { en: 'cats', zh: '貓（複數）', image: '🐱', phonics: '', kk: '[kæts]', phonicsSound: '', exampleSentence: 'three cats', exampleZh: '三隻貓' },
+    { en: 'birds', zh: '鳥（複數）', image: '🐦', phonics: '', kk: '[bɝdz]', phonicsSound: '', exampleSentence: 'four birds', exampleZh: '四隻鳥' },
+    { en: 'ducks', zh: '鴨（複數）', image: '🦆', phonics: '', kk: '[dʌks]', phonicsSound: '', exampleSentence: 'five ducks', exampleZh: '五隻鴨' },
+    { en: 'pigs', zh: '豬（複數）', image: '🐷', phonics: '', kk: '[pɪɡz]', phonicsSound: '', exampleSentence: 'two pigs', exampleZh: '兩隻豬' },
+    { en: 'rabbits', zh: '兔（複數）', image: '🐰', phonics: '', kk: '[ˈræbɪts]', phonicsSound: '', exampleSentence: 'six rabbits', exampleZh: '六隻兔' },
+    { en: 'cows', zh: '牛（複數）', image: '🐮', phonics: '', kk: '[kaʊz]', phonicsSound: '', exampleSentence: 'two cows', exampleZh: '兩隻牛' },
+    { en: 'hens', zh: '母雞（複數）', image: '🐔', phonics: '', kk: '[hɛnz]', phonicsSound: '', exampleSentence: 'ten hens', exampleZh: '十隻母雞' },
+    { en: 'sheep', zh: '綿羊（單複同）', image: '🐑', phonics: '', kk: '[ʃip]', phonicsSound: '', exampleSentence: 'three sheep', exampleZh: '三隻綿羊' },
+    { en: 'horses', zh: '馬（複數）', image: '🐴', phonics: '', kk: '[ˈhɔrsɪz]', phonicsSound: '', exampleSentence: 'two horses', exampleZh: '兩匹馬' },
+  ],
+  sentences: [
+    { en: 'One dog, two dogs.', zh: '一隻狗，兩隻狗。' }, { en: 'They are cats.', zh: '牠們是貓。' }, { en: 'How many ducks?', zh: '有幾隻鴨子？' }, { en: 'There are five ducks.', zh: '有五隻鴨子。' }, { en: 'Are they pigs?', zh: '牠們是豬嗎？' }, { en: 'Yes, they are.', zh: '是的，牠們是。' },
+  ],
+  phonicsLetters: ['plurals -s'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'one cat, two ___', options: ['cats', 'cat', 'cates', 'cat s'], answer: 'cats' },
+    { type: 'listen-pick', question: 'How many? 🐶🐶', options: ['two dogs', 'one dog', 'three dogs', 'a dog'], answer: 'two dogs' },
+    { type: 'match', question: '🐮 是哪個動物（複數）？', options: ['cows', 'pigs', 'hens', 'ducks'], answer: 'cows' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'three ___（貓複數）', options: ['cats', 'cat', 'cates', 'catz'], answer: 'cats' },
+    { type: 'fill-blank', question: 'They ___ ducks.（be動詞）', options: ['are', 'is', 'am', 'a'], answer: 'are' },
+    { type: 'fill-blank', question: 'How ___ birds?（幾隻）', options: ['many', 'much', 'color', 'old'], answer: 'many' },
+    { type: 'match', question: '配對：複數配圖', options: ['pigs-🐷', 'hens-🐔', 'horses-🐴', 'sheep-🐑'], answer: 'pigs-🐷' },
+    { type: 'listen-pick', question: 'How many? 🦆🦆🦆🦆🦆', options: ['five ducks', 'four ducks', 'three ducks', 'six ducks'], answer: 'five ducks' },
+    { type: 'speak', question: '跟著念：Two dogs, three cats!', answer: 'Two dogs', image: '🗣' },
+  ],
+  talkTimePrompts: ["How many pets do you have?", "Count the animals: two ___, three ___.", "Are they cats or dogs?", "How many students are girls?"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'one duck, two ___', options: ['ducks', 'duck', 'duckes', ' duck'], answer: 'ducks' },
+    { type: 'fill-blank', question: 'How many cats? ___ are three.', options: ['There', 'They', 'It', 'Is'], answer: 'There' },
+    { type: 'match', question: '🐑 綿羊複數是？', options: ['sheep', 'sheeps', 'sheepes', 'ship'], answer: 'sheep' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "One dog, two dogs, three dogs!", lineZh: '一隻狗、兩隻狗、三隻狗！' },
+    { speaker: 'Polly', line: "Add -s for more! dogs, cats, ducks!", lineZh: '多的加 -s！dogs、cats、ducks！' },
+    { speaker: 'Coco', line: "How many ducks are there?", lineZh: '有幾隻鴨子？' },
+    { speaker: 'Polly', line: "Five ducks! They are yellow!", lineZh: '五隻鴨子！牠們是黃色的！' },
+  ],
+};
+
+const L3_M10: Mission = {
+  id: 10, slug: 'l3-m10-review-food-animal', level: 3, title: '複習② 食物動物', titleEn: 'Review Food & Animals', theme: '市場街・熱鬧市集', themeEmoji: '🎪',
+  focus: '複習食物＋動物＋冠詞＋複數＋Do you like…?',
+  story: [
+    { image: '🎪', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Review time! Food and animals!", dialogueZh: '複習時間！食物和動物！', highlightWords: [], sceneEmojis: ['🎪', '🍎', '🐾'], animation: 'wave' },
+    { image: '🐶', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Two dogs like meat. Do you like meat?", dialogueZh: '兩隻狗喜歡肉。你喜歡肉嗎？', highlightWords: ['dogs', 'meat', 'like'], sceneEmojis: ['🐶', '🍖', '❓'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know so many words now! Champion!", dialogueZh: '你會好多單字了！冠軍！', highlightWords: [], sceneEmojis: ['🏆', '🎉', '🎪'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'an apple', exampleZh: '一顆蘋果' },
+    { en: 'egg', zh: '蛋', image: '🥚', phonics: '', kk: '[ɛɡ]', phonicsSound: '', exampleSentence: 'an egg', exampleZh: '一顆蛋' },
+    { en: 'cake', zh: '蛋糕', image: '🎂', phonics: '', kk: '[kek]', phonicsSound: '', exampleSentence: 'a cake', exampleZh: '一個蛋糕' },
+    { en: 'dog', zh: '狗', image: '🐶', phonics: '', kk: '[dɔɡ]', phonicsSound: '', exampleSentence: 'two dogs', exampleZh: '兩隻狗' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: '', kk: '[kæt]', phonicsSound: '', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'lion', zh: '獅子', image: '🦁', phonics: '', kk: '[ˈlaɪən]', phonicsSound: '', exampleSentence: 'a lion', exampleZh: '一隻獅子' },
+    { en: 'fish', zh: '魚', image: '🐟', phonics: '', kk: '[fɪʃ]', phonicsSound: '', exampleSentence: 'fish', exampleZh: '魚' },
+    { en: 'milk', zh: '牛奶', image: '🥛', phonics: '', kk: '[mɪlk]', phonicsSound: '', exampleSentence: 'milk', exampleZh: '牛奶' },
+    { en: 'rabbit', zh: '兔子', image: '🐰', phonics: '', kk: '[ˈræbɪt]', phonicsSound: '', exampleSentence: 'a rabbit', exampleZh: '一隻兔子' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like it.', exampleZh: '我喜歡。' },
+  ],
+  sentences: [
+    { en: 'I like apples and cake.', zh: '我喜歡蘋果和蛋糕。' }, { en: 'The two dogs like meat.', zh: '這兩隻狗喜歡肉。' }, { en: 'Do you like fish?', zh: '你喜歡魚嗎？' }, { en: 'Yes, I do.', zh: '是的。' }, { en: 'Is it an egg?', zh: '這是一顆蛋嗎？' }, { en: 'How many cats?', zh: '有幾隻貓？' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'match', question: '🦁 是哪個？', options: ['lion', 'dog', 'cat', 'fish'], answer: 'lion' },
+    { type: 'fill-blank', question: '___ egg（冠詞）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: 'two ___（狗複數）', options: ['dogs', 'dog', 'doges', 'dogz'], answer: 'dogs' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🍎', '🐶', '🦁', '🐟'], answer: '🦁', image: '🎧' },
+    { type: 'fill-blank', question: 'Do you ___ fish?（喜歡）', options: ['like', 'is', 'are', 'a'], answer: 'like' },
+    { type: 'fill-blank', question: 'It is ___ apple.（冠詞）', options: ['an', 'a', 'the', 'two'], answer: 'an' },
+    { type: 'match', question: '配對：字配圖', options: ['cake-🎂', 'milk-🥛', 'rabbit-🐰', 'cat-🐱'], answer: 'cake-🎂' },
+    { type: 'fill-blank', question: 'The two dogs ___ meat.（喜歡）', options: ['like', 'likes', 'liking', 'is'], answer: 'like' },
+    { type: 'speak', question: '跟著說：I like cake and apples!', answer: 'I like cake', image: '🗣' },
+  ],
+  talkTimePrompts: ["What food and animals do you like?", "Do you like fish? (food or pet!)", "How many pets do you want?", "Say: I like ___ and ___."],
+  reviewQuiz: [
+    { type: 'match', question: '🥛 是哪個？', options: ['milk', 'juice', 'water', 'soup'], answer: 'milk' },
+    { type: 'fill-blank', question: 'I have two ___.（貓複數）', options: ['cats', 'cat', 'a cat', 'cates'], answer: 'cats' },
+    { type: 'fill-blank', question: 'Do you like cake? Yes, I ___.', options: ['do', 'am', 'is', 'like'], answer: 'do' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "My two dogs like meat. Do you like meat?", lineZh: '我的兩隻狗喜歡肉。你喜歡肉嗎？' },
+    { speaker: 'Coco', line: "No, I don't. I like apples and cake!", lineZh: '不喜歡。我喜歡蘋果和蛋糕！' },
+    { speaker: 'Polly', line: "Is it an egg or an apple?", lineZh: '這是蛋還是蘋果？' },
+    { speaker: 'Coco', line: "It's an apple! Yum!", lineZh: '是蘋果！好吃！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
