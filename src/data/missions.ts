@@ -30,11 +30,12 @@ export interface StoryScene {
 }
 
 export interface QuizQuestion {
-  type: 'listen-pick' | 'match' | 'spell' | 'speak' | 'fill-blank';
+  type: 'listen-pick' | 'match' | 'spell' | 'speak' | 'fill-blank' | 'read';
   question: string;
   options?: string[];
   answer: string;
   image?: string;
+  passage?: string;   // 閱讀理解題的短文/對話（read 題型顯示，不自動播音）
 }
 
 export interface Mission {
@@ -736,6 +737,7 @@ const L2_M1: Mission = {
     { type: 'match', question: '配對：字配圖', options: ['cat-🐱', 'dog-🐶', 'sun-☀️', 'pig-🐷'], answer: 'cat-🐱' },
     { type: 'speak', question: '跟著拼：b-u-s → Bus!', answer: 'Bus', image: '🗣' },
     { type: 'fill-blank', question: 'The ___ is hot.（太陽）', options: ['sun', 'bed', 'box', 'dog'], answer: 'sun' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['It is a cat.', 'It is a dog.', 'Is it a cat?', 'It is a bus.'], answer: 'It is a cat.', image: '🎧' },
   ],
   talkTimePrompts: ["Can you blend c-a-t?", "What is s-u-n?", "Say a word that starts with /b/.", "You can blend sounds! Great!"],
   reviewQuiz: [
@@ -1776,6 +1778,8 @@ const L3_M1: Mission = {
     { type: 'spell', question: '拼拼看：r _ d（紅色）', answer: 'red', image: '✍️' },
     { type: 'fill-blank', question: 'It is a ___ apple.（紅色）', options: ['red', 'blue', 'green', 'black'], answer: 'red' },
     { type: 'fill-blank', question: 'The tree is ___.（綠色）', options: ['green', 'red', 'pink', 'white'], answer: 'green' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['It is a blue car.', 'It is a red car.', 'It is a blue ball.', 'It is a green car.'], answer: 'It is a blue car.', image: '🎧' },
+    { type: 'read', question: 'What color is the apple?（蘋果是什麼顏色？）', passage: 'Coco has a red apple.\nShe likes the red apple.\nThe tree is green.', options: ['red', 'green', 'blue', 'yellow'], answer: 'red' },
     { type: 'speak', question: '跟著念：Red, blue, green!', answer: 'Red', image: '🗣' },
   ],
   talkTimePrompts: ["What is your favorite color?", "What color is an apple?", "Point to something blue!", "Say three colors you like!"],

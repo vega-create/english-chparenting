@@ -17,6 +17,7 @@ const typeLabel: Record<string, { icon: string; label: string; characterKey: str
   'match': { icon: '🔗', label: '配對挑戰', characterKey: 'benny', characterAction: 'read' },
   'spell': { icon: '✍️', label: '拼寫挑戰', characterKey: 'ruby', characterAction: 'write' },
   'fill-blank': { icon: '📝', label: '填空挑戰', characterKey: 'finn', characterAction: 'talk' },
+  'read': { icon: '📖', label: '閱讀理解', characterKey: 'benny', characterAction: 'read' },
 };
 
 export default function Challenge({ challenges, onComplete, praiseLevel = 'low' }: Props) {
@@ -97,6 +98,20 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low' 
       {/* 題目區 */}
       <div className="bg-white rounded-3xl p-8 shadow-lg border-2 border-orange-200 max-w-xl mx-auto">
         {q.image && <div className="text-center text-4xl mb-3">{q.image}</div>}
+
+        {/* 閱讀理解：先顯示短文/對話（讀，不自動播音，可點🔊選聽） */}
+        {q.type === 'read' && q.passage && (
+          <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 mb-5">
+            <p className="text-base leading-relaxed text-gray-800 whitespace-pre-line">{q.passage}</p>
+            <button
+              onClick={() => speak(q.passage!.replace(/\n/g, '. '))}
+              className="mt-3 text-amber-600 text-sm font-bold hover:underline"
+            >
+              🔊 聽一次（可選）
+            </button>
+          </div>
+        )}
+
         <p className="text-xl font-bold text-center text-gray-800 mb-6">{q.question}</p>
 
         {/* 聽力題：加播放按鈕 */}
@@ -156,7 +171,7 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low' 
         )}
 
         {/* 選擇題（listen-pick, match, fill-blank） */}
-        {(q.type === 'listen-pick' || q.type === 'match' || q.type === 'fill-blank') && q.options && (
+        {(q.type === 'listen-pick' || q.type === 'match' || q.type === 'fill-blank' || q.type === 'read') && q.options && (
           <div className="grid grid-cols-2 gap-3">
             {q.options.map((option) => {
               let btnClass = 'bg-white border-2 border-gray-200 hover:border-orange-400 hover:bg-orange-50';
