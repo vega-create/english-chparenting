@@ -134,7 +134,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
             </div>
 
             <button
-              onClick={() => setStep(mission.id === 1 ? 'welcome' : 'wakeup')}
+              onClick={() => setStep(course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup')}
               className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-10 py-4 rounded-full font-bold text-xl hover:from-yellow-500 hover:to-orange-500 transition-all active:scale-95 shadow-xl"
             >
               Let&apos;s Go! 出發！🚀
@@ -152,7 +152,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'discover' && (
-          <Discover story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} onComplete={() => setStep('challenge')} />
+          <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} onComplete={() => setStep('challenge')} />
         )}
 
         {step === 'challenge' && (

@@ -2,8 +2,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene } from '@/data/missions';
 import { speak } from '@/lib/speech';
+import { playClip, sleep, wordSlug } from '@/lib/audio';
 
 interface Props {
+  level: number;
   story: StoryScene[];
   words: Word[];
   sentences: Sentence[];
@@ -13,7 +15,7 @@ interface Props {
 
 type Phase = 'story' | 'words' | 'phonics' | 'sentences';
 
-export default function Discover({ story, words, sentences, phonicsLetters, onComplete }: Props) {
+export default function Discover({ level, story, words, sentences, phonicsLetters, onComplete }: Props) {
   const [phase, setPhase] = useState<Phase>('story');
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
@@ -45,6 +47,16 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
       if (!seenCards.includes(i)) setSeenCards(s => [...s, i]);
       speak(words[i].en, 0.6);
     }
+  }
+
+  // 拆音唸法：先唸完整單字，再用自然發音法拆音念（blue → bl [bl] ue [u] [blu]）
+  // 音檔優先播 Vega 的錄音；沒檔時暫時用慢速 TTS 佔位
+  async function soundOut(w: Word) {
+    const slug = wordSlug(w.en);
+    const okWord = await playClip(`/lessons/L2/${slug}.mp3`);
+    if (!okWord) { speak(w.en, 0.6); await sleep(1000); }
+    const okBlend = await playClip(`/lessons/L2/${slug}-blend.mp3`);
+    if (!okBlend) { await sleep(200); speak(w.en, 0.3); }
   }
 
   // ===== Phase 1: 對話故事（全篇 + 點擊播放 + 動畫） =====
@@ -243,12 +255,24 @@ export default function Discover({ story, words, sentences, phonicsLetters, onCo
                     <p className="text-xl font-black text-gray-800 leading-tight">{w.en}</p>
                     <p className="text-xs text-gray-400 mb-1">{w.zh}</p>
                     {w.kk && <p className="text-[11px] text-purple-600">KK {w.kk}</p>}
-                    <button
-                      onClick={(e) => { e.stopPropagation(); speak(w.en, 0.5); }}
-                      className="mt-1 bg-blue-500 text-white w-9 h-9 rounded-full font-bold hover:bg-blue-600 transition active:scale-95 flex items-center justify-center"
-                    >
-                      🔊
-                    </button>
+                    <div className="mt-1 flex items-center gap-2">
+                      <button
+                        onClick={(e) => { e.stopPropagation(); speak(w.en, 0.5); }}
+                        className="bg-blue-500 text-white w-9 h-9 rounded-full font-bold hover:bg-blue-600 transition active:scale-95 flex items-center justify-center"
+                        title="唸單字"
+                      >
+                        🔊
+                      </button>
+                      {level === 2 && (
+                        <button
+                          onClick={(e) => { e.stopPropagation(); soundOut(w); }}
+                          className="bg-green-500 text-white px-3 h-9 rounded-full font-bold text-sm hover:bg-green-600 transition active:scale-95 flex items-center gap-1"
+                          title="拆音（自然發音）"
+                        >
+                          🔤 拆音
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
