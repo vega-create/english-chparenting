@@ -17,6 +17,7 @@ export default function Footer() {
           <h4 className="font-bold mb-3 text-gray-800">學習資源</h4>
           <ul className="space-y-2 text-gray-500">
             <li><Link href="/adventure-map" className="hover:text-purple-600 no-underline">冒險地圖</Link></li>
+            <li><Link href="/verbs" className="hover:text-purple-600 no-underline">動詞三態表</Link></li>
             <li><Link href="/guide" className="hover:text-purple-600 no-underline">使用說明</Link></li>
             <li><Link href="/books" className="hover:text-purple-600 no-underline">推薦書單</Link></li>
           </ul>
