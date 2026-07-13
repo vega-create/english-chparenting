@@ -3303,7 +3303,267 @@ const L4_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10];
+const L4_M11: Mission = {
+  id: 11, slug: 'l4-m11-can-you', level: 4, title: 'Can you…?', titleEn: 'Can you…?', theme: '學校路・你會嗎', themeEmoji: '🙋',
+  focus: '疑問 Can you…? 短答 Yes, I can. / No, I can\'t.',
+  story: [
+    { image: '🙋', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Can you swim? Yes, I can!", dialogueZh: '你會游泳嗎？是的，我會！', highlightWords: ['Can', 'can'], sceneEmojis: ['🏊', '❓', '✅'], animation: 'wave' },
+    { image: '🕊️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Can you fly? No, I can't. I can read!", dialogueZh: '你會飛嗎？不，我不會。我會閱讀！', highlightWords: ["can't", 'can'], sceneEmojis: ['🕊️', '🙅', '📖'], animation: 'shake' },
+    { image: '🍳', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Can you cook? Yes, I can! I can climb too!", dialogueZh: '你會煮飯嗎？是的，我會！我也會爬！', highlightWords: ['Can', 'can'], sceneEmojis: ['🍳', '🧗', '🎉'], animation: 'bounce' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Ask your friends: Can you…? Have fun!", dialogueZh: '問問朋友：你會…嗎？玩得開心！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🙋'], animation: 'tada' },
+  ],
+  words: [
+    { en: 'can', zh: '會·能', image: '💪', phonics: '', kk: '[kæn]', phonicsSound: '', exampleSentence: 'Can you swim?', exampleZh: '你會游泳嗎？' },
+    { en: "can't", zh: '不會·不能', image: '🚫', phonics: '', kk: '[kænt]', phonicsSound: '', exampleSentence: "No, I can't.", exampleZh: '不，我不會。' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: 'Can you swim?', exampleZh: '你會游泳嗎？' },
+    { en: 'read', zh: '閱讀', image: '📖', phonics: '', kk: '[rid]', phonicsSound: '', exampleSentence: 'I can read.', exampleZh: '我會閱讀。' },
+    { en: 'cook', zh: '煮飯', image: '🍳', phonics: '', kk: '[kʊk]', phonicsSound: '', exampleSentence: 'Can you cook?', exampleZh: '你會煮飯嗎？' },
+    { en: 'climb', zh: '攀爬', image: '🧗', phonics: '', kk: '[klaɪm]', phonicsSound: '', exampleSentence: 'I can climb.', exampleZh: '我會爬。' },
+    { en: 'kick', zh: '踢', image: '🦵', phonics: '', kk: '[kɪk]', phonicsSound: '', exampleSentence: 'I can kick a ball.', exampleZh: '我會踢球。' },
+    { en: 'jump', zh: '跳', image: '🤸', phonics: '', kk: '[dʒʌmp]', phonicsSound: '', exampleSentence: 'Can you jump?', exampleZh: '你會跳嗎？' },
+    { en: 'fly', zh: '飛', image: '🕊️', phonics: '', kk: '[flaɪ]', phonicsSound: '', exampleSentence: "I can't fly.", exampleZh: '我不會飛。' },
+    { en: 'ride', zh: '騎', image: '🚲', phonics: '', kk: '[raɪd]', phonicsSound: '', exampleSentence: 'I can ride a bike.', exampleZh: '我會騎腳踏車。' },
+  ],
+  sentences: [
+    { en: 'Can you swim?', zh: '你會游泳嗎？' }, { en: 'Yes, I can.', zh: '是的，我會。' }, { en: 'Can you fly?', zh: '你會飛嗎？' }, { en: "No, I can't.", zh: '不，我不會。' }, { en: 'Can you ride a bike?', zh: '你會騎腳踏車嗎？' }, { en: 'Yes, I can!', zh: '是的，我會！' },
+  ],
+  phonicsLetters: ['Can you…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ you swim?（問句·會）', options: ['Can', 'Do', 'Are', 'Is'], answer: 'Can' },
+    { type: 'fill-blank', question: 'Can you fly? No, I ___.', options: ["can't", 'can', 'do', 'am'], answer: "can't" },
+    { type: 'match', question: '🍳 是什麼動作？', options: ['cook', 'swim', 'climb', 'read'], answer: 'cook' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🏊', '🍳', '🧗', '🚲'], answer: '🧗', image: '🎧' },
+    { type: 'match', question: '配對：動作配圖', options: ['cook-🍳', 'read-📖', 'climb-🧗', 'ride-🚲'], answer: 'cook-🍳' },
+    { type: 'fill-blank', question: 'Can you jump? Yes, I ___.', options: ['can', "can't", 'do', 'am'], answer: 'can' },
+    { type: 'spell', question: '拼拼看：c _ ok（煮飯）', answer: 'cook', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Can you swim?', 'Can you cook?', 'I can swim.', 'Can you fly?'], answer: 'Can you swim?', image: '🎧' },
+    { type: 'read', question: 'Can Benny fly?（Benny 會飛嗎？）', passage: "Benny can read and cook.\nBut he can not fly.\nHe is not a bird!", options: ['No', 'Yes', 'Maybe', 'Sometimes'], answer: 'No' },
+  ],
+  talkTimePrompts: ["Ask: Can you swim?", "Answer: Yes, I can. / No, I can't.", "Ask about cook, climb, ride!", "Change it: Can you ___? (jump/read/kick)"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ you ride a bike?（問句·會）', options: ['Can', 'Do', 'Are', 'Is'], answer: 'Can' },
+    { type: 'match', question: '🧗 是什麼動作？', options: ['climb', 'kick', 'fly', 'cook'], answer: 'climb' },
+    { type: 'fill-blank', question: 'Can you cook? Yes, I ___.', options: ['can', "can't", 'do', 'is'], answer: 'can' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Can you swim?", lineZh: '你會游泳嗎？' },
+    { speaker: 'Coco', line: "Yes, I can! Can you fly?", lineZh: '是的，我會！你會飛嗎？' },
+    { speaker: 'Polly', line: "No, I can't! But I can read.", lineZh: '不，我不會！但我會閱讀。' },
+    { speaker: 'Benny', line: "I can cook and climb! Can you?", lineZh: '我會煮飯和攀爬！你會嗎？' },
+  ],
+};
+
+const L4_M12: Mission = {
+  id: 12, slug: 'l4-m12-what-is-this', level: 4, title: 'What is this?', titleEn: 'What is this?', theme: '學校路・教室裡', themeEmoji: '🏫',
+  focus: '疑問 What is this? — It is a…（教室物品）',
+  story: [
+    { image: '🏫', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "What is this? It is a clock!", dialogueZh: '這是什麼？這是一個時鐘！', highlightWords: ['What', 'clock'], sceneEmojis: ['🕐', '❓', '✨'], animation: 'wave' },
+    { image: '🚪', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "What is that? It is a door.", dialogueZh: '那是什麼？那是一扇門。', highlightWords: ['What', 'door'], sceneEmojis: ['🚪', '❓', '😊'], animation: 'bounce' },
+    { image: '🪟', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "What is this? It is a window!", dialogueZh: '這是什麼？這是一扇窗！', highlightWords: ['What', 'window'], sceneEmojis: ['🪟', '❓', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You can ask about everything now! Great!", dialogueZh: '現在你什麼都能問了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🏫'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'clock', zh: '時鐘', image: '🕐', phonics: '', kk: '[klɑk]', phonicsSound: '', exampleSentence: 'It is a clock.', exampleZh: '這是時鐘。' },
+    { en: 'door', zh: '門', image: '🚪', phonics: '', kk: '[dɔr]', phonicsSound: '', exampleSentence: 'It is a door.', exampleZh: '這是門。' },
+    { en: 'window', zh: '窗戶', image: '🪟', phonics: '', kk: '[ˈwɪndo]', phonicsSound: '', exampleSentence: 'It is a window.', exampleZh: '這是窗戶。' },
+    { en: 'board', zh: '黑板', image: '📋', phonics: '', kk: '[bɔrd]', phonicsSound: '', exampleSentence: 'It is a board.', exampleZh: '這是黑板。' },
+    { en: 'chair', zh: '椅子', image: '🪑', phonics: '', kk: '[tʃɛr]', phonicsSound: '', exampleSentence: 'It is a chair.', exampleZh: '這是椅子。' },
+    { en: 'desk', zh: '書桌', image: '🖥️', phonics: '', kk: '[dɛsk]', phonicsSound: '', exampleSentence: 'It is a desk.', exampleZh: '這是書桌。' },
+    { en: 'map', zh: '地圖', image: '🗺️', phonics: '', kk: '[mæp]', phonicsSound: '', exampleSentence: 'It is a map.', exampleZh: '這是地圖。' },
+    { en: 'light', zh: '燈', image: '💡', phonics: '', kk: '[laɪt]', phonicsSound: '', exampleSentence: 'It is a light.', exampleZh: '這是燈。' },
+    { en: 'wall', zh: '牆', image: '🧱', phonics: '', kk: '[wɔl]', phonicsSound: '', exampleSentence: 'It is a wall.', exampleZh: '這是牆。' },
+    { en: 'what', zh: '什麼', image: '❓', phonics: '', kk: '[wɑt]', phonicsSound: '', exampleSentence: 'What is this?', exampleZh: '這是什麼？' },
+  ],
+  sentences: [
+    { en: 'What is this?', zh: '這是什麼？' }, { en: 'It is a clock.', zh: '這是一個時鐘。' }, { en: 'What is that?', zh: '那是什麼？' }, { en: 'It is a door.', zh: '那是一扇門。' }, { en: 'Is this a window?', zh: '這是窗戶嗎？' }, { en: 'Yes, it is.', zh: '是的，它是。' },
+  ],
+  phonicsLetters: ['What is this?'],
+  warmUpQuestions: [
+    { type: 'match', question: '🕐 是什麼？', options: ['clock', 'door', 'window', 'wall'], answer: 'clock' },
+    { type: 'fill-blank', question: '___ is this?（什麼）', options: ['What', 'Where', 'Who', 'Is'], answer: 'What' },
+    { type: 'match', question: '🚪 是什麼？', options: ['door', 'window', 'board', 'chair'], answer: 'door' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的東西', options: ['🕐', '🚪', '🪟', '🗺️'], answer: '🪟', image: '🎧' },
+    { type: 'match', question: '配對：字配圖', options: ['clock-🕐', 'door-🚪', 'map-🗺️', 'chair-🪑'], answer: 'clock-🕐' },
+    { type: 'fill-blank', question: 'What is this? It ___ a clock.（be動詞）', options: ['is', 'am', 'are', 'be'], answer: 'is' },
+    { type: 'spell', question: '拼拼看：do _ r（門）', answer: 'door', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What is this?', 'What is that?', 'It is a door.', 'Is this a door?'], answer: 'What is this?', image: '🎧' },
+    { type: 'read', question: 'What is on the wall?（牆上是什麼？）', passage: 'This is our classroom.\nA clock and a map are on the wall.\nThe door is next to the window.', options: ['a clock and a map', 'a chair', 'a desk', 'a book'], answer: 'a clock and a map' },
+  ],
+  talkTimePrompts: ["Point and ask: What is this?", "Answer: It is a ___.", "Ask about 3 things in your room!", "Change it: What is that? It is a ___."],
+  reviewQuiz: [
+    { type: 'match', question: '🗺️ 是什麼？', options: ['map', 'board', 'light', 'wall'], answer: 'map' },
+    { type: 'fill-blank', question: '___ is that? It is a door.', options: ['What', 'Where', 'Who', 'Can'], answer: 'What' },
+    { type: 'spell', question: '拼拼看：cl _ ck（時鐘）', answer: 'clock', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "What is this?", lineZh: '這是什麼？' },
+    { speaker: 'Coco', line: "It is a clock! What is that?", lineZh: '這是時鐘！那是什麼？' },
+    { speaker: 'Benny', line: "It is a map. What is this?", lineZh: '那是地圖。這是什麼？' },
+    { speaker: 'Ruby', line: "It is a window! Our classroom is nice!", lineZh: '這是窗戶！我們的教室好棒！' },
+  ],
+};
+
+const L4_M13: Mission = {
+  id: 13, slug: 'l4-m13-where-is', level: 4, title: 'Where is…?', titleEn: 'Where is…?', theme: '學校路・找找看', themeEmoji: '🔍',
+  focus: '疑問 Where is…? — It is in / on / under…',
+  story: [
+    { image: '🔍', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Where is my cat? It is on the desk!", dialogueZh: '我的貓在哪？牠在書桌上！', highlightWords: ['Where', 'on'], sceneEmojis: ['🐱', '🖥️', '✨'], animation: 'wave' },
+    { image: '📦', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Where is the ball? It is in the box.", dialogueZh: '球在哪？它在箱子裡。', highlightWords: ['Where', 'in'], sceneEmojis: ['⚽', '📦', '😊'], animation: 'bounce' },
+    { image: '🪑', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Where is the bag? It is under the chair!", dialogueZh: '書包在哪？它在椅子下面！', highlightWords: ['Where', 'under'], sceneEmojis: ['🎒', '🪑', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "In, on, under — you found them all!", dialogueZh: 'In、on、under —— 你全找到了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔍'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'where', zh: '哪裡', image: '🔍', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is it?', exampleZh: '它在哪？' },
+    { en: 'in', zh: '在…裡面', image: '📥', phonics: '', kk: '[ɪn]', phonicsSound: '', exampleSentence: 'It is in the box.', exampleZh: '它在箱子裡。' },
+    { en: 'on', zh: '在…上面', image: '⬆️', phonics: '', kk: '[ɑn]', phonicsSound: '', exampleSentence: 'It is on the desk.', exampleZh: '它在書桌上。' },
+    { en: 'under', zh: '在…下面', image: '⬇️', phonics: '', kk: '[ˈʌndɚ]', phonicsSound: '', exampleSentence: 'It is under the chair.', exampleZh: '它在椅子下。' },
+    { en: 'box', zh: '箱子', image: '📦', phonics: '', kk: '[bɑks]', phonicsSound: '', exampleSentence: 'in the box', exampleZh: '在箱子裡' },
+    { en: 'desk', zh: '書桌', image: '🖥️', phonics: '', kk: '[dɛsk]', phonicsSound: '', exampleSentence: 'on the desk', exampleZh: '在書桌上' },
+    { en: 'chair', zh: '椅子', image: '🪑', phonics: '', kk: '[tʃɛr]', phonicsSound: '', exampleSentence: 'under the chair', exampleZh: '在椅子下' },
+    { en: 'bag', zh: '書包', image: '🎒', phonics: '', kk: '[bæɡ]', phonicsSound: '', exampleSentence: 'Where is the bag?', exampleZh: '書包在哪？' },
+    { en: 'ball', zh: '球', image: '⚽', phonics: '', kk: '[bɔl]', phonicsSound: '', exampleSentence: 'Where is the ball?', exampleZh: '球在哪？' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: '', kk: '[kæt]', phonicsSound: '', exampleSentence: 'The cat is on the desk.', exampleZh: '貓在書桌上。' },
+  ],
+  sentences: [
+    { en: 'Where is my cat?', zh: '我的貓在哪？' }, { en: 'It is on the desk.', zh: '牠在書桌上。' }, { en: 'Where is the ball?', zh: '球在哪？' }, { en: 'It is in the box.', zh: '它在箱子裡。' }, { en: 'Where is the bag?', zh: '書包在哪？' }, { en: 'It is under the chair.', zh: '它在椅子下。' },
+  ],
+  phonicsLetters: ['Where is…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ is my cat?（哪裡）', options: ['Where', 'What', 'Who', 'Is'], answer: 'Where' },
+    { type: 'fill-blank', question: 'It is ___ the box.（裡面）', options: ['in', 'on', 'under', 'is'], answer: 'in' },
+    { type: 'fill-blank', question: 'It is ___ the desk.（上面）', options: ['on', 'in', 'under', 'is'], answer: 'on' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的位置字', options: ['📥', '⬆️', '⬇️', '📦'], answer: '⬇️', image: '🎧' },
+    { type: 'fill-blank', question: 'The bag is ___ the chair.（下面）', options: ['under', 'in', 'on', 'is'], answer: 'under' },
+    { type: 'fill-blank', question: 'The cat is ___ the desk.（上面）', options: ['on', 'in', 'under', 'is'], answer: 'on' },
+    { type: 'spell', question: '拼拼看：und _ r（下面）', answer: 'under', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['It is on the desk.', 'It is in the box.', 'It is under the chair.', 'Where is the cat?'], answer: 'It is on the desk.', image: '🎧' },
+    { type: 'read', question: 'Where is the ball?（球在哪？）', passage: 'The cat is on the desk.\nThe bag is under the chair.\nThe ball is in the box.', options: ['in the box', 'on the desk', 'under the chair', 'on the wall'], answer: 'in the box' },
+  ],
+  talkTimePrompts: ["Ask: Where is my bag?", "Answer: It is in / on / under the ___.", "Hide something and ask: Where is it?", "Change it: The cat is ___ the box (in/on/under)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'It is ___ the chair.（下面）', options: ['under', 'in', 'on', 'is'], answer: 'under' },
+    { type: 'fill-blank', question: '___ is the ball?（哪裡）', options: ['Where', 'What', 'Who', 'Can'], answer: 'Where' },
+    { type: 'match', question: '📦 是什麼？', options: ['box', 'bag', 'ball', 'desk'], answer: 'box' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Where is my cat?", lineZh: '我的貓在哪？' },
+    { speaker: 'Benny', line: "It is on the desk! Where is the ball?", lineZh: '牠在書桌上！球在哪？' },
+    { speaker: 'Coco', line: "It is in the box. Where is my bag?", lineZh: '它在箱子裡。我的書包在哪？' },
+    { speaker: 'Ruby', line: "It is under the chair! Found it!", lineZh: '它在椅子下！找到了！' },
+  ],
+};
+
+const L4_M14: Mission = {
+  id: 14, slug: 'l4-m14-prepositions', level: 4, title: '介系詞', titleEn: 'Prepositions', theme: '學校路・位置大集合', themeEmoji: '📍',
+  focus: '介系詞 in / on / under / next to / behind',
+  story: [
+    { image: '📍', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "The cat is next to the box.", dialogueZh: '貓在箱子旁邊。', highlightWords: ['next to'], sceneEmojis: ['🐱', '📦', '✨'], animation: 'wave' },
+    { image: '🙈', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "The dog is behind the chair!", dialogueZh: '狗在椅子後面！', highlightWords: ['behind'], sceneEmojis: ['🐶', '🪑', '😊'], animation: 'bounce' },
+    { image: '📦', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "In, on, under, next to, behind — five words!", dialogueZh: 'In、on、under、next to、behind —— 五個字！', highlightWords: [], sceneEmojis: ['📥', '⬆️', '⬇️'], animation: 'tada' },
+    { image: '🎉', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You can say where everything is! Great!", dialogueZh: '你會說每樣東西在哪了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📍'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'in', zh: '在…裡面', image: '📥', phonics: '', kk: '[ɪn]', phonicsSound: '', exampleSentence: 'in the box', exampleZh: '在箱子裡' },
+    { en: 'on', zh: '在…上面', image: '⬆️', phonics: '', kk: '[ɑn]', phonicsSound: '', exampleSentence: 'on the desk', exampleZh: '在書桌上' },
+    { en: 'under', zh: '在…下面', image: '⬇️', phonics: '', kk: '[ˈʌndɚ]', phonicsSound: '', exampleSentence: 'under the chair', exampleZh: '在椅子下' },
+    { en: 'next to', zh: '在…旁邊', image: '↔️', phonics: '', kk: '[nɛkst tu]', phonicsSound: '', exampleSentence: 'next to the box', exampleZh: '在箱子旁' },
+    { en: 'behind', zh: '在…後面', image: '🔙', phonics: '', kk: '[bɪˈhaɪnd]', phonicsSound: '', exampleSentence: 'behind the chair', exampleZh: '在椅子後' },
+    { en: 'box', zh: '箱子', image: '📦', phonics: '', kk: '[bɑks]', phonicsSound: '', exampleSentence: 'in the box', exampleZh: '在箱子裡' },
+    { en: 'table', zh: '桌子', image: '🪵', phonics: '', kk: '[ˈtebl̩]', phonicsSound: '', exampleSentence: 'on the table', exampleZh: '在桌上' },
+    { en: 'chair', zh: '椅子', image: '🪑', phonics: '', kk: '[tʃɛr]', phonicsSound: '', exampleSentence: 'under the chair', exampleZh: '在椅子下' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: '', kk: '[kæt]', phonicsSound: '', exampleSentence: 'The cat is on it.', exampleZh: '貓在上面。' },
+    { en: 'dog', zh: '狗', image: '🐶', phonics: '', kk: '[dɔɡ]', phonicsSound: '', exampleSentence: 'The dog is behind it.', exampleZh: '狗在後面。' },
+  ],
+  sentences: [
+    { en: 'The cat is in the box.', zh: '貓在箱子裡。' }, { en: 'The book is on the table.', zh: '書在桌上。' }, { en: 'The ball is under the chair.', zh: '球在椅子下。' }, { en: 'The cat is next to the box.', zh: '貓在箱子旁。' }, { en: 'The dog is behind the chair.', zh: '狗在椅子後。' }, { en: 'Where is the cat?', zh: '貓在哪？' },
+  ],
+  phonicsLetters: ['in/on/under…'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'The cat is ___ the box.（旁邊）', options: ['next to', 'in', 'on', 'is'], answer: 'next to' },
+    { type: 'fill-blank', question: 'The dog is ___ the chair.（後面）', options: ['behind', 'on', 'in', 'is'], answer: 'behind' },
+    { type: 'fill-blank', question: 'The ball is ___ the table.（上面）', options: ['on', 'in', 'behind', 'is'], answer: 'on' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的位置字', options: ['📥', '⬆️', '↔️', '🔙'], answer: '🔙', image: '🎧' },
+    { type: 'match', question: '配對：位置字配意思', options: ['in-裡面', 'on-上面', 'under-下面', 'behind-後面'], answer: 'in-裡面' },
+    { type: 'fill-blank', question: '句型代換：The cat is ___ the chair.（後面）', options: ['behind', 'happy', 'like', 'is'], answer: 'behind' },
+    { type: 'spell', question: '拼拼看：beh _ nd（後面）', answer: 'behind', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The cat is next to the box.', 'The cat is in the box.', 'The cat is behind the box.', 'The cat is on the box.'], answer: 'The cat is next to the box.', image: '🎧' },
+    { type: 'read', question: 'Where is the dog?（狗在哪？）', passage: 'The cat is on the table.\nThe ball is under the chair.\nThe dog is behind the door.', options: ['behind the door', 'on the table', 'under the chair', 'in the box'], answer: 'behind the door' },
+  ],
+  talkTimePrompts: ["Say where your bag is: It is ___ the ___.", "Use 'next to' in a sentence.", "Use 'behind' in a sentence.", "Change it: The cat is ___ the box (in/on/next to)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The cat is ___ the box.（旁邊）', options: ['next to', 'in', 'on', 'is'], answer: 'next to' },
+    { type: 'match', question: '🔙 behind 是什麼意思？', options: ['後面', '前面', '上面', '裡面'], answer: '後面' },
+    { type: 'fill-blank', question: 'The book is ___ the table.（上面）', options: ['on', 'under', 'behind', 'is'], answer: 'on' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "The cat is next to the box.", lineZh: '貓在箱子旁邊。' },
+    { speaker: 'Coco', line: "The dog is behind the chair!", lineZh: '狗在椅子後面！' },
+    { speaker: 'Benny', line: "The ball is under the table.", lineZh: '球在桌子下面。' },
+    { speaker: 'Ruby', line: "In, on, under, next to, behind! Perfect!", lineZh: 'In、on、under、next to、behind！完美！' },
+  ],
+};
+
+const L4_M15: Mission = {
+  id: 15, slug: 'l4-m15-review-questions', level: 4, title: 'Review③ 問句', titleEn: 'Review: Questions', theme: '學校路・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習③：Are you…? / Do you…? / Can you…? / What…? / Where…?',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review our questions! Are you ready?", dialogueZh: '來複習問句！你準備好了嗎？', highlightWords: ['Are'], sceneEmojis: ['🔄', '❓', '✨'], animation: 'wave' },
+    { image: '🤔', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Do you like it? Can you do it?", dialogueZh: '你喜歡嗎？你會嗎？', highlightWords: ['Do', 'Can'], sceneEmojis: ['❤️', '💪', '😊'], animation: 'bounce' },
+    { image: '🔍', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "What is this? Where is it? Great questions!", dialogueZh: '這是什麼？它在哪？好問題！', highlightWords: ['What', 'Where'], sceneEmojis: ['❓', '🔍', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can ask anything now! Amazing!", dialogueZh: '你現在什麼都會問了！太厲害了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'are', zh: '是（你）', image: '❓', phonics: '', kk: '[ɑr]', phonicsSound: '', exampleSentence: 'Are you happy?', exampleZh: '你開心嗎？' },
+    { en: 'do', zh: '（問句助動詞）', image: '❓', phonics: '', kk: '[du]', phonicsSound: '', exampleSentence: 'Do you like it?', exampleZh: '你喜歡嗎？' },
+    { en: 'can', zh: '會·能', image: '💪', phonics: '', kk: '[kæn]', phonicsSound: '', exampleSentence: 'Can you swim?', exampleZh: '你會游泳嗎？' },
+    { en: 'what', zh: '什麼', image: '❔', phonics: '', kk: '[wɑt]', phonicsSound: '', exampleSentence: 'What is this?', exampleZh: '這是什麼？' },
+    { en: 'where', zh: '哪裡', image: '🔍', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is it?', exampleZh: '它在哪？' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'Do you like it?', exampleZh: '你喜歡嗎？' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: 'Can you swim?', exampleZh: '你會游泳嗎？' },
+    { en: 'clock', zh: '時鐘', image: '🕐', phonics: '', kk: '[klɑk]', phonicsSound: '', exampleSentence: 'It is a clock.', exampleZh: '這是時鐘。' },
+    { en: 'on', zh: '在…上面', image: '⬆️', phonics: '', kk: '[ɑn]', phonicsSound: '', exampleSentence: 'on the desk', exampleZh: '在書桌上' },
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'Are you happy?', exampleZh: '你開心嗎？' },
+  ],
+  sentences: [
+    { en: 'Are you happy?', zh: '你開心嗎？' }, { en: 'Do you like pizza?', zh: '你喜歡披薩嗎？' }, { en: 'Can you swim?', zh: '你會游泳嗎？' }, { en: 'What is this?', zh: '這是什麼？' }, { en: 'Where is the cat?', zh: '貓在哪？' }, { en: 'Yes, I can!', zh: '是的，我會！' },
+  ],
+  phonicsLetters: ['review questions'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ you happy?（be動詞問句）', options: ['Are', 'Do', 'Can', 'What'], answer: 'Are' },
+    { type: 'fill-blank', question: '___ you like pizza?（一般動詞問句）', options: ['Do', 'Are', 'Can', 'Where'], answer: 'Do' },
+    { type: 'fill-blank', question: '___ you swim?（能力問句）', options: ['Can', 'Are', 'Do', 'What'], answer: 'Can' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的東西', options: ['🕐', '🏊', '❤️', '😊'], answer: '🕐', image: '🎧' },
+    { type: 'fill-blank', question: '___ is this? It is a clock.（什麼）', options: ['What', 'Where', 'Who', 'Do'], answer: 'What' },
+    { type: 'fill-blank', question: '___ is the cat? It is on the desk.（哪裡）', options: ['Where', 'What', 'Who', 'Can'], answer: 'Where' },
+    { type: 'spell', question: '拼拼看：wh _ re（哪裡）', answer: 'where', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Can you swim?', 'Do you swim?', 'Are you swimming?', 'What is swim?'], answer: 'Can you swim?', image: '🎧' },
+    { type: 'read', question: 'Can Finn swim?（Finn 會游泳嗎？）', passage: 'Finn is happy.\nHe likes the pool.\nHe can swim very well!', options: ['Yes', 'No', 'Maybe', 'Never'], answer: 'Yes' },
+  ],
+  talkTimePrompts: ["Ask a friend: Are you…?", "Ask: Do you like…?", "Ask: Can you…?", "Ask: What is this? / Where is it?"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ you like dogs?（問句）', options: ['Do', 'Are', 'Can', 'What'], answer: 'Do' },
+    { type: 'fill-blank', question: '___ is the ball? It is in the box.', options: ['Where', 'What', 'Who', 'Can'], answer: 'Where' },
+    { type: 'read', question: 'Is the cat on the desk?（貓在書桌上嗎？）', passage: 'Where is the cat?\nThe cat is on the desk.\nThe clock is on the wall.', options: ['Yes', 'No', 'Maybe', 'Under'], answer: 'Yes' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Are you ready? Do you like questions?", lineZh: '你準備好了嗎？你喜歡問句嗎？' },
+    { speaker: 'Polly', line: "Yes, I do! Can you ask one?", lineZh: '是的！你能問一個嗎？' },
+    { speaker: 'Benny', line: "What is this? Where is the cat?", lineZh: '這是什麼？貓在哪？' },
+    { speaker: 'Finn', line: "Great! You know all the questions!", lineZh: '太棒了！你會所有問句了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
