@@ -3043,7 +3043,267 @@ const L4_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5];
+const L4_M6: Mission = {
+  id: 6, slug: 'l4-m6-i-like', level: 4, title: 'I like…', titleEn: 'I like / I don\'t like', theme: '學校路・我喜歡', themeEmoji: '❤️',
+  focus: '句型 I like + N / I don\'t like + N；句型代換替換名詞',
+  story: [
+    { image: '❤️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I like pizza! I like music too!", dialogueZh: '我喜歡披薩！我也喜歡音樂！', highlightWords: ['like'], sceneEmojis: ['🍕', '🎵', '❤️'], animation: 'bounce' },
+    { image: '🚫', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I don't like candy. I like books!", dialogueZh: '我不喜歡糖果。我喜歡書！', highlightWords: ["don't", 'like'], sceneEmojis: ['🍬', '📚', '😊'], animation: 'shake' },
+    { image: '🎨', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "I like art and games! What do you like?", dialogueZh: '我喜歡畫畫和遊戲！你喜歡什麼？', highlightWords: ['like'], sceneEmojis: ['🎨', '🎮', '⭐'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'wave', characterName: 'Coco', dialogue: "Now you can say what you like! Yay!", dialogueZh: '現在你會說你喜歡什麼了！耶！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '❤️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like pizza.', exampleZh: '我喜歡披薩。' },
+    { en: 'pizza', zh: '披薩', image: '🍕', phonics: '', kk: '[ˈpitsə]', phonicsSound: '', exampleSentence: 'I like pizza.', exampleZh: '我喜歡披薩。' },
+    { en: 'ice cream', zh: '冰淇淋', image: '🍦', phonics: '', kk: '[aɪs krim]', phonicsSound: '', exampleSentence: 'I like ice cream.', exampleZh: '我喜歡冰淇淋。' },
+    { en: 'candy', zh: '糖果', image: '🍬', phonics: '', kk: '[ˈkændi]', phonicsSound: '', exampleSentence: "I don't like candy.", exampleZh: '我不喜歡糖果。' },
+    { en: 'music', zh: '音樂', image: '🎵', phonics: '', kk: '[ˈmjuzɪk]', phonicsSound: '', exampleSentence: 'I like music.', exampleZh: '我喜歡音樂。' },
+    { en: 'art', zh: '美術', image: '🎨', phonics: '', kk: '[ɑrt]', phonicsSound: '', exampleSentence: 'I like art.', exampleZh: '我喜歡美術。' },
+    { en: 'game', zh: '遊戲', image: '🎮', phonics: '', kk: '[ɡem]', phonicsSound: '', exampleSentence: 'I like games.', exampleZh: '我喜歡遊戲。' },
+    { en: 'sport', zh: '運動', image: '⚽', phonics: '', kk: '[spɔrt]', phonicsSound: '', exampleSentence: 'I like sports.', exampleZh: '我喜歡運動。' },
+    { en: 'book', zh: '書', image: '📚', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'I like books.', exampleZh: '我喜歡書。' },
+    { en: "don't like", zh: '不喜歡', image: '🚫', phonics: '', kk: '[dont laɪk]', phonicsSound: '', exampleSentence: "I don't like candy.", exampleZh: '我不喜歡糖果。' },
+  ],
+  sentences: [
+    { en: 'I like pizza.', zh: '我喜歡披薩。' }, { en: 'I like music and art.', zh: '我喜歡音樂和美術。' }, { en: "I don't like candy.", zh: '我不喜歡糖果。' }, { en: 'What do you like?', zh: '你喜歡什麼？' }, { en: 'I like games!', zh: '我喜歡遊戲！' }, { en: "I don't like sports.", zh: '我不喜歡運動。' },
+  ],
+  phonicsLetters: ['I like ___'],
+  warmUpQuestions: [
+    { type: 'match', question: '🍕 是什麼？', options: ['pizza', 'candy', 'book', 'art'], answer: 'pizza' },
+    { type: 'fill-blank', question: 'I ___ music.（喜歡）', options: ['like', 'am', 'is', 'do'], answer: 'like' },
+    { type: 'match', question: '🎨 是什麼？', options: ['art', 'music', 'game', 'sport'], answer: 'art' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的東西', options: ['🍕', '🍦', '🍬', '🎵'], answer: '🍦', image: '🎧' },
+    { type: 'match', question: '配對：字配圖', options: ['pizza-🍕', 'music-🎵', 'art-🎨', 'game-🎮'], answer: 'pizza-🍕' },
+    { type: 'fill-blank', question: '句型代換：I like ___.（運動）', options: ['sports', 'candy', 'sad', 'is'], answer: 'sports' },
+    { type: 'fill-blank', question: 'I ___ like candy.（不喜歡）', options: ["don't", 'am', 'not', 'no'], answer: "don't" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I like music.', 'I like pizza.', "I don't like music.", 'Do you like music?'], answer: 'I like music.', image: '🎧' },
+    { type: 'read', question: 'What does Benny like?（Benny 喜歡什麼？）', passage: "Benny doesn't like candy.\nHe likes books.\nHe likes reading!", options: ['books', 'candy', 'pizza', 'games'], answer: 'books' },
+  ],
+  talkTimePrompts: ["What do you like? I like ___.", "Say something you don't like: I don't like ___.", "Name three things you like!", "Change it: I like ___ (pizza/music/games)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ ice cream!（喜歡）', options: ['like', 'am', 'is', 'do'], answer: 'like' },
+    { type: 'match', question: '🍬 是什麼？', options: ['candy', 'pizza', 'book', 'sport'], answer: 'candy' },
+    { type: 'fill-blank', question: "I don't ___ sports.（喜歡）", options: ['like', 'likes', 'am', 'is'], answer: 'like' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I like pizza and music! What do you like?", lineZh: '我喜歡披薩和音樂！你喜歡什麼？' },
+    { speaker: 'Benny', line: "I like books. I don't like candy.", lineZh: '我喜歡書。我不喜歡糖果。' },
+    { speaker: 'Ruby', line: "I like art and games!", lineZh: '我喜歡美術和遊戲！' },
+    { speaker: 'Coco', line: "We all like different things! Cool!", lineZh: '我們喜歡不同的東西！好酷！' },
+  ],
+};
+
+const L4_M7: Mission = {
+  id: 7, slug: 'l4-m7-do-you-like', level: 4, title: 'Do you like…?', titleEn: 'Do you like…?', theme: '學校路・你喜歡嗎', themeEmoji: '🤔',
+  focus: '疑問 Do you like…? 短答 Yes, I do. / No, I don\'t.',
+  story: [
+    { image: '🤔', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Do you like pizza? Yes, I do!", dialogueZh: '你喜歡披薩嗎？是的，我喜歡！', highlightWords: ['Do', 'do'], sceneEmojis: ['🍕', '❓', '✨'], animation: 'wave' },
+    { image: '🐶', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Do you like dogs? No, I don't. I like cats!", dialogueZh: '你喜歡狗嗎？不，我不喜歡。我喜歡貓！', highlightWords: ["don't"], sceneEmojis: ['🐶', '🙅', '🐱'], animation: 'shake' },
+    { image: '🎵', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Do you like music? Yes, I do! I love it!", dialogueZh: '你喜歡音樂嗎？是的！我很愛！', highlightWords: ['Do', 'do'], sceneEmojis: ['🎵', '✅', '😊'], animation: 'bounce' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Ask your friends: Do you like…? So fun!", dialogueZh: '問問你的朋友：你喜歡…嗎？好好玩！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🤔'], animation: 'tada' },
+  ],
+  words: [
+    { en: 'do', zh: '（助動詞·問句用）', image: '❓', phonics: '', kk: '[du]', phonicsSound: '', exampleSentence: 'Do you like it?', exampleZh: '你喜歡它嗎？' },
+    { en: "don't", zh: '不（否定）', image: '🚫', phonics: '', kk: '[dont]', phonicsSound: '', exampleSentence: "No, I don't.", exampleZh: '不，我不喜歡。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'Do you like pizza?', exampleZh: '你喜歡披薩嗎？' },
+    { en: 'dog', zh: '狗', image: '🐶', phonics: '', kk: '[dɔɡ]', phonicsSound: '', exampleSentence: 'Do you like dogs?', exampleZh: '你喜歡狗嗎？' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: '', kk: '[kæt]', phonicsSound: '', exampleSentence: 'I like cats.', exampleZh: '我喜歡貓。' },
+    { en: 'pizza', zh: '披薩', image: '🍕', phonics: '', kk: '[ˈpitsə]', phonicsSound: '', exampleSentence: 'Do you like pizza?', exampleZh: '你喜歡披薩嗎？' },
+    { en: 'music', zh: '音樂', image: '🎵', phonics: '', kk: '[ˈmjuzɪk]', phonicsSound: '', exampleSentence: 'Do you like music?', exampleZh: '你喜歡音樂嗎？' },
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'Do you like apples?', exampleZh: '你喜歡蘋果嗎？' },
+    { en: 'milk', zh: '牛奶', image: '🥛', phonics: '', kk: '[mɪlk]', phonicsSound: '', exampleSentence: 'Do you like milk?', exampleZh: '你喜歡牛奶嗎？' },
+    { en: 'love', zh: '很愛', image: '💕', phonics: '', kk: '[lʌv]', phonicsSound: '', exampleSentence: 'I love it!', exampleZh: '我很愛！' },
+  ],
+  sentences: [
+    { en: 'Do you like pizza?', zh: '你喜歡披薩嗎？' }, { en: 'Yes, I do.', zh: '是的，我喜歡。' }, { en: 'Do you like dogs?', zh: '你喜歡狗嗎？' }, { en: "No, I don't.", zh: '不，我不喜歡。' }, { en: 'Do you like music?', zh: '你喜歡音樂嗎？' }, { en: 'I love music!', zh: '我很愛音樂！' },
+  ],
+  phonicsLetters: ['Do you like…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ you like pizza?（問句）', options: ['Do', 'Are', 'Is', 'Am'], answer: 'Do' },
+    { type: 'fill-blank', question: 'Do you like it? Yes, I ___.', options: ['do', 'am', 'is', 'like'], answer: 'do' },
+    { type: 'match', question: '🥛 是什麼？', options: ['milk', 'apple', 'pizza', 'music'], answer: 'milk' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的東西', options: ['🐶', '🐱', '🍕', '🥛'], answer: '🐱', image: '🎧' },
+    { type: 'fill-blank', question: 'Do you like dogs? No, I ___.（否定短答）', options: ["don't", 'do', 'am', 'not'], answer: "don't" },
+    { type: 'fill-blank', question: '___ you like music?（問句）', options: ['Do', 'Are', 'Is', 'Be'], answer: 'Do' },
+    { type: 'spell', question: '拼拼看：mil _ （牛奶）', answer: 'milk', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Do you like dogs?', 'Do you like cats?', 'I like dogs.', 'Do you like pizza?'], answer: 'Do you like dogs?', image: '🎧' },
+    { type: 'read', question: 'Does Coco like dogs?（Coco 喜歡狗嗎？）', passage: "Coco doesn't like dogs.\nShe likes cats.\nCats are her favorite!", options: ['No', 'Yes', 'Maybe', 'A lot'], answer: 'No' },
+  ],
+  talkTimePrompts: ["Ask a friend: Do you like ___?", "Answer: Yes, I do. / No, I don't.", "Ask about pizza, dogs, music!", "Change it: Do you like ___? (apples/milk/games)"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Do you like apples? Yes, I ___.', options: ['do', 'am', 'is', 'like'], answer: 'do' },
+    { type: 'match', question: '💕 很愛 的英文？', options: ['love', 'like', 'do', 'milk'], answer: 'love' },
+    { type: 'fill-blank', question: "Do you like candy? No, I ___.", options: ["don't", 'do', 'am', 'not'], answer: "don't" },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Do you like pizza?", lineZh: '你喜歡披薩嗎？' },
+    { speaker: 'Coco', line: "Yes, I do! Do you like dogs?", lineZh: '是的！你喜歡狗嗎？' },
+    { speaker: 'Polly', line: "No, I don't. I like cats!", lineZh: '不，我不喜歡。我喜歡貓！' },
+    { speaker: 'Benny', line: "Me too! I love cats!", lineZh: '我也是！我很愛貓！' },
+  ],
+};
+
+const L4_M8: Mission = {
+  id: 8, slug: 'l4-m8-i-have', level: 4, title: 'I have…', titleEn: 'I have / Do you have…?', theme: '學校路・我有什麼', themeEmoji: '🎒',
+  focus: '句型 I have + N / Do you have…? Yes, I do. / No, I don\'t.',
+  story: [
+    { image: '🎒', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I have a bag. I have a book too!", dialogueZh: '我有一個書包。我也有一本書！', highlightWords: ['have'], sceneEmojis: ['🎒', '📖', '✨'], animation: 'wave' },
+    { image: '🖊️', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "Do you have a pen? Yes, I do!", dialogueZh: '你有筆嗎？是的，我有！', highlightWords: ['have', 'do'], sceneEmojis: ['🖊️', '❓', '✅'], animation: 'bounce' },
+    { image: '⚽', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Do you have a ball? No, I don't.", dialogueZh: '你有球嗎？不，我沒有。', highlightWords: ["don't"], sceneEmojis: ['⚽', '🙅', '😊'], animation: 'shake' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Now you can say what you have! Great!", dialogueZh: '現在你會說你有什麼了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🎒'], animation: 'tada' },
+  ],
+  words: [
+    { en: 'have', zh: '有', image: '🤲', phonics: '', kk: '[hæv]', phonicsSound: '', exampleSentence: 'I have a bag.', exampleZh: '我有一個書包。' },
+    { en: 'bag', zh: '書包', image: '🎒', phonics: '', kk: '[bæɡ]', phonicsSound: '', exampleSentence: 'I have a bag.', exampleZh: '我有書包。' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'I have a book.', exampleZh: '我有書。' },
+    { en: 'pen', zh: '筆', image: '🖊️', phonics: '', kk: '[pɛn]', phonicsSound: '', exampleSentence: 'Do you have a pen?', exampleZh: '你有筆嗎？' },
+    { en: 'toy', zh: '玩具', image: '🧸', phonics: '', kk: '[tɔɪ]', phonicsSound: '', exampleSentence: 'I have a toy.', exampleZh: '我有玩具。' },
+    { en: 'ball', zh: '球', image: '⚽', phonics: '', kk: '[bɔl]', phonicsSound: '', exampleSentence: 'Do you have a ball?', exampleZh: '你有球嗎？' },
+    { en: 'bike', zh: '腳踏車', image: '🚲', phonics: '', kk: '[baɪk]', phonicsSound: '', exampleSentence: 'I have a bike.', exampleZh: '我有腳踏車。' },
+    { en: 'hat', zh: '帽子', image: '🎩', phonics: '', kk: '[hæt]', phonicsSound: '', exampleSentence: 'I have a hat.', exampleZh: '我有帽子。' },
+    { en: 'has', zh: '有（他/她）', image: '👉', phonics: '', kk: '[hæz]', phonicsSound: '', exampleSentence: 'She has a dog.', exampleZh: '她有一隻狗。' },
+    { en: "don't have", zh: '沒有', image: '🚫', phonics: '', kk: '[dont hæv]', phonicsSound: '', exampleSentence: "I don't have a ball.", exampleZh: '我沒有球。' },
+  ],
+  sentences: [
+    { en: 'I have a bag.', zh: '我有一個書包。' }, { en: 'I have a book and a pen.', zh: '我有一本書和一枝筆。' }, { en: 'Do you have a toy?', zh: '你有玩具嗎？' }, { en: 'Yes, I do.', zh: '是的，我有。' }, { en: "I don't have a bike.", zh: '我沒有腳踏車。' }, { en: 'She has a hat.', zh: '她有一頂帽子。' },
+  ],
+  phonicsLetters: ['I have…'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ a bag.（有）', options: ['have', 'am', 'is', 'do'], answer: 'have' },
+    { type: 'match', question: '🧸 是什麼？', options: ['toy', 'ball', 'bike', 'hat'], answer: 'toy' },
+    { type: 'fill-blank', question: '___ you have a pen?（問句）', options: ['Do', 'Are', 'Is', 'Am'], answer: 'Do' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的東西', options: ['🎒', '📖', '⚽', '🚲'], answer: '🚲', image: '🎧' },
+    { type: 'match', question: '配對：字配圖', options: ['bag-🎒', 'ball-⚽', 'bike-🚲', 'hat-🎩'], answer: 'bag-🎒' },
+    { type: 'fill-blank', question: '句型代換：I have a ___.（玩具）', options: ['toy', 'happy', 'like', 'is'], answer: 'toy' },
+    { type: 'fill-blank', question: 'Do you have a ball? No, I ___.', options: ["don't", 'do', 'am', 'not'], answer: "don't" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I have a book.', 'I have a bag.', 'Do you have a book?', "I don't have a book."], answer: 'I have a book.', image: '🎧' },
+    { type: 'read', question: 'What does Ruby have?（Ruby 有什麼？）', passage: 'Ruby has a bag.\nIn the bag, she has a book and a pen.\nShe does not have a ball.', options: ['a book and a pen', 'a ball', 'a bike', 'a toy'], answer: 'a book and a pen' },
+  ],
+  talkTimePrompts: ["What do you have? I have a ___.", "Ask: Do you have a ___?", "Answer: Yes, I do. / No, I don't.", "Change it: I have a ___ (toy/bike/hat)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Do you have a toy? Yes, I ___.', options: ['do', 'am', 'is', 'have'], answer: 'do' },
+    { type: 'match', question: '🚲 是什麼？', options: ['bike', 'ball', 'bag', 'hat'], answer: 'bike' },
+    { type: 'fill-blank', question: 'She ___ a dog.（有·第三人稱）', options: ['has', 'have', 'is', 'do'], answer: 'has' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I have a bag and a book. Do you have a pen?", lineZh: '我有書包和書。你有筆嗎？' },
+    { speaker: 'Ruby', line: "Yes, I do! Do you have a ball?", lineZh: '是的！你有球嗎？' },
+    { speaker: 'Finn', line: "No, I don't. But I have a bike!", lineZh: '不，我沒有。但我有腳踏車！' },
+    { speaker: 'Benny', line: "Cool! We all have something fun!", lineZh: '酷！我們都有好玩的東西！' },
+  ],
+};
+
+const L4_M9: Mission = {
+  id: 9, slug: 'l4-m9-i-can', level: 4, title: 'I can…', titleEn: 'I can / I can\'t', theme: '學校路・我會做', themeEmoji: '💪',
+  focus: '句型 I can + V（能力）/ I can\'t + V；句型代換替換動詞',
+  story: [
+    { image: '💪', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I can run! I can jump! Can you?", dialogueZh: '我會跑！我會跳！你會嗎？', highlightWords: ['can'], sceneEmojis: ['🏃', '🤸', '💪'], animation: 'bounce' },
+    { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I can swim! But I can't fly.", dialogueZh: '我會游泳！但我不會飛。', highlightWords: ['can', "can't"], sceneEmojis: ['🏊', '🚫', '😊'], animation: 'wave' },
+    { image: '🎨', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "I can draw and write! What can you do?", dialogueZh: '我會畫畫和寫字！你會做什麼？', highlightWords: ['can'], sceneEmojis: ['🎨', '✏️', '⭐'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'thumbsup', characterName: 'Finn', dialogue: "You can do so many things! Amazing!", dialogueZh: '你會好多事情！太厲害了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '💪'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'can', zh: '會·能', image: '💪', phonics: '', kk: '[kæn]', phonicsSound: '', exampleSentence: 'I can swim.', exampleZh: '我會游泳。' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: 'I can swim.', exampleZh: '我會游泳。' },
+    { en: 'run', zh: '跑', image: '🏃', phonics: '', kk: '[rʌn]', phonicsSound: '', exampleSentence: 'I can run fast.', exampleZh: '我跑得快。' },
+    { en: 'jump', zh: '跳', image: '🤸', phonics: '', kk: '[dʒʌmp]', phonicsSound: '', exampleSentence: 'I can jump high.', exampleZh: '我跳得高。' },
+    { en: 'sing', zh: '唱歌', image: '🎤', phonics: '', kk: '[sɪŋ]', phonicsSound: '', exampleSentence: 'I can sing.', exampleZh: '我會唱歌。' },
+    { en: 'dance', zh: '跳舞', image: '💃', phonics: '', kk: '[dæns]', phonicsSound: '', exampleSentence: 'I can dance.', exampleZh: '我會跳舞。' },
+    { en: 'draw', zh: '畫畫', image: '🎨', phonics: '', kk: '[drɔ]', phonicsSound: '', exampleSentence: 'I can draw.', exampleZh: '我會畫畫。' },
+    { en: 'write', zh: '寫字', image: '✏️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'I can write.', exampleZh: '我會寫字。' },
+    { en: 'fly', zh: '飛', image: '🕊️', phonics: '', kk: '[flaɪ]', phonicsSound: '', exampleSentence: "I can't fly.", exampleZh: '我不會飛。' },
+    { en: "can't", zh: '不會·不能', image: '🚫', phonics: '', kk: '[kænt]', phonicsSound: '', exampleSentence: "I can't fly.", exampleZh: '我不會飛。' },
+  ],
+  sentences: [
+    { en: 'I can swim.', zh: '我會游泳。' }, { en: 'I can run and jump.', zh: '我會跑也會跳。' }, { en: "I can't fly.", zh: '我不會飛。' }, { en: 'Can you sing?', zh: '你會唱歌嗎？' }, { en: 'Yes, I can!', zh: '是的，我會！' }, { en: 'What can you do?', zh: '你會做什麼？' },
+  ],
+  phonicsLetters: ['I can ___'],
+  warmUpQuestions: [
+    { type: 'match', question: '🏊 是什麼動作？', options: ['swim', 'run', 'jump', 'sing'], answer: 'swim' },
+    { type: 'fill-blank', question: 'I ___ run fast.（會）', options: ['can', 'am', 'is', 'do'], answer: 'can' },
+    { type: 'match', question: '🎨 是什麼動作？', options: ['draw', 'write', 'sing', 'dance'], answer: 'draw' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🏊', '🏃', '🤸', '🎤'], answer: '🤸', image: '🎧' },
+    { type: 'match', question: '配對：動作配圖', options: ['swim-🏊', 'run-🏃', 'sing-🎤', 'dance-💃'], answer: 'swim-🏊' },
+    { type: 'fill-blank', question: '句型代換：I can ___.（跳舞）', options: ['dance', 'happy', 'book', 'is'], answer: 'dance' },
+    { type: 'fill-blank', question: "I ___ fly.（不會）", options: ["can't", 'can', 'am', 'not'], answer: "can't" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I can swim.', 'I can sing.', "I can't swim.", 'Can you swim?'], answer: 'I can swim.', image: '🎧' },
+    { type: 'read', question: 'What can Coco NOT do?（Coco 不會什麼？）', passage: 'Coco can swim.\nShe can run and jump.\nBut she can not fly.', options: ['fly', 'swim', 'run', 'jump'], answer: 'fly' },
+  ],
+  talkTimePrompts: ["What can you do? I can ___.", "Say something you can't do: I can't ___.", "Ask: Can you swim?", "Change it: I can ___ (run/sing/draw)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ sing a song.（會）', options: ['can', 'am', 'is', 'do'], answer: 'can' },
+    { type: 'match', question: '✏️ 是什麼動作？', options: ['write', 'draw', 'run', 'fly'], answer: 'write' },
+    { type: 'fill-blank', question: 'Can you dance? Yes, I ___.', options: ['can', 'am', 'do', 'is'], answer: 'can' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "I can run and jump! Can you swim?", lineZh: '我會跑也會跳！你會游泳嗎？' },
+    { speaker: 'Coco', line: "Yes, I can! But I can't fly.", lineZh: '是的，我會！但我不會飛。' },
+    { speaker: 'Ruby', line: "I can draw and write! What can you do?", lineZh: '我會畫畫和寫字！你會做什麼？' },
+    { speaker: 'Finn', line: "We can do so many things! Awesome!", lineZh: '我們會好多事！太棒了！' },
+  ],
+};
+
+const L4_M10: Mission = {
+  id: 10, slug: 'l4-m10-review-like-have-can', level: 4, title: 'Review② like/have/can', titleEn: 'Review: like/have/can', theme: '學校路・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：I like / I have / I can ＋ 疑問短答',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! I like, I have, I can!", dialogueZh: '來複習！I like、I have、I can！', highlightWords: ['like', 'have', 'can'], sceneEmojis: ['❤️', '🎒', '💪'], animation: 'wave' },
+    { image: '🍕', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I like pizza. I have a book. I can swim!", dialogueZh: '我喜歡披薩。我有書。我會游泳！', highlightWords: ['like', 'have', 'can'], sceneEmojis: ['🍕', '📖', '🏊'], animation: 'bounce' },
+    { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Do you like it? Do you have it? Can you do it?", dialogueZh: '你喜歡嗎？你有嗎？你會嗎？', highlightWords: ['Do', 'Can'], sceneEmojis: ['❓', '🤔', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know like, have, and can! Super!", dialogueZh: '你會 like、have、can 了！超棒！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like music.', exampleZh: '我喜歡音樂。' },
+    { en: 'have', zh: '有', image: '🤲', phonics: '', kk: '[hæv]', phonicsSound: '', exampleSentence: 'I have a bag.', exampleZh: '我有書包。' },
+    { en: 'can', zh: '會·能', image: '💪', phonics: '', kk: '[kæn]', phonicsSound: '', exampleSentence: 'I can run.', exampleZh: '我會跑。' },
+    { en: 'pizza', zh: '披薩', image: '🍕', phonics: '', kk: '[ˈpitsə]', phonicsSound: '', exampleSentence: 'I like pizza.', exampleZh: '我喜歡披薩。' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'I have a book.', exampleZh: '我有書。' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: 'I can swim.', exampleZh: '我會游泳。' },
+    { en: 'run', zh: '跑', image: '🏃', phonics: '', kk: '[rʌn]', phonicsSound: '', exampleSentence: 'I can run.', exampleZh: '我會跑。' },
+    { en: 'dog', zh: '狗', image: '🐶', phonics: '', kk: '[dɔɡ]', phonicsSound: '', exampleSentence: 'Do you like dogs?', exampleZh: '你喜歡狗嗎？' },
+    { en: 'ball', zh: '球', image: '⚽', phonics: '', kk: '[bɔl]', phonicsSound: '', exampleSentence: 'I have a ball.', exampleZh: '我有球。' },
+    { en: 'sing', zh: '唱歌', image: '🎤', phonics: '', kk: '[sɪŋ]', phonicsSound: '', exampleSentence: 'I can sing.', exampleZh: '我會唱歌。' },
+  ],
+  sentences: [
+    { en: 'I like pizza.', zh: '我喜歡披薩。' }, { en: 'I have a ball.', zh: '我有一顆球。' }, { en: 'I can swim.', zh: '我會游泳。' }, { en: 'Do you like dogs?', zh: '你喜歡狗嗎？' }, { en: 'Can you sing?', zh: '你會唱歌嗎？' }, { en: 'Yes, I can!', zh: '是的，我會！' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ pizza.（喜歡）', options: ['like', 'have', 'can', 'am'], answer: 'like' },
+    { type: 'fill-blank', question: 'I ___ a book.（有）', options: ['have', 'like', 'can', 'is'], answer: 'have' },
+    { type: 'fill-blank', question: 'I ___ swim.（會）', options: ['can', 'like', 'have', 'am'], answer: 'can' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🏊', '🏃', '🎤', '⚽'], answer: '🎤', image: '🎧' },
+    { type: 'fill-blank', question: 'Do you ___ dogs?（喜歡·問句）', options: ['like', 'have', 'can', 'are'], answer: 'like' },
+    { type: 'fill-blank', question: 'Can you sing? Yes, I ___.', options: ['can', 'do', 'am', 'like'], answer: 'can' },
+    { type: 'spell', question: '拼拼看：sw _ m（游泳）', answer: 'swim', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I can swim.', 'I like swim.', 'I have a swim.', 'Can you swim?'], answer: 'I can swim.', image: '🎧' },
+    { type: 'read', question: 'What can Coco do?（Coco 會什麼？）', passage: 'Coco likes pizza.\nShe has a book.\nShe can swim very well!', options: ['swim', 'fly', 'cook', 'drive'], answer: 'swim' },
+  ],
+  talkTimePrompts: ["Say: I like ___, I have ___, I can ___.", "Ask a friend one question with 'Do you…?'", "Ask a friend one question with 'Can you…?'", "Tell me three things about you!"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ a ball.（有）', options: ['have', 'like', 'can', 'am'], answer: 'have' },
+    { type: 'fill-blank', question: 'Do you ___ music?（喜歡）', options: ['like', 'have', 'can', 'is'], answer: 'like' },
+    { type: 'read', question: 'Does Coco have a book?（Coco 有書嗎？）', passage: 'Coco has a book and a bag.\nShe can read the book.\nShe likes it!', options: ['Yes', 'No', 'Maybe', 'Never'], answer: 'Yes' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "I like pizza, I have a ball, and I can run!", lineZh: '我喜歡披薩，我有球，我會跑！' },
+    { speaker: 'Coco', line: "I can swim! Do you like dogs?", lineZh: '我會游泳！你喜歡狗嗎？' },
+    { speaker: 'Polly', line: "Yes, I do! Can you sing?", lineZh: '是的！你會唱歌嗎？' },
+    { speaker: 'Finn', line: "Yes, I can! Great review, everyone!", lineZh: '是的，我會！複習得很好，大家！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
