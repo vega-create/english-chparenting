@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { playPraise, getLevelFromMissionId } from '@/lib/vega-audio';
+import { speak } from '@/lib/speech';
 
 interface Props {
   missionTitle: string;
@@ -19,6 +20,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   const [selected, setSelected] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [spellInput, setSpellInput] = useState('');
 
   const starPercent = Math.round((stars / maxStars) * 100);
   const starCount = starPercent >= 90 ? 3 : starPercent >= 70 ? 2 : 1;
@@ -31,7 +33,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   function handleQuizAnswer(answer: string) {
     if (showResult) return;
     setSelected(answer);
-    const correct = answer === reviewQuiz[quizCurrent].answer;
+    const correct = answer.toLowerCase().trim() === reviewQuiz[quizCurrent].answer.toLowerCase().trim();
     if (correct) setQuizScore(s => s + 1);
     setShowResult(true);
 
@@ -40,6 +42,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
         setQuizCurrent(c => c + 1);
         setSelected(null);
         setShowResult(false);
+        setSpellInput('');
       } else {
         setQuizDone(true);
       }
@@ -139,23 +142,80 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
       </div>
 
       <div className="bg-white rounded-3xl p-8 shadow-lg border-2 border-yellow-200 max-w-xl mx-auto">
+        {/* 閱讀理解短文 */}
+        {q.type === 'read' && q.passage && (
+          <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 mb-5">
+            <p className="text-base leading-relaxed text-gray-800 whitespace-pre-line">{q.passage}</p>
+          </div>
+        )}
+
         <p className="text-xl font-bold text-center text-gray-800 mb-6">{q.question}</p>
-        <div className="grid grid-cols-2 gap-3">
-          {q.options?.map((option) => {
-            let btnClass = 'bg-white border-2 border-gray-200 hover:border-yellow-400 hover:bg-yellow-50';
-            if (showResult && option === q.answer) {
-              btnClass = 'bg-green-100 border-2 border-green-500 scale-105';
-            } else if (showResult && option === selected && option !== q.answer) {
-              btnClass = 'bg-red-100 border-2 border-red-400';
-            }
-            return (
-              <button key={option} onClick={() => handleQuizAnswer(option)} disabled={showResult}
-                className={`${btnClass} rounded-2xl p-4 text-lg font-medium text-gray-700 transition-all active:scale-95`}>
-                {option}
+
+        {/* 聽力題：播放按鈕 */}
+        {q.type === 'listen-pick' && (
+          <div className="text-center mb-4">
+            <button onClick={() => speak(q.answer)}
+              className="bg-blue-100 text-blue-600 px-6 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
+              🔊 播放音檔
+            </button>
+          </div>
+        )}
+
+        {/* 拼寫題：打字框 */}
+        {q.type === 'spell' ? (
+          <div className="text-center">
+            <input
+              type="text"
+              value={spellInput}
+              onChange={(e) => setSpellInput(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter' && spellInput.trim() && !showResult) handleQuizAnswer(spellInput); }}
+              placeholder="在這裡打字..."
+              className="text-center text-2xl font-bold border-2 border-gray-200 rounded-2xl px-6 py-3 w-48 focus:outline-none focus:border-yellow-400 transition"
+              autoFocus
+              disabled={showResult}
+            />
+            <div className="mt-3">
+              <button onClick={() => handleQuizAnswer(spellInput)} disabled={!spellInput.trim() || showResult}
+                className="bg-yellow-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-yellow-600 transition active:scale-95 disabled:opacity-50">
+                確認 ✓
               </button>
-            );
-          })}
-        </div>
+            </div>
+            {showResult && spellInput.toLowerCase().trim() !== q.answer.toLowerCase().trim() && (
+              <p className="text-orange-500 font-bold mt-3">💪 答案是：{q.answer}</p>
+            )}
+          </div>
+        ) : q.type === 'speak' ? (
+          /* 口說題 */
+          <div className="text-center">
+            <button onClick={() => speak(q.answer)}
+              className="bg-green-100 text-green-600 px-6 py-3 rounded-2xl font-bold hover:bg-green-200 transition active:scale-95 mb-3">
+              🔊 先聽示範
+            </button>
+            <p className="text-sm text-gray-400 mb-3">跟著念一次，再按下面按鈕</p>
+            <button onClick={() => handleQuizAnswer(q.answer)} disabled={showResult}
+              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-green-600 transition active:scale-95 disabled:opacity-50">
+              🎤 我念完了！
+            </button>
+          </div>
+        ) : (
+          /* 選擇題（listen-pick / match / fill-blank / read） */
+          <div className="grid grid-cols-2 gap-3">
+            {q.options?.map((option) => {
+              let btnClass = 'bg-white border-2 border-gray-200 hover:border-yellow-400 hover:bg-yellow-50';
+              if (showResult && option === q.answer) {
+                btnClass = 'bg-green-100 border-2 border-green-500 scale-105';
+              } else if (showResult && option === selected && option !== q.answer) {
+                btnClass = 'bg-red-100 border-2 border-red-400';
+              }
+              return (
+                <button key={option} onClick={() => handleQuizAnswer(option)} disabled={showResult}
+                  className={`${btnClass} rounded-2xl p-4 text-lg font-medium text-gray-700 transition-all active:scale-95`}>
+                  {option}
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
