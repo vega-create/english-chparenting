@@ -958,7 +958,266 @@ const L2_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5];
+const L2_M6: Mission = {
+  id: 6, slug: 'l2-m6-short-o', level: 2, title: '短母音 o', titleEn: 'Short o', theme: '聲音島・短音 o 岩洞', themeEmoji: '🅾️',
+  focus: '短母音 o /ɑ/：-ox / -ot / -op 家族',
+  story: [
+    { image: '📦', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter o says /ɑ/! Like in box!", dialogueZh: '字母 o 發 /ɑ/ 的音！像 box 一樣！', highlightWords: ['o', 'box'], sceneEmojis: ['📦', '🔤', '✨'], animation: 'wave' },
+    { image: '🦊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "box, fox, hot — all /ɑ/!", dialogueZh: 'box、fox、hot —— 都是 /ɑ/！', highlightWords: ['box', 'fox', 'hot'], sceneEmojis: ['📦', '🦊', '🔥'], animation: 'bounce' },
+    { image: '🧹', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "top, pot, mop — /ɑ/ too!", dialogueZh: 'top、pot、mop —— 也是 /ɑ/！', highlightWords: ['top', 'pot', 'mop'], sceneEmojis: ['🔝', '🍲', '🧹'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Short o — done! Great!", dialogueZh: '短母音 o —— 完成！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔤'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'box', zh: '箱子', image: '📦', phonics: 'o /ɑ/', kk: '[bɑks]', phonicsSound: '/ɑ/', exampleSentence: 'a big box', exampleZh: '一個大箱子' },
+    { en: 'fox', zh: '狐狸', image: '🦊', phonics: 'o /ɑ/', kk: '[fɑks]', phonicsSound: '/ɑ/', exampleSentence: 'a fast fox', exampleZh: '一隻快狐狸' },
+    { en: 'hot', zh: '熱的', image: '🔥', phonics: 'o /ɑ/', kk: '[hɑt]', phonicsSound: '/ɑ/', exampleSentence: 'It is hot.', exampleZh: '很熱。' },
+    { en: 'top', zh: '頂端', image: '🔝', phonics: 'o /ɑ/', kk: '[tɑp]', phonicsSound: '/ɑ/', exampleSentence: 'on the top', exampleZh: '在頂端' },
+    { en: 'pot', zh: '鍋子', image: '🍲', phonics: 'o /ɑ/', kk: '[pɑt]', phonicsSound: '/ɑ/', exampleSentence: 'a hot pot', exampleZh: '一個熱鍋' },
+    { en: 'mop', zh: '拖把', image: '🧹', phonics: 'o /ɑ/', kk: '[mɑp]', phonicsSound: '/ɑ/', exampleSentence: 'a wet mop', exampleZh: '一支濕拖把' },
+    { en: 'hop', zh: '跳', image: '🐰', phonics: 'o /ɑ/', kk: '[hɑp]', phonicsSound: '/ɑ/', exampleSentence: 'Rabbits hop.', exampleZh: '兔子會跳。' },
+    { en: 'dot', zh: '點', image: '🔴', phonics: 'o /ɑ/', kk: '[dɑt]', phonicsSound: '/ɑ/', exampleSentence: 'a red dot', exampleZh: '一個紅點' },
+    { en: 'log', zh: '木頭', image: '🪵', phonics: 'o /ɑ/', kk: '[lɔɡ]', phonicsSound: '/ɑ/', exampleSentence: 'a big log', exampleZh: '一根大木頭' },
+    { en: 'pop', zh: '爆開', image: '🎈', phonics: 'o /ɑ/', kk: '[pɑp]', phonicsSound: '/ɑ/', exampleSentence: 'Pop the balloon!', exampleZh: '把氣球弄破！' },
+  ],
+  sentences: [
+    { en: 'The fox is in the box.', zh: '狐狸在箱子裡。' }, { en: 'The pot is hot.', zh: '鍋子很燙。' }, { en: 'Is the pot hot?', zh: '鍋子燙嗎？' }, { en: 'Yes, it is hot.', zh: '是的，很燙。' }, { en: 'Can you hop?', zh: '你會跳嗎？' }, { en: 'The mop is on top.', zh: '拖把在上面。' },
+  ],
+  phonicsLetters: ['o /ɑ/'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有 /ɑ/ 的音？', options: ['box', 'cat', 'bed', 'pig'], answer: 'box', image: '🔤' },
+    { type: 'match', question: '🦊 狐狸是哪個字？', options: ['fox', 'box', 'pot', 'top'], answer: 'fox' },
+    { type: 'spell', question: '拼拼看：h _ t（熱的）', answer: 'hot', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['📦', '🦊', '🔥', '🍲'], answer: '🍲', image: '🎧' },
+    { type: 'spell', question: '拼拼看：b _ x（箱子）', answer: 'box', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m _ p（拖把）', answer: 'mop', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['top-🔝', 'pot-🍲', 'log-🪵', 'dot-🔴'], answer: 'top-🔝' },
+    { type: 'fill-blank', question: 'The pot is ___.（熱的）', options: ['hot', 'box', 'top', 'mop'], answer: 'hot' },
+    { type: 'speak', question: '跟著念：Box, fox, hot!', answer: 'Box', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say three words with /ɑ/.", "What is hot?", "Can you hop like a rabbit?", "Great job with short o!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "fox" 狐狸？', options: ['🦊', '📦', '🍲', '🧹'], answer: '🦊' },
+    { type: 'spell', question: '拼拼看：t _ p（頂端）', answer: 'top', image: '✍️' },
+    { type: 'match', question: '🧹 拖把是哪個字？', options: ['mop', 'hop', 'pop', 'top'], answer: 'mop' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "A fox is in the box!", lineZh: '狐狸在箱子裡！' },
+    { speaker: 'Coco', line: "fox, box — /ɑ/! Look out!", lineZh: 'fox、box —— /ɑ/！小心！' },
+    { speaker: 'Finn', line: "The pot is hot. Don't touch!", lineZh: '鍋子很燙。別碰！' },
+    { speaker: 'Coco', line: "hot, pot — /ɑ/ again!", lineZh: 'hot、pot —— 又是 /ɑ/！' },
+  ],
+};
+
+const L2_M7: Mission = {
+  id: 7, slug: 'l2-m7-short-u', level: 2, title: '短母音 u', titleEn: 'Short u', theme: '聲音島・短音 u 泥地', themeEmoji: '🆄',
+  focus: '短母音 u /ʌ/：-un / -ug / -ut 家族',
+  story: [
+    { image: '🥤', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter u says /ʌ/! Like in cup!", dialogueZh: '字母 u 發 /ʌ/ 的音！像 cup 一樣！', highlightWords: ['u', 'cup'], sceneEmojis: ['🥤', '🔤', '✨'], animation: 'wave' },
+    { image: '☀️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "sun, run, fun — all /ʌ/!", dialogueZh: 'sun、run、fun —— 都是 /ʌ/！', highlightWords: ['sun', 'run'], sceneEmojis: ['☀️', '🏃', '🎉'], animation: 'bounce' },
+    { image: '🐛', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "bug, hug, jug — /ʌ/ too!", dialogueZh: 'bug、hug、jug —— 也是 /ʌ/！', highlightWords: ['bug', 'hug', 'jug'], sceneEmojis: ['🐛', '🤗', '🫗'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "All five short vowels — done! Wow!", dialogueZh: '五個短母音 —— 全部完成！哇！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔤'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cup', zh: '杯子', image: '🥤', phonics: 'u /ʌ/', kk: '[kʌp]', phonicsSound: '/ʌ/', exampleSentence: 'a red cup', exampleZh: '一個紅杯子' },
+    { en: 'bus', zh: '公車', image: '🚌', phonics: 'u /ʌ/', kk: '[bʌs]', phonicsSound: '/ʌ/', exampleSentence: 'a big bus', exampleZh: '一台大公車' },
+    { en: 'sun', zh: '太陽', image: '☀️', phonics: 'u /ʌ/', kk: '[sʌn]', phonicsSound: '/ʌ/', exampleSentence: 'The sun is up.', exampleZh: '太陽升起。' },
+    { en: 'bug', zh: '蟲', image: '🐛', phonics: 'u /ʌ/', kk: '[bʌɡ]', phonicsSound: '/ʌ/', exampleSentence: 'a small bug', exampleZh: '一隻小蟲' },
+    { en: 'run', zh: '跑', image: '🏃', phonics: 'u /ʌ/', kk: '[rʌn]', phonicsSound: '/ʌ/', exampleSentence: 'I can run.', exampleZh: '我會跑。' },
+    { en: 'nut', zh: '堅果', image: '🥜', phonics: 'u /ʌ/', kk: '[nʌt]', phonicsSound: '/ʌ/', exampleSentence: 'a small nut', exampleZh: '一顆小堅果' },
+    { en: 'cut', zh: '切', image: '✂️', phonics: 'u /ʌ/', kk: '[kʌt]', phonicsSound: '/ʌ/', exampleSentence: 'Cut the cake.', exampleZh: '切蛋糕。' },
+    { en: 'mud', zh: '泥巴', image: '🟤', phonics: 'u /ʌ/', kk: '[mʌd]', phonicsSound: '/ʌ/', exampleSentence: 'in the mud', exampleZh: '在泥巴裡' },
+    { en: 'hug', zh: '擁抱', image: '🤗', phonics: 'u /ʌ/', kk: '[hʌɡ]', phonicsSound: '/ʌ/', exampleSentence: 'a big hug', exampleZh: '一個大擁抱' },
+    { en: 'jug', zh: '水壺', image: '🫗', phonics: 'u /ʌ/', kk: '[dʒʌɡ]', phonicsSound: '/ʌ/', exampleSentence: 'a big jug', exampleZh: '一個大水壺' },
+  ],
+  sentences: [
+    { en: 'The bug is in the cup.', zh: '蟲在杯子裡。' }, { en: 'I run in the sun.', zh: '我在太陽下跑。' }, { en: 'Can you run?', zh: '你會跑嗎？' }, { en: 'Yes, I can run.', zh: '是的，我會跑。' }, { en: 'Give me a hug!', zh: '給我一個擁抱！' }, { en: 'Is it a bug?', zh: '這是一隻蟲嗎？' },
+  ],
+  phonicsLetters: ['u /ʌ/'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有 /ʌ/ 的音？', options: ['cup', 'cat', 'bed', 'pig'], answer: 'cup', image: '🔤' },
+    { type: 'match', question: '☀️ 太陽是哪個字？', options: ['sun', 'run', 'bug', 'cup'], answer: 'sun' },
+    { type: 'spell', question: '拼拼看：b _ g（蟲）', answer: 'bug', image: '✍️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🥤', '🚌', '🐛', '🥜'], answer: '🐛', image: '🎧' },
+    { type: 'spell', question: '拼拼看：s _ n（太陽）', answer: 'sun', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r _ n（跑）', answer: 'run', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['cut-✂️', 'hug-🤗', 'jug-🫗', 'nut-🥜'], answer: 'cut-✂️' },
+    { type: 'fill-blank', question: 'I can ___ fast.（跑）', options: ['run', 'cup', 'bug', 'nut'], answer: 'run' },
+    { type: 'speak', question: '跟著念：Cup, sun, bug!', answer: 'Cup', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say three words with /ʌ/.", "Can you run fast?", "Give me a hug!", "You know all five short vowels!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "cup" 杯子？', options: ['🥤', '🚌', '🥜', '🐛'], answer: '🥤' },
+    { type: 'spell', question: '拼拼看：n _ t（堅果）', answer: 'nut', image: '✍️' },
+    { type: 'match', question: '🤗 擁抱是哪個字？', options: ['hug', 'jug', 'bug', 'mud'], answer: 'hug' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A bug is in my cup!", lineZh: '一隻蟲在我杯子裡！' },
+    { speaker: 'Ruby', line: "bug, cup — /ʌ/! Run!", lineZh: 'bug、cup —— /ʌ/！快跑！' },
+    { speaker: 'Benny', line: "The sun is fun. Let's run!", lineZh: '太陽很棒。我們去跑步！' },
+    { speaker: 'Ruby', line: "sun, fun, run — /ʌ/! Yay!", lineZh: 'sun、fun、run —— /ʌ/！耶！' },
+  ],
+};
+
+const L2_M8: Mission = {
+  id: 8, slug: 'l2-m8-sh-ch', level: 2, title: '子音組合 sh · ch', titleEn: 'sh & ch', theme: '聲音島・海螺灣', themeEmoji: '🐚',
+  focus: '兩個子音一個音：sh /ʃ/、ch /tʃ/',
+  story: [
+    { image: '🚢', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "s and h together make /ʃ/! Sh! Be quiet!", dialogueZh: 's 和 h 一起發 /ʃ/！噓！安靜！', highlightWords: ['sh'], sceneEmojis: ['🚢', '🤫', '✨'], animation: 'wave' },
+    { image: '🐟', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "ship, fish, shop — /ʃ/!", dialogueZh: 'ship、fish、shop —— /ʃ/！', highlightWords: ['ship', 'fish', 'shop'], sceneEmojis: ['🚢', '🐟', '🏪'], animation: 'bounce' },
+    { image: '🪑', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "c and h make /tʃ/! chip, chair, lunch!", dialogueZh: 'c 和 h 發 /tʃ/！chip、chair、lunch！', highlightWords: ['chip', 'chair', 'lunch'], sceneEmojis: ['🍟', '🪑', '🍱'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "sh and ch — two letters, one sound! Cool!", dialogueZh: 'sh 和 ch —— 兩個字母一個音！很酷！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔤'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'ship', zh: '船', image: '🚢', phonics: 'sh /ʃ/', kk: '[ʃɪp]', phonicsSound: '/ʃ/', exampleSentence: 'a big ship', exampleZh: '一艘大船' },
+    { en: 'fish', zh: '魚', image: '🐟', phonics: 'sh /ʃ/', kk: '[fɪʃ]', phonicsSound: '/ʃ/', exampleSentence: 'a small fish', exampleZh: '一條小魚' },
+    { en: 'shop', zh: '商店', image: '🏪', phonics: 'sh /ʃ/', kk: '[ʃɑp]', phonicsSound: '/ʃ/', exampleSentence: 'a toy shop', exampleZh: '一間玩具店' },
+    { en: 'shell', zh: '貝殼', image: '🐚', phonics: 'sh /ʃ/', kk: '[ʃɛl]', phonicsSound: '/ʃ/', exampleSentence: 'a sea shell', exampleZh: '一個海貝殼' },
+    { en: 'brush', zh: '刷子', image: '🪥', phonics: 'sh /ʃ/', kk: '[brʌʃ]', phonicsSound: '/ʃ/', exampleSentence: 'a tooth brush', exampleZh: '一支牙刷' },
+    { en: 'chip', zh: '薯片', image: '🍟', phonics: 'ch /tʃ/', kk: '[tʃɪp]', phonicsSound: '/tʃ/', exampleSentence: 'a hot chip', exampleZh: '一片熱薯片' },
+    { en: 'chin', zh: '下巴', image: '👦', phonics: 'ch /tʃ/', kk: '[tʃɪn]', phonicsSound: '/tʃ/', exampleSentence: 'my chin', exampleZh: '我的下巴' },
+    { en: 'chair', zh: '椅子', image: '🪑', phonics: 'ch /tʃ/', kk: '[tʃɛr]', phonicsSound: '/tʃ/', exampleSentence: 'sit on the chair', exampleZh: '坐在椅子上' },
+    { en: 'lunch', zh: '午餐', image: '🍱', phonics: 'ch /tʃ/', kk: '[lʌntʃ]', phonicsSound: '/tʃ/', exampleSentence: 'eat lunch', exampleZh: '吃午餐' },
+    { en: 'cheese', zh: '起司', image: '🧀', phonics: 'ch /tʃ/', kk: '[tʃiz]', phonicsSound: '/tʃ/', exampleSentence: 'I like cheese.', exampleZh: '我喜歡起司。' },
+  ],
+  sentences: [
+    { en: 'The fish is on the ship.', zh: '魚在船上。' }, { en: 'I eat chips for lunch.', zh: '我午餐吃薯片。' }, { en: 'Is it a ship?', zh: '這是一艘船嗎？' }, { en: 'Yes, it is a ship.', zh: '是的，這是一艘船。' }, { en: 'Do you like cheese?', zh: '你喜歡起司嗎？' }, { en: 'Sit on the chair.', zh: '坐在椅子上。' },
+  ],
+  phonicsLetters: ['sh /ʃ/', 'ch /tʃ/'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有 /ʃ/（sh）的音？', options: ['ship', 'chip', 'cat', 'sun'], answer: 'ship', image: '🚢' },
+    { type: 'listen-pick', question: '哪個字有 /tʃ/（ch）的音？', options: ['chip', 'ship', 'fish', 'shop'], answer: 'chip', image: '🍟' },
+    { type: 'match', question: '🐚 貝殼是哪個字？', options: ['shell', 'ship', 'shop', 'fish'], answer: 'shell' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🚢', '🐟', '🍟', '🪑'], answer: '🐟', image: '🎧' },
+    { type: 'spell', question: '拼拼看：sh _ p（船）', answer: 'ship', image: '✍️' },
+    { type: 'spell', question: '拼拼看：ch _ p（薯片）', answer: 'chip', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['fish-🐟', 'chair-🪑', 'cheese-🧀', 'shop-🏪'], answer: 'fish-🐟' },
+    { type: 'fill-blank', question: 'I eat ___ for lunch.（薯片）', options: ['chips', 'ship', 'shell', 'chin'], answer: 'chips' },
+    { type: 'speak', question: '跟著念：Ship, fish, chip!', answer: 'Ship', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say a word with sh.", "Say a word with ch.", "What do you eat for lunch?", "Great job with sh and ch!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "cheese" 起司？', options: ['🧀', '🐟', '🍟', '🐚'], answer: '🧀' },
+    { type: 'spell', question: '拼拼看：fi _ h（魚）', answer: 'fish', image: '✍️' },
+    { type: 'match', question: '🪑 椅子是哪個字？', options: ['chair', 'chip', 'chin', 'ship'], answer: 'chair' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Sh! Look, a fish on the ship!", lineZh: '噓！看，船上有一條魚！' },
+    { speaker: 'Coco', line: "ship, fish — sh sound! /ʃ/", lineZh: 'ship、fish —— sh 的音！/ʃ/' },
+    { speaker: 'Polly', line: "Let's eat chips for lunch!", lineZh: '我們午餐吃薯片！' },
+    { speaker: 'Coco', line: "chip, lunch — ch sound! /tʃ/", lineZh: 'chip、lunch —— ch 的音！/tʃ/' },
+  ],
+};
+
+const L2_M9: Mission = {
+  id: 9, slug: 'l2-m9-th-ck-ng', level: 2, title: '子音組合 th · ck · ng', titleEn: 'th ck ng', theme: '聲音島・回音谷', themeEmoji: '👅',
+  focus: 'th /ð·θ/、ck /k/、ng /ŋ/',
+  story: [
+    { image: '👅', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "t and h make /ð/! Put your tongue out: this!", dialogueZh: 't 和 h 發 /ð/！把舌頭伸出來：this！', highlightWords: ['th', 'this'], sceneEmojis: ['👅', '🔤', '✨'], animation: 'wave' },
+    { image: '🦆', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "ck says /k/! duck, sock, kick!", dialogueZh: 'ck 發 /k/！duck、sock、kick！', highlightWords: ['duck', 'sock', 'kick'], sceneEmojis: ['🦆', '🧦', '⚽'], animation: 'bounce' },
+    { image: '💍', character: '🦜', characterKey: 'polly', characterAction: 'sing', characterName: 'Polly', dialogue: "ng says /ŋ/! ring, king, sing!", dialogueZh: 'ng 發 /ŋ/！ring、king、sing！', highlightWords: ['ring', 'king', 'sing'], sceneEmojis: ['💍', '👑', '🎵'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "th, ck, ng — you did it! Super!", dialogueZh: 'th、ck、ng —— 你做到了！超厲害！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔤'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'this', zh: '這個', image: '👉', phonics: 'th /ð/', kk: '[ðɪs]', phonicsSound: '/ð/', exampleSentence: 'this cat', exampleZh: '這隻貓' },
+    { en: 'that', zh: '那個', image: '👈', phonics: 'th /ð/', kk: '[ðæt]', phonicsSound: '/ð/', exampleSentence: 'that dog', exampleZh: '那隻狗' },
+    { en: 'thin', zh: '薄的', image: '📏', phonics: 'th /θ/', kk: '[θɪn]', phonicsSound: '/θ/', exampleSentence: 'a thin book', exampleZh: '一本薄書' },
+    { en: 'duck', zh: '鴨子', image: '🦆', phonics: 'ck /k/', kk: '[dʌk]', phonicsSound: '/k/', exampleSentence: 'a yellow duck', exampleZh: '一隻黃鴨' },
+    { en: 'sock', zh: '襪子', image: '🧦', phonics: 'ck /k/', kk: '[sɑk]', phonicsSound: '/k/', exampleSentence: 'a red sock', exampleZh: '一隻紅襪子' },
+    { en: 'kick', zh: '踢', image: '⚽', phonics: 'ck /k/', kk: '[kɪk]', phonicsSound: '/k/', exampleSentence: 'kick the ball', exampleZh: '踢球' },
+    { en: 'ring', zh: '戒指', image: '💍', phonics: 'ng /ŋ/', kk: '[rɪŋ]', phonicsSound: '/ŋ/', exampleSentence: 'a gold ring', exampleZh: '一枚金戒指' },
+    { en: 'king', zh: '國王', image: '👑', phonics: 'ng /ŋ/', kk: '[kɪŋ]', phonicsSound: '/ŋ/', exampleSentence: 'the king', exampleZh: '國王' },
+    { en: 'sing', zh: '唱歌', image: '🎵', phonics: 'ng /ŋ/', kk: '[sɪŋ]', phonicsSound: '/ŋ/', exampleSentence: 'I can sing.', exampleZh: '我會唱歌。' },
+    { en: 'long', zh: '長的', image: '📏', phonics: 'ng /ŋ/', kk: '[lɔŋ]', phonicsSound: '/ŋ/', exampleSentence: 'a long snake', exampleZh: '一條長蛇' },
+  ],
+  sentences: [
+    { en: 'The king has a ring.', zh: '國王有一枚戒指。' }, { en: 'The duck can sing.', zh: '鴨子會唱歌。' }, { en: 'Is this a duck?', zh: '這是一隻鴨子嗎？' }, { en: 'Yes, this is a duck.', zh: '是的，這是一隻鴨子。' }, { en: 'Can you sing?', zh: '你會唱歌嗎？' }, { en: 'Kick the ball!', zh: '踢球！' },
+  ],
+  phonicsLetters: ['th', 'ck', 'ng'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '哪個字有 ck /k/ 的音？', options: ['duck', 'this', 'ring', 'sing'], answer: 'duck', image: '🦆' },
+    { type: 'listen-pick', question: '哪個字有 ng /ŋ/ 的音？', options: ['ring', 'duck', 'this', 'sock'], answer: 'ring', image: '💍' },
+    { type: 'match', question: '👑 國王是哪個字？', options: ['king', 'ring', 'sing', 'long'], answer: 'king' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🦆', '🧦', '💍', '👑'], answer: '🧦', image: '🎧' },
+    { type: 'spell', question: '拼拼看：du _ _（鴨子）', answer: 'duck', image: '✍️' },
+    { type: 'spell', question: '拼拼看：ri _ _（戒指）', answer: 'ring', image: '✍️' },
+    { type: 'match', question: '配對：字配圖', options: ['kick-⚽', 'sing-🎵', 'sock-🧦', 'king-👑'], answer: 'kick-⚽' },
+    { type: 'fill-blank', question: 'The ___ has a ring.（國王）', options: ['king', 'duck', 'sock', 'sing'], answer: 'king' },
+    { type: 'speak', question: '跟著念：Duck, ring, sing!', answer: 'Duck', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say a word with ck.", "Say a word with ng.", "Can you sing a song?", "Great job with th, ck, ng!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個是 "duck" 鴨子？', options: ['🦆', '💍', '🧦', '👑'], answer: '🦆' },
+    { type: 'spell', question: '拼拼看：si _ _（唱歌）', answer: 'sing', image: '✍️' },
+    { type: 'match', question: '💍 戒指是哪個字？', options: ['ring', 'king', 'sing', 'long'], answer: 'ring' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The king has a gold ring!", lineZh: '國王有一枚金戒指！' },
+    { speaker: 'Polly', line: "king, ring, sing — ng sound! /ŋ/", lineZh: 'king、ring、sing —— ng 的音！/ŋ/' },
+    { speaker: 'Finn', line: "Look at that duck in a sock!", lineZh: '看那隻穿襪子的鴨子！' },
+    { speaker: 'Polly', line: "duck, sock — ck sound! /k/", lineZh: 'duck、sock —— ck 的音！/k/' },
+  ],
+};
+
+const L2_M10: Mission = {
+  id: 10, slug: 'l2-m10-review-short', level: 2, title: '拼讀複習② 短母音＋子音組合', titleEn: 'Review Short Vowels', theme: '聲音島・回音音樂會', themeEmoji: '🎪',
+  focus: '複習 5 個短母音 + sh/ch/th/ck/ng',
+  story: [
+    { image: '🎪', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Big review! Short vowels and digraphs!", dialogueZh: '大複習！短母音和子音組合！', highlightWords: [], sceneEmojis: ['🎪', '🔤', '🎉'], animation: 'wave' },
+    { image: '🎵', character: '🦜', characterKey: 'polly', characterAction: 'sing', characterName: 'Polly', dialogue: "a-e-i-o-u, sh-ch-th! Sing along!", dialogueZh: 'a-e-i-o-u，sh-ch-th！一起唱！', highlightWords: [], sceneEmojis: ['🎵', '🎶', '⭐'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can read so many words now! Amazing!", dialogueZh: '你現在會讀好多字了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '🎉', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cat', zh: '貓', image: '🐱', phonics: 'a /æ/', kk: '[kæt]', phonicsSound: '/æ/', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'bed', zh: '床', image: '🛏️', phonics: 'e /ɛ/', kk: '[bɛd]', phonicsSound: '/ɛ/', exampleSentence: 'a bed', exampleZh: '一張床' },
+    { en: 'pig', zh: '豬', image: '🐷', phonics: 'i /ɪ/', kk: '[pɪɡ]', phonicsSound: '/ɪ/', exampleSentence: 'a pig', exampleZh: '一隻豬' },
+    { en: 'box', zh: '箱子', image: '📦', phonics: 'o /ɑ/', kk: '[bɑks]', phonicsSound: '/ɑ/', exampleSentence: 'a box', exampleZh: '一個箱子' },
+    { en: 'cup', zh: '杯子', image: '🥤', phonics: 'u /ʌ/', kk: '[kʌp]', phonicsSound: '/ʌ/', exampleSentence: 'a cup', exampleZh: '一個杯子' },
+    { en: 'fish', zh: '魚', image: '🐟', phonics: 'sh /ʃ/', kk: '[fɪʃ]', phonicsSound: '/ʃ/', exampleSentence: 'a fish', exampleZh: '一條魚' },
+    { en: 'chip', zh: '薯片', image: '🍟', phonics: 'ch /tʃ/', kk: '[tʃɪp]', phonicsSound: '/tʃ/', exampleSentence: 'a chip', exampleZh: '一片薯片' },
+    { en: 'duck', zh: '鴨子', image: '🦆', phonics: 'ck /k/', kk: '[dʌk]', phonicsSound: '/k/', exampleSentence: 'a duck', exampleZh: '一隻鴨子' },
+    { en: 'ring', zh: '戒指', image: '💍', phonics: 'ng /ŋ/', kk: '[rɪŋ]', phonicsSound: '/ŋ/', exampleSentence: 'a ring', exampleZh: '一枚戒指' },
+    { en: 'sun', zh: '太陽', image: '☀️', phonics: 'u /ʌ/', kk: '[sʌn]', phonicsSound: '/ʌ/', exampleSentence: 'the sun', exampleZh: '太陽' },
+  ],
+  sentences: [
+    { en: 'A cat, a pig, a duck.', zh: '一隻貓、一隻豬、一隻鴨。' }, { en: 'The fish is in the box.', zh: '魚在箱子裡。' }, { en: 'What is this?', zh: '這是什麼？' }, { en: 'It is a duck.', zh: '這是一隻鴨子。' }, { en: 'Is the cup on the bed?', zh: '杯子在床上嗎？' }, { en: 'Yes, it is.', zh: '是的。' },
+  ],
+  phonicsLetters: ['a', 'e', 'i', 'o', 'u', 'sh', 'ch', 'th', 'ck', 'ng'],
+  warmUpQuestions: [
+    { type: 'listen-pick', question: '"cup" 是哪個母音？', options: ['u', 'a', 'e', 'i'], answer: 'u', image: '🥤' },
+    { type: 'listen-pick', question: '"box" 是哪個母音？', options: ['o', 'a', 'u', 'e'], answer: 'o', image: '📦' },
+    { type: 'listen-pick', question: '"fish" 有哪個子音組合？', options: ['sh', 'ch', 'th', 'ck'], answer: 'sh', image: '🐟' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🐱', '🐷', '📦', '🥤'], answer: '📦', image: '🎧' },
+    { type: 'spell', question: '拼拼看：c _ p（杯子）', answer: 'cup', image: '✍️' },
+    { type: 'spell', question: '拼拼看：du _ _（鴨子）', answer: 'duck', image: '✍️' },
+    { type: 'match', question: '配對：字配母音/組合', options: ['cat-a', 'bed-e', 'pig-i', 'box-o'], answer: 'cat-a' },
+    { type: 'fill-blank', question: 'Which has sh? ___', options: ['fish', 'chip', 'duck', 'ring'], answer: 'fish' },
+    { type: 'speak', question: '跟著念：Cat, bed, pig, box, cup!', answer: 'Cat', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say a word with each short vowel!", "Say a word with sh.", "Can you read cat, pig, cup?", "You are a reading star!"],
+  reviewQuiz: [
+    { type: 'listen-pick', question: '哪個字有 /ɑ/？', options: ['box', 'cat', 'bed', 'pig'], answer: 'box' },
+    { type: 'match', question: '💍 戒指有哪個子音組合？', options: ['ng', 'sh', 'ch', 'ck'], answer: 'ng' },
+    { type: 'spell', question: '拼拼看：fi _ h（魚）', answer: 'fish', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's read together: cat, bed, pig, box, cup!", lineZh: '一起讀：cat、bed、pig、box、cup！' },
+    { speaker: 'Coco', line: "Five short vowels! /æ/ /ɛ/ /ɪ/ /ɑ/ /ʌ/", lineZh: '五個短母音！/æ/ /ɛ/ /ɪ/ /ɑ/ /ʌ/' },
+    { speaker: 'Polly', line: "And fish, chip, duck, ring!", lineZh: '還有 fish、chip、duck、ring！' },
+    { speaker: 'Finn', line: "You can read now! Amazing!", lineZh: '你會讀了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
