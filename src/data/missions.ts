@@ -2258,7 +2258,266 @@ const L3_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10];
+const L3_M11: Mission = {
+  id: 11, slug: 'l3-m11-body', level: 3, title: '身體部位', titleEn: 'Body', theme: '市場街・健康站', themeEmoji: '🧍',
+  focus: '10 個身體部位；句型 This is my… / I have two…',
+  story: [
+    { image: '🧍', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Touch your head! This is my head!", dialogueZh: '摸摸你的頭！這是我的頭！', highlightWords: ['head'], sceneEmojis: ['🧍', '👆', '✨'], animation: 'wave' },
+    { image: '👀', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have two eyes and one nose!", dialogueZh: '我有兩隻眼睛和一個鼻子！', highlightWords: ['eyes', 'nose'], sceneEmojis: ['👀', '👃', '😊'], animation: 'bounce' },
+    { image: '✋', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Two hands, two feet, two arms, two legs!", dialogueZh: '兩隻手、兩隻腳、兩隻手臂、兩條腿！', highlightWords: ['hands', 'feet', 'arms', 'legs'], sceneEmojis: ['✋', '🦶', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know your body parts! Great!", dialogueZh: '你會身體部位了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🧍'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'head', zh: '頭', image: '🧠', phonics: '', kk: '[hɛd]', phonicsSound: '', exampleSentence: 'my head', exampleZh: '我的頭' },
+    { en: 'hand', zh: '手', image: '✋', phonics: '', kk: '[hænd]', phonicsSound: '', exampleSentence: 'two hands', exampleZh: '兩隻手' },
+    { en: 'foot', zh: '腳', image: '🦶', phonics: '', kk: '[fʊt]', phonicsSound: '', exampleSentence: 'my foot', exampleZh: '我的腳' },
+    { en: 'eye', zh: '眼睛', image: '👁️', phonics: '', kk: '[aɪ]', phonicsSound: '', exampleSentence: 'two eyes', exampleZh: '兩隻眼睛' },
+    { en: 'ear', zh: '耳朵', image: '👂', phonics: '', kk: '[ɪr]', phonicsSound: '', exampleSentence: 'two ears', exampleZh: '兩隻耳朵' },
+    { en: 'nose', zh: '鼻子', image: '👃', phonics: '', kk: '[noz]', phonicsSound: '', exampleSentence: 'my nose', exampleZh: '我的鼻子' },
+    { en: 'mouth', zh: '嘴巴', image: '👄', phonics: '', kk: '[maʊθ]', phonicsSound: '', exampleSentence: 'my mouth', exampleZh: '我的嘴巴' },
+    { en: 'hair', zh: '頭髮', image: '💇', phonics: '', kk: '[hɛr]', phonicsSound: '', exampleSentence: 'black hair', exampleZh: '黑頭髮' },
+    { en: 'arm', zh: '手臂', image: '💪', phonics: '', kk: '[ɑrm]', phonicsSound: '', exampleSentence: 'two arms', exampleZh: '兩隻手臂' },
+    { en: 'leg', zh: '腿', image: '🦵', phonics: '', kk: '[lɛɡ]', phonicsSound: '', exampleSentence: 'two legs', exampleZh: '兩條腿' },
+  ],
+  sentences: [
+    { en: 'This is my head.', zh: '這是我的頭。' }, { en: 'I have two eyes.', zh: '我有兩隻眼睛。' }, { en: 'Touch your nose!', zh: '摸摸你的鼻子！' }, { en: 'What is this?', zh: '這是什麼？' }, { en: 'It is my ear.', zh: '這是我的耳朵。' }, { en: 'How many hands do you have?', zh: '你有幾隻手？' },
+  ],
+  phonicsLetters: ['body'],
+  warmUpQuestions: [
+    { type: 'match', question: '👃 是哪個部位？', options: ['nose', 'eye', 'ear', 'mouth'], answer: 'nose' },
+    { type: 'match', question: '✋ 是哪個部位？', options: ['hand', 'foot', 'arm', 'leg'], answer: 'hand' },
+    { type: 'listen-pick', question: '哪個是 "eye" 眼睛？', options: ['👁️', '👂', '👃', '👄'], answer: '👁️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的部位', options: ['🧠', '✋', '🦶', '👂'], answer: '👂', image: '🎧' },
+    { type: 'match', question: '配對：部位配圖', options: ['nose-👃', 'mouth-👄', 'arm-💪', 'leg-🦵'], answer: 'nose-👃' },
+    { type: 'fill-blank', question: 'I have two ___.（眼睛）', options: ['eyes', 'eye', 'nose', 'head'], answer: 'eyes' },
+    { type: 'spell', question: '拼拼看：h _ nd（手）', answer: 'hand', image: '✍️' },
+    { type: 'fill-blank', question: 'This is my ___.（頭）', options: ['head', 'hand', 'foot', 'ear'], answer: 'head' },
+    { type: 'speak', question: '跟著念：Head, hand, eye!', answer: 'Head', image: '🗣' },
+  ],
+  talkTimePrompts: ["Touch your nose!", "How many eyes do you have?", "Point to your ears!", "This is my ___. (point to body parts)"],
+  reviewQuiz: [
+    { type: 'match', question: '👂 是哪個部位？', options: ['ear', 'eye', 'nose', 'mouth'], answer: 'ear' },
+    { type: 'fill-blank', question: 'I have two ___.（腿）', options: ['legs', 'leg', 'arm', 'head'], answer: 'legs' },
+    { type: 'listen-pick', question: '哪個是 "mouth" 嘴巴？', options: ['👄', '👃', '👁️', '👂'], answer: '👄' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Touch your head! Now your nose!", lineZh: '摸摸你的頭！現在鼻子！' },
+    { speaker: 'Benny', line: "head, nose — I know them!", lineZh: 'head、nose —— 我都認得！' },
+    { speaker: 'Coco', line: "How many eyes do you have?", lineZh: '你有幾隻眼睛？' },
+    { speaker: 'Benny', line: "I have two eyes and two ears!", lineZh: '我有兩隻眼睛和兩隻耳朵！' },
+  ],
+};
+
+const L3_M12: Mission = {
+  id: 12, slug: 'l3-m12-family', level: 3, title: '家人', titleEn: 'Family', theme: '市場街・全家福', themeEmoji: '👨‍👩‍👧',
+  focus: '10 個家人稱謂；句型 This is my… / Who is he/she?',
+  story: [
+    { image: '👨‍👩‍👧', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "This is my family! Mom, Dad, and me!", dialogueZh: '這是我的家人！媽媽、爸爸和我！', highlightWords: ['family', 'Mom', 'Dad'], sceneEmojis: ['👨‍👩‍👧', '❤️', '✨'], animation: 'wave' },
+    { image: '👦', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Who is he? He is my brother!", dialogueZh: '他是誰？他是我哥哥！', highlightWords: ['Who', 'brother'], sceneEmojis: ['👦', '❓', '😊'], animation: 'bounce' },
+    { image: '👵', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "This is my grandma and grandpa!", dialogueZh: '這是我的奶奶和爺爺！', highlightWords: ['grandma', 'grandpa'], sceneEmojis: ['👵', '👴', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can talk about your family! Great!", dialogueZh: '你會介紹你的家人了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '❤️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'mom', zh: '媽媽', image: '👩', phonics: '', kk: '[mɑm]', phonicsSound: '', exampleSentence: 'my mom', exampleZh: '我的媽媽' },
+    { en: 'dad', zh: '爸爸', image: '👨', phonics: '', kk: '[dæd]', phonicsSound: '', exampleSentence: 'my dad', exampleZh: '我的爸爸' },
+    { en: 'brother', zh: '哥哥/弟弟', image: '👦', phonics: '', kk: '[ˈbrʌðɚ]', phonicsSound: '', exampleSentence: 'my brother', exampleZh: '我的兄弟' },
+    { en: 'sister', zh: '姊姊/妹妹', image: '👧', phonics: '', kk: '[ˈsɪstɚ]', phonicsSound: '', exampleSentence: 'my sister', exampleZh: '我的姊妹' },
+    { en: 'baby', zh: '寶寶', image: '👶', phonics: '', kk: '[ˈbebi]', phonicsSound: '', exampleSentence: 'a cute baby', exampleZh: '一個可愛寶寶' },
+    { en: 'grandma', zh: '奶奶', image: '👵', phonics: '', kk: '[ˈɡrænmɑ]', phonicsSound: '', exampleSentence: 'my grandma', exampleZh: '我的奶奶' },
+    { en: 'grandpa', zh: '爺爺', image: '👴', phonics: '', kk: '[ˈɡrænpɑ]', phonicsSound: '', exampleSentence: 'my grandpa', exampleZh: '我的爺爺' },
+    { en: 'family', zh: '家庭', image: '👨‍👩‍👧', phonics: '', kk: '[ˈfæməli]', phonicsSound: '', exampleSentence: 'my family', exampleZh: '我的家庭' },
+    { en: 'aunt', zh: '阿姨/姑姑', image: '👩‍🦰', phonics: '', kk: '[ænt]', phonicsSound: '', exampleSentence: 'my aunt', exampleZh: '我的阿姨' },
+    { en: 'uncle', zh: '叔叔/舅舅', image: '🧔', phonics: '', kk: '[ˈʌŋkl]', phonicsSound: '', exampleSentence: 'my uncle', exampleZh: '我的叔叔' },
+  ],
+  sentences: [
+    { en: 'This is my mom.', zh: '這是我的媽媽。' }, { en: 'He is my brother.', zh: '他是我的兄弟。' }, { en: 'Who is she?', zh: '她是誰？' }, { en: 'She is my sister.', zh: '她是我的姊妹。' }, { en: 'I love my family.', zh: '我愛我的家人。' }, { en: 'Is he your dad?', zh: '他是你爸爸嗎？' },
+  ],
+  phonicsLetters: ['family'],
+  warmUpQuestions: [
+    { type: 'match', question: '👩 是誰？', options: ['mom', 'dad', 'sister', 'baby'], answer: 'mom' },
+    { type: 'match', question: '👴 是誰？', options: ['grandpa', 'grandma', 'uncle', 'dad'], answer: 'grandpa' },
+    { type: 'fill-blank', question: 'This is ___ mom.（我的）', options: ['my', 'a', 'the', 'is'], answer: 'my' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的家人', options: ['👩', '👨', '👦', '👧'], answer: '👦', image: '🎧' },
+    { type: 'match', question: '配對：家人配圖', options: ['baby-👶', 'grandma-👵', 'sister-👧', 'dad-👨'], answer: 'baby-👶' },
+    { type: 'fill-blank', question: 'He is my ___.（哥哥）', options: ['brother', 'sister', 'mom', 'aunt'], answer: 'brother' },
+    { type: 'fill-blank', question: '___ is she? She is my sister.（誰）', options: ['Who', 'What', 'Is', 'The'], answer: 'Who' },
+    { type: 'spell', question: '拼拼看：m _ m（媽媽）', answer: 'mom', image: '✍️' },
+    { type: 'speak', question: '跟著說：This is my mom!', answer: 'This is my mom', image: '🗣' },
+  ],
+  talkTimePrompts: ["Who is in your family?", "Do you have a brother or sister?", "This is my ___. (introduce family)", "How many people in your family?"],
+  reviewQuiz: [
+    { type: 'match', question: '👧 是誰？', options: ['sister', 'brother', 'mom', 'baby'], answer: 'sister' },
+    { type: 'fill-blank', question: 'She is my ___.（奶奶）', options: ['grandma', 'grandpa', 'uncle', 'dad'], answer: 'grandma' },
+    { type: 'fill-blank', question: 'Is he your dad? Yes, he ___.', options: ['is', 'are', 'am', 'do'], answer: 'is' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "This is my family. This is my mom and dad.", lineZh: '這是我的家人。這是我媽媽和爸爸。' },
+    { speaker: 'Benny', line: "Who is he?", lineZh: '他是誰？' },
+    { speaker: 'Coco', line: "He is my brother! And she is my sister.", lineZh: '他是我哥哥！她是我姊姊。' },
+    { speaker: 'Benny', line: "I love my family too!", lineZh: '我也愛我的家人！' },
+  ],
+};
+
+const L3_M13: Mission = {
+  id: 13, slug: 'l3-m13-clothes', level: 3, title: '衣服', titleEn: 'Clothes', theme: '市場街・服飾店', themeEmoji: '👕',
+  focus: '10 個衣物；句型 I wear… / Put on your… / 顏色+衣物',
+  story: [
+    { image: '👕', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "New clothes! I wear a red shirt!", dialogueZh: '新衣服！我穿一件紅襯衫！', highlightWords: ['wear', 'shirt'], sceneEmojis: ['👕', '🔴', '✨'], animation: 'wave' },
+    { image: '👟', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Put on your shoes and socks!", dialogueZh: '穿上你的鞋子和襪子！', highlightWords: ['shoes', 'socks'], sceneEmojis: ['👟', '🧦', '😊'], animation: 'bounce' },
+    { image: '🧥', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "It's cold! Wear a coat and a hat!", dialogueZh: '好冷！穿外套戴帽子！', highlightWords: ['coat', 'hat'], sceneEmojis: ['🧥', '🧢', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know clothes words! Looking good!", dialogueZh: '你會衣服單字了！很好看！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '👕'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'shirt', zh: '襯衫', image: '👕', phonics: '', kk: '[ʃɝt]', phonicsSound: '', exampleSentence: 'a red shirt', exampleZh: '一件紅襯衫' },
+    { en: 'pants', zh: '褲子', image: '👖', phonics: '', kk: '[pænts]', phonicsSound: '', exampleSentence: 'blue pants', exampleZh: '藍褲子' },
+    { en: 'hat', zh: '帽子', image: '🎩', phonics: '', kk: '[hæt]', phonicsSound: '', exampleSentence: 'a hat', exampleZh: '一頂帽子' },
+    { en: 'shoes', zh: '鞋子', image: '👟', phonics: '', kk: '[ʃuz]', phonicsSound: '', exampleSentence: 'new shoes', exampleZh: '新鞋子' },
+    { en: 'coat', zh: '外套', image: '🧥', phonics: '', kk: '[kot]', phonicsSound: '', exampleSentence: 'a warm coat', exampleZh: '一件暖外套' },
+    { en: 'dress', zh: '洋裝', image: '👗', phonics: '', kk: '[drɛs]', phonicsSound: '', exampleSentence: 'a pink dress', exampleZh: '一件粉紅洋裝' },
+    { en: 'socks', zh: '襪子', image: '🧦', phonics: '', kk: '[sɑks]', phonicsSound: '', exampleSentence: 'red socks', exampleZh: '紅襪子' },
+    { en: 'skirt', zh: '裙子', image: '👚', phonics: '', kk: '[skɝt]', phonicsSound: '', exampleSentence: 'a blue skirt', exampleZh: '一件藍裙' },
+    { en: 'cap', zh: '鴨舌帽', image: '🧢', phonics: '', kk: '[kæp]', phonicsSound: '', exampleSentence: 'a green cap', exampleZh: '一頂綠帽' },
+    { en: 'gloves', zh: '手套', image: '🧤', phonics: '', kk: '[ɡlʌvz]', phonicsSound: '', exampleSentence: 'warm gloves', exampleZh: '暖手套' },
+  ],
+  sentences: [
+    { en: 'I wear a red shirt.', zh: '我穿一件紅襯衫。' }, { en: 'Put on your shoes.', zh: '穿上你的鞋子。' }, { en: 'It is a pink dress.', zh: '這是一件粉紅洋裝。' }, { en: 'Is it a hat?', zh: '這是一頂帽子嗎？' }, { en: 'Yes, it is.', zh: '是的。' }, { en: 'What color is your coat?', zh: '你的外套是什麼顏色？' },
+  ],
+  phonicsLetters: ['clothes'],
+  warmUpQuestions: [
+    { type: 'match', question: '👕 是哪個衣物？', options: ['shirt', 'pants', 'hat', 'shoes'], answer: 'shirt' },
+    { type: 'match', question: '👟 是哪個衣物？', options: ['shoes', 'socks', 'coat', 'dress'], answer: 'shoes' },
+    { type: 'listen-pick', question: '哪個是 "dress" 洋裝？', options: ['👗', '👖', '🧥', '🧦'], answer: '👗' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的衣物', options: ['👕', '👖', '🎩', '👟'], answer: '👖', image: '🎧' },
+    { type: 'match', question: '配對：衣物配圖', options: ['coat-🧥', 'socks-🧦', 'cap-🧢', 'gloves-🧤'], answer: 'coat-🧥' },
+    { type: 'fill-blank', question: 'I ___ a red shirt.（穿）', options: ['wear', 'is', 'have', 'like'], answer: 'wear' },
+    { type: 'spell', question: '拼拼看：h _ t（帽子）', answer: 'hat', image: '✍️' },
+    { type: 'fill-blank', question: 'Put on your ___.（鞋子）', options: ['shoes', 'shoe', 'hat', 'coat'], answer: 'shoes' },
+    { type: 'speak', question: '跟著念：Shirt, pants, shoes!', answer: 'Shirt', image: '🗣' },
+  ],
+  talkTimePrompts: ["What are you wearing today?", "What color is your shirt?", "Do you like hats?", "Put on your shoes! (act it out)"],
+  reviewQuiz: [
+    { type: 'match', question: '🧥 是哪個衣物？', options: ['coat', 'dress', 'skirt', 'cap'], answer: 'coat' },
+    { type: 'fill-blank', question: 'It is a ___ dress.（粉紅）', options: ['pink', 'shoe', 'hat', 'wear'], answer: 'pink' },
+    { type: 'listen-pick', question: '哪個是 "socks" 襪子？', options: ['🧦', '👟', '🧤', '🧢'], answer: '🧦' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I wear a red shirt and blue pants!", lineZh: '我穿紅襯衫和藍褲子！' },
+    { speaker: 'Benny', line: "It's cold! Put on your coat!", lineZh: '好冷！穿上你的外套！' },
+    { speaker: 'Coco', line: "And a hat and gloves!", lineZh: '還有帽子和手套！' },
+    { speaker: 'Benny', line: "Now I'm warm! Let's go!", lineZh: '現在我暖了！走吧！' },
+  ],
+};
+
+const L3_M14: Mission = {
+  id: 14, slug: 'l3-m14-toys', level: 3, title: '玩具與文具', titleEn: 'Toys & School Things', theme: '市場街・玩具文具攤', themeEmoji: '🧸',
+  focus: '10 個玩具/文具；句型 Whose…? It is my… / 冠詞複習',
+  story: [
+    { image: '🧸', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Toys and school things! A ball, a doll!", dialogueZh: '玩具和文具！一顆球、一個娃娃！', highlightWords: ['ball', 'doll'], sceneEmojis: ['⚽', '🧸', '✨'], animation: 'wave' },
+    { image: '📖', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Whose book is this? It is my book!", dialogueZh: '這是誰的書？這是我的書！', highlightWords: ['Whose', 'book'], sceneEmojis: ['📖', '❓', '😊'], animation: 'bounce' },
+    { image: '🖊️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "A pen, a pencil, a ruler — for school!", dialogueZh: '一支筆、一支鉛筆、一把尺 —— 上學用！', highlightWords: ['pen', 'pencil', 'ruler'], sceneEmojis: ['🖊️', '✏️', '📏'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know toys and school things! Great!", dialogueZh: '你會玩具和文具了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🧸'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'ball', zh: '球', image: '⚽', phonics: '', kk: '[bɔl]', phonicsSound: '', exampleSentence: 'a red ball', exampleZh: '一顆紅球' },
+    { en: 'doll', zh: '娃娃', image: '🧸', phonics: '', kk: '[dɑl]', phonicsSound: '', exampleSentence: 'a cute doll', exampleZh: '一個可愛娃娃' },
+    { en: 'car', zh: '玩具車', image: '🚗', phonics: '', kk: '[kɑr]', phonicsSound: '', exampleSentence: 'a toy car', exampleZh: '一輛玩具車' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'a book', exampleZh: '一本書' },
+    { en: 'pen', zh: '筆', image: '🖊️', phonics: '', kk: '[pɛn]', phonicsSound: '', exampleSentence: 'a blue pen', exampleZh: '一支藍筆' },
+    { en: 'pencil', zh: '鉛筆', image: '✏️', phonics: '', kk: '[ˈpɛnsl]', phonicsSound: '', exampleSentence: 'a pencil', exampleZh: '一支鉛筆' },
+    { en: 'ruler', zh: '尺', image: '📏', phonics: '', kk: '[ˈrulɚ]', phonicsSound: '', exampleSentence: 'a ruler', exampleZh: '一把尺' },
+    { en: 'bag', zh: '書包', image: '🎒', phonics: '', kk: '[bæɡ]', phonicsSound: '', exampleSentence: 'my bag', exampleZh: '我的書包' },
+    { en: 'robot', zh: '機器人', image: '🤖', phonics: '', kk: '[ˈrobɑt]', phonicsSound: '', exampleSentence: 'a cool robot', exampleZh: '一個酷機器人' },
+    { en: 'kite', zh: '風箏', image: '🪁', phonics: '', kk: '[kaɪt]', phonicsSound: '', exampleSentence: 'a big kite', exampleZh: '一個大風箏' },
+  ],
+  sentences: [
+    { en: 'It is my ball.', zh: '這是我的球。' }, { en: 'Whose book is this?', zh: '這是誰的書？' }, { en: 'It is my book.', zh: '這是我的書。' }, { en: 'I have a robot.', zh: '我有一個機器人。' }, { en: 'Is it your bag?', zh: '這是你的書包嗎？' }, { en: 'Yes, it is my bag.', zh: '是的，這是我的書包。' },
+  ],
+  phonicsLetters: ['toys'],
+  warmUpQuestions: [
+    { type: 'match', question: '⚽ 是哪個？', options: ['ball', 'doll', 'car', 'book'], answer: 'ball' },
+    { type: 'match', question: '✏️ 是哪個？', options: ['pencil', 'pen', 'ruler', 'book'], answer: 'pencil' },
+    { type: 'listen-pick', question: '哪個是 "robot" 機器人？', options: ['🤖', '🧸', '🚗', '🪁'], answer: '🤖' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的東西', options: ['⚽', '🧸', '🚗', '📖'], answer: '🧸', image: '🎧' },
+    { type: 'match', question: '配對：東西配圖', options: ['pen-🖊️', 'ruler-📏', 'bag-🎒', 'kite-🪁'], answer: 'pen-🖊️' },
+    { type: 'fill-blank', question: '___ book is this?（誰的）', options: ['Whose', 'Who', 'What', 'Is'], answer: 'Whose' },
+    { type: 'spell', question: '拼拼看：b _ ll（球）', answer: 'ball', image: '✍️' },
+    { type: 'fill-blank', question: 'It is ___ book.（我的）', options: ['my', 'a', 'an', 'is'], answer: 'my' },
+    { type: 'speak', question: '跟著念：Ball, doll, book!', answer: 'Ball', image: '🗣' },
+  ],
+  talkTimePrompts: ["What toys do you have?", "What is in your school bag?", "Whose pencil is this?", "What is your favorite toy?"],
+  reviewQuiz: [
+    { type: 'match', question: '📏 是哪個？', options: ['ruler', 'pen', 'pencil', 'book'], answer: 'ruler' },
+    { type: 'fill-blank', question: 'Is it your bag? Yes, it ___ my bag.', options: ['is', 'are', 'am', 'do'], answer: 'is' },
+    { type: 'listen-pick', question: '哪個是 "kite" 風箏？', options: ['🪁', '🤖', '🎒', '🚗'], answer: '🪁' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Whose book is this?", lineZh: '這是誰的書？' },
+    { speaker: 'Benny', line: "It is my book! And this is my pen.", lineZh: '這是我的書！這是我的筆。' },
+    { speaker: 'Coco', line: "Wow, a robot! Is it yours?", lineZh: '哇，機器人！是你的嗎？' },
+    { speaker: 'Benny', line: "Yes! It is my robot. Cool, right?", lineZh: '是！這是我的機器人。很酷吧？' },
+  ],
+};
+
+const L3_M15: Mission = {
+  id: 15, slug: 'l3-m15-review-body-etc', level: 3, title: '複習③ 身體家人衣物', titleEn: 'Review Body/Family/Clothes', theme: '市場街・大集合', themeEmoji: '🎪',
+  focus: '複習身體/家人/衣物/玩具＋This is my… / Whose…?',
+  story: [
+    { image: '🎪', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Big review! Body, family, clothes, toys!", dialogueZh: '大複習！身體、家人、衣服、玩具！', highlightWords: [], sceneEmojis: ['🎪', '🧍', '👨‍👩‍👧'], animation: 'wave' },
+    { image: '👗', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "My sister wears a pink dress!", dialogueZh: '我姊姊穿一件粉紅洋裝！', highlightWords: ['sister', 'dress'], sceneEmojis: ['👧', '👗', '🩷'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know so much now! Champion!", dialogueZh: '你會好多東西了！冠軍！', highlightWords: [], sceneEmojis: ['🏆', '🎉', '🎪'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'eye', zh: '眼睛', image: '👁️', phonics: '', kk: '[aɪ]', phonicsSound: '', exampleSentence: 'two eyes', exampleZh: '兩隻眼睛' },
+    { en: 'hand', zh: '手', image: '✋', phonics: '', kk: '[hænd]', phonicsSound: '', exampleSentence: 'my hand', exampleZh: '我的手' },
+    { en: 'mom', zh: '媽媽', image: '👩', phonics: '', kk: '[mɑm]', phonicsSound: '', exampleSentence: 'my mom', exampleZh: '我的媽媽' },
+    { en: 'brother', zh: '兄弟', image: '👦', phonics: '', kk: '[ˈbrʌðɚ]', phonicsSound: '', exampleSentence: 'my brother', exampleZh: '我的兄弟' },
+    { en: 'shirt', zh: '襯衫', image: '👕', phonics: '', kk: '[ʃɝt]', phonicsSound: '', exampleSentence: 'a shirt', exampleZh: '一件襯衫' },
+    { en: 'shoes', zh: '鞋子', image: '👟', phonics: '', kk: '[ʃuz]', phonicsSound: '', exampleSentence: 'shoes', exampleZh: '鞋子' },
+    { en: 'ball', zh: '球', image: '⚽', phonics: '', kk: '[bɔl]', phonicsSound: '', exampleSentence: 'a ball', exampleZh: '一顆球' },
+    { en: 'book', zh: '書', image: '📖', phonics: '', kk: '[bʊk]', phonicsSound: '', exampleSentence: 'my book', exampleZh: '我的書' },
+    { en: 'dress', zh: '洋裝', image: '👗', phonics: '', kk: '[drɛs]', phonicsSound: '', exampleSentence: 'a dress', exampleZh: '一件洋裝' },
+    { en: 'family', zh: '家庭', image: '👨‍👩‍👧', phonics: '', kk: '[ˈfæməli]', phonicsSound: '', exampleSentence: 'my family', exampleZh: '我的家庭' },
+  ],
+  sentences: [
+    { en: 'This is my hand.', zh: '這是我的手。' }, { en: 'My sister wears a dress.', zh: '我姊姊穿一件洋裝。' }, { en: 'Whose ball is this?', zh: '這是誰的球？' }, { en: 'It is my ball.', zh: '這是我的球。' }, { en: 'I love my family.', zh: '我愛我的家人。' }, { en: 'I have two eyes and one nose.', zh: '我有兩隻眼睛和一個鼻子。' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'match', question: '👩 是誰？', options: ['mom', 'dad', 'sister', 'brother'], answer: 'mom' },
+    { type: 'match', question: '👕 是哪個衣物？', options: ['shirt', 'shoes', 'dress', 'hat'], answer: 'shirt' },
+    { type: 'listen-pick', question: '哪個是 "eye" 眼睛？', options: ['👁️', '✋', '👂', '👃'], answer: '👁️' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['👁️', '✋', '👕', '⚽'], answer: '👕', image: '🎧' },
+    { type: 'fill-blank', question: 'This is ___ hand.（我的）', options: ['my', 'a', 'an', 'is'], answer: 'my' },
+    { type: 'fill-blank', question: '___ book is this?（誰的）', options: ['Whose', 'Who', 'What', 'Is'], answer: 'Whose' },
+    { type: 'match', question: '配對：字配圖', options: ['shoes-👟', 'book-📖', 'dress-👗', 'ball-⚽'], answer: 'shoes-👟' },
+    { type: 'fill-blank', question: 'My sister wears a ___.（洋裝）', options: ['dress', 'ball', 'book', 'eye'], answer: 'dress' },
+    { type: 'speak', question: '跟著說：This is my family!', answer: 'This is my family', image: '🗣' },
+  ],
+  talkTimePrompts: ["Introduce your family!", "What are you wearing?", "Point to your eyes and hands!", "Whose bag is this?"],
+  reviewQuiz: [
+    { type: 'match', question: '👦 是誰？', options: ['brother', 'sister', 'mom', 'dad'], answer: 'brother' },
+    { type: 'fill-blank', question: 'I have two ___.（眼睛）', options: ['eyes', 'eye', 'hand', 'mom'], answer: 'eyes' },
+    { type: 'fill-blank', question: 'It is my ___.（球）', options: ['ball', 'eye', 'mom', 'shirt'], answer: 'ball' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "This is my family. My sister wears a pink dress.", lineZh: '這是我的家人。我姊姊穿粉紅洋裝。' },
+    { speaker: 'Coco', line: "Whose ball is this?", lineZh: '這是誰的球？' },
+    { speaker: 'Polly', line: "It's my brother's ball!", lineZh: '這是我哥哥的球！' },
+    { speaker: 'Coco', line: "You know so many words now!", lineZh: '你現在會好多單字了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
