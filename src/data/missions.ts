@@ -57,6 +57,7 @@ export interface Mission {
   // ── v2 新格式（L2 起）選填 ──
   focus?: string;              // 該課重點（phonics 樣式 / 文法點）
   videoScript?: VideoLine[];   // 對話影片腳本（角色輪流；留給 Vega 拍/生）
+  videoUrl?: string;           // 對話影片連結（YouTube 網址 或 mp4/R2 連結）；沒填就顯示腳本分鏡
 }
 
 // 對話影片腳本一行

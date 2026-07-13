@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
-import type { Word, Sentence, StoryScene } from '@/data/missions';
+import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak } from '@/lib/speech';
 import { playClip, sleep, wordSlug } from '@/lib/audio';
 
@@ -10,12 +10,20 @@ interface Props {
   words: Word[];
   sentences: Sentence[];
   phonicsLetters: string[];
+  videoScript?: VideoLine[];
+  videoUrl?: string;
   onComplete: () => void;
 }
 
 type Phase = 'story' | 'words' | 'phonics' | 'sentences';
 
-export default function Discover({ level, story, words, sentences, phonicsLetters, onComplete }: Props) {
+// YouTube 網址 → embed 網址
+function youtubeEmbed(url: string): string | null {
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : null;
+}
+
+export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, onComplete }: Props) {
   const [phase, setPhase] = useState<Phase>('story');
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
@@ -72,6 +80,42 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
     return (
       <div className="animate-slide-up">
+        {/* 🎬 對話影片位：有連結就播，沒連結顯示腳本分鏡（等 Vega 的影片） */}
+        {(videoUrl || (videoScript && videoScript.length > 0)) && (
+          <div className="mb-6 bg-white rounded-3xl border-2 border-purple-200 shadow-sm overflow-hidden max-w-xl mx-auto">
+            <div className="bg-purple-500 text-white px-4 py-2 text-sm font-bold">
+              🎬 對話影片{videoUrl ? '' : ' · 製作中'}
+            </div>
+            {videoUrl ? (
+              youtubeEmbed(videoUrl) ? (
+                <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}>
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={youtubeEmbed(videoUrl)!}
+                    title="對話影片"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                <video className="w-full" controls src={videoUrl} />
+              )
+            ) : (
+              <div className="p-4">
+                <p className="text-xs text-gray-400 mb-2">影片還沒上，先看對話腳本（分鏡）：</p>
+                <div className="space-y-1.5">
+                  {videoScript!.map((v, i) => (
+                    <div key={i} className="flex gap-2 text-sm">
+                      <span className="font-bold text-purple-600 shrink-0">{v.speaker}:</span>
+                      <span className="text-gray-700">{v.line} <span className="text-gray-400">（{v.lineZh}）</span></span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
         <div className="text-center mb-4">
           <p className="text-sm font-medium text-purple-500 bg-purple-50 inline-block px-4 py-1 rounded-full">
             📖 Story Time
