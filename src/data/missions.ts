@@ -5645,7 +5645,267 @@ const L6_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15];
+const L6_M16: Mission = {
+  id: 16, slug: 'l6-m16-past-ed', level: 6, title: '過去式 -ed', titleEn: 'Past Tense -ed', theme: '燈塔角・昨天做了', themeEmoji: '⏪',
+  focus: '過去式規則 -ed：played/walked/looked/cleaned',
+  story: [
+    { image: '⏪', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Yesterday I played at the beach.", dialogueZh: '昨天我在海邊玩。', highlightWords: ['played'], sceneEmojis: ['🏖️', '⏪', '✨'], animation: 'wave' },
+    { image: '🚶', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I walked to the lighthouse. I looked at the sea.", dialogueZh: '我走去燈塔。我看著海。', highlightWords: ['walked', 'looked'], sceneEmojis: ['🚶', '🏰', '😊'], animation: 'bounce' },
+    { image: '🧹', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "I cleaned my room and helped my mom.", dialogueZh: '我打掃房間也幫了媽媽。', highlightWords: ['cleaned', 'helped'], sceneEmojis: ['🧹', '👩', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Add -ed for the past! played, walked!", dialogueZh: '過去式加 -ed！played、walked！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '⏪'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'played', zh: '玩了', image: '🎮', phonics: '', kk: '[pled]', phonicsSound: '', exampleSentence: 'I played.', exampleZh: '我玩了。' },
+    { en: 'walked', zh: '走了', image: '🚶', phonics: '', kk: '[wɔkt]', phonicsSound: '', exampleSentence: 'I walked home.', exampleZh: '我走路回家。' },
+    { en: 'looked', zh: '看了', image: '👀', phonics: '', kk: '[lʊkt]', phonicsSound: '', exampleSentence: 'I looked at it.', exampleZh: '我看了它。' },
+    { en: 'cooked', zh: '煮了', image: '🍳', phonics: '', kk: '[kʊkt]', phonicsSound: '', exampleSentence: 'I cooked dinner.', exampleZh: '我煮了晚餐。' },
+    { en: 'jumped', zh: '跳了', image: '🤸', phonics: '', kk: '[dʒʌmpt]', phonicsSound: '', exampleSentence: 'I jumped high.', exampleZh: '我跳得高。' },
+    { en: 'cleaned', zh: '打掃了', image: '🧹', phonics: '', kk: '[klind]', phonicsSound: '', exampleSentence: 'I cleaned my room.', exampleZh: '我打掃房間。' },
+    { en: 'watched', zh: '看了（電視）', image: '📺', phonics: '', kk: '[wɑtʃt]', phonicsSound: '', exampleSentence: 'I watched TV.', exampleZh: '我看了電視。' },
+    { en: 'helped', zh: '幫了', image: '🤝', phonics: '', kk: '[hɛlpt]', phonicsSound: '', exampleSentence: 'I helped my mom.', exampleZh: '我幫了媽媽。' },
+    { en: 'wanted', zh: '想要了', image: '🙋', phonics: '', kk: '[ˈwɑntɪd]', phonicsSound: '', exampleSentence: 'I wanted ice cream.', exampleZh: '我想要冰淇淋。' },
+    { en: 'yesterday', zh: '昨天', image: '📅', phonics: '', kk: '[ˈjɛstɚˌde]', phonicsSound: '', exampleSentence: 'yesterday', exampleZh: '昨天' },
+  ],
+  sentences: [
+    { en: 'Yesterday I played.', zh: '昨天我玩了。' }, { en: 'I walked to school.', zh: '我走路去學校。' }, { en: 'I looked at the sea.', zh: '我看著海。' }, { en: 'I cleaned my room.', zh: '我打掃房間。' }, { en: 'Did you help your mom?', zh: '你幫了媽媽嗎？' }, { en: 'Yes, I helped her.', zh: '是的，我幫了她。' },
+  ],
+  phonicsLetters: ['play → played'],
+  warmUpQuestions: [
+    { type: 'match', question: 'play 的過去式是？', options: ['played', 'plays', 'playing', 'play'], answer: 'played' },
+    { type: 'match', question: 'walk 的過去式是？', options: ['walked', 'walks', 'walking', 'walk'], answer: 'walked' },
+    { type: 'match', question: 'clean 的過去式是？', options: ['cleaned', 'cleans', 'cleaning', 'clean'], answer: 'cleaned' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選字：點你聽到的過去式', options: ['played', 'walked', 'looked', 'cleaned'], answer: 'walked', image: '🎧' },
+    { type: 'match', question: '配對：原形→過去式', options: ['play-played', 'walk-walked', 'cook-cooked', 'help-helped'], answer: 'play-played' },
+    { type: 'fill-blank', question: 'Yesterday I ___ my room.（打掃·過去）', options: ['cleaned', 'clean', 'cleans', 'cleaning'], answer: 'cleaned' },
+    { type: 'fill-blank', question: 'I ___ TV last night.（看·過去）', options: ['watched', 'watch', 'watches', 'watching'], answer: 'watched' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Yesterday I played.', 'I walked to school.', 'I cleaned my room.', 'I looked at the sea.'], answer: 'Yesterday I played.', image: '🎧' },
+    { type: 'read', question: 'What did Ruby do yesterday?（Ruby 昨天做了什麼？）', passage: 'Yesterday Ruby cleaned her room.\nShe helped her mom cook.\nThen she watched TV.', options: ['cleaned and helped', 'went swimming', 'played all day', 'slept', ], answer: 'cleaned and helped' },
+  ],
+  talkTimePrompts: ["Say what you did: Yesterday I ___ed.", "Use walked, played, cleaned.", "Ask: Did you help your mom?", "✍️ 引導寫作：Yesterday I ___ed and ___ed."],
+  reviewQuiz: [
+    { type: 'match', question: 'help 的過去式是？', options: ['helped', 'helps', 'helping', 'help'], answer: 'helped' },
+    { type: 'fill-blank', question: 'I ___ to the beach yesterday.（走·過去）', options: ['walked', 'walk', 'walks', 'walking'], answer: 'walked' },
+    { type: 'spell', question: '拼拼看：play _ d（玩了）', answer: 'played', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Yesterday I played at the beach.", lineZh: '昨天我在海邊玩。' },
+    { speaker: 'Coco', line: "I walked to the lighthouse. I looked at the sea.", lineZh: '我走去燈塔。我看著海。' },
+    { speaker: 'Ruby', line: "I cleaned my room and helped my mom.", lineZh: '我打掃房間也幫了媽媽。' },
+    { speaker: 'Benny', line: "Add -ed for the past! played, walked!", lineZh: '過去式加 -ed！played、walked！' },
+  ],
+};
+
+const L6_M17: Mission = {
+  id: 17, slug: 'l6-m17-what-did-you-do', level: 6, title: 'What did you do?', titleEn: 'What did you do?', theme: '燈塔角・你昨天做了什麼', themeEmoji: '❓',
+  focus: '疑問 What did you do? / Did you…? — I ___ed.',
+  story: [
+    { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What did you do yesterday?", dialogueZh: '你昨天做了什麼？', highlightWords: ['did'], sceneEmojis: ['❓', '📅', '✨'], animation: 'wave' },
+    { image: '🏖️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I played at the beach. I swam in the sea!", dialogueZh: '我在海邊玩。我在海裡游泳！', highlightWords: ['played'], sceneEmojis: ['🏖️', '🏊', '😊'], animation: 'bounce' },
+    { image: '📺', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Did you watch TV? Yes, I did!", dialogueZh: '你看電視了嗎？是的，我看了！', highlightWords: ['Did', 'did'], sceneEmojis: ['📺', '✅', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Now you can talk about the past!", dialogueZh: '現在你會講過去的事了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '❓'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'did', zh: '做了（助動詞）', image: '❓', phonics: '', kk: '[dɪd]', phonicsSound: '', exampleSentence: 'What did you do?', exampleZh: '你做了什麼？' },
+    { en: "didn't", zh: '沒有做', image: '🚫', phonics: '', kk: '[ˈdɪdnt]', phonicsSound: '', exampleSentence: "I didn't go.", exampleZh: '我沒去。' },
+    { en: 'played', zh: '玩了', image: '🎮', phonics: '', kk: '[pled]', phonicsSound: '', exampleSentence: 'I played.', exampleZh: '我玩了。' },
+    { en: 'watched', zh: '看了', image: '📺', phonics: '', kk: '[wɑtʃt]', phonicsSound: '', exampleSentence: 'I watched TV.', exampleZh: '我看了電視。' },
+    { en: 'visited', zh: '拜訪了', image: '🚪', phonics: '', kk: '[ˈvɪzɪtɪd]', phonicsSound: '', exampleSentence: 'I visited grandma.', exampleZh: '我拜訪了奶奶。' },
+    { en: 'stayed', zh: '待在', image: '🏠', phonics: '', kk: '[sted]', phonicsSound: '', exampleSentence: 'I stayed home.', exampleZh: '我待在家。' },
+    { en: 'studied', zh: '讀書了', image: '📚', phonics: '', kk: '[ˈstʌdid]', phonicsSound: '', exampleSentence: 'I studied English.', exampleZh: '我讀了英文。' },
+    { en: 'cooked', zh: '煮了', image: '🍳', phonics: '', kk: '[kʊkt]', phonicsSound: '', exampleSentence: 'I cooked lunch.', exampleZh: '我煮了午餐。' },
+    { en: 'last night', zh: '昨晚', image: '🌙', phonics: '', kk: '[læst naɪt]', phonicsSound: '', exampleSentence: 'last night', exampleZh: '昨晚' },
+    { en: 'weekend', zh: '週末', image: '🎉', phonics: '', kk: '[ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'last weekend', exampleZh: '上週末' },
+  ],
+  sentences: [
+    { en: 'What did you do yesterday?', zh: '你昨天做了什麼？' }, { en: 'I played at the beach.', zh: '我在海邊玩。' }, { en: 'Did you watch TV?', zh: '你看電視了嗎？' }, { en: 'Yes, I did.', zh: '是的，我看了。' }, { en: "No, I didn't.", zh: '不，我沒有。' }, { en: 'I visited my grandma.', zh: '我拜訪了奶奶。' },
+  ],
+  phonicsLetters: ['What did you do?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'What ___ you do?（過去問句）', options: ['did', 'do', 'are', 'is'], answer: 'did' },
+    { type: 'fill-blank', question: 'Did you watch TV? Yes, I ___.', options: ['did', 'do', 'am', 'was'], answer: 'did' },
+    { type: 'match', question: '📺 watched 是什麼意思？', options: ['看了', '玩了', '走了', '煮了'], answer: '看了' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🎮', '📺', '🚪', '📚'], answer: '🚪', image: '🎧' },
+    { type: 'fill-blank', question: 'Did you play? No, I ___.（否定短答）', options: ["didn't", 'did', 'do', 'was'], answer: "didn't" },
+    { type: 'fill-blank', question: 'What did you ___?（做·原形）', options: ['do', 'did', 'done', 'doing'], answer: 'do' },
+    { type: 'spell', question: '拼拼看：visit _ d（拜訪了）', answer: 'visited', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What did you do yesterday?', 'I played at the beach.', 'Did you watch TV?', 'I visited my grandma.'], answer: 'What did you do yesterday?', image: '🎧' },
+    { type: 'read', question: 'What did Coco do yesterday?（Coco 昨天做了什麼？）', passage: '"What did you do yesterday?"\nCoco says, "I played at the beach.\nI swam in the sea."', options: ['played at the beach', 'watched TV', 'studied', 'stayed home'], answer: 'played at the beach' },
+  ],
+  talkTimePrompts: ["Ask: What did you do yesterday?", "Answer: I ___ed.", "Ask: Did you ___? Yes, I did. / No, I didn't.", "✍️ 引導寫作：Yesterday I ___ed. Then I ___ed."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'What ___ you do last weekend?（過去問句）', options: ['did', 'do', 'are', 'was'], answer: 'did' },
+    { type: 'fill-blank', question: "Did you cook? No, I ___.", options: ["didn't", 'did', 'do', 'was'], answer: "didn't" },
+    { type: 'read', question: 'Did Benny watch TV?（Benny 看電視了嗎？）', passage: '"Did you watch TV last night?"\nBenny says, "Yes, I did.\nI watched a fun show."', options: ['Yes, he did', 'No, he did not', 'He played', 'He slept'], answer: 'Yes, he did' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "What did you do yesterday?", lineZh: '你昨天做了什麼？' },
+    { speaker: 'Coco', line: "I played at the beach. I swam in the sea!", lineZh: '我在海邊玩。我在海裡游泳！' },
+    { speaker: 'Benny', line: "Did you watch TV? Yes, I did!", lineZh: '你看電視了嗎？是的，我看了！' },
+    { speaker: 'Polly', line: "Now you can talk about the past!", lineZh: '現在你會講過去的事了！' },
+  ],
+};
+
+const L6_M18: Mission = {
+  id: 18, slug: 'l6-m18-dialogue-mix', level: 6, title: '情境對話綜合', titleEn: 'Dialogue Mix', theme: '燈塔角・出遊日', themeEmoji: '💬',
+  focus: '綜合情境對話：邀約 ＋ 購物 ＋ 問路 ＋ 感受',
+  story: [
+    { image: '🙌', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Let's go to the market! Do you want to come?", dialogueZh: '我們去市場！你想來嗎？', highlightWords: ["Let's", 'want'], sceneEmojis: ['🙌', '🛍️', '✨'], animation: 'wave' },
+    { image: '🤩', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Sure! I am so excited! Where is the market?", dialogueZh: '好啊！我好興奮！市場在哪？', highlightWords: ['excited', 'Where'], sceneEmojis: ['🤩', '❓', '😊'], animation: 'bounce' },
+    { image: '💵', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Go straight and turn left. The apples are cheap!", dialogueZh: '直走然後左轉。蘋果很便宜！', highlightWords: ['straight', 'cheap'], sceneEmojis: ['⬅️', '🍎', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "What a great day out! Let's go!", dialogueZh: '出遊真棒！走吧！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '💬'], animation: 'bounce' },
+  ],
+  words: [
+    { en: "let's", zh: '我們來…吧', image: '🙌', phonics: '', kk: '[lɛts]', phonicsSound: '', exampleSentence: "Let's go!", exampleZh: '我們走吧！' },
+    { en: 'want', zh: '想要', image: '🙋', phonics: '', kk: '[wɑnt]', phonicsSound: '', exampleSentence: 'Do you want to come?', exampleZh: '你想來嗎？' },
+    { en: 'excited', zh: '興奮的', image: '🤩', phonics: '', kk: '[ɪkˈsaɪtɪd]', phonicsSound: '', exampleSentence: 'I am excited!', exampleZh: '我好興奮！' },
+    { en: 'where', zh: '哪裡', image: '🗺️', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is it?', exampleZh: '它在哪？' },
+    { en: 'straight', zh: '直直地', image: '⬆️', phonics: '', kk: '[stret]', phonicsSound: '', exampleSentence: 'Go straight.', exampleZh: '直走。' },
+    { en: 'left', zh: '左', image: '⬅️', phonics: '', kk: '[lɛft]', phonicsSound: '', exampleSentence: 'Turn left.', exampleZh: '左轉。' },
+    { en: 'cheap', zh: '便宜的', image: '💵', phonics: '', kk: '[tʃip]', phonicsSound: '', exampleSentence: 'cheap apples', exampleZh: '便宜蘋果' },
+    { en: 'buy', zh: '買', image: '🛒', phonics: '', kk: '[baɪ]', phonicsSound: '', exampleSentence: 'I buy fruit.', exampleZh: '我買水果。' },
+    { en: 'market', zh: '市場', image: '🛍️', phonics: '', kk: '[ˈmɑrkɪt]', phonicsSound: '', exampleSentence: 'the market', exampleZh: '市場' },
+    { en: 'sure', zh: '好啊', image: '👍', phonics: '', kk: '[ʃʊr]', phonicsSound: '', exampleSentence: 'Sure!', exampleZh: '好啊！' },
+  ],
+  sentences: [
+    { en: "Let's go to the market!", zh: '我們去市場！' }, { en: 'Do you want to come?', zh: '你想來嗎？' }, { en: 'I am so excited!', zh: '我好興奮！' }, { en: 'Where is the market?', zh: '市場在哪？' }, { en: 'Go straight and turn left.', zh: '直走然後左轉。' }, { en: 'The apples are cheap!', zh: '蘋果很便宜！' },
+  ],
+  phonicsLetters: ['dialogue mix'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: "___ go to the market!（我們來…吧）", options: ["Let's", 'Do', 'Can', 'Are'], answer: "Let's" },
+    { type: 'fill-blank', question: '___ is the market?（哪裡）', options: ['Where', 'What', 'Who', 'How'], answer: 'Where' },
+    { type: 'match', question: '🤩 excited 是什麼意思？', options: ['興奮的', '害怕的', '無聊的', '便宜的'], answer: '興奮的' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🙌', '🗺️', '⬅️', '🍎'], answer: '🗺️', image: '🎧' },
+    { type: 'fill-blank', question: 'Do you ___ to come?（想要）', options: ['want', 'like', "let's", 'is'], answer: 'want' },
+    { type: 'fill-blank', question: 'Go straight and turn ___.（左）', options: ['left', 'right', 'stop', 'near'], answer: 'left' },
+    { type: 'spell', question: '拼拼看：mar _ et（市場）', answer: 'market', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ["Let's go to the market!", 'Do you want to come?', 'Where is the market?', 'The apples are cheap!'], answer: "Let's go to the market!", image: '🎧' },
+    { type: 'read', question: 'How does Coco feel?（Coco 覺得如何？）', passage: 'Finn says, "Let\'s go to the market!"\nCoco says, "Sure! I am so excited!"\nThey walk together.', options: ['excited', 'scared', 'bored', 'tired'], answer: 'excited' },
+  ],
+  talkTimePrompts: ["Invite a friend and ask directions.", "Role-play: go to the market together.", "Say how you feel about the trip.", "✍️ 引導寫作：Let's go to the ___! I am ___ because ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The apples are ___.（便宜）', options: ['cheap', 'expensive', 'old', 'far'], answer: 'cheap' },
+    { type: 'fill-blank', question: 'Do you want ___ come?（不定詞 to）', options: ['to', 'and', 'the', 'a'], answer: 'to' },
+    { type: 'read', question: 'Where do they want to go?（他們想去哪？）', passage: 'Finn wants to go to the market.\nCoco is excited to come.\nThey buy cheap apples.', options: ['the market', 'the school', 'the sea', 'home'], answer: 'the market' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's go to the market! Do you want to come?", lineZh: '我們去市場！你想來嗎？' },
+    { speaker: 'Coco', line: "Sure! I am so excited! Where is the market?", lineZh: '好啊！我好興奮！市場在哪？' },
+    { speaker: 'Benny', line: "Go straight and turn left. The apples are cheap!", lineZh: '直走左轉。蘋果便宜！' },
+    { speaker: 'Finn', line: "What a great day out! Let's go!", lineZh: '出遊真棒！走吧！' },
+  ],
+};
+
+const L6_M19: Mission = {
+  id: 19, slug: 'l6-m19-read-write', level: 6, title: '閱讀＋寫短句', titleEn: 'Read & Write', theme: '燈塔角・讀與寫', themeEmoji: '✍️',
+  focus: '閱讀短文 ＋ 引導式寫作：照樣造句寫出自己的短句',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read the story, then write your own!", dialogueZh: '讀故事，然後寫你自己的！', highlightWords: ['write'], sceneEmojis: ['📖', '✍️', '✨'], animation: 'wave' },
+    { image: '🏖️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Yesterday I went to the beach. I played and swam.", dialogueZh: '昨天我去了海邊。我玩也游泳。', highlightWords: ['went', 'played'], sceneEmojis: ['🏖️', '🏊', '😊'], animation: 'bounce' },
+    { image: '✏️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Now write: Yesterday I ___. I ___ and ___.", dialogueZh: '現在寫：昨天我___。我___和___。', highlightWords: [], sceneEmojis: ['✏️', '📝', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Great! You are a reader and a writer!", dialogueZh: '太棒了！你是讀者也是作者！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '✍️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'write', zh: '寫', image: '✍️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'I write a sentence.', exampleZh: '我寫一句話。' },
+    { en: 'read', zh: '讀', image: '📖', phonics: '', kk: '[rid]', phonicsSound: '', exampleSentence: 'I read a story.', exampleZh: '我讀一個故事。' },
+    { en: 'sentence', zh: '句子', image: '📝', phonics: '', kk: '[ˈsɛntəns]', phonicsSound: '', exampleSentence: 'a short sentence', exampleZh: '一個短句' },
+    { en: 'went', zh: '去了', image: '⏪', phonics: '', kk: '[wɛnt]', phonicsSound: '', exampleSentence: 'I went home.', exampleZh: '我回家了。' },
+    { en: 'played', zh: '玩了', image: '🎮', phonics: '', kk: '[pled]', phonicsSound: '', exampleSentence: 'I played.', exampleZh: '我玩了。' },
+    { en: 'beach', zh: '海邊', image: '🏖️', phonics: '', kk: '[bitʃ]', phonicsSound: '', exampleSentence: 'at the beach', exampleZh: '在海邊' },
+    { en: 'story', zh: '故事', image: '📚', phonics: '', kk: '[ˈstɔri]', phonicsSound: '', exampleSentence: 'a fun story', exampleZh: '有趣的故事' },
+    { en: 'idea', zh: '想法', image: '💡', phonics: '', kk: '[aɪˈdiə]', phonicsSound: '', exampleSentence: 'a good idea', exampleZh: '好主意' },
+    { en: 'first', zh: '首先', image: '1️⃣', phonics: '', kk: '[fɝst]', phonicsSound: '', exampleSentence: 'First, I got up.', exampleZh: '首先，我起床。' },
+    { en: 'then', zh: '然後', image: '2️⃣', phonics: '', kk: '[ðɛn]', phonicsSound: '', exampleSentence: 'Then, I ate.', exampleZh: '然後，我吃飯。' },
+  ],
+  sentences: [
+    { en: 'Yesterday I went to the beach.', zh: '昨天我去了海邊。' }, { en: 'First, I played in the sand.', zh: '首先，我在沙上玩。' }, { en: 'Then, I swam in the sea.', zh: '然後，我在海裡游泳。' }, { en: 'I found a big shell.', zh: '我找到一個大貝殼。' }, { en: 'It was a fun day.', zh: '那是好玩的一天。' }, { en: 'Now write your own story!', zh: '現在寫你自己的故事！' },
+  ],
+  phonicsLetters: ['read & write'],
+  warmUpQuestions: [
+    { type: 'match', question: '✍️ write 是什麼意思？', options: ['寫', '讀', '玩', '看'], answer: '寫' },
+    { type: 'fill-blank', question: '___, I got up.（首先）', options: ['First', 'Then', 'And', 'But'], answer: 'First' },
+    { type: 'fill-blank', question: 'Yesterday I ___ to the beach.（去·過去）', options: ['went', 'go', 'goes', 'going'], answer: 'went' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Where did the writer go?（作者去哪？）', passage: 'Yesterday I went to the beach.\nFirst, I played in the sand.\nThen, I swam in the sea.', options: ['the beach', 'the market', 'school', 'home'], answer: 'the beach' },
+    { type: 'read', question: 'What did the writer do first?（作者先做什麼？）', passage: 'First, I played in the sand.\nThen, I swam in the sea.\nI found a big shell.', options: ['played in the sand', 'swam in the sea', 'found a shell', 'went home'], answer: 'played in the sand' },
+    { type: 'fill-blank', question: 'First I played. ___ I swam.（然後）', options: ['Then', 'First', 'But', 'Or'], answer: 'Then' },
+    { type: 'fill-blank', question: 'Yesterday I ___ in the sand.（玩·過去）', options: ['played', 'play', 'plays', 'playing'], answer: 'played' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Yesterday I went to the beach.', 'First, I played in the sand.', 'Then, I swam in the sea.', 'It was a fun day.'], answer: 'Yesterday I went to the beach.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：sent _ nce（句子）', answer: 'sentence', image: '✍️' },
+  ],
+  talkTimePrompts: ["Read the story out loud.", "Say what you did yesterday with First / Then.", "✍️ 引導寫作：Yesterday I went to ___.", "✍️ 引導寫作：First I ___ed. Then I ___ed."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ I got up. Then I ate.（首先）', options: ['First', 'Then', 'And', 'So'], answer: 'First' },
+    { type: 'read', question: 'Was it a fun day?（那天好玩嗎？）', passage: 'I played and swam at the beach.\nI found a big shell.\nIt was a fun day!', options: ['Yes, it was fun', 'No, it was boring', 'It was sad', 'It rained'], answer: 'Yes, it was fun' },
+    { type: 'spell', question: '拼拼看：wr _ te（寫）', answer: 'write', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Read the story, then write your own!", lineZh: '讀故事，然後寫你自己的！' },
+    { speaker: 'Coco', line: "Yesterday I went to the beach. I played and swam.", lineZh: '昨天我去海邊。我玩也游泳。' },
+    { speaker: 'Ruby', line: "Now write: Yesterday I ___. I ___ and ___.", lineZh: '現在寫：昨天我___。我___和___。' },
+    { speaker: 'Benny', line: "Great! You are a reader and a writer!", lineZh: '太棒了！你是讀者也是作者！' },
+  ],
+};
+
+const L6_M20: Mission = {
+  id: 20, slug: 'l6-m20-boss', level: 6, title: '燈塔角大魔王', titleEn: 'Lighthouse Boss', theme: '燈塔角・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：描述/意見/購物/點餐/問路/感受/過去式 -ed',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Lighthouse Boss is here! Use all your English!", dialogueZh: '燈塔大魔王來了！用上你所有的英文！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏰'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Describe, shop, ask the way — I can do it all!", dialogueZh: '形容、購物、問路 —— 我全都會！', highlightWords: [], sceneEmojis: ['💪', '🛍️', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Lighthouse Badge!", dialogueZh: '你打敗大魔王了！獲得燈塔徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🏰', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Lighthouse Point! On to Grammar Gate!", dialogueZh: '你完成了燈塔角！前進文法門！', highlightWords: [], sceneEmojis: ['🏰', '🚪', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'beautiful', zh: '美麗的', image: '🌅', phonics: '', kk: '[ˈbjutɪfl̩]', phonicsSound: '', exampleSentence: 'It is beautiful.', exampleZh: '它很美。' },
+    { en: 'think', zh: '覺得', image: '💭', phonics: '', kk: '[θɪŋk]', phonicsSound: '', exampleSentence: "I think it's cool.", exampleZh: '我覺得很酷。' },
+    { en: 'how much', zh: '多少錢', image: '💲', phonics: '', kk: '[haʊ mʌtʃ]', phonicsSound: '', exampleSentence: 'How much is it?', exampleZh: '多少錢？' },
+    { en: 'cheap', zh: '便宜的', image: '💵', phonics: '', kk: '[tʃip]', phonicsSound: '', exampleSentence: 'It is cheap.', exampleZh: '它很便宜。' },
+    { en: "I'd like", zh: '我想要', image: '🙋', phonics: '', kk: '[aɪd laɪk]', phonicsSound: '', exampleSentence: "I'd like soup.", exampleZh: '我想要湯。' },
+    { en: 'where', zh: '哪裡', image: '🗺️', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is it?', exampleZh: '它在哪？' },
+    { en: 'left', zh: '左', image: '⬅️', phonics: '', kk: '[lɛft]', phonicsSound: '', exampleSentence: 'Turn left.', exampleZh: '左轉。' },
+    { en: 'excited', zh: '興奮的', image: '🤩', phonics: '', kk: '[ɪkˈsaɪtɪd]', phonicsSound: '', exampleSentence: 'I am excited!', exampleZh: '我好興奮！' },
+    { en: 'played', zh: '玩了', image: '⏪', phonics: '', kk: '[pled]', phonicsSound: '', exampleSentence: 'I played yesterday.', exampleZh: '我昨天玩了。' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy!', exampleZh: '我很開心！' },
+  ],
+  sentences: [
+    { en: 'The view is beautiful. I think it is amazing.', zh: '景色很美。我覺得驚人。' }, { en: 'How much is it? It is cheap.', zh: '多少錢？很便宜。' }, { en: "I'd like a hamburger, please.", zh: '我想要漢堡。' }, { en: 'Where is the park? Turn left.', zh: '公園在哪？左轉。' }, { en: 'Yesterday I played at the beach.', zh: '昨天我在海邊玩。' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ it is cool.（覺得）', options: ['think', 'am', 'buy', 'is'], answer: 'think' },
+    { type: 'fill-blank', question: '___ much is it?（多少）', options: ['How', 'What', 'Where', 'Who'], answer: 'How' },
+    { type: 'match', question: 'play 的過去式是？', options: ['played', 'plays', 'playing', 'play'], answer: 'played' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🌅', '💵', '🗺️', '🤩'], answer: '🤩', image: '🎧' },
+    { type: 'fill-blank', question: "句型代換：I'd like a ___.（漢堡）", options: ['hamburger', 'where', 'left', 'is'], answer: 'hamburger' },
+    { type: 'fill-blank', question: 'Where is the park? Turn ___.（左）', options: ['left', 'much', 'cheap', 'think'], answer: 'left' },
+    { type: 'match', question: 'clean 的過去式是？', options: ['cleaned', 'cleans', 'cleaning', 'clean'], answer: 'cleaned' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Yesterday I played at the beach.', 'How much is it?', 'The view is beautiful.', 'Where is the park?'], answer: 'Yesterday I played at the beach.', image: '🎧' },
+    { type: 'read', question: 'What did the friends do yesterday?（朋友們昨天做了什麼？）', passage: 'Yesterday the friends went to the beach.\nThey played in the sand.\nThey were very happy.', options: ['went to the beach', 'went to school', 'stayed home', 'cooked dinner'], answer: 'went to the beach' },
+  ],
+  talkTimePrompts: ["Describe something and give your opinion.", "Order food and ask directions.", "Say what you did yesterday.", "You beat the Lighthouse Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'It is ___. Only two dollars!（便宜）', options: ['cheap', 'expensive', 'far', 'old'], answer: 'cheap' },
+    { type: 'fill-blank', question: 'Yesterday I ___ my room.（打掃·過去）', options: ['cleaned', 'clean', 'cleans', 'cleaning'], answer: 'cleaned' },
+    { type: 'read', question: 'Were the friends happy?（朋友們開心嗎？）', passage: 'The friends played at the beach.\nThey found shells.\nThey were very happy!', options: ['Yes, they were happy', 'No, they were sad', 'They were tired', 'They were bored'], answer: 'Yes, they were happy' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Lighthouse Boss says: describe your day!", lineZh: '燈塔大魔王說：描述你的一天！' },
+    { speaker: 'Coco', line: "Yesterday I played at the beach. It was beautiful!", lineZh: '昨天我在海邊玩。好美！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Lighthouse champion!", lineZh: '你打敗大魔王了！燈塔冠軍！' },
+    { speaker: 'Finn', line: "On to Grammar Gate! Let's learn grammar!", lineZh: '前進文法門！我們來學文法！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
