@@ -5125,7 +5125,267 @@ const L6_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5];
+const L6_M6: Mission = {
+  id: 6, slug: 'l6-m6-restaurant', level: 6, title: '餐廳點餐', titleEn: 'At the Restaurant', theme: '燈塔角・海鮮餐廳', themeEmoji: '🍽️',
+  focus: '句型 Can I have…? / I\'d like…（點餐）',
+  story: [
+    { image: '🍽️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Can I have a menu, please?", dialogueZh: '可以給我菜單嗎？', highlightWords: ['Can I have'], sceneEmojis: ['🍽️', '📋', '✨'], animation: 'wave' },
+    { image: '🍲', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I'd like some soup and salad.", dialogueZh: '我想要湯和沙拉。', highlightWords: ["I'd like"], sceneEmojis: ['🍲', '🥗', '😊'], animation: 'bounce' },
+    { image: '🥤', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Can I have some juice? Thank you!", dialogueZh: '可以給我果汁嗎？謝謝！', highlightWords: ['Can I have'], sceneEmojis: ['🥤', '🙏', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Now you can order food in English!", dialogueZh: '現在你會用英文點餐了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🍽️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: "I'd like", zh: '我想要', image: '🙋', phonics: '', kk: '[aɪd laɪk]', phonicsSound: '', exampleSentence: "I'd like some soup.", exampleZh: '我想要一些湯。' },
+    { en: 'menu', zh: '菜單', image: '📋', phonics: '', kk: '[ˈmɛnju]', phonicsSound: '', exampleSentence: 'Can I have a menu?', exampleZh: '可以給我菜單嗎？' },
+    { en: 'order', zh: '點餐', image: '📝', phonics: '', kk: '[ˈɔrdɚ]', phonicsSound: '', exampleSentence: 'I want to order.', exampleZh: '我想點餐。' },
+    { en: 'soup', zh: '湯', image: '🍲', phonics: '', kk: '[sup]', phonicsSound: '', exampleSentence: "I'd like soup.", exampleZh: '我想要湯。' },
+    { en: 'salad', zh: '沙拉', image: '🥗', phonics: '', kk: '[ˈsæləd]', phonicsSound: '', exampleSentence: 'a green salad', exampleZh: '一份綠沙拉' },
+    { en: 'chicken', zh: '雞肉', image: '🍗', phonics: '', kk: '[ˈtʃɪkɪn]', phonicsSound: '', exampleSentence: "I'd like chicken.", exampleZh: '我想要雞肉。' },
+    { en: 'water', zh: '水', image: '💧', phonics: '', kk: '[ˈwɔtɚ]', phonicsSound: '', exampleSentence: 'Can I have water?', exampleZh: '可以給我水嗎？' },
+    { en: 'juice', zh: '果汁', image: '🧃', phonics: '', kk: '[dʒus]', phonicsSound: '', exampleSentence: 'apple juice', exampleZh: '蘋果汁' },
+    { en: 'waiter', zh: '服務生', image: '🧑‍🍳', phonics: '', kk: '[ˈwetɚ]', phonicsSound: '', exampleSentence: 'Ask the waiter.', exampleZh: '問服務生。' },
+    { en: 'please', zh: '請', image: '🙏', phonics: '', kk: '[pliz]', phonicsSound: '', exampleSentence: 'Water, please.', exampleZh: '請給我水。' },
+  ],
+  sentences: [
+    { en: 'Can I have a menu, please?', zh: '可以給我菜單嗎？' }, { en: "I'd like some soup.", zh: '我想要一些湯。' }, { en: 'Can I have some water?', zh: '可以給我水嗎？' }, { en: 'What would you like?', zh: '你想要什麼？' }, { en: "I'd like chicken and salad.", zh: '我想要雞肉和沙拉。' }, { en: 'Thank you very much!', zh: '非常謝謝！' },
+  ],
+  phonicsLetters: ["Can I have…?"],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ I have a menu?（可以）', options: ['Can', 'Do', 'Are', 'Is'], answer: 'Can' },
+    { type: 'match', question: '🍲 是什麼？', options: ['soup', 'salad', 'juice', 'chicken'], answer: 'soup' },
+    { type: 'match', question: '🥗 是什麼？', options: ['salad', 'soup', 'water', 'menu'], answer: 'salad' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的食物', options: ['🍲', '🥗', '🍗', '🧃'], answer: '🍗', image: '🎧' },
+    { type: 'match', question: '配對：食物配圖', options: ['soup-🍲', 'salad-🥗', 'chicken-🍗', 'juice-🧃'], answer: 'soup-🍲' },
+    { type: 'fill-blank', question: "句型代換：I'd like some ___.（湯）", options: ['soup', 'menu', 'please', 'is'], answer: 'soup' },
+    { type: 'fill-blank', question: '___ I have some water?（可以）', options: ['Can', 'Do', 'Are', 'Is'], answer: 'Can' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Can I have a menu, please?', "I'd like some soup.", 'Can I have some water?', 'What would you like?'], answer: 'Can I have a menu, please?', image: '🎧' },
+    { type: 'read', question: 'What does Benny order?（Benny 點什麼？）', passage: 'Benny is at the restaurant.\n"What would you like?"\n"I\'d like soup and salad, please."', options: ['soup and salad', 'chicken and juice', 'water only', 'a menu'], answer: 'soup and salad' },
+  ],
+  talkTimePrompts: ["Order food: Can I have ___?", "Say: I'd like ___.", "Be polite: ___, please. / Thank you!", "✍️ 引導寫作：I'd like ___ and ___, please."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: "___ like some juice.（我想要）", options: ["I'd", 'I', 'Can', 'Do'], answer: "I'd" },
+    { type: 'match', question: '🧃 是什麼？', options: ['juice', 'water', 'soup', 'salad'], answer: 'juice' },
+    { type: 'spell', question: '拼拼看：men _ （菜單）', answer: 'menu', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Can I have a menu, please?", lineZh: '可以給我菜單嗎？' },
+    { speaker: 'Benny', line: "I'd like some soup and salad.", lineZh: '我想要湯和沙拉。' },
+    { speaker: 'Polly', line: "Can I have some juice? Thank you!", lineZh: '可以給我果汁嗎？謝謝！' },
+    { speaker: 'Coco', line: "Now you can order food in English!", lineZh: '現在你會用英文點餐了！' },
+  ],
+};
+
+const L6_M7: Mission = {
+  id: 7, slug: 'l6-m7-food-drinks', level: 6, title: '食物飲料', titleEn: 'Food & Drinks', theme: '燈塔角・美味餐點', themeEmoji: '🍔',
+  focus: '更多食物飲料 ＋ 點餐對話綜合',
+  story: [
+    { image: '🍔', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I'd like a hamburger and fries!", dialogueZh: '我想要漢堡和薯條！', highlightWords: ['hamburger', 'fries'], sceneEmojis: ['🍔', '🍟', '✨'], animation: 'wave' },
+    { image: '🍕', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Can I have pizza and a cola?", dialogueZh: '可以給我披薩和可樂嗎？', highlightWords: ['pizza'], sceneEmojis: ['🍕', '🥤', '😊'], animation: 'bounce' },
+    { image: '🍰', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "For dessert, I'd like cake and tea!", dialogueZh: '甜點我想要蛋糕和茶！', highlightWords: ['cake', 'tea'], sceneEmojis: ['🍰', '🍵', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Yummy! We ordered a big meal!", dialogueZh: '好吃！我們點了一大餐！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🍔'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'hamburger', zh: '漢堡', image: '🍔', phonics: '', kk: '[ˈhæmbɝɡɚ]', phonicsSound: '', exampleSentence: "I'd like a hamburger.", exampleZh: '我想要漢堡。' },
+    { en: 'fries', zh: '薯條', image: '🍟', phonics: '', kk: '[fraɪz]', phonicsSound: '', exampleSentence: 'some fries', exampleZh: '一些薯條' },
+    { en: 'pizza', zh: '披薩', image: '🍕', phonics: '', kk: '[ˈpitsə]', phonicsSound: '', exampleSentence: 'a pizza', exampleZh: '一個披薩' },
+    { en: 'cola', zh: '可樂', image: '🥤', phonics: '', kk: '[ˈkolə]', phonicsSound: '', exampleSentence: 'a cola', exampleZh: '一杯可樂' },
+    { en: 'cake', zh: '蛋糕', image: '🍰', phonics: '', kk: '[kek]', phonicsSound: '', exampleSentence: 'a piece of cake', exampleZh: '一塊蛋糕' },
+    { en: 'tea', zh: '茶', image: '🍵', phonics: '', kk: '[ti]', phonicsSound: '', exampleSentence: 'a cup of tea', exampleZh: '一杯茶' },
+    { en: 'coffee', zh: '咖啡', image: '☕', phonics: '', kk: '[ˈkɔfi]', phonicsSound: '', exampleSentence: 'a cup of coffee', exampleZh: '一杯咖啡' },
+    { en: 'noodles', zh: '麵', image: '🍜', phonics: '', kk: '[ˈnudl̩z]', phonicsSound: '', exampleSentence: 'hot noodles', exampleZh: '熱麵' },
+    { en: 'rice', zh: '飯', image: '🍚', phonics: '', kk: '[raɪs]', phonicsSound: '', exampleSentence: 'a bowl of rice', exampleZh: '一碗飯' },
+    { en: 'dessert', zh: '甜點', image: '🍨', phonics: '', kk: '[dɪˈzɝt]', phonicsSound: '', exampleSentence: 'for dessert', exampleZh: '當甜點' },
+  ],
+  sentences: [
+    { en: "I'd like a hamburger and fries.", zh: '我想要漢堡和薯條。' }, { en: 'Can I have pizza and a cola?', zh: '可以給我披薩和可樂嗎？' }, { en: 'What would you like to drink?', zh: '你想喝什麼？' }, { en: "I'd like some tea, please.", zh: '我想要一些茶。' }, { en: 'For dessert, I want cake.', zh: '甜點我想要蛋糕。' }, { en: 'The food is delicious!', zh: '食物好好吃！' },
+  ],
+  phonicsLetters: ['food & drinks'],
+  warmUpQuestions: [
+    { type: 'match', question: '🍔 是什麼？', options: ['hamburger', 'pizza', 'cake', 'tea'], answer: 'hamburger' },
+    { type: 'match', question: '🍟 是什麼？', options: ['fries', 'rice', 'noodles', 'cola'], answer: 'fries' },
+    { type: 'match', question: '🍵 是什麼？', options: ['tea', 'coffee', 'cola', 'juice'], answer: 'tea' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的食物', options: ['🍔', '🍕', '🍰', '🍜'], answer: '🍜', image: '🎧' },
+    { type: 'match', question: '配對：食物配圖', options: ['pizza-🍕', 'cake-🍰', 'tea-🍵', 'rice-🍚'], answer: 'pizza-🍕' },
+    { type: 'fill-blank', question: "句型代換：I'd like a ___.（漢堡）", options: ['hamburger', 'please', 'menu', 'is'], answer: 'hamburger' },
+    { type: 'spell', question: '拼拼看：pi _ za（披薩）', answer: 'pizza', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ["I'd like a hamburger and fries.", 'Can I have pizza and a cola?', 'For dessert, I want cake.', 'The food is delicious!'], answer: "I'd like a hamburger and fries.", image: '🎧' },
+    { type: 'read', question: 'What does Ruby want for dessert?（Ruby 甜點想要什麼？）', passage: 'Benny orders a hamburger.\nCoco orders pizza.\nFor dessert, Ruby wants cake and tea.', options: ['cake and tea', 'pizza', 'fries', 'noodles'], answer: 'cake and tea' },
+  ],
+  talkTimePrompts: ["Order a meal: I'd like ___ and ___.", "What do you want to drink?", "Order dessert!", "✍️ 引導寫作：For lunch, I'd like ___. For dessert, I'd like ___."],
+  reviewQuiz: [
+    { type: 'match', question: '☕ 是什麼？', options: ['coffee', 'tea', 'cola', 'juice'], answer: 'coffee' },
+    { type: 'fill-blank', question: 'Can I ___ a pizza?（有·點餐）', options: ['have', 'am', 'is', 'do'], answer: 'have' },
+    { type: 'spell', question: '拼拼看：c _ ke（蛋糕）', answer: 'cake', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I'd like a hamburger and fries!", lineZh: '我想要漢堡和薯條！' },
+    { speaker: 'Coco', line: "Can I have pizza and a cola?", lineZh: '可以給我披薩和可樂嗎？' },
+    { speaker: 'Ruby', line: "For dessert, I'd like cake and tea!", lineZh: '甜點我想要蛋糕和茶！' },
+    { speaker: 'Benny', line: "Yummy! We ordered a big meal!", lineZh: '好吃！我們點了一大餐！' },
+  ],
+};
+
+const L6_M8: Mission = {
+  id: 8, slug: 'l6-m8-directions', level: 6, title: '問路', titleEn: 'Asking Directions', theme: '燈塔角・找路', themeEmoji: '🗺️',
+  focus: '句型 Where is the…? / How do I get to…?（問路）',
+  story: [
+    { image: '🗺️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Excuse me, where is the park?", dialogueZh: '不好意思，公園在哪裡？', highlightWords: ['Where is'], sceneEmojis: ['🗺️', '🏞️', '✨'], animation: 'wave' },
+    { image: '🏦', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "How do I get to the bank?", dialogueZh: '我要怎麼去銀行？', highlightWords: ['How do I get to'], sceneEmojis: ['🏦', '❓', '😊'], animation: 'bounce' },
+    { image: '🏥', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "The hospital is near the school!", dialogueZh: '醫院在學校附近！', highlightWords: ['near'], sceneEmojis: ['🏥', '🏫', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Now you can ask for directions!", dialogueZh: '現在你會問路了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🗺️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'where', zh: '哪裡', image: '🗺️', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is the park?', exampleZh: '公園在哪？' },
+    { en: 'park', zh: '公園', image: '🏞️', phonics: '', kk: '[pɑrk]', phonicsSound: '', exampleSentence: 'the park', exampleZh: '公園' },
+    { en: 'bank', zh: '銀行', image: '🏦', phonics: '', kk: '[bæŋk]', phonicsSound: '', exampleSentence: 'the bank', exampleZh: '銀行' },
+    { en: 'hospital', zh: '醫院', image: '🏥', phonics: '', kk: '[ˈhɑspɪtl̩]', phonicsSound: '', exampleSentence: 'the hospital', exampleZh: '醫院' },
+    { en: 'store', zh: '商店', image: '🏬', phonics: '', kk: '[stɔr]', phonicsSound: '', exampleSentence: 'the store', exampleZh: '商店' },
+    { en: 'library', zh: '圖書館', image: '📚', phonics: '', kk: '[ˈlaɪˌbrɛri]', phonicsSound: '', exampleSentence: 'the library', exampleZh: '圖書館' },
+    { en: 'street', zh: '街道', image: '🛣️', phonics: '', kk: '[strit]', phonicsSound: '', exampleSentence: 'on Main Street', exampleZh: '在大街上' },
+    { en: 'near', zh: '附近', image: '📍', phonics: '', kk: '[nɪr]', phonicsSound: '', exampleSentence: 'near the school', exampleZh: '在學校附近' },
+    { en: 'far', zh: '遠', image: '🔭', phonics: '', kk: '[fɑr]', phonicsSound: '', exampleSentence: 'It is far.', exampleZh: '很遠。' },
+    { en: 'map', zh: '地圖', image: '🗺️', phonics: '', kk: '[mæp]', phonicsSound: '', exampleSentence: 'Look at the map.', exampleZh: '看地圖。' },
+  ],
+  sentences: [
+    { en: 'Where is the park?', zh: '公園在哪裡？' }, { en: 'How do I get to the bank?', zh: '我怎麼去銀行？' }, { en: 'It is near the school.', zh: '它在學校附近。' }, { en: 'Is it far?', zh: '很遠嗎？' }, { en: 'No, it is near.', zh: '不，很近。' }, { en: 'Excuse me, where is the library?', zh: '不好意思，圖書館在哪？' },
+  ],
+  phonicsLetters: ['Where is…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ is the park?（哪裡）', options: ['Where', 'What', 'Who', 'How'], answer: 'Where' },
+    { type: 'match', question: '🏦 是什麼？', options: ['bank', 'park', 'store', 'hospital'], answer: 'bank' },
+    { type: 'match', question: 'near 的相反是？', options: ['far', 'store', 'street', 'map'], answer: 'far' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的地方', options: ['🏞️', '🏦', '🏥', '📚'], answer: '🏥', image: '🎧' },
+    { type: 'match', question: '配對：地方配圖', options: ['park-🏞️', 'bank-🏦', 'hospital-🏥', 'library-📚'], answer: 'park-🏞️' },
+    { type: 'fill-blank', question: 'The park is ___ the school.（附近）', options: ['near', 'far', 'where', 'map'], answer: 'near' },
+    { type: 'spell', question: '拼拼看：ba _ k（銀行）', answer: 'bank', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Where is the park?', 'How do I get to the bank?', 'It is near the school.', 'Is it far?'], answer: 'Where is the park?', image: '🎧' },
+    { type: 'read', question: 'Where is the hospital?（醫院在哪？）', passage: 'Coco wants to find the hospital.\n"Where is the hospital?"\n"It is near the school."', options: ['near the school', 'near the park', 'far away', 'on the beach'], answer: 'near the school' },
+  ],
+  talkTimePrompts: ["Ask: Where is the ___?", "Ask: How do I get to the ___?", "Say: It is near / far.", "✍️ 引導寫作：The ___ is near the ___."],
+  reviewQuiz: [
+    { type: 'match', question: '📚 是什麼？', options: ['library', 'bank', 'store', 'park'], answer: 'library' },
+    { type: 'fill-blank', question: '___ do I get to the bank?（怎麼）', options: ['How', 'Where', 'What', 'Who'], answer: 'How' },
+    { type: 'spell', question: '拼拼看：n _ ar（附近）', answer: 'near', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Excuse me, where is the park?", lineZh: '不好意思，公園在哪？' },
+    { speaker: 'Benny', line: "How do I get to the bank?", lineZh: '我要怎麼去銀行？' },
+    { speaker: 'Polly', line: "The hospital is near the school!", lineZh: '醫院在學校附近！' },
+    { speaker: 'Coco', line: "Now you can ask for directions!", lineZh: '現在你會問路了！' },
+  ],
+};
+
+const L6_M9: Mission = {
+  id: 9, slug: 'l6-m9-turn-left', level: 6, title: '方位指路', titleEn: 'Turn left / right', theme: '燈塔角・怎麼走', themeEmoji: '🧭',
+  focus: '指路方位：turn left/right, go straight, in front of',
+  story: [
+    { image: '🧭', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Go straight and turn left!", dialogueZh: '直走然後左轉！', highlightWords: ['straight', 'left'], sceneEmojis: ['⬆️', '⬅️', '✨'], animation: 'wave' },
+    { image: '➡️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Turn right at the corner.", dialogueZh: '在轉角右轉。', highlightWords: ['right', 'corner'], sceneEmojis: ['➡️', '📐', '😊'], animation: 'bounce' },
+    { image: '🏪', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "The shop is in front of the park!", dialogueZh: '商店在公園前面！', highlightWords: ['in front of'], sceneEmojis: ['🏪', '🏞️', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Left, right, straight — you found it!", dialogueZh: '左、右、直走 —— 你找到了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🧭'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'left', zh: '左', image: '⬅️', phonics: '', kk: '[lɛft]', phonicsSound: '', exampleSentence: 'Turn left.', exampleZh: '左轉。' },
+    { en: 'right', zh: '右', image: '➡️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'Turn right.', exampleZh: '右轉。' },
+    { en: 'straight', zh: '直直地', image: '⬆️', phonics: '', kk: '[stret]', phonicsSound: '', exampleSentence: 'Go straight.', exampleZh: '直走。' },
+    { en: 'turn', zh: '轉', image: '🔄', phonics: '', kk: '[tɝn]', phonicsSound: '', exampleSentence: 'Turn left.', exampleZh: '左轉。' },
+    { en: 'go', zh: '走·去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '', exampleSentence: 'Go straight.', exampleZh: '直走。' },
+    { en: 'stop', zh: '停', image: '🛑', phonics: '', kk: '[stɑp]', phonicsSound: '', exampleSentence: 'Stop here.', exampleZh: '在這裡停。' },
+    { en: 'corner', zh: '轉角', image: '📐', phonics: '', kk: '[ˈkɔrnɚ]', phonicsSound: '', exampleSentence: 'at the corner', exampleZh: '在轉角' },
+    { en: 'in front of', zh: '在…前面', image: '⏭️', phonics: '', kk: '[ɪn frʌnt ʌv]', phonicsSound: '', exampleSentence: 'in front of the park', exampleZh: '在公園前面' },
+    { en: 'behind', zh: '在…後面', image: '🔙', phonics: '', kk: '[bɪˈhaɪnd]', phonicsSound: '', exampleSentence: 'behind the shop', exampleZh: '在店後面' },
+    { en: 'between', zh: '在…之間', image: '↔️', phonics: '', kk: '[bɪˈtwin]', phonicsSound: '', exampleSentence: 'between the two shops', exampleZh: '在兩店之間' },
+  ],
+  sentences: [
+    { en: 'Go straight.', zh: '直走。' }, { en: 'Turn left at the corner.', zh: '在轉角左轉。' }, { en: 'Turn right.', zh: '右轉。' }, { en: 'The shop is in front of the park.', zh: '商店在公園前面。' }, { en: 'How do I get there?', zh: '我要怎麼到那裡？' }, { en: 'It is between the bank and the store.', zh: '它在銀行和商店之間。' },
+  ],
+  phonicsLetters: ['turn left/right'],
+  warmUpQuestions: [
+    { type: 'match', question: '⬅️ 是哪個方向？', options: ['left', 'right', 'straight', 'stop'], answer: 'left' },
+    { type: 'match', question: '➡️ 是哪個方向？', options: ['right', 'left', 'straight', 'turn'], answer: 'right' },
+    { type: 'fill-blank', question: 'Go ___ and turn left.（直走）', options: ['straight', 'stop', 'corner', 'behind'], answer: 'straight' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的方向', options: ['⬅️', '➡️', '⬆️', '🛑'], answer: '🛑', image: '🎧' },
+    { type: 'match', question: '配對：方位配意思', options: ['left-左', 'right-右', 'straight-直', 'corner-轉角'], answer: 'left-左' },
+    { type: 'fill-blank', question: '句型代換：Turn ___ at the corner.（右）', options: ['right', 'left', 'stop', 'go'], answer: 'right' },
+    { type: 'fill-blank', question: 'The shop is ___ the park.（前面）', options: ['in front of', 'behind', 'between', 'turn'], answer: 'in front of' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Go straight.', 'Turn left at the corner.', 'Turn right.', 'How do I get there?'], answer: 'Go straight.', image: '🎧' },
+    { type: 'read', question: 'How do you get to the shop?（怎麼到商店？）', passage: 'Go straight for two streets.\nTurn left at the corner.\nThe shop is in front of the park.', options: ['go straight, then turn left', 'turn right, then stop', 'go behind the park', 'turn right at the bank'], answer: 'go straight, then turn left' },
+  ],
+  talkTimePrompts: ["Give directions: Go straight. Turn ___.", "Say where something is: in front of / behind.", "Ask: How do I get there?", "✍️ 引導寫作：Go straight, then turn ___. It is ___ the ___."],
+  reviewQuiz: [
+    { type: 'match', question: '🛑 是什麼？', options: ['stop', 'go', 'turn', 'left'], answer: 'stop' },
+    { type: 'fill-blank', question: 'Turn ___ at the corner.（左）', options: ['left', 'right', 'straight', 'stop'], answer: 'left' },
+    { type: 'match', question: 'between 是什麼意思？', options: ['在…之間', '在…前面', '在…後面', '轉角'], answer: '在…之間' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Go straight and turn left!", lineZh: '直走然後左轉！' },
+    { speaker: 'Coco', line: "Turn right at the corner.", lineZh: '在轉角右轉。' },
+    { speaker: 'Polly', line: "The shop is in front of the park!", lineZh: '商店在公園前面！' },
+    { speaker: 'Benny', line: "Left, right, straight — you found it!", lineZh: '左、右、直走 —— 你找到了！' },
+  ],
+};
+
+const L6_M10: Mission = {
+  id: 10, slug: 'l6-m10-review-order-directions', level: 6, title: 'Review② 點餐問路', titleEn: 'Review: Order & Directions', theme: '燈塔角・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：點餐 Can I have ＋ 問路 Where is ＋ 方位 turn left/right',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! Order food and find the way!", dialogueZh: '來複習！點餐和找路！', highlightWords: [], sceneEmojis: ['🔄', '🍽️', '✨'], animation: 'wave' },
+    { image: '🍽️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Can I have a hamburger, please?", dialogueZh: '可以給我漢堡嗎？', highlightWords: ['Can I have'], sceneEmojis: ['🍔', '🙏', '😊'], animation: 'bounce' },
+    { image: '🗺️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Where is the park? Go straight and turn left!", dialogueZh: '公園在哪？直走然後左轉！', highlightWords: ['Where is', 'straight', 'left'], sceneEmojis: ['🗺️', '⬅️', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can order and find your way! Great!", dialogueZh: '你會點餐也會找路了！太棒了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: "I'd like", zh: '我想要', image: '🙋', phonics: '', kk: '[aɪd laɪk]', phonicsSound: '', exampleSentence: "I'd like soup.", exampleZh: '我想要湯。' },
+    { en: 'menu', zh: '菜單', image: '📋', phonics: '', kk: '[ˈmɛnju]', phonicsSound: '', exampleSentence: 'Can I have a menu?', exampleZh: '可以給我菜單嗎？' },
+    { en: 'hamburger', zh: '漢堡', image: '🍔', phonics: '', kk: '[ˈhæmbɝɡɚ]', phonicsSound: '', exampleSentence: 'a hamburger', exampleZh: '一個漢堡' },
+    { en: 'where', zh: '哪裡', image: '🗺️', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is it?', exampleZh: '它在哪？' },
+    { en: 'park', zh: '公園', image: '🏞️', phonics: '', kk: '[pɑrk]', phonicsSound: '', exampleSentence: 'the park', exampleZh: '公園' },
+    { en: 'left', zh: '左', image: '⬅️', phonics: '', kk: '[lɛft]', phonicsSound: '', exampleSentence: 'Turn left.', exampleZh: '左轉。' },
+    { en: 'right', zh: '右', image: '➡️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'Turn right.', exampleZh: '右轉。' },
+    { en: 'straight', zh: '直直地', image: '⬆️', phonics: '', kk: '[stret]', phonicsSound: '', exampleSentence: 'Go straight.', exampleZh: '直走。' },
+    { en: 'near', zh: '附近', image: '📍', phonics: '', kk: '[nɪr]', phonicsSound: '', exampleSentence: 'near the school', exampleZh: '在學校附近' },
+    { en: 'please', zh: '請', image: '🙏', phonics: '', kk: '[pliz]', phonicsSound: '', exampleSentence: 'Water, please.', exampleZh: '請給我水。' },
+  ],
+  sentences: [
+    { en: 'Can I have a hamburger, please?', zh: '可以給我漢堡嗎？' }, { en: "I'd like some juice.", zh: '我想要一些果汁。' }, { en: 'Where is the park?', zh: '公園在哪？' }, { en: 'Go straight and turn left.', zh: '直走然後左轉。' }, { en: 'It is near the bank.', zh: '它在銀行附近。' }, { en: 'Thank you very much!', zh: '非常謝謝！' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ I have a menu?（可以）', options: ['Can', 'Do', 'Are', 'Is'], answer: 'Can' },
+    { type: 'fill-blank', question: '___ is the park?（哪裡）', options: ['Where', 'What', 'Who', 'How'], answer: 'Where' },
+    { type: 'match', question: '⬅️ 是哪個方向？', options: ['left', 'right', 'straight', 'stop'], answer: 'left' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🍔', '📋', '🗺️', '⬅️'], answer: '🗺️', image: '🎧' },
+    { type: 'fill-blank', question: "句型代換：I'd like a ___.（漢堡）", options: ['hamburger', 'where', 'left', 'is'], answer: 'hamburger' },
+    { type: 'fill-blank', question: 'Go straight and turn ___.（右）', options: ['right', 'menu', 'near', 'please'], answer: 'right' },
+    { type: 'spell', question: '拼拼看：str _ ight（直）', answer: 'straight', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Can I have a hamburger, please?', 'Where is the park?', 'Go straight and turn left.', 'It is near the bank.'], answer: 'Can I have a hamburger, please?', image: '🎧' },
+    { type: 'read', question: 'How do you get to the park?（怎麼到公園？）', passage: 'Coco asks, "Where is the park?"\nBenny says, "Go straight and turn left.\nIt is near the bank."', options: ['go straight and turn left', 'turn right and stop', 'go behind the school', 'it is far away'], answer: 'go straight and turn left' },
+  ],
+  talkTimePrompts: ["Order food and drinks.", "Ask and give directions.", "Role-play: customer and waiter.", "✍️ 引導寫作：I'd like ___. The park is ___ and turn ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: "___ like a pizza.（我想要）", options: ["I'd", 'I', 'Can', 'Do'], answer: "I'd" },
+    { type: 'fill-blank', question: 'Turn ___ at the corner.（左）', options: ['left', 'right', 'straight', 'near'], answer: 'left' },
+    { type: 'read', question: 'Is the park far?（公園遠嗎？）', passage: 'Where is the park?\nGo straight and turn left.\nIt is near — not far!', options: ['No, it is near', 'Yes, it is far', 'It is closed', 'It is behind'], answer: 'No, it is near' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review! Order food and find the way!", lineZh: '來複習！點餐和找路！' },
+    { speaker: 'Coco', line: "Can I have a hamburger, please?", lineZh: '可以給我漢堡嗎？' },
+    { speaker: 'Benny', line: "Where is the park? Go straight and turn left!", lineZh: '公園在哪？直走左轉！' },
+    { speaker: 'Finn', line: "You can order and find your way! Great!", lineZh: '你會點餐也會找路了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
