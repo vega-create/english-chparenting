@@ -6686,7 +6686,267 @@ const L7_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15];
+const L7_M16: Mission = {
+  id: 16, slug: 'l7-m16-facts-timeline', level: 7, title: '事實與習慣', titleEn: 'Facts & Habits', theme: '文法門・時間軸', themeEmoji: '🕰️',
+  focus: '現在簡單式表「事實/習慣」（時鐘/時間軸視覺）：The sun rises. I go to school every day.',
+  story: [
+    { image: '🕰️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Present simple shows facts and habits!", dialogueZh: '現在簡單式表示事實和習慣！', highlightWords: ['facts', 'habits'], sceneEmojis: ['🕰️', '📊', '✨'], animation: 'wave' },
+    { image: '☀️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The sun rises in the east. That is a fact!", dialogueZh: '太陽從東邊升起。這是事實！', highlightWords: ['rises', 'fact'], sceneEmojis: ['☀️', '🌅', '😊'], animation: 'bounce' },
+    { image: '🏫', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "I go to school every day. That is a habit!", dialogueZh: '我每天上學。這是習慣！', highlightWords: ['go', 'habit'], sceneEmojis: ['🏫', '🔁', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Facts and habits — use present simple!", dialogueZh: '事實和習慣 —— 用現在簡單式！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🕰️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'fact', zh: '事實', image: '💡', phonics: '', kk: '[fækt]', phonicsSound: '', exampleSentence: 'It is a fact.', exampleZh: '這是事實。' },
+    { en: 'habit', zh: '習慣', image: '🔁', phonics: '', kk: '[ˈhæbɪt]', phonicsSound: '', exampleSentence: 'a good habit', exampleZh: '一個好習慣' },
+    { en: 'rise', zh: '升起', image: '🌅', phonics: '', kk: '[raɪz]', phonicsSound: '', exampleSentence: 'The sun rises.', exampleZh: '太陽升起。' },
+    { en: 'set', zh: '落下', image: '🌇', phonics: '', kk: '[sɛt]', phonicsSound: '', exampleSentence: 'The sun sets.', exampleZh: '太陽落下。' },
+    { en: 'every day', zh: '每天', image: '📅', phonics: '', kk: '[ˈɛvri de]', phonicsSound: '', exampleSentence: 'I read every day.', exampleZh: '我每天讀書。' },
+    { en: 'water', zh: '水', image: '💧', phonics: '', kk: '[ˈwɔtɚ]', phonicsSound: '', exampleSentence: 'Water is wet.', exampleZh: '水是濕的。' },
+    { en: 'boil', zh: '沸騰', image: '♨️', phonics: '', kk: '[bɔɪl]', phonicsSound: '', exampleSentence: 'Water boils at 100°C.', exampleZh: '水在100度沸騰。' },
+    { en: 'east', zh: '東方', image: '🧭', phonics: '', kk: '[ist]', phonicsSound: '', exampleSentence: 'in the east', exampleZh: '在東方' },
+    { en: 'earth', zh: '地球', image: '🌍', phonics: '', kk: '[ɝθ]', phonicsSound: '', exampleSentence: 'The earth is round.', exampleZh: '地球是圓的。' },
+    { en: 'true', zh: '真的', image: '✅', phonics: '', kk: '[tru]', phonicsSound: '', exampleSentence: 'It is true.', exampleZh: '這是真的。' },
+  ],
+  sentences: [
+    { en: 'The sun rises in the east.', zh: '太陽從東邊升起。' }, { en: 'Water is wet.', zh: '水是濕的。' }, { en: 'I go to school every day.', zh: '我每天上學。' }, { en: 'The earth is round.', zh: '地球是圓的。' }, { en: 'Does the sun rise in the west?', zh: '太陽從西邊升起嗎？' }, { en: 'No, it rises in the east.', zh: '不，從東邊升起。' },
+  ],
+  phonicsLetters: ['facts & habits'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'The sun ___ in the east.（升起·事實·第三人稱）', options: ['rises', 'rise', 'rising', 'rose'], answer: 'rises' },
+    { type: 'match', question: 'fact 是什麼意思？', options: ['事實', '習慣', '故事', '夢'], answer: '事實' },
+    { type: 'fill-blank', question: 'I go to school ___.（每天）', options: ['every day', 'now', 'yesterday', 'last night'], answer: 'every day' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🌅', '💧', '🌍', '🧭'], answer: '🌍', image: '🎧' },
+    { type: 'fill-blank', question: 'The earth ___ round.（be動詞·事實）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'Water ___ at 100 degrees.（boil·事實·第三人稱）', options: ['boils', 'boil', 'boiling', 'boiled'], answer: 'boils' },
+    { type: 'fill-blank', question: 'I ___ breakfast every day.（eat·習慣）', options: ['eat', 'ate', 'eating', 'eaten'], answer: 'eat' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The sun rises in the east.', 'Water is wet.', 'I go to school every day.', 'The earth is round.'], answer: 'The sun rises in the east.', image: '🎧' },
+    { type: 'read', question: 'Where does the sun rise?（太陽從哪升起？）', passage: 'The sun rises in the east.\nIt sets in the west.\nThis is always true.', options: ['in the east', 'in the west', 'in the north', 'in the sea'], answer: 'in the east' },
+  ],
+  talkTimePrompts: ["Say a fact: The sun ___.", "Say a habit: I ___ every day.", "Ask: Does water boil?", "✍️ 引導寫作：The ___ is ___. I ___ every day."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The sun ___ in the west.（落下·事實·第三人稱）', options: ['sets', 'set', 'setting', 'sat'], answer: 'sets' },
+    { type: 'match', question: 'habit 是什麼意思？', options: ['習慣', '事實', '真的', '東方'], answer: '習慣' },
+    { type: 'read', question: 'Is the earth round?（地球是圓的嗎？）', passage: 'The earth is round.\nIt goes around the sun.\nThis is a fact.', options: ['Yes, it is round', 'No, it is flat', 'It is square', 'It is a habit'], answer: 'Yes, it is round' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Present simple shows facts and habits!", lineZh: '現在簡單式表示事實和習慣！' },
+    { speaker: 'Coco', line: "The sun rises in the east. That is a fact!", lineZh: '太陽從東邊升起。這是事實！' },
+    { speaker: 'Polly', line: "I go to school every day. That is a habit!", lineZh: '我每天上學。這是習慣！' },
+    { speaker: 'Benny', line: "Facts and habits — use present simple!", lineZh: '事實和習慣 —— 用現在簡單式！' },
+  ],
+};
+
+const L7_M17: Mission = {
+  id: 17, slug: 'l7-m17-simple-vs-continuous', level: 7, title: '簡單式 vs 進行式', titleEn: 'Simple vs Continuous', theme: '文法門・對比', themeEmoji: '⚖️',
+  focus: '現在簡單（every day）vs 現在進行（now）對比',
+  story: [
+    { image: '⚖️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I play soccer every day. But now I am reading.", dialogueZh: '我每天踢足球。但現在我在讀書。', highlightWords: ['play', 'am reading'], sceneEmojis: ['⚽', '📖', '✨'], animation: 'wave' },
+    { image: '📅', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Every day = simple. Now = continuous!", dialogueZh: '每天 = 簡單式。現在 = 進行式！', highlightWords: ['simple', 'continuous'], sceneEmojis: ['📅', '⏰', '😊'], animation: 'bounce' },
+    { image: '🍽️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "She eats lunch at noon. Now she is eating!", dialogueZh: '她中午吃午餐。現在她正在吃！', highlightWords: ['eats', 'is eating'], sceneEmojis: ['🍽️', '😋', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Habit vs now — two different tenses!", dialogueZh: '習慣 vs 現在 —— 兩種不同時態！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '⚖️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'play', zh: '玩（習慣）', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '簡單式', exampleSentence: 'I play every day.', exampleZh: '我每天玩。' },
+    { en: 'playing', zh: '正在玩', image: '🎮', phonics: '', kk: '[ˈpleɪŋ]', phonicsSound: '進行式', exampleSentence: 'I am playing now.', exampleZh: '我現在正在玩。' },
+    { en: 'eat', zh: '吃（習慣）', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '簡單式', exampleSentence: 'She eats at noon.', exampleZh: '她中午吃。' },
+    { en: 'eating', zh: '正在吃', image: '😋', phonics: '', kk: '[ˈitɪŋ]', phonicsSound: '進行式', exampleSentence: 'She is eating now.', exampleZh: '她現在正在吃。' },
+    { en: 'read', zh: '讀（習慣）', image: '📚', phonics: '', kk: '[rid]', phonicsSound: '簡單式', exampleSentence: 'He reads every night.', exampleZh: '他每晚讀書。' },
+    { en: 'reading', zh: '正在讀', image: '📖', phonics: '', kk: '[ˈridɪŋ]', phonicsSound: '進行式', exampleSentence: 'He is reading now.', exampleZh: '他現在正在讀。' },
+    { en: 'now', zh: '現在', image: '⏰', phonics: '', kk: '[naʊ]', phonicsSound: '進行式標誌', exampleSentence: 'now', exampleZh: '現在（用進行式）' },
+    { en: 'every day', zh: '每天', image: '📅', phonics: '', kk: '[ˈɛvri de]', phonicsSound: '簡單式標誌', exampleSentence: 'every day', exampleZh: '每天（用簡單式）' },
+    { en: 'usually', zh: '通常', image: '🔆', phonics: '', kk: '[ˈjuʒuəli]', phonicsSound: '簡單式標誌', exampleSentence: 'I usually walk.', exampleZh: '我通常走路。' },
+    { en: 'look', zh: '看（現在！）', image: '👀', phonics: '', kk: '[lʊk]', phonicsSound: '進行式標誌', exampleSentence: 'Look! It is raining.', exampleZh: '看！在下雨。' },
+  ],
+  sentences: [
+    { en: 'I play soccer every day.', zh: '我每天踢足球。' }, { en: 'Now I am reading a book.', zh: '現在我在讀書。' }, { en: 'She eats lunch at noon.', zh: '她中午吃午餐。' }, { en: 'Look! She is eating now.', zh: '看！她正在吃。' }, { en: 'What do you do every day?', zh: '你每天做什麼？' }, { en: 'What are you doing now?', zh: '你現在在做什麼？' },
+  ],
+  phonicsLetters: ['simple vs continuous'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ soccer every day.（簡單式）', options: ['play', 'am playing', 'played', 'plays'], answer: 'play' },
+    { type: 'fill-blank', question: 'Now I ___ a book.（進行式）', options: ['am reading', 'read', 'reads', 'readed'], answer: 'am reading' },
+    { type: 'match', question: 'now 通常搭配哪種時態？', options: ['進行式', '簡單式', '過去式', '未來式'], answer: '進行式' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'She ___ lunch at noon.（每天·簡單式）', options: ['eats', 'is eating', 'ate', 'eaten'], answer: 'eats' },
+    { type: 'fill-blank', question: 'Look! She ___ now.（進行式）', options: ['is eating', 'eats', 'eat', 'ate'], answer: 'is eating' },
+    { type: 'fill-blank', question: 'He ___ every night.（習慣·read）', options: ['reads', 'is reading', 'read', 'reading'], answer: 'reads' },
+    { type: 'fill-blank', question: 'He ___ now.（進行式·read）', options: ['is reading', 'reads', 'read', 'readed'], answer: 'is reading' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I play soccer every day.', 'Now I am reading a book.', 'She eats lunch at noon.', 'What are you doing now?'], answer: 'I play soccer every day.', image: '🎧' },
+    { type: 'read', question: 'What is Benny doing now?（Benny 現在在做什麼？）', passage: 'Benny plays soccer every day.\nBut right now, he is not playing.\nHe is reading a book.', options: ['reading a book', 'playing soccer', 'eating', 'sleeping'], answer: 'reading a book' },
+  ],
+  talkTimePrompts: ["Say a habit and what you do now.", "What do you do every day? What are you doing now?", "Compare: I eat / I am eating.", "✍️ 引導寫作：Every day I ___. Right now I am ___ing."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'What ___ you doing now?（進行式問句）', options: ['are', 'do', 'is', 'did'], answer: 'are' },
+    { type: 'fill-blank', question: 'I ___ to school every day.（簡單式·walk）', options: ['walk', 'am walking', 'walked', 'walks'], answer: 'walk' },
+    { type: 'read', question: 'Does Benny play soccer every day?（Benny 每天踢足球嗎？）', passage: 'Benny plays soccer every day.\nRight now he is reading.\nHe loves both.', options: ['Yes, every day', 'No, never', 'Only now', 'He hates soccer'], answer: 'Yes, every day' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I play soccer every day. But now I am reading.", lineZh: '我每天踢足球。但現在我在讀書。' },
+    { speaker: 'Coco', line: "Every day = simple. Now = continuous!", lineZh: '每天 = 簡單式。現在 = 進行式！' },
+    { speaker: 'Polly', line: "She eats lunch at noon. Now she is eating!", lineZh: '她中午吃午餐。現在她正在吃！' },
+    { speaker: 'Benny', line: "Habit vs now — two different tenses!", lineZh: '習慣 vs 現在 —— 兩種不同時態！' },
+  ],
+};
+
+const L7_M18: Mission = {
+  id: 18, slug: 'l7-m18-grammar-mix', level: 7, title: '文法綜合練習', titleEn: 'Grammar Mix', theme: '文法門・綜合', themeEmoji: '🧩',
+  focus: '綜合練習：現在簡單式 ＋ 第三人稱 ＋ 頻率副詞 ＋ 動詞三態',
+  story: [
+    { image: '🧩', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's put it all together!", dialogueZh: '我們把它們組合起來！', highlightWords: [], sceneEmojis: ['🧩', '📚', '✨'], animation: 'wave' },
+    { image: '📅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "She always reads. Yesterday she read a lot.", dialogueZh: '她總是讀書。昨天她讀了很多。', highlightWords: ['reads', 'read'], sceneEmojis: ['📅', '📖', '😊'], animation: 'bounce' },
+    { image: '❓', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Does he go to school? Yes, every day.", dialogueZh: '他上學嗎？是的，每天。', highlightWords: ['Does', 'go'], sceneEmojis: ['❓', '🏫', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You use grammar like a pro!", dialogueZh: '你用文法像高手一樣！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🧩'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'always', zh: '總是', image: '💯', phonics: '', kk: '[ˈɔlˌwez]', phonicsSound: '', exampleSentence: 'She always reads.', exampleZh: '她總是讀書。' },
+    { en: 'reads', zh: '讀（第三人稱）', image: '📚', phonics: '', kk: '[ridz]', phonicsSound: '', exampleSentence: 'She reads books.', exampleZh: '她讀書。' },
+    { en: 'read', zh: '讀（過去）', image: '📖', phonics: '', kk: '[rɛd]', phonicsSound: '', exampleSentence: 'She read a book.', exampleZh: '她讀了一本書。' },
+    { en: 'does', zh: '（問句·他）', image: '❓', phonics: '', kk: '[dʌz]', phonicsSound: '', exampleSentence: 'Does he go?', exampleZh: '他去嗎？' },
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '', exampleSentence: 'He goes to school.', exampleZh: '他上學。' },
+    { en: 'went', zh: '去了', image: '⏪', phonics: '', kk: '[wɛnt]', phonicsSound: '', exampleSentence: 'He went home.', exampleZh: '他回家了。' },
+    { en: "doesn't", zh: '不（第三人稱）', image: '🚫', phonics: '', kk: '[ˈdʌznt]', phonicsSound: '', exampleSentence: "He doesn't play.", exampleZh: '他不玩。' },
+    { en: 'every day', zh: '每天', image: '📅', phonics: '', kk: '[ˈɛvri de]', phonicsSound: '', exampleSentence: 'every day', exampleZh: '每天' },
+    { en: 'yesterday', zh: '昨天', image: '🌙', phonics: '', kk: '[ˈjɛstɚˌde]', phonicsSound: '', exampleSentence: 'yesterday', exampleZh: '昨天' },
+    { en: 'eats', zh: '吃（第三人稱）', image: '🍽️', phonics: '', kk: '[its]', phonicsSound: '', exampleSentence: 'He eats lunch.', exampleZh: '他吃午餐。' },
+  ],
+  sentences: [
+    { en: 'She always reads books.', zh: '她總是讀書。' }, { en: 'Yesterday she read a lot.', zh: '昨天她讀了很多。' }, { en: 'Does he go to school?', zh: '他上學嗎？' }, { en: 'He goes every day.', zh: '他每天去。' }, { en: "He doesn't eat candy.", zh: '他不吃糖。' }, { en: 'They went to the park yesterday.', zh: '他們昨天去了公園。' },
+  ],
+  phonicsLetters: ['grammar mix'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'She ___ books every day.（讀·第三人稱）', options: ['reads', 'read', 'reading', 'to read'], answer: 'reads' },
+    { type: 'fill-blank', question: '___ he go to school?（問句·他）', options: ['Does', 'Do', 'Are', 'Is'], answer: 'Does' },
+    { type: 'fill-blank', question: 'Yesterday they ___ to the park.（go 過去）', options: ['went', 'go', 'goes', 'gone'], answer: 'went' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'He ___ eat candy.（否定·第三人稱）', options: ["doesn't", "don't", 'not', 'no'], answer: "doesn't" },
+    { type: 'fill-blank', question: 'She ___ eats breakfast.（總是，放動詞前）', options: ['always', 'eats', 'is', 'and'], answer: 'always' },
+    { type: 'fill-blank', question: 'Yesterday she ___ a book.（read 過去，發音變）', options: ['read', 'reads', 'reading', 'readed'], answer: 'read' },
+    { type: 'fill-blank', question: 'He ___ to school every day.（去·第三人稱）', options: ['goes', 'go', 'went', 'going'], answer: 'goes' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['She always reads books.', 'Does he go to school?', 'He goes every day.', 'They went to the park yesterday.'], answer: 'She always reads books.', image: '🎧' },
+    { type: 'read', question: 'How often does Coco read?（Coco 多常讀書？）', passage: 'Coco always reads books.\nYesterday she read for two hours.\nShe loves stories.', options: ['always', 'never', 'once a year', 'only yesterday'], answer: 'always' },
+  ],
+  talkTimePrompts: ["Say a habit with a frequency adverb.", "Ask a Does…? question.", "Say what you did yesterday (past).", "✍️ 引導寫作：He always ___. Yesterday he ___ (past)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ she like tea?（問句·她）', options: ['Does', 'Do', 'Are', 'Is'], answer: 'Does' },
+    { type: 'fill-blank', question: 'He ___ to the park yesterday.（go 過去）', options: ['went', 'go', 'goes', 'gone'], answer: 'went' },
+    { type: 'read', question: 'Does Coco like stories?（Coco 喜歡故事嗎？）', passage: 'Coco reads every day.\nShe loves stories.\nYesterday she read a long book.', options: ['Yes, she loves them', 'No, she hates them', 'She never reads', 'She only plays'], answer: 'Yes, she loves them' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's put it all together!", lineZh: '我們把它們組合起來！' },
+    { speaker: 'Coco', line: "She always reads. Yesterday she read a lot.", lineZh: '她總是讀書。昨天她讀了很多。' },
+    { speaker: 'Benny', line: "Does he go to school? Yes, every day.", lineZh: '他上學嗎？是的，每天。' },
+    { speaker: 'Finn', line: "You use grammar like a pro!", lineZh: '你用文法像高手一樣！' },
+  ],
+};
+
+const L7_M19: Mission = {
+  id: 19, slug: 'l7-m19-reading', level: 7, title: '文法閱讀', titleEn: 'Grammar Reading', theme: '文法門・故事時間', themeEmoji: '📖',
+  focus: '閱讀：現在簡單式短文（介紹某人的一天）＋理解',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read about Tom's day!", dialogueZh: '讀讀 Tom 的一天！', highlightWords: ['read'], sceneEmojis: ['📖', '👦', '✨'], animation: 'wave' },
+    { image: '🌅', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Tom gets up early. He always eats breakfast.", dialogueZh: 'Tom 早起。他總是吃早餐。', highlightWords: ['gets', 'eats'], sceneEmojis: ['🌅', '🥞', '😊'], animation: 'bounce' },
+    { image: '🏫', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "He goes to school and studies hard.", dialogueZh: '他上學而且努力讀書。', highlightWords: ['goes', 'studies'], sceneEmojis: ['🏫', '📚', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read about Tom's day! Great!", dialogueZh: '你讀了 Tom 的一天！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'gets up', zh: '起床（第三人稱）', image: '🛌', phonics: '', kk: '[ɡɛts ʌp]', phonicsSound: '', exampleSentence: 'He gets up early.', exampleZh: '他早起。' },
+    { en: 'eats', zh: '吃（第三人稱）', image: '🥞', phonics: '', kk: '[its]', phonicsSound: '', exampleSentence: 'He eats breakfast.', exampleZh: '他吃早餐。' },
+    { en: 'goes', zh: '去（第三人稱）', image: '🏫', phonics: '', kk: '[ɡoz]', phonicsSound: '', exampleSentence: 'He goes to school.', exampleZh: '他上學。' },
+    { en: 'studies', zh: '讀書（第三人稱）', image: '📚', phonics: '', kk: '[ˈstʌdiz]', phonicsSound: '', exampleSentence: 'He studies hard.', exampleZh: '他努力讀書。' },
+    { en: 'plays', zh: '玩（第三人稱）', image: '⚽', phonics: '', kk: '[plez]', phonicsSound: '', exampleSentence: 'He plays soccer.', exampleZh: '他踢足球。' },
+    { en: 'early', zh: '早的', image: '🌄', phonics: '', kk: '[ˈɝli]', phonicsSound: '', exampleSentence: 'get up early', exampleZh: '早起' },
+    { en: 'hard', zh: '努力地', image: '💪', phonics: '', kk: '[hɑrd]', phonicsSound: '', exampleSentence: 'study hard', exampleZh: '努力讀書' },
+    { en: 'always', zh: '總是', image: '💯', phonics: '', kk: '[ˈɔlˌwez]', phonicsSound: '', exampleSentence: 'He always eats.', exampleZh: '他總是吃。' },
+    { en: 'friend', zh: '朋友', image: '🧑‍🤝‍🧑', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'his friends', exampleZh: '他的朋友' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'He is happy.', exampleZh: '他很開心。' },
+  ],
+  sentences: [
+    { en: 'Tom gets up early.', zh: 'Tom 早起。' }, { en: 'He always eats breakfast.', zh: '他總是吃早餐。' }, { en: 'He goes to school.', zh: '他上學。' }, { en: 'He studies hard.', zh: '他努力讀書。' }, { en: 'After school, he plays with friends.', zh: '放學後他和朋友玩。' }, { en: 'Tom is a happy boy.', zh: 'Tom 是個開心的男孩。' },
+  ],
+  phonicsLetters: ['grammar reading'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'Tom ___ up early.（起床·第三人稱）', options: ['gets', 'get', 'getting', 'got'], answer: 'gets' },
+    { type: 'fill-blank', question: 'He ___ to school.（去·第三人稱）', options: ['goes', 'go', 'going', 'went'], answer: 'goes' },
+    { type: 'match', question: 'hard 在這裡是什麼意思？', options: ['努力地', '硬的', '難的', '快的'], answer: '努力地' },
+  ],
+  challenges: [
+    { type: 'read', question: 'When does Tom get up?（Tom 何時起床？）', passage: 'Tom gets up early every day.\nHe always eats breakfast.\nThen he goes to school.', options: ['early', 'late', 'at noon', 'at night'], answer: 'early' },
+    { type: 'read', question: 'What does Tom do at school?（Tom 在學校做什麼？）', passage: 'Tom goes to school every day.\nHe studies hard.\nHe likes math and English.', options: ['studies hard', 'sleeps', 'plays all day', 'watches TV'], answer: 'studies hard' },
+    { type: 'read', question: 'What does Tom do after school?（Tom 放學後做什麼？）', passage: 'After school, Tom plays soccer.\nHe plays with his friends.\nThey are very happy.', options: ['plays soccer', 'studies', 'sleeps', 'cooks'], answer: 'plays soccer' },
+    { type: 'fill-blank', question: 'He ___ hard at school.（讀書·第三人稱）', options: ['studies', 'study', 'studying', 'studied'], answer: 'studies' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Tom gets up early.', 'He always eats breakfast.', 'He goes to school.', 'He studies hard.'], answer: 'Tom gets up early.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：stud _ es（讀書·第三人稱）', answer: 'studies', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell Tom's day.", "What does Tom do every morning?", "Describe your own day with he/she verbs.", "✍️ 引導寫作：My friend gets up ___. He/She ___s every day."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'He ___ soccer after school.（玩·第三人稱）', options: ['plays', 'play', 'playing', 'played'], answer: 'plays' },
+    { type: 'read', question: 'Is Tom happy?（Tom 開心嗎？）', passage: 'Tom studies hard and plays with friends.\nHe has a good day.\nTom is a happy boy.', options: ['Yes, he is happy', 'No, he is sad', 'He is tired', 'He is bored'], answer: 'Yes, he is happy' },
+    { type: 'match', question: 'always 是什麼意思？', options: ['總是', '從不', '有時', '昨天'], answer: '總是' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Read about Tom's day!", lineZh: '讀讀 Tom 的一天！' },
+    { speaker: 'Coco', line: "Tom gets up early. He always eats breakfast.", lineZh: 'Tom 早起。他總是吃早餐。' },
+    { speaker: 'Polly', line: "He goes to school and studies hard.", lineZh: '他上學而且努力讀書。' },
+    { speaker: 'Benny', line: "You read about Tom's day! Great!", lineZh: '你讀了 Tom 的一天！太棒了！' },
+  ],
+};
+
+const L7_M20: Mission = {
+  id: 20, slug: 'l7-m20-boss', level: 7, title: '文法門大魔王', titleEn: 'Grammar Boss', theme: '文法門・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：現在簡單式/第三人稱/否定問句/頻率副詞/介系詞/動詞三態',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Grammar Boss is here! Show your grammar power!", dialogueZh: '文法大魔王來了！展現你的文法力！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🚪'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "He plays, she reads, I went, they ate!", dialogueZh: 'He plays、she reads、I went、they ate！', highlightWords: [], sceneEmojis: ['💪', '📋', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Grammar Badge!", dialogueZh: '你打敗大魔王了！獲得文法徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🗼', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Grammar Gate! On to Question Tower!", dialogueZh: '你完成了文法門！前進問題塔！', highlightWords: [], sceneEmojis: ['🗼', '❓', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'plays', zh: '玩（第三人稱）', image: '⚽', phonics: '', kk: '[plez]', phonicsSound: '', exampleSentence: 'He plays soccer.', exampleZh: '他踢足球。' },
+    { en: 'reads', zh: '讀（第三人稱）', image: '📚', phonics: '', kk: '[ridz]', phonicsSound: '', exampleSentence: 'She reads books.', exampleZh: '她讀書。' },
+    { en: 'went', zh: '去了', image: '⏪', phonics: '', kk: '[wɛnt]', phonicsSound: '', exampleSentence: 'I went home.', exampleZh: '我回家了。' },
+    { en: 'ate', zh: '吃了', image: '🍽️', phonics: '', kk: '[et]', phonicsSound: '', exampleSentence: 'They ate lunch.', exampleZh: '他們吃了午餐。' },
+    { en: 'always', zh: '總是', image: '💯', phonics: '', kk: '[ˈɔlˌwez]', phonicsSound: '', exampleSentence: 'I always eat.', exampleZh: '我總是吃。' },
+    { en: 'does', zh: '（問句·他）', image: '❓', phonics: '', kk: '[dʌz]', phonicsSound: '', exampleSentence: 'Does he play?', exampleZh: '他玩嗎？' },
+    { en: "doesn't", zh: '不（第三人稱）', image: '🚫', phonics: '', kk: '[ˈdʌznt]', phonicsSound: '', exampleSentence: "He doesn't play.", exampleZh: '他不玩。' },
+    { en: 'on', zh: '在（星期）', image: '📅', phonics: '', kk: '[ɑn]', phonicsSound: '', exampleSentence: 'on Monday', exampleZh: '在星期一' },
+    { en: 'there is', zh: '有（單數）', image: '1️⃣', phonics: '', kk: '[ðɛr ɪz]', phonicsSound: '', exampleSentence: 'There is a park.', exampleZh: '有一座公園。' },
+    { en: 'write', zh: '寫', image: '✏️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'write-wrote-written', exampleZh: '寫（三態）' },
+  ],
+  sentences: [
+    { en: 'He plays soccer every day.', zh: '他每天踢足球。' }, { en: 'She always reads books.', zh: '她總是讀書。' }, { en: 'Yesterday I went home and ate dinner.', zh: '昨天我回家吃了晚餐。' }, { en: "Does he like tea? No, he doesn't.", zh: '他喜歡茶嗎？不。' }, { en: 'There is a park on my street.', zh: '我的街上有一座公園。' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'He ___ soccer.（玩·第三人稱）', options: ['plays', 'play', 'playing', 'played'], answer: 'plays' },
+    { type: 'fill-blank', question: 'Yesterday I ___ home.（go 過去）', options: ['went', 'go', 'goes', 'gone'], answer: 'went' },
+    { type: 'fill-blank', question: '___ he like tea?（問句·他）', options: ['Does', 'Do', 'Are', 'Is'], answer: 'Does' },
+  ],
+  challenges: [
+    { type: 'match', question: 'eat → 過去 → ?', options: ['ate', 'eated', 'eaten', 'eats'], answer: 'ate' },
+    { type: 'fill-blank', question: 'She ___ read books.（否定·第三人稱）', options: ["doesn't", "don't", 'not', 'no'], answer: "doesn't" },
+    { type: 'fill-blank', question: 'We have art ___ Monday.（in/on/at）', options: ['on', 'in', 'at', 'to'], answer: 'on' },
+    { type: 'fill-blank', question: 'There ___ many trees.（複數）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['He plays soccer every day.', 'She always reads books.', 'Yesterday I went home.', 'There is a park on my street.'], answer: 'He plays soccer every day.', image: '🎧' },
+    { type: 'read', question: 'What did the writer do yesterday?（作者昨天做了什麼？）', passage: 'I play soccer every day.\nYesterday I went to the park.\nI played and ate ice cream.', options: ['went to the park', 'stayed home', 'studied all day', 'slept'], answer: 'went to the park' },
+  ],
+  talkTimePrompts: ["Say a habit with a frequency adverb.", "Say what you did yesterday (past tense).", "Ask a Does…? question.", "You beat the Grammar Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'match', question: 'write → 過去分詞 → ?', options: ['written', 'wrote', 'writed', 'writes'], answer: 'written' },
+    { type: 'fill-blank', question: 'She ___ books every day.（讀·第三人稱）', options: ['reads', 'read', 'reading', 'to read'], answer: 'reads' },
+    { type: 'read', question: 'Does the writer play soccer daily?（作者每天踢足球嗎？）', passage: 'I play soccer every day.\nI love it very much.\nYesterday I played for two hours.', options: ['Yes, every day', 'No, never', 'Only yesterday', 'He hates it'], answer: 'Yes, every day' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Grammar Boss says: use your grammar!", lineZh: '文法大魔王說：用你的文法！' },
+    { speaker: 'Coco', line: "He plays, she reads, I went, they ate!", lineZh: 'He plays、she reads、I went、they ate！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Grammar champion!", lineZh: '你打敗大魔王了！文法冠軍！' },
+    { speaker: 'Finn', line: "On to Question Tower! Let's learn Wh- questions!", lineZh: '前進問題塔！我們來學 Wh- 問句！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
