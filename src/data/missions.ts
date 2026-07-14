@@ -10069,7 +10069,268 @@ const L10_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20];
+// ===================== L11 挑戰場 Challenge Arena（A2+→B1・進階文法與應用） =====================
+const L11_M1: Mission = {
+  id: 1, slug: 'l11-m1-can-could-should', level: 11, title: '情態 can/could/should', titleEn: 'can / could / should', theme: '挑戰場・能力與建議', themeEmoji: '💡',
+  focus: '情態動詞 can（能力）/ could（禮貌·過去）/ should（建議）＋ 中翻英',
+  story: [
+    { image: '💡', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I can swim, and I could swim when I was five.", dialogueZh: '我會游泳，我五歲時就會了。', highlightWords: ['can', 'could'], sceneEmojis: ['🏊', '💡', '✨'], animation: 'wave' },
+    { image: '🙏', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Could you help me, please?", dialogueZh: '你可以幫我嗎？（禮貌）', highlightWords: ['Could'], sceneEmojis: ['🙏', '🤝', '😊'], animation: 'bounce' },
+    { image: '😴', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "You look tired. You should rest.", dialogueZh: '你看起來累了。你應該休息。', highlightWords: ['should'], sceneEmojis: ['😴', '🛌', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "can = ability, could = polite, should = advice!", dialogueZh: 'can = 能力，could = 禮貌，should = 建議！', highlightWords: [], sceneEmojis: ['🏆', '💡', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'can', zh: '能·會', image: '💪', phonics: '', kk: '[kæn]', phonicsSound: '能力', exampleSentence: 'I can swim.', exampleZh: '我會游泳。' },
+    { en: 'could', zh: '能（禮貌·過去）', image: '🙏', phonics: '', kk: '[kʊd]', phonicsSound: '禮貌/過去', exampleSentence: 'Could you help me?', exampleZh: '你可以幫我嗎？' },
+    { en: 'should', zh: '應該', image: '💡', phonics: '', kk: '[ʃʊd]', phonicsSound: '建議', exampleSentence: 'You should rest.', exampleZh: '你應該休息。' },
+    { en: "shouldn't", zh: '不應該', image: '🚫', phonics: '', kk: '[ˈʃʊdnt]', phonicsSound: '', exampleSentence: "You shouldn't be late.", exampleZh: '你不該遲到。' },
+    { en: 'advice', zh: '建議', image: '🗣️', phonics: '', kk: '[ədˈvaɪs]', phonicsSound: '', exampleSentence: 'good advice', exampleZh: '好建議' },
+    { en: 'ability', zh: '能力', image: '💪', phonics: '', kk: '[əˈbɪləti]', phonicsSound: '', exampleSentence: 'a special ability', exampleZh: '特別的能力' },
+    { en: 'polite', zh: '有禮貌的', image: '🙇', phonics: '', kk: '[pəˈlaɪt]', phonicsSound: '', exampleSentence: 'be polite', exampleZh: '有禮貌' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '', exampleSentence: 'Could you help?', exampleZh: '你可以幫忙嗎？' },
+    { en: 'rest', zh: '休息', image: '🛌', phonics: '', kk: '[rɛst]', phonicsSound: '', exampleSentence: 'You should rest.', exampleZh: '你應該休息。' },
+    { en: 'study', zh: '讀書', image: '📚', phonics: '', kk: '[ˈstʌdi]', phonicsSound: '', exampleSentence: 'You should study.', exampleZh: '你應該讀書。' },
+  ],
+  sentences: [
+    { en: 'I can swim well.', zh: '我很會游泳。' }, { en: 'I could swim when I was five.', zh: '我五歲時就會游泳。' }, { en: 'Could you help me, please?', zh: '你可以幫我嗎？' }, { en: 'You should rest.', zh: '你應該休息。' }, { en: "You shouldn't eat too much candy.", zh: '你不該吃太多糖。' }, { en: 'What should I do?', zh: '我該怎麼辦？' },
+  ],
+  phonicsLetters: ['can/could/should'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ you help me, please?（禮貌）', options: ['Could', 'Should', 'Must', 'Do'], answer: 'Could' },
+    { type: 'fill-blank', question: 'You look tired. You ___ rest.（建議）', options: ['should', 'could', 'can', 'must'], answer: 'should' },
+    { type: 'match', question: 'advice 是什麼意思？', options: ['建議', '能力', '禮貌', '休息'], answer: '建議' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I ___ swim when I was five.（過去能力）', options: ['could', 'should', 'must', 'can'], answer: 'could' },
+    { type: 'fill-blank', question: "You ___ eat too much candy.（不應該）", options: ["shouldn't", "couldn't", "can't", "don't"], answer: "shouldn't" },
+    { type: 'fill-blank', question: '中翻英：「你可以幫我嗎？」（禮貌）', options: ['Could you help me?', 'Can you swim?', 'Should I help?', 'Must you help?'], answer: 'Could you help me?' },
+    { type: 'fill-blank', question: '中翻英：「你應該休息。」', options: ['You should rest.', 'You can rest.', 'You could rest.', 'You must rest.'], answer: 'You should rest.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I can swim well.', 'Could you help me, please?', 'You should rest.', 'What should I do?'], answer: 'I can swim well.', image: '🎧' },
+    { type: 'read', question: 'What advice does Polly give?（Polly 給什麼建議？）', passage: 'Benny looks very tired.\nPolly says, "You should rest.\nDo not study too much."', options: ['rest', 'study more', 'swim', 'eat candy'], answer: 'rest' },
+  ],
+  talkTimePrompts: ["Say an ability: I can ___.", "Ask politely: Could you ___?", "Give advice: You should ___.", "✍️ 引導寫作＋翻譯：把「我五歲時就會游泳。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'What ___ I do?（建議·問句）', options: ['should', 'could', 'can', 'must'], answer: 'should' },
+    { type: 'fill-blank', question: '中翻英：「你不該吃太多糖。」', options: ["You shouldn't eat too much candy.", 'You can eat candy.', 'You should eat candy.', 'Do you eat candy?'], answer: "You shouldn't eat too much candy." },
+    { type: 'match', question: 'should 表示？', options: ['建議', '能力', '義務', '禮貌'], answer: '建議' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I can swim, and I could swim when I was five.", lineZh: '我會游泳，我五歲時就會了。' },
+    { speaker: 'Coco', line: "Could you help me, please?", lineZh: '你可以幫我嗎？' },
+    { speaker: 'Polly', line: "You look tired. You should rest.", lineZh: '你看起來累了。你應該休息。' },
+    { speaker: 'Benny', line: "can = ability, could = polite, should = advice!", lineZh: 'can = 能力，could = 禮貌，should = 建議！' },
+  ],
+};
+
+const L11_M2: Mission = {
+  id: 2, slug: 'l11-m2-must-have-to', level: 11, title: '情態 must/have to', titleEn: 'must / have to', theme: '挑戰場・規則與義務', themeEmoji: '📏',
+  focus: '情態動詞 must（必須）/ have to（不得不）/ don\'t have to（不必）＋ 中翻英',
+  story: [
+    { image: '📏', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "You must wear a seatbelt in a car.", dialogueZh: '在車上你必須繫安全帶。', highlightWords: ['must'], sceneEmojis: ['🚗', '📏', '✨'], animation: 'wave' },
+    { image: '🏫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I have to go to school on Monday.", dialogueZh: '星期一我得去上學。', highlightWords: ['have to'], sceneEmojis: ['🏫', '📅', '😊'], animation: 'bounce' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "On Sunday, I don't have to get up early.", dialogueZh: '星期日我不必早起。', highlightWords: ["don't have to"], sceneEmojis: ['🎉', '😴', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "must = necessary. don't have to = not necessary!", dialogueZh: 'must = 必須。don\'t have to = 不必！', highlightWords: [], sceneEmojis: ['🏆', '📏', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'must', zh: '必須', image: '📏', phonics: '', kk: '[mʌst]', phonicsSound: '必須', exampleSentence: 'You must stop.', exampleZh: '你必須停。' },
+    { en: 'have to', zh: '不得不', image: '📅', phonics: '', kk: '[hæv tu]', phonicsSound: '義務', exampleSentence: 'I have to go.', exampleZh: '我得走了。' },
+    { en: "don't have to", zh: '不必', image: '🎉', phonics: '', kk: '[dont hæv tu]', phonicsSound: '', exampleSentence: "I don't have to work.", exampleZh: '我不必工作。' },
+    { en: "mustn't", zh: '絕不可以', image: '🚫', phonics: '', kk: '[ˈmʌsnt]', phonicsSound: '', exampleSentence: "You mustn't run here.", exampleZh: '你不可以在這裡跑。' },
+    { en: 'rule', zh: '規則', image: '📋', phonics: '', kk: '[rul]', phonicsSound: '', exampleSentence: 'follow the rules', exampleZh: '遵守規則' },
+    { en: 'seatbelt', zh: '安全帶', image: '🚗', phonics: '', kk: '[ˈsitˌbɛlt]', phonicsSound: '', exampleSentence: 'wear a seatbelt', exampleZh: '繫安全帶' },
+    { en: 'wear', zh: '穿·戴', image: '🧥', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'wear a helmet', exampleZh: '戴安全帽' },
+    { en: 'follow', zh: '遵守·跟隨', image: '👣', phonics: '', kk: '[ˈfɑlo]', phonicsSound: '', exampleSentence: 'follow the rules', exampleZh: '遵守規則' },
+    { en: 'early', zh: '早的', image: '🌅', phonics: '', kk: '[ˈɝli]', phonicsSound: '', exampleSentence: 'get up early', exampleZh: '早起' },
+    { en: 'necessary', zh: '必要的', image: '❗', phonics: '', kk: '[ˈnɛsəˌsɛri]', phonicsSound: '', exampleSentence: 'It is necessary.', exampleZh: '這是必要的。' },
+  ],
+  sentences: [
+    { en: 'You must wear a seatbelt.', zh: '你必須繫安全帶。' }, { en: 'I have to go to school.', zh: '我得去上學。' }, { en: "I don't have to work on Sunday.", zh: '我星期日不必工作。' }, { en: "You mustn't run near the pool.", zh: '你不可以在泳池邊跑。' }, { en: 'We must follow the rules.', zh: '我們必須遵守規則。' }, { en: 'Do I have to go?', zh: '我一定要去嗎？' },
+  ],
+  phonicsLetters: ['must / have to'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'You ___ wear a seatbelt.（必須）', options: ['must', 'could', 'should', 'may'], answer: 'must' },
+    { type: 'fill-blank', question: 'I ___ go to school on Monday.（不得不）', options: ['have to', 'must not', "don't", 'could'], answer: 'have to' },
+    { type: 'match', question: 'rule 是什麼意思？', options: ['規則', '建議', '能力', '早的'], answer: '規則' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: "On Sunday, I ___ get up early.（不必）", options: ["don't have to", 'must', 'have to', "mustn't"], answer: "don't have to" },
+    { type: 'fill-blank', question: "You ___ run near the pool.（絕不可以）", options: ["mustn't", "don't have to", 'could', 'should'], answer: "mustn't" },
+    { type: 'fill-blank', question: '中翻英：「你必須繫安全帶。」', options: ['You must wear a seatbelt.', 'You could wear a seatbelt.', 'You should wear one.', 'Do you wear one?'], answer: 'You must wear a seatbelt.' },
+    { type: 'fill-blank', question: '中翻英：「我星期日不必工作。」', options: ["I don't have to work on Sunday.", 'I must work on Sunday.', 'I work on Sunday.', 'Do I work?'], answer: "I don't have to work on Sunday." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['You must wear a seatbelt.', 'I have to go to school.', "I don't have to work on Sunday.", 'We must follow the rules.'], answer: 'You must wear a seatbelt.', image: '🎧' },
+    { type: 'read', question: 'What must you do in a car?（在車上必須做什麼？）', passage: 'Safety is important.\nIn a car, you must wear a seatbelt.\nYou mustn\'t open the door.', options: ['wear a seatbelt', 'open the door', 'run', 'sleep'], answer: 'wear a seatbelt' },
+  ],
+  talkTimePrompts: ["Say a rule: You must ___.", "Say an obligation: I have to ___.", "Say something not necessary: I don't have to ___.", "✍️ 引導寫作＋翻譯：把「我們必須遵守規則。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'We ___ follow the rules.（必須）', options: ['must', 'could', 'may', "don't"], answer: 'must' },
+    { type: 'fill-blank', question: "中翻英：「你不可以在泳池邊跑。」", options: ["You mustn't run near the pool.", 'You must run.', "You don't have to run.", 'Can you run?'], answer: "You mustn't run near the pool." },
+    { type: 'match', question: "don't have to 意思是？", options: ['不必', '必須', '絕不可以', '應該'], answer: '不必' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "You must wear a seatbelt in a car.", lineZh: '在車上你必須繫安全帶。' },
+    { speaker: 'Coco', line: "I have to go to school on Monday.", lineZh: '星期一我得去上學。' },
+    { speaker: 'Polly', line: "On Sunday, I don't have to get up early.", lineZh: '星期日我不必早起。' },
+    { speaker: 'Benny', line: "must = necessary. don't have to = not necessary!", lineZh: 'must = 必須。don\'t have to = 不必！' },
+  ],
+};
+
+const L11_M3: Mission = {
+  id: 3, slug: 'l11-m3-relative-pronouns', level: 11, title: '關係代名詞', titleEn: 'who / which / that', theme: '挑戰場・連接句子', themeEmoji: '🔗',
+  focus: '關係代名詞 who（人）/ which（物）/ that（人或物）＋ 中翻英',
+  story: [
+    { image: '🔗', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The boy who is running is my brother.", dialogueZh: '那個正在跑的男孩是我弟弟。', highlightWords: ['who'], sceneEmojis: ['👦', '🏃', '✨'], animation: 'wave' },
+    { image: '📕', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "The book which is on the desk is mine.", dialogueZh: '桌上那本書是我的。', highlightWords: ['which'], sceneEmojis: ['📕', '🖥️', '😊'], animation: 'bounce' },
+    { image: '🐶', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "The dog that barks is friendly.", dialogueZh: '那隻會叫的狗很友善。', highlightWords: ['that'], sceneEmojis: ['🐶', '🔗', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "who = people, which = things, that = both!", dialogueZh: 'who = 人，which = 物，that = 都可以！', highlightWords: [], sceneEmojis: ['🏆', '🔗', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'who', zh: '（關代·人）', image: '🧑', phonics: '', kk: '[hu]', phonicsSound: '人', exampleSentence: 'the boy who runs', exampleZh: '跑步的男孩' },
+    { en: 'which', zh: '（關代·物）', image: '📕', phonics: '', kk: '[wɪtʃ]', phonicsSound: '物', exampleSentence: 'the book which is red', exampleZh: '紅色那本書' },
+    { en: 'that', zh: '（關代·人或物）', image: '🔗', phonics: '', kk: '[ðæt]', phonicsSound: '人或物', exampleSentence: 'the dog that barks', exampleZh: '會叫的狗' },
+    { en: 'brother', zh: '兄弟', image: '👦', phonics: '', kk: '[ˈbrʌðɚ]', phonicsSound: '', exampleSentence: 'my brother', exampleZh: '我兄弟' },
+    { en: 'bark', zh: '（狗）吠叫', image: '🐶', phonics: '', kk: '[bɑrk]', phonicsSound: '', exampleSentence: 'The dog barks.', exampleZh: '狗在叫。' },
+    { en: 'friendly', zh: '友善的', image: '😊', phonics: '', kk: '[ˈfrɛndli]', phonicsSound: '', exampleSentence: 'a friendly dog', exampleZh: '友善的狗' },
+    { en: 'wear', zh: '穿·戴', image: '👓', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'the man who wears glasses', exampleZh: '戴眼鏡的男人' },
+    { en: 'glasses', zh: '眼鏡', image: '👓', phonics: '', kk: '[ˈɡlæsɪz]', phonicsSound: '', exampleSentence: 'wear glasses', exampleZh: '戴眼鏡' },
+    { en: 'live', zh: '住', image: '🏠', phonics: '', kk: '[lɪv]', phonicsSound: '', exampleSentence: 'the house which we live in', exampleZh: '我們住的房子' },
+    { en: 'connect', zh: '連接', image: '🔗', phonics: '', kk: '[kəˈnɛkt]', phonicsSound: '', exampleSentence: 'connect two sentences', exampleZh: '連接兩句' },
+  ],
+  sentences: [
+    { en: 'The boy who is running is my brother.', zh: '那個正在跑的男孩是我弟弟。' }, { en: 'The book which is on the desk is mine.', zh: '桌上那本書是我的。' }, { en: 'The dog that barks is friendly.', zh: '那隻會叫的狗很友善。' }, { en: 'She is the girl who won.', zh: '她就是贏的那個女孩。' }, { en: 'This is the cake that I made.', zh: '這是我做的蛋糕。' }, { en: 'The man who wears glasses is a teacher.', zh: '戴眼鏡的男人是老師。' },
+  ],
+  phonicsLetters: ['who/which/that'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'The boy ___ is running is my brother.（人）', options: ['who', 'which', 'where', 'when'], answer: 'who' },
+    { type: 'fill-blank', question: 'The book ___ is on the desk is mine.（物）', options: ['which', 'who', 'where', 'when'], answer: 'which' },
+    { type: 'match', question: 'who 用來指？', options: ['人', '物', '地方', '時間'], answer: '人' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'The dog ___ barks is friendly.（人或物）', options: ['that', 'who', 'where', 'when'], answer: 'that' },
+    { type: 'fill-blank', question: 'She is the girl ___ won.（人）', options: ['who', 'which', 'where', 'when'], answer: 'who' },
+    { type: 'fill-blank', question: '中翻英：「那個正在跑的男孩是我弟弟。」', options: ['The boy who is running is my brother.', 'The boy runs.', 'My brother runs.', 'Who is running?'], answer: 'The boy who is running is my brother.' },
+    { type: 'fill-blank', question: '中翻英：「桌上那本書是我的。」', options: ['The book which is on the desk is mine.', 'The book is on the desk.', 'My book is here.', 'Where is the book?'], answer: 'The book which is on the desk is mine.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The boy who is running is my brother.', 'The book which is on the desk is mine.', 'The dog that barks is friendly.', 'She is the girl who won.'], answer: 'The boy who is running is my brother.', image: '🎧' },
+    { type: 'read', question: 'Who is the writer\'s brother?（誰是作者的弟弟？）', passage: 'Look at the two boys.\nThe boy who is running is my brother.\nThe other boy is my friend.', options: ['the boy who is running', 'the boy sitting', 'the friend', 'the teacher'], answer: 'the boy who is running' },
+  ],
+  talkTimePrompts: ["Describe a person: the person who ___.", "Describe a thing: the thing which ___.", "Use 'that' to join two sentences.", "✍️ 引導寫作＋翻譯：把「這是我做的蛋糕。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'This is the cake ___ I made.（人或物）', options: ['that', 'who', 'where', 'when'], answer: 'that' },
+    { type: 'fill-blank', question: '中翻英：「那隻會叫的狗很友善。」', options: ['The dog that barks is friendly.', 'The dog barks.', 'A friendly dog.', 'Does the dog bark?'], answer: 'The dog that barks is friendly.' },
+    { type: 'match', question: 'which 用來指？', options: ['物', '人', '地方', '時間'], answer: '物' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "The boy who is running is my brother.", lineZh: '那個正在跑的男孩是我弟弟。' },
+    { speaker: 'Coco', line: "The book which is on the desk is mine.", lineZh: '桌上那本書是我的。' },
+    { speaker: 'Polly', line: "The dog that barks is friendly.", lineZh: '那隻會叫的狗很友善。' },
+    { speaker: 'Benny', line: "who = people, which = things, that = both!", lineZh: 'who = 人，which = 物，that = 都可以！' },
+  ],
+};
+
+const L11_M4: Mission = {
+  id: 4, slug: 'l11-m4-superlative', level: 11, title: '最高級', titleEn: 'Superlatives', theme: '挑戰場・之最', themeEmoji: '🥇',
+  focus: '最高級 the -est / the most（三者以上最…）＋ 中翻英',
+  story: [
+    { image: '🥇', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The blue whale is the biggest animal.", dialogueZh: '藍鯨是最大的動物。', highlightWords: ['biggest'], sceneEmojis: ['🐋', '🥇', '✨'], animation: 'wave' },
+    { image: '🏔️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Mount Everest is the tallest mountain.", dialogueZh: '聖母峰是最高的山。', highlightWords: ['tallest'], sceneEmojis: ['🏔️', '📏', '😊'], animation: 'bounce' },
+    { image: '💎', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "This is the most beautiful gem of all.", dialogueZh: '這是所有寶石中最美的。', highlightWords: ['most beautiful'], sceneEmojis: ['💎', '✨', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Short words: -est. Long words: the most!", dialogueZh: '短字：-est。長字：the most！', highlightWords: [], sceneEmojis: ['🏆', '🥇', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'biggest', zh: '最大的', image: '🐋', phonics: '', kk: '[ˈbɪɡɪst]', phonicsSound: '-est', exampleSentence: 'the biggest animal', exampleZh: '最大的動物' },
+    { en: 'tallest', zh: '最高的', image: '🏔️', phonics: '', kk: '[ˈtɔlɪst]', phonicsSound: '-est', exampleSentence: 'the tallest mountain', exampleZh: '最高的山' },
+    { en: 'fastest', zh: '最快的', image: '💨', phonics: '', kk: '[ˈfæstɪst]', phonicsSound: '-est', exampleSentence: 'the fastest runner', exampleZh: '最快的跑者' },
+    { en: 'best', zh: '最好的（不規則）', image: '🥇', phonics: '', kk: '[bɛst]', phonicsSound: 'good→best', exampleSentence: 'the best team', exampleZh: '最好的隊' },
+    { en: 'most beautiful', zh: '最美的', image: '💎', phonics: '', kk: '[most ˈbjutɪfl̩]', phonicsSound: 'the most', exampleSentence: 'the most beautiful', exampleZh: '最美的' },
+    { en: 'most important', zh: '最重要的', image: '⭐', phonics: '', kk: '[most ɪmˈpɔrtn̩t]', phonicsSound: 'the most', exampleSentence: 'the most important', exampleZh: '最重要的' },
+    { en: 'longest', zh: '最長的', image: '📏', phonics: '', kk: '[ˈlɔŋɡɪst]', phonicsSound: '-est', exampleSentence: 'the longest river', exampleZh: '最長的河' },
+    { en: 'smallest', zh: '最小的', image: '🐜', phonics: '', kk: '[ˈsmɔlɪst]', phonicsSound: '-est', exampleSentence: 'the smallest ant', exampleZh: '最小的螞蟻' },
+    { en: 'mountain', zh: '山', image: '🏔️', phonics: '', kk: '[ˈmaʊntn̩]', phonicsSound: '', exampleSentence: 'a tall mountain', exampleZh: '高山' },
+    { en: 'of all', zh: '所有之中', image: '🌍', phonics: '', kk: '[ʌv ɔl]', phonicsSound: '', exampleSentence: 'the best of all', exampleZh: '所有中最好' },
+  ],
+  sentences: [
+    { en: 'The blue whale is the biggest animal.', zh: '藍鯨是最大的動物。' }, { en: 'Mount Everest is the tallest mountain.', zh: '聖母峰是最高的山。' }, { en: 'This is the most beautiful gem.', zh: '這是最美的寶石。' }, { en: 'He is the fastest runner.', zh: '他是最快的跑者。' }, { en: 'Family is the most important thing.', zh: '家人是最重要的。' }, { en: 'Which is the best?', zh: '哪個最好？' },
+  ],
+  phonicsLetters: ['the -est / the most'],
+  warmUpQuestions: [
+    { type: 'match', question: 'big 的最高級是？', options: ['biggest', 'bigger', 'most big', 'big'], answer: 'biggest' },
+    { type: 'match', question: 'good 的最高級是？（不規則）', options: ['best', 'goodest', 'better', 'most good'], answer: 'best' },
+    { type: 'fill-blank', question: 'This is the most ___ gem.（美的·長字用 most）', options: ['beautiful', 'beautifulest', 'beautifuler', 'beauty'], answer: 'beautiful' },
+  ],
+  challenges: [
+    { type: 'match', question: 'tall 的最高級是？', options: ['tallest', 'taller', 'most tall', 'tall'], answer: 'tallest' },
+    { type: 'fill-blank', question: 'He is the ___ runner.（快·最高級）', options: ['fastest', 'faster', 'most fast', 'fast'], answer: 'fastest' },
+    { type: 'fill-blank', question: '中翻英：「藍鯨是最大的動物。」', options: ['The blue whale is the biggest animal.', 'The whale is big.', 'A big whale.', 'Is the whale big?'], answer: 'The blue whale is the biggest animal.' },
+    { type: 'fill-blank', question: '中翻英：「家人是最重要的。」', options: ['Family is the most important thing.', 'Family is important.', 'I love family.', 'Is family important?'], answer: 'Family is the most important thing.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The blue whale is the biggest animal.', 'Mount Everest is the tallest mountain.', 'This is the most beautiful gem.', 'He is the fastest runner.'], answer: 'The blue whale is the biggest animal.', image: '🎧' },
+    { type: 'read', question: 'What is the biggest animal?（最大的動物是什麼？）', passage: 'Many animals are big.\nBut the blue whale is the biggest animal.\nIt is huge!', options: ['the blue whale', 'the elephant', 'the shark', 'the lion'], answer: 'the blue whale' },
+  ],
+  talkTimePrompts: ["Say a superlative: ___ is the biggest.", "Use 'the most' with a long word.", "Compare three things: A is the ___est.", "✍️ 引導寫作＋翻譯：把「他是最快的跑者。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'long 的最高級是？', options: ['longest', 'longer', 'most long', 'long'], answer: 'longest' },
+    { type: 'fill-blank', question: '中翻英：「聖母峰是最高的山。」', options: ['Mount Everest is the tallest mountain.', 'The mountain is tall.', 'A tall mountain.', 'Is it tall?'], answer: 'Mount Everest is the tallest mountain.' },
+    { type: 'match', question: '長形容詞的最高級用？', options: ['the most + 原級', '加 -est', '加 -er', '不變'], answer: 'the most + 原級' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "The blue whale is the biggest animal.", lineZh: '藍鯨是最大的動物。' },
+    { speaker: 'Coco', line: "Mount Everest is the tallest mountain.", lineZh: '聖母峰是最高的山。' },
+    { speaker: 'Polly', line: "This is the most beautiful gem of all.", lineZh: '這是所有寶石中最美的。' },
+    { speaker: 'Benny', line: "Short words: -est. Long words: the most!", lineZh: '短字：-est。長字：the most！' },
+  ],
+};
+
+const L11_M5: Mission = {
+  id: 5, slug: 'l11-m5-review-modal', level: 11, title: 'Review① 情態關係比較', titleEn: 'Review: Modals & More', theme: '挑戰場・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：情態動詞 ＋ 關係代名詞 ＋ 最高級 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review modals, relatives, and superlatives!", dialogueZh: '來複習情態、關代、最高級！', highlightWords: [], sceneEmojis: ['🔄', '💡', '✨'], animation: 'wave' },
+    { image: '💡', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "You should rest. You must sleep early.", dialogueZh: '你應該休息。你必須早睡。', highlightWords: ['should', 'must'], sceneEmojis: ['💡', '🛌', '😊'], animation: 'bounce' },
+    { image: '🥇', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The boy who won is the fastest runner.", dialogueZh: '贏的那個男孩是最快的跑者。', highlightWords: ['who', 'fastest'], sceneEmojis: ['👦', '🥇', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know advanced grammar now! Amazing!", dialogueZh: '你會進階文法了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'should', zh: '應該', image: '💡', phonics: '', kk: '[ʃʊd]', phonicsSound: '', exampleSentence: 'You should rest.', exampleZh: '你應該休息。' },
+    { en: 'must', zh: '必須', image: '📏', phonics: '', kk: '[mʌst]', phonicsSound: '', exampleSentence: 'You must sleep.', exampleZh: '你必須睡覺。' },
+    { en: 'could', zh: '能（禮貌）', image: '🙏', phonics: '', kk: '[kʊd]', phonicsSound: '', exampleSentence: 'Could you help?', exampleZh: '你可以幫忙嗎？' },
+    { en: 'who', zh: '（關代·人）', image: '🧑', phonics: '', kk: '[hu]', phonicsSound: '', exampleSentence: 'the boy who won', exampleZh: '贏的男孩' },
+    { en: 'which', zh: '（關代·物）', image: '📕', phonics: '', kk: '[wɪtʃ]', phonicsSound: '', exampleSentence: 'the book which is red', exampleZh: '紅色的書' },
+    { en: 'that', zh: '（關代·人或物）', image: '🔗', phonics: '', kk: '[ðæt]', phonicsSound: '', exampleSentence: 'the cake that I made', exampleZh: '我做的蛋糕' },
+    { en: 'biggest', zh: '最大的', image: '🐋', phonics: '', kk: '[ˈbɪɡɪst]', phonicsSound: '', exampleSentence: 'the biggest', exampleZh: '最大的' },
+    { en: 'fastest', zh: '最快的', image: '💨', phonics: '', kk: '[ˈfæstɪst]', phonicsSound: '', exampleSentence: 'the fastest', exampleZh: '最快的' },
+    { en: 'best', zh: '最好的', image: '🥇', phonics: '', kk: '[bɛst]', phonicsSound: '', exampleSentence: 'the best', exampleZh: '最好的' },
+    { en: 'most important', zh: '最重要的', image: '⭐', phonics: '', kk: '[most ɪmˈpɔrtn̩t]', phonicsSound: '', exampleSentence: 'the most important', exampleZh: '最重要的' },
+  ],
+  sentences: [
+    { en: 'You should rest.', zh: '你應該休息。' }, { en: 'You must sleep early.', zh: '你必須早睡。' }, { en: 'Could you help me?', zh: '你可以幫我嗎？' }, { en: 'The boy who won is fast.', zh: '贏的男孩很快。' }, { en: 'This is the best cake.', zh: '這是最好的蛋糕。' }, { en: 'Family is the most important.', zh: '家人最重要。' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'You ___ rest.（建議）', options: ['should', 'must', 'could', 'may'], answer: 'should' },
+    { type: 'fill-blank', question: 'The boy ___ won is fast.（人）', options: ['who', 'which', 'where', 'when'], answer: 'who' },
+    { type: 'match', question: 'good 的最高級是？', options: ['best', 'goodest', 'better', 'most good'], answer: 'best' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: '___ you help me?（禮貌）', options: ['Could', 'Should', 'Must', 'Do'], answer: 'Could' },
+    { type: 'fill-blank', question: 'The book ___ is red is mine.（物）', options: ['which', 'who', 'where', 'when'], answer: 'which' },
+    { type: 'fill-blank', question: '中翻英：「你必須早睡。」', options: ['You must sleep early.', 'You should sleep.', 'You could sleep.', 'Do you sleep?'], answer: 'You must sleep early.' },
+    { type: 'fill-blank', question: '中翻英：「這是最好的蛋糕。」', options: ['This is the best cake.', 'This cake is good.', 'A good cake.', 'Is this cake good?'], answer: 'This is the best cake.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['You should rest.', 'Could you help me?', 'The boy who won is fast.', 'Family is the most important.'], answer: 'You should rest.', image: '🎧' },
+    { type: 'read', question: 'What advice is given?（給了什麼建議？）', passage: 'You look tired.\nYou should rest.\nYou must sleep early tonight.', options: ['rest and sleep early', 'study more', 'run', 'eat candy'], answer: 'rest and sleep early' },
+  ],
+  talkTimePrompts: ["Give advice with 'should'.", "Ask politely with 'could'.", "Use a relative pronoun (who/which/that).", "✍️ 引導寫作＋翻譯：把「贏的男孩很快。」寫成英文（用 who）。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'This is the cake ___ I made.（人或物）', options: ['that', 'who', 'where', 'when'], answer: 'that' },
+    { type: 'fill-blank', question: '中翻英：「家人最重要。」', options: ['Family is the most important.', 'Family is important.', 'I love family.', 'Is family important?'], answer: 'Family is the most important.' },
+    { type: 'match', question: 'must 表示？', options: ['必須', '建議', '禮貌', '能力'], answer: '必須' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review modals, relatives, and superlatives!", lineZh: '來複習情態、關代、最高級！' },
+    { speaker: 'Coco', line: "You should rest. You must sleep early.", lineZh: '你應該休息。你必須早睡。' },
+    { speaker: 'Benny', line: "The boy who won is the fastest runner.", lineZh: '贏的那個男孩是最快的跑者。' },
+    { speaker: 'Finn', line: "You know advanced grammar now! Amazing!", lineZh: '你會進階文法了！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
