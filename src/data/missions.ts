@@ -4344,7 +4344,267 @@ const L5_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10];
+const L5_M11: Mission = {
+  id: 11, slug: 'l5-m11-days', level: 5, title: '星期', titleEn: 'Days of the Week', theme: '珊瑚灘・一週七天', themeEmoji: '📅',
+  focus: '星期 Monday–Sunday ＋ on Monday',
+  story: [
+    { image: '📅', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "Monday, Tuesday, Wednesday — school days!", dialogueZh: '星期一、二、三 —— 上學日！', highlightWords: ['Monday', 'Tuesday'], sceneEmojis: ['📅', '🏫', '✨'], animation: 'wave' },
+    { image: '🎨', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "On Friday, we have art class!", dialogueZh: '星期五我們有美術課！', highlightWords: ['Friday'], sceneEmojis: ['🎨', '🖌️', '😊'], animation: 'bounce' },
+    { image: '🏖️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "On Saturday and Sunday — weekend fun!", dialogueZh: '星期六和星期日 —— 週末好好玩！', highlightWords: ['Saturday', 'Sunday'], sceneEmojis: ['🏖️', '🎉', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Seven days in a week! You know them all!", dialogueZh: '一週七天！你全會了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📅'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'Monday', zh: '星期一', image: '1️⃣', phonics: '', kk: '[ˈmʌnde]', phonicsSound: '', exampleSentence: 'on Monday', exampleZh: '在星期一' },
+    { en: 'Tuesday', zh: '星期二', image: '2️⃣', phonics: '', kk: '[ˈtuzde]', phonicsSound: '', exampleSentence: 'on Tuesday', exampleZh: '在星期二' },
+    { en: 'Wednesday', zh: '星期三', image: '3️⃣', phonics: '', kk: '[ˈwɛnzde]', phonicsSound: '', exampleSentence: 'on Wednesday', exampleZh: '在星期三' },
+    { en: 'Thursday', zh: '星期四', image: '4️⃣', phonics: '', kk: '[ˈθɝzde]', phonicsSound: '', exampleSentence: 'on Thursday', exampleZh: '在星期四' },
+    { en: 'Friday', zh: '星期五', image: '5️⃣', phonics: '', kk: '[ˈfraɪde]', phonicsSound: '', exampleSentence: 'on Friday', exampleZh: '在星期五' },
+    { en: 'Saturday', zh: '星期六', image: '6️⃣', phonics: '', kk: '[ˈsætɚde]', phonicsSound: '', exampleSentence: 'on Saturday', exampleZh: '在星期六' },
+    { en: 'Sunday', zh: '星期日', image: '7️⃣', phonics: '', kk: '[ˈsʌnde]', phonicsSound: '', exampleSentence: 'on Sunday', exampleZh: '在星期日' },
+    { en: 'week', zh: '星期·週', image: '📅', phonics: '', kk: '[wik]', phonicsSound: '', exampleSentence: 'a week', exampleZh: '一週' },
+    { en: 'weekend', zh: '週末', image: '🏖️', phonics: '', kk: '[ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'on the weekend', exampleZh: '在週末' },
+    { en: 'today', zh: '今天', image: '📆', phonics: '', kk: '[təˈde]', phonicsSound: '', exampleSentence: 'What day is today?', exampleZh: '今天星期幾？' },
+  ],
+  sentences: [
+    { en: 'Today is Monday.', zh: '今天是星期一。' }, { en: 'On Friday, we have art.', zh: '星期五我們有美術。' }, { en: 'What day is today?', zh: '今天星期幾？' }, { en: 'It is Sunday.', zh: '今天是星期日。' }, { en: 'I play on the weekend.', zh: '我週末玩。' }, { en: 'There are seven days in a week.', zh: '一週有七天。' },
+  ],
+  phonicsLetters: ['days of week'],
+  warmUpQuestions: [
+    { type: 'match', question: '一週的第一個上學日通常是？', options: ['Monday', 'Sunday', 'Friday', 'Saturday'], answer: 'Monday' },
+    { type: 'match', question: '週末的兩天是？', options: ['Saturday & Sunday', 'Monday & Tuesday', 'Friday & Monday', 'Wednesday & Thursday'], answer: 'Saturday & Sunday' },
+    { type: 'fill-blank', question: 'What ___ is today?（星期幾）', options: ['day', 'time', 'week', 'month'], answer: 'day' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選字：點你聽到的星期', options: ['Monday', 'Friday', 'Sunday', 'Wednesday'], answer: 'Friday', image: '🎧' },
+    { type: 'match', question: 'Monday 是？', options: ['星期一', '星期二', '星期日', '星期五'], answer: '星期一' },
+    { type: 'fill-blank', question: 'We have art ___ Friday.（在）', options: ['on', 'in', 'at', 'to'], answer: 'on' },
+    { type: 'spell', question: '拼拼看：Sund _ y（星期日）', answer: 'Sunday', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Today is Monday.', 'Today is Sunday.', 'On Friday, we have art.', 'What day is today?'], answer: 'Today is Monday.', image: '🎧' },
+    { type: 'read', question: 'When is art class?（美術課是哪天？）', passage: 'Coco goes to school on Monday.\nOn Friday, she has art class.\nOn Saturday, she plays at the beach.', options: ['Friday', 'Monday', 'Saturday', 'Sunday'], answer: 'Friday' },
+  ],
+  talkTimePrompts: ["What day is today?", "Say the seven days!", "What do you do on the weekend?", "Change it: On ___, I ___."],
+  reviewQuiz: [
+    { type: 'match', question: 'Saturday 是？', options: ['星期六', '星期日', '星期一', '星期五'], answer: '星期六' },
+    { type: 'fill-blank', question: 'I play ___ Sunday.（在）', options: ['on', 'in', 'at', 'to'], answer: 'on' },
+    { type: 'spell', question: '拼拼看：Mond _ y（星期一）', answer: 'Monday', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Monday, Tuesday, Wednesday — school days!", lineZh: '一、二、三 —— 上學日！' },
+    { speaker: 'Coco', line: "On Friday, we have art class!", lineZh: '星期五有美術課！' },
+    { speaker: 'Benny', line: "Saturday and Sunday — weekend fun!", lineZh: '週六週日 —— 週末好玩！' },
+    { speaker: 'Ruby', line: "Seven days in a week! Great!", lineZh: '一週七天！太棒了！' },
+  ],
+};
+
+const L5_M12: Mission = {
+  id: 12, slug: 'l5-m12-months', level: 5, title: '月份 / 季節', titleEn: 'Months & Seasons', theme: '珊瑚灘・一年四季', themeEmoji: '🗓️',
+  focus: '月份 ＋ 季節 ＋ When is your birthday? — In May.',
+  story: [
+    { image: '🗓️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A year has twelve months! January to December.", dialogueZh: '一年有十二個月！一月到十二月。', highlightWords: ['months'], sceneEmojis: ['🗓️', '📆', '✨'], animation: 'wave' },
+    { image: '🌸', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "In spring, flowers bloom in April!", dialogueZh: '春天，四月花開！', highlightWords: ['spring', 'April'], sceneEmojis: ['🌸', '🌷', '😊'], animation: 'bounce' },
+    { image: '🎂', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "When is your birthday? Mine is in May!", dialogueZh: '你的生日在哪個月？我的在五月！', highlightWords: ['birthday', 'May'], sceneEmojis: ['🎂', '🎉', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Twelve months, four seasons! Amazing!", dialogueZh: '十二個月，四季！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🗓️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'month', zh: '月份', image: '🗓️', phonics: '', kk: '[mʌnθ]', phonicsSound: '', exampleSentence: 'a new month', exampleZh: '新的一個月' },
+    { en: 'year', zh: '年', image: '📆', phonics: '', kk: '[jɪr]', phonicsSound: '', exampleSentence: 'a new year', exampleZh: '新的一年' },
+    { en: 'January', zh: '一月', image: '❄️', phonics: '', kk: '[ˈdʒænjuˌɛri]', phonicsSound: '', exampleSentence: 'in January', exampleZh: '在一月' },
+    { en: 'April', zh: '四月', image: '🌸', phonics: '', kk: '[ˈeprəl]', phonicsSound: '', exampleSentence: 'in April', exampleZh: '在四月' },
+    { en: 'May', zh: '五月', image: '🌺', phonics: '', kk: '[me]', phonicsSound: '', exampleSentence: 'in May', exampleZh: '在五月' },
+    { en: 'July', zh: '七月', image: '🌞', phonics: '', kk: '[dʒuˈlaɪ]', phonicsSound: '', exampleSentence: 'in July', exampleZh: '在七月' },
+    { en: 'October', zh: '十月', image: '🎃', phonics: '', kk: '[ɑkˈtobɚ]', phonicsSound: '', exampleSentence: 'in October', exampleZh: '在十月' },
+    { en: 'December', zh: '十二月', image: '🎄', phonics: '', kk: '[dɪˈsɛmbɚ]', phonicsSound: '', exampleSentence: 'in December', exampleZh: '在十二月' },
+    { en: 'birthday', zh: '生日', image: '🎂', phonics: '', kk: '[ˈbɝθˌde]', phonicsSound: '', exampleSentence: 'When is your birthday?', exampleZh: '你生日哪天？' },
+    { en: 'season', zh: '季節', image: '🍁', phonics: '', kk: '[ˈsizn̩]', phonicsSound: '', exampleSentence: 'four seasons', exampleZh: '四個季節' },
+  ],
+  sentences: [
+    { en: 'A year has twelve months.', zh: '一年有十二個月。' }, { en: 'My birthday is in May.', zh: '我的生日在五月。' }, { en: 'When is your birthday?', zh: '你的生日在哪個月？' }, { en: 'It is in July.', zh: '在七月。' }, { en: 'Spring is my favorite season.', zh: '春天是我最愛的季節。' }, { en: 'It is cold in January.', zh: '一月很冷。' },
+  ],
+  phonicsLetters: ['months'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'A year has twelve ___.（月份）', options: ['months', 'days', 'weeks', 'years'], answer: 'months' },
+    { type: 'match', question: '🎂 是什麼？', options: ['birthday', 'season', 'month', 'year'], answer: 'birthday' },
+    { type: 'match', question: '🎄 December 是幾月？', options: ['十二月', '一月', '十月', '五月'], answer: '十二月' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的月份', options: ['❄️', '🌸', '🌞', '🎄'], answer: '🎄', image: '🎧' },
+    { type: 'match', question: 'May 是幾月？', options: ['五月', '三月', '七月', '四月'], answer: '五月' },
+    { type: 'fill-blank', question: 'My birthday is ___ May.（在·月份用 in）', options: ['in', 'on', 'at', 'to'], answer: 'in' },
+    { type: 'spell', question: '拼拼看：mon _ h（月份）', answer: 'month', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['My birthday is in May.', 'When is your birthday?', 'A year has twelve months.', 'It is in July.'], answer: 'My birthday is in May.', image: '🎧' },
+    { type: 'read', question: "When is Ruby's birthday?（Ruby 生日哪個月？）", passage: "A year has twelve months.\nRuby's birthday is in May.\nIt is in spring!", options: ['May', 'July', 'January', 'December'], answer: 'May' },
+  ],
+  talkTimePrompts: ["When is your birthday? It is in ___.", "Say four months you know.", "What is your favorite season?", "Change it: My birthday is in ___."],
+  reviewQuiz: [
+    { type: 'match', question: 'January 是幾月？', options: ['一月', '四月', '七月', '十月'], answer: '一月' },
+    { type: 'fill-blank', question: 'My birthday is ___ July.（在）', options: ['in', 'on', 'at', 'to'], answer: 'in' },
+    { type: 'match', question: '🍁 season 是什麼意思？', options: ['季節', '月份', '星期', '年'], answer: '季節' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A year has twelve months!", lineZh: '一年有十二個月！' },
+    { speaker: 'Coco', line: "In spring, flowers bloom in April!", lineZh: '春天，四月花開！' },
+    { speaker: 'Ruby', line: "When is your birthday? Mine is in May!", lineZh: '你生日哪個月？我的在五月！' },
+    { speaker: 'Benny', line: "Twelve months, four seasons! Cool!", lineZh: '十二個月，四季！酷！' },
+  ],
+};
+
+const L5_M13: Mission = {
+  id: 13, slug: 'l5-m13-story-1', level: 5, title: '短篇故事① 海邊', titleEn: 'Story: The Beach', theme: '珊瑚灘・故事時間', themeEmoji: '📖',
+  focus: '短篇閱讀①：讀一個海邊的小故事並回答問題',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a story: A Day at the Beach!", dialogueZh: '我們來讀故事：海邊的一天！', highlightWords: ['story'], sceneEmojis: ['📖', '🏖️', '✨'], animation: 'wave' },
+    { image: '🌞', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "It is a sunny day. Finn goes to the beach.", dialogueZh: '晴朗的一天。Finn 去海邊。', highlightWords: ['sunny', 'beach'], sceneEmojis: ['🌞', '🏖️', '😊'], animation: 'bounce' },
+    { image: '🐚', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "He finds a big shell. He is very happy!", dialogueZh: '他找到一個大貝殼。他好開心！', highlightWords: ['shell', 'happy'], sceneEmojis: ['🐚', '😄', '🎉'], animation: 'float' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read the whole story! Great reader!", dialogueZh: '你讀完整個故事了！了不起！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'beach', zh: '海邊', image: '🏖️', phonics: '', kk: '[bitʃ]', phonicsSound: '', exampleSentence: 'go to the beach', exampleZh: '去海邊' },
+    { en: 'sunny', zh: '晴朗的', image: '🌞', phonics: '', kk: '[ˈsʌni]', phonicsSound: '', exampleSentence: 'a sunny day', exampleZh: '晴朗的一天' },
+    { en: 'sand', zh: '沙子', image: '🏖️', phonics: '', kk: '[sænd]', phonicsSound: '', exampleSentence: 'warm sand', exampleZh: '溫暖的沙' },
+    { en: 'shell', zh: '貝殼', image: '🐚', phonics: '', kk: '[ʃɛl]', phonicsSound: '', exampleSentence: 'a big shell', exampleZh: '一個大貝殼' },
+    { en: 'wave', zh: '海浪', image: '🌊', phonics: '', kk: '[wev]', phonicsSound: '', exampleSentence: 'big waves', exampleZh: '大浪' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: 'He can swim.', exampleZh: '他會游泳。' },
+    { en: 'find', zh: '找到', image: '🔍', phonics: '', kk: '[faɪnd]', phonicsSound: '', exampleSentence: 'He finds a shell.', exampleZh: '他找到貝殼。' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'He is happy.', exampleZh: '他很開心。' },
+    { en: 'day', zh: '一天', image: '📆', phonics: '', kk: '[de]', phonicsSound: '', exampleSentence: 'a fun day', exampleZh: '好玩的一天' },
+    { en: 'friend', zh: '朋友', image: '🧑‍🤝‍🧑', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'with his friends', exampleZh: '和他的朋友' },
+  ],
+  sentences: [
+    { en: 'It is a sunny day.', zh: '晴朗的一天。' }, { en: 'Finn goes to the beach.', zh: 'Finn 去海邊。' }, { en: 'He finds a big shell.', zh: '他找到一個大貝殼。' }, { en: 'He can swim in the sea.', zh: '他會在海裡游泳。' }, { en: 'The waves are big.', zh: '浪很大。' }, { en: 'Finn is very happy.', zh: 'Finn 很開心。' },
+  ],
+  phonicsLetters: ['story reading'],
+  warmUpQuestions: [
+    { type: 'match', question: '🏖️ 是什麼？', options: ['beach', 'shell', 'wave', 'sand'], answer: 'beach' },
+    { type: 'match', question: '🐚 是什麼？', options: ['shell', 'sand', 'wave', 'fish'], answer: 'shell' },
+    { type: 'fill-blank', question: 'It is a ___ day.（晴朗）', options: ['sunny', 'rainy', 'cold', 'snowy'], answer: 'sunny' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Where does Finn go?（Finn 去哪？）', passage: 'It is a sunny day.\nFinn goes to the beach.\nThe sand is warm.', options: ['the beach', 'the school', 'the zoo', 'the shop'], answer: 'the beach' },
+    { type: 'read', question: 'What does Finn find?（Finn 找到什麼？）', passage: 'Finn walks on the sand.\nHe finds a big shell.\nHe is very happy!', options: ['a big shell', 'a fish', 'a crab', 'a ball'], answer: 'a big shell' },
+    { type: 'read', question: 'How does Finn feel?（Finn 覺得如何？）', passage: 'Finn can swim in the sea.\nThe waves are big and fun.\nFinn is very happy!', options: ['happy', 'sad', 'tired', 'cold'], answer: 'happy' },
+    { type: 'fill-blank', question: 'He ___ a big shell.（找到·第三人稱）', options: ['finds', 'find', 'found', 'finding'], answer: 'finds' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['He finds a big shell.', 'He swims in the sea.', 'It is a sunny day.', 'The waves are big.'], answer: 'He finds a big shell.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：sh _ ll（貝殼）', answer: 'shell', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the story about Finn.", "What does Finn find at the beach?", "What can you do at the beach?", "Make your own: I go to the ___."],
+  reviewQuiz: [
+    { type: 'read', question: 'Is it rainy in the story?（故事裡下雨嗎？）', passage: 'It is a sunny day.\nFinn plays at the beach.\nThe sun is warm.', options: ['No, it is sunny', 'Yes, it is rainy', 'It is snowy', 'It is night'], answer: 'No, it is sunny' },
+    { type: 'match', question: '🌊 是什麼？', options: ['wave', 'sand', 'shell', 'beach'], answer: 'wave' },
+    { type: 'fill-blank', question: 'Finn is very ___.（開心）', options: ['happy', 'sad', 'cold', 'tired'], answer: 'happy' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A story: A Day at the Beach!", lineZh: '故事：海邊的一天！' },
+    { speaker: 'Finn', line: "It is sunny! I go to the beach.", lineZh: '晴天！我去海邊。' },
+    { speaker: 'Coco', line: "Look! Finn finds a big shell!", lineZh: '看！Finn 找到一個大貝殼！' },
+    { speaker: 'Finn', line: "I can swim! I am so happy!", lineZh: '我會游泳！我好開心！' },
+  ],
+};
+
+const L5_M14: Mission = {
+  id: 14, slug: 'l5-m14-story-2', level: 5, title: '短篇故事② 小烏龜', titleEn: 'Story: Little Turtle', theme: '珊瑚灘・故事時間', themeEmoji: '🐢',
+  focus: '短篇閱讀②：讀一個小烏龜的故事並回答問題',
+  story: [
+    { image: '🐢', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A new story: The Little Turtle!", dialogueZh: '新故事：小烏龜！', highlightWords: ['story'], sceneEmojis: ['🐢', '📖', '✨'], animation: 'wave' },
+    { image: '🐢', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "A little turtle is slow. But he never gives up!", dialogueZh: '小烏龜很慢。但他從不放棄！', highlightWords: ['slow'], sceneEmojis: ['🐢', '💪', '😊'], animation: 'bounce' },
+    { image: '🏁', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "He walks and walks. He wins the race!", dialogueZh: '他一直走一直走。他贏了比賽！', highlightWords: ['wins'], sceneEmojis: ['🏁', '🏆', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Slow and steady wins! Great story!", dialogueZh: '慢而穩者勝！好故事！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🐢'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'turtle', zh: '烏龜', image: '🐢', phonics: '', kk: '[ˈtɝtl̩]', phonicsSound: '', exampleSentence: 'a little turtle', exampleZh: '一隻小烏龜' },
+    { en: 'slow', zh: '慢的', image: '🐌', phonics: '', kk: '[slo]', phonicsSound: '', exampleSentence: 'He is slow.', exampleZh: '他很慢。' },
+    { en: 'walk', zh: '走', image: '🚶', phonics: '', kk: '[wɔk]', phonicsSound: '', exampleSentence: 'He walks slowly.', exampleZh: '他慢慢走。' },
+    { en: 'race', zh: '比賽', image: '🏁', phonics: '', kk: '[res]', phonicsSound: '', exampleSentence: 'a big race', exampleZh: '一場大比賽' },
+    { en: 'win', zh: '贏', image: '🏆', phonics: '', kk: '[wɪn]', phonicsSound: '', exampleSentence: 'He wins!', exampleZh: '他贏了！' },
+    { en: 'fast', zh: '快的', image: '💨', phonics: '', kk: '[fæst]', phonicsSound: '', exampleSentence: 'The rabbit is fast.', exampleZh: '兔子很快。' },
+    { en: 'rabbit', zh: '兔子', image: '🐰', phonics: '', kk: '[ˈræbɪt]', phonicsSound: '', exampleSentence: 'a fast rabbit', exampleZh: '一隻快兔子' },
+    { en: 'sleep', zh: '睡覺', image: '😴', phonics: '', kk: '[slip]', phonicsSound: '', exampleSentence: 'The rabbit sleeps.', exampleZh: '兔子睡著了。' },
+    { en: 'try', zh: '嘗試', image: '💪', phonics: '', kk: '[traɪ]', phonicsSound: '', exampleSentence: 'He tries hard.', exampleZh: '他努力嘗試。' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'He is happy.', exampleZh: '他很開心。' },
+  ],
+  sentences: [
+    { en: 'The turtle is slow.', zh: '烏龜很慢。' }, { en: 'The rabbit is fast.', zh: '兔子很快。' }, { en: 'The turtle never gives up.', zh: '烏龜從不放棄。' }, { en: 'The rabbit sleeps.', zh: '兔子睡著了。' }, { en: 'The turtle wins the race!', zh: '烏龜贏了比賽！' }, { en: 'Slow and steady wins.', zh: '慢而穩者勝。' },
+  ],
+  phonicsLetters: ['story reading'],
+  warmUpQuestions: [
+    { type: 'match', question: '🐢 turtle 是什麼？', options: ['烏龜', '兔子', '魚', '螃蟹'], answer: '烏龜' },
+    { type: 'fill-blank', question: 'The turtle is ___.（慢）', options: ['slow', 'fast', 'big', 'hot'], answer: 'slow' },
+    { type: 'fill-blank', question: 'The rabbit is ___.（快）', options: ['fast', 'slow', 'small', 'cold'], answer: 'fast' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Who is slow?（誰很慢？）', passage: 'The little turtle is slow.\nThe rabbit is fast.\nThey have a race.', options: ['the turtle', 'the rabbit', 'the fish', 'the crab'], answer: 'the turtle' },
+    { type: 'read', question: 'What does the rabbit do?（兔子做什麼？）', passage: 'The rabbit runs very fast.\nThen the rabbit sleeps.\nThe turtle walks and walks.', options: ['sleeps', 'wins', 'swims', 'reads'], answer: 'sleeps' },
+    { type: 'read', question: 'Who wins the race?（誰贏了比賽？）', passage: 'The rabbit sleeps.\nThe turtle never gives up.\nThe turtle wins the race!', options: ['the turtle', 'the rabbit', 'no one', 'both'], answer: 'the turtle' },
+    { type: 'fill-blank', question: 'The turtle ___ the race.（贏·第三人稱）', options: ['wins', 'win', 'won', 'winning'], answer: 'wins' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The turtle wins the race!', 'The rabbit is fast.', 'The rabbit sleeps.', 'The turtle is slow.'], answer: 'The turtle wins the race!', image: '🎧' },
+    { type: 'spell', question: '拼拼看：t _ rtle（烏龜）', answer: 'turtle', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the turtle story.", "Who is fast? Who is slow?", "Who wins the race?", "What can we learn? Never give up!"],
+  reviewQuiz: [
+    { type: 'read', question: 'Is the rabbit slow?（兔子慢嗎？）', passage: 'The rabbit is very fast.\nThe turtle is slow.\nBut the turtle wins!', options: ['No, it is fast', 'Yes, it is slow', 'It is big', 'It is cold'], answer: 'No, it is fast' },
+    { type: 'match', question: 'win 是什麼意思？', options: ['贏', '輸', '跑', '睡'], answer: '贏' },
+    { type: 'fill-blank', question: 'The turtle never ___ up.（放棄）', options: ['gives', 'give', 'gave', 'giving'], answer: 'gives' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A story: The Little Turtle!", lineZh: '故事：小烏龜！' },
+    { speaker: 'Polly', line: "The turtle is slow, but he never gives up!", lineZh: '烏龜很慢，但他從不放棄！' },
+    { speaker: 'Coco', line: "The rabbit sleeps. The turtle walks and walks!", lineZh: '兔子睡著了。烏龜一直走！' },
+    { speaker: 'Benny', line: "The turtle wins! Slow and steady wins!", lineZh: '烏龜贏了！慢而穩者勝！' },
+  ],
+};
+
+const L5_M15: Mission = {
+  id: 15, slug: 'l5-m15-review-reading', level: 5, title: 'Review③ 閱讀理解', titleEn: 'Review: Reading', theme: '珊瑚灘・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習③：閱讀理解 ＋ 形容詞 ＋ 天氣時間 ＋ 星期月份',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review reading! Read and answer!", dialogueZh: '來複習閱讀！讀完回答！', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
+    { image: '🏖️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "On Sunday, it is sunny. We go to the beach!", dialogueZh: '星期日，晴天。我們去海邊！', highlightWords: ['Sunday', 'sunny'], sceneEmojis: ['🏖️', '☀️', '😊'], animation: 'bounce' },
+    { image: '🐢', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "We see a slow turtle and a fast fish!", dialogueZh: '我們看到慢烏龜和快魚！', highlightWords: ['slow', 'fast'], sceneEmojis: ['🐢', '🐟', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You are a great reader now! Amazing!", dialogueZh: '你現在是很棒的讀者了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'beach', zh: '海邊', image: '🏖️', phonics: '', kk: '[bitʃ]', phonicsSound: '', exampleSentence: 'go to the beach', exampleZh: '去海邊' },
+    { en: 'sunny', zh: '晴朗的', image: '☀️', phonics: '', kk: '[ˈsʌni]', phonicsSound: '', exampleSentence: "It's sunny.", exampleZh: '天氣晴朗。' },
+    { en: 'Sunday', zh: '星期日', image: '7️⃣', phonics: '', kk: '[ˈsʌnde]', phonicsSound: '', exampleSentence: 'on Sunday', exampleZh: '在星期日' },
+    { en: 'turtle', zh: '烏龜', image: '🐢', phonics: '', kk: '[ˈtɝtl̩]', phonicsSound: '', exampleSentence: 'a slow turtle', exampleZh: '一隻慢烏龜' },
+    { en: 'fish', zh: '魚', image: '🐟', phonics: '', kk: '[fɪʃ]', phonicsSound: '', exampleSentence: 'a fast fish', exampleZh: '一隻快魚' },
+    { en: 'slow', zh: '慢的', image: '🐌', phonics: '', kk: '[slo]', phonicsSound: '', exampleSentence: 'It is slow.', exampleZh: '它很慢。' },
+    { en: 'fast', zh: '快的', image: '💨', phonics: '', kk: '[fæst]', phonicsSound: '', exampleSentence: 'It is fast.', exampleZh: '它很快。' },
+    { en: 'shell', zh: '貝殼', image: '🐚', phonics: '', kk: '[ʃɛl]', phonicsSound: '', exampleSentence: 'a big shell', exampleZh: '一個大貝殼' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'We are happy.', exampleZh: '我們很開心。' },
+    { en: 'weekend', zh: '週末', image: '🎉', phonics: '', kk: '[ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'on the weekend', exampleZh: '在週末' },
+  ],
+  sentences: [
+    { en: 'On Sunday, it is sunny.', zh: '星期日，天氣晴朗。' }, { en: 'We go to the beach.', zh: '我們去海邊。' }, { en: 'The turtle is slow.', zh: '烏龜很慢。' }, { en: 'The fish is fast.', zh: '魚很快。' }, { en: 'We find a big shell.', zh: '我們找到一個大貝殼。' }, { en: 'We are happy.', zh: '我們很開心。' },
+  ],
+  phonicsLetters: ['review reading'],
+  warmUpQuestions: [
+    { type: 'match', question: '🐢 turtle 是快還是慢？', options: ['慢', '快', '大', '小'], answer: '慢' },
+    { type: 'fill-blank', question: 'On Sunday, it is ___.（晴朗）', options: ['sunny', 'rainy', 'cold', 'windy'], answer: 'sunny' },
+    { type: 'match', question: '🐚 是什麼？', options: ['shell', 'fish', 'sand', 'wave'], answer: 'shell' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Where do they go on Sunday?（星期日他們去哪？）', passage: 'On Sunday, it is sunny and warm.\nWe go to the beach.\nWe play in the sand.', options: ['the beach', 'the school', 'the zoo', 'home'], answer: 'the beach' },
+    { type: 'read', question: 'Which one is fast?（哪個快？）', passage: 'At the beach, we see a turtle and a fish.\nThe turtle is slow.\nThe fish is fast.', options: ['the fish', 'the turtle', 'the shell', 'the crab'], answer: 'the fish' },
+    { type: 'read', question: 'How do they feel?（他們覺得如何？）', passage: 'We find a big shell.\nWe swim in the sea.\nWe are very happy!', options: ['happy', 'sad', 'tired', 'cold'], answer: 'happy' },
+    { type: 'fill-blank', question: 'The fish is ___ than the turtle.（快）', options: ['faster', 'fast', 'slow', 'slower'], answer: 'faster' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['On Sunday, it is sunny.', 'We go to the beach.', 'The turtle is slow.', 'We are happy.'], answer: 'On Sunday, it is sunny.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：be _ ch（海邊）', answer: 'beach', image: '✍️' },
+  ],
+  talkTimePrompts: ["Tell a short story about the beach.", "Describe the weather and the day.", "Compare the turtle and the fish.", "What did you find? I found a ___."],
+  reviewQuiz: [
+    { type: 'read', question: 'Is the turtle fast?（烏龜快嗎？）', passage: 'The turtle is slow.\nThe fish is fast.\nThe fish is faster than the turtle.', options: ['No, it is slow', 'Yes, it is fast', 'It is big', 'It is hot'], answer: 'No, it is slow' },
+    { type: 'fill-blank', question: 'We go to the beach ___ Sunday.（在）', options: ['on', 'in', 'at', 'to'], answer: 'on' },
+    { type: 'match', question: '💨 fast 是什麼意思？', options: ['快', '慢', '大', '冷'], answer: '快' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review reading! Read and answer!", lineZh: '來複習閱讀！讀完回答！' },
+    { speaker: 'Coco', line: "On Sunday, it is sunny. We go to the beach!", lineZh: '星期日晴天。我們去海邊！' },
+    { speaker: 'Benny', line: "We see a slow turtle and a fast fish!", lineZh: '我們看到慢烏龜和快魚！' },
+    { speaker: 'Finn', line: "You are a great reader! Amazing!", lineZh: '你是很棒的讀者！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
