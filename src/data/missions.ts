@@ -11631,7 +11631,267 @@ const L12_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5, L12_M6, L12_M7, L12_M8, L12_M9, L12_M10];
+const L12_M11: Mission = {
+  id: 11, slug: 'l12-m11-creative-story', level: 12, title: '創意故事寫作', titleEn: 'Creative Story', theme: '勝利峰・當個作家', themeEmoji: '✍️',
+  focus: '創意寫作：故事結構（開頭/發展/結尾＋角色＋情節）＋ 中翻英',
+  story: [
+    { image: '✍️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "A story needs a beginning, a middle, and an end.", dialogueZh: '故事需要開頭、中段和結尾。', highlightWords: ['beginning', 'end'], sceneEmojis: ['✍️', '📖', '✨'], animation: 'wave' },
+    { image: '🐉', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Beginning: Once upon a time, a dragon lived in a cave.", dialogueZh: '開頭：從前，一條龍住在洞穴裡。', highlightWords: ['Once upon a time'], sceneEmojis: ['🐉', '🕳️', '😊'], animation: 'bounce' },
+    { image: '⚔️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Middle: a problem. End: how it is solved!", dialogueZh: '中段：一個問題。結尾：如何解決！', highlightWords: ['problem', 'solved'], sceneEmojis: ['⚔️', '✅', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Use your imagination to create a story!", dialogueZh: '用你的想像力創作故事！', highlightWords: [], sceneEmojis: ['🏆', '✍️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'beginning', zh: '開頭', image: '1️⃣', phonics: '', kk: '[bɪˈɡɪnɪŋ]', phonicsSound: '', exampleSentence: 'the beginning', exampleZh: '開頭' },
+    { en: 'middle', zh: '中段', image: '2️⃣', phonics: '', kk: '[ˈmɪdl̩]', phonicsSound: '', exampleSentence: 'the middle', exampleZh: '中段' },
+    { en: 'end', zh: '結尾', image: '3️⃣', phonics: '', kk: '[ɛnd]', phonicsSound: '', exampleSentence: 'the end', exampleZh: '結尾' },
+    { en: 'character', zh: '角色', image: '🧑', phonics: '', kk: '[ˈkærɪktɚ]', phonicsSound: '', exampleSentence: 'the main character', exampleZh: '主角' },
+    { en: 'plot', zh: '情節', image: '📈', phonics: '', kk: '[plɑt]', phonicsSound: '', exampleSentence: 'an exciting plot', exampleZh: '刺激的情節' },
+    { en: 'problem', zh: '問題', image: '⚠️', phonics: '', kk: '[ˈprɑbləm]', phonicsSound: '', exampleSentence: 'a big problem', exampleZh: '大問題' },
+    { en: 'solve', zh: '解決', image: '✅', phonics: '', kk: '[sɑlv]', phonicsSound: '', exampleSentence: 'solve the problem', exampleZh: '解決問題' },
+    { en: 'imagine', zh: '想像', image: '💭', phonics: '', kk: '[ɪˈmædʒɪn]', phonicsSound: '', exampleSentence: 'imagine a world', exampleZh: '想像一個世界' },
+    { en: 'once upon a time', zh: '從前', image: '📜', phonics: '', kk: '[wʌns əˈpɑn ə taɪm]', phonicsSound: '', exampleSentence: 'Once upon a time…', exampleZh: '從前…' },
+    { en: 'create', zh: '創作', image: '🎨', phonics: '', kk: '[kriˈet]', phonicsSound: '', exampleSentence: 'create a story', exampleZh: '創作故事' },
+  ],
+  sentences: [
+    { en: 'A story needs a beginning, middle, and end.', zh: '故事需要開頭、中段和結尾。' }, { en: 'Once upon a time, a dragon lived in a cave.', zh: '從前，一條龍住在洞穴裡。' }, { en: 'The main character had a big problem.', zh: '主角遇到一個大問題。' }, { en: 'In the end, the problem was solved.', zh: '最後，問題解決了。' }, { en: 'Use your imagination.', zh: '用你的想像力。' }, { en: 'Every good story teaches something.', zh: '每個好故事都教我們東西。' },
+  ],
+  phonicsLetters: ['creative story'],
+  warmUpQuestions: [
+    { type: 'match', question: '故事的三部分是？', options: ['開頭/中段/結尾', '主詞/動詞/受詞', '過去/現在/未來', '大/中/小'], answer: '開頭/中段/結尾' },
+    { type: 'match', question: 'character 是什麼意思？', options: ['角色', '情節', '問題', '結尾'], answer: '角色' },
+    { type: 'fill-blank', question: '___ upon a time…（從前）', options: ['Once', 'First', 'Then', 'Now'], answer: 'Once' },
+  ],
+  challenges: [
+    { type: 'match', question: 'plot 是什麼意思？', options: ['情節', '角色', '開頭', '結尾'], answer: '情節' },
+    { type: 'fill-blank', question: 'In the end, the problem was ___.（解決·p.p.）', options: ['solved', 'solve', 'solving', 'solves'], answer: 'solved' },
+    { type: 'fill-blank', question: '中翻英：「從前，一條龍住在洞穴裡。」', options: ['Once upon a time, a dragon lived in a cave.', 'A dragon is big.', 'I see a dragon.', 'Where is the dragon?'], answer: 'Once upon a time, a dragon lived in a cave.' },
+    { type: 'fill-blank', question: '中翻英：「主角遇到一個大問題。」', options: ['The main character had a big problem.', 'The character is nice.', 'A big problem.', 'Who is the character?'], answer: 'The main character had a big problem.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['A story needs a beginning, middle, and end.', 'Once upon a time, a dragon lived in a cave.', 'The main character had a big problem.', 'In the end, the problem was solved.'], answer: 'A story needs a beginning, middle, and end.', image: '🎧' },
+    { type: 'read', question: 'What are the parts of a story?（故事的部分有哪些？）', passage: 'Every story has three parts.\nThe beginning introduces the character.\nThe middle has a problem, and the end solves it.', options: ['beginning, middle, end', 'top, side, bottom', 'past, now, future', 'one part only'], answer: 'beginning, middle, end' },
+  ],
+  talkTimePrompts: ["Tell the beginning of a story: Once upon a time…", "Describe a character and a problem.", "Say how the story ends.", "✍️ 引導寫作＋翻譯：寫一個有開頭/中段/結尾的短篇故事。"],
+  reviewQuiz: [
+    { type: 'match', question: 'imagine 是什麼意思？', options: ['想像', '解決', '創作', '角色'], answer: '想像' },
+    { type: 'fill-blank', question: '中翻英：「用你的想像力。」', options: ['Use your imagination.', 'I imagine.', 'Imagine it.', 'Do you imagine?'], answer: 'Use your imagination.' },
+    { type: 'read', question: 'What does a good story do?（好故事會怎樣？）', passage: 'A good story is fun to read.\nIt has interesting characters.\nEvery good story teaches something.', options: ['teaches something', 'is boring', 'is short', 'has no end'], answer: 'teaches something' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "A story needs a beginning, a middle, and an end.", lineZh: '故事需要開頭、中段和結尾。' },
+    { speaker: 'Coco', line: "Beginning: Once upon a time, a dragon lived in a cave.", lineZh: '開頭：從前，一條龍住在洞穴裡。' },
+    { speaker: 'Benny', line: "Middle: a problem. End: how it is solved!", lineZh: '中段：一個問題。結尾：如何解決！' },
+    { speaker: 'Ruby', line: "Use your imagination to create a story!", lineZh: '用你的想像力創作故事！' },
+  ],
+};
+
+const L12_M12: Mission = {
+  id: 12, slug: 'l12-m12-how-to', level: 12, title: '說明文寫作', titleEn: 'How-To Writing', theme: '勝利峰・教學高手', themeEmoji: '📋',
+  focus: '說明文寫作：How to…（步驟清楚、用順序詞）＋ 中翻英',
+  story: [
+    { image: '📋', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A how-to text explains steps clearly.", dialogueZh: '說明文清楚地解釋步驟。', highlightWords: ['steps'], sceneEmojis: ['📋', '🪜', '✨'], animation: 'wave' },
+    { image: '🥪', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "How to make a sandwich: First, take two slices of bread.", dialogueZh: '如何做三明治：首先，拿兩片麵包。', highlightWords: ['First'], sceneEmojis: ['🥪', '🍞', '😊'], animation: 'bounce' },
+    { image: '🧀', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Next, add cheese. Finally, enjoy your sandwich!", dialogueZh: '接著，加起司。最後，享用你的三明治！', highlightWords: ['Next', 'Finally'], sceneEmojis: ['🧀', '😋', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Clear steps make good instructions!", dialogueZh: '清楚的步驟造就好說明！', highlightWords: [], sceneEmojis: ['🏆', '📋', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'how to', zh: '如何（做）', image: '📋', phonics: '', kk: '[haʊ tu]', phonicsSound: '', exampleSentence: 'how to make it', exampleZh: '如何做它' },
+    { en: 'step', zh: '步驟', image: '🪜', phonics: '', kk: '[stɛp]', phonicsSound: '', exampleSentence: 'the first step', exampleZh: '第一步' },
+    { en: 'instructions', zh: '說明·指示', image: '📄', phonics: '', kk: '[ɪnˈstrʌkʃənz]', phonicsSound: '', exampleSentence: 'follow the instructions', exampleZh: '照著說明做' },
+    { en: 'first', zh: '首先', image: '1️⃣', phonics: '', kk: '[fɝst]', phonicsSound: '', exampleSentence: 'First, take bread.', exampleZh: '首先，拿麵包。' },
+    { en: 'next', zh: '接著', image: '2️⃣', phonics: '', kk: '[nɛkst]', phonicsSound: '', exampleSentence: 'Next, add cheese.', exampleZh: '接著，加起司。' },
+    { en: 'finally', zh: '最後', image: '🏁', phonics: '', kk: '[ˈfaɪnəli]', phonicsSound: '', exampleSentence: 'Finally, enjoy!', exampleZh: '最後，享用！' },
+    { en: 'add', zh: '加入', image: '➕', phonics: '', kk: '[æd]', phonicsSound: '', exampleSentence: 'add cheese', exampleZh: '加起司' },
+    { en: 'slice', zh: '片', image: '🍞', phonics: '', kk: '[slaɪs]', phonicsSound: '', exampleSentence: 'a slice of bread', exampleZh: '一片麵包' },
+    { en: 'mix', zh: '混合', image: '🥣', phonics: '', kk: '[mɪks]', phonicsSound: '', exampleSentence: 'mix the eggs', exampleZh: '把蛋打勻' },
+    { en: 'clear', zh: '清楚的', image: '✅', phonics: '', kk: '[klɪr]', phonicsSound: '', exampleSentence: 'clear steps', exampleZh: '清楚的步驟' },
+  ],
+  sentences: [
+    { en: 'How to make a sandwich.', zh: '如何做三明治。' }, { en: 'First, take two slices of bread.', zh: '首先，拿兩片麵包。' }, { en: 'Next, add cheese and tomato.', zh: '接著，加起司和番茄。' }, { en: 'Finally, enjoy your sandwich!', zh: '最後，享用你的三明治！' }, { en: 'Follow the steps in order.', zh: '照順序照著步驟做。' }, { en: 'Clear instructions are helpful.', zh: '清楚的說明很有幫助。' },
+  ],
+  phonicsLetters: ['how-to writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___, take two slices of bread.（首先）', options: ['First', 'Finally', 'Next', 'And'], answer: 'First' },
+    { type: 'fill-blank', question: '___, add cheese.（接著）', options: ['Next', 'First', 'Finally', 'So'], answer: 'Next' },
+    { type: 'match', question: 'step 是什麼意思？', options: ['步驟', '說明', '片', '混合'], answer: '步驟' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: '___, enjoy your sandwich!（最後）', options: ['Finally', 'First', 'Next', 'And'], answer: 'Finally' },
+    { type: 'fill-blank', question: 'Follow the ___ in order.（步驟·複數）', options: ['steps', 'step', 'slice', 'mix'], answer: 'steps' },
+    { type: 'fill-blank', question: '中翻英：「首先，拿兩片麵包。」', options: ['First, take two slices of bread.', 'I eat bread.', 'Bread is good.', 'Where is bread?'], answer: 'First, take two slices of bread.' },
+    { type: 'fill-blank', question: '中翻英：「最後，享用你的三明治！」', options: ['Finally, enjoy your sandwich!', 'I like sandwiches.', 'A sandwich.', 'Is it good?'], answer: 'Finally, enjoy your sandwich!' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['How to make a sandwich.', 'First, take two slices of bread.', 'Next, add cheese and tomato.', 'Finally, enjoy your sandwich!'], answer: 'How to make a sandwich.', image: '🎧' },
+    { type: 'read', question: 'What is the first step?（第一步是什麼？）', passage: 'How to make a sandwich:\nFirst, take two slices of bread.\nNext, add cheese. Finally, enjoy!', options: ['take two slices of bread', 'add cheese', 'enjoy', 'eat it'], answer: 'take two slices of bread' },
+  ],
+  talkTimePrompts: ["Explain how to make something with First/Next/Finally.", "Give clear steps for a simple task.", "Teach a friend how to do something.", "✍️ 引導寫作＋翻譯：寫一篇「How to…」說明文（3-4 步驟）。"],
+  reviewQuiz: [
+    { type: 'match', question: 'instructions 是什麼意思？', options: ['說明·指示', '步驟', '片', '混合'], answer: '說明·指示' },
+    { type: 'fill-blank', question: '中翻英：「接著，加起司和番茄。」', options: ['Next, add cheese and tomato.', 'I add cheese.', 'Cheese is good.', 'Where is cheese?'], answer: 'Next, add cheese and tomato.' },
+    { type: 'match', question: '說明文常用哪類詞？', options: ['順序詞(First/Next/Finally)', '疑問詞', '形容詞', '介系詞'], answer: '順序詞(First/Next/Finally)' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A how-to text explains steps clearly.", lineZh: '說明文清楚地解釋步驟。' },
+    { speaker: 'Coco', line: "How to make a sandwich: First, take two slices of bread.", lineZh: '如何做三明治：首先，拿兩片麵包。' },
+    { speaker: 'Polly', line: "Next, add cheese. Finally, enjoy your sandwich!", lineZh: '接著，加起司。最後，享用你的三明治！' },
+    { speaker: 'Benny', line: "Clear steps make good instructions!", lineZh: '清楚的步驟造就好說明！' },
+  ],
+};
+
+const L12_M13: Mission = {
+  id: 13, slug: 'l12-m13-email', level: 12, title: '書信 email 進階', titleEn: 'Email Writing', theme: '勝利峰・寫封email', themeEmoji: '📧',
+  focus: '書信/email 進階：主旨、問候、正文、結尾（正式與友善）＋ 中翻英',
+  story: [
+    { image: '📧', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "An email has a subject, a greeting, a body, and a closing.", dialogueZh: 'email 有主旨、問候、正文和結尾。', highlightWords: ['subject', 'closing'], sceneEmojis: ['📧', '📝', '✨'], animation: 'wave' },
+    { image: '👋', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Dear Mr. Lee, I am writing to ask about the class.", dialogueZh: '親愛的李老師，我寫信是想詢問課程。', highlightWords: ['Dear', 'writing to ask'], sceneEmojis: ['👋', '📚', '😊'], animation: 'bounce' },
+    { image: '🖊️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Thank you for your time. Best regards, Coco.", dialogueZh: '謝謝您撥空。誠摯問候，Coco。', highlightWords: ['Best regards'], sceneEmojis: ['🖊️', '🙏', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Now you can write a proper email!", dialogueZh: '現在你會寫正式的 email 了！', highlightWords: [], sceneEmojis: ['🏆', '📧', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'email', zh: '電子郵件', image: '📧', phonics: '', kk: '[ˈiˌmel]', phonicsSound: '', exampleSentence: 'write an email', exampleZh: '寫 email' },
+    { en: 'subject', zh: '主旨', image: '📌', phonics: '', kk: '[ˈsʌbdʒɪkt]', phonicsSound: '', exampleSentence: 'the subject line', exampleZh: '主旨欄' },
+    { en: 'greeting', zh: '問候語', image: '👋', phonics: '', kk: '[ˈɡritɪŋ]', phonicsSound: '', exampleSentence: 'a polite greeting', exampleZh: '有禮的問候' },
+    { en: 'body', zh: '正文', image: '📄', phonics: '', kk: '[ˈbɑdi]', phonicsSound: '', exampleSentence: 'the body of the email', exampleZh: 'email 正文' },
+    { en: 'closing', zh: '結尾', image: '🖊️', phonics: '', kk: '[ˈklozɪŋ]', phonicsSound: '', exampleSentence: 'a polite closing', exampleZh: '有禮的結尾' },
+    { en: 'Dear', zh: '親愛的·敬啟者', image: '💌', phonics: '', kk: '[dɪr]', phonicsSound: '', exampleSentence: 'Dear Mr. Lee,', exampleZh: '親愛的李先生，' },
+    { en: 'Best regards', zh: '誠摯問候', image: '🙏', phonics: '', kk: '[bɛst rɪˈɡɑrdz]', phonicsSound: '', exampleSentence: 'Best regards, Coco', exampleZh: '誠摯問候，Coco' },
+    { en: 'reply', zh: '回覆', image: '↩️', phonics: '', kk: '[rɪˈplaɪ]', phonicsSound: '', exampleSentence: 'reply soon', exampleZh: '盡快回覆' },
+    { en: 'ask', zh: '詢問', image: '❓', phonics: '', kk: '[æsk]', phonicsSound: '', exampleSentence: 'ask about the class', exampleZh: '詢問課程' },
+    { en: 'polite', zh: '有禮貌的', image: '🙇', phonics: '', kk: '[pəˈlaɪt]', phonicsSound: '', exampleSentence: 'be polite', exampleZh: '有禮貌' },
+  ],
+  sentences: [
+    { en: 'Dear Mr. Lee,', zh: '親愛的李老師，' }, { en: 'I am writing to ask about the class.', zh: '我寫信是想詢問課程。' }, { en: 'Could you please tell me the time?', zh: '可以請您告訴我時間嗎？' }, { en: 'Thank you for your time.', zh: '謝謝您撥空。' }, { en: 'Best regards, Coco', zh: '誠摯問候，Coco' }, { en: 'I look forward to your reply.', zh: '我期待您的回覆。' },
+  ],
+  phonicsLetters: ['email writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ Mr. Lee, I am writing…（email 開頭）', options: ['Dear', 'Hi there', 'To', 'From'], answer: 'Dear' },
+    { type: 'match', question: 'email 的結尾常寫？', options: ['Best regards', 'Once upon a time', 'The end', 'Hello'], answer: 'Best regards' },
+    { type: 'match', question: 'subject 是什麼意思？', options: ['主旨', '正文', '問候', '結尾'], answer: '主旨' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Why is Coco writing the email?（Coco 為何寫這封 email？）', passage: 'Dear Mr. Lee,\nI am writing to ask about the class.\nCould you tell me the time?', options: ['to ask about the class', 'to say goodbye', 'to complain', 'to sell something'], answer: 'to ask about the class' },
+    { type: 'fill-blank', question: 'How do you close a polite email?（如何結尾）', options: ['Best regards', 'Once upon a time', 'The end', 'Bye now'], answer: 'Best regards' },
+    { type: 'fill-blank', question: '中翻英：「謝謝您撥空。」', options: ['Thank you for your time.', 'Thank you.', 'You are welcome.', 'What time?'], answer: 'Thank you for your time.' },
+    { type: 'fill-blank', question: '中翻英：「我期待您的回覆。」', options: ['I look forward to your reply.', 'I reply.', 'Reply soon.', 'Do you reply?'], answer: 'I look forward to your reply.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am writing to ask about the class.', 'Could you please tell me the time?', 'Thank you for your time.', 'Best regards, Coco'], answer: 'I am writing to ask about the class.', image: '🎧' },
+    { type: 'read', question: 'What are the parts of an email?（email 有哪些部分？）', passage: 'An email has four parts.\nA subject, a greeting, a body, and a closing.\nEach part is important.', options: ['subject, greeting, body, closing', 'title only', 'name only', 'no parts'], answer: 'subject, greeting, body, closing' },
+  ],
+  talkTimePrompts: ["Start an email: Dear ___, I am writing to ___.", "Make a polite request: Could you please ___?", "Close an email politely.", "✍️ 引導寫作＋翻譯：寫一封短 email（主旨/問候/正文/結尾）。"],
+  reviewQuiz: [
+    { type: 'match', question: 'closing 是 email 的？', options: ['結尾', '主旨', '問候', '正文'], answer: '結尾' },
+    { type: 'fill-blank', question: '中翻英：「可以請您告訴我時間嗎？」', options: ['Could you please tell me the time?', 'What time is it?', 'Tell me now.', 'Is it time?'], answer: 'Could you please tell me the time?' },
+    { type: 'match', question: 'Best regards 用在？', options: ['email 結尾', 'email 開頭', '主旨欄', '正文開始'], answer: 'email 結尾' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "An email has a subject, a greeting, a body, and a closing.", lineZh: 'email 有主旨、問候、正文和結尾。' },
+    { speaker: 'Coco', line: "Dear Mr. Lee, I am writing to ask about the class.", lineZh: '親愛的李老師，我寫信是想詢問課程。' },
+    { speaker: 'Benny', line: "Thank you for your time. Best regards, Coco.", lineZh: '謝謝您撥空。誠摯問候，Coco。' },
+    { speaker: 'Ruby', line: "Now you can write a proper email!", lineZh: '現在你會寫正式的 email 了！' },
+  ],
+};
+
+const L12_M14: Mission = {
+  id: 14, slug: 'l12-m14-project-writing', level: 12, title: '專題寫作', titleEn: 'Project: My Hero', theme: '勝利峰・我的英雄', themeEmoji: '🦸',
+  focus: '專題寫作：My Dream / My Hero（個人主題短文）＋ 中翻英',
+  story: [
+    { image: '🦸', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's write about a person we admire.", dialogueZh: '我們來寫一位我們敬佩的人。', highlightWords: ['admire'], sceneEmojis: ['🦸', '✍️', '✨'], animation: 'wave' },
+    { image: '👵', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "My hero is my grandma. She is kind and strong.", dialogueZh: '我的英雄是我奶奶。她善良又堅強。', highlightWords: ['hero'], sceneEmojis: ['👵', '💪', '😊'], animation: 'bounce' },
+    { image: '💭', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "She inspires me to never give up.", dialogueZh: '她激勵我永不放棄。', highlightWords: ['inspires'], sceneEmojis: ['💭', '🌟', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Write about who inspires you and why!", dialogueZh: '寫下誰激勵你以及為什麼！', highlightWords: [], sceneEmojis: ['🏆', '🦸', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'hero', zh: '英雄', image: '🦸', phonics: '', kk: '[ˈhɪro]', phonicsSound: '', exampleSentence: 'my hero', exampleZh: '我的英雄' },
+    { en: 'admire', zh: '敬佩', image: '🌟', phonics: '', kk: '[ədˈmaɪr]', phonicsSound: '', exampleSentence: 'I admire her.', exampleZh: '我敬佩她。' },
+    { en: 'inspire', zh: '激勵', image: '💭', phonics: '', kk: '[ɪnˈspaɪr]', phonicsSound: '', exampleSentence: 'She inspires me.', exampleZh: '她激勵我。' },
+    { en: 'dream', zh: '夢想', image: '⭐', phonics: '', kk: '[drim]', phonicsSound: '', exampleSentence: 'my dream', exampleZh: '我的夢想' },
+    { en: 'strong', zh: '堅強的', image: '💪', phonics: '', kk: '[strɔŋ]', phonicsSound: '', exampleSentence: 'kind and strong', exampleZh: '善良又堅強' },
+    { en: 'goal', zh: '目標', image: '🥅', phonics: '', kk: '[ɡol]', phonicsSound: '', exampleSentence: 'reach my goal', exampleZh: '達成目標' },
+    { en: 'proud', zh: '驕傲的', image: '😌', phonics: '', kk: '[praʊd]', phonicsSound: '', exampleSentence: 'proud of her', exampleZh: '以她為傲' },
+    { en: 'role model', zh: '榜樣', image: '👤', phonics: '', kk: '[rol ˈmɑdl̩]', phonicsSound: '', exampleSentence: 'a great role model', exampleZh: '好榜樣' },
+    { en: 'brave', zh: '勇敢的', image: '🦁', phonics: '', kk: '[brev]', phonicsSound: '', exampleSentence: 'a brave hero', exampleZh: '勇敢的英雄' },
+    { en: 'value', zh: '重視·價值', image: '💎', phonics: '', kk: '[ˈvælju]', phonicsSound: '', exampleSentence: 'I value kindness.', exampleZh: '我重視善良。' },
+  ],
+  sentences: [
+    { en: 'My hero is my grandma.', zh: '我的英雄是我奶奶。' }, { en: 'She is kind and strong.', zh: '她善良又堅強。' }, { en: 'She inspires me to never give up.', zh: '她激勵我永不放棄。' }, { en: 'I admire her because she helps others.', zh: '我敬佩她因為她幫助別人。' }, { en: 'She is my role model.', zh: '她是我的榜樣。' }, { en: 'I want to be like her.', zh: '我想像她一樣。' },
+  ],
+  phonicsLetters: ['project writing'],
+  warmUpQuestions: [
+    { type: 'match', question: 'hero 是什麼意思？', options: ['英雄', '夢想', '目標', '榜樣'], answer: '英雄' },
+    { type: 'match', question: 'admire 是什麼意思？', options: ['敬佩', '激勵', '重視', '堅強'], answer: '敬佩' },
+    { type: 'fill-blank', question: 'She ___ me to never give up.（激勵）', options: ['inspires', 'admires', 'values', 'dreams'], answer: 'inspires' },
+  ],
+  challenges: [
+    { type: 'read', question: "Who is Coco's hero?（Coco 的英雄是誰？）", passage: 'My hero is my grandma.\nShe is kind and strong.\nShe raised our whole family.', options: ['her grandma', 'her teacher', 'a movie star', 'her friend'], answer: 'her grandma' },
+    { type: 'read', question: 'Why does Coco admire her grandma?（Coco 為何敬佩奶奶？）', passage: 'My grandma helps others.\nShe never gives up.\nI admire her because she is kind and strong.', options: ['she is kind and strong', 'she is rich', 'she is famous', 'she is tall'], answer: 'she is kind and strong' },
+    { type: 'fill-blank', question: '中翻英：「我的英雄是我奶奶。」', options: ['My hero is my grandma.', 'I love grandma.', 'Grandma is here.', 'Who is grandma?'], answer: 'My hero is my grandma.' },
+    { type: 'fill-blank', question: '中翻英：「她激勵我永不放棄。」', options: ['She inspires me to never give up.', 'She is strong.', 'I never give up.', 'Does she inspire me?'], answer: 'She inspires me to never give up.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['My hero is my grandma.', 'She is kind and strong.', 'She inspires me to never give up.', 'I want to be like her.'], answer: 'My hero is my grandma.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：insp _ re（激勵）', answer: 'inspire', image: '✍️' },
+  ],
+  talkTimePrompts: ["Say who your hero is: My hero is ___.", "Describe their qualities.", "Say why they inspire you.", "✍️ 引導寫作＋翻譯：寫一篇「My Hero」或「My Dream」短文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'role model 是什麼意思？', options: ['榜樣', '英雄', '夢想', '目標'], answer: '榜樣' },
+    { type: 'fill-blank', question: '中翻英：「我敬佩她因為她幫助別人。」', options: ['I admire her because she helps others.', 'She helps.', 'I admire her.', 'Does she help?'], answer: 'I admire her because she helps others.' },
+    { type: 'read', question: 'Does Coco want to be like her grandma?（Coco 想像奶奶一樣嗎？）', passage: 'Coco admires her grandma very much.\nShe is her role model.\nCoco wants to be like her.', options: ['Yes, she does', 'No, she does not', 'She is not sure', 'She dislikes her'], answer: 'Yes, she does' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Let's write about a person we admire.", lineZh: '我們來寫一位我們敬佩的人。' },
+    { speaker: 'Coco', line: "My hero is my grandma. She is kind and strong.", lineZh: '我的英雄是我奶奶。她善良又堅強。' },
+    { speaker: 'Benny', line: "She inspires me to never give up.", lineZh: '她激勵我永不放棄。' },
+    { speaker: 'Ruby', line: "Write about who inspires you and why!", lineZh: '寫下誰激勵你以及為什麼！' },
+  ],
+};
+
+const L12_M15: Mission = {
+  id: 15, slug: 'l12-m15-review-writing', level: 12, title: 'Review③ 寫作', titleEn: 'Review: Writing', theme: '勝利峰・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習③：創意故事 ＋ 說明文 ＋ email ＋ 專題寫作 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'write', characterName: 'Finn', dialogue: "Let's review all our writing types!", dialogueZh: '來複習所有寫作類型！', highlightWords: [], sceneEmojis: ['🔄', '✍️', '✨'], animation: 'wave' },
+    { image: '🐉', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "A story has a beginning, middle, and end.", dialogueZh: '故事有開頭、中段和結尾。', highlightWords: [], sceneEmojis: ['🐉', '📖', '😊'], animation: 'bounce' },
+    { image: '📧', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "An email starts with 'Dear' and ends with 'Best regards'.", dialogueZh: 'email 以「Dear」開頭，「Best regards」結尾。', highlightWords: [], sceneEmojis: ['📧', '🖊️', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can write anything now! Ready to graduate!", dialogueZh: '你現在什麼都會寫了！準備畢業！', highlightWords: [], sceneEmojis: ['🏅', '🎓', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'story', zh: '故事', image: '📖', phonics: '', kk: '[ˈstɔri]', phonicsSound: '', exampleSentence: 'write a story', exampleZh: '寫故事' },
+    { en: 'beginning', zh: '開頭', image: '1️⃣', phonics: '', kk: '[bɪˈɡɪnɪŋ]', phonicsSound: '', exampleSentence: 'the beginning', exampleZh: '開頭' },
+    { en: 'how to', zh: '如何（做）', image: '📋', phonics: '', kk: '[haʊ tu]', phonicsSound: '', exampleSentence: 'how to make it', exampleZh: '如何做它' },
+    { en: 'step', zh: '步驟', image: '🪜', phonics: '', kk: '[stɛp]', phonicsSound: '', exampleSentence: 'the first step', exampleZh: '第一步' },
+    { en: 'email', zh: '電子郵件', image: '📧', phonics: '', kk: '[ˈiˌmel]', phonicsSound: '', exampleSentence: 'write an email', exampleZh: '寫 email' },
+    { en: 'Dear', zh: '親愛的', image: '💌', phonics: '', kk: '[dɪr]', phonicsSound: '', exampleSentence: 'Dear Mr. Lee,', exampleZh: '親愛的李先生，' },
+    { en: 'hero', zh: '英雄', image: '🦸', phonics: '', kk: '[ˈhɪro]', phonicsSound: '', exampleSentence: 'my hero', exampleZh: '我的英雄' },
+    { en: 'inspire', zh: '激勵', image: '💭', phonics: '', kk: '[ɪnˈspaɪr]', phonicsSound: '', exampleSentence: 'She inspires me.', exampleZh: '她激勵我。' },
+    { en: 'finally', zh: '最後', image: '🏁', phonics: '', kk: '[ˈfaɪnəli]', phonicsSound: '', exampleSentence: 'Finally, enjoy!', exampleZh: '最後，享用！' },
+    { en: 'write', zh: '寫', image: '✍️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'I love to write.', exampleZh: '我愛寫作。' },
+  ],
+  sentences: [
+    { en: 'A story has a beginning, middle, and end.', zh: '故事有開頭、中段和結尾。' }, { en: 'First, next, finally — clear steps!', zh: '首先、接著、最後 —— 清楚的步驟！' }, { en: 'An email starts with Dear.', zh: 'email 以 Dear 開頭。' }, { en: 'My hero inspires me.', zh: '我的英雄激勵我。' }, { en: 'I can write stories and essays.', zh: '我會寫故事和短文。' }, { en: 'Writing is my superpower!', zh: '寫作是我的超能力！' },
+  ],
+  phonicsLetters: ['review writing'],
+  warmUpQuestions: [
+    { type: 'match', question: '故事的三部分是？', options: ['開頭/中段/結尾', '主詞/動詞/受詞', '大/中/小', '過去/現在/未來'], answer: '開頭/中段/結尾' },
+    { type: 'fill-blank', question: '說明文用 First, Next, ___.（最後）', options: ['Finally', 'Dear', 'hero', 'story'], answer: 'Finally' },
+    { type: 'match', question: 'email 開頭常寫？', options: ['Dear', 'Once upon a time', 'First', 'The end'], answer: 'Dear' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What are three writing types here?（這裡有哪三種寫作？）', passage: 'We learned to write stories.\nWe wrote how-to texts and emails.\nWe also wrote about our heroes.', options: ['stories, how-to, emails (and hero essays)', 'only stories', 'only emails', 'only poems'], answer: 'stories, how-to, emails (and hero essays)' },
+    { type: 'fill-blank', question: 'An email ends with ___.（誠摯問候）', options: ['Best regards', 'Once upon a time', 'First', 'The end'], answer: 'Best regards' },
+    { type: 'fill-blank', question: '中翻英：「故事有開頭、中段和結尾。」', options: ['A story has a beginning, middle, and end.', 'A story is long.', 'I read a story.', 'Is it a story?'], answer: 'A story has a beginning, middle, and end.' },
+    { type: 'fill-blank', question: '中翻英：「我的英雄激勵我。」', options: ['My hero inspires me.', 'My hero is here.', 'I have a hero.', 'Who is my hero?'], answer: 'My hero inspires me.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['A story has a beginning, middle, and end.', 'An email starts with Dear.', 'My hero inspires me.', 'Writing is my superpower!'], answer: 'A story has a beginning, middle, and end.', image: '🎧' },
+    { type: 'read', question: 'What can the writer do now?（作者現在會什麼？）', passage: 'I have learned many kinds of writing.\nI can write stories, emails, and essays.\nWriting is my superpower!', options: ['write many kinds of texts', 'only draw', 'only read', 'nothing'], answer: 'write many kinds of texts' },
+  ],
+  talkTimePrompts: ["Say the parts of a story.", "Give steps for something with First/Next/Finally.", "Say how to start and end an email.", "✍️ 引導寫作＋翻譯：選一種寫作類型，寫一小段。"],
+  reviewQuiz: [
+    { type: 'match', question: 'inspire 是什麼意思？', options: ['激勵', '敬佩', '重視', '創作'], answer: '激勵' },
+    { type: 'fill-blank', question: '中翻英：「我會寫故事和短文。」', options: ['I can write stories and essays.', 'I write.', 'Stories are fun.', 'Do I write?'], answer: 'I can write stories and essays.' },
+    { type: 'read', question: 'Is the writer ready to graduate?（作者準備好畢業了嗎？）', passage: 'I have learned so many writing skills.\nI feel confident now.\nI am ready to graduate!', options: ['Yes, ready', 'No, not yet', 'She quit', 'Not sure'], answer: 'Yes, ready' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review all our writing types!", lineZh: '來複習所有寫作類型！' },
+    { speaker: 'Coco', line: "A story has a beginning, middle, and end.", lineZh: '故事有開頭、中段和結尾。' },
+    { speaker: 'Benny', line: "An email starts with 'Dear' and ends with 'Best regards'.", lineZh: 'email 以「Dear」開頭，「Best regards」結尾。' },
+    { speaker: 'Finn', line: "You can write anything now! Ready to graduate!", lineZh: '你現在什麼都會寫了！準備畢業！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5, L12_M6, L12_M7, L12_M8, L12_M9, L12_M10, L12_M11, L12_M12, L12_M13, L12_M14, L12_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
