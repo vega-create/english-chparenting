@@ -11891,7 +11891,267 @@ const L12_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5, L12_M6, L12_M7, L12_M8, L12_M9, L12_M10, L12_M11, L12_M12, L12_M13, L12_M14, L12_M15];
+const L12_M16: Mission = {
+  id: 16, slug: 'l12-m16-storytelling', level: 12, title: '口說：說故事', titleEn: 'Storytelling', theme: '勝利峰・說書人', themeEmoji: '🎙️',
+  focus: '口說：說故事（用表情、聲音、順序詞把故事說活）＋ 中翻英',
+  story: [
+    { image: '🎙️', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "A good storyteller uses expression and voice.", dialogueZh: '好的說書人會用表情和聲音。', highlightWords: ['expression', 'voice'], sceneEmojis: ['🎙️', '🎭', '✨'], animation: 'wave' },
+    { image: '🐺', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Once, a little wolf was lost in the forest.", dialogueZh: '從前，一隻小狼在森林裡迷路了。', highlightWords: ['Once', 'lost'], sceneEmojis: ['🐺', '🌲', '😊'], animation: 'bounce' },
+    { image: '👏', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Speak clearly and look at your audience!", dialogueZh: '說清楚並看著你的聽眾！', highlightWords: ['audience'], sceneEmojis: ['👏', '👀', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Bring your story to life with your voice!", dialogueZh: '用你的聲音讓故事活起來！', highlightWords: [], sceneEmojis: ['🏆', '🎙️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'storyteller', zh: '說書人', image: '🎙️', phonics: '', kk: '[ˈstɔriˌtɛlɚ]', phonicsSound: '', exampleSentence: 'a good storyteller', exampleZh: '好的說書人' },
+    { en: 'expression', zh: '表情', image: '🎭', phonics: '', kk: '[ɪkˈsprɛʃən]', phonicsSound: '', exampleSentence: 'use expression', exampleZh: '用表情' },
+    { en: 'voice', zh: '聲音·語氣', image: '🔊', phonics: '', kk: '[vɔɪs]', phonicsSound: '', exampleSentence: 'a clear voice', exampleZh: '清楚的聲音' },
+    { en: 'audience', zh: '聽眾', image: '👀', phonics: '', kk: '[ˈɔdiəns]', phonicsSound: '', exampleSentence: 'the audience', exampleZh: '聽眾' },
+    { en: 'clearly', zh: '清楚地', image: '✅', phonics: '', kk: '[ˈklɪrli]', phonicsSound: '', exampleSentence: 'speak clearly', exampleZh: '說清楚' },
+    { en: 'lost', zh: '迷路的', image: '🧭', phonics: '', kk: '[lɔst]', phonicsSound: '', exampleSentence: 'lost in the forest', exampleZh: '在森林迷路' },
+    { en: 'forest', zh: '森林', image: '🌲', phonics: '', kk: '[ˈfɔrɪst]', phonicsSound: '', exampleSentence: 'a dark forest', exampleZh: '黑暗的森林' },
+    { en: 'exciting', zh: '刺激的', image: '🤩', phonics: '', kk: '[ɪkˈsaɪtɪŋ]', phonicsSound: '', exampleSentence: 'an exciting story', exampleZh: '刺激的故事' },
+    { en: 'pause', zh: '停頓', image: '⏸️', phonics: '', kk: '[pɔz]', phonicsSound: '', exampleSentence: 'a short pause', exampleZh: '短暫停頓' },
+    { en: 'bring to life', zh: '使…生動', image: '✨', phonics: '', kk: '[brɪŋ tu laɪf]', phonicsSound: '', exampleSentence: 'bring a story to life', exampleZh: '讓故事生動' },
+  ],
+  sentences: [
+    { en: 'A good storyteller uses expression.', zh: '好說書人會用表情。' }, { en: 'Once, a little wolf was lost.', zh: '從前，一隻小狼迷路了。' }, { en: 'Speak clearly and slowly.', zh: '說清楚且慢慢說。' }, { en: 'Look at your audience.', zh: '看著你的聽眾。' }, { en: 'Use your voice to show feelings.', zh: '用聲音表現情緒。' }, { en: 'Bring your story to life!', zh: '讓你的故事活起來！' },
+  ],
+  phonicsLetters: ['storytelling'],
+  warmUpQuestions: [
+    { type: 'match', question: 'storyteller 是什麼意思？', options: ['說書人', '聽眾', '表情', '森林'], answer: '說書人' },
+    { type: 'match', question: 'audience 是什麼意思？', options: ['聽眾', '說書人', '聲音', '表情'], answer: '聽眾' },
+    { type: 'fill-blank', question: 'Speak ___ and slowly.（清楚地）', options: ['clearly', 'lost', 'exciting', 'forest'], answer: 'clearly' },
+  ],
+  challenges: [
+    { type: 'match', question: 'expression 是什麼意思？', options: ['表情', '聽眾', '森林', '停頓'], answer: '表情' },
+    { type: 'fill-blank', question: 'Look at your ___.（聽眾）', options: ['audience', 'voice', 'forest', 'pause'], answer: 'audience' },
+    { type: 'fill-blank', question: '中翻英：「從前，一隻小狼迷路了。」', options: ['Once, a little wolf was lost.', 'A wolf is big.', 'I see a wolf.', 'Where is the wolf?'], answer: 'Once, a little wolf was lost.' },
+    { type: 'fill-blank', question: '中翻英：「用聲音表現情緒。」', options: ['Use your voice to show feelings.', 'I have a voice.', 'Speak loudly.', 'Do you speak?'], answer: 'Use your voice to show feelings.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['A good storyteller uses expression.', 'Once, a little wolf was lost.', 'Speak clearly and slowly.', 'Bring your story to life!'], answer: 'A good storyteller uses expression.', image: '🎧' },
+    { type: 'read', question: 'What makes a good storyteller?（好說書人靠什麼？）', passage: 'A good storyteller speaks clearly.\nThey use expression and voice.\nThey look at the audience.', options: ['expression, voice, eye contact', 'reading fast', 'staying silent', 'looking down'], answer: 'expression, voice, eye contact' },
+  ],
+  talkTimePrompts: ["Tell a short story out loud with expression.", "Change your voice for different characters.", "Look up and speak to your 'audience'.", "✍️ 引導寫作＋翻譯：寫下你要說的故事的開頭 2 句。"],
+  reviewQuiz: [
+    { type: 'match', question: 'bring to life 意思是？', options: ['使…生動', '迷路', '停頓', '刺激'], answer: '使…生動' },
+    { type: 'fill-blank', question: '中翻英：「看著你的聽眾。」', options: ['Look at your audience.', 'I see people.', 'Speak up.', 'Who is there?'], answer: 'Look at your audience.' },
+    { type: 'match', question: '說故事時該？', options: ['用表情和聲音', '快速唸完', '不看聽眾', '很小聲'], answer: '用表情和聲音' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "A good storyteller uses expression and voice.", lineZh: '好的說書人會用表情和聲音。' },
+    { speaker: 'Coco', line: "Once, a little wolf was lost in the forest.", lineZh: '從前，一隻小狼在森林裡迷路了。' },
+    { speaker: 'Benny', line: "Speak clearly and look at your audience!", lineZh: '說清楚並看著你的聽眾！' },
+    { speaker: 'Ruby', line: "Bring your story to life with your voice!", lineZh: '用你的聲音讓故事活起來！' },
+  ],
+};
+
+const L12_M17: Mission = {
+  id: 17, slug: 'l12-m17-presentation', level: 12, title: '口說：簡報', titleEn: 'Presentation', theme: '勝利峰・上台報告', themeEmoji: '📊',
+  focus: '口說：簡報與自我介紹（開場/內容/結尾＋自信）＋ 中翻英',
+  story: [
+    { image: '📊', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Hello, everyone. Today I will talk about my hobby.", dialogueZh: '大家好。今天我要談我的嗜好。', highlightWords: ['Today I will talk about'], sceneEmojis: ['📊', '🎤', '✨'], animation: 'wave' },
+    { image: '🎨', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "First, I will show you my paintings.", dialogueZh: '首先，我會給大家看我的畫。', highlightWords: ['First'], sceneEmojis: ['🎨', '🖼️', '😊'], animation: 'bounce' },
+    { image: '🙏', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Thank you for listening. Any questions?", dialogueZh: '謝謝聆聽。有問題嗎？', highlightWords: ['Thank you for listening'], sceneEmojis: ['🙏', '❓', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Stand tall, speak up, and be confident!", dialogueZh: '站直、大聲說、要有自信！', highlightWords: ['confident'], sceneEmojis: ['🏆', '📊', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'presentation', zh: '簡報·報告', image: '📊', phonics: '', kk: '[ˌprɛzn̩ˈteʃən]', phonicsSound: '', exampleSentence: 'give a presentation', exampleZh: '做報告' },
+    { en: 'introduce', zh: '介紹', image: '🎤', phonics: '', kk: '[ˌɪntrəˈdus]', phonicsSound: '', exampleSentence: 'introduce myself', exampleZh: '介紹我自己' },
+    { en: 'topic', zh: '主題', image: '📌', phonics: '', kk: '[ˈtɑpɪk]', phonicsSound: '', exampleSentence: 'my topic', exampleZh: '我的主題' },
+    { en: 'confident', zh: '有自信的', image: '😌', phonics: '', kk: '[ˈkɑnfɪdənt]', phonicsSound: '', exampleSentence: 'be confident', exampleZh: '有自信' },
+    { en: 'audience', zh: '觀眾', image: '👀', phonics: '', kk: '[ˈɔdiəns]', phonicsSound: '', exampleSentence: 'the audience', exampleZh: '觀眾' },
+    { en: 'slide', zh: '投影片', image: '🖥️', phonics: '', kk: '[slaɪd]', phonicsSound: '', exampleSentence: 'the next slide', exampleZh: '下一張投影片' },
+    { en: 'question', zh: '問題', image: '❓', phonics: '', kk: '[ˈkwɛstʃən]', phonicsSound: '', exampleSentence: 'Any questions?', exampleZh: '有問題嗎？' },
+    { en: 'speak up', zh: '大聲說', image: '🔊', phonics: '', kk: '[spik ʌp]', phonicsSound: '', exampleSentence: 'Speak up!', exampleZh: '大聲說！' },
+    { en: 'practice', zh: '練習', image: '🎯', phonics: '', kk: '[ˈpræktɪs]', phonicsSound: '', exampleSentence: 'practice first', exampleZh: '先練習' },
+    { en: 'clear', zh: '清楚的', image: '✅', phonics: '', kk: '[klɪr]', phonicsSound: '', exampleSentence: 'a clear voice', exampleZh: '清楚的聲音' },
+  ],
+  sentences: [
+    { en: 'Hello, everyone.', zh: '大家好。' }, { en: 'Today I will talk about my hobby.', zh: '今天我要談我的嗜好。' }, { en: 'First, I will show you my paintings.', zh: '首先，我會給大家看我的畫。' }, { en: 'Thank you for listening.', zh: '謝謝聆聽。' }, { en: 'Any questions?', zh: '有問題嗎？' }, { en: 'Stand tall and be confident.', zh: '站直並有自信。' },
+  ],
+  phonicsLetters: ['presentation'],
+  warmUpQuestions: [
+    { type: 'match', question: 'presentation 是什麼意思？', options: ['簡報·報告', '故事', '聽眾', '主題'], answer: '簡報·報告' },
+    { type: 'fill-blank', question: 'Today I will ___ about my hobby.（談·報告開場）', options: ['talk', 'sleep', 'eat', 'run'], answer: 'talk' },
+    { type: 'match', question: 'confident 是什麼意思？', options: ['有自信的', '清楚的', '有主題的', '有問題的'], answer: '有自信的' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'Thank you for ___.（聆聽）', options: ['listening', 'sleeping', 'eating', 'running'], answer: 'listening' },
+    { type: 'fill-blank', question: 'Stand tall and be ___.（有自信）', options: ['confident', 'clear', 'topic', 'slide'], answer: 'confident' },
+    { type: 'fill-blank', question: '中翻英：「今天我要談我的嗜好。」', options: ['Today I will talk about my hobby.', 'I have a hobby.', 'My hobby is fun.', 'What is your hobby?'], answer: 'Today I will talk about my hobby.' },
+    { type: 'fill-blank', question: '中翻英：「謝謝聆聽。有問題嗎？」', options: ['Thank you for listening. Any questions?', 'Thank you.', 'I have questions.', 'Do you listen?'], answer: 'Thank you for listening. Any questions?' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Hello, everyone.', 'Today I will talk about my hobby.', 'Thank you for listening.', 'Stand tall and be confident.'], answer: 'Hello, everyone.', image: '🎧' },
+    { type: 'read', question: 'How should you present?（該如何做簡報？）', passage: 'To give a good presentation,\nspeak clearly and stand tall.\nBe confident and look at your audience.', options: ['clearly and confidently', 'very quietly', 'looking down', 'reading fast'], answer: 'clearly and confidently' },
+  ],
+  talkTimePrompts: ["Open a presentation: Hello, today I will talk about ___.", "Introduce yourself confidently.", "Close: Thank you for listening. Any questions?", "✍️ 引導寫作＋翻譯：寫你簡報的開場和結尾兩句。"],
+  reviewQuiz: [
+    { type: 'match', question: 'audience 是什麼意思？', options: ['觀眾', '主題', '投影片', '問題'], answer: '觀眾' },
+    { type: 'fill-blank', question: '中翻英：「首先，我會給大家看我的畫。」', options: ['First, I will show you my paintings.', 'I paint.', 'My paintings are nice.', 'Do you paint?'], answer: 'First, I will show you my paintings.' },
+    { type: 'match', question: '報告時該？', options: ['站直、大聲、有自信', '小聲低頭', '快速唸稿', '不看觀眾'], answer: '站直、大聲、有自信' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Hello, everyone. Today I will talk about my hobby.", lineZh: '大家好。今天我要談我的嗜好。' },
+    { speaker: 'Coco', line: "First, I will show you my paintings.", lineZh: '首先，我會給大家看我的畫。' },
+    { speaker: 'Polly', line: "Thank you for listening. Any questions?", lineZh: '謝謝聆聽。有問題嗎？' },
+    { speaker: 'Benny', line: "Stand tall, speak up, and be confident!", lineZh: '站直、大聲說、要有自信！' },
+  ],
+};
+
+const L12_M18: Mission = {
+  id: 18, slug: 'l12-m18-project', level: 12, title: '綜合專題', titleEn: 'Project', theme: '勝利峰・我的專題', themeEmoji: '🎯',
+  focus: '綜合專題：結合讀、寫、說完成一個主題（研究＋報告）＋ 中翻英',
+  story: [
+    { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A project uses reading, writing, and speaking together.", dialogueZh: '專題結合閱讀、寫作和口說。', highlightWords: ['project'], sceneEmojis: ['🎯', '📚', '✨'], animation: 'wave' },
+    { image: '🔍', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "First, I read about sea animals. Then I wrote notes.", dialogueZh: '首先，我讀了海洋動物。然後我寫筆記。', highlightWords: ['read', 'wrote'], sceneEmojis: ['🔍', '🐠', '😊'], animation: 'bounce' },
+    { image: '📊', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Finally, I made a poster and gave a talk.", dialogueZh: '最後，我做了海報並做了報告。', highlightWords: ['made', 'gave a talk'], sceneEmojis: ['📊', '🖼️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You used every skill in one project!", dialogueZh: '你在一個專題裡用上了所有技能！', highlightWords: [], sceneEmojis: ['🏆', '🎯', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'project', zh: '專題', image: '🎯', phonics: '', kk: '[ˈprɑdʒɛkt]', phonicsSound: '', exampleSentence: 'a class project', exampleZh: '課堂專題' },
+    { en: 'research', zh: '研究', image: '🔍', phonics: '', kk: '[rɪˈsɝtʃ]', phonicsSound: '', exampleSentence: 'do research', exampleZh: '做研究' },
+    { en: 'notes', zh: '筆記', image: '📝', phonics: '', kk: '[nots]', phonicsSound: '', exampleSentence: 'take notes', exampleZh: '做筆記' },
+    { en: 'poster', zh: '海報', image: '🖼️', phonics: '', kk: '[ˈpostɚ]', phonicsSound: '', exampleSentence: 'make a poster', exampleZh: '做海報' },
+    { en: 'topic', zh: '主題', image: '📌', phonics: '', kk: '[ˈtɑpɪk]', phonicsSound: '', exampleSentence: 'choose a topic', exampleZh: '選主題' },
+    { en: 'information', zh: '資訊', image: 'ℹ️', phonics: '', kk: '[ˌɪnfɚˈmeʃən]', phonicsSound: '', exampleSentence: 'find information', exampleZh: '找資訊' },
+    { en: 'organize', zh: '整理', image: '🗂️', phonics: '', kk: '[ˈɔrɡəˌnaɪz]', phonicsSound: '', exampleSentence: 'organize ideas', exampleZh: '整理想法' },
+    { en: 'present', zh: '呈現·報告', image: '📊', phonics: '', kk: '[prɪˈzɛnt]', phonicsSound: '', exampleSentence: 'present your work', exampleZh: '呈現你的作品' },
+    { en: 'skill', zh: '技能', image: '💪', phonics: '', kk: '[skɪl]', phonicsSound: '', exampleSentence: 'use your skills', exampleZh: '運用技能' },
+    { en: 'together', zh: '一起', image: '🔗', phonics: '', kk: '[təˈɡɛðɚ]', phonicsSound: '', exampleSentence: 'work together', exampleZh: '一起合作' },
+  ],
+  sentences: [
+    { en: 'A project uses reading, writing, and speaking.', zh: '專題結合讀、寫、說。' }, { en: 'First, I read about sea animals.', zh: '首先，我讀了海洋動物。' }, { en: 'Then, I wrote my notes.', zh: '然後，我寫了筆記。' }, { en: 'I made a poster.', zh: '我做了海報。' }, { en: 'Finally, I gave a talk.', zh: '最後，我做了報告。' }, { en: 'I used all my skills.', zh: '我用上了所有技能。' },
+  ],
+  phonicsLetters: ['project'],
+  warmUpQuestions: [
+    { type: 'match', question: 'project 是什麼意思？', options: ['專題', '海報', '研究', '筆記'], answer: '專題' },
+    { type: 'match', question: 'research 是什麼意思？', options: ['研究', '呈現', '整理', '技能'], answer: '研究' },
+    { type: 'fill-blank', question: 'First, I ___ about sea animals.（讀·過去）', options: ['read', 'reads', 'reading', 'will read'], answer: 'read' },
+  ],
+  challenges: [
+    { type: 'match', question: 'poster 是什麼意思？', options: ['海報', '筆記', '主題', '技能'], answer: '海報' },
+    { type: 'fill-blank', question: 'Finally, I ___ a talk.（做·過去 give）', options: ['gave', 'give', 'gives', 'giving'], answer: 'gave' },
+    { type: 'fill-blank', question: '中翻英：「專題結合讀、寫、說。」', options: ['A project uses reading, writing, and speaking.', 'A project is fun.', 'I do a project.', 'What is a project?'], answer: 'A project uses reading, writing, and speaking.' },
+    { type: 'fill-blank', question: '中翻英：「我用上了所有技能。」', options: ['I used all my skills.', 'I have skills.', 'Skills are useful.', 'Do I have skills?'], answer: 'I used all my skills.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['A project uses reading, writing, and speaking.', 'First, I read about sea animals.', 'I made a poster.', 'Finally, I gave a talk.'], answer: 'A project uses reading, writing, and speaking.', image: '🎧' },
+    { type: 'read', question: 'What were the steps of the project?（專題的步驟？）', passage: 'First, Coco read about sea animals.\nThen she wrote notes and made a poster.\nFinally, she gave a talk.', options: ['read, write notes, make poster, give talk', 'sleep and play', 'only read', 'only talk'], answer: 'read, write notes, make poster, give talk' },
+  ],
+  talkTimePrompts: ["Describe your project steps: First, then, finally.", "Say what topic you researched.", "Present one fact you learned.", "✍️ 引導寫作＋翻譯：規劃一個小專題的 3 個步驟。"],
+  reviewQuiz: [
+    { type: 'match', question: 'present 在這裡是什麼意思？', options: ['呈現·報告', '禮物', '現在', '出席'], answer: '呈現·報告' },
+    { type: 'fill-blank', question: '中翻英：「然後，我寫了筆記。」', options: ['Then, I wrote my notes.', 'I write notes.', 'Notes are here.', 'Do I write?'], answer: 'Then, I wrote my notes.' },
+    { type: 'match', question: '專題結合哪些技能？', options: ['讀寫說', '只有讀', '只有寫', '只有說'], answer: '讀寫說' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A project uses reading, writing, and speaking together.", lineZh: '專題結合閱讀、寫作和口說。' },
+    { speaker: 'Coco', line: "First, I read about sea animals. Then I wrote notes.", lineZh: '首先，我讀了海洋動物。然後我寫筆記。' },
+    { speaker: 'Polly', line: "Finally, I made a poster and gave a talk.", lineZh: '最後，我做了海報並做了報告。' },
+    { speaker: 'Benny', line: "You used every skill in one project!", lineZh: '你在一個專題裡用上了所有技能！' },
+  ],
+};
+
+const L12_M19: Mission = {
+  id: 19, slug: 'l12-m19-showcase', level: 12, title: '成果展示', titleEn: 'Showcase', theme: '勝利峰・作品展', themeEmoji: '🌟',
+  focus: '成果展示：分享並回顧自己的學習成果（回顧＋自我肯定）＋ 中翻英',
+  story: [
+    { image: '🌟', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Today we showcase everything we have learned!", dialogueZh: '今天我們展示所有學過的！', highlightWords: ['showcase', 'have learned'], sceneEmojis: ['🌟', '🎨', '✨'], animation: 'wave' },
+    { image: '📖', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I can read stories, write essays, and give talks.", dialogueZh: '我會讀故事、寫短文、做報告。', highlightWords: ['read', 'write', 'give'], sceneEmojis: ['📖', '✍️', '😊'], animation: 'bounce' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I am proud of how far I have come.", dialogueZh: '我為自己的進步感到驕傲。', highlightWords: ['proud'], sceneEmojis: ['🎉', '😌', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'cheer', characterName: 'Ruby', dialogue: "Look how much you can do now!", dialogueZh: '看看你現在會多少事！', highlightWords: [], sceneEmojis: ['🏆', '🌟', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'showcase', zh: '展示', image: '🌟', phonics: '', kk: '[ˈʃoˌkes]', phonicsSound: '', exampleSentence: 'showcase your work', exampleZh: '展示你的作品' },
+    { en: 'proud', zh: '驕傲的', image: '😌', phonics: '', kk: '[praʊd]', phonicsSound: '', exampleSentence: 'proud of myself', exampleZh: '以自己為傲' },
+    { en: 'progress', zh: '進步', image: '📈', phonics: '', kk: '[ˈprɑɡrɛs]', phonicsSound: '', exampleSentence: 'make progress', exampleZh: '取得進步' },
+    { en: 'achieve', zh: '達成', image: '🎯', phonics: '', kk: '[əˈtʃiv]', phonicsSound: '', exampleSentence: 'achieve a goal', exampleZh: '達成目標' },
+    { en: 'review', zh: '回顧·複習', image: '🔄', phonics: '', kk: '[rɪˈvju]', phonicsSound: '', exampleSentence: 'review the year', exampleZh: '回顧這一年' },
+    { en: 'skill', zh: '技能', image: '💪', phonics: '', kk: '[skɪl]', phonicsSound: '', exampleSentence: 'so many skills', exampleZh: '好多技能' },
+    { en: 'improve', zh: '進步·改善', image: '⬆️', phonics: '', kk: '[ɪmˈpruv]', phonicsSound: '', exampleSentence: 'I improved a lot.', exampleZh: '我進步很多。' },
+    { en: 'celebrate', zh: '慶祝', image: '🎉', phonics: '', kk: '[ˈsɛləˌbret]', phonicsSound: '', exampleSentence: 'celebrate success', exampleZh: '慶祝成功' },
+    { en: 'confident', zh: '有自信的', image: '😎', phonics: '', kk: '[ˈkɑnfɪdənt]', phonicsSound: '', exampleSentence: 'feel confident', exampleZh: '有自信' },
+    { en: 'journey', zh: '旅程', image: '🛤️', phonics: '', kk: '[ˈdʒɝni]', phonicsSound: '', exampleSentence: 'my learning journey', exampleZh: '我的學習旅程' },
+  ],
+  sentences: [
+    { en: 'Today we showcase our work.', zh: '今天我們展示作品。' }, { en: 'I can read, write, and speak English.', zh: '我會讀、寫、說英文。' }, { en: 'I have made a lot of progress.', zh: '我進步了很多。' }, { en: 'I am proud of myself.', zh: '我以自己為傲。' }, { en: 'Look how far I have come.', zh: '看看我進步了多少。' }, { en: "Let's celebrate our success!", zh: '我們來慶祝成功！' },
+  ],
+  phonicsLetters: ['showcase'],
+  warmUpQuestions: [
+    { type: 'match', question: 'showcase 是什麼意思？', options: ['展示', '回顧', '慶祝', '進步'], answer: '展示' },
+    { type: 'fill-blank', question: 'I am ___ of myself.（驕傲）', options: ['proud', 'sad', 'tired', 'bored'], answer: 'proud' },
+    { type: 'match', question: 'progress 是什麼意思？', options: ['進步', '技能', '旅程', '慶祝'], answer: '進步' },
+  ],
+  challenges: [
+    { type: 'match', question: 'celebrate 是什麼意思？', options: ['慶祝', '展示', '回顧', '改善'], answer: '慶祝' },
+    { type: 'fill-blank', question: 'I have made a lot of ___.（進步）', options: ['progress', 'skill', 'journey', 'review'], answer: 'progress' },
+    { type: 'fill-blank', question: '中翻英：「我以自己為傲。」', options: ['I am proud of myself.', 'I am here.', 'I did it.', 'Am I proud?'], answer: 'I am proud of myself.' },
+    { type: 'fill-blank', question: '中翻英：「我會讀、寫、說英文。」', options: ['I can read, write, and speak English.', 'I like English.', 'English is fun.', 'Do I speak English?'], answer: 'I can read, write, and speak English.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Today we showcase our work.', 'I have made a lot of progress.', 'I am proud of myself.', "Let's celebrate our success!"], answer: 'Today we showcase our work.', image: '🎧' },
+    { type: 'read', question: 'How does Benny feel about his progress?（Benny 對進步感覺如何？）', passage: 'Benny started as a beginner.\nNow he can read, write, and speak well.\nHe is proud of how far he has come.', options: ['proud', 'sad', 'bored', 'scared'], answer: 'proud' },
+  ],
+  talkTimePrompts: ["Showcase your skills: I can ___, ___, and ___.", "Say what you are proud of.", "Look back: I have learned so much!", "✍️ 引導寫作＋翻譯：寫 3 句回顧你的學習成果並肯定自己。"],
+  reviewQuiz: [
+    { type: 'match', question: 'improve 是什麼意思？', options: ['進步·改善', '展示', '慶祝', '回顧'], answer: '進步·改善' },
+    { type: 'fill-blank', question: '中翻英：「看看我進步了多少。」', options: ['Look how far I have come.', 'I come here.', 'I am far.', 'How far is it?'], answer: 'Look how far I have come.' },
+    { type: 'read', question: 'What should we do at the end?（結尾我們該做什麼？）', passage: 'We have all worked hard.\nWe have made great progress.\nLet\'s celebrate our success!', options: ['celebrate our success', 'give up', 'start over', 'be sad'], answer: 'celebrate our success' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Today we showcase everything we have learned!", lineZh: '今天我們展示所有學過的！' },
+    { speaker: 'Coco', line: "I can read stories, write essays, and give talks.", lineZh: '我會讀故事、寫短文、做報告。' },
+    { speaker: 'Benny', line: "I am proud of how far I have come.", lineZh: '我為自己的進步感到驕傲。' },
+    { speaker: 'Ruby', line: "Look how much you can do now!", lineZh: '看看你現在會多少事！' },
+  ],
+};
+
+const L12_M20: Mission = {
+  id: 20, slug: 'l12-m20-graduation', level: 12, title: '畢業典禮 🎓', titleEn: 'Graduation!', theme: '勝利峰・畢業典禮', themeEmoji: '🎓',
+  focus: '畢業典禮：回顧整趟旅程、頒發結業證書、勇敢繼續前進 ＋ 中翻英',
+  story: [
+    { image: '🎓', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Congratulations! You have reached Victory Summit!", dialogueZh: '恭喜！你抵達了勝利峰！', highlightWords: ['Congratulations'], sceneEmojis: ['🎓', '⛰️', '✨'], animation: 'tada' },
+    { image: '🌈', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "We started at Letter Island, and now we can do so much!", dialogueZh: '我們從字母島出發，現在會這麼多了！', highlightWords: ['started'], sceneEmojis: ['🌈', '🏝️', '😊'], animation: 'bounce' },
+    { image: '📜', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Here is your certificate. You are an English adventurer!", dialogueZh: '這是你的結業證書。你是英語冒險家！', highlightWords: ['certificate'], sceneEmojis: ['📜', '🏆', '🎉'], animation: 'tada' },
+    { image: '🚀', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Keep learning, keep exploring. The adventure never ends!", dialogueZh: '繼續學習，繼續探索。冒險永不結束！', highlightWords: [], sceneEmojis: ['🚀', '🌟', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'graduate', zh: '畢業', image: '🎓', phonics: '', kk: '[ˈɡrædʒuˌet]', phonicsSound: '', exampleSentence: 'I graduate today!', exampleZh: '我今天畢業！' },
+    { en: 'congratulations', zh: '恭喜', image: '🎉', phonics: '', kk: '[kənˌɡrætʃəˈleʃənz]', phonicsSound: '', exampleSentence: 'Congratulations!', exampleZh: '恭喜！' },
+    { en: 'certificate', zh: '證書', image: '📜', phonics: '', kk: '[sɚˈtɪfɪkɪt]', phonicsSound: '', exampleSentence: 'a certificate', exampleZh: '一張證書' },
+    { en: 'journey', zh: '旅程', image: '🛤️', phonics: '', kk: '[ˈdʒɝni]', phonicsSound: '', exampleSentence: 'a long journey', exampleZh: '漫長旅程' },
+    { en: 'adventure', zh: '冒險', image: '🗺️', phonics: '', kk: '[ədˈvɛntʃɚ]', phonicsSound: '', exampleSentence: 'a great adventure', exampleZh: '偉大的冒險' },
+    { en: 'proud', zh: '驕傲的', image: '😌', phonics: '', kk: '[praʊd]', phonicsSound: '', exampleSentence: 'so proud', exampleZh: '好驕傲' },
+    { en: 'achieve', zh: '達成', image: '🎯', phonics: '', kk: '[əˈtʃiv]', phonicsSound: '', exampleSentence: 'I achieved my goal.', exampleZh: '我達成了目標。' },
+    { en: 'explore', zh: '探索', image: '🔭', phonics: '', kk: '[ɪkˈsplɔr]', phonicsSound: '', exampleSentence: 'keep exploring', exampleZh: '繼續探索' },
+    { en: 'future', zh: '未來', image: '🚀', phonics: '', kk: '[ˈfjutʃɚ]', phonicsSound: '', exampleSentence: 'a bright future', exampleZh: '光明的未來' },
+    { en: 'thank you', zh: '謝謝', image: '🙏', phonics: '', kk: '[θæŋk ju]', phonicsSound: '', exampleSentence: 'Thank you, teachers!', exampleZh: '謝謝老師們！' },
+  ],
+  sentences: [
+    { en: 'Congratulations on your graduation!', zh: '恭喜你畢業！' }, { en: 'We started at Letter Island.', zh: '我們從字母島出發。' }, { en: 'Now I can read, write, and speak English.', zh: '現在我會讀、寫、說英文。' }, { en: 'Here is your certificate.', zh: '這是你的結業證書。' }, { en: 'I am proud of my journey.', zh: '我為我的旅程驕傲。' }, { en: 'The adventure never ends!', zh: '冒險永不結束！' },
+  ],
+  phonicsLetters: ['graduation'],
+  warmUpQuestions: [
+    { type: 'match', question: 'graduate 是什麼意思？', options: ['畢業', '證書', '旅程', '冒險'], answer: '畢業' },
+    { type: 'match', question: 'certificate 是什麼意思？', options: ['證書', '恭喜', '未來', '謝謝'], answer: '證書' },
+    { type: 'fill-blank', question: '___ on your graduation!（恭喜）', options: ['Congratulations', 'Thank you', 'Sorry', 'Hello'], answer: 'Congratulations' },
+  ],
+  challenges: [
+    { type: 'match', question: 'adventure 是什麼意思？', options: ['冒險', '未來', '證書', '旅程'], answer: '冒險' },
+    { type: 'fill-blank', question: 'Keep learning, keep ___.（探索）', options: ['exploring', 'sleeping', 'stopping', 'crying'], answer: 'exploring' },
+    { type: 'fill-blank', question: '中翻英：「恭喜你畢業！」', options: ['Congratulations on your graduation!', 'I graduate.', 'Thank you.', 'Are you happy?'], answer: 'Congratulations on your graduation!' },
+    { type: 'fill-blank', question: '中翻英：「現在我會讀、寫、說英文。」', options: ['Now I can read, write, and speak English.', 'I like English.', 'English is fun.', 'Do I speak English?'], answer: 'Now I can read, write, and speak English.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Congratulations on your graduation!', 'We started at Letter Island.', 'Here is your certificate.', 'The adventure never ends!'], answer: 'Congratulations on your graduation!', image: '🎧' },
+    { type: 'read', question: 'What is the message at graduation?（畢業的訊息是？）', passage: 'You have finished the whole journey.\nBe proud of yourself.\nKeep learning — the adventure never ends!', options: ['keep learning, never stop', 'stop now', 'forget everything', 'be sad'], answer: 'keep learning, never stop' },
+  ],
+  talkTimePrompts: ["Say: I can read, write, and speak English now!", "Look back on your journey from L1 to L12.", "Say what you are most proud of.", "✍️ 引導寫作＋翻譯：寫一段畢業感言，回顧旅程並展望未來。"],
+  reviewQuiz: [
+    { type: 'match', question: 'explore 是什麼意思？', options: ['探索', '畢業', '恭喜', '達成'], answer: '探索' },
+    { type: 'fill-blank', question: '中翻英：「我為我的旅程驕傲。」', options: ['I am proud of my journey.', 'I have a journey.', 'The journey is long.', 'Am I proud?'], answer: 'I am proud of my journey.' },
+    { type: 'read', question: 'Does the adventure end at graduation?（畢業就結束冒險了嗎？）', passage: 'Graduation is not the end.\nIt is a new beginning.\nThe adventure never ends — keep exploring!', options: ['No, it never ends', 'Yes, it ends', 'The end is sad', 'No more learning'], answer: 'No, it never ends' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Congratulations! You have reached Victory Summit!", lineZh: '恭喜！你抵達了勝利峰！' },
+    { speaker: 'Coco', line: "We started at Letter Island, and now we can do so much!", lineZh: '我們從字母島出發，現在會這麼多了！' },
+    { speaker: 'Ruby', line: "Here is your certificate. You are an English adventurer!", lineZh: '這是你的結業證書。你是英語冒險家！' },
+    { speaker: 'Finn', line: "Keep learning, keep exploring. The adventure never ends!", lineZh: '繼續學習，繼續探索。冒險永不結束！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5, L12_M6, L12_M7, L12_M8, L12_M9, L12_M10, L12_M11, L12_M12, L12_M13, L12_M14, L12_M15, L12_M16, L12_M17, L12_M18, L12_M19, L12_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
