@@ -5385,7 +5385,267 @@ const L6_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10];
+const L6_M11: Mission = {
+  id: 11, slug: 'l6-m11-invitations', level: 6, title: '邀約', titleEn: "Let's… / Do you want to…?", theme: '燈塔角・一起玩', themeEmoji: '🙌',
+  focus: '句型 Let\'s… / Do you want to…?（邀約）',
+  story: [
+    { image: '🙌', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Let's go to the beach!", dialogueZh: '我們去海邊吧！', highlightWords: ["Let's"], sceneEmojis: ['🏖️', '🙌', '✨'], animation: 'wave' },
+    { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Do you want to swim with me?", dialogueZh: '你想跟我游泳嗎？', highlightWords: ['Do you want to'], sceneEmojis: ['🏊', '❓', '😊'], animation: 'bounce' },
+    { image: '👍', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Sure! Let's play together!", dialogueZh: '好啊！我們一起玩！', highlightWords: ["Let's"], sceneEmojis: ['👍', '🤝', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'star', characterName: 'Polly', dialogue: "Now you can invite your friends!", dialogueZh: '現在你會邀請朋友了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🙌'], animation: 'bounce' },
+  ],
+  words: [
+    { en: "let's", zh: '我們來…吧', image: '🙌', phonics: '', kk: '[lɛts]', phonicsSound: '', exampleSentence: "Let's go!", exampleZh: '我們走吧！' },
+    { en: 'want', zh: '想要', image: '🙋', phonics: '', kk: '[wɑnt]', phonicsSound: '', exampleSentence: 'Do you want to play?', exampleZh: '你想玩嗎？' },
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '', exampleSentence: "Let's go.", exampleZh: '我們走吧。' },
+    { en: 'play', zh: '玩', image: '🎮', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: "Let's play.", exampleZh: '我們來玩。' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: 'Do you want to swim?', exampleZh: '你想游泳嗎？' },
+    { en: 'come', zh: '來', image: '👋', phonics: '', kk: '[kʌm]', phonicsSound: '', exampleSentence: 'Come with me!', exampleZh: '跟我來！' },
+    { en: 'join', zh: '加入', image: '🤝', phonics: '', kk: '[dʒɔɪn]', phonicsSound: '', exampleSentence: 'Join us!', exampleZh: '加入我們！' },
+    { en: 'together', zh: '一起', image: '👫', phonics: '', kk: '[təˈɡɛðɚ]', phonicsSound: '', exampleSentence: 'play together', exampleZh: '一起玩' },
+    { en: 'sure', zh: '好啊·當然', image: '👍', phonics: '', kk: '[ʃʊr]', phonicsSound: '', exampleSentence: 'Sure!', exampleZh: '好啊！' },
+    { en: 'sorry', zh: '抱歉', image: '🙇', phonics: '', kk: '[ˈsɑri]', phonicsSound: '', exampleSentence: "Sorry, I can't.", exampleZh: '抱歉，我不行。' },
+  ],
+  sentences: [
+    { en: "Let's go to the beach!", zh: '我們去海邊吧！' }, { en: 'Do you want to swim?', zh: '你想游泳嗎？' }, { en: "Sure! Let's play!", zh: '好啊！我們玩吧！' }, { en: 'Do you want to come?', zh: '你想來嗎？' }, { en: "Let's play together.", zh: '我們一起玩。' }, { en: "Sorry, I can't today.", zh: '抱歉，我今天不行。' },
+  ],
+  phonicsLetters: ["Let's…"],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: "___ go to the beach!（我們來…吧）", options: ["Let's", 'Do', 'Can', 'Are'], answer: "Let's" },
+    { type: 'fill-blank', question: 'Do you ___ to swim?（想要）', options: ['want', 'like', 'go', 'is'], answer: 'want' },
+    { type: 'match', question: '👍 sure 是什麼意思？', options: ['好啊', '抱歉', '不要', '再見'], answer: '好啊' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🏊', '🎮', '🚶', '🤝'], answer: '🤝', image: '🎧' },
+    { type: 'match', question: '配對：字配意思', options: ["let's-我們來吧", 'want-想要', 'join-加入', 'together-一起'], answer: "let's-我們來吧" },
+    { type: 'fill-blank', question: '句型代換：Do you want to ___?（游泳）', options: ['swim', "let's", 'sure', 'is'], answer: 'swim' },
+    { type: 'fill-blank', question: "___ play together!（我們來…吧）", options: ["Let's", 'Do', 'Can', 'Want'], answer: "Let's" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ["Let's go to the beach!", 'Do you want to swim?', "Sure! Let's play!", "Let's play together."], answer: "Let's go to the beach!", image: '🎧' },
+    { type: 'read', question: 'What does Coco want to do?（Coco 想做什麼？）', passage: 'Polly says, "Let\'s go to the beach!"\nCoco says, "Do you want to swim?"\nBenny says, "Sure! Let\'s swim together!"', options: ['swim', 'sleep', 'read', 'eat'], answer: 'swim' },
+  ],
+  talkTimePrompts: ["Invite a friend: Let's ___!", "Ask: Do you want to ___?", "Answer: Sure! / Sorry, I can't.", "✍️ 引導寫作：Let's ___ together! Do you want to ___?"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Do you want ___ play?（不定詞 to）', options: ['to', 'and', 'the', 'a'], answer: 'to' },
+    { type: 'match', question: 'together 是什麼意思？', options: ['一起', '好啊', '抱歉', '想要'], answer: '一起' },
+    { type: 'fill-blank', question: "___ swim!（我們來…吧）", options: ["Let's", 'Do', 'Are', 'Is'], answer: "Let's" },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Let's go to the beach!", lineZh: '我們去海邊吧！' },
+    { speaker: 'Coco', line: "Do you want to swim with me?", lineZh: '你想跟我游泳嗎？' },
+    { speaker: 'Benny', line: "Sure! Let's play together!", lineZh: '好啊！我們一起玩！' },
+    { speaker: 'Polly', line: "Now you can invite your friends!", lineZh: '現在你會邀請朋友了！' },
+  ],
+};
+
+const L6_M12: Mission = {
+  id: 12, slug: 'l6-m12-feelings', level: 6, title: '感受', titleEn: 'Feelings', theme: '燈塔角・心情', themeEmoji: '😲',
+  focus: '進階感受形容詞：excited/scared/bored/surprised…',
+  story: [
+    { image: '🤩', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am so excited! We are going to the beach!", dialogueZh: '我好興奮！我們要去海邊了！', highlightWords: ['excited'], sceneEmojis: ['🤩', '🏖️', '✨'], animation: 'bounce' },
+    { image: '😱', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "The big wave is scary! I am scared!", dialogueZh: '大浪好可怕！我好害怕！', highlightWords: ['scared'], sceneEmojis: ['🌊', '😱', '😊'], animation: 'shake' },
+    { image: '😲', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "A dolphin! I am surprised!", dialogueZh: '一隻海豚！我好驚訝！', highlightWords: ['surprised'], sceneEmojis: ['🐬', '😲', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'wave', characterName: 'Coco', dialogue: "You can talk about your feelings now!", dialogueZh: '現在你會說你的感受了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '😲'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'excited', zh: '興奮的', image: '🤩', phonics: '', kk: '[ɪkˈsaɪtɪd]', phonicsSound: '', exampleSentence: 'I am excited!', exampleZh: '我好興奮！' },
+    { en: 'scared', zh: '害怕的', image: '😱', phonics: '', kk: '[skɛrd]', phonicsSound: '', exampleSentence: 'I am scared.', exampleZh: '我好害怕。' },
+    { en: 'bored', zh: '無聊的', image: '😑', phonics: '', kk: '[bɔrd]', phonicsSound: '', exampleSentence: 'I am bored.', exampleZh: '我好無聊。' },
+    { en: 'surprised', zh: '驚訝的', image: '😲', phonics: '', kk: '[sɚˈpraɪzd]', phonicsSound: '', exampleSentence: 'I am surprised!', exampleZh: '我好驚訝！' },
+    { en: 'proud', zh: '驕傲的', image: '😌', phonics: '', kk: '[praʊd]', phonicsSound: '', exampleSentence: 'I am proud.', exampleZh: '我很驕傲。' },
+    { en: 'nervous', zh: '緊張的', image: '😰', phonics: '', kk: '[ˈnɝvəs]', phonicsSound: '', exampleSentence: 'I am nervous.', exampleZh: '我好緊張。' },
+    { en: 'shy', zh: '害羞的', image: '😳', phonics: '', kk: '[ʃaɪ]', phonicsSound: '', exampleSentence: 'I am shy.', exampleZh: '我很害羞。' },
+    { en: 'worried', zh: '擔心的', image: '😟', phonics: '', kk: '[ˈwɝid]', phonicsSound: '', exampleSentence: 'I am worried.', exampleZh: '我很擔心。' },
+    { en: 'excited', zh: '興奮的', image: '🎊', phonics: '', kk: '[ɪkˈsaɪtɪd]', phonicsSound: '', exampleSentence: 'so excited', exampleZh: '好興奮' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy.', exampleZh: '我很開心。' },
+  ],
+  sentences: [
+    { en: 'I am so excited!', zh: '我好興奮！' }, { en: 'I am scared of the big wave.', zh: '我怕那個大浪。' }, { en: 'Why are you bored?', zh: '你為什麼無聊？' }, { en: 'I am surprised!', zh: '我好驚訝！' }, { en: 'Are you nervous?', zh: '你緊張嗎？' }, { en: 'I am proud of you!', zh: '我以你為傲！' },
+  ],
+  phonicsLetters: ['feelings'],
+  warmUpQuestions: [
+    { type: 'match', question: '🤩 是什麼感覺？', options: ['excited', 'scared', 'bored', 'shy'], answer: 'excited' },
+    { type: 'match', question: '😱 是什麼感覺？', options: ['scared', 'proud', 'happy', 'bored'], answer: 'scared' },
+    { type: 'match', question: '😲 是什麼感覺？', options: ['surprised', 'shy', 'nervous', 'bored'], answer: 'surprised' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的感覺', options: ['🤩', '😱', '😑', '😲'], answer: '😑', image: '🎧' },
+    { type: 'match', question: '配對：感覺配圖', options: ['excited-🤩', 'scared-😱', 'bored-😑', 'surprised-😲'], answer: 'excited-🤩' },
+    { type: 'fill-blank', question: '句型代換：I am ___.（驚訝）', options: ['surprised', 'excited', 'is', 'the'], answer: 'surprised' },
+    { type: 'spell', question: '拼拼看：sc _ red（害怕）', answer: 'scared', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am so excited!', 'I am scared of the big wave.', 'I am surprised!', 'Are you nervous?'], answer: 'I am so excited!', image: '🎧' },
+    { type: 'read', question: 'Why is Coco excited?（Coco 為何興奮？）', passage: 'Coco is going to the beach.\nShe loves the sea.\nShe is so excited!', options: ['going to the beach', 'going to school', 'she is scared', 'she is bored'], answer: 'going to the beach' },
+  ],
+  talkTimePrompts: ["How do you feel? I am ___.", "Say when you feel scared or excited.", "Ask: Are you nervous?", "✍️ 引導寫作：I am ___ because ___."],
+  reviewQuiz: [
+    { type: 'match', question: '😰 是什麼感覺？', options: ['nervous', 'excited', 'proud', 'shy'], answer: 'nervous' },
+    { type: 'fill-blank', question: 'I am ___ of you!（驕傲）', options: ['proud', 'scared', 'bored', 'shy'], answer: 'proud' },
+    { type: 'spell', question: '拼拼看：exc _ ted（興奮）', answer: 'excited', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I am so excited! We are going to the beach!", lineZh: '我好興奮！我們要去海邊！' },
+    { speaker: 'Benny', line: "The big wave is scary! I am scared!", lineZh: '大浪好可怕！我好害怕！' },
+    { speaker: 'Ruby', line: "A dolphin! I am surprised!", lineZh: '一隻海豚！我好驚訝！' },
+    { speaker: 'Coco', line: "You can talk about your feelings now!", lineZh: '現在你會說感受了！' },
+  ],
+};
+
+const L6_M13: Mission = {
+  id: 13, slug: 'l6-m13-long-reading-1', level: 6, title: '長文閱讀① 燈塔', titleEn: 'Reading: The Lighthouse', theme: '燈塔角・故事時間', themeEmoji: '📖',
+  focus: '長文閱讀①：讀一篇關於燈塔的短文並回答問題',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a longer story: The Old Lighthouse.", dialogueZh: '我們讀一篇長故事：老燈塔。', highlightWords: ['story'], sceneEmojis: ['📖', '🏰', '✨'], animation: 'wave' },
+    { image: '💡', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The old lighthouse is tall. Its light is very bright.", dialogueZh: '老燈塔很高。它的光很亮。', highlightWords: ['tall', 'bright'], sceneEmojis: ['💡', '🏰', '😊'], animation: 'bounce' },
+    { image: '⛵', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "At night, it helps the boats find the way home.", dialogueZh: '晚上，它幫船找到回家的路。', highlightWords: ['helps'], sceneEmojis: ['⛵', '🌙', '🎉'], animation: 'float' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read a long story! Great reader!", dialogueZh: '你讀了長故事！了不起！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'lighthouse', zh: '燈塔', image: '🏰', phonics: '', kk: '[ˈlaɪtˌhaʊs]', phonicsSound: '', exampleSentence: 'an old lighthouse', exampleZh: '一座老燈塔' },
+    { en: 'light', zh: '光·燈', image: '💡', phonics: '', kk: '[laɪt]', phonicsSound: '', exampleSentence: 'a bright light', exampleZh: '明亮的光' },
+    { en: 'bright', zh: '明亮的', image: '✨', phonics: '', kk: '[braɪt]', phonicsSound: '', exampleSentence: 'very bright', exampleZh: '很亮' },
+    { en: 'boat', zh: '船', image: '⛵', phonics: '', kk: '[bot]', phonicsSound: '', exampleSentence: 'a small boat', exampleZh: '一艘小船' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '', exampleSentence: 'It helps the boats.', exampleZh: '它幫助船。' },
+    { en: 'night', zh: '夜晚', image: '🌙', phonics: '', kk: '[naɪt]', phonicsSound: '', exampleSentence: 'at night', exampleZh: '在晚上' },
+    { en: 'sea', zh: '海', image: '🌊', phonics: '', kk: '[si]', phonicsSound: '', exampleSentence: 'across the sea', exampleZh: '越過海洋' },
+    { en: 'home', zh: '家', image: '🏠', phonics: '', kk: '[hom]', phonicsSound: '', exampleSentence: 'find the way home', exampleZh: '找到回家的路' },
+    { en: 'old', zh: '老的·舊的', image: '🕰️', phonics: '', kk: '[old]', phonicsSound: '', exampleSentence: 'the old lighthouse', exampleZh: '老燈塔' },
+    { en: 'safe', zh: '安全的', image: '🛟', phonics: '', kk: '[sef]', phonicsSound: '', exampleSentence: 'They are safe.', exampleZh: '他們安全了。' },
+  ],
+  sentences: [
+    { en: 'The old lighthouse is tall.', zh: '老燈塔很高。' }, { en: 'Its light is very bright.', zh: '它的光很亮。' }, { en: 'At night, it helps the boats.', zh: '晚上它幫助船。' }, { en: 'The boats find their way home.', zh: '船找到回家的路。' }, { en: 'The sailors are safe.', zh: '水手們安全了。' }, { en: 'The lighthouse is a good friend.', zh: '燈塔是個好朋友。' },
+  ],
+  phonicsLetters: ['long reading'],
+  warmUpQuestions: [
+    { type: 'match', question: '🏰 lighthouse 是什麼？', options: ['燈塔', '船', '海', '家'], answer: '燈塔' },
+    { type: 'fill-blank', question: 'The light is very ___.（明亮）', options: ['bright', 'dark', 'old', 'small'], answer: 'bright' },
+    { type: 'match', question: '⛵ 是什麼？', options: ['boat', 'light', 'home', 'sea'], answer: 'boat' },
+  ],
+  challenges: [
+    { type: 'read', question: 'How is the lighthouse?（燈塔怎麼樣？）', passage: 'The old lighthouse stands by the sea.\nIt is very tall.\nIts light is bright.', options: ['tall and bright', 'small and dark', 'new and short', 'dirty and old'], answer: 'tall and bright' },
+    { type: 'read', question: 'What does the lighthouse do at night?（燈塔晚上做什麼？）', passage: 'At night, the sea is dark.\nThe lighthouse shines its bright light.\nIt helps the boats find the way.', options: ['helps the boats', 'sleeps', 'goes home', 'plays'], answer: 'helps the boats' },
+    { type: 'read', question: 'How do the sailors feel?（水手覺得如何？）', passage: 'The boats see the bright light.\nThey find their way home.\nThe sailors are safe and happy.', options: ['safe and happy', 'scared', 'lost', 'sad'], answer: 'safe and happy' },
+    { type: 'fill-blank', question: 'The lighthouse ___ the boats.（幫助·第三人稱）', options: ['helps', 'help', 'helped', 'helping'], answer: 'helps' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Its light is very bright.', 'The old lighthouse is tall.', 'At night, it helps the boats.', 'The sailors are safe.'], answer: 'Its light is very bright.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：li _ ht（光）', answer: 'light', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the lighthouse story.", "What does the lighthouse do?", "Why is it important?", "✍️ 引導寫作：The lighthouse is ___. It helps ___."],
+  reviewQuiz: [
+    { type: 'read', question: 'Is the sea dark at night?（晚上海是暗的嗎？）', passage: 'At night, the sea is dark.\nBut the lighthouse light is bright.\nThe boats are safe.', options: ['Yes, but the light is bright', 'No, it is sunny', 'The sea is red', 'It is morning'], answer: 'Yes, but the light is bright' },
+    { type: 'match', question: 'safe 是什麼意思？', options: ['安全的', '害怕的', '明亮的', '老的'], answer: '安全的' },
+    { type: 'fill-blank', question: 'The boats find their way ___.（家）', options: ['home', 'sea', 'light', 'night'], answer: 'home' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A story: The Old Lighthouse!", lineZh: '故事：老燈塔！' },
+    { speaker: 'Finn', line: "The old lighthouse is tall. Its light is bright.", lineZh: '老燈塔很高。它的光很亮。' },
+    { speaker: 'Coco', line: "At night, it helps the boats find the way home.", lineZh: '晚上它幫船找到回家的路。' },
+    { speaker: 'Benny', line: "You read a long story! Great reader!", lineZh: '你讀了長故事！了不起！' },
+  ],
+};
+
+const L6_M14: Mission = {
+  id: 14, slug: 'l6-m14-long-reading-2', level: 6, title: '長文閱讀② 市場日', titleEn: 'Reading: Market Day', theme: '燈塔角・故事時間', themeEmoji: '📚',
+  focus: '長文閱讀②：讀一篇市場日的短文並回答問題',
+  story: [
+    { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A new story: Market Day!", dialogueZh: '新故事：市場日！', highlightWords: ['story'], sceneEmojis: ['📚', '🛍️', '✨'], animation: 'wave' },
+    { image: '🍎', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "On Saturday, Ruby goes to the market.", dialogueZh: '星期六，Ruby 去市場。', highlightWords: ['market'], sceneEmojis: ['🍎', '🛒', '😊'], animation: 'bounce' },
+    { image: '💰', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "She buys cheap apples. They are only two dollars!", dialogueZh: '她買便宜的蘋果。只要兩塊錢！', highlightWords: ['cheap', 'dollars'], sceneEmojis: ['💰', '🍎', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read another story! Wonderful!", dialogueZh: '你又讀了一篇故事！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📚'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'market', zh: '市場', image: '🛍️', phonics: '', kk: '[ˈmɑrkɪt]', phonicsSound: '', exampleSentence: 'go to the market', exampleZh: '去市場' },
+    { en: 'buy', zh: '買', image: '🛒', phonics: '', kk: '[baɪ]', phonicsSound: '', exampleSentence: 'She buys apples.', exampleZh: '她買蘋果。' },
+    { en: 'cheap', zh: '便宜的', image: '💵', phonics: '', kk: '[tʃip]', phonicsSound: '', exampleSentence: 'cheap apples', exampleZh: '便宜的蘋果' },
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '', exampleSentence: 'red apples', exampleZh: '紅蘋果' },
+    { en: 'basket', zh: '籃子', image: '🧺', phonics: '', kk: '[ˈbæskɪt]', phonicsSound: '', exampleSentence: 'a full basket', exampleZh: '一個滿籃子' },
+    { en: 'dollar', zh: '元', image: '💵', phonics: '', kk: '[ˈdɑlɚ]', phonicsSound: '', exampleSentence: 'two dollars', exampleZh: '兩塊錢' },
+    { en: 'fresh', zh: '新鮮的', image: '🥬', phonics: '', kk: '[frɛʃ]', phonicsSound: '', exampleSentence: 'fresh fruit', exampleZh: '新鮮水果' },
+    { en: 'fruit', zh: '水果', image: '🍇', phonics: '', kk: '[frut]', phonicsSound: '', exampleSentence: 'sweet fruit', exampleZh: '甜水果' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'She is happy.', exampleZh: '她很開心。' },
+    { en: 'Saturday', zh: '星期六', image: '📅', phonics: '', kk: '[ˈsætɚde]', phonicsSound: '', exampleSentence: 'on Saturday', exampleZh: '在星期六' },
+  ],
+  sentences: [
+    { en: 'On Saturday, Ruby goes to the market.', zh: '星期六，Ruby 去市場。' }, { en: 'The fruit is fresh.', zh: '水果很新鮮。' }, { en: 'She buys cheap apples.', zh: '她買便宜的蘋果。' }, { en: 'They are only two dollars.', zh: '只要兩塊錢。' }, { en: 'Her basket is full.', zh: '她的籃子滿了。' }, { en: 'Ruby is very happy.', zh: 'Ruby 很開心。' },
+  ],
+  phonicsLetters: ['long reading'],
+  warmUpQuestions: [
+    { type: 'match', question: '🛍️ market 是什麼？', options: ['市場', '商店', '公園', '銀行'], answer: '市場' },
+    { type: 'fill-blank', question: 'The apples are ___.（便宜）', options: ['cheap', 'expensive', 'old', 'dark'], answer: 'cheap' },
+    { type: 'match', question: '🧺 是什麼？', options: ['basket', 'apple', 'fruit', 'market'], answer: 'basket' },
+  ],
+  challenges: [
+    { type: 'read', question: 'When does Ruby go to the market?（Ruby 何時去市場？）', passage: 'On Saturday, Ruby goes to the market.\nThe market is big and busy.\nThe fruit is fresh.', options: ['Saturday', 'Monday', 'Sunday', 'Friday'], answer: 'Saturday' },
+    { type: 'read', question: 'What does Ruby buy?（Ruby 買什麼？）', passage: 'Ruby looks at the fresh fruit.\nShe buys some cheap apples.\nThey are red and sweet.', options: ['apples', 'fish', 'a hat', 'a boat'], answer: 'apples' },
+    { type: 'read', question: 'How much are the apples?（蘋果多少錢？）', passage: 'The apples are cheap.\nThey are only two dollars.\nRuby is very happy!', options: ['two dollars', 'five dollars', 'ten dollars', 'one dollar'], answer: 'two dollars' },
+    { type: 'fill-blank', question: 'Ruby ___ some apples.（買·第三人稱）', options: ['buys', 'buy', 'bought', 'buying'], answer: 'buys' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['She buys cheap apples.', 'On Saturday, Ruby goes to the market.', 'The fruit is fresh.', 'Ruby is very happy.'], answer: 'She buys cheap apples.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：mar _ et（市場）', answer: 'market', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the market story.", "What does Ruby buy?", "How much are the apples?", "✍️ 引導寫作：I go to the market. I buy ___. It is ___ dollars."],
+  reviewQuiz: [
+    { type: 'read', question: 'Are the apples expensive?（蘋果貴嗎？）', passage: 'The apples are only two dollars.\nThey are very cheap.\nRuby buys a lot!', options: ['No, they are cheap', 'Yes, they are expensive', 'They are free', 'They are old'], answer: 'No, they are cheap' },
+    { type: 'match', question: 'fresh 是什麼意思？', options: ['新鮮的', '便宜的', '貴的', '開心的'], answer: '新鮮的' },
+    { type: 'fill-blank', question: 'Her basket is ___.（滿的）', options: ['full', 'empty', 'small', 'old'], answer: 'full' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A new story: Market Day!", lineZh: '新故事：市場日！' },
+    { speaker: 'Ruby', line: "On Saturday, I go to the market.", lineZh: '星期六，我去市場。' },
+    { speaker: 'Coco', line: "She buys cheap apples. Only two dollars!", lineZh: '她買便宜蘋果。只要兩塊！' },
+    { speaker: 'Benny', line: "You read another story! Wonderful!", lineZh: '你又讀了一篇故事！太棒了！' },
+  ],
+};
+
+const L6_M15: Mission = {
+  id: 15, slug: 'l6-m15-review-reading', level: 6, title: 'Review③ 長文閱讀', titleEn: 'Review: Reading', theme: '燈塔角・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習③：長文閱讀 ＋ 描述 ＋ 意見 ＋ 感受',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review our reading! Read and answer!", dialogueZh: '來複習閱讀！讀完回答！', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
+    { image: '🏰', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "The lighthouse is tall and bright. I think it is beautiful!", dialogueZh: '燈塔又高又亮。我覺得它很美！', highlightWords: ['bright', 'think'], sceneEmojis: ['🏰', '💡', '😊'], animation: 'bounce' },
+    { image: '🛍️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "At the market, the fruit is cheap and fresh!", dialogueZh: '在市場，水果又便宜又新鮮！', highlightWords: ['cheap', 'fresh'], sceneEmojis: ['🛍️', '🍎', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You are a great reader now! Wonderful!", dialogueZh: '你現在是很棒的讀者了！太棒了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'lighthouse', zh: '燈塔', image: '🏰', phonics: '', kk: '[ˈlaɪtˌhaʊs]', phonicsSound: '', exampleSentence: 'a tall lighthouse', exampleZh: '高燈塔' },
+    { en: 'bright', zh: '明亮的', image: '💡', phonics: '', kk: '[braɪt]', phonicsSound: '', exampleSentence: 'bright light', exampleZh: '明亮的光' },
+    { en: 'beautiful', zh: '美麗的', image: '🌅', phonics: '', kk: '[ˈbjutɪfl̩]', phonicsSound: '', exampleSentence: 'It is beautiful.', exampleZh: '它很美。' },
+    { en: 'market', zh: '市場', image: '🛍️', phonics: '', kk: '[ˈmɑrkɪt]', phonicsSound: '', exampleSentence: 'the market', exampleZh: '市場' },
+    { en: 'cheap', zh: '便宜的', image: '💵', phonics: '', kk: '[tʃip]', phonicsSound: '', exampleSentence: 'cheap fruit', exampleZh: '便宜水果' },
+    { en: 'fresh', zh: '新鮮的', image: '🥬', phonics: '', kk: '[frɛʃ]', phonicsSound: '', exampleSentence: 'fresh fruit', exampleZh: '新鮮水果' },
+    { en: 'think', zh: '覺得', image: '💭', phonics: '', kk: '[θɪŋk]', phonicsSound: '', exampleSentence: "I think it's nice.", exampleZh: '我覺得很好。' },
+    { en: 'excited', zh: '興奮的', image: '🤩', phonics: '', kk: '[ɪkˈsaɪtɪd]', phonicsSound: '', exampleSentence: 'I am excited.', exampleZh: '我好興奮。' },
+    { en: 'boat', zh: '船', image: '⛵', phonics: '', kk: '[bot]', phonicsSound: '', exampleSentence: 'a small boat', exampleZh: '一艘小船' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'They are happy.', exampleZh: '他們很開心。' },
+  ],
+  sentences: [
+    { en: 'The lighthouse is tall and bright.', zh: '燈塔又高又亮。' }, { en: 'I think it is beautiful.', zh: '我覺得它很美。' }, { en: 'The fruit is cheap and fresh.', zh: '水果又便宜又新鮮。' }, { en: 'I am excited to go shopping.', zh: '我很興奮去購物。' }, { en: 'The boats are safe at night.', zh: '船晚上很安全。' }, { en: 'What a wonderful day!', zh: '多美好的一天！' },
+  ],
+  phonicsLetters: ['review reading'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'The lighthouse is tall and ___.（明亮）', options: ['bright', 'dark', 'cheap', 'old'], answer: 'bright' },
+    { type: 'fill-blank', question: 'I ___ it is beautiful.（覺得）', options: ['think', 'am', 'buy', 'is'], answer: 'think' },
+    { type: 'match', question: 'fresh 是什麼意思？', options: ['新鮮的', '便宜的', '明亮的', '興奮的'], answer: '新鮮的' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What does Coco think of the lighthouse?（Coco 覺得燈塔如何？）', passage: 'Coco looks at the lighthouse.\nIt is tall and bright.\nShe thinks it is beautiful.', options: ['beautiful', 'boring', 'ugly', 'small'], answer: 'beautiful' },
+    { type: 'read', question: 'How is the fruit at the market?（市場水果如何？）', passage: 'Benny goes to the market.\nThe fruit is cheap and fresh.\nHe buys some sweet apples.', options: ['cheap and fresh', 'old and expensive', 'dirty', 'bad'], answer: 'cheap and fresh' },
+    { type: 'fill-blank', question: 'I am ___ to go shopping.（興奮）', options: ['excited', 'bored', 'scared', 'shy'], answer: 'excited' },
+    { type: 'fill-blank', question: 'The light ___ the boats.（幫助·第三人稱）', options: ['helps', 'help', 'helped', 'helping'], answer: 'helps' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The lighthouse is tall and bright.', 'I think it is beautiful.', 'The fruit is cheap and fresh.', 'What a wonderful day!'], answer: 'The lighthouse is tall and bright.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：fr _ sh（新鮮）', answer: 'fresh', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell one story you read.", "Give your opinion: I think ___.", "Describe the lighthouse or market.", "✍️ 引導寫作：I think the ___ is ___ because ___."],
+  reviewQuiz: [
+    { type: 'read', question: 'Is the fruit expensive?（水果貴嗎？）', passage: 'The market has fresh fruit.\nThe apples are cheap.\nThey are only two dollars.', options: ['No, it is cheap', 'Yes, it is expensive', 'It is free', 'It is old'], answer: 'No, it is cheap' },
+    { type: 'fill-blank', question: 'I ___ it is beautiful.（覺得）', options: ['think', 'am', 'buy', 'is'], answer: 'think' },
+    { type: 'match', question: 'beautiful 是什麼意思？', options: ['美麗的', '便宜的', '無聊的', '害怕的'], answer: '美麗的' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review our reading! Read and answer!", lineZh: '來複習閱讀！讀完回答！' },
+    { speaker: 'Coco', line: "The lighthouse is tall and bright. I think it is beautiful!", lineZh: '燈塔又高又亮。我覺得很美！' },
+    { speaker: 'Benny', line: "At the market, the fruit is cheap and fresh!", lineZh: '在市場，水果便宜又新鮮！' },
+    { speaker: 'Finn', line: "You are a great reader now! Wonderful!", lineZh: '你現在是很棒的讀者了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
