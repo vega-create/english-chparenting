@@ -10330,7 +10330,267 @@ const L11_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5];
+const L11_M6: Mission = {
+  id: 6, slug: 'l11-m6-infinitive', level: 11, title: '不定詞 to V', titleEn: 'Infinitive: to V', theme: '挑戰場・想做的事', themeEmoji: '🎯',
+  focus: '不定詞 to + 原形動詞：want to / hope to / It\'s fun to… ＋ 中翻英',
+  story: [
+    { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I want to be a scientist.", dialogueZh: '我想成為科學家。', highlightWords: ['want to'], sceneEmojis: ['🎯', '🔬', '✨'], animation: 'wave' },
+    { image: '🌟', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I hope to travel around the world.", dialogueZh: '我希望環遊世界。', highlightWords: ['hope to'], sceneEmojis: ['🌟', '✈️', '😊'], animation: 'bounce' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "It is fun to learn new things!", dialogueZh: '學新東西很好玩！', highlightWords: ['to learn'], sceneEmojis: ['🎉', '📚', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Some verbs take 'to + verb'!", dialogueZh: '有些動詞後面接「to + 動詞」！', highlightWords: [], sceneEmojis: ['🏆', '🎯', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'want to', zh: '想要（做）', image: '🙋', phonics: '', kk: '[wɑnt tu]', phonicsSound: '', exampleSentence: 'I want to go.', exampleZh: '我想去。' },
+    { en: 'hope to', zh: '希望（做）', image: '🌟', phonics: '', kk: '[hop tu]', phonicsSound: '', exampleSentence: 'I hope to win.', exampleZh: '我希望贏。' },
+    { en: 'need to', zh: '需要（做）', image: '❗', phonics: '', kk: '[nid tu]', phonicsSound: '', exampleSentence: 'I need to study.', exampleZh: '我需要讀書。' },
+    { en: 'decide to', zh: '決定（做）', image: '✅', phonics: '', kk: '[dɪˈsaɪd tu]', phonicsSound: '', exampleSentence: 'I decided to help.', exampleZh: '我決定幫忙。' },
+    { en: 'learn to', zh: '學會（做）', image: '📚', phonics: '', kk: '[lɝn tu]', phonicsSound: '', exampleSentence: 'learn to swim', exampleZh: '學游泳' },
+    { en: 'scientist', zh: '科學家', image: '🔬', phonics: '', kk: '[ˈsaɪəntɪst]', phonicsSound: '', exampleSentence: 'be a scientist', exampleZh: '當科學家' },
+    { en: 'travel', zh: '旅行', image: '✈️', phonics: '', kk: '[ˈtrævl̩]', phonicsSound: '', exampleSentence: 'hope to travel', exampleZh: '希望旅行' },
+    { en: 'fun to', zh: '做…很好玩', image: '🎉', phonics: '', kk: '[fʌn tu]', phonicsSound: '', exampleSentence: 'fun to learn', exampleZh: '學起來好玩' },
+    { en: 'easy to', zh: '做…很容易', image: '👍', phonics: '', kk: '[ˈizi tu]', phonicsSound: '', exampleSentence: 'easy to read', exampleZh: '容易讀' },
+    { en: 'plan to', zh: '計畫（做）', image: '🗒️', phonics: '', kk: '[plæn tu]', phonicsSound: '', exampleSentence: 'plan to visit', exampleZh: '計畫拜訪' },
+  ],
+  sentences: [
+    { en: 'I want to be a scientist.', zh: '我想成為科學家。' }, { en: 'I hope to travel the world.', zh: '我希望環遊世界。' }, { en: 'It is fun to learn new things.', zh: '學新東西很好玩。' }, { en: 'I need to study tonight.', zh: '我今晚需要讀書。' }, { en: 'She decided to help.', zh: '她決定幫忙。' }, { en: 'It is easy to make friends.', zh: '交朋友很容易。' },
+  ],
+  phonicsLetters: ['to + verb'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I want ___ be a scientist.（不定詞）', options: ['to', 'for', 'at', 'in'], answer: 'to' },
+    { type: 'fill-blank', question: 'I hope ___ travel.（不定詞）', options: ['to', 'for', 'and', 'so'], answer: 'to' },
+    { type: 'match', question: 'scientist 是什麼意思？', options: ['科學家', '老師', '醫生', '作家'], answer: '科學家' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I need ___ study tonight.（不定詞）', options: ['to', 'for', 'at', 'and'], answer: 'to' },
+    { type: 'fill-blank', question: 'It is fun ___ learn new things.（不定詞）', options: ['to', 'for', 'and', 'so'], answer: 'to' },
+    { type: 'fill-blank', question: '中翻英：「我想成為科學家。」', options: ['I want to be a scientist.', 'I am a scientist.', 'Do I want it?', 'I like science.'], answer: 'I want to be a scientist.' },
+    { type: 'fill-blank', question: '中翻英：「學新東西很好玩。」', options: ['It is fun to learn new things.', 'Learning is a thing.', 'I learn things.', 'Is it fun?'], answer: 'It is fun to learn new things.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I want to be a scientist.', 'I hope to travel the world.', 'It is fun to learn new things.', 'She decided to help.'], answer: 'I want to be a scientist.', image: '🎧' },
+    { type: 'read', question: 'What does Benny want to be?（Benny 想當什麼？）', passage: 'Benny loves science.\nHe does experiments at home.\nHe wants to be a scientist.', options: ['a scientist', 'a teacher', 'a pilot', 'a chef'], answer: 'a scientist' },
+  ],
+  talkTimePrompts: ["Say a goal: I want to ___.", "Say a hope: I hope to ___.", "Say: It is fun/easy to ___.", "✍️ 引導寫作＋翻譯：把「我希望環遊世界。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'She decided ___ help.（不定詞）', options: ['to', 'for', 'and', 'at'], answer: 'to' },
+    { type: 'fill-blank', question: '中翻英：「交朋友很容易。」', options: ['It is easy to make friends.', 'Friends are easy.', 'I make friends.', 'Do you make friends?'], answer: 'It is easy to make friends.' },
+    { type: 'match', question: 'want to 後面接？', options: ['原形動詞', '過去式', '-ing', '名詞'], answer: '原形動詞' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I want to be a scientist.", lineZh: '我想成為科學家。' },
+    { speaker: 'Coco', line: "I hope to travel around the world.", lineZh: '我希望環遊世界。' },
+    { speaker: 'Polly', line: "It is fun to learn new things!", lineZh: '學新東西很好玩！' },
+    { speaker: 'Benny', line: "Some verbs take 'to + verb'!", lineZh: '有些動詞後面接「to + 動詞」！' },
+  ],
+};
+
+const L11_M7: Mission = {
+  id: 7, slug: 'l11-m7-gerund', level: 11, title: '動名詞 V-ing', titleEn: 'Gerund: V-ing', theme: '挑戰場・喜歡做的事', themeEmoji: '🏊',
+  focus: '動名詞 V-ing：enjoy/like/finish/keep + V-ing ＋ 中翻英',
+  story: [
+    { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I enjoy swimming and reading.", dialogueZh: '我喜歡游泳和閱讀。', highlightWords: ['swimming', 'reading'], sceneEmojis: ['🏊', '📖', '✨'], animation: 'wave' },
+    { image: '🎨', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "She finished painting the picture.", dialogueZh: '她畫完了那幅畫。', highlightWords: ['painting'], sceneEmojis: ['🎨', '🖼️', '😊'], animation: 'bounce' },
+    { image: '💪', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Keep trying! Don't stop practicing!", dialogueZh: '繼續努力！別停止練習！', highlightWords: ['trying', 'practicing'], sceneEmojis: ['💪', '🎯', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Some verbs take 'verb + ing'!", dialogueZh: '有些動詞後面接「動詞 + ing」！', highlightWords: [], sceneEmojis: ['🏆', '🏊', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'enjoy', zh: '享受·喜歡', image: '😄', phonics: '', kk: '[ɪnˈdʒɔɪ]', phonicsSound: '接 V-ing', exampleSentence: 'enjoy swimming', exampleZh: '喜歡游泳' },
+    { en: 'finish', zh: '完成', image: '🏁', phonics: '', kk: '[ˈfɪnɪʃ]', phonicsSound: '接 V-ing', exampleSentence: 'finish reading', exampleZh: '讀完' },
+    { en: 'keep', zh: '持續', image: '🔁', phonics: '', kk: '[kip]', phonicsSound: '接 V-ing', exampleSentence: 'keep trying', exampleZh: '持續嘗試' },
+    { en: 'stop', zh: '停止', image: '🛑', phonics: '', kk: '[stɑp]', phonicsSound: '接 V-ing', exampleSentence: 'stop talking', exampleZh: '停止講話' },
+    { en: 'swimming', zh: '游泳', image: '🏊', phonics: '', kk: '[ˈswɪmɪŋ]', phonicsSound: '', exampleSentence: 'I like swimming.', exampleZh: '我喜歡游泳。' },
+    { en: 'reading', zh: '閱讀', image: '📖', phonics: '', kk: '[ˈridɪŋ]', phonicsSound: '', exampleSentence: 'enjoy reading', exampleZh: '喜歡閱讀' },
+    { en: 'painting', zh: '畫畫', image: '🎨', phonics: '', kk: '[ˈpentɪŋ]', phonicsSound: '', exampleSentence: 'finish painting', exampleZh: '畫完' },
+    { en: 'practicing', zh: '練習', image: '🎯', phonics: '', kk: '[ˈpræktɪsɪŋ]', phonicsSound: '', exampleSentence: 'keep practicing', exampleZh: '持續練習' },
+    { en: 'cooking', zh: '煮飯', image: '🍳', phonics: '', kk: '[ˈkʊkɪŋ]', phonicsSound: '', exampleSentence: 'love cooking', exampleZh: '愛煮飯' },
+    { en: 'dancing', zh: '跳舞', image: '💃', phonics: '', kk: '[ˈdænsɪŋ]', phonicsSound: '', exampleSentence: 'enjoy dancing', exampleZh: '喜歡跳舞' },
+  ],
+  sentences: [
+    { en: 'I enjoy swimming and reading.', zh: '我喜歡游泳和閱讀。' }, { en: 'She finished painting the picture.', zh: '她畫完了那幅畫。' }, { en: 'Keep trying!', zh: '繼續努力！' }, { en: "Don't stop practicing.", zh: '別停止練習。' }, { en: 'I love cooking dinner.', zh: '我愛煮晚餐。' }, { en: 'He is good at dancing.', zh: '他很會跳舞。' },
+  ],
+  phonicsLetters: ['verb + ing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I enjoy ___.（游泳·動名詞）', options: ['swimming', 'swim', 'to swim', 'swims'], answer: 'swimming' },
+    { type: 'fill-blank', question: 'She finished ___ the picture.（畫·動名詞）', options: ['painting', 'paint', 'to paint', 'paints'], answer: 'painting' },
+    { type: 'match', question: 'enjoy 後面接？', options: ['V-ing 動名詞', '原形', '過去式', '名詞複數'], answer: 'V-ing 動名詞' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: "Don't stop ___.（練習·動名詞）", options: ['practicing', 'practice', 'to practice', 'practices'], answer: 'practicing' },
+    { type: 'fill-blank', question: 'Keep ___! You can do it.（嘗試·動名詞）', options: ['trying', 'try', 'to try', 'tries'], answer: 'trying' },
+    { type: 'fill-blank', question: '中翻英：「我喜歡游泳和閱讀。」', options: ['I enjoy swimming and reading.', 'I swim and read.', 'I like to swim.', 'Do I swim?'], answer: 'I enjoy swimming and reading.' },
+    { type: 'fill-blank', question: '中翻英：「她畫完了那幅畫。」', options: ['She finished painting the picture.', 'She paints.', 'She will paint.', 'Does she paint?'], answer: 'She finished painting the picture.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I enjoy swimming and reading.', 'She finished painting the picture.', 'Keep trying!', 'I love cooking dinner.'], answer: 'I enjoy swimming and reading.', image: '🎧' },
+    { type: 'read', question: 'What does Coco enjoy?（Coco 喜歡什麼？）', passage: 'Coco has many hobbies.\nShe enjoys swimming and reading.\nShe also loves cooking.', options: ['swimming and reading', 'sleeping', 'nothing', 'running only'], answer: 'swimming and reading' },
+  ],
+  talkTimePrompts: ["Say a hobby: I enjoy ___ing.", "Use keep / stop / finish + V-ing.", "Say what you are good at: good at ___ing.", "✍️ 引導寫作＋翻譯：把「別停止練習。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'He is good at ___.（跳舞·動名詞）', options: ['dancing', 'dance', 'to dance', 'dances'], answer: 'dancing' },
+    { type: 'fill-blank', question: '中翻英：「繼續努力！」', options: ['Keep trying!', 'Try it.', 'You try.', 'Do you try?'], answer: 'Keep trying!' },
+    { type: 'match', question: 'finish 後面接？', options: ['V-ing 動名詞', '原形', 'to V', '名詞'], answer: 'V-ing 動名詞' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I enjoy swimming and reading.", lineZh: '我喜歡游泳和閱讀。' },
+    { speaker: 'Benny', line: "She finished painting the picture.", lineZh: '她畫完了那幅畫。' },
+    { speaker: 'Polly', line: "Keep trying! Don't stop practicing!", lineZh: '繼續努力！別停止練習！' },
+    { speaker: 'Coco', line: "Some verbs take 'verb + ing'!", lineZh: '有些動詞後面接「動詞 + ing」！' },
+  ],
+};
+
+const L11_M8: Mission = {
+  id: 8, slug: 'l11-m8-used-to', level: 11, title: 'used to', titleEn: 'used to', theme: '挑戰場・以前的習慣', themeEmoji: '⏳',
+  focus: 'used to + 原形（過去的習慣，現在不再）＋ 中翻英',
+  story: [
+    { image: '⏳', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I used to be short, but now I am tall.", dialogueZh: '我以前很矮，但現在很高。', highlightWords: ['used to'], sceneEmojis: ['⏳', '📏', '✨'], animation: 'wave' },
+    { image: '🍬', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "She used to eat a lot of candy.", dialogueZh: '她以前吃很多糖。', highlightWords: ['used to'], sceneEmojis: ['🍬', '⏳', '😊'], animation: 'bounce' },
+    { image: '🏡', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "We used to live in a village.", dialogueZh: '我們以前住在村莊。', highlightWords: ['used to'], sceneEmojis: ['🏡', '⏳', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "used to = a past habit that stopped!", dialogueZh: 'used to = 過去的習慣，現在停了！', highlightWords: [], sceneEmojis: ['🏆', '⏳', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'used to', zh: '以前常…', image: '⏳', phonics: '', kk: '[just tu]', phonicsSound: '過去習慣', exampleSentence: 'I used to play.', exampleZh: '我以前常玩。' },
+    { en: 'short', zh: '矮的', image: '📏', phonics: '', kk: '[ʃɔrt]', phonicsSound: '', exampleSentence: 'I was short.', exampleZh: '我以前矮。' },
+    { en: 'tall', zh: '高的', image: '📐', phonics: '', kk: '[tɔl]', phonicsSound: '', exampleSentence: 'I am tall now.', exampleZh: '我現在高。' },
+    { en: 'village', zh: '村莊', image: '🏡', phonics: '', kk: '[ˈvɪlɪdʒ]', phonicsSound: '', exampleSentence: 'a small village', exampleZh: '小村莊' },
+    { en: 'candy', zh: '糖果', image: '🍬', phonics: '', kk: '[ˈkændi]', phonicsSound: '', exampleSentence: 'eat candy', exampleZh: '吃糖' },
+    { en: 'habit', zh: '習慣', image: '🔁', phonics: '', kk: '[ˈhæbɪt]', phonicsSound: '', exampleSentence: 'an old habit', exampleZh: '舊習慣' },
+    { en: 'no longer', zh: '不再', image: '🚫', phonics: '', kk: '[no ˈlɔŋɡɚ]', phonicsSound: '', exampleSentence: 'no longer here', exampleZh: '不再在這' },
+    { en: 'change', zh: '改變', image: '🔄', phonics: '', kk: '[tʃendʒ]', phonicsSound: '', exampleSentence: 'People change.', exampleZh: '人會改變。' },
+    { en: 'young', zh: '年輕的', image: '👶', phonics: '', kk: '[jʌŋ]', phonicsSound: '', exampleSentence: 'when I was young', exampleZh: '我年輕時' },
+    { en: 'past', zh: '過去', image: '⏪', phonics: '', kk: '[pæst]', phonicsSound: '', exampleSentence: 'in the past', exampleZh: '在過去' },
+  ],
+  sentences: [
+    { en: 'I used to be short.', zh: '我以前很矮。' }, { en: 'She used to eat a lot of candy.', zh: '她以前吃很多糖。' }, { en: 'We used to live in a village.', zh: '我們以前住在村莊。' }, { en: 'He used to play the piano.', zh: '他以前彈鋼琴。' }, { en: 'Did you use to like it?', zh: '你以前喜歡它嗎？' }, { en: 'Things used to be different.', zh: '事情以前不一樣。' },
+  ],
+  phonicsLetters: ['used to'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ be short, but now I am tall.（以前常）', options: ['used to', 'use to now', 'will', 'am'], answer: 'used to' },
+    { type: 'match', question: 'used to 表示？', options: ['過去的習慣（現在停了）', '現在習慣', '未來', '正在做'], answer: '過去的習慣（現在停了）' },
+    { type: 'match', question: 'village 是什麼意思？', options: ['村莊', '城市', '習慣', '糖果'], answer: '村莊' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'She ___ eat a lot of candy.（以前常）', options: ['used to', 'uses to', 'will', 'is'], answer: 'used to' },
+    { type: 'fill-blank', question: 'We used to ___ in a village.（原形·住）', options: ['live', 'lived', 'living', 'lives'], answer: 'live' },
+    { type: 'fill-blank', question: '中翻英：「我以前很矮，但現在很高。」', options: ['I used to be short, but now I am tall.', 'I am short.', 'I will be tall.', 'Am I short?'], answer: 'I used to be short, but now I am tall.' },
+    { type: 'fill-blank', question: '中翻英：「我們以前住在村莊。」', options: ['We used to live in a village.', 'We live in a village.', 'We will live there.', 'Do we live there?'], answer: 'We used to live in a village.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I used to be short.', 'She used to eat a lot of candy.', 'We used to live in a village.', 'He used to play the piano.'], answer: 'I used to be short.', image: '🎧' },
+    { type: 'read', question: 'What did Benny used to be?（Benny 以前如何？）', passage: 'Benny is very tall now.\nBut he used to be short.\nHe grew a lot!', options: ['short', 'tall', 'old', 'sick'], answer: 'short' },
+  ],
+  talkTimePrompts: ["Say a past habit: I used to ___.", "Compare past and now: I used to ___, but now ___.", "Ask: Did you use to ___?", "✍️ 引導寫作＋翻譯：把「她以前吃很多糖。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'He ___ play the piano.（以前常）', options: ['used to', 'uses to', 'will', 'is'], answer: 'used to' },
+    { type: 'fill-blank', question: '中翻英：「事情以前不一樣。」', options: ['Things used to be different.', 'Things are different.', 'Things will change.', 'Are things different?'], answer: 'Things used to be different.' },
+    { type: 'match', question: 'used to 後面接？', options: ['原形動詞', '過去式', '-ing', '名詞'], answer: '原形動詞' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I used to be short, but now I am tall.", lineZh: '我以前很矮，但現在很高。' },
+    { speaker: 'Coco', line: "She used to eat a lot of candy.", lineZh: '她以前吃很多糖。' },
+    { speaker: 'Polly', line: "We used to live in a village.", lineZh: '我們以前住在村莊。' },
+    { speaker: 'Benny', line: "used to = a past habit that stopped!", lineZh: 'used to = 過去的習慣，現在停了！' },
+  ],
+};
+
+const L11_M9: Mission = {
+  id: 9, slug: 'l11-m9-conditional', level: 11, title: '條件句 if', titleEn: 'Conditional: if', theme: '挑戰場・如果', themeEmoji: '🔀',
+  focus: '第一條件句 If + 現在式, will + 原形（真實的可能）＋ 中翻英',
+  story: [
+    { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "If it rains, I will stay home.", dialogueZh: '如果下雨，我就待在家。', highlightWords: ['If', 'will'], sceneEmojis: ['🌧️', '🏠', '✨'], animation: 'wave' },
+    { image: '📚', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "If you study hard, you will pass.", dialogueZh: '如果你努力讀書，你就會通過。', highlightWords: ['If', 'will'], sceneEmojis: ['📚', '💯', '😊'], animation: 'bounce' },
+    { image: '⏰', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "If we hurry, we will catch the bus.", dialogueZh: '如果我們趕快，就會趕上公車。', highlightWords: ['If', 'will'], sceneEmojis: ['⏰', '🚌', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "If + present, will + verb. A real possibility!", dialogueZh: 'If + 現在式，will + 動詞。真實的可能！', highlightWords: [], sceneEmojis: ['🏆', '🔀', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'if', zh: '如果', image: '🔀', phonics: '', kk: '[ɪf]', phonicsSound: '', exampleSentence: 'If it rains…', exampleZh: '如果下雨…' },
+    { en: 'will', zh: '將會', image: '🔮', phonics: '', kk: '[wɪl]', phonicsSound: '', exampleSentence: 'I will stay.', exampleZh: '我會待著。' },
+    { en: 'rain', zh: '下雨', image: '🌧️', phonics: '', kk: '[ren]', phonicsSound: '', exampleSentence: 'If it rains…', exampleZh: '如果下雨…' },
+    { en: 'stay', zh: '待著', image: '🏠', phonics: '', kk: '[ste]', phonicsSound: '', exampleSentence: 'stay home', exampleZh: '待在家' },
+    { en: 'study', zh: '讀書', image: '📚', phonics: '', kk: '[ˈstʌdi]', phonicsSound: '', exampleSentence: 'study hard', exampleZh: '努力讀書' },
+    { en: 'pass', zh: '通過', image: '💯', phonics: '', kk: '[pæs]', phonicsSound: '', exampleSentence: 'pass the test', exampleZh: '通過考試' },
+    { en: 'hurry', zh: '趕快', image: '⏰', phonics: '', kk: '[ˈhɝi]', phonicsSound: '', exampleSentence: 'if we hurry', exampleZh: '如果我們趕快' },
+    { en: 'catch', zh: '趕上·抓住', image: '🚌', phonics: '', kk: '[kætʃ]', phonicsSound: '', exampleSentence: 'catch the bus', exampleZh: '趕上公車' },
+    { en: 'possible', zh: '可能的', image: '🤔', phonics: '', kk: '[ˈpɑsəbl̩]', phonicsSound: '', exampleSentence: 'It is possible.', exampleZh: '這是可能的。' },
+    { en: 'happen', zh: '發生', image: '⚡', phonics: '', kk: '[ˈhæpən]', phonicsSound: '', exampleSentence: 'what will happen', exampleZh: '會發生什麼' },
+  ],
+  sentences: [
+    { en: 'If it rains, I will stay home.', zh: '如果下雨，我就待在家。' }, { en: 'If you study hard, you will pass.', zh: '如果你努力讀書，你就會通過。' }, { en: 'If we hurry, we will catch the bus.', zh: '如果我們趕快，就會趕上公車。' }, { en: 'What will you do if it rains?', zh: '如果下雨你會怎麼辦？' }, { en: 'If I have time, I will help you.', zh: '如果我有時間，我會幫你。' }, { en: 'If you are kind, people will like you.', zh: '如果你善良，人們會喜歡你。' },
+  ],
+  phonicsLetters: ['If … will …'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ it rains, I will stay home.（如果）', options: ['If', 'And', 'But', 'So'], answer: 'If' },
+    { type: 'fill-blank', question: 'If you study hard, you ___ pass.（未來 will）', options: ['will', 'are', 'was', 'do'], answer: 'will' },
+    { type: 'fill-blank', question: 'If it ___, I will stay home.（現在式·rain）', options: ['rains', 'will rain', 'rained', 'raining'], answer: 'rains' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'If we hurry, we ___ catch the bus.（未來 will）', options: ['will', 'are', 'was', 'do'], answer: 'will' },
+    { type: 'fill-blank', question: 'If you ___ hard, you will pass.（現在式·study）', options: ['study', 'will study', 'studied', 'studying'], answer: 'study' },
+    { type: 'fill-blank', question: '中翻英：「如果下雨，我就待在家。」', options: ['If it rains, I will stay home.', 'It rains and I stay.', 'I stay home.', 'Does it rain?'], answer: 'If it rains, I will stay home.' },
+    { type: 'fill-blank', question: '中翻英：「如果你努力讀書，你就會通過。」', options: ['If you study hard, you will pass.', 'You study hard.', 'You will pass.', 'Do you study?'], answer: 'If you study hard, you will pass.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['If it rains, I will stay home.', 'If you study hard, you will pass.', 'If we hurry, we will catch the bus.', 'If I have time, I will help you.'], answer: 'If it rains, I will stay home.', image: '🎧' },
+    { type: 'read', question: 'What will happen if you study hard?（努力讀書會怎樣？）', passage: 'The test is tomorrow.\nIf you study hard, you will pass.\nSo do your best!', options: ['you will pass', 'you will fail', 'nothing', 'you will sleep'], answer: 'you will pass' },
+  ],
+  talkTimePrompts: ["Make an if-sentence: If ___, I will ___.", "Say: If it rains, I will ___.", "Ask: What will you do if ___?", "✍️ 引導寫作＋翻譯：把「如果我有時間，我會幫你。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'If you are kind, people ___ like you.（未來 will）', options: ['will', 'are', 'was', 'do'], answer: 'will' },
+    { type: 'fill-blank', question: '中翻英：「如果我們趕快，就會趕上公車。」', options: ['If we hurry, we will catch the bus.', 'We hurry.', 'We catch the bus.', 'Do we hurry?'], answer: 'If we hurry, we will catch the bus.' },
+    { type: 'match', question: '第一條件句：If 子句用哪個時態？', options: ['現在式', '未來式', '過去式', '完成式'], answer: '現在式' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "If it rains, I will stay home.", lineZh: '如果下雨，我就待在家。' },
+    { speaker: 'Coco', line: "If you study hard, you will pass.", lineZh: '如果你努力讀書，你就會通過。' },
+    { speaker: 'Polly', line: "If we hurry, we will catch the bus.", lineZh: '如果我們趕快，就會趕上公車。' },
+    { speaker: 'Benny', line: "If + present, will + verb. A real possibility!", lineZh: 'If + 現在式，will + 動詞。真實的可能！' },
+  ],
+};
+
+const L11_M10: Mission = {
+  id: 10, slug: 'l11-m10-review-verbals', level: 11, title: 'Review② 不定詞條件句', titleEn: 'Review: to V / -ing / if', theme: '挑戰場・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：不定詞 to V ＋ 動名詞 V-ing ＋ used to ＋ 條件句 if ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review verbals and conditionals!", dialogueZh: '來複習不定詞、動名詞、條件句！', highlightWords: [], sceneEmojis: ['🔄', '🎯', '✨'], animation: 'wave' },
+    { image: '🎯', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I want to travel, and I enjoy swimming.", dialogueZh: '我想旅行，而且我喜歡游泳。', highlightWords: ['to travel', 'swimming'], sceneEmojis: ['✈️', '🏊', '😊'], animation: 'bounce' },
+    { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "If it is sunny, we will go to the beach.", dialogueZh: '如果天晴，我們就去海邊。', highlightWords: ['If', 'will'], sceneEmojis: ['☀️', '🏖️', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You are close to B1 level! Amazing!", dialogueZh: '你快到 B1 程度了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'want to', zh: '想要（做）', image: '🙋', phonics: '', kk: '[wɑnt tu]', phonicsSound: '', exampleSentence: 'I want to go.', exampleZh: '我想去。' },
+    { en: 'enjoy', zh: '喜歡（做）', image: '😄', phonics: '', kk: '[ɪnˈdʒɔɪ]', phonicsSound: '接 V-ing', exampleSentence: 'enjoy swimming', exampleZh: '喜歡游泳' },
+    { en: 'used to', zh: '以前常', image: '⏳', phonics: '', kk: '[just tu]', phonicsSound: '', exampleSentence: 'I used to play.', exampleZh: '我以前常玩。' },
+    { en: 'if', zh: '如果', image: '🔀', phonics: '', kk: '[ɪf]', phonicsSound: '', exampleSentence: 'If it rains…', exampleZh: '如果下雨…' },
+    { en: 'will', zh: '將會', image: '🔮', phonics: '', kk: '[wɪl]', phonicsSound: '', exampleSentence: 'I will go.', exampleZh: '我會去。' },
+    { en: 'swimming', zh: '游泳', image: '🏊', phonics: '', kk: '[ˈswɪmɪŋ]', phonicsSound: '', exampleSentence: 'enjoy swimming', exampleZh: '喜歡游泳' },
+    { en: 'travel', zh: '旅行', image: '✈️', phonics: '', kk: '[ˈtrævl̩]', phonicsSound: '', exampleSentence: 'want to travel', exampleZh: '想旅行' },
+    { en: 'keep', zh: '持續', image: '🔁', phonics: '', kk: '[kip]', phonicsSound: '接 V-ing', exampleSentence: 'keep trying', exampleZh: '持續嘗試' },
+    { en: 'study', zh: '讀書', image: '📚', phonics: '', kk: '[ˈstʌdi]', phonicsSound: '', exampleSentence: 'need to study', exampleZh: '需要讀書' },
+    { en: 'pass', zh: '通過', image: '💯', phonics: '', kk: '[pæs]', phonicsSound: '', exampleSentence: 'will pass', exampleZh: '會通過' },
+  ],
+  sentences: [
+    { en: 'I want to travel.', zh: '我想旅行。' }, { en: 'I enjoy swimming.', zh: '我喜歡游泳。' }, { en: 'I used to live in a village.', zh: '我以前住在村莊。' }, { en: 'If it is sunny, we will go to the beach.', zh: '如果天晴，我們就去海邊。' }, { en: 'Keep trying and you will pass.', zh: '持續努力你就會通過。' }, { en: 'It is fun to learn.', zh: '學習很好玩。' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I want ___ travel.（不定詞）', options: ['to', 'for', 'and', 'so'], answer: 'to' },
+    { type: 'fill-blank', question: 'I enjoy ___.（游泳·動名詞）', options: ['swimming', 'swim', 'to swim', 'swims'], answer: 'swimming' },
+    { type: 'fill-blank', question: '___ it is sunny, we will go.（如果）', options: ['If', 'And', 'But', 'So'], answer: 'If' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I ___ live in a village.（以前常）', options: ['used to', 'uses to', 'will', 'am'], answer: 'used to' },
+    { type: 'fill-blank', question: 'If you study, you ___ pass.（未來 will）', options: ['will', 'are', 'was', 'do'], answer: 'will' },
+    { type: 'fill-blank', question: '中翻英：「如果天晴，我們就去海邊。」', options: ['If it is sunny, we will go to the beach.', 'It is sunny.', 'We go to the beach.', 'Is it sunny?'], answer: 'If it is sunny, we will go to the beach.' },
+    { type: 'fill-blank', question: '中翻英：「我喜歡游泳。」', options: ['I enjoy swimming.', 'I swim.', 'I will swim.', 'Do I swim?'], answer: 'I enjoy swimming.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I want to travel.', 'I enjoy swimming.', 'If it is sunny, we will go to the beach.', 'It is fun to learn.'], answer: 'I want to travel.', image: '🎧' },
+    { type: 'read', question: 'Where will they go if it is sunny?（天晴會去哪？）', passage: 'The friends have a plan.\nIf it is sunny, they will go to the beach.\nIf it rains, they will stay home.', options: ['the beach', 'home', 'school', 'the shop'], answer: 'the beach' },
+  ],
+  talkTimePrompts: ["Use 'want to' and 'enjoy + ing' in sentences.", "Say a past habit with 'used to'.", "Make an if-sentence.", "✍️ 引導寫作＋翻譯：把「持續努力你就會通過。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Keep ___! You can do it.（嘗試·動名詞）', options: ['trying', 'try', 'to try', 'tries'], answer: 'trying' },
+    { type: 'fill-blank', question: '中翻英：「我以前住在村莊。」', options: ['I used to live in a village.', 'I live in a village.', 'I will live there.', 'Do I live there?'], answer: 'I used to live in a village.' },
+    { type: 'read', question: 'What will they do if it rains?（下雨會做什麼？）', passage: 'If it is sunny, they will go to the beach.\nIf it rains, they will stay home and read.', options: ['stay home and read', 'go to the beach', 'go swimming', 'go to school'], answer: 'stay home and read' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review verbals and conditionals!", lineZh: '來複習不定詞、動名詞、條件句！' },
+    { speaker: 'Coco', line: "I want to travel, and I enjoy swimming.", lineZh: '我想旅行，而且我喜歡游泳。' },
+    { speaker: 'Benny', line: "If it is sunny, we will go to the beach.", lineZh: '如果天晴，我們就去海邊。' },
+    { speaker: 'Finn', line: "You are close to B1 level! Amazing!", lineZh: '你快到 B1 程度了！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
