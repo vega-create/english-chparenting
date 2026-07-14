@@ -9809,7 +9809,267 @@ const L10_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15];
+const L10_M16: Mission = {
+  id: 16, slug: 'l10-m16-describe', level: 10, title: '描述人物地點', titleEn: 'Describe People & Places', theme: '未來橋・描寫', themeEmoji: '🧑‍🎨',
+  focus: '寫作：描述人物與地點（外觀＋個性＋特色）＋ 中翻英',
+  story: [
+    { image: '🧑‍🎨', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's describe a person and a place!", dialogueZh: '我們來描述一個人和一個地方！', highlightWords: ['describe'], sceneEmojis: ['🧑‍🎨', '✍️', '✨'], animation: 'wave' },
+    { image: '👩‍🏫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "My teacher is tall and kind. She helps everyone.", dialogueZh: '我的老師又高又善良。她幫助大家。', highlightWords: ['tall', 'kind'], sceneEmojis: ['👩‍🏫', '❤️', '😊'], animation: 'bounce' },
+    { image: '🏞️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "My favorite place is the park. It is green and quiet.", dialogueZh: '我最愛的地方是公園。它綠又安靜。', highlightWords: ['green', 'quiet'], sceneEmojis: ['🏞️', '🌳', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Use adjectives to paint a picture with words!", dialogueZh: '用形容詞用文字畫出畫面！', highlightWords: [], sceneEmojis: ['🏆', '🧑‍🎨', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'describe', zh: '描述', image: '🗣️', phonics: '', kk: '[dɪˈskraɪb]', phonicsSound: '', exampleSentence: 'describe a person', exampleZh: '描述一個人' },
+    { en: 'kind', zh: '善良的', image: '❤️', phonics: '', kk: '[kaɪnd]', phonicsSound: '', exampleSentence: 'a kind teacher', exampleZh: '善良的老師' },
+    { en: 'tall', zh: '高的', image: '📏', phonics: '', kk: '[tɔl]', phonicsSound: '', exampleSentence: 'a tall man', exampleZh: '高個子' },
+    { en: 'quiet', zh: '安靜的', image: '🤫', phonics: '', kk: '[ˈkwaɪət]', phonicsSound: '', exampleSentence: 'a quiet place', exampleZh: '安靜的地方' },
+    { en: 'beautiful', zh: '美麗的', image: '🌅', phonics: '', kk: '[ˈbjutɪfl̩]', phonicsSound: '', exampleSentence: 'a beautiful park', exampleZh: '美麗的公園' },
+    { en: 'friendly', zh: '友善的', image: '😊', phonics: '', kk: '[ˈfrɛndli]', phonicsSound: '', exampleSentence: 'a friendly girl', exampleZh: '友善的女孩' },
+    { en: 'place', zh: '地方', image: '📍', phonics: '', kk: '[ples]', phonicsSound: '', exampleSentence: 'my favorite place', exampleZh: '我最愛的地方' },
+    { en: 'person', zh: '人', image: '🧑', phonics: '', kk: '[ˈpɝsn̩]', phonicsSound: '', exampleSentence: 'a nice person', exampleZh: '好人' },
+    { en: 'busy', zh: '繁忙的', image: '🚦', phonics: '', kk: '[ˈbɪzi]', phonicsSound: '', exampleSentence: 'a busy street', exampleZh: '繁忙的街' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '', exampleSentence: 'She helps everyone.', exampleZh: '她幫助大家。' },
+  ],
+  sentences: [
+    { en: 'My teacher is tall and kind.', zh: '我的老師又高又善良。' }, { en: 'She helps everyone.', zh: '她幫助大家。' }, { en: 'My favorite place is the park.', zh: '我最愛的地方是公園。' }, { en: 'It is green and quiet.', zh: '它綠又安靜。' }, { en: 'The city is busy but exciting.', zh: '城市繁忙但令人興奮。' }, { en: 'My friend is funny and kind.', zh: '我朋友風趣又善良。' },
+  ],
+  phonicsLetters: ['describe'],
+  warmUpQuestions: [
+    { type: 'match', question: 'kind 是什麼意思？', options: ['善良的', '高的', '安靜的', '繁忙的'], answer: '善良的' },
+    { type: 'fill-blank', question: 'My teacher is tall ___ kind.（並列）', options: ['and', 'but', 'so', 'because'], answer: 'and' },
+    { type: 'match', question: 'quiet 的相反是？', options: ['busy', 'kind', 'tall', 'green'], answer: 'busy' },
+  ],
+  challenges: [
+    { type: 'read', question: 'How is the teacher?（老師怎麼樣？）', passage: 'My teacher is tall and kind.\nShe is patient with us.\nShe helps everyone learn.', options: ['tall and kind', 'short and mean', 'loud and busy', 'quiet and old'], answer: 'tall and kind' },
+    { type: 'read', question: 'How is the park?（公園怎麼樣？）', passage: 'My favorite place is the park.\nIt is green and quiet.\nI feel calm there.', options: ['green and quiet', 'busy and loud', 'dirty and dark', 'small and old'], answer: 'green and quiet' },
+    { type: 'fill-blank', question: '中翻英：「我的老師又高又善良。」', options: ['My teacher is tall and kind.', 'My teacher helps.', 'She is a teacher.', 'Who is my teacher?'], answer: 'My teacher is tall and kind.' },
+    { type: 'fill-blank', question: '中翻英：「它綠又安靜。」', options: ['It is green and quiet.', 'It is a park.', 'The park is big.', 'Where is it?'], answer: 'It is green and quiet.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['My teacher is tall and kind.', 'She helps everyone.', 'My favorite place is the park.', 'It is green and quiet.'], answer: 'My teacher is tall and kind.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：desc _ ibe（描述）', answer: 'describe', image: '✍️' },
+  ],
+  talkTimePrompts: ["Describe a person: He/She is ___ and ___.", "Describe a place: It is ___.", "Use two adjectives in one sentence.", "✍️ 引導寫作＋翻譯：寫 3 句描述一個你喜歡的人或地方。"],
+  reviewQuiz: [
+    { type: 'match', question: 'beautiful 是什麼意思？', options: ['美麗的', '繁忙的', '善良的', '安靜的'], answer: '美麗的' },
+    { type: 'fill-blank', question: '中翻英：「我最愛的地方是公園。」', options: ['My favorite place is the park.', 'I like the park.', 'The park is here.', 'Where is the park?'], answer: 'My favorite place is the park.' },
+    { type: 'read', question: 'Does the teacher help students?（老師幫助學生嗎？）', passage: 'My teacher is very kind.\nShe helps everyone learn.\nWe all like her.', options: ['Yes, she helps everyone', 'No, she is busy', 'She is mean', 'She is quiet'], answer: 'Yes, she helps everyone' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Let's describe a person and a place!", lineZh: '我們來描述一個人和一個地方！' },
+    { speaker: 'Coco', line: "My teacher is tall and kind. She helps everyone.", lineZh: '我的老師又高又善良。她幫助大家。' },
+    { speaker: 'Benny', line: "My favorite place is the park. It is green and quiet.", lineZh: '我最愛的地方是公園。它綠又安靜。' },
+    { speaker: 'Ruby', line: "Use adjectives to paint a picture with words!", lineZh: '用形容詞用文字畫出畫面！' },
+  ],
+};
+
+const L10_M17: Mission = {
+  id: 17, slug: 'l10-m17-opinion', level: 10, title: '意見短文', titleEn: 'Opinion Writing', theme: '未來橋・我的看法', themeEmoji: '💭',
+  focus: '寫作：意見短文 I think… because…（觀點＋理由）＋ 中翻英',
+  story: [
+    { image: '💭', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I think reading is great because it is fun.", dialogueZh: '我覺得閱讀很棒因為它很好玩。', highlightWords: ['think', 'because'], sceneEmojis: ['💭', '📚', '✨'], animation: 'wave' },
+    { image: '🏫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "In my opinion, school is important.", dialogueZh: '在我看來，學校很重要。', highlightWords: ['opinion'], sceneEmojis: ['🏫', '💡', '😊'], animation: 'bounce' },
+    { image: '🤝', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "I agree because we learn a lot.", dialogueZh: '我同意因為我們學很多。', highlightWords: ['agree', 'because'], sceneEmojis: ['🤝', '📚', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Give your opinion AND a reason!", dialogueZh: '給出你的觀點「和」理由！', highlightWords: [], sceneEmojis: ['🏆', '💭', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'opinion', zh: '意見·看法', image: '💭', phonics: '', kk: '[əˈpɪnjən]', phonicsSound: '', exampleSentence: 'In my opinion…', exampleZh: '在我看來…' },
+    { en: 'think', zh: '認為', image: '🤔', phonics: '', kk: '[θɪŋk]', phonicsSound: '', exampleSentence: 'I think…', exampleZh: '我認為…' },
+    { en: 'because', zh: '因為', image: '💡', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'because it is fun', exampleZh: '因為好玩' },
+    { en: 'agree', zh: '同意', image: '🤝', phonics: '', kk: '[əˈɡri]', phonicsSound: '', exampleSentence: 'I agree.', exampleZh: '我同意。' },
+    { en: 'disagree', zh: '不同意', image: '🙅', phonics: '', kk: '[ˌdɪsəˈɡri]', phonicsSound: '', exampleSentence: 'I disagree.', exampleZh: '我不同意。' },
+    { en: 'important', zh: '重要的', image: '⭐', phonics: '', kk: '[ɪmˈpɔrtn̩t]', phonicsSound: '', exampleSentence: 'School is important.', exampleZh: '學校很重要。' },
+    { en: 'reason', zh: '理由', image: '❓', phonics: '', kk: '[ˈrizn̩]', phonicsSound: '', exampleSentence: 'a good reason', exampleZh: '好理由' },
+    { en: 'best', zh: '最好的', image: '🥇', phonics: '', kk: '[bɛst]', phonicsSound: '', exampleSentence: 'the best sport', exampleZh: '最好的運動' },
+    { en: 'favorite', zh: '最愛的', image: '⭐', phonics: '', kk: '[ˈfevərɪt]', phonicsSound: '', exampleSentence: 'my favorite', exampleZh: '我的最愛' },
+    { en: 'great', zh: '很棒的', image: '👍', phonics: '', kk: '[ɡret]', phonicsSound: '', exampleSentence: 'It is great.', exampleZh: '它很棒。' },
+  ],
+  sentences: [
+    { en: 'I think reading is great.', zh: '我覺得閱讀很棒。' }, { en: 'I like it because it is fun.', zh: '我喜歡因為它好玩。' }, { en: 'In my opinion, school is important.', zh: '在我看來，學校很重要。' }, { en: 'I agree because we learn a lot.', zh: '我同意因為我們學很多。' }, { en: 'Soccer is the best sport.', zh: '足球是最好的運動。' }, { en: 'What do you think?', zh: '你覺得呢？' },
+  ],
+  phonicsLetters: ['opinion writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ reading is great.（認為）', options: ['think', 'am', 'have', 'do'], answer: 'think' },
+    { type: 'fill-blank', question: 'I like it ___ it is fun.（因為）', options: ['because', 'so', 'and', 'but'], answer: 'because' },
+    { type: 'match', question: 'opinion 是什麼意思？', options: ['意見·看法', '理由', '事實', '故事'], answer: '意見·看法' },
+  ],
+  challenges: [
+    { type: 'read', question: "What is Benny's opinion?（Benny 的看法？）", passage: 'I think reading is great.\nI read every day.\nI like it because it is fun.', options: ['reading is great', 'reading is boring', 'sports are best', 'school is bad'], answer: 'reading is great' },
+    { type: 'fill-blank', question: 'In my ___, school is important.（看法）', options: ['opinion', 'reason', 'fact', 'title'], answer: 'opinion' },
+    { type: 'fill-blank', question: '中翻英：「我覺得閱讀很棒因為它很好玩。」', options: ['I think reading is great because it is fun.', 'Reading is a book.', 'Do you read?', 'I read a book.'], answer: 'I think reading is great because it is fun.' },
+    { type: 'fill-blank', question: '中翻英：「我同意因為我們學很多。」', options: ['I agree because we learn a lot.', 'I agree.', 'We learn.', 'Do you agree?'], answer: 'I agree because we learn a lot.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I think reading is great.', 'In my opinion, school is important.', 'I agree because we learn a lot.', 'Soccer is the best sport.'], answer: 'I think reading is great.', image: '🎧' },
+    { type: 'read', question: 'Why does the writer like reading?（作者為何喜歡閱讀？）', passage: 'I love to read.\nBooks take me to new worlds.\nI like reading because it is fun.', options: ['because it is fun', 'because it is easy', 'because he must', 'he does not like it'], answer: 'because it is fun' },
+  ],
+  talkTimePrompts: ["Give an opinion: I think ___.", "Add a reason: because ___.", "Say: In my opinion, ___ is the best.", "✍️ 引導寫作＋翻譯：寫 3 句意見短文（I think… because…）。"],
+  reviewQuiz: [
+    { type: 'match', question: 'agree 的相反是？', options: ['disagree', 'think', 'reason', 'best'], answer: 'disagree' },
+    { type: 'fill-blank', question: '中翻英：「在我看來，學校很重要。」', options: ['In my opinion, school is important.', 'School is a place.', 'I go to school.', 'Is school important?'], answer: 'In my opinion, school is important.' },
+    { type: 'read', question: 'Does the writer think school is important?（作者覺得學校重要嗎？）', passage: 'In my opinion, school is important.\nWe learn many things there.\nI agree that school helps us.', options: ['Yes', 'No', 'Not sure', 'School is bad'], answer: 'Yes' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I think reading is great because it is fun.", lineZh: '我覺得閱讀很棒因為它很好玩。' },
+    { speaker: 'Coco', line: "In my opinion, school is important.", lineZh: '在我看來，學校很重要。' },
+    { speaker: 'Polly', line: "I agree because we learn a lot.", lineZh: '我同意因為我們學很多。' },
+    { speaker: 'Benny', line: "Give your opinion AND a reason!", lineZh: '給出你的觀點「和」理由！' },
+  ],
+};
+
+const L10_M18: Mission = {
+  id: 18, slug: 'l10-m18-read-write', level: 10, title: '讀寫綜合', titleEn: 'Read & Write', theme: '未來橋・讀完再寫', themeEmoji: '📖',
+  focus: '讀寫綜合：讀一段短文，再仿寫自己的版本 ＋ 中翻英',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read the model, then write your own!", dialogueZh: '讀範例，然後寫你自己的！', highlightWords: ['model'], sceneEmojis: ['📖', '✍️', '✨'], animation: 'wave' },
+    { image: '🌞', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Model: My weekend was fun. I went to the beach.", dialogueZh: '範例：我的週末很好玩。我去了海邊。', highlightWords: ['went'], sceneEmojis: ['🌞', '🏖️', '😊'], animation: 'bounce' },
+    { image: '✏️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Now you: My weekend was ___. I went to ___.", dialogueZh: '換你：我的週末___。我去了___。', highlightWords: [], sceneEmojis: ['✏️', '📝', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Read a model, then make it your own!", dialogueZh: '讀範例，然後改成你自己的！', highlightWords: [], sceneEmojis: ['🏆', '📖', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'model', zh: '範例', image: '📋', phonics: '', kk: '[ˈmɑdl̩]', phonicsSound: '', exampleSentence: 'read the model', exampleZh: '讀範例' },
+    { en: 'weekend', zh: '週末', image: '🏖️', phonics: '', kk: '[ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'my weekend', exampleZh: '我的週末' },
+    { en: 'went', zh: '去了', image: '🚶', phonics: '', kk: '[wɛnt]', phonicsSound: '', exampleSentence: 'I went to the beach.', exampleZh: '我去了海邊。' },
+    { en: 'fun', zh: '好玩的', image: '🎉', phonics: '', kk: '[fʌn]', phonicsSound: '', exampleSentence: 'It was fun.', exampleZh: '很好玩。' },
+    { en: 'beach', zh: '海邊', image: '🏖️', phonics: '', kk: '[bitʃ]', phonicsSound: '', exampleSentence: 'the beach', exampleZh: '海邊' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: 'I swam.', exampleZh: '我游泳了。' },
+    { en: 'copy', zh: '仿寫·抄', image: '✏️', phonics: '', kk: '[ˈkɑpi]', phonicsSound: '', exampleSentence: 'copy the pattern', exampleZh: '仿照句型' },
+    { en: 'own', zh: '自己的', image: '🙋', phonics: '', kk: '[on]', phonicsSound: '', exampleSentence: 'your own story', exampleZh: '你自己的故事' },
+    { en: 'change', zh: '改變', image: '🔄', phonics: '', kk: '[tʃendʒ]', phonicsSound: '', exampleSentence: 'change the words', exampleZh: '換掉字詞' },
+    { en: 'wrote', zh: '寫了', image: '✍️', phonics: '', kk: '[rot]', phonicsSound: '', exampleSentence: 'I wrote a story.', exampleZh: '我寫了故事。' },
+  ],
+  sentences: [
+    { en: 'My weekend was fun.', zh: '我的週末很好玩。' }, { en: 'I went to the beach.', zh: '我去了海邊。' }, { en: 'I swam and played.', zh: '我游泳也玩了。' }, { en: 'Now write your own.', zh: '現在寫你自己的。' }, { en: 'Change the words to fit you.', zh: '換掉字詞來符合你。' }, { en: 'I wrote a great paragraph!', zh: '我寫了很棒的一段！' },
+  ],
+  phonicsLetters: ['read & write'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'My weekend ___ fun.（過去 be·單數）', options: ['was', 'is', 'were', 'will'], answer: 'was' },
+    { type: 'fill-blank', question: 'I ___ to the beach.（go 過去）', options: ['went', 'go', 'goes', 'going'], answer: 'went' },
+    { type: 'match', question: 'model 在這裡是什麼意思？', options: ['範例', '模特兒', '玩具', '汽車'], answer: '範例' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What did the writer do at the weekend?（作者週末做了什麼？）', passage: 'My weekend was fun.\nI went to the beach.\nI swam and played in the sand.', options: ['went to the beach', 'stayed home', 'went to school', 'slept'], answer: 'went to the beach' },
+    { type: 'fill-blank', question: 'I swam ___ played.（並列）', options: ['and', 'but', 'so', 'because'], answer: 'and' },
+    { type: 'fill-blank', question: '中翻英：「我的週末很好玩。」', options: ['My weekend was fun.', 'My weekend is fun.', 'Weekends are fun.', 'Is the weekend fun?'], answer: 'My weekend was fun.' },
+    { type: 'fill-blank', question: '中翻英：「我去了海邊。」', options: ['I went to the beach.', 'I go to the beach.', 'The beach is here.', 'Where is the beach?'], answer: 'I went to the beach.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['My weekend was fun.', 'I went to the beach.', 'I swam and played.', 'Now write your own.'], answer: 'My weekend was fun.', image: '🎧' },
+    { type: 'read', question: 'How can you use a model?（怎麼用範例？）', passage: 'Read the model first.\nThen change the words to fit you.\nWrite your own paragraph.', options: ['change the words to fit you', 'copy it exactly', 'ignore it', 'throw it away'], answer: 'change the words to fit you' },
+  ],
+  talkTimePrompts: ["Read a model sentence, then say your own version.", "Talk about your weekend (past tense).", "Change the model to fit you.", "✍️ 引導寫作＋翻譯：仿照「My weekend was ___. I went to ___.」寫你自己的週末。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Now write your ___ story.（自己的）', options: ['own', 'model', 'copy', 'change'], answer: 'own' },
+    { type: 'fill-blank', question: '中翻英：「我游泳也玩了。」', options: ['I swam and played.', 'I swim and play.', 'I will swim.', 'Do I swim?'], answer: 'I swam and played.' },
+    { type: 'match', question: 'copy the pattern 意思是？', options: ['仿照句型', '改變主題', '刪掉', '畫圖'], answer: '仿照句型' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Read the model, then write your own!", lineZh: '讀範例，然後寫你自己的！' },
+    { speaker: 'Coco', line: "Model: My weekend was fun. I went to the beach.", lineZh: '範例：我的週末很好玩。我去了海邊。' },
+    { speaker: 'Ruby', line: "Now you: My weekend was ___. I went to ___.", lineZh: '換你：我的週末___。我去了___。' },
+    { speaker: 'Benny', line: "Read a model, then make it your own!", lineZh: '讀範例，然後改成你自己的！' },
+  ],
+};
+
+const L10_M19: Mission = {
+  id: 19, slug: 'l10-m19-read-write-mix', level: 10, title: '綜合讀寫', titleEn: 'Reading + Writing', theme: '未來橋・讀寫大挑戰', themeEmoji: '📚',
+  focus: '綜合：讀一篇短文，回答理解，再寫短回應 ＋ 中翻英',
+  story: [
+    { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read, understand, and respond!", dialogueZh: '讀懂、理解、回應！', highlightWords: ['respond'], sceneEmojis: ['📚', '💬', '✨'], animation: 'wave' },
+    { image: '🌳', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Text: Trees are important. They give us air.", dialogueZh: '文章：樹很重要。它們給我們空氣。', highlightWords: ['important'], sceneEmojis: ['🌳', '💨', '😊'], animation: 'bounce' },
+    { image: '✍️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Respond: I think trees are great because they help us.", dialogueZh: '回應：我覺得樹很棒因為它們幫我們。', highlightWords: ['think', 'because'], sceneEmojis: ['✍️', '🌳', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Read it, then write what you think!", dialogueZh: '讀完，然後寫你的想法！', highlightWords: [], sceneEmojis: ['🏆', '📚', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'respond', zh: '回應', image: '💬', phonics: '', kk: '[rɪˈspɑnd]', phonicsSound: '', exampleSentence: 'respond to the text', exampleZh: '回應文章' },
+    { en: 'tree', zh: '樹', image: '🌳', phonics: '', kk: '[tri]', phonicsSound: '', exampleSentence: 'Trees are important.', exampleZh: '樹很重要。' },
+    { en: 'important', zh: '重要的', image: '⭐', phonics: '', kk: '[ɪmˈpɔrtn̩t]', phonicsSound: '', exampleSentence: 'very important', exampleZh: '很重要' },
+    { en: 'air', zh: '空氣', image: '💨', phonics: '', kk: '[ɛr]', phonicsSound: '', exampleSentence: 'fresh air', exampleZh: '新鮮空氣' },
+    { en: 'nature', zh: '大自然', image: '🌿', phonics: '', kk: '[ˈnetʃɚ]', phonicsSound: '', exampleSentence: 'love nature', exampleZh: '愛大自然' },
+    { en: 'protect', zh: '保護', image: '🛡️', phonics: '', kk: '[prəˈtɛkt]', phonicsSound: '', exampleSentence: 'protect trees', exampleZh: '保護樹木' },
+    { en: 'clean', zh: '乾淨的', image: '🫧', phonics: '', kk: '[klin]', phonicsSound: '', exampleSentence: 'clean air', exampleZh: '乾淨空氣' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '', exampleSentence: 'They help us.', exampleZh: '它們幫我們。' },
+    { en: 'earth', zh: '地球', image: '🌍', phonics: '', kk: '[ɝθ]', phonicsSound: '', exampleSentence: 'our earth', exampleZh: '我們的地球' },
+    { en: 'plant', zh: '種植', image: '🌱', phonics: '', kk: '[plænt]', phonicsSound: '', exampleSentence: 'plant a tree', exampleZh: '種一棵樹' },
+  ],
+  sentences: [
+    { en: 'Trees are important.', zh: '樹很重要。' }, { en: 'They give us clean air.', zh: '它們給我們乾淨的空氣。' }, { en: 'We should protect trees.', zh: '我們應該保護樹木。' }, { en: 'I think trees are great because they help us.', zh: '我覺得樹很棒因為它們幫我們。' }, { en: 'Let\'s plant more trees.', zh: '我們來種更多樹。' }, { en: 'Nature is beautiful.', zh: '大自然很美。' },
+  ],
+  phonicsLetters: ['read + write'],
+  warmUpQuestions: [
+    { type: 'match', question: 'important 是什麼意思？', options: ['重要的', '乾淨的', '空氣', '樹'], answer: '重要的' },
+    { type: 'fill-blank', question: 'Trees give us clean ___.（空氣）', options: ['air', 'tree', 'earth', 'help'], answer: 'air' },
+    { type: 'match', question: 'protect 是什麼意思？', options: ['保護', '種植', '回應', '重要'], answer: '保護' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Why are trees important?（樹為何重要？）', passage: 'Trees are important.\nThey give us clean air.\nThey help our earth.', options: ['they give us clean air', 'they are tall', 'they are green', 'they are old'], answer: 'they give us clean air' },
+    { type: 'read', question: 'What should we do?（我們該做什麼？）', passage: 'Trees help us in many ways.\nWe should protect them.\nLet\'s plant more trees!', options: ['protect and plant trees', 'cut trees', 'ignore trees', 'sell trees'], answer: 'protect and plant trees' },
+    { type: 'fill-blank', question: '中翻英：「樹很重要。」', options: ['Trees are important.', 'Trees are green.', 'A tree is here.', 'Where are trees?'], answer: 'Trees are important.' },
+    { type: 'fill-blank', question: '中翻英：「我覺得樹很棒因為它們幫我們。」', options: ['I think trees are great because they help us.', 'Trees are tall.', 'Do trees help?', 'I like trees.'], answer: 'I think trees are great because they help us.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Trees are important.', 'They give us clean air.', 'We should protect trees.', "Let's plant more trees."], answer: 'Trees are important.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：prot _ ct（保護）', answer: 'protect', image: '✍️' },
+  ],
+  talkTimePrompts: ["Read the text, then say the main idea.", "Give your opinion about trees.", "Use 'because' to give a reason.", "✍️ 引導寫作＋翻譯：讀完短文，寫 2-3 句你對樹木的看法。"],
+  reviewQuiz: [
+    { type: 'match', question: 'respond 是什麼意思？', options: ['回應', '閱讀', '種植', '保護'], answer: '回應' },
+    { type: 'fill-blank', question: '中翻英：「它們給我們乾淨的空氣。」', options: ['They give us clean air.', 'They are clean.', 'Air is clean.', 'Do they give air?'], answer: 'They give us clean air.' },
+    { type: 'read', question: 'What is the main idea?（主旨？）', passage: 'Trees give us air and shade.\nThey help animals and people.\nTrees are important for the earth.', options: ['Trees are important', 'Trees are tall', 'Trees are green', 'Animals like trees'], answer: 'Trees are important' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Read, understand, and respond!", lineZh: '讀懂、理解、回應！' },
+    { speaker: 'Coco', line: "Text: Trees are important. They give us air.", lineZh: '文章：樹很重要。它們給我們空氣。' },
+    { speaker: 'Ruby', line: "Respond: I think trees are great because they help us.", lineZh: '回應：我覺得樹很棒因為它們幫我們。' },
+    { speaker: 'Benny', line: "Read it, then write what you think!", lineZh: '讀完，然後寫你的想法！' },
+  ],
+};
+
+const L10_M20: Mission = {
+  id: 20, slug: 'l10-m20-boss', level: 10, title: '未來橋大魔王', titleEn: 'Bridge Boss', theme: '未來橋・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：連接詞 ＋ 段落閱讀 ＋ 各類寫作 ＋ 中翻英',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Bridge Boss is here! Read and write!", dialogueZh: '未來橋大魔王來了！讀寫對決！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🌉'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I can connect ideas and write a paragraph!", dialogueZh: '我會連接想法也會寫段落！', highlightWords: [], sceneEmojis: ['💪', '✍️', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Bridge Badge!", dialogueZh: '你打敗大魔王了！獲得未來橋徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🎓', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Future Bridge! On to Challenge Field!", dialogueZh: '你完成了未來橋！前進挑戰場！', highlightWords: [], sceneEmojis: ['🎓', '🏔️', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'and', zh: '和', image: '🔗', phonics: '', kk: '[ænd]', phonicsSound: '', exampleSentence: 'tea and cake', exampleZh: '茶和蛋糕' },
+    { en: 'but', zh: '但是', image: '↔️', phonics: '', kk: '[bʌt]', phonicsSound: '', exampleSentence: 'cheap but nice', exampleZh: '便宜但好' },
+    { en: 'because', zh: '因為', image: '💡', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'because it is fun', exampleZh: '因為好玩' },
+    { en: 'so', zh: '所以', image: '➡️', phonics: '', kk: '[so]', phonicsSound: '', exampleSentence: 'so I slept', exampleZh: '所以我睡了' },
+    { en: 'first', zh: '首先', image: '1️⃣', phonics: '', kk: '[fɝst]', phonicsSound: '', exampleSentence: 'First, I…', exampleZh: '首先，我…' },
+    { en: 'finally', zh: '最後', image: '🏁', phonics: '', kk: '[ˈfaɪnəli]', phonicsSound: '', exampleSentence: 'Finally, I…', exampleZh: '最後，我…' },
+    { en: 'think', zh: '認為', image: '💭', phonics: '', kk: '[θɪŋk]', phonicsSound: '', exampleSentence: 'I think…', exampleZh: '我認為…' },
+    { en: 'main idea', zh: '主旨', image: '🎯', phonics: '', kk: '[men aɪˈdiə]', phonicsSound: '', exampleSentence: 'the main idea', exampleZh: '主旨' },
+    { en: 'letter', zh: '信', image: '✉️', phonics: '', kk: '[ˈlɛtɚ]', phonicsSound: '', exampleSentence: 'write a letter', exampleZh: '寫信' },
+    { en: 'diary', zh: '日記', image: '📔', phonics: '', kk: '[ˈdaɪəri]', phonicsSound: '', exampleSentence: 'Dear Diary', exampleZh: '親愛的日記' },
+  ],
+  sentences: [
+    { en: 'I like tea and cake, but not milk.', zh: '我喜歡茶和蛋糕，但不喜歡牛奶。' }, { en: 'I was tired, so I slept.', zh: '我累了，所以睡了。' }, { en: 'First I plan, then I write.', zh: '首先我計畫，然後寫。' }, { en: 'I think reading is great because it is fun.', zh: '我覺得閱讀很棒因為它好玩。' }, { en: 'Dear Grandma, I miss you.', zh: '親愛的奶奶，我想你。' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I like tea ___ cake.（並列）', options: ['and', 'but', 'so', 'because'], answer: 'and' },
+    { type: 'fill-blank', question: 'I was tired, ___ I slept.（結果）', options: ['so', 'because', 'and', 'but'], answer: 'so' },
+    { type: 'fill-blank', question: 'I ___ reading is great.（認為）', options: ['think', 'am', 'have', 'do'], answer: 'think' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I like it ___ it is fun.（因為）', options: ['because', 'so', 'and', 'but'], answer: 'because' },
+    { type: 'read', question: 'What is the main idea?（主旨？）', passage: 'Dogs are great pets.\nThey are loyal and friendly.\nThey make us happy.', options: ['Dogs are great pets', 'Dogs are brown', 'Dogs bark', 'Dogs eat'], answer: 'Dogs are great pets' },
+    { type: 'fill-blank', question: 'First I plan, ___ I write.（然後）', options: ['then', 'before', 'so', 'but'], answer: 'then' },
+    { type: 'fill-blank', question: '中翻英：「我累了，所以睡了。」', options: ['I was tired, so I slept.', 'I slept and was tired.', 'Was I tired?', 'I sleep.'], answer: 'I was tired, so I slept.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I like tea and cake, but not milk.', 'I was tired, so I slept.', 'First I plan, then I write.', 'Dear Grandma, I miss you.'], answer: 'I like tea and cake, but not milk.', image: '🎧' },
+    { type: 'read', question: 'How do you end a friendly letter?（友善信件如何結尾？）', passage: 'A friendly letter starts with "Dear".\nIt ends with "Best wishes" and your name.', options: ['Best wishes', 'The end', 'Dear you', 'Hello'], answer: 'Best wishes' },
+  ],
+  talkTimePrompts: ["Connect two ideas with and/but/because/so.", "Say the main idea of a short text.", "Introduce yourself or describe a place.", "You beat the Bridge Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___, I check my work.（最後）', options: ['Finally', 'First', 'Then', 'Before'], answer: 'Finally' },
+    { type: 'fill-blank', question: '中翻英：「我覺得閱讀很棒因為它好玩。」', options: ['I think reading is great because it is fun.', 'Reading is a book.', 'Do you read?', 'I read a book.'], answer: 'I think reading is great because it is fun.' },
+    { type: 'read', question: 'Is this text about pets?（這篇關於寵物嗎？）', passage: 'Dogs are great pets.\nCats are good pets too.\nPets make us happy.', options: ['Yes, about pets', 'No, about cars', 'About food', 'About school'], answer: 'Yes, about pets' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Bridge Boss says: read and write!", lineZh: '未來橋大魔王說：讀寫對決！' },
+    { speaker: 'Coco', line: "I can connect ideas and write a paragraph!", lineZh: '我會連接想法也會寫段落！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Bridge champion!", lineZh: '你打敗大魔王了！未來橋冠軍！' },
+    { speaker: 'Finn', line: "On to Challenge Field! Advanced grammar awaits!", lineZh: '前進挑戰場！進階文法等著你！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
