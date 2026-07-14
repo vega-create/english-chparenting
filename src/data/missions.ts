@@ -664,7 +664,7 @@ const L1_M12: Mission = {
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Letter Boss is here! Use all your letters A to Z!", dialogueZh: '字母大魔王來了！用上你所有的字母 A 到 Z！', highlightWords: ['A', 'Z', 'Boss'], sceneEmojis: ['🐲', '⚔️', '🔤'], animation: 'shake' },
     { image: '💪', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Answer the questions to beat the Boss! You can do it!", dialogueZh: '答對問題就能打敗大魔王！你做得到！', highlightWords: ['beat'], sceneEmojis: ['💪', '❓', '✨'], animation: 'bounce' },
     { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Letter Badge!", dialogueZh: '你打敗大魔王了！獲得字母徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
-    { image: '🎓', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Congratulations! You finished Letter Island! On to Sound Island!", dialogueZh: '恭喜！你完成了字母島！前進聲音島！', highlightWords: ['Congratulations'], sceneEmojis: ['🎓', '🌈', '🚀'], animation: 'bounce' },
+    { image: '⭐', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know all 26 letters! Now let's learn some sight words!", dialogueZh: '你會 26 個字母了！現在我們來學常見字！', highlightWords: ['26 letters'], sceneEmojis: ['⭐', '🔤', '🚀'], animation: 'bounce' },
   ],
   words: [
     { en: 'apple', zh: '蘋果', image: '🍎', phonics: 'Aa', kk: '[ˈæpl̩]', phonicsSound: '/æ/', exampleSentence: 'A is for apple.', exampleZh: 'A 是 apple。' },
@@ -694,6 +694,423 @@ const L1_M12: Mission = {
     { type: 'listen-pick', question: '"Q" 開頭的字是？', options: ['apple', 'fish', 'queen', 'zebra'], answer: 'queen' },
     { type: 'fill-blank', question: 'F is for ___.', options: ['apple', 'fish', 'queen', 'zebra'], answer: 'fish' },
     { type: 'fill-blank', question: 'The last letter of A-Z is ___.', options: ['Z', 'A', 'Y', 'X'], answer: 'Z' },
+  ],
+};
+
+// ===================== L1 字母島擴充 M13-M20（大小寫/書寫/sight words/冠詞/閱讀/畢業） =====================
+const L1_M13: Mission = {
+  id: 13, slug: 'l1-m13-upper-lower', level: 1, title: '大小寫配對', titleEn: 'Big & Small Letters', theme: '字母島・大寫小寫', themeEmoji: '🔠',
+  focus: '大寫配小寫：Big A → small a（認識同一個字母的兩種樣子）',
+  story: [
+    { image: '🔠', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Every letter has two forms: big and small!", dialogueZh: '每個字母有兩種樣子：大寫和小寫！', highlightWords: ['big', 'small'], sceneEmojis: ['🔠', '🔡', '✨'], animation: 'wave' },
+    { image: '🅰️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Big A and small a are the same letter!", dialogueZh: '大寫 A 和小寫 a 是同一個字母！', highlightWords: ['A', 'a'], sceneEmojis: ['🅰️', '👇', '😊'], animation: 'bounce' },
+    { image: '🅱️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Big B, small b. Match them up!", dialogueZh: '大寫 B，小寫 b。把它們配對！', highlightWords: ['B', 'b'], sceneEmojis: ['🅱️', '🔗', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can match big and small letters now!", dialogueZh: '你會配大小寫了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔠'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'A a', zh: '字母 A（大小寫）', image: '🍎', phonics: 'Aa', kk: '[e]', phonicsSound: '/æ/', exampleSentence: 'Big A, small a', exampleZh: '大寫A，小寫a' },
+    { en: 'B b', zh: '字母 B（大小寫）', image: '⚽', phonics: 'Bb', kk: '[bi]', phonicsSound: '/b/', exampleSentence: 'Big B, small b', exampleZh: '大寫B，小寫b' },
+    { en: 'C c', zh: '字母 C（大小寫）', image: '🐱', phonics: 'Cc', kk: '[si]', phonicsSound: '/k/', exampleSentence: 'Big C, small c', exampleZh: '大寫C，小寫c' },
+    { en: 'D d', zh: '字母 D（大小寫）', image: '🐶', phonics: 'Dd', kk: '[di]', phonicsSound: '/d/', exampleSentence: 'Big D, small d', exampleZh: '大寫D，小寫d' },
+    { en: 'E e', zh: '字母 E（大小寫）', image: '🥚', phonics: 'Ee', kk: '[i]', phonicsSound: '/ɛ/', exampleSentence: 'Big E, small e', exampleZh: '大寫E，小寫e' },
+    { en: 'F f', zh: '字母 F（大小寫）', image: '🐟', phonics: 'Ff', kk: '[ɛf]', phonicsSound: '/f/', exampleSentence: 'Big F, small f', exampleZh: '大寫F，小寫f' },
+    { en: 'G g', zh: '字母 G（大小寫）', image: '🐐', phonics: 'Gg', kk: '[dʒi]', phonicsSound: '/g/', exampleSentence: 'Big G, small g', exampleZh: '大寫G，小寫g' },
+    { en: 'H h', zh: '字母 H（大小寫）', image: '🎩', phonics: 'Hh', kk: '[etʃ]', phonicsSound: '/h/', exampleSentence: 'Big H, small h', exampleZh: '大寫H，小寫h' },
+    { en: 'M m', zh: '字母 M（大小寫）', image: '🌙', phonics: 'Mm', kk: '[ɛm]', phonicsSound: '/m/', exampleSentence: 'Big M, small m', exampleZh: '大寫M，小寫m' },
+    { en: 'S s', zh: '字母 S（大小寫）', image: '☀️', phonics: 'Ss', kk: '[ɛs]', phonicsSound: '/s/', exampleSentence: 'Big S, small s', exampleZh: '大寫S，小寫s' },
+  ],
+  sentences: [
+    { en: 'Big A, small a.', zh: '大寫 A，小寫 a。' }, { en: 'Big B, small b.', zh: '大寫 B，小寫 b。' }, { en: 'They are the same letter.', zh: '它們是同一個字母。' }, { en: 'Match big and small.', zh: '配對大小寫。' }, { en: 'A is for apple.', zh: 'A 是 apple。' }, { en: 'I can match letters!', zh: '我會配字母！' },
+  ],
+  phonicsLetters: ['Aa', 'Bb', 'Cc', 'Dd', 'Ee'],
+  warmUpQuestions: [
+    { type: 'match', question: '大寫 A 的小寫是？', options: ['a', 'b', 'e', 's'], answer: 'a' },
+    { type: 'match', question: '大寫 B 的小寫是？', options: ['b', 'd', 'a', 'h'], answer: 'b' },
+    { type: 'match', question: '大寫 S 的小寫是？', options: ['s', 'c', 'm', 'e'], answer: 's' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字母代表字', options: ['🍎', '⚽', '🐱', '🐶'], answer: '🐱', image: '🎧' },
+    { type: 'match', question: '配對：大寫→小寫', options: ['A-a', 'B-b', 'C-c', 'D-d'], answer: 'A-a' },
+    { type: 'match', question: '大寫 E 的小寫是？', options: ['e', 'a', 'f', 'm'], answer: 'e' },
+    { type: 'spell', question: '拼拼看：ca _（貓）', answer: 'cat', image: '✍️' },
+    { type: 'match', question: '大寫 M 的小寫是？', options: ['m', 'n', 'w', 'h'], answer: 'm' },
+    { type: 'speak', question: '跟著念：Big A, small a!', answer: 'Big A small a', image: '🗣' },
+  ],
+  talkTimePrompts: ["Say: Big A, small a!", "Match a big letter to a small one.", "Point to a big letter and its small one.", "Can you write A and a?"],
+  reviewQuiz: [
+    { type: 'match', question: '大寫 F 的小寫是？', options: ['f', 't', 'l', 'i'], answer: 'f' },
+    { type: 'match', question: '大寫 D 的小寫是？', options: ['d', 'b', 'p', 'q'], answer: 'd' },
+    { type: 'match', question: '大寫和小寫是？', options: ['同一個字母', '不同字母', '數字', '符號'], answer: '同一個字母' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Every letter has two forms: big and small!", lineZh: '每個字母有兩種樣子：大寫和小寫！' },
+    { speaker: 'Coco', line: "Big A and small a are the same letter!", lineZh: '大寫 A 和小寫 a 是同一個字母！' },
+    { speaker: 'Benny', line: "Big B, small b. Match them up!", lineZh: '大寫 B，小寫 b。把它們配對！' },
+    { speaker: 'Finn', line: "You can match big and small letters now!", lineZh: '你會配大小寫了！' },
+  ],
+};
+
+const L1_M14: Mission = {
+  id: 14, slug: 'l1-m14-writing', level: 1, title: '字母書寫', titleEn: 'Letter Writing', theme: '字母島・描一描寫一寫', themeEmoji: '✏️',
+  focus: '字母書寫：跟著描寫字母（認形＋動手寫）',
+  story: [
+    { image: '✏️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's write our letters! Trace them slowly.", dialogueZh: '我們來寫字母！慢慢地描。', highlightWords: ['write', 'trace'], sceneEmojis: ['✏️', '📝', '✨'], animation: 'wave' },
+    { image: '🔤', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "A goes down, down, and across!", dialogueZh: 'A 往下、往下、再一橫！', highlightWords: ['A'], sceneEmojis: ['🅰️', '⬇️', '😊'], animation: 'bounce' },
+    { image: '⭕', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "O is a circle. Round and round!", dialogueZh: 'O 是一個圈。轉一圈！', highlightWords: ['O'], sceneEmojis: ['⭕', '🔄', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Great writing! You can write letters now!", dialogueZh: '寫得好！你會寫字母了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '✏️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'write', zh: '寫', image: '✏️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'I write a letter.', exampleZh: '我寫一個字母。' },
+    { en: 'trace', zh: '描寫', image: '📝', phonics: '', kk: '[tres]', phonicsSound: '', exampleSentence: 'Trace the letter A.', exampleZh: '描字母 A。' },
+    { en: 'line', zh: '線', image: '➖', phonics: '', kk: '[laɪn]', phonicsSound: '', exampleSentence: 'a straight line', exampleZh: '一條直線' },
+    { en: 'circle', zh: '圓圈', image: '⭕', phonics: '', kk: '[ˈsɝkl̩]', phonicsSound: '', exampleSentence: 'O is a circle.', exampleZh: 'O 是一個圈。' },
+    { en: 'up', zh: '往上', image: '⬆️', phonics: '', kk: '[ʌp]', phonicsSound: '', exampleSentence: 'go up', exampleZh: '往上' },
+    { en: 'down', zh: '往下', image: '⬇️', phonics: '', kk: '[daʊn]', phonicsSound: '', exampleSentence: 'go down', exampleZh: '往下' },
+    { en: 'across', zh: '橫過', image: '↔️', phonics: '', kk: '[əˈkrɔs]', phonicsSound: '', exampleSentence: 'a line across', exampleZh: '一橫' },
+    { en: 'pencil', zh: '鉛筆', image: '✏️', phonics: '', kk: '[ˈpɛnsl̩]', phonicsSound: '', exampleSentence: 'use a pencil', exampleZh: '用鉛筆' },
+    { en: 'letter', zh: '字母', image: '🔤', phonics: '', kk: '[ˈlɛtɚ]', phonicsSound: '', exampleSentence: 'write a letter', exampleZh: '寫一個字母' },
+    { en: 'good', zh: '好的', image: '👍', phonics: '', kk: '[ɡʊd]', phonicsSound: '', exampleSentence: 'Good writing!', exampleZh: '寫得好！' },
+  ],
+  sentences: [
+    { en: 'Let\'s write the letter A.', zh: '我們來寫字母 A。' }, { en: 'Trace it slowly.', zh: '慢慢地描。' }, { en: 'A goes down, down, across.', zh: 'A 往下、往下、一橫。' }, { en: 'O is a circle.', zh: 'O 是一個圈。' }, { en: 'I can write my letters!', zh: '我會寫字母了！' }, { en: 'Good job!', zh: '做得好！' },
+  ],
+  phonicsLetters: ['writing'],
+  warmUpQuestions: [
+    { type: 'match', question: 'trace 是什麼意思？', options: ['描寫', '跑', '吃', '看'], answer: '描寫' },
+    { type: 'match', question: 'O 的形狀像？', options: ['圓圈', '直線', '三角', '方形'], answer: '圓圈' },
+    { type: 'match', question: '✏️ 是什麼？', options: ['鉛筆', '書', '紙', '橡皮擦'], answer: '鉛筆' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的方向', options: ['⬆️', '⬇️', '↔️', '⭕'], answer: '⬇️', image: '🎧' },
+    { type: 'match', question: '配對：字配意思', options: ['write-寫', 'trace-描', 'circle-圓圈', 'line-線'], answer: 'write-寫' },
+    { type: 'spell', question: '拼拼看：wr _ te（寫）', answer: 'write', image: '✍️' },
+    { type: 'match', question: 'down 是什麼意思？', options: ['往下', '往上', '橫過', '圓圈'], answer: '往下' },
+    { type: 'speak', question: '跟著念：Write the letter A!', answer: 'Write the letter A', image: '🗣' },
+    { type: 'match', question: '寫字要用？', options: ['pencil', 'apple', 'fish', 'ball'], answer: 'pencil' },
+  ],
+  talkTimePrompts: ["Say: down, down, across for A.", "Trace a letter in the air.", "What shape is O?", "Can you write your name's first letter?"],
+  reviewQuiz: [
+    { type: 'match', question: 'circle 是什麼意思？', options: ['圓圈', '直線', '往上', '往下'], answer: '圓圈' },
+    { type: 'spell', question: '拼拼看：lett _ r（字母）', answer: 'letter', image: '✍️' },
+    { type: 'match', question: 'up 的相反是？', options: ['down', 'across', 'circle', 'line'], answer: 'down' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Let's write our letters! Trace them slowly.", lineZh: '我們來寫字母！慢慢地描。' },
+    { speaker: 'Coco', line: "A goes down, down, and across!", lineZh: 'A 往下、往下、再一橫！' },
+    { speaker: 'Benny', line: "O is a circle. Round and round!", lineZh: 'O 是一個圈。轉一圈！' },
+    { speaker: 'Ruby', line: "Great writing! You can write letters now!", lineZh: '寫得好！你會寫字母了！' },
+  ],
+};
+
+const L1_M15: Mission = {
+  id: 15, slug: 'l1-m15-review-abc', level: 1, title: 'Review③ A–Z', titleEn: 'Review: A–Z', theme: '字母島・字母歌', themeEmoji: '🎵',
+  focus: '螺旋複習③：A–Z 完整字母歌 ＋ 大小寫 ＋ 字母音',
+  story: [
+    { image: '🎵', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's sing the ABC song from A to Z!", dialogueZh: '我們從 A 唱到 Z！', highlightWords: ['A', 'Z'], sceneEmojis: ['🎵', '🔤', '✨'], animation: 'wave' },
+    { image: '🎤', character: '🦜', characterKey: 'polly', characterAction: 'sing', characterName: 'Polly', dialogue: "A, B, C, D, E, F, G...", dialogueZh: 'A、B、C、D、E、F、G…', highlightWords: [], sceneEmojis: ['🎤', '🎶', '😊'], animation: 'bounce' },
+    { image: '🔤', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "26 letters, big and small. You know them all!", dialogueZh: '26 個字母，大寫小寫。你全會了！', highlightWords: ['26 letters'], sceneEmojis: ['🔤', '🔡', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You are an ABC star! Amazing!", dialogueZh: '你是 ABC 之星！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🎵'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'apple', zh: '蘋果 (A)', image: '🍎', phonics: 'Aa', kk: '[ˈæpl̩]', phonicsSound: '/æ/', exampleSentence: 'A is for apple.', exampleZh: 'A 是 apple。' },
+    { en: 'egg', zh: '蛋 (E)', image: '🥚', phonics: 'Ee', kk: '[ɛɡ]', phonicsSound: '/ɛ/', exampleSentence: 'E is for egg.', exampleZh: 'E 是 egg。' },
+    { en: 'igloo', zh: '冰屋 (I)', image: '🧊', phonics: 'Ii', kk: '[ˈɪɡlu]', phonicsSound: '/ɪ/', exampleSentence: 'I is for igloo.', exampleZh: 'I 是 igloo。' },
+    { en: 'orange', zh: '柳橙 (O)', image: '🍊', phonics: 'Oo', kk: '[ˈɔrɪndʒ]', phonicsSound: '/ɑ/', exampleSentence: 'O is for orange.', exampleZh: 'O 是 orange。' },
+    { en: 'umbrella', zh: '傘 (U)', image: '☂️', phonics: 'Uu', kk: '[ʌmˈbrɛlə]', phonicsSound: '/ʌ/', exampleSentence: 'U is for umbrella.', exampleZh: 'U 是 umbrella。' },
+    { en: 'ball', zh: '球 (B)', image: '⚽', phonics: 'Bb', kk: '[bɔl]', phonicsSound: '/b/', exampleSentence: 'B is for ball.', exampleZh: 'B 是 ball。' },
+    { en: 'cat', zh: '貓 (C)', image: '🐱', phonics: 'Cc', kk: '[kæt]', phonicsSound: '/k/', exampleSentence: 'C is for cat.', exampleZh: 'C 是 cat。' },
+    { en: 'sun', zh: '太陽 (S)', image: '☀️', phonics: 'Ss', kk: '[sʌn]', phonicsSound: '/s/', exampleSentence: 'S is for sun.', exampleZh: 'S 是 sun。' },
+    { en: 'zebra', zh: '斑馬 (Z)', image: '🦓', phonics: 'Zz', kk: '[ˈzibrə]', phonicsSound: '/z/', exampleSentence: 'Z is for zebra.', exampleZh: 'Z 是 zebra。' },
+    { en: 'moon', zh: '月亮 (M)', image: '🌙', phonics: 'Mm', kk: '[mun]', phonicsSound: '/m/', exampleSentence: 'M is for moon.', exampleZh: 'M 是 moon。' },
+  ],
+  sentences: [
+    { en: 'A B C D E F G.', zh: 'A B C D E F G。' }, { en: 'A is for apple.', zh: 'A 是 apple。' }, { en: 'E is for egg.', zh: 'E 是 egg。' }, { en: 'Z is for zebra.', zh: 'Z 是 zebra。' }, { en: 'I know A to Z!', zh: '我會 A 到 Z！' }, { en: 'Now I know my ABCs.', zh: '現在我會 ABC 了。' },
+  ],
+  phonicsLetters: ['Aa', 'Ee', 'Ii', 'Oo', 'Uu'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'A, B, C, ___', options: ['D', 'E', 'Z', 'B'], answer: 'D' },
+    { type: 'fill-blank', question: 'E, F, ___', options: ['G', 'H', 'D', 'A'], answer: 'G' },
+    { type: 'match', question: '🍎 apple 是哪個字母？', options: ['A', 'E', 'O', 'B'], answer: 'A' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🍎', '🥚', '🍊', '☂️'], answer: '🍊', image: '🎧' },
+    { type: 'match', question: '配對：字母配圖', options: ['A-🍎', 'E-🥚', 'S-☀️', 'Z-🦓'], answer: 'A-🍎' },
+    { type: 'fill-blank', question: 'X, Y, ___', options: ['Z', 'A', 'W', 'B'], answer: 'Z' },
+    { type: 'spell', question: '拼拼看：e _ g（蛋）', answer: 'egg', image: '✍️' },
+    { type: 'match', question: '🌙 moon 是哪個字母？', options: ['M', 'N', 'B', 'S'], answer: 'M' },
+    { type: 'speak', question: '唱唱看：A B C D!', answer: 'A B C D', image: '🎤' },
+  ],
+  talkTimePrompts: ["Sing the ABC song!", "Say a word for A, B, C.", "What is Z for?", "You know your ABCs! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The first letter is ___.', options: ['A', 'Z', 'B', 'M'], answer: 'A' },
+    { type: 'fill-blank', question: 'S is for ___.', options: ['sun', 'apple', 'egg', 'zebra'], answer: 'sun' },
+    { type: 'match', question: '🦓 zebra 是哪個字母？', options: ['Z', 'S', 'M', 'A'], answer: 'Z' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's sing the ABC song from A to Z!", lineZh: '我們從 A 唱到 Z！' },
+    { speaker: 'Polly', line: "A, B, C, D, E, F, G...", lineZh: 'A、B、C、D、E、F、G…' },
+    { speaker: 'Benny', line: "26 letters, big and small. You know them all!", lineZh: '26 個字母，大寫小寫。你全會了！' },
+    { speaker: 'Finn', line: "You are an ABC star! Amazing!", lineZh: '你是 ABC 之星！太厲害！' },
+  ],
+};
+
+const L1_M16: Mission = {
+  id: 16, slug: 'l1-m16-sight-words-1', level: 1, title: 'Sight Words①', titleEn: 'Sight Words 1', theme: '字母島・常見字', themeEmoji: '👀',
+  focus: '高頻常見字①：I / a / an / the / is（直接看整字記）',
+  story: [
+    { image: '👀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Some words we just know by sight!", dialogueZh: '有些字我們一看就認得！', highlightWords: ['sight'], sceneEmojis: ['👀', '🔤', '✨'], animation: 'wave' },
+    { image: '🙋', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I is for me. I am Coco!", dialogueZh: 'I 是「我」。我是 Coco！', highlightWords: ['I'], sceneEmojis: ['🙋', '🐱', '😊'], animation: 'bounce' },
+    { image: '🍎', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "It is an apple. The apple is red.", dialogueZh: '這是一顆蘋果。這蘋果是紅的。', highlightWords: ['is', 'an', 'The'], sceneEmojis: ['🍎', '🔴', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I, a, an, the, is — remember them!", dialogueZh: 'I、a、an、the、is —— 記住它們！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '👀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'I', zh: '我', image: '🙋', phonics: '', kk: '[aɪ]', phonicsSound: 'sight word', exampleSentence: 'I am Coco.', exampleZh: '我是 Coco。' },
+    { en: 'a', zh: '一個', image: '1️⃣', phonics: '', kk: '[ə]', phonicsSound: 'sight word', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'an', zh: '一個（母音前）', image: '🍎', phonics: '', kk: '[ən]', phonicsSound: 'sight word', exampleSentence: 'an apple', exampleZh: '一顆蘋果' },
+    { en: 'the', zh: '這/那（特定）', image: '👉', phonics: '', kk: '[ðə]', phonicsSound: 'sight word', exampleSentence: 'the sun', exampleZh: '（那個）太陽' },
+    { en: 'is', zh: '是', image: '🟰', phonics: '', kk: '[ɪz]', phonicsSound: 'sight word', exampleSentence: 'It is red.', exampleZh: '它是紅的。' },
+    { en: 'it', zh: '它', image: '📦', phonics: '', kk: '[ɪt]', phonicsSound: 'sight word', exampleSentence: 'It is a box.', exampleZh: '這是一個箱子。' },
+    { en: 'am', zh: '是（我）', image: '🙋', phonics: '', kk: '[æm]', phonicsSound: 'sight word', exampleSentence: 'I am happy.', exampleZh: '我很開心。' },
+    { en: 'red', zh: '紅色', image: '🔴', phonics: '', kk: '[rɛd]', phonicsSound: '/r/', exampleSentence: 'The apple is red.', exampleZh: '蘋果是紅的。' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: '', kk: '[kæt]', phonicsSound: '/k/', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'apple', zh: '蘋果', image: '🍎', phonics: '', kk: '[ˈæpl̩]', phonicsSound: '/æ/', exampleSentence: 'an apple', exampleZh: '一顆蘋果' },
+  ],
+  sentences: [
+    { en: 'I am Coco.', zh: '我是 Coco。' }, { en: 'It is a cat.', zh: '這是一隻貓。' }, { en: 'It is an apple.', zh: '這是一顆蘋果。' }, { en: 'The apple is red.', zh: '這蘋果是紅的。' }, { en: 'I am happy.', zh: '我很開心。' }, { en: 'The cat is here.', zh: '貓在這裡。' },
+  ],
+  phonicsLetters: ['sight words'],
+  warmUpQuestions: [
+    { type: 'match', question: '「我」的英文是？', options: ['I', 'a', 'the', 'is'], answer: 'I' },
+    { type: 'fill-blank', question: 'It ___ a cat.（是）', options: ['is', 'I', 'a', 'the'], answer: 'is' },
+    { type: 'fill-blank', question: 'It is ___ apple.（母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選字：點你聽到的字', options: ['I', 'a', 'the', 'is'], answer: 'the', image: '🎧' },
+    { type: 'match', question: '配對：sight word 配意思', options: ['I-我', 'is-是', 'a-一個', 'the-那個'], answer: 'I-我' },
+    { type: 'fill-blank', question: '___ am Coco.（我）', options: ['I', 'a', 'the', 'is'], answer: 'I' },
+    { type: 'fill-blank', question: 'It is ___ cat.（子音前）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am Coco.', 'It is a cat.', 'It is an apple.', 'The apple is red.'], answer: 'I am Coco.', image: '🎧' },
+    { type: 'read', question: 'What color is the apple?（蘋果什麼顏色？）', passage: 'It is an apple.\nThe apple is red.\nI like it.', options: ['red', 'blue', 'green', 'yellow'], answer: 'red' },
+  ],
+  talkTimePrompts: ["Say: I am ___.", "Say: It is a ___ / an ___.", "Read: The ___ is red.", "Point and say: I, a, an, the, is."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The apple ___ red.（是）', options: ['is', 'I', 'a', 'an'], answer: 'is' },
+    { type: 'fill-blank', question: 'It is ___ egg.（母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'match', question: '「是」的英文是？', options: ['is', 'I', 'a', 'the'], answer: 'is' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Some words we just know by sight!", lineZh: '有些字我們一看就認得！' },
+    { speaker: 'Coco', line: "I is for me. I am Coco!", lineZh: 'I 是「我」。我是 Coco！' },
+    { speaker: 'Polly', line: "It is an apple. The apple is red.", lineZh: '這是一顆蘋果。這蘋果是紅的。' },
+    { speaker: 'Benny', line: "I, a, an, the, is — remember them!", lineZh: 'I、a、an、the、is —— 記住它們！' },
+  ],
+};
+
+const L1_M17: Mission = {
+  id: 17, slug: 'l1-m17-sight-words-2', level: 1, title: 'Sight Words②', titleEn: 'Sight Words 2', theme: '字母島・更多常見字', themeEmoji: '👀',
+  focus: '高頻常見字②：you / see / like / go / me',
+  story: [
+    { image: '👀', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I see you! Do you see me?", dialogueZh: '我看到你！你看到我嗎？', highlightWords: ['see', 'you', 'me'], sceneEmojis: ['👀', '👉', '✨'], animation: 'wave' },
+    { image: '❤️', character: '🐻', characterKey: 'benny', characterAction: 'clap', characterName: 'Benny', dialogue: "I like you! I like to play.", dialogueZh: '我喜歡你！我喜歡玩。', highlightWords: ['like'], sceneEmojis: ['❤️', '🎮', '😊'], animation: 'bounce' },
+    { image: '🚶', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Let's go! Come with me!", dialogueZh: '我們走！跟我來！', highlightWords: ['go', 'me'], sceneEmojis: ['🚶', '👋', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'wave', characterName: 'Coco', dialogue: "you, see, like, go, me — say them!", dialogueZh: 'you、see、like、go、me —— 說出來！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '👀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'you', zh: '你', image: '👉', phonics: '', kk: '[ju]', phonicsSound: 'sight word', exampleSentence: 'I see you.', exampleZh: '我看到你。' },
+    { en: 'see', zh: '看見', image: '👀', phonics: '', kk: '[si]', phonicsSound: 'sight word', exampleSentence: 'I see a cat.', exampleZh: '我看到一隻貓。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: 'sight word', exampleSentence: 'I like you.', exampleZh: '我喜歡你。' },
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: 'sight word', exampleSentence: "Let's go.", exampleZh: '我們走。' },
+    { en: 'me', zh: '我（受詞）', image: '🙋', phonics: '', kk: '[mi]', phonicsSound: 'sight word', exampleSentence: 'Come with me.', exampleZh: '跟我來。' },
+    { en: 'we', zh: '我們', image: '👫', phonics: '', kk: '[wi]', phonicsSound: 'sight word', exampleSentence: 'We play.', exampleZh: '我們玩。' },
+    { en: 'to', zh: '到·去', image: '➡️', phonics: '', kk: '[tu]', phonicsSound: 'sight word', exampleSentence: 'go to school', exampleZh: '去學校' },
+    { en: 'play', zh: '玩', image: '🎮', phonics: '', kk: '[ple]', phonicsSound: '/p/', exampleSentence: 'I like to play.', exampleZh: '我喜歡玩。' },
+    { en: 'come', zh: '來', image: '👋', phonics: '', kk: '[kʌm]', phonicsSound: 'sight word', exampleSentence: 'Come with me.', exampleZh: '跟我來。' },
+    { en: 'and', zh: '和', image: '➕', phonics: '', kk: '[ænd]', phonicsSound: 'sight word', exampleSentence: 'you and me', exampleZh: '你和我' },
+  ],
+  sentences: [
+    { en: 'I see you.', zh: '我看到你。' }, { en: 'Do you see me?', zh: '你看到我嗎？' }, { en: 'I like you.', zh: '我喜歡你。' }, { en: "Let's go and play.", zh: '我們去玩吧。' }, { en: 'Come with me.', zh: '跟我來。' }, { en: 'You and me!', zh: '你和我！' },
+  ],
+  phonicsLetters: ['sight words'],
+  warmUpQuestions: [
+    { type: 'match', question: '「你」的英文是？', options: ['you', 'me', 'go', 'see'], answer: 'you' },
+    { type: 'match', question: '「看見」的英文是？', options: ['see', 'go', 'like', 'me'], answer: 'see' },
+    { type: 'match', question: '「喜歡」的英文是？', options: ['like', 'see', 'go', 'you'], answer: 'like' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選字：點你聽到的字', options: ['you', 'see', 'like', 'go'], answer: 'go', image: '🎧' },
+    { type: 'match', question: '配對：sight word 配意思', options: ['you-你', 'see-看見', 'like-喜歡', 'go-去'], answer: 'you-你' },
+    { type: 'fill-blank', question: 'I ___ you.（看見）', options: ['see', 'go', 'me', 'and'], answer: 'see' },
+    { type: 'fill-blank', question: 'Come with ___.（我·受詞）', options: ['me', 'I', 'you', 'we'], answer: 'me' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I see you.', 'I like you.', "Let's go and play.", 'Come with me.'], answer: 'I see you.', image: '🎧' },
+    { type: 'read', question: 'Who does Coco see?（Coco 看到誰？）', passage: 'Coco looks around.\n"I see you!" she says.\n"Do you see me?"', options: ['you', 'a cat', 'a dog', 'no one'], answer: 'you' },
+  ],
+  talkTimePrompts: ["Say: I see you!", "Say: I like ___.", "Say: Let's go!", "Say: Come with me."],
+  reviewQuiz: [
+    { type: 'match', question: '「去」的英文是？', options: ['go', 'see', 'me', 'you'], answer: 'go' },
+    { type: 'fill-blank', question: 'I ___ to play.（喜歡）', options: ['like', 'see', 'go', 'me'], answer: 'like' },
+    { type: 'match', question: '「來」的英文是？', options: ['come', 'go', 'see', 'me'], answer: 'come' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I see you! Do you see me?", lineZh: '我看到你！你看到我嗎？' },
+    { speaker: 'Benny', line: "I like you! I like to play.", lineZh: '我喜歡你！我喜歡玩。' },
+    { speaker: 'Polly', line: "Let's go! Come with me!", lineZh: '我們走！跟我來！' },
+    { speaker: 'Coco', line: "you, see, like, go, me — say them!", lineZh: 'you、see、like、go、me —— 說出來！' },
+  ],
+};
+
+const L1_M18: Mission = {
+  id: 18, slug: 'l1-m18-a-an', level: 1, title: '冠詞 a / an 入門', titleEn: 'a / an', theme: '字母島・一個東西', themeEmoji: '🔢',
+  focus: '冠詞入門：a + 子音開頭（a cat）/ an + 母音開頭（an apple）',
+  story: [
+    { image: '🔢', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "One thing? Use a or an!", dialogueZh: '一個東西？用 a 或 an！', highlightWords: ['a', 'an'], sceneEmojis: ['🔢', '☝️', '✨'], animation: 'wave' },
+    { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "a cat, a dog, a ball — 'a' before a sound!", dialogueZh: 'a cat、a dog、a ball —— 子音前用 a！', highlightWords: ['a'], sceneEmojis: ['🐱', '🐶', '😊'], animation: 'bounce' },
+    { image: '🍎', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "an apple, an egg — 'an' before a, e, i, o, u!", dialogueZh: 'an apple、an egg —— 母音前用 an！', highlightWords: ['an'], sceneEmojis: ['🍎', '🥚', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "a for most, an for a-e-i-o-u!", dialogueZh: '大部分用 a，母音用 an！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔢'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'a cat', zh: '一隻貓', image: '🐱', phonics: '', kk: '[ə kæt]', phonicsSound: 'a+子音', exampleSentence: 'I see a cat.', exampleZh: '我看到一隻貓。' },
+    { en: 'a dog', zh: '一隻狗', image: '🐶', phonics: '', kk: '[ə dɔɡ]', phonicsSound: 'a+子音', exampleSentence: 'a dog', exampleZh: '一隻狗' },
+    { en: 'a ball', zh: '一顆球', image: '⚽', phonics: '', kk: '[ə bɔl]', phonicsSound: 'a+子音', exampleSentence: 'a ball', exampleZh: '一顆球' },
+    { en: 'a sun', zh: '一個太陽', image: '☀️', phonics: '', kk: '[ə sʌn]', phonicsSound: 'a+子音', exampleSentence: 'a sun', exampleZh: '一個太陽' },
+    { en: 'an apple', zh: '一顆蘋果', image: '🍎', phonics: '', kk: '[ən ˈæpl̩]', phonicsSound: 'an+母音', exampleSentence: 'an apple', exampleZh: '一顆蘋果' },
+    { en: 'an egg', zh: '一顆蛋', image: '🥚', phonics: '', kk: '[ən ɛɡ]', phonicsSound: 'an+母音', exampleSentence: 'an egg', exampleZh: '一顆蛋' },
+    { en: 'an orange', zh: '一顆柳橙', image: '🍊', phonics: '', kk: '[ən ˈɔrɪndʒ]', phonicsSound: 'an+母音', exampleSentence: 'an orange', exampleZh: '一顆柳橙' },
+    { en: 'an igloo', zh: '一間冰屋', image: '🧊', phonics: '', kk: '[ən ˈɪɡlu]', phonicsSound: 'an+母音', exampleSentence: 'an igloo', exampleZh: '一間冰屋' },
+    { en: 'an umbrella', zh: '一把傘', image: '☂️', phonics: '', kk: '[ən ʌmˈbrɛlə]', phonicsSound: 'an+母音', exampleSentence: 'an umbrella', exampleZh: '一把傘' },
+    { en: 'a hat', zh: '一頂帽子', image: '🎩', phonics: '', kk: '[ə hæt]', phonicsSound: 'a+子音', exampleSentence: 'a hat', exampleZh: '一頂帽子' },
+  ],
+  sentences: [
+    { en: 'I have a cat.', zh: '我有一隻貓。' }, { en: 'I have an apple.', zh: '我有一顆蘋果。' }, { en: 'It is a ball.', zh: '這是一顆球。' }, { en: 'It is an egg.', zh: '這是一顆蛋。' }, { en: 'a dog and an orange', zh: '一隻狗和一顆柳橙' }, { en: 'a or an?', zh: 'a 還是 an？' },
+  ],
+  phonicsLetters: ['a / an'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ cat（貓·子音前）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'fill-blank', question: '___ apple（蘋果·母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: '___ egg（蛋·母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的東西', options: ['🐱', '🐶', '🍎', '🥚'], answer: '🍎', image: '🎧' },
+    { type: 'fill-blank', question: '句型代換：It is ___ orange.（柳橙）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: 'I have ___ ball.（球·子音前）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'fill-blank', question: '___ umbrella（傘·母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I have a cat.', 'I have an apple.', 'It is a ball.', 'It is an egg.'], answer: 'I have a cat.', image: '🎧' },
+    { type: 'read', question: 'a or an for "egg"?（egg 用 a 還是 an？）', passage: 'Use a before most words: a cat.\nUse an before a, e, i, o, u.\nEgg starts with e.', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+  ],
+  talkTimePrompts: ["Say 'a' or 'an': ___ cat, ___ apple.", "Point and say: a dog, an egg.", "Make a sentence: I have a ___ / an ___.", "a or an? Try 'orange' and 'ball'."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I see ___ umbrella.（傘）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: 'It is ___ hat.（帽子）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'match', question: 'an 用在？', options: ['母音(a/e/i/o/u)前', '子音前', '句尾', '數字前'], answer: '母音(a/e/i/o/u)前' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "One thing? Use a or an!", lineZh: '一個東西？用 a 或 an！' },
+    { speaker: 'Coco', line: "a cat, a dog, a ball — 'a' before a sound!", lineZh: 'a cat、a dog、a ball —— 子音前用 a！' },
+    { speaker: 'Polly', line: "an apple, an egg — 'an' before a, e, i, o, u!", lineZh: 'an apple、an egg —— 母音前用 an！' },
+    { speaker: 'Benny', line: "a for most, an for a-e-i-o-u!", lineZh: '大部分用 a，母音用 an！' },
+  ],
+};
+
+const L1_M19: Mission = {
+  id: 19, slug: 'l1-m19-reading', level: 1, title: '綜合閱讀', titleEn: 'First Reading', theme: '字母島・我會讀了', themeEmoji: '📖',
+  focus: '綜合閱讀：把 sight words ＋ a/an ＋ 字母字讀成短句（I see a cat.）',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Now you can read short sentences!", dialogueZh: '現在你會讀短句了！', highlightWords: ['read'], sceneEmojis: ['📖', '👀', '✨'], animation: 'wave' },
+    { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "I see a cat. The cat is big.", dialogueZh: '我看到一隻貓。這隻貓很大。', highlightWords: ['see', 'cat'], sceneEmojis: ['🐱', '🔍', '😊'], animation: 'bounce' },
+    { image: '🥚', character: '🦜', characterKey: 'polly', characterAction: 'read', characterName: 'Polly', dialogue: "It is an egg. I like the egg!", dialogueZh: '這是一顆蛋。我喜歡這顆蛋！', highlightWords: ['an', 'like'], sceneEmojis: ['🥚', '❤️', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read your first sentences! Amazing!", dialogueZh: '你讀出你的第一批句子了！太厲害！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📖'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'I', zh: '我', image: '🙋', phonics: '', kk: '[aɪ]', phonicsSound: 'sight word', exampleSentence: 'I see a cat.', exampleZh: '我看到一隻貓。' },
+    { en: 'see', zh: '看見', image: '👀', phonics: '', kk: '[si]', phonicsSound: 'sight word', exampleSentence: 'I see it.', exampleZh: '我看到了。' },
+    { en: 'a', zh: '一個', image: '1️⃣', phonics: '', kk: '[ə]', phonicsSound: 'sight word', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'an', zh: '一個（母音前）', image: '🍎', phonics: '', kk: '[ən]', phonicsSound: 'sight word', exampleSentence: 'an egg', exampleZh: '一顆蛋' },
+    { en: 'the', zh: '這/那', image: '👉', phonics: '', kk: '[ðə]', phonicsSound: 'sight word', exampleSentence: 'the cat', exampleZh: '這隻貓' },
+    { en: 'is', zh: '是', image: '🟰', phonics: '', kk: '[ɪz]', phonicsSound: 'sight word', exampleSentence: 'The cat is big.', exampleZh: '貓很大。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: 'sight word', exampleSentence: 'I like the egg.', exampleZh: '我喜歡這顆蛋。' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: '', kk: '[kæt]', phonicsSound: '/k/', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'egg', zh: '蛋', image: '🥚', phonics: '', kk: '[ɛɡ]', phonicsSound: '/ɛ/', exampleSentence: 'an egg', exampleZh: '一顆蛋' },
+    { en: 'big', zh: '大的', image: '🔵', phonics: '', kk: '[bɪɡ]', phonicsSound: '/b/', exampleSentence: 'The cat is big.', exampleZh: '貓很大。' },
+  ],
+  sentences: [
+    { en: 'I see a cat.', zh: '我看到一隻貓。' }, { en: 'The cat is big.', zh: '這隻貓很大。' }, { en: 'It is an egg.', zh: '這是一顆蛋。' }, { en: 'I like the egg.', zh: '我喜歡這顆蛋。' }, { en: 'I see a dog.', zh: '我看到一隻狗。' }, { en: 'I can read!', zh: '我會讀了！' },
+  ],
+  phonicsLetters: ['reading'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ a cat.（看見）', options: ['see', 'is', 'a', 'the'], answer: 'see' },
+    { type: 'fill-blank', question: 'It is ___ egg.（母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: 'The cat ___ big.（是）', options: ['is', 'see', 'a', 'I'], answer: 'is' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What does the writer see?（作者看到什麼？）', passage: 'I see a cat.\nThe cat is big.\nI like the cat.', options: ['a cat', 'a dog', 'an egg', 'a ball'], answer: 'a cat' },
+    { type: 'read', question: 'Is the cat big or small?（貓大還是小？）', passage: 'I see a cat.\nThe cat is big.\nIt is not small.', options: ['big', 'small', 'red', 'happy'], answer: 'big' },
+    { type: 'fill-blank', question: 'It is ___ apple.（母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'fill-blank', question: 'I ___ the egg.（喜歡）', options: ['like', 'is', 'a', 'see'], answer: 'like' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I see a cat.', 'The cat is big.', 'It is an egg.', 'I like the egg.'], answer: 'I see a cat.', image: '🎧' },
+    { type: 'read', question: 'What does the writer like?（作者喜歡什麼？）', passage: 'It is an egg.\nThe egg is white.\nI like the egg!', options: ['the egg', 'the cat', 'the dog', 'the ball'], answer: 'the egg' },
+  ],
+  talkTimePrompts: ["Read: I see a cat.", "Read: It is an egg.", "Read: The cat is big.", "Make your own: I see a ___."],
+  reviewQuiz: [
+    { type: 'read', question: 'Can the writer read now?（作者會讀了嗎？）', passage: 'I see a cat.\nIt is an egg.\nI can read!', options: ['Yes, I can read', 'No', 'Only numbers', 'Not yet'], answer: 'Yes, I can read' },
+    { type: 'fill-blank', question: 'I see ___ dog.（子音前）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'fill-blank', question: 'The cat ___ big.（是）', options: ['is', 'see', 'a', 'like'], answer: 'is' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Now you can read short sentences!", lineZh: '現在你會讀短句了！' },
+    { speaker: 'Coco', line: "I see a cat. The cat is big.", lineZh: '我看到一隻貓。這隻貓很大。' },
+    { speaker: 'Polly', line: "It is an egg. I like the egg!", lineZh: '這是一顆蛋。我喜歡這顆蛋！' },
+    { speaker: 'Benny', line: "You read your first sentences! Amazing!", lineZh: '你讀出你的第一批句子了！太厲害！' },
+  ],
+};
+
+const L1_M20: Mission = {
+  id: 20, slug: 'l1-m20-graduation-boss', level: 1, title: '字母島畢業大魔王', titleEn: 'Island Boss', theme: '字母島・畢業大魔王', themeEmoji: '🎓',
+  focus: '總驗收＋畢業：字母 A-Z ＋ 大小寫 ＋ sight words ＋ a/an ＋ 綜合閱讀',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Island Boss is here! Use letters, words, and reading!", dialogueZh: '字母島大魔王來了！用上字母、常見字和閱讀！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🔤'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "A to Z, big and small, I see a cat — I know it all!", dialogueZh: 'A 到 Z、大寫小寫、I see a cat —— 我全會了！', highlightWords: [], sceneEmojis: ['💪', '🔤', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You graduate from Letter Island!", dialogueZh: '你打敗大魔王了！你從字母島畢業了！', highlightWords: ['graduate'], sceneEmojis: ['🎖️', '🎓', '🎉'], animation: 'tada' },
+    { image: '🌈', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Congratulations! On to Sound Island for phonics!", dialogueZh: '恭喜！前進聲音島學自然發音！', highlightWords: [], sceneEmojis: ['🌈', '🔊', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'apple', zh: '蘋果 (A)', image: '🍎', phonics: 'Aa', kk: '[ˈæpl̩]', phonicsSound: '/æ/', exampleSentence: 'A is for apple.', exampleZh: 'A 是 apple。' },
+    { en: 'zebra', zh: '斑馬 (Z)', image: '🦓', phonics: 'Zz', kk: '[ˈzibrə]', phonicsSound: '/z/', exampleSentence: 'Z is for zebra.', exampleZh: 'Z 是 zebra。' },
+    { en: 'I', zh: '我', image: '🙋', phonics: '', kk: '[aɪ]', phonicsSound: 'sight word', exampleSentence: 'I see a cat.', exampleZh: '我看到一隻貓。' },
+    { en: 'see', zh: '看見', image: '👀', phonics: '', kk: '[si]', phonicsSound: 'sight word', exampleSentence: 'I see it.', exampleZh: '我看到。' },
+    { en: 'a', zh: '一個', image: '1️⃣', phonics: '', kk: '[ə]', phonicsSound: 'sight word', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'an', zh: '一個（母音前）', image: '🍎', phonics: '', kk: '[ən]', phonicsSound: 'sight word', exampleSentence: 'an egg', exampleZh: '一顆蛋' },
+    { en: 'the', zh: '這/那', image: '👉', phonics: '', kk: '[ðə]', phonicsSound: 'sight word', exampleSentence: 'the sun', exampleZh: '太陽' },
+    { en: 'cat', zh: '貓', image: '🐱', phonics: 'Cc', kk: '[kæt]', phonicsSound: '/k/', exampleSentence: 'a cat', exampleZh: '一隻貓' },
+    { en: 'egg', zh: '蛋', image: '🥚', phonics: 'Ee', kk: '[ɛɡ]', phonicsSound: '/ɛ/', exampleSentence: 'an egg', exampleZh: '一顆蛋' },
+    { en: 'is', zh: '是', image: '🟰', phonics: '', kk: '[ɪz]', phonicsSound: 'sight word', exampleSentence: 'It is red.', exampleZh: '它是紅的。' },
+  ],
+  sentences: [
+    { en: 'I know A to Z.', zh: '我會 A 到 Z。' }, { en: 'Big A, small a.', zh: '大寫 A，小寫 a。' }, { en: 'I see a cat.', zh: '我看到一隻貓。' }, { en: 'It is an egg.', zh: '這是一顆蛋。' }, { en: 'I can read!', zh: '我會讀了！' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'A, B, C, ___', options: ['D', 'E', 'Z', 'B'], answer: 'D' },
+    { type: 'match', question: '大寫 A 的小寫是？', options: ['a', 'b', 'e', 's'], answer: 'a' },
+    { type: 'fill-blank', question: 'It is ___ apple.（母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🍎', '🦓', '🐱', '🥚'], answer: '🦓', image: '🎧' },
+    { type: 'match', question: '配對：大寫→小寫', options: ['A-a', 'B-b', 'C-c', 'Z-z'], answer: 'A-a' },
+    { type: 'fill-blank', question: 'I ___ a cat.（看見）', options: ['see', 'is', 'a', 'the'], answer: 'see' },
+    { type: 'fill-blank', question: 'It is ___ cat.（子音前）', options: ['a', 'an', 'the', 'is'], answer: 'a' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I see a cat.', 'It is an egg.', 'Big A, small a.', 'I know A to Z.'], answer: 'I see a cat.', image: '🎧' },
+    { type: 'read', question: 'What does the writer see?（作者看到什麼？）', passage: 'I know my letters.\nI see a cat.\nThe cat is big!', options: ['a cat', 'a dog', 'an egg', 'a zebra'], answer: 'a cat' },
+  ],
+  talkTimePrompts: ["Sing A to Z!", "Say: I see a cat. It is an egg.", "Match a big letter to a small one.", "You graduated from Letter Island! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The last letter is ___.', options: ['Z', 'A', 'Y', 'X'], answer: 'Z' },
+    { type: 'fill-blank', question: 'It is ___ egg.（母音前）', options: ['an', 'a', 'the', 'is'], answer: 'an' },
+    { type: 'read', question: 'Can the writer read now?（作者會讀了嗎？）', passage: 'I know A to Z.\nI can read sight words.\nI can read: I see a cat!', options: ['Yes, I can read', 'No', 'Only ABC', 'Not yet'], answer: 'Yes, I can read' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Island Boss says: use letters, words, and reading!", lineZh: '字母島大魔王說：用上字母、常見字和閱讀！' },
+    { speaker: 'Coco', line: "A to Z, big and small, I see a cat — I know it all!", lineZh: 'A 到 Z、大寫小寫、I see a cat —— 我全會了！' },
+    { speaker: 'Ruby', line: "You beat the Boss! You graduate from Letter Island!", lineZh: '你打敗大魔王了！你從字母島畢業了！' },
+    { speaker: 'Finn', line: "Congratulations! On to Sound Island for phonics!", lineZh: '恭喜！前進聲音島學自然發音！' },
   ],
 };
 
@@ -12151,7 +12568,7 @@ const L12_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5, L12_M6, L12_M7, L12_M8, L12_M9, L12_M10, L12_M11, L12_M12, L12_M13, L12_M14, L12_M15, L12_M16, L12_M17, L12_M18, L12_M19, L12_M20];
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L1_M13, L1_M14, L1_M15, L1_M16, L1_M17, L1_M18, L1_M19, L1_M20, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5, L12_M6, L12_M7, L12_M8, L12_M9, L12_M10, L12_M11, L12_M12, L12_M13, L12_M14, L12_M15, L12_M16, L12_M17, L12_M18, L12_M19, L12_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
