@@ -11371,7 +11371,267 @@ const L12_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5];
+const L12_M6: Mission = {
+  id: 6, slug: 'l12-m6-story-reading', level: 12, title: '長篇故事閱讀', titleEn: 'Story Reading', theme: '勝利峰・追夢的女孩', themeEmoji: '📖',
+  focus: '長篇故事閱讀：讀一個較長的敘事故事並深入理解 ＋ 中翻英',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A story: The Girl Who Followed Her Dream.", dialogueZh: '故事：追夢的女孩。', highlightWords: ['story'], sceneEmojis: ['📖', '⭐', '✨'], animation: 'wave' },
+    { image: '🎻', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Mia loved music, although her family was poor.", dialogueZh: 'Mia 熱愛音樂，雖然家裡窮。', highlightWords: ['although'], sceneEmojis: ['🎻', '❤️', '😊'], animation: 'bounce' },
+    { image: '🌟', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "She practiced every day. Finally, she became a musician.", dialogueZh: '她每天練習。最後，她成了音樂家。', highlightWords: ['practiced', 'became'], sceneEmojis: ['🌟', '🎼', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You understood a whole story! Wonderful!", dialogueZh: '你讀懂整個故事了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '📖', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'dream', zh: '夢想', image: '⭐', phonics: '', kk: '[drim]', phonicsSound: '', exampleSentence: 'follow your dream', exampleZh: '追隨夢想' },
+    { en: 'music', zh: '音樂', image: '🎻', phonics: '', kk: '[ˈmjuzɪk]', phonicsSound: '', exampleSentence: 'love music', exampleZh: '熱愛音樂' },
+    { en: 'poor', zh: '貧窮的', image: '💸', phonics: '', kk: '[pʊr]', phonicsSound: '', exampleSentence: 'a poor family', exampleZh: '貧窮的家庭' },
+    { en: 'practice', zh: '練習', image: '🎼', phonics: '', kk: '[ˈpræktɪs]', phonicsSound: '', exampleSentence: 'practice every day', exampleZh: '每天練習' },
+    { en: 'musician', zh: '音樂家', image: '🎹', phonics: '', kk: '[mjuˈzɪʃən]', phonicsSound: '', exampleSentence: 'a great musician', exampleZh: '偉大的音樂家' },
+    { en: 'hard', zh: '努力地·困難的', image: '💪', phonics: '', kk: '[hɑrd]', phonicsSound: '', exampleSentence: 'work hard', exampleZh: '努力工作' },
+    { en: 'succeed', zh: '成功', image: '🏆', phonics: '', kk: '[səkˈsid]', phonicsSound: '', exampleSentence: 'She succeeded.', exampleZh: '她成功了。' },
+    { en: 'talent', zh: '才華', image: '✨', phonics: '', kk: '[ˈtælənt]', phonicsSound: '', exampleSentence: 'a special talent', exampleZh: '特別的才華' },
+    { en: 'never', zh: '從不', image: '🚫', phonics: '', kk: '[ˈnɛvɚ]', phonicsSound: '', exampleSentence: 'never give up', exampleZh: '永不放棄' },
+    { en: 'proud', zh: '驕傲的', image: '😌', phonics: '', kk: '[praʊd]', phonicsSound: '', exampleSentence: 'very proud', exampleZh: '很驕傲' },
+  ],
+  sentences: [
+    { en: 'Mia loved music.', zh: 'Mia 熱愛音樂。' }, { en: 'Although her family was poor, she never gave up.', zh: '雖然家裡窮，她從不放棄。' }, { en: 'She practiced every day.', zh: '她每天練習。' }, { en: 'Finally, she became a musician.', zh: '最後，她成了音樂家。' }, { en: 'Her family was very proud.', zh: '她的家人很驕傲。' }, { en: 'Follow your dream!', zh: '追隨你的夢想！' },
+  ],
+  phonicsLetters: ['story reading'],
+  warmUpQuestions: [
+    { type: 'match', question: 'dream 是什麼意思？', options: ['夢想', '音樂', '才華', '練習'], answer: '夢想' },
+    { type: 'fill-blank', question: 'Mia loved ___.（音樂）', options: ['music', 'money', 'sports', 'sleep'], answer: 'music' },
+    { type: 'match', question: 'musician 是什麼意思？', options: ['音樂家', '畫家', '作家', '老師'], answer: '音樂家' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What did Mia love?（Mia 熱愛什麼？）', passage: 'Mia grew up in a small town.\nHer family was poor.\nBut she loved music more than anything.', options: ['music', 'money', 'sports', 'sleep'], answer: 'music' },
+    { type: 'read', question: 'Did Mia give up when times were hard?（艱難時 Mia 放棄了嗎？）', passage: 'Although her family was poor,\nMia never gave up.\nShe practiced every single day.', options: ["No, she never gave up", 'Yes, she quit', 'She stopped music', 'She left home'], answer: "No, she never gave up" },
+    { type: 'read', question: 'What did Mia become?（Mia 成了什麼？）', passage: 'After years of practice,\nMia became a famous musician.\nHer family was very proud.', options: ['a musician', 'a doctor', 'a teacher', 'a painter'], answer: 'a musician' },
+    { type: 'fill-blank', question: '中翻英：「雖然家裡窮，她從不放棄。」', options: ['Although her family was poor, she never gave up.', 'Her family was poor.', 'She gave up.', 'Was she poor?'], answer: 'Although her family was poor, she never gave up.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Mia loved music.', 'She practiced every day.', 'Finally, she became a musician.', 'Follow your dream!'], answer: 'Mia loved music.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：mus _ cian（音樂家）', answer: 'musician', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell Mia's story.", "What is the lesson of the story?", "Talk about a dream you have.", "✍️ 引導寫作＋翻譯：把「追隨你的夢想！」寫成英文，再寫你的夢想。"],
+  reviewQuiz: [
+    { type: 'read', question: "What is the story's message?（故事訊息？）", passage: 'Mia worked hard for her dream.\nShe never gave up.\nLesson: Follow your dream and never give up.', options: ['Follow your dream', 'Music is hard', 'Be rich', 'Stay home'], answer: 'Follow your dream' },
+    { type: 'match', question: 'succeed 是什麼意思？', options: ['成功', '放棄', '練習', '驕傲'], answer: '成功' },
+    { type: 'fill-blank', question: 'She ___ every day to improve.（練習）', options: ['practiced', 'stopped', 'slept', 'quit'], answer: 'practiced' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A story: The Girl Who Followed Her Dream.", lineZh: '故事：追夢的女孩。' },
+    { speaker: 'Coco', line: "Mia loved music, although her family was poor.", lineZh: 'Mia 熱愛音樂，雖然家裡窮。' },
+    { speaker: 'Polly', line: "She practiced every day. Finally, she became a musician.", lineZh: '她每天練習。最後，她成了音樂家。' },
+    { speaker: 'Benny', line: "You understood a whole story! Wonderful!", lineZh: '你讀懂整個故事了！太棒了！' },
+  ],
+};
+
+const L12_M7: Mission = {
+  id: 7, slug: 'l12-m7-article-reading', level: 12, title: '知識文章閱讀', titleEn: 'Article Reading', theme: '勝利峰・認識太空', themeEmoji: '🚀',
+  focus: '知識文章閱讀：讀一篇說明文（太空）並抓重點 ＋ 中翻英',
+  story: [
+    { image: '🚀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "An article: Our Amazing Solar System.", dialogueZh: '文章：我們驚人的太陽系。', highlightWords: ['article'], sceneEmojis: ['🚀', '🪐', '✨'], animation: 'wave' },
+    { image: '☀️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "The sun is a star. Eight planets go around it.", dialogueZh: '太陽是一顆星星。八顆行星繞著它轉。', highlightWords: ['star', 'planets'], sceneEmojis: ['☀️', '🪐', '😊'], animation: 'bounce' },
+    { image: '🌍', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Earth is the only planet with life that we know.", dialogueZh: '地球是我們所知唯一有生命的行星。', highlightWords: ['only', 'life'], sceneEmojis: ['🌍', '🌱', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You learned facts from an article! Great!", dialogueZh: '你從文章學到知識了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '🚀', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'article', zh: '文章', image: '📰', phonics: '', kk: '[ˈɑrtɪkl̩]', phonicsSound: '', exampleSentence: 'read an article', exampleZh: '讀文章' },
+    { en: 'solar system', zh: '太陽系', image: '🪐', phonics: '', kk: '[ˈsolɚ ˈsɪstəm]', phonicsSound: '', exampleSentence: 'the solar system', exampleZh: '太陽系' },
+    { en: 'star', zh: '恆星·星星', image: '⭐', phonics: '', kk: '[stɑr]', phonicsSound: '', exampleSentence: 'The sun is a star.', exampleZh: '太陽是恆星。' },
+    { en: 'planet', zh: '行星', image: '🪐', phonics: '', kk: '[ˈplænɪt]', phonicsSound: '', exampleSentence: 'eight planets', exampleZh: '八顆行星' },
+    { en: 'orbit', zh: '繞行·軌道', image: '🔄', phonics: '', kk: '[ˈɔrbɪt]', phonicsSound: '', exampleSentence: 'orbit the sun', exampleZh: '繞太陽轉' },
+    { en: 'Earth', zh: '地球', image: '🌍', phonics: '', kk: '[ɝθ]', phonicsSound: '', exampleSentence: 'planet Earth', exampleZh: '地球' },
+    { en: 'life', zh: '生命', image: '🌱', phonics: '', kk: '[laɪf]', phonicsSound: '', exampleSentence: 'life on Earth', exampleZh: '地球上的生命' },
+    { en: 'space', zh: '太空', image: '🌌', phonics: '', kk: '[spes]', phonicsSound: '', exampleSentence: 'outer space', exampleZh: '外太空' },
+    { en: 'huge', zh: '巨大的', image: '🌟', phonics: '', kk: '[hjudʒ]', phonicsSound: '', exampleSentence: 'a huge star', exampleZh: '巨大的星星' },
+    { en: 'explore', zh: '探索', image: '🔭', phonics: '', kk: '[ɪkˈsplɔr]', phonicsSound: '', exampleSentence: 'explore space', exampleZh: '探索太空' },
+  ],
+  sentences: [
+    { en: 'The sun is a star.', zh: '太陽是一顆恆星。' }, { en: 'Eight planets orbit the sun.', zh: '八顆行星繞太陽轉。' }, { en: 'Earth is the only planet with life.', zh: '地球是唯一有生命的行星。' }, { en: 'Space is huge and amazing.', zh: '太空巨大又驚人。' }, { en: 'People want to explore space.', zh: '人們想探索太空。' }, { en: 'We learn a lot from science.', zh: '我們從科學學到很多。' },
+  ],
+  phonicsLetters: ['article reading'],
+  warmUpQuestions: [
+    { type: 'match', question: '🪐 planet 是什麼？', options: ['行星', '恆星', '太空', '生命'], answer: '行星' },
+    { type: 'fill-blank', question: 'The sun is a ___.（恆星）', options: ['star', 'planet', 'space', 'life'], answer: 'star' },
+    { type: 'match', question: 'explore 是什麼意思？', options: ['探索', '繞行', '生命', '巨大'], answer: '探索' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What is the sun?（太陽是什麼？）', passage: 'The sun is at the center of our solar system.\nThe sun is a star.\nIt gives us light and heat.', options: ['a star', 'a planet', 'a moon', 'a rock'], answer: 'a star' },
+    { type: 'read', question: 'How many planets orbit the sun?（幾顆行星繞太陽？）', passage: 'Our solar system has eight planets.\nThey all orbit the sun.\nEarth is one of them.', options: ['eight', 'six', 'ten', 'one'], answer: 'eight' },
+    { type: 'read', question: 'Which planet has life?（哪顆行星有生命？）', passage: 'Earth is special.\nIt is the only planet with life that we know.\nIt has water and air.', options: ['Earth', 'Mars', 'the sun', 'the moon'], answer: 'Earth' },
+    { type: 'fill-blank', question: '中翻英：「八顆行星繞太陽轉。」', options: ['Eight planets orbit the sun.', 'The sun is big.', 'Planets are round.', 'How many planets?'], answer: 'Eight planets orbit the sun.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The sun is a star.', 'Eight planets orbit the sun.', 'Earth is the only planet with life.', 'Space is huge and amazing.'], answer: 'The sun is a star.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：pla _ et（行星）', answer: 'planet', image: '✍️' },
+  ],
+  talkTimePrompts: ["Say two facts about the solar system.", "What makes Earth special?", "Would you like to explore space? Why?", "✍️ 引導寫作＋翻譯：寫 3 句關於太陽系的事實。"],
+  reviewQuiz: [
+    { type: 'match', question: 'orbit 是什麼意思？', options: ['繞行·軌道', '恆星', '生命', '探索'], answer: '繞行·軌道' },
+    { type: 'fill-blank', question: '中翻英：「地球是唯一有生命的行星。」', options: ['Earth is the only planet with life.', 'Earth is round.', 'I live on Earth.', 'Is there life?'], answer: 'Earth is the only planet with life.' },
+    { type: 'read', question: 'Why is Earth able to have life?（地球為何能有生命？）', passage: 'Earth has water and air.\nIt is not too hot or too cold.\nSo it can have life.', options: ['it has water and air', 'it is the biggest', 'it is far', 'it is a star'], answer: 'it has water and air' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "An article: Our Amazing Solar System.", lineZh: '文章：我們驚人的太陽系。' },
+    { speaker: 'Coco', line: "The sun is a star. Eight planets go around it.", lineZh: '太陽是一顆星星。八顆行星繞著它轉。' },
+    { speaker: 'Polly', line: "Earth is the only planet with life that we know.", lineZh: '地球是我們所知唯一有生命的行星。' },
+    { speaker: 'Benny', line: "You learned facts from an article! Great!", lineZh: '你從文章學到知識了！太棒了！' },
+  ],
+};
+
+const L12_M8: Mission = {
+  id: 8, slug: 'l12-m8-poem-script', level: 12, title: '詩與劇本', titleEn: 'Poem & Script', theme: '勝利峰・文學之美', themeEmoji: '🎭',
+  focus: '閱讀：短詩 / 對話劇本（感受節奏與角色語氣）＋ 中翻英',
+  story: [
+    { image: '🎭', character: '🐰', characterKey: 'ruby', characterAction: 'read', characterName: 'Ruby', dialogue: "Poems use rhythm and rhyme.", dialogueZh: '詩使用節奏和押韻。', highlightWords: ['rhythm', 'rhyme'], sceneEmojis: ['🎭', '📜', '✨'], animation: 'wave' },
+    { image: '⭐', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "\"Stars so bright, in the night, shining light, pure delight.\"", dialogueZh: '「星星明亮，在夜晚，閃耀光芒，純粹喜悅。」', highlightWords: ['bright', 'night'], sceneEmojis: ['⭐', '🌙', '😊'], animation: 'bounce' },
+    { image: '💬', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "In a script, each character has a voice.", dialogueZh: '在劇本裡，每個角色有自己的語氣。', highlightWords: ['character'], sceneEmojis: ['💬', '🎬', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Literature makes language beautiful!", dialogueZh: '文學讓語言變美！', highlightWords: [], sceneEmojis: ['🏆', '🎭', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'poem', zh: '詩', image: '📜', phonics: '', kk: '[ˈpoəm]', phonicsSound: '', exampleSentence: 'a short poem', exampleZh: '一首短詩' },
+    { en: 'rhythm', zh: '節奏', image: '🥁', phonics: '', kk: '[ˈrɪðəm]', phonicsSound: '', exampleSentence: 'a nice rhythm', exampleZh: '好聽的節奏' },
+    { en: 'rhyme', zh: '押韻', image: '🎵', phonics: '', kk: '[raɪm]', phonicsSound: '', exampleSentence: 'words that rhyme', exampleZh: '押韻的字' },
+    { en: 'script', zh: '劇本', image: '🎬', phonics: '', kk: '[skrɪpt]', phonicsSound: '', exampleSentence: 'read the script', exampleZh: '讀劇本' },
+    { en: 'character', zh: '角色', image: '🎭', phonics: '', kk: '[ˈkærɪktɚ]', phonicsSound: '', exampleSentence: 'the main character', exampleZh: '主角' },
+    { en: 'bright', zh: '明亮的', image: '⭐', phonics: '', kk: '[braɪt]', phonicsSound: '', exampleSentence: 'stars so bright', exampleZh: '明亮的星' },
+    { en: 'delight', zh: '喜悅', image: '😄', phonics: '', kk: '[dɪˈlaɪt]', phonicsSound: '', exampleSentence: 'pure delight', exampleZh: '純粹喜悅' },
+    { en: 'stage', zh: '舞台', image: '🎪', phonics: '', kk: '[stedʒ]', phonicsSound: '', exampleSentence: 'on the stage', exampleZh: '在舞台上' },
+    { en: 'line', zh: '台詞', image: '💬', phonics: '', kk: '[laɪn]', phonicsSound: '', exampleSentence: 'say your line', exampleZh: '說你的台詞' },
+    { en: 'literature', zh: '文學', image: '📚', phonics: '', kk: '[ˈlɪtərətʃɚ]', phonicsSound: '', exampleSentence: 'love literature', exampleZh: '熱愛文學' },
+  ],
+  sentences: [
+    { en: 'Poems use rhythm and rhyme.', zh: '詩使用節奏和押韻。' }, { en: 'Stars so bright shine in the night.', zh: '明亮的星在夜晚閃耀。' }, { en: 'In a script, each character has a voice.', zh: '在劇本裡，每個角色有語氣。' }, { en: 'Bright and night rhyme.', zh: 'Bright 和 night 押韻。' }, { en: 'Actors read their lines.', zh: '演員讀他們的台詞。' }, { en: 'Literature is beautiful.', zh: '文學很美。' },
+  ],
+  phonicsLetters: ['poem & script'],
+  warmUpQuestions: [
+    { type: 'match', question: 'poem 是什麼意思？', options: ['詩', '劇本', '節奏', '角色'], answer: '詩' },
+    { type: 'match', question: 'rhyme 是什麼意思？', options: ['押韻', '節奏', '舞台', '台詞'], answer: '押韻' },
+    { type: 'match', question: '哪兩個字押韻？', options: ['bright / night', 'cat / dog', 'sun / moon', 'big / small'], answer: 'bright / night' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What do poems use?（詩用什麼？）', passage: 'Poems are special.\nThey use rhythm and rhyme.\nThey sound like music.', options: ['rhythm and rhyme', 'numbers', 'maps', 'charts'], answer: 'rhythm and rhyme' },
+    { type: 'read', question: 'Which words rhyme in the poem?（詩中哪些字押韻？）', passage: '"Stars so bright,\nin the night,\nshining light,\npure delight."', options: ['bright, night, light, delight', 'stars, so, in, pure', 'shining, the', 'none'], answer: 'bright, night, light, delight' },
+    { type: 'read', question: 'In a script, what does each character have?（劇本中每個角色有什麼？）', passage: 'A script is written for a play.\nEach character has lines to say.\nEach one has a different voice.', options: ['a voice and lines', 'a map', 'a chart', 'nothing'], answer: 'a voice and lines' },
+    { type: 'fill-blank', question: '中翻英：「詩使用節奏和押韻。」', options: ['Poems use rhythm and rhyme.', 'Poems are long.', 'I read a poem.', 'Is it a poem?'], answer: 'Poems use rhythm and rhyme.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Poems use rhythm and rhyme.', 'Stars so bright shine in the night.', 'In a script, each character has a voice.', 'Literature is beautiful.'], answer: 'Poems use rhythm and rhyme.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：rh _ me（押韻）', answer: 'rhyme', image: '✍️' },
+  ],
+  talkTimePrompts: ["Read the star poem out loud with rhythm.", "Find two words that rhyme.", "Read a script line with feeling.", "✍️ 引導寫作＋翻譯：寫一首 2-4 行的英文小詩（試著押韻）。"],
+  reviewQuiz: [
+    { type: 'match', question: 'character 在劇本中指？', options: ['角色', '節奏', '押韻', '舞台'], answer: '角色' },
+    { type: 'fill-blank', question: '中翻英：「文學很美。」', options: ['Literature is beautiful.', 'I read a book.', 'Poems are nice.', 'Is it beautiful?'], answer: 'Literature is beautiful.' },
+    { type: 'match', question: 'rhythm 是什麼意思？', options: ['節奏', '押韻', '角色', '台詞'], answer: '節奏' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Poems use rhythm and rhyme.", lineZh: '詩使用節奏和押韻。' },
+    { speaker: 'Coco', line: "Stars so bright, in the night, shining light, pure delight.", lineZh: '星星明亮，在夜晚，閃耀光芒，純粹喜悅。' },
+    { speaker: 'Benny', line: "In a script, each character has a voice.", lineZh: '在劇本裡，每個角色有自己的語氣。' },
+    { speaker: 'Ruby', line: "Literature makes language beautiful!", lineZh: '文學讓語言變美！' },
+  ],
+};
+
+const L12_M9: Mission = {
+  id: 9, slug: 'l12-m9-deep-comprehension', level: 12, title: '閱讀理解深化', titleEn: 'Deep Comprehension', theme: '勝利峰・讀出言外之意', themeEmoji: '🧠',
+  focus: '閱讀理解深化：推論、找主旨、猜字義（inference）＋ 中翻英',
+  story: [
+    { image: '🧠', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Good readers think beyond the words.", dialogueZh: '好讀者會想到字面之外。', highlightWords: ['beyond'], sceneEmojis: ['🧠', '📖', '✨'], animation: 'wave' },
+    { image: '🔍', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "\"She smiled and wiped her tears.\" She feels happy but moved.", dialogueZh: '「她微笑著擦掉眼淚。」她開心又感動。', highlightWords: ['feels'], sceneEmojis: ['🔍', '😢', '😊'], animation: 'bounce' },
+    { image: '💡', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Guess new words from the sentence around them.", dialogueZh: '從周圍句子猜新字的意思。', highlightWords: ['Guess'], sceneEmojis: ['💡', '🔤', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Read between the lines like a detective!", dialogueZh: '像偵探一樣讀出言外之意！', highlightWords: [], sceneEmojis: ['🏆', '🧠', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'infer', zh: '推論', image: '🧠', phonics: '', kk: '[ɪnˈfɝ]', phonicsSound: '', exampleSentence: 'infer the meaning', exampleZh: '推論意思' },
+    { en: 'guess', zh: '猜', image: '🤔', phonics: '', kk: '[ɡɛs]', phonicsSound: '', exampleSentence: 'guess the word', exampleZh: '猜這個字' },
+    { en: 'meaning', zh: '意思', image: '🔤', phonics: '', kk: '[ˈminɪŋ]', phonicsSound: '', exampleSentence: 'the meaning', exampleZh: '意思' },
+    { en: 'clue', zh: '線索', image: '🔍', phonics: '', kk: '[klu]', phonicsSound: '', exampleSentence: 'a good clue', exampleZh: '好線索' },
+    { en: 'feeling', zh: '感受', image: '💗', phonics: '', kk: '[ˈfilɪŋ]', phonicsSound: '', exampleSentence: 'a strong feeling', exampleZh: '強烈的感受' },
+    { en: 'moved', zh: '感動的', image: '🥹', phonics: '', kk: '[muvd]', phonicsSound: '', exampleSentence: 'She was moved.', exampleZh: '她很感動。' },
+    { en: 'context', zh: '上下文', image: '📄', phonics: '', kk: '[ˈkɑntɛkst]', phonicsSound: '', exampleSentence: 'use the context', exampleZh: '利用上下文' },
+    { en: 'detail', zh: '細節', image: '📌', phonics: '', kk: '[ˈditel]', phonicsSound: '', exampleSentence: 'a small detail', exampleZh: '小細節' },
+    { en: 'between the lines', zh: '言外之意', image: '📖', phonics: '', kk: '[bɪˈtwin ðə laɪnz]', phonicsSound: '', exampleSentence: 'read between the lines', exampleZh: '讀出言外之意' },
+    { en: 'understand', zh: '理解', image: '💡', phonics: '', kk: '[ˌʌndɚˈstænd]', phonicsSound: '', exampleSentence: 'understand deeply', exampleZh: '深入理解' },
+  ],
+  sentences: [
+    { en: 'Good readers think beyond the words.', zh: '好讀者會想到字面之外。' }, { en: 'She smiled and wiped her tears.', zh: '她微笑著擦掉眼淚。' }, { en: 'We can infer she feels moved.', zh: '我們可以推論她很感動。' }, { en: 'Guess new words from the context.', zh: '從上下文猜新字。' }, { en: 'Look for clues in the sentence.', zh: '在句子中找線索。' }, { en: 'Read between the lines.', zh: '讀出言外之意。' },
+  ],
+  phonicsLetters: ['deep comprehension'],
+  warmUpQuestions: [
+    { type: 'match', question: 'infer 是什麼意思？', options: ['推論', '猜', '理解', '細節'], answer: '推論' },
+    { type: 'match', question: 'clue 是什麼意思？', options: ['線索', '意思', '感受', '上下文'], answer: '線索' },
+    { type: 'fill-blank', question: 'Guess new words from the ___.（上下文）', options: ['context', 'clue', 'feeling', 'detail'], answer: 'context' },
+  ],
+  challenges: [
+    { type: 'read', question: 'How does the girl feel?（女孩感覺如何？）', passage: 'She smiled and wiped her tears.\nShe hugged her family.\nWe can infer she feels happy but moved.', options: ['happy but moved', 'angry', 'bored', 'sleepy'], answer: 'happy but moved' },
+    { type: 'read', question: 'What does "enormous" probably mean?（enormous 大概什麼意思？）', passage: 'The whale was enormous.\nIt was bigger than a bus.\nEveryone was amazed by its size.', options: ['very big', 'very small', 'very fast', 'very old'], answer: 'very big' },
+    { type: 'read', question: 'Why was the town happy?（小鎮為何開心？）', passage: 'After months of dry weather, the rain finally came.\nThe farmers cheered.\nThe crops would grow again.', options: ['the rain came', 'it was hot', 'it was dry', 'nothing grew'], answer: 'the rain came' },
+    { type: 'fill-blank', question: '中翻英：「我們可以推論她很感動。」', options: ['We can infer she feels moved.', 'She is happy.', 'She cries.', 'Is she moved?'], answer: 'We can infer she feels moved.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Good readers think beyond the words.', 'She smiled and wiped her tears.', 'Guess new words from the context.', 'Read between the lines.'], answer: 'Good readers think beyond the words.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：cont _ xt（上下文）', answer: 'context', image: '✍️' },
+  ],
+  talkTimePrompts: ["Infer a character's feeling from a clue.", "Guess a hard word from context.", "Explain what a passage really means.", "✍️ 引導寫作＋翻譯：讀一段文字，寫出你推論到的言外之意。"],
+  reviewQuiz: [
+    { type: 'match', question: 'between the lines 意思是？', options: ['言外之意', '字面意思', '押韻', '節奏'], answer: '言外之意' },
+    { type: 'fill-blank', question: '中翻英：「在句子中找線索。」', options: ['Look for clues in the sentence.', 'The sentence is long.', 'I read a sentence.', 'Where is the clue?'], answer: 'Look for clues in the sentence.' },
+    { type: 'read', question: 'What can we infer about the whale?（關於鯨魚能推論什麼？）', passage: 'The whale was bigger than a bus.\nEveryone stared in amazement.\nSome people had never seen anything so big.', options: ['it was very big', 'it was small', 'it was fast', 'it was scary'], answer: 'it was very big' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Good readers think beyond the words.", lineZh: '好讀者會想到字面之外。' },
+    { speaker: 'Coco', line: "She smiled and wiped her tears. She feels happy but moved.", lineZh: '她微笑著擦掉眼淚。她開心又感動。' },
+    { speaker: 'Polly', line: "Guess new words from the sentence around them.", lineZh: '從周圍句子猜新字的意思。' },
+    { speaker: 'Benny', line: "Read between the lines like a detective!", lineZh: '像偵探一樣讀出言外之意！' },
+  ],
+};
+
+const L12_M10: Mission = {
+  id: 10, slug: 'l12-m10-review-reading', level: 12, title: 'Review② 閱讀', titleEn: 'Review: Reading', theme: '勝利峰・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：故事/知識文章/詩/推論理解 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review advanced reading!", dialogueZh: '來複習進階閱讀！', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
+    { image: '⭐', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Mia followed her dream and became a musician.", dialogueZh: 'Mia 追隨夢想成了音樂家。', highlightWords: ['became'], sceneEmojis: ['⭐', '🎻', '😊'], animation: 'bounce' },
+    { image: '🚀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Eight planets orbit the sun; Earth has life.", dialogueZh: '八顆行星繞太陽；地球有生命。', highlightWords: ['orbit'], sceneEmojis: ['🚀', '🌍', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You read stories, articles, and poems! Amazing!", dialogueZh: '你讀了故事、文章和詩！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'dream', zh: '夢想', image: '⭐', phonics: '', kk: '[drim]', phonicsSound: '', exampleSentence: 'follow your dream', exampleZh: '追隨夢想' },
+    { en: 'musician', zh: '音樂家', image: '🎻', phonics: '', kk: '[mjuˈzɪʃən]', phonicsSound: '', exampleSentence: 'a great musician', exampleZh: '偉大音樂家' },
+    { en: 'planet', zh: '行星', image: '🪐', phonics: '', kk: '[ˈplænɪt]', phonicsSound: '', exampleSentence: 'eight planets', exampleZh: '八顆行星' },
+    { en: 'orbit', zh: '繞行', image: '🔄', phonics: '', kk: '[ˈɔrbɪt]', phonicsSound: '', exampleSentence: 'orbit the sun', exampleZh: '繞太陽' },
+    { en: 'poem', zh: '詩', image: '📜', phonics: '', kk: '[ˈpoəm]', phonicsSound: '', exampleSentence: 'a short poem', exampleZh: '短詩' },
+    { en: 'rhyme', zh: '押韻', image: '🎵', phonics: '', kk: '[raɪm]', phonicsSound: '', exampleSentence: 'words that rhyme', exampleZh: '押韻的字' },
+    { en: 'infer', zh: '推論', image: '🧠', phonics: '', kk: '[ɪnˈfɝ]', phonicsSound: '', exampleSentence: 'infer the meaning', exampleZh: '推論意思' },
+    { en: 'context', zh: '上下文', image: '📄', phonics: '', kk: '[ˈkɑntɛkst]', phonicsSound: '', exampleSentence: 'use the context', exampleZh: '利用上下文' },
+    { en: 'main idea', zh: '主旨', image: '🎯', phonics: '', kk: '[men aɪˈdiə]', phonicsSound: '', exampleSentence: 'the main idea', exampleZh: '主旨' },
+    { en: 'life', zh: '生命', image: '🌱', phonics: '', kk: '[laɪf]', phonicsSound: '', exampleSentence: 'life on Earth', exampleZh: '地球生命' },
+  ],
+  sentences: [
+    { en: 'Mia became a musician.', zh: 'Mia 成了音樂家。' }, { en: 'Eight planets orbit the sun.', zh: '八顆行星繞太陽。' }, { en: 'Poems use rhythm and rhyme.', zh: '詩用節奏和押韻。' }, { en: 'We can infer her feelings.', zh: '我們能推論她的感受。' }, { en: 'The main idea is the big point.', zh: '主旨是重點。' }, { en: 'Reading opens new worlds.', zh: '閱讀打開新世界。' },
+  ],
+  phonicsLetters: ['review reading'],
+  warmUpQuestions: [
+    { type: 'match', question: 'infer 是什麼意思？', options: ['推論', '押韻', '繞行', '夢想'], answer: '推論' },
+    { type: 'fill-blank', question: 'Eight planets ___ the sun.（繞行）', options: ['orbit', 'infer', 'rhyme', 'dream'], answer: 'orbit' },
+    { type: 'match', question: 'main idea 是什麼意思？', options: ['主旨', '細節', '上下文', '押韻'], answer: '主旨' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What did Mia become?（Mia 成了什麼？）', passage: 'Mia practiced music every day.\nAlthough it was hard, she never gave up.\nShe became a famous musician.', options: ['a musician', 'a doctor', 'a teacher', 'a pilot'], answer: 'a musician' },
+    { type: 'read', question: 'Which planet has life?（哪顆行星有生命？）', passage: 'Eight planets orbit the sun.\nEarth has water and air.\nSo Earth is the only planet with life we know.', options: ['Earth', 'Mars', 'the sun', 'the moon'], answer: 'Earth' },
+    { type: 'read', question: 'What do poems use?（詩用什麼？）', passage: 'Poems are a kind of literature.\nThey use rhythm and rhyme.\nThey make language sound like music.', options: ['rhythm and rhyme', 'numbers', 'maps', 'facts only'], answer: 'rhythm and rhyme' },
+    { type: 'fill-blank', question: '中翻英：「八顆行星繞太陽。」', options: ['Eight planets orbit the sun.', 'The sun is big.', 'Planets are round.', 'How many planets?'], answer: 'Eight planets orbit the sun.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Mia became a musician.', 'Eight planets orbit the sun.', 'Poems use rhythm and rhyme.', 'Reading opens new worlds.'], answer: 'Mia became a musician.', image: '🎧' },
+    { type: 'read', question: 'What is the theme of Mia\'s story?（Mia 故事的主題？）', passage: 'Mia was poor but talented.\nShe worked hard and never gave up.\nThe theme: follow your dream.', options: ['follow your dream', 'be rich', 'stay home', 'music is easy'], answer: 'follow your dream' },
+  ],
+  talkTimePrompts: ["Retell a story you read.", "Say two facts from an article.", "Read a poem line with rhythm.", "✍️ 引導寫作＋翻譯：把「閱讀打開新世界。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'rhyme 是什麼意思？', options: ['押韻', '節奏', '推論', '主旨'], answer: '押韻' },
+    { type: 'fill-blank', question: '中翻英：「我們能推論她的感受。」', options: ['We can infer her feelings.', 'She is happy.', 'I feel good.', 'How does she feel?'], answer: 'We can infer her feelings.' },
+    { type: 'read', question: 'Does reading help us?（閱讀對我們有幫助嗎？）', passage: 'Reading gives us stories and facts.\nIt helps us think and imagine.\nReading opens new worlds.', options: ['Yes, it opens new worlds', 'No, it is boring', 'It is useless', 'Only for tests'], answer: 'Yes, it opens new worlds' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review advanced reading!", lineZh: '來複習進階閱讀！' },
+    { speaker: 'Coco', line: "Mia followed her dream and became a musician.", lineZh: 'Mia 追隨夢想成了音樂家。' },
+    { speaker: 'Benny', line: "Eight planets orbit the sun; Earth has life.", lineZh: '八顆行星繞太陽；地球有生命。' },
+    { speaker: 'Finn', line: "You read stories, articles, and poems! Amazing!", lineZh: '你讀了故事、文章和詩！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5, L12_M6, L12_M7, L12_M8, L12_M9, L12_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
