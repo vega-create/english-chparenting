@@ -8248,7 +8248,267 @@ const L9_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5];
+const L9_M6: Mission = {
+  id: 6, slug: 'l9-m6-past-continuous', level: 9, title: '過去進行式', titleEn: 'Past Continuous', theme: '時光道・當時正在', themeEmoji: '⏱️',
+  focus: '過去進行式 was/were + V-ing（當時正在做）＋ 中翻英',
+  story: [
+    { image: '⏱️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "At eight, I was reading. Coco was sleeping.", dialogueZh: '八點時，我正在讀書。Coco 正在睡覺。', highlightWords: ['was reading', 'was sleeping'], sceneEmojis: ['📖', '😴', '✨'], animation: 'wave' },
+    { image: '🌧️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "It was raining when I woke up.", dialogueZh: '我醒來時正在下雨。', highlightWords: ['was raining'], sceneEmojis: ['🌧️', '⏰', '😊'], animation: 'bounce' },
+    { image: '⚽', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "They were playing soccer at four.", dialogueZh: '他們四點時正在踢足球。', highlightWords: ['were playing'], sceneEmojis: ['⚽', '🕓', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "was/were + V-ing = action in the past!", dialogueZh: 'was/were + V-ing = 過去正在進行！', highlightWords: [], sceneEmojis: ['🏆', '⏱️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'was', zh: '（過去·單數 be）', image: '1️⃣', phonics: '', kk: '[wʌz]', phonicsSound: '', exampleSentence: 'I was reading.', exampleZh: '我正在讀。' },
+    { en: 'were', zh: '（過去·複數 be）', image: '🔢', phonics: '', kk: '[wɝ]', phonicsSound: '', exampleSentence: 'They were playing.', exampleZh: '他們正在玩。' },
+    { en: 'sleeping', zh: '正在睡', image: '😴', phonics: '', kk: '[ˈslipɪŋ]', phonicsSound: '', exampleSentence: 'She was sleeping.', exampleZh: '她正在睡。' },
+    { en: 'reading', zh: '正在讀', image: '📖', phonics: '', kk: '[ˈridɪŋ]', phonicsSound: '', exampleSentence: 'I was reading.', exampleZh: '我正在讀。' },
+    { en: 'raining', zh: '正在下雨', image: '🌧️', phonics: '', kk: '[ˈrenɪŋ]', phonicsSound: '', exampleSentence: 'It was raining.', exampleZh: '正在下雨。' },
+    { en: 'playing', zh: '正在玩', image: '⚽', phonics: '', kk: '[ˈpleɪŋ]', phonicsSound: '', exampleSentence: 'They were playing.', exampleZh: '他們正在玩。' },
+    { en: 'eating', zh: '正在吃', image: '🍽️', phonics: '', kk: '[ˈitɪŋ]', phonicsSound: '', exampleSentence: 'We were eating.', exampleZh: '我們正在吃。' },
+    { en: 'walking', zh: '正在走', image: '🚶', phonics: '', kk: '[ˈwɔkɪŋ]', phonicsSound: '', exampleSentence: 'He was walking.', exampleZh: '他正在走。' },
+    { en: 'when', zh: '當…時', image: '🕐', phonics: '', kk: '[wɛn]', phonicsSound: '', exampleSentence: 'when I woke up', exampleZh: '當我醒來時' },
+    { en: 'woke up', zh: '醒來', image: '⏰', phonics: '', kk: '[wok ʌp]', phonicsSound: '', exampleSentence: 'I woke up.', exampleZh: '我醒來。' },
+  ],
+  sentences: [
+    { en: 'At eight, I was reading.', zh: '八點時我正在讀書。' }, { en: 'Coco was sleeping.', zh: 'Coco 正在睡覺。' }, { en: 'It was raining when I woke up.', zh: '我醒來時正在下雨。' }, { en: 'They were playing soccer.', zh: '他們正在踢足球。' }, { en: 'What were you doing at five?', zh: '你五點時在做什麼？' }, { en: 'We were eating dinner.', zh: '我們正在吃晚餐。' },
+  ],
+  phonicsLetters: ['was/were + V-ing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ reading at eight.（過去·單數 be）', options: ['was', 'were', 'am', 'is'], answer: 'was' },
+    { type: 'fill-blank', question: 'They ___ playing soccer.（過去·複數 be）', options: ['were', 'was', 'are', 'is'], answer: 'were' },
+    { type: 'match', question: 'raining 是什麼意思？', options: ['正在下雨', '正在睡', '正在讀', '正在玩'], answer: '正在下雨' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['😴', '📖', '🌧️', '⚽'], answer: '🌧️', image: '🎧' },
+    { type: 'fill-blank', question: 'She ___ sleeping at ten.（過去·單數 be）', options: ['was', 'were', 'is', 'are'], answer: 'was' },
+    { type: 'fill-blank', question: 'It ___ raining when I woke up.（過去·單數 be）', options: ['was', 'were', 'is', 'are'], answer: 'was' },
+    { type: 'fill-blank', question: '中翻英：「他們正在踢足球。」', options: ["They were playing soccer.", "They play soccer.", "They will play soccer.", "Do they play soccer?"], answer: "They were playing soccer." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['At eight, I was reading.', 'It was raining when I woke up.', 'They were playing soccer.', 'We were eating dinner.'], answer: 'At eight, I was reading.', image: '🎧' },
+    { type: 'read', question: 'What was Coco doing at eight?（Coco 八點時在做什麼？）', passage: 'At eight, Benny was reading.\nCoco was sleeping.\nIt was a quiet night.', options: ['sleeping', 'reading', 'playing', 'eating'], answer: 'sleeping' },
+  ],
+  talkTimePrompts: ["Say what you were doing at a time: I was ___ing.", "Use was/were correctly.", "Ask: What were you doing at five?", "✍️ 引導寫作＋翻譯：把「我醒來時正在下雨。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'We ___ eating dinner.（過去·複數 be）', options: ['were', 'was', 'are', 'is'], answer: 'were' },
+    { type: 'fill-blank', question: 'What ___ you doing at five?（過去問句·單數）', options: ['were', 'was', 'are', 'do'], answer: 'were' },
+    { type: 'fill-blank', question: '中翻英：「八點時我正在讀書。」', options: ['At eight, I was reading.', 'I read at eight.', 'I will read at eight.', 'Do I read at eight?'], answer: 'At eight, I was reading.' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "At eight, I was reading. Coco was sleeping.", lineZh: '八點時，我正在讀書。Coco 正在睡覺。' },
+    { speaker: 'Coco', line: "It was raining when I woke up.", lineZh: '我醒來時正在下雨。' },
+    { speaker: 'Polly', line: "They were playing soccer at four.", lineZh: '他們四點時正在踢足球。' },
+    { speaker: 'Benny', line: "was/were + V-ing = action in the past!", lineZh: 'was/were + V-ing = 過去正在進行！' },
+  ],
+};
+
+const L9_M7: Mission = {
+  id: 7, slug: 'l9-m7-future-will', level: 9, title: '未來式 will', titleEn: 'Future: will', theme: '時光道・未來', themeEmoji: '🔮',
+  focus: '未來式 will + 原形動詞（預測/決定）＋ 中翻英',
+  story: [
+    { image: '🔮', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Tomorrow I will visit my grandma.", dialogueZh: '明天我會去看奶奶。', highlightWords: ['will visit'], sceneEmojis: ['🔮', '👵', '✨'], animation: 'wave' },
+    { image: '🌧️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "It will rain tomorrow. Take an umbrella!", dialogueZh: '明天會下雨。帶把傘！', highlightWords: ['will rain'], sceneEmojis: ['🌧️', '☂️', '😊'], animation: 'bounce' },
+    { image: '🤝', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I will help you. Don't worry!", dialogueZh: '我會幫你。別擔心！', highlightWords: ['will help'], sceneEmojis: ['🤝', '💪', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "will + base verb for the future!", dialogueZh: '未來用 will + 原形動詞！', highlightWords: [], sceneEmojis: ['🏆', '🔮', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'will', zh: '將會', image: '🔮', phonics: '', kk: '[wɪl]', phonicsSound: '', exampleSentence: 'I will go.', exampleZh: '我會去。' },
+    { en: "won't", zh: '將不會', image: '🚫', phonics: '', kk: '[wont]', phonicsSound: '', exampleSentence: "I won't go.", exampleZh: '我不會去。' },
+    { en: 'tomorrow', zh: '明天', image: '➡️', phonics: '', kk: '[təˈmɑro]', phonicsSound: '', exampleSentence: 'tomorrow', exampleZh: '明天' },
+    { en: 'visit', zh: '拜訪', image: '👵', phonics: '', kk: '[ˈvɪzɪt]', phonicsSound: '', exampleSentence: 'I will visit her.', exampleZh: '我會去看她。' },
+    { en: 'rain', zh: '下雨', image: '🌧️', phonics: '', kk: '[ren]', phonicsSound: '', exampleSentence: 'It will rain.', exampleZh: '會下雨。' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '', exampleSentence: 'I will help you.', exampleZh: '我會幫你。' },
+    { en: 'be', zh: '會是', image: '⭐', phonics: '', kk: '[bi]', phonicsSound: '', exampleSentence: 'It will be fun.', exampleZh: '會很好玩。' },
+    { en: 'next week', zh: '下週', image: '🗓️', phonics: '', kk: '[nɛkst wik]', phonicsSound: '', exampleSentence: 'next week', exampleZh: '下週' },
+    { en: 'win', zh: '贏', image: '🏆', phonics: '', kk: '[wɪn]', phonicsSound: '', exampleSentence: 'We will win!', exampleZh: '我們會贏！' },
+    { en: 'travel', zh: '旅行', image: '✈️', phonics: '', kk: '[ˈtrævl̩]', phonicsSound: '', exampleSentence: 'I will travel.', exampleZh: '我會去旅行。' },
+  ],
+  sentences: [
+    { en: 'Tomorrow I will visit my grandma.', zh: '明天我會去看奶奶。' }, { en: 'It will rain tomorrow.', zh: '明天會下雨。' }, { en: 'I will help you.', zh: '我會幫你。' }, { en: 'It will be fun.', zh: '會很好玩。' }, { en: "I won't be late.", zh: '我不會遲到。' }, { en: 'Will you come to my party?', zh: '你會來我的派對嗎？' },
+  ],
+  phonicsLetters: ['will + V'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'Tomorrow I ___ visit grandma.（未來）', options: ['will', 'am', 'was', 'do'], answer: 'will' },
+    { type: 'fill-blank', question: 'It ___ rain tomorrow.（未來）', options: ['will', 'is', 'was', 'does'], answer: 'will' },
+    { type: 'match', question: "won't 是什麼意思？", options: ['將不會', '將會', '想要', '已經'], answer: '將不會' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['👵', '🌧️', '🤝', '✈️'], answer: '✈️', image: '🎧' },
+    { type: 'fill-blank', question: 'I ___ help you.（未來）', options: ['will', 'am', 'was', 'do'], answer: 'will' },
+    { type: 'fill-blank', question: '中翻英：「明天我會去看奶奶。」', options: ["Tomorrow I will visit my grandma.", "I visit my grandma.", "I visited my grandma.", "Do you visit grandma?"], answer: "Tomorrow I will visit my grandma." },
+    { type: 'fill-blank', question: '中翻英：「明天會下雨。」', options: ["It will rain tomorrow.", "It rains tomorrow.", "It rained tomorrow.", "Does it rain?"], answer: "It will rain tomorrow." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Tomorrow I will visit my grandma.', 'It will rain tomorrow.', 'I will help you.', 'It will be fun.'], answer: 'Tomorrow I will visit my grandma.', image: '🎧' },
+    { type: 'read', question: 'What will Finn do tomorrow?（Finn 明天會做什麼？）', passage: 'Tomorrow Finn will visit his grandma.\nHe will bring her flowers.\nShe will be happy.', options: ['visit his grandma', 'go to school', 'play soccer', 'sleep'], answer: 'visit his grandma' },
+  ],
+  talkTimePrompts: ["Say a future plan: I will ___.", "Make a prediction: It will ___.", "Offer help: I will help you.", "✍️ 引導寫作＋翻譯：把「我會幫你。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'We ___ win the game!（未來）', options: ['will', 'are', 'was', 'do'], answer: 'will' },
+    { type: 'fill-blank', question: "I ___ be late.（未來否定）", options: ["won't", "will", 'am not', "don't"], answer: "won't" },
+    { type: 'fill-blank', question: '中翻英：「會很好玩。」', options: ['It will be fun.', 'It is fun.', 'It was fun.', 'Is it fun?'], answer: 'It will be fun.' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Tomorrow I will visit my grandma.", lineZh: '明天我會去看奶奶。' },
+    { speaker: 'Coco', line: "It will rain tomorrow. Take an umbrella!", lineZh: '明天會下雨。帶把傘！' },
+    { speaker: 'Benny', line: "I will help you. Don't worry!", lineZh: '我會幫你。別擔心！' },
+    { speaker: 'Finn', line: "will + base verb for the future!", lineZh: '未來用 will + 原形動詞！' },
+  ],
+};
+
+const L9_M8: Mission = {
+  id: 8, slug: 'l9-m8-be-going-to', level: 9, title: 'be going to', titleEn: 'be going to', theme: '時光道・計畫', themeEmoji: '📋',
+  focus: '未來 be going to + 原形動詞（計畫/打算）＋ 中翻英',
+  story: [
+    { image: '📋', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "I am going to study tonight.", dialogueZh: '我今晚打算讀書。', highlightWords: ['going to'], sceneEmojis: ['📋', '📚', '✨'], animation: 'wave' },
+    { image: '✈️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "We are going to travel next month.", dialogueZh: '我們下個月打算去旅行。', highlightWords: ['going to'], sceneEmojis: ['✈️', '🗓️', '😊'], animation: 'bounce' },
+    { image: '⚽', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "He is going to play soccer after school.", dialogueZh: '他放學後打算踢足球。', highlightWords: ['going to'], sceneEmojis: ['⚽', '🏫', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "be going to = a plan you decided!", dialogueZh: 'be going to = 你決定好的計畫！', highlightWords: [], sceneEmojis: ['🏆', '📋', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'going to', zh: '打算·將要', image: '📋', phonics: '', kk: '[ˈɡoɪŋ tu]', phonicsSound: '', exampleSentence: 'I am going to study.', exampleZh: '我打算讀書。' },
+    { en: 'plan', zh: '計畫', image: '🗒️', phonics: '', kk: '[plæn]', phonicsSound: '', exampleSentence: 'my plan', exampleZh: '我的計畫' },
+    { en: 'tonight', zh: '今晚', image: '🌃', phonics: '', kk: '[təˈnaɪt]', phonicsSound: '', exampleSentence: 'tonight', exampleZh: '今晚' },
+    { en: 'study', zh: '讀書', image: '📚', phonics: '', kk: '[ˈstʌdi]', phonicsSound: '', exampleSentence: 'going to study', exampleZh: '打算讀書' },
+    { en: 'travel', zh: '旅行', image: '✈️', phonics: '', kk: '[ˈtrævl̩]', phonicsSound: '', exampleSentence: 'going to travel', exampleZh: '打算旅行' },
+    { en: 'watch', zh: '看', image: '📺', phonics: '', kk: '[wɑtʃ]', phonicsSound: '', exampleSentence: 'going to watch a movie', exampleZh: '打算看電影' },
+    { en: 'next month', zh: '下個月', image: '🗓️', phonics: '', kk: '[nɛkst mʌnθ]', phonicsSound: '', exampleSentence: 'next month', exampleZh: '下個月' },
+    { en: 'buy', zh: '買', image: '🛒', phonics: '', kk: '[baɪ]', phonicsSound: '', exampleSentence: 'going to buy a bike', exampleZh: '打算買腳踏車' },
+    { en: 'visit', zh: '拜訪', image: '👵', phonics: '', kk: '[ˈvɪzɪt]', phonicsSound: '', exampleSentence: 'going to visit', exampleZh: '打算拜訪' },
+    { en: 'weekend', zh: '週末', image: '🏖️', phonics: '', kk: '[ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'this weekend', exampleZh: '這個週末' },
+  ],
+  sentences: [
+    { en: 'I am going to study tonight.', zh: '我今晚打算讀書。' }, { en: 'We are going to travel next month.', zh: '我們下個月打算去旅行。' }, { en: 'He is going to play soccer.', zh: '他打算踢足球。' }, { en: 'What are you going to do?', zh: '你打算做什麼？' }, { en: 'I am going to buy a bike.', zh: '我打算買腳踏車。' }, { en: 'They are going to watch a movie.', zh: '他們打算看電影。' },
+  ],
+  phonicsLetters: ['be going to'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I am ___ to study tonight.（打算）', options: ['going', 'go', 'went', 'will'], answer: 'going' },
+    { type: 'fill-blank', question: 'We ___ going to travel.（be動詞·複數）', options: ['are', 'is', 'am', 'was'], answer: 'are' },
+    { type: 'match', question: 'plan 是什麼意思？', options: ['計畫', '旅行', '讀書', '今晚'], answer: '計畫' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['📚', '✈️', '📺', '🛒'], answer: '✈️', image: '🎧' },
+    { type: 'fill-blank', question: 'He ___ going to play soccer.（be動詞·he）', options: ['is', 'are', 'am', 'was'], answer: 'is' },
+    { type: 'fill-blank', question: '中翻英：「我今晚打算讀書。」', options: ["I am going to study tonight.", "I study tonight.", "I studied tonight.", "Do I study?"], answer: "I am going to study tonight." },
+    { type: 'fill-blank', question: '中翻英：「你打算做什麼？」', options: ["What are you going to do?", "What do you do?", "What did you do?", "What will you?"], answer: "What are you going to do?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am going to study tonight.', 'We are going to travel next month.', 'He is going to play soccer.', 'I am going to buy a bike.'], answer: 'I am going to study tonight.', image: '🎧' },
+    { type: 'read', question: 'What is Ruby going to do tonight?（Ruby 今晚打算做什麼？）', passage: 'Ruby has a test tomorrow.\nShe is going to study tonight.\nShe wants a good grade.', options: ['study', 'travel', 'play', 'sleep'], answer: 'study' },
+  ],
+  talkTimePrompts: ["Say a plan: I am going to ___.", "Ask: What are you going to do?", "Say a weekend plan.", "✍️ 引導寫作＋翻譯：把「我打算買腳踏車。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'They ___ going to watch a movie.（be動詞·複數）', options: ['are', 'is', 'am', 'was'], answer: 'are' },
+    { type: 'fill-blank', question: '中翻英：「我們下個月打算去旅行。」', options: ['We are going to travel next month.', 'We travel next month.', 'We traveled.', 'Do we travel?'], answer: 'We are going to travel next month.' },
+    { type: 'match', question: 'tonight 是什麼意思？', options: ['今晚', '明天', '下個月', '週末'], answer: '今晚' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "I am going to study tonight.", lineZh: '我今晚打算讀書。' },
+    { speaker: 'Coco', line: "We are going to travel next month.", lineZh: '我們下個月打算去旅行。' },
+    { speaker: 'Benny', line: "He is going to play soccer after school.", lineZh: '他放學後打算踢足球。' },
+    { speaker: 'Ruby', line: "be going to = a plan you decided!", lineZh: 'be going to = 你決定好的計畫！' },
+  ],
+};
+
+const L9_M9: Mission = {
+  id: 9, slug: 'l9-m9-will-vs-going-to', level: 9, title: 'will vs going to', titleEn: 'will vs going to', theme: '時光道・兩種未來', themeEmoji: '⚖️',
+  focus: 'will（當下決定/預測）vs be going to（已計畫）對比 ＋ 中翻英',
+  story: [
+    { image: '⚖️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I am going to travel — it is my plan.", dialogueZh: '我打算去旅行 —— 這是我的計畫。', highlightWords: ['going to'], sceneEmojis: ['✈️', '📋', '✨'], animation: 'wave' },
+    { image: '💡', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "The phone is ringing. I will answer it!", dialogueZh: '電話在響。我來接！', highlightWords: ['will'], sceneEmojis: ['📞', '💡', '😊'], animation: 'bounce' },
+    { image: '☁️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Look at the clouds — it will rain! (prediction)", dialogueZh: '看那些雲 —— 會下雨！（預測）', highlightWords: ['will'], sceneEmojis: ['☁️', '🌧️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "going to = plan. will = decide now / predict!", dialogueZh: 'going to = 計畫。will = 當下決定/預測！', highlightWords: [], sceneEmojis: ['🏆', '⚖️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'will', zh: 'will（當下決定/預測）', image: '💡', phonics: '', kk: '[wɪl]', phonicsSound: '', exampleSentence: 'I will answer it.', exampleZh: '我來接。' },
+    { en: 'going to', zh: 'going to（計畫）', image: '📋', phonics: '', kk: '[ˈɡoɪŋ tu]', phonicsSound: '', exampleSentence: 'I am going to travel.', exampleZh: '我打算旅行。' },
+    { en: 'plan', zh: '計畫', image: '🗒️', phonics: '', kk: '[plæn]', phonicsSound: '', exampleSentence: 'a plan', exampleZh: '一個計畫' },
+    { en: 'decide', zh: '決定', image: '✅', phonics: '', kk: '[dɪˈsaɪd]', phonicsSound: '', exampleSentence: 'I decide now.', exampleZh: '我現在決定。' },
+    { en: 'predict', zh: '預測', image: '🔮', phonics: '', kk: '[prɪˈdɪkt]', phonicsSound: '', exampleSentence: 'I predict rain.', exampleZh: '我預測會下雨。' },
+    { en: 'ringing', zh: '正在響', image: '📞', phonics: '', kk: '[ˈrɪŋɪŋ]', phonicsSound: '', exampleSentence: 'The phone is ringing.', exampleZh: '電話在響。' },
+    { en: 'answer', zh: '接·回答', image: '💬', phonics: '', kk: '[ˈænsɚ]', phonicsSound: '', exampleSentence: 'I will answer.', exampleZh: '我來接。' },
+    { en: 'cloud', zh: '雲', image: '☁️', phonics: '', kk: '[klaʊd]', phonicsSound: '', exampleSentence: 'dark clouds', exampleZh: '烏雲' },
+    { en: 'sure', zh: '確定', image: '👍', phonics: '', kk: '[ʃʊr]', phonicsSound: '', exampleSentence: 'I am sure.', exampleZh: '我確定。' },
+    { en: 'maybe', zh: '也許', image: '🤷', phonics: '', kk: '[ˈmebi]', phonicsSound: '', exampleSentence: 'Maybe it will rain.', exampleZh: '也許會下雨。' },
+  ],
+  sentences: [
+    { en: 'I am going to travel next week.', zh: '我下週打算去旅行。' }, { en: 'The phone is ringing. I will answer it.', zh: '電話在響。我來接。' }, { en: 'Look at the clouds. It will rain.', zh: '看那些雲。會下雨。' }, { en: 'What are you going to do this weekend?', zh: '你這週末打算做什麼？' }, { en: 'I think it will be sunny.', zh: '我想會是晴天。' }, { en: 'We are going to have a party.', zh: '我們打算辦派對。' },
+  ],
+  phonicsLetters: ['will vs going to'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'It is my plan. I ___ travel.（計畫）', options: ['am going to', 'will', 'was', 'do'], answer: 'am going to' },
+    { type: 'fill-blank', question: 'The phone rings. I ___ answer it!（當下決定）', options: ['will', 'am going to', 'was', 'did'], answer: 'will' },
+    { type: 'match', question: 'predict 是什麼意思？', options: ['預測', '決定', '計畫', '確定'], answer: '預測' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'Look at the clouds! It ___ rain.（預測·will）', options: ['will', 'is going to plan', 'was', 'did'], answer: 'will' },
+    { type: 'fill-blank', question: 'We ___ have a party. It is planned.（計畫）', options: ['are going to', 'will just', 'was', 'did'], answer: 'are going to' },
+    { type: 'fill-blank', question: '中翻英：「我下週打算去旅行。」', options: ["I am going to travel next week.", "I travel next week.", "I traveled.", "Do I travel?"], answer: "I am going to travel next week." },
+    { type: 'fill-blank', question: '中翻英：「電話在響。我來接。」', options: ["The phone is ringing. I will answer it.", "The phone rings.", "I answered the phone.", "Do you answer?"], answer: "The phone is ringing. I will answer it." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am going to travel next week.', 'The phone is ringing. I will answer it.', 'Look at the clouds. It will rain.', 'We are going to have a party.'], answer: 'I am going to travel next week.', image: '🎧' },
+    { type: 'read', question: 'Which is a plan?（哪個是計畫？）', passage: 'A: I am going to travel. (a plan)\nB: I will answer the phone. (decide now)', options: ['A', 'B', 'both', 'neither'], answer: 'A' },
+  ],
+  talkTimePrompts: ["Say a plan with 'going to'.", "Make a quick decision with 'will'.", "Make a prediction with 'will'.", "✍️ 引導寫作＋翻譯：把「我們打算辦派對。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I think it ___ be sunny.（預測·will）', options: ['will', 'is going', 'was', 'did'], answer: 'will' },
+    { type: 'fill-blank', question: '中翻英：「你這週末打算做什麼？」', options: ['What are you going to do this weekend?', 'What do you do?', 'What did you do?', 'What will you?'], answer: 'What are you going to do this weekend?' },
+    { type: 'match', question: 'be going to 通常表示？', options: ['已決定的計畫', '當下臨時決定', '過去的事', '習慣'], answer: '已決定的計畫' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I am going to travel — it is my plan.", lineZh: '我打算去旅行 —— 這是我的計畫。' },
+    { speaker: 'Coco', line: "The phone is ringing. I will answer it!", lineZh: '電話在響。我來接！' },
+    { speaker: 'Polly', line: "Look at the clouds — it will rain!", lineZh: '看那些雲 —— 會下雨！' },
+    { speaker: 'Benny', line: "going to = plan. will = decide now / predict!", lineZh: 'going to = 計畫。will = 當下決定/預測！' },
+  ],
+};
+
+const L9_M10: Mission = {
+  id: 10, slug: 'l9-m10-review-future', level: 9, title: 'Review② 未來式', titleEn: 'Review: Future', theme: '時光道・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：will ＋ be going to ＋ 過去進行式 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the future!", dialogueZh: '來複習未來式！', highlightWords: [], sceneEmojis: ['🔄', '🔮', '✨'], animation: 'wave' },
+    { image: '📋', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am going to study. I will pass the test!", dialogueZh: '我打算讀書。我會通過考試！', highlightWords: ['going to', 'will'], sceneEmojis: ['📋', '💯', '😊'], animation: 'bounce' },
+    { image: '⏱️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "At eight, I was reading. Tomorrow I will read more.", dialogueZh: '八點時我在讀書。明天我會讀更多。', highlightWords: ['was reading', 'will read'], sceneEmojis: ['⏱️', '📖', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Past, present, future — you know them all!", dialogueZh: '過去、現在、未來 —— 你全會了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'will', zh: '將會', image: '🔮', phonics: '', kk: '[wɪl]', phonicsSound: '', exampleSentence: 'I will win.', exampleZh: '我會贏。' },
+    { en: 'going to', zh: '打算', image: '📋', phonics: '', kk: '[ˈɡoɪŋ tu]', phonicsSound: '', exampleSentence: 'I am going to study.', exampleZh: '我打算讀書。' },
+    { en: 'was', zh: '（過去·單數 be）', image: '1️⃣', phonics: '', kk: '[wʌz]', phonicsSound: '', exampleSentence: 'I was reading.', exampleZh: '我正在讀。' },
+    { en: 'were', zh: '（過去·複數 be）', image: '🔢', phonics: '', kk: '[wɝ]', phonicsSound: '', exampleSentence: 'They were playing.', exampleZh: '他們正在玩。' },
+    { en: 'tomorrow', zh: '明天', image: '➡️', phonics: '', kk: '[təˈmɑro]', phonicsSound: '', exampleSentence: 'tomorrow', exampleZh: '明天' },
+    { en: 'study', zh: '讀書', image: '📚', phonics: '', kk: '[ˈstʌdi]', phonicsSound: '', exampleSentence: 'going to study', exampleZh: '打算讀書' },
+    { en: 'travel', zh: '旅行', image: '✈️', phonics: '', kk: '[ˈtrævl̩]', phonicsSound: '', exampleSentence: 'will travel', exampleZh: '會去旅行' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '', exampleSentence: 'I will help.', exampleZh: '我會幫忙。' },
+    { en: 'reading', zh: '正在讀', image: '📖', phonics: '', kk: '[ˈridɪŋ]', phonicsSound: '', exampleSentence: 'I was reading.', exampleZh: '我正在讀。' },
+    { en: 'plan', zh: '計畫', image: '🗒️', phonics: '', kk: '[plæn]', phonicsSound: '', exampleSentence: 'my plan', exampleZh: '我的計畫' },
+  ],
+  sentences: [
+    { en: 'Tomorrow I will help you.', zh: '明天我會幫你。' }, { en: 'I am going to study tonight.', zh: '我今晚打算讀書。' }, { en: 'At eight, I was reading.', zh: '八點時我正在讀書。' }, { en: 'They were playing at four.', zh: '他們四點時正在玩。' }, { en: 'What are you going to do tomorrow?', zh: '你明天打算做什麼？' }, { en: 'It will be a great day!', zh: '會是美好的一天！' },
+  ],
+  phonicsLetters: ['review future'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'Tomorrow I ___ help you.（未來 will）', options: ['will', 'am', 'was', 'do'], answer: 'will' },
+    { type: 'fill-blank', question: 'I am ___ to study tonight.（打算）', options: ['going', 'go', 'went', 'will'], answer: 'going' },
+    { type: 'fill-blank', question: 'At eight, I ___ reading.（過去進行·單數 be）', options: ['was', 'were', 'am', 'will'], answer: 'was' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🔮', '📋', '📖', '✈️'], answer: '✈️', image: '🎧' },
+    { type: 'fill-blank', question: 'They ___ playing at four.（過去進行·複數 be）', options: ['were', 'was', 'are', 'will'], answer: 'were' },
+    { type: 'fill-blank', question: '中翻英：「我今晚打算讀書。」', options: ["I am going to study tonight.", "I study tonight.", "I studied tonight.", "Do I study?"], answer: "I am going to study tonight." },
+    { type: 'fill-blank', question: '中翻英：「明天我會幫你。」', options: ["Tomorrow I will help you.", "I help you.", "I helped you.", "Do you help?"], answer: "Tomorrow I will help you." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Tomorrow I will help you.', 'I am going to study tonight.', 'At eight, I was reading.', 'It will be a great day!'], answer: 'Tomorrow I will help you.', image: '🎧' },
+    { type: 'read', question: 'What is Coco going to do?（Coco 打算做什麼？）', passage: 'Coco has a test tomorrow.\nShe is going to study tonight.\nShe will pass the test!', options: ['study tonight', 'travel', 'sleep', 'play'], answer: 'study tonight' },
+  ],
+  talkTimePrompts: ["Say a plan (going to) and a prediction (will).", "Say what you were doing at a past time.", "Talk about your plan for tomorrow.", "✍️ 引導寫作＋翻譯：把「你明天打算做什麼？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'It ___ be a great day!（未來 will）', options: ['will', 'is going', 'was', 'did'], answer: 'will' },
+    { type: 'fill-blank', question: '中翻英：「八點時我正在讀書。」', options: ['At eight, I was reading.', 'I read at eight.', 'I will read.', 'Do I read?'], answer: 'At eight, I was reading.' },
+    { type: 'read', question: 'Will Coco pass the test?（Coco 會通過考試嗎？）', passage: 'Coco is going to study hard tonight.\nShe is ready.\nShe will pass the test!', options: ['Yes, she will', "No, she won't", 'She will fail', 'She is not ready'], answer: 'Yes, she will' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review the future!", lineZh: '來複習未來式！' },
+    { speaker: 'Coco', line: "I am going to study. I will pass the test!", lineZh: '我打算讀書。我會通過考試！' },
+    { speaker: 'Benny', line: "At eight, I was reading. Tomorrow I will read more.", lineZh: '八點時我在讀書。明天我會讀更多。' },
+    { speaker: 'Finn', line: "Past, present, future — you know them all!", lineZh: '過去、現在、未來 —— 你全會了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
