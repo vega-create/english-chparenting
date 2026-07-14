@@ -5905,7 +5905,268 @@ const L6_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20];
+// ===================== L7 文法門 Grammar Gate（A1+・現在簡單式＋動詞三態背誦） =====================
+const L7_M1: Mission = {
+  id: 1, slug: 'l7-m1-present-simple', level: 7, title: '現在簡單式', titleEn: 'Present Simple', theme: '文法門・每天做的事', themeEmoji: '🔁',
+  focus: '現在簡單式 I / You / We ＋ 原形動詞（習慣、事實）',
+  story: [
+    { image: '🔁', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I eat breakfast every day.", dialogueZh: '我每天吃早餐。', highlightWords: ['eat', 'every day'], sceneEmojis: ['🥞', '🔁', '✨'], animation: 'wave' },
+    { image: '📚', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "You read books. We learn English.", dialogueZh: '你讀書。我們學英文。', highlightWords: ['read', 'learn'], sceneEmojis: ['📚', '🇬🇧', '😊'], animation: 'bounce' },
+    { image: '⚽', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "We play soccer after school.", dialogueZh: '我們放學後踢足球。', highlightWords: ['play'], sceneEmojis: ['⚽', '🏫', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "I, you, we — use the base verb!", dialogueZh: 'I、you、we —— 用原形動詞！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔁'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '', exampleSentence: 'I eat breakfast.', exampleZh: '我吃早餐。' },
+    { en: 'drink', zh: '喝', image: '🥤', phonics: '', kk: '[drɪŋk]', phonicsSound: '', exampleSentence: 'I drink milk.', exampleZh: '我喝牛奶。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like apples.', exampleZh: '我喜歡蘋果。' },
+    { en: 'play', zh: '玩·打（球）', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'We play soccer.', exampleZh: '我們踢足球。' },
+    { en: 'read', zh: '讀', image: '📚', phonics: '', kk: '[rid]', phonicsSound: '', exampleSentence: 'You read books.', exampleZh: '你讀書。' },
+    { en: 'work', zh: '工作', image: '💼', phonics: '', kk: '[wɝk]', phonicsSound: '', exampleSentence: 'They work hard.', exampleZh: '他們努力工作。' },
+    { en: 'live', zh: '住', image: '🏠', phonics: '', kk: '[lɪv]', phonicsSound: '', exampleSentence: 'I live here.', exampleZh: '我住這裡。' },
+    { en: 'learn', zh: '學習', image: '🧠', phonics: '', kk: '[lɝn]', phonicsSound: '', exampleSentence: 'We learn English.', exampleZh: '我們學英文。' },
+    { en: 'walk', zh: '走路', image: '🚶', phonics: '', kk: '[wɔk]', phonicsSound: '', exampleSentence: 'I walk to school.', exampleZh: '我走路上學。' },
+    { en: 'every day', zh: '每天', image: '📅', phonics: '', kk: '[ˈɛvri de]', phonicsSound: '', exampleSentence: 'I eat every day.', exampleZh: '我每天吃。' },
+  ],
+  sentences: [
+    { en: 'I eat breakfast every day.', zh: '我每天吃早餐。' }, { en: 'You read many books.', zh: '你讀很多書。' }, { en: 'We play soccer.', zh: '我們踢足球。' }, { en: 'They live in the city.', zh: '他們住在城市。' }, { en: 'I like English.', zh: '我喜歡英文。' }, { en: 'We learn every day.', zh: '我們每天學習。' },
+  ],
+  phonicsLetters: ['I / You / We + V'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ breakfast every day.（吃·原形）', options: ['eat', 'eats', 'eating', 'ate'], answer: 'eat' },
+    { type: 'fill-blank', question: 'We ___ soccer.（玩·原形）', options: ['play', 'plays', 'playing', 'played'], answer: 'play' },
+    { type: 'match', question: '🧠 learn 是什麼意思？', options: ['學習', '工作', '走路', '喝'], answer: '學習' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🍽️', '🥤', '📚', '🚶'], answer: '🚶', image: '🎧' },
+    { type: 'match', question: '配對：動作配圖', options: ['eat-🍽️', 'drink-🥤', 'read-📚', 'walk-🚶'], answer: 'eat-🍽️' },
+    { type: 'fill-blank', question: '句型代換：You ___ books.（讀·原形）', options: ['read', 'reads', 'reading', 'to read'], answer: 'read' },
+    { type: 'fill-blank', question: 'They ___ in the city.（住·原形）', options: ['live', 'lives', 'living', 'lived'], answer: 'live' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I eat breakfast every day.', 'You read many books.', 'We play soccer.', 'They live in the city.'], answer: 'I eat breakfast every day.', image: '🎧' },
+    { type: 'read', question: 'What do they do after school?（他們放學後做什麼？）', passage: 'Finn and Benny go to school.\nThey learn English.\nAfter school, they play soccer.', options: ['play soccer', 'sleep', 'cook', 'swim'], answer: 'play soccer' },
+  ],
+  talkTimePrompts: ["Say a habit: I ___ every day.", "Say what you like: I like ___.", "Say what we do: We ___.", "✍️ 引導寫作：Every day, I ___ and ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'We ___ English.（學·原形）', options: ['learn', 'learns', 'learning', 'learned'], answer: 'learn' },
+    { type: 'fill-blank', question: 'I ___ milk every morning.（喝·原形）', options: ['drink', 'drinks', 'drinking', 'drank'], answer: 'drink' },
+    { type: 'spell', question: '拼拼看：ev _ ry day（每天）', answer: 'every', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "I eat breakfast every day.", lineZh: '我每天吃早餐。' },
+    { speaker: 'Coco', line: "You read books. We learn English.", lineZh: '你讀書。我們學英文。' },
+    { speaker: 'Benny', line: "We play soccer after school.", lineZh: '我們放學後踢足球。' },
+    { speaker: 'Finn', line: "I, you, we — use the base verb!", lineZh: 'I、you、we —— 用原形動詞！' },
+  ],
+};
+
+const L7_M2: Mission = {
+  id: 2, slug: 'l7-m2-third-person', level: 7, title: '第三人稱 -s', titleEn: 'He / She + V-s', theme: '文法門・他她它', themeEmoji: '➕',
+  focus: '第三人稱單數 He / She / It ＋ 動詞 +s（likes/goes/watches）',
+  story: [
+    { image: '➕', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "He likes soccer. Add -s for he/she!", dialogueZh: '他喜歡足球。he/she 加 -s！', highlightWords: ['likes', '-s'], sceneEmojis: ['⚽', '➕', '✨'], animation: 'wave' },
+    { image: '👧', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "She reads books. She goes to school.", dialogueZh: '她讀書。她去上學。', highlightWords: ['reads', 'goes'], sceneEmojis: ['👧', '📚', '😊'], animation: 'bounce' },
+    { image: '📺', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "He watches TV. -ch adds -es!", dialogueZh: '他看電視。-ch 結尾加 -es！', highlightWords: ['watches'], sceneEmojis: ['📺', '➕', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "He, she, it — add -s or -es!", dialogueZh: 'he、she、it —— 加 -s 或 -es！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '➕'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'likes', zh: '喜歡（第三人稱）', image: '❤️', phonics: '', kk: '[laɪks]', phonicsSound: '', exampleSentence: 'He likes it.', exampleZh: '他喜歡它。' },
+    { en: 'reads', zh: '讀（第三人稱）', image: '📚', phonics: '', kk: '[ridz]', phonicsSound: '', exampleSentence: 'She reads.', exampleZh: '她讀書。' },
+    { en: 'plays', zh: '玩（第三人稱）', image: '⚽', phonics: '', kk: '[plez]', phonicsSound: '', exampleSentence: 'He plays soccer.', exampleZh: '他踢足球。' },
+    { en: 'goes', zh: '去（第三人稱）', image: '🚶', phonics: '', kk: '[ɡoz]', phonicsSound: '', exampleSentence: 'She goes home.', exampleZh: '她回家。' },
+    { en: 'watches', zh: '看（第三人稱）', image: '📺', phonics: '', kk: '[ˈwɑtʃɪz]', phonicsSound: '', exampleSentence: 'He watches TV.', exampleZh: '他看電視。' },
+    { en: 'eats', zh: '吃（第三人稱）', image: '🍽️', phonics: '', kk: '[its]', phonicsSound: '', exampleSentence: 'She eats lunch.', exampleZh: '她吃午餐。' },
+    { en: 'does', zh: '做（第三人稱）', image: '✅', phonics: '', kk: '[dʌz]', phonicsSound: '', exampleSentence: 'He does homework.', exampleZh: '他做作業。' },
+    { en: 'has', zh: '有（第三人稱）', image: '🤲', phonics: '', kk: '[hæz]', phonicsSound: '', exampleSentence: 'She has a dog.', exampleZh: '她有一隻狗。' },
+    { en: 'studies', zh: '讀書（第三人稱）', image: '📖', phonics: '', kk: '[ˈstʌdiz]', phonicsSound: '', exampleSentence: 'He studies math.', exampleZh: '他讀數學。' },
+    { en: 'runs', zh: '跑（第三人稱）', image: '🏃', phonics: '', kk: '[rʌnz]', phonicsSound: '', exampleSentence: 'She runs fast.', exampleZh: '她跑得快。' },
+  ],
+  sentences: [
+    { en: 'He likes soccer.', zh: '他喜歡足球。' }, { en: 'She reads books.', zh: '她讀書。' }, { en: 'He watches TV.', zh: '他看電視。' }, { en: 'She goes to school.', zh: '她去上學。' }, { en: 'The cat runs fast.', zh: '貓跑得快。' }, { en: 'He has a bike.', zh: '他有腳踏車。' },
+  ],
+  phonicsLetters: ['He / She + V-s'],
+  warmUpQuestions: [
+    { type: 'match', question: 'like → 第三人稱是？', options: ['likes', 'like', 'liking', 'liked'], answer: 'likes' },
+    { type: 'match', question: 'go → 第三人稱是？（+es）', options: ['goes', 'gos', 'going', 'went'], answer: 'goes' },
+    { type: 'match', question: 'watch → 第三人稱是？（+es）', options: ['watches', 'watchs', 'watching', 'watched'], answer: 'watches' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['❤️', '📚', '⚽', '📺'], answer: '📺', image: '🎧' },
+    { type: 'match', question: '配對：原形→第三人稱', options: ['like-likes', 'go-goes', 'watch-watches', 'study-studies'], answer: 'like-likes' },
+    { type: 'fill-blank', question: 'She ___ books.（讀·第三人稱）', options: ['reads', 'read', 'reading', 'to read'], answer: 'reads' },
+    { type: 'fill-blank', question: 'He ___ TV.（看·第三人稱）', options: ['watches', 'watch', 'watchs', 'watching'], answer: 'watches' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['He likes soccer.', 'She reads books.', 'He watches TV.', 'She goes to school.'], answer: 'He likes soccer.', image: '🎧' },
+    { type: 'read', question: 'What does she do?（她做什麼？）', passage: 'Coco is a student.\nShe reads books every day.\nShe goes to school by bus.', options: ['reads books', 'plays games', 'watches TV', 'cooks'], answer: 'reads books' },
+  ],
+  talkTimePrompts: ["Say about a friend: He/She ___s.", "Change the verb: like → likes.", "Say: He watches / She goes.", "✍️ 引導寫作：My friend ___s every day."],
+  reviewQuiz: [
+    { type: 'match', question: 'study → 第三人稱是？（y→ies）', options: ['studies', 'studys', 'studying', 'studied'], answer: 'studies' },
+    { type: 'fill-blank', question: 'The cat ___ fast.（跑·第三人稱）', options: ['runs', 'run', 'running', 'ran'], answer: 'runs' },
+    { type: 'fill-blank', question: 'She ___ a dog.（有·第三人稱）', options: ['has', 'have', 'haves', 'having'], answer: 'has' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "He likes soccer. Add -s for he/she!", lineZh: '他喜歡足球。he/she 加 -s！' },
+    { speaker: 'Coco', line: "She reads books. She goes to school.", lineZh: '她讀書。她去上學。' },
+    { speaker: 'Ruby', line: "He watches TV. -ch adds -es!", lineZh: '他看電視。-ch 加 -es！' },
+    { speaker: 'Benny', line: "He, she, it — add -s or -es!", lineZh: 'he、she、it —— 加 -s 或 -es！' },
+  ],
+};
+
+const L7_M3: Mission = {
+  id: 3, slug: 'l7-m3-negative', level: 7, title: "否定 don't / doesn't", titleEn: "don't / doesn't", theme: '文法門・不做', themeEmoji: '🚫',
+  focus: "現在簡單式否定：I don't ＋ V / He doesn't ＋ V",
+  story: [
+    { image: '🚫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I don't like carrots. I like apples!", dialogueZh: '我不喜歡紅蘿蔔。我喜歡蘋果！', highlightWords: ["don't"], sceneEmojis: ['🥕', '🚫', '✨'], animation: 'shake' },
+    { image: '📺', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "He doesn't watch TV. He reads books.", dialogueZh: '他不看電視。他讀書。', highlightWords: ["doesn't"], sceneEmojis: ['📺', '🚫', '📚'], animation: 'bounce' },
+    { image: '🏊', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "She doesn't swim, but she runs!", dialogueZh: '她不游泳，但她跑步！', highlightWords: ["doesn't"], sceneEmojis: ['🏊', '🚫', '🏃'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I don't, he doesn't — now you know!", dialogueZh: 'I don\'t、he doesn\'t —— 現在你懂了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🚫'], animation: 'bounce' },
+  ],
+  words: [
+    { en: "don't", zh: '不（I/you/we）', image: '🚫', phonics: '', kk: '[dont]', phonicsSound: '', exampleSentence: "I don't like it.", exampleZh: '我不喜歡它。' },
+    { en: "doesn't", zh: '不（he/she/it）', image: '🙅', phonics: '', kk: '[ˈdʌznt]', phonicsSound: '', exampleSentence: "He doesn't play.", exampleZh: '他不玩。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: "I don't like it.", exampleZh: '我不喜歡它。' },
+    { en: 'watch', zh: '看', image: '📺', phonics: '', kk: '[wɑtʃ]', phonicsSound: '', exampleSentence: "He doesn't watch TV.", exampleZh: '他不看電視。' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '', exampleSentence: "I don't eat meat.", exampleZh: '我不吃肉。' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '', exampleSentence: "She doesn't swim.", exampleZh: '她不游泳。' },
+    { en: 'carrot', zh: '紅蘿蔔', image: '🥕', phonics: '', kk: '[ˈkærət]', phonicsSound: '', exampleSentence: "I don't like carrots.", exampleZh: '我不喜歡紅蘿蔔。' },
+    { en: 'meat', zh: '肉', image: '🍖', phonics: '', kk: '[mit]', phonicsSound: '', exampleSentence: "He doesn't eat meat.", exampleZh: '他不吃肉。' },
+    { en: 'run', zh: '跑', image: '🏃', phonics: '', kk: '[rʌn]', phonicsSound: '', exampleSentence: 'She runs.', exampleZh: '她跑步。' },
+    { en: 'coffee', zh: '咖啡', image: '☕', phonics: '', kk: '[ˈkɔfi]', phonicsSound: '', exampleSentence: "I don't drink coffee.", exampleZh: '我不喝咖啡。' },
+  ],
+  sentences: [
+    { en: "I don't like carrots.", zh: '我不喜歡紅蘿蔔。' }, { en: "He doesn't watch TV.", zh: '他不看電視。' }, { en: "She doesn't eat meat.", zh: '她不吃肉。' }, { en: "We don't drink coffee.", zh: '我們不喝咖啡。' }, { en: "It doesn't run fast.", zh: '它跑不快。' }, { en: "I don't, but I like apples.", zh: '我不喜歡，但我喜歡蘋果。' },
+  ],
+  phonicsLetters: ["don't / doesn't"],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ like carrots.（否定·我）', options: ["don't", "doesn't", 'not', 'no'], answer: "don't" },
+    { type: 'fill-blank', question: 'He ___ watch TV.（否定·他）', options: ["doesn't", "don't", 'not', 'no'], answer: "doesn't" },
+    { type: 'match', question: '🥕 是什麼？', options: ['carrot', 'meat', 'coffee', 'apple'], answer: 'carrot' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🥕', '🍖', '☕', '📺'], answer: '🍖', image: '🎧' },
+    { type: 'fill-blank', question: 'She ___ eat meat.（否定·她）', options: ["doesn't", "don't", 'not', 'no'], answer: "doesn't" },
+    { type: 'fill-blank', question: 'We ___ drink coffee.（否定·我們）', options: ["don't", "doesn't", 'not', 'no'], answer: "don't" },
+    { type: 'spell', question: '拼拼看：do _ sn\'t（他不）', answer: "doesn't", image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ["I don't like carrots.", "He doesn't watch TV.", "She doesn't eat meat.", "We don't drink coffee."], answer: "I don't like carrots.", image: '🎧' },
+    { type: 'read', question: 'What does Benny not do?（Benny 不做什麼？）', passage: "Benny likes to read.\nHe doesn't watch TV.\nHe reads books every night.", options: ["watch TV", "read", "eat", "sleep"], answer: 'watch TV' },
+  ],
+  talkTimePrompts: ["Say what you don't like: I don't like ___.", "Say about a friend: He doesn't ___.", "Use don't and doesn't.", "✍️ 引導寫作：I don't ___, but I like ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'He ___ eat meat.（否定·他）', options: ["doesn't", "don't", 'not', 'no'], answer: "doesn't" },
+    { type: 'fill-blank', question: "I ___ drink coffee.（否定·我）", options: ["don't", "doesn't", 'not', 'no'], answer: "don't" },
+    { type: 'read', question: 'Does she eat meat?（她吃肉嗎？）', passage: "Coco likes vegetables.\nShe doesn't eat meat.\nShe eats a lot of fruit.", options: ["No, she doesn't", "Yes, she does", "She eats meat", "She is hungry"], answer: "No, she doesn't" },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I don't like carrots. I like apples!", lineZh: '我不喜歡紅蘿蔔。我喜歡蘋果！' },
+    { speaker: 'Benny', line: "He doesn't watch TV. He reads books.", lineZh: '他不看電視。他讀書。' },
+    { speaker: 'Polly', line: "She doesn't swim, but she runs!", lineZh: '她不游泳，但她跑步！' },
+    { speaker: 'Coco', line: "I don't, he doesn't — now you know!", lineZh: 'I don\'t、he doesn\'t —— 現在你懂了！' },
+  ],
+};
+
+const L7_M4: Mission = {
+  id: 4, slug: 'l7-m4-do-does-q', level: 7, title: '問句 Do / Does', titleEn: 'Do…? / Does…?', theme: '文法門・問問看', themeEmoji: '❓',
+  focus: '現在簡單式問句：Do you…? / Does he…? — Yes/No 短答',
+  story: [
+    { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Do you like soccer? Yes, I do!", dialogueZh: '你喜歡足球嗎？是的，我喜歡！', highlightWords: ['Do', 'do'], sceneEmojis: ['⚽', '❓', '✨'], animation: 'wave' },
+    { image: '📚', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Does she read books? Yes, she does.", dialogueZh: '她讀書嗎？是的，她讀。', highlightWords: ['Does', 'does'], sceneEmojis: ['📚', '👧', '😊'], animation: 'bounce' },
+    { image: '📺', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Does he watch TV? No, he doesn't.", dialogueZh: '他看電視嗎？不，他不看。', highlightWords: ['Does', "doesn't"], sceneEmojis: ['📺', '🙅', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Do and Does — now you can ask!", dialogueZh: 'Do 和 Does —— 現在你會問了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '❓'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'do', zh: '（問句·I/you/we）', image: '❓', phonics: '', kk: '[du]', phonicsSound: '', exampleSentence: 'Do you like it?', exampleZh: '你喜歡它嗎？' },
+    { en: 'does', zh: '（問句·he/she/it）', image: '❔', phonics: '', kk: '[dʌz]', phonicsSound: '', exampleSentence: 'Does he play?', exampleZh: '他玩嗎？' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'Do you like it?', exampleZh: '你喜歡嗎？' },
+    { en: 'read', zh: '讀', image: '📚', phonics: '', kk: '[rid]', phonicsSound: '', exampleSentence: 'Does she read?', exampleZh: '她讀書嗎？' },
+    { en: 'watch', zh: '看', image: '📺', phonics: '', kk: '[wɑtʃ]', phonicsSound: '', exampleSentence: 'Does he watch TV?', exampleZh: '他看電視嗎？' },
+    { en: 'play', zh: '玩·打（球）', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'Do you play soccer?', exampleZh: '你踢足球嗎？' },
+    { en: 'want', zh: '想要', image: '🙋', phonics: '', kk: '[wɑnt]', phonicsSound: '', exampleSentence: 'Do you want tea?', exampleZh: '你想要茶嗎？' },
+    { en: 'have', zh: '有', image: '🤲', phonics: '', kk: '[hæv]', phonicsSound: '', exampleSentence: 'Do you have a pen?', exampleZh: '你有筆嗎？' },
+    { en: 'speak', zh: '說（語言）', image: '💬', phonics: '', kk: '[spik]', phonicsSound: '', exampleSentence: 'Do you speak English?', exampleZh: '你說英文嗎？' },
+    { en: 'know', zh: '知道', image: '💡', phonics: '', kk: '[no]', phonicsSound: '', exampleSentence: 'Do you know him?', exampleZh: '你認識他嗎？' },
+  ],
+  sentences: [
+    { en: 'Do you like soccer?', zh: '你喜歡足球嗎？' }, { en: 'Yes, I do.', zh: '是的，我喜歡。' }, { en: 'Does she read books?', zh: '她讀書嗎？' }, { en: 'Yes, she does.', zh: '是的，她讀。' }, { en: 'Does he watch TV?', zh: '他看電視嗎？' }, { en: "No, he doesn't.", zh: '不，他不看。' },
+  ],
+  phonicsLetters: ['Do…? / Does…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ you like soccer?（問句·你）', options: ['Do', 'Does', 'Are', 'Is'], answer: 'Do' },
+    { type: 'fill-blank', question: '___ she read books?（問句·她）', options: ['Does', 'Do', 'Are', 'Is'], answer: 'Does' },
+    { type: 'fill-blank', question: 'Do you like it? Yes, I ___.', options: ['do', 'does', 'am', 'like'], answer: 'do' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['⚽', '📚', '📺', '💬'], answer: '💬', image: '🎧' },
+    { type: 'fill-blank', question: 'Does he watch TV? No, he ___.（否定短答）', options: ["doesn't", "don't", 'not', 'no'], answer: "doesn't" },
+    { type: 'fill-blank', question: '___ he play soccer?（問句·他）', options: ['Does', 'Do', 'Are', 'Is'], answer: 'Does' },
+    { type: 'spell', question: '拼拼看：sp _ ak（說）', answer: 'speak', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Do you like soccer?', 'Does she read books?', 'Does he watch TV?', 'Yes, I do.'], answer: 'Do you like soccer?', image: '🎧' },
+    { type: 'read', question: 'Does Coco read books?（Coco 讀書嗎？）', passage: '"Does Coco read books?"\nYes, she does.\nShe reads every day.', options: ['Yes, she does', "No, she doesn't", 'She watches TV', 'She sleeps'], answer: 'Yes, she does' },
+  ],
+  talkTimePrompts: ["Ask: Do you like ___?", "Ask about a friend: Does he/she ___?", "Answer: Yes, I do. / No, he doesn't.", "✍️ 引導寫作：Do you ___? Does your friend ___?"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ you speak English?（問句·你）', options: ['Do', 'Does', 'Are', 'Is'], answer: 'Do' },
+    { type: 'fill-blank', question: 'Does she play? Yes, she ___.', options: ['does', 'do', 'is', 'plays'], answer: 'does' },
+    { type: 'read', question: 'Does Benny watch TV?（Benny 看電視嗎？）', passage: '"Does Benny watch TV?"\nNo, he doesn\'t.\nHe reads books instead.', options: ["No, he doesn't", 'Yes, he does', 'He plays', 'He swims'], answer: "No, he doesn't" },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Do you like soccer? Yes, I do!", lineZh: '你喜歡足球嗎？是的！' },
+    { speaker: 'Coco', line: "Does she read books? Yes, she does.", lineZh: '她讀書嗎？是的。' },
+    { speaker: 'Benny', line: "Does he watch TV? No, he doesn't.", lineZh: '他看電視嗎？不，不看。' },
+    { speaker: 'Polly', line: "Do and Does — now you can ask!", lineZh: 'Do 和 Does —— 現在你會問了！' },
+  ],
+};
+
+const L7_M5: Mission = {
+  id: 5, slug: 'l7-m5-review-present', level: 7, title: 'Review① 現在簡單式', titleEn: 'Review: Present Simple', theme: '文法門・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：現在簡單式肯定 ＋ 第三人稱 -s ＋ 否定 ＋ 問句',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the present simple!", dialogueZh: '來複習現在簡單式！', highlightWords: [], sceneEmojis: ['🔄', '📚', '✨'], animation: 'wave' },
+    { image: '⚽', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I play soccer. He plays soccer too!", dialogueZh: '我踢足球。他也踢足球！', highlightWords: ['play', 'plays'], sceneEmojis: ['⚽', '➕', '😊'], animation: 'bounce' },
+    { image: '❓', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Do you like it? She doesn't like carrots.", dialogueZh: '你喜歡嗎？她不喜歡紅蘿蔔。', highlightWords: ['Do', "doesn't"], sceneEmojis: ['❓', '🚫', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know the present simple! Great!", dialogueZh: '你會現在簡單式了！太棒了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'play', zh: '玩·打（球）', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'I play soccer.', exampleZh: '我踢足球。' },
+    { en: 'plays', zh: '玩（第三人稱）', image: '➕', phonics: '', kk: '[plez]', phonicsSound: '', exampleSentence: 'He plays soccer.', exampleZh: '他踢足球。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like it.', exampleZh: '我喜歡它。' },
+    { en: 'goes', zh: '去（第三人稱）', image: '🚶', phonics: '', kk: '[ɡoz]', phonicsSound: '', exampleSentence: 'She goes home.', exampleZh: '她回家。' },
+    { en: "don't", zh: '不（I/you/we）', image: '🚫', phonics: '', kk: '[dont]', phonicsSound: '', exampleSentence: "I don't like it.", exampleZh: '我不喜歡。' },
+    { en: "doesn't", zh: '不（he/she/it）', image: '🙅', phonics: '', kk: '[ˈdʌznt]', phonicsSound: '', exampleSentence: "He doesn't play.", exampleZh: '他不玩。' },
+    { en: 'do', zh: '（問句·你）', image: '❓', phonics: '', kk: '[du]', phonicsSound: '', exampleSentence: 'Do you like it?', exampleZh: '你喜歡嗎？' },
+    { en: 'does', zh: '（問句·他）', image: '❔', phonics: '', kk: '[dʌz]', phonicsSound: '', exampleSentence: 'Does he play?', exampleZh: '他玩嗎？' },
+    { en: 'read', zh: '讀', image: '📚', phonics: '', kk: '[rid]', phonicsSound: '', exampleSentence: 'She reads books.', exampleZh: '她讀書。' },
+    { en: 'watch', zh: '看', image: '📺', phonics: '', kk: '[wɑtʃ]', phonicsSound: '', exampleSentence: 'He watches TV.', exampleZh: '他看電視。' },
+  ],
+  sentences: [
+    { en: 'I play soccer.', zh: '我踢足球。' }, { en: 'He plays soccer too.', zh: '他也踢足球。' }, { en: 'She reads books.', zh: '她讀書。' }, { en: "I don't like carrots.", zh: '我不喜歡紅蘿蔔。' }, { en: 'Do you like tea?', zh: '你喜歡茶嗎？' }, { en: "He doesn't watch TV.", zh: '他不看電視。' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'He ___ soccer.（玩·第三人稱）', options: ['plays', 'play', 'playing', 'played'], answer: 'plays' },
+    { type: 'fill-blank', question: 'I ___ like carrots.（否定·我）', options: ["don't", "doesn't", 'not', 'no'], answer: "don't" },
+    { type: 'fill-blank', question: '___ you like tea?（問句·你）', options: ['Do', 'Does', 'Are', 'Is'], answer: 'Do' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['⚽', '📚', '🚶', '📺'], answer: '📚', image: '🎧' },
+    { type: 'fill-blank', question: 'She ___ to school.（去·第三人稱）', options: ['goes', 'go', 'going', 'went'], answer: 'goes' },
+    { type: 'fill-blank', question: 'He ___ watch TV.（否定·他）', options: ["doesn't", "don't", 'not', 'no'], answer: "doesn't" },
+    { type: 'fill-blank', question: '___ she read books?（問句·她）', options: ['Does', 'Do', 'Are', 'Is'], answer: 'Does' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['He plays soccer too.', 'I play soccer.', 'She reads books.', "I don't like carrots."], answer: 'He plays soccer too.', image: '🎧' },
+    { type: 'read', question: 'What does Coco do every day?（Coco 每天做什麼？）', passage: 'Coco plays soccer.\nShe reads books every day.\nShe doesn\'t watch much TV.', options: ['reads books', 'watches TV', 'sleeps', 'cooks'], answer: 'reads books' },
+  ],
+  talkTimePrompts: ["Say a habit: I ___ every day.", "Say about a friend: He/She ___s.", "Ask: Do you ___? / Does he ___?", "✍️ 引導寫作：I ___ every day, but I don't ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'She ___ books.（讀·第三人稱）', options: ['reads', 'read', 'reading', 'to read'], answer: 'reads' },
+    { type: 'fill-blank', question: 'Does he play? Yes, he ___.', options: ['does', 'do', 'is', 'plays'], answer: 'does' },
+    { type: 'read', question: 'Does Coco watch a lot of TV?（Coco 看很多電視嗎？）', passage: 'Coco reads books every day.\nShe plays soccer.\nShe doesn\'t watch much TV.', options: ["No, she doesn't", 'Yes, she does', 'She loves TV', 'She has no books'], answer: "No, she doesn't" },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review the present simple!", lineZh: '來複習現在簡單式！' },
+    { speaker: 'Coco', line: "I play soccer. He plays soccer too!", lineZh: '我踢足球。他也踢！' },
+    { speaker: 'Benny', line: "Do you like it? She doesn't like carrots.", lineZh: '你喜歡嗎？她不喜歡紅蘿蔔。' },
+    { speaker: 'Finn', line: "You know the present simple! Great!", lineZh: '你會現在簡單式了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
