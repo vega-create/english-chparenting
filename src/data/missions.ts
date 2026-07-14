@@ -1120,12 +1120,12 @@ const L1_M20: Mission = {
 
 const L2_M1: Mission = {
   id: 1, slug: 'l2-m1-blending', level: 2, title: '拼讀入門', titleEn: 'Blending', theme: '聲音島・拼讀港口', themeEmoji: '🔊',
-  focus: '拼讀 blending：把 3 個音一個一個拼成一個字（c-a-t → cat）',
+  focus: '母音 a/e/i/o/u 是每個字的「媽媽」（每個字至少一個媽媽）；找到媽媽再把音拼起來 c-a-t → cat',
   story: [
-    { image: '🔊', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Sound Island! Today we learn to blend sounds!", dialogueZh: '歡迎來到聲音島！今天我們學把音拼起來！', highlightWords: ['blend', 'sounds'], sceneEmojis: ['🔊', '🏝️', '✨'], animation: 'wave' },
-    { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Listen: c... a... t... cat! Three sounds make one word!", dialogueZh: '聽：c… a… t… cat！三個音拼成一個字！', highlightWords: ['cat'], sceneEmojis: ['🔤', '🐱', '👂'], animation: 'bounce' },
-    { image: '☀️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "s... u... n... sun! You try it!", dialogueZh: 's… u… n… sun！換你試試！', highlightWords: ['sun'], sceneEmojis: ['☀️', '🔤', '🎉'], animation: 'tada' },
-    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Great! Now you can blend sounds into words!", dialogueZh: '太棒了！現在你會把音拼成字了！', highlightWords: ['blend'], sceneEmojis: ['🎉', '🏆', '🔊'], animation: 'bounce' },
+    { image: '🔊', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Sound Island! Five letters are special: a, e, i, o, u.", dialogueZh: '歡迎來到聲音島！有五個字母很特別：a、e、i、o、u。', highlightWords: ['a', 'e', 'i', 'o', 'u'], sceneEmojis: ['🔊', '🅰️', '✨'], animation: 'wave' },
+    { image: '👩', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "a, e, i, o, u are the mommy of every word!", dialogueZh: 'a、e、i、o、u 是母音，是每個字的「媽媽」！（排成一張臉就是媽媽）', highlightWords: ['mommy'], sceneEmojis: ['👩', '🔤', '❤️'], animation: 'bounce' },
+    { image: '🐱', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Look: c-a-t. The mommy is 'a'! Every word needs a mommy.", dialogueZh: '看：c-a-t。媽媽是 a！每個字都要有一個媽媽。', highlightWords: ['a', 'mommy'], sceneEmojis: ['🐱', '👩', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Find the mommy, then blend: c-a-t → cat!", dialogueZh: '找到媽媽，再把音拼起來：c-a-t → cat！', highlightWords: ['blend'], sceneEmojis: ['🎉', '🏆', '🔊'], animation: 'bounce' },
   ],
   words: [
     { en: 'cat', zh: '貓', image: '🐱', phonics: 'c-a-t', kk: '[kæt]', phonicsSound: '/k/ /æ/ /t/', exampleSentence: 'The cat is here.', exampleZh: '貓在這裡。' },
@@ -1144,9 +1144,9 @@ const L2_M1: Mission = {
   ],
   phonicsLetters: ['blending'],
   warmUpQuestions: [
+    { type: 'match', question: '哪一個是「媽媽」（母音）？', options: ['a', 'b', 'c', 'd'], answer: 'a' },
+    { type: 'match', question: 'c-a-t 裡的媽媽（母音）是哪一個？', options: ['a', 'c', 't', '沒有'], answer: 'a' },
     { type: 'listen-pick', question: 'c-a-t 拼起來是？', options: ['cat', 'dog', 'sun', 'pig'], answer: 'cat', image: '🐱' },
-    { type: 'listen-pick', question: 's-u-n 拼起來是？', options: ['bus', 'sun', 'six', 'sit'], answer: 'sun', image: '☀️' },
-    { type: 'match', question: '🐷 豬是哪個字？', options: ['pig', 'dog', 'cat', 'bus'], answer: 'pig' },
   ],
   challenges: [
     { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🐱', '🐶', '☀️', '🐷'], answer: '🐶', image: '🎧' },
