@@ -9028,7 +9028,268 @@ const L9_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20];
+// ===================== L10 未來橋 Future Bridge（A2・讀寫，連接詞＋作文） =====================
+const L10_M1: Mission = {
+  id: 1, slug: 'l10-m1-and-but', level: 10, title: '連接詞 and / but', titleEn: 'and / but', theme: '未來橋・連起來', themeEmoji: '🔗',
+  focus: '連接詞 and（並列）/ but（轉折）＋ 中翻英 ＋ 句子合併',
+  story: [
+    { image: '🔗', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I like tea and coffee.", dialogueZh: '我喜歡茶和咖啡。', highlightWords: ['and'], sceneEmojis: ['🍵', '☕', '✨'], animation: 'wave' },
+    { image: '↔️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I like cats, but I don't like dogs.", dialogueZh: '我喜歡貓，但我不喜歡狗。', highlightWords: ['but'], sceneEmojis: ['🐱', '↔️', '😊'], animation: 'bounce' },
+    { image: '📝', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "'and' joins. 'but' shows a difference!", dialogueZh: '「and」連接。「but」表示不同！', highlightWords: ['and', 'but'], sceneEmojis: ['📝', '🔗', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Join your ideas with and and but!", dialogueZh: '用 and 和 but 連接你的想法！', highlightWords: [], sceneEmojis: ['🏆', '🔗', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'and', zh: '和·而且', image: '🔗', phonics: '', kk: '[ænd]', phonicsSound: '並列', exampleSentence: 'tea and coffee', exampleZh: '茶和咖啡' },
+    { en: 'but', zh: '但是', image: '↔️', phonics: '', kk: '[bʌt]', phonicsSound: '轉折', exampleSentence: 'cheap but nice', exampleZh: '便宜但好' },
+    { en: 'or', zh: '或者', image: '🔀', phonics: '', kk: '[ɔr]', phonicsSound: '選擇', exampleSentence: 'tea or coffee?', exampleZh: '茶還是咖啡？' },
+    { en: 'also', zh: '也', image: '➕', phonics: '', kk: '[ˈɔlso]', phonicsSound: '', exampleSentence: 'I also like it.', exampleZh: '我也喜歡。' },
+    { en: 'too', zh: '也（句尾）', image: '👍', phonics: '', kk: '[tu]', phonicsSound: '', exampleSentence: 'Me too!', exampleZh: '我也是！' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like it.', exampleZh: '我喜歡。' },
+    { en: 'tea', zh: '茶', image: '🍵', phonics: '', kk: '[ti]', phonicsSound: '', exampleSentence: 'a cup of tea', exampleZh: '一杯茶' },
+    { en: 'coffee', zh: '咖啡', image: '☕', phonics: '', kk: '[ˈkɔfi]', phonicsSound: '', exampleSentence: 'a cup of coffee', exampleZh: '一杯咖啡' },
+    { en: 'idea', zh: '想法', image: '💡', phonics: '', kk: '[aɪˈdiə]', phonicsSound: '', exampleSentence: 'a good idea', exampleZh: '好主意' },
+    { en: 'join', zh: '連接·加入', image: '🤝', phonics: '', kk: '[dʒɔɪn]', phonicsSound: '', exampleSentence: 'join two ideas', exampleZh: '連接兩個想法' },
+  ],
+  sentences: [
+    { en: 'I like tea and coffee.', zh: '我喜歡茶和咖啡。' }, { en: "I like cats, but I don't like dogs.", zh: '我喜歡貓，但不喜歡狗。' }, { en: 'It is cheap but nice.', zh: '它便宜但好。' }, { en: 'Do you want tea or coffee?', zh: '你要茶還是咖啡？' }, { en: 'I like art, and I like music too.', zh: '我喜歡美術，也喜歡音樂。' }, { en: 'She is small but strong.', zh: '她小但強壯。' },
+  ],
+  phonicsLetters: ['and / but'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I like tea ___ coffee.（並列）', options: ['and', 'but', 'or', 'so'], answer: 'and' },
+    { type: 'fill-blank', question: "I like cats, ___ I don't like dogs.（轉折）", options: ['but', 'and', 'or', 'so'], answer: 'but' },
+    { type: 'match', question: 'but 是什麼意思？', options: ['但是', '和', '或者', '因為'], answer: '但是' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'It is cheap ___ nice.（轉折）', options: ['but', 'and', 'or', 'so'], answer: 'but' },
+    { type: 'fill-blank', question: 'Do you want tea ___ coffee?（選擇）', options: ['or', 'and', 'but', 'so'], answer: 'or' },
+    { type: 'fill-blank', question: '中翻英：「我喜歡茶和咖啡。」', options: ["I like tea and coffee.", "I like tea but coffee.", "I like tea or coffee.", "Do I like tea?"], answer: "I like tea and coffee." },
+    { type: 'fill-blank', question: '中翻英：「我喜歡貓，但不喜歡狗。」', options: ["I like cats, but I don't like dogs.", "I like cats and dogs.", "Do I like cats?", "I like cats or dogs."], answer: "I like cats, but I don't like dogs." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I like tea and coffee.', "I like cats, but I don't like dogs.", 'It is cheap but nice.', 'She is small but strong.'], answer: 'I like tea and coffee.', image: '🎧' },
+    { type: 'read', question: 'Which animal does Coco NOT like?（Coco 不喜歡哪種動物？）', passage: 'Coco likes cats.\nBut she does not like dogs.\nShe thinks dogs are too loud.', options: ['dogs', 'cats', 'birds', 'fish'], answer: 'dogs' },
+  ],
+  talkTimePrompts: ["Join two ideas with 'and'.", "Show a contrast with 'but'.", "Combine: I like ___, but I don't like ___.", "✍️ 引導寫作＋翻譯：把「它便宜但好。」寫成英文，再用 and/but 各造一句。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'She is small ___ strong.（轉折）', options: ['but', 'and', 'or', 'so'], answer: 'but' },
+    { type: 'fill-blank', question: '中翻英：「你要茶還是咖啡？」', options: ['Do you want tea or coffee?', 'I want tea and coffee.', 'I like tea.', 'Tea is good.'], answer: 'Do you want tea or coffee?' },
+    { type: 'match', question: 'and 用來？', options: ['連接/並列', '表示轉折', '表示選擇', '表示原因'], answer: '連接/並列' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I like tea and coffee.", lineZh: '我喜歡茶和咖啡。' },
+    { speaker: 'Coco', line: "I like cats, but I don't like dogs.", lineZh: '我喜歡貓，但我不喜歡狗。' },
+    { speaker: 'Polly', line: "'and' joins. 'but' shows a difference!", lineZh: '「and」連接。「but」表示不同！' },
+    { speaker: 'Benny', line: "Join your ideas with and and but!", lineZh: '用 and 和 but 連接你的想法！' },
+  ],
+};
+
+const L10_M2: Mission = {
+  id: 2, slug: 'l10-m2-because-so', level: 10, title: '連接詞 because / so', titleEn: 'because / so', theme: '未來橋・因為所以', themeEmoji: '➡️',
+  focus: '連接詞 because（原因）/ so（結果）＋ 中翻英 ＋ 句子合併',
+  story: [
+    { image: '➡️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I am tired because I studied all night.", dialogueZh: '我很累因為我讀了整晚。', highlightWords: ['because'], sceneEmojis: ['😴', '📚', '✨'], animation: 'wave' },
+    { image: '🌧️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "It was raining, so I took an umbrella.", dialogueZh: '在下雨，所以我帶了傘。', highlightWords: ['so'], sceneEmojis: ['🌧️', '☂️', '😊'], animation: 'bounce' },
+    { image: '💡', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "'because' gives a reason. 'so' gives a result!", dialogueZh: '「because」給原因。「so」給結果！', highlightWords: ['because', 'so'], sceneEmojis: ['💡', '➡️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Cause and result — connect them!", dialogueZh: '原因和結果 —— 連起來！', highlightWords: [], sceneEmojis: ['🏆', '➡️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'because', zh: '因為', image: '💡', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '原因', exampleSentence: 'because I am tired', exampleZh: '因為我累' },
+    { en: 'so', zh: '所以', image: '➡️', phonics: '', kk: '[so]', phonicsSound: '結果', exampleSentence: 'so I went home', exampleZh: '所以我回家' },
+    { en: 'reason', zh: '原因', image: '❓', phonics: '', kk: '[ˈrizn̩]', phonicsSound: '', exampleSentence: 'the reason', exampleZh: '原因' },
+    { en: 'result', zh: '結果', image: '✅', phonics: '', kk: '[rɪˈzʌlt]', phonicsSound: '', exampleSentence: 'the result', exampleZh: '結果' },
+    { en: 'tired', zh: '累的', image: '😴', phonics: '', kk: '[taɪrd]', phonicsSound: '', exampleSentence: 'I am tired.', exampleZh: '我很累。' },
+    { en: 'studied', zh: '讀書了', image: '📚', phonics: '', kk: '[ˈstʌdid]', phonicsSound: '', exampleSentence: 'I studied.', exampleZh: '我讀書了。' },
+    { en: 'raining', zh: '正在下雨', image: '🌧️', phonics: '', kk: '[ˈrenɪŋ]', phonicsSound: '', exampleSentence: 'It was raining.', exampleZh: '在下雨。' },
+    { en: 'umbrella', zh: '雨傘', image: '☂️', phonics: '', kk: '[ʌmˈbrɛlə]', phonicsSound: '', exampleSentence: 'take an umbrella', exampleZh: '帶把傘' },
+    { en: 'hungry', zh: '餓的', image: '🍽️', phonics: '', kk: '[ˈhʌŋɡri]', phonicsSound: '', exampleSentence: 'I am hungry.', exampleZh: '我餓了。' },
+    { en: 'sick', zh: '生病的', image: '🤒', phonics: '', kk: '[sɪk]', phonicsSound: '', exampleSentence: 'I am sick.', exampleZh: '我生病了。' },
+  ],
+  sentences: [
+    { en: 'I am tired because I studied all night.', zh: '我很累因為我讀了整晚。' }, { en: 'It was raining, so I took an umbrella.', zh: '在下雨，所以我帶了傘。' }, { en: 'I am hungry because I did not eat.', zh: '我餓因為我沒吃。' }, { en: 'He was sick, so he stayed home.', zh: '他生病，所以待在家。' }, { en: 'Why are you happy?', zh: '你為什麼開心？' }, { en: 'Because it is my birthday!', zh: '因為今天是我生日！' },
+  ],
+  phonicsLetters: ['because / so'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I am tired ___ I studied all night.（原因）', options: ['because', 'so', 'and', 'but'], answer: 'because' },
+    { type: 'fill-blank', question: 'It was raining, ___ I took an umbrella.（結果）', options: ['so', 'because', 'and', 'but'], answer: 'so' },
+    { type: 'match', question: 'because 是什麼意思？', options: ['因為', '所以', '但是', '和'], answer: '因為' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I am hungry ___ I did not eat.（原因）', options: ['because', 'so', 'and', 'but'], answer: 'because' },
+    { type: 'fill-blank', question: 'He was sick, ___ he stayed home.（結果）', options: ['so', 'because', 'and', 'but'], answer: 'so' },
+    { type: 'fill-blank', question: '中翻英：「我很累因為我讀了整晚。」', options: ["I am tired because I studied all night.", "I am tired so I studied.", "I studied and I am tired.", "Why am I tired?"], answer: "I am tired because I studied all night." },
+    { type: 'fill-blank', question: '中翻英：「在下雨，所以我帶了傘。」', options: ["It was raining, so I took an umbrella.", "It was raining because I took an umbrella.", "I took an umbrella and it rained.", "Did it rain?"], answer: "It was raining, so I took an umbrella." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am tired because I studied all night.', 'It was raining, so I took an umbrella.', 'I am hungry because I did not eat.', 'He was sick, so he stayed home.'], answer: 'I am tired because I studied all night.', image: '🎧' },
+    { type: 'read', question: 'Why did Benny take an umbrella?（Benny 為何帶傘？）', passage: 'It was raining hard.\nSo Benny took an umbrella.\nHe stayed dry.', options: ['because it was raining', 'because it was sunny', 'because he was cold', 'because he was tired'], answer: 'because it was raining' },
+  ],
+  talkTimePrompts: ["Give a reason with 'because'.", "Give a result with 'so'.", "Combine: I am ___ because ___.", "✍️ 引導寫作＋翻譯：把「他生病，所以待在家。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I did not eat, ___ I am hungry.（結果）', options: ['so', 'because', 'and', 'but'], answer: 'so' },
+    { type: 'fill-blank', question: '中翻英：「因為今天是我生日！」', options: ['Because it is my birthday!', 'So it is my birthday.', 'It is my birthday and…', 'Is it my birthday?'], answer: 'Because it is my birthday!' },
+    { type: 'match', question: 'so 用來表示？', options: ['結果', '原因', '轉折', '選擇'], answer: '結果' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I am tired because I studied all night.", lineZh: '我很累因為我讀了整晚。' },
+    { speaker: 'Benny', line: "It was raining, so I took an umbrella.", lineZh: '在下雨，所以我帶了傘。' },
+    { speaker: 'Polly', line: "'because' gives a reason. 'so' gives a result!", lineZh: '「because」給原因。「so」給結果！' },
+    { speaker: 'Coco', line: "Cause and result — connect them!", lineZh: '原因和結果 —— 連起來！' },
+  ],
+};
+
+const L10_M3: Mission = {
+  id: 3, slug: 'l10-m3-then-after-before', level: 10, title: '順序連接詞', titleEn: 'then / after / before', theme: '未來橋・先後順序', themeEmoji: '🔢',
+  focus: '順序連接詞 first/then/after/before/finally ＋ 中翻英 ＋ 描述流程',
+  story: [
+    { image: '🔢', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "First I got up, then I ate breakfast.", dialogueZh: '首先我起床，然後吃早餐。', highlightWords: ['First', 'then'], sceneEmojis: ['🌅', '🥞', '✨'], animation: 'wave' },
+    { image: '🦷', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I brush my teeth after I eat.", dialogueZh: '我吃完後刷牙。', highlightWords: ['after'], sceneEmojis: ['🍽️', '🪥', '😊'], animation: 'bounce' },
+    { image: '😴', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Before I sleep, I read a book. Finally, I rest.", dialogueZh: '睡覺前我讀書。最後，我休息。', highlightWords: ['Before', 'Finally'], sceneEmojis: ['📖', '😴', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Use order words to tell a process!", dialogueZh: '用順序詞來描述流程！', highlightWords: [], sceneEmojis: ['🏆', '🔢', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'first', zh: '首先', image: '1️⃣', phonics: '', kk: '[fɝst]', phonicsSound: '', exampleSentence: 'First, I got up.', exampleZh: '首先，我起床。' },
+    { en: 'then', zh: '然後', image: '2️⃣', phonics: '', kk: '[ðɛn]', phonicsSound: '', exampleSentence: 'Then, I ate.', exampleZh: '然後，我吃飯。' },
+    { en: 'next', zh: '接著', image: '3️⃣', phonics: '', kk: '[nɛkst]', phonicsSound: '', exampleSentence: 'Next, I washed.', exampleZh: '接著，我洗漱。' },
+    { en: 'after', zh: '在…之後', image: '⏩', phonics: '', kk: '[ˈæftɚ]', phonicsSound: '', exampleSentence: 'after I eat', exampleZh: '在我吃完後' },
+    { en: 'before', zh: '在…之前', image: '⏪', phonics: '', kk: '[bɪˈfɔr]', phonicsSound: '', exampleSentence: 'before I sleep', exampleZh: '在我睡前' },
+    { en: 'finally', zh: '最後', image: '🏁', phonics: '', kk: '[ˈfaɪnəli]', phonicsSound: '', exampleSentence: 'Finally, I rest.', exampleZh: '最後，我休息。' },
+    { en: 'later', zh: '後來', image: '➡️', phonics: '', kk: '[ˈletɚ]', phonicsSound: '', exampleSentence: 'later that day', exampleZh: '那天稍晚' },
+    { en: 'process', zh: '流程', image: '📋', phonics: '', kk: '[ˈprɑsɛs]', phonicsSound: '', exampleSentence: 'a step-by-step process', exampleZh: '一步步的流程' },
+    { en: 'step', zh: '步驟', image: '🪜', phonics: '', kk: '[stɛp]', phonicsSound: '', exampleSentence: 'the next step', exampleZh: '下一步' },
+    { en: 'routine', zh: '例行事', image: '🔁', phonics: '', kk: '[ruˈtin]', phonicsSound: '', exampleSentence: 'my morning routine', exampleZh: '我的晨間例行' },
+  ],
+  sentences: [
+    { en: 'First, I got up.', zh: '首先，我起床。' }, { en: 'Then, I ate breakfast.', zh: '然後，我吃早餐。' }, { en: 'I brush my teeth after I eat.', zh: '我吃完後刷牙。' }, { en: 'Before I sleep, I read a book.', zh: '睡覺前我讀書。' }, { en: 'Finally, I go to bed.', zh: '最後，我上床睡覺。' }, { en: 'What do you do first?', zh: '你先做什麼？' },
+  ],
+  phonicsLetters: ['order words'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___, I got up. Then I ate.（首先）', options: ['First', 'Finally', 'After', 'Before'], answer: 'First' },
+    { type: 'fill-blank', question: 'I brush my teeth ___ I eat.（之後）', options: ['after', 'before', 'first', 'then'], answer: 'after' },
+    { type: 'fill-blank', question: '___, I go to bed.（最後）', options: ['Finally', 'First', 'Then', 'After'], answer: 'Finally' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: '___ I sleep, I read a book.（之前）', options: ['Before', 'After', 'Finally', 'Then'], answer: 'Before' },
+    { type: 'fill-blank', question: 'First I got up, ___ I ate.（然後）', options: ['then', 'before', 'finally', 'after'], answer: 'then' },
+    { type: 'fill-blank', question: '中翻英：「首先我起床，然後吃早餐。」', options: ["First I got up, then I ate breakfast.", "I got up and ate.", "I ate before I got up.", "Did I get up?"], answer: "First I got up, then I ate breakfast." },
+    { type: 'fill-blank', question: '中翻英：「睡覺前我讀書。」', options: ["Before I sleep, I read a book.", "After I sleep, I read.", "I read then I sleep.", "Do I read?"], answer: "Before I sleep, I read a book." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['First, I got up.', 'Then, I ate breakfast.', 'Before I sleep, I read a book.', 'Finally, I go to bed.'], answer: 'First, I got up.', image: '🎧' },
+    { type: 'read', question: 'What does Benny do first?（Benny 先做什麼？）', passage: 'First, Benny got up.\nThen, he ate breakfast.\nFinally, he went to school.', options: ['got up', 'ate breakfast', 'went to school', 'slept'], answer: 'got up' },
+  ],
+  talkTimePrompts: ["Describe your morning: First, then, finally.", "Use 'after' and 'before'.", "Tell the steps of making a sandwich.", "✍️ 引導寫作＋翻譯：用 First/Then/Finally 寫你的晨間流程。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___, I ate breakfast.（然後）', options: ['Then', 'First', 'Before', 'Finally'], answer: 'Then' },
+    { type: 'fill-blank', question: '中翻英：「最後，我上床睡覺。」', options: ['Finally, I go to bed.', 'First, I go to bed.', 'I go to bed then.', 'Do I go to bed?'], answer: 'Finally, I go to bed.' },
+    { type: 'match', question: 'before 是什麼意思？', options: ['在…之前', '在…之後', '最後', '然後'], answer: '在…之前' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "First I got up, then I ate breakfast.", lineZh: '首先我起床，然後吃早餐。' },
+    { speaker: 'Coco', line: "I brush my teeth after I eat.", lineZh: '我吃完後刷牙。' },
+    { speaker: 'Polly', line: "Before I sleep, I read a book. Finally, I rest.", lineZh: '睡覺前我讀書。最後，我休息。' },
+    { speaker: 'Benny', line: "Use order words to tell a process!", lineZh: '用順序詞來描述流程！' },
+  ],
+};
+
+const L10_M4: Mission = {
+  id: 4, slug: 'l10-m4-sentence-expansion', level: 10, title: '句子擴寫', titleEn: 'Sentence Expansion', theme: '未來橋・把句子變長', themeEmoji: '📏',
+  focus: '句子擴寫：把短句用連接詞、形容詞、時間地點連成長句 ＋ 中翻英',
+  story: [
+    { image: '📏', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Short: I have a dog. Long: I have a big brown dog.", dialogueZh: '短：我有一隻狗。長：我有一隻大棕狗。', highlightWords: ['big brown'], sceneEmojis: ['🐶', '📏', '✨'], animation: 'wave' },
+    { image: '➕', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Add when and where: I play soccer at the park after school.", dialogueZh: '加時間地點：我放學後在公園踢足球。', highlightWords: ['at the park', 'after school'], sceneEmojis: ['⚽', '🏞️', '😊'], animation: 'bounce' },
+    { image: '🔗', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Join two: I like tea, and I like cake because they are sweet.", dialogueZh: '合併：我喜歡茶和蛋糕，因為它們很甜。', highlightWords: ['and', 'because'], sceneEmojis: ['🍵', '🍰', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Add details to make longer sentences!", dialogueZh: '加細節讓句子變長！', highlightWords: [], sceneEmojis: ['🏆', '📏', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'add', zh: '增加', image: '➕', phonics: '', kk: '[æd]', phonicsSound: '', exampleSentence: 'add a word', exampleZh: '加一個字' },
+    { en: 'detail', zh: '細節', image: '🔍', phonics: '', kk: '[ˈditel]', phonicsSound: '', exampleSentence: 'more details', exampleZh: '更多細節' },
+    { en: 'adjective', zh: '形容詞', image: '🎨', phonics: '', kk: '[ˈædʒɪktɪv]', phonicsSound: '', exampleSentence: 'a big dog', exampleZh: '一隻大狗' },
+    { en: 'when', zh: '時間（何時）', image: '🕐', phonics: '', kk: '[wɛn]', phonicsSound: '', exampleSentence: 'after school', exampleZh: '放學後' },
+    { en: 'where', zh: '地點（哪裡）', image: '📍', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'at the park', exampleZh: '在公園' },
+    { en: 'combine', zh: '合併', image: '🔗', phonics: '', kk: '[kəmˈbaɪn]', phonicsSound: '', exampleSentence: 'combine two sentences', exampleZh: '合併兩句' },
+    { en: 'short', zh: '短的', image: '📏', phonics: '', kk: '[ʃɔrt]', phonicsSound: '', exampleSentence: 'a short sentence', exampleZh: '短句' },
+    { en: 'long', zh: '長的', image: '📐', phonics: '', kk: '[lɔŋ]', phonicsSound: '', exampleSentence: 'a long sentence', exampleZh: '長句' },
+    { en: 'sweet', zh: '甜的', image: '🍰', phonics: '', kk: '[swit]', phonicsSound: '', exampleSentence: 'sweet cake', exampleZh: '甜蛋糕' },
+    { en: 'brown', zh: '棕色的', image: '🟤', phonics: '', kk: '[braʊn]', phonicsSound: '', exampleSentence: 'a brown dog', exampleZh: '棕狗' },
+  ],
+  sentences: [
+    { en: 'I have a dog.', zh: '我有一隻狗。' }, { en: 'I have a big brown dog.', zh: '我有一隻大棕狗。' }, { en: 'I play soccer at the park after school.', zh: '我放學後在公園踢足球。' }, { en: 'I like tea and cake because they are sweet.', zh: '我喜歡茶和蛋糕因為它們很甜。' }, { en: 'Add details to your sentence.', zh: '為句子加細節。' }, { en: 'Make it longer and clearer.', zh: '讓它更長更清楚。' },
+  ],
+  phonicsLetters: ['sentence expansion'],
+  warmUpQuestions: [
+    { type: 'match', question: '哪句比較長且有細節？', options: ['I have a big brown dog.', 'I have a dog.', 'A dog.', 'Dog.'], answer: 'I have a big brown dog.' },
+    { type: 'fill-blank', question: 'I play soccer ___ the park.（地點·在）', options: ['at', 'in time', 'and', 'because'], answer: 'at' },
+    { type: 'match', question: 'combine 是什麼意思？', options: ['合併', '增加', '短', '長'], answer: '合併' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I like tea and cake ___ they are sweet.（原因）', options: ['because', 'so', 'but', 'or'], answer: 'because' },
+    { type: 'fill-blank', question: 'I play soccer at the park ___ school.（放學後）', options: ['after', 'before', 'and', 'so'], answer: 'after' },
+    { type: 'fill-blank', question: '中翻英：「我有一隻大棕狗。」', options: ["I have a big brown dog.", "I have a dog.", "My dog is big.", "Do I have a dog?"], answer: "I have a big brown dog." },
+    { type: 'fill-blank', question: '中翻英：「我放學後在公園踢足球。」', options: ["I play soccer at the park after school.", "I play soccer.", "After school I play.", "Where do I play?"], answer: "I play soccer at the park after school." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I have a big brown dog.', 'I play soccer at the park after school.', 'I like tea and cake because they are sweet.', 'Make it longer and clearer.'], answer: 'I have a big brown dog.', image: '🎧' },
+    { type: 'read', question: 'How can you make a sentence longer?（怎麼讓句子變長？）', passage: 'Add an adjective: a big dog.\nAdd when/where: at the park.\nJoin ideas: and, but, because.', options: ['add details and join ideas', 'delete words', 'use one word', 'say nothing'], answer: 'add details and join ideas' },
+  ],
+  talkTimePrompts: ["Make a short sentence longer with an adjective.", "Add when and where to a sentence.", "Combine two sentences with because.", "✍️ 引導寫作＋翻譯：把「我有一隻狗。」擴寫成長句並翻成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: '哪個是形容詞？', options: ['brown', 'run', 'park', 'and'], answer: 'brown' },
+    { type: 'fill-blank', question: '中翻英：「我喜歡茶和蛋糕因為它們很甜。」', options: ['I like tea and cake because they are sweet.', 'I like tea.', 'Cake is sweet.', 'Do I like cake?'], answer: 'I like tea and cake because they are sweet.' },
+    { type: 'match', question: 'detail 是什麼意思？', options: ['細節', '合併', '短', '長'], answer: '細節' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Short: I have a dog. Long: I have a big brown dog.", lineZh: '短：我有一隻狗。長：我有一隻大棕狗。' },
+    { speaker: 'Coco', line: "Add when and where: I play soccer at the park after school.", lineZh: '加時間地點：我放學後在公園踢足球。' },
+    { speaker: 'Benny', line: "Join two: I like tea, and I like cake because they are sweet.", lineZh: '合併：我喜歡茶和蛋糕，因為它們很甜。' },
+    { speaker: 'Ruby', line: "Add details to make longer sentences!", lineZh: '加細節讓句子變長！' },
+  ],
+};
+
+const L10_M5: Mission = {
+  id: 5, slug: 'l10-m5-review-connectors', level: 10, title: 'Review① 連接詞', titleEn: 'Review: Connectors', theme: '未來橋・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：and/but/or ＋ because/so ＋ 順序詞 ＋ 句子擴寫 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review all the connectors!", dialogueZh: '來複習所有連接詞！', highlightWords: [], sceneEmojis: ['🔄', '🔗', '✨'], animation: 'wave' },
+    { image: '🔗', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I like tea and coffee, but not milk.", dialogueZh: '我喜歡茶和咖啡，但不喜歡牛奶。', highlightWords: ['and', 'but'], sceneEmojis: ['🍵', '☕', '😊'], animation: 'bounce' },
+    { image: '➡️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I was tired, so I slept because I studied all night.", dialogueZh: '我累了，所以睡覺，因為我讀了整晚。', highlightWords: ['so', 'because'], sceneEmojis: ['😴', '➡️', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can connect ideas like a writer!", dialogueZh: '你能像作家一樣連接想法了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'and', zh: '和', image: '🔗', phonics: '', kk: '[ænd]', phonicsSound: '', exampleSentence: 'tea and coffee', exampleZh: '茶和咖啡' },
+    { en: 'but', zh: '但是', image: '↔️', phonics: '', kk: '[bʌt]', phonicsSound: '', exampleSentence: 'cheap but nice', exampleZh: '便宜但好' },
+    { en: 'or', zh: '或者', image: '🔀', phonics: '', kk: '[ɔr]', phonicsSound: '', exampleSentence: 'tea or coffee', exampleZh: '茶或咖啡' },
+    { en: 'because', zh: '因為', image: '💡', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'because I am tired', exampleZh: '因為我累' },
+    { en: 'so', zh: '所以', image: '➡️', phonics: '', kk: '[so]', phonicsSound: '', exampleSentence: 'so I slept', exampleZh: '所以我睡了' },
+    { en: 'first', zh: '首先', image: '1️⃣', phonics: '', kk: '[fɝst]', phonicsSound: '', exampleSentence: 'First, I got up.', exampleZh: '首先，我起床。' },
+    { en: 'then', zh: '然後', image: '2️⃣', phonics: '', kk: '[ðɛn]', phonicsSound: '', exampleSentence: 'Then, I ate.', exampleZh: '然後，我吃飯。' },
+    { en: 'finally', zh: '最後', image: '🏁', phonics: '', kk: '[ˈfaɪnəli]', phonicsSound: '', exampleSentence: 'Finally, I rest.', exampleZh: '最後，我休息。' },
+    { en: 'after', zh: '在…之後', image: '⏩', phonics: '', kk: '[ˈæftɚ]', phonicsSound: '', exampleSentence: 'after I eat', exampleZh: '在我吃完後' },
+    { en: 'before', zh: '在…之前', image: '⏪', phonics: '', kk: '[bɪˈfɔr]', phonicsSound: '', exampleSentence: 'before I sleep', exampleZh: '在我睡前' },
+  ],
+  sentences: [
+    { en: 'I like tea and coffee.', zh: '我喜歡茶和咖啡。' }, { en: "I like cats, but not dogs.", zh: '我喜歡貓，但不喜歡狗。' }, { en: 'I was tired, so I slept.', zh: '我累了，所以睡了。' }, { en: 'I slept because I was tired.', zh: '我睡了因為我累。' }, { en: 'First I ate, then I studied.', zh: '首先我吃飯，然後讀書。' }, { en: 'Before I sleep, I read.', zh: '睡前我讀書。' },
+  ],
+  phonicsLetters: ['review connectors'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I like tea ___ coffee.（並列）', options: ['and', 'but', 'so', 'because'], answer: 'and' },
+    { type: 'fill-blank', question: 'I was tired, ___ I slept.（結果）', options: ['so', 'because', 'and', 'but'], answer: 'so' },
+    { type: 'fill-blank', question: 'I slept ___ I was tired.（原因）', options: ['because', 'so', 'and', 'but'], answer: 'because' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I like cats, ___ not dogs.（轉折）', options: ['but', 'and', 'so', 'because'], answer: 'but' },
+    { type: 'fill-blank', question: 'First I ate, ___ I studied.（然後）', options: ['then', 'before', 'so', 'but'], answer: 'then' },
+    { type: 'fill-blank', question: '中翻英：「我累了，所以睡了。」', options: ["I was tired, so I slept.", "I slept, so I was tired.", "I was tired and slept.", "Was I tired?"], answer: "I was tired, so I slept." },
+    { type: 'fill-blank', question: '中翻英：「睡前我讀書。」', options: ["Before I sleep, I read.", "After I sleep, I read.", "I read then I sleep.", "Do I read?"], answer: "Before I sleep, I read." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I like tea and coffee.', 'I like cats, but not dogs.', 'I was tired, so I slept.', 'First I ate, then I studied.'], answer: 'I like tea and coffee.', image: '🎧' },
+    { type: 'read', question: 'Why did the writer sleep?（作者為何睡覺？）', passage: 'I studied all night.\nI was very tired.\nSo I slept because I needed rest.', options: ['because tired', 'because hungry', 'because bored', 'because sick'], answer: 'because tired' },
+  ],
+  talkTimePrompts: ["Use and, but, or in sentences.", "Give a reason (because) and a result (so).", "Describe steps: First, then, finally.", "✍️ 引導寫作＋翻譯：用 3 個連接詞寫一段小短文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Do you want tea ___ coffee?（選擇）', options: ['or', 'and', 'but', 'so'], answer: 'or' },
+    { type: 'fill-blank', question: '中翻英：「首先我吃飯，然後讀書。」', options: ['First I ate, then I studied.', 'I ate and studied.', 'I studied then ate.', 'Did I eat?'], answer: 'First I ate, then I studied.' },
+    { type: 'match', question: 'because 用來？', options: ['給原因', '給結果', '表選擇', '表順序'], answer: '給原因' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review all the connectors!", lineZh: '來複習所有連接詞！' },
+    { speaker: 'Coco', line: "I like tea and coffee, but not milk.", lineZh: '我喜歡茶和咖啡，但不喜歡牛奶。' },
+    { speaker: 'Benny', line: "I was tired, so I slept because I studied all night.", lineZh: '我累了，所以睡覺，因為我讀了整晚。' },
+    { speaker: 'Finn', line: "You can connect ideas like a writer!", lineZh: '你能像作家一樣連接想法了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
