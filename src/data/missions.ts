@@ -2594,7 +2594,7 @@ const L3_M8: Mission = {
 const L3_M9: Mission = {
   id: 9, slug: 'l3-m9-animals-2', level: 3, title: '動物② 複數', titleEn: 'Animals & Plurals', theme: '市場街・動物農場', themeEmoji: '🐔',
   focus: '名詞複數 -s（two dogs）；句型 How many? / They are…',
-  tip: { zh: '不只一個，名詞後面要加 -s：one dog → two dogs。', char: 'benny' },
+  tip: { zh: '複數 -s 兩種音，記「有聲配有聲、無聲配無聲」：有聲結尾（dog /g/）→ -s 唸 /z/（dogs）；無聲結尾（cat /t/）→ -s 唸 /s/（cats）。', char: 'benny' },
   story: [
     { image: '🐔', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "One dog, two dogs! Add -s for more!", dialogueZh: '一隻狗，兩隻狗！多的加 -s！', highlightWords: ['dogs', '-s'], sceneEmojis: ['🐶', '🐶', '✨'], animation: 'wave' },
     { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Three cats! They are black.", dialogueZh: '三隻貓！牠們是黑色的。', highlightWords: ['cats', 'They'], sceneEmojis: ['🐱', '🐱', '🐱'], animation: 'bounce' },
@@ -3010,7 +3010,7 @@ const L3_M16: Mission = {
 const L3_M17: Mission = {
   id: 17, slug: 'l3-m17-plurals', level: 3, title: '名詞複數', titleEn: 'Plurals', theme: '市場街・數量魔法', themeEmoji: '➕',
   focus: '複數規則：+s、+es（box→boxes）、不規則（foot→feet）',
-  tip: { zh: '複數不是全都加 -s：box→boxes（加 es）、foot→feet（不規則要背）。', char: 'benny' },
+  tip: { zh: '複數不是全都加 -s：嘶音結尾（s/x/sh/ch）加 es 唸 /ɪz/（watch→watches、box→boxes）；子音+y 要去 y 加 ies（baby→babies）；不規則要背（foot→feet）。', char: 'benny' },
   story: [
     { image: '➕', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "More than one? Add -s! cat → cats!", dialogueZh: '不只一個？加 -s！cat → cats！', highlightWords: ['-s', 'cats'], sceneEmojis: ['➕', '🐱', '✨'], animation: 'wave' },
     { image: '📦', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "box → boxes! Add -es after x, s, sh, ch!", dialogueZh: 'box → boxes！x、s、sh、ch 後加 -es！', highlightWords: ['boxes', '-es'], sceneEmojis: ['📦', '📦', '😊'], animation: 'bounce' },
@@ -6403,7 +6403,7 @@ const L7_M1: Mission = {
 const L7_M2: Mission = {
   id: 2, slug: 'l7-m2-third-person', level: 7, title: '第三人稱 -s', titleEn: 'He / She + V-s', theme: '文法門・他她它', themeEmoji: '➕',
   focus: '第三人稱單數 He / She / It ＋ 動詞 +s（likes/goes/watches）',
-  tip: { zh: '主詞是 he／she／it，動詞要加 -s：He likes、She goes、It watches。最容易漏！', char: 'ruby' },
+  tip: { zh: '主詞 he／she／it 動詞要加 -s（最容易漏！）；唸法跟複數一樣：有聲配 /z/、無聲配 /s/、嘶音加 es 唸 /ɪz/（watch→watches）；子音+y 去 y 加 ies（study→studies）。', char: 'ruby' },
   story: [
     { image: '➕', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "He likes soccer. Add -s for he/she!", dialogueZh: '他喜歡足球。he/she 加 -s！', highlightWords: ['likes', '-s'], sceneEmojis: ['⚽', '➕', '✨'], animation: 'wave' },
     { image: '👧', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "She reads books. She goes to school.", dialogueZh: '她讀書。她去上學。', highlightWords: ['reads', 'goes'], sceneEmojis: ['👧', '📚', '😊'], animation: 'bounce' },
