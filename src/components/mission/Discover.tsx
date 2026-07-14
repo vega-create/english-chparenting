@@ -12,6 +12,7 @@ interface Props {
   phonicsLetters: string[];
   videoScript?: VideoLine[];
   videoUrl?: string;
+  tip?: { zh: string; char?: string };
   onComplete: () => void;
 }
 
@@ -23,7 +24,7 @@ function youtubeEmbed(url: string): string | null {
   return m ? `https://www.youtube.com/embed/${m[1]}` : null;
 }
 
-export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, onComplete }: Props) {
+export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, onComplete }: Props) {
   const [phase, setPhase] = useState<Phase>('story');
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
@@ -256,6 +257,17 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
             📝 Word Time · 翻開全部 {seenCards.length}/{words.length}
           </p>
         </div>
+
+        {/* 💡 小老師提醒（角色泡泡）：母音媽媽 / a-an 規則 / 例外字 */}
+        {tip && (
+          <div className="max-w-xl mx-auto mb-4 flex items-start gap-2 animate-slide-up">
+            <img src={`/characters/${tip.char || 'coco'}/${tip.char || 'coco'}-talk.png`} alt="小老師" className="w-16 h-16 object-contain flex-shrink-0" />
+            <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl rounded-tl-none px-4 py-2 flex-1">
+              <p className="text-xs font-bold text-amber-500 mb-0.5">💡 小提醒</p>
+              <p className="text-sm text-gray-700 leading-relaxed">{tip.zh}</p>
+            </div>
+          </div>
+        )}
 
         {/* 進度條 */}
         <div className="flex gap-1 mb-5 max-w-xl mx-auto">

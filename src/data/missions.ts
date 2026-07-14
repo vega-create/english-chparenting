@@ -58,6 +58,7 @@ export interface Mission {
   focus?: string;              // 該課重點（phonics 樣式 / 文法點）
   videoScript?: VideoLine[];   // 對話影片腳本（角色輪流；留給 Vega 拍/生）
   videoUrl?: string;           // 對話影片連結（YouTube 網址 或 mp4/R2 連結）；沒填就顯示腳本分鏡
+  tip?: { zh: string; char?: string };  // 小老師提醒（角色泡泡）：如「母音媽媽」「a/an 規則」「例外字直接記」
 }
 
 // 對話影片腳本一行
@@ -1121,6 +1122,7 @@ const L1_M20: Mission = {
 const L2_M1: Mission = {
   id: 1, slug: 'l2-m1-blending', level: 2, title: '拼讀入門', titleEn: 'Blending', theme: '聲音島・拼讀港口', themeEmoji: '🔊',
   focus: '母音 a/e/i/o/u 是每個字的「媽媽」（每個字至少一個媽媽）；找到媽媽再把音拼起來 c-a-t → cat',
+  tip: { zh: '每個字都有一個「媽媽」——母音 a·e·i·o·u。先找到媽媽，再把音拼起來！（單字第一個字母是媽媽 → 用 an：an apple）', char: 'coco' },
   story: [
     { image: '🔊', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Sound Island! Five letters are special: a, e, i, o, u.", dialogueZh: '歡迎來到聲音島！有五個字母很特別：a、e、i、o、u。', highlightWords: ['a', 'e', 'i', 'o', 'u'], sceneEmojis: ['🔊', '🅰️', '✨'], animation: 'wave' },
     { image: '👩', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "a, e, i, o, u are the mommy of every word!", dialogueZh: 'a、e、i、o、u 是母音，是每個字的「媽媽」！（排成一張臉就是媽媽）', highlightWords: ['mommy'], sceneEmojis: ['👩', '🔤', '❤️'], animation: 'bounce' },
