@@ -10590,7 +10590,267 @@ const L11_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10];
+const L11_M11: Mission = {
+  id: 11, slug: 'l11-m11-passive', level: 11, title: '被動語態', titleEn: 'Passive Voice', theme: '挑戰場・被…', themeEmoji: '🔧',
+  focus: '被動語態 be + p.p.（It is made of… / was built by…）＋ 中翻英',
+  story: [
+    { image: '🔧', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "This table is made of wood.", dialogueZh: '這張桌子是木頭做的。', highlightWords: ['is made'], sceneEmojis: ['🪵', '🔧', '✨'], animation: 'wave' },
+    { image: '🏰', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "The castle was built long ago.", dialogueZh: '這座城堡很久以前就建成了。', highlightWords: ['was built'], sceneEmojis: ['🏰', '⏳', '😊'], animation: 'bounce' },
+    { image: '📖', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "This book was written by a famous author.", dialogueZh: '這本書是一位有名的作家寫的。', highlightWords: ['was written', 'by'], sceneEmojis: ['📖', '✍️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "be + past participle = the passive!", dialogueZh: 'be + 過去分詞 = 被動語態！', highlightWords: [], sceneEmojis: ['🏆', '🔧', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'is made of', zh: '由…製成', image: '🔧', phonics: '', kk: '[ɪz med ʌv]', phonicsSound: '被動', exampleSentence: 'made of wood', exampleZh: '木頭做的' },
+    { en: 'was built', zh: '被建造', image: '🏰', phonics: '', kk: '[wʌz bɪlt]', phonicsSound: '被動·過去', exampleSentence: 'was built long ago', exampleZh: '很久前建的' },
+    { en: 'was written', zh: '被寫', image: '📖', phonics: '', kk: '[wʌz ˈrɪtn̩]', phonicsSound: '被動·過去', exampleSentence: 'written by…', exampleZh: '由…寫' },
+    { en: 'by', zh: '被·由', image: '👤', phonics: '', kk: '[baɪ]', phonicsSound: '', exampleSentence: 'written by him', exampleZh: '由他寫' },
+    { en: 'wood', zh: '木頭', image: '🪵', phonics: '', kk: '[wʊd]', phonicsSound: '', exampleSentence: 'made of wood', exampleZh: '木頭做的' },
+    { en: 'used', zh: '被使用', image: '♻️', phonics: '', kk: '[juzd]', phonicsSound: '', exampleSentence: 'It is used a lot.', exampleZh: '它常被使用。' },
+    { en: 'author', zh: '作者', image: '✍️', phonics: '', kk: '[ˈɔθɚ]', phonicsSound: '', exampleSentence: 'a famous author', exampleZh: '有名的作者' },
+    { en: 'castle', zh: '城堡', image: '🏰', phonics: '', kk: '[ˈkæsl̩]', phonicsSound: '', exampleSentence: 'an old castle', exampleZh: '老城堡' },
+    { en: 'paper', zh: '紙', image: '📄', phonics: '', kk: '[ˈpepɚ]', phonicsSound: '', exampleSentence: 'made of paper', exampleZh: '紙做的' },
+    { en: 'metal', zh: '金屬', image: '🔩', phonics: '', kk: '[ˈmɛtl̩]', phonicsSound: '', exampleSentence: 'made of metal', exampleZh: '金屬做的' },
+  ],
+  sentences: [
+    { en: 'This table is made of wood.', zh: '這張桌子是木頭做的。' }, { en: 'The castle was built long ago.', zh: '城堡很久以前建成。' }, { en: 'This book was written by a famous author.', zh: '這本書是有名作家寫的。' }, { en: 'Paper is made from trees.', zh: '紙是用樹做的。' }, { en: 'English is spoken all over the world.', zh: '英語在全世界被使用。' }, { en: 'The window was broken.', zh: '窗戶被打破了。' },
+  ],
+  phonicsLetters: ['be + p.p. (passive)'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'This table is ___ of wood.（製成）', options: ['made', 'make', 'making', 'makes'], answer: 'made' },
+    { type: 'fill-blank', question: 'The castle was ___ long ago.（建·p.p.）', options: ['built', 'build', 'building', 'builds'], answer: 'built' },
+    { type: 'match', question: '被動語態的結構是？', options: ['be + 過去分詞', 'be + V-ing', 'will + V', 'to + V'], answer: 'be + 過去分詞' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'This book was ___ by an author.（寫·p.p.）', options: ['written', 'write', 'wrote', 'writing'], answer: 'written' },
+    { type: 'fill-blank', question: 'English is ___ around the world.（說·p.p.）', options: ['spoken', 'speak', 'spoke', 'speaking'], answer: 'spoken' },
+    { type: 'fill-blank', question: '中翻英：「這張桌子是木頭做的。」', options: ['This table is made of wood.', 'I make a table.', 'The table is big.', 'Is it wood?'], answer: 'This table is made of wood.' },
+    { type: 'fill-blank', question: '中翻英：「這本書是有名作家寫的。」', options: ['This book was written by a famous author.', 'I write a book.', 'The book is good.', 'Who wrote it?'], answer: 'This book was written by a famous author.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['This table is made of wood.', 'The castle was built long ago.', 'This book was written by a famous author.', 'English is spoken all over the world.'], answer: 'This table is made of wood.', image: '🎧' },
+    { type: 'read', question: 'What is the table made of?（桌子是什麼做的？）', passage: 'Look at this old table.\nIt is made of wood.\nIt is very strong.', options: ['wood', 'metal', 'paper', 'glass'], answer: 'wood' },
+  ],
+  talkTimePrompts: ["Say what something is made of: It is made of ___.", "Use passive: was built / was written.", "Say: English is spoken in many countries.", "✍️ 引導寫作＋翻譯：把「城堡很久以前建成。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Paper is made ___ trees.（從）', options: ['from', 'by', 'of', 'to'], answer: 'from' },
+    { type: 'fill-blank', question: '中翻英：「英語在全世界被使用。」', options: ['English is spoken all over the world.', 'People speak English.', 'I speak English.', 'Do you speak English?'], answer: 'English is spoken all over the world.' },
+    { type: 'match', question: 'was written 是什麼語態？', options: ['被動（過去）', '主動（現在）', '進行式', '完成式'], answer: '被動（過去）' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "This table is made of wood.", lineZh: '這張桌子是木頭做的。' },
+    { speaker: 'Coco', line: "The castle was built long ago.", lineZh: '這座城堡很久以前就建成了。' },
+    { speaker: 'Polly', line: "This book was written by a famous author.", lineZh: '這本書是一位有名的作家寫的。' },
+    { speaker: 'Benny', line: "be + past participle = the passive!", lineZh: 'be + 過去分詞 = 被動語態！' },
+  ],
+};
+
+const L11_M12: Mission = {
+  id: 12, slug: 'l11-m12-advanced-connectors', level: 11, title: '進階連接詞', titleEn: 'although / however', theme: '挑戰場・雖然然而', themeEmoji: '🔀',
+  focus: '進階連接詞 although / however / while（讓步與對比）＋ 中翻英',
+  story: [
+    { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Although it was raining, we went out.", dialogueZh: '雖然在下雨，我們還是出門了。', highlightWords: ['Although'], sceneEmojis: ['🌧️', '🚪', '✨'], animation: 'wave' },
+    { image: '💭', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I like the city. However, it is too busy.", dialogueZh: '我喜歡城市。然而，它太繁忙了。', highlightWords: ['However'], sceneEmojis: ['🏙️', '💭', '😊'], animation: 'bounce' },
+    { image: '⏳', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "While I cooked, she cleaned.", dialogueZh: '當我煮飯時，她打掃。', highlightWords: ['While'], sceneEmojis: ['🍳', '🧹', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "These connectors make your writing mature!", dialogueZh: '這些連接詞讓你的寫作更成熟！', highlightWords: [], sceneEmojis: ['🏆', '🔀', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'although', zh: '雖然', image: '🔀', phonics: '', kk: '[ɔlˈðo]', phonicsSound: '讓步', exampleSentence: 'Although it rained…', exampleZh: '雖然下雨…' },
+    { en: 'however', zh: '然而', image: '💭', phonics: '', kk: '[haʊˈɛvɚ]', phonicsSound: '對比', exampleSentence: 'However, it is busy.', exampleZh: '然而，它很忙。' },
+    { en: 'while', zh: '當…時·然而', image: '⏳', phonics: '', kk: '[waɪl]', phonicsSound: '同時', exampleSentence: 'While I cooked…', exampleZh: '當我煮飯時…' },
+    { en: 'though', zh: '雖然', image: '🔀', phonics: '', kk: '[ðo]', phonicsSound: '讓步', exampleSentence: 'It was hard, though.', exampleZh: '不過它很難。' },
+    { en: 'on the other hand', zh: '另一方面', image: '✋', phonics: '', kk: '[ɑn ði ˈʌðɚ hænd]', phonicsSound: '對比', exampleSentence: 'On the other hand…', exampleZh: '另一方面…' },
+    { en: 'busy', zh: '繁忙的', image: '🚦', phonics: '', kk: '[ˈbɪzi]', phonicsSound: '', exampleSentence: 'too busy', exampleZh: '太忙' },
+    { en: 'still', zh: '仍然', image: '🔁', phonics: '', kk: '[stɪl]', phonicsSound: '', exampleSentence: 'still went out', exampleZh: '還是出門' },
+    { en: 'raining', zh: '正在下雨', image: '🌧️', phonics: '', kk: '[ˈrenɪŋ]', phonicsSound: '', exampleSentence: 'It was raining.', exampleZh: '在下雨。' },
+    { en: 'contrast', zh: '對比', image: '↔️', phonics: '', kk: '[ˈkɑntræst]', phonicsSound: '', exampleSentence: 'show a contrast', exampleZh: '表現對比' },
+    { en: 'mature', zh: '成熟的', image: '🎓', phonics: '', kk: '[məˈtʃʊr]', phonicsSound: '', exampleSentence: 'mature writing', exampleZh: '成熟的寫作' },
+  ],
+  sentences: [
+    { en: 'Although it was raining, we went out.', zh: '雖然在下雨，我們還是出門了。' }, { en: 'I like the city. However, it is busy.', zh: '我喜歡城市。然而，它很忙。' }, { en: 'While I cooked, she cleaned.', zh: '當我煮飯時，她打掃。' }, { en: 'It was hard, though.', zh: '不過它很難。' }, { en: 'On the other hand, it is cheap.', zh: '另一方面，它很便宜。' }, { en: 'Although he is small, he is strong.', zh: '雖然他小，他很強壯。' },
+  ],
+  phonicsLetters: ['although / however'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ it was raining, we went out.（雖然）', options: ['Although', 'Because', 'So', 'And'], answer: 'Although' },
+    { type: 'fill-blank', question: 'I like the city. ___, it is busy.（然而）', options: ['However', 'Because', 'So', 'And'], answer: 'However' },
+    { type: 'match', question: 'although 是什麼意思？', options: ['雖然', '因為', '所以', '和'], answer: '雖然' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: '___ I cooked, she cleaned.（當…時）', options: ['While', 'Because', 'So', 'But'], answer: 'While' },
+    { type: 'fill-blank', question: '___ he is small, he is strong.（雖然）', options: ['Although', 'Because', 'So', 'And'], answer: 'Although' },
+    { type: 'fill-blank', question: '中翻英：「雖然在下雨，我們還是出門了。」', options: ['Although it was raining, we went out.', 'It rained and we went out.', 'We went out.', 'Did it rain?'], answer: 'Although it was raining, we went out.' },
+    { type: 'fill-blank', question: '中翻英：「我喜歡城市。然而，它很忙。」', options: ['I like the city. However, it is busy.', 'The city is busy.', 'I like the busy city.', 'Is the city busy?'], answer: 'I like the city. However, it is busy.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Although it was raining, we went out.', 'I like the city. However, it is busy.', 'While I cooked, she cleaned.', 'Although he is small, he is strong.'], answer: 'Although it was raining, we went out.', image: '🎧' },
+    { type: 'read', question: 'Did they go out even though it rained?（下雨他們還是出門了嗎？）', passage: 'It was raining hard.\nAlthough it was raining, we went out.\nWe had a good time.', options: ['Yes, they went out', 'No, they stayed home', 'It was sunny', 'They slept'], answer: 'Yes, they went out' },
+  ],
+  talkTimePrompts: ["Use 'although' to show contrast.", "Use 'however' to add a different point.", "Use 'while' for two actions at once.", "✍️ 引導寫作＋翻譯：把「雖然他小，他很強壯。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'It is expensive. ___, it is good.（然而）', options: ['However', 'Because', 'So', 'And'], answer: 'However' },
+    { type: 'fill-blank', question: '中翻英：「當我煮飯時，她打掃。」', options: ['While I cooked, she cleaned.', 'I cooked and cleaned.', 'She cooked.', 'Did she clean?'], answer: 'While I cooked, she cleaned.' },
+    { type: 'match', question: 'however 用來？', options: ['表示對比', '表示原因', '表示並列', '表示順序'], answer: '表示對比' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Although it was raining, we went out.", lineZh: '雖然在下雨，我們還是出門了。' },
+    { speaker: 'Coco', line: "I like the city. However, it is too busy.", lineZh: '我喜歡城市。然而，它太繁忙了。' },
+    { speaker: 'Polly', line: "While I cooked, she cleaned.", lineZh: '當我煮飯時，她打掃。' },
+    { speaker: 'Benny', line: "These connectors make your writing mature!", lineZh: '這些連接詞讓你的寫作更成熟！' },
+  ],
+};
+
+const L11_M13: Mission = {
+  id: 13, slug: 'l11-m13-long-story-1', level: 11, title: '長篇故事①', titleEn: 'Long Story 1', theme: '挑戰場・勇敢的小船', themeEmoji: '📖',
+  focus: '長篇故事閱讀①：讀較長的故事並回答理解問題 ＋ 中翻英',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A long story: The Brave Little Boat!", dialogueZh: '一個長故事：勇敢的小船！', highlightWords: ['story'], sceneEmojis: ['📖', '⛵', '✨'], animation: 'wave' },
+    { image: '⛵', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "A little boat wanted to cross the big sea.", dialogueZh: '一艘小船想橫越大海。', highlightWords: ['wanted'], sceneEmojis: ['⛵', '🌊', '😊'], animation: 'bounce' },
+    { image: '🌊', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Although the waves were big, the boat did not give up.", dialogueZh: '雖然浪很大，小船沒有放棄。', highlightWords: ['Although'], sceneEmojis: ['🌊', '💪', '🎉'], animation: 'float' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read a long story! Wonderful!", dialogueZh: '你讀了長故事！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '📖', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'brave', zh: '勇敢的', image: '💪', phonics: '', kk: '[brev]', phonicsSound: '', exampleSentence: 'a brave boat', exampleZh: '勇敢的船' },
+    { en: 'cross', zh: '橫越', image: '↔️', phonics: '', kk: '[krɔs]', phonicsSound: '', exampleSentence: 'cross the sea', exampleZh: '橫越大海' },
+    { en: 'sea', zh: '海', image: '🌊', phonics: '', kk: '[si]', phonicsSound: '', exampleSentence: 'the big sea', exampleZh: '大海' },
+    { en: 'wave', zh: '海浪', image: '🌊', phonics: '', kk: '[wev]', phonicsSound: '', exampleSentence: 'big waves', exampleZh: '大浪' },
+    { en: 'give up', zh: '放棄', image: '🏳️', phonics: '', kk: '[ɡɪv ʌp]', phonicsSound: '', exampleSentence: "don't give up", exampleZh: '別放棄' },
+    { en: 'storm', zh: '暴風雨', image: '⛈️', phonics: '', kk: '[stɔrm]', phonicsSound: '', exampleSentence: 'a big storm', exampleZh: '大暴風雨' },
+    { en: 'reach', zh: '抵達', image: '📍', phonics: '', kk: '[ritʃ]', phonicsSound: '', exampleSentence: 'reach the shore', exampleZh: '抵達岸邊' },
+    { en: 'shore', zh: '岸邊', image: '🏖️', phonics: '', kk: '[ʃɔr]', phonicsSound: '', exampleSentence: 'the far shore', exampleZh: '遠方的岸' },
+    { en: 'proud', zh: '驕傲的', image: '😌', phonics: '', kk: '[praʊd]', phonicsSound: '', exampleSentence: 'very proud', exampleZh: '很驕傲' },
+    { en: 'brave', zh: '勇敢', image: '🦁', phonics: '', kk: '[brev]', phonicsSound: '', exampleSentence: 'stay brave', exampleZh: '保持勇敢' },
+  ],
+  sentences: [
+    { en: 'A little boat wanted to cross the sea.', zh: '一艘小船想橫越大海。' }, { en: 'Although the waves were big, it did not give up.', zh: '雖然浪很大，它沒放棄。' }, { en: 'A storm came, but the boat stayed brave.', zh: '暴風雨來了，但小船保持勇敢。' }, { en: 'Finally, it reached the shore.', zh: '最後，它抵達岸邊。' }, { en: 'The little boat was very proud.', zh: '小船很驕傲。' }, { en: 'Never give up!', zh: '永不放棄！' },
+  ],
+  phonicsLetters: ['long story'],
+  warmUpQuestions: [
+    { type: 'match', question: 'brave 是什麼意思？', options: ['勇敢的', '害怕的', '大的', '快的'], answer: '勇敢的' },
+    { type: 'match', question: 'give up 是什麼意思？', options: ['放棄', '抵達', '橫越', '驕傲'], answer: '放棄' },
+    { type: 'fill-blank', question: 'The boat wanted to ___ the sea.（橫越）', options: ['cross', 'give up', 'reach', 'proud'], answer: 'cross' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What did the little boat want to do?（小船想做什麼？）', passage: 'A little boat lived by the sea.\nIt wanted to cross the big sea.\nIt was a long journey.', options: ['cross the sea', 'stay home', 'sleep', 'sink'], answer: 'cross the sea' },
+    { type: 'read', question: 'Did the boat give up in the storm?（暴風雨中小船放棄了嗎？）', passage: 'A big storm came.\nThe waves were huge.\nAlthough it was scary, the boat did not give up.', options: ["No, it did not give up", 'Yes, it gave up', 'It sank', 'It went home'], answer: "No, it did not give up" },
+    { type: 'read', question: 'How did the boat feel at the end?（結尾小船的感覺？）', passage: 'Finally, the boat reached the shore.\nIt had crossed the whole sea.\nThe little boat was very proud.', options: ['proud', 'sad', 'scared', 'angry'], answer: 'proud' },
+    { type: 'fill-blank', question: '中翻英：「雖然浪很大，它沒放棄。」', options: ['Although the waves were big, it did not give up.', 'The waves were big.', 'It gave up.', 'Did it give up?'], answer: 'Although the waves were big, it did not give up.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['A little boat wanted to cross the sea.', 'A storm came, but the boat stayed brave.', 'Finally, it reached the shore.', 'Never give up!'], answer: 'A little boat wanted to cross the sea.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：br _ ve（勇敢的）', answer: 'brave', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the story of the brave boat.", "What is the lesson of the story?", "Use 'although' to describe the boat.", "✍️ 引導寫作＋翻譯：把「最後，它抵達岸邊。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'read', question: 'What is the message?（故事的訊息是？）', passage: 'The little boat faced big waves and a storm.\nBut it never gave up.\nThe lesson: Never give up!', options: ['Never give up', 'Stay home', 'Boats are small', 'Storms are scary'], answer: 'Never give up' },
+    { type: 'match', question: 'shore 是什麼意思？', options: ['岸邊', '海浪', '暴風雨', '大海'], answer: '岸邊' },
+    { type: 'fill-blank', question: 'Finally, it ___ the shore.（抵達）', options: ['reached', 'crossed', 'gave up', 'proud'], answer: 'reached' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A long story: The Brave Little Boat!", lineZh: '一個長故事：勇敢的小船！' },
+    { speaker: 'Coco', line: "A little boat wanted to cross the big sea.", lineZh: '一艘小船想橫越大海。' },
+    { speaker: 'Polly', line: "Although the waves were big, the boat did not give up.", lineZh: '雖然浪很大，小船沒有放棄。' },
+    { speaker: 'Benny', line: "You read a long story! Wonderful!", lineZh: '你讀了長故事！太棒了！' },
+  ],
+};
+
+const L11_M14: Mission = {
+  id: 14, slug: 'l11-m14-long-story-2', level: 11, title: '長篇故事②', titleEn: 'Long Story 2', theme: '挑戰場・善良的巨人', themeEmoji: '📚',
+  focus: '長篇故事閱讀②：讀較長的故事並回答理解問題 ＋ 中翻英',
+  story: [
+    { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A new story: The Kind Giant!", dialogueZh: '新故事：善良的巨人！', highlightWords: ['story'], sceneEmojis: ['📚', '🧌', '✨'], animation: 'wave' },
+    { image: '🧌', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "People were afraid of the giant, although he was kind.", dialogueZh: '人們怕巨人，雖然他很善良。', highlightWords: ['although'], sceneEmojis: ['🧌', '😨', '😊'], animation: 'bounce' },
+    { image: '🌉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "One day, he built a bridge to help the town.", dialogueZh: '有一天，他蓋了一座橋幫助小鎮。', highlightWords: ['built'], sceneEmojis: ['🌉', '🏘️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You understood the whole story! Great!", dialogueZh: '你讀懂整個故事了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '📚', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'giant', zh: '巨人', image: '🧌', phonics: '', kk: '[ˈdʒaɪənt]', phonicsSound: '', exampleSentence: 'a kind giant', exampleZh: '善良的巨人' },
+    { en: 'kind', zh: '善良的', image: '❤️', phonics: '', kk: '[kaɪnd]', phonicsSound: '', exampleSentence: 'a kind man', exampleZh: '善良的人' },
+    { en: 'afraid', zh: '害怕的', image: '😨', phonics: '', kk: '[əˈfred]', phonicsSound: '', exampleSentence: 'afraid of him', exampleZh: '怕他' },
+    { en: 'build', zh: '建造', image: '🔨', phonics: '', kk: '[bɪld]', phonicsSound: '', exampleSentence: 'build a bridge', exampleZh: '蓋橋' },
+    { en: 'bridge', zh: '橋', image: '🌉', phonics: '', kk: '[brɪdʒ]', phonicsSound: '', exampleSentence: 'a strong bridge', exampleZh: '堅固的橋' },
+    { en: 'town', zh: '小鎮', image: '🏘️', phonics: '', kk: '[taʊn]', phonicsSound: '', exampleSentence: 'the town', exampleZh: '小鎮' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '', exampleSentence: 'help the town', exampleZh: '幫助小鎮' },
+    { en: 'thank', zh: '感謝', image: '🙏', phonics: '', kk: '[θæŋk]', phonicsSound: '', exampleSentence: 'thank the giant', exampleZh: '感謝巨人' },
+    { en: 'friend', zh: '朋友', image: '🧑‍🤝‍🧑', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'become friends', exampleZh: '成為朋友' },
+    { en: 'gentle', zh: '溫柔的', image: '🕊️', phonics: '', kk: '[ˈdʒɛntl̩]', phonicsSound: '', exampleSentence: 'a gentle giant', exampleZh: '溫柔的巨人' },
+  ],
+  sentences: [
+    { en: 'There was a kind giant.', zh: '有一個善良的巨人。' }, { en: 'People were afraid of him, although he was kind.', zh: '人們怕他，雖然他很善良。' }, { en: 'One day, he built a bridge.', zh: '有一天，他蓋了一座橋。' }, { en: 'The bridge helped the town.', zh: '橋幫助了小鎮。' }, { en: 'Then people thanked the giant.', zh: '然後人們感謝巨人。' }, { en: 'They became good friends.', zh: '他們成了好朋友。' },
+  ],
+  phonicsLetters: ['long story'],
+  warmUpQuestions: [
+    { type: 'match', question: '🧌 giant 是什麼？', options: ['巨人', '橋', '小鎮', '朋友'], answer: '巨人' },
+    { type: 'match', question: 'afraid 是什麼意思？', options: ['害怕的', '善良的', '溫柔的', '感謝'], answer: '害怕的' },
+    { type: 'fill-blank', question: 'The giant was ___.（善良的）', options: ['kind', 'afraid', 'big', 'fast'], answer: 'kind' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Why were people afraid of the giant?（人們為何怕巨人？）', passage: 'There was a giant near the town.\nHe was big and tall.\nPeople were afraid of him, although he was kind.', options: ['he was big', 'he was mean', 'he was loud', 'he was scary looking but kind'], answer: 'he was big' },
+    { type: 'read', question: 'What did the giant build?（巨人蓋了什麼？）', passage: 'One day, the river flooded.\nThe giant built a strong bridge.\nIt helped the town cross safely.', options: ['a bridge', 'a house', 'a wall', 'a boat'], answer: 'a bridge' },
+    { type: 'read', question: 'What happened in the end?（結局如何？）', passage: 'The bridge saved the town.\nPeople thanked the kind giant.\nThey all became good friends.', options: ['they became friends', 'they ran away', 'they were angry', 'nothing'], answer: 'they became friends' },
+    { type: 'fill-blank', question: '中翻英：「人們怕他，雖然他很善良。」', options: ['People were afraid of him, although he was kind.', 'People liked him.', 'He was afraid.', 'Was he kind?'], answer: 'People were afraid of him, although he was kind.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['There was a kind giant.', 'One day, he built a bridge.', 'The bridge helped the town.', 'They became good friends.'], answer: 'There was a kind giant.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：bri _ ge（橋）', answer: 'bridge', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the story of the kind giant.", "What is the lesson of the story?", "Describe the giant with 'although'.", "✍️ 引導寫作＋翻譯：把「他們成了好朋友。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'read', question: 'What is the lesson?（故事教訓？）', passage: 'The giant looked scary but was kind.\nHe helped the town.\nLesson: Do not judge by looks.', options: ['Do not judge by looks', 'Giants are bad', 'Bridges are big', 'Towns are small'], answer: 'Do not judge by looks' },
+    { type: 'match', question: 'gentle 是什麼意思？', options: ['溫柔的', '害怕的', '巨大的', '快的'], answer: '溫柔的' },
+    { type: 'fill-blank', question: 'People ___ the giant in the end.（感謝）', options: ['thanked', 'feared', 'built', 'crossed'], answer: 'thanked' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A new story: The Kind Giant!", lineZh: '新故事：善良的巨人！' },
+    { speaker: 'Coco', line: "People were afraid of the giant, although he was kind.", lineZh: '人們怕巨人，雖然他很善良。' },
+    { speaker: 'Polly', line: "One day, he built a bridge to help the town.", lineZh: '有一天，他蓋了一座橋幫助小鎮。' },
+    { speaker: 'Benny', line: "You understood the whole story! Great!", lineZh: '你讀懂整個故事了！太棒了！' },
+  ],
+};
+
+const L11_M15: Mission = {
+  id: 15, slug: 'l11-m15-review-reading', level: 11, title: 'Review③ 進階閱讀', titleEn: 'Review: Reading', theme: '挑戰場・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習③：長篇故事理解 ＋ 進階連接詞 ＋ 被動語態 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review advanced reading!", dialogueZh: '來複習進階閱讀！', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
+    { image: '⛵', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Although it was hard, the little boat never gave up.", dialogueZh: '雖然很難，小船從不放棄。', highlightWords: ['Although'], sceneEmojis: ['⛵', '💪', '😊'], animation: 'bounce' },
+    { image: '🌉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "The bridge was built by the kind giant.", dialogueZh: '橋是善良的巨人蓋的。', highlightWords: ['was built'], sceneEmojis: ['🌉', '🧌', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You are ready for the boss! Amazing!", dialogueZh: '你準備好打大魔王了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'although', zh: '雖然', image: '🔀', phonics: '', kk: '[ɔlˈðo]', phonicsSound: '', exampleSentence: 'Although it rained…', exampleZh: '雖然下雨…' },
+    { en: 'however', zh: '然而', image: '💭', phonics: '', kk: '[haʊˈɛvɚ]', phonicsSound: '', exampleSentence: 'However, it is busy.', exampleZh: '然而，它很忙。' },
+    { en: 'was built', zh: '被建造', image: '🌉', phonics: '', kk: '[wʌz bɪlt]', phonicsSound: '被動', exampleSentence: 'was built by…', exampleZh: '由…蓋的' },
+    { en: 'brave', zh: '勇敢的', image: '💪', phonics: '', kk: '[brev]', phonicsSound: '', exampleSentence: 'a brave boat', exampleZh: '勇敢的船' },
+    { en: 'give up', zh: '放棄', image: '🏳️', phonics: '', kk: '[ɡɪv ʌp]', phonicsSound: '', exampleSentence: 'never give up', exampleZh: '永不放棄' },
+    { en: 'giant', zh: '巨人', image: '🧌', phonics: '', kk: '[ˈdʒaɪənt]', phonicsSound: '', exampleSentence: 'a kind giant', exampleZh: '善良的巨人' },
+    { en: 'kind', zh: '善良的', image: '❤️', phonics: '', kk: '[kaɪnd]', phonicsSound: '', exampleSentence: 'a kind giant', exampleZh: '善良的巨人' },
+    { en: 'reach', zh: '抵達', image: '📍', phonics: '', kk: '[ritʃ]', phonicsSound: '', exampleSentence: 'reach the shore', exampleZh: '抵達岸邊' },
+    { en: 'made of', zh: '由…製成', image: '🔧', phonics: '', kk: '[med ʌv]', phonicsSound: '', exampleSentence: 'made of wood', exampleZh: '木頭做的' },
+    { en: 'lesson', zh: '教訓·課', image: '📘', phonics: '', kk: '[ˈlɛsn̩]', phonicsSound: '', exampleSentence: 'the lesson', exampleZh: '教訓' },
+  ],
+  sentences: [
+    { en: 'Although it was hard, the boat never gave up.', zh: '雖然很難，小船從不放棄。' }, { en: 'The bridge was built by the giant.', zh: '橋是巨人蓋的。' }, { en: 'The table is made of wood.', zh: '桌子是木頭做的。' }, { en: 'However, the town was thankful.', zh: '然而，小鎮心懷感謝。' }, { en: 'The lesson is: never give up.', zh: '教訓是：永不放棄。' }, { en: 'Do not judge by looks.', zh: '不要以貌取人。' },
+  ],
+  phonicsLetters: ['review reading'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ it was hard, the boat did not give up.（雖然）', options: ['Although', 'Because', 'So', 'And'], answer: 'Although' },
+    { type: 'fill-blank', question: 'The bridge ___ built by the giant.（被動·過去）', options: ['was', 'is', 'are', 'were'], answer: 'was' },
+    { type: 'match', question: 'give up 是什麼意思？', options: ['放棄', '抵達', '建造', '善良'], answer: '放棄' },
+  ],
+  challenges: [
+    { type: 'read', question: "What is the boat story's lesson?（小船故事的教訓？）", passage: 'The little boat faced big waves.\nAlthough it was hard, it never gave up.\nThe lesson: never give up!', options: ['never give up', 'stay home', 'boats sink', 'waves are big'], answer: 'never give up' },
+    { type: 'fill-blank', question: 'The table ___ made of wood.（被動·is）', options: ['is', 'was', 'are', 'were'], answer: 'is' },
+    { type: 'fill-blank', question: '中翻英：「橋是巨人蓋的。」', options: ['The bridge was built by the giant.', 'The giant builds a bridge.', 'The bridge is big.', 'Who built it?'], answer: 'The bridge was built by the giant.' },
+    { type: 'fill-blank', question: '中翻英：「雖然很難，小船從不放棄。」', options: ['Although it was hard, the boat never gave up.', 'It was hard.', 'The boat gave up.', 'Was it hard?'], answer: 'Although it was hard, the boat never gave up.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Although it was hard, the boat never gave up.', 'The bridge was built by the giant.', 'The table is made of wood.', 'The lesson is: never give up.'], answer: 'Although it was hard, the boat never gave up.', image: '🎧' },
+    { type: 'read', question: "What is the giant story's lesson?（巨人故事教訓？）", passage: 'The giant looked scary but was kind.\nHe helped the town.\nThe lesson: do not judge by looks.', options: ['do not judge by looks', 'giants are bad', 'towns are big', 'run away'], answer: 'do not judge by looks' },
+  ],
+  talkTimePrompts: ["Retell a story with a lesson.", "Use 'although' and passive voice.", "Say what something is made of.", "✍️ 引導寫作＋翻譯：把「不要以貌取人。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The book ___ written by an author.（被動·過去）', options: ['was', 'is', 'are', 'were'], answer: 'was' },
+    { type: 'fill-blank', question: '中翻英：「桌子是木頭做的。」', options: ['The table is made of wood.', 'I make a table.', 'The table is big.', 'Is it wood?'], answer: 'The table is made of wood.' },
+    { type: 'match', question: 'although 用來？', options: ['表示讓步/對比', '表示原因', '表示並列', '表示順序'], answer: '表示讓步/對比' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review advanced reading!", lineZh: '來複習進階閱讀！' },
+    { speaker: 'Coco', line: "Although it was hard, the little boat never gave up.", lineZh: '雖然很難，小船從不放棄。' },
+    { speaker: 'Benny', line: "The bridge was built by the kind giant.", lineZh: '橋是善良的巨人蓋的。' },
+    { speaker: 'Finn', line: "You are ready for the boss! Amazing!", lineZh: '你準備好打大魔王了！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
