@@ -9549,7 +9549,267 @@ const L10_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10];
+const L10_M11: Mission = {
+  id: 11, slug: 'l10-m11-about-myself', level: 10, title: '自我介紹短文', titleEn: 'About Myself', theme: '未來橋・介紹我自己', themeEmoji: '🙋',
+  focus: '寫作：about myself（5–8 句自我介紹）＋ 中翻英',
+  story: [
+    { image: '🙋', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's write about ourselves!", dialogueZh: '我們來寫自我介紹！', highlightWords: [], sceneEmojis: ['🙋', '✍️', '✨'], animation: 'wave' },
+    { image: '🏷️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "My name is Coco. I am nine years old.", dialogueZh: '我叫 Coco。我九歲。', highlightWords: ['name', 'years old'], sceneEmojis: ['🏷️', '9️⃣', '😊'], animation: 'bounce' },
+    { image: '🎵', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I live in Taipei. I like music and reading.", dialogueZh: '我住台北。我喜歡音樂和閱讀。', highlightWords: ['live', 'like'], sceneEmojis: ['🎵', '📚', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Now write 5 sentences about you!", dialogueZh: '現在寫 5 句關於你的話！', highlightWords: [], sceneEmojis: ['🏆', '✍️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'myself', zh: '我自己', image: '🙋', phonics: '', kk: '[maɪˈsɛlf]', phonicsSound: '', exampleSentence: 'about myself', exampleZh: '關於我自己' },
+    { en: 'name', zh: '名字', image: '🏷️', phonics: '', kk: '[nem]', phonicsSound: '', exampleSentence: 'My name is…', exampleZh: '我的名字是…' },
+    { en: 'years old', zh: '…歲', image: '🎂', phonics: '', kk: '[jɪrz old]', phonicsSound: '', exampleSentence: 'nine years old', exampleZh: '九歲' },
+    { en: 'live', zh: '住', image: '🏠', phonics: '', kk: '[lɪv]', phonicsSound: '', exampleSentence: 'I live in Taipei.', exampleZh: '我住台北。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'I like music.', exampleZh: '我喜歡音樂。' },
+    { en: 'hobby', zh: '嗜好', image: '🎨', phonics: '', kk: '[ˈhɑbi]', phonicsSound: '', exampleSentence: 'My hobby is…', exampleZh: '我的嗜好是…' },
+    { en: 'family', zh: '家人', image: '👨‍👩‍👧', phonics: '', kk: '[ˈfæməli]', phonicsSound: '', exampleSentence: 'my family', exampleZh: '我的家人' },
+    { en: 'dream', zh: '夢想', image: '💭', phonics: '', kk: '[drim]', phonicsSound: '', exampleSentence: 'my dream', exampleZh: '我的夢想' },
+    { en: 'favorite', zh: '最愛的', image: '⭐', phonics: '', kk: '[ˈfevərɪt]', phonicsSound: '', exampleSentence: 'my favorite color', exampleZh: '我最愛的顏色' },
+    { en: 'introduce', zh: '介紹', image: '🤝', phonics: '', kk: '[ˌɪntrəˈdus]', phonicsSound: '', exampleSentence: 'introduce myself', exampleZh: '介紹我自己' },
+  ],
+  sentences: [
+    { en: 'My name is Coco.', zh: '我叫 Coco。' }, { en: 'I am nine years old.', zh: '我九歲。' }, { en: 'I live in Taipei.', zh: '我住台北。' }, { en: 'I like music and reading.', zh: '我喜歡音樂和閱讀。' }, { en: 'My favorite color is blue.', zh: '我最愛的顏色是藍色。' }, { en: 'I want to be a teacher.', zh: '我想當老師。' },
+  ],
+  phonicsLetters: ['about myself'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'My ___ is Coco.（名字）', options: ['name', 'age', 'hobby', 'dream'], answer: 'name' },
+    { type: 'fill-blank', question: 'I ___ in Taipei.（住）', options: ['live', 'like', 'am', 'have'], answer: 'live' },
+    { type: 'fill-blank', question: 'I am nine ___.（歲）', options: ['years old', 'name', 'live', 'like'], answer: 'years old' },
+  ],
+  challenges: [
+    { type: 'read', question: 'How old is the writer?（作者幾歲？）', passage: 'My name is Coco.\nI am nine years old.\nI live in Taipei.', options: ['nine', 'eight', 'ten', 'seven'], answer: 'nine' },
+    { type: 'read', question: 'What does the writer like?（作者喜歡什麼？）', passage: 'I like music and reading.\nMy favorite color is blue.\nI want to be a teacher.', options: ['music and reading', 'sports', 'cooking', 'nothing'], answer: 'music and reading' },
+    { type: 'fill-blank', question: '中翻英：「我叫 Coco。」', options: ['My name is Coco.', 'I am Coco?', 'Coco is here.', 'Who is Coco?'], answer: 'My name is Coco.' },
+    { type: 'fill-blank', question: '中翻英：「我住台北。」', options: ['I live in Taipei.', 'I like Taipei.', 'Taipei is big.', 'Where is Taipei?'], answer: 'I live in Taipei.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['My name is Coco.', 'I am nine years old.', 'I live in Taipei.', 'I like music and reading.'], answer: 'My name is Coco.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：hob _ y（嗜好）', answer: 'hobby', image: '✍️' },
+  ],
+  talkTimePrompts: ["Introduce yourself in 5 sentences.", "Say your name, age, and where you live.", "Say what you like and your dream.", "✍️ 引導寫作＋翻譯：寫 5-8 句英文自我介紹（名字/年齡/住哪/喜好/夢想）。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'My ___ is to be a teacher.（夢想）', options: ['dream', 'name', 'age', 'live'], answer: 'dream' },
+    { type: 'fill-blank', question: '中翻英：「我喜歡音樂和閱讀。」', options: ['I like music and reading.', 'I read music.', 'Music is good.', 'Do I like music?'], answer: 'I like music and reading.' },
+    { type: 'read', question: 'What does the writer want to be?（作者想當什麼？）', passage: 'I like to help people.\nI want to be a teacher.\nThat is my dream.', options: ['a teacher', 'a doctor', 'a singer', 'a pilot'], answer: 'a teacher' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Let's write about ourselves!", lineZh: '我們來寫自我介紹！' },
+    { speaker: 'Coco', line: "My name is Coco. I am nine years old.", lineZh: '我叫 Coco。我九歲。' },
+    { speaker: 'Benny', line: "I live in Taipei. I like music and reading.", lineZh: '我住台北。我喜歡音樂和閱讀。' },
+    { speaker: 'Ruby', line: "Now write 5 sentences about you!", lineZh: '現在寫 5 句關於你的話！' },
+  ],
+};
+
+const L10_M12: Mission = {
+  id: 12, slug: 'l10-m12-diary', level: 10, title: '日記', titleEn: 'Diary', theme: '未來橋・寫日記', themeEmoji: '📔',
+  focus: '寫作：日記 First / Then / Finally（記錄一天）＋ 中翻英',
+  story: [
+    { image: '📔', character: '🐱', characterKey: 'coco', characterAction: 'write', characterName: 'Coco', dialogue: "Dear Diary, today was a great day!", dialogueZh: '親愛的日記，今天是美好的一天！', highlightWords: ['Dear Diary'], sceneEmojis: ['📔', '☀️', '✨'], animation: 'wave' },
+    { image: '🌅', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "First, I went to the park. Then, I met my friends.", dialogueZh: '首先，我去公園。然後，我遇到朋友。', highlightWords: ['First', 'Then'], sceneEmojis: ['🏞️', '👫', '😊'], animation: 'bounce' },
+    { image: '🍦', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Finally, we ate ice cream. It was so fun!", dialogueZh: '最後，我們吃冰淇淋。真好玩！', highlightWords: ['Finally'], sceneEmojis: ['🍦', '🎉', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐱', characterKey: 'coco', characterAction: 'star', characterName: 'Coco', dialogue: "Write your day with First, Then, Finally!", dialogueZh: '用 First、Then、Finally 寫你的一天！', highlightWords: [], sceneEmojis: ['🏆', '📔', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'diary', zh: '日記', image: '📔', phonics: '', kk: '[ˈdaɪəri]', phonicsSound: '', exampleSentence: 'Dear Diary', exampleZh: '親愛的日記' },
+    { en: 'today', zh: '今天', image: '📆', phonics: '', kk: '[təˈde]', phonicsSound: '', exampleSentence: 'today', exampleZh: '今天' },
+    { en: 'first', zh: '首先', image: '1️⃣', phonics: '', kk: '[fɝst]', phonicsSound: '', exampleSentence: 'First, I…', exampleZh: '首先，我…' },
+    { en: 'then', zh: '然後', image: '2️⃣', phonics: '', kk: '[ðɛn]', phonicsSound: '', exampleSentence: 'Then, I…', exampleZh: '然後，我…' },
+    { en: 'finally', zh: '最後', image: '🏁', phonics: '', kk: '[ˈfaɪnəli]', phonicsSound: '', exampleSentence: 'Finally, I…', exampleZh: '最後，我…' },
+    { en: 'met', zh: '遇見（過去）', image: '👋', phonics: '', kk: '[mɛt]', phonicsSound: 'meet→met', exampleSentence: 'I met my friends.', exampleZh: '我遇到朋友。' },
+    { en: 'great', zh: '很棒的', image: '👍', phonics: '', kk: '[ɡret]', phonicsSound: '', exampleSentence: 'a great day', exampleZh: '美好的一天' },
+    { en: 'fun', zh: '好玩的', image: '🎉', phonics: '', kk: '[fʌn]', phonicsSound: '', exampleSentence: 'It was fun.', exampleZh: '很好玩。' },
+    { en: 'tired', zh: '累的', image: '😴', phonics: '', kk: '[taɪrd]', phonicsSound: '', exampleSentence: 'I was tired.', exampleZh: '我很累。' },
+    { en: 'remember', zh: '記得', image: '🧠', phonics: '', kk: '[rɪˈmɛmbɚ]', phonicsSound: '', exampleSentence: 'I will remember.', exampleZh: '我會記得。' },
+  ],
+  sentences: [
+    { en: 'Dear Diary, today was a great day.', zh: '親愛的日記，今天是美好的一天。' }, { en: 'First, I went to the park.', zh: '首先，我去公園。' }, { en: 'Then, I met my friends.', zh: '然後，我遇到朋友。' }, { en: 'Finally, we ate ice cream.', zh: '最後，我們吃冰淇淋。' }, { en: 'It was so much fun.', zh: '真的很好玩。' }, { en: 'I will remember this day.', zh: '我會記得這一天。' },
+  ],
+  phonicsLetters: ['diary writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ Diary, today was great.（親愛的）', options: ['Dear', 'Hi', 'To', 'From'], answer: 'Dear' },
+    { type: 'fill-blank', question: '___, I went to the park.（首先）', options: ['First', 'Finally', 'Then', 'After'], answer: 'First' },
+    { type: 'fill-blank', question: '___, we ate ice cream.（最後）', options: ['Finally', 'First', 'Then', 'Before'], answer: 'Finally' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What did the writer do first?（作者先做什麼？）', passage: 'First, I went to the park.\nThen, I met my friends.\nFinally, we ate ice cream.', options: ['went to the park', 'met friends', 'ate ice cream', 'slept'], answer: 'went to the park' },
+    { type: 'fill-blank', question: 'Then, I ___ my friends.（meet 過去）', options: ['met', 'meet', 'meets', 'meeting'], answer: 'met' },
+    { type: 'fill-blank', question: '中翻英：「首先，我去公園。」', options: ['First, I went to the park.', 'I go to the park.', 'Finally, I went.', 'Where is the park?'], answer: 'First, I went to the park.' },
+    { type: 'fill-blank', question: '中翻英：「最後，我們吃冰淇淋。」', options: ['Finally, we ate ice cream.', 'First, we ate.', 'We eat ice cream.', 'Do we eat?'], answer: 'Finally, we ate ice cream.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['First, I went to the park.', 'Then, I met my friends.', 'Finally, we ate ice cream.', 'It was so much fun.'], answer: 'First, I went to the park.', image: '🎧' },
+    { type: 'read', question: 'How was the writer\'s day?（作者的一天如何？）', passage: 'Today was a great day.\nWe played and ate ice cream.\nIt was so much fun!', options: ['great and fun', 'boring', 'sad', 'scary'], answer: 'great and fun' },
+  ],
+  talkTimePrompts: ["Tell about your day: First, Then, Finally.", "Start with 'Dear Diary'.", "Use past tense verbs.", "✍️ 引導寫作＋翻譯：寫一篇日記，用 First/Then/Finally 記錄你的一天。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___, I met my friends.（然後）', options: ['Then', 'First', 'Finally', 'Before'], answer: 'Then' },
+    { type: 'fill-blank', question: '中翻英：「我會記得這一天。」', options: ['I will remember this day.', 'I remember.', 'I remembered.', 'Do I remember?'], answer: 'I will remember this day.' },
+    { type: 'match', question: '日記開頭常寫？', options: ['Dear Diary', 'Best wishes', 'The end', 'Hello sir'], answer: 'Dear Diary' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Dear Diary, today was a great day!", lineZh: '親愛的日記，今天是美好的一天！' },
+    { speaker: 'Benny', line: "First, I went to the park. Then, I met my friends.", lineZh: '首先，我去公園。然後，我遇到朋友。' },
+    { speaker: 'Polly', line: "Finally, we ate ice cream. It was so fun!", lineZh: '最後，我們吃冰淇淋。真好玩！' },
+    { speaker: 'Coco', line: "Write your day with First, Then, Finally!", lineZh: '用 First、Then、Finally 寫你的一天！' },
+  ],
+};
+
+const L10_M13: Mission = {
+  id: 13, slug: 'l10-m13-letter', level: 10, title: '寫信', titleEn: 'Writing a Letter', theme: '未來橋・寫封信', themeEmoji: '✉️',
+  focus: '寫作：友善信件 Dear… / Best wishes（開頭與結尾）＋ 中翻英',
+  story: [
+    { image: '✉️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "A letter starts with 'Dear'.", dialogueZh: '信以「Dear」開頭。', highlightWords: ['Dear'], sceneEmojis: ['✉️', '📝', '✨'], animation: 'wave' },
+    { image: '💌', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Dear Grandma, how are you? I miss you.", dialogueZh: '親愛的奶奶，你好嗎？我想你。', highlightWords: ['Dear', 'miss'], sceneEmojis: ['💌', '👵', '😊'], animation: 'bounce' },
+    { image: '🖊️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "End with 'Best wishes' and your name.", dialogueZh: '用「Best wishes」和你的名字結尾。', highlightWords: ['Best wishes'], sceneEmojis: ['🖊️', '✍️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Now write a letter to a friend!", dialogueZh: '現在寫一封信給朋友！', highlightWords: [], sceneEmojis: ['🏆', '✉️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'letter', zh: '信', image: '✉️', phonics: '', kk: '[ˈlɛtɚ]', phonicsSound: '', exampleSentence: 'write a letter', exampleZh: '寫信' },
+    { en: 'Dear', zh: '親愛的', image: '💌', phonics: '', kk: '[dɪr]', phonicsSound: '', exampleSentence: 'Dear Grandma,', exampleZh: '親愛的奶奶，' },
+    { en: 'Best wishes', zh: '祝好（結尾）', image: '🖊️', phonics: '', kk: '[bɛst ˈwɪʃɪz]', phonicsSound: '', exampleSentence: 'Best wishes, Coco', exampleZh: '祝好，Coco' },
+    { en: 'miss', zh: '想念', image: '💗', phonics: '', kk: '[mɪs]', phonicsSound: '', exampleSentence: 'I miss you.', exampleZh: '我想你。' },
+    { en: 'hope', zh: '希望', image: '🌟', phonics: '', kk: '[hop]', phonicsSound: '', exampleSentence: 'I hope you are well.', exampleZh: '希望你安好。' },
+    { en: 'write', zh: '寫', image: '✍️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'write to you', exampleZh: '寫信給你' },
+    { en: 'send', zh: '寄', image: '📮', phonics: '', kk: '[sɛnd]', phonicsSound: '', exampleSentence: 'send a letter', exampleZh: '寄信' },
+    { en: 'news', zh: '消息', image: '📰', phonics: '', kk: '[nuz]', phonicsSound: '', exampleSentence: 'good news', exampleZh: '好消息' },
+    { en: 'visit', zh: '拜訪', image: '🚪', phonics: '', kk: '[ˈvɪzɪt]', phonicsSound: '', exampleSentence: 'I will visit soon.', exampleZh: '我很快會去看你。' },
+    { en: 'soon', zh: '很快', image: '⏳', phonics: '', kk: '[sun]', phonicsSound: '', exampleSentence: 'See you soon.', exampleZh: '很快見。' },
+  ],
+  sentences: [
+    { en: 'Dear Grandma,', zh: '親愛的奶奶，' }, { en: 'How are you? I miss you.', zh: '你好嗎？我想你。' }, { en: 'I hope you are well.', zh: '希望你安好。' }, { en: 'I will visit you soon.', zh: '我很快會去看你。' }, { en: 'Best wishes,', zh: '祝好，' }, { en: 'Coco', zh: 'Coco' },
+  ],
+  phonicsLetters: ['letter writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ Grandma, how are you?（信開頭）', options: ['Dear', 'Hi sir', 'The', 'From'], answer: 'Dear' },
+    { type: 'fill-blank', question: '信結尾常寫 ___.', options: ['Best wishes', 'The end', 'Dear you', 'Hello'], answer: 'Best wishes' },
+    { type: 'match', question: 'miss 是什麼意思？', options: ['想念', '寄', '希望', '拜訪'], answer: '想念' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Who is the letter to?（信寫給誰？）', passage: 'Dear Grandma,\nHow are you? I miss you.\nBest wishes, Coco', options: ['Grandma', 'a teacher', 'a friend', 'Mom'], answer: 'Grandma' },
+    { type: 'fill-blank', question: 'How do you end a friendly letter?（如何結尾）', options: ['Best wishes', 'Dear you', 'The end', 'Hello'], answer: 'Best wishes' },
+    { type: 'fill-blank', question: '中翻英：「你好嗎？我想你。」', options: ['How are you? I miss you.', 'Who are you?', 'Where are you?', 'I am fine.'], answer: 'How are you? I miss you.' },
+    { type: 'fill-blank', question: '中翻英：「我很快會去看你。」', options: ['I will visit you soon.', 'I visit you.', 'I visited you.', 'Do I visit?'], answer: 'I will visit you soon.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['How are you? I miss you.', 'I hope you are well.', 'I will visit you soon.', 'Best wishes, Coco'], answer: 'How are you? I miss you.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：le _ ter（信）', answer: 'letter', image: '✍️' },
+  ],
+  talkTimePrompts: ["Start a letter with 'Dear ___,'.", "Say: I miss you. I hope you are well.", "End with 'Best wishes' and your name.", "✍️ 引導寫作＋翻譯：寫一封短信給奶奶或朋友（Dear…／Best wishes）。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ you are well.（希望）', options: ['hope', 'miss', 'send', 'visit'], answer: 'hope' },
+    { type: 'fill-blank', question: '中翻英：「親愛的奶奶，」', options: ['Dear Grandma,', 'Hi Grandma!', 'To Grandma.', 'From Grandma.'], answer: 'Dear Grandma,' },
+    { type: 'match', question: 'Best wishes 用在信的？', options: ['結尾', '開頭', '中間', '標題'], answer: '結尾' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "A letter starts with 'Dear'.", lineZh: '信以「Dear」開頭。' },
+    { speaker: 'Coco', line: "Dear Grandma, how are you? I miss you.", lineZh: '親愛的奶奶，你好嗎？我想你。' },
+    { speaker: 'Benny', line: "End with 'Best wishes' and your name.", lineZh: '用「Best wishes」和你的名字結尾。' },
+    { speaker: 'Ruby', line: "Now write a letter to a friend!", lineZh: '現在寫一封信給朋友！' },
+  ],
+};
+
+const L10_M14: Mission = {
+  id: 14, slug: 'l10-m14-picture-writing', level: 10, title: '看圖寫作', titleEn: 'Picture Writing', theme: '未來橋・看圖說故事', themeEmoji: '🖼️',
+  focus: '寫作：看圖描述（There is/are ＋ 動作 ＋ 感受）＋ 中翻英',
+  story: [
+    { image: '🖼️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Look at the picture and describe it!", dialogueZh: '看圖並描述它！', highlightWords: ['describe'], sceneEmojis: ['🖼️', '👀', '✨'], animation: 'wave' },
+    { image: '🏞️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "In the picture, there is a park with trees.", dialogueZh: '圖裡有一座有樹的公園。', highlightWords: ['there is'], sceneEmojis: ['🏞️', '🌳', '😊'], animation: 'bounce' },
+    { image: '👧', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "A girl is playing. She looks happy.", dialogueZh: '一個女孩正在玩。她看起來開心。', highlightWords: ['is playing', 'looks'], sceneEmojis: ['👧', '😄', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Say what you see, what they do, how they feel!", dialogueZh: '說你看到什麼、他們做什麼、感覺如何！', highlightWords: [], sceneEmojis: ['🏆', '🖼️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'picture', zh: '圖片', image: '🖼️', phonics: '', kk: '[ˈpɪktʃɚ]', phonicsSound: '', exampleSentence: 'in the picture', exampleZh: '在圖裡' },
+    { en: 'there is', zh: '有（單數）', image: '1️⃣', phonics: '', kk: '[ðɛr ɪz]', phonicsSound: '', exampleSentence: 'There is a park.', exampleZh: '有一座公園。' },
+    { en: 'there are', zh: '有（複數）', image: '🔢', phonics: '', kk: '[ðɛr ɑr]', phonicsSound: '', exampleSentence: 'There are trees.', exampleZh: '有很多樹。' },
+    { en: 'describe', zh: '描述', image: '🗣️', phonics: '', kk: '[dɪˈskraɪb]', phonicsSound: '', exampleSentence: 'describe the picture', exampleZh: '描述圖片' },
+    { en: 'looks', zh: '看起來', image: '👀', phonics: '', kk: '[lʊks]', phonicsSound: '', exampleSentence: 'She looks happy.', exampleZh: '她看起來開心。' },
+    { en: 'in the picture', zh: '在圖裡', image: '🖼️', phonics: '', kk: '[ɪn ðə ˈpɪktʃɚ]', phonicsSound: '', exampleSentence: 'in the picture', exampleZh: '在圖裡' },
+    { en: 'playing', zh: '正在玩', image: '⚽', phonics: '', kk: '[ˈpleɪŋ]', phonicsSound: '', exampleSentence: 'She is playing.', exampleZh: '她正在玩。' },
+    { en: 'sunny', zh: '晴朗的', image: '☀️', phonics: '', kk: '[ˈsʌni]', phonicsSound: '', exampleSentence: 'It is sunny.', exampleZh: '天氣晴朗。' },
+    { en: 'behind', zh: '在…後面', image: '🔙', phonics: '', kk: '[bɪˈhaɪnd]', phonicsSound: '', exampleSentence: 'behind the trees', exampleZh: '在樹後' },
+    { en: 'scene', zh: '場景', image: '🎬', phonics: '', kk: '[sin]', phonicsSound: '', exampleSentence: 'a happy scene', exampleZh: '開心的場景' },
+  ],
+  sentences: [
+    { en: 'In the picture, there is a park.', zh: '圖裡有一座公園。' }, { en: 'There are many trees.', zh: '有很多樹。' }, { en: 'A girl is playing.', zh: '一個女孩正在玩。' }, { en: 'She looks happy.', zh: '她看起來開心。' }, { en: 'It is a sunny day.', zh: '是晴朗的一天。' }, { en: 'The scene is peaceful.', zh: '場景很寧靜。' },
+  ],
+  phonicsLetters: ['picture writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'In the picture, there ___ a park.（單數）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'There ___ many trees.（複數）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+    { type: 'fill-blank', question: 'She ___ happy.（看起來）', options: ['looks', 'look', 'looking', 'looked'], answer: 'looks' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What is in the picture?（圖裡有什麼？）', passage: 'In the picture, there is a park.\nThere are many green trees.\nA girl is playing.', options: ['a park with trees and a girl', 'a city', 'a school', 'a shop'], answer: 'a park with trees and a girl' },
+    { type: 'fill-blank', question: 'A girl ___ playing.（進行·單數 be）', options: ['is', 'are', 'am', 'was'], answer: 'is' },
+    { type: 'fill-blank', question: '中翻英：「圖裡有一座公園。」', options: ['In the picture, there is a park.', 'The park is big.', 'Where is the park?', 'A park.'], answer: 'In the picture, there is a park.' },
+    { type: 'fill-blank', question: '中翻英：「她看起來開心。」', options: ['She looks happy.', 'She is a girl.', 'She plays.', 'Is she happy?'], answer: 'She looks happy.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['In the picture, there is a park.', 'There are many trees.', 'A girl is playing.', 'She looks happy.'], answer: 'In the picture, there is a park.', image: '🎧' },
+    { type: 'read', question: 'How does the girl look?（女孩看起來如何？）', passage: 'A girl is playing in the park.\nThe sun is shining.\nShe looks very happy.', options: ['happy', 'sad', 'tired', 'angry'], answer: 'happy' },
+  ],
+  talkTimePrompts: ["Describe a picture: There is / are ___.", "Say what people are doing.", "Say how they feel: They look ___.", "✍️ 引導寫作＋翻譯：看一張圖，寫 4 句描述（有什麼/做什麼/感覺）。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'There ___ trees behind the girl.（複數）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+    { type: 'fill-blank', question: '中翻英：「有很多樹。」', options: ['There are many trees.', 'There is a tree.', 'Trees are green.', 'Where are trees?'], answer: 'There are many trees.' },
+    { type: 'match', question: 'describe 是什麼意思？', options: ['描述', '看見', '玩', '感覺'], answer: '描述' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Look at the picture and describe it!", lineZh: '看圖並描述它！' },
+    { speaker: 'Coco', line: "In the picture, there is a park with trees.", lineZh: '圖裡有一座有樹的公園。' },
+    { speaker: 'Polly', line: "A girl is playing. She looks happy.", lineZh: '一個女孩正在玩。她看起來開心。' },
+    { speaker: 'Benny', line: "Say what you see, what they do, how they feel!", lineZh: '說你看到什麼、他們做什麼、感覺如何！' },
+  ],
+};
+
+const L10_M15: Mission = {
+  id: 15, slug: 'l10-m15-review-writing', level: 10, title: 'Review③ 寫作', titleEn: 'Review: Writing', theme: '未來橋・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習③：自我介紹 ＋ 日記 ＋ 信件 ＋ 看圖寫作 ＋ 連接詞 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'write', characterName: 'Finn', dialogue: "Let's review all our writing!", dialogueZh: '來複習所有寫作！', highlightWords: [], sceneEmojis: ['🔄', '✍️', '✨'], animation: 'wave' },
+    { image: '🙋', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "My name is Coco, and I like to write.", dialogueZh: '我叫 Coco，我喜歡寫作。', highlightWords: ['and'], sceneEmojis: ['🙋', '📝', '😊'], animation: 'bounce' },
+    { image: '📔', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "First I plan, then I write, finally I check.", dialogueZh: '首先我計畫，然後寫，最後檢查。', highlightWords: ['First', 'then', 'finally'], sceneEmojis: ['📔', '🔢', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can write like an author now!", dialogueZh: '你現在能像作家一樣寫作了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'write', zh: '寫', image: '✍️', phonics: '', kk: '[raɪt]', phonicsSound: '', exampleSentence: 'I like to write.', exampleZh: '我喜歡寫作。' },
+    { en: 'plan', zh: '計畫', image: '🗒️', phonics: '', kk: '[plæn]', phonicsSound: '', exampleSentence: 'First I plan.', exampleZh: '首先我計畫。' },
+    { en: 'check', zh: '檢查', image: '✅', phonics: '', kk: '[tʃɛk]', phonicsSound: '', exampleSentence: 'Finally I check.', exampleZh: '最後我檢查。' },
+    { en: 'and', zh: '和', image: '🔗', phonics: '', kk: '[ænd]', phonicsSound: '', exampleSentence: 'tea and cake', exampleZh: '茶和蛋糕' },
+    { en: 'because', zh: '因為', image: '💡', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'because it is fun', exampleZh: '因為好玩' },
+    { en: 'diary', zh: '日記', image: '📔', phonics: '', kk: '[ˈdaɪəri]', phonicsSound: '', exampleSentence: 'Dear Diary', exampleZh: '親愛的日記' },
+    { en: 'letter', zh: '信', image: '✉️', phonics: '', kk: '[ˈlɛtɚ]', phonicsSound: '', exampleSentence: 'write a letter', exampleZh: '寫信' },
+    { en: 'picture', zh: '圖片', image: '🖼️', phonics: '', kk: '[ˈpɪktʃɚ]', phonicsSound: '', exampleSentence: 'describe the picture', exampleZh: '描述圖片' },
+    { en: 'first', zh: '首先', image: '1️⃣', phonics: '', kk: '[fɝst]', phonicsSound: '', exampleSentence: 'First, I…', exampleZh: '首先，我…' },
+    { en: 'finally', zh: '最後', image: '🏁', phonics: '', kk: '[ˈfaɪnəli]', phonicsSound: '', exampleSentence: 'Finally, I…', exampleZh: '最後，我…' },
+  ],
+  sentences: [
+    { en: 'My name is Coco, and I like to write.', zh: '我叫 Coco，我喜歡寫作。' }, { en: 'First I plan, then I write.', zh: '首先我計畫，然後寫。' }, { en: 'Finally, I check my work.', zh: '最後，我檢查作品。' }, { en: 'Dear Grandma, I miss you.', zh: '親愛的奶奶，我想你。' }, { en: 'In the picture, there is a park.', zh: '圖裡有一座公園。' }, { en: 'I like writing because it is fun.', zh: '我喜歡寫作因為好玩。' },
+  ],
+  phonicsLetters: ['review writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'My name is Coco, ___ I like to write.（並列）', options: ['and', 'but', 'so', 'because'], answer: 'and' },
+    { type: 'fill-blank', question: '___ I plan, then I write.（首先）', options: ['First', 'Finally', 'Then', 'After'], answer: 'First' },
+    { type: 'fill-blank', question: 'I like writing ___ it is fun.（因為）', options: ['because', 'so', 'and', 'but'], answer: 'because' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What are the writing steps?（寫作步驟是什麼？）', passage: 'First, I plan my ideas.\nThen, I write them down.\nFinally, I check my work.', options: ['plan, write, check', 'eat, sleep, play', 'run, jump, stop', 'read only'], answer: 'plan, write, check' },
+    { type: 'fill-blank', question: 'Finally, I ___ my work.（檢查）', options: ['check', 'plan', 'write', 'read'], answer: 'check' },
+    { type: 'fill-blank', question: '中翻英：「首先我計畫，然後寫。」', options: ['First I plan, then I write.', 'I write and plan.', 'I plan.', 'Do I plan?'], answer: 'First I plan, then I write.' },
+    { type: 'fill-blank', question: '中翻英：「我喜歡寫作因為好玩。」', options: ['I like writing because it is fun.', 'I write.', 'Writing is fun.', 'Do I write?'], answer: 'I like writing because it is fun.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['My name is Coco, and I like to write.', 'First I plan, then I write.', 'Finally, I check my work.', 'In the picture, there is a park.'], answer: 'My name is Coco, and I like to write.', image: '🎧' },
+    { type: 'read', question: 'Why does Coco like writing?（Coco 為何喜歡寫作？）', passage: 'Coco writes every day.\nShe writes stories and letters.\nShe likes it because it is fun.', options: ['because it is fun', 'because it is hard', 'because she must', 'she does not like it'], answer: 'because it is fun' },
+  ],
+  talkTimePrompts: ["Introduce yourself in a few sentences.", "Say the writing steps: First, then, finally.", "Use 'and', 'but', 'because'.", "✍️ 引導寫作＋翻譯：選一種（日記/信/看圖），寫一小段英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___, I check my work.（最後）', options: ['Finally', 'First', 'Then', 'Before'], answer: 'Finally' },
+    { type: 'fill-blank', question: '中翻英：「圖裡有一座公園。」', options: ['In the picture, there is a park.', 'The park is big.', 'Where is the park?', 'A park.'], answer: 'In the picture, there is a park.' },
+    { type: 'match', question: '信的結尾常寫？', options: ['Best wishes', 'Dear Diary', 'First', 'There is'], answer: 'Best wishes' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review all our writing!", lineZh: '來複習所有寫作！' },
+    { speaker: 'Coco', line: "My name is Coco, and I like to write.", lineZh: '我叫 Coco，我喜歡寫作。' },
+    { speaker: 'Benny', line: "First I plan, then I write, finally I check.", lineZh: '首先我計畫，然後寫，最後檢查。' },
+    { speaker: 'Finn', line: "You can write like an author now!", lineZh: '你現在能像作家一樣寫作了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
