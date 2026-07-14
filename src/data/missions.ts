@@ -4864,7 +4864,268 @@ const L5_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20];
+// ===================== L6 燈塔角 Lighthouse Point（A1+・進階對話＋過去式入門＋引導式寫作） =====================
+const L6_M1: Mission = {
+  id: 1, slug: 'l6-m1-describe', level: 6, title: '描述外觀', titleEn: 'Describing', theme: '燈塔角・美麗海景', themeEmoji: '🌅',
+  focus: '描述外觀形容詞：beautiful/pretty/clean/dirty/new/old…',
+  story: [
+    { image: '🌅', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Lighthouse Point! The view is beautiful!", dialogueZh: '歡迎來到燈塔角！景色好美！', highlightWords: ['beautiful'], sceneEmojis: ['🌅', '🏰', '✨'], animation: 'wave' },
+    { image: '🏖️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The beach is clean. The old boat is pretty!", dialogueZh: '海灘很乾淨。那艘舊船好漂亮！', highlightWords: ['clean', 'old', 'pretty'], sceneEmojis: ['🏖️', '⛵', '😊'], animation: 'bounce' },
+    { image: '💡', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The lighthouse is tall and bright!", dialogueZh: '燈塔又高又亮！', highlightWords: ['tall', 'bright'], sceneEmojis: ['💡', '🏰', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can describe things now! Wonderful!", dialogueZh: '你會形容東西了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🌅'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'beautiful', zh: '美麗的', image: '🌅', phonics: '', kk: '[ˈbjutɪfl̩]', phonicsSound: '', exampleSentence: 'It is beautiful.', exampleZh: '它很美。' },
+    { en: 'pretty', zh: '漂亮的', image: '🌸', phonics: '', kk: '[ˈprɪti]', phonicsSound: '', exampleSentence: 'a pretty shell', exampleZh: '一個漂亮貝殼' },
+    { en: 'clean', zh: '乾淨的', image: '🫧', phonics: '', kk: '[klin]', phonicsSound: '', exampleSentence: 'a clean beach', exampleZh: '乾淨的海灘' },
+    { en: 'dirty', zh: '髒的', image: '🟤', phonics: '', kk: '[ˈdɝti]', phonicsSound: '', exampleSentence: 'dirty water', exampleZh: '髒水' },
+    { en: 'new', zh: '新的', image: '✨', phonics: '', kk: '[nu]', phonicsSound: '', exampleSentence: 'a new boat', exampleZh: '一艘新船' },
+    { en: 'old', zh: '舊的·老的', image: '⛵', phonics: '', kk: '[old]', phonicsSound: '', exampleSentence: 'an old boat', exampleZh: '一艘舊船' },
+    { en: 'bright', zh: '明亮的', image: '💡', phonics: '', kk: '[braɪt]', phonicsSound: '', exampleSentence: 'a bright light', exampleZh: '明亮的燈' },
+    { en: 'dark', zh: '暗的', image: '🌑', phonics: '', kk: '[dɑrk]', phonicsSound: '', exampleSentence: 'a dark night', exampleZh: '黑暗的夜' },
+    { en: 'tall', zh: '高的', image: '🏰', phonics: '', kk: '[tɔl]', phonicsSound: '', exampleSentence: 'a tall lighthouse', exampleZh: '高高的燈塔' },
+    { en: 'nice', zh: '好的·美好的', image: '🥰', phonics: '', kk: '[naɪs]', phonicsSound: '', exampleSentence: 'a nice day', exampleZh: '美好的一天' },
+  ],
+  sentences: [
+    { en: 'The view is beautiful.', zh: '景色很美。' }, { en: 'The beach is clean.', zh: '海灘很乾淨。' }, { en: 'Is the boat old?', zh: '這艘船舊嗎？' }, { en: 'Yes, it is old but pretty.', zh: '是的，它舊但漂亮。' }, { en: 'The lighthouse is tall and bright.', zh: '燈塔又高又亮。' }, { en: 'What a beautiful day!', zh: '多美的一天！' },
+  ],
+  phonicsLetters: ['describing'],
+  warmUpQuestions: [
+    { type: 'match', question: '🌅 beautiful 是什麼意思？', options: ['美麗的', '髒的', '舊的', '暗的'], answer: '美麗的' },
+    { type: 'match', question: 'clean 的相反是？', options: ['dirty', 'new', 'bright', 'tall'], answer: 'dirty' },
+    { type: 'fill-blank', question: 'The lighthouse is ___.（明亮）', options: ['bright', 'dark', 'dirty', 'old'], answer: 'bright' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的形容詞', options: ['🌅', '🫧', '💡', '🌑'], answer: '🌑', image: '🎧' },
+    { type: 'match', question: '配對：相反詞', options: ['clean-dirty', 'new-old', 'bright-dark', 'beautiful-ugly'], answer: 'clean-dirty' },
+    { type: 'fill-blank', question: '句型代換：The view is ___.（美麗）', options: ['beautiful', 'dirty', 'dark', 'is'], answer: 'beautiful' },
+    { type: 'spell', question: '拼拼看：br _ ght（明亮）', answer: 'bright', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The view is beautiful.', 'The beach is clean.', 'The boat is old.', 'The lighthouse is tall.'], answer: 'The view is beautiful.', image: '🎧' },
+    { type: 'read', question: 'How is the lighthouse?（燈塔怎麼樣？）', passage: 'The lighthouse is very tall.\nAt night, it is bright.\nThe view is beautiful!', options: ['tall and bright', 'small and dark', 'dirty and old', 'short and new'], answer: 'tall and bright' },
+  ],
+  talkTimePrompts: ["Describe the view: It is ___.", "Say two opposite adjectives.", "Describe something in your room.", "✍️ 引導寫作：The ___ is ___. (寫一句描述)"],
+  reviewQuiz: [
+    { type: 'match', question: 'bright 的相反是？', options: ['dark', 'clean', 'new', 'tall'], answer: 'dark' },
+    { type: 'fill-blank', question: 'The beach is ___.（乾淨）', options: ['clean', 'dirty', 'dark', 'old'], answer: 'clean' },
+    { type: 'spell', question: '拼拼看：pre _ ty（漂亮）', answer: 'pretty', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Welcome to Lighthouse Point! It's beautiful!", lineZh: '歡迎來到燈塔角！好美！' },
+    { speaker: 'Coco', line: "The beach is clean. The old boat is pretty!", lineZh: '海灘乾淨。舊船漂亮！' },
+    { speaker: 'Benny', line: "The lighthouse is tall and bright!", lineZh: '燈塔又高又亮！' },
+    { speaker: 'Finn', line: "You can describe things now! Wonderful!", lineZh: '你會形容東西了！太棒了！' },
+  ],
+};
+
+const L6_M2: Mission = {
+  id: 2, slug: 'l6-m2-opinions', level: 6, title: '表達意見', titleEn: 'I think…', theme: '燈塔角・我覺得', themeEmoji: '💭',
+  focus: '句型 I think it\'s… 表達意見；引導寫作 I think ___ because ___',
+  story: [
+    { image: '💭', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "I think the lighthouse is cool!", dialogueZh: '我覺得燈塔很酷！', highlightWords: ['think', 'cool'], sceneEmojis: ['💭', '💡', '✨'], animation: 'wave' },
+    { image: '🎨', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I think this picture is beautiful!", dialogueZh: '我覺得這幅畫很美！', highlightWords: ['think', 'beautiful'], sceneEmojis: ['🎨', '🖼️', '😊'], animation: 'bounce' },
+    { image: '🤔', character: '🐻', characterKey: 'benny', characterAction: 'think', characterName: 'Benny', dialogue: "I think it's fun because we are together!", dialogueZh: '我覺得很好玩，因為我們在一起！', highlightWords: ['think', 'because'], sceneEmojis: ['🤔', '🎉', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Now you can share your ideas!", dialogueZh: '現在你會分享你的想法了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '💭'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'think', zh: '認為·覺得', image: '💭', phonics: '', kk: '[θɪŋk]', phonicsSound: '', exampleSentence: "I think it's nice.", exampleZh: '我覺得很好。' },
+    { en: 'cool', zh: '酷的', image: '😎', phonics: '', kk: '[kul]', phonicsSound: '', exampleSentence: "It's cool!", exampleZh: '很酷！' },
+    { en: 'great', zh: '很棒的', image: '👍', phonics: '', kk: '[ɡret]', phonicsSound: '', exampleSentence: "It's great!", exampleZh: '很棒！' },
+    { en: 'boring', zh: '無聊的', image: '😐', phonics: '', kk: '[ˈbɔrɪŋ]', phonicsSound: '', exampleSentence: "It's boring.", exampleZh: '很無聊。' },
+    { en: 'fun', zh: '好玩的', image: '🎉', phonics: '', kk: '[fʌn]', phonicsSound: '', exampleSentence: "It's fun!", exampleZh: '很好玩！' },
+    { en: 'good', zh: '好的', image: '🙂', phonics: '', kk: '[ɡʊd]', phonicsSound: '', exampleSentence: "It's good.", exampleZh: '很好。' },
+    { en: 'bad', zh: '不好的', image: '🙁', phonics: '', kk: '[bæd]', phonicsSound: '', exampleSentence: "It's bad.", exampleZh: '不好。' },
+    { en: 'amazing', zh: '驚人的', image: '🤩', phonics: '', kk: '[əˈmezɪŋ]', phonicsSound: '', exampleSentence: "It's amazing!", exampleZh: '太驚人了！' },
+    { en: 'because', zh: '因為', image: '➡️', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'I like it because it is fun.', exampleZh: '我喜歡它因為好玩。' },
+    { en: 'idea', zh: '想法', image: '💡', phonics: '', kk: '[aɪˈdiə]', phonicsSound: '', exampleSentence: 'a good idea', exampleZh: '一個好主意' },
+  ],
+  sentences: [
+    { en: "I think it's cool.", zh: '我覺得很酷。' }, { en: 'I think the picture is beautiful.', zh: '我覺得這幅畫很美。' }, { en: "What do you think?", zh: '你覺得呢？' }, { en: "I think it's fun because we play together.", zh: '我覺得好玩因為我們一起玩。' }, { en: "I don't think it's boring.", zh: '我不覺得無聊。' }, { en: "That's a good idea!", zh: '好主意！' },
+  ],
+  phonicsLetters: ["I think it's…"],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ it is cool.（覺得）', options: ['think', 'am', 'like', 'is'], answer: 'think' },
+    { type: 'match', question: '😎 cool 是什麼意思？', options: ['酷的', '無聊的', '不好的', '髒的'], answer: '酷的' },
+    { type: 'match', question: 'fun 的相反感覺是？', options: ['boring', 'great', 'cool', 'good'], answer: 'boring' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的感覺', options: ['😎', '😐', '🤩', '🙁'], answer: '🤩', image: '🎧' },
+    { type: 'match', question: '配對：意見詞配意思', options: ['cool-酷', 'boring-無聊', 'great-很棒', 'amazing-驚人'], answer: 'cool-酷' },
+    { type: 'fill-blank', question: '句型代換：I think it\'s ___.（好玩）', options: ['fun', 'think', 'because', 'is'], answer: 'fun' },
+    { type: 'fill-blank', question: 'I like it ___ it is fun.（因為）', options: ['because', 'think', 'and', 'but'], answer: 'because' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ["I think it's cool.", 'What do you think?', "I think it's fun.", "That's a good idea!"], answer: "I think it's cool.", image: '🎧' },
+    { type: 'read', question: 'Why does Benny think it is fun?（Benny 為何覺得好玩？）', passage: "Benny is at the beach with friends.\nHe thinks it is fun.\nIt is fun because they are together.", options: ['because they are together', 'because it is cold', 'because it is boring', 'because it is late'], answer: 'because they are together' },
+  ],
+  talkTimePrompts: ["What do you think? I think it's ___.", "Give an opinion about school.", "Use 'because': I like it because ___.", "✍️ 引導寫作：I think ___ because ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'What do you ___?（覺得）', options: ['think', 'am', 'like', 'is'], answer: 'think' },
+    { type: 'match', question: '😐 boring 是什麼意思？', options: ['無聊的', '好玩的', '很棒的', '酷的'], answer: '無聊的' },
+    { type: 'fill-blank', question: "It's fun ___ we play together.（因為）", options: ['because', 'think', 'but', 'and'], answer: 'because' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "I think the lighthouse is cool!", lineZh: '我覺得燈塔很酷！' },
+    { speaker: 'Coco', line: "I think this picture is beautiful!", lineZh: '我覺得這幅畫很美！' },
+    { speaker: 'Benny', line: "I think it's fun because we are together!", lineZh: '我覺得好玩因為我們在一起！' },
+    { speaker: 'Ruby', line: "Now you can share your ideas!", lineZh: '現在你會分享想法了！' },
+  ],
+};
+
+const L6_M3: Mission = {
+  id: 3, slug: 'l6-m3-shopping', level: 6, title: '購物 How much?', titleEn: 'How much?', theme: '燈塔角・海邊小店', themeEmoji: '🛍️',
+  focus: '句型 How much is it? — It\'s ___ dollars.',
+  story: [
+    { image: '🛍️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "How much is this shell? It's five dollars.", dialogueZh: '這個貝殼多少錢？五塊錢。', highlightWords: ['How much', 'dollars'], sceneEmojis: ['🐚', '💵', '✨'], animation: 'wave' },
+    { image: '🍦', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "How much is the ice cream? It's two dollars.", dialogueZh: '冰淇淋多少錢？兩塊錢。', highlightWords: ['How much', 'dollars'], sceneEmojis: ['🍦', '💵', '😊'], animation: 'bounce' },
+    { image: '💰', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Here is the money. Thank you!", dialogueZh: '錢在這裡。謝謝！', highlightWords: ['money'], sceneEmojis: ['💰', '🤝', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Now you can go shopping in English!", dialogueZh: '現在你會用英文購物了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🛍️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'how much', zh: '多少錢', image: '💲', phonics: '', kk: '[haʊ mʌtʃ]', phonicsSound: '', exampleSentence: 'How much is it?', exampleZh: '多少錢？' },
+    { en: 'dollar', zh: '元·美金', image: '💵', phonics: '', kk: '[ˈdɑlɚ]', phonicsSound: '', exampleSentence: 'five dollars', exampleZh: '五塊錢' },
+    { en: 'money', zh: '錢', image: '💰', phonics: '', kk: '[ˈmʌni]', phonicsSound: '', exampleSentence: 'I have money.', exampleZh: '我有錢。' },
+    { en: 'price', zh: '價錢', image: '🏷️', phonics: '', kk: '[praɪs]', phonicsSound: '', exampleSentence: 'a good price', exampleZh: '好價錢' },
+    { en: 'buy', zh: '買', image: '🛒', phonics: '', kk: '[baɪ]', phonicsSound: '', exampleSentence: 'I buy a shell.', exampleZh: '我買一個貝殼。' },
+    { en: 'pay', zh: '付錢', image: '💳', phonics: '', kk: '[pe]', phonicsSound: '', exampleSentence: 'I pay five dollars.', exampleZh: '我付五塊錢。' },
+    { en: 'coin', zh: '硬幣', image: '🪙', phonics: '', kk: '[kɔɪn]', phonicsSound: '', exampleSentence: 'a gold coin', exampleZh: '一個金幣' },
+    { en: 'shop', zh: '商店·購物', image: '🏪', phonics: '', kk: '[ʃɑp]', phonicsSound: '', exampleSentence: 'a small shop', exampleZh: '一間小店' },
+    { en: 'want', zh: '想要', image: '🙋', phonics: '', kk: '[wɑnt]', phonicsSound: '', exampleSentence: 'I want this.', exampleZh: '我想要這個。' },
+    { en: 'thank you', zh: '謝謝', image: '🙇', phonics: '', kk: '[θæŋk ju]', phonicsSound: '', exampleSentence: 'Thank you!', exampleZh: '謝謝你！' },
+  ],
+  sentences: [
+    { en: 'How much is it?', zh: '多少錢？' }, { en: "It's five dollars.", zh: '五塊錢。' }, { en: 'I want to buy this.', zh: '我想買這個。' }, { en: 'Here is the money.', zh: '錢在這裡。' }, { en: 'How much are they?', zh: '它們多少錢？' }, { en: 'Thank you very much!', zh: '非常謝謝！' },
+  ],
+  phonicsLetters: ['How much?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ much is it?（多少）', options: ['How', 'What', 'Where', 'Who'], answer: 'How' },
+    { type: 'match', question: '💵 是什麼？', options: ['dollar', 'coin', 'shop', 'price'], answer: 'dollar' },
+    { type: 'match', question: 'buy 是什麼意思？', options: ['買', '賣', '付', '想'], answer: '買' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['💵', '💰', '🪙', '🛒'], answer: '🪙', image: '🎧' },
+    { type: 'match', question: '配對：字配圖', options: ['money-💰', 'coin-🪙', 'buy-🛒', 'price-🏷️'], answer: 'money-💰' },
+    { type: 'fill-blank', question: "How much is it? It's five ___.（元）", options: ['dollars', 'money', 'coins', 'price'], answer: 'dollars' },
+    { type: 'spell', question: '拼拼看：mon _ y（錢）', answer: 'money', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['How much is it?', "It's five dollars.", 'I want to buy this.', 'Here is the money.'], answer: 'How much is it?', image: '🎧' },
+    { type: 'read', question: 'How much is the ice cream?（冰淇淋多少錢？）', passage: 'Coco is at the shop.\n"How much is the ice cream?"\n"It is two dollars."', options: ['two dollars', 'five dollars', 'ten dollars', 'one dollar'], answer: 'two dollars' },
+  ],
+  talkTimePrompts: ["Ask: How much is it?", "Answer: It's ___ dollars.", "Buy something: I want to buy ___.", "✍️ 引導寫作：I want to buy a ___. It is ___ dollars."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'How ___ is it?（多少）', options: ['much', 'many', 'old', 'big'], answer: 'much' },
+    { type: 'match', question: '🪙 是什麼？', options: ['coin', 'dollar', 'price', 'shop'], answer: 'coin' },
+    { type: 'spell', question: '拼拼看：doll _ r（元）', answer: 'dollar', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "How much is this shell?", lineZh: '這個貝殼多少錢？' },
+    { speaker: 'Polly', line: "It's five dollars. How much is the ice cream?", lineZh: '五塊錢。冰淇淋多少錢？' },
+    { speaker: 'Benny', line: "It's two dollars. Here is the money!", lineZh: '兩塊錢。錢在這裡！' },
+    { speaker: 'Coco', line: "Thank you! Now you can go shopping!", lineZh: '謝謝！現在你會購物了！' },
+  ],
+};
+
+const L6_M4: Mission = {
+  id: 4, slug: 'l6-m4-cheap-expensive', level: 6, title: '便宜與貴', titleEn: 'Cheap / Expensive', theme: '燈塔角・買東西', themeEmoji: '💰',
+  focus: '購物單字：cheap/expensive/buy/sell/money ＋ It is too expensive.',
+  story: [
+    { image: '💰', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "This hat is cheap. It's only one dollar!", dialogueZh: '這頂帽子很便宜。只要一塊錢！', highlightWords: ['cheap'], sceneEmojis: ['🎩', '💵', '✨'], animation: 'wave' },
+    { image: '💎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "This ring is expensive. It's too expensive!", dialogueZh: '這個戒指很貴。太貴了！', highlightWords: ['expensive'], sceneEmojis: ['💎', '💸', '😮'], animation: 'shake' },
+    { image: '🏪', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "The shop sells shells. People buy them!", dialogueZh: '這家店賣貝殼。人們買它們！', highlightWords: ['sells', 'buy'], sceneEmojis: ['🏪', '🐚', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Cheap or expensive — you can decide!", dialogueZh: '便宜或貴 —— 你可以決定！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '💰'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'cheap', zh: '便宜的', image: '💵', phonics: '', kk: '[tʃip]', phonicsSound: '', exampleSentence: 'It is cheap.', exampleZh: '它很便宜。' },
+    { en: 'expensive', zh: '貴的', image: '💎', phonics: '', kk: '[ɪkˈspɛnsɪv]', phonicsSound: '', exampleSentence: 'It is expensive.', exampleZh: '它很貴。' },
+    { en: 'buy', zh: '買', image: '🛒', phonics: '', kk: '[baɪ]', phonicsSound: '', exampleSentence: 'I buy a hat.', exampleZh: '我買一頂帽子。' },
+    { en: 'sell', zh: '賣', image: '🏪', phonics: '', kk: '[sɛl]', phonicsSound: '', exampleSentence: 'They sell shells.', exampleZh: '他們賣貝殼。' },
+    { en: 'money', zh: '錢', image: '💰', phonics: '', kk: '[ˈmʌni]', phonicsSound: '', exampleSentence: 'I have money.', exampleZh: '我有錢。' },
+    { en: 'too', zh: '太…', image: '⚠️', phonics: '', kk: '[tu]', phonicsSound: '', exampleSentence: 'too expensive', exampleZh: '太貴了' },
+    { en: 'store', zh: '商店', image: '🏬', phonics: '', kk: '[stɔr]', phonicsSound: '', exampleSentence: 'a big store', exampleZh: '一家大商店' },
+    { en: 'sale', zh: '特價', image: '🔖', phonics: '', kk: '[sel]', phonicsSound: '', exampleSentence: 'on sale', exampleZh: '特價中' },
+    { en: 'wallet', zh: '錢包', image: '👛', phonics: '', kk: '[ˈwɑlɪt]', phonicsSound: '', exampleSentence: 'my wallet', exampleZh: '我的錢包' },
+    { en: 'hat', zh: '帽子', image: '🎩', phonics: '', kk: '[hæt]', phonicsSound: '', exampleSentence: 'a cheap hat', exampleZh: '一頂便宜帽子' },
+  ],
+  sentences: [
+    { en: 'This hat is cheap.', zh: '這頂帽子很便宜。' }, { en: 'This ring is expensive.', zh: '這個戒指很貴。' }, { en: 'It is too expensive!', zh: '太貴了！' }, { en: 'The shop sells shells.', zh: '這家店賣貝殼。' }, { en: 'Do you want to buy it?', zh: '你想買嗎？' }, { en: 'It is on sale!', zh: '特價中！' },
+  ],
+  phonicsLetters: ['cheap / expensive'],
+  warmUpQuestions: [
+    { type: 'match', question: 'cheap 的相反是？', options: ['expensive', 'buy', 'sell', 'money'], answer: 'expensive' },
+    { type: 'match', question: 'buy 的相反是？', options: ['sell', 'cheap', 'store', 'sale'], answer: 'sell' },
+    { type: 'match', question: '💎 這個戒指通常是？', options: ['expensive', 'cheap', 'free', 'sell'], answer: 'expensive' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['💵', '💎', '🏪', '👛'], answer: '👛', image: '🎧' },
+    { type: 'match', question: '配對：字配意思', options: ['cheap-便宜', 'expensive-貴', 'buy-買', 'sell-賣'], answer: 'cheap-便宜' },
+    { type: 'fill-blank', question: '句型代換：This ring is ___.（貴）', options: ['expensive', 'cheap', 'buy', 'is'], answer: 'expensive' },
+    { type: 'fill-blank', question: 'The shop ___ shells.（賣·第三人稱）', options: ['sells', 'sell', 'buy', 'buys'], answer: 'sells' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['This hat is cheap.', 'This ring is expensive.', 'It is too expensive!', 'It is on sale!'], answer: 'This hat is cheap.', image: '🎧' },
+    { type: 'read', question: 'Why does Coco not buy the ring?（Coco 為何不買戒指？）', passage: 'Coco looks at a ring.\nIt is very expensive.\nIt is too expensive, so she does not buy it.', options: ['too expensive', 'too cheap', 'too small', 'too old'], answer: 'too expensive' },
+  ],
+  talkTimePrompts: ["Say: This is cheap / expensive.", "Ask: Do you want to buy it?", "Use 'too': It is too expensive.", "✍️ 引導寫作：The ___ is cheap/expensive. I ___ it."],
+  reviewQuiz: [
+    { type: 'match', question: 'expensive 是什麼意思？', options: ['貴的', '便宜的', '買', '賣'], answer: '貴的' },
+    { type: 'fill-blank', question: 'It is ___ expensive!（太）', options: ['too', 'to', 'two', 'so'], answer: 'too' },
+    { type: 'spell', question: '拼拼看：ch _ ap（便宜）', answer: 'cheap', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "This hat is cheap. Only one dollar!", lineZh: '這帽子便宜。只要一塊！' },
+    { speaker: 'Coco', line: "This ring is too expensive!", lineZh: '這戒指太貴了！' },
+    { speaker: 'Polly', line: "The shop sells shells. People buy them!", lineZh: '店賣貝殼。人們買！' },
+    { speaker: 'Benny', line: "Cheap or expensive — you decide!", lineZh: '便宜或貴 —— 你決定！' },
+  ],
+};
+
+const L6_M5: Mission = {
+  id: 5, slug: 'l6-m5-review-shopping', level: 6, title: 'Review① 描述購物', titleEn: 'Review: Describe & Shop', theme: '燈塔角・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：描述形容詞 ＋ 意見 I think ＋ 購物 How much/cheap/expensive',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! Describe, think, and shop!", dialogueZh: '來複習！形容、想法、購物！', highlightWords: [], sceneEmojis: ['🔄', '🛍️', '✨'], animation: 'wave' },
+    { image: '🌅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The view is beautiful. I think it's amazing!", dialogueZh: '景色很美。我覺得太驚人了！', highlightWords: ['beautiful', 'think'], sceneEmojis: ['🌅', '💭', '😊'], animation: 'bounce' },
+    { image: '💵', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "How much is it? It's cheap — only two dollars!", dialogueZh: '多少錢？很便宜 —— 只要兩塊！', highlightWords: ['How much', 'cheap'], sceneEmojis: ['💵', '🛒', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can describe, share, and shop! Amazing!", dialogueZh: '你會形容、分享、購物了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'beautiful', zh: '美麗的', image: '🌅', phonics: '', kk: '[ˈbjutɪfl̩]', phonicsSound: '', exampleSentence: 'It is beautiful.', exampleZh: '它很美。' },
+    { en: 'clean', zh: '乾淨的', image: '🫧', phonics: '', kk: '[klin]', phonicsSound: '', exampleSentence: 'a clean beach', exampleZh: '乾淨的海灘' },
+    { en: 'think', zh: '覺得', image: '💭', phonics: '', kk: '[θɪŋk]', phonicsSound: '', exampleSentence: "I think it's nice.", exampleZh: '我覺得很好。' },
+    { en: 'cool', zh: '酷的', image: '😎', phonics: '', kk: '[kul]', phonicsSound: '', exampleSentence: "It's cool!", exampleZh: '很酷！' },
+    { en: 'how much', zh: '多少錢', image: '💲', phonics: '', kk: '[haʊ mʌtʃ]', phonicsSound: '', exampleSentence: 'How much is it?', exampleZh: '多少錢？' },
+    { en: 'dollar', zh: '元', image: '💵', phonics: '', kk: '[ˈdɑlɚ]', phonicsSound: '', exampleSentence: 'two dollars', exampleZh: '兩塊錢' },
+    { en: 'cheap', zh: '便宜的', image: '🪙', phonics: '', kk: '[tʃip]', phonicsSound: '', exampleSentence: 'It is cheap.', exampleZh: '它很便宜。' },
+    { en: 'expensive', zh: '貴的', image: '💎', phonics: '', kk: '[ɪkˈspɛnsɪv]', phonicsSound: '', exampleSentence: 'It is expensive.', exampleZh: '它很貴。' },
+    { en: 'buy', zh: '買', image: '🛒', phonics: '', kk: '[baɪ]', phonicsSound: '', exampleSentence: 'I buy it.', exampleZh: '我買它。' },
+    { en: 'because', zh: '因為', image: '➡️', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'I like it because it is nice.', exampleZh: '我喜歡因為它很好。' },
+  ],
+  sentences: [
+    { en: 'The view is beautiful.', zh: '景色很美。' }, { en: "I think it's amazing.", zh: '我覺得很驚人。' }, { en: 'How much is it?', zh: '多少錢？' }, { en: "It's cheap, only two dollars.", zh: '很便宜，只要兩塊。' }, { en: 'It is too expensive.', zh: '太貴了。' }, { en: 'I like it because it is pretty.', zh: '我喜歡它因為它漂亮。' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'match', question: 'beautiful 是什麼意思？', options: ['美麗的', '便宜的', '貴的', '無聊的'], answer: '美麗的' },
+    { type: 'fill-blank', question: 'I ___ it is cool.（覺得）', options: ['think', 'am', 'buy', 'is'], answer: 'think' },
+    { type: 'match', question: 'cheap 的相反是？', options: ['expensive', 'clean', 'cool', 'buy'], answer: 'expensive' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🌅', '💭', '💵', '💎'], answer: '💎', image: '🎧' },
+    { type: 'fill-blank', question: "How ___ is it? It's cheap.（多少）", options: ['much', 'many', 'old', 'big'], answer: 'much' },
+    { type: 'fill-blank', question: 'I like it ___ it is pretty.（因為）', options: ['because', 'think', 'but', 'and'], answer: 'because' },
+    { type: 'spell', question: '拼拼看：exp _ nsive（貴）', answer: 'expensive', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The view is beautiful.', "I think it's amazing.", 'How much is it?', 'It is too expensive.'], answer: 'The view is beautiful.', image: '🎧' },
+    { type: 'read', question: 'What does Coco think of the view?（Coco 覺得景色如何？）', passage: 'Coco looks at the sea.\nThe view is beautiful.\nShe thinks it is amazing!', options: ['amazing', 'boring', 'bad', 'dark'], answer: 'amazing' },
+  ],
+  talkTimePrompts: ["Describe and give an opinion: It is ___. I think it's ___.", "Go shopping: How much? Buy it.", "Say cheap or expensive.", "✍️ 引導寫作：I think the ___ is ___ because ___."],
+  reviewQuiz: [
+    { type: 'match', question: 'expensive 是什麼意思？', options: ['貴的', '便宜的', '美麗的', '乾淨的'], answer: '貴的' },
+    { type: 'fill-blank', question: "I think it's ___.（酷）", options: ['cool', 'think', 'buy', 'much'], answer: 'cool' },
+    { type: 'read', question: 'Is it expensive?（貴嗎？）', passage: 'The hat is only two dollars.\nIt is very cheap.\nCoco buys the hat.', options: ['No, it is cheap', 'Yes, it is expensive', 'It is dirty', 'It is old'], answer: 'No, it is cheap' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review! Describe, think, and shop!", lineZh: '來複習！形容、想法、購物！' },
+    { speaker: 'Coco', line: "The view is beautiful. I think it's amazing!", lineZh: '景色很美。我覺得驚人！' },
+    { speaker: 'Benny', line: "How much? It's cheap — only two dollars!", lineZh: '多少錢？便宜 —— 只要兩塊！' },
+    { speaker: 'Finn', line: "You can describe, share, and shop! Amazing!", lineZh: '你會形容、分享、購物了！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
