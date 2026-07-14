@@ -9289,7 +9289,267 @@ const L10_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5];
+const L10_M6: Mission = {
+  id: 6, slug: 'l10-m6-paragraph-1', level: 10, title: '段落閱讀①', titleEn: 'Paragraph Reading 1', theme: '未來橋・我的城市', themeEmoji: '📖',
+  focus: '段落閱讀①：讀一段介紹城市的短文並回答理解問題 ＋ 中翻英',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a paragraph about a city!", dialogueZh: '我們來讀一段介紹城市的短文！', highlightWords: ['paragraph'], sceneEmojis: ['📖', '🏙️', '✨'], animation: 'wave' },
+    { image: '🏙️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Taipei is a big city. Many people live there.", dialogueZh: '台北是大城市。很多人住那裡。', highlightWords: ['big city'], sceneEmojis: ['🏙️', '👥', '😊'], animation: 'bounce' },
+    { image: '🚇', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "It has a fast train and tall buildings.", dialogueZh: '它有快速的火車和高大樓。', highlightWords: ['fast train'], sceneEmojis: ['🚇', '🏢', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read a whole paragraph! Great!", dialogueZh: '你讀完整段了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '📖', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'city', zh: '城市', image: '🏙️', phonics: '', kk: '[ˈsɪti]', phonicsSound: '', exampleSentence: 'a big city', exampleZh: '大城市' },
+    { en: 'people', zh: '人們', image: '👥', phonics: '', kk: '[ˈpipl̩]', phonicsSound: '', exampleSentence: 'many people', exampleZh: '很多人' },
+    { en: 'building', zh: '建築·大樓', image: '🏢', phonics: '', kk: '[ˈbɪldɪŋ]', phonicsSound: '', exampleSentence: 'tall buildings', exampleZh: '高大樓' },
+    { en: 'train', zh: '火車', image: '🚇', phonics: '', kk: '[tren]', phonicsSound: '', exampleSentence: 'a fast train', exampleZh: '快速火車' },
+    { en: 'busy', zh: '繁忙的', image: '🚦', phonics: '', kk: '[ˈbɪzi]', phonicsSound: '', exampleSentence: 'a busy city', exampleZh: '繁忙的城市' },
+    { en: 'tall', zh: '高的', image: '📏', phonics: '', kk: '[tɔl]', phonicsSound: '', exampleSentence: 'tall buildings', exampleZh: '高大樓' },
+    { en: 'park', zh: '公園', image: '🏞️', phonics: '', kk: '[pɑrk]', phonicsSound: '', exampleSentence: 'a nice park', exampleZh: '漂亮公園' },
+    { en: 'live', zh: '住', image: '🏠', phonics: '', kk: '[lɪv]', phonicsSound: '', exampleSentence: 'people live there', exampleZh: '人們住那' },
+    { en: 'famous', zh: '有名的', image: '⭐', phonics: '', kk: '[ˈfeməs]', phonicsSound: '', exampleSentence: 'a famous tower', exampleZh: '有名的塔' },
+    { en: 'visit', zh: '拜訪·參觀', image: '📸', phonics: '', kk: '[ˈvɪzɪt]', phonicsSound: '', exampleSentence: 'visit the city', exampleZh: '參觀城市' },
+  ],
+  sentences: [
+    { en: 'Taipei is a big city.', zh: '台北是大城市。' }, { en: 'Many people live there.', zh: '很多人住那裡。' }, { en: 'It has a fast train.', zh: '它有快速火車。' }, { en: 'There are tall buildings.', zh: '有高大樓。' }, { en: 'People visit the famous tower.', zh: '人們參觀有名的塔。' }, { en: 'It is a busy and fun city.', zh: '它是繁忙又好玩的城市。' },
+  ],
+  phonicsLetters: ['paragraph reading'],
+  warmUpQuestions: [
+    { type: 'match', question: '🏙️ city 是什麼？', options: ['城市', '公園', '火車', '大樓'], answer: '城市' },
+    { type: 'fill-blank', question: 'Taipei is a big ___.（城市）', options: ['city', 'train', 'park', 'people'], answer: 'city' },
+    { type: 'match', question: 'busy 是什麼意思？', options: ['繁忙的', '安靜的', '高的', '有名的'], answer: '繁忙的' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What kind of city is Taipei?（台北是什麼樣的城市？）', passage: 'Taipei is a big city.\nMany people live there.\nIt is busy and exciting.', options: ['a big city', 'a small village', 'a quiet town', 'a farm'], answer: 'a big city' },
+    { type: 'read', question: 'What does Taipei have?（台北有什麼？）', passage: 'Taipei has a fast train.\nIt has many tall buildings.\nThere is a famous tower.', options: ['a fast train and tall buildings', 'only farms', 'no people', 'small houses'], answer: 'a fast train and tall buildings' },
+    { type: 'read', question: 'What do people visit?（人們參觀什麼？）', passage: 'People from all over come to Taipei.\nThey visit the famous tower.\nThey take many photos.', options: ['the famous tower', 'a farm', 'a river', 'nothing'], answer: 'the famous tower' },
+    { type: 'fill-blank', question: '中翻英：「很多人住那裡。」', options: ['Many people live there.', 'People visit.', 'It is big.', 'Do people live?'], answer: 'Many people live there.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Taipei is a big city.', 'It has a fast train.', 'There are tall buildings.', 'It is a busy and fun city.'], answer: 'Taipei is a big city.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：build _ ng（大樓）', answer: 'building', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the paragraph about Taipei.", "Describe a city you know.", "What does the city have?", "✍️ 引導寫作＋翻譯：寫 3 句介紹你住的城市。"],
+  reviewQuiz: [
+    { type: 'read', question: 'Is Taipei quiet?（台北安靜嗎？）', passage: 'Taipei is a big, busy city.\nMany people and cars are on the streets.\nIt is exciting.', options: ['No, it is busy', 'Yes, it is quiet', 'It is empty', 'It is small'], answer: 'No, it is busy' },
+    { type: 'match', question: 'famous 是什麼意思？', options: ['有名的', '繁忙的', '高的', '快的'], answer: '有名的' },
+    { type: 'fill-blank', question: 'There ___ tall buildings.（複數 there be）', options: ['are', 'is', 'was', 'be'], answer: 'are' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Let's read a paragraph about a city!", lineZh: '我們來讀一段介紹城市的短文！' },
+    { speaker: 'Coco', line: "Taipei is a big city. Many people live there.", lineZh: '台北是大城市。很多人住那裡。' },
+    { speaker: 'Polly', line: "It has a fast train and tall buildings.", lineZh: '它有快速的火車和高大樓。' },
+    { speaker: 'Benny', line: "You read a whole paragraph! Great!", lineZh: '你讀完整段了！太棒了！' },
+  ],
+};
+
+const L10_M7: Mission = {
+  id: 7, slug: 'l10-m7-paragraph-2', level: 10, title: '段落閱讀②', titleEn: 'Paragraph Reading 2', theme: '未來橋・我的寵物', themeEmoji: '📚',
+  focus: '段落閱讀②：讀一段介紹寵物的短文並回答理解問題 ＋ 中翻英',
+  story: [
+    { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A new paragraph: My Pet Dog!", dialogueZh: '新段落：我的寵物狗！', highlightWords: ['paragraph'], sceneEmojis: ['📚', '🐶', '✨'], animation: 'wave' },
+    { image: '🐶', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "I have a dog named Max. He is brown and friendly.", dialogueZh: '我有一隻叫 Max 的狗。他棕色又友善。', highlightWords: ['brown', 'friendly'], sceneEmojis: ['🐶', '🟤', '😊'], animation: 'bounce' },
+    { image: '⚽', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Every day, Max and I play in the park.", dialogueZh: '每天，Max 和我在公園玩。', highlightWords: ['play'], sceneEmojis: ['⚽', '🏞️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You understood the whole story! Great!", dialogueZh: '你讀懂整個故事了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '📚', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'pet', zh: '寵物', image: '🐾', phonics: '', kk: '[pɛt]', phonicsSound: '', exampleSentence: 'my pet', exampleZh: '我的寵物' },
+    { en: 'named', zh: '名叫', image: '🏷️', phonics: '', kk: '[nemd]', phonicsSound: '', exampleSentence: 'a dog named Max', exampleZh: '一隻叫 Max 的狗' },
+    { en: 'friendly', zh: '友善的', image: '😊', phonics: '', kk: '[ˈfrɛndli]', phonicsSound: '', exampleSentence: 'a friendly dog', exampleZh: '友善的狗' },
+    { en: 'brown', zh: '棕色的', image: '🟤', phonics: '', kk: '[braʊn]', phonicsSound: '', exampleSentence: 'a brown dog', exampleZh: '棕狗' },
+    { en: 'play', zh: '玩', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'we play', exampleZh: '我們玩' },
+    { en: 'every day', zh: '每天', image: '📅', phonics: '', kk: '[ˈɛvri de]', phonicsSound: '', exampleSentence: 'every day', exampleZh: '每天' },
+    { en: 'walk', zh: '散步·遛', image: '🚶', phonics: '', kk: '[wɔk]', phonicsSound: '', exampleSentence: 'I walk my dog.', exampleZh: '我遛狗。' },
+    { en: 'love', zh: '愛', image: '❤️', phonics: '', kk: '[lʌv]', phonicsSound: '', exampleSentence: 'I love Max.', exampleZh: '我愛 Max。' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'We are happy.', exampleZh: '我們很開心。' },
+    { en: 'best friend', zh: '最好的朋友', image: '🤝', phonics: '', kk: '[bɛst frɛnd]', phonicsSound: '', exampleSentence: 'my best friend', exampleZh: '我最好的朋友' },
+  ],
+  sentences: [
+    { en: 'I have a dog named Max.', zh: '我有一隻叫 Max 的狗。' }, { en: 'He is brown and friendly.', zh: '他棕色又友善。' }, { en: 'Every day, we play in the park.', zh: '每天我們在公園玩。' }, { en: 'I walk Max after school.', zh: '我放學後遛 Max。' }, { en: 'Max is my best friend.', zh: 'Max 是我最好的朋友。' }, { en: 'We are very happy together.', zh: '我們在一起很開心。' },
+  ],
+  phonicsLetters: ['paragraph reading'],
+  warmUpQuestions: [
+    { type: 'match', question: '🐾 pet 是什麼？', options: ['寵物', '公園', '朋友', '狗窩'], answer: '寵物' },
+    { type: 'match', question: 'friendly 是什麼意思？', options: ['友善的', '棕色的', '快的', '大的'], answer: '友善的' },
+    { type: 'fill-blank', question: 'Max is ___ and friendly.（棕色）', options: ['brown', 'happy', 'big', 'fast'], answer: 'brown' },
+  ],
+  challenges: [
+    { type: 'read', question: "What is the dog's name?（狗叫什麼名字？）", passage: 'I have a pet dog.\nHis name is Max.\nHe is brown and friendly.', options: ['Max', 'Coco', 'Sam', 'Ben'], answer: 'Max' },
+    { type: 'read', question: 'What do they do every day?（他們每天做什麼？）', passage: 'Every day, Max and I play.\nWe play in the park.\nWe run and have fun.', options: ['play in the park', 'sleep', 'study', 'watch TV'], answer: 'play in the park' },
+    { type: 'read', question: 'How does the writer feel about Max?（作者對 Max 感覺如何？）', passage: 'Max is my best friend.\nI love him a lot.\nWe are very happy together.', options: ['loves him', 'is scared of him', 'ignores him', 'dislikes him'], answer: 'loves him' },
+    { type: 'fill-blank', question: '中翻英：「他棕色又友善。」', options: ['He is brown and friendly.', 'He is a dog.', 'I have a dog.', 'Is he friendly?'], answer: 'He is brown and friendly.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I have a dog named Max.', 'He is brown and friendly.', 'Every day, we play in the park.', 'Max is my best friend.'], answer: 'I have a dog named Max.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：fri _ ndly（友善的）', answer: 'friendly', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the paragraph about Max.", "Describe a pet or animal you like.", "What do they do every day?", "✍️ 引導寫作＋翻譯：寫 3 句介紹一隻寵物。"],
+  reviewQuiz: [
+    { type: 'read', question: 'Where do Max and the writer play?（Max 和作者在哪玩？）', passage: 'Every day, we go to the park.\nWe play there together.\nIt is our favorite place.', options: ['the park', 'the house', 'school', 'the beach'], answer: 'the park' },
+    { type: 'match', question: 'best friend 是什麼意思？', options: ['最好的朋友', '寵物', '公園', '棕色'], answer: '最好的朋友' },
+    { type: 'fill-blank', question: 'I ___ Max after school.（遛·散步）', options: ['walk', 'read', 'eat', 'sleep'], answer: 'walk' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "A new paragraph: My Pet Dog!", lineZh: '新段落：我的寵物狗！' },
+    { speaker: 'Coco', line: "I have a dog named Max. He is brown and friendly.", lineZh: '我有一隻叫 Max 的狗。他棕色又友善。' },
+    { speaker: 'Polly', line: "Every day, Max and I play in the park.", lineZh: '每天，Max 和我在公園玩。' },
+    { speaker: 'Benny', line: "You understood the whole story! Great!", lineZh: '你讀懂整個故事了！太棒了！' },
+  ],
+};
+
+const L10_M8: Mission = {
+  id: 8, slug: 'l10-m8-reading-strategy', level: 10, title: '閱讀策略', titleEn: 'Main Idea & Detail', theme: '未來橋・抓重點', themeEmoji: '🎯',
+  focus: '閱讀策略：找主旨（main idea）vs 細節（detail）＋ 中翻英',
+  story: [
+    { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The main idea is what the text is mostly about.", dialogueZh: '主旨是文章主要在講什麼。', highlightWords: ['main idea'], sceneEmojis: ['🎯', '📖', '✨'], animation: 'wave' },
+    { image: '🔍', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "A detail is a small fact in the text.", dialogueZh: '細節是文章裡的小事實。', highlightWords: ['detail'], sceneEmojis: ['🔍', '📝', '😊'], animation: 'bounce' },
+    { image: '🏷️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "The title often gives the main idea!", dialogueZh: '標題常常告訴你主旨！', highlightWords: ['title'], sceneEmojis: ['🏷️', '🎯', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Main idea = big picture. Detail = small fact!", dialogueZh: '主旨 = 大方向。細節 = 小事實！', highlightWords: [], sceneEmojis: ['🏆', '🎯', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'main idea', zh: '主旨·大意', image: '🎯', phonics: '', kk: '[men aɪˈdiə]', phonicsSound: '', exampleSentence: 'the main idea', exampleZh: '主旨' },
+    { en: 'detail', zh: '細節', image: '🔍', phonics: '', kk: '[ˈditel]', phonicsSound: '', exampleSentence: 'a small detail', exampleZh: '一個小細節' },
+    { en: 'title', zh: '標題', image: '🏷️', phonics: '', kk: '[ˈtaɪtl̩]', phonicsSound: '', exampleSentence: 'the title', exampleZh: '標題' },
+    { en: 'topic', zh: '主題', image: '📌', phonics: '', kk: '[ˈtɑpɪk]', phonicsSound: '', exampleSentence: 'the topic', exampleZh: '主題' },
+    { en: 'about', zh: '關於', image: 'ℹ️', phonics: '', kk: '[əˈbaʊt]', phonicsSound: '', exampleSentence: 'It is about dogs.', exampleZh: '它關於狗。' },
+    { en: 'fact', zh: '事實', image: '✅', phonics: '', kk: '[fækt]', phonicsSound: '', exampleSentence: 'a true fact', exampleZh: '真實事實' },
+    { en: 'text', zh: '文章·文字', image: '📄', phonics: '', kk: '[tɛkst]', phonicsSound: '', exampleSentence: 'read the text', exampleZh: '讀文章' },
+    { en: 'summary', zh: '摘要', image: '📋', phonics: '', kk: '[ˈsʌməri]', phonicsSound: '', exampleSentence: 'a short summary', exampleZh: '簡短摘要' },
+    { en: 'guess', zh: '猜', image: '🤔', phonics: '', kk: '[ɡɛs]', phonicsSound: '', exampleSentence: 'guess the meaning', exampleZh: '猜意思' },
+    { en: 'important', zh: '重要的', image: '⭐', phonics: '', kk: '[ɪmˈpɔrtn̩t]', phonicsSound: '', exampleSentence: 'the important idea', exampleZh: '重要的想法' },
+  ],
+  sentences: [
+    { en: 'The main idea is the big picture.', zh: '主旨是大方向。' }, { en: 'A detail is a small fact.', zh: '細節是小事實。' }, { en: 'The title gives the topic.', zh: '標題給出主題。' }, { en: 'What is the text about?', zh: '文章在講什麼？' }, { en: 'Find the important idea.', zh: '找出重要的想法。' }, { en: 'Guess the meaning from the words.', zh: '從字詞猜意思。' },
+  ],
+  phonicsLetters: ['main idea / detail'],
+  warmUpQuestions: [
+    { type: 'match', question: 'main idea 是什麼意思？', options: ['主旨·大意', '細節', '標題', '事實'], answer: '主旨·大意' },
+    { type: 'match', question: 'detail 是什麼意思？', options: ['細節', '主旨', '主題', '摘要'], answer: '細節' },
+    { type: 'fill-blank', question: 'The ___ often gives the main idea.（標題）', options: ['title', 'detail', 'fact', 'guess'], answer: 'title' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What is the main idea?（主旨是什麼？）', passage: 'Dogs are great pets.\nThey are friendly and loyal.\nThey make people happy.', options: ['Dogs are great pets', 'Dogs are brown', 'Dogs eat food', 'Dogs sleep'], answer: 'Dogs are great pets' },
+    { type: 'read', question: 'Which is a detail?（哪個是細節？）', passage: 'Main idea: Taipei is a big city.\nDetail: It has a famous tower.', options: ['It has a famous tower', 'Taipei is a big city', 'Cities are good', 'People live'], answer: 'It has a famous tower' },
+    { type: 'fill-blank', question: '中翻英：「主旨是大方向。」', options: ['The main idea is the big picture.', 'A detail is small.', 'The title is here.', 'What is it about?'], answer: 'The main idea is the big picture.' },
+    { type: 'fill-blank', question: '中翻英：「文章在講什麼？」', options: ['What is the text about?', 'What is the detail?', 'What is the title?', 'Who is it?'], answer: 'What is the text about?' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The main idea is the big picture.', 'A detail is a small fact.', 'The title gives the topic.', 'Find the important idea.'], answer: 'The main idea is the big picture.', image: '🎧' },
+    { type: 'read', question: 'What is the paragraph mostly about?（這段主要在講什麼？）', passage: 'Max is a friendly dog.\nHe is brown.\nHe likes to play. He is a great pet.', options: ['Max the dog', 'the color brown', 'playing games', 'the park'], answer: 'Max the dog' },
+  ],
+  talkTimePrompts: ["Read a text and say the main idea.", "Find one detail in a paragraph.", "What is this text mostly about?", "✍️ 引導寫作＋翻譯：寫一句主旨句，再加一個細節句。"],
+  reviewQuiz: [
+    { type: 'match', question: 'title 是什麼意思？', options: ['標題', '細節', '事實', '摘要'], answer: '標題' },
+    { type: 'fill-blank', question: '中翻英：「細節是小事實。」', options: ['A detail is a small fact.', 'The main idea is big.', 'The title is here.', 'What is it?'], answer: 'A detail is a small fact.' },
+    { type: 'read', question: 'What is the main idea?（主旨？）', passage: 'Exercise is good for you.\nIt keeps you strong.\nIt makes you happy.', options: ['Exercise is good for you', 'You are strong', 'You are happy', 'Run fast'], answer: 'Exercise is good for you' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "The main idea is what the text is mostly about.", lineZh: '主旨是文章主要在講什麼。' },
+    { speaker: 'Coco', line: "A detail is a small fact in the text.", lineZh: '細節是文章裡的小事實。' },
+    { speaker: 'Polly', line: "The title often gives the main idea!", lineZh: '標題常常告訴你主旨！' },
+    { speaker: 'Benny', line: "Main idea = big picture. Detail = small fact!", lineZh: '主旨 = 大方向。細節 = 小事實！' },
+  ],
+};
+
+const L10_M9: Mission = {
+  id: 9, slug: 'l10-m9-charts-notices', level: 10, title: '圖表與告示', titleEn: 'Charts & Notices', theme: '未來橋・看懂告示', themeEmoji: '📋',
+  focus: '閱讀實用文本：告示/時刻表/菜單（open/closed/schedule）＋ 中翻英',
+  story: [
+    { image: '📋', character: '🐰', characterKey: 'ruby', characterAction: 'read', characterName: 'Ruby', dialogue: "The sign says: OPEN 9 to 5.", dialogueZh: '告示寫：開放 9 點到 5 點。', highlightWords: ['OPEN'], sceneEmojis: ['📋', '🕘', '✨'], animation: 'wave' },
+    { image: '🚫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "This notice says: No food or drinks.", dialogueZh: '這告示寫：禁止飲食。', highlightWords: ['No food'], sceneEmojis: ['🚫', '🍔', '😊'], animation: 'bounce' },
+    { image: '🚆', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The schedule shows the train leaves at 3:00.", dialogueZh: '時刻表顯示火車 3 點開。', highlightWords: ['schedule', 'leaves'], sceneEmojis: ['🚆', '🕒', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Read signs to find useful information!", dialogueZh: '讀告示來找有用的資訊！', highlightWords: [], sceneEmojis: ['🏆', '📋', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'sign', zh: '標誌·告示', image: '🪧', phonics: '', kk: '[saɪn]', phonicsSound: '', exampleSentence: 'read the sign', exampleZh: '讀告示' },
+    { en: 'notice', zh: '公告', image: '📋', phonics: '', kk: '[ˈnotɪs]', phonicsSound: '', exampleSentence: 'a notice', exampleZh: '一張公告' },
+    { en: 'open', zh: '開放·營業', image: '🟢', phonics: '', kk: '[ˈopən]', phonicsSound: '', exampleSentence: 'We are open.', exampleZh: '我們營業中。' },
+    { en: 'closed', zh: '關閉·打烊', image: '🔴', phonics: '', kk: '[klozd]', phonicsSound: '', exampleSentence: 'It is closed.', exampleZh: '已打烊。' },
+    { en: 'schedule', zh: '時刻表', image: '🗓️', phonics: '', kk: '[ˈskɛdʒul]', phonicsSound: '', exampleSentence: 'the train schedule', exampleZh: '火車時刻表' },
+    { en: 'menu', zh: '菜單', image: '📖', phonics: '', kk: '[ˈmɛnju]', phonicsSound: '', exampleSentence: 'the menu', exampleZh: '菜單' },
+    { en: 'price', zh: '價錢', image: '🏷️', phonics: '', kk: '[praɪs]', phonicsSound: '', exampleSentence: 'the price', exampleZh: '價錢' },
+    { en: 'leave', zh: '出發·離開', image: '🚆', phonics: '', kk: '[liv]', phonicsSound: '', exampleSentence: 'The train leaves.', exampleZh: '火車出發。' },
+    { en: 'arrive', zh: '抵達', image: '📍', phonics: '', kk: '[əˈraɪv]', phonicsSound: '', exampleSentence: 'The bus arrives.', exampleZh: '公車抵達。' },
+    { en: 'warning', zh: '警告', image: '⚠️', phonics: '', kk: '[ˈwɔrnɪŋ]', phonicsSound: '', exampleSentence: 'a warning sign', exampleZh: '警告標誌' },
+  ],
+  sentences: [
+    { en: 'The sign says OPEN 9 to 5.', zh: '告示寫開放 9 點到 5 點。' }, { en: 'No food or drinks.', zh: '禁止飲食。' }, { en: 'The train leaves at 3:00.', zh: '火車 3 點開。' }, { en: 'The shop is closed on Sunday.', zh: '商店週日打烊。' }, { en: 'What time does it open?', zh: '幾點開？' }, { en: 'Look at the schedule.', zh: '看時刻表。' },
+  ],
+  phonicsLetters: ['signs & schedules'],
+  warmUpQuestions: [
+    { type: 'match', question: 'open 的相反是？', options: ['closed', 'sign', 'menu', 'price'], answer: 'closed' },
+    { type: 'match', question: '🗓️ schedule 是什麼？', options: ['時刻表', '菜單', '告示', '價錢'], answer: '時刻表' },
+    { type: 'match', question: '⚠️ warning 是什麼意思？', options: ['警告', '開放', '菜單', '抵達'], answer: '警告' },
+  ],
+  challenges: [
+    { type: 'read', question: 'When is the shop open?（商店幾點開放？）', passage: 'SIGN: OPEN 9 to 5.\nThe shop opens at nine.\nIt closes at five.', options: ['9 to 5', '5 to 9', 'all day', 'never'], answer: '9 to 5' },
+    { type: 'read', question: 'What does the notice say you cannot do?（公告說不能做什麼？）', passage: 'NOTICE: No food or drinks.\nPlease keep the room clean.\nThank you.', options: ['eat or drink', 'talk', 'read', 'sit'], answer: 'eat or drink' },
+    { type: 'read', question: 'What time does the train leave?（火車幾點開？）', passage: 'TRAIN SCHEDULE\nThe train leaves at 3:00.\nIt arrives at 4:00.', options: ['3:00', '4:00', '5:00', '9:00'], answer: '3:00' },
+    { type: 'fill-blank', question: '中翻英：「火車 3 點開。」', options: ['The train leaves at 3:00.', 'The train is open.', 'The train arrives.', 'What time is it?'], answer: 'The train leaves at 3:00.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The sign says OPEN 9 to 5.', 'No food or drinks.', 'The train leaves at 3:00.', 'The shop is closed on Sunday.'], answer: 'The sign says OPEN 9 to 5.', image: '🎧' },
+    { type: 'match', question: 'closed 是什麼意思？', options: ['打烊·關閉', '營業·開放', '出發', '抵達'], answer: '打烊·關閉' },
+  ],
+  talkTimePrompts: ["Read a sign and say what it means.", "When does the shop open/close?", "What time does the train leave?", "✍️ 引導寫作＋翻譯：把「商店週日打烊。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'read', question: 'Is the shop open on Sunday?（商店週日開嗎？）', passage: 'The shop is open Monday to Saturday.\nIt is closed on Sunday.\nCome back on Monday!', options: ['No, it is closed', 'Yes, it is open', 'Only at night', 'Never'], answer: 'No, it is closed' },
+    { type: 'match', question: 'leave 在時刻表表示？', options: ['出發', '抵達', '打烊', '警告'], answer: '出發' },
+    { type: 'fill-blank', question: '中翻英：「禁止飲食。」', options: ['No food or drinks.', 'Open 9 to 5.', 'The train leaves.', 'Look at the menu.'], answer: 'No food or drinks.' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "The sign says: OPEN 9 to 5.", lineZh: '告示寫：開放 9 點到 5 點。' },
+    { speaker: 'Coco', line: "This notice says: No food or drinks.", lineZh: '這告示寫：禁止飲食。' },
+    { speaker: 'Benny', line: "The schedule shows the train leaves at 3:00.", lineZh: '時刻表顯示火車 3 點開。' },
+    { speaker: 'Ruby', line: "Read signs to find useful information!", lineZh: '讀告示來找有用的資訊！' },
+  ],
+};
+
+const L10_M10: Mission = {
+  id: 10, slug: 'l10-m10-review-reading', level: 10, title: 'Review② 閱讀理解', titleEn: 'Review: Reading', theme: '未來橋・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：段落閱讀 ＋ 主旨細節 ＋ 圖表告示 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review reading! Find the main idea.", dialogueZh: '來複習閱讀！找出主旨。', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
+    { image: '🏙️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "This text is about a big, busy city.", dialogueZh: '這篇文章是關於一個繁忙的大城市。', highlightWords: ['about'], sceneEmojis: ['🏙️', '🎯', '😊'], animation: 'bounce' },
+    { image: '📋', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "The sign says the shop opens at nine.", dialogueZh: '告示說商店九點開。', highlightWords: ['sign'], sceneEmojis: ['📋', '🕘', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You are a strong reader now! Amazing!", dialogueZh: '你現在是很強的讀者了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'main idea', zh: '主旨', image: '🎯', phonics: '', kk: '[men aɪˈdiə]', phonicsSound: '', exampleSentence: 'the main idea', exampleZh: '主旨' },
+    { en: 'detail', zh: '細節', image: '🔍', phonics: '', kk: '[ˈditel]', phonicsSound: '', exampleSentence: 'a detail', exampleZh: '一個細節' },
+    { en: 'city', zh: '城市', image: '🏙️', phonics: '', kk: '[ˈsɪti]', phonicsSound: '', exampleSentence: 'a big city', exampleZh: '大城市' },
+    { en: 'pet', zh: '寵物', image: '🐾', phonics: '', kk: '[pɛt]', phonicsSound: '', exampleSentence: 'my pet', exampleZh: '我的寵物' },
+    { en: 'sign', zh: '告示', image: '🪧', phonics: '', kk: '[saɪn]', phonicsSound: '', exampleSentence: 'read the sign', exampleZh: '讀告示' },
+    { en: 'open', zh: '開放', image: '🟢', phonics: '', kk: '[ˈopən]', phonicsSound: '', exampleSentence: 'It is open.', exampleZh: '營業中。' },
+    { en: 'closed', zh: '打烊', image: '🔴', phonics: '', kk: '[klozd]', phonicsSound: '', exampleSentence: 'It is closed.', exampleZh: '已打烊。' },
+    { en: 'about', zh: '關於', image: 'ℹ️', phonics: '', kk: '[əˈbaʊt]', phonicsSound: '', exampleSentence: 'It is about dogs.', exampleZh: '它關於狗。' },
+    { en: 'schedule', zh: '時刻表', image: '🗓️', phonics: '', kk: '[ˈskɛdʒul]', phonicsSound: '', exampleSentence: 'the schedule', exampleZh: '時刻表' },
+    { en: 'title', zh: '標題', image: '🏷️', phonics: '', kk: '[ˈtaɪtl̩]', phonicsSound: '', exampleSentence: 'the title', exampleZh: '標題' },
+  ],
+  sentences: [
+    { en: 'What is the text about?', zh: '文章在講什麼？' }, { en: 'The main idea is the big picture.', zh: '主旨是大方向。' }, { en: 'A detail is a small fact.', zh: '細節是小事實。' }, { en: 'The sign says the shop opens at nine.', zh: '告示說商店九點開。' }, { en: 'The train leaves at 3:00.', zh: '火車 3 點開。' }, { en: 'Find the important information.', zh: '找出重要資訊。' },
+  ],
+  phonicsLetters: ['review reading'],
+  warmUpQuestions: [
+    { type: 'match', question: 'main idea 是什麼意思？', options: ['主旨', '細節', '標題', '告示'], answer: '主旨' },
+    { type: 'match', question: 'open 的相反是？', options: ['closed', 'sign', 'city', 'pet'], answer: 'closed' },
+    { type: 'fill-blank', question: 'What is the text ___?（關於）', options: ['about', 'sign', 'open', 'city'], answer: 'about' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What is the main idea?（主旨？）', passage: 'Taipei is a great city to visit.\nIt has trains, towers, and parks.\nMany people love it.', options: ['Taipei is a great city to visit', 'Trains are fast', 'Parks are green', 'People walk'], answer: 'Taipei is a great city to visit' },
+    { type: 'read', question: 'When does the shop open?（商店幾點開？）', passage: 'SIGN: OPEN at 9.\nThe shop opens at nine in the morning.\nIt closes at six.', options: ['at 9', 'at 6', 'at noon', 'never'], answer: 'at 9' },
+    { type: 'read', question: 'Which is a detail, not the main idea?（哪個是細節？）', passage: 'Main idea: Dogs are great pets.\nDetail: My dog is brown.', options: ['My dog is brown', 'Dogs are great pets', 'Pets are good', 'Dogs are nice'], answer: 'My dog is brown' },
+    { type: 'fill-blank', question: '中翻英：「文章在講什麼？」', options: ['What is the text about?', 'What is the title?', 'What is the detail?', 'Who is it?'], answer: 'What is the text about?' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What is the text about?', 'The main idea is the big picture.', 'The sign says the shop opens at nine.', 'The train leaves at 3:00.'], answer: 'What is the text about?', image: '🎧' },
+    { type: 'read', question: 'Is the shop open at 8?（商店 8 點開嗎？）', passage: 'The shop opens at 9 and closes at 6.\nAt 8, it is still closed.\nCome back at 9!', options: ['No, it opens at 9', 'Yes, it is open', 'It never opens', 'It closes at 8'], answer: 'No, it opens at 9' },
+  ],
+  talkTimePrompts: ["Read a paragraph and say the main idea.", "Find one detail.", "Read a sign and say the opening time.", "✍️ 引導寫作＋翻譯：讀一段短文，用英文寫出它的主旨句。"],
+  reviewQuiz: [
+    { type: 'match', question: 'detail 是什麼意思？', options: ['細節', '主旨', '標題', '告示'], answer: '細節' },
+    { type: 'fill-blank', question: '中翻英：「火車 3 點開。」', options: ['The train leaves at 3:00.', 'The train is open.', 'The shop is closed.', 'What time is it?'], answer: 'The train leaves at 3:00.' },
+    { type: 'read', question: 'What is this text about?（這篇關於什麼？）', passage: 'My dog Max is friendly.\nHe is brown and small.\nI love playing with him.', options: ['the writer\'s dog', 'a city', 'a train', 'a shop'], answer: 'the writer\'s dog' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review reading! Find the main idea.", lineZh: '來複習閱讀！找出主旨。' },
+    { speaker: 'Coco', line: "This text is about a big, busy city.", lineZh: '這篇文章是關於一個繁忙的大城市。' },
+    { speaker: 'Benny', line: "The sign says the shop opens at nine.", lineZh: '告示說商店九點開。' },
+    { speaker: 'Finn', line: "You are a strong reader now! Amazing!", lineZh: '你現在是很強的讀者了！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
