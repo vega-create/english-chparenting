@@ -7207,7 +7207,267 @@ const L8_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5];
+const L8_M6: Mission = {
+  id: 6, slug: 'l8-m6-why-because', level: 8, title: 'Why…? Because…', titleEn: 'Why…? Because…', theme: '問題塔・為什麼', themeEmoji: '🤔',
+  focus: 'Why 問句 ＋ Because 回答 ＋ 中翻英',
+  story: [
+    { image: '🤔', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Why are you happy? Because it is my birthday!", dialogueZh: '你為什麼開心？因為今天是我生日！', highlightWords: ['Why', 'Because'], sceneEmojis: ['🤔', '🎂', '✨'], animation: 'wave' },
+    { image: '😢', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Why are you sad? Because I lost my toy.", dialogueZh: '你為什麼難過？因為我弄丟了玩具。', highlightWords: ['Why', 'Because'], sceneEmojis: ['😢', '🧸', '😊'], animation: 'bounce' },
+    { image: '😴', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Why are you tired? Because I studied all night.", dialogueZh: '你為什麼累？因為我讀了整晚。', highlightWords: ['Why', 'Because'], sceneEmojis: ['😴', '📚', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Why asks the reason. Because gives it!", dialogueZh: 'Why 問原因。Because 給答案！', highlightWords: [], sceneEmojis: ['🏆', '🤔', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'why', zh: '為什麼', image: '🤔', phonics: '', kk: '[waɪ]', phonicsSound: '', exampleSentence: 'Why are you sad?', exampleZh: '你為什麼難過？' },
+    { en: 'because', zh: '因為', image: '➡️', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'Because it is fun.', exampleZh: '因為很好玩。' },
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'Why are you happy?', exampleZh: '你為什麼開心？' },
+    { en: 'sad', zh: '難過的', image: '😢', phonics: '', kk: '[sæd]', phonicsSound: '', exampleSentence: 'Why are you sad?', exampleZh: '你為什麼難過？' },
+    { en: 'tired', zh: '累的', image: '😴', phonics: '', kk: '[taɪrd]', phonicsSound: '', exampleSentence: 'I am tired.', exampleZh: '我很累。' },
+    { en: 'lost', zh: '弄丟了', image: '🧸', phonics: '', kk: '[lɔst]', phonicsSound: '', exampleSentence: 'I lost my toy.', exampleZh: '我弄丟玩具。' },
+    { en: 'sick', zh: '生病的', image: '🤒', phonics: '', kk: '[sɪk]', phonicsSound: '', exampleSentence: 'I am sick.', exampleZh: '我生病了。' },
+    { en: 'study', zh: '讀書', image: '📚', phonics: '', kk: '[ˈstʌdi]', phonicsSound: '', exampleSentence: 'I study a lot.', exampleZh: '我讀很多書。' },
+    { en: 'late', zh: '遲到的', image: '🏃', phonics: '', kk: '[let]', phonicsSound: '', exampleSentence: 'I am late.', exampleZh: '我遲到了。' },
+    { en: 'reason', zh: '原因', image: '💡', phonics: '', kk: '[ˈrizn̩]', phonicsSound: '', exampleSentence: 'the reason', exampleZh: '原因' },
+  ],
+  sentences: [
+    { en: 'Why are you happy?', zh: '你為什麼開心？' }, { en: 'Because it is my birthday.', zh: '因為今天是我生日。' }, { en: 'Why are you sad?', zh: '你為什麼難過？' }, { en: 'Because I lost my toy.', zh: '因為我弄丟了玩具。' }, { en: 'Why are you late?', zh: '你為什麼遲到？' }, { en: 'Because I got up late.', zh: '因為我晚起。' },
+  ],
+  phonicsLetters: ['Why…? Because…'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ are you happy?（為什麼）', options: ['Why', 'What', 'Where', 'Who'], answer: 'Why' },
+    { type: 'fill-blank', question: 'Why are you sad? ___ I lost my toy.（因為）', options: ['Because', 'Why', 'And', 'But'], answer: 'Because' },
+    { type: 'match', question: 'why 是什麼意思？', options: ['為什麼', '什麼', '哪裡', '誰'], answer: '為什麼' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的感覺', options: ['😊', '😢', '😴', '🤒'], answer: '🤒', image: '🎧' },
+    { type: 'fill-blank', question: 'Why are you tired? ___ I studied all night.（因為）', options: ['Because', 'Why', 'And', 'So'], answer: 'Because' },
+    { type: 'fill-blank', question: '中翻英：「你為什麼難過？」', options: ["Why are you sad?", "What is sad?", "Where are you?", "Who is sad?"], answer: "Why are you sad?" },
+    { type: 'fill-blank', question: '中翻英：「因為今天是我生日。」', options: ["Because it is my birthday.", "When is my birthday?", "What is my birthday?", "Where is my birthday?"], answer: "Because it is my birthday." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Why are you happy?', 'Because it is my birthday.', 'Why are you sad?', 'Why are you late?'], answer: 'Why are you happy?', image: '🎧' },
+    { type: 'read', question: 'Why is Benny tired?（Benny 為何累？）', passage: '"Why are you tired?"\nBenny says, "Because I studied all night.\nI have a test today."', options: ['he studied all night', 'he played games', 'he is sick', 'he ran'], answer: 'he studied all night' },
+  ],
+  talkTimePrompts: ["Ask: Why are you happy/sad?", "Answer: Because ___.", "Give a reason with 'because'.", "✍️ 引導寫作＋翻譯：把「你為什麼開心？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ are you late?（為什麼）', options: ['Why', 'What', 'Where', 'Who'], answer: 'Why' },
+    { type: 'fill-blank', question: '中翻英：「因為我弄丟了玩具。」', options: ['Because I lost my toy.', 'Why is my toy?', 'Where is my toy?', 'What is my toy?'], answer: 'Because I lost my toy.' },
+    { type: 'match', question: 'reason 是什麼意思？', options: ['原因', '因為', '為什麼', '生病'], answer: '原因' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Why are you happy? Because it is my birthday!", lineZh: '你為什麼開心？因為今天是我生日！' },
+    { speaker: 'Coco', line: "Why are you sad? Because I lost my toy.", lineZh: '你為什麼難過？因為我弄丟了玩具。' },
+    { speaker: 'Benny', line: "Why are you tired? Because I studied all night.", lineZh: '你為什麼累？因為我讀了整晚。' },
+    { speaker: 'Polly', line: "Why asks the reason. Because gives it!", lineZh: 'Why 問原因。Because 給答案！' },
+  ],
+};
+
+const L8_M7: Mission = {
+  id: 7, slug: 'l8-m7-how', level: 8, title: 'How…?', titleEn: 'How…?', theme: '問題塔・如何', themeEmoji: '🔧',
+  focus: 'How 問句：How are you? How do you…? ＋ 中翻英',
+  story: [
+    { image: '🔧', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "How are you? I am fine, thank you!", dialogueZh: '你好嗎？我很好，謝謝！', highlightWords: ['How'], sceneEmojis: ['🔧', '😊', '✨'], animation: 'wave' },
+    { image: '🚌', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "How do you go to school? By bus.", dialogueZh: '你怎麼上學？搭公車。', highlightWords: ['How'], sceneEmojis: ['🚌', '🏫', '😊'], animation: 'bounce' },
+    { image: '🍳', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "How do you make a cake? Let me show you!", dialogueZh: '你怎麼做蛋糕？我示範給你看！', highlightWords: ['How'], sceneEmojis: ['🍳', '🎂', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "How asks about the way! Great!", dialogueZh: 'How 問「方式」！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '🔧', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'how', zh: '如何·怎麼', image: '🔧', phonics: '', kk: '[haʊ]', phonicsSound: '', exampleSentence: 'How are you?', exampleZh: '你好嗎？' },
+    { en: 'fine', zh: '很好', image: '😊', phonics: '', kk: '[faɪn]', phonicsSound: '', exampleSentence: 'I am fine.', exampleZh: '我很好。' },
+    { en: 'by bus', zh: '搭公車', image: '🚌', phonics: '', kk: '[baɪ bʌs]', phonicsSound: '', exampleSentence: 'I go by bus.', exampleZh: '我搭公車去。' },
+    { en: 'by car', zh: '搭車', image: '🚗', phonics: '', kk: '[baɪ kɑr]', phonicsSound: '', exampleSentence: 'I go by car.', exampleZh: '我搭車去。' },
+    { en: 'walk', zh: '走路', image: '🚶', phonics: '', kk: '[wɔk]', phonicsSound: '', exampleSentence: 'I walk to school.', exampleZh: '我走路上學。' },
+    { en: 'make', zh: '做·製作', image: '🍳', phonics: '', kk: '[mek]', phonicsSound: '', exampleSentence: 'How do you make it?', exampleZh: '你怎麼做的？' },
+    { en: 'get to', zh: '到達', image: '🎯', phonics: '', kk: '[ɡɛt tu]', phonicsSound: '', exampleSentence: 'How do I get to…?', exampleZh: '我怎麼到…？' },
+    { en: 'spell', zh: '拼（字）', image: '🔤', phonics: '', kk: '[spɛl]', phonicsSound: '', exampleSentence: 'How do you spell it?', exampleZh: '這怎麼拼？' },
+    { en: 'feel', zh: '感覺', image: '💗', phonics: '', kk: '[fil]', phonicsSound: '', exampleSentence: 'How do you feel?', exampleZh: '你感覺如何？' },
+    { en: 'great', zh: '很棒', image: '👍', phonics: '', kk: '[ɡret]', phonicsSound: '', exampleSentence: 'I feel great!', exampleZh: '我感覺很棒！' },
+  ],
+  sentences: [
+    { en: 'How are you?', zh: '你好嗎？' }, { en: 'I am fine, thank you.', zh: '我很好，謝謝。' }, { en: 'How do you go to school?', zh: '你怎麼上學？' }, { en: 'I go by bus.', zh: '我搭公車。' }, { en: 'How do you spell it?', zh: '這怎麼拼？' }, { en: 'How do you feel?', zh: '你感覺如何？' },
+  ],
+  phonicsLetters: ['How…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ are you?（如何）', options: ['How', 'What', 'Where', 'Who'], answer: 'How' },
+    { type: 'fill-blank', question: '___ do you go to school?（怎麼）', options: ['How', 'What', 'Where', 'When'], answer: 'How' },
+    { type: 'match', question: 'how 是什麼意思？', options: ['如何', '什麼', '哪裡', '何時'], answer: '如何' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的交通方式', options: ['🚌', '🚗', '🚶', '🍳'], answer: '🚗', image: '🎧' },
+    { type: 'fill-blank', question: '___ do you feel?（如何）', options: ['How', 'What', 'Where', 'Who'], answer: 'How' },
+    { type: 'fill-blank', question: '中翻英：「你好嗎？」', options: ["How are you?", "Who are you?", "Where are you?", "What are you?"], answer: "How are you?" },
+    { type: 'fill-blank', question: '中翻英：「你怎麼上學？」', options: ["How do you go to school?", "Where is school?", "When is school?", "What is school?"], answer: "How do you go to school?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['How are you?', 'How do you go to school?', 'How do you spell it?', 'I am fine, thank you.'], answer: 'How are you?', image: '🎧' },
+    { type: 'read', question: 'How does Coco go to school?（Coco 怎麼上學？）', passage: '"How do you go to school?"\nCoco says, "I go by bus.\nThe bus is fast."', options: ['by bus', 'by car', 'walks', 'by bike'], answer: 'by bus' },
+  ],
+  talkTimePrompts: ["Ask: How are you?", "Ask: How do you go to school?", "Answer: I am fine. / I go by ___.", "✍️ 引導寫作＋翻譯：把「你感覺如何？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ do you spell it?（怎麼）', options: ['How', 'What', 'Where', 'Who'], answer: 'How' },
+    { type: 'fill-blank', question: '中翻英：「我很好，謝謝。」', options: ['I am fine, thank you.', 'How are you?', 'I go by bus.', 'What is your name?'], answer: 'I am fine, thank you.' },
+    { type: 'match', question: 'by bus 是什麼意思？', options: ['搭公車', '走路', '搭車', '騎車'], answer: '搭公車' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "How are you? I am fine, thank you!", lineZh: '你好嗎？我很好，謝謝！' },
+    { speaker: 'Coco', line: "How do you go to school? By bus.", lineZh: '你怎麼上學？搭公車。' },
+    { speaker: 'Benny', line: "How do you make a cake? Let me show you!", lineZh: '你怎麼做蛋糕？我示範給你看！' },
+    { speaker: 'Ruby', line: "How asks about the way! Great!", lineZh: 'How 問「方式」！太棒了！' },
+  ],
+};
+
+const L8_M8: Mission = {
+  id: 8, slug: 'l8-m8-how-many-much-old', level: 8, title: 'How many/much/old', titleEn: 'How many / much / old', theme: '問題塔・多少', themeEmoji: '🔢',
+  focus: 'How many（可數）/ How much（不可數·價錢）/ How old（年齡）＋ 中翻英',
+  story: [
+    { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "How many apples? There are five.", dialogueZh: '有幾顆蘋果？有五顆。', highlightWords: ['How many'], sceneEmojis: ['🍎', '5️⃣', '✨'], animation: 'wave' },
+    { image: '💵', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "How much is it? It is ten dollars.", dialogueZh: '多少錢？十塊錢。', highlightWords: ['How much'], sceneEmojis: ['💵', '🔟', '😊'], animation: 'bounce' },
+    { image: '🎂', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "How old are you? I am eight years old.", dialogueZh: '你幾歲？我八歲。', highlightWords: ['How old'], sceneEmojis: ['🎂', '8️⃣', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "many for count, much for money, old for age!", dialogueZh: 'many 數數、much 價錢、old 年齡！', highlightWords: [], sceneEmojis: ['🏆', '🔢', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'how many', zh: '多少（可數）', image: '🔢', phonics: '', kk: '[haʊ ˈmɛni]', phonicsSound: '', exampleSentence: 'How many apples?', exampleZh: '有幾顆蘋果？' },
+    { en: 'how much', zh: '多少（錢）', image: '💵', phonics: '', kk: '[haʊ mʌtʃ]', phonicsSound: '', exampleSentence: 'How much is it?', exampleZh: '多少錢？' },
+    { en: 'how old', zh: '幾歲', image: '🎂', phonics: '', kk: '[haʊ old]', phonicsSound: '', exampleSentence: 'How old are you?', exampleZh: '你幾歲？' },
+    { en: 'many', zh: '很多（可數）', image: '➕', phonics: '', kk: '[ˈmɛni]', phonicsSound: '', exampleSentence: 'many apples', exampleZh: '很多蘋果' },
+    { en: 'much', zh: '很多（不可數）', image: '💧', phonics: '', kk: '[mʌtʃ]', phonicsSound: '', exampleSentence: 'much water', exampleZh: '很多水' },
+    { en: 'old', zh: '歲·老的', image: '👴', phonics: '', kk: '[old]', phonicsSound: '', exampleSentence: 'eight years old', exampleZh: '八歲' },
+    { en: 'years', zh: '歲·年', image: '📅', phonics: '', kk: '[jɪrz]', phonicsSound: '', exampleSentence: 'eight years old', exampleZh: '八歲' },
+    { en: 'dollars', zh: '元', image: '💰', phonics: '', kk: '[ˈdɑlɚz]', phonicsSound: '', exampleSentence: 'ten dollars', exampleZh: '十塊錢' },
+    { en: 'count', zh: '數', image: '🧮', phonics: '', kk: '[kaʊnt]', phonicsSound: '', exampleSentence: 'count the apples', exampleZh: '數蘋果' },
+    { en: 'price', zh: '價錢', image: '🏷️', phonics: '', kk: '[praɪs]', phonicsSound: '', exampleSentence: 'a good price', exampleZh: '好價錢' },
+  ],
+  sentences: [
+    { en: 'How many apples are there?', zh: '有幾顆蘋果？' }, { en: 'There are five.', zh: '有五顆。' }, { en: 'How much is it?', zh: '多少錢？' }, { en: 'It is ten dollars.', zh: '十塊錢。' }, { en: 'How old are you?', zh: '你幾歲？' }, { en: 'I am eight years old.', zh: '我八歲。' },
+  ],
+  phonicsLetters: ['How many/much/old'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'How ___ apples?（可數·多少）', options: ['many', 'much', 'old', 'long'], answer: 'many' },
+    { type: 'fill-blank', question: 'How ___ is it?（價錢）', options: ['much', 'many', 'old', 'big'], answer: 'much' },
+    { type: 'fill-blank', question: 'How ___ are you?（年齡）', options: ['old', 'many', 'much', 'big'], answer: 'old' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🍎', '💵', '🎂', '🧮'], answer: '🎂', image: '🎧' },
+    { type: 'fill-blank', question: 'How ___ water do you drink?（不可數）', options: ['much', 'many', 'old', 'long'], answer: 'much' },
+    { type: 'fill-blank', question: '中翻英：「你幾歲？」', options: ["How old are you?", "How much are you?", "How many are you?", "Who are you?"], answer: "How old are you?" },
+    { type: 'fill-blank', question: '中翻英：「有幾顆蘋果？」', options: ["How many apples are there?", "How much are apples?", "How old are apples?", "Where are apples?"], answer: "How many apples are there?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['How many apples are there?', 'How much is it?', 'How old are you?', 'I am eight years old.'], answer: 'How many apples are there?', image: '🎧' },
+    { type: 'read', question: 'How old is Ruby?（Ruby 幾歲？）', passage: '"How old are you?"\nRuby says, "I am eight years old.\nMy birthday is in May."', options: ['eight', 'five', 'ten', 'six'], answer: 'eight' },
+  ],
+  talkTimePrompts: ["Ask: How old are you?", "Ask: How many / How much…?", "Answer: I am ___ years old. / It is ___ dollars.", "✍️ 引導寫作＋翻譯：把「多少錢？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'How ___ dollars?（可數·多少）', options: ['many', 'much', 'old', 'big'], answer: 'many' },
+    { type: 'fill-blank', question: '中翻英：「我八歲。」', options: ['I am eight years old.', 'How old are you?', 'It is eight dollars.', 'There are eight.'], answer: 'I am eight years old.' },
+    { type: 'match', question: 'how much 通常問？', options: ['價錢/不可數量', '可數數量', '年齡', '時間'], answer: '價錢/不可數量' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "How many apples? There are five.", lineZh: '有幾顆蘋果？有五顆。' },
+    { speaker: 'Benny', line: "How much is it? It is ten dollars.", lineZh: '多少錢？十塊錢。' },
+    { speaker: 'Ruby', line: "How old are you? I am eight years old.", lineZh: '你幾歲？我八歲。' },
+    { speaker: 'Coco', line: "many for count, much for money, old for age!", lineZh: 'many 數數、much 價錢、old 年齡！' },
+  ],
+};
+
+const L8_M9: Mission = {
+  id: 9, slug: 'l8-m9-whose-which', level: 8, title: 'Whose / Which', titleEn: 'Whose / Which', theme: '問題塔・誰的·哪個', themeEmoji: '🔀',
+  focus: 'Whose（誰的）/ Which（哪一個）問句 ＋ 中翻英',
+  story: [
+    { image: '🎒', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Whose bag is this? It is mine!", dialogueZh: '這是誰的書包？是我的！', highlightWords: ['Whose'], sceneEmojis: ['🎒', '🙋', '✨'], animation: 'wave' },
+    { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Which apple do you want? The red one.", dialogueZh: '你要哪顆蘋果？紅色那顆。', highlightWords: ['Which'], sceneEmojis: ['🍎', '🍏', '😊'], animation: 'bounce' },
+    { image: '📘', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Whose book is that? It is hers.", dialogueZh: '那是誰的書？是她的。', highlightWords: ['Whose'], sceneEmojis: ['📘', '👧', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Whose = 誰的, Which = 哪一個!", dialogueZh: 'Whose = 誰的，Which = 哪一個！', highlightWords: [], sceneEmojis: ['🏆', '🔀', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'whose', zh: '誰的', image: '❓', phonics: '', kk: '[huz]', phonicsSound: '', exampleSentence: 'Whose bag is this?', exampleZh: '這是誰的書包？' },
+    { en: 'which', zh: '哪一個', image: '🔀', phonics: '', kk: '[wɪtʃ]', phonicsSound: '', exampleSentence: 'Which one?', exampleZh: '哪一個？' },
+    { en: 'mine', zh: '我的（東西）', image: '🙋', phonics: '', kk: '[maɪn]', phonicsSound: '', exampleSentence: 'It is mine.', exampleZh: '這是我的。' },
+    { en: 'yours', zh: '你的（東西）', image: '👉', phonics: '', kk: '[jʊrz]', phonicsSound: '', exampleSentence: 'It is yours.', exampleZh: '這是你的。' },
+    { en: 'his', zh: '他的', image: '👦', phonics: '', kk: '[hɪz]', phonicsSound: '', exampleSentence: 'It is his.', exampleZh: '這是他的。' },
+    { en: 'hers', zh: '她的（東西）', image: '👧', phonics: '', kk: '[hɝz]', phonicsSound: '', exampleSentence: 'It is hers.', exampleZh: '這是她的。' },
+    { en: 'this one', zh: '這一個', image: '👇', phonics: '', kk: '[ðɪs wʌn]', phonicsSound: '', exampleSentence: 'this one', exampleZh: '這一個' },
+    { en: 'that one', zh: '那一個', image: '👆', phonics: '', kk: '[ðæt wʌn]', phonicsSound: '', exampleSentence: 'that one', exampleZh: '那一個' },
+    { en: 'choose', zh: '選擇', image: '✅', phonics: '', kk: '[tʃuz]', phonicsSound: '', exampleSentence: 'Choose one.', exampleZh: '選一個。' },
+    { en: 'one', zh: '一個（代替名詞）', image: '1️⃣', phonics: '', kk: '[wʌn]', phonicsSound: '', exampleSentence: 'the red one', exampleZh: '紅色那個' },
+  ],
+  sentences: [
+    { en: 'Whose bag is this?', zh: '這是誰的書包？' }, { en: 'It is mine.', zh: '這是我的。' }, { en: 'Which apple do you want?', zh: '你要哪顆蘋果？' }, { en: 'I want the red one.', zh: '我要紅色那顆。' }, { en: 'Whose book is that?', zh: '那是誰的書？' }, { en: 'Which one is yours?', zh: '哪一個是你的？' },
+  ],
+  phonicsLetters: ['Whose / Which'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ bag is this?（誰的）', options: ['Whose', 'Which', 'What', 'Who'], answer: 'Whose' },
+    { type: 'fill-blank', question: '___ apple do you want?（哪一個）', options: ['Which', 'Whose', 'What', 'Who'], answer: 'Which' },
+    { type: 'match', question: 'mine 是什麼意思？', options: ['我的', '你的', '他的', '她的'], answer: '我的' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🎒', '🍎', '📘', '👧'], answer: '📘', image: '🎧' },
+    { type: 'fill-blank', question: '___ one is yours?（哪一個）', options: ['Which', 'Whose', 'What', 'Who'], answer: 'Which' },
+    { type: 'fill-blank', question: '中翻英：「這是誰的書包？」', options: ["Whose bag is this?", "Which bag is this?", "What is this bag?", "Where is this bag?"], answer: "Whose bag is this?" },
+    { type: 'fill-blank', question: '中翻英：「你要哪顆蘋果？」', options: ["Which apple do you want?", "Whose apple is this?", "What is an apple?", "Where is the apple?"], answer: "Which apple do you want?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Whose bag is this?', 'Which apple do you want?', 'It is mine.', 'Whose book is that?'], answer: 'Whose bag is this?', image: '🎧' },
+    { type: 'read', question: 'Whose bag is it?（那是誰的書包？）', passage: '"Whose bag is this?"\nBenny says, "It is mine!\nThank you for finding it."', options: ["Benny's", "Coco's", "Ruby's", "the teacher's"], answer: "Benny's" },
+  ],
+  talkTimePrompts: ["Ask: Whose ___ is this?", "Ask: Which one do you want?", "Answer: It is mine/yours/hers.", "✍️ 引導寫作＋翻譯：把「哪一個是你的？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ book is that?（誰的）', options: ['Whose', 'Which', 'What', 'Who'], answer: 'Whose' },
+    { type: 'fill-blank', question: '中翻英：「這是我的。」', options: ['It is mine.', 'It is yours.', 'Whose is it?', 'Which one?'], answer: 'It is mine.' },
+    { type: 'match', question: 'hers 是什麼意思？', options: ['她的', '他的', '我的', '你的'], answer: '她的' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Whose bag is this? It is mine!", lineZh: '這是誰的書包？是我的！' },
+    { speaker: 'Coco', line: "Which apple do you want? The red one.", lineZh: '你要哪顆蘋果？紅色那顆。' },
+    { speaker: 'Ruby', line: "Whose book is that? It is hers.", lineZh: '那是誰的書？是她的。' },
+    { speaker: 'Benny', line: "Whose = 誰的, Which = 哪一個!", lineZh: 'Whose = 誰的，Which = 哪一個！' },
+  ],
+};
+
+const L8_M10: Mission = {
+  id: 10, slug: 'l8-m10-review-why-how', level: 8, title: 'Review② Why/How', titleEn: 'Review: Why/How', theme: '問題塔・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：Why/Because ＋ How ＋ How many/much/old ＋ Whose/Which ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review more questions!", dialogueZh: '來複習更多問句！', highlightWords: [], sceneEmojis: ['🔄', '❓', '✨'], animation: 'wave' },
+    { image: '🤔', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Why are you happy? How are you?", dialogueZh: '你為什麼開心？你好嗎？', highlightWords: ['Why', 'How'], sceneEmojis: ['🤔', '🔧', '😊'], animation: 'bounce' },
+    { image: '🔢', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "How old are you? Whose bag is this?", dialogueZh: '你幾歲？這是誰的書包？', highlightWords: ['How old', 'Whose'], sceneEmojis: ['🔢', '🎒', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can ask any question now! Amazing!", dialogueZh: '你現在什麼都能問了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'why', zh: '為什麼', image: '🤔', phonics: '', kk: '[waɪ]', phonicsSound: '', exampleSentence: 'Why are you sad?', exampleZh: '你為什麼難過？' },
+    { en: 'because', zh: '因為', image: '➡️', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'Because it is fun.', exampleZh: '因為好玩。' },
+    { en: 'how', zh: '如何', image: '🔧', phonics: '', kk: '[haʊ]', phonicsSound: '', exampleSentence: 'How are you?', exampleZh: '你好嗎？' },
+    { en: 'how many', zh: '多少（可數）', image: '🔢', phonics: '', kk: '[haʊ ˈmɛni]', phonicsSound: '', exampleSentence: 'How many?', exampleZh: '多少個？' },
+    { en: 'how old', zh: '幾歲', image: '🎂', phonics: '', kk: '[haʊ old]', phonicsSound: '', exampleSentence: 'How old are you?', exampleZh: '你幾歲？' },
+    { en: 'whose', zh: '誰的', image: '❓', phonics: '', kk: '[huz]', phonicsSound: '', exampleSentence: 'Whose bag?', exampleZh: '誰的書包？' },
+    { en: 'which', zh: '哪一個', image: '🔀', phonics: '', kk: '[wɪtʃ]', phonicsSound: '', exampleSentence: 'Which one?', exampleZh: '哪一個？' },
+    { en: 'mine', zh: '我的', image: '🙋', phonics: '', kk: '[maɪn]', phonicsSound: '', exampleSentence: 'It is mine.', exampleZh: '這是我的。' },
+    { en: 'fine', zh: '很好', image: '😊', phonics: '', kk: '[faɪn]', phonicsSound: '', exampleSentence: 'I am fine.', exampleZh: '我很好。' },
+    { en: 'reason', zh: '原因', image: '💡', phonics: '', kk: '[ˈrizn̩]', phonicsSound: '', exampleSentence: 'the reason', exampleZh: '原因' },
+  ],
+  sentences: [
+    { en: 'Why are you happy?', zh: '你為什麼開心？' }, { en: 'Because it is my birthday.', zh: '因為今天是我生日。' }, { en: 'How are you?', zh: '你好嗎？' }, { en: 'How old are you?', zh: '你幾歲？' }, { en: 'Whose bag is this?', zh: '這是誰的書包？' }, { en: 'Which one do you want?', zh: '你要哪一個？' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ are you sad?（為什麼）', options: ['Why', 'How', 'Whose', 'Which'], answer: 'Why' },
+    { type: 'fill-blank', question: '___ old are you?（幾歲）', options: ['How', 'Why', 'Whose', 'Which'], answer: 'How' },
+    { type: 'fill-blank', question: '___ bag is this?（誰的）', options: ['Whose', 'Which', 'Why', 'How'], answer: 'Whose' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🤔', '🔧', '🎂', '🎒'], answer: '🎂', image: '🎧' },
+    { type: 'fill-blank', question: 'Why are you happy? ___ it is my birthday.（因為）', options: ['Because', 'Why', 'And', 'So'], answer: 'Because' },
+    { type: 'fill-blank', question: '中翻英：「你幾歲？」', options: ["How old are you?", "How many are you?", "Why are you?", "Who are you?"], answer: "How old are you?" },
+    { type: 'fill-blank', question: '中翻英：「你為什麼難過？」', options: ["Why are you sad?", "How are you sad?", "Whose is sad?", "Which is sad?"], answer: "Why are you sad?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Why are you happy?', 'How are you?', 'How old are you?', 'Whose bag is this?'], answer: 'Why are you happy?', image: '🎧' },
+    { type: 'read', question: 'Which question asks for a reason?（哪個問句問「原因」？）', passage: 'Why → reason (because)\nHow → the way\nHow old → age\nWhose → owner', options: ['Why', 'How', 'How old', 'Whose'], answer: 'Why' },
+  ],
+  talkTimePrompts: ["Ask Why and answer with Because.", "Ask How / How old / How many.", "Ask Whose / Which.", "✍️ 引導寫作＋翻譯：把「你好嗎？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ one is yours?（哪一個）', options: ['Which', 'Whose', 'Why', 'How'], answer: 'Which' },
+    { type: 'fill-blank', question: '中翻英：「因為今天是我生日。」', options: ['Because it is my birthday.', 'Why is my birthday?', 'When is my birthday?', 'Whose birthday?'], answer: 'Because it is my birthday.' },
+    { type: 'read', question: 'What does "How old" ask about?（How old 問什麼？）', passage: 'How old are you?\nThis question asks about age.\nAnswer: I am eight years old.', options: ['age', 'price', 'place', 'time'], answer: 'age' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review more questions!", lineZh: '來複習更多問句！' },
+    { speaker: 'Coco', line: "Why are you happy? How are you?", lineZh: '你為什麼開心？你好嗎？' },
+    { speaker: 'Benny', line: "How old are you? Whose bag is this?", lineZh: '你幾歲？這是誰的書包？' },
+    { speaker: 'Finn', line: "You can ask any question now! Amazing!", lineZh: '你現在什麼都能問了！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
