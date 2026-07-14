@@ -8508,7 +8508,267 @@ const L9_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10];
+const L9_M11: Mission = {
+  id: 11, slug: 'l9-m11-present-perfect', level: 9, title: '現在完成式', titleEn: 'Present Perfect', theme: '時光道・已經完成', themeEmoji: '✅',
+  focus: '現在完成式 have/has + p.p.（過去到現在）★三態 ＋ 中翻英',
+  story: [
+    { image: '✅', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I have finished my homework!", dialogueZh: '我已經寫完作業了！', highlightWords: ['have finished'], sceneEmojis: ['✅', '📚', '✨'], animation: 'wave' },
+    { image: '🍽️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "She has eaten lunch. She is not hungry.", dialogueZh: '她已經吃過午餐。她不餓。', highlightWords: ['has eaten'], sceneEmojis: ['🍽️', '😊', '😊'], animation: 'bounce' },
+    { image: '🌏', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "They have gone home already.", dialogueZh: '他們已經回家了。', highlightWords: ['have gone'], sceneEmojis: ['🌏', '🏠', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "have/has + past participle (第三態)!", dialogueZh: 'have/has + 過去分詞（第三態）！', highlightWords: [], sceneEmojis: ['🏆', '✅', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'have', zh: '（完成式·I/you/we）', image: '✅', phonics: '', kk: '[hæv]', phonicsSound: '', exampleSentence: 'I have finished.', exampleZh: '我已完成。' },
+    { en: 'has', zh: '（完成式·he/she）', image: '✅', phonics: '', kk: '[hæz]', phonicsSound: '', exampleSentence: 'She has eaten.', exampleZh: '她已吃過。' },
+    { en: 'finished', zh: '完成（p.p.）', image: '📚', phonics: '', kk: '[ˈfɪnɪʃt]', phonicsSound: '', exampleSentence: 'I have finished.', exampleZh: '我完成了。' },
+    { en: 'eaten', zh: '吃（p.p.）', image: '🍽️', phonics: '', kk: '[ˈitn̩]', phonicsSound: 'eat-ate-eaten', exampleSentence: 'She has eaten.', exampleZh: '她吃過了。' },
+    { en: 'gone', zh: '去（p.p.）', image: '🏠', phonics: '', kk: '[ɡɔn]', phonicsSound: 'go-went-gone', exampleSentence: 'They have gone.', exampleZh: '他們去了。' },
+    { en: 'seen', zh: '看見（p.p.）', image: '👀', phonics: '', kk: '[sin]', phonicsSound: 'see-saw-seen', exampleSentence: 'I have seen it.', exampleZh: '我看過了。' },
+    { en: 'done', zh: '做（p.p.）', image: '✔️', phonics: '', kk: '[dʌn]', phonicsSound: 'do-did-done', exampleSentence: 'I have done it.', exampleZh: '我做完了。' },
+    { en: 'been', zh: '去過·是（p.p.）', image: '🧳', phonics: '', kk: '[bɪn]', phonicsSound: 'be-was-been', exampleSentence: 'I have been to Japan.', exampleZh: '我去過日本。' },
+    { en: 'written', zh: '寫（p.p.）', image: '✏️', phonics: '', kk: '[ˈrɪtn̩]', phonicsSound: 'write-wrote-written', exampleSentence: 'She has written it.', exampleZh: '她寫完了。' },
+    { en: 'already', zh: '已經', image: '⏱️', phonics: '', kk: '[ɔlˈrɛdi]', phonicsSound: '', exampleSentence: 'I have already done it.', exampleZh: '我已經做完了。' },
+  ],
+  sentences: [
+    { en: 'I have finished my homework.', zh: '我已經寫完作業了。' }, { en: 'She has eaten lunch.', zh: '她已經吃過午餐。' }, { en: 'They have gone home.', zh: '他們已經回家了。' }, { en: 'Have you done it?', zh: '你做完了嗎？' }, { en: 'I have seen that movie.', zh: '我看過那部電影。' }, { en: 'He has written a letter.', zh: '他已經寫好了信。' },
+  ],
+  phonicsLetters: ['have/has + p.p.'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ finished my homework.（完成式·I）', options: ['have', 'has', 'am', 'was'], answer: 'have' },
+    { type: 'fill-blank', question: 'She ___ eaten lunch.（完成式·she）', options: ['has', 'have', 'is', 'was'], answer: 'has' },
+    { type: 'match', question: 'go 的過去分詞（p.p.）是？', options: ['gone', 'went', 'goes', 'going'], answer: 'gone' },
+  ],
+  challenges: [
+    { type: 'match', question: '配對：原形→過去分詞', options: ['eat-eaten', 'go-gone', 'see-seen', 'do-done'], answer: 'eat-eaten' },
+    { type: 'fill-blank', question: 'They have ___ home.（go 的 p.p.）', options: ['gone', 'went', 'go', 'going'], answer: 'gone' },
+    { type: 'fill-blank', question: 'She ___ written a letter.（完成式·she）', options: ['has', 'have', 'is', 'was'], answer: 'has' },
+    { type: 'fill-blank', question: '中翻英：「我已經寫完作業了。」', options: ["I have finished my homework.", "I finish my homework.", "I finished my homework.", "Do I finish?"], answer: "I have finished my homework." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I have finished my homework.', 'She has eaten lunch.', 'They have gone home.', 'I have seen that movie.'], answer: 'I have finished my homework.', image: '🎧' },
+    { type: 'read', question: 'Why is Coco not hungry?（Coco 為何不餓？）', passage: 'Coco has eaten lunch.\nShe had a big meal.\nShe is not hungry now.', options: ['she has eaten lunch', 'she is sleeping', 'she is sick', 'she is playing'], answer: 'she has eaten lunch' },
+  ],
+  talkTimePrompts: ["Say what you have finished: I have ___.", "Practice p.p.: eaten, gone, seen, done.", "Ask: Have you done it?", "✍️ 引導寫作＋翻譯：把「他已經寫好了信。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'see 的過去分詞（p.p.）是？', options: ['seen', 'saw', 'sees', 'seeing'], answer: 'seen' },
+    { type: 'fill-blank', question: 'I have ___ it.（do 的 p.p.）', options: ['done', 'did', 'do', 'doing'], answer: 'done' },
+    { type: 'fill-blank', question: '中翻英：「她已經吃過午餐。」', options: ['She has eaten lunch.', 'She eats lunch.', 'She ate lunch.', 'Does she eat lunch?'], answer: 'She has eaten lunch.' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I have finished my homework!", lineZh: '我已經寫完作業了！' },
+    { speaker: 'Coco', line: "She has eaten lunch. She is not hungry.", lineZh: '她已經吃過午餐。她不餓。' },
+    { speaker: 'Polly', line: "They have gone home already.", lineZh: '他們已經回家了。' },
+    { speaker: 'Benny', line: "have/has + past participle (第三態)!", lineZh: 'have/has + 過去分詞（第三態）！' },
+  ],
+};
+
+const L9_M12: Mission = {
+  id: 12, slug: 'l9-m12-perfect-experience', level: 9, title: '完成式・經驗', titleEn: 'ever / never / just', theme: '時光道・你曾經', themeEmoji: '🌟',
+  focus: '現在完成式：經驗 ever/never ＋ 剛剛 just/already/yet ＋ 中翻英',
+  story: [
+    { image: '🌟', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Have you ever been to Japan? Yes, I have!", dialogueZh: '你曾經去過日本嗎？有，我去過！', highlightWords: ['ever', 'have'], sceneEmojis: ['🌟', '🗾', '✨'], animation: 'wave' },
+    { image: '🚫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I have never eaten snails.", dialogueZh: '我從沒吃過蝸牛。', highlightWords: ['never'], sceneEmojis: ['🐌', '🚫', '😊'], animation: 'bounce' },
+    { image: '⚡', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I have just finished. Have you finished yet?", dialogueZh: '我剛剛完成。你完成了嗎？', highlightWords: ['just', 'yet'], sceneEmojis: ['⚡', '✅', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "ever/never = experience. just/yet = time!", dialogueZh: 'ever/never = 經驗。just/yet = 時間！', highlightWords: [], sceneEmojis: ['🏆', '🌟', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'ever', zh: '曾經（問句）', image: '🌟', phonics: '', kk: '[ˈɛvɚ]', phonicsSound: '', exampleSentence: 'Have you ever…?', exampleZh: '你曾經…嗎？' },
+    { en: 'never', zh: '從未', image: '🚫', phonics: '', kk: '[ˈnɛvɚ]', phonicsSound: '', exampleSentence: 'I have never…', exampleZh: '我從未…' },
+    { en: 'just', zh: '剛剛', image: '⚡', phonics: '', kk: '[dʒʌst]', phonicsSound: '', exampleSentence: 'I have just finished.', exampleZh: '我剛完成。' },
+    { en: 'already', zh: '已經', image: '⏱️', phonics: '', kk: '[ɔlˈrɛdi]', phonicsSound: '', exampleSentence: 'I have already eaten.', exampleZh: '我已吃過。' },
+    { en: 'yet', zh: '尚未（否定/問句）', image: '❓', phonics: '', kk: '[jɛt]', phonicsSound: '', exampleSentence: 'Have you finished yet?', exampleZh: '你完成了嗎？' },
+    { en: 'been to', zh: '去過', image: '🗾', phonics: '', kk: '[bɪn tu]', phonicsSound: '', exampleSentence: 'I have been to Japan.', exampleZh: '我去過日本。' },
+    { en: 'tried', zh: '試過（p.p.）', image: '🍜', phonics: '', kk: '[traɪd]', phonicsSound: '', exampleSentence: 'Have you tried it?', exampleZh: '你試過嗎？' },
+    { en: 'before', zh: '以前', image: '⏮️', phonics: '', kk: '[bɪˈfɔr]', phonicsSound: '', exampleSentence: 'I have seen it before.', exampleZh: '我以前看過。' },
+    { en: 'experience', zh: '經驗', image: '💼', phonics: '', kk: '[ɪkˈspɪriəns]', phonicsSound: '', exampleSentence: 'a new experience', exampleZh: '新的經驗' },
+    { en: 'snail', zh: '蝸牛', image: '🐌', phonics: '', kk: '[snel]', phonicsSound: '', exampleSentence: 'eat snails', exampleZh: '吃蝸牛' },
+  ],
+  sentences: [
+    { en: 'Have you ever been to Japan?', zh: '你曾經去過日本嗎？' }, { en: 'Yes, I have.', zh: '有，我去過。' }, { en: 'I have never eaten snails.', zh: '我從沒吃過蝸牛。' }, { en: 'I have just finished.', zh: '我剛剛完成。' }, { en: 'Have you finished yet?', zh: '你完成了嗎？' }, { en: 'I have already eaten.', zh: '我已經吃過了。' },
+  ],
+  phonicsLetters: ['ever/never/just'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'Have you ___ been to Japan?（曾經）', options: ['ever', 'never', 'just', 'yet'], answer: 'ever' },
+    { type: 'fill-blank', question: 'I have ___ eaten snails.（從未）', options: ['never', 'ever', 'just', 'already'], answer: 'never' },
+    { type: 'fill-blank', question: 'I have ___ finished.（剛剛）', options: ['just', 'ever', 'never', 'yet'], answer: 'just' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🌟', '🐌', '⚡', '🗾'], answer: '🐌', image: '🎧' },
+    { type: 'fill-blank', question: 'Have you finished ___?（尚未·問句）', options: ['yet', 'just', 'ever', 'already'], answer: 'yet' },
+    { type: 'fill-blank', question: 'I have ___ eaten. I am full.（已經）', options: ['already', 'yet', 'ever', 'never'], answer: 'already' },
+    { type: 'fill-blank', question: '中翻英：「你曾經去過日本嗎？」', options: ["Have you ever been to Japan?", "Do you go to Japan?", "Did you go to Japan?", "Will you go to Japan?"], answer: "Have you ever been to Japan?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Have you ever been to Japan?', 'I have never eaten snails.', 'I have just finished.', 'I have already eaten.'], answer: 'Have you ever been to Japan?', image: '🎧' },
+    { type: 'read', question: 'Has Coco eaten snails?（Coco 吃過蝸牛嗎？）', passage: 'Polly asks, "Have you ever eaten snails?"\nCoco says, "No, I have never eaten snails.\nMaybe one day!"', options: ["No, never", 'Yes, many times', 'Yes, once', 'She loves them'], answer: 'No, never' },
+  ],
+  talkTimePrompts: ["Ask: Have you ever ___?", "Say: I have never ___.", "Say: I have just ___.", "✍️ 引導寫作＋翻譯：把「我從沒吃過蝸牛。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I have ___ seen this movie.（曾經·肯定 already）', options: ['already', 'yet', 'ever', 'never'], answer: 'already' },
+    { type: 'fill-blank', question: '中翻英：「我剛剛完成。」', options: ['I have just finished.', 'I finish.', 'I finished.', 'Do I finish?'], answer: 'I have just finished.' },
+    { type: 'match', question: 'never 在完成式表示？', options: ['從未（經驗）', '剛剛', '已經', '尚未'], answer: '從未（經驗）' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "Have you ever been to Japan? Yes, I have!", lineZh: '你曾經去過日本嗎？有，我去過！' },
+    { speaker: 'Coco', line: "I have never eaten snails.", lineZh: '我從沒吃過蝸牛。' },
+    { speaker: 'Benny', line: "I have just finished. Have you finished yet?", lineZh: '我剛剛完成。你完成了嗎？' },
+    { speaker: 'Polly', line: "ever/never = experience. just/yet = time!", lineZh: 'ever/never = 經驗。just/yet = 時間！' },
+  ],
+};
+
+const L9_M13: Mission = {
+  id: 13, slug: 'l9-m13-past-perfect', level: 9, title: '過去完成式', titleEn: 'Past Perfect', theme: '時光道・過去的過去', themeEmoji: '⏮️',
+  focus: '過去完成式 had + p.p.（過去某時之前已完成）＋ 中翻英',
+  story: [
+    { image: '⏮️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "When I arrived, the bus had already left.", dialogueZh: '我到的時候，公車已經開走了。', highlightWords: ['had already left'], sceneEmojis: ['🚌', '⏮️', '✨'], animation: 'wave' },
+    { image: '🍽️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "She had eaten before I came home.", dialogueZh: '在我回家前她已經吃過了。', highlightWords: ['had eaten'], sceneEmojis: ['🍽️', '🏠', '😊'], animation: 'bounce' },
+    { image: '📖', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "I had never seen snow before that day.", dialogueZh: '在那天之前我從沒看過雪。', highlightWords: ['had never seen'], sceneEmojis: ['❄️', '📖', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "had + p.p. = the past before the past!", dialogueZh: 'had + p.p. = 過去的過去！', highlightWords: [], sceneEmojis: ['🏆', '⏮️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'had', zh: '（過去完成式）', image: '⏮️', phonics: '', kk: '[hæd]', phonicsSound: '', exampleSentence: 'She had left.', exampleZh: '她已經離開了。' },
+    { en: 'left', zh: '離開（p.p.）', image: '🚌', phonics: '', kk: '[lɛft]', phonicsSound: 'leave-left-left', exampleSentence: 'The bus had left.', exampleZh: '公車開走了。' },
+    { en: 'arrived', zh: '到達', image: '📍', phonics: '', kk: '[əˈraɪvd]', phonicsSound: '', exampleSentence: 'When I arrived…', exampleZh: '當我到達…' },
+    { en: 'eaten', zh: '吃（p.p.）', image: '🍽️', phonics: '', kk: '[ˈitn̩]', phonicsSound: '', exampleSentence: 'She had eaten.', exampleZh: '她已吃過。' },
+    { en: 'seen', zh: '看見（p.p.）', image: '👀', phonics: '', kk: '[sin]', phonicsSound: '', exampleSentence: 'I had seen it.', exampleZh: '我看過了。' },
+    { en: 'before', zh: '在…之前', image: '⏮️', phonics: '', kk: '[bɪˈfɔr]', phonicsSound: '', exampleSentence: 'before I came', exampleZh: '在我來之前' },
+    { en: 'when', zh: '當…時', image: '🕐', phonics: '', kk: '[wɛn]', phonicsSound: '', exampleSentence: 'when I arrived', exampleZh: '當我到達時' },
+    { en: 'already', zh: '已經', image: '⏱️', phonics: '', kk: '[ɔlˈrɛdi]', phonicsSound: '', exampleSentence: 'had already left', exampleZh: '已經離開了' },
+    { en: 'snow', zh: '雪', image: '❄️', phonics: '', kk: '[sno]', phonicsSound: '', exampleSentence: 'I had never seen snow.', exampleZh: '我從沒看過雪。' },
+    { en: 'finished', zh: '完成（p.p.）', image: '✅', phonics: '', kk: '[ˈfɪnɪʃt]', phonicsSound: '', exampleSentence: 'had finished', exampleZh: '已經完成了' },
+  ],
+  sentences: [
+    { en: 'When I arrived, the bus had left.', zh: '我到的時候公車已開走。' }, { en: 'She had eaten before I came home.', zh: '在我回家前她已吃過。' }, { en: 'I had never seen snow before.', zh: '我以前從沒看過雪。' }, { en: 'They had finished the game.', zh: '他們已完成比賽。' }, { en: 'He had left when I called.', zh: '我打電話時他已離開。' }, { en: 'We had already eaten dinner.', zh: '我們已經吃過晚餐。' },
+  ],
+  phonicsLetters: ['had + p.p.'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'When I arrived, the bus ___ left.（過去完成）', options: ['had', 'has', 'have', 'was'], answer: 'had' },
+    { type: 'fill-blank', question: 'She ___ eaten before I came.（過去完成）', options: ['had', 'has', 'have', 'is'], answer: 'had' },
+    { type: 'match', question: 'leave 的過去分詞（p.p.）是？', options: ['left', 'leaved', 'leaves', 'leaving'], answer: 'left' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I ___ never seen snow before.（過去完成）', options: ['had', 'has', 'have', 'was'], answer: 'had' },
+    { type: 'fill-blank', question: 'They had ___ the game.（finish 的 p.p.）', options: ['finished', 'finish', 'finishes', 'finishing'], answer: 'finished' },
+    { type: 'fill-blank', question: '中翻英：「我到的時候公車已經開走了。」', options: ["When I arrived, the bus had left.", "The bus leaves when I arrive.", "The bus left.", "Did the bus leave?"], answer: "When I arrived, the bus had left." },
+    { type: 'fill-blank', question: '中翻英：「在我回家前她已經吃過了。」', options: ["She had eaten before I came home.", "She eats before I come.", "She ate.", "Does she eat?"], answer: "She had eaten before I came home." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['When I arrived, the bus had left.', 'She had eaten before I came home.', 'I had never seen snow before.', 'We had already eaten dinner.'], answer: 'When I arrived, the bus had left.', image: '🎧' },
+    { type: 'read', question: 'Why did Benny miss the bus?（Benny 為何錯過公車？）', passage: 'Benny was late.\nWhen he arrived, the bus had already left.\nHe had to walk home.', options: ['the bus had already left', 'the bus was full', 'he was sick', 'it was raining'], answer: 'the bus had already left' },
+  ],
+  talkTimePrompts: ["Say two past actions in order with 'had'.", "Use 'before' + past perfect.", "Say: I had never ___ before.", "✍️ 引導寫作＋翻譯：把「我以前從沒看過雪。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'He ___ left when I called.（過去完成）', options: ['had', 'has', 'have', 'was'], answer: 'had' },
+    { type: 'fill-blank', question: '中翻英：「我們已經吃過晚餐。」', options: ['We had already eaten dinner.', 'We eat dinner.', 'We ate dinner.', 'Do we eat dinner?'], answer: 'We had already eaten dinner.' },
+    { type: 'match', question: '過去完成式表示？', options: ['過去某時之前已完成', '現在正在做', '未來計畫', '習慣'], answer: '過去某時之前已完成' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "When I arrived, the bus had already left.", lineZh: '我到的時候，公車已經開走了。' },
+    { speaker: 'Coco', line: "She had eaten before I came home.", lineZh: '在我回家前她已經吃過了。' },
+    { speaker: 'Polly', line: "I had never seen snow before that day.", lineZh: '在那天之前我從沒看過雪。' },
+    { speaker: 'Benny', line: "had + p.p. = the past before the past!", lineZh: 'had + p.p. = 過去的過去！' },
+  ],
+};
+
+const L9_M14: Mission = {
+  id: 14, slug: 'l9-m14-tense-contrast', level: 9, title: '時態總對比', titleEn: 'Tense Contrast', theme: '時光道・時間軸大整理', themeEmoji: '🕰️',
+  focus: '時態總整理（時間軸）：過去/現在/未來/完成式對比 ＋ 中翻英',
+  story: [
+    { image: '🕰️', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's put all tenses on a timeline!", dialogueZh: '我們把所有時態放在時間軸上！', highlightWords: ['tenses'], sceneEmojis: ['🕰️', '📊', '✨'], animation: 'wave' },
+    { image: '⏪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Yesterday I played. Now I am playing.", dialogueZh: '昨天我玩了。現在我正在玩。', highlightWords: ['played', 'am playing'], sceneEmojis: ['⏪', '⚽', '😊'], animation: 'bounce' },
+    { image: '🔮', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Tomorrow I will play. I have played before.", dialogueZh: '明天我會玩。我以前玩過。', highlightWords: ['will play', 'have played'], sceneEmojis: ['🔮', '✅', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Each tense has its own place in time!", dialogueZh: '每個時態在時間軸上都有位置！', highlightWords: [], sceneEmojis: ['🏆', '🕰️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'play', zh: '玩（現在簡單）', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '現在', exampleSentence: 'I play every day.', exampleZh: '我每天玩。' },
+    { en: 'played', zh: '玩了（過去）', image: '⏪', phonics: '', kk: '[pled]', phonicsSound: '過去', exampleSentence: 'I played yesterday.', exampleZh: '我昨天玩了。' },
+    { en: 'am playing', zh: '正在玩（現在進行）', image: '🎮', phonics: '', kk: '[æm ˈpleɪŋ]', phonicsSound: '進行', exampleSentence: 'I am playing now.', exampleZh: '我現在正在玩。' },
+    { en: 'will play', zh: '會玩（未來）', image: '🔮', phonics: '', kk: '[wɪl ple]', phonicsSound: '未來', exampleSentence: 'I will play tomorrow.', exampleZh: '我明天會玩。' },
+    { en: 'have played', zh: '玩過（現在完成）', image: '✅', phonics: '', kk: '[hæv pled]', phonicsSound: '完成', exampleSentence: 'I have played before.', exampleZh: '我以前玩過。' },
+    { en: 'was playing', zh: '當時在玩（過去進行）', image: '⏱️', phonics: '', kk: '[wʌz ˈpleɪŋ]', phonicsSound: '過去進行', exampleSentence: 'I was playing at five.', exampleZh: '我五點時在玩。' },
+    { en: 'timeline', zh: '時間軸', image: '📊', phonics: '', kk: '[ˈtaɪmˌlaɪn]', phonicsSound: '', exampleSentence: 'on the timeline', exampleZh: '在時間軸上' },
+    { en: 'now', zh: '現在', image: '⏰', phonics: '', kk: '[naʊ]', phonicsSound: '', exampleSentence: 'right now', exampleZh: '現在' },
+    { en: 'yesterday', zh: '昨天', image: '🌙', phonics: '', kk: '[ˈjɛstɚˌde]', phonicsSound: '', exampleSentence: 'yesterday', exampleZh: '昨天' },
+    { en: 'tomorrow', zh: '明天', image: '➡️', phonics: '', kk: '[təˈmɑro]', phonicsSound: '', exampleSentence: 'tomorrow', exampleZh: '明天' },
+  ],
+  sentences: [
+    { en: 'I play every day.', zh: '我每天玩。' }, { en: 'Yesterday I played.', zh: '昨天我玩了。' }, { en: 'Now I am playing.', zh: '現在我正在玩。' }, { en: 'Tomorrow I will play.', zh: '明天我會玩。' }, { en: 'I have played before.', zh: '我以前玩過。' }, { en: 'At five, I was playing.', zh: '五點時我正在玩。' },
+  ],
+  phonicsLetters: ['tense contrast'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'Yesterday I ___.（過去）', options: ['played', 'play', 'will play', 'am playing'], answer: 'played' },
+    { type: 'fill-blank', question: 'Now I ___.（現在進行）', options: ['am playing', 'play', 'played', 'will play'], answer: 'am playing' },
+    { type: 'fill-blank', question: 'Tomorrow I ___.（未來）', options: ['will play', 'play', 'played', 'am playing'], answer: 'will play' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I ___ played before.（現在完成）', options: ['have', 'am', 'was', 'will'], answer: 'have' },
+    { type: 'fill-blank', question: 'At five, I ___ playing.（過去進行·單數 be）', options: ['was', 'were', 'am', 'will'], answer: 'was' },
+    { type: 'fill-blank', question: '中翻英：「明天我會玩。」', options: ["Tomorrow I will play.", "I play tomorrow.", "I played tomorrow.", "Do I play?"], answer: "Tomorrow I will play." },
+    { type: 'fill-blank', question: '中翻英：「我以前玩過。」', options: ["I have played before.", "I play before.", "I played before now.", "Do I play?"], answer: "I have played before." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Yesterday I played.', 'Now I am playing.', 'Tomorrow I will play.', 'I have played before.'], answer: 'Yesterday I played.', image: '🎧' },
+    { type: 'read', question: 'Which sentence is about the future?（哪句是未來？）', passage: 'Yesterday I played. (past)\nNow I am playing. (present)\nTomorrow I will play. (future)', options: ['Tomorrow I will play.', 'Yesterday I played.', 'Now I am playing.', 'none'], answer: 'Tomorrow I will play.' },
+  ],
+  talkTimePrompts: ["Say the same verb in 4 tenses.", "Match a time word to a tense.", "Tell a mini story using 3 tenses.", "✍️ 引導寫作＋翻譯：把「現在我正在玩。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ every day.（現在簡單·習慣）', options: ['play', 'played', 'will play', 'am playing'], answer: 'play' },
+    { type: 'fill-blank', question: '中翻英：「昨天我玩了。」', options: ['Yesterday I played.', 'I play.', 'I will play.', 'I am playing.'], answer: 'Yesterday I played.' },
+    { type: 'match', question: 'have played 是哪個時態？', options: ['現在完成式', '過去式', '未來式', '現在進行式'], answer: '現在完成式' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's put all tenses on a timeline!", lineZh: '我們把所有時態放在時間軸上！' },
+    { speaker: 'Coco', line: "Yesterday I played. Now I am playing.", lineZh: '昨天我玩了。現在我正在玩。' },
+    { speaker: 'Benny', line: "Tomorrow I will play. I have played before.", lineZh: '明天我會玩。我以前玩過。' },
+    { speaker: 'Finn', line: "Each tense has its own place in time!", lineZh: '每個時態在時間軸上都有位置！' },
+  ],
+};
+
+const L9_M15: Mission = {
+  id: 15, slug: 'l9-m15-review-perfect', level: 9, title: 'Review③ 完成式', titleEn: 'Review: Perfect', theme: '時光道・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習③：現在完成式 ＋ 過去完成式 ＋ 時態對比 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the perfect tenses!", dialogueZh: '來複習完成式！', highlightWords: [], sceneEmojis: ['🔄', '✅', '✨'], animation: 'wave' },
+    { image: '✅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have finished. She has eaten.", dialogueZh: '我已完成。她已吃過。', highlightWords: ['have finished', 'has eaten'], sceneEmojis: ['✅', '🍽️', '😊'], animation: 'bounce' },
+    { image: '⏮️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The bus had left when I arrived.", dialogueZh: '我到時公車已開走。', highlightWords: ['had left'], sceneEmojis: ['⏮️', '🚌', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know the perfect tenses! Amazing!", dialogueZh: '你會完成式了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'have', zh: '（現在完成·I）', image: '✅', phonics: '', kk: '[hæv]', phonicsSound: '', exampleSentence: 'I have finished.', exampleZh: '我已完成。' },
+    { en: 'has', zh: '（現在完成·she）', image: '✅', phonics: '', kk: '[hæz]', phonicsSound: '', exampleSentence: 'She has eaten.', exampleZh: '她已吃過。' },
+    { en: 'had', zh: '（過去完成）', image: '⏮️', phonics: '', kk: '[hæd]', phonicsSound: '', exampleSentence: 'He had left.', exampleZh: '他已離開。' },
+    { en: 'finished', zh: '完成（p.p.）', image: '📚', phonics: '', kk: '[ˈfɪnɪʃt]', phonicsSound: '', exampleSentence: 'have finished', exampleZh: '已完成' },
+    { en: 'eaten', zh: '吃（p.p.）', image: '🍽️', phonics: '', kk: '[ˈitn̩]', phonicsSound: '', exampleSentence: 'has eaten', exampleZh: '已吃過' },
+    { en: 'gone', zh: '去（p.p.）', image: '🏠', phonics: '', kk: '[ɡɔn]', phonicsSound: '', exampleSentence: 'have gone', exampleZh: '已去了' },
+    { en: 'ever', zh: '曾經', image: '🌟', phonics: '', kk: '[ˈɛvɚ]', phonicsSound: '', exampleSentence: 'Have you ever…?', exampleZh: '你曾經…嗎？' },
+    { en: 'never', zh: '從未', image: '🚫', phonics: '', kk: '[ˈnɛvɚ]', phonicsSound: '', exampleSentence: 'I have never…', exampleZh: '我從未…' },
+    { en: 'already', zh: '已經', image: '⏱️', phonics: '', kk: '[ɔlˈrɛdi]', phonicsSound: '', exampleSentence: 'have already', exampleZh: '已經…了' },
+    { en: 'left', zh: '離開（p.p.）', image: '🚌', phonics: '', kk: '[lɛft]', phonicsSound: '', exampleSentence: 'had left', exampleZh: '已離開' },
+  ],
+  sentences: [
+    { en: 'I have finished my homework.', zh: '我已完成作業。' }, { en: 'She has eaten lunch.', zh: '她已吃過午餐。' }, { en: 'Have you ever been to Japan?', zh: '你曾去過日本嗎？' }, { en: 'The bus had left when I arrived.', zh: '我到時公車已開走。' }, { en: 'I have never seen snow.', zh: '我從沒看過雪。' }, { en: 'They have already gone home.', zh: '他們已經回家了。' },
+  ],
+  phonicsLetters: ['review perfect'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ finished.（現在完成·I）', options: ['have', 'has', 'had', 'am'], answer: 'have' },
+    { type: 'fill-blank', question: 'She ___ eaten.（現在完成·she）', options: ['has', 'have', 'had', 'is'], answer: 'has' },
+    { type: 'fill-blank', question: 'The bus ___ left when I arrived.（過去完成）', options: ['had', 'has', 'have', 'was'], answer: 'had' },
+  ],
+  challenges: [
+    { type: 'match', question: 'go 的過去分詞（p.p.）是？', options: ['gone', 'went', 'goes', 'going'], answer: 'gone' },
+    { type: 'fill-blank', question: 'Have you ___ been to Japan?（曾經）', options: ['ever', 'never', 'just', 'yet'], answer: 'ever' },
+    { type: 'fill-blank', question: '中翻英：「我已完成作業。」', options: ["I have finished my homework.", "I finish my homework.", "I finished.", "Do I finish?"], answer: "I have finished my homework." },
+    { type: 'fill-blank', question: '中翻英：「我到時公車已開走。」', options: ["The bus had left when I arrived.", "The bus leaves.", "The bus left.", "Did the bus leave?"], answer: "The bus had left when I arrived." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I have finished my homework.', 'She has eaten lunch.', 'The bus had left when I arrived.', 'I have never seen snow.'], answer: 'I have finished my homework.', image: '🎧' },
+    { type: 'read', question: 'Has Coco seen snow?（Coco 看過雪嗎？）', passage: 'Coco lives in a warm city.\nShe has never seen snow.\nShe hopes to see it one day.', options: ["No, never", 'Yes, often', 'Yes, once', 'She hates snow'], answer: 'No, never' },
+  ],
+  talkTimePrompts: ["Say what you have finished today.", "Ask: Have you ever ___?", "Use past perfect: had + p.p.", "✍️ 引導寫作＋翻譯：把「他們已經回家了。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'They have ___ gone home.（已經）', options: ['already', 'yet', 'ever', 'was'], answer: 'already' },
+    { type: 'fill-blank', question: '中翻英：「她已吃過午餐。」', options: ['She has eaten lunch.', 'She eats lunch.', 'She ate lunch.', 'Does she eat?'], answer: 'She has eaten lunch.' },
+    { type: 'read', question: 'What tense is "had left"?（had left 是哪個時態？）', passage: 'had + p.p. = past perfect.\nIt shows the past before another past.', options: ['過去完成式', '現在完成式', '過去式', '未來式'], answer: '過去完成式' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review the perfect tenses!", lineZh: '來複習完成式！' },
+    { speaker: 'Coco', line: "I have finished. She has eaten.", lineZh: '我已完成。她已吃過。' },
+    { speaker: 'Benny', line: "The bus had left when I arrived.", lineZh: '我到時公車已開走。' },
+    { speaker: 'Finn', line: "You know the perfect tenses! Amazing!", lineZh: '你會完成式了！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
