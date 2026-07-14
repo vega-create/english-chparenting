@@ -8768,7 +8768,267 @@ const L9_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15];
+const L9_M16: Mission = {
+  id: 16, slug: 'l9-m16-tense-switch', level: 9, title: '時態切換練習', titleEn: 'Tense Switching', theme: '時光道・切換自如', themeEmoji: '🔀',
+  focus: '看時間字選對時態：every day/yesterday/now/tomorrow/before ＋ 中翻英',
+  story: [
+    { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The time word tells you the tense!", dialogueZh: '時間字告訴你用哪個時態！', highlightWords: [], sceneEmojis: ['🔀', '🕰️', '✨'], animation: 'wave' },
+    { image: '📅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "'every day' → simple. 'now' → continuous.", dialogueZh: '「every day」→ 簡單式。「now」→ 進行式。', highlightWords: [], sceneEmojis: ['📅', '⏰', '😊'], animation: 'bounce' },
+    { image: '🔮', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "'yesterday' → past. 'tomorrow' → future!", dialogueZh: '「yesterday」→ 過去。「tomorrow」→ 未來！', highlightWords: [], sceneEmojis: ['⏪', '🔮', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Find the time word, choose the tense!", dialogueZh: '找時間字，選時態！', highlightWords: [], sceneEmojis: ['🏆', '🔀', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'every day', zh: '每天（簡單）', image: '📅', phonics: '', kk: '[ˈɛvri de]', phonicsSound: '簡單式', exampleSentence: 'I play every day.', exampleZh: '我每天玩。' },
+    { en: 'now', zh: '現在（進行）', image: '⏰', phonics: '', kk: '[naʊ]', phonicsSound: '進行式', exampleSentence: 'I am playing now.', exampleZh: '我現在在玩。' },
+    { en: 'yesterday', zh: '昨天（過去）', image: '⏪', phonics: '', kk: '[ˈjɛstɚˌde]', phonicsSound: '過去式', exampleSentence: 'I played yesterday.', exampleZh: '我昨天玩了。' },
+    { en: 'tomorrow', zh: '明天（未來）', image: '🔮', phonics: '', kk: '[təˈmɑro]', phonicsSound: '未來式', exampleSentence: 'I will play tomorrow.', exampleZh: '我明天會玩。' },
+    { en: 'already', zh: '已經（完成）', image: '✅', phonics: '', kk: '[ɔlˈrɛdi]', phonicsSound: '完成式', exampleSentence: 'I have already played.', exampleZh: '我已玩過。' },
+    { en: 'at five', zh: '五點時（過去進行）', image: '⏱️', phonics: '', kk: '[æt faɪv]', phonicsSound: '過去進行', exampleSentence: 'I was playing at five.', exampleZh: '五點時我在玩。' },
+    { en: 'usually', zh: '通常（簡單）', image: '🔆', phonics: '', kk: '[ˈjuʒuəli]', phonicsSound: '簡單式', exampleSentence: 'I usually walk.', exampleZh: '我通常走路。' },
+    { en: 'next week', zh: '下週（未來）', image: '🗓️', phonics: '', kk: '[nɛkst wik]', phonicsSound: '未來式', exampleSentence: 'I will go next week.', exampleZh: '我下週會去。' },
+    { en: 'last night', zh: '昨晚（過去）', image: '🌃', phonics: '', kk: '[læst naɪt]', phonicsSound: '過去式', exampleSentence: 'I slept last night.', exampleZh: '我昨晚睡了。' },
+    { en: 'tense', zh: '時態', image: '🕰️', phonics: '', kk: '[tɛns]', phonicsSound: '', exampleSentence: 'choose the tense', exampleZh: '選時態' },
+  ],
+  sentences: [
+    { en: 'I play soccer every day.', zh: '我每天踢足球。' }, { en: 'I am playing now.', zh: '我現在正在玩。' }, { en: 'I played yesterday.', zh: '我昨天玩了。' }, { en: 'I will play tomorrow.', zh: '我明天會玩。' }, { en: 'I have already played.', zh: '我已經玩過了。' }, { en: 'At five, I was playing.', zh: '五點時我正在玩。' },
+  ],
+  phonicsLetters: ['tense switching'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ soccer every day.（簡單式）', options: ['play', 'played', 'am playing', 'will play'], answer: 'play' },
+    { type: 'fill-blank', question: 'I ___ soccer yesterday.（過去式）', options: ['played', 'play', 'am playing', 'will play'], answer: 'played' },
+    { type: 'fill-blank', question: 'I ___ soccer tomorrow.（未來式）', options: ['will play', 'play', 'played', 'am playing'], answer: 'will play' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'Look! I ___ now.（現在進行）', options: ['am playing', 'play', 'played', 'will play'], answer: 'am playing' },
+    { type: 'fill-blank', question: 'I ___ already eaten.（現在完成）', options: ['have', 'am', 'was', 'will'], answer: 'have' },
+    { type: 'fill-blank', question: '中翻英：「我昨天玩了。」', options: ["I played yesterday.", "I play yesterday.", "I will play yesterday.", "I am playing."], answer: "I played yesterday." },
+    { type: 'fill-blank', question: '中翻英：「我明天會玩。」', options: ["I will play tomorrow.", "I play tomorrow.", "I played tomorrow.", "I am playing."], answer: "I will play tomorrow." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I play soccer every day.', 'I am playing now.', 'I played yesterday.', 'I will play tomorrow.'], answer: 'I play soccer every day.', image: '🎧' },
+    { type: 'read', question: 'Which time word needs future tense?（哪個時間字要用未來式？）', passage: 'every day → simple\nnow → continuous\ntomorrow → future', options: ['tomorrow', 'every day', 'now', 'none'], answer: 'tomorrow' },
+  ],
+  talkTimePrompts: ["Match a time word to the right tense.", "Say the same verb in 4 tenses.", "Make sentences with now, yesterday, tomorrow.", "✍️ 引導寫作＋翻譯：把「五點時我正在玩。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'At five, I ___ playing.（過去進行·單數 be）', options: ['was', 'were', 'am', 'will'], answer: 'was' },
+    { type: 'fill-blank', question: '中翻英：「我現在正在玩。」', options: ['I am playing now.', 'I play now.', 'I played now.', 'I will play.'], answer: 'I am playing now.' },
+    { type: 'match', question: '"already" 常搭配哪個時態？', options: ['現在完成式', '過去式', '未來式', '現在簡單式'], answer: '現在完成式' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "The time word tells you the tense!", lineZh: '時間字告訴你用哪個時態！' },
+    { speaker: 'Coco', line: "'every day' → simple. 'now' → continuous.", lineZh: '「every day」→ 簡單式。「now」→ 進行式。' },
+    { speaker: 'Polly', line: "'yesterday' → past. 'tomorrow' → future!", lineZh: '「yesterday」→ 過去。「tomorrow」→ 未來！' },
+    { speaker: 'Benny', line: "Find the time word, choose the tense!", lineZh: '找時間字，選時態！' },
+  ],
+};
+
+const L9_M17: Mission = {
+  id: 17, slug: 'l9-m17-tense-reading', level: 9, title: '時態閱讀', titleEn: 'Tense Reading', theme: '時光道・故事時間', themeEmoji: '📖',
+  focus: '閱讀：一篇混合時態的短文（過去/現在/未來）＋ 理解 ＋ 中翻英',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read a story with many tenses!", dialogueZh: '讀一篇有很多時態的故事！', highlightWords: ['tenses'], sceneEmojis: ['📖', '🕰️', '✨'], animation: 'wave' },
+    { image: '🌏', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Last year, Sam went to Japan. Now he lives here.", dialogueZh: '去年，Sam 去了日本。現在他住這裡。', highlightWords: ['went', 'lives'], sceneEmojis: ['🌏', '🗾', '😊'], animation: 'bounce' },
+    { image: '🔮', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Next year, he will visit again!", dialogueZh: '明年，他會再去一次！', highlightWords: ['will visit'], sceneEmojis: ['🔮', '✈️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read all the tenses! Great!", dialogueZh: '你讀懂所有時態了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '📖', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'went', zh: '去了（過去）', image: '⏪', phonics: '', kk: '[wɛnt]', phonicsSound: '', exampleSentence: 'He went to Japan.', exampleZh: '他去了日本。' },
+    { en: 'lives', zh: '住（現在·第三人稱）', image: '🏠', phonics: '', kk: '[lɪvz]', phonicsSound: '', exampleSentence: 'He lives here.', exampleZh: '他住這裡。' },
+    { en: 'will visit', zh: '會拜訪（未來）', image: '🔮', phonics: '', kk: '[wɪl ˈvɪzɪt]', phonicsSound: '', exampleSentence: 'He will visit.', exampleZh: '他會去拜訪。' },
+    { en: 'has learned', zh: '學過了（完成）', image: '✅', phonics: '', kk: '[hæz lɝnd]', phonicsSound: '', exampleSentence: 'He has learned a lot.', exampleZh: '他學了很多。' },
+    { en: 'last year', zh: '去年', image: '🗓️', phonics: '', kk: '[læst jɪr]', phonicsSound: '', exampleSentence: 'last year', exampleZh: '去年' },
+    { en: 'next year', zh: '明年', image: '➡️', phonics: '', kk: '[nɛkst jɪr]', phonicsSound: '', exampleSentence: 'next year', exampleZh: '明年' },
+    { en: 'now', zh: '現在', image: '⏰', phonics: '', kk: '[naʊ]', phonicsSound: '', exampleSentence: 'now', exampleZh: '現在' },
+    { en: 'travel', zh: '旅行', image: '✈️', phonics: '', kk: '[ˈtrævl̩]', phonicsSound: '', exampleSentence: 'He loves to travel.', exampleZh: '他愛旅行。' },
+    { en: 'story', zh: '故事', image: '📚', phonics: '', kk: '[ˈstɔri]', phonicsSound: '', exampleSentence: 'a good story', exampleZh: '好故事' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'He is happy.', exampleZh: '他很開心。' },
+  ],
+  sentences: [
+    { en: 'Last year, Sam went to Japan.', zh: '去年 Sam 去了日本。' }, { en: 'Now he lives here.', zh: '現在他住這裡。' }, { en: 'He has learned a lot.', zh: '他學了很多。' }, { en: 'Next year, he will visit again.', zh: '明年他會再去。' }, { en: 'He loves to travel.', zh: '他愛旅行。' }, { en: 'Sam is very happy.', zh: 'Sam 很開心。' },
+  ],
+  phonicsLetters: ['tense reading'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'Last year, Sam ___ to Japan.（過去）', options: ['went', 'goes', 'will go', 'is going'], answer: 'went' },
+    { type: 'fill-blank', question: 'Now he ___ here.（現在·第三人稱）', options: ['lives', 'lived', 'will live', 'living'], answer: 'lives' },
+    { type: 'fill-blank', question: 'Next year, he ___ visit again.（未來）', options: ['will', 'is', 'was', 'has'], answer: 'will' },
+  ],
+  challenges: [
+    { type: 'read', question: 'When did Sam go to Japan?（Sam 何時去日本？）', passage: 'Last year, Sam went to Japan.\nHe learned a lot there.\nNow he lives in Taiwan.', options: ['last year', 'this year', 'next year', 'now'], answer: 'last year' },
+    { type: 'read', question: 'Where does Sam live now?（Sam 現在住哪？）', passage: 'Sam went to Japan last year.\nNow he lives in Taiwan.\nHe likes it here.', options: ['Taiwan', 'Japan', 'America', 'Korea'], answer: 'Taiwan' },
+    { type: 'read', question: 'What will Sam do next year?（Sam 明年會做什麼？）', passage: 'Sam loves Japan.\nNext year, he will visit again.\nHe is very excited.', options: ['visit Japan again', 'move away', 'stop traveling', 'stay home'], answer: 'visit Japan again' },
+    { type: 'fill-blank', question: '中翻英：「明年他會再去一次。」', options: ['Next year, he will visit again.', 'He visits again.', 'He visited again.', 'Does he visit?'], answer: 'Next year, he will visit again.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Last year, Sam went to Japan.', 'Now he lives here.', 'He has learned a lot.', 'Next year, he will visit again.'], answer: 'Last year, Sam went to Japan.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：trav _ l（旅行）', answer: 'travel', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell Sam's story using past, present, future.", "What did Sam do last year?", "What will he do next year?", "✍️ 引導寫作＋翻譯：把「現在他住這裡。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'read', question: 'Is Sam happy?（Sam 開心嗎？）', passage: 'Sam has learned a lot.\nHe loves to travel.\nSam is very happy.', options: ['Yes, he is happy', 'No, he is sad', 'He is tired', 'He is bored'], answer: 'Yes, he is happy' },
+    { type: 'fill-blank', question: 'He ___ learned a lot.（現在完成·he）', options: ['has', 'have', 'had', 'is'], answer: 'has' },
+    { type: 'match', question: 'next year 用哪個時態？', options: ['未來式', '過去式', '現在式', '完成式'], answer: '未來式' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Read a story with many tenses!", lineZh: '讀一篇有很多時態的故事！' },
+    { speaker: 'Coco', line: "Last year, Sam went to Japan. Now he lives here.", lineZh: '去年 Sam 去了日本。現在他住這裡。' },
+    { speaker: 'Polly', line: "Next year, he will visit again!", lineZh: '明年，他會再去一次！' },
+    { speaker: 'Benny', line: "You read all the tenses! Great!", lineZh: '你讀懂所有時態了！太棒了！' },
+  ],
+};
+
+const L9_M18: Mission = {
+  id: 18, slug: 'l9-m18-tense-writing', level: 9, title: '時態寫作', titleEn: 'Tense Writing', theme: '時光道・寫寫看', themeEmoji: '✍️',
+  focus: '引導式寫作：用不同時態寫「我的過去、現在、未來」＋ 中翻英',
+  story: [
+    { image: '✍️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's write about your life in three tenses!", dialogueZh: '我們用三種時態寫你的人生！', highlightWords: [], sceneEmojis: ['✍️', '📝', '✨'], animation: 'wave' },
+    { image: '⏪', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Past: When I was little, I lived in a village.", dialogueZh: '過去：我小時候住在村莊。', highlightWords: ['lived'], sceneEmojis: ['⏪', '🏡', '😊'], animation: 'bounce' },
+    { image: '🔮', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Future: One day, I will be a teacher.", dialogueZh: '未來：有一天，我會當老師。', highlightWords: ['will be'], sceneEmojis: ['🔮', '👩‍🏫', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Now write your own story! You can do it!", dialogueZh: '現在寫你自己的故事！你做得到！', highlightWords: [], sceneEmojis: ['🏆', '✍️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'when I was little', zh: '我小時候', image: '👶', phonics: '', kk: '[wɛn aɪ wʌz ˈlɪtl̩]', phonicsSound: '過去', exampleSentence: 'When I was little…', exampleZh: '我小時候…' },
+    { en: 'lived', zh: '住過（過去）', image: '🏡', phonics: '', kk: '[lɪvd]', phonicsSound: '', exampleSentence: 'I lived in a village.', exampleZh: '我住在村莊。' },
+    { en: 'now', zh: '現在', image: '⏰', phonics: '', kk: '[naʊ]', phonicsSound: '', exampleSentence: 'Now I live in the city.', exampleZh: '現在我住城市。' },
+    { en: 'one day', zh: '有一天', image: '🔮', phonics: '', kk: '[wʌn de]', phonicsSound: '未來', exampleSentence: 'One day, I will…', exampleZh: '有一天，我會…' },
+    { en: 'will be', zh: '會成為', image: '⭐', phonics: '', kk: '[wɪl bi]', phonicsSound: '', exampleSentence: 'I will be a teacher.', exampleZh: '我會當老師。' },
+    { en: 'dream', zh: '夢想', image: '💭', phonics: '', kk: '[drim]', phonicsSound: '', exampleSentence: 'my dream', exampleZh: '我的夢想' },
+    { en: 'village', zh: '村莊', image: '🏡', phonics: '', kk: '[ˈvɪlɪdʒ]', phonicsSound: '', exampleSentence: 'a small village', exampleZh: '一個小村莊' },
+    { en: 'city', zh: '城市', image: '🏙️', phonics: '', kk: '[ˈsɪti]', phonicsSound: '', exampleSentence: 'a big city', exampleZh: '大城市' },
+    { en: 'grow up', zh: '長大', image: '🌱', phonics: '', kk: '[ɡro ʌp]', phonicsSound: '', exampleSentence: 'When I grow up…', exampleZh: '我長大後…' },
+    { en: 'future', zh: '未來', image: '🚀', phonics: '', kk: '[ˈfjutʃɚ]', phonicsSound: '', exampleSentence: 'in the future', exampleZh: '在未來' },
+  ],
+  sentences: [
+    { en: 'When I was little, I lived in a village.', zh: '我小時候住在村莊。' }, { en: 'Now I live in the city.', zh: '現在我住城市。' }, { en: 'I go to school every day.', zh: '我每天上學。' }, { en: 'One day, I will be a teacher.', zh: '有一天我會當老師。' }, { en: 'That is my dream.', zh: '那是我的夢想。' }, { en: 'I will work hard.', zh: '我會努力。' },
+  ],
+  phonicsLetters: ['tense writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'When I was little, I ___ in a village.（過去）', options: ['lived', 'live', 'will live', 'living'], answer: 'lived' },
+    { type: 'fill-blank', question: 'Now I ___ in the city.（現在）', options: ['live', 'lived', 'will live', 'living'], answer: 'live' },
+    { type: 'fill-blank', question: 'One day, I ___ be a teacher.（未來）', options: ['will', 'am', 'was', 'have'], answer: 'will' },
+  ],
+  challenges: [
+    { type: 'read', question: 'Where did the writer live as a child?（作者小時候住哪？）', passage: 'When I was little, I lived in a village.\nIt was quiet and green.\nNow I live in a busy city.', options: ['a village', 'a city', 'a farm', 'the beach'], answer: 'a village' },
+    { type: 'fill-blank', question: 'One day, I ___ be a teacher.（未來）', options: ['will', 'am', 'was', 'have'], answer: 'will' },
+    { type: 'fill-blank', question: '中翻英：「我小時候住在村莊。」', options: ["When I was little, I lived in a village.", "I live in a village.", "I will live in a village.", "Do I live there?"], answer: "When I was little, I lived in a village." },
+    { type: 'fill-blank', question: '中翻英：「有一天我會當老師。」', options: ["One day, I will be a teacher.", "I am a teacher.", "I was a teacher.", "Am I a teacher?"], answer: "One day, I will be a teacher." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['When I was little, I lived in a village.', 'Now I live in the city.', 'One day, I will be a teacher.', 'That is my dream.'], answer: 'When I was little, I lived in a village.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：fut _ re（未來）', answer: 'future', image: '✍️' },
+  ],
+  talkTimePrompts: ["Tell about your past: When I was little, I ___.", "Tell about your present: Now I ___.", "Tell about your future: One day, I will ___.", "✍️ 引導寫作＋翻譯：把「那是我的夢想。」寫成英文，再寫你自己的三時態短文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ work hard.（未來）', options: ['will', 'am', 'was', 'have'], answer: 'will' },
+    { type: 'fill-blank', question: '中翻英：「現在我住城市。」', options: ['Now I live in the city.', 'I lived in the city.', 'I will live in the city.', 'Do I live there?'], answer: 'Now I live in the city.' },
+    { type: 'read', question: 'What is the writer\'s dream?（作者的夢想是什麼？）', passage: 'One day, I will be a teacher.\nI will help children learn.\nThat is my dream.', options: ['to be a teacher', 'to travel', 'to be rich', 'to sleep'], answer: 'to be a teacher' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Let's write about your life in three tenses!", lineZh: '我們用三種時態寫你的人生！' },
+    { speaker: 'Coco', line: "Past: When I was little, I lived in a village.", lineZh: '過去：我小時候住在村莊。' },
+    { speaker: 'Benny', line: "Future: One day, I will be a teacher.", lineZh: '未來：有一天，我會當老師。' },
+    { speaker: 'Ruby', line: "Now write your own story! You can do it!", lineZh: '現在寫你自己的故事！你做得到！' },
+  ],
+};
+
+const L9_M19: Mission = {
+  id: 19, slug: 'l9-m19-dialogue', level: 9, title: '時態綜合對話', titleEn: 'Tense Dialogue', theme: '時光道・聊聊時間', themeEmoji: '💬',
+  focus: '綜合對話：用不同時態聊過去、現在、未來的事 ＋ 中翻英',
+  story: [
+    { image: '💬', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What did you do last weekend?", dialogueZh: '你上週末做了什麼？', highlightWords: ['did'], sceneEmojis: ['💬', '⏪', '✨'], animation: 'wave' },
+    { image: '🏞️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I went hiking. Right now I am resting.", dialogueZh: '我去健行。現在我在休息。', highlightWords: ['went', 'am resting'], sceneEmojis: ['🏞️', '😌', '😊'], animation: 'bounce' },
+    { image: '🔮', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "What will you do next weekend?", dialogueZh: '你下週末會做什麼？', highlightWords: ['will'], sceneEmojis: ['🔮', '📅', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "You can talk about any time now!", dialogueZh: '現在你什麼時間的事都能聊了！', highlightWords: [], sceneEmojis: ['🏆', '💬', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'last weekend', zh: '上週末', image: '⏪', phonics: '', kk: '[læst ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'last weekend', exampleZh: '上週末' },
+    { en: 'went hiking', zh: '去健行了', image: '🥾', phonics: '', kk: '[wɛnt ˈhaɪkɪŋ]', phonicsSound: '', exampleSentence: 'I went hiking.', exampleZh: '我去健行。' },
+    { en: 'resting', zh: '正在休息', image: '😌', phonics: '', kk: '[ˈrɛstɪŋ]', phonicsSound: '', exampleSentence: 'I am resting.', exampleZh: '我在休息。' },
+    { en: 'next weekend', zh: '下週末', image: '➡️', phonics: '', kk: '[nɛkst ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'next weekend', exampleZh: '下週末' },
+    { en: 'will do', zh: '會做', image: '🔮', phonics: '', kk: '[wɪl du]', phonicsSound: '', exampleSentence: 'What will you do?', exampleZh: '你會做什麼？' },
+    { en: 'plan', zh: '計畫', image: '🗒️', phonics: '', kk: '[plæn]', phonicsSound: '', exampleSentence: 'my plan', exampleZh: '我的計畫' },
+    { en: 'tired', zh: '累的', image: '😴', phonics: '', kk: '[taɪrd]', phonicsSound: '', exampleSentence: 'I am tired.', exampleZh: '我很累。' },
+    { en: 'fun', zh: '好玩的', image: '🎉', phonics: '', kk: '[fʌn]', phonicsSound: '', exampleSentence: 'It was fun.', exampleZh: '很好玩。' },
+    { en: 'movie', zh: '電影', image: '🎬', phonics: '', kk: '[ˈmuvi]', phonicsSound: '', exampleSentence: 'watch a movie', exampleZh: '看電影' },
+    { en: 'relax', zh: '放鬆', image: '🛋️', phonics: '', kk: '[rɪˈlæks]', phonicsSound: '', exampleSentence: 'I want to relax.', exampleZh: '我想放鬆。' },
+  ],
+  sentences: [
+    { en: 'What did you do last weekend?', zh: '你上週末做了什麼？' }, { en: 'I went hiking.', zh: '我去健行。' }, { en: 'Right now I am resting.', zh: '現在我在休息。' }, { en: 'What will you do next weekend?', zh: '你下週末會做什麼？' }, { en: 'I will watch a movie.', zh: '我會看電影。' }, { en: 'It was so much fun!', zh: '真是太好玩了！' },
+  ],
+  phonicsLetters: ['tense dialogue'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'What ___ you do last weekend?（過去問句）', options: ['did', 'do', 'will', 'are'], answer: 'did' },
+    { type: 'fill-blank', question: 'Right now I ___ resting.（進行·單數 be）', options: ['am', 'was', 'will', 'do'], answer: 'am' },
+    { type: 'fill-blank', question: 'What ___ you do next weekend?（未來問句）', options: ['will', 'did', 'do', 'are'], answer: 'will' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🥾', '😌', '🎬', '🛋️'], answer: '🎬', image: '🎧' },
+    { type: 'fill-blank', question: 'I ___ hiking last weekend.（go 過去）', options: ['went', 'go', 'will go', 'going'], answer: 'went' },
+    { type: 'fill-blank', question: '中翻英：「你上週末做了什麼？」', options: ["What did you do last weekend?", "What do you do?", "What will you do?", "Where did you go?"], answer: "What did you do last weekend?" },
+    { type: 'fill-blank', question: '中翻英：「我會看電影。」', options: ["I will watch a movie.", "I watch a movie.", "I watched a movie.", "Do I watch a movie?"], answer: "I will watch a movie." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What did you do last weekend?', 'I went hiking.', 'Right now I am resting.', 'What will you do next weekend?'], answer: 'What did you do last weekend?', image: '🎧' },
+    { type: 'read', question: 'What is Coco doing right now?（Coco 現在在做什麼？）', passage: 'Coco went hiking last weekend.\nIt was tiring but fun.\nRight now she is resting at home.', options: ['resting', 'hiking', 'watching a movie', 'studying'], answer: 'resting' },
+  ],
+  talkTimePrompts: ["Ask and answer about last weekend.", "Say what you are doing now.", "Say your plan for next weekend.", "✍️ 引導寫作＋翻譯：把「現在我在休息。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Right now I ___ resting.（進行·單數 be）', options: ['am', 'was', 'will', 'do'], answer: 'am' },
+    { type: 'fill-blank', question: '中翻英：「你下週末會做什麼？」', options: ['What will you do next weekend?', 'What did you do?', 'What do you do?', 'Where will you go?'], answer: 'What will you do next weekend?' },
+    { type: 'read', question: 'Was the hike fun?（健行好玩嗎？）', passage: 'Coco went hiking last weekend.\nIt was tiring but it was so much fun.\nShe wants to go again.', options: ['Yes, it was fun', 'No, it was boring', 'She hated it', 'She stayed home'], answer: 'Yes, it was fun' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "What did you do last weekend?", lineZh: '你上週末做了什麼？' },
+    { speaker: 'Coco', line: "I went hiking. Right now I am resting.", lineZh: '我去健行。現在我在休息。' },
+    { speaker: 'Benny', line: "What will you do next weekend?", lineZh: '你下週末會做什麼？' },
+    { speaker: 'Polly', line: "You can talk about any time now!", lineZh: '現在你什麼時間的事都能聊了！' },
+  ],
+};
+
+const L9_M20: Mission = {
+  id: 20, slug: 'l9-m20-boss', level: 9, title: '時光道大魔王', titleEn: 'Time Boss', theme: '時光道・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：現在/過去/未來/進行/完成式 ＋ 動詞三態 ＋ 中翻英',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Time Boss is here! Master every tense!", dialogueZh: '時光大魔王來了！精通每個時態！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🕰️'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I play, played, am playing, will play, have played!", dialogueZh: 'I play、played、am playing、will play、have played！', highlightWords: [], sceneEmojis: ['💪', '🕰️', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Time Badge!", dialogueZh: '你打敗大魔王了！獲得時光徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🌉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Time Travel Path! On to Future Bridge!", dialogueZh: '你完成了時光道！前進未來橋！', highlightWords: [], sceneEmojis: ['🌉', '📝', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'play', zh: '玩（現在）', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '現在', exampleSentence: 'I play every day.', exampleZh: '我每天玩。' },
+    { en: 'played', zh: '玩了（過去）', image: '⏪', phonics: '', kk: '[pled]', phonicsSound: '過去', exampleSentence: 'I played yesterday.', exampleZh: '我昨天玩了。' },
+    { en: 'am playing', zh: '正在玩（進行）', image: '🎮', phonics: '', kk: '[æm ˈpleɪŋ]', phonicsSound: '進行', exampleSentence: 'I am playing now.', exampleZh: '我現在在玩。' },
+    { en: 'will play', zh: '會玩（未來）', image: '🔮', phonics: '', kk: '[wɪl ple]', phonicsSound: '未來', exampleSentence: 'I will play tomorrow.', exampleZh: '我明天會玩。' },
+    { en: 'have played', zh: '玩過（完成）', image: '✅', phonics: '', kk: '[hæv pled]', phonicsSound: '完成', exampleSentence: 'I have played before.', exampleZh: '我以前玩過。' },
+    { en: 'went', zh: '去了', image: '🚶', phonics: '', kk: '[wɛnt]', phonicsSound: 'go→went', exampleSentence: 'I went home.', exampleZh: '我回家了。' },
+    { en: 'eaten', zh: '吃過（p.p.）', image: '🍽️', phonics: '', kk: '[ˈitn̩]', phonicsSound: 'eat→eaten', exampleSentence: 'I have eaten.', exampleZh: '我吃過了。' },
+    { en: 'was reading', zh: '當時在讀', image: '📖', phonics: '', kk: '[wʌz ˈridɪŋ]', phonicsSound: '過去進行', exampleSentence: 'I was reading.', exampleZh: '我正在讀。' },
+    { en: 'going to', zh: '打算', image: '📋', phonics: '', kk: '[ˈɡoɪŋ tu]', phonicsSound: '未來計畫', exampleSentence: 'I am going to study.', exampleZh: '我打算讀書。' },
+    { en: 'had left', zh: '已離開（過去完成）', image: '⏮️', phonics: '', kk: '[hæd lɛft]', phonicsSound: '過去完成', exampleSentence: 'The bus had left.', exampleZh: '公車已開走。' },
+  ],
+  sentences: [
+    { en: 'I play soccer every day.', zh: '我每天踢足球。' }, { en: 'Yesterday I went to the park.', zh: '昨天我去了公園。' }, { en: 'Right now I am reading.', zh: '現在我在讀書。' }, { en: 'Tomorrow I will visit grandma.', zh: '明天我會看奶奶。' }, { en: 'I have finished my homework.', zh: '我已完成作業。' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'Yesterday I ___ to the park.（過去）', options: ['went', 'go', 'will go', 'am going'], answer: 'went' },
+    { type: 'fill-blank', question: 'Right now I ___ reading.（進行·單數 be）', options: ['am', 'was', 'will', 'have'], answer: 'am' },
+    { type: 'fill-blank', question: 'Tomorrow I ___ visit grandma.（未來）', options: ['will', 'am', 'was', 'have'], answer: 'will' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I ___ finished my homework.（現在完成·I）', options: ['have', 'am', 'was', 'will'], answer: 'have' },
+    { type: 'match', question: 'eat 的過去分詞（p.p.）是？', options: ['eaten', 'ate', 'eats', 'eating'], answer: 'eaten' },
+    { type: 'fill-blank', question: 'The bus ___ left when I arrived.（過去完成）', options: ['had', 'has', 'have', 'was'], answer: 'had' },
+    { type: 'fill-blank', question: '中翻英：「明天我會看奶奶。」', options: ["Tomorrow I will visit grandma.", "I visit grandma.", "I visited grandma.", "Do I visit?"], answer: "Tomorrow I will visit grandma." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I play soccer every day.', 'Yesterday I went to the park.', 'Right now I am reading.', 'I have finished my homework.'], answer: 'I play soccer every day.', image: '🎧' },
+    { type: 'read', question: 'What has the writer finished?（作者完成了什麼？）', passage: 'I play soccer every day.\nYesterday I played in a game.\nNow I have finished my homework.', options: ['homework', 'a game', 'dinner', 'a book'], answer: 'homework' },
+  ],
+  talkTimePrompts: ["Say one verb in 5 tenses.", "Tell me about yesterday, now, and tomorrow.", "Use a perfect tense sentence.", "You beat the Time Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I have ___ before.（play 的 p.p.）', options: ['played', 'play', 'plays', 'playing'], answer: 'played' },
+    { type: 'fill-blank', question: '中翻英：「我已完成作業。」', options: ['I have finished my homework.', 'I finish my homework.', 'I finished.', 'Do I finish?'], answer: 'I have finished my homework.' },
+    { type: 'read', question: 'Did the writer finish homework?（作者寫完作業了嗎？）', passage: 'I played soccer, then I studied.\nNow I have finished my homework.\nI can relax!', options: ['Yes, it is finished', 'No, not yet', 'He has no homework', 'He is still playing'], answer: 'Yes, it is finished' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Time Boss says: master every tense!", lineZh: '時光大魔王說：精通每個時態！' },
+    { speaker: 'Coco', line: "I play, played, am playing, will play, have played!", lineZh: 'I play、played、am playing、will play、have played！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Time champion!", lineZh: '你打敗大魔王了！時光冠軍！' },
+    { speaker: 'Finn', line: "On to Future Bridge! Let's read and write!", lineZh: '前進未來橋！我們來讀寫！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
