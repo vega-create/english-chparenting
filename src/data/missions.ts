@@ -6166,7 +6166,267 @@ const L7_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5];
+const L7_M6: Mission = {
+  id: 6, slug: 'l7-m6-frequency', level: 7, title: '頻率副詞', titleEn: 'Frequency Adverbs', theme: '文法門・多常做', themeEmoji: '📊',
+  focus: '頻率副詞：always/usually/often/sometimes/never（放在一般動詞前）',
+  story: [
+    { image: '📊', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I always eat breakfast.", dialogueZh: '我總是吃早餐。', highlightWords: ['always'], sceneEmojis: ['🥞', '📊', '✨'], animation: 'wave' },
+    { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I usually read after school. Sometimes I play.", dialogueZh: '我通常放學後讀書。有時我玩。', highlightWords: ['usually', 'Sometimes'], sceneEmojis: ['📚', '🎮', '😊'], animation: 'bounce' },
+    { image: '🍬', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "I never eat candy before dinner!", dialogueZh: '我晚餐前從不吃糖！', highlightWords: ['never'], sceneEmojis: ['🍬', '🚫', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Always, usually, sometimes, never — how often!", dialogueZh: '總是、通常、有時、從不 —— 多常做！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📊'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'always', zh: '總是', image: '💯', phonics: '', kk: '[ˈɔlˌwez]', phonicsSound: '', exampleSentence: 'I always eat breakfast.', exampleZh: '我總是吃早餐。' },
+    { en: 'usually', zh: '通常', image: '🔆', phonics: '', kk: '[ˈjuʒuəli]', phonicsSound: '', exampleSentence: 'I usually walk.', exampleZh: '我通常走路。' },
+    { en: 'often', zh: '常常', image: '🔁', phonics: '', kk: '[ˈɔfən]', phonicsSound: '', exampleSentence: 'I often read.', exampleZh: '我常常讀書。' },
+    { en: 'sometimes', zh: '有時', image: '🔀', phonics: '', kk: '[ˈsʌmˌtaɪmz]', phonicsSound: '', exampleSentence: 'Sometimes I play.', exampleZh: '有時我玩。' },
+    { en: 'never', zh: '從不', image: '🚫', phonics: '', kk: '[ˈnɛvɚ]', phonicsSound: '', exampleSentence: 'I never eat candy.', exampleZh: '我從不吃糖。' },
+    { en: 'breakfast', zh: '早餐', image: '🥞', phonics: '', kk: '[ˈbrɛkfəst]', phonicsSound: '', exampleSentence: 'eat breakfast', exampleZh: '吃早餐' },
+    { en: 'late', zh: '遲的·晚的', image: '⏰', phonics: '', kk: '[let]', phonicsSound: '', exampleSentence: 'I am never late.', exampleZh: '我從不遲到。' },
+    { en: 'early', zh: '早的', image: '🌅', phonics: '', kk: '[ˈɝli]', phonicsSound: '', exampleSentence: 'I usually get up early.', exampleZh: '我通常早起。' },
+    { en: 'candy', zh: '糖果', image: '🍬', phonics: '', kk: '[ˈkændi]', phonicsSound: '', exampleSentence: 'never eat candy', exampleZh: '從不吃糖' },
+    { en: 'how often', zh: '多常', image: '📊', phonics: '', kk: '[haʊ ˈɔfən]', phonicsSound: '', exampleSentence: 'How often do you read?', exampleZh: '你多常讀書？' },
+  ],
+  sentences: [
+    { en: 'I always eat breakfast.', zh: '我總是吃早餐。' }, { en: 'I usually walk to school.', zh: '我通常走路上學。' }, { en: 'Sometimes I play games.', zh: '有時我玩遊戲。' }, { en: 'I never eat candy before dinner.', zh: '我晚餐前從不吃糖。' }, { en: 'How often do you read?', zh: '你多常讀書？' }, { en: 'He often plays soccer.', zh: '他常常踢足球。' },
+  ],
+  phonicsLetters: ['frequency'],
+  warmUpQuestions: [
+    { type: 'match', question: 'always 是什麼意思？', options: ['總是', '從不', '有時', '通常'], answer: '總是' },
+    { type: 'match', question: 'never 是什麼意思？', options: ['從不', '總是', '常常', '有時'], answer: '從不' },
+    { type: 'fill-blank', question: 'I ___ eat breakfast.（總是）', options: ['always', 'never', 'sometimes', 'often'], answer: 'always' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的頻率詞', options: ['💯', '🔁', '🔀', '🚫'], answer: '🚫', image: '🎧' },
+    { type: 'match', question: '配對：頻率詞配意思', options: ['always-總是', 'usually-通常', 'sometimes-有時', 'never-從不'], answer: 'always-總是' },
+    { type: 'fill-blank', question: '句型代換：I ___ eat candy.（從不）', options: ['never', 'always', 'often', 'is'], answer: 'never' },
+    { type: 'fill-blank', question: 'He ___ plays soccer.（常常，放動詞前）', options: ['often', 'plays', 'is', 'and'], answer: 'often' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I always eat breakfast.', 'I usually walk to school.', 'Sometimes I play games.', 'I never eat candy.'], answer: 'I always eat breakfast.', image: '🎧' },
+    { type: 'read', question: 'How often does Ruby eat candy before dinner?（Ruby 晚餐前多常吃糖？）', passage: 'Ruby is healthy.\nShe always eats breakfast.\nShe never eats candy before dinner.', options: ['never', 'always', 'often', 'usually'], answer: 'never' },
+  ],
+  talkTimePrompts: ["Say a habit: I always / usually / never ___.", "How often do you read?", "Use 'sometimes' in a sentence.", "✍️ 引導寫作：I always ___. I never ___."],
+  reviewQuiz: [
+    { type: 'match', question: 'sometimes 是什麼意思？', options: ['有時', '總是', '從不', '常常'], answer: '有時' },
+    { type: 'fill-blank', question: 'I ___ get up early.（通常）', options: ['usually', 'never', 'candy', 'late'], answer: 'usually' },
+    { type: 'spell', question: '拼拼看：alw _ ys（總是）', answer: 'always', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I always eat breakfast.", lineZh: '我總是吃早餐。' },
+    { speaker: 'Benny', line: "I usually read after school. Sometimes I play.", lineZh: '我通常放學後讀書。有時我玩。' },
+    { speaker: 'Ruby', line: "I never eat candy before dinner!", lineZh: '我晚餐前從不吃糖！' },
+    { speaker: 'Coco', line: "Always, usually, sometimes, never — how often!", lineZh: '總是、通常、有時、從不 —— 多常做！' },
+  ],
+};
+
+const L7_M7: Mission = {
+  id: 7, slug: 'l7-m7-in-on-at', level: 7, title: '介系詞 in/on/at', titleEn: 'in / on / at', theme: '文法門・時間地點', themeEmoji: '📍',
+  focus: '介系詞 in/on/at（時間與地點）：in the morning, on Monday, at 3',
+  story: [
+    { image: '🌅', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I get up in the morning.", dialogueZh: '我在早上起床。', highlightWords: ['in'], sceneEmojis: ['🌅', '📍', '✨'], animation: 'wave' },
+    { image: '📅', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "We have art on Monday.", dialogueZh: '我們星期一有美術。', highlightWords: ['on'], sceneEmojis: ['📅', '🎨', '😊'], animation: 'bounce' },
+    { image: '🕒', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "School starts at eight o'clock.", dialogueZh: '學校八點開始。', highlightWords: ['at'], sceneEmojis: ['🕒', '🏫', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "in the morning, on Monday, at eight!", dialogueZh: 'in 早上、on 星期、at 幾點！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📍'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'in', zh: '在（月/季/早上）', image: '🌅', phonics: '', kk: '[ɪn]', phonicsSound: '', exampleSentence: 'in the morning', exampleZh: '在早上' },
+    { en: 'on', zh: '在（星期/日期）', image: '📅', phonics: '', kk: '[ɑn]', phonicsSound: '', exampleSentence: 'on Monday', exampleZh: '在星期一' },
+    { en: 'at', zh: '在（幾點/地點）', image: '🕒', phonics: '', kk: '[æt]', phonicsSound: '', exampleSentence: "at 8 o'clock", exampleZh: '在八點' },
+    { en: 'morning', zh: '早上', image: '🌄', phonics: '', kk: '[ˈmɔrnɪŋ]', phonicsSound: '', exampleSentence: 'in the morning', exampleZh: '在早上' },
+    { en: 'night', zh: '夜晚', image: '🌙', phonics: '', kk: '[naɪt]', phonicsSound: '', exampleSentence: 'at night', exampleZh: '在晚上' },
+    { en: 'Monday', zh: '星期一', image: '1️⃣', phonics: '', kk: '[ˈmʌnde]', phonicsSound: '', exampleSentence: 'on Monday', exampleZh: '在星期一' },
+    { en: 'school', zh: '學校', image: '🏫', phonics: '', kk: '[skul]', phonicsSound: '', exampleSentence: 'at school', exampleZh: '在學校' },
+    { en: 'home', zh: '家', image: '🏠', phonics: '', kk: '[hom]', phonicsSound: '', exampleSentence: 'at home', exampleZh: '在家' },
+    { en: 'summer', zh: '夏天', image: '🌻', phonics: '', kk: '[ˈsʌmɚ]', phonicsSound: '', exampleSentence: 'in summer', exampleZh: '在夏天' },
+    { en: 'noon', zh: '中午', image: '🕛', phonics: '', kk: '[nun]', phonicsSound: '', exampleSentence: 'at noon', exampleZh: '在中午' },
+  ],
+  sentences: [
+    { en: 'I get up in the morning.', zh: '我在早上起床。' }, { en: 'We have art on Monday.', zh: '我們星期一有美術。' }, { en: "School starts at eight.", zh: '學校八點開始。' }, { en: 'I am at home now.', zh: '我現在在家。' }, { en: 'It is hot in summer.', zh: '夏天很熱。' }, { en: 'We eat at noon.', zh: '我們中午吃飯。' },
+  ],
+  phonicsLetters: ['in / on / at'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I get up ___ the morning.（in/on/at）', options: ['in', 'on', 'at', 'to'], answer: 'in' },
+    { type: 'fill-blank', question: 'We have art ___ Monday.（in/on/at）', options: ['on', 'in', 'at', 'to'], answer: 'on' },
+    { type: 'fill-blank', question: "School starts ___ eight.（in/on/at）", options: ['at', 'in', 'on', 'to'], answer: 'at' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的時段', options: ['🌅', '🌙', '🕛', '📅'], answer: '🕛', image: '🎧' },
+    { type: 'fill-blank', question: 'I read ___ night.（在·晚上）', options: ['at', 'in', 'on', 'to'], answer: 'at' },
+    { type: 'fill-blank', question: 'It is hot ___ summer.（在·季節）', options: ['in', 'on', 'at', 'to'], answer: 'in' },
+    { type: 'fill-blank', question: 'We play ___ Sunday.（在·星期）', options: ['on', 'in', 'at', 'to'], answer: 'on' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I get up in the morning.', 'We have art on Monday.', 'School starts at eight.', 'We eat at noon.'], answer: 'I get up in the morning.', image: '🎧' },
+    { type: 'read', question: 'When does school start?（學校幾點開始？）', passage: 'Benny gets up in the morning.\nHe walks to school.\nSchool starts at eight o\'clock.', options: ["at eight o'clock", 'at noon', 'at night', 'on Monday'], answer: "at eight o'clock" },
+  ],
+  talkTimePrompts: ["Say a time: in the morning / at night.", "Say a day: on ___.", "When do you get up? At ___.", "✍️ 引導寫作：I get up ___ the morning. School starts ___ eight."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I am ___ home now.（在·地點）', options: ['at', 'in', 'on', 'to'], answer: 'at' },
+    { type: 'fill-blank', question: 'We eat ___ noon.（在·時間）', options: ['at', 'in', 'on', 'to'], answer: 'at' },
+    { type: 'fill-blank', question: 'It snows ___ winter.（在·季節）', options: ['in', 'on', 'at', 'to'], answer: 'in' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I get up in the morning.", lineZh: '我在早上起床。' },
+    { speaker: 'Coco', line: "We have art on Monday.", lineZh: '我們星期一有美術。' },
+    { speaker: 'Polly', line: "School starts at eight o'clock.", lineZh: '學校八點開始。' },
+    { speaker: 'Benny', line: "in the morning, on Monday, at eight!", lineZh: 'in 早上、on 星期、at 幾點！' },
+  ],
+};
+
+const L7_M8: Mission = {
+  id: 8, slug: 'l7-m8-place-prep', level: 7, title: '位置介系詞', titleEn: 'Place Prepositions', theme: '文法門・在哪裡', themeEmoji: '📦',
+  focus: '位置介系詞：under/behind/between/next to/in front of',
+  story: [
+    { image: '📦', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "The cat is under the table.", dialogueZh: '貓在桌子下面。', highlightWords: ['under'], sceneEmojis: ['🐱', '🪵', '✨'], animation: 'wave' },
+    { image: '🚪', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "The ball is behind the door.", dialogueZh: '球在門後面。', highlightWords: ['behind'], sceneEmojis: ['⚽', '🚪', '😊'], animation: 'bounce' },
+    { image: '🏫', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The park is between the school and the shop.", dialogueZh: '公園在學校和商店之間。', highlightWords: ['between'], sceneEmojis: ['🏫', '🏞️', '🏪'], animation: 'tada' },
+    { image: '🎉', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Under, behind, between — you found them!", dialogueZh: '下面、後面、之間 —— 你找到了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📦'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'under', zh: '在…下面', image: '⬇️', phonics: '', kk: '[ˈʌndɚ]', phonicsSound: '', exampleSentence: 'under the table', exampleZh: '在桌子下' },
+    { en: 'behind', zh: '在…後面', image: '🔙', phonics: '', kk: '[bɪˈhaɪnd]', phonicsSound: '', exampleSentence: 'behind the door', exampleZh: '在門後' },
+    { en: 'between', zh: '在…之間', image: '↔️', phonics: '', kk: '[bɪˈtwin]', phonicsSound: '', exampleSentence: 'between the shops', exampleZh: '在店之間' },
+    { en: 'next to', zh: '在…旁邊', image: '➡️', phonics: '', kk: '[nɛkst tu]', phonicsSound: '', exampleSentence: 'next to the bank', exampleZh: '在銀行旁' },
+    { en: 'in front of', zh: '在…前面', image: '⏭️', phonics: '', kk: '[ɪn frʌnt ʌv]', phonicsSound: '', exampleSentence: 'in front of the park', exampleZh: '在公園前' },
+    { en: 'on', zh: '在…上面', image: '⬆️', phonics: '', kk: '[ɑn]', phonicsSound: '', exampleSentence: 'on the desk', exampleZh: '在桌上' },
+    { en: 'in', zh: '在…裡面', image: '📥', phonics: '', kk: '[ɪn]', phonicsSound: '', exampleSentence: 'in the box', exampleZh: '在箱裡' },
+    { en: 'table', zh: '桌子', image: '🪵', phonics: '', kk: '[ˈtebl̩]', phonicsSound: '', exampleSentence: 'under the table', exampleZh: '在桌下' },
+    { en: 'door', zh: '門', image: '🚪', phonics: '', kk: '[dɔr]', phonicsSound: '', exampleSentence: 'behind the door', exampleZh: '在門後' },
+    { en: 'wall', zh: '牆', image: '🧱', phonics: '', kk: '[wɔl]', phonicsSound: '', exampleSentence: 'on the wall', exampleZh: '在牆上' },
+  ],
+  sentences: [
+    { en: 'The cat is under the table.', zh: '貓在桌子下面。' }, { en: 'The ball is behind the door.', zh: '球在門後面。' }, { en: 'The park is between the shops.', zh: '公園在商店之間。' }, { en: 'The bank is next to the store.', zh: '銀行在商店旁邊。' }, { en: 'Where is the cat?', zh: '貓在哪？' }, { en: 'The picture is on the wall.', zh: '畫在牆上。' },
+  ],
+  phonicsLetters: ['place prepositions'],
+  warmUpQuestions: [
+    { type: 'match', question: 'under 是什麼意思？', options: ['在…下面', '在…上面', '在…後面', '在…之間'], answer: '在…下面' },
+    { type: 'match', question: 'behind 是什麼意思？', options: ['在…後面', '在…前面', '在…旁邊', '在…裡面'], answer: '在…後面' },
+    { type: 'fill-blank', question: 'The park is ___ the two shops.（之間）', options: ['between', 'under', 'on', 'in'], answer: 'between' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的位置字', options: ['⬇️', '🔙', '↔️', '⬆️'], answer: '↔️', image: '🎧' },
+    { type: 'match', question: '配對：位置字配意思', options: ['under-下面', 'behind-後面', 'between-之間', 'next to-旁邊'], answer: 'under-下面' },
+    { type: 'fill-blank', question: '句型代換：The cat is ___ the table.（下面）', options: ['under', 'on', 'behind', 'is'], answer: 'under' },
+    { type: 'fill-blank', question: 'The bank is ___ the store.（旁邊）', options: ['next to', 'under', 'behind', 'in'], answer: 'next to' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The cat is under the table.', 'The ball is behind the door.', 'The park is between the shops.', 'The picture is on the wall.'], answer: 'The cat is under the table.', image: '🎧' },
+    { type: 'read', question: 'Where is the ball?（球在哪？）', passage: 'The cat is under the table.\nThe picture is on the wall.\nThe ball is behind the door.', options: ['behind the door', 'under the table', 'on the wall', 'in the box'], answer: 'behind the door' },
+  ],
+  talkTimePrompts: ["Say where things are: It is ___ the ___.", "Use 'between' and 'next to'.", "Ask: Where is the cat?", "✍️ 引導寫作：The ___ is ___ the ___."],
+  reviewQuiz: [
+    { type: 'match', question: 'between 是什麼意思？', options: ['在…之間', '在…下面', '在…上面', '在…後面'], answer: '在…之間' },
+    { type: 'fill-blank', question: 'The shop is ___ the park.（前面）', options: ['in front of', 'under', 'in', 'on'], answer: 'in front of' },
+    { type: 'spell', question: '拼拼看：beh _ nd（後面）', answer: 'behind', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "The cat is under the table.", lineZh: '貓在桌子下面。' },
+    { speaker: 'Benny', line: "The ball is behind the door.", lineZh: '球在門後面。' },
+    { speaker: 'Coco', line: "The park is between the school and the shop.", lineZh: '公園在學校和商店之間。' },
+    { speaker: 'Ruby', line: "Under, behind, between — you found them!", lineZh: '下面、後面、之間 —— 你找到了！' },
+  ],
+};
+
+const L7_M9: Mission = {
+  id: 9, slug: 'l7-m9-there-is-are', level: 7, title: 'There is / There are', titleEn: 'There is / are', theme: '文法門・有什麼', themeEmoji: '🏙️',
+  focus: '句型 There is + 單數 / There are + 複數',
+  story: [
+    { image: '🏙️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "There is a park in my town.", dialogueZh: '我的城鎮有一座公園。', highlightWords: ['There is'], sceneEmojis: ['🏞️', '🏙️', '✨'], animation: 'wave' },
+    { image: '🌳', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "There are many trees in the park.", dialogueZh: '公園裡有很多樹。', highlightWords: ['There are'], sceneEmojis: ['🌳', '🌳', '😊'], animation: 'bounce' },
+    { image: '🦆', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "There is a lake. There are ducks in it!", dialogueZh: '有一個湖。裡面有鴨子！', highlightWords: ['There is', 'There are'], sceneEmojis: ['🦆', '🌊', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "There is one, there are many!", dialogueZh: 'There is 一個，there are 很多！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🏙️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'there is', zh: '有（單數）', image: '1️⃣', phonics: '', kk: '[ðɛr ɪz]', phonicsSound: '', exampleSentence: 'There is a park.', exampleZh: '有一座公園。' },
+    { en: 'there are', zh: '有（複數）', image: '🔢', phonics: '', kk: '[ðɛr ɑr]', phonicsSound: '', exampleSentence: 'There are trees.', exampleZh: '有很多樹。' },
+    { en: 'park', zh: '公園', image: '🏞️', phonics: '', kk: '[pɑrk]', phonicsSound: '', exampleSentence: 'a big park', exampleZh: '一座大公園' },
+    { en: 'tree', zh: '樹', image: '🌳', phonics: '', kk: '[tri]', phonicsSound: '', exampleSentence: 'many trees', exampleZh: '很多樹' },
+    { en: 'lake', zh: '湖', image: '🌊', phonics: '', kk: '[lek]', phonicsSound: '', exampleSentence: 'a lake', exampleZh: '一個湖' },
+    { en: 'duck', zh: '鴨子', image: '🦆', phonics: '', kk: '[dʌk]', phonicsSound: '', exampleSentence: 'many ducks', exampleZh: '很多鴨子' },
+    { en: 'town', zh: '城鎮', image: '🏙️', phonics: '', kk: '[taʊn]', phonicsSound: '', exampleSentence: 'my town', exampleZh: '我的城鎮' },
+    { en: 'many', zh: '很多', image: '➕', phonics: '', kk: '[ˈmɛni]', phonicsSound: '', exampleSentence: 'many trees', exampleZh: '很多樹' },
+    { en: 'some', zh: '一些', image: '🔟', phonics: '', kk: '[sʌm]', phonicsSound: '', exampleSentence: 'some birds', exampleZh: '一些鳥' },
+    { en: 'bench', zh: '長椅', image: '🪑', phonics: '', kk: '[bɛntʃ]', phonicsSound: '', exampleSentence: 'a bench', exampleZh: '一張長椅' },
+  ],
+  sentences: [
+    { en: 'There is a park in my town.', zh: '我的城鎮有一座公園。' }, { en: 'There are many trees.', zh: '有很多樹。' }, { en: 'Is there a lake?', zh: '有湖嗎？' }, { en: 'Yes, there is.', zh: '有的。' }, { en: 'There are some ducks.', zh: '有一些鴨子。' }, { en: 'How many trees are there?', zh: '有幾棵樹？' },
+  ],
+  phonicsLetters: ['There is / are'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'There ___ a park.（單數）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'There ___ many trees.（複數）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+    { type: 'match', question: '🦆 是什麼？', options: ['duck', 'tree', 'lake', 'park'], answer: 'duck' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🏞️', '🌳', '🌊', '🦆'], answer: '🌊', image: '🎧' },
+    { type: 'fill-blank', question: 'There ___ some ducks.（複數）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+    { type: 'fill-blank', question: 'There ___ a lake in the park.（單數）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'spell', question: '拼拼看：tr _ e（樹）', answer: 'tree', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['There is a park in my town.', 'There are many trees.', 'There are some ducks.', 'Is there a lake?'], answer: 'There is a park in my town.', image: '🎧' },
+    { type: 'read', question: 'What is in the park?（公園裡有什麼？）', passage: 'There is a lake in the park.\nThere are many trees.\nThere are some ducks in the lake.', options: ['a lake, trees, and ducks', 'only a shop', 'nothing', 'cars'], answer: 'a lake, trees, and ducks' },
+  ],
+  talkTimePrompts: ["Say what is in your town: There is / are ___.", "Use 'There are many ___.'", "Ask: Is there a ___?", "✍️ 引導寫作：In my town, there is ___ and there are ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'There ___ five trees.（複數）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+    { type: 'fill-blank', question: 'There ___ a bench.（單數）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'read', question: 'Are there ducks in the lake?（湖裡有鴨子嗎？）', passage: 'There is a lake in the park.\nThere are some ducks in it.\nThe ducks swim happily.', options: ['Yes, there are', 'No, there are not', 'There is a cat', 'The lake is empty'], answer: 'Yes, there are' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "There is a park in my town.", lineZh: '我的城鎮有一座公園。' },
+    { speaker: 'Coco', line: "There are many trees in the park.", lineZh: '公園裡有很多樹。' },
+    { speaker: 'Polly', line: "There is a lake. There are ducks in it!", lineZh: '有一個湖。裡面有鴨子！' },
+    { speaker: 'Benny', line: "There is one, there are many!", lineZh: 'There is 一個，there are 很多！' },
+  ],
+};
+
+const L7_M10: Mission = {
+  id: 10, slug: 'l7-m10-review-freq-prep', level: 7, title: 'Review② 頻率介系詞', titleEn: 'Review: Adverbs & Prep', theme: '文法門・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：頻率副詞 ＋ in/on/at ＋ 位置介系詞 ＋ There is/are',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review adverbs and prepositions!", dialogueZh: '來複習副詞和介系詞！', highlightWords: [], sceneEmojis: ['🔄', '📍', '✨'], animation: 'wave' },
+    { image: '🌅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I always get up at seven in the morning.", dialogueZh: '我總是早上七點起床。', highlightWords: ['always', 'at', 'in'], sceneEmojis: ['🌅', '🕖', '😊'], animation: 'bounce' },
+    { image: '🏞️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "There is a park next to my house.", dialogueZh: '我家旁邊有一座公園。', highlightWords: ['There is', 'next to'], sceneEmojis: ['🏞️', '🏠', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know adverbs and prepositions! Great!", dialogueZh: '你會副詞和介系詞了！太棒了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'always', zh: '總是', image: '💯', phonics: '', kk: '[ˈɔlˌwez]', phonicsSound: '', exampleSentence: 'I always eat.', exampleZh: '我總是吃。' },
+    { en: 'never', zh: '從不', image: '🚫', phonics: '', kk: '[ˈnɛvɚ]', phonicsSound: '', exampleSentence: 'I never eat candy.', exampleZh: '我從不吃糖。' },
+    { en: 'in', zh: '在（早上/季）', image: '🌅', phonics: '', kk: '[ɪn]', phonicsSound: '', exampleSentence: 'in the morning', exampleZh: '在早上' },
+    { en: 'on', zh: '在（星期）', image: '📅', phonics: '', kk: '[ɑn]', phonicsSound: '', exampleSentence: 'on Monday', exampleZh: '在星期一' },
+    { en: 'at', zh: '在（幾點/地點）', image: '🕒', phonics: '', kk: '[æt]', phonicsSound: '', exampleSentence: 'at seven', exampleZh: '在七點' },
+    { en: 'under', zh: '在…下面', image: '⬇️', phonics: '', kk: '[ˈʌndɚ]', phonicsSound: '', exampleSentence: 'under the table', exampleZh: '在桌下' },
+    { en: 'next to', zh: '在…旁邊', image: '➡️', phonics: '', kk: '[nɛkst tu]', phonicsSound: '', exampleSentence: 'next to my house', exampleZh: '在我家旁' },
+    { en: 'there is', zh: '有（單數）', image: '1️⃣', phonics: '', kk: '[ðɛr ɪz]', phonicsSound: '', exampleSentence: 'There is a park.', exampleZh: '有一座公園。' },
+    { en: 'there are', zh: '有（複數）', image: '🔢', phonics: '', kk: '[ðɛr ɑr]', phonicsSound: '', exampleSentence: 'There are trees.', exampleZh: '有很多樹。' },
+    { en: 'park', zh: '公園', image: '🏞️', phonics: '', kk: '[pɑrk]', phonicsSound: '', exampleSentence: 'a park', exampleZh: '一座公園' },
+  ],
+  sentences: [
+    { en: 'I always get up at seven.', zh: '我總是七點起床。' }, { en: 'We have art on Monday.', zh: '我們星期一有美術。' }, { en: 'The cat is under the table.', zh: '貓在桌下。' }, { en: 'There is a park next to my house.', zh: '我家旁邊有公園。' }, { en: 'There are many trees.', zh: '有很多樹。' }, { en: 'I never eat candy at night.', zh: '我晚上從不吃糖。' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ get up at seven.（總是）', options: ['always', 'never', 'in', 'on'], answer: 'always' },
+    { type: 'fill-blank', question: 'We have art ___ Monday.（in/on/at）', options: ['on', 'in', 'at', 'to'], answer: 'on' },
+    { type: 'fill-blank', question: 'There ___ many trees.（複數）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🌅', '📅', '🏞️', '⬇️'], answer: '🏞️', image: '🎧' },
+    { type: 'fill-blank', question: 'I get up ___ the morning.（in/on/at）', options: ['in', 'on', 'at', 'to'], answer: 'in' },
+    { type: 'fill-blank', question: 'The cat is ___ the table.（下面）', options: ['under', 'on', 'in', 'at'], answer: 'under' },
+    { type: 'fill-blank', question: 'There ___ a park.（單數）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I always get up at seven.', 'There is a park next to my house.', 'The cat is under the table.', 'There are many trees.'], answer: 'I always get up at seven.', image: '🎧' },
+    { type: 'read', question: 'When does Coco get up?（Coco 幾點起床？）', passage: 'Coco always gets up at seven.\nShe eats breakfast in the morning.\nThen she goes to school.', options: ['at seven', 'at noon', 'at night', 'on Monday'], answer: 'at seven' },
+  ],
+  talkTimePrompts: ["Say your routine with always / at / in.", "Say what is near your house: There is ___.", "Say where something is.", "✍️ 引導寫作：I always ___ in the morning. There is a ___ next to my house."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'There ___ five ducks.（複數）', options: ['are', 'is', 'am', 'be'], answer: 'are' },
+    { type: 'fill-blank', question: 'I ___ eat candy at night.（從不）', options: ['never', 'always', 'in', 'on'], answer: 'never' },
+    { type: 'read', question: 'Is there a park near Benny\'s house?（Benny 家附近有公園嗎？）', passage: 'There is a park next to my house.\nThere are many trees and a lake.\nI often play there.', options: ['Yes, there is', 'No, there is not', 'There is a shop', 'There is nothing'], answer: 'Yes, there is' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review adverbs and prepositions!", lineZh: '來複習副詞和介系詞！' },
+    { speaker: 'Coco', line: "I always get up at seven in the morning.", lineZh: '我總是早上七點起床。' },
+    { speaker: 'Benny', line: "There is a park next to my house.", lineZh: '我家旁邊有一座公園。' },
+    { speaker: 'Finn', line: "You know adverbs and prepositions! Great!", lineZh: '你會副詞和介系詞了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
