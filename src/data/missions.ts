@@ -7727,7 +7727,267 @@ const L8_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15];
+const L8_M16: Mission = {
+  id: 16, slug: 'l8-m16-past-questions', level: 8, title: '過去式問句', titleEn: 'Did you…?', theme: '問題塔・問過去', themeEmoji: '⏪',
+  focus: '過去式問句：Did you…? / What did you do? 短答 Yes, I did. ＋ 中翻英',
+  story: [
+    { image: '⏪', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What did you do yesterday?", dialogueZh: '你昨天做了什麼？', highlightWords: ['did'], sceneEmojis: ['⏪', '❓', '✨'], animation: 'wave' },
+    { image: '🏞️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I went to the park. I played with friends.", dialogueZh: '我去了公園。我和朋友玩。', highlightWords: ['went', 'played'], sceneEmojis: ['🏞️', '👫', '😊'], animation: 'bounce' },
+    { image: '🍦', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Did you eat ice cream? Yes, I did!", dialogueZh: '你吃冰淇淋了嗎？是的，我吃了！', highlightWords: ['Did', 'did'], sceneEmojis: ['🍦', '✅', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Did + subject + base verb for the past!", dialogueZh: 'Did + 主詞 + 原形動詞問過去！', highlightWords: [], sceneEmojis: ['🏆', '⏪', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'did', zh: '（過去問句助動詞）', image: '⏪', phonics: '', kk: '[dɪd]', phonicsSound: '', exampleSentence: 'What did you do?', exampleZh: '你做了什麼？' },
+    { en: "didn't", zh: '沒有（過去否定）', image: '🚫', phonics: '', kk: '[ˈdɪdnt]', phonicsSound: '', exampleSentence: "No, I didn't.", exampleZh: '不，我沒有。' },
+    { en: 'yesterday', zh: '昨天', image: '📅', phonics: '', kk: '[ˈjɛstɚˌde]', phonicsSound: '', exampleSentence: 'yesterday', exampleZh: '昨天' },
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '', exampleSentence: 'Did you go?', exampleZh: '你去了嗎？' },
+    { en: 'eat', zh: '吃', image: '🍦', phonics: '', kk: '[it]', phonicsSound: '', exampleSentence: 'Did you eat?', exampleZh: '你吃了嗎？' },
+    { en: 'see', zh: '看見', image: '👀', phonics: '', kk: '[si]', phonicsSound: '', exampleSentence: 'Did you see it?', exampleZh: '你看見了嗎？' },
+    { en: 'play', zh: '玩', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'Did you play?', exampleZh: '你玩了嗎？' },
+    { en: 'buy', zh: '買', image: '🛒', phonics: '', kk: '[baɪ]', phonicsSound: '', exampleSentence: 'Did you buy it?', exampleZh: '你買了嗎？' },
+    { en: 'visit', zh: '拜訪', image: '🚪', phonics: '', kk: '[ˈvɪzɪt]', phonicsSound: '', exampleSentence: 'Did you visit her?', exampleZh: '你拜訪她了嗎？' },
+    { en: 'last weekend', zh: '上週末', image: '🗓️', phonics: '', kk: '[læst ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'last weekend', exampleZh: '上週末' },
+  ],
+  sentences: [
+    { en: 'What did you do yesterday?', zh: '你昨天做了什麼？' }, { en: 'I went to the park.', zh: '我去了公園。' }, { en: 'Did you eat ice cream?', zh: '你吃冰淇淋了嗎？' }, { en: 'Yes, I did.', zh: '是的，我吃了。' }, { en: "No, I didn't.", zh: '不，我沒有。' }, { en: 'Where did you go last weekend?', zh: '你上週末去哪了？' },
+  ],
+  phonicsLetters: ['Did you…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'What ___ you do yesterday?（過去問句）', options: ['did', 'do', 'does', 'are'], answer: 'did' },
+    { type: 'fill-blank', question: 'Did you eat? Yes, I ___.', options: ['did', 'do', 'am', 'was'], answer: 'did' },
+    { type: 'fill-blank', question: 'Did you go? No, I ___.', options: ["didn't", "don't", 'not', 'no'], answer: "didn't" },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🚶', '🍦', '⚽', '🛒'], answer: '🛒', image: '🎧' },
+    { type: 'fill-blank', question: 'Where ___ you go?（過去問句）', options: ['did', 'do', 'does', 'are'], answer: 'did' },
+    { type: 'fill-blank', question: '中翻英：「你昨天做了什麼？」', options: ["What did you do yesterday?", "What do you do?", "Where did you go?", "When did you do?"], answer: "What did you do yesterday?" },
+    { type: 'fill-blank', question: '中翻英：「你吃冰淇淋了嗎？」', options: ["Did you eat ice cream?", "Do you eat ice cream?", "What is ice cream?", "When did you eat?"], answer: "Did you eat ice cream?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What did you do yesterday?', 'Did you eat ice cream?', 'I went to the park.', 'Where did you go?'], answer: 'What did you do yesterday?', image: '🎧' },
+    { type: 'read', question: 'What did Coco do yesterday?（Coco 昨天做了什麼？）', passage: '"What did you do yesterday?"\nCoco says, "I went to the park.\nI played with my friends."', options: ['went to the park', 'stayed home', 'went to school', 'slept'], answer: 'went to the park' },
+  ],
+  talkTimePrompts: ["Ask: What did you do yesterday?", "Ask: Did you ___? (past)", "Answer: Yes, I did. / No, I didn't.", "✍️ 引導寫作＋翻譯：把「你上週末去哪了？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ you see the movie?（過去問句）', options: ['Did', 'Do', 'Does', 'Are'], answer: 'Did' },
+    { type: 'fill-blank', question: '中翻英：「你買了嗎？」', options: ['Did you buy it?', 'Do you buy it?', 'What did you buy?', 'Where did you buy?'], answer: 'Did you buy it?' },
+    { type: 'read', question: 'Did Benny eat ice cream?（Benny 吃冰淇淋了嗎？）', passage: '"Did you eat ice cream?"\nBenny says, "Yes, I did!\nIt was so yummy."', options: ['Yes, he did', "No, he didn't", 'He ate cake', 'He was full'], answer: 'Yes, he did' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "What did you do yesterday?", lineZh: '你昨天做了什麼？' },
+    { speaker: 'Coco', line: "I went to the park. I played with friends.", lineZh: '我去了公園。我和朋友玩。' },
+    { speaker: 'Benny', line: "Did you eat ice cream? Yes, I did!", lineZh: '你吃冰淇淋了嗎？是的！' },
+    { speaker: 'Polly', line: "Did + subject + base verb for the past!", lineZh: 'Did + 主詞 + 原形動詞問過去！' },
+  ],
+};
+
+const L8_M17: Mission = {
+  id: 17, slug: 'l8-m17-past-vs-present-q', level: 8, title: '過去 vs 現在問句', titleEn: 'Past vs Present Q', theme: '問題塔・時間軸', themeEmoji: '⚖️',
+  focus: '過去 vs 現在問句對比：Do you…? (現在) vs Did you…? (過去) ＋ 中翻英',
+  story: [
+    { image: '⚖️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Do you play soccer? — every day (now).", dialogueZh: '你踢足球嗎？—— 每天（現在）。', highlightWords: ['Do'], sceneEmojis: ['⚽', '📅', '✨'], animation: 'wave' },
+    { image: '⏪', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Did you play soccer? — yesterday (past).", dialogueZh: '你踢足球了嗎？—— 昨天（過去）。', highlightWords: ['Did'], sceneEmojis: ['⚽', '⏪', '😊'], animation: 'bounce' },
+    { image: '🕰️', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Do = now. Did = past. Check the time word!", dialogueZh: 'Do = 現在。Did = 過去。看時間字！', highlightWords: ['Do', 'Did'], sceneEmojis: ['🕰️', '📅', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Now vs past — choose the right helper!", dialogueZh: '現在 vs 過去 —— 選對助動詞！', highlightWords: [], sceneEmojis: ['🏆', '⚖️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'do', zh: '（現在問句）', image: '📅', phonics: '', kk: '[du]', phonicsSound: '現在', exampleSentence: 'Do you play?', exampleZh: '你玩嗎？' },
+    { en: 'did', zh: '（過去問句）', image: '⏪', phonics: '', kk: '[dɪd]', phonicsSound: '過去', exampleSentence: 'Did you play?', exampleZh: '你玩了嗎？' },
+    { en: 'now', zh: '現在', image: '⏰', phonics: '', kk: '[naʊ]', phonicsSound: '', exampleSentence: 'right now', exampleZh: '現在' },
+    { en: 'yesterday', zh: '昨天', image: '🌙', phonics: '', kk: '[ˈjɛstɚˌde]', phonicsSound: '', exampleSentence: 'yesterday', exampleZh: '昨天' },
+    { en: 'every day', zh: '每天', image: '🔁', phonics: '', kk: '[ˈɛvri de]', phonicsSound: '', exampleSentence: 'every day', exampleZh: '每天' },
+    { en: 'last night', zh: '昨晚', image: '🌃', phonics: '', kk: '[læst naɪt]', phonicsSound: '', exampleSentence: 'last night', exampleZh: '昨晚' },
+    { en: 'usually', zh: '通常', image: '🔆', phonics: '', kk: '[ˈjuʒuəli]', phonicsSound: '', exampleSentence: 'usually', exampleZh: '通常' },
+    { en: 'play', zh: '玩', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'Do you play?', exampleZh: '你玩嗎？' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '', exampleSentence: 'Did you eat?', exampleZh: '你吃了嗎？' },
+    { en: 'time word', zh: '時間字', image: '🕰️', phonics: '', kk: '[taɪm wɝd]', phonicsSound: '', exampleSentence: 'Check the time word.', exampleZh: '看時間字。' },
+  ],
+  sentences: [
+    { en: 'Do you play soccer every day?', zh: '你每天踢足球嗎？' }, { en: 'Did you play soccer yesterday?', zh: '你昨天踢足球了嗎？' }, { en: 'Do you eat breakfast?', zh: '你吃早餐嗎？' }, { en: 'Did you eat breakfast today?', zh: '你今天吃早餐了嗎？' }, { en: 'What do you do now?', zh: '你現在做什麼？' }, { en: 'What did you do last night?', zh: '你昨晚做了什麼？' },
+  ],
+  phonicsLetters: ['Do vs Did'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ you play every day?（現在問句）', options: ['Do', 'Did', 'Does', 'Are'], answer: 'Do' },
+    { type: 'fill-blank', question: '___ you play yesterday?（過去問句）', options: ['Did', 'Do', 'Does', 'Are'], answer: 'Did' },
+    { type: 'match', question: 'yesterday 搭配哪個助動詞？', options: ['Did', 'Do', 'Does', 'Is'], answer: 'Did' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: '___ you eat breakfast today?（過去·today 已過）', options: ['Did', 'Do', 'Does', 'Are'], answer: 'Did' },
+    { type: 'fill-blank', question: '___ you usually walk to school?（現在習慣）', options: ['Do', 'Did', 'Does', 'Are'], answer: 'Do' },
+    { type: 'fill-blank', question: '中翻英：「你昨天踢足球了嗎？」', options: ["Did you play soccer yesterday?", "Do you play soccer?", "What did you play?", "When did you play?"], answer: "Did you play soccer yesterday?" },
+    { type: 'fill-blank', question: '中翻英：「你現在做什麼？」', options: ["What do you do now?", "What did you do?", "Where do you go?", "When do you do?"], answer: "What do you do now?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Do you play soccer every day?', 'Did you play soccer yesterday?', 'What do you do now?', 'What did you do last night?'], answer: 'Do you play soccer every day?', image: '🎧' },
+    { type: 'read', question: 'Which sentence is about the past?（哪句是過去？）', passage: 'A: Do you play every day?\nB: Did you play yesterday?\n"Did" and "yesterday" mean the past.', options: ['B', 'A', 'both', 'neither'], answer: 'B' },
+  ],
+  talkTimePrompts: ["Ask about a habit: Do you ___?", "Ask about the past: Did you ___?", "Match the time word to Do or Did.", "✍️ 引導寫作＋翻譯：把「你昨晚做了什麼？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ you see the movie last night?（過去問句）', options: ['Did', 'Do', 'Does', 'Are'], answer: 'Did' },
+    { type: 'fill-blank', question: '中翻英：「你每天踢足球嗎？」', options: ['Do you play soccer every day?', 'Did you play soccer?', 'What do you play?', 'When do you play?'], answer: 'Do you play soccer every day?' },
+    { type: 'match', question: 'every day 搭配哪個助動詞？', options: ['Do', 'Did', 'Was', 'Were'], answer: 'Do' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Do you play soccer? — every day (now).", lineZh: '你踢足球嗎？—— 每天（現在）。' },
+    { speaker: 'Coco', line: "Did you play soccer? — yesterday (past).", lineZh: '你踢足球了嗎？—— 昨天（過去）。' },
+    { speaker: 'Polly', line: "Do = now. Did = past. Check the time word!", lineZh: 'Do = 現在。Did = 過去。看時間字！' },
+    { speaker: 'Benny', line: "Now vs past — choose the right helper!", lineZh: '現在 vs 過去 —— 選對助動詞！' },
+  ],
+};
+
+const L8_M18: Mission = {
+  id: 18, slug: 'l8-m18-grammar-mix', level: 8, title: '問句綜合', titleEn: 'Question Mix', theme: '問題塔・綜合', themeEmoji: '🧩',
+  focus: '綜合練習：Wh- 問句 ＋ Do/Does/Did ＋ 中翻英',
+  story: [
+    { image: '🧩', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's mix all the questions!", dialogueZh: '我們把所有問句混在一起！', highlightWords: [], sceneEmojis: ['🧩', '❓', '✨'], animation: 'wave' },
+    { image: '❤️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What do you like? Where did you go?", dialogueZh: '你喜歡什麼？你去了哪？', highlightWords: ['What', 'Where'], sceneEmojis: ['❤️', '🏞️', '😊'], animation: 'bounce' },
+    { image: '🤔', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Why does she cry? How old are you?", dialogueZh: '她為什麼哭？你幾歲？', highlightWords: ['Why', 'How old'], sceneEmojis: ['🤔', '🎂', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can ask about anything, anytime!", dialogueZh: '你隨時都能問任何事！', highlightWords: [], sceneEmojis: ['🏆', '🧩', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'what', zh: '什麼', image: '❓', phonics: '', kk: '[wɑt]', phonicsSound: '', exampleSentence: 'What do you like?', exampleZh: '你喜歡什麼？' },
+    { en: 'where', zh: '哪裡', image: '📍', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where did you go?', exampleZh: '你去了哪？' },
+    { en: 'why', zh: '為什麼', image: '🤔', phonics: '', kk: '[waɪ]', phonicsSound: '', exampleSentence: 'Why does she cry?', exampleZh: '她為什麼哭？' },
+    { en: 'how old', zh: '幾歲', image: '🎂', phonics: '', kk: '[haʊ old]', phonicsSound: '', exampleSentence: 'How old are you?', exampleZh: '你幾歲？' },
+    { en: 'do', zh: '（現在問句）', image: '🔧', phonics: '', kk: '[du]', phonicsSound: '', exampleSentence: 'Do you like it?', exampleZh: '你喜歡嗎？' },
+    { en: 'does', zh: '（現在·他）', image: '⚙️', phonics: '', kk: '[dʌz]', phonicsSound: '', exampleSentence: 'Does she cry?', exampleZh: '她哭嗎？' },
+    { en: 'did', zh: '（過去問句）', image: '⏪', phonics: '', kk: '[dɪd]', phonicsSound: '', exampleSentence: 'Did you go?', exampleZh: '你去了嗎？' },
+    { en: 'cry', zh: '哭', image: '😭', phonics: '', kk: '[kraɪ]', phonicsSound: '', exampleSentence: 'Why does she cry?', exampleZh: '她為什麼哭？' },
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '', exampleSentence: 'Where did you go?', exampleZh: '你去了哪？' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'What do you like?', exampleZh: '你喜歡什麼？' },
+  ],
+  sentences: [
+    { en: 'What do you like?', zh: '你喜歡什麼？' }, { en: 'Where did you go?', zh: '你去了哪？' }, { en: 'Why does she cry?', zh: '她為什麼哭？' }, { en: 'How old are you?', zh: '你幾歲？' }, { en: 'When did you come home?', zh: '你何時回家的？' }, { en: 'Who is your teacher?', zh: '你老師是誰？' },
+  ],
+  phonicsLetters: ['question mix'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ do you like?（什麼）', options: ['What', 'Where', 'Why', 'How'], answer: 'What' },
+    { type: 'fill-blank', question: 'Where ___ you go yesterday?（過去問句）', options: ['did', 'do', 'does', 'are'], answer: 'did' },
+    { type: 'fill-blank', question: 'Why ___ she cry?（現在·她）', options: ['does', 'do', 'did', 'is'], answer: 'does' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['❓', '📍', '🤔', '🎂'], answer: '🤔', image: '🎧' },
+    { type: 'fill-blank', question: '___ old are you?（幾歲）', options: ['How', 'What', 'Where', 'Who'], answer: 'How' },
+    { type: 'fill-blank', question: '中翻英：「你去了哪？」', options: ["Where did you go?", "Where do you go?", "What did you go?", "When did you go?"], answer: "Where did you go?" },
+    { type: 'fill-blank', question: '中翻英：「她為什麼哭？」', options: ["Why does she cry?", "Why did she cry?", "What does she cry?", "How does she cry?"], answer: "Why does she cry?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What do you like?', 'Where did you go?', 'Why does she cry?', 'How old are you?'], answer: 'What do you like?', image: '🎧' },
+    { type: 'read', question: 'Which question is about the past?（哪個問句是過去？）', passage: 'What do you like? (now)\nWhere did you go? (past)\nWhy does she cry? (now)', options: ['Where did you go?', 'What do you like?', 'Why does she cry?', 'none'], answer: 'Where did you go?' },
+  ],
+  talkTimePrompts: ["Ask a present and a past question.", "Ask Why and answer Because.", "Interview a friend with 4 questions.", "✍️ 引導寫作＋翻譯：把「你何時回家的？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ you go yesterday?（過去問句）', options: ['Did', 'Do', 'Does', 'Are'], answer: 'Did' },
+    { type: 'fill-blank', question: '中翻英：「你幾歲？」', options: ['How old are you?', 'How many are you?', 'Why are you?', 'Who are you?'], answer: 'How old are you?' },
+    { type: 'read', question: 'Does "Where" ask about a place?（Where 問地方嗎？）', passage: 'Where asks about places.\nWhen asks about time.\nWho asks about people.', options: ['Yes', 'No', 'It asks time', 'It asks people'], answer: 'Yes' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's mix all the questions!", lineZh: '我們把所有問句混在一起！' },
+    { speaker: 'Coco', line: "What do you like? Where did you go?", lineZh: '你喜歡什麼？你去了哪？' },
+    { speaker: 'Benny', line: "Why does she cry? How old are you?", lineZh: '她為什麼哭？你幾歲？' },
+    { speaker: 'Finn', line: "You can ask about anything, anytime!", lineZh: '你隨時都能問任何事！' },
+  ],
+};
+
+const L8_M19: Mission = {
+  id: 19, slug: 'l8-m19-reading', level: 8, title: '問答閱讀', titleEn: 'Q&A Reading', theme: '問題塔・訪問短文', themeEmoji: '📖',
+  focus: '閱讀：一篇問答訪問短文 ＋ 理解 ＋ 中翻英',
+  story: [
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read the interview with a new friend!", dialogueZh: '讀讀對新朋友的訪問！', highlightWords: ['interview'], sceneEmojis: ['📖', '🎤', '✨'], animation: 'wave' },
+    { image: '👦', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "This is Sam. He is nine. He lives in Tainan.", dialogueZh: '這是 Sam。他九歲。他住台南。', highlightWords: ['is', 'lives'], sceneEmojis: ['👦', '🏙️', '😊'], animation: 'bounce' },
+    { image: '⚽', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "He likes soccer. Yesterday he played with friends.", dialogueZh: '他喜歡足球。昨天他和朋友玩。', highlightWords: ['likes', 'played'], sceneEmojis: ['⚽', '👫', '🎉'], animation: 'float' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read the whole interview! Great!", dialogueZh: '你讀完整篇訪問了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '📖', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'interview', zh: '訪問', image: '🎤', phonics: '', kk: '[ˈɪntɚˌvju]', phonicsSound: '', exampleSentence: 'an interview', exampleZh: '一場訪問' },
+    { en: 'name', zh: '名字', image: '🏷️', phonics: '', kk: '[nem]', phonicsSound: '', exampleSentence: 'His name is Sam.', exampleZh: '他叫 Sam。' },
+    { en: 'live', zh: '住', image: '🏙️', phonics: '', kk: '[lɪv]', phonicsSound: '', exampleSentence: 'He lives in Tainan.', exampleZh: '他住台南。' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'He likes soccer.', exampleZh: '他喜歡足球。' },
+    { en: 'soccer', zh: '足球', image: '⚽', phonics: '', kk: '[ˈsɑkɚ]', phonicsSound: '', exampleSentence: 'play soccer', exampleZh: '踢足球' },
+    { en: 'nine', zh: '九', image: '9️⃣', phonics: '', kk: '[naɪn]', phonicsSound: '', exampleSentence: 'He is nine.', exampleZh: '他九歲。' },
+    { en: 'played', zh: '玩了', image: '⏪', phonics: '', kk: '[pled]', phonicsSound: '', exampleSentence: 'He played yesterday.', exampleZh: '他昨天玩了。' },
+    { en: 'friend', zh: '朋友', image: '👫', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'with friends', exampleZh: '和朋友' },
+    { en: 'new', zh: '新的', image: '✨', phonics: '', kk: '[nu]', phonicsSound: '', exampleSentence: 'a new friend', exampleZh: '新朋友' },
+    { en: 'city', zh: '城市', image: '🏙️', phonics: '', kk: '[ˈsɪti]', phonicsSound: '', exampleSentence: 'a big city', exampleZh: '大城市' },
+  ],
+  sentences: [
+    { en: 'His name is Sam.', zh: '他叫 Sam。' }, { en: 'He is nine years old.', zh: '他九歲。' }, { en: 'He lives in Tainan.', zh: '他住台南。' }, { en: 'He likes soccer.', zh: '他喜歡足球。' }, { en: 'Yesterday he played with friends.', zh: '昨天他和朋友玩。' }, { en: 'Sam is a happy boy.', zh: 'Sam 是個開心的男孩。' },
+  ],
+  phonicsLetters: ['Q&A reading'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'His name ___ Sam.（be動詞）', options: ['is', 'are', 'am', 'be'], answer: 'is' },
+    { type: 'fill-blank', question: 'He ___ in Tainan.（住·第三人稱）', options: ['lives', 'live', 'living', 'lived'], answer: 'lives' },
+    { type: 'match', question: 'interview 是什麼意思？', options: ['訪問', '回答', '朋友', '城市'], answer: '訪問' },
+  ],
+  challenges: [
+    { type: 'read', question: 'How old is Sam?（Sam 幾歲？）', passage: 'This is Sam.\nHe is nine years old.\nHe lives in Tainan.', options: ['nine', 'eight', 'ten', 'seven'], answer: 'nine' },
+    { type: 'read', question: 'What does Sam like?（Sam 喜歡什麼？）', passage: 'Sam likes soccer very much.\nHe plays after school.\nHe is good at it.', options: ['soccer', 'music', 'reading', 'art'], answer: 'soccer' },
+    { type: 'read', question: 'What did Sam do yesterday?（Sam 昨天做了什麼？）', passage: 'Yesterday Sam played soccer.\nHe played with his friends.\nThey had a lot of fun.', options: ['played soccer', 'studied', 'slept', 'watched TV'], answer: 'played soccer' },
+    { type: 'fill-blank', question: '中翻英：「他住台南。」', options: ['He lives in Tainan.', 'Where does he live?', 'He likes Tainan.', 'He is in Tainan?'], answer: 'He lives in Tainan.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['His name is Sam.', 'He is nine years old.', 'He likes soccer.', 'He lives in Tainan.'], answer: 'His name is Sam.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：inter _ iew（訪問）', answer: 'interview', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the interview about Sam.", "Answer: What does Sam like? How old is he?", "Interview a real friend.", "✍️ 引導寫作＋翻譯：把「他喜歡足球。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'read', question: 'Where does Sam live?（Sam 住哪？）', passage: 'Sam lives in Tainan.\nTainan is a nice city.\nHe likes his home.', options: ['Tainan', 'Taipei', 'Taichung', 'Japan'], answer: 'Tainan' },
+    { type: 'fill-blank', question: 'He ___ soccer.（喜歡·第三人稱）', options: ['likes', 'like', 'liking', 'liked'], answer: 'likes' },
+    { type: 'match', question: 'new 是什麼意思？', options: ['新的', '舊的', '大的', '快的'], answer: '新的' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Read the interview with a new friend!", lineZh: '讀讀對新朋友的訪問！' },
+    { speaker: 'Coco', line: "This is Sam. He is nine. He lives in Tainan.", lineZh: '這是 Sam。他九歲。他住台南。' },
+    { speaker: 'Polly', line: "He likes soccer. Yesterday he played with friends.", lineZh: '他喜歡足球。昨天他和朋友玩。' },
+    { speaker: 'Benny', line: "You read the whole interview! Great!", lineZh: '你讀完整篇訪問了！太棒了！' },
+  ],
+};
+
+const L8_M20: Mission = {
+  id: 20, slug: 'l8-m20-boss', level: 8, title: '問題塔大魔王', titleEn: 'Question Boss', theme: '問題塔・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：所有 Wh- 問句 ＋ Do/Does/Did ＋ 附加問句 ＋ 中翻英',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Question Boss is here! Ask and answer!", dialogueZh: '問題大魔王來了！問答對決！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🗼'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What, where, when, why, how, did — I know them!", dialogueZh: 'What、where、when、why、how、did —— 我都會！', highlightWords: [], sceneEmojis: ['💪', '❓', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Question Badge!", dialogueZh: '你打敗大魔王了！獲得問題徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🌍', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Question Tower! On to Time Road!", dialogueZh: '你完成了問題塔！前進時光道！', highlightWords: [], sceneEmojis: ['🌍', '🕰️', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'what', zh: '什麼', image: '❓', phonics: '', kk: '[wɑt]', phonicsSound: '', exampleSentence: 'What is it?', exampleZh: '這是什麼？' },
+    { en: 'where', zh: '哪裡', image: '📍', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is it?', exampleZh: '它在哪？' },
+    { en: 'why', zh: '為什麼', image: '🤔', phonics: '', kk: '[waɪ]', phonicsSound: '', exampleSentence: 'Why?', exampleZh: '為什麼？' },
+    { en: 'how old', zh: '幾歲', image: '🎂', phonics: '', kk: '[haʊ old]', phonicsSound: '', exampleSentence: 'How old are you?', exampleZh: '你幾歲？' },
+    { en: 'did', zh: '（過去問句）', image: '⏪', phonics: '', kk: '[dɪd]', phonicsSound: '', exampleSentence: 'Did you go?', exampleZh: '你去了嗎？' },
+    { en: 'do', zh: '（現在問句）', image: '🔧', phonics: '', kk: '[du]', phonicsSound: '', exampleSentence: 'Do you like it?', exampleZh: '你喜歡嗎？' },
+    { en: 'whose', zh: '誰的', image: '🎒', phonics: '', kk: '[huz]', phonicsSound: '', exampleSentence: 'Whose bag?', exampleZh: '誰的書包？' },
+    { en: "isn't it", zh: '對吧（附加）', image: '➰', phonics: '', kk: '[ˈɪznt ɪt]', phonicsSound: '', exampleSentence: "It is nice, isn't it?", exampleZh: '很好，對吧？' },
+    { en: 'because', zh: '因為', image: '➡️', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'Because it is fun.', exampleZh: '因為好玩。' },
+    { en: 'answer', zh: '回答', image: '💬', phonics: '', kk: '[ˈænsɚ]', phonicsSound: '', exampleSentence: 'answer the question', exampleZh: '回答問題' },
+  ],
+  sentences: [
+    { en: 'What is your name?', zh: '你叫什麼名字？' }, { en: 'Where did you go yesterday?', zh: '你昨天去哪了？' }, { en: 'Why are you happy? Because it is my birthday.', zh: '你為什麼開心？因為今天是我生日。' }, { en: 'How old are you?', zh: '你幾歲？' }, { en: "It is a nice day, isn't it?", zh: '天氣很好，對吧？' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ are you happy?（為什麼）', options: ['Why', 'What', 'Where', 'How'], answer: 'Why' },
+    { type: 'fill-blank', question: '___ old are you?（幾歲）', options: ['How', 'What', 'Where', 'Who'], answer: 'How' },
+    { type: 'fill-blank', question: '___ you go yesterday?（過去問句）', options: ['Did', 'Do', 'Does', 'Are'], answer: 'Did' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['❓', '📍', '🤔', '🎂'], answer: '🎂', image: '🎧' },
+    { type: 'fill-blank', question: '___ bag is this?（誰的）', options: ['Whose', 'Which', 'What', 'Who'], answer: 'Whose' },
+    { type: 'fill-blank', question: '中翻英：「你昨天去哪了？」', options: ["Where did you go yesterday?", "Where do you go?", "What did you go?", "When did you go?"], answer: "Where did you go yesterday?" },
+    { type: 'fill-blank', question: "It is nice, ___?（附加問句）", options: ["isn't it", "don't you", "aren't you", 'why'], answer: "isn't it" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What is your name?', 'Where did you go yesterday?', 'How old are you?', 'Why are you happy?'], answer: 'What is your name?', image: '🎧' },
+    { type: 'read', question: 'What did the friends do yesterday?（朋友們昨天做了什麼？）', passage: '"What did you do yesterday?"\nThe friends went to the park.\nThey played and had fun.', options: ['went to the park', 'went to school', 'stayed home', 'slept'], answer: 'went to the park' },
+  ],
+  talkTimePrompts: ["Ask 5 different questions.", "Ask a past question with 'Did'.", "Add a tag question.", "You beat the Question Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ do you like?（什麼）', options: ['What', 'Where', 'When', 'Who'], answer: 'What' },
+    { type: 'fill-blank', question: '中翻英：「你為什麼開心？」', options: ['Why are you happy?', 'How are you happy?', 'What are you happy?', 'When are you happy?'], answer: 'Why are you happy?' },
+    { type: 'read', question: 'Did the friends have fun?（朋友們玩得開心嗎？）', passage: 'The friends went to the park.\nThey played all day.\nThey had a lot of fun!', options: ['Yes, they had fun', 'No, they were bored', 'They were sad', 'They stayed home'], answer: 'Yes, they had fun' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Question Boss says: ask and answer!", lineZh: '問題大魔王說：問答對決！' },
+    { speaker: 'Coco', line: "What, where, when, why, how, did — I know them!", lineZh: 'What、where、when、why、how、did —— 我都會！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Question champion!", lineZh: '你打敗大魔王了！問題冠軍！' },
+    { speaker: 'Finn', line: "On to Time Road! Let's learn tenses!", lineZh: '前進時光道！我們來學時態！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
