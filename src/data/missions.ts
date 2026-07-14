@@ -6089,7 +6089,7 @@ const L6_M15: Mission = {
 const L6_M16: Mission = {
   id: 16, slug: 'l6-m16-past-ed', level: 6, title: '過去式 -ed', titleEn: 'Past Tense -ed', theme: '燈塔角・昨天做了', themeEmoji: '⏪',
   focus: '過去式規則 -ed：played/walked/looked/cleaned',
-  tip: { zh: '規則動詞過去式加 -ed：play→played、walk→walked。', char: 'ruby' },
+  tip: { zh: '過去式 -ed 有三種音，一樣「有聲配有聲、無聲配無聲」：無聲結尾唸 /t/（walked、jumped）；有聲結尾唸 /d/（played、cleaned）；t/d 結尾加一個音節唸 /ɪd/（wanted、needed）。', char: 'ruby' },
   story: [
     { image: '⏪', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Yesterday I played at the beach.", dialogueZh: '昨天我在海邊玩。', highlightWords: ['played'], sceneEmojis: ['🏖️', '⏪', '✨'], animation: 'wave' },
     { image: '🚶', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I walked to the lighthouse. I looked at the sea.", dialogueZh: '我走去燈塔。我看著海。', highlightWords: ['walked', 'looked'], sceneEmojis: ['🚶', '🏰', '😊'], animation: 'bounce' },
