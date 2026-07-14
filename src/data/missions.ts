@@ -11110,7 +11110,268 @@ const L11_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20];
+// ===================== L12 勝利峰 Victory Summit（B1・綜合精熟與創作＋畢業） =====================
+const L12_M1: Mission = {
+  id: 1, slug: 'l12-m1-tense-mastery', level: 12, title: '進階時態綜合', titleEn: 'Tense Mastery', theme: '勝利峰・時態大師', themeEmoji: '🕰️',
+  focus: '在情境中綜合運用各種時態（過去/現在/未來/完成）＋ 中翻英',
+  story: [
+    { image: '🕰️', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Welcome to Victory Summit! The final level!", dialogueZh: '歡迎來到勝利峰！最後一級！', highlightWords: [], sceneEmojis: ['🕰️', '⛰️', '✨'], animation: 'wave' },
+    { image: '📖', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "I have studied English for years, and I am still learning.", dialogueZh: '我已學英文很多年了，而且我還在學。', highlightWords: ['have studied', 'am learning'], sceneEmojis: ['📖', '📚', '😊'], animation: 'bounce' },
+    { image: '🎓', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "When I graduate, I will use everything I have learned.", dialogueZh: '當我畢業，我會用上所有學過的。', highlightWords: ['graduate', 'will use', 'have learned'], sceneEmojis: ['🎓', '🚀', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can now mix tenses like a pro!", dialogueZh: '你現在能像高手一樣混用時態了！', highlightWords: [], sceneEmojis: ['🏆', '🕰️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'have studied', zh: '已學（現在完成）', image: '📖', phonics: '', kk: '[hæv ˈstʌdid]', phonicsSound: '完成', exampleSentence: 'I have studied for years.', exampleZh: '我已學很多年。' },
+    { en: 'am learning', zh: '正在學（進行）', image: '📚', phonics: '', kk: '[æm ˈlɝnɪŋ]', phonicsSound: '進行', exampleSentence: 'I am still learning.', exampleZh: '我還在學。' },
+    { en: 'will use', zh: '將用（未來）', image: '🚀', phonics: '', kk: '[wɪl juz]', phonicsSound: '未來', exampleSentence: 'I will use it.', exampleZh: '我會用它。' },
+    { en: 'graduate', zh: '畢業', image: '🎓', phonics: '', kk: '[ˈɡrædʒuˌet]', phonicsSound: '', exampleSentence: 'When I graduate…', exampleZh: '當我畢業…' },
+    { en: 'used to', zh: '以前常', image: '⏳', phonics: '', kk: '[just tu]', phonicsSound: '', exampleSentence: 'I used to struggle.', exampleZh: '我以前很吃力。' },
+    { en: 'had learned', zh: '已學會（過去完成）', image: '⏮️', phonics: '', kk: '[hæd lɝnd]', phonicsSound: '過去完成', exampleSentence: 'I had learned a lot.', exampleZh: '我已學會很多。' },
+    { en: 'progress', zh: '進步', image: '📈', phonics: '', kk: '[ˈprɑɡrɛs]', phonicsSound: '', exampleSentence: 'make progress', exampleZh: '取得進步' },
+    { en: 'journey', zh: '旅程', image: '🛤️', phonics: '', kk: '[ˈdʒɝni]', phonicsSound: '', exampleSentence: 'a long journey', exampleZh: '漫長旅程' },
+    { en: 'achieve', zh: '達成', image: '🎯', phonics: '', kk: '[əˈtʃiv]', phonicsSound: '', exampleSentence: 'achieve a goal', exampleZh: '達成目標' },
+    { en: 'goal', zh: '目標', image: '🥅', phonics: '', kk: '[ɡol]', phonicsSound: '', exampleSentence: 'reach a goal', exampleZh: '達到目標' },
+  ],
+  sentences: [
+    { en: 'I have studied English for years.', zh: '我已學英文很多年。' }, { en: 'I am still learning every day.', zh: '我每天還在學。' }, { en: 'When I graduate, I will use it.', zh: '當我畢業，我會用它。' }, { en: 'I used to find English hard.', zh: '我以前覺得英文難。' }, { en: 'I have made a lot of progress.', zh: '我已進步很多。' }, { en: 'I will achieve my goals.', zh: '我會達成我的目標。' },
+  ],
+  phonicsLetters: ['tense mastery'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ studied English for years.（現在完成·I）', options: ['have', 'has', 'am', 'was'], answer: 'have' },
+    { type: 'fill-blank', question: 'I am still ___.（學·進行式）', options: ['learning', 'learn', 'learned', 'learns'], answer: 'learning' },
+    { type: 'fill-blank', question: 'When I graduate, I ___ use it.（未來）', options: ['will', 'am', 'was', 'have'], answer: 'will' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I ___ find English hard.（以前常）', options: ['used to', 'uses to', 'will', 'am'], answer: 'used to' },
+    { type: 'fill-blank', question: 'I have ___ a lot of progress.（make 的 p.p.）', options: ['made', 'make', 'making', 'makes'], answer: 'made' },
+    { type: 'fill-blank', question: '中翻英：「我已學英文很多年。」', options: ['I have studied English for years.', 'I study English.', 'I studied English.', 'Do I study?'], answer: 'I have studied English for years.' },
+    { type: 'fill-blank', question: '中翻英：「當我畢業，我會用它。」', options: ['When I graduate, I will use it.', 'I graduate.', 'I used it.', 'Do I graduate?'], answer: 'When I graduate, I will use it.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I have studied English for years.', 'I am still learning every day.', 'When I graduate, I will use it.', 'I will achieve my goals.'], answer: 'I have studied English for years.', image: '🎧' },
+    { type: 'read', question: 'How does Coco feel about English now?（Coco 現在對英文感覺如何？）', passage: 'Coco used to find English hard.\nBut she has studied for years.\nNow she is confident and still learning.', options: ['confident and still learning', 'she hates it', 'she gave up', 'she is scared'], answer: 'confident and still learning' },
+  ],
+  talkTimePrompts: ["Talk about your English journey in different tenses.", "Say: I used to ___, but now I ___.", "Say a future goal with 'will'.", "✍️ 引導寫作＋翻譯：用 3 種時態寫你的英文學習旅程。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I ___ achieve my goals.（未來）', options: ['will', 'am', 'was', 'have'], answer: 'will' },
+    { type: 'fill-blank', question: '中翻英：「我已進步很多。」', options: ['I have made a lot of progress.', 'I make progress.', 'I made progress.', 'Do I progress?'], answer: 'I have made a lot of progress.' },
+    { type: 'match', question: 'have studied 是哪個時態？', options: ['現在完成式', '過去式', '未來式', '進行式'], answer: '現在完成式' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Welcome to Victory Summit! The final level!", lineZh: '歡迎來到勝利峰！最後一級！' },
+    { speaker: 'Coco', line: "I have studied English for years, and I am still learning.", lineZh: '我已學英文很多年了，而且我還在學。' },
+    { speaker: 'Benny', line: "When I graduate, I will use everything I have learned.", lineZh: '當我畢業，我會用上所有學過的。' },
+    { speaker: 'Finn', line: "You can now mix tenses like a pro!", lineZh: '你現在能像高手一樣混用時態了！' },
+  ],
+};
+
+const L12_M2: Mission = {
+  id: 2, slug: 'l12-m2-sentence-mastery', level: 12, title: '進階句型綜合', titleEn: 'Sentence Mastery', theme: '勝利峰・句型大師', themeEmoji: '🧩',
+  focus: '綜合進階句型（被動＋關係代名詞＋條件句＋連接詞）＋ 中翻英',
+  story: [
+    { image: '🧩', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The book that I read was written by a famous author.", dialogueZh: '我讀的那本書是有名作家寫的。', highlightWords: ['that', 'was written'], sceneEmojis: ['📖', '✍️', '✨'], animation: 'wave' },
+    { image: '🌧️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "If it rains tomorrow, the game which we planned will be canceled.", dialogueZh: '如果明天下雨，我們計畫的比賽就會取消。', highlightWords: ['If', 'which'], sceneEmojis: ['🌧️', '⚽', '😊'], animation: 'bounce' },
+    { image: '💪', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Although the task was hard, the team who tried won.", dialogueZh: '雖然任務很難，努力的隊伍贏了。', highlightWords: ['Although', 'who'], sceneEmojis: ['💪', '🏆', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Combine everything into rich sentences!", dialogueZh: '把所有東西組合成豐富的句子！', highlightWords: [], sceneEmojis: ['🏆', '🧩', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'that', zh: '（關代）', image: '🔗', phonics: '', kk: '[ðæt]', phonicsSound: '', exampleSentence: 'the book that I read', exampleZh: '我讀的書' },
+    { en: 'which', zh: '（關代·物）', image: '📕', phonics: '', kk: '[wɪtʃ]', phonicsSound: '', exampleSentence: 'the game which we planned', exampleZh: '我們計畫的比賽' },
+    { en: 'was written', zh: '被寫（被動）', image: '✍️', phonics: '', kk: '[wʌz ˈrɪtn̩]', phonicsSound: '被動', exampleSentence: 'was written by…', exampleZh: '由…寫' },
+    { en: 'if', zh: '如果', image: '🔀', phonics: '', kk: '[ɪf]', phonicsSound: '', exampleSentence: 'If it rains…', exampleZh: '如果下雨…' },
+    { en: 'although', zh: '雖然', image: '↔️', phonics: '', kk: '[ɔlˈðo]', phonicsSound: '', exampleSentence: 'Although it was hard…', exampleZh: '雖然很難…' },
+    { en: 'canceled', zh: '被取消', image: '🚫', phonics: '', kk: '[ˈkænsl̩d]', phonicsSound: '', exampleSentence: 'will be canceled', exampleZh: '會被取消' },
+    { en: 'author', zh: '作者', image: '🖊️', phonics: '', kk: '[ˈɔθɚ]', phonicsSound: '', exampleSentence: 'a famous author', exampleZh: '有名作者' },
+    { en: 'team', zh: '隊伍', image: '👥', phonics: '', kk: '[tim]', phonicsSound: '', exampleSentence: 'a strong team', exampleZh: '強隊' },
+    { en: 'plan', zh: '計畫', image: '🗒️', phonics: '', kk: '[plæn]', phonicsSound: '', exampleSentence: 'the game we planned', exampleZh: '我們計畫的比賽' },
+    { en: 'combine', zh: '結合', image: '🔗', phonics: '', kk: '[kəmˈbaɪn]', phonicsSound: '', exampleSentence: 'combine sentences', exampleZh: '結合句子' },
+  ],
+  sentences: [
+    { en: 'The book that I read was written by an author.', zh: '我讀的書是作者寫的。' }, { en: 'If it rains, the game will be canceled.', zh: '如果下雨，比賽會取消。' }, { en: 'Although it was hard, the team won.', zh: '雖然很難，隊伍贏了。' }, { en: 'The house which was built last year is big.', zh: '去年蓋的房子很大。' }, { en: 'The girl who won is my friend.', zh: '贏的女孩是我朋友。' }, { en: 'I combine many patterns.', zh: '我結合許多句型。' },
+  ],
+  phonicsLetters: ['sentence mastery'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'The book ___ I read was good.（關代）', options: ['that', 'who', 'where', 'when'], answer: 'that' },
+    { type: 'fill-blank', question: 'The book was ___ by an author.（被動·寫）', options: ['written', 'write', 'wrote', 'writing'], answer: 'written' },
+    { type: 'fill-blank', question: '___ it rains, the game will stop.（如果）', options: ['If', 'And', 'But', 'So'], answer: 'If' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'The game ___ we planned is fun.（關代·物）', options: ['which', 'who', 'where', 'when'], answer: 'which' },
+    { type: 'fill-blank', question: '___ it was hard, the team won.（雖然）', options: ['Although', 'Because', 'So', 'And'], answer: 'Although' },
+    { type: 'fill-blank', question: '中翻英：「我讀的那本書是有名作家寫的。」', options: ['The book that I read was written by a famous author.', 'I read a book.', 'The author is famous.', 'Who wrote it?'], answer: 'The book that I read was written by a famous author.' },
+    { type: 'fill-blank', question: '中翻英：「贏的女孩是我朋友。」', options: ['The girl who won is my friend.', 'The girl won.', 'My friend won.', 'Who won?'], answer: 'The girl who won is my friend.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The book that I read was written by an author.', 'If it rains, the game will be canceled.', 'Although it was hard, the team won.', 'The girl who won is my friend.'], answer: 'The book that I read was written by an author.', image: '🎧' },
+    { type: 'read', question: 'What will happen if it rains?（下雨會怎樣？）', passage: 'The team planned a big game.\nBut if it rains tomorrow, the game will be canceled.\nEveryone hopes for sun.', options: ['the game will be canceled', 'the game will start', 'nothing', 'they will win'], answer: 'the game will be canceled' },
+  ],
+  talkTimePrompts: ["Combine a relative clause and passive voice.", "Make an if-sentence with a relative clause.", "Use 'although' with a relative clause.", "✍️ 引導寫作＋翻譯：把「雖然很難，隊伍贏了。」寫成英文（用 although + who）。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The house ___ was built last year is big.（關代·物）', options: ['which', 'who', 'where', 'when'], answer: 'which' },
+    { type: 'fill-blank', question: '中翻英：「如果下雨，比賽會取消。」', options: ['If it rains, the game will be canceled.', 'It rains.', 'The game stops.', 'Does it rain?'], answer: 'If it rains, the game will be canceled.' },
+    { type: 'match', question: 'was written 是什麼語態？', options: ['被動', '主動', '進行', '完成'], answer: '被動' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "The book that I read was written by a famous author.", lineZh: '我讀的那本書是有名作家寫的。' },
+    { speaker: 'Coco', line: "If it rains tomorrow, the game which we planned will be canceled.", lineZh: '如果明天下雨，我們計畫的比賽就會取消。' },
+    { speaker: 'Polly', line: "Although the task was hard, the team who tried won.", lineZh: '雖然任務很難，努力的隊伍贏了。' },
+    { speaker: 'Benny', line: "Combine everything into rich sentences!", lineZh: '把所有東西組合成豐富的句子！' },
+  ],
+};
+
+const L12_M3: Mission = {
+  id: 3, slug: 'l12-m3-emotions-personality', level: 12, title: '情緒與個性', titleEn: 'Emotions & Personality', theme: '勝利峰・認識自己', themeEmoji: '😌',
+  focus: '主題單字擴充①：情緒與個性形容詞（confident/generous/honest…）＋ 中翻英',
+  story: [
+    { image: '😌', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "She is confident and always speaks up.", dialogueZh: '她很有自信，總是勇於發言。', highlightWords: ['confident'], sceneEmojis: ['😌', '🗣️', '✨'], animation: 'wave' },
+    { image: '🎁', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "He is generous. He shares everything.", dialogueZh: '他很慷慨。他什麼都分享。', highlightWords: ['generous'], sceneEmojis: ['🎁', '🤝', '😊'], animation: 'bounce' },
+    { image: '🔍', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I am curious. I love asking questions.", dialogueZh: '我很好奇。我愛問問題。', highlightWords: ['curious'], sceneEmojis: ['🔍', '❓', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Rich words describe who we really are!", dialogueZh: '豐富的字詞描述真正的我們！', highlightWords: [], sceneEmojis: ['🏆', '😌', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'confident', zh: '有自信的', image: '😌', phonics: '', kk: '[ˈkɑnfɪdənt]', phonicsSound: '', exampleSentence: 'a confident girl', exampleZh: '有自信的女孩' },
+    { en: 'generous', zh: '慷慨的', image: '🎁', phonics: '', kk: '[ˈdʒɛnərəs]', phonicsSound: '', exampleSentence: 'a generous man', exampleZh: '慷慨的人' },
+    { en: 'honest', zh: '誠實的', image: '🤞', phonics: '', kk: '[ˈɑnɪst]', phonicsSound: '', exampleSentence: 'an honest person', exampleZh: '誠實的人' },
+    { en: 'curious', zh: '好奇的', image: '🔍', phonics: '', kk: '[ˈkjʊriəs]', phonicsSound: '', exampleSentence: 'a curious child', exampleZh: '好奇的孩子' },
+    { en: 'patient', zh: '有耐心的', image: '⏳', phonics: '', kk: '[ˈpeʃənt]', phonicsSound: '', exampleSentence: 'be patient', exampleZh: '有耐心' },
+    { en: 'brave', zh: '勇敢的', image: '🦁', phonics: '', kk: '[brev]', phonicsSound: '', exampleSentence: 'a brave hero', exampleZh: '勇敢的英雄' },
+    { en: 'cheerful', zh: '開朗的', image: '😄', phonics: '', kk: '[ˈtʃɪrfl̩]', phonicsSound: '', exampleSentence: 'a cheerful smile', exampleZh: '開朗的笑容' },
+    { en: 'calm', zh: '冷靜的', image: '🧘', phonics: '', kk: '[kɑm]', phonicsSound: '', exampleSentence: 'stay calm', exampleZh: '保持冷靜' },
+    { en: 'creative', zh: '有創意的', image: '🎨', phonics: '', kk: '[kriˈetɪv]', phonicsSound: '', exampleSentence: 'a creative mind', exampleZh: '有創意的頭腦' },
+    { en: 'kind', zh: '善良的', image: '❤️', phonics: '', kk: '[kaɪnd]', phonicsSound: '', exampleSentence: 'a kind heart', exampleZh: '善良的心' },
+  ],
+  sentences: [
+    { en: 'She is confident and brave.', zh: '她有自信又勇敢。' }, { en: 'He is generous and honest.', zh: '他慷慨又誠實。' }, { en: 'I am curious and creative.', zh: '我好奇又有創意。' }, { en: 'A good friend is patient and kind.', zh: '好朋友有耐心又善良。' }, { en: 'Stay calm and cheerful.', zh: '保持冷靜和開朗。' }, { en: 'What are you like?', zh: '你的個性如何？' },
+  ],
+  phonicsLetters: ['personality'],
+  warmUpQuestions: [
+    { type: 'match', question: 'confident 是什麼意思？', options: ['有自信的', '慷慨的', '好奇的', '冷靜的'], answer: '有自信的' },
+    { type: 'match', question: 'generous 是什麼意思？', options: ['慷慨的', '誠實的', '勇敢的', '開朗的'], answer: '慷慨的' },
+    { type: 'match', question: 'honest 是什麼意思？', options: ['誠實的', '好奇的', '有耐心的', '善良的'], answer: '誠實的' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的個性', options: ['😌', '🎁', '🔍', '🧘'], answer: '🔍', image: '🎧' },
+    { type: 'match', question: '配對：個性配意思', options: ['confident-有自信', 'generous-慷慨', 'curious-好奇', 'patient-有耐心'], answer: 'confident-有自信' },
+    { type: 'fill-blank', question: 'She shares everything. She is ___.（慷慨）', options: ['generous', 'shy', 'lazy', 'rude'], answer: 'generous' },
+    { type: 'fill-blank', question: '中翻英：「她有自信又勇敢。」', options: ['She is confident and brave.', 'She is here.', 'I am confident.', 'Is she brave?'], answer: 'She is confident and brave.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['She is confident and brave.', 'He is generous and honest.', 'I am curious and creative.', 'Stay calm and cheerful.'], answer: 'She is confident and brave.', image: '🎧' },
+    { type: 'read', question: 'What is Benny like?（Benny 個性如何？）', passage: 'Benny loves to learn.\nHe always asks questions.\nHe is very curious and creative.', options: ['curious and creative', 'shy and quiet', 'lazy and rude', 'sad and tired'], answer: 'curious and creative' },
+  ],
+  talkTimePrompts: ["Describe your personality: I am ___ and ___.", "Describe a friend's character.", "Say which trait you value most and why.", "✍️ 引導寫作＋翻譯：用 3 個個性形容詞介紹你自己。"],
+  reviewQuiz: [
+    { type: 'match', question: 'curious 是什麼意思？', options: ['好奇的', '慷慨的', '冷靜的', '善良的'], answer: '好奇的' },
+    { type: 'fill-blank', question: '中翻英：「保持冷靜和開朗。」', options: ['Stay calm and cheerful.', 'I am calm.', 'Be happy.', 'Are you calm?'], answer: 'Stay calm and cheerful.' },
+    { type: 'match', question: 'creative 是什麼意思？', options: ['有創意的', '誠實的', '勇敢的', '有耐心的'], answer: '有創意的' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "She is confident and always speaks up.", lineZh: '她很有自信，總是勇於發言。' },
+    { speaker: 'Coco', line: "He is generous. He shares everything.", lineZh: '他很慷慨。他什麼都分享。' },
+    { speaker: 'Benny', line: "I am curious. I love asking questions.", lineZh: '我很好奇。我愛問問題。' },
+    { speaker: 'Ruby', line: "Rich words describe who we really are!", lineZh: '豐富的字詞描述真正的我們！' },
+  ],
+};
+
+const L12_M4: Mission = {
+  id: 4, slug: 'l12-m4-world-nature', level: 12, title: '世界與自然', titleEn: 'World & Nature', theme: '勝利峰・大世界', themeEmoji: '🌍',
+  focus: '主題單字擴充②：世界/文化/自然（culture/planet/forest…）＋ 中翻英',
+  story: [
+    { image: '🌍', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Our planet has oceans, forests, and mountains.", dialogueZh: '我們的星球有海洋、森林和高山。', highlightWords: ['planet', 'forests'], sceneEmojis: ['🌍', '🌲', '✨'], animation: 'wave' },
+    { image: '🎎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Every country has its own culture and traditions.", dialogueZh: '每個國家都有自己的文化和傳統。', highlightWords: ['culture', 'traditions'], sceneEmojis: ['🎎', '🌏', '😊'], animation: 'bounce' },
+    { image: '🌿', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "We must protect nature for the future.", dialogueZh: '我們必須為未來保護大自然。', highlightWords: ['protect', 'nature'], sceneEmojis: ['🌿', '🛡️', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You can talk about the whole world now!", dialogueZh: '現在你能談論整個世界了！', highlightWords: [], sceneEmojis: ['🏆', '🌍', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'planet', zh: '星球', image: '🌍', phonics: '', kk: '[ˈplænɪt]', phonicsSound: '', exampleSentence: 'our planet', exampleZh: '我們的星球' },
+    { en: 'culture', zh: '文化', image: '🎎', phonics: '', kk: '[ˈkʌltʃɚ]', phonicsSound: '', exampleSentence: 'a rich culture', exampleZh: '豐富的文化' },
+    { en: 'tradition', zh: '傳統', image: '🏮', phonics: '', kk: '[trəˈdɪʃən]', phonicsSound: '', exampleSentence: 'an old tradition', exampleZh: '古老的傳統' },
+    { en: 'forest', zh: '森林', image: '🌲', phonics: '', kk: '[ˈfɔrɪst]', phonicsSound: '', exampleSentence: 'a green forest', exampleZh: '綠色森林' },
+    { en: 'ocean', zh: '海洋', image: '🌊', phonics: '', kk: '[ˈoʃən]', phonicsSound: '', exampleSentence: 'the deep ocean', exampleZh: '深海' },
+    { en: 'desert', zh: '沙漠', image: '🏜️', phonics: '', kk: '[ˈdɛzɚt]', phonicsSound: '', exampleSentence: 'a hot desert', exampleZh: '炎熱的沙漠' },
+    { en: 'mountain', zh: '高山', image: '⛰️', phonics: '', kk: '[ˈmaʊntn̩]', phonicsSound: '', exampleSentence: 'a high mountain', exampleZh: '高山' },
+    { en: 'nature', zh: '大自然', image: '🌿', phonics: '', kk: '[ˈnetʃɚ]', phonicsSound: '', exampleSentence: 'love nature', exampleZh: '愛大自然' },
+    { en: 'festival', zh: '節慶', image: '🎊', phonics: '', kk: '[ˈfɛstɪvl̩]', phonicsSound: '', exampleSentence: 'a spring festival', exampleZh: '春節' },
+    { en: 'country', zh: '國家', image: '🏳️', phonics: '', kk: '[ˈkʌntri]', phonicsSound: '', exampleSentence: 'many countries', exampleZh: '許多國家' },
+  ],
+  sentences: [
+    { en: 'Our planet has oceans and forests.', zh: '我們的星球有海洋和森林。' }, { en: 'Every country has its own culture.', zh: '每個國家有自己的文化。' }, { en: 'We must protect nature.', zh: '我們必須保護大自然。' }, { en: 'The forest is full of life.', zh: '森林充滿生命。' }, { en: 'I want to travel and learn about cultures.', zh: '我想旅行並認識文化。' }, { en: 'The world is a wonderful place.', zh: '世界是個美好的地方。' },
+  ],
+  phonicsLetters: ['world & nature'],
+  warmUpQuestions: [
+    { type: 'match', question: '🌲 forest 是什麼？', options: ['森林', '海洋', '沙漠', '高山'], answer: '森林' },
+    { type: 'match', question: '🎎 culture 是什麼意思？', options: ['文化', '傳統', '節慶', '國家'], answer: '文化' },
+    { type: 'match', question: '🏜️ desert 是什麼？', options: ['沙漠', '森林', '海洋', '高山'], answer: '沙漠' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的地方', options: ['🌲', '🌊', '🏜️', '⛰️'], answer: '🏜️', image: '🎧' },
+    { type: 'match', question: '配對：自然配圖', options: ['forest-🌲', 'ocean-🌊', 'desert-🏜️', 'mountain-⛰️'], answer: 'forest-🌲' },
+    { type: 'fill-blank', question: 'Every country has its own ___.（文化）', options: ['culture', 'ocean', 'desert', 'planet'], answer: 'culture' },
+    { type: 'fill-blank', question: '中翻英：「我們必須保護大自然。」', options: ['We must protect nature.', 'Nature is big.', 'I like nature.', 'Do we protect it?'], answer: 'We must protect nature.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Our planet has oceans and forests.', 'Every country has its own culture.', 'We must protect nature.', 'The world is a wonderful place.'], answer: 'Our planet has oceans and forests.', image: '🎧' },
+    { type: 'read', question: 'What does our planet have?（我們的星球有什麼？）', passage: 'Our planet is amazing.\nIt has oceans, forests, and mountains.\nWe must protect them all.', options: ['oceans, forests, and mountains', 'only cities', 'nothing', 'only deserts'], answer: 'oceans, forests, and mountains' },
+  ],
+  talkTimePrompts: ["Describe our planet: It has ___.", "Talk about a culture or festival you know.", "Say why we should protect nature.", "✍️ 引導寫作＋翻譯：寫 3 句關於世界或大自然。"],
+  reviewQuiz: [
+    { type: 'match', question: '🎊 festival 是什麼意思？', options: ['節慶', '文化', '傳統', '國家'], answer: '節慶' },
+    { type: 'fill-blank', question: '中翻英：「每個國家有自己的文化。」', options: ['Every country has its own culture.', 'Countries are big.', 'I like countries.', 'How many countries?'], answer: 'Every country has its own culture.' },
+    { type: 'match', question: 'ocean 是什麼意思？', options: ['海洋', '森林', '沙漠', '高山'], answer: '海洋' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Our planet has oceans, forests, and mountains.", lineZh: '我們的星球有海洋、森林和高山。' },
+    { speaker: 'Coco', line: "Every country has its own culture and traditions.", lineZh: '每個國家都有自己的文化和傳統。' },
+    { speaker: 'Polly', line: "We must protect nature for the future.", lineZh: '我們必須為未來保護大自然。' },
+    { speaker: 'Benny', line: "You can talk about the whole world now!", lineZh: '現在你能談論整個世界了！' },
+  ],
+};
+
+const L12_M5: Mission = {
+  id: 5, slug: 'l12-m5-review-language', level: 12, title: 'Review① 綜合語言', titleEn: 'Review: Language', theme: '勝利峰・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：進階時態 ＋ 進階句型 ＋ 主題單字 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review advanced language!", dialogueZh: '來複習進階語言！', highlightWords: [], sceneEmojis: ['🔄', '📚', '✨'], animation: 'wave' },
+    { image: '🕰️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have learned a lot, and I will keep going.", dialogueZh: '我學了很多，而且我會繼續。', highlightWords: ['have learned', 'will keep'], sceneEmojis: ['🕰️', '📈', '😊'], animation: 'bounce' },
+    { image: '🌍', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The world which we protect is our home.", dialogueZh: '我們保護的世界是我們的家。', highlightWords: ['which'], sceneEmojis: ['🌍', '🏠', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You are almost ready to graduate! Amazing!", dialogueZh: '你快準備好畢業了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎓', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'have learned', zh: '已學會（完成）', image: '📈', phonics: '', kk: '[hæv lɝnd]', phonicsSound: '', exampleSentence: 'I have learned a lot.', exampleZh: '我學了很多。' },
+    { en: 'will keep', zh: '會持續（未來）', image: '🚀', phonics: '', kk: '[wɪl kip]', phonicsSound: '', exampleSentence: 'I will keep going.', exampleZh: '我會繼續。' },
+    { en: 'which', zh: '（關代·物）', image: '🔗', phonics: '', kk: '[wɪtʃ]', phonicsSound: '', exampleSentence: 'the world which we protect', exampleZh: '我們保護的世界' },
+    { en: 'was built', zh: '被建造', image: '🌉', phonics: '', kk: '[wʌz bɪlt]', phonicsSound: '', exampleSentence: 'was built long ago', exampleZh: '很久前建的' },
+    { en: 'confident', zh: '有自信的', image: '😌', phonics: '', kk: '[ˈkɑnfɪdənt]', phonicsSound: '', exampleSentence: 'a confident student', exampleZh: '有自信的學生' },
+    { en: 'culture', zh: '文化', image: '🎎', phonics: '', kk: '[ˈkʌltʃɚ]', phonicsSound: '', exampleSentence: 'rich culture', exampleZh: '豐富文化' },
+    { en: 'nature', zh: '大自然', image: '🌿', phonics: '', kk: '[ˈnetʃɚ]', phonicsSound: '', exampleSentence: 'protect nature', exampleZh: '保護大自然' },
+    { en: 'if', zh: '如果', image: '🔀', phonics: '', kk: '[ɪf]', phonicsSound: '', exampleSentence: 'If we try…', exampleZh: '如果我們努力…' },
+    { en: 'although', zh: '雖然', image: '↔️', phonics: '', kk: '[ɔlˈðo]', phonicsSound: '', exampleSentence: 'Although it is hard…', exampleZh: '雖然很難…' },
+    { en: 'graduate', zh: '畢業', image: '🎓', phonics: '', kk: '[ˈɡrædʒuˌet]', phonicsSound: '', exampleSentence: 'ready to graduate', exampleZh: '準備畢業' },
+  ],
+  sentences: [
+    { en: 'I have learned a lot.', zh: '我學了很多。' }, { en: 'I will keep going.', zh: '我會繼續。' }, { en: 'The world which we protect is our home.', zh: '我們保護的世界是我們的家。' }, { en: 'She is confident and creative.', zh: '她有自信又有創意。' }, { en: 'If we try, we will succeed.', zh: '如果我們努力，就會成功。' }, { en: 'I am ready to graduate.', zh: '我準備好畢業了。' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ learned a lot.（現在完成·I）', options: ['have', 'has', 'am', 'was'], answer: 'have' },
+    { type: 'fill-blank', question: 'The world ___ we protect is our home.（關代·物）', options: ['which', 'who', 'where', 'when'], answer: 'which' },
+    { type: 'match', question: 'confident 是什麼意思？', options: ['有自信的', '慷慨的', '好奇的', '冷靜的'], answer: '有自信的' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'If we try, we ___ succeed.（未來 will）', options: ['will', 'are', 'was', 'have'], answer: 'will' },
+    { type: 'fill-blank', question: '___ it is hard, I will not give up.（雖然）', options: ['Although', 'Because', 'So', 'And'], answer: 'Although' },
+    { type: 'fill-blank', question: '中翻英：「我們保護的世界是我們的家。」', options: ['The world which we protect is our home.', 'We protect the world.', 'The world is big.', 'Is it our home?'], answer: 'The world which we protect is our home.' },
+    { type: 'fill-blank', question: '中翻英：「如果我們努力，就會成功。」', options: ['If we try, we will succeed.', 'We try.', 'We succeed.', 'Do we try?'], answer: 'If we try, we will succeed.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I have learned a lot.', 'I will keep going.', 'The world which we protect is our home.', 'I am ready to graduate.'], answer: 'I have learned a lot.', image: '🎧' },
+    { type: 'read', question: 'Is the writer ready to graduate?（作者準備好畢業了嗎？）', passage: 'I have learned so much English.\nI am confident now.\nI am ready to graduate!', options: ['Yes, ready', 'No, not yet', 'She quit', 'Not sure'], answer: 'Yes, ready' },
+  ],
+  talkTimePrompts: ["Use a perfect tense and a future tense.", "Make a sentence with a relative pronoun.", "Describe yourself with personality words.", "✍️ 引導寫作＋翻譯：把「如果我們努力，就會成功。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The bridge ___ built long ago.（被動·過去）', options: ['was', 'is', 'are', 'were'], answer: 'was' },
+    { type: 'fill-blank', question: '中翻英：「我學了很多。」', options: ['I have learned a lot.', 'I learn.', 'I learned.', 'Do I learn?'], answer: 'I have learned a lot.' },
+    { type: 'match', question: 'nature 是什麼意思？', options: ['大自然', '文化', '傳統', '節慶'], answer: '大自然' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review advanced language!", lineZh: '來複習進階語言！' },
+    { speaker: 'Coco', line: "I have learned a lot, and I will keep going.", lineZh: '我學了很多，而且我會繼續。' },
+    { speaker: 'Benny', line: "The world which we protect is our home.", lineZh: '我們保護的世界是我們的家。' },
+    { speaker: 'Finn', line: "You are almost ready to graduate! Amazing!", lineZh: '你快準備好畢業了！太厲害！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20, L12_M1, L12_M2, L12_M3, L12_M4, L12_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
