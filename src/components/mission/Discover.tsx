@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak } from '@/lib/speech';
 import { playClip, sleep, wordSlug } from '@/lib/audio';
+import VowelMommyFace from '@/components/mission/VowelMommyFace';
 
 interface Props {
   level: number;
@@ -12,7 +13,7 @@ interface Props {
   phonicsLetters: string[];
   videoScript?: VideoLine[];
   videoUrl?: string;
-  tip?: { zh: string; char?: string };
+  tip?: { zh: string; char?: string; face?: boolean };
   onComplete: () => void;
 }
 
@@ -265,6 +266,11 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
             <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl rounded-tl-none px-4 py-2 flex-1">
               <p className="text-xs font-bold text-amber-500 mb-0.5">💡 小提醒</p>
               <p className="text-sm text-gray-700 leading-relaxed">{tip.zh}</p>
+              {tip.face && (
+                <div className="mt-2 flex justify-center">
+                  <VowelMommyFace size={150} showLabels />
+                </div>
+              )}
             </div>
           </div>
         )}

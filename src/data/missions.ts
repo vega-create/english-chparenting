@@ -58,7 +58,7 @@ export interface Mission {
   focus?: string;              // 該課重點（phonics 樣式 / 文法點）
   videoScript?: VideoLine[];   // 對話影片腳本（角色輪流；留給 Vega 拍/生）
   videoUrl?: string;           // 對話影片連結（YouTube 網址 或 mp4/R2 連結）；沒填就顯示腳本分鏡
-  tip?: { zh: string; char?: string };  // 小老師提醒（角色泡泡）：如「母音媽媽」「a/an 規則」「例外字直接記」
+  tip?: { zh: string; char?: string; face?: boolean };  // 小老師提醒（角色泡泡）：如「母音媽媽」「a/an 規則」「例外字直接記」；face=true 會畫出母音媽媽的臉
 }
 
 // 對話影片腳本一行
@@ -1122,7 +1122,7 @@ const L1_M20: Mission = {
 const L2_M1: Mission = {
   id: 1, slug: 'l2-m1-blending', level: 2, title: '拼讀入門', titleEn: 'Blending', theme: '聲音島・拼讀港口', themeEmoji: '🔊',
   focus: '母音 a/e/i/o/u 是每個字的「媽媽」（每個字至少一個媽媽）；找到媽媽再把音拼起來 c-a-t → cat',
-  tip: { zh: '每個字都有一個「媽媽」——母音 a·e·i·o·u。先找到媽媽，再把音拼起來！（單字第一個字母是媽媽 → 用 an：an apple）', char: 'coco' },
+  tip: { zh: '每個字都有一個「媽媽」——母音 a·e·i·o·u。先找到媽媽，再把音拼起來！（單字第一個字母是媽媽 → 用 an：an apple）', char: 'coco', face: true },
   story: [
     { image: '🔊', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Sound Island! Five letters are special: a, e, i, o, u.", dialogueZh: '歡迎來到聲音島！有五個字母很特別：a、e、i、o、u。', highlightWords: ['a', 'e', 'i', 'o', 'u'], sceneEmojis: ['🔊', '🅰️', '✨'], animation: 'wave' },
     { image: '👩', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "a, e, i, o, u are the mommy of every word!", dialogueZh: 'a、e、i、o、u 是母音，是每個字的「媽媽」！（排成一張臉就是媽媽）', highlightWords: ['mommy'], sceneEmojis: ['👩', '🔤', '❤️'], animation: 'bounce' },
@@ -1953,6 +1953,7 @@ const L2_M16: Mission = {
 const L2_M17: Mission = {
   id: 17, slug: 'l2-m17-soft-cg', level: 2, title: '軟音 c · g', titleEn: 'Soft c & g', theme: '聲音島・魔法冰宮', themeEmoji: '🧊',
   focus: '例外：c/g 在 e·i·y 前變軟音（c→/s/、g→/dʒ/）',
+  tip: { zh: '小心！c 和 g 遇到 e·i·y，就會變「軟音」：c 唸 /s/（city, ice）、g 唸 /dʒ/（gem, giraffe）。', char: 'polly' },
   story: [
     { image: '🏙️', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Careful! c before e, i, y says /s/! city!", dialogueZh: '小心！c 在 e、i、y 前發 /s/！city！', highlightWords: ['soft c'], sceneEmojis: ['🏙️', '🔤', '⚠️'], animation: 'wave' },
     { image: '🧊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "ice, face, rice — soft c /s/!", dialogueZh: 'ice、face、rice —— 軟音 c /s/！', highlightWords: ['ice', 'face', 'rice'], sceneEmojis: ['🧊', '😀', '🍚'], animation: 'bounce' },
@@ -2057,6 +2058,7 @@ const L2_M18: Mission = {
 const L2_M19: Mission = {
   id: 19, slug: 'l2-m19-sight-words', level: 2, title: '常見字 Sight Words', titleEn: 'Sight Words', theme: '聲音島・記憶寶庫', themeEmoji: '⭐',
   focus: '高頻字（不能拼讀、要直接記）：the, is, you, are, have…',
+  tip: { zh: '⚠️ 這些字不守規則，不能用拼的——看到就直接記起來喔！（the, is, you, are, have）', char: 'benny' },
   story: [
     { image: '⭐', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Some words can't be sounded out. Just remember them!", dialogueZh: '有些字沒辦法拼讀，直接記起來就好！', highlightWords: ['remember'], sceneEmojis: ['⭐', '🧠', '✨'], animation: 'wave' },
     { image: '💬', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "the, is, you, are — see them everywhere!", dialogueZh: 'the、is、you、are —— 到處都看得到！', highlightWords: ['the', 'is', 'you', 'are'], sceneEmojis: ['💬', '👀', '⭐'], animation: 'bounce' },
