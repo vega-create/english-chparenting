@@ -4084,7 +4084,267 @@ const L5_M5: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5];
+const L5_M6: Mission = {
+  id: 6, slug: 'l5-m6-weather', level: 5, title: '天氣', titleEn: 'Weather', theme: '珊瑚灘・今天天氣', themeEmoji: '🌤️',
+  focus: '天氣單字：sunny/rainy/cloudy/windy/snowy…',
+  story: [
+    { image: '☀️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "It is sunny today! Let's go to the beach!", dialogueZh: '今天是晴天！我們去海邊吧！', highlightWords: ['sunny'], sceneEmojis: ['☀️', '🏖️', '✨'], animation: 'wave' },
+    { image: '🌧️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Oh no, now it is rainy and cloudy!", dialogueZh: '喔不，現在下雨又多雲！', highlightWords: ['rainy', 'cloudy'], sceneEmojis: ['🌧️', '☁️', '😊'], animation: 'bounce' },
+    { image: '💨', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "It is windy! My kite can fly!", dialogueZh: '風好大！我的風箏能飛了！', highlightWords: ['windy'], sceneEmojis: ['💨', '🪁', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Sunny, rainy, windy — you know the weather!", dialogueZh: '晴、雨、風 —— 你會說天氣了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🌤️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'sunny', zh: '晴朗的', image: '☀️', phonics: '', kk: '[ˈsʌni]', phonicsSound: '', exampleSentence: 'It is sunny.', exampleZh: '天氣晴朗。' },
+    { en: 'rainy', zh: '下雨的', image: '🌧️', phonics: '', kk: '[ˈreni]', phonicsSound: '', exampleSentence: 'It is rainy.', exampleZh: '在下雨。' },
+    { en: 'cloudy', zh: '多雲的', image: '☁️', phonics: '', kk: '[ˈklaʊdi]', phonicsSound: '', exampleSentence: 'It is cloudy.', exampleZh: '多雲。' },
+    { en: 'windy', zh: '風大的', image: '💨', phonics: '', kk: '[ˈwɪndi]', phonicsSound: '', exampleSentence: 'It is windy.', exampleZh: '風很大。' },
+    { en: 'snowy', zh: '下雪的', image: '❄️', phonics: '', kk: '[ˈsnoi]', phonicsSound: '', exampleSentence: 'It is snowy.', exampleZh: '在下雪。' },
+    { en: 'hot', zh: '熱的', image: '🥵', phonics: '', kk: '[hɑt]', phonicsSound: '', exampleSentence: 'It is hot.', exampleZh: '天氣很熱。' },
+    { en: 'cold', zh: '冷的', image: '🥶', phonics: '', kk: '[kold]', phonicsSound: '', exampleSentence: 'It is cold.', exampleZh: '天氣很冷。' },
+    { en: 'warm', zh: '溫暖的', image: '🌤️', phonics: '', kk: '[wɔrm]', phonicsSound: '', exampleSentence: 'It is warm.', exampleZh: '天氣溫暖。' },
+    { en: 'cool', zh: '涼爽的', image: '🍃', phonics: '', kk: '[kul]', phonicsSound: '', exampleSentence: 'It is cool.', exampleZh: '天氣涼爽。' },
+    { en: 'rainbow', zh: '彩虹', image: '🌈', phonics: '', kk: '[ˈrenˌbo]', phonicsSound: '', exampleSentence: 'a rainbow', exampleZh: '一道彩虹' },
+  ],
+  sentences: [
+    { en: 'It is sunny today.', zh: '今天是晴天。' }, { en: 'It is rainy and cloudy.', zh: '又下雨又多雲。' }, { en: 'Is it windy?', zh: '風大嗎？' }, { en: 'Yes, it is windy.', zh: '是的，風很大。' }, { en: 'It is hot in summer.', zh: '夏天很熱。' }, { en: 'Look, a rainbow!', zh: '看，彩虹！' },
+  ],
+  phonicsLetters: ['weather'],
+  warmUpQuestions: [
+    { type: 'match', question: '☀️ 是什麼天氣？', options: ['sunny', 'rainy', 'windy', 'snowy'], answer: 'sunny' },
+    { type: 'match', question: '🌧️ 是什麼天氣？', options: ['rainy', 'sunny', 'cloudy', 'cool'], answer: 'rainy' },
+    { type: 'match', question: '💨 是什麼天氣？', options: ['windy', 'snowy', 'hot', 'warm'], answer: 'windy' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的天氣', options: ['☀️', '🌧️', '☁️', '❄️'], answer: '❄️', image: '🎧' },
+    { type: 'match', question: '配對：天氣配圖', options: ['sunny-☀️', 'rainy-🌧️', 'cloudy-☁️', 'windy-💨'], answer: 'sunny-☀️' },
+    { type: 'fill-blank', question: '句型代換：It is ___.（下雪）', options: ['snowy', 'sunny', 'warm', 'is'], answer: 'snowy' },
+    { type: 'spell', question: '拼拼看：s _ nny（晴朗）', answer: 'sunny', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['It is sunny today.', 'It is rainy today.', 'It is windy today.', 'It is snowy today.'], answer: 'It is sunny today.', image: '🎧' },
+    { type: 'read', question: 'What is the weather like?（天氣如何？）', passage: 'Today it is not sunny.\nIt is rainy and cloudy.\nTake your umbrella!', options: ['rainy', 'sunny', 'snowy', 'hot'], answer: 'rainy' },
+  ],
+  talkTimePrompts: ["What is the weather today? It is ___.", "Say two kinds of weather.", "Ask: Is it sunny?", "Change it: It is ___ (windy/cloudy/cold)."],
+  reviewQuiz: [
+    { type: 'match', question: '❄️ 是什麼天氣？', options: ['snowy', 'sunny', 'rainy', 'warm'], answer: 'snowy' },
+    { type: 'fill-blank', question: 'It is ___ today. Take an umbrella.（下雨）', options: ['rainy', 'sunny', 'warm', 'cool'], answer: 'rainy' },
+    { type: 'spell', question: '拼拼看：w _ ndy（風大）', answer: 'windy', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "It is sunny today! Let's go out!", lineZh: '今天晴天！我們出去吧！' },
+    { speaker: 'Coco', line: "Wait, now it is rainy and cloudy!", lineZh: '等等，現在下雨又多雲！' },
+    { speaker: 'Polly', line: "And windy! My kite can fly!", lineZh: '風也大！我的風箏能飛！' },
+    { speaker: 'Finn', line: "Look! After the rain — a rainbow!", lineZh: '看！雨後 —— 彩虹！' },
+  ],
+};
+
+const L5_M7: Mission = {
+  id: 7, slug: 'l5-m7-how-weather', level: 5, title: 'How\'s the weather?', titleEn: "How's the weather?", theme: '珊瑚灘・問天氣', themeEmoji: '🌦️',
+  focus: '句型 How\'s the weather? — It\'s sunny. 四季天氣',
+  story: [
+    { image: '🌦️', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "How's the weather? It's sunny and warm!", dialogueZh: '天氣如何？晴朗又溫暖！', highlightWords: ["How's", "It's"], sceneEmojis: ['🌦️', '☀️', '✨'], animation: 'wave' },
+    { image: '🍂', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "In fall, it's cool and windy.", dialogueZh: '秋天涼爽又有風。', highlightWords: ["It's", 'cool'], sceneEmojis: ['🍂', '💨', '😊'], animation: 'bounce' },
+    { image: '⛄', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "In winter, it's cold and snowy!", dialogueZh: '冬天又冷又下雪！', highlightWords: ["It's", 'snowy'], sceneEmojis: ['⛄', '❄️', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Now you can ask about the weather!", dialogueZh: '現在你會問天氣了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🌦️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: "how's", zh: '如何（how is）', image: '❓', phonics: '', kk: '[haʊz]', phonicsSound: '', exampleSentence: "How's the weather?", exampleZh: '天氣如何？' },
+    { en: 'weather', zh: '天氣', image: '🌦️', phonics: '', kk: '[ˈwɛðɚ]', phonicsSound: '', exampleSentence: "How's the weather?", exampleZh: '天氣如何？' },
+    { en: "it's", zh: '它是（it is）', image: '☀️', phonics: '', kk: '[ɪts]', phonicsSound: '', exampleSentence: "It's sunny.", exampleZh: '天氣晴朗。' },
+    { en: 'spring', zh: '春天', image: '🌸', phonics: '', kk: '[sprɪŋ]', phonicsSound: '', exampleSentence: 'In spring, it is warm.', exampleZh: '春天很溫暖。' },
+    { en: 'summer', zh: '夏天', image: '🌻', phonics: '', kk: '[ˈsʌmɚ]', phonicsSound: '', exampleSentence: 'In summer, it is hot.', exampleZh: '夏天很熱。' },
+    { en: 'fall', zh: '秋天', image: '🍂', phonics: '', kk: '[fɔl]', phonicsSound: '', exampleSentence: 'In fall, it is cool.', exampleZh: '秋天涼爽。' },
+    { en: 'winter', zh: '冬天', image: '⛄', phonics: '', kk: '[ˈwɪntɚ]', phonicsSound: '', exampleSentence: 'In winter, it is cold.', exampleZh: '冬天很冷。' },
+    { en: 'warm', zh: '溫暖的', image: '🌤️', phonics: '', kk: '[wɔrm]', phonicsSound: '', exampleSentence: "It's warm.", exampleZh: '很溫暖。' },
+    { en: 'umbrella', zh: '雨傘', image: '☂️', phonics: '', kk: '[ʌmˈbrɛlə]', phonicsSound: '', exampleSentence: 'Take an umbrella.', exampleZh: '帶把傘。' },
+    { en: 'coat', zh: '外套', image: '🧥', phonics: '', kk: '[kot]', phonicsSound: '', exampleSentence: 'Wear a coat.', exampleZh: '穿外套。' },
+  ],
+  sentences: [
+    { en: "How's the weather?", zh: '天氣如何？' }, { en: "It's sunny and warm.", zh: '晴朗又溫暖。' }, { en: 'In summer, it is hot.', zh: '夏天很熱。' }, { en: 'In winter, it is cold.', zh: '冬天很冷。' }, { en: "It's rainy. Take an umbrella.", zh: '在下雨。帶把傘。' }, { en: "Is it cold? Wear a coat.", zh: '冷嗎？穿外套。' },
+  ],
+  phonicsLetters: ["How's the weather?"],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: "___ the weather?（如何）", options: ["How's", "What's", "Where's", "It's"], answer: "How's" },
+    { type: 'match', question: '🌻 是哪個季節？', options: ['summer', 'spring', 'fall', 'winter'], answer: 'summer' },
+    { type: 'match', question: '⛄ 是哪個季節？', options: ['winter', 'summer', 'spring', 'fall'], answer: 'winter' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的季節', options: ['🌸', '🌻', '🍂', '⛄'], answer: '🍂', image: '🎧' },
+    { type: 'match', question: '配對：季節配圖', options: ['spring-🌸', 'summer-🌻', 'fall-🍂', 'winter-⛄'], answer: 'spring-🌸' },
+    { type: 'fill-blank', question: "How's the weather? ___ sunny.（它是）", options: ["It's", "How's", "That's", "Is"], answer: "It's" },
+    { type: 'fill-blank', question: 'In summer, it is ___.（熱）', options: ['hot', 'cold', 'snowy', 'cool'], answer: 'hot' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ["How's the weather?", "It's sunny and warm.", 'In winter, it is cold.', 'Take an umbrella.'], answer: "How's the weather?", image: '🎧' },
+    { type: 'read', question: 'What should you take?（該帶什麼？）', passage: "How's the weather?\nIt's rainy today.\nTake an umbrella!", options: ['an umbrella', 'a coat', 'a kite', 'a hat'], answer: 'an umbrella' },
+  ],
+  talkTimePrompts: ["Ask: How's the weather?", "Answer: It's ___.", "What is the weather in summer?", "Change it: In ___, it is ___."],
+  reviewQuiz: [
+    { type: 'match', question: '🌸 是哪個季節？', options: ['spring', 'summer', 'fall', 'winter'], answer: 'spring' },
+    { type: 'fill-blank', question: 'In winter, it is ___.（冷）', options: ['cold', 'hot', 'warm', 'sunny'], answer: 'cold' },
+    { type: 'fill-blank', question: "___ the weather? It's cloudy.", options: ["How's", "What's", "It's", "Where's"], answer: "How's" },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "How's the weather today?", lineZh: '今天天氣如何？' },
+    { speaker: 'Benny', line: "It's sunny and warm. It's spring!", lineZh: '晴朗又溫暖。是春天！' },
+    { speaker: 'Coco', line: "In winter, it's cold and snowy!", lineZh: '冬天又冷又下雪！' },
+    { speaker: 'Ruby', line: "Now you can ask about the weather!", lineZh: '現在你會問天氣了！' },
+  ],
+};
+
+const L5_M8: Mission = {
+  id: 8, slug: 'l5-m8-time', level: 5, title: '時間 o\'clock', titleEn: 'What time is it?', theme: '珊瑚灘・幾點鐘', themeEmoji: '🕐',
+  focus: '句型 What time is it? — It is ___ o\'clock.（整點）',
+  story: [
+    { image: '🕐', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "What time is it? It is one o'clock!", dialogueZh: '幾點了？一點鐘！', highlightWords: ['time', "o'clock"], sceneEmojis: ['🕐', '❓', '✨'], animation: 'wave' },
+    { image: '🕖', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "It is seven o'clock. Time for breakfast!", dialogueZh: '七點鐘。吃早餐時間！', highlightWords: ["o'clock"], sceneEmojis: ['🕖', '🥞', '😊'], animation: 'bounce' },
+    { image: '🕘', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "It is nine o'clock. Time for school!", dialogueZh: '九點鐘。上學時間！', highlightWords: ["o'clock"], sceneEmojis: ['🕘', '🏫', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Now you can tell the time! Great!", dialogueZh: '現在你會看時間了！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🕐'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'time', zh: '時間', image: '⏰', phonics: '', kk: '[taɪm]', phonicsSound: '', exampleSentence: 'What time is it?', exampleZh: '幾點了？' },
+    { en: "o'clock", zh: '…點鐘', image: '🕐', phonics: '', kk: '[əˈklɑk]', phonicsSound: '', exampleSentence: "It is one o'clock.", exampleZh: '一點鐘。' },
+    { en: 'clock', zh: '時鐘', image: '🕰️', phonics: '', kk: '[klɑk]', phonicsSound: '', exampleSentence: 'Look at the clock.', exampleZh: '看時鐘。' },
+    { en: 'morning', zh: '早上', image: '🌅', phonics: '', kk: '[ˈmɔrnɪŋ]', phonicsSound: '', exampleSentence: 'in the morning', exampleZh: '在早上' },
+    { en: 'afternoon', zh: '下午', image: '🌇', phonics: '', kk: '[ˌæftɚˈnun]', phonicsSound: '', exampleSentence: 'in the afternoon', exampleZh: '在下午' },
+    { en: 'evening', zh: '晚上', image: '🌆', phonics: '', kk: '[ˈivnɪŋ]', phonicsSound: '', exampleSentence: 'in the evening', exampleZh: '在傍晚' },
+    { en: 'night', zh: '夜晚', image: '🌙', phonics: '', kk: '[naɪt]', phonicsSound: '', exampleSentence: 'at night', exampleZh: '在晚上' },
+    { en: 'now', zh: '現在', image: '👉', phonics: '', kk: '[naʊ]', phonicsSound: '', exampleSentence: 'What time is it now?', exampleZh: '現在幾點？' },
+    { en: 'early', zh: '早的', image: '🐦', phonics: '', kk: '[ˈɝli]', phonicsSound: '', exampleSentence: 'I am early.', exampleZh: '我很早。' },
+    { en: 'late', zh: '晚的·遲的', image: '🏃', phonics: '', kk: '[let]', phonicsSound: '', exampleSentence: 'I am late!', exampleZh: '我遲到了！' },
+  ],
+  sentences: [
+    { en: 'What time is it?', zh: '幾點了？' }, { en: "It is one o'clock.", zh: '一點鐘。' }, { en: "It is seven o'clock.", zh: '七點鐘。' }, { en: 'It is time for school.', zh: '該上學了。' }, { en: 'Is it late?', zh: '很晚了嗎？' }, { en: 'Good morning!', zh: '早安！' },
+  ],
+  phonicsLetters: ["o'clock"],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'What ___ is it?（時間）', options: ['time', 'clock', 'now', 'day'], answer: 'time' },
+    { type: 'match', question: '🌅 是什麼時候？', options: ['morning', 'night', 'evening', 'afternoon'], answer: 'morning' },
+    { type: 'match', question: '🌙 是什麼時候？', options: ['night', 'morning', 'noon', 'early'], answer: 'night' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的時段', options: ['🌅', '🌇', '🌆', '🌙'], answer: '🌙', image: '🎧' },
+    { type: 'match', question: '配對：時段配意思', options: ['morning-早上', 'afternoon-下午', 'evening-傍晚', 'night-晚上'], answer: 'morning-早上' },
+    { type: 'fill-blank', question: "It is seven ___.（點鐘）", options: ["o'clock", 'time', 'clock', 'now'], answer: "o'clock" },
+    { type: 'spell', question: '拼拼看：cl _ ck（時鐘）', answer: 'clock', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What time is it?', "It is one o'clock.", 'It is time for school.', 'Good morning!'], answer: 'What time is it?', image: '🎧' },
+    { type: 'read', question: 'What time is it for school?（幾點上學？）', passage: "It is seven o'clock. Time for breakfast.\nIt is nine o'clock now.\nIt is time for school!", options: ["nine o'clock", "seven o'clock", "one o'clock", "ten o'clock"], answer: "nine o'clock" },
+  ],
+  talkTimePrompts: ["Ask: What time is it?", "Answer: It is ___ o'clock.", "Say good morning / good night!", "What time do you go to school?"],
+  reviewQuiz: [
+    { type: 'match', question: '🌇 是什麼時候？', options: ['afternoon', 'morning', 'night', 'early'], answer: 'afternoon' },
+    { type: 'fill-blank', question: 'What ___ is it now?（時間）', options: ['time', 'clock', 'day', 'late'], answer: 'time' },
+    { type: 'spell', question: '拼拼看：ni _ ht（夜晚）', answer: 'night', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "What time is it?", lineZh: '幾點了？' },
+    { speaker: 'Coco', line: "It is seven o'clock. Time for breakfast!", lineZh: '七點鐘。吃早餐時間！' },
+    { speaker: 'Polly', line: "Now it is nine o'clock. Time for school!", lineZh: '現在九點。上學時間！' },
+    { speaker: 'Benny', line: "Don't be late! Let's go!", lineZh: '別遲到！走吧！' },
+  ],
+};
+
+const L5_M9: Mission = {
+  id: 9, slug: 'l5-m9-daily-routine', level: 5, title: '日常作息', titleEn: 'Daily Routine', theme: '珊瑚灘・我的一天', themeEmoji: '🌅',
+  focus: '日常作息動詞：get up / eat / go to school / sleep',
+  story: [
+    { image: '🌅', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I get up at seven. I wash my face.", dialogueZh: '我七點起床。我洗臉。', highlightWords: ['get up', 'wash'], sceneEmojis: ['🌅', '🧼', '✨'], animation: 'wave' },
+    { image: '🥞', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I eat breakfast. Then I go to school.", dialogueZh: '我吃早餐。然後我去學校。', highlightWords: ['eat', 'go to school'], sceneEmojis: ['🥞', '🏫', '😊'], animation: 'bounce' },
+    { image: '🌙', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "At night, I brush my teeth and sleep.", dialogueZh: '晚上，我刷牙然後睡覺。', highlightWords: ['brush', 'sleep'], sceneEmojis: ['🪥', '🌙', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "That is my day! What about you?", dialogueZh: '這就是我的一天！你呢？', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🌅'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'get up', zh: '起床', image: '🛌', phonics: '', kk: '[ɡɛt ʌp]', phonicsSound: '', exampleSentence: 'I get up early.', exampleZh: '我很早起床。' },
+    { en: 'wash', zh: '洗', image: '🧼', phonics: '', kk: '[wɑʃ]', phonicsSound: '', exampleSentence: 'I wash my face.', exampleZh: '我洗臉。' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '', exampleSentence: 'I eat breakfast.', exampleZh: '我吃早餐。' },
+    { en: 'brush', zh: '刷（牙）', image: '🪥', phonics: '', kk: '[brʌʃ]', phonicsSound: '', exampleSentence: 'I brush my teeth.', exampleZh: '我刷牙。' },
+    { en: 'go to school', zh: '上學', image: '🏫', phonics: '', kk: '[ɡo tu skul]', phonicsSound: '', exampleSentence: 'I go to school.', exampleZh: '我去學校。' },
+    { en: 'play', zh: '玩', image: '🎮', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'I play after school.', exampleZh: '我放學後玩。' },
+    { en: 'study', zh: '讀書', image: '📚', phonics: '', kk: '[ˈstʌdi]', phonicsSound: '', exampleSentence: 'I study English.', exampleZh: '我讀英文。' },
+    { en: 'sleep', zh: '睡覺', image: '😴', phonics: '', kk: '[slip]', phonicsSound: '', exampleSentence: 'I sleep at night.', exampleZh: '我晚上睡覺。' },
+    { en: 'breakfast', zh: '早餐', image: '🥞', phonics: '', kk: '[ˈbrɛkfəst]', phonicsSound: '', exampleSentence: 'I eat breakfast.', exampleZh: '我吃早餐。' },
+    { en: 'dinner', zh: '晚餐', image: '🍜', phonics: '', kk: '[ˈdɪnɚ]', phonicsSound: '', exampleSentence: 'I eat dinner.', exampleZh: '我吃晚餐。' },
+  ],
+  sentences: [
+    { en: 'I get up at seven.', zh: '我七點起床。' }, { en: 'I eat breakfast.', zh: '我吃早餐。' }, { en: 'I go to school.', zh: '我去學校。' }, { en: 'What time do you get up?', zh: '你幾點起床？' }, { en: 'I brush my teeth.', zh: '我刷牙。' }, { en: 'I sleep at night.', zh: '我晚上睡覺。' },
+  ],
+  phonicsLetters: ['daily routine'],
+  warmUpQuestions: [
+    { type: 'match', question: '🛌 動作是？', options: ['get up', 'eat', 'sleep', 'play'], answer: 'get up' },
+    { type: 'match', question: '🪥 動作是？', options: ['brush', 'wash', 'eat', 'study'], answer: 'brush' },
+    { type: 'match', question: '😴 動作是？', options: ['sleep', 'get up', 'play', 'wash'], answer: 'sleep' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🛌', '🧼', '🥞', '😴'], answer: '🥞', image: '🎧' },
+    { type: 'match', question: '配對：作息配圖', options: ['get up-🛌', 'wash-🧼', 'eat-🍽️', 'sleep-😴'], answer: 'get up-🛌' },
+    { type: 'fill-blank', question: '句型代換：I ___ breakfast.（吃）', options: ['eat', 'sleep', 'wash', 'is'], answer: 'eat' },
+    { type: 'spell', question: '拼拼看：sl _ ep（睡覺）', answer: 'sleep', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I get up at seven.', 'I eat breakfast.', 'I go to school.', 'I sleep at night.'], answer: 'I get up at seven.', image: '🎧' },
+    { type: 'read', question: 'What does Coco do at night?（Coco 晚上做什麼？）', passage: 'Coco gets up at seven.\nShe goes to school.\nAt night, she brushes her teeth and sleeps.', options: ['brushes teeth and sleeps', 'goes to school', 'eats breakfast', 'plays games'], answer: 'brushes teeth and sleeps' },
+  ],
+  talkTimePrompts: ["What do you do in the morning? I ___.", "Say three things you do every day.", "What time do you get up?", "Change it: I ___ (eat/play/study)."],
+  reviewQuiz: [
+    { type: 'match', question: '🥞 是什麼？', options: ['breakfast', 'dinner', 'sleep', 'study'], answer: 'breakfast' },
+    { type: 'fill-blank', question: 'I ___ to school.（去）', options: ['go', 'eat', 'sleep', 'is'], answer: 'go' },
+    { type: 'spell', question: '拼拼看：st _ dy（讀書）', answer: 'study', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I get up at seven. I wash my face.", lineZh: '我七點起床。我洗臉。' },
+    { speaker: 'Benny', line: "I eat breakfast. Then I go to school.", lineZh: '我吃早餐。然後去學校。' },
+    { speaker: 'Ruby', line: "At night, I brush my teeth and sleep.", lineZh: '晚上，我刷牙然後睡覺。' },
+    { speaker: 'Coco', line: "That is my day! What about you?", lineZh: '這是我的一天！你呢？' },
+  ],
+};
+
+const L5_M10: Mission = {
+  id: 10, slug: 'l5-m10-review-weather-time', level: 5, title: 'Review② 天氣時間', titleEn: 'Review: Weather & Time', theme: '珊瑚灘・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習②：天氣 ＋ How\'s the weather ＋ 時間 o\'clock ＋ 作息',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! How's the weather today?", dialogueZh: '來複習！今天天氣如何？', highlightWords: ["How's"], sceneEmojis: ['🔄', '🌦️', '✨'], animation: 'wave' },
+    { image: '☀️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "It's sunny! It is nine o'clock. Time for school!", dialogueZh: '晴天！九點鐘。上學時間！', highlightWords: ["It's", "o'clock"], sceneEmojis: ['☀️', '🕘', '😊'], animation: 'bounce' },
+    { image: '🌙', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "At night, I sleep. Good night!", dialogueZh: '晚上我睡覺。晚安！', highlightWords: ['sleep'], sceneEmojis: ['🌙', '😴', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Weather, time, routine — you know them all!", dialogueZh: '天氣、時間、作息 —— 你全會了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'sunny', zh: '晴朗的', image: '☀️', phonics: '', kk: '[ˈsʌni]', phonicsSound: '', exampleSentence: "It's sunny.", exampleZh: '天氣晴朗。' },
+    { en: 'rainy', zh: '下雨的', image: '🌧️', phonics: '', kk: '[ˈreni]', phonicsSound: '', exampleSentence: "It's rainy.", exampleZh: '在下雨。' },
+    { en: 'weather', zh: '天氣', image: '🌦️', phonics: '', kk: '[ˈwɛðɚ]', phonicsSound: '', exampleSentence: "How's the weather?", exampleZh: '天氣如何？' },
+    { en: 'time', zh: '時間', image: '⏰', phonics: '', kk: '[taɪm]', phonicsSound: '', exampleSentence: 'What time is it?', exampleZh: '幾點了？' },
+    { en: "o'clock", zh: '…點鐘', image: '🕐', phonics: '', kk: '[əˈklɑk]', phonicsSound: '', exampleSentence: "one o'clock", exampleZh: '一點鐘' },
+    { en: 'morning', zh: '早上', image: '🌅', phonics: '', kk: '[ˈmɔrnɪŋ]', phonicsSound: '', exampleSentence: 'in the morning', exampleZh: '在早上' },
+    { en: 'night', zh: '夜晚', image: '🌙', phonics: '', kk: '[naɪt]', phonicsSound: '', exampleSentence: 'at night', exampleZh: '在晚上' },
+    { en: 'get up', zh: '起床', image: '🛌', phonics: '', kk: '[ɡɛt ʌp]', phonicsSound: '', exampleSentence: 'I get up early.', exampleZh: '我早起。' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '', exampleSentence: 'I eat breakfast.', exampleZh: '我吃早餐。' },
+    { en: 'sleep', zh: '睡覺', image: '😴', phonics: '', kk: '[slip]', phonicsSound: '', exampleSentence: 'I sleep at night.', exampleZh: '我晚上睡覺。' },
+  ],
+  sentences: [
+    { en: "How's the weather? It's sunny.", zh: '天氣如何？晴朗。' }, { en: "What time is it? It is nine o'clock.", zh: '幾點了？九點鐘。' }, { en: 'I get up in the morning.', zh: '我早上起床。' }, { en: 'I sleep at night.', zh: '我晚上睡覺。' }, { en: 'Is it rainy today?', zh: '今天下雨嗎？' }, { en: 'Good morning! Good night!', zh: '早安！晚安！' },
+  ],
+  phonicsLetters: ['review'],
+  warmUpQuestions: [
+    { type: 'match', question: '☀️ 是什麼天氣？', options: ['sunny', 'rainy', 'windy', 'snowy'], answer: 'sunny' },
+    { type: 'fill-blank', question: "___ the weather?（如何）", options: ["How's", "What's", "It's", "Where's"], answer: "How's" },
+    { type: 'match', question: '🌅 是什麼時候？', options: ['morning', 'night', 'evening', 'noon'], answer: 'morning' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['☀️', '🌧️', '🕐', '😴'], answer: '🕐', image: '🎧' },
+    { type: 'fill-blank', question: "What time is it? It is nine ___.（點鐘）", options: ["o'clock", 'time', 'morning', 'clock'], answer: "o'clock" },
+    { type: 'fill-blank', question: 'I ___ up in the morning.（起床）', options: ['get', 'eat', 'sleep', 'go'], answer: 'get' },
+    { type: 'spell', question: '拼拼看：s _ nny（晴朗）', answer: 'sunny', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ["How's the weather? It's sunny.", "What time is it?", 'I sleep at night.', 'I get up in the morning.'], answer: "How's the weather? It's sunny.", image: '🎧' },
+    { type: 'read', question: 'What time does Coco go to school?（Coco 幾點上學？）', passage: "It's sunny this morning.\nCoco gets up at seven.\nIt is nine o'clock. She goes to school.", options: ["nine o'clock", "seven o'clock", "eight o'clock", "ten o'clock"], answer: "nine o'clock" },
+  ],
+  talkTimePrompts: ["Ask: How's the weather? / What time is it?", "Tell me your morning routine.", "Say the weather and time now.", "Say good morning and good night."],
+  reviewQuiz: [
+    { type: 'match', question: '🌧️ 是什麼天氣？', options: ['rainy', 'sunny', 'windy', 'warm'], answer: 'rainy' },
+    { type: 'fill-blank', question: 'I ___ at night.（睡覺）', options: ['sleep', 'get up', 'eat', 'go'], answer: 'sleep' },
+    { type: 'read', question: 'Is it rainy?（下雨嗎？）', passage: "How's the weather?\nIt's sunny and warm today.\nLet's go to the beach!", options: ['No, it is sunny', 'Yes, it is rainy', 'It is snowy', 'It is night'], answer: 'No, it is sunny' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "How's the weather today?", lineZh: '今天天氣如何？' },
+    { speaker: 'Coco', line: "It's sunny! It is nine o'clock. Time for school!", lineZh: '晴天！九點鐘。上學時間！' },
+    { speaker: 'Benny', line: "At night, I sleep. Good night!", lineZh: '晚上我睡覺。晚安！' },
+    { speaker: 'Finn', line: "Weather, time, routine — great review!", lineZh: '天氣、時間、作息 —— 複習得好！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
