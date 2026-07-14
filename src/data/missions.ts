@@ -3823,7 +3823,268 @@ const L4_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20];
+// ===================== L5 珊瑚灘 Coral Beach（A1・形容詞＋比較級＋閱讀起步） =====================
+const L5_M1: Mission = {
+  id: 1, slug: 'l5-m1-adjectives-size', level: 5, title: '形容詞① 大小', titleEn: 'Adjectives: Size', theme: '珊瑚灘・大海生物', themeEmoji: '📏',
+  focus: '形容詞（大小）：big/small/tall/short/long…；It is + 形容詞',
+  story: [
+    { image: '🌊', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Coral Beach! Look at the big whale!", dialogueZh: '歡迎來到珊瑚灘！看那隻大鯨魚！', highlightWords: ['big'], sceneEmojis: ['🌊', '🐋', '✨'], animation: 'wave' },
+    { image: '🐟', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The fish is small. The whale is big!", dialogueZh: '魚很小。鯨魚很大！', highlightWords: ['small', 'big'], sceneEmojis: ['🐟', '🐋', '😊'], animation: 'bounce' },
+    { image: '🦀', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "The crab is short. The eel is long!", dialogueZh: '螃蟹很短。鰻魚很長！', highlightWords: ['short', 'long'], sceneEmojis: ['🦀', '🐍', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Big, small, long, short — you can describe things!", dialogueZh: '大、小、長、短 —— 你會形容東西了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📏'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'big', zh: '大的', image: '🐋', phonics: '', kk: '[bɪɡ]', phonicsSound: '', exampleSentence: 'It is big.', exampleZh: '它很大。' },
+    { en: 'small', zh: '小的', image: '🐟', phonics: '', kk: '[smɔl]', phonicsSound: '', exampleSentence: 'It is small.', exampleZh: '它很小。' },
+    { en: 'tall', zh: '高的', image: '🦒', phonics: '', kk: '[tɔl]', phonicsSound: '', exampleSentence: 'It is tall.', exampleZh: '它很高。' },
+    { en: 'short', zh: '矮的·短的', image: '🦀', phonics: '', kk: '[ʃɔrt]', phonicsSound: '', exampleSentence: 'It is short.', exampleZh: '它很矮。' },
+    { en: 'long', zh: '長的', image: '🐍', phonics: '', kk: '[lɔŋ]', phonicsSound: '', exampleSentence: 'It is long.', exampleZh: '它很長。' },
+    { en: 'little', zh: '小小的', image: '🐚', phonics: '', kk: '[ˈlɪtl̩]', phonicsSound: '', exampleSentence: 'a little shell', exampleZh: '一個小貝殼' },
+    { en: 'huge', zh: '巨大的', image: '🐳', phonics: '', kk: '[hjudʒ]', phonicsSound: '', exampleSentence: 'a huge whale', exampleZh: '一隻巨大的鯨魚' },
+    { en: 'wide', zh: '寬的', image: '🌊', phonics: '', kk: '[waɪd]', phonicsSound: '', exampleSentence: 'The sea is wide.', exampleZh: '海很寬。' },
+    { en: 'round', zh: '圓的', image: '⚪', phonics: '', kk: '[raʊnd]', phonicsSound: '', exampleSentence: 'a round ball', exampleZh: '一顆圓球' },
+    { en: 'fat', zh: '胖的', image: '🐡', phonics: '', kk: '[fæt]', phonicsSound: '', exampleSentence: 'a fat fish', exampleZh: '一隻胖魚' },
+  ],
+  sentences: [
+    { en: 'The whale is big.', zh: '鯨魚很大。' }, { en: 'The fish is small.', zh: '魚很小。' }, { en: 'Is it long?', zh: '它長嗎？' }, { en: 'Yes, it is long.', zh: '是的，它很長。' }, { en: 'It is a huge whale.', zh: '這是一隻巨大的鯨魚。' }, { en: 'The crab is short.', zh: '螃蟹很短。' },
+  ],
+  phonicsLetters: ['big / small'],
+  warmUpQuestions: [
+    { type: 'match', question: '🐋 鯨魚是？', options: ['big', 'small', 'short', 'little'], answer: 'big' },
+    { type: 'match', question: '🐟 小魚是？', options: ['small', 'big', 'tall', 'long'], answer: 'small' },
+    { type: 'fill-blank', question: 'The eel is ___.（長）', options: ['long', 'short', 'small', 'round'], answer: 'long' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的形容詞', options: ['🐋', '🐟', '🐍', '🦀'], answer: '🐍', image: '🎧' },
+    { type: 'match', question: '配對：形容詞配意思', options: ['big-大', 'small-小', 'long-長', 'short-短'], answer: 'big-大' },
+    { type: 'fill-blank', question: '句型代換：It is ___.（巨大的）', options: ['huge', 'small', 'short', 'is'], answer: 'huge' },
+    { type: 'spell', question: '拼拼看：sm _ ll（小的）', answer: 'small', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The whale is big.', 'The fish is small.', 'The crab is short.', 'The eel is long.'], answer: 'The whale is big.', image: '🎧' },
+    { type: 'read', question: 'How is the whale?（鯨魚怎麼樣？）', passage: 'Look at the sea.\nThe whale is very big.\nThe little fish is small.', options: ['big', 'small', 'short', 'round'], answer: 'big' },
+  ],
+  talkTimePrompts: ["Describe it: It is big / small.", "Point to something long and short.", "Ask: Is it big?", "Change it: It is ___ (tall/little/huge)."],
+  reviewQuiz: [
+    { type: 'match', question: '🐍 長的 是？', options: ['long', 'short', 'small', 'round'], answer: 'long' },
+    { type: 'fill-blank', question: 'The whale is ___.（大）', options: ['big', 'small', 'short', 'thin'], answer: 'big' },
+    { type: 'spell', question: '拼拼看：l _ ng（長的）', answer: 'long', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Look! The whale is so big!", lineZh: '看！鯨魚好大！' },
+    { speaker: 'Coco', line: "And the fish is small. So little!", lineZh: '魚很小。好小喔！' },
+    { speaker: 'Polly', line: "The eel is long. The crab is short!", lineZh: '鰻魚很長。螃蟹很短！' },
+    { speaker: 'Finn', line: "Big, small, long, short — great words!", lineZh: '大、小、長、短 —— 好棒的字！' },
+  ],
+};
+
+const L5_M2: Mission = {
+  id: 2, slug: 'l5-m2-adjectives-2', level: 5, title: '形容詞② 相反', titleEn: 'Adjectives: Opposites', theme: '珊瑚灘・相反詞', themeEmoji: '↔️',
+  focus: '形容詞（相反詞）：hot/cold, new/old, fast/slow, clean/dirty',
+  story: [
+    { image: '↔️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "The sun is hot. The water is cold!", dialogueZh: '太陽很熱。水很冷！', highlightWords: ['hot', 'cold'], sceneEmojis: ['☀️', '❄️', '✨'], animation: 'wave' },
+    { image: '🐢', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "The fish is fast. The turtle is slow!", dialogueZh: '魚很快。烏龜很慢！', highlightWords: ['fast', 'slow'], sceneEmojis: ['🐟', '🐢', '😊'], animation: 'bounce' },
+    { image: '🐚', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "This shell is new. That shell is old!", dialogueZh: '這個貝殼是新的。那個貝殼是舊的！', highlightWords: ['new', 'old'], sceneEmojis: ['🐚', '🦪', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Opposites are fun! Hot and cold!", dialogueZh: '相反詞好好玩！熱和冷！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '↔️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'hot', zh: '熱的', image: '☀️', phonics: '', kk: '[hɑt]', phonicsSound: '', exampleSentence: 'It is hot.', exampleZh: '它很熱。' },
+    { en: 'cold', zh: '冷的', image: '❄️', phonics: '', kk: '[kold]', phonicsSound: '', exampleSentence: 'It is cold.', exampleZh: '它很冷。' },
+    { en: 'new', zh: '新的', image: '✨', phonics: '', kk: '[nu]', phonicsSound: '', exampleSentence: 'a new shell', exampleZh: '一個新貝殼' },
+    { en: 'old', zh: '舊的', image: '🦪', phonics: '', kk: '[old]', phonicsSound: '', exampleSentence: 'an old shell', exampleZh: '一個舊貝殼' },
+    { en: 'fast', zh: '快的', image: '💨', phonics: '', kk: '[fæst]', phonicsSound: '', exampleSentence: 'a fast fish', exampleZh: '一隻快魚' },
+    { en: 'slow', zh: '慢的', image: '🐢', phonics: '', kk: '[slo]', phonicsSound: '', exampleSentence: 'a slow turtle', exampleZh: '一隻慢烏龜' },
+    { en: 'clean', zh: '乾淨的', image: '🫧', phonics: '', kk: '[klin]', phonicsSound: '', exampleSentence: 'clean water', exampleZh: '乾淨的水' },
+    { en: 'dirty', zh: '髒的', image: '🟤', phonics: '', kk: '[ˈdɝti]', phonicsSound: '', exampleSentence: 'dirty sand', exampleZh: '髒的沙' },
+    { en: 'happy', zh: '開心的', image: '😊', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'a happy crab', exampleZh: '一隻開心的螃蟹' },
+    { en: 'sad', zh: '難過的', image: '😢', phonics: '', kk: '[sæd]', phonicsSound: '', exampleSentence: 'a sad fish', exampleZh: '一隻難過的魚' },
+  ],
+  sentences: [
+    { en: 'The sun is hot.', zh: '太陽很熱。' }, { en: 'The water is cold.', zh: '水很冷。' }, { en: 'Is it fast or slow?', zh: '它快還是慢？' }, { en: 'It is fast.', zh: '它很快。' }, { en: 'This shell is new.', zh: '這個貝殼是新的。' }, { en: 'The water is clean.', zh: '水很乾淨。' },
+  ],
+  phonicsLetters: ['hot / cold'],
+  warmUpQuestions: [
+    { type: 'match', question: 'hot 的相反是？', options: ['cold', 'fast', 'new', 'clean'], answer: 'cold' },
+    { type: 'match', question: 'fast 的相反是？', options: ['slow', 'hot', 'old', 'dirty'], answer: 'slow' },
+    { type: 'match', question: 'new 的相反是？', options: ['old', 'cold', 'slow', 'clean'], answer: 'old' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的形容詞', options: ['☀️', '❄️', '💨', '🐢'], answer: '🐢', image: '🎧' },
+    { type: 'match', question: '配對：相反詞', options: ['hot-cold', 'fast-slow', 'new-old', 'clean-dirty'], answer: 'hot-cold' },
+    { type: 'fill-blank', question: '句型代換：The water is ___.（冷）', options: ['cold', 'hot', 'fast', 'is'], answer: 'cold' },
+    { type: 'spell', question: '拼拼看：sl _ w（慢的）', answer: 'slow', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The sun is hot.', 'The water is cold.', 'The fish is fast.', 'The turtle is slow.'], answer: 'The sun is hot.', image: '🎧' },
+    { type: 'read', question: 'Is the turtle fast?（烏龜快嗎？）', passage: 'The fish swims fast.\nThe turtle is very slow.\nThey are good friends.', options: ['No, it is slow', 'Yes, it is fast', 'It is hot', 'It is new'], answer: 'No, it is slow' },
+  ],
+  talkTimePrompts: ["Say opposites: hot / cold.", "Describe the water: It is ___.", "Ask: Is it fast or slow?", "Change it: It is ___ (new/old/clean)."],
+  reviewQuiz: [
+    { type: 'match', question: 'clean 的相反是？', options: ['dirty', 'cold', 'slow', 'old'], answer: 'dirty' },
+    { type: 'fill-blank', question: 'The turtle is ___.（慢）', options: ['slow', 'fast', 'hot', 'new'], answer: 'slow' },
+    { type: 'spell', question: '拼拼看：c _ ld（冷的）', answer: 'cold', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "The sun is hot, but the water is cold!", lineZh: '太陽很熱，但水很冷！' },
+    { speaker: 'Benny', line: "The fish is fast. The turtle is slow.", lineZh: '魚很快。烏龜很慢。' },
+    { speaker: 'Ruby', line: "My shell is new. Yours is old!", lineZh: '我的貝殼是新的。你的是舊的！' },
+    { speaker: 'Coco', line: "Opposites everywhere! So cool!", lineZh: '到處都是相反詞！好酷！' },
+  ],
+};
+
+const L5_M3: Mission = {
+  id: 3, slug: 'l5-m3-comparative', level: 5, title: '比較級 -er', titleEn: 'Comparative -er', theme: '珊瑚灘・比一比', themeEmoji: '➕',
+  focus: '比較級 -er：big→bigger, tall→taller, fast→faster',
+  story: [
+    { image: '➕', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Big becomes bigger! Add -er!", dialogueZh: 'Big 變 bigger！加 -er！', highlightWords: ['bigger', '-er'], sceneEmojis: ['🐋', '➕', '✨'], animation: 'wave' },
+    { image: '🐋', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The whale is bigger. The eel is longer!", dialogueZh: '鯨魚比較大。鰻魚比較長！', highlightWords: ['bigger', 'longer'], sceneEmojis: ['🐋', '🐍', '😊'], animation: 'bounce' },
+    { image: '💨', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "This fish is faster! And that one is smaller!", dialogueZh: '這隻魚比較快！那隻比較小！', highlightWords: ['faster', 'smaller'], sceneEmojis: ['🐟', '💨', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Add -er to compare! Bigger, faster, taller!", dialogueZh: '加 -er 來比較！bigger、faster、taller！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '➕'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'bigger', zh: '比較大', image: '🐋', phonics: '', kk: '[ˈbɪɡɚ]', phonicsSound: '', exampleSentence: 'It is bigger.', exampleZh: '它比較大。' },
+    { en: 'smaller', zh: '比較小', image: '🐟', phonics: '', kk: '[ˈsmɔlɚ]', phonicsSound: '', exampleSentence: 'It is smaller.', exampleZh: '它比較小。' },
+    { en: 'taller', zh: '比較高', image: '🦒', phonics: '', kk: '[ˈtɔlɚ]', phonicsSound: '', exampleSentence: 'It is taller.', exampleZh: '它比較高。' },
+    { en: 'longer', zh: '比較長', image: '🐍', phonics: '', kk: '[ˈlɔŋɡɚ]', phonicsSound: '', exampleSentence: 'It is longer.', exampleZh: '它比較長。' },
+    { en: 'faster', zh: '比較快', image: '💨', phonics: '', kk: '[ˈfæstɚ]', phonicsSound: '', exampleSentence: 'It is faster.', exampleZh: '它比較快。' },
+    { en: 'slower', zh: '比較慢', image: '🐢', phonics: '', kk: '[ˈsloɚ]', phonicsSound: '', exampleSentence: 'It is slower.', exampleZh: '它比較慢。' },
+    { en: 'older', zh: '比較舊·老', image: '🦪', phonics: '', kk: '[ˈoldɚ]', phonicsSound: '', exampleSentence: 'It is older.', exampleZh: '它比較舊。' },
+    { en: 'newer', zh: '比較新', image: '✨', phonics: '', kk: '[ˈnuɚ]', phonicsSound: '', exampleSentence: 'It is newer.', exampleZh: '它比較新。' },
+    { en: 'hotter', zh: '比較熱', image: '🔥', phonics: '', kk: '[ˈhɑtɚ]', phonicsSound: '', exampleSentence: 'It is hotter.', exampleZh: '它比較熱。' },
+    { en: 'colder', zh: '比較冷', image: '🧊', phonics: '', kk: '[ˈkoldɚ]', phonicsSound: '', exampleSentence: 'It is colder.', exampleZh: '它比較冷。' },
+  ],
+  sentences: [
+    { en: 'The whale is bigger.', zh: '鯨魚比較大。' }, { en: 'The eel is longer.', zh: '鰻魚比較長。' }, { en: 'This fish is faster.', zh: '這隻魚比較快。' }, { en: 'Which one is bigger?', zh: '哪一個比較大？' }, { en: 'The sun is hotter today.', zh: '今天太陽比較熱。' }, { en: 'A shell is smaller.', zh: '貝殼比較小。' },
+  ],
+  phonicsLetters: ['big → bigger'],
+  warmUpQuestions: [
+    { type: 'match', question: 'big 的比較級是？', options: ['bigger', 'biger', 'big', 'biggest'], answer: 'bigger' },
+    { type: 'match', question: 'fast 的比較級是？', options: ['faster', 'fastest', 'fast', 'more fast'], answer: 'faster' },
+    { type: 'match', question: 'tall 的比較級是？', options: ['taller', 'tallest', 'tall', 'more tall'], answer: 'taller' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選字：點你聽到的比較級', options: ['bigger', 'smaller', 'faster', 'longer'], answer: 'faster', image: '🎧' },
+    { type: 'match', question: '配對：原級→比較級', options: ['big-bigger', 'small-smaller', 'fast-faster', 'long-longer'], answer: 'big-bigger' },
+    { type: 'fill-blank', question: 'The whale is ___ than the fish.（大）', options: ['bigger', 'big', 'biggest', 'more big'], answer: 'bigger' },
+    { type: 'spell', question: '拼拼看：fast _ r（比較快）', answer: 'faster', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The whale is bigger.', 'The eel is longer.', 'The fish is faster.', 'The shell is smaller.'], answer: 'The whale is bigger.', image: '🎧' },
+    { type: 'read', question: 'Which is faster?（哪個比較快？）', passage: 'The fish swims fast.\nThe turtle swims slowly.\nThe fish is faster than the turtle.', options: ['the fish', 'the turtle', 'the whale', 'the crab'], answer: 'the fish' },
+  ],
+  talkTimePrompts: ["Make it -er: big → ?", "Compare two things: A is ___er.", "Which is bigger? A or B?", "Change it: It is ___er (taller/faster/older)."],
+  reviewQuiz: [
+    { type: 'match', question: 'long 的比較級是？', options: ['longer', 'longest', 'long', 'more long'], answer: 'longer' },
+    { type: 'fill-blank', question: 'The turtle is ___ than the fish.（慢）', options: ['slower', 'slow', 'slowest', 'more slow'], answer: 'slower' },
+    { type: 'spell', question: '拼拼看：bigg _ r（比較大）', answer: 'bigger', image: '✍️' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Big becomes bigger. Just add -er!", lineZh: 'Big 變 bigger。加 -er 就好！' },
+    { speaker: 'Coco', line: "The whale is bigger than the fish!", lineZh: '鯨魚比魚大！' },
+    { speaker: 'Polly', line: "And this fish is faster than that one!", lineZh: '這隻魚比那隻快！' },
+    { speaker: 'Benny', line: "Bigger, faster, taller! Add -er!", lineZh: 'Bigger、faster、taller！加 -er！' },
+  ],
+};
+
+const L5_M4: Mission = {
+  id: 4, slug: 'l5-m4-bigger-than', level: 5, title: 'A is …er than B', titleEn: 'Bigger than', theme: '珊瑚灘・誰比較大', themeEmoji: '⚖️',
+  focus: '句型 A is + 比較級 + than + B',
+  story: [
+    { image: '⚖️', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "A whale is bigger than a fish!", dialogueZh: '鯨魚比魚大！', highlightWords: ['bigger', 'than'], sceneEmojis: ['🐋', '🐟', '✨'], animation: 'wave' },
+    { image: '🦈', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "A shark is faster than a crab!", dialogueZh: '鯊魚比螃蟹快！', highlightWords: ['faster', 'than'], sceneEmojis: ['🦈', '🦀', '😊'], animation: 'bounce' },
+    { image: '🐙', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "An octopus is bigger than a shrimp!", dialogueZh: '章魚比蝦子大！', highlightWords: ['bigger', 'than'], sceneEmojis: ['🐙', '🦐', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "A is bigger than B! You can compare!", dialogueZh: 'A 比 B 大！你會比較了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '⚖️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'than', zh: '比', image: '⚖️', phonics: '', kk: '[ðæn]', phonicsSound: '', exampleSentence: 'bigger than', exampleZh: '比…大' },
+    { en: 'whale', zh: '鯨魚', image: '🐋', phonics: '', kk: '[wel]', phonicsSound: '', exampleSentence: 'a big whale', exampleZh: '一隻大鯨魚' },
+    { en: 'fish', zh: '魚', image: '🐟', phonics: '', kk: '[fɪʃ]', phonicsSound: '', exampleSentence: 'a small fish', exampleZh: '一隻小魚' },
+    { en: 'shark', zh: '鯊魚', image: '🦈', phonics: '', kk: '[ʃɑrk]', phonicsSound: '', exampleSentence: 'a fast shark', exampleZh: '一隻快鯊魚' },
+    { en: 'crab', zh: '螃蟹', image: '🦀', phonics: '', kk: '[kræb]', phonicsSound: '', exampleSentence: 'a small crab', exampleZh: '一隻小螃蟹' },
+    { en: 'octopus', zh: '章魚', image: '🐙', phonics: '', kk: '[ˈɑktəpəs]', phonicsSound: '', exampleSentence: 'a big octopus', exampleZh: '一隻大章魚' },
+    { en: 'shrimp', zh: '蝦子', image: '🦐', phonics: '', kk: '[ʃrɪmp]', phonicsSound: '', exampleSentence: 'a little shrimp', exampleZh: '一隻小蝦' },
+    { en: 'turtle', zh: '烏龜', image: '🐢', phonics: '', kk: '[ˈtɝtl̩]', phonicsSound: '', exampleSentence: 'a slow turtle', exampleZh: '一隻慢烏龜' },
+    { en: 'dolphin', zh: '海豚', image: '🐬', phonics: '', kk: '[ˈdɑlfɪn]', phonicsSound: '', exampleSentence: 'a fast dolphin', exampleZh: '一隻快海豚' },
+    { en: 'seal', zh: '海豹', image: '🦭', phonics: '', kk: '[sil]', phonicsSound: '', exampleSentence: 'a cute seal', exampleZh: '一隻可愛海豹' },
+  ],
+  sentences: [
+    { en: 'A whale is bigger than a fish.', zh: '鯨魚比魚大。' }, { en: 'A shark is faster than a crab.', zh: '鯊魚比螃蟹快。' }, { en: 'Which is bigger?', zh: '哪個比較大？' }, { en: 'The whale is bigger.', zh: '鯨魚比較大。' }, { en: 'A dolphin is faster than a turtle.', zh: '海豚比烏龜快。' }, { en: 'An octopus is bigger than a shrimp.', zh: '章魚比蝦子大。' },
+  ],
+  phonicsLetters: ['A is …er than B'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'A whale is bigger ___ a fish.（比）', options: ['than', 'then', 'that', 'the'], answer: 'than' },
+    { type: 'match', question: '🦈 是什麼？', options: ['shark', 'whale', 'crab', 'seal'], answer: 'shark' },
+    { type: 'match', question: '🐙 是什麼？', options: ['octopus', 'shrimp', 'turtle', 'fish'], answer: 'octopus' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的海洋生物', options: ['🐋', '🦈', '🐙', '🦀'], answer: '🐙', image: '🎧' },
+    { type: 'match', question: '配對：海洋生物配圖', options: ['whale-🐋', 'shark-🦈', 'crab-🦀', 'shrimp-🦐'], answer: 'whale-🐋' },
+    { type: 'fill-blank', question: 'A shark is ___ than a crab.（快）', options: ['faster', 'fast', 'fastest', 'more fast'], answer: 'faster' },
+    { type: 'fill-blank', question: 'A whale is bigger ___ a fish.（比）', options: ['than', 'then', 'that', 'to'], answer: 'than' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['A whale is bigger than a fish.', 'A shark is faster than a crab.', 'A dolphin is faster than a turtle.', 'An octopus is bigger than a shrimp.'], answer: 'A whale is bigger than a fish.', image: '🎧' },
+    { type: 'read', question: 'Which is bigger?（哪個比較大？）', passage: 'A whale is very big.\nA fish is small.\nA whale is bigger than a fish.', options: ['a whale', 'a fish', 'a crab', 'a shrimp'], answer: 'a whale' },
+  ],
+  talkTimePrompts: ["Compare: A ___ is bigger than a ___.", "Which is faster, a shark or a crab?", "Make a sentence with 'than'.", "Change it: A ___ is bigger than a ___."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'A dolphin is ___ than a turtle.（快）', options: ['faster', 'fast', 'fastest', 'more fast'], answer: 'faster' },
+    { type: 'match', question: '🦐 是什麼？', options: ['shrimp', 'crab', 'seal', 'fish'], answer: 'shrimp' },
+    { type: 'fill-blank', question: 'A shark is bigger ___ a shrimp.（比）', options: ['than', 'then', 'that', 'the'], answer: 'than' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "A whale is bigger than a fish!", lineZh: '鯨魚比魚大！' },
+    { speaker: 'Coco', line: "A shark is faster than a crab!", lineZh: '鯊魚比螃蟹快！' },
+    { speaker: 'Benny', line: "An octopus is bigger than a shrimp!", lineZh: '章魚比蝦子大！' },
+    { speaker: 'Polly', line: "A is bigger than B! Now you compare!", lineZh: 'A 比 B 大！現在你會比較了！' },
+  ],
+};
+
+const L5_M5: Mission = {
+  id: 5, slug: 'l5-m5-review-adjectives', level: 5, title: 'Review① 形容詞', titleEn: 'Review: Adjectives', theme: '珊瑚灘・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：形容詞 ＋ 相反詞 ＋ 比較級 A is …er than B',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! Big, small, fast, slow!", dialogueZh: '來複習！大、小、快、慢！', highlightWords: [], sceneEmojis: ['🔄', '📏', '✨'], animation: 'wave' },
+    { image: '🐋', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The whale is bigger than the fish!", dialogueZh: '鯨魚比魚大！', highlightWords: ['bigger', 'than'], sceneEmojis: ['🐋', '🐟', '😊'], animation: 'bounce' },
+    { image: '↔️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Hot and cold, new and old — opposites!", dialogueZh: '熱和冷，新和舊 —— 相反詞！', highlightWords: [], sceneEmojis: ['☀️', '❄️', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You can describe and compare! Amazing!", dialogueZh: '你會形容也會比較了！太厲害了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'big', zh: '大的', image: '🐋', phonics: '', kk: '[bɪɡ]', phonicsSound: '', exampleSentence: 'It is big.', exampleZh: '它很大。' },
+    { en: 'small', zh: '小的', image: '🐟', phonics: '', kk: '[smɔl]', phonicsSound: '', exampleSentence: 'It is small.', exampleZh: '它很小。' },
+    { en: 'fast', zh: '快的', image: '💨', phonics: '', kk: '[fæst]', phonicsSound: '', exampleSentence: 'It is fast.', exampleZh: '它很快。' },
+    { en: 'slow', zh: '慢的', image: '🐢', phonics: '', kk: '[slo]', phonicsSound: '', exampleSentence: 'It is slow.', exampleZh: '它很慢。' },
+    { en: 'hot', zh: '熱的', image: '☀️', phonics: '', kk: '[hɑt]', phonicsSound: '', exampleSentence: 'It is hot.', exampleZh: '它很熱。' },
+    { en: 'cold', zh: '冷的', image: '❄️', phonics: '', kk: '[kold]', phonicsSound: '', exampleSentence: 'It is cold.', exampleZh: '它很冷。' },
+    { en: 'bigger', zh: '比較大', image: '🐳', phonics: '', kk: '[ˈbɪɡɚ]', phonicsSound: '', exampleSentence: 'It is bigger.', exampleZh: '它比較大。' },
+    { en: 'faster', zh: '比較快', image: '🦈', phonics: '', kk: '[ˈfæstɚ]', phonicsSound: '', exampleSentence: 'It is faster.', exampleZh: '它比較快。' },
+    { en: 'than', zh: '比', image: '⚖️', phonics: '', kk: '[ðæn]', phonicsSound: '', exampleSentence: 'bigger than', exampleZh: '比…大' },
+    { en: 'whale', zh: '鯨魚', image: '🐋', phonics: '', kk: '[wel]', phonicsSound: '', exampleSentence: 'a big whale', exampleZh: '一隻大鯨魚' },
+  ],
+  sentences: [
+    { en: 'The whale is big.', zh: '鯨魚很大。' }, { en: 'The fish is small.', zh: '魚很小。' }, { en: 'The whale is bigger than the fish.', zh: '鯨魚比魚大。' }, { en: 'Is it hot or cold?', zh: '它熱還是冷？' }, { en: 'A shark is faster than a crab.', zh: '鯊魚比螃蟹快。' }, { en: 'Which is bigger?', zh: '哪個比較大？' },
+  ],
+  phonicsLetters: ['review adjectives'],
+  warmUpQuestions: [
+    { type: 'match', question: 'big 的相反是？', options: ['small', 'fast', 'hot', 'new'], answer: 'small' },
+    { type: 'match', question: 'fast 的比較級是？', options: ['faster', 'fastest', 'fast', 'more fast'], answer: 'faster' },
+    { type: 'fill-blank', question: 'The whale is ___ than the fish.（大）', options: ['bigger', 'big', 'biggest', 'small'], answer: 'bigger' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的形容詞', options: ['🐋', '🐟', '💨', '🐢'], answer: '🐢', image: '🎧' },
+    { type: 'match', question: '配對：相反詞', options: ['big-small', 'fast-slow', 'hot-cold', 'new-old'], answer: 'big-small' },
+    { type: 'fill-blank', question: 'A shark is ___ than a crab.（快）', options: ['faster', 'fast', 'fastest', 'slow'], answer: 'faster' },
+    { type: 'spell', question: '拼拼看：sm _ ll（小）', answer: 'small', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['The whale is bigger than the fish.', 'The fish is smaller than the whale.', 'The shark is faster than the crab.', 'It is hot today.'], answer: 'The whale is bigger than the fish.', image: '🎧' },
+    { type: 'read', question: 'Which is smaller?（哪個比較小？）', passage: 'A whale is big.\nA fish is small.\nThe fish is smaller than the whale.', options: ['the fish', 'the whale', 'the shark', 'the sea'], answer: 'the fish' },
+  ],
+  talkTimePrompts: ["Describe the sea: It is ___.", "Compare two sea animals.", "Say two opposites.", "Which is bigger, a whale or a fish?"],
+  reviewQuiz: [
+    { type: 'match', question: 'hot 的相反是？', options: ['cold', 'fast', 'big', 'new'], answer: 'cold' },
+    { type: 'fill-blank', question: 'A whale is ___ than a fish.（大）', options: ['bigger', 'big', 'small', 'biggest'], answer: 'bigger' },
+    { type: 'read', question: 'Is the whale small?（鯨魚小嗎？）', passage: 'The whale is very big.\nIt is bigger than a shark.\nIt is the biggest in the sea!', options: ['No, it is big', 'Yes, it is small', 'It is fast', 'It is cold'], answer: 'No, it is big' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review! Big, small, hot, cold!", lineZh: '來複習！大、小、熱、冷！' },
+    { speaker: 'Coco', line: "The whale is bigger than the fish!", lineZh: '鯨魚比魚大！' },
+    { speaker: 'Benny', line: "A shark is faster than a crab!", lineZh: '鯊魚比螃蟹快！' },
+    { speaker: 'Finn', line: "You can describe and compare! Great!", lineZh: '你會形容也會比較了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
