@@ -34,6 +34,14 @@ export default function VowelMommyFace({ size = 200, showLabels = false, classNa
               strokeWidth="8"
               strokeLinecap="round"
             />
+            {/* u 的小寫尾巴 */}
+            <path
+              d={`M ${cx + 60},130 L ${cx + 60},182 Q ${cx + 60},200 ${cx + 78},200`}
+              fill="none"
+              stroke="#F48FB1"
+              strokeWidth="8"
+              strokeLinecap="round"
+            />
             {/* a e ＝ 眼睛 */}
             <text x={cx - 26} y="95" fontFamily="Georgia, serif" fontSize="44" fontWeight="700" fill="#EC407A" textAnchor="middle">a</text>
             <text x={cx + 26} y="95" fontFamily="Georgia, serif" fontSize="44" fontWeight="700" fill="#EC407A" textAnchor="middle">e</text>
