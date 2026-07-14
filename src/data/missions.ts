@@ -6946,7 +6946,268 @@ const L7_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20];
+// ===================== L8 問題塔 Question Tower（A2・Wh- 問句＋中翻英翻譯） =====================
+const L8_M1: Mission = {
+  id: 1, slug: 'l8-m1-what', level: 8, title: 'What…?', titleEn: 'What…?', theme: '問題塔・什麼', themeEmoji: '❓',
+  focus: 'What 問句：What is…? What do you…? ＋ 中翻英入門',
+  story: [
+    { image: '❓', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "What is your name? My name is Finn.", dialogueZh: '你叫什麼名字？我叫 Finn。', highlightWords: ['What'], sceneEmojis: ['❓', '🦊', '✨'], animation: 'wave' },
+    { image: '🎨', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What color do you like? I like blue.", dialogueZh: '你喜歡什麼顏色？我喜歡藍色。', highlightWords: ['What'], sceneEmojis: ['🎨', '🔵', '😊'], animation: 'bounce' },
+    { image: '🕐', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "What time is it? It is three o'clock.", dialogueZh: '幾點了？三點鐘。', highlightWords: ['What'], sceneEmojis: ['🕐', '3️⃣', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "What asks about things! Great!", dialogueZh: 'What 問「什麼東西」！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '❓'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'what', zh: '什麼', image: '❓', phonics: '', kk: '[wɑt]', phonicsSound: '', exampleSentence: 'What is it?', exampleZh: '這是什麼？' },
+    { en: 'name', zh: '名字', image: '🏷️', phonics: '', kk: '[nem]', phonicsSound: '', exampleSentence: 'What is your name?', exampleZh: '你叫什麼名字？' },
+    { en: 'color', zh: '顏色', image: '🎨', phonics: '', kk: '[ˈkʌlɚ]', phonicsSound: '', exampleSentence: 'What color?', exampleZh: '什麼顏色？' },
+    { en: 'time', zh: '時間', image: '🕐', phonics: '', kk: '[taɪm]', phonicsSound: '', exampleSentence: 'What time is it?', exampleZh: '幾點了？' },
+    { en: 'like', zh: '喜歡', image: '❤️', phonics: '', kk: '[laɪk]', phonicsSound: '', exampleSentence: 'What do you like?', exampleZh: '你喜歡什麼？' },
+    { en: 'do', zh: '做', image: '✅', phonics: '', kk: '[du]', phonicsSound: '', exampleSentence: 'What do you do?', exampleZh: '你做什麼？' },
+    { en: 'want', zh: '想要', image: '🙋', phonics: '', kk: '[wɑnt]', phonicsSound: '', exampleSentence: 'What do you want?', exampleZh: '你想要什麼？' },
+    { en: 'this', zh: '這個', image: '👉', phonics: '', kk: '[ðɪs]', phonicsSound: '', exampleSentence: 'What is this?', exampleZh: '這是什麼？' },
+    { en: 'favorite', zh: '最愛的', image: '⭐', phonics: '', kk: '[ˈfevərɪt]', phonicsSound: '', exampleSentence: 'your favorite color', exampleZh: '你最愛的顏色' },
+    { en: 'food', zh: '食物', image: '🍔', phonics: '', kk: '[fud]', phonicsSound: '', exampleSentence: 'What food do you like?', exampleZh: '你喜歡什麼食物？' },
+  ],
+  sentences: [
+    { en: 'What is your name?', zh: '你叫什麼名字？' }, { en: 'What color do you like?', zh: '你喜歡什麼顏色？' }, { en: 'What time is it?', zh: '幾點了？' }, { en: 'What do you want?', zh: '你想要什麼？' }, { en: 'What is this?', zh: '這是什麼？' }, { en: 'What is your favorite food?', zh: '你最愛的食物是什麼？' },
+  ],
+  phonicsLetters: ['What…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ is your name?（什麼）', options: ['What', 'Where', 'Who', 'When'], answer: 'What' },
+    { type: 'fill-blank', question: '___ time is it?（什麼）', options: ['What', 'Where', 'Who', 'How'], answer: 'What' },
+    { type: 'match', question: 'what 是什麼意思？', options: ['什麼', '哪裡', '誰', '何時'], answer: '什麼' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🏷️', '🎨', '🕐', '🍔'], answer: '🎨', image: '🎧' },
+    { type: 'fill-blank', question: '___ do you like?（什麼）', options: ['What', 'Where', 'Who', 'When'], answer: 'What' },
+    { type: 'fill-blank', question: '中翻英：「你叫什麼名字？」', options: ["What is your name?", "Where are you?", "Who is he?", "When is it?"], answer: "What is your name?" },
+    { type: 'fill-blank', question: '中翻英：「幾點了？」', options: ["What time is it?", "What is your name?", "What color?", "What do you want?"], answer: "What time is it?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What is your name?', 'What color do you like?', 'What time is it?', 'What do you want?'], answer: 'What is your name?', image: '🎧' },
+    { type: 'read', question: 'What does Coco like?（Coco 喜歡什麼？）', passage: '"What color do you like?"\nCoco says, "I like blue.\nBlue is my favorite color."', options: ['blue', 'red', 'green', 'pink'], answer: 'blue' },
+  ],
+  talkTimePrompts: ["Ask: What is your name?", "Ask: What do you like?", "Answer with 'What' questions.", "✍️ 引導寫作＋翻譯：把「你喜歡什麼食物？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ is this?（什麼）', options: ['What', 'Where', 'Who', 'When'], answer: 'What' },
+    { type: 'fill-blank', question: '中翻英：「這是什麼？」', options: ['What is this?', 'Where is this?', 'Who is this?', 'When is this?'], answer: 'What is this?' },
+    { type: 'match', question: 'favorite 是什麼意思？', options: ['最愛的', '顏色', '名字', '食物'], answer: '最愛的' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "What is your name? My name is Finn.", lineZh: '你叫什麼名字？我叫 Finn。' },
+    { speaker: 'Coco', line: "What color do you like? I like blue.", lineZh: '你喜歡什麼顏色？我喜歡藍色。' },
+    { speaker: 'Benny', line: "What time is it? It is three o'clock.", lineZh: '幾點了？三點鐘。' },
+    { speaker: 'Finn', line: "What asks about things! Great!", lineZh: 'What 問「什麼東西」！太棒了！' },
+  ],
+};
+
+const L8_M2: Mission = {
+  id: 2, slug: 'l8-m2-where', level: 8, title: 'Where…?', titleEn: 'Where…?', theme: '問題塔・哪裡', themeEmoji: '📍',
+  focus: 'Where 問句：Where is…? Where do you…? ＋ 中翻英',
+  story: [
+    { image: '📍', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Where do you live? I live in Taipei.", dialogueZh: '你住哪裡？我住台北。', highlightWords: ['Where'], sceneEmojis: ['📍', '🏙️', '✨'], animation: 'wave' },
+    { image: '🎒', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Where is my bag? It is on the chair.", dialogueZh: '我的書包在哪？在椅子上。', highlightWords: ['Where'], sceneEmojis: ['🎒', '🪑', '😊'], animation: 'bounce' },
+    { image: '🌏', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Where are you from? I am from Taiwan.", dialogueZh: '你來自哪裡？我來自台灣。', highlightWords: ['Where'], sceneEmojis: ['🌏', '🇹🇼', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Where asks about places! Great!", dialogueZh: 'Where 問「地方」！太棒了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📍'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'where', zh: '哪裡', image: '📍', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is it?', exampleZh: '它在哪？' },
+    { en: 'live', zh: '住', image: '🏠', phonics: '', kk: '[lɪv]', phonicsSound: '', exampleSentence: 'Where do you live?', exampleZh: '你住哪？' },
+    { en: 'from', zh: '來自', image: '🌏', phonics: '', kk: '[frʌm]', phonicsSound: '', exampleSentence: 'Where are you from?', exampleZh: '你來自哪？' },
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '', exampleSentence: 'Where do you go?', exampleZh: '你去哪？' },
+    { en: 'here', zh: '這裡', image: '👇', phonics: '', kk: '[hɪr]', phonicsSound: '', exampleSentence: 'It is here.', exampleZh: '在這裡。' },
+    { en: 'there', zh: '那裡', image: '👉', phonics: '', kk: '[ðɛr]', phonicsSound: '', exampleSentence: 'It is there.', exampleZh: '在那裡。' },
+    { en: 'city', zh: '城市', image: '🏙️', phonics: '', kk: '[ˈsɪti]', phonicsSound: '', exampleSentence: 'a big city', exampleZh: '一座大城市' },
+    { en: 'country', zh: '國家', image: '🌏', phonics: '', kk: '[ˈkʌntri]', phonicsSound: '', exampleSentence: 'my country', exampleZh: '我的國家' },
+    { en: 'bag', zh: '書包', image: '🎒', phonics: '', kk: '[bæɡ]', phonicsSound: '', exampleSentence: 'Where is my bag?', exampleZh: '我的書包在哪？' },
+    { en: 'school', zh: '學校', image: '🏫', phonics: '', kk: '[skul]', phonicsSound: '', exampleSentence: 'Where is the school?', exampleZh: '學校在哪？' },
+  ],
+  sentences: [
+    { en: 'Where do you live?', zh: '你住哪裡？' }, { en: 'I live in Taipei.', zh: '我住台北。' }, { en: 'Where is my bag?', zh: '我的書包在哪？' }, { en: 'Where are you from?', zh: '你來自哪裡？' }, { en: 'I am from Taiwan.', zh: '我來自台灣。' }, { en: 'Where do you go to school?', zh: '你在哪上學？' },
+  ],
+  phonicsLetters: ['Where…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ do you live?（哪裡）', options: ['Where', 'What', 'Who', 'When'], answer: 'Where' },
+    { type: 'fill-blank', question: '___ is my bag?（哪裡）', options: ['Where', 'What', 'Who', 'How'], answer: 'Where' },
+    { type: 'match', question: 'where 是什麼意思？', options: ['哪裡', '什麼', '誰', '何時'], answer: '哪裡' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🏠', '🌏', '🎒', '🏫'], answer: '🌏', image: '🎧' },
+    { type: 'fill-blank', question: '___ are you from?（哪裡）', options: ['Where', 'What', 'Who', 'When'], answer: 'Where' },
+    { type: 'fill-blank', question: '中翻英：「你住哪裡？」', options: ["Where do you live?", "What do you like?", "Who are you?", "When do you go?"], answer: "Where do you live?" },
+    { type: 'fill-blank', question: '中翻英：「你來自哪裡？」', options: ["Where are you from?", "Where do you live?", "Where is my bag?", "What is your name?"], answer: "Where are you from?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Where do you live?', 'Where is my bag?', 'Where are you from?', 'I live in Taipei.'], answer: 'Where do you live?', image: '🎧' },
+    { type: 'read', question: 'Where is Coco from?（Coco 來自哪？）', passage: '"Where are you from?"\nCoco says, "I am from Taiwan.\nI live in Taipei."', options: ['Taiwan', 'Japan', 'America', 'Korea'], answer: 'Taiwan' },
+  ],
+  talkTimePrompts: ["Ask: Where do you live?", "Ask: Where are you from?", "Answer with 'Where' questions.", "✍️ 引導寫作＋翻譯：把「你住哪裡？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ is the school?（哪裡）', options: ['Where', 'What', 'Who', 'When'], answer: 'Where' },
+    { type: 'fill-blank', question: '中翻英：「我的書包在哪？」', options: ['Where is my bag?', 'What is my bag?', 'Who is my bag?', 'When is my bag?'], answer: 'Where is my bag?' },
+    { type: 'match', question: 'country 是什麼意思？', options: ['國家', '城市', '學校', '家'], answer: '國家' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "Where do you live? I live in Taipei.", lineZh: '你住哪裡？我住台北。' },
+    { speaker: 'Benny', line: "Where is my bag? It is on the chair.", lineZh: '我的書包在哪？在椅子上。' },
+    { speaker: 'Polly', line: "Where are you from? I am from Taiwan.", lineZh: '你來自哪裡？我來自台灣。' },
+    { speaker: 'Coco', line: "Where asks about places! Great!", lineZh: 'Where 問「地方」！太棒了！' },
+  ],
+};
+
+const L8_M3: Mission = {
+  id: 3, slug: 'l8-m3-when', level: 8, title: 'When…?', titleEn: 'When…?', theme: '問題塔・何時', themeEmoji: '📅',
+  focus: 'When 問句：When is…? When do you…? ＋ 中翻英',
+  story: [
+    { image: '📅', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "When is your birthday? It is in May.", dialogueZh: '你的生日是何時？在五月。', highlightWords: ['When'], sceneEmojis: ['📅', '🎂', '✨'], animation: 'wave' },
+    { image: '🏫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "When do you go to school? At eight.", dialogueZh: '你何時上學？八點。', highlightWords: ['When'], sceneEmojis: ['🏫', '🕗', '😊'], animation: 'bounce' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "When is the party? On Saturday!", dialogueZh: '派對是何時？星期六！', highlightWords: ['When'], sceneEmojis: ['🎉', '📅', '🎊'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "When asks about time! Great!", dialogueZh: 'When 問「時間」！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '⏰', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'when', zh: '何時', image: '📅', phonics: '', kk: '[wɛn]', phonicsSound: '', exampleSentence: 'When is it?', exampleZh: '何時？' },
+    { en: 'birthday', zh: '生日', image: '🎂', phonics: '', kk: '[ˈbɝθˌde]', phonicsSound: '', exampleSentence: 'When is your birthday?', exampleZh: '你生日何時？' },
+    { en: 'start', zh: '開始', image: '🚦', phonics: '', kk: '[stɑrt]', phonicsSound: '', exampleSentence: 'When does it start?', exampleZh: '何時開始？' },
+    { en: 'party', zh: '派對', image: '🎉', phonics: '', kk: '[ˈpɑrti]', phonicsSound: '', exampleSentence: 'When is the party?', exampleZh: '派對何時？' },
+    { en: 'come', zh: '來', image: '👋', phonics: '', kk: '[kʌm]', phonicsSound: '', exampleSentence: 'When do you come?', exampleZh: '你何時來？' },
+    { en: 'today', zh: '今天', image: '📆', phonics: '', kk: '[təˈde]', phonicsSound: '', exampleSentence: 'today', exampleZh: '今天' },
+    { en: 'tomorrow', zh: '明天', image: '➡️', phonics: '', kk: '[təˈmɑro]', phonicsSound: '', exampleSentence: 'See you tomorrow.', exampleZh: '明天見。' },
+    { en: 'weekend', zh: '週末', image: '🏖️', phonics: '', kk: '[ˈwikˌɛnd]', phonicsSound: '', exampleSentence: 'on the weekend', exampleZh: '在週末' },
+    { en: "o'clock", zh: '…點鐘', image: '🕗', phonics: '', kk: '[əˈklɑk]', phonicsSound: '', exampleSentence: "at eight o'clock", exampleZh: '八點鐘' },
+    { en: 'Saturday', zh: '星期六', image: '6️⃣', phonics: '', kk: '[ˈsætɚde]', phonicsSound: '', exampleSentence: 'on Saturday', exampleZh: '在星期六' },
+  ],
+  sentences: [
+    { en: 'When is your birthday?', zh: '你的生日是何時？' }, { en: 'It is in May.', zh: '在五月。' }, { en: 'When do you go to school?', zh: '你何時上學？' }, { en: 'When is the party?', zh: '派對是何時？' }, { en: 'When does the movie start?', zh: '電影何時開始？' }, { en: 'When do you come home?', zh: '你何時回家？' },
+  ],
+  phonicsLetters: ['When…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ is your birthday?（何時）', options: ['When', 'What', 'Where', 'Who'], answer: 'When' },
+    { type: 'fill-blank', question: '___ do you go to school?（何時）', options: ['When', 'What', 'Where', 'How'], answer: 'When' },
+    { type: 'match', question: 'when 是什麼意思？', options: ['何時', '什麼', '哪裡', '誰'], answer: '何時' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🎂', '🎉', '🕗', '📆'], answer: '🎉', image: '🎧' },
+    { type: 'fill-blank', question: '___ is the party?（何時）', options: ['When', 'What', 'Where', 'Who'], answer: 'When' },
+    { type: 'fill-blank', question: '中翻英：「你的生日是何時？」', options: ["When is your birthday?", "Where is your birthday?", "What is your birthday?", "Who is your birthday?"], answer: "When is your birthday?" },
+    { type: 'fill-blank', question: '中翻英：「電影何時開始？」', options: ["When does the movie start?", "What is the movie?", "Where is the movie?", "Who is in the movie?"], answer: "When does the movie start?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['When is your birthday?', 'When do you go to school?', 'When is the party?', 'It is in May.'], answer: 'When is your birthday?', image: '🎧' },
+    { type: 'read', question: 'When is the party?（派對何時？）', passage: '"When is the party?"\nPolly says, "It is on Saturday.\nCome at three o\'clock!"', options: ['on Saturday', 'on Monday', 'today', 'in May'], answer: 'on Saturday' },
+  ],
+  talkTimePrompts: ["Ask: When is your birthday?", "Ask: When do you go to school?", "Answer with 'When' questions.", "✍️ 引導寫作＋翻譯：把「派對是何時？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ do you come home?（何時）', options: ['When', 'What', 'Where', 'Who'], answer: 'When' },
+    { type: 'fill-blank', question: '中翻英：「你何時上學？」', options: ['When do you go to school?', 'Where do you go to school?', 'What is school?', 'Who is at school?'], answer: 'When do you go to school?' },
+    { type: 'match', question: 'tomorrow 是什麼意思？', options: ['明天', '今天', '昨天', '週末'], answer: '明天' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "When is your birthday? It is in May.", lineZh: '你的生日是何時？在五月。' },
+    { speaker: 'Coco', line: "When do you go to school? At eight.", lineZh: '你何時上學？八點。' },
+    { speaker: 'Polly', line: "When is the party? On Saturday!", lineZh: '派對是何時？星期六！' },
+    { speaker: 'Benny', line: "When asks about time! Great!", lineZh: 'When 問「時間」！太棒了！' },
+  ],
+};
+
+const L8_M4: Mission = {
+  id: 4, slug: 'l8-m4-who', level: 8, title: 'Who…?', titleEn: 'Who…?', theme: '問題塔・誰', themeEmoji: '🧑',
+  focus: 'Who 問句：Who is…? Who do you…? ＋ 中翻英',
+  story: [
+    { image: '🧑', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "Who is that? That is my teacher.", dialogueZh: '那是誰？那是我的老師。', highlightWords: ['Who'], sceneEmojis: ['🧑', '👩‍🏫', '✨'], animation: 'wave' },
+    { image: '👫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Who is your best friend? Benny is!", dialogueZh: '你最好的朋友是誰？是 Benny！', highlightWords: ['Who'], sceneEmojis: ['👫', '🐻', '😊'], animation: 'bounce' },
+    { image: '🍳', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Who cooks at home? My mom does.", dialogueZh: '誰在家煮飯？我媽媽。', highlightWords: ['Who'], sceneEmojis: ['🍳', '👩', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Who asks about people! Great!", dialogueZh: 'Who 問「人」！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '🧑', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'who', zh: '誰', image: '🧑', phonics: '', kk: '[hu]', phonicsSound: '', exampleSentence: 'Who is it?', exampleZh: '是誰？' },
+    { en: 'teacher', zh: '老師', image: '👩‍🏫', phonics: '', kk: '[ˈtitʃɚ]', phonicsSound: '', exampleSentence: 'Who is your teacher?', exampleZh: '你老師是誰？' },
+    { en: 'friend', zh: '朋友', image: '👫', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'Who is your friend?', exampleZh: '你朋友是誰？' },
+    { en: 'best', zh: '最好的', image: '🥇', phonics: '', kk: '[bɛst]', phonicsSound: '', exampleSentence: 'my best friend', exampleZh: '我最好的朋友' },
+    { en: 'that', zh: '那個', image: '👆', phonics: '', kk: '[ðæt]', phonicsSound: '', exampleSentence: 'Who is that?', exampleZh: '那是誰？' },
+    { en: 'mom', zh: '媽媽', image: '👩', phonics: '', kk: '[mɑm]', phonicsSound: '', exampleSentence: 'my mom', exampleZh: '我媽媽' },
+    { en: 'dad', zh: '爸爸', image: '👨', phonics: '', kk: '[dæd]', phonicsSound: '', exampleSentence: 'my dad', exampleZh: '我爸爸' },
+    { en: 'sister', zh: '姊妹', image: '👧', phonics: '', kk: '[ˈsɪstɚ]', phonicsSound: '', exampleSentence: 'my sister', exampleZh: '我姊妹' },
+    { en: 'brother', zh: '兄弟', image: '👦', phonics: '', kk: '[ˈbrʌðɚ]', phonicsSound: '', exampleSentence: 'my brother', exampleZh: '我兄弟' },
+    { en: 'know', zh: '認識·知道', image: '💡', phonics: '', kk: '[no]', phonicsSound: '', exampleSentence: 'Do you know him?', exampleZh: '你認識他嗎？' },
+  ],
+  sentences: [
+    { en: 'Who is that?', zh: '那是誰？' }, { en: 'That is my teacher.', zh: '那是我的老師。' }, { en: 'Who is your best friend?', zh: '你最好的朋友是誰？' }, { en: 'Who cooks at home?', zh: '誰在家煮飯？' }, { en: 'Who is your favorite singer?', zh: '你最愛的歌手是誰？' }, { en: 'Do you know who she is?', zh: '你知道她是誰嗎？' },
+  ],
+  phonicsLetters: ['Who…?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ is that?（誰）', options: ['Who', 'What', 'Where', 'When'], answer: 'Who' },
+    { type: 'fill-blank', question: '___ is your teacher?（誰）', options: ['Who', 'What', 'Where', 'How'], answer: 'Who' },
+    { type: 'match', question: 'who 是什麼意思？', options: ['誰', '什麼', '哪裡', '何時'], answer: '誰' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的人', options: ['👩‍🏫', '👫', '👩', '👨'], answer: '👨', image: '🎧' },
+    { type: 'fill-blank', question: '___ cooks at home?（誰）', options: ['Who', 'What', 'Where', 'When'], answer: 'Who' },
+    { type: 'fill-blank', question: '中翻英：「那是誰？」', options: ["Who is that?", "What is that?", "Where is that?", "When is that?"], answer: "Who is that?" },
+    { type: 'fill-blank', question: '中翻英：「你最好的朋友是誰？」', options: ["Who is your best friend?", "What is your friend?", "Where is your friend?", "When is your friend?"], answer: "Who is your best friend?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Who is that?', 'Who is your best friend?', 'Who cooks at home?', 'That is my teacher.'], answer: 'Who is that?', image: '🎧' },
+    { type: 'read', question: 'Who cooks at Benny\'s home?（誰在 Benny 家煮飯？）', passage: '"Who cooks at home?"\nBenny says, "My mom cooks.\nShe makes great food!"', options: ['his mom', 'his dad', 'his sister', 'Benny'], answer: 'his mom' },
+  ],
+  talkTimePrompts: ["Ask: Who is your teacher?", "Ask: Who is your best friend?", "Answer with 'Who' questions.", "✍️ 引導寫作＋翻譯：把「誰在家煮飯？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ is your favorite singer?（誰）', options: ['Who', 'What', 'Where', 'When'], answer: 'Who' },
+    { type: 'fill-blank', question: '中翻英：「你老師是誰？」', options: ['Who is your teacher?', 'What is your teacher?', 'Where is your teacher?', 'When is your teacher?'], answer: 'Who is your teacher?' },
+    { type: 'match', question: 'best 是什麼意思？', options: ['最好的', '朋友', '老師', '認識'], answer: '最好的' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Who is that? That is my teacher.", lineZh: '那是誰？那是我的老師。' },
+    { speaker: 'Coco', line: "Who is your best friend? Benny is!", lineZh: '你最好的朋友是誰？是 Benny！' },
+    { speaker: 'Benny', line: "Who cooks at home? My mom does.", lineZh: '誰在家煮飯？我媽媽。' },
+    { speaker: 'Ruby', line: "Who asks about people! Great!", lineZh: 'Who 問「人」！太棒了！' },
+  ],
+};
+
+const L8_M5: Mission = {
+  id: 5, slug: 'l8-m5-review-wh', level: 8, title: 'Review① Wh 問句', titleEn: 'Review: Wh-', theme: '問題塔・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：What / Where / When / Who ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review our Wh- questions!", dialogueZh: '來複習 Wh- 問句！', highlightWords: [], sceneEmojis: ['🔄', '❓', '✨'], animation: 'wave' },
+    { image: '❓', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What is it? Where is it? When is it?", dialogueZh: '這是什麼？在哪？何時？', highlightWords: ['What', 'Where', 'When'], sceneEmojis: ['❓', '📍', '📅'], animation: 'bounce' },
+    { image: '🧑', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Who is that? Ask the right question!", dialogueZh: '那是誰？問對的問題！', highlightWords: ['Who'], sceneEmojis: ['🧑', '❓', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know your Wh- questions! Great!", dialogueZh: '你會 Wh- 問句了！太棒了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'what', zh: '什麼', image: '❓', phonics: '', kk: '[wɑt]', phonicsSound: '', exampleSentence: 'What is it?', exampleZh: '這是什麼？' },
+    { en: 'where', zh: '哪裡', image: '📍', phonics: '', kk: '[wɛr]', phonicsSound: '', exampleSentence: 'Where is it?', exampleZh: '它在哪？' },
+    { en: 'when', zh: '何時', image: '📅', phonics: '', kk: '[wɛn]', phonicsSound: '', exampleSentence: 'When is it?', exampleZh: '何時？' },
+    { en: 'who', zh: '誰', image: '🧑', phonics: '', kk: '[hu]', phonicsSound: '', exampleSentence: 'Who is it?', exampleZh: '是誰？' },
+    { en: 'name', zh: '名字', image: '🏷️', phonics: '', kk: '[nem]', phonicsSound: '', exampleSentence: 'What is your name?', exampleZh: '你叫什麼名字？' },
+    { en: 'live', zh: '住', image: '🏠', phonics: '', kk: '[lɪv]', phonicsSound: '', exampleSentence: 'Where do you live?', exampleZh: '你住哪？' },
+    { en: 'birthday', zh: '生日', image: '🎂', phonics: '', kk: '[ˈbɝθˌde]', phonicsSound: '', exampleSentence: 'When is your birthday?', exampleZh: '你生日何時？' },
+    { en: 'teacher', zh: '老師', image: '👩‍🏫', phonics: '', kk: '[ˈtitʃɚ]', phonicsSound: '', exampleSentence: 'Who is your teacher?', exampleZh: '你老師是誰？' },
+    { en: 'from', zh: '來自', image: '🌏', phonics: '', kk: '[frʌm]', phonicsSound: '', exampleSentence: 'Where are you from?', exampleZh: '你來自哪？' },
+    { en: 'friend', zh: '朋友', image: '👫', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'Who is your friend?', exampleZh: '你朋友是誰？' },
+  ],
+  sentences: [
+    { en: 'What is your name?', zh: '你叫什麼名字？' }, { en: 'Where do you live?', zh: '你住哪裡？' }, { en: 'When is your birthday?', zh: '你的生日是何時？' }, { en: 'Who is your teacher?', zh: '你老師是誰？' }, { en: 'Where are you from?', zh: '你來自哪裡？' }, { en: 'What do you like?', zh: '你喜歡什麼？' },
+  ],
+  phonicsLetters: ['review Wh-'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: '___ is your name?（什麼）', options: ['What', 'Where', 'When', 'Who'], answer: 'What' },
+    { type: 'fill-blank', question: '___ do you live?（哪裡）', options: ['Where', 'What', 'When', 'Who'], answer: 'Where' },
+    { type: 'fill-blank', question: '___ is your teacher?（誰）', options: ['Who', 'What', 'Where', 'When'], answer: 'Who' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['❓', '📍', '📅', '🧑'], answer: '📅', image: '🎧' },
+    { type: 'fill-blank', question: '___ is your birthday?（何時）', options: ['When', 'What', 'Where', 'Who'], answer: 'When' },
+    { type: 'fill-blank', question: '中翻英：「你來自哪裡？」', options: ["Where are you from?", "What is your name?", "When is it?", "Who is that?"], answer: "Where are you from?" },
+    { type: 'fill-blank', question: '中翻英：「你老師是誰？」', options: ["Who is your teacher?", "What is your teacher?", "Where is your teacher?", "When is your teacher?"], answer: "Who is your teacher?" },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What is your name?', 'Where do you live?', 'When is your birthday?', 'Who is your teacher?'], answer: 'What is your name?', image: '🎧' },
+    { type: 'read', question: 'Which question asks about a person?（哪個問句問「人」？）', passage: 'What → things\nWhere → places\nWhen → time\nWho → people', options: ['Who', 'What', 'Where', 'When'], answer: 'Who' },
+  ],
+  talkTimePrompts: ["Ask 4 Wh- questions to a friend.", "Answer: My name is / I live in ___.", "Match Wh- word to its meaning.", "✍️ 引導寫作＋翻譯：把「你的生日是何時？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: '___ do you like?（什麼）', options: ['What', 'Where', 'When', 'Who'], answer: 'What' },
+    { type: 'fill-blank', question: '中翻英：「你住哪裡？」', options: ['Where do you live?', 'What do you live?', 'When do you live?', 'Who do you live?'], answer: 'Where do you live?' },
+    { type: 'match', question: 'When 問的是？', options: ['時間', '地方', '人', '東西'], answer: '時間' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review our Wh- questions!", lineZh: '來複習 Wh- 問句！' },
+    { speaker: 'Coco', line: "What is it? Where is it? When is it?", lineZh: '這是什麼？在哪？何時？' },
+    { speaker: 'Benny', line: "Who is that? Ask the right question!", lineZh: '那是誰？問對的問題！' },
+    { speaker: 'Finn', line: "You know your Wh- questions! Great!", lineZh: '你會 Wh- 問句了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
