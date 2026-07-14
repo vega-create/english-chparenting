@@ -4604,7 +4604,267 @@ const L5_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15];
+const L5_M16: Mission = {
+  id: 16, slug: 'l5-m16-present-continuous', level: 5, title: '現在進行式', titleEn: 'be + V-ing', theme: '珊瑚灘・正在做', themeEmoji: '🏃',
+  focus: '現在進行式入門 be ＋ V-ing：I am reading.',
+  story: [
+    { image: '🏃', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I am swimming! Look at me!", dialogueZh: '我正在游泳！看我！', highlightWords: ['am', 'swimming'], sceneEmojis: ['🏊', '🌊', '✨'], animation: 'wave' },
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I am reading a book. It is fun!", dialogueZh: '我正在讀書。很好玩！', highlightWords: ['am', 'reading'], sceneEmojis: ['📖', '🐻', '😊'], animation: 'bounce' },
+    { image: '🎨', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Ruby is drawing. Finn is running!", dialogueZh: 'Ruby 正在畫畫。Finn 正在跑！', highlightWords: ['is', 'drawing', 'running'], sceneEmojis: ['🎨', '🏃', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Add -ing for now! I am playing!", dialogueZh: '正在做加 -ing！我正在玩！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🏃'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'swimming', zh: '正在游泳', image: '🏊', phonics: '', kk: '[ˈswɪmɪŋ]', phonicsSound: '', exampleSentence: 'I am swimming.', exampleZh: '我正在游泳。' },
+    { en: 'reading', zh: '正在讀', image: '📖', phonics: '', kk: '[ˈridɪŋ]', phonicsSound: '', exampleSentence: 'I am reading.', exampleZh: '我正在讀書。' },
+    { en: 'running', zh: '正在跑', image: '🏃', phonics: '', kk: '[ˈrʌnɪŋ]', phonicsSound: '', exampleSentence: 'He is running.', exampleZh: '他正在跑。' },
+    { en: 'eating', zh: '正在吃', image: '🍽️', phonics: '', kk: '[ˈitɪŋ]', phonicsSound: '', exampleSentence: 'She is eating.', exampleZh: '她正在吃。' },
+    { en: 'playing', zh: '正在玩', image: '🎮', phonics: '', kk: '[ˈpleɪŋ]', phonicsSound: '', exampleSentence: 'I am playing.', exampleZh: '我正在玩。' },
+    { en: 'drawing', zh: '正在畫', image: '🎨', phonics: '', kk: '[ˈdrɔɪŋ]', phonicsSound: '', exampleSentence: 'She is drawing.', exampleZh: '她正在畫畫。' },
+    { en: 'singing', zh: '正在唱', image: '🎤', phonics: '', kk: '[ˈsɪŋɪŋ]', phonicsSound: '', exampleSentence: 'He is singing.', exampleZh: '他正在唱歌。' },
+    { en: 'sleeping', zh: '正在睡', image: '😴', phonics: '', kk: '[ˈslipɪŋ]', phonicsSound: '', exampleSentence: 'The cat is sleeping.', exampleZh: '貓正在睡。' },
+    { en: 'writing', zh: '正在寫', image: '✏️', phonics: '', kk: '[ˈraɪtɪŋ]', phonicsSound: '', exampleSentence: 'I am writing.', exampleZh: '我正在寫。' },
+    { en: 'jumping', zh: '正在跳', image: '🤸', phonics: '', kk: '[ˈdʒʌmpɪŋ]', phonicsSound: '', exampleSentence: 'They are jumping.', exampleZh: '他們正在跳。' },
+  ],
+  sentences: [
+    { en: 'I am swimming.', zh: '我正在游泳。' }, { en: 'He is reading a book.', zh: '他正在讀書。' }, { en: 'She is drawing.', zh: '她正在畫畫。' }, { en: 'They are playing.', zh: '他們正在玩。' }, { en: 'Is he running?', zh: '他正在跑嗎？' }, { en: 'Yes, he is running.', zh: '是的，他正在跑。' },
+  ],
+  phonicsLetters: ['be + V-ing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ swimming.（be動詞）', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'fill-blank', question: 'He is ___.（讀·進行式）', options: ['reading', 'read', 'reads', 'to read'], answer: 'reading' },
+    { type: 'match', question: '🏊 正在做什麼？', options: ['swimming', 'running', 'eating', 'reading'], answer: 'swimming' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🏊', '🏃', '🍽️', '🎨'], answer: '🎨', image: '🎧' },
+    { type: 'match', question: '配對：進行式配圖', options: ['swimming-🏊', 'running-🏃', 'reading-📖', 'drawing-🎨'], answer: 'swimming-🏊' },
+    { type: 'fill-blank', question: '句型代換：She is ___.（唱歌·進行式）', options: ['singing', 'sing', 'sings', 'to sing'], answer: 'singing' },
+    { type: 'fill-blank', question: 'They ___ playing.（be動詞·複數）', options: ['are', 'am', 'is', 'be'], answer: 'are' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am swimming.', 'He is reading a book.', 'She is drawing.', 'They are playing.'], answer: 'I am swimming.', image: '🎧' },
+    { type: 'read', question: 'What is Benny doing?（Benny 正在做什麼？）', passage: 'Coco is swimming in the sea.\nBenny is reading a book.\nRuby is drawing a picture.', options: ['reading a book', 'swimming', 'drawing', 'running'], answer: 'reading a book' },
+  ],
+  talkTimePrompts: ["Say what you are doing: I am ___ing.", "Act it out and say: I am jumping!", "Ask a friend: what are they doing?", "Change it: I am ___ing (reading/playing/singing)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The cat is ___.（睡·進行式）', options: ['sleeping', 'sleep', 'sleeps', 'to sleep'], answer: 'sleeping' },
+    { type: 'fill-blank', question: 'I ___ playing.（be動詞）', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'match', question: '🎤 正在做什麼？', options: ['singing', 'drawing', 'eating', 'running'], answer: 'singing' },
+  ],
+  videoScript: [
+    { speaker: 'Coco', line: "I am swimming! Look at me!", lineZh: '我正在游泳！看我！' },
+    { speaker: 'Benny', line: "I am reading a book. It is fun!", lineZh: '我正在讀書。很好玩！' },
+    { speaker: 'Ruby', line: "Ruby is drawing. Finn is running!", lineZh: 'Ruby 正在畫畫。Finn 正在跑！' },
+    { speaker: 'Coco', line: "Add -ing for now! I am playing!", lineZh: '正在做加 -ing！我正在玩！' },
+  ],
+};
+
+const L5_M17: Mission = {
+  id: 17, slug: 'l5-m17-what-doing', level: 5, title: 'What are you doing?', titleEn: 'What are you doing?', theme: '珊瑚灘・你在做什麼', themeEmoji: '❓',
+  focus: '疑問 What are you doing? — I am + V-ing.',
+  story: [
+    { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What are you doing? I am singing!", dialogueZh: '你在做什麼？我正在唱歌！', highlightWords: ['doing', 'singing'], sceneEmojis: ['❓', '🎤', '✨'], animation: 'wave' },
+    { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "What is he doing? He is swimming!", dialogueZh: '他在做什麼？他正在游泳！', highlightWords: ['doing', 'swimming'], sceneEmojis: ['🏊', '🌊', '😊'], animation: 'bounce' },
+    { image: '🍽️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "What are they doing? They are eating!", dialogueZh: '他們在做什麼？他們正在吃！', highlightWords: ['doing', 'eating'], sceneEmojis: ['🍽️', '😋', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Now you can ask what someone is doing!", dialogueZh: '現在你會問別人在做什麼了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '❓'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'doing', zh: '正在做', image: '❓', phonics: '', kk: '[ˈduɪŋ]', phonicsSound: '', exampleSentence: 'What are you doing?', exampleZh: '你在做什麼？' },
+    { en: 'singing', zh: '正在唱', image: '🎤', phonics: '', kk: '[ˈsɪŋɪŋ]', phonicsSound: '', exampleSentence: 'I am singing.', exampleZh: '我正在唱。' },
+    { en: 'swimming', zh: '正在游泳', image: '🏊', phonics: '', kk: '[ˈswɪmɪŋ]', phonicsSound: '', exampleSentence: 'He is swimming.', exampleZh: '他正在游泳。' },
+    { en: 'eating', zh: '正在吃', image: '🍽️', phonics: '', kk: '[ˈitɪŋ]', phonicsSound: '', exampleSentence: 'They are eating.', exampleZh: '他們正在吃。' },
+    { en: 'dancing', zh: '正在跳舞', image: '💃', phonics: '', kk: '[ˈdænsɪŋ]', phonicsSound: '', exampleSentence: 'She is dancing.', exampleZh: '她正在跳舞。' },
+    { en: 'cooking', zh: '正在煮', image: '🍳', phonics: '', kk: '[ˈkʊkɪŋ]', phonicsSound: '', exampleSentence: 'Mom is cooking.', exampleZh: '媽媽正在煮。' },
+    { en: 'looking', zh: '正在看', image: '👀', phonics: '', kk: '[ˈlʊkɪŋ]', phonicsSound: '', exampleSentence: 'I am looking.', exampleZh: '我正在看。' },
+    { en: 'making', zh: '正在做（製作）', image: '🛠️', phonics: '', kk: '[ˈmekɪŋ]', phonicsSound: '', exampleSentence: 'He is making a boat.', exampleZh: '他正在做一艘船。' },
+    { en: 'playing', zh: '正在玩', image: '🎮', phonics: '', kk: '[ˈpleɪŋ]', phonicsSound: '', exampleSentence: 'We are playing.', exampleZh: '我們正在玩。' },
+    { en: 'now', zh: '現在', image: '⏰', phonics: '', kk: '[naʊ]', phonicsSound: '', exampleSentence: 'What are you doing now?', exampleZh: '你現在在做什麼？' },
+  ],
+  sentences: [
+    { en: 'What are you doing?', zh: '你在做什麼？' }, { en: 'I am singing.', zh: '我正在唱歌。' }, { en: 'What is he doing?', zh: '他在做什麼？' }, { en: 'He is swimming.', zh: '他正在游泳。' }, { en: 'What are they doing?', zh: '他們在做什麼？' }, { en: 'They are eating.', zh: '他們正在吃。' },
+  ],
+  phonicsLetters: ['What are you doing?'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'What ___ you doing?（be動詞·你）', options: ['are', 'is', 'am', 'do'], answer: 'are' },
+    { type: 'fill-blank', question: 'What is he ___?（做·進行式）', options: ['doing', 'do', 'does', 'to do'], answer: 'doing' },
+    { type: 'match', question: '🎤 正在做什麼？', options: ['singing', 'eating', 'swimming', 'cooking'], answer: 'singing' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🎤', '🏊', '🍽️', '💃'], answer: '💃', image: '🎧' },
+    { type: 'match', question: '配對：進行式配圖', options: ['singing-🎤', 'swimming-🏊', 'eating-🍽️', 'dancing-💃'], answer: 'singing-🎤' },
+    { type: 'fill-blank', question: 'What are you doing? I ___ singing.（be動詞）', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'fill-blank', question: 'What is she ___?（做·進行式）', options: ['doing', 'do', 'does', 'to do'], answer: 'doing' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What are you doing?', 'What is he doing?', 'I am singing.', 'They are eating.'], answer: 'What are you doing?', image: '🎧' },
+    { type: 'read', question: 'What is Coco doing?（Coco 在做什麼？）', passage: 'Polly is singing.\nCoco is swimming in the sea.\nBenny is eating lunch.', options: ['swimming', 'singing', 'eating', 'dancing'], answer: 'swimming' },
+  ],
+  talkTimePrompts: ["Ask: What are you doing?", "Answer: I am ___ing.", "Ask about a friend: What is he/she doing?", "Change it: I am ___ing (cooking/dancing/playing)."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'What are they ___?（做·進行式）', options: ['doing', 'do', 'does', 'to do'], answer: 'doing' },
+    { type: 'fill-blank', question: 'They ___ eating.（be動詞·複數）', options: ['are', 'am', 'is', 'be'], answer: 'are' },
+    { type: 'match', question: '🍳 正在做什麼？', options: ['cooking', 'looking', 'making', 'playing'], answer: 'cooking' },
+  ],
+  videoScript: [
+    { speaker: 'Polly', line: "What are you doing?", lineZh: '你在做什麼？' },
+    { speaker: 'Coco', line: "I am swimming! What is Benny doing?", lineZh: '我正在游泳！Benny 在做什麼？' },
+    { speaker: 'Benny', line: "I am eating lunch. Yum!", lineZh: '我正在吃午餐。好吃！' },
+    { speaker: 'Polly', line: "Now you can ask what someone is doing!", lineZh: '現在你會問別人在做什麼了！' },
+  ],
+};
+
+const L5_M18: Mission = {
+  id: 18, slug: 'l5-m18-beach-talk', level: 5, title: '海邊對話', titleEn: 'Beach Talk', theme: '珊瑚灘・海邊的一天', themeEmoji: '🏖️',
+  focus: '情境對話：在海邊綜合運用形容詞/天氣/進行式',
+  story: [
+    { image: '🏖️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "It's a sunny day! What are you doing, Coco?", dialogueZh: '晴朗的一天！Coco，你在做什麼？', highlightWords: ['sunny', 'doing'], sceneEmojis: ['🏖️', '☀️', '✨'], animation: 'wave' },
+    { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am swimming! The water is cool!", dialogueZh: '我正在游泳！水好涼！', highlightWords: ['swimming', 'cool'], sceneEmojis: ['🏊', '🌊', '😊'], animation: 'bounce' },
+    { image: '🐚', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Look! I have a big shell. It is bigger than yours!", dialogueZh: '看！我有一個大貝殼。比你的大！', highlightWords: ['bigger'], sceneEmojis: ['🐚', '👀', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "What a fun day at the beach!", dialogueZh: '海邊真是好玩的一天！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🏖️'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'beach', zh: '海邊', image: '🏖️', phonics: '', kk: '[bitʃ]', phonicsSound: '', exampleSentence: 'at the beach', exampleZh: '在海邊' },
+    { en: 'sunny', zh: '晴朗的', image: '☀️', phonics: '', kk: '[ˈsʌni]', phonicsSound: '', exampleSentence: "It's sunny.", exampleZh: '天氣晴朗。' },
+    { en: 'swimming', zh: '正在游泳', image: '🏊', phonics: '', kk: '[ˈswɪmɪŋ]', phonicsSound: '', exampleSentence: 'I am swimming.', exampleZh: '我正在游泳。' },
+    { en: 'cool', zh: '涼爽的', image: '🍃', phonics: '', kk: '[kul]', phonicsSound: '', exampleSentence: 'The water is cool.', exampleZh: '水很涼。' },
+    { en: 'shell', zh: '貝殼', image: '🐚', phonics: '', kk: '[ʃɛl]', phonicsSound: '', exampleSentence: 'a big shell', exampleZh: '一個大貝殼' },
+    { en: 'bigger', zh: '比較大', image: '🔎', phonics: '', kk: '[ˈbɪɡɚ]', phonicsSound: '', exampleSentence: 'It is bigger.', exampleZh: '它比較大。' },
+    { en: 'sand', zh: '沙子', image: '🏝️', phonics: '', kk: '[sænd]', phonicsSound: '', exampleSentence: 'warm sand', exampleZh: '溫暖的沙' },
+    { en: 'sea', zh: '海', image: '🌊', phonics: '', kk: '[si]', phonicsSound: '', exampleSentence: 'in the sea', exampleZh: '在海裡' },
+    { en: 'fun', zh: '好玩的', image: '🎉', phonics: '', kk: '[fʌn]', phonicsSound: '', exampleSentence: 'a fun day', exampleZh: '好玩的一天' },
+    { en: 'play', zh: '玩', image: '🏐', phonics: '', kk: '[ple]', phonicsSound: '', exampleSentence: 'We play on the sand.', exampleZh: '我們在沙上玩。' },
+  ],
+  sentences: [
+    { en: "It's a sunny day.", zh: '晴朗的一天。' }, { en: 'What are you doing?', zh: '你在做什麼？' }, { en: 'I am swimming in the sea.', zh: '我正在海裡游泳。' }, { en: 'My shell is bigger than yours.', zh: '我的貝殼比你的大。' }, { en: 'The water is cool.', zh: '水很涼。' }, { en: 'What a fun day!', zh: '真是好玩的一天！' },
+  ],
+  phonicsLetters: ['beach dialogue'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: "It's a ___ day.（晴朗）", options: ['sunny', 'rainy', 'cold', 'snowy'], answer: 'sunny' },
+    { type: 'fill-blank', question: 'I am ___ in the sea.（游泳·進行式）', options: ['swimming', 'swim', 'swims', 'to swim'], answer: 'swimming' },
+    { type: 'match', question: '🐚 是什麼？', options: ['shell', 'sand', 'sea', 'fun'], answer: 'shell' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🏖️', '🏊', '🐚', '🌊'], answer: '🐚', image: '🎧' },
+    { type: 'fill-blank', question: 'My shell is ___ than yours.（大）', options: ['bigger', 'big', 'small', 'biggest'], answer: 'bigger' },
+    { type: 'fill-blank', question: 'What are you ___?（做·進行式）', options: ['doing', 'do', 'does', 'to do'], answer: 'doing' },
+    { type: 'spell', question: '拼拼看：be _ ch（海邊）', answer: 'beach', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am swimming in the sea.', "It's a sunny day.", 'My shell is bigger than yours.', 'The water is cool.'], answer: 'I am swimming in the sea.', image: '🎧' },
+    { type: 'read', question: 'How is the weather at the beach?（海邊天氣如何？）', passage: "It's a sunny day at the beach.\nCoco is swimming.\nThe water is cool and nice.", options: ['sunny', 'rainy', 'snowy', 'cloudy'], answer: 'sunny' },
+  ],
+  talkTimePrompts: ["Talk about the beach: It's sunny. I am ___.", "Compare two shells: Mine is bigger.", "Ask a friend: What are you doing?", "Describe the sea and the sand."],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'Coco is ___ in the sea.（游泳·進行式）', options: ['swimming', 'swim', 'swims', 'to swim'], answer: 'swimming' },
+    { type: 'fill-blank', question: 'The water is ___.（涼）', options: ['cool', 'hot', 'big', 'fast'], answer: 'cool' },
+    { type: 'read', question: 'Whose shell is bigger?（誰的貝殼大？）', passage: "Coco has a small shell.\nBenny has a big shell.\nBenny's shell is bigger than Coco's.", options: ["Benny's", "Coco's", 'the same', 'no shell'], answer: "Benny's" },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "It's a sunny day! What are you doing, Coco?", lineZh: '晴天！Coco，你在做什麼？' },
+    { speaker: 'Coco', line: "I am swimming! The water is cool!", lineZh: '我正在游泳！水好涼！' },
+    { speaker: 'Benny', line: "Look! My shell is bigger than yours!", lineZh: '看！我的貝殼比你的大！' },
+    { speaker: 'Finn', line: "What a fun day at the beach!", lineZh: '海邊真是好玩的一天！' },
+  ],
+};
+
+const L5_M19: Mission = {
+  id: 19, slug: 'l5-m19-reading-mix', level: 5, title: '閱讀綜合', titleEn: 'Reading Mix', theme: '珊瑚灘・大閱讀', themeEmoji: '📚',
+  focus: '綜合閱讀：形容詞/比較級/天氣/進行式讀成一篇短文',
+  story: [
+    { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a longer story today!", dialogueZh: '今天我們讀一篇長一點的故事！', highlightWords: ['story'], sceneEmojis: ['📚', '📖', '✨'], animation: 'wave' },
+    { image: '🌞', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "On Saturday, it is sunny. The friends go to the beach.", dialogueZh: '星期六，晴天。朋友們去海邊。', highlightWords: ['sunny', 'beach'], sceneEmojis: ['🌞', '🏖️', '😊'], animation: 'bounce' },
+    { image: '🐬', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "They see a dolphin swimming. It is faster than a fish!", dialogueZh: '他們看到海豚在游。牠比魚快！', highlightWords: ['swimming', 'faster'], sceneEmojis: ['🐬', '💨', '🎉'], animation: 'float' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You read a big story! Wonderful reader!", dialogueZh: '你讀了一篇大故事！了不起的讀者！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📚'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'Saturday', zh: '星期六', image: '6️⃣', phonics: '', kk: '[ˈsætɚde]', phonicsSound: '', exampleSentence: 'on Saturday', exampleZh: '在星期六' },
+    { en: 'sunny', zh: '晴朗的', image: '🌞', phonics: '', kk: '[ˈsʌni]', phonicsSound: '', exampleSentence: 'a sunny day', exampleZh: '晴朗的一天' },
+    { en: 'beach', zh: '海邊', image: '🏖️', phonics: '', kk: '[bitʃ]', phonicsSound: '', exampleSentence: 'go to the beach', exampleZh: '去海邊' },
+    { en: 'dolphin', zh: '海豚', image: '🐬', phonics: '', kk: '[ˈdɑlfɪn]', phonicsSound: '', exampleSentence: 'a fast dolphin', exampleZh: '一隻快海豚' },
+    { en: 'swimming', zh: '正在游泳', image: '🏊', phonics: '', kk: '[ˈswɪmɪŋ]', phonicsSound: '', exampleSentence: 'It is swimming.', exampleZh: '牠正在游。' },
+    { en: 'faster', zh: '比較快', image: '💨', phonics: '', kk: '[ˈfæstɚ]', phonicsSound: '', exampleSentence: 'It is faster.', exampleZh: '牠比較快。' },
+    { en: 'shell', zh: '貝殼', image: '🐚', phonics: '', kk: '[ʃɛl]', phonicsSound: '', exampleSentence: 'a pretty shell', exampleZh: '一個漂亮貝殼' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'They are happy.', exampleZh: '他們很開心。' },
+    { en: 'friend', zh: '朋友', image: '🧑‍🤝‍🧑', phonics: '', kk: '[frɛnd]', phonicsSound: '', exampleSentence: 'good friends', exampleZh: '好朋友' },
+    { en: 'home', zh: '家', image: '🏠', phonics: '', kk: '[hom]', phonicsSound: '', exampleSentence: 'go home', exampleZh: '回家' },
+  ],
+  sentences: [
+    { en: 'On Saturday, it is sunny.', zh: '星期六，天氣晴朗。' }, { en: 'The friends go to the beach.', zh: '朋友們去海邊。' }, { en: 'A dolphin is swimming.', zh: '一隻海豚正在游。' }, { en: 'It is faster than a fish.', zh: '牠比魚快。' }, { en: 'They find pretty shells.', zh: '他們找到漂亮的貝殼。' }, { en: 'They are very happy.', zh: '他們很開心。' },
+  ],
+  phonicsLetters: ['reading mix'],
+  warmUpQuestions: [
+    { type: 'match', question: '🐬 是什麼？', options: ['dolphin', 'fish', 'crab', 'turtle'], answer: 'dolphin' },
+    { type: 'fill-blank', question: 'On Saturday, it is ___.（晴朗）', options: ['sunny', 'rainy', 'cold', 'snowy'], answer: 'sunny' },
+    { type: 'fill-blank', question: 'A dolphin is ___ than a fish.（快）', options: ['faster', 'fast', 'slow', 'slower'], answer: 'faster' },
+  ],
+  challenges: [
+    { type: 'read', question: 'When do the friends go to the beach?（朋友們何時去海邊？）', passage: 'On Saturday, it is sunny and warm.\nThe friends go to the beach.\nThey play in the sand.', options: ['Saturday', 'Monday', 'Sunday', 'Friday'], answer: 'Saturday' },
+    { type: 'read', question: 'What do they see swimming?（他們看到什麼在游？）', passage: 'At the beach, they look at the sea.\nA dolphin is swimming.\nIt is faster than a fish!', options: ['a dolphin', 'a shark', 'a turtle', 'a crab'], answer: 'a dolphin' },
+    { type: 'read', question: 'How do the friends feel?（朋友們覺得如何？）', passage: 'They find pretty shells on the sand.\nThey swim in the cool sea.\nThey are very happy!', options: ['happy', 'sad', 'tired', 'angry'], answer: 'happy' },
+    { type: 'fill-blank', question: 'A dolphin is ___ than a fish.（快·比較級）', options: ['faster', 'fast', 'fastest', 'more fast'], answer: 'faster' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['A dolphin is swimming.', 'On Saturday, it is sunny.', 'They find pretty shells.', 'They are very happy.'], answer: 'A dolphin is swimming.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：dolph _ n（海豚）', answer: 'dolphin', image: '✍️' },
+  ],
+  talkTimePrompts: ["Retell the beach story.", "What is the dolphin doing?", "Compare the dolphin and the fish.", "What day and weather is it in the story?"],
+  reviewQuiz: [
+    { type: 'read', question: 'Is the dolphin slower than the fish?（海豚比魚慢嗎？）', passage: 'A dolphin is swimming fast.\nA fish is slower.\nThe dolphin is faster than the fish.', options: ['No, it is faster', 'Yes, it is slower', 'They are the same', 'It is sleeping'], answer: 'No, it is faster' },
+    { type: 'fill-blank', question: 'They go to the beach ___ Saturday.（在）', options: ['on', 'in', 'at', 'to'], answer: 'on' },
+    { type: 'match', question: '🐚 是什麼？', options: ['shell', 'sand', 'sea', 'home'], answer: 'shell' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Let's read a longer story today!", lineZh: '今天讀一篇長一點的故事！' },
+    { speaker: 'Coco', line: "On Saturday, it is sunny. We go to the beach!", lineZh: '星期六晴天。我們去海邊！' },
+    { speaker: 'Polly', line: "A dolphin is swimming. It is faster than a fish!", lineZh: '海豚在游。牠比魚快！' },
+    { speaker: 'Benny', line: "You read a big story! Wonderful!", lineZh: '你讀了大故事！了不起！' },
+  ],
+};
+
+const L5_M20: Mission = {
+  id: 20, slug: 'l5-m20-boss', level: 5, title: '珊瑚灘大魔王', titleEn: 'Coral Boss', theme: '珊瑚灘・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：形容詞/比較級/天氣時間/星期月份/現在進行式',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Coral Boss is here! Use all your English!", dialogueZh: '珊瑚大魔王來了！用上你所有的英文！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🌊'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Big, small, faster, sunny — I know them all!", dialogueZh: '大、小、比較快、晴朗 —— 我全會了！', highlightWords: [], sceneEmojis: ['💪', '🌦️', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Coral Badge!", dialogueZh: '你打敗大魔王了！獲得珊瑚徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🏰', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Coral Beach! On to Lighthouse Point!", dialogueZh: '你完成了珊瑚灘！前進燈塔角！', highlightWords: [], sceneEmojis: ['🏰', '💡', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'big', zh: '大的', image: '🐋', phonics: '', kk: '[bɪɡ]', phonicsSound: '', exampleSentence: 'It is big.', exampleZh: '它很大。' },
+    { en: 'faster', zh: '比較快', image: '🦈', phonics: '', kk: '[ˈfæstɚ]', phonicsSound: '', exampleSentence: 'It is faster.', exampleZh: '它比較快。' },
+    { en: 'sunny', zh: '晴朗的', image: '☀️', phonics: '', kk: '[ˈsʌni]', phonicsSound: '', exampleSentence: "It's sunny.", exampleZh: '天氣晴朗。' },
+    { en: "o'clock", zh: '…點鐘', image: '🕐', phonics: '', kk: '[əˈklɑk]', phonicsSound: '', exampleSentence: "nine o'clock", exampleZh: '九點鐘' },
+    { en: 'Monday', zh: '星期一', image: '📅', phonics: '', kk: '[ˈmʌnde]', phonicsSound: '', exampleSentence: 'on Monday', exampleZh: '在星期一' },
+    { en: 'May', zh: '五月', image: '🌺', phonics: '', kk: '[me]', phonicsSound: '', exampleSentence: 'in May', exampleZh: '在五月' },
+    { en: 'swimming', zh: '正在游泳', image: '🏊', phonics: '', kk: '[ˈswɪmɪŋ]', phonicsSound: '', exampleSentence: 'I am swimming.', exampleZh: '我正在游泳。' },
+    { en: 'turtle', zh: '烏龜', image: '🐢', phonics: '', kk: '[ˈtɝtl̩]', phonicsSound: '', exampleSentence: 'a slow turtle', exampleZh: '一隻慢烏龜' },
+    { en: 'cold', zh: '冷的', image: '❄️', phonics: '', kk: '[kold]', phonicsSound: '', exampleSentence: 'It is cold.', exampleZh: '它很冷。' },
+    { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy!', exampleZh: '我很開心！' },
+  ],
+  sentences: [
+    { en: 'The whale is bigger than the fish.', zh: '鯨魚比魚大。' }, { en: "It is sunny. It is nine o'clock.", zh: '晴天。九點鐘。' }, { en: 'My birthday is in May.', zh: '我的生日在五月。' }, { en: 'I am swimming in the sea.', zh: '我正在海裡游泳。' }, { en: 'What are you doing?', zh: '你在做什麼？' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'The whale is ___ than the fish.（大）', options: ['bigger', 'big', 'small', 'biggest'], answer: 'bigger' },
+    { type: 'match', question: '☀️ 是什麼天氣？', options: ['sunny', 'rainy', 'cold', 'windy'], answer: 'sunny' },
+    { type: 'fill-blank', question: 'I ___ swimming.（be動詞·進行式）', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🐋', '🦈', '🏊', '🐢'], answer: '🏊', image: '🎧' },
+    { type: 'fill-blank', question: 'A shark is ___ than a crab.（快）', options: ['faster', 'fast', 'slow', 'fastest'], answer: 'faster' },
+    { type: 'fill-blank', question: "What time is it? It is nine ___.（點鐘）", options: ["o'clock", 'time', 'morning', 'clock'], answer: "o'clock" },
+    { type: 'match', question: 'What is she doing? 🏊', options: ['swimming', 'reading', 'eating', 'singing'], answer: 'swimming' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am swimming in the sea.', 'What are you doing?', 'The whale is bigger than the fish.', 'My birthday is in May.'], answer: 'I am swimming in the sea.', image: '🎧' },
+    { type: 'read', question: 'What is the weather like?（天氣如何？）', passage: "It is Saturday. It is sunny and warm.\nWe go to the beach at nine o'clock.\nWe are swimming and playing. We are happy!", options: ['sunny and warm', 'cold and snowy', 'rainy', 'windy'], answer: 'sunny and warm' },
+  ],
+  talkTimePrompts: ["Describe today: weather, day, time.", "Compare two things with -er.", "Say what you are doing now.", "You beat the Coral Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'The turtle is ___ than the fish.（慢）', options: ['slower', 'slow', 'fast', 'slowest'], answer: 'slower' },
+    { type: 'match', question: 'May 是幾月？', options: ['五月', '三月', '七月', '一月'], answer: '五月' },
+    { type: 'read', question: 'Are they sad?（他們難過嗎？）', passage: 'It is a sunny Saturday.\nThe friends are swimming at the beach.\nThey are very happy!', options: ['No, they are happy', 'Yes, they are sad', 'They are cold', 'They are tired'], answer: 'No, they are happy' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Coral Boss says: describe the sea!", lineZh: '珊瑚大魔王說：描述大海！' },
+    { speaker: 'Coco', line: "The whale is bigger than the fish. It is sunny!", lineZh: '鯨魚比魚大。天氣晴朗！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Coral champion!", lineZh: '你打敗大魔王了！珊瑚冠軍！' },
+    { speaker: 'Finn', line: "On to Lighthouse Point! Let's keep going!", lineZh: '前進燈塔角！繼續加油！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
