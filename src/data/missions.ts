@@ -7987,7 +7987,268 @@ const L8_M20: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20];
+// ===================== L9 時光道 Time Travel Path（A2・時態含完成式，時間軸視覺） =====================
+const L9_M1: Mission = {
+  id: 1, slug: 'l9-m1-present-continuous', level: 9, title: '現在進行式', titleEn: 'Present Continuous', theme: '時光道・正在進行', themeEmoji: '⏳',
+  focus: '現在進行式深化 be + V-ing（拼字：run→running, make→making）＋ 中翻英',
+  story: [
+    { image: '⏳', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Look! I am running. Ruby is making a cake.", dialogueZh: '看！我正在跑。Ruby 正在做蛋糕。', highlightWords: ['am running', 'is making'], sceneEmojis: ['🏃', '🎂', '✨'], animation: 'wave' },
+    { image: '📖', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Right now, they are reading books.", dialogueZh: '現在，他們正在讀書。', highlightWords: ['are reading'], sceneEmojis: ['📖', '👥', '😊'], animation: 'bounce' },
+    { image: '✍️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "write becomes writing. Drop the e, add -ing!", dialogueZh: 'write 變 writing。去 e 加 -ing！', highlightWords: ['writing'], sceneEmojis: ['✍️', '➕', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "be + V-ing for actions now!", dialogueZh: '現在的動作用 be + V-ing！', highlightWords: [], sceneEmojis: ['🏆', '⏳', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'running', zh: '正在跑', image: '🏃', phonics: '', kk: '[ˈrʌnɪŋ]', phonicsSound: '雙寫n', exampleSentence: 'I am running.', exampleZh: '我正在跑。' },
+    { en: 'making', zh: '正在做', image: '🎂', phonics: '', kk: '[ˈmekɪŋ]', phonicsSound: '去e', exampleSentence: 'She is making a cake.', exampleZh: '她正在做蛋糕。' },
+    { en: 'writing', zh: '正在寫', image: '✍️', phonics: '', kk: '[ˈraɪtɪŋ]', phonicsSound: '去e', exampleSentence: 'He is writing.', exampleZh: '他正在寫。' },
+    { en: 'reading', zh: '正在讀', image: '📖', phonics: '', kk: '[ˈridɪŋ]', phonicsSound: '', exampleSentence: 'They are reading.', exampleZh: '他們正在讀。' },
+    { en: 'swimming', zh: '正在游泳', image: '🏊', phonics: '', kk: '[ˈswɪmɪŋ]', phonicsSound: '雙寫m', exampleSentence: 'I am swimming.', exampleZh: '我正在游泳。' },
+    { en: 'sitting', zh: '正在坐', image: '🪑', phonics: '', kk: '[ˈsɪtɪŋ]', phonicsSound: '雙寫t', exampleSentence: 'She is sitting.', exampleZh: '她正在坐。' },
+    { en: 'cooking', zh: '正在煮', image: '🍳', phonics: '', kk: '[ˈkʊkɪŋ]', phonicsSound: '', exampleSentence: 'Mom is cooking.', exampleZh: '媽媽正在煮。' },
+    { en: 'dancing', zh: '正在跳舞', image: '💃', phonics: '', kk: '[ˈdænsɪŋ]', phonicsSound: '去e', exampleSentence: 'She is dancing.', exampleZh: '她正在跳舞。' },
+    { en: 'now', zh: '現在', image: '⏰', phonics: '', kk: '[naʊ]', phonicsSound: '', exampleSentence: 'right now', exampleZh: '現在' },
+    { en: 'at the moment', zh: '此刻', image: '⏳', phonics: '', kk: '[æt ðə ˈmomənt]', phonicsSound: '', exampleSentence: 'at the moment', exampleZh: '此刻' },
+  ],
+  sentences: [
+    { en: 'I am running now.', zh: '我正在跑。' }, { en: 'She is making a cake.', zh: '她正在做蛋糕。' }, { en: 'They are reading books.', zh: '他們正在讀書。' }, { en: 'What are you doing at the moment?', zh: '你此刻在做什麼？' }, { en: 'He is writing a letter.', zh: '他正在寫信。' }, { en: 'We are having fun.', zh: '我們玩得開心。' },
+  ],
+  phonicsLetters: ['be + V-ing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'I ___ running.（be動詞）', options: ['am', 'is', 'are', 'be'], answer: 'am' },
+    { type: 'match', question: 'run 的 -ing 是？（雙寫）', options: ['running', 'runing', 'runningg', 'runs'], answer: 'running' },
+    { type: 'match', question: 'make 的 -ing 是？（去e）', options: ['making', 'makeing', 'makking', 'makes'], answer: 'making' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🏃', '🎂', '📖', '💃'], answer: '💃', image: '🎧' },
+    { type: 'match', question: '配對：動詞→-ing', options: ['run-running', 'make-making', 'write-writing', 'swim-swimming'], answer: 'run-running' },
+    { type: 'fill-blank', question: 'She is ___ a cake.（make 進行式）', options: ['making', 'makeing', 'makking', 'makes'], answer: 'making' },
+    { type: 'fill-blank', question: '中翻英：「他們正在讀書。」', options: ["They are reading books.", "They read books.", "They will read.", "Do they read?"], answer: "They are reading books." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I am running now.', 'She is making a cake.', 'They are reading books.', 'He is writing a letter.'], answer: 'I am running now.', image: '🎧' },
+    { type: 'read', question: 'What is Ruby doing?（Ruby 在做什麼？）', passage: 'Look at the friends now.\nFinn is running.\nRuby is making a cake.', options: ['making a cake', 'running', 'reading', 'swimming'], answer: 'making a cake' },
+  ],
+  talkTimePrompts: ["Say what you are doing now.", "Say what a friend is doing.", "Spell: run → running, make → making.", "✍️ 引導寫作＋翻譯：把「他正在寫信。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'sit 的 -ing 是？（雙寫）', options: ['sitting', 'siting', 'sittting', 'sits'], answer: 'sitting' },
+    { type: 'fill-blank', question: 'They ___ reading.（be動詞·複數）', options: ['are', 'am', 'is', 'be'], answer: 'are' },
+    { type: 'fill-blank', question: '中翻英：「我正在跑。」', options: ['I am running.', 'I run.', 'I will run.', 'Do I run?'], answer: 'I am running.' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Look! I am running. Ruby is making a cake.", lineZh: '看！我正在跑。Ruby 正在做蛋糕。' },
+    { speaker: 'Coco', line: "Right now, they are reading books.", lineZh: '現在，他們正在讀書。' },
+    { speaker: 'Ruby', line: "write becomes writing. Drop the e, add -ing!", lineZh: 'write 變 writing。去 e 加 -ing！' },
+    { speaker: 'Finn', line: "be + V-ing for actions now!", lineZh: '現在的動作用 be + V-ing！' },
+  ],
+};
+
+const L9_M2: Mission = {
+  id: 2, slug: 'l9-m2-past-regular', level: 9, title: '過去式規則', titleEn: 'Past Regular', theme: '時光道・回到昨天', themeEmoji: '⏪',
+  focus: '過去式規則 -ed 深化（拼字：stop→stopped, study→studied）＋ 中翻英',
+  story: [
+    { image: '⏪', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Yesterday I studied and cleaned my room.", dialogueZh: '昨天我讀書也打掃房間。', highlightWords: ['studied', 'cleaned'], sceneEmojis: ['📚', '🧹', '✨'], animation: 'wave' },
+    { image: '🛑', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "The bus stopped. stop becomes stopped!", dialogueZh: '公車停了。stop 變 stopped！', highlightWords: ['stopped'], sceneEmojis: ['🚌', '🛑', '😊'], animation: 'bounce' },
+    { image: '📖', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "study becomes studied. y changes to ied!", dialogueZh: 'study 變 studied。y 變 ied！', highlightWords: ['studied'], sceneEmojis: ['📖', '➕', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Regular past: +ed, +ied, or double letter!", dialogueZh: '規則過去式：+ed、+ied 或雙寫！', highlightWords: [], sceneEmojis: ['🏆', '⏪', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'studied', zh: '讀書了', image: '📚', phonics: '', kk: '[ˈstʌdid]', phonicsSound: 'y→ied', exampleSentence: 'I studied hard.', exampleZh: '我努力讀書。' },
+    { en: 'stopped', zh: '停了', image: '🛑', phonics: '', kk: '[stɑpt]', phonicsSound: '雙寫p', exampleSentence: 'The bus stopped.', exampleZh: '公車停了。' },
+    { en: 'cleaned', zh: '打掃了', image: '🧹', phonics: '', kk: '[klind]', phonicsSound: '+ed', exampleSentence: 'I cleaned my room.', exampleZh: '我打掃房間。' },
+    { en: 'played', zh: '玩了', image: '⚽', phonics: '', kk: '[pled]', phonicsSound: '+ed', exampleSentence: 'I played soccer.', exampleZh: '我踢了足球。' },
+    { en: 'cried', zh: '哭了', image: '😢', phonics: '', kk: '[kraɪd]', phonicsSound: 'y→ied', exampleSentence: 'The baby cried.', exampleZh: '寶寶哭了。' },
+    { en: 'watched', zh: '看了', image: '📺', phonics: '', kk: '[wɑtʃt]', phonicsSound: '+ed', exampleSentence: 'I watched TV.', exampleZh: '我看了電視。' },
+    { en: 'wanted', zh: '想要了', image: '🙋', phonics: '', kk: '[ˈwɑntɪd]', phonicsSound: '+ed(唸/ɪd/)', exampleSentence: 'I wanted it.', exampleZh: '我想要它。' },
+    { en: 'liked', zh: '喜歡了', image: '❤️', phonics: '', kk: '[laɪkt]', phonicsSound: '+d', exampleSentence: 'I liked it.', exampleZh: '我喜歡它。' },
+    { en: 'lived', zh: '住過', image: '🏠', phonics: '', kk: '[lɪvd]', phonicsSound: '+d', exampleSentence: 'I lived there.', exampleZh: '我住過那裡。' },
+    { en: 'last week', zh: '上週', image: '🗓️', phonics: '', kk: '[læst wik]', phonicsSound: '', exampleSentence: 'last week', exampleZh: '上週' },
+  ],
+  sentences: [
+    { en: 'Yesterday I studied English.', zh: '昨天我讀了英文。' }, { en: 'The bus stopped here.', zh: '公車停在這裡。' }, { en: 'I cleaned my room.', zh: '我打掃了房間。' }, { en: 'We played in the park.', zh: '我們在公園玩。' }, { en: 'Did you watch the movie?', zh: '你看了電影嗎？' }, { en: 'The baby cried last night.', zh: '寶寶昨晚哭了。' },
+  ],
+  phonicsLetters: ['regular past -ed'],
+  warmUpQuestions: [
+    { type: 'match', question: 'study 的過去式是？（y→ied）', options: ['studied', 'studyed', 'studies', 'studay'], answer: 'studied' },
+    { type: 'match', question: 'stop 的過去式是？（雙寫）', options: ['stopped', 'stoped', 'stopd', 'stops'], answer: 'stopped' },
+    { type: 'match', question: 'clean 的過去式是？', options: ['cleaned', 'cleand', 'clean', 'cleans'], answer: 'cleaned' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['📚', '🛑', '🧹', '📺'], answer: '🛑', image: '🎧' },
+    { type: 'match', question: '配對：原形→過去式', options: ['study-studied', 'stop-stopped', 'clean-cleaned', 'cry-cried'], answer: 'study-studied' },
+    { type: 'fill-blank', question: 'The bus ___ here.（stop 過去）', options: ['stopped', 'stoped', 'stops', 'stopping'], answer: 'stopped' },
+    { type: 'fill-blank', question: '中翻英：「昨天我讀了英文。」', options: ["Yesterday I studied English.", "I study English.", "I will study English.", "Do you study English?"], answer: "Yesterday I studied English." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Yesterday I studied English.', 'The bus stopped here.', 'I cleaned my room.', 'We played in the park.'], answer: 'Yesterday I studied English.', image: '🎧' },
+    { type: 'read', question: 'What did Benny do yesterday?（Benny 昨天做了什麼？）', passage: 'Yesterday Benny studied English.\nHe cleaned his room.\nThen he watched TV.', options: ['studied and cleaned', 'went swimming', 'played all day', 'slept'], answer: 'studied and cleaned' },
+  ],
+  talkTimePrompts: ["Say what you did yesterday: I ___ed.", "Spell: study → studied, stop → stopped.", "Use cleaned, played, watched.", "✍️ 引導寫作＋翻譯：把「我打掃了房間。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'cry 的過去式是？（y→ied）', options: ['cried', 'cryed', 'cries', 'cry'], answer: 'cried' },
+    { type: 'fill-blank', question: 'I ___ TV last night.（watch 過去）', options: ['watched', 'watch', 'watchs', 'watching'], answer: 'watched' },
+    { type: 'fill-blank', question: '中翻英：「公車停在這裡。」', options: ['The bus stopped here.', 'The bus stops here.', 'The bus will stop.', 'Does the bus stop?'], answer: 'The bus stopped here.' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Yesterday I studied and cleaned my room.", lineZh: '昨天我讀書也打掃房間。' },
+    { speaker: 'Coco', line: "The bus stopped. stop becomes stopped!", lineZh: '公車停了。stop 變 stopped！' },
+    { speaker: 'Polly', line: "study becomes studied. y changes to ied!", lineZh: 'study 變 studied。y 變 ied！' },
+    { speaker: 'Benny', line: "Regular past: +ed, +ied, or double letter!", lineZh: '規則過去式：+ed、+ied 或雙寫！' },
+  ],
+};
+
+const L9_M3: Mission = {
+  id: 3, slug: 'l9-m3-past-irregular-1', level: 9, title: '過去式不規則①', titleEn: 'Past Irregular 1', theme: '時光道・特別的過去', themeEmoji: '🌀',
+  focus: '常用不規則過去式①（三態）：go-went, have-had, make-made, come-came ＋ 中翻英',
+  story: [
+    { image: '🌀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Yesterday I went to the zoo. I saw a lion!", dialogueZh: '昨天我去了動物園。我看到一隻獅子！', highlightWords: ['went', 'saw'], sceneEmojis: ['🦁', '🌀', '✨'], animation: 'wave' },
+    { image: '🎁', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Mom made a cake. She gave me a gift.", dialogueZh: '媽媽做了蛋糕。她給我一個禮物。', highlightWords: ['made', 'gave'], sceneEmojis: ['🎂', '🎁', '😊'], animation: 'bounce' },
+    { image: '🏠', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "We had fun. Then we came home.", dialogueZh: '我們玩得開心。然後我們回家了。', highlightWords: ['had', 'came'], sceneEmojis: ['🏠', '😄', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Irregular verbs — you must remember them!", dialogueZh: '不規則動詞 —— 你必須記住！', highlightWords: [], sceneEmojis: ['🏆', '🌀', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'went', zh: '去了', image: '🚶', phonics: '', kk: '[wɛnt]', phonicsSound: 'go→went', exampleSentence: 'I went to the zoo.', exampleZh: '我去了動物園。' },
+    { en: 'saw', zh: '看見了', image: '👀', phonics: '', kk: '[sɔ]', phonicsSound: 'see→saw', exampleSentence: 'I saw a lion.', exampleZh: '我看到一隻獅子。' },
+    { en: 'made', zh: '做了', image: '🎂', phonics: '', kk: '[med]', phonicsSound: 'make→made', exampleSentence: 'Mom made a cake.', exampleZh: '媽媽做了蛋糕。' },
+    { en: 'gave', zh: '給了', image: '🎁', phonics: '', kk: '[ɡev]', phonicsSound: 'give→gave', exampleSentence: 'She gave me a gift.', exampleZh: '她給我禮物。' },
+    { en: 'had', zh: '有了·度過', image: '😄', phonics: '', kk: '[hæd]', phonicsSound: 'have→had', exampleSentence: 'We had fun.', exampleZh: '我們玩得開心。' },
+    { en: 'came', zh: '來了', image: '🏠', phonics: '', kk: '[kem]', phonicsSound: 'come→came', exampleSentence: 'We came home.', exampleZh: '我們回家了。' },
+    { en: 'took', zh: '拿了·搭乘', image: '✋', phonics: '', kk: '[tʊk]', phonicsSound: 'take→took', exampleSentence: 'I took the bus.', exampleZh: '我搭了公車。' },
+    { en: 'got', zh: '得到了', image: '🎯', phonics: '', kk: '[ɡɑt]', phonicsSound: 'get→got', exampleSentence: 'I got a prize.', exampleZh: '我得到獎品。' },
+    { en: 'ate', zh: '吃了', image: '🍽️', phonics: '', kk: '[et]', phonicsSound: 'eat→ate', exampleSentence: 'I ate lunch.', exampleZh: '我吃了午餐。' },
+    { en: 'said', zh: '說了', image: '💬', phonics: '', kk: '[sɛd]', phonicsSound: 'say→said', exampleSentence: 'She said hello.', exampleZh: '她說了你好。' },
+  ],
+  sentences: [
+    { en: 'Yesterday I went to the zoo.', zh: '昨天我去了動物園。' }, { en: 'I saw a lion.', zh: '我看到一隻獅子。' }, { en: 'Mom made a cake.', zh: '媽媽做了蛋糕。' }, { en: 'She gave me a gift.', zh: '她給我一個禮物。' }, { en: 'We had a lot of fun.', zh: '我們玩得很開心。' }, { en: 'Then we came home.', zh: '然後我們回家了。' },
+  ],
+  phonicsLetters: ['irregular past 1'],
+  warmUpQuestions: [
+    { type: 'match', question: 'go 的過去式是？', options: ['went', 'goed', 'goes', 'gone'], answer: 'went' },
+    { type: 'match', question: 'make 的過去式是？', options: ['made', 'maked', 'makes', 'making'], answer: 'made' },
+    { type: 'match', question: 'have 的過去式是？', options: ['had', 'haved', 'has', 'having'], answer: 'had' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['🦁', '🎂', '🎁', '🍽️'], answer: '🎁', image: '🎧' },
+    { type: 'match', question: '配對：原形→過去式', options: ['go-went', 'see-saw', 'make-made', 'give-gave'], answer: 'go-went' },
+    { type: 'fill-blank', question: 'Yesterday I ___ a lion.（see 過去）', options: ['saw', 'seed', 'seen', 'sees'], answer: 'saw' },
+    { type: 'fill-blank', question: '中翻英：「昨天我去了動物園。」', options: ["Yesterday I went to the zoo.", "I go to the zoo.", "I will go to the zoo.", "Do you go to the zoo?"], answer: "Yesterday I went to the zoo." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Yesterday I went to the zoo.', 'I saw a lion.', 'Mom made a cake.', 'We came home.'], answer: 'Yesterday I went to the zoo.', image: '🎧' },
+    { type: 'read', question: 'What did Coco\'s mom make?（Coco 媽媽做了什麼？）', passage: 'Coco\'s mom made a cake.\nShe gave Coco a gift.\nThey had a happy day.', options: ['a cake', 'a gift', 'lunch', 'a card'], answer: 'a cake' },
+  ],
+  talkTimePrompts: ["Say what you did: I went / saw / ate.", "Practice: go-went, see-saw, make-made.", "Tell me about a fun day (past).", "✍️ 引導寫作＋翻譯：把「她給我一個禮物。」寫成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'come 的過去式是？', options: ['came', 'comed', 'comes', 'coming'], answer: 'came' },
+    { type: 'fill-blank', question: 'I ___ the bus to school.（take 過去）', options: ['took', 'taked', 'takes', 'taken'], answer: 'took' },
+    { type: 'fill-blank', question: '中翻英：「我們玩得很開心。」', options: ['We had a lot of fun.', 'We have fun.', 'We will have fun.', 'Do we have fun?'], answer: 'We had a lot of fun.' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Yesterday I went to the zoo. I saw a lion!", lineZh: '昨天我去了動物園。我看到一隻獅子！' },
+    { speaker: 'Coco', line: "Mom made a cake. She gave me a gift.", lineZh: '媽媽做了蛋糕。她給我一個禮物。' },
+    { speaker: 'Polly', line: "We had fun. Then we came home.", lineZh: '我們玩得開心。然後我們回家了。' },
+    { speaker: 'Benny', line: "Irregular verbs — you must remember them!", lineZh: '不規則動詞 —— 你必須記住！' },
+  ],
+};
+
+const L9_M4: Mission = {
+  id: 4, slug: 'l9-m4-past-irregular-2', level: 9, title: '過去式不規則②', titleEn: 'Past Irregular 2', theme: '時光道・更多過去', themeEmoji: '🔀',
+  focus: '常用不規則過去式②（三態）：run-ran, swim-swam, write-wrote, buy-bought ＋ 中翻英',
+  story: [
+    { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I ran in the race. I swam in the pool.", dialogueZh: '我在比賽跑步。我在泳池游泳。', highlightWords: ['ran', 'swam'], sceneEmojis: ['🏃', '🏊', '✨'], animation: 'wave' },
+    { image: '✏️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "I wrote a story. I read it to my class.", dialogueZh: '我寫了一個故事。我唸給全班聽。', highlightWords: ['wrote', 'read'], sceneEmojis: ['✏️', '📖', '😊'], animation: 'bounce' },
+    { image: '🛒', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Mom bought fruit. Dad found his keys.", dialogueZh: '媽媽買了水果。爸爸找到鑰匙。', highlightWords: ['bought', 'found'], sceneEmojis: ['🛒', '🔑', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "More irregular verbs — keep practicing!", dialogueZh: '更多不規則動詞 —— 繼續練習！', highlightWords: [], sceneEmojis: ['🏆', '🔀', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'ran', zh: '跑了', image: '🏃', phonics: '', kk: '[ræn]', phonicsSound: 'run→ran', exampleSentence: 'I ran fast.', exampleZh: '我跑得快。' },
+    { en: 'swam', zh: '游泳了', image: '🏊', phonics: '', kk: '[swæm]', phonicsSound: 'swim→swam', exampleSentence: 'I swam in the pool.', exampleZh: '我在泳池游泳。' },
+    { en: 'wrote', zh: '寫了', image: '✏️', phonics: '', kk: '[rot]', phonicsSound: 'write→wrote', exampleSentence: 'I wrote a story.', exampleZh: '我寫了故事。' },
+    { en: 'read', zh: '讀了（發音變）', image: '📖', phonics: '', kk: '[rɛd]', phonicsSound: 'read→read', exampleSentence: 'I read a book.', exampleZh: '我讀了一本書。' },
+    { en: 'bought', zh: '買了', image: '🛒', phonics: '', kk: '[bɔt]', phonicsSound: 'buy→bought', exampleSentence: 'Mom bought fruit.', exampleZh: '媽媽買了水果。' },
+    { en: 'found', zh: '找到了', image: '🔑', phonics: '', kk: '[faʊnd]', phonicsSound: 'find→found', exampleSentence: 'Dad found his keys.', exampleZh: '爸爸找到鑰匙。' },
+    { en: 'sang', zh: '唱了', image: '🎤', phonics: '', kk: '[sæŋ]', phonicsSound: 'sing→sang', exampleSentence: 'She sang a song.', exampleZh: '她唱了一首歌。' },
+    { en: 'drank', zh: '喝了', image: '🥤', phonics: '', kk: '[dræŋk]', phonicsSound: 'drink→drank', exampleSentence: 'I drank juice.', exampleZh: '我喝了果汁。' },
+    { en: 'slept', zh: '睡了', image: '😴', phonics: '', kk: '[slɛpt]', phonicsSound: 'sleep→slept', exampleSentence: 'I slept well.', exampleZh: '我睡得好。' },
+    { en: 'won', zh: '贏了', image: '🏆', phonics: '', kk: '[wʌn]', phonicsSound: 'win→won', exampleSentence: 'We won the game.', exampleZh: '我們贏了比賽。' },
+  ],
+  sentences: [
+    { en: 'I ran in the race.', zh: '我在比賽跑步。' }, { en: 'I swam in the pool.', zh: '我在泳池游泳。' }, { en: 'I wrote a story.', zh: '我寫了一個故事。' }, { en: 'Mom bought fruit.', zh: '媽媽買了水果。' }, { en: 'We won the game!', zh: '我們贏了比賽！' }, { en: 'I slept well last night.', zh: '我昨晚睡得好。' },
+  ],
+  phonicsLetters: ['irregular past 2'],
+  warmUpQuestions: [
+    { type: 'match', question: 'run 的過去式是？', options: ['ran', 'runned', 'runs', 'run'], answer: 'ran' },
+    { type: 'match', question: 'buy 的過去式是？', options: ['bought', 'buyed', 'buys', 'buying'], answer: 'bought' },
+    { type: 'match', question: 'write 的過去式是？', options: ['wrote', 'writed', 'writes', 'written'], answer: 'wrote' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的動作', options: ['🏃', '🏊', '✏️', '🛒'], answer: '🛒', image: '🎧' },
+    { type: 'match', question: '配對：原形→過去式', options: ['run-ran', 'swim-swam', 'buy-bought', 'find-found'], answer: 'run-ran' },
+    { type: 'fill-blank', question: 'Mom ___ fruit at the market.（buy 過去）', options: ['bought', 'buyed', 'buys', 'buying'], answer: 'bought' },
+    { type: 'fill-blank', question: '中翻英：「我寫了一個故事。」', options: ["I wrote a story.", "I write a story.", "I will write a story.", "Do you write?"], answer: "I wrote a story." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['I ran in the race.', 'I swam in the pool.', 'I wrote a story.', 'We won the game!'], answer: 'I ran in the race.', image: '🎧' },
+    { type: 'read', question: 'What did Ruby write?（Ruby 寫了什麼？）', passage: 'Ruby wrote a story yesterday.\nShe read it to her class.\nEveryone liked it.', options: ['a story', 'a song', 'a letter', 'a test'], answer: 'a story' },
+  ],
+  talkTimePrompts: ["Say what you did: I ran / swam / bought.", "Practice: run-ran, swim-swam, buy-bought.", "Tell me about a race or game (past).", "✍️ 引導寫作＋翻譯：把「我們贏了比賽！」寫成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'find 的過去式是？', options: ['found', 'finded', 'finds', 'finding'], answer: 'found' },
+    { type: 'fill-blank', question: 'She ___ a song.（sing 過去）', options: ['sang', 'singed', 'sings', 'sung'], answer: 'sang' },
+    { type: 'fill-blank', question: '中翻英：「我在泳池游泳。」', options: ['I swam in the pool.', 'I swim in the pool.', 'I will swim.', 'Do you swim?'], answer: 'I swam in the pool.' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I ran in the race. I swam in the pool.", lineZh: '我在比賽跑步。我在泳池游泳。' },
+    { speaker: 'Ruby', line: "I wrote a story. I read it to my class.", lineZh: '我寫了故事。我唸給全班聽。' },
+    { speaker: 'Coco', line: "Mom bought fruit. Dad found his keys.", lineZh: '媽媽買了水果。爸爸找到鑰匙。' },
+    { speaker: 'Benny', line: "More irregular verbs — keep practicing!", lineZh: '更多不規則動詞 —— 繼續練習！' },
+  ],
+};
+
+const L9_M5: Mission = {
+  id: 5, slug: 'l9-m5-review-past', level: 9, title: 'Review① 過去式', titleEn: 'Review: Past Tense', theme: '時光道・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習①：過去式規則＋不規則 ＋ 現在進行式 ＋ 中翻英',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the past tense!", dialogueZh: '來複習過去式！', highlightWords: [], sceneEmojis: ['🔄', '⏪', '✨'], animation: 'wave' },
+    { image: '⏪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Regular: played. Irregular: went, ate, saw!", dialogueZh: '規則：played。不規則：went、ate、saw！', highlightWords: [], sceneEmojis: ['⏪', '🌀', '😊'], animation: 'bounce' },
+    { image: '⏳', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Now I am reading. Yesterday I read a book.", dialogueZh: '現在我在讀書。昨天我讀了一本書。', highlightWords: ['am reading', 'read'], sceneEmojis: ['⏳', '📖', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know the past tense! Wonderful!", dialogueZh: '你會過去式了！太棒了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'played', zh: '玩了', image: '⚽', phonics: '', kk: '[pled]', phonicsSound: '規則', exampleSentence: 'I played.', exampleZh: '我玩了。' },
+    { en: 'went', zh: '去了', image: '🚶', phonics: '', kk: '[wɛnt]', phonicsSound: '不規則', exampleSentence: 'I went home.', exampleZh: '我回家了。' },
+    { en: 'ate', zh: '吃了', image: '🍽️', phonics: '', kk: '[et]', phonicsSound: '不規則', exampleSentence: 'I ate lunch.', exampleZh: '我吃了午餐。' },
+    { en: 'saw', zh: '看見了', image: '👀', phonics: '', kk: '[sɔ]', phonicsSound: '不規則', exampleSentence: 'I saw a lion.', exampleZh: '我看到獅子。' },
+    { en: 'studied', zh: '讀書了', image: '📚', phonics: '', kk: '[ˈstʌdid]', phonicsSound: 'y→ied', exampleSentence: 'I studied.', exampleZh: '我讀書了。' },
+    { en: 'bought', zh: '買了', image: '🛒', phonics: '', kk: '[bɔt]', phonicsSound: '不規則', exampleSentence: 'I bought fruit.', exampleZh: '我買了水果。' },
+    { en: 'ran', zh: '跑了', image: '🏃', phonics: '', kk: '[ræn]', phonicsSound: '不規則', exampleSentence: 'I ran fast.', exampleZh: '我跑得快。' },
+    { en: 'reading', zh: '正在讀', image: '📖', phonics: '', kk: '[ˈridɪŋ]', phonicsSound: '進行式', exampleSentence: 'I am reading.', exampleZh: '我正在讀。' },
+    { en: 'yesterday', zh: '昨天', image: '🌙', phonics: '', kk: '[ˈjɛstɚˌde]', phonicsSound: '', exampleSentence: 'yesterday', exampleZh: '昨天' },
+    { en: 'won', zh: '贏了', image: '🏆', phonics: '', kk: '[wʌn]', phonicsSound: '不規則', exampleSentence: 'We won.', exampleZh: '我們贏了。' },
+  ],
+  sentences: [
+    { en: 'Yesterday I played soccer.', zh: '昨天我踢了足球。' }, { en: 'I went to the zoo and saw a lion.', zh: '我去動物園看到獅子。' }, { en: 'I ate lunch and studied.', zh: '我吃了午餐也讀了書。' }, { en: 'Now I am reading a book.', zh: '現在我在讀書。' }, { en: 'We won the game!', zh: '我們贏了比賽！' }, { en: 'What did you do yesterday?', zh: '你昨天做了什麼？' },
+  ],
+  phonicsLetters: ['review past'],
+  warmUpQuestions: [
+    { type: 'match', question: 'go 的過去式是？', options: ['went', 'goed', 'goes', 'gone'], answer: 'went' },
+    { type: 'match', question: 'study 的過去式是？', options: ['studied', 'studyed', 'studies', 'study'], answer: 'studied' },
+    { type: 'match', question: 'buy 的過去式是？', options: ['bought', 'buyed', 'buys', 'buying'], answer: 'bought' },
+  ],
+  challenges: [
+    { type: 'listen-pick', question: '聽音選圖：點你聽到的字', options: ['⚽', '🚶', '🍽️', '🛒'], answer: '🛒', image: '🎧' },
+    { type: 'fill-blank', question: 'Yesterday I ___ to the zoo.（go 過去）', options: ['went', 'go', 'goes', 'gone'], answer: 'went' },
+    { type: 'fill-blank', question: 'Now I ___ reading.（be動詞·進行式）', options: ['am', 'was', 'is', 'are'], answer: 'am' },
+    { type: 'fill-blank', question: '中翻英：「我去動物園看到獅子。」', options: ["I went to the zoo and saw a lion.", "I go to the zoo.", "I will go to the zoo.", "Do you go to the zoo?"], answer: "I went to the zoo and saw a lion." },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['Yesterday I played soccer.', 'I went to the zoo and saw a lion.', 'Now I am reading a book.', 'We won the game!'], answer: 'Yesterday I played soccer.', image: '🎧' },
+    { type: 'read', question: 'What did the writer do at the zoo?（作者在動物園做了什麼？）', passage: 'Yesterday I went to the zoo.\nI saw a lion and a bear.\nI ate ice cream too.', options: ['saw a lion and a bear', 'went swimming', 'played soccer', 'studied'], answer: 'saw a lion and a bear' },
+  ],
+  talkTimePrompts: ["Tell me what you did yesterday.", "Mix regular and irregular past verbs.", "Say: Now I am ___ing.", "✍️ 引導寫作＋翻譯：把「你昨天做了什麼？」寫成英文。"],
+  reviewQuiz: [
+    { type: 'match', question: 'run 的過去式是？', options: ['ran', 'runned', 'runs', 'run'], answer: 'ran' },
+    { type: 'fill-blank', question: 'I ___ lunch at noon.（eat 過去）', options: ['ate', 'eated', 'eats', 'eaten'], answer: 'ate' },
+    { type: 'read', question: 'Was it a fun day?（那天好玩嗎？）', passage: 'I went to the zoo and had fun.\nI saw many animals.\nIt was a great day!', options: ['Yes, it was fun', 'No, it was boring', 'It rained', 'He stayed home'], answer: 'Yes, it was fun' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review the past tense!", lineZh: '來複習過去式！' },
+    { speaker: 'Coco', line: "Regular: played. Irregular: went, ate, saw!", lineZh: '規則：played。不規則：went、ate、saw！' },
+    { speaker: 'Benny', line: "Now I am reading. Yesterday I read a book.", lineZh: '現在我在讀書。昨天我讀了一本書。' },
+    { speaker: 'Finn', line: "You know the past tense! Wonderful!", lineZh: '你會過去式了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
