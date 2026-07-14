@@ -10850,7 +10850,267 @@ const L11_M15: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15];
+const L11_M16: Mission = {
+  id: 16, slug: 'l11-m16-opinion-writing', level: 11, title: '觀點寫作', titleEn: 'Opinion Writing', theme: '挑戰場・我的觀點', themeEmoji: '💭',
+  focus: '觀點寫作：My opinion is… because… + 例子（觀點段落結構）＋ 中翻英',
+  story: [
+    { image: '💭', character: '🐻', characterKey: 'benny', characterAction: 'write', characterName: 'Benny', dialogue: "State your opinion, then give reasons and examples.", dialogueZh: '說出觀點，再給理由和例子。', highlightWords: ['opinion'], sceneEmojis: ['💭', '✍️', '✨'], animation: 'wave' },
+    { image: '📚', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "In my opinion, reading is the best hobby.", dialogueZh: '在我看來，閱讀是最好的嗜好。', highlightWords: ['In my opinion'], sceneEmojis: ['📚', '🥇', '😊'], animation: 'bounce' },
+    { image: '💡', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "It is great because it teaches us many things. For example, history.", dialogueZh: '它很棒因為教我們很多，例如歷史。', highlightWords: ['because', 'For example'], sceneEmojis: ['💡', '📖', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Opinion + reason + example = strong writing!", dialogueZh: '觀點 + 理由 + 例子 = 有力的寫作！', highlightWords: [], sceneEmojis: ['🏆', '💭', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'opinion', zh: '觀點·意見', image: '💭', phonics: '', kk: '[əˈpɪnjən]', phonicsSound: '', exampleSentence: 'In my opinion…', exampleZh: '在我看來…' },
+    { en: 'believe', zh: '相信·認為', image: '💡', phonics: '', kk: '[bɪˈliv]', phonicsSound: '', exampleSentence: 'I believe that…', exampleZh: '我認為…' },
+    { en: 'because', zh: '因為', image: '➡️', phonics: '', kk: '[bɪˈkɔz]', phonicsSound: '', exampleSentence: 'because it is fun', exampleZh: '因為好玩' },
+    { en: 'for example', zh: '例如', image: '📌', phonics: '', kk: '[fɔr ɪɡˈzæmpl̩]', phonicsSound: '', exampleSentence: 'For example…', exampleZh: '例如…' },
+    { en: 'reason', zh: '理由', image: '❓', phonics: '', kk: '[ˈrizn̩]', phonicsSound: '', exampleSentence: 'a good reason', exampleZh: '好理由' },
+    { en: 'example', zh: '例子', image: '🔍', phonics: '', kk: '[ɪɡˈzæmpl̩]', phonicsSound: '', exampleSentence: 'give an example', exampleZh: '舉個例子' },
+    { en: 'best', zh: '最好的', image: '🥇', phonics: '', kk: '[bɛst]', phonicsSound: '', exampleSentence: 'the best hobby', exampleZh: '最好的嗜好' },
+    { en: 'point', zh: '要點', image: '📍', phonics: '', kk: '[pɔɪnt]', phonicsSound: '', exampleSentence: 'a good point', exampleZh: '好要點' },
+    { en: 'agree', zh: '同意', image: '🤝', phonics: '', kk: '[əˈɡri]', phonicsSound: '', exampleSentence: 'I agree.', exampleZh: '我同意。' },
+    { en: 'conclusion', zh: '結論', image: '🏁', phonics: '', kk: '[kənˈkluʒən]', phonicsSound: '', exampleSentence: 'in conclusion', exampleZh: '總之' },
+  ],
+  sentences: [
+    { en: 'In my opinion, reading is the best hobby.', zh: '在我看來，閱讀是最好的嗜好。' }, { en: 'It is great because it teaches us many things.', zh: '它很棒因為教我們很多。' }, { en: 'For example, we learn about history.', zh: '例如，我們學歷史。' }, { en: 'I believe that everyone should read.', zh: '我認為每個人都該閱讀。' }, { en: 'In conclusion, reading is wonderful.', zh: '總之，閱讀很棒。' }, { en: 'What is your opinion?', zh: '你的觀點是什麼？' },
+  ],
+  phonicsLetters: ['opinion writing'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'In my ___, reading is great.（觀點）', options: ['opinion', 'reason', 'example', 'point'], answer: 'opinion' },
+    { type: 'fill-blank', question: 'It is great ___ it teaches us.（因為）', options: ['because', 'so', 'and', 'but'], answer: 'because' },
+    { type: 'fill-blank', question: '___, we learn history.（例如）', options: ['For example', 'Because', 'However', 'And'], answer: 'For example' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'I ___ that everyone should read.（認為）', options: ['believe', 'opinion', 'example', 'reason'], answer: 'believe' },
+    { type: 'fill-blank', question: 'In ___, reading is wonderful.（結論·總之）', options: ['conclusion', 'opinion', 'example', 'reason'], answer: 'conclusion' },
+    { type: 'fill-blank', question: '中翻英：「在我看來，閱讀是最好的嗜好。」', options: ['In my opinion, reading is the best hobby.', 'Reading is a hobby.', 'I read books.', 'Do you read?'], answer: 'In my opinion, reading is the best hobby.' },
+    { type: 'fill-blank', question: '中翻英：「例如，我們學歷史。」', options: ['For example, we learn about history.', 'We learn history.', 'History is a subject.', 'Do we learn?'], answer: 'For example, we learn about history.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['In my opinion, reading is the best hobby.', 'It is great because it teaches us many things.', 'For example, we learn about history.', 'In conclusion, reading is wonderful.'], answer: 'In my opinion, reading is the best hobby.', image: '🎧' },
+    { type: 'read', question: "What is the writer's opinion?（作者的觀點？）", passage: 'In my opinion, reading is the best hobby.\nIt teaches us many things.\nFor example, we learn about history.', options: ['reading is the best hobby', 'sports are best', 'reading is boring', 'history is hard'], answer: 'reading is the best hobby' },
+  ],
+  talkTimePrompts: ["State an opinion: In my opinion, ___.", "Give a reason with 'because'.", "Give an example with 'For example'.", "✍️ 引導寫作＋翻譯：寫一段觀點文（觀點＋理由＋例子＋結論）。"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'What is your ___?（觀點）', options: ['opinion', 'example', 'reason', 'point'], answer: 'opinion' },
+    { type: 'fill-blank', question: '中翻英：「我認為每個人都該閱讀。」', options: ['I believe that everyone should read.', 'I read.', 'Everyone reads.', 'Do you read?'], answer: 'I believe that everyone should read.' },
+    { type: 'match', question: '觀點段落通常包含？', options: ['觀點+理由+例子', '只有觀點', '只有故事', '只有問句'], answer: '觀點+理由+例子' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "State your opinion, then give reasons and examples.", lineZh: '說出觀點，再給理由和例子。' },
+    { speaker: 'Coco', line: "In my opinion, reading is the best hobby.", lineZh: '在我看來，閱讀是最好的嗜好。' },
+    { speaker: 'Polly', line: "It is great because it teaches us many things. For example, history.", lineZh: '它很棒因為教我們很多，例如歷史。' },
+    { speaker: 'Benny', line: "Opinion + reason + example = strong writing!", lineZh: '觀點 + 理由 + 例子 = 有力的寫作！' },
+  ],
+};
+
+const L11_M17: Mission = {
+  id: 17, slug: 'l11-m17-descriptive', level: 11, title: '描述性寫作', titleEn: 'Descriptive Writing', theme: '挑戰場・生動描寫', themeEmoji: '🎨',
+  focus: '描述性寫作：人物/地點/經驗（外觀＋個性＋感受）＋ 中翻英',
+  story: [
+    { image: '🎨', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Use your five senses to describe!", dialogueZh: '用你的五感來描寫！', highlightWords: ['describe'], sceneEmojis: ['🎨', '👁️', '✨'], animation: 'wave' },
+    { image: '👵', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "My grandma is gentle. She has kind eyes and a warm smile.", dialogueZh: '我奶奶很溫柔。她有慈祥的眼睛和溫暖的笑容。', highlightWords: ['gentle', 'kind'], sceneEmojis: ['👵', '❤️', '😊'], animation: 'bounce' },
+    { image: '🏖️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The beach was peaceful. I could hear the waves.", dialogueZh: '海灘很寧靜。我聽得到海浪。', highlightWords: ['peaceful', 'hear'], sceneEmojis: ['🏖️', '🌊', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Show, don't just tell — paint with words!", dialogueZh: '用畫面呈現，別只是說 —— 用文字作畫！', highlightWords: [], sceneEmojis: ['🏆', '🎨', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'describe', zh: '描寫', image: '🗣️', phonics: '', kk: '[dɪˈskraɪb]', phonicsSound: '', exampleSentence: 'describe a person', exampleZh: '描寫一個人' },
+    { en: 'gentle', zh: '溫柔的', image: '🕊️', phonics: '', kk: '[ˈdʒɛntl̩]', phonicsSound: '', exampleSentence: 'a gentle person', exampleZh: '溫柔的人' },
+    { en: 'appearance', zh: '外觀', image: '👁️', phonics: '', kk: '[əˈpɪrəns]', phonicsSound: '', exampleSentence: 'her appearance', exampleZh: '她的外觀' },
+    { en: 'personality', zh: '個性', image: '😊', phonics: '', kk: '[ˌpɝsəˈnæləti]', phonicsSound: '', exampleSentence: 'a warm personality', exampleZh: '溫暖的個性' },
+    { en: 'peaceful', zh: '寧靜的', image: '🕊️', phonics: '', kk: '[ˈpisfl̩]', phonicsSound: '', exampleSentence: 'a peaceful place', exampleZh: '寧靜的地方' },
+    { en: 'smile', zh: '笑容', image: '😊', phonics: '', kk: '[smaɪl]', phonicsSound: '', exampleSentence: 'a warm smile', exampleZh: '溫暖的笑容' },
+    { en: 'senses', zh: '感官', image: '👂', phonics: '', kk: '[ˈsɛnsɪz]', phonicsSound: '', exampleSentence: 'the five senses', exampleZh: '五種感官' },
+    { en: 'memory', zh: '回憶', image: '💭', phonics: '', kk: '[ˈmɛməri]', phonicsSound: '', exampleSentence: 'a happy memory', exampleZh: '快樂的回憶' },
+    { en: 'experience', zh: '經驗', image: '🌟', phonics: '', kk: '[ɪkˈspɪriəns]', phonicsSound: '', exampleSentence: 'a great experience', exampleZh: '很棒的經驗' },
+    { en: 'vivid', zh: '生動的', image: '🌈', phonics: '', kk: '[ˈvɪvɪd]', phonicsSound: '', exampleSentence: 'a vivid picture', exampleZh: '生動的畫面' },
+  ],
+  sentences: [
+    { en: 'My grandma is gentle.', zh: '我奶奶很溫柔。' }, { en: 'She has kind eyes and a warm smile.', zh: '她有慈祥的眼睛和溫暖的笑容。' }, { en: 'The beach was peaceful.', zh: '海灘很寧靜。' }, { en: 'I could hear the waves.', zh: '我聽得到海浪。' }, { en: 'It was a wonderful experience.', zh: '那是很棒的經驗。' }, { en: 'I will never forget that day.', zh: '我永遠不會忘記那天。' },
+  ],
+  phonicsLetters: ['descriptive writing'],
+  warmUpQuestions: [
+    { type: 'match', question: 'gentle 是什麼意思？', options: ['溫柔的', '寧靜的', '生動的', '快樂的'], answer: '溫柔的' },
+    { type: 'match', question: 'appearance 是什麼意思？', options: ['外觀', '個性', '感官', '回憶'], answer: '外觀' },
+    { type: 'fill-blank', question: 'The beach was ___.（寧靜）', options: ['peaceful', 'busy', 'loud', 'ugly'], answer: 'peaceful' },
+  ],
+  challenges: [
+    { type: 'read', question: 'How is the grandma described?（奶奶被如何描寫？）', passage: 'My grandma is gentle.\nShe has kind eyes and a warm smile.\nShe always helps me.', options: ['gentle with kind eyes', 'loud and busy', 'tall and fast', 'quiet and cold'], answer: 'gentle with kind eyes' },
+    { type: 'read', question: 'What could the writer hear at the beach?（作者在海灘聽到什麼？）', passage: 'The beach was peaceful.\nI could hear the waves.\nThe air smelled fresh.', options: ['the waves', 'cars', 'music', 'people'], answer: 'the waves' },
+    { type: 'fill-blank', question: '中翻英：「我奶奶很溫柔。」', options: ['My grandma is gentle.', 'My grandma is here.', 'I love grandma.', 'Is grandma gentle?'], answer: 'My grandma is gentle.' },
+    { type: 'fill-blank', question: '中翻英：「那是很棒的經驗。」', options: ['It was a wonderful experience.', 'It is an experience.', 'I have experience.', 'Was it good?'], answer: 'It was a wonderful experience.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['My grandma is gentle.', 'She has kind eyes and a warm smile.', 'The beach was peaceful.', 'I could hear the waves.'], answer: 'My grandma is gentle.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：peac _ ful（寧靜的）', answer: 'peaceful', image: '✍️' },
+  ],
+  talkTimePrompts: ["Describe a person's appearance and personality.", "Describe a place using your senses.", "Describe a memorable experience.", "✍️ 引導寫作＋翻譯：寫一段描寫（人/地點/經驗），用形容詞和感官。"],
+  reviewQuiz: [
+    { type: 'match', question: 'peaceful 是什麼意思？', options: ['寧靜的', '繁忙的', '溫柔的', '生動的'], answer: '寧靜的' },
+    { type: 'fill-blank', question: '中翻英：「她有慈祥的眼睛和溫暖的笑容。」', options: ['She has kind eyes and a warm smile.', 'She is kind.', 'She smiles.', 'Is she kind?'], answer: 'She has kind eyes and a warm smile.' },
+    { type: 'read', question: 'Was the experience good?（那經驗好嗎？）', passage: 'The beach day was peaceful and beautiful.\nIt was a wonderful experience.\nI will never forget it.', options: ['Yes, wonderful', 'No, boring', 'It was scary', 'It rained'], answer: 'Yes, wonderful' },
+  ],
+  videoScript: [
+    { speaker: 'Ruby', line: "Use your five senses to describe!", lineZh: '用你的五感來描寫！' },
+    { speaker: 'Coco', line: "My grandma is gentle. She has kind eyes and a warm smile.", lineZh: '我奶奶很溫柔。她有慈祥的眼睛和溫暖的笑容。' },
+    { speaker: 'Benny', line: "The beach was peaceful. I could hear the waves.", lineZh: '海灘很寧靜。我聽得到海浪。' },
+    { speaker: 'Ruby', line: "Show, don't just tell — paint with words!", lineZh: '用畫面呈現，別只是說 —— 用文字作畫！' },
+  ],
+};
+
+const L11_M18: Mission = {
+  id: 18, slug: 'l11-m18-discussion', level: 11, title: '口說：討論', titleEn: 'Discussion', theme: '挑戰場・一起討論', themeEmoji: '🗣️',
+  focus: '口說：討論與表達意見（agree/disagree/What do you think?）＋ 中翻英',
+  story: [
+    { image: '🗣️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I think dogs are better than cats. What do you think?", dialogueZh: '我覺得狗比貓好。你覺得呢？', highlightWords: ['What do you think'], sceneEmojis: ['🗣️', '🐶', '✨'], animation: 'wave' },
+    { image: '🤝', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I agree with you. Dogs are friendly.", dialogueZh: '我同意你。狗很友善。', highlightWords: ['agree'], sceneEmojis: ['🤝', '🐶', '😊'], animation: 'bounce' },
+    { image: '🙅', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "I disagree. In my view, cats are cuter.", dialogueZh: '我不同意。在我看來，貓比較可愛。', highlightWords: ['disagree', 'In my view'], sceneEmojis: ['🙅', '🐱', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Share ideas politely and respect others!", dialogueZh: '有禮貌地分享想法並尊重別人！', highlightWords: [], sceneEmojis: ['🏆', '🗣️', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'discuss', zh: '討論', image: '🗣️', phonics: '', kk: '[dɪˈskʌs]', phonicsSound: '', exampleSentence: 'discuss a topic', exampleZh: '討論主題' },
+    { en: 'agree', zh: '同意', image: '🤝', phonics: '', kk: '[əˈɡri]', phonicsSound: '', exampleSentence: 'I agree with you.', exampleZh: '我同意你。' },
+    { en: 'disagree', zh: '不同意', image: '🙅', phonics: '', kk: '[ˌdɪsəˈɡri]', phonicsSound: '', exampleSentence: 'I disagree.', exampleZh: '我不同意。' },
+    { en: 'in my view', zh: '在我看來', image: '👁️', phonics: '', kk: '[ɪn maɪ vju]', phonicsSound: '', exampleSentence: 'In my view…', exampleZh: '在我看來…' },
+    { en: 'What do you think?', zh: '你覺得呢？', image: '❓', phonics: '', kk: '[wɑt du ju θɪŋk]', phonicsSound: '', exampleSentence: 'What do you think?', exampleZh: '你覺得呢？' },
+    { en: 'point', zh: '論點', image: '📍', phonics: '', kk: '[pɔɪnt]', phonicsSound: '', exampleSentence: 'a good point', exampleZh: '好論點' },
+    { en: 'respect', zh: '尊重', image: '🙏', phonics: '', kk: '[rɪˈspɛkt]', phonicsSound: '', exampleSentence: 'respect others', exampleZh: '尊重別人' },
+    { en: 'topic', zh: '主題', image: '📌', phonics: '', kk: '[ˈtɑpɪk]', phonicsSound: '', exampleSentence: 'the topic', exampleZh: '主題' },
+    { en: 'share', zh: '分享', image: '🔄', phonics: '', kk: '[ʃɛr]', phonicsSound: '', exampleSentence: 'share your ideas', exampleZh: '分享想法' },
+    { en: 'maybe', zh: '也許', image: '🤷', phonics: '', kk: '[ˈmebi]', phonicsSound: '', exampleSentence: 'Maybe you are right.', exampleZh: '也許你對。' },
+  ],
+  sentences: [
+    { en: 'What do you think?', zh: '你覺得呢？' }, { en: 'I agree with you.', zh: '我同意你。' }, { en: 'I disagree.', zh: '我不同意。' }, { en: 'In my view, cats are cuter.', zh: '在我看來，貓比較可愛。' }, { en: 'That is a good point.', zh: '這是個好論點。' }, { en: 'Let us discuss it.', zh: '我們來討論吧。' },
+  ],
+  phonicsLetters: ['discussion'],
+  warmUpQuestions: [
+    { type: 'match', question: 'agree 的相反是？', options: ['disagree', 'discuss', 'respect', 'share'], answer: 'disagree' },
+    { type: 'fill-blank', question: 'I ___ with you.（同意）', options: ['agree', 'disagree', 'respect', 'discuss'], answer: 'agree' },
+    { type: 'match', question: 'What do you think? 是什麼意思？', options: ['你覺得呢？', '我同意', '我不同意', '尊重'], answer: '你覺得呢？' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'In my ___, cats are cuter.（看法）', options: ['view', 'agree', 'point', 'topic'], answer: 'view' },
+    { type: 'fill-blank', question: 'I ___. Cats are better!（不同意）', options: ['disagree', 'agree', 'respect', 'share'], answer: 'disagree' },
+    { type: 'fill-blank', question: '中翻英：「你覺得呢？」', options: ['What do you think?', 'What is that?', 'Who are you?', 'Where is it?'], answer: 'What do you think?' },
+    { type: 'fill-blank', question: '中翻英：「在我看來，貓比較可愛。」', options: ['In my view, cats are cuter.', 'Cats are cute.', 'I like cats.', 'Are cats cute?'], answer: 'In my view, cats are cuter.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['What do you think?', 'I agree with you.', 'I disagree.', 'In my view, cats are cuter.'], answer: 'What do you think?', image: '🎧' },
+    { type: 'read', question: 'Does Polly agree with Benny?（Polly 同意 Benny 嗎？）', passage: 'Benny says dogs are better.\nCoco agrees with him.\nBut Polly disagrees. She thinks cats are cuter.', options: ['No, she disagrees', 'Yes, she agrees', 'She is not sure', 'She left'], answer: 'No, she disagrees' },
+  ],
+  talkTimePrompts: ["Ask: What do you think?", "Agree: I agree because ___.", "Disagree politely: I disagree. In my view, ___.", "✍️ 引導寫作＋翻譯：把「這是個好論點。」寫成英文，再寫一句你的看法。"],
+  reviewQuiz: [
+    { type: 'match', question: 'respect 是什麼意思？', options: ['尊重', '討論', '分享', '同意'], answer: '尊重' },
+    { type: 'fill-blank', question: '中翻英：「我不同意。」', options: ['I disagree.', 'I agree.', 'I think so.', 'Do you agree?'], answer: 'I disagree.' },
+    { type: 'read', question: 'How should you discuss?（該如何討論？）', passage: 'When we discuss, we share ideas.\nWe agree or disagree politely.\nWe respect others.', options: ['politely and with respect', 'by shouting', 'by ignoring', 'by leaving'], answer: 'politely and with respect' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "I think dogs are better than cats. What do you think?", lineZh: '我覺得狗比貓好。你覺得呢？' },
+    { speaker: 'Coco', line: "I agree with you. Dogs are friendly.", lineZh: '我同意你。狗很友善。' },
+    { speaker: 'Polly', line: "I disagree. In my view, cats are cuter.", lineZh: '我不同意。在我看來，貓比較可愛。' },
+    { speaker: 'Benny', line: "Share ideas politely and respect others!", lineZh: '有禮貌地分享想法並尊重別人！' },
+  ],
+};
+
+const L11_M19: Mission = {
+  id: 19, slug: 'l11-m19-integrated', level: 11, title: '綜合應用', titleEn: 'Read + Write + Speak', theme: '挑戰場・全能挑戰', themeEmoji: '🎯',
+  focus: '綜合應用：讀一篇文章，寫下觀點，再口說分享 ＋ 中翻英',
+  story: [
+    { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read, then write, then speak — all in one!", dialogueZh: '讀、寫、說 —— 一次全部！', highlightWords: [], sceneEmojis: ['🎯', '📖', '✨'], animation: 'wave' },
+    { image: '🌳', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Text: We should protect the environment.", dialogueZh: '文章：我們應該保護環境。', highlightWords: ['should'], sceneEmojis: ['🌳', '🌍', '😊'], animation: 'bounce' },
+    { image: '✍️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Write & say: I agree because clean air is important.", dialogueZh: '寫並說：我同意因為乾淨空氣很重要。', highlightWords: ['agree', 'because'], sceneEmojis: ['✍️', '💨', '🎉'], animation: 'tada' },
+    { image: '🏆', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "You used all your skills together! Great!", dialogueZh: '你把所有技能一起用了！太棒了！', highlightWords: [], sceneEmojis: ['🏆', '🎯', '🎉'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'environment', zh: '環境', image: '🌍', phonics: '', kk: '[ɪnˈvaɪrənmənt]', phonicsSound: '', exampleSentence: 'protect the environment', exampleZh: '保護環境' },
+    { en: 'protect', zh: '保護', image: '🛡️', phonics: '', kk: '[prəˈtɛkt]', phonicsSound: '', exampleSentence: 'protect nature', exampleZh: '保護大自然' },
+    { en: 'pollution', zh: '污染', image: '🏭', phonics: '', kk: '[pəˈluʃən]', phonicsSound: '', exampleSentence: 'stop pollution', exampleZh: '停止污染' },
+    { en: 'recycle', zh: '回收', image: '♻️', phonics: '', kk: '[riˈsaɪkl̩]', phonicsSound: '', exampleSentence: 'recycle paper', exampleZh: '回收紙' },
+    { en: 'clean', zh: '乾淨的', image: '🫧', phonics: '', kk: '[klin]', phonicsSound: '', exampleSentence: 'clean air', exampleZh: '乾淨空氣' },
+    { en: 'important', zh: '重要的', image: '⭐', phonics: '', kk: '[ɪmˈpɔrtn̩t]', phonicsSound: '', exampleSentence: 'very important', exampleZh: '很重要' },
+    { en: 'agree', zh: '同意', image: '🤝', phonics: '', kk: '[əˈɡri]', phonicsSound: '', exampleSentence: 'I agree.', exampleZh: '我同意。' },
+    { en: 'future', zh: '未來', image: '🚀', phonics: '', kk: '[ˈfjutʃɚ]', phonicsSound: '', exampleSentence: 'our future', exampleZh: '我們的未來' },
+    { en: 'save', zh: '拯救·節省', image: '💚', phonics: '', kk: '[sev]', phonicsSound: '', exampleSentence: 'save the earth', exampleZh: '拯救地球' },
+    { en: 'action', zh: '行動', image: '💪', phonics: '', kk: '[ˈækʃən]', phonicsSound: '', exampleSentence: 'take action', exampleZh: '採取行動' },
+  ],
+  sentences: [
+    { en: 'We should protect the environment.', zh: '我們應該保護環境。' }, { en: 'Pollution is a big problem.', zh: '污染是大問題。' }, { en: 'We should recycle and save water.', zh: '我們該回收和省水。' }, { en: 'I agree because clean air is important.', zh: '我同意因為乾淨空氣很重要。' }, { en: 'Let us take action for the future.', zh: '我們為未來採取行動吧。' }, { en: 'Everyone can help.', zh: '每個人都能幫忙。' },
+  ],
+  phonicsLetters: ['integrated'],
+  warmUpQuestions: [
+    { type: 'match', question: 'environment 是什麼意思？', options: ['環境', '污染', '未來', '行動'], answer: '環境' },
+    { type: 'fill-blank', question: 'We should ___ the environment.（保護）', options: ['protect', 'pollute', 'waste', 'ignore'], answer: 'protect' },
+    { type: 'match', question: '♻️ recycle 是什麼意思？', options: ['回收', '污染', '拯救', '重要'], answer: '回收' },
+  ],
+  challenges: [
+    { type: 'read', question: 'What is the text about?（文章關於什麼？）', passage: 'We should protect the environment.\nPollution harms the earth.\nWe can recycle and save water.', options: ['protecting the environment', 'shopping', 'sports', 'cooking'], answer: 'protecting the environment' },
+    { type: 'read', question: 'What can we do to help?（我們能做什麼幫忙？）', passage: 'Everyone can help the earth.\nWe can recycle paper and plastic.\nWe can save water and energy.', options: ['recycle and save water', 'waste more', 'do nothing', 'buy more'], answer: 'recycle and save water' },
+    { type: 'fill-blank', question: '中翻英：「我們應該保護環境。」', options: ['We should protect the environment.', 'The environment is big.', 'I like nature.', 'Do we protect it?'], answer: 'We should protect the environment.' },
+    { type: 'fill-blank', question: '中翻英：「我同意因為乾淨空氣很重要。」', options: ['I agree because clean air is important.', 'I agree.', 'Air is clean.', 'Do you agree?'], answer: 'I agree because clean air is important.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['We should protect the environment.', 'Pollution is a big problem.', 'I agree because clean air is important.', 'Everyone can help.'], answer: 'We should protect the environment.', image: '🎧' },
+    { type: 'spell', question: '拼拼看：prot _ ct（保護）', answer: 'protect', image: '✍️' },
+  ],
+  talkTimePrompts: ["Read the text and say the main idea.", "Write your opinion about the environment.", "Speak: I think we should ___ because ___.", "✍️ 引導寫作＋翻譯：讀完後寫 3 句你對保護環境的看法。"],
+  reviewQuiz: [
+    { type: 'match', question: 'pollution 是什麼意思？', options: ['污染', '回收', '環境', '未來'], answer: '污染' },
+    { type: 'fill-blank', question: '中翻英：「我們為未來採取行動吧。」', options: ['Let us take action for the future.', 'The future is here.', 'I take action.', 'Do we act?'], answer: 'Let us take action for the future.' },
+    { type: 'read', question: 'Can everyone help the earth?（每個人都能幫地球嗎？）', passage: 'Protecting the earth is everyone\'s job.\nEveryone can help.\nSmall actions make a big difference.', options: ['Yes, everyone can help', 'No, only adults', 'No one can', 'Only scientists'], answer: 'Yes, everyone can help' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Read, then write, then speak — all in one!", lineZh: '讀、寫、說 —— 一次全部！' },
+    { speaker: 'Coco', line: "Text: We should protect the environment.", lineZh: '文章：我們應該保護環境。' },
+    { speaker: 'Ruby', line: "Write & say: I agree because clean air is important.", lineZh: '寫並說：我同意因為乾淨空氣很重要。' },
+    { speaker: 'Benny', line: "You used all your skills together! Great!", lineZh: '你把所有技能一起用了！太棒了！' },
+  ],
+};
+
+const L11_M20: Mission = {
+  id: 20, slug: 'l11-m20-boss', level: 11, title: '挑戰場大魔王', titleEn: 'Challenge Boss', theme: '挑戰場・大魔王挑戰', themeEmoji: '🏆',
+  focus: '總驗收：情態/關係代名詞/被動/條件句/進階連接詞/寫作 ＋ 中翻英',
+  story: [
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Challenge Boss is here! Show your B1 skills!", dialogueZh: '挑戰大魔王來了！展現你的 B1 實力！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏔️'], animation: 'shake' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "should, who, was made, if, although — I know them!", dialogueZh: 'should、who、was made、if、although —— 我都會！', highlightWords: [], sceneEmojis: ['💪', '📚', '✨'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Challenge Badge!", dialogueZh: '你打敗大魔王了！獲得挑戰徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '⛰️', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Challenge Arena! On to Victory Peak!", dialogueZh: '你完成了挑戰場！前進勝利峰！', highlightWords: [], sceneEmojis: ['⛰️', '🎓', '🚀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'should', zh: '應該', image: '💡', phonics: '', kk: '[ʃʊd]', phonicsSound: '', exampleSentence: 'You should rest.', exampleZh: '你應該休息。' },
+    { en: 'must', zh: '必須', image: '📏', phonics: '', kk: '[mʌst]', phonicsSound: '', exampleSentence: 'You must go.', exampleZh: '你必須走。' },
+    { en: 'who', zh: '（關代·人）', image: '🧑', phonics: '', kk: '[hu]', phonicsSound: '', exampleSentence: 'the boy who won', exampleZh: '贏的男孩' },
+    { en: 'was made', zh: '被製成', image: '🔧', phonics: '', kk: '[wʌz med]', phonicsSound: '被動', exampleSentence: 'was made of wood', exampleZh: '木頭做的' },
+    { en: 'if', zh: '如果', image: '🔀', phonics: '', kk: '[ɪf]', phonicsSound: '', exampleSentence: 'If it rains…', exampleZh: '如果下雨…' },
+    { en: 'although', zh: '雖然', image: '↔️', phonics: '', kk: '[ɔlˈðo]', phonicsSound: '', exampleSentence: 'Although it rained…', exampleZh: '雖然下雨…' },
+    { en: 'want to', zh: '想要（做）', image: '🙋', phonics: '', kk: '[wɑnt tu]', phonicsSound: '', exampleSentence: 'I want to go.', exampleZh: '我想去。' },
+    { en: 'enjoy', zh: '喜歡（做）', image: '😄', phonics: '', kk: '[ɪnˈdʒɔɪ]', phonicsSound: '', exampleSentence: 'enjoy reading', exampleZh: '喜歡閱讀' },
+    { en: 'opinion', zh: '觀點', image: '💭', phonics: '', kk: '[əˈpɪnjən]', phonicsSound: '', exampleSentence: 'In my opinion…', exampleZh: '在我看來…' },
+    { en: 'best', zh: '最好的', image: '🥇', phonics: '', kk: '[bɛst]', phonicsSound: '', exampleSentence: 'the best', exampleZh: '最好的' },
+  ],
+  sentences: [
+    { en: 'You should rest because you are tired.', zh: '你應該休息因為你累了。' }, { en: 'The boy who won is my friend.', zh: '贏的男孩是我朋友。' }, { en: 'The bridge was made of stone.', zh: '橋是石頭做的。' }, { en: 'If it rains, we will stay home.', zh: '如果下雨，我們就待在家。' }, { en: 'Although it was hard, I did it.', zh: '雖然很難，我做到了。' }, { en: 'I did it!', zh: '我做到了！' },
+  ],
+  phonicsLetters: ['review all'],
+  warmUpQuestions: [
+    { type: 'fill-blank', question: 'You ___ rest.（建議）', options: ['should', 'must', 'could', 'may'], answer: 'should' },
+    { type: 'fill-blank', question: 'The boy ___ won is my friend.（人）', options: ['who', 'which', 'where', 'when'], answer: 'who' },
+    { type: 'fill-blank', question: '___ it rains, we will stay home.（如果）', options: ['If', 'And', 'But', 'So'], answer: 'If' },
+  ],
+  challenges: [
+    { type: 'fill-blank', question: 'The bridge was ___ of stone.（製成·p.p.）', options: ['made', 'make', 'making', 'makes'], answer: 'made' },
+    { type: 'fill-blank', question: '___ it was hard, I did it.（雖然）', options: ['Although', 'Because', 'So', 'And'], answer: 'Although' },
+    { type: 'fill-blank', question: 'I want ___ travel the world.（不定詞）', options: ['to', 'for', 'and', 'so'], answer: 'to' },
+    { type: 'fill-blank', question: '中翻英：「贏的男孩是我朋友。」', options: ['The boy who won is my friend.', 'The boy won.', 'My friend won.', 'Who won?'], answer: 'The boy who won is my friend.' },
+    { type: 'listen-pick', question: '🎧 聽句子，勾選你聽到的那一句', options: ['You should rest because you are tired.', 'The boy who won is my friend.', 'If it rains, we will stay home.', 'Although it was hard, I did it.'], answer: 'You should rest because you are tired.', image: '🎧' },
+    { type: 'read', question: "What is the writer's opinion?（作者觀點？）", passage: 'In my opinion, reading is the best hobby.\nIt teaches us many things.\nEveryone should try it.', options: ['reading is the best hobby', 'sports are best', 'reading is boring', 'no opinion'], answer: 'reading is the best hobby' },
+  ],
+  talkTimePrompts: ["Give advice with should/must.", "Use a relative pronoun and passive voice.", "Make an if-sentence and use 'although'.", "You beat the Challenge Boss! Say 'I did it!'"],
+  reviewQuiz: [
+    { type: 'fill-blank', question: 'I enjoy ___.（閱讀·動名詞）', options: ['reading', 'read', 'to read', 'reads'], answer: 'reading' },
+    { type: 'fill-blank', question: '中翻英：「如果下雨，我們就待在家。」', options: ['If it rains, we will stay home.', 'It rains.', 'We stay home.', 'Does it rain?'], answer: 'If it rains, we will stay home.' },
+    { type: 'read', question: 'Did the writer succeed?（作者成功了嗎？）', passage: 'The task was very hard.\nAlthough it was hard, I did not give up.\nFinally, I did it!', options: ['Yes, succeeded', 'No, gave up', 'It was easy', 'Not sure'], answer: 'Yes, succeeded' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Challenge Boss says: show your B1 skills!", lineZh: '挑戰大魔王說：展現你的 B1 實力！' },
+    { speaker: 'Coco', line: "should, who, was made, if, although — I know them!", lineZh: 'should、who、was made、if、although —— 我都會！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Challenge champion!", lineZh: '你打敗大魔王了！挑戰冠軍！' },
+    { speaker: 'Finn', line: "On to Victory Peak! The final level!", lineZh: '前進勝利峰！最後一級！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15, L7_M16, L7_M17, L7_M18, L7_M19, L7_M20, L8_M1, L8_M2, L8_M3, L8_M4, L8_M5, L8_M6, L8_M7, L8_M8, L8_M9, L8_M10, L8_M11, L8_M12, L8_M13, L8_M14, L8_M15, L8_M16, L8_M17, L8_M18, L8_M19, L8_M20, L9_M1, L9_M2, L9_M3, L9_M4, L9_M5, L9_M6, L9_M7, L9_M8, L9_M9, L9_M10, L9_M11, L9_M12, L9_M13, L9_M14, L9_M15, L9_M16, L9_M17, L9_M18, L9_M19, L9_M20, L10_M1, L10_M2, L10_M3, L10_M4, L10_M5, L10_M6, L10_M7, L10_M8, L10_M9, L10_M10, L10_M11, L10_M12, L10_M13, L10_M14, L10_M15, L10_M16, L10_M17, L10_M18, L10_M19, L10_M20, L11_M1, L11_M2, L11_M3, L11_M4, L11_M5, L11_M6, L11_M7, L11_M8, L11_M9, L11_M10, L11_M11, L11_M12, L11_M13, L11_M14, L11_M15, L11_M16, L11_M17, L11_M18, L11_M19, L11_M20];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
