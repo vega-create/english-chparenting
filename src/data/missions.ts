@@ -6426,7 +6426,267 @@ const L7_M10: Mission = {
   ],
 };
 
-export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10];
+const L7_M11: Mission = {
+  id: 11, slug: 'l7-m11-verb-forms-regular', level: 7, title: '動詞三態① 規則', titleEn: 'Verb Forms: Regular', theme: '文法門・三態背誦', themeEmoji: '📋',
+  focus: '規則動詞三態（原形-過去-過去分詞同形 +ed）：play-played-played',
+  story: [
+    { image: '📋', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Regular verbs: play, played, played!", dialogueZh: '規則動詞：play、played、played！', highlightWords: ['played'], sceneEmojis: ['📋', '➕', '✨'], animation: 'wave' },
+    { image: '🚶', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "walk, walked, walked. Just add -ed!", dialogueZh: 'walk、walked、walked。加 -ed 就好！', highlightWords: ['walked'], sceneEmojis: ['🚶', '➕', '😊'], animation: 'bounce' },
+    { image: '🧹', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "clean, cleaned, cleaned. Say them three times!", dialogueZh: 'clean、cleaned、cleaned。念三次！', highlightWords: ['cleaned'], sceneEmojis: ['🧹', '📢', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Regular verbs are easy — all +ed!", dialogueZh: '規則動詞很簡單 —— 都加 +ed！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '📋'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'play', zh: '玩', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '規則', exampleSentence: 'play → played → played', exampleZh: '原→過去→過去分詞' },
+    { en: 'walk', zh: '走路', image: '🚶', phonics: '', kk: '[wɔk]', phonicsSound: '規則', exampleSentence: 'walk → walked → walked', exampleZh: '原→過去→過去分詞' },
+    { en: 'look', zh: '看', image: '👀', phonics: '', kk: '[lʊk]', phonicsSound: '規則', exampleSentence: 'look → looked → looked', exampleZh: '原→過去→過去分詞' },
+    { en: 'want', zh: '想要', image: '🙋', phonics: '', kk: '[wɑnt]', phonicsSound: '規則', exampleSentence: 'want → wanted → wanted', exampleZh: '原→過去→過去分詞' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '規則', exampleSentence: 'help → helped → helped', exampleZh: '原→過去→過去分詞' },
+    { en: 'clean', zh: '打掃', image: '🧹', phonics: '', kk: '[klin]', phonicsSound: '規則', exampleSentence: 'clean → cleaned → cleaned', exampleZh: '原→過去→過去分詞' },
+    { en: 'watch', zh: '看（電視）', image: '📺', phonics: '', kk: '[wɑtʃ]', phonicsSound: '規則', exampleSentence: 'watch → watched → watched', exampleZh: '原→過去→過去分詞' },
+    { en: 'cook', zh: '煮', image: '🍳', phonics: '', kk: '[kʊk]', phonicsSound: '規則', exampleSentence: 'cook → cooked → cooked', exampleZh: '原→過去→過去分詞' },
+    { en: 'jump', zh: '跳', image: '🤸', phonics: '', kk: '[dʒʌmp]', phonicsSound: '規則', exampleSentence: 'jump → jumped → jumped', exampleZh: '原→過去→過去分詞' },
+    { en: 'call', zh: '打電話·叫', image: '📞', phonics: '', kk: '[kɔl]', phonicsSound: '規則', exampleSentence: 'call → called → called', exampleZh: '原→過去→過去分詞' },
+  ],
+  sentences: [
+    { en: 'play - played - played', zh: '玩（規則）' }, { en: 'walk - walked - walked', zh: '走路（規則）' }, { en: 'I played soccer yesterday.', zh: '我昨天踢了足球。' }, { en: 'She has cleaned her room.', zh: '她打掃過房間了。' }, { en: 'We helped our mom.', zh: '我們幫了媽媽。' }, { en: 'Regular verbs add -ed.', zh: '規則動詞加 -ed。' },
+  ],
+  phonicsLetters: ['regular verbs'],
+  warmUpQuestions: [
+    { type: 'match', question: 'play 的過去式是？', options: ['played', 'plaid', 'plays', 'playing'], answer: 'played' },
+    { type: 'match', question: 'walk 的過去分詞是？', options: ['walked', 'walking', 'walks', 'walk'], answer: 'walked' },
+    { type: 'match', question: 'want 的過去式是？', options: ['wanted', 'wants', 'wanting', 'want'], answer: 'wanted' },
+  ],
+  challenges: [
+    { type: 'match', question: '配對：原形→過去式', options: ['play-played', 'walk-walked', 'help-helped', 'cook-cooked'], answer: 'play-played' },
+    { type: 'fill-blank', question: 'Yesterday I ___ my room.（clean 過去）', options: ['cleaned', 'clean', 'cleans', 'cleaning'], answer: 'cleaned' },
+    { type: 'fill-blank', question: 'She has ___ soccer.（play 過去分詞）', options: ['played', 'play', 'plays', 'playing'], answer: 'played' },
+    { type: 'spell', question: '拼拼看：help 的過去式 help__', answer: 'helped', image: '✍️' },
+    { type: 'listen-pick', question: '🎧 聽三態，勾選你聽到的動詞', options: ['walk - walked - walked', 'play - played - played', 'cook - cooked - cooked', 'help - helped - helped'], answer: 'walk - walked - walked', image: '🎧' },
+    { type: 'read', question: 'What did they do yesterday?（昨天做了什麼？）', passage: 'Yesterday the friends cleaned the park.\nThey walked and played.\nThey helped each other.', options: ['cleaned the park', 'went to school', 'watched TV', 'cooked dinner'], answer: 'cleaned the park' },
+  ],
+  talkTimePrompts: ["Say three forms: play, played, played.", "Make a past sentence: I ___ed.", "Practice: walk, walked, walked!", "✍️ 引導寫作：Yesterday I ___ed and ___ed."],
+  reviewQuiz: [
+    { type: 'match', question: 'cook 的過去分詞是？', options: ['cooked', 'cooking', 'cooks', 'cook'], answer: 'cooked' },
+    { type: 'fill-blank', question: 'We ___ our mom yesterday.（help 過去）', options: ['helped', 'help', 'helps', 'helping'], answer: 'helped' },
+    { type: 'match', question: 'jump 的過去式是？', options: ['jumped', 'jumps', 'jumping', 'jump'], answer: 'jumped' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Regular verbs: play, played, played!", lineZh: '規則動詞：play、played、played！' },
+    { speaker: 'Coco', line: "walk, walked, walked. Just add -ed!", lineZh: 'walk、walked、walked。加 -ed！' },
+    { speaker: 'Ruby', line: "clean, cleaned, cleaned. Say them three times!", lineZh: 'clean、cleaned、cleaned。念三次！' },
+    { speaker: 'Benny', line: "Regular verbs are easy — all +ed!", lineZh: '規則動詞很簡單 —— 都加 +ed！' },
+  ],
+};
+
+const L7_M12: Mission = {
+  id: 12, slug: 'l7-m12-verb-forms-irregular-1', level: 7, title: '動詞三態② 不規則', titleEn: 'Irregular Verbs 1', theme: '文法門・三態背誦', themeEmoji: '🌀',
+  focus: '常用不規則動詞三態①：go-went-gone, eat-ate-eaten, see-saw-seen',
+  story: [
+    { image: '🌀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Irregular verbs change! go, went, gone!", dialogueZh: '不規則動詞會變！go、went、gone！', highlightWords: ['went', 'gone'], sceneEmojis: ['🌀', '🚶', '✨'], animation: 'wave' },
+    { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "eat, ate, eaten. They are special!", dialogueZh: 'eat、ate、eaten。它們很特別！', highlightWords: ['ate', 'eaten'], sceneEmojis: ['🍎', '🌀', '😊'], animation: 'bounce' },
+    { image: '👀', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "see, saw, seen. You must remember them!", dialogueZh: 'see、saw、seen。你必須記住！', highlightWords: ['saw', 'seen'], sceneEmojis: ['👀', '🧠', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Irregular verbs — practice every day!", dialogueZh: '不規則動詞 —— 每天練習！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🌀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '不規則', exampleSentence: 'go → went → gone', exampleZh: '原→過去→過去分詞' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '不規則', exampleSentence: 'eat → ate → eaten', exampleZh: '原→過去→過去分詞' },
+    { en: 'see', zh: '看見', image: '👀', phonics: '', kk: '[si]', phonicsSound: '不規則', exampleSentence: 'see → saw → seen', exampleZh: '原→過去→過去分詞' },
+    { en: 'come', zh: '來', image: '👋', phonics: '', kk: '[kʌm]', phonicsSound: '不規則', exampleSentence: 'come → came → come', exampleZh: '原→過去→過去分詞' },
+    { en: 'give', zh: '給', image: '🎁', phonics: '', kk: '[ɡɪv]', phonicsSound: '不規則', exampleSentence: 'give → gave → given', exampleZh: '原→過去→過去分詞' },
+    { en: 'take', zh: '拿', image: '✋', phonics: '', kk: '[tek]', phonicsSound: '不規則', exampleSentence: 'take → took → taken', exampleZh: '原→過去→過去分詞' },
+    { en: 'make', zh: '製作', image: '🛠️', phonics: '', kk: '[mek]', phonicsSound: '不規則', exampleSentence: 'make → made → made', exampleZh: '原→過去→過去分詞' },
+    { en: 'do', zh: '做', image: '✅', phonics: '', kk: '[du]', phonicsSound: '不規則', exampleSentence: 'do → did → done', exampleZh: '原→過去→過去分詞' },
+    { en: 'get', zh: '得到', image: '🎯', phonics: '', kk: '[ɡɛt]', phonicsSound: '不規則', exampleSentence: 'get → got → gotten', exampleZh: '原→過去→過去分詞' },
+    { en: 'have', zh: '有', image: '🤲', phonics: '', kk: '[hæv]', phonicsSound: '不規則', exampleSentence: 'have → had → had', exampleZh: '原→過去→過去分詞' },
+  ],
+  sentences: [
+    { en: 'go - went - gone', zh: '去（不規則）' }, { en: 'eat - ate - eaten', zh: '吃（不規則）' }, { en: 'I went to school yesterday.', zh: '我昨天去了學校。' }, { en: 'She has eaten lunch.', zh: '她吃過午餐了。' }, { en: 'We saw a movie.', zh: '我們看了電影。' }, { en: 'He has done his homework.', zh: '他做完作業了。' },
+  ],
+  phonicsLetters: ['irregular verbs 1'],
+  warmUpQuestions: [
+    { type: 'match', question: 'go 的過去式是？', options: ['went', 'goed', 'goes', 'gone'], answer: 'went' },
+    { type: 'match', question: 'eat 的過去式是？', options: ['ate', 'eated', 'eaten', 'eats'], answer: 'ate' },
+    { type: 'match', question: 'see 的過去式是？', options: ['saw', 'seed', 'seen', 'sees'], answer: 'saw' },
+  ],
+  challenges: [
+    { type: 'match', question: '配對：原形→過去式', options: ['go-went', 'eat-ate', 'see-saw', 'take-took'], answer: 'go-went' },
+    { type: 'fill-blank', question: 'I ___ to school yesterday.（go 過去）', options: ['went', 'goed', 'gone', 'goes'], answer: 'went' },
+    { type: 'fill-blank', question: 'She has ___ lunch.（eat 過去分詞）', options: ['eaten', 'ate', 'eat', 'eating'], answer: 'eaten' },
+    { type: 'match', question: 'do 的過去分詞是？', options: ['done', 'did', 'does', 'doing'], answer: 'done' },
+    { type: 'listen-pick', question: '🎧 聽三態，勾選你聽到的動詞', options: ['go - went - gone', 'eat - ate - eaten', 'see - saw - seen', 'take - took - taken'], answer: 'go - went - gone', image: '🎧' },
+    { type: 'read', question: 'Where did Finn go yesterday?（Finn 昨天去哪？）', passage: 'Yesterday Finn went to the park.\nHe saw a big dog.\nHe ate an ice cream.', options: ['the park', 'school', 'home', 'the shop'], answer: 'the park' },
+  ],
+  talkTimePrompts: ["Say three forms: go, went, gone.", "Make a past sentence: I went to ___.", "Practice: eat, ate, eaten!", "✍️ 引導寫作：Yesterday I went to ___ and saw ___."],
+  reviewQuiz: [
+    { type: 'match', question: 'take 的過去式是？', options: ['took', 'taked', 'taken', 'takes'], answer: 'took' },
+    { type: 'fill-blank', question: 'We ___ a movie.（see 過去）', options: ['saw', 'seed', 'seen', 'sees'], answer: 'saw' },
+    { type: 'match', question: 'give 的過去分詞是？', options: ['given', 'gave', 'gived', 'gives'], answer: 'given' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Irregular verbs change! go, went, gone!", lineZh: '不規則動詞會變！go、went、gone！' },
+    { speaker: 'Coco', line: "eat, ate, eaten. They are special!", lineZh: 'eat、ate、eaten。很特別！' },
+    { speaker: 'Ruby', line: "see, saw, seen. You must remember them!", lineZh: 'see、saw、seen。必須記住！' },
+    { speaker: 'Benny', line: "Irregular verbs — practice every day!", lineZh: '不規則動詞 —— 每天練習！' },
+  ],
+};
+
+const L7_M13: Mission = {
+  id: 13, slug: 'l7-m13-verb-forms-irregular-2', level: 7, title: '動詞三態③ 不規則', titleEn: 'Irregular Verbs 2', theme: '文法門・三態背誦', themeEmoji: '🔀',
+  focus: '常用不規則動詞三態②：run-ran-run, sing-sang-sung, write-wrote-written',
+  story: [
+    { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "More irregular verbs! run, ran, run!", dialogueZh: '更多不規則動詞！run、ran、run！', highlightWords: ['ran'], sceneEmojis: ['🔀', '🏃', '✨'], animation: 'wave' },
+    { image: '🎤', character: '🦜', characterKey: 'polly', characterAction: 'sing', characterName: 'Polly', dialogue: "sing, sang, sung. I sang a song!", dialogueZh: 'sing、sang、sung。我唱了一首歌！', highlightWords: ['sang', 'sung'], sceneEmojis: ['🎤', '🎵', '😊'], animation: 'bounce' },
+    { image: '✏️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "write, wrote, written. I wrote a story!", dialogueZh: 'write、wrote、written。我寫了一個故事！', highlightWords: ['wrote', 'written'], sceneEmojis: ['✏️', '📖', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Keep practicing irregular verbs!", dialogueZh: '繼續練習不規則動詞！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🔀'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'run', zh: '跑', image: '🏃', phonics: '', kk: '[rʌn]', phonicsSound: '不規則', exampleSentence: 'run → ran → run', exampleZh: '原→過去→過去分詞' },
+    { en: 'swim', zh: '游泳', image: '🏊', phonics: '', kk: '[swɪm]', phonicsSound: '不規則', exampleSentence: 'swim → swam → swum', exampleZh: '原→過去→過去分詞' },
+    { en: 'sing', zh: '唱歌', image: '🎤', phonics: '', kk: '[sɪŋ]', phonicsSound: '不規則', exampleSentence: 'sing → sang → sung', exampleZh: '原→過去→過去分詞' },
+    { en: 'drink', zh: '喝', image: '🥤', phonics: '', kk: '[drɪŋk]', phonicsSound: '不規則', exampleSentence: 'drink → drank → drunk', exampleZh: '原→過去→過去分詞' },
+    { en: 'write', zh: '寫', image: '✏️', phonics: '', kk: '[raɪt]', phonicsSound: '不規則', exampleSentence: 'write → wrote → written', exampleZh: '原→過去→過去分詞' },
+    { en: 'read', zh: '讀', image: '📚', phonics: '', kk: '[rid]', phonicsSound: '不規則', exampleSentence: 'read → read → read', exampleZh: '原→過去→過去分詞（發音變）' },
+    { en: 'speak', zh: '說', image: '💬', phonics: '', kk: '[spik]', phonicsSound: '不規則', exampleSentence: 'speak → spoke → spoken', exampleZh: '原→過去→過去分詞' },
+    { en: 'fly', zh: '飛', image: '🕊️', phonics: '', kk: '[flaɪ]', phonicsSound: '不規則', exampleSentence: 'fly → flew → flown', exampleZh: '原→過去→過去分詞' },
+    { en: 'ride', zh: '騎', image: '🚲', phonics: '', kk: '[raɪd]', phonicsSound: '不規則', exampleSentence: 'ride → rode → ridden', exampleZh: '原→過去→過去分詞' },
+    { en: 'sleep', zh: '睡覺', image: '😴', phonics: '', kk: '[slip]', phonicsSound: '不規則', exampleSentence: 'sleep → slept → slept', exampleZh: '原→過去→過去分詞' },
+  ],
+  sentences: [
+    { en: 'run - ran - run', zh: '跑（不規則）' }, { en: 'sing - sang - sung', zh: '唱歌（不規則）' }, { en: 'I ran fast in the race.', zh: '我在比賽跑得快。' }, { en: 'She has written a story.', zh: '她寫了一個故事。' }, { en: 'The bird flew away.', zh: '鳥飛走了。' }, { en: 'I slept well last night.', zh: '我昨晚睡得好。' },
+  ],
+  phonicsLetters: ['irregular verbs 2'],
+  warmUpQuestions: [
+    { type: 'match', question: 'run 的過去式是？', options: ['ran', 'runned', 'run', 'runs'], answer: 'ran' },
+    { type: 'match', question: 'sing 的過去式是？', options: ['sang', 'singed', 'sung', 'sings'], answer: 'sang' },
+    { type: 'match', question: 'write 的過去式是？', options: ['wrote', 'writed', 'written', 'writes'], answer: 'wrote' },
+  ],
+  challenges: [
+    { type: 'match', question: '配對：原形→過去式', options: ['run-ran', 'sing-sang', 'write-wrote', 'fly-flew'], answer: 'run-ran' },
+    { type: 'fill-blank', question: 'She has ___ a story.（write 過去分詞）', options: ['written', 'wrote', 'write', 'writing'], answer: 'written' },
+    { type: 'fill-blank', question: 'The bird ___ away.（fly 過去）', options: ['flew', 'flied', 'flown', 'flies'], answer: 'flew' },
+    { type: 'match', question: 'swim 的過去分詞是？', options: ['swum', 'swam', 'swimmed', 'swims'], answer: 'swum' },
+    { type: 'listen-pick', question: '🎧 聽三態，勾選你聽到的動詞', options: ['run - ran - run', 'sing - sang - sung', 'write - wrote - written', 'fly - flew - flown'], answer: 'run - ran - run', image: '🎧' },
+    { type: 'read', question: 'What did Ruby write?（Ruby 寫了什麼？）', passage: 'Yesterday Ruby wrote a story.\nPolly sang a song.\nThey had a lot of fun.', options: ['a story', 'a song', 'a letter', 'a book'], answer: 'a story' },
+  ],
+  talkTimePrompts: ["Say three forms: run, ran, run.", "Make a past sentence: I ___ (past).", "Practice: sing, sang, sung!", "✍️ 引導寫作：Yesterday I ___ (past) and ___ (past)."],
+  reviewQuiz: [
+    { type: 'match', question: 'ride 的過去式是？', options: ['rode', 'rided', 'ridden', 'rides'], answer: 'rode' },
+    { type: 'fill-blank', question: 'I ___ well last night.（sleep 過去）', options: ['slept', 'sleeped', 'sleep', 'sleeps'], answer: 'slept' },
+    { type: 'match', question: 'speak 的過去分詞是？', options: ['spoken', 'spoke', 'speaked', 'speaks'], answer: 'spoken' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "More irregular verbs! run, ran, run!", lineZh: '更多不規則動詞！run、ran、run！' },
+    { speaker: 'Polly', line: "sing, sang, sung. I sang a song!", lineZh: 'sing、sang、sung。我唱了一首歌！' },
+    { speaker: 'Ruby', line: "write, wrote, written. I wrote a story!", lineZh: 'write、wrote、written。我寫了一個故事！' },
+    { speaker: 'Benny', line: "Keep practicing irregular verbs!", lineZh: '繼續練習不規則動詞！' },
+  ],
+};
+
+const L7_M14: Mission = {
+  id: 14, slug: 'l7-m14-verb-forms-quiz', level: 7, title: '三態綜合驗收', titleEn: 'Verb Forms Check', theme: '文法門・三態驗收', themeEmoji: '🎯',
+  focus: '動詞三態綜合背誦驗收（規則＋不規則混合）',
+  story: [
+    { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Time to check! Do you know your verb forms?", dialogueZh: '驗收時間！你會動詞三態了嗎？', highlightWords: [], sceneEmojis: ['🎯', '📋', '✨'], animation: 'wave' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "go-went-gone, play-played-played!", dialogueZh: 'go-went-gone、play-played-played！', highlightWords: [], sceneEmojis: ['💪', '🌀', '😊'], animation: 'bounce' },
+    { image: '🧠', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "eat-ate-eaten, write-wrote-written!", dialogueZh: 'eat-ate-eaten、write-wrote-written！', highlightWords: [], sceneEmojis: ['🧠', '🔀', '🎉'], animation: 'tada' },
+    { image: '🎉', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "You remember them all! Amazing!", dialogueZh: '你全記住了！太厲害了！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🎯'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '不規則', exampleSentence: 'go → went → gone', exampleZh: '原→過去→過去分詞' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '不規則', exampleSentence: 'eat → ate → eaten', exampleZh: '原→過去→過去分詞' },
+    { en: 'play', zh: '玩', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '規則', exampleSentence: 'play → played → played', exampleZh: '原→過去→過去分詞' },
+    { en: 'run', zh: '跑', image: '🏃', phonics: '', kk: '[rʌn]', phonicsSound: '不規則', exampleSentence: 'run → ran → run', exampleZh: '原→過去→過去分詞' },
+    { en: 'write', zh: '寫', image: '✏️', phonics: '', kk: '[raɪt]', phonicsSound: '不規則', exampleSentence: 'write → wrote → written', exampleZh: '原→過去→過去分詞' },
+    { en: 'see', zh: '看見', image: '👀', phonics: '', kk: '[si]', phonicsSound: '不規則', exampleSentence: 'see → saw → seen', exampleZh: '原→過去→過去分詞' },
+    { en: 'make', zh: '製作', image: '🛠️', phonics: '', kk: '[mek]', phonicsSound: '不規則', exampleSentence: 'make → made → made', exampleZh: '原→過去→過去分詞' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '規則', exampleSentence: 'help → helped → helped', exampleZh: '原→過去→過去分詞' },
+    { en: 'drink', zh: '喝', image: '🥤', phonics: '', kk: '[drɪŋk]', phonicsSound: '不規則', exampleSentence: 'drink → drank → drunk', exampleZh: '原→過去→過去分詞' },
+    { en: 'sleep', zh: '睡覺', image: '😴', phonics: '', kk: '[slip]', phonicsSound: '不規則', exampleSentence: 'sleep → slept → slept', exampleZh: '原→過去→過去分詞' },
+  ],
+  sentences: [
+    { en: 'go - went - gone', zh: '去（不規則）' }, { en: 'play - played - played', zh: '玩（規則）' }, { en: 'I ate breakfast and went to school.', zh: '我吃了早餐去了學校。' }, { en: 'She has written a letter.', zh: '她寫了一封信。' }, { en: 'We ran and played all day.', zh: '我們跑跳玩了一整天。' }, { en: 'Practice makes perfect!', zh: '熟能生巧！' },
+  ],
+  phonicsLetters: ['verb forms quiz'],
+  warmUpQuestions: [
+    { type: 'match', question: 'go → 過去 → ?', options: ['went', 'goed', 'gone', 'goes'], answer: 'went' },
+    { type: 'match', question: 'play → 過去 → ?', options: ['played', 'plaid', 'plays', 'playing'], answer: 'played' },
+    { type: 'match', question: 'eat → 過去 → ?', options: ['ate', 'eated', 'eaten', 'eats'], answer: 'ate' },
+  ],
+  challenges: [
+    { type: 'match', question: '配對：原形→過去分詞', options: ['go-gone', 'eat-eaten', 'write-written', 'see-seen'], answer: 'go-gone' },
+    { type: 'fill-blank', question: 'I ___ breakfast this morning.（eat 過去）', options: ['ate', 'eated', 'eaten', 'eats'], answer: 'ate' },
+    { type: 'fill-blank', question: 'She has ___ a letter.（write 過去分詞）', options: ['written', 'wrote', 'write', 'writing'], answer: 'written' },
+    { type: 'fill-blank', question: 'We ___ to the park.（go 過去）', options: ['went', 'goed', 'gone', 'goes'], answer: 'went' },
+    { type: 'listen-pick', question: '🎧 聽三態，勾選你聽到的動詞', options: ['run - ran - run', 'go - went - gone', 'eat - ate - eaten', 'play - played - played'], answer: 'run - ran - run', image: '🎧' },
+    { type: 'read', question: 'What did Coco do this morning?（Coco 今早做了什麼？）', passage: 'This morning Coco ate breakfast.\nThen she went to school.\nShe ran to class.', options: ['ate breakfast and went to school', 'slept all day', 'watched TV', 'stayed home'], answer: 'ate breakfast and went to school' },
+  ],
+  talkTimePrompts: ["Say five verbs in three forms.", "Make a past sentence with an irregular verb.", "Quiz a friend: what is the past of 'go'?", "✍️ 引導寫作：Yesterday I ate ___, went to ___, and saw ___."],
+  reviewQuiz: [
+    { type: 'match', question: 'write → 過去分詞 → ?', options: ['written', 'wrote', 'writed', 'writes'], answer: 'written' },
+    { type: 'fill-blank', question: 'I ___ well last night.（sleep 過去）', options: ['slept', 'sleeped', 'sleep', 'sleeps'], answer: 'slept' },
+    { type: 'match', question: 'make → 過去 → ?', options: ['made', 'maked', 'made', 'makes'], answer: 'made' },
+  ],
+  videoScript: [
+    { speaker: 'Benny', line: "Time to check! Do you know your verb forms?", lineZh: '驗收時間！你會動詞三態了嗎？' },
+    { speaker: 'Coco', line: "go-went-gone, play-played-played!", lineZh: 'go-went-gone、play-played-played！' },
+    { speaker: 'Ruby', line: "eat-ate-eaten, write-wrote-written!", lineZh: 'eat-ate-eaten、write-wrote-written！' },
+    { speaker: 'Benny', line: "You remember them all! Amazing!", lineZh: '你全記住了！太厲害了！' },
+  ],
+};
+
+const L7_M15: Mission = {
+  id: 15, slug: 'l7-m15-review-verb-forms', level: 7, title: 'Review③ 動詞三態', titleEn: 'Review: Verb Forms', theme: '文法門・複習關', themeEmoji: '🔄',
+  focus: '螺旋複習③：規則＋不規則動詞三態 ＋ 過去式應用',
+  story: [
+    { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review all the verb forms!", dialogueZh: '來複習所有動詞三態！', highlightWords: [], sceneEmojis: ['🔄', '📋', '✨'], animation: 'wave' },
+    { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Regular: -ed. Irregular: change the word!", dialogueZh: '規則：-ed。不規則：把字變一下！', highlightWords: [], sceneEmojis: ['📋', '🌀', '😊'], animation: 'bounce' },
+    { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Yesterday I went, ate, and played!", dialogueZh: '昨天我去了、吃了、玩了！', highlightWords: ['went', 'ate', 'played'], sceneEmojis: ['💪', '🎉', '🎉'], animation: 'tada' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know your verb forms! Wonderful!", dialogueZh: '你會動詞三態了！太棒了！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+  ],
+  words: [
+    { en: 'go', zh: '去', image: '🚶', phonics: '', kk: '[ɡo]', phonicsSound: '不規則', exampleSentence: 'go → went → gone', exampleZh: '原→過去→過去分詞' },
+    { en: 'play', zh: '玩', image: '⚽', phonics: '', kk: '[ple]', phonicsSound: '規則', exampleSentence: 'play → played → played', exampleZh: '原→過去→過去分詞' },
+    { en: 'eat', zh: '吃', image: '🍽️', phonics: '', kk: '[it]', phonicsSound: '不規則', exampleSentence: 'eat → ate → eaten', exampleZh: '原→過去→過去分詞' },
+    { en: 'walk', zh: '走路', image: '🚶', phonics: '', kk: '[wɔk]', phonicsSound: '規則', exampleSentence: 'walk → walked → walked', exampleZh: '原→過去→過去分詞' },
+    { en: 'see', zh: '看見', image: '👀', phonics: '', kk: '[si]', phonicsSound: '不規則', exampleSentence: 'see → saw → seen', exampleZh: '原→過去→過去分詞' },
+    { en: 'write', zh: '寫', image: '✏️', phonics: '', kk: '[raɪt]', phonicsSound: '不規則', exampleSentence: 'write → wrote → written', exampleZh: '原→過去→過去分詞' },
+    { en: 'help', zh: '幫助', image: '🤝', phonics: '', kk: '[hɛlp]', phonicsSound: '規則', exampleSentence: 'help → helped → helped', exampleZh: '原→過去→過去分詞' },
+    { en: 'run', zh: '跑', image: '🏃', phonics: '', kk: '[rʌn]', phonicsSound: '不規則', exampleSentence: 'run → ran → run', exampleZh: '原→過去→過去分詞' },
+    { en: 'cook', zh: '煮', image: '🍳', phonics: '', kk: '[kʊk]', phonicsSound: '規則', exampleSentence: 'cook → cooked → cooked', exampleZh: '原→過去→過去分詞' },
+    { en: 'drink', zh: '喝', image: '🥤', phonics: '', kk: '[drɪŋk]', phonicsSound: '不規則', exampleSentence: 'drink → drank → drunk', exampleZh: '原→過去→過去分詞' },
+  ],
+  sentences: [
+    { en: 'Yesterday I went to the park.', zh: '昨天我去了公園。' }, { en: 'I played and ran.', zh: '我玩也跑了。' }, { en: 'She has written a story.', zh: '她寫了一個故事。' }, { en: 'We ate lunch together.', zh: '我們一起吃了午餐。' }, { en: 'He helped his mom cook.', zh: '他幫媽媽煮飯。' }, { en: 'Practice makes perfect!', zh: '熟能生巧！' },
+  ],
+  phonicsLetters: ['review verb forms'],
+  warmUpQuestions: [
+    { type: 'match', question: 'walk → 過去 → ?', options: ['walked', 'walk', 'walking', 'walks'], answer: 'walked' },
+    { type: 'match', question: 'go → 過去 → ?', options: ['went', 'goed', 'gone', 'goes'], answer: 'went' },
+    { type: 'match', question: 'eat → 過去分詞 → ?', options: ['eaten', 'ate', 'eated', 'eats'], answer: 'eaten' },
+  ],
+  challenges: [
+    { type: 'match', question: '配對：原形→過去式', options: ['go-went', 'play-played', 'eat-ate', 'run-ran'], answer: 'go-went' },
+    { type: 'fill-blank', question: 'Yesterday I ___ to the park.（go 過去）', options: ['went', 'goed', 'gone', 'goes'], answer: 'went' },
+    { type: 'fill-blank', question: 'We ___ lunch together.（eat 過去）', options: ['ate', 'eated', 'eaten', 'eats'], answer: 'ate' },
+    { type: 'fill-blank', question: 'She has ___ a story.（write 過去分詞）', options: ['written', 'wrote', 'write', 'writing'], answer: 'written' },
+    { type: 'listen-pick', question: '🎧 聽三態，勾選你聽到的動詞', options: ['go - went - gone', 'play - played - played', 'eat - ate - eaten', 'run - ran - run'], answer: 'go - went - gone', image: '🎧' },
+    { type: 'read', question: 'What did the friends do yesterday?（朋友們昨天做了什麼？）', passage: 'Yesterday the friends went to the park.\nThey played and ran.\nThey ate ice cream and had fun.', options: ['went to the park', 'stayed home', 'went to school', 'slept all day'], answer: 'went to the park' },
+  ],
+  talkTimePrompts: ["Say five verbs in three forms.", "Tell me what you did yesterday (past tense).", "Quiz: what is the past of 'eat'?", "✍️ 引導寫作：Yesterday I went to ___. I ___ and ___."],
+  reviewQuiz: [
+    { type: 'match', question: 'run → 過去 → ?', options: ['ran', 'runned', 'run', 'runs'], answer: 'ran' },
+    { type: 'fill-blank', question: 'He ___ his mom cook.（help 過去）', options: ['helped', 'help', 'helps', 'helping'], answer: 'helped' },
+    { type: 'read', question: 'Did they have fun?（他們玩得開心嗎？）', passage: 'The friends went to the park.\nThey played and ate ice cream.\nThey had a lot of fun!', options: ['Yes, they had fun', 'No, they were bored', 'They were sad', 'They stayed home'], answer: 'Yes, they had fun' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's review all the verb forms!", lineZh: '來複習所有動詞三態！' },
+    { speaker: 'Benny', line: "Regular: -ed. Irregular: change the word!", lineZh: '規則：-ed。不規則：把字變一下！' },
+    { speaker: 'Coco', line: "Yesterday I went, ate, and played!", lineZh: '昨天我去了、吃了、玩了！' },
+    { speaker: 'Finn', line: "You know your verb forms! Wonderful!", lineZh: '你會動詞三態了！太棒了！' },
+  ],
+};
+
+export const MISSIONS: Mission[] = [L1_M1, L1_M2, L1_M3, L1_M4, L1_M5, L1_M6, L1_M7, L1_M8, L1_M9, L1_M10, L1_M11, L1_M12, L2_M1, L2_M2, L2_M3, L2_M4, L2_M5, L2_M6, L2_M7, L2_M8, L2_M9, L2_M10, L2_M11, L2_M12, L2_M13, L2_M14, L2_M15, L2_M16, L2_M17, L2_M18, L2_M19, L2_M20, L3_M1, L3_M2, L3_M3, L3_M4, L3_M5, L3_M6, L3_M7, L3_M8, L3_M9, L3_M10, L3_M11, L3_M12, L3_M13, L3_M14, L3_M15, L3_M16, L3_M17, L3_M18, L3_M19, L3_M20, L4_M1, L4_M2, L4_M3, L4_M4, L4_M5, L4_M6, L4_M7, L4_M8, L4_M9, L4_M10, L4_M11, L4_M12, L4_M13, L4_M14, L4_M15, L4_M16, L4_M17, L4_M18, L4_M19, L4_M20, L5_M1, L5_M2, L5_M3, L5_M4, L5_M5, L5_M6, L5_M7, L5_M8, L5_M9, L5_M10, L5_M11, L5_M12, L5_M13, L5_M14, L5_M15, L5_M16, L5_M17, L5_M18, L5_M19, L5_M20, L6_M1, L6_M2, L6_M3, L6_M4, L6_M5, L6_M6, L6_M7, L6_M8, L6_M9, L6_M10, L6_M11, L6_M12, L6_M13, L6_M14, L6_M15, L6_M16, L6_M17, L6_M18, L6_M19, L6_M20, L7_M1, L7_M2, L7_M3, L7_M4, L7_M5, L7_M6, L7_M7, L7_M8, L7_M9, L7_M10, L7_M11, L7_M12, L7_M13, L7_M14, L7_M15];
 
 export function getMissionsByLevel(level: number): Mission[] {
   return MISSIONS.filter(m => m.level === level);
