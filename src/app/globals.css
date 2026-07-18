@@ -91,6 +91,21 @@ body {
 .animate-slide-up-d4 { animation: slideUp 0.8s ease-out 0.6s both; }
 .animate-star-spin { animation: star-spin 8s linear infinite; }
 
+/* 電子書翻頁 */
+@keyframes pageTurnNext {
+  from { transform: rotateY(-105deg); opacity: 0; }
+  60%  { opacity: 1; }
+  to   { transform: rotateY(0deg); opacity: 1; }
+}
+@keyframes pageTurnPrev {
+  from { transform: rotateY(105deg); opacity: 0; }
+  60%  { opacity: 1; }
+  to   { transform: rotateY(0deg); opacity: 1; }
+}
+.book-perspective { perspective: 1600px; }
+.animate-page-next { transform-origin: left center; animation: pageTurnNext 0.55s ease-out both; }
+.animate-page-prev { transform-origin: right center; animation: pageTurnPrev 0.55s ease-out both; }
+
 /* Glass card */
 .glass {
   background: rgba(255,255,255,0.7);

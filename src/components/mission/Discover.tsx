@@ -33,6 +33,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const [seenCards, setSeenCards] = useState<number[]>([]);
   const [currentSentence, setCurrentSentence] = useState(0);
   const [sentenceRepeated, setSentenceRepeated] = useState(false);
+  const [pageDir, setPageDir] = useState<'next' | 'prev'>('next');
 
   const scene = story[storyIndex];
   const sentence = sentences[currentSentence];
@@ -118,106 +119,120 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
           </div>
         )}
 
-        <div className="text-center mb-4">
+        <div className="text-center mb-3">
           <p className="text-sm font-medium text-purple-500 bg-purple-50 inline-block px-4 py-1 rounded-full">
-            📖 Story Time
+            📖 Story Time · 翻書讀故事
           </p>
         </div>
 
-        {/* 動畫場景區 */}
-        <div className="bg-gradient-to-b from-blue-100 to-purple-50 rounded-3xl p-6 mb-6 min-h-[180px] flex flex-col items-center justify-center relative overflow-hidden">
-          {/* 場景背景 */}
-          <div className="text-7xl mb-2">{scene.image}</div>
+        {/* 電子書：一頁一課文，左右翻頁 */}
+        <div className="book-perspective max-w-xl mx-auto mb-4">
+          <div
+            key={storyIndex}
+            className={`relative bg-[#fffdf7] rounded-2xl border border-amber-200 shadow-xl overflow-hidden ${
+              pageDir === 'next' ? 'animate-page-next' : 'animate-page-prev'
+            }`}
+          >
+            {/* 書背裝訂線 */}
+            <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-amber-200/70 to-transparent" />
 
-          {/* 場景 emoji 動畫 */}
-          <div className="flex gap-4 text-4xl">
-            {scene.sceneEmojis.map((emoji, i) => (
-              <span
-                key={`${storyIndex}-${i}`}
-                className={`inline-block ${animationClass[scene.animation] || 'animate-bounce'}`}
-                style={{
-                  animationDelay: `${i * 0.15}s`,
-                  animationDuration: '1s',
-                  animationIterationCount: storyIndex === story.length - 1 && scene.animation === 'bounce' ? 'infinite' : '3',
-                }}
-              >
-                {emoji}
-              </span>
-            ))}
+            {/* 上半頁：插畫（場景圖＋emoji 動畫） */}
+            <div className="bg-gradient-to-b from-blue-100 to-purple-50 px-6 pt-7 pb-5 min-h-[190px] flex flex-col items-center justify-center relative overflow-hidden">
+              <div className="text-7xl mb-2">{scene.image}</div>
+              <div className="flex gap-4 text-4xl">
+                {scene.sceneEmojis.map((emoji, i) => (
+                  <span
+                    key={`${storyIndex}-${i}`}
+                    className={`inline-block ${animationClass[scene.animation] || 'animate-bounce'}`}
+                    style={{
+                      animationDelay: `${i * 0.15}s`,
+                      animationDuration: '1s',
+                      animationIterationCount: '3',
+                    }}
+                  >
+                    {emoji}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* 下半頁：課文（角色＋台詞＋翻譯） */}
+            <div className="px-6 py-5 flex items-start gap-3">
+              <img
+                src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
+                alt={scene.characterName}
+                className="w-24 h-24 object-contain flex-shrink-0"
+              />
+              <div className="flex-1 min-w-0 pl-4">
+                <p className="text-xs text-gray-400 font-bold mb-1">{scene.characterName}</p>
+                <p className="font-bold leading-relaxed text-gray-800 text-lg">
+                  {scene.dialogue.split(' ').map((w, wi) => {
+                    const isHighlight = scene.highlightWords?.some(hw =>
+                      w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
+                      hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
+                    );
+                    return (
+                      <span key={wi}>
+                        <span
+                          className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer' : ''}
+                          onClick={() => { if (isHighlight) speak(w.replace(/[.,!?]/g, ''), 0.5); }}
+                        >
+                          {w}
+                        </span>{' '}
+                      </span>
+                    );
+                  })}
+                </p>
+                {showTranslation && (
+                  <p className="text-gray-500 text-sm mt-2 animate-slide-up">{scene.dialogueZh}</p>
+                )}
+              </div>
+            </div>
+
+            {/* 頁碼 */}
+            <div className="text-center pb-3 text-xs text-amber-400 font-bold">
+              第 {storyIndex + 1} / {story.length} 頁
+            </div>
           </div>
         </div>
 
-        {/* 完整對話列表 */}
-        <div className="max-w-xl mx-auto space-y-3 mb-6">
-          {story.map((s, i) => {
-            const isActive = i === storyIndex;
-            const isPast = i < storyIndex;
-
-            return (
-              <button
-                key={i}
-                onClick={() => {
-                  setStoryIndex(i);
-                  setShowTranslation(false);
-                  speak(s.dialogue, 0.75);
-                }}
-                className={`w-full text-left flex items-start gap-3 p-4 rounded-2xl transition-all ${
-                  isActive
-                    ? 'bg-white border-2 border-purple-400 shadow-lg scale-[1.02]'
-                    : isPast
-                    ? 'bg-green-50 border-2 border-green-200 opacity-80'
-                    : 'bg-gray-50 border-2 border-gray-100 opacity-50'
-                }`}
-              >
-                <span className="flex-shrink-0">
-                  {isPast ? <span className="text-3xl">✅</span> : <img src={`/characters/${s.characterKey || 'finn'}/${s.characterKey || 'finn'}-${s.characterAction || 'talk'}.png`} alt={s.characterName} className="w-28 h-28 object-contain" />}
-                </span>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs text-gray-400 font-bold">{s.characterName}</p>
-                  <p className={`font-bold leading-relaxed ${
-                    isActive ? 'text-gray-800 text-lg' : 'text-gray-600 text-sm'
-                  }`}>
-                    {isActive ? (
-                      // 活躍句子：重點單字標色
-                      s.dialogue.split(' ').map((w, wi) => {
-                        const isHighlight = s.highlightWords?.some(hw =>
-                          w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
-                          hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
-                        );
-                        return (
-                          <span key={wi}>
-                            <span
-                              className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded' : ''}
-                              onClick={(e) => {
-                                if (isHighlight) {
-                                  e.stopPropagation();
-                                  speak(w.replace(/[.,!?]/g, ''), 0.5);
-                                }
-                              }}
-                            >
-                              {w}
-                            </span>{' '}
-                          </span>
-                        );
-                      })
-                    ) : (
-                      s.dialogue
-                    )}
-                  </p>
-                  {showTranslation && (
-                    <p className="text-gray-400 text-xs mt-1 animate-slide-up">{s.dialogueZh}</p>
-                  )}
-                </div>
-                {isActive && (
-                  <span className="text-purple-400 text-xl flex-shrink-0">🔊</span>
-                )}
-              </button>
-            );
-          })}
+        {/* 翻頁圓點 */}
+        <div className="flex justify-center gap-1.5 mb-4">
+          {story.map((_, i) => (
+            <button
+              key={i}
+              aria-label={`第 ${i + 1} 頁`}
+              onClick={() => {
+                setPageDir(i >= storyIndex ? 'next' : 'prev');
+                setShowTranslation(false);
+                setStoryIndex(i);
+                speak(story[i].dialogue, 0.75);
+              }}
+              className={`h-2.5 rounded-full transition-all ${
+                i === storyIndex ? 'w-6 bg-purple-500' : i < storyIndex ? 'w-2.5 bg-green-300' : 'w-2.5 bg-gray-200'
+              }`}
+            />
+          ))}
         </div>
 
-        {/* 操作列 */}
-        <div className="flex justify-center gap-3">
+        {/* 操作列：上一頁 / 慢唸 / 中譯 / 下一頁 */}
+        <div className="flex justify-center items-center gap-3">
+          <button
+            onClick={() => {
+              if (storyIndex > 0) {
+                setPageDir('prev');
+                setShowTranslation(false);
+                const prev = storyIndex - 1;
+                setStoryIndex(prev);
+                speak(story[prev].dialogue, 0.75);
+              }
+            }}
+            disabled={storyIndex === 0}
+            className={`px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${
+              storyIndex === 0 ? 'bg-gray-100 text-gray-300' : 'bg-amber-100 text-amber-600 hover:bg-amber-200'
+            }`}>
+            ◀
+          </button>
           <button onClick={() => speak(scene.dialogue, 0.5)}
             className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
             🐢
@@ -233,6 +248,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
           <button onClick={() => {
             setShowTranslation(false);
             if (storyIndex < story.length - 1) {
+              setPageDir('next');
               const next = storyIndex + 1;
               setStoryIndex(next);
               speak(story[next].dialogue, 0.75);
