@@ -1,38 +1,48 @@
 'use client';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { loadProgress, completedCount, totalStars, currentIsland, type Progress } from '@/lib/missionProgress';
 
-// 家長中心：家長視角的進度/報告/時間管理。目前為架構頁，數據會在孩子開始學習後累積。
-const SECTIONS = [
-  {
-    icon: '📈', title: '學習進度追蹤', color: 'border-pink-200 bg-pink-50',
-    desc: '看孩子走到哪座島、完成幾課、每課拿幾顆星。',
-    stats: [
-      { label: '完成課程', val: '0 課' },
-      { label: '目前所在', val: 'L1 字母島' },
-      { label: '累計星星', val: '⭐ 0' },
-    ],
-  },
-  {
-    icon: '📊', title: '學習報告分析', color: 'border-purple-200 bg-purple-50',
-    desc: '每週整理孩子的強項與需要多練的地方（聽、說、讀、寫、字彙）。',
-    stats: [
-      { label: '本週學習', val: '0 分鐘' },
-      { label: '最強能力', val: '—' },
-      { label: '建議加強', val: '—' },
-    ],
-  },
-  {
-    icon: '⏰', title: '使用時間管理', color: 'border-rose-200 bg-rose-50',
-    desc: '設定每天學習時間上限，養成規律又不過量的好習慣。',
-    stats: [
-      { label: '今日使用', val: '0 分鐘' },
-      { label: '每日上限', val: '未設定' },
-      { label: '連續天數', val: '0 天' },
-    ],
-  },
-];
-
+// 家長中心：家長視角的進度/報告/時間管理。可追蹤的數據由進度推導；時間類尚未追蹤，誠實留白。
 export default function ParentsPage() {
+  const [p, setP] = useState<Progress>({ completed: {} });
+  useEffect(() => {
+    const refresh = () => setP(loadProgress());
+    refresh();
+    window.addEventListener('ae-mission-progress-change', refresh);
+    return () => window.removeEventListener('ae-mission-progress-change', refresh);
+  }, []);
+
+  const SECTIONS = [
+    {
+      icon: '📈', title: '學習進度追蹤', color: 'border-pink-200 bg-pink-50',
+      desc: '看孩子走到哪座島、完成幾課、累積幾顆星。',
+      stats: [
+        { label: '完成課程', val: `${completedCount(p)} 課` },
+        { label: '目前所在', val: currentIsland(p) },
+        { label: '累計星星', val: `⭐ ${totalStars(p)}` },
+      ],
+    },
+    {
+      icon: '📊', title: '學習報告分析', color: 'border-purple-200 bg-purple-50',
+      desc: '整理孩子的強項與需要多練的地方（聽、說、讀、寫、字彙）。',
+      stats: [
+        { label: '完成課程', val: `${completedCount(p)} 課` },
+        { label: '最強能力', val: '學習中' },
+        { label: '建議加強', val: '學習中' },
+      ],
+    },
+    {
+      icon: '⏰', title: '使用時間管理', color: 'border-rose-200 bg-rose-50',
+      desc: '養成規律又不過量的好習慣（時間上限功能開發中）。',
+      stats: [
+        { label: '連續天數', val: `${p.streak || 0} 天` },
+        { label: '每日上限', val: '未設定' },
+        { label: '今日使用', val: '—' },
+      ],
+    },
+  ];
+
   return (
     <main className="min-h-screen py-12 px-4">
       <div className="max-w-3xl mx-auto">

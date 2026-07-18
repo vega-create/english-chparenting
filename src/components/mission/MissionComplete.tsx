@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { playPraise, getLevelFromMissionId } from '@/lib/vega-audio';
 import { speak } from '@/lib/speech';
+import { recordMissionComplete } from '@/lib/missionProgress';
 
 interface Props {
   missionTitle: string;
@@ -11,9 +12,10 @@ interface Props {
   maxStars: number;
   reviewQuiz: QuizQuestion[];
   courseSlug: string;
+  missionId: number;
 }
 
-export default function MissionComplete({ missionTitle, missionTitleEn, stars, maxStars, reviewQuiz, courseSlug }: Props) {
+export default function MissionComplete({ missionTitle, missionTitleEn, stars, maxStars, reviewQuiz, courseSlug, missionId }: Props) {
   const [quizDone, setQuizDone] = useState(false);
   const [quizCurrent, setQuizCurrent] = useState(0);
   const [quizScore, setQuizScore] = useState(0);
@@ -25,10 +27,11 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   const starPercent = Math.round((stars / maxStars) * 100);
   const starCount = starPercent >= 90 ? 3 : starPercent >= 70 ? 2 : 1;
 
-  // 進到結算畫面時播 Miss Vega 鼓勵語音
+  // 進到結算畫面時播 Miss Vega 鼓勵語音 + 記錄完成進度（星數/寶石/單字圖鑑/徽章）
   useEffect(() => {
     playPraise(getLevelFromMissionId(courseSlug));
-  }, [courseSlug]);
+    recordMissionComplete(courseSlug, missionId, starCount);
+  }, [courseSlug, missionId, starCount]);
 
   function handleQuizAnswer(answer: string) {
     if (showResult) return;
