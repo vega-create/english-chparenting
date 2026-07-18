@@ -61,9 +61,6 @@ export default function LayeredBanner() {
       {/* ===== Top Nav 手機 ===== */}
       <div className="relative z-30 md:hidden bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-between px-4 py-2 border-b-2 border-yellow-200/50">
         <button onClick={() => { playOpen(); setMobileMenu(true); }} className="w-9 h-9 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-xl">☰</button>
-        <Link href="/" className="font-black text-lg bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent leading-none no-underline text-center">
-          Adventure<br />English
-        </Link>
         <button className="w-9 h-9 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-lg">🔔</button>
       </div>
 

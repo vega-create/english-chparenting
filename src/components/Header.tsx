@@ -20,12 +20,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 glass border-b border-gray-200/60">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14 gap-2">
-        <Link href="/" className="flex items-center gap-2 no-underline flex-shrink-0">
-          <img src="/characters/finn/finn-normal.png" alt="Finn" className="w-9 h-9 object-contain" />
-          <span className="font-black text-base text-purple-800 whitespace-nowrap hidden sm:inline">Adventure English</span>
-        </Link>
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex gap-0.5 items-center">
+        <nav className="hidden lg:flex gap-0.5 items-center flex-1">
           {NAV.map(n => (
             <Link key={n.href} href={n.href} className="px-2.5 py-1.5 rounded-full text-[13px] font-medium text-gray-700 whitespace-nowrap hover:bg-purple-50 hover:text-purple-700 transition-colors no-underline">
               {n.label}
