@@ -17,7 +17,7 @@ const typeLabel: Record<string, { icon: string; label: string; characterKey: str
   'match': { icon: '🔗', label: '配對挑戰', characterKey: 'benny', characterAction: 'read' },
   'spell': { icon: '✍️', label: '拼寫挑戰', characterKey: 'ruby', characterAction: 'write' },
   'fill-blank': { icon: '📝', label: '填空挑戰', characterKey: 'finn', characterAction: 'talk' },
-  'read': { icon: '📖', label: '閱讀理解', characterKey: 'benny', characterAction: 'read' },
+  'read': { icon: '📖', label: '讀故事找線索', characterKey: 'benny', characterAction: 'read' },
 };
 
 export default function Challenge({ challenges, onComplete, praiseLevel = 'low' }: Props) {

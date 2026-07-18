@@ -90,7 +90,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
 
           {quizDone && (
             <div className="mt-4 pt-4 border-t border-gray-100">
-              <p className="text-sm text-gray-500">小測驗：{quizScore}/{reviewQuiz.length} 答對</p>
+              <p className="text-sm text-gray-500">🎁 寶藏挑戰：找到 {quizScore}/{reviewQuiz.length} 個寶藏</p>
             </div>
           )}
         </div>
@@ -110,27 +110,27 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
               onClick={() => setShowQuiz(true)}
               className="bg-yellow-400 text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-500 transition active:scale-95 shadow-lg"
             >
-              📝 小測驗（{reviewQuiz.length} 題）
+              🎁 寶藏挑戰（{reviewQuiz.length} 關）
             </button>
           )}
           <a
             href={`/courses/${courseSlug}`}
-            className="bg-gray-200 text-gray-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-300 transition active:scale-95 text-center"
+            className="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:from-green-500 hover:to-emerald-600 transition active:scale-95 text-center"
           >
-            回到課程列表
+            繼續冒險 · 下一站 🗺 →
           </a>
         </div>
       </div>
     );
   }
 
-  // 小測驗
+  // 寶藏挑戰
   const q = reviewQuiz[quizCurrent];
   return (
     <div className="animate-slide-up">
       <div className="text-center mb-4">
-        <div className="inline-block text-5xl mb-2">📝</div>
-        <p className="text-lg font-bold text-gray-700">小測驗 Mini Quiz</p>
+        <div className="inline-block text-5xl mb-2">🎁</div>
+        <p className="text-lg font-bold text-gray-700">寶藏挑戰</p>
       </div>
 
       <div className="flex gap-1 mb-6 max-w-xl mx-auto">

@@ -2962,7 +2962,7 @@ const L3_M16: Mission = {
     { image: '🎩', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Magic words! a, an, the — before nouns!", dialogueZh: '魔法字！a、an、the —— 放名詞前面！', highlightWords: ['a', 'an', 'the'], sceneEmojis: ['🎩', '🔤', '✨'], animation: 'wave' },
     { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "a dog, an apple — 'an' before a,e,i,o,u!", dialogueZh: 'a dog、an apple —— 母音前用 an！', highlightWords: ['a', 'an'], sceneEmojis: ['🐶', '🍎', '😊'], animation: 'bounce' },
     { image: '👉', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "the dog — that special one we know!", dialogueZh: 'the dog —— 我們知道的那隻特定的！', highlightWords: ['the'], sceneEmojis: ['👉', '🐶', '🎉'], animation: 'tada' },
-    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "a, an, the — you're a grammar star!", dialogueZh: 'a、an、the —— 你是文法之星！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🎩'], animation: 'bounce' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "a, an, the — you're a word wizard!", dialogueZh: 'a、an、the —— 你是文字小魔法師！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🎩'], animation: 'bounce' },
   ],
   words: [
     { en: 'a dog', zh: '一隻狗', image: '🐶', phonics: '', kk: '[ə dɔɡ]', phonicsSound: 'a+子音', exampleSentence: 'I see a dog.', exampleZh: '我看到一隻狗。' },
@@ -6302,7 +6302,7 @@ const L6_M20: Mission = {
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Lighthouse Boss is here! Use all your English!", dialogueZh: '燈塔大魔王來了！用上你所有的英文！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏰'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Describe, shop, ask the way — I can do it all!", dialogueZh: '形容、購物、問路 —— 我全都會！', highlightWords: [], sceneEmojis: ['💪', '🛍️', '✨'], animation: 'bounce' },
     { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Lighthouse Badge!", dialogueZh: '你打敗大魔王了！獲得燈塔徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
-    { image: '🏰', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Lighthouse Point! On to Grammar Gate!", dialogueZh: '你完成了燈塔角！前進文法門！', highlightWords: [], sceneEmojis: ['🏰', '🚪', '🚀'], animation: 'bounce' },
+    { image: '🏰', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Lighthouse Point! On to Magic Gate!", dialogueZh: '你完成了燈塔角！前進魔法門！', highlightWords: [], sceneEmojis: ['🏰', '🚪', '🚀'], animation: 'bounce' },
   ],
   words: [
     { en: 'beautiful', zh: '美麗的', image: '🌅', phonics: '', kk: '[ˈbjutɪfl̩]', phonicsSound: '', exampleSentence: 'It is beautiful.', exampleZh: '它很美。' },
@@ -6343,13 +6343,13 @@ const L6_M20: Mission = {
     { speaker: 'Finn', line: "The Lighthouse Boss says: describe your day!", lineZh: '燈塔大魔王說：描述你的一天！' },
     { speaker: 'Coco', line: "Yesterday I played at the beach. It was beautiful!", lineZh: '昨天我在海邊玩。好美！' },
     { speaker: 'Ruby', line: "You beat the Boss! Lighthouse champion!", lineZh: '你打敗大魔王了！燈塔冠軍！' },
-    { speaker: 'Finn', line: "On to Grammar Gate! Let's learn grammar!", lineZh: '前進文法門！我們來學文法！' },
+    { speaker: 'Finn', line: "On to the Magic Gate! Let's learn magic sentences!", lineZh: '前進魔法門！我們來學魔法句！' },
   ],
 };
 
-// ===================== L7 文法門 Grammar Gate（A1+・現在簡單式＋動詞三態背誦） =====================
+// ===================== L7 魔法門 Magic Gate（A1+・現在簡單式＋動詞三態背誦） =====================
 const L7_M1: Mission = {
-  id: 1, slug: 'l7-m1-present-simple', level: 7, title: '現在簡單式', titleEn: 'Present Simple', theme: '文法門・每天做的事', themeEmoji: '🔁',
+  id: 1, slug: 'l7-m1-present-simple', level: 7, title: '現在簡單式', titleEn: 'Present Simple', theme: '魔法門・每天做的事', themeEmoji: '🔁',
   focus: '現在簡單式 I / You / We ＋ 原形動詞（習慣、事實）',
   story: [
     { image: '🔁', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I eat breakfast every day.", dialogueZh: '我每天吃早餐。', highlightWords: ['eat', 'every day'], sceneEmojis: ['🥞', '🔁', '✨'], animation: 'wave' },
@@ -6401,7 +6401,7 @@ const L7_M1: Mission = {
 };
 
 const L7_M2: Mission = {
-  id: 2, slug: 'l7-m2-third-person', level: 7, title: '第三人稱 -s', titleEn: 'He / She + V-s', theme: '文法門・他她它', themeEmoji: '➕',
+  id: 2, slug: 'l7-m2-third-person', level: 7, title: '第三人稱 -s', titleEn: 'He / She + V-s', theme: '魔法門・他她它', themeEmoji: '➕',
   focus: '第三人稱單數 He / She / It ＋ 動詞 +s（likes/goes/watches）',
   tip: { zh: '主詞 he／she／it 動詞要加 -s（最容易漏！）；唸法跟複數一樣：有聲配 /z/、無聲配 /s/、嘶音加 es 唸 /ɪz/（watch→watches）；子音+y 去 y 加 ies（study→studies）。', char: 'ruby' },
   story: [
@@ -6454,7 +6454,7 @@ const L7_M2: Mission = {
 };
 
 const L7_M3: Mission = {
-  id: 3, slug: 'l7-m3-negative', level: 7, title: "否定 don't / doesn't", titleEn: "don't / doesn't", theme: '文法門・不做', themeEmoji: '🚫',
+  id: 3, slug: 'l7-m3-negative', level: 7, title: "否定 don't / doesn't", titleEn: "don't / doesn't", theme: '魔法門・不做', themeEmoji: '🚫',
   focus: "現在簡單式否定：I don't ＋ V / He doesn't ＋ V",
   story: [
     { image: '🚫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I don't like carrots. I like apples!", dialogueZh: '我不喜歡紅蘿蔔。我喜歡蘋果！', highlightWords: ["don't"], sceneEmojis: ['🥕', '🚫', '✨'], animation: 'shake' },
@@ -6506,7 +6506,7 @@ const L7_M3: Mission = {
 };
 
 const L7_M4: Mission = {
-  id: 4, slug: 'l7-m4-do-does-q', level: 7, title: '問句 Do / Does', titleEn: 'Do…? / Does…?', theme: '文法門・問問看', themeEmoji: '❓',
+  id: 4, slug: 'l7-m4-do-does-q', level: 7, title: '問句 Do / Does', titleEn: 'Do…? / Does…?', theme: '魔法門・問問看', themeEmoji: '❓',
   focus: '現在簡單式問句：Do you…? / Does he…? — Yes/No 短答',
   tip: { zh: '用 Does 問，後面動詞要變回「原形」：Does he like…?（不是 likes）。', char: 'ruby' },
   story: [
@@ -6559,7 +6559,7 @@ const L7_M4: Mission = {
 };
 
 const L7_M5: Mission = {
-  id: 5, slug: 'l7-m5-review-present', level: 7, title: 'Review① 現在簡單式', titleEn: 'Review: Present Simple', theme: '文法門・複習關', themeEmoji: '🔄',
+  id: 5, slug: 'l7-m5-review-present', level: 7, title: 'Review① 現在簡單式', titleEn: 'Review: Present Simple', theme: '魔法門・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：現在簡單式肯定 ＋ 第三人稱 -s ＋ 否定 ＋ 問句',
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the present simple!", dialogueZh: '來複習現在簡單式！', highlightWords: [], sceneEmojis: ['🔄', '📚', '✨'], animation: 'wave' },
@@ -6611,7 +6611,7 @@ const L7_M5: Mission = {
 };
 
 const L7_M6: Mission = {
-  id: 6, slug: 'l7-m6-frequency', level: 7, title: '頻率副詞', titleEn: 'Frequency Adverbs', theme: '文法門・多常做', themeEmoji: '📊',
+  id: 6, slug: 'l7-m6-frequency', level: 7, title: '頻率副詞', titleEn: 'Frequency Adverbs', theme: '魔法門・多常做', themeEmoji: '📊',
   focus: '頻率副詞：always/usually/often/sometimes/never（放在一般動詞前）',
   tip: { zh: '頻率副詞（always/often/never）放在「一般動詞前面」：I always eat…。', char: 'polly' },
   story: [
@@ -6664,7 +6664,7 @@ const L7_M6: Mission = {
 };
 
 const L7_M7: Mission = {
-  id: 7, slug: 'l7-m7-in-on-at', level: 7, title: '介系詞 in/on/at', titleEn: 'in / on / at', theme: '文法門・時間地點', themeEmoji: '📍',
+  id: 7, slug: 'l7-m7-in-on-at', level: 7, title: '介系詞 in/on/at', titleEn: 'in / on / at', theme: '魔法門・時間地點', themeEmoji: '📍',
   focus: '介系詞 in/on/at（時間與地點）：in the morning, on Monday, at 3',
   story: [
     { image: '🌅', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I get up in the morning.", dialogueZh: '我在早上起床。', highlightWords: ['in'], sceneEmojis: ['🌅', '📍', '✨'], animation: 'wave' },
@@ -6716,7 +6716,7 @@ const L7_M7: Mission = {
 };
 
 const L7_M8: Mission = {
-  id: 8, slug: 'l7-m8-place-prep', level: 7, title: '位置介系詞', titleEn: 'Place Prepositions', theme: '文法門・在哪裡', themeEmoji: '📦',
+  id: 8, slug: 'l7-m8-place-prep', level: 7, title: '位置介系詞', titleEn: 'Place Prepositions', theme: '魔法門・在哪裡', themeEmoji: '📦',
   focus: '位置介系詞：under/behind/between/next to/in front of',
   story: [
     { image: '📦', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "The cat is under the table.", dialogueZh: '貓在桌子下面。', highlightWords: ['under'], sceneEmojis: ['🐱', '🪵', '✨'], animation: 'wave' },
@@ -6768,7 +6768,7 @@ const L7_M8: Mission = {
 };
 
 const L7_M9: Mission = {
-  id: 9, slug: 'l7-m9-there-is-are', level: 7, title: 'There is / There are', titleEn: 'There is / are', theme: '文法門・有什麼', themeEmoji: '🏙️',
+  id: 9, slug: 'l7-m9-there-is-are', level: 7, title: 'There is / There are', titleEn: 'There is / are', theme: '魔法門・有什麼', themeEmoji: '🏙️',
   focus: '句型 There is + 單數 / There are + 複數',
   story: [
     { image: '🏙️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "There is a park in my town.", dialogueZh: '我的城鎮有一座公園。', highlightWords: ['There is'], sceneEmojis: ['🏞️', '🏙️', '✨'], animation: 'wave' },
@@ -6820,7 +6820,7 @@ const L7_M9: Mission = {
 };
 
 const L7_M10: Mission = {
-  id: 10, slug: 'l7-m10-review-freq-prep', level: 7, title: 'Review② 頻率介系詞', titleEn: 'Review: Adverbs & Prep', theme: '文法門・複習關', themeEmoji: '🔄',
+  id: 10, slug: 'l7-m10-review-freq-prep', level: 7, title: 'Review② 頻率介系詞', titleEn: 'Review: Adverbs & Prep', theme: '魔法門・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：頻率副詞 ＋ in/on/at ＋ 位置介系詞 ＋ There is/are',
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review adverbs and prepositions!", dialogueZh: '來複習副詞和介系詞！', highlightWords: [], sceneEmojis: ['🔄', '📍', '✨'], animation: 'wave' },
@@ -6872,7 +6872,7 @@ const L7_M10: Mission = {
 };
 
 const L7_M11: Mission = {
-  id: 11, slug: 'l7-m11-verb-forms-regular', level: 7, title: '動詞三態① 規則', titleEn: 'Verb Forms: Regular', theme: '文法門・三態背誦', themeEmoji: '📋',
+  id: 11, slug: 'l7-m11-verb-forms-regular', level: 7, title: '動詞三態① 規則', titleEn: 'Verb Forms: Regular', theme: '魔法門・三態背誦', themeEmoji: '📋',
   focus: '規則動詞三態（原形-過去-過去分詞同形 +ed）：play-played-played',
   tip: { zh: '規則動詞三態同形：play-played-played；先把規則的背熟。', char: 'finn' },
   story: [
@@ -6925,7 +6925,7 @@ const L7_M11: Mission = {
 };
 
 const L7_M12: Mission = {
-  id: 12, slug: 'l7-m12-verb-forms-irregular-1', level: 7, title: '動詞三態② 不規則', titleEn: 'Irregular Verbs 1', theme: '文法門・三態背誦', themeEmoji: '🌀',
+  id: 12, slug: 'l7-m12-verb-forms-irregular-1', level: 7, title: '動詞三態② 不規則', titleEn: 'Irregular Verbs 1', theme: '魔法門・三態背誦', themeEmoji: '🌀',
   focus: '常用不規則動詞三態①：go-went-gone, eat-ate-eaten, see-saw-seen',
   tip: { zh: '不規則三態要一組一組背：go-went-gone、eat-ate-eaten、see-saw-seen。', char: 'ruby' },
   story: [
@@ -6978,7 +6978,7 @@ const L7_M12: Mission = {
 };
 
 const L7_M13: Mission = {
-  id: 13, slug: 'l7-m13-verb-forms-irregular-2', level: 7, title: '動詞三態③ 不規則', titleEn: 'Irregular Verbs 2', theme: '文法門・三態背誦', themeEmoji: '🔀',
+  id: 13, slug: 'l7-m13-verb-forms-irregular-2', level: 7, title: '動詞三態③ 不規則', titleEn: 'Irregular Verbs 2', theme: '魔法門・三態背誦', themeEmoji: '🔀',
   focus: '常用不規則動詞三態②：run-ran-run, sing-sang-sung, write-wrote-written',
   story: [
     { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "More irregular verbs! run, ran, run!", dialogueZh: '更多不規則動詞！run、ran、run！', highlightWords: ['ran'], sceneEmojis: ['🔀', '🏃', '✨'], animation: 'wave' },
@@ -7030,7 +7030,7 @@ const L7_M13: Mission = {
 };
 
 const L7_M14: Mission = {
-  id: 14, slug: 'l7-m14-verb-forms-quiz', level: 7, title: '三態綜合驗收', titleEn: 'Verb Forms Check', theme: '文法門・三態驗收', themeEmoji: '🎯',
+  id: 14, slug: 'l7-m14-verb-forms-quiz', level: 7, title: '三態綜合驗收', titleEn: 'Verb Forms Check', theme: '魔法門・三態驗收', themeEmoji: '🎯',
   focus: '動詞三態綜合背誦驗收（規則＋不規則混合）',
   story: [
     { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Time to check! Do you know your verb forms?", dialogueZh: '驗收時間！你會動詞三態了嗎？', highlightWords: [], sceneEmojis: ['🎯', '📋', '✨'], animation: 'wave' },
@@ -7082,7 +7082,7 @@ const L7_M14: Mission = {
 };
 
 const L7_M15: Mission = {
-  id: 15, slug: 'l7-m15-review-verb-forms', level: 7, title: 'Review③ 動詞三態', titleEn: 'Review: Verb Forms', theme: '文法門・複習關', themeEmoji: '🔄',
+  id: 15, slug: 'l7-m15-review-verb-forms', level: 7, title: 'Review③ 動詞三態', titleEn: 'Review: Verb Forms', theme: '魔法門・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：規則＋不規則動詞三態 ＋ 過去式應用',
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review all the verb forms!", dialogueZh: '來複習所有動詞三態！', highlightWords: [], sceneEmojis: ['🔄', '📋', '✨'], animation: 'wave' },
@@ -7134,7 +7134,7 @@ const L7_M15: Mission = {
 };
 
 const L7_M16: Mission = {
-  id: 16, slug: 'l7-m16-facts-timeline', level: 7, title: '事實與習慣', titleEn: 'Facts & Habits', theme: '文法門・時間軸', themeEmoji: '🕰️',
+  id: 16, slug: 'l7-m16-facts-timeline', level: 7, title: '事實與習慣', titleEn: 'Facts & Habits', theme: '魔法門・時間軸', themeEmoji: '🕰️',
   focus: '現在簡單式表「事實/習慣」（時鐘/時間軸視覺）：The sun rises. I go to school every day.',
   story: [
     { image: '🕰️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Present simple shows facts and habits!", dialogueZh: '現在簡單式表示事實和習慣！', highlightWords: ['facts', 'habits'], sceneEmojis: ['🕰️', '📊', '✨'], animation: 'wave' },
@@ -7186,7 +7186,7 @@ const L7_M16: Mission = {
 };
 
 const L7_M17: Mission = {
-  id: 17, slug: 'l7-m17-simple-vs-continuous', level: 7, title: '簡單式 vs 進行式', titleEn: 'Simple vs Continuous', theme: '文法門・對比', themeEmoji: '⚖️',
+  id: 17, slug: 'l7-m17-simple-vs-continuous', level: 7, title: '簡單式 vs 進行式', titleEn: 'Simple vs Continuous', theme: '魔法門・對比', themeEmoji: '⚖️',
   focus: '現在簡單（every day）vs 現在進行（now）對比',
   tip: { zh: '每天做的事用現在簡單式（every day），現在正在做用進行式（now）。', char: 'coco' },
   story: [
@@ -7239,13 +7239,13 @@ const L7_M17: Mission = {
 };
 
 const L7_M18: Mission = {
-  id: 18, slug: 'l7-m18-grammar-mix', level: 7, title: '文法綜合練習', titleEn: 'Grammar Mix', theme: '文法門・綜合', themeEmoji: '🧩',
+  id: 18, slug: 'l7-m18-grammar-mix', level: 7, title: '文法綜合練習', titleEn: 'Grammar Mix', theme: '魔法門・綜合', themeEmoji: '🧩',
   focus: '綜合練習：現在簡單式 ＋ 第三人稱 ＋ 頻率副詞 ＋ 動詞三態',
   story: [
     { image: '🧩', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's put it all together!", dialogueZh: '我們把它們組合起來！', highlightWords: [], sceneEmojis: ['🧩', '📚', '✨'], animation: 'wave' },
     { image: '📅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "She always reads. Yesterday she read a lot.", dialogueZh: '她總是讀書。昨天她讀了很多。', highlightWords: ['reads', 'read'], sceneEmojis: ['📅', '📖', '😊'], animation: 'bounce' },
     { image: '❓', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Does he go to school? Yes, every day.", dialogueZh: '他上學嗎？是的，每天。', highlightWords: ['Does', 'go'], sceneEmojis: ['❓', '🏫', '🎉'], animation: 'tada' },
-    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You use grammar like a pro!", dialogueZh: '你用文法像高手一樣！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🧩'], animation: 'bounce' },
+    { image: '🎉', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You use magic sentences like a pro!", dialogueZh: '你用魔法句像高手一樣！', highlightWords: [], sceneEmojis: ['🎉', '🏆', '🧩'], animation: 'bounce' },
   ],
   words: [
     { en: 'always', zh: '總是', image: '💯', phonics: '', kk: '[ˈɔlˌwez]', phonicsSound: '', exampleSentence: 'She always reads.', exampleZh: '她總是讀書。' },
@@ -7286,12 +7286,12 @@ const L7_M18: Mission = {
     { speaker: 'Finn', line: "Let's put it all together!", lineZh: '我們把它們組合起來！' },
     { speaker: 'Coco', line: "She always reads. Yesterday she read a lot.", lineZh: '她總是讀書。昨天她讀了很多。' },
     { speaker: 'Benny', line: "Does he go to school? Yes, every day.", lineZh: '他上學嗎？是的，每天。' },
-    { speaker: 'Finn', line: "You use grammar like a pro!", lineZh: '你用文法像高手一樣！' },
+    { speaker: 'Finn', line: "You use magic sentences like a pro!", lineZh: '你用魔法句像高手一樣！' },
   ],
 };
 
 const L7_M19: Mission = {
-  id: 19, slug: 'l7-m19-reading', level: 7, title: '文法閱讀', titleEn: 'Grammar Reading', theme: '文法門・故事時間', themeEmoji: '📖',
+  id: 19, slug: 'l7-m19-reading', level: 7, title: '文法閱讀', titleEn: 'Grammar Reading', theme: '魔法門・故事時間', themeEmoji: '📖',
   focus: '閱讀：現在簡單式短文（介紹某人的一天）＋理解',
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read about Tom's day!", dialogueZh: '讀讀 Tom 的一天！', highlightWords: ['read'], sceneEmojis: ['📖', '👦', '✨'], animation: 'wave' },
@@ -7343,13 +7343,13 @@ const L7_M19: Mission = {
 };
 
 const L7_M20: Mission = {
-  id: 20, slug: 'l7-m20-boss', level: 7, title: '文法門大魔王', titleEn: 'Grammar Boss', theme: '文法門・大魔王挑戰', themeEmoji: '🏆',
+  id: 20, slug: 'l7-m20-boss', level: 7, title: '魔法門大魔王', titleEn: 'Grammar Boss', theme: '魔法門・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：現在簡單式/第三人稱/否定問句/頻率副詞/介系詞/動詞三態',
   story: [
-    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Grammar Boss is here! Show your grammar power!", dialogueZh: '文法大魔王來了！展現你的文法力！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🚪'], animation: 'shake' },
+    { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Magic Boss is here! Show your magic power!", dialogueZh: '魔法大魔王來了！展現你的魔法力！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🚪'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "He plays, she reads, I went, they ate!", dialogueZh: 'He plays、she reads、I went、they ate！', highlightWords: [], sceneEmojis: ['💪', '📋', '✨'], animation: 'bounce' },
-    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Grammar Badge!", dialogueZh: '你打敗大魔王了！獲得文法徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
-    { image: '🗼', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Grammar Gate! On to Question Tower!", dialogueZh: '你完成了文法門！前進問題塔！', highlightWords: [], sceneEmojis: ['🗼', '❓', '🚀'], animation: 'bounce' },
+    { image: '🎖️', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "You beat the Boss! You get the Magic Badge!", dialogueZh: '你打敗大魔王了！獲得魔法徽章！', highlightWords: ['Badge'], sceneEmojis: ['🎖️', '🏆', '🎉'], animation: 'tada' },
+    { image: '🗼', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You finished Magic Gate! On to Question Tower!", dialogueZh: '你完成了魔法門！前進問題塔！', highlightWords: [], sceneEmojis: ['🗼', '❓', '🚀'], animation: 'bounce' },
   ],
   words: [
     { en: 'plays', zh: '玩（第三人稱）', image: '⚽', phonics: '', kk: '[plez]', phonicsSound: '', exampleSentence: 'He plays soccer.', exampleZh: '他踢足球。' },
@@ -7387,9 +7387,9 @@ const L7_M20: Mission = {
     { type: 'read', question: 'Does the writer play soccer daily?（作者每天踢足球嗎？）', passage: 'I play soccer every day.\nI love it very much.\nYesterday I played for two hours.', options: ['Yes, every day', 'No, never', 'Only yesterday', 'He hates it'], answer: 'Yes, every day' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Grammar Boss says: use your grammar!", lineZh: '文法大魔王說：用你的文法！' },
+    { speaker: 'Finn', line: "The Magic Boss says: use your magic sentences!", lineZh: '魔法大魔王說：用你的魔法句！' },
     { speaker: 'Coco', line: "He plays, she reads, I went, they ate!", lineZh: 'He plays、she reads、I went、they ate！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Grammar champion!", lineZh: '你打敗大魔王了！文法冠軍！' },
+    { speaker: 'Ruby', line: "You beat the Boss! Magic champion!", lineZh: '你打敗大魔王了！魔法冠軍！' },
     { speaker: 'Finn', line: "On to Question Tower! Let's learn Wh- questions!", lineZh: '前進問題塔！我們來學 Wh- 問句！' },
   ],
 };
@@ -10521,7 +10521,7 @@ const L10_M20: Mission = {
     { speaker: 'Finn', line: "The Bridge Boss says: read and write!", lineZh: '未來橋大魔王說：讀寫對決！' },
     { speaker: 'Coco', line: "I can connect ideas and write a paragraph!", lineZh: '我會連接想法也會寫段落！' },
     { speaker: 'Ruby', line: "You beat the Boss! Bridge champion!", lineZh: '你打敗大魔王了！未來橋冠軍！' },
-    { speaker: 'Finn', line: "On to Challenge Field! Advanced grammar awaits!", lineZh: '前進挑戰場！進階文法等著你！' },
+    { speaker: 'Finn', line: "On to Challenge Field! Advanced magic awaits!", lineZh: '前進挑戰場！進階魔法等著你！' },
   ],
 };
 
@@ -10744,7 +10744,7 @@ const L11_M5: Mission = {
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review modals, relatives, and superlatives!", dialogueZh: '來複習情態、關代、最高級！', highlightWords: [], sceneEmojis: ['🔄', '💡', '✨'], animation: 'wave' },
     { image: '💡', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "You should rest. You must sleep early.", dialogueZh: '你應該休息。你必須早睡。', highlightWords: ['should', 'must'], sceneEmojis: ['💡', '🛌', '😊'], animation: 'bounce' },
     { image: '🥇', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The boy who won is the fastest runner.", dialogueZh: '贏的那個男孩是最快的跑者。', highlightWords: ['who', 'fastest'], sceneEmojis: ['👦', '🥇', '🎉'], animation: 'tada' },
-    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know advanced grammar now! Amazing!", dialogueZh: '你會進階文法了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
+    { image: '🏅', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "You know advanced magic sentences now! Amazing!", dialogueZh: '你會進階魔法句了！太厲害！', highlightWords: [], sceneEmojis: ['🏅', '🎉', '🔄'], animation: 'bounce' },
   ],
   words: [
     { en: 'should', zh: '應該', image: '💡', phonics: '', kk: '[ʃʊd]', phonicsSound: '', exampleSentence: 'You should rest.', exampleZh: '你應該休息。' },
@@ -10785,7 +10785,7 @@ const L11_M5: Mission = {
     { speaker: 'Finn', line: "Let's review modals, relatives, and superlatives!", lineZh: '來複習情態、關代、最高級！' },
     { speaker: 'Coco', line: "You should rest. You must sleep early.", lineZh: '你應該休息。你必須早睡。' },
     { speaker: 'Benny', line: "The boy who won is the fastest runner.", lineZh: '贏的那個男孩是最快的跑者。' },
-    { speaker: 'Finn', line: "You know advanced grammar now! Amazing!", lineZh: '你會進階文法了！太厲害！' },
+    { speaker: 'Finn', line: "You know advanced magic sentences now! Amazing!", lineZh: '你會進階魔法句了！太厲害！' },
   ],
 };
 
