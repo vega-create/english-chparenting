@@ -14,6 +14,8 @@ interface Props {
   videoScript?: VideoLine[];
   videoUrl?: string;
   tip?: { zh: string; char?: string; face?: boolean };
+  title?: string;
+  titleEn?: string;
   onComplete: () => void;
 }
 
@@ -25,9 +27,10 @@ function youtubeEmbed(url: string): string | null {
   return m ? `https://www.youtube.com/embed/${m[1]}` : null;
 }
 
-export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, onComplete }: Props) {
+export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, onComplete }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
+  const [bookOpen, setBookOpen] = useState(false);
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
   const [openCards, setOpenCards] = useState<number[]>([]);
@@ -41,10 +44,10 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
   // 故事自動播放語音
   const playStory = useCallback(() => {
-    if (phase === 'story' && scene) {
+    if (phase === 'story' && bookOpen && scene) {
       setTimeout(() => speak(scene.dialogue, 0.75), 300);
     }
-  }, [phase, scene]);
+  }, [phase, bookOpen, scene]);
 
   useEffect(() => {
     playStory();
@@ -138,158 +141,188 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
       tada: 'animate-tada',
     };
 
+    const openBook = () => {
+      setPageDir('next');
+      setBookOpen(true);
+      setStoryIndex(0);
+      playPageFlip();
+    };
+
     return (
       <div className="animate-slide-up">
         <div className="text-center mb-3">
           {hasVideo && (
-            <button onClick={() => setPhase('video')} className="text-xs text-gray-400 hover:text-purple-500 mb-2 block mx-auto">
+            <button onClick={() => { setBookOpen(false); setPhase('video'); }} className="text-xs text-gray-400 hover:text-purple-500 mb-2 block mx-auto">
               ← 回看影片
             </button>
           )}
           <p className="text-sm font-medium text-purple-500 bg-purple-50 inline-block px-4 py-1 rounded-full">
-            📖 翻書學習 · 一頁一頁讀
+            📖 翻書學習 · 像一本書
           </p>
         </div>
 
-        {/* 電子書：一頁一課文，左右翻頁 */}
-        <div className="book-perspective max-w-xl mx-auto mb-4">
-          <div
-            key={storyIndex}
-            className={`relative bg-[#fffdf7] rounded-2xl border border-amber-200 shadow-xl overflow-hidden ${
-              pageDir === 'next' ? 'animate-page-next' : 'animate-page-prev'
-            }`}
-          >
-            {/* 書背裝訂線 */}
-            <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-amber-200/70 to-transparent" />
-
-            {/* 上半頁：插畫（場景圖＋emoji 動畫） */}
-            <div className="bg-gradient-to-b from-blue-100 to-purple-50 px-6 pt-7 pb-5 min-h-[190px] flex flex-col items-center justify-center relative overflow-hidden">
-              <div className="text-7xl mb-2">{scene.image}</div>
-              <div className="flex gap-4 text-4xl">
-                {scene.sceneEmojis.map((emoji, i) => (
-                  <span
-                    key={`${storyIndex}-${i}`}
-                    className={`inline-block ${animationClass[scene.animation] || 'animate-bounce'}`}
-                    style={{
-                      animationDelay: `${i * 0.15}s`,
-                      animationDuration: '1s',
-                      animationIterationCount: '3',
-                    }}
-                  >
-                    {emoji}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* 下半頁：課文（角色＋台詞＋翻譯） */}
-            <div className="px-6 py-5 flex items-start gap-3">
-              <img
-                src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
-                alt={scene.characterName}
-                className="w-24 h-24 object-contain flex-shrink-0"
-              />
-              <div className="flex-1 min-w-0 pl-4">
-                <p className="text-xs text-gray-400 font-bold mb-1">{scene.characterName}</p>
-                <p className="font-bold leading-relaxed text-gray-800 text-lg">
-                  {scene.dialogue.split(' ').map((w, wi) => {
-                    const isHighlight = scene.highlightWords?.some(hw =>
-                      w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
-                      hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
-                    );
-                    return (
-                      <span key={wi}>
-                        <span
-                          className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer' : ''}
-                          onClick={() => { if (isHighlight) speak(w.replace(/[.,!?]/g, ''), 0.5); }}
-                        >
-                          {w}
-                        </span>{' '}
-                      </span>
-                    );
-                  })}
-                </p>
-                {showTranslation && (
-                  <p className="text-gray-500 text-sm mt-2 animate-slide-up">{scene.dialogueZh}</p>
-                )}
-              </div>
-            </div>
-
-            {/* 頁碼 */}
-            <div className="text-center pb-3 text-xs text-amber-400 font-bold">
-              第 {storyIndex + 1} / {story.length} 頁
-            </div>
-          </div>
-        </div>
-
-        {/* 翻頁圓點 */}
-        <div className="flex justify-center gap-1.5 mb-4">
-          {story.map((_, i) => (
+        {/* 一本書：封面 + 內頁（書本比例） */}
+        <div className="book-perspective max-w-[380px] mx-auto mb-4">
+          {!bookOpen ? (
+            /* ── 封面 ── */
             <button
-              key={i}
-              aria-label={`第 ${i + 1} 頁`}
-              onClick={() => {
-                if (i === storyIndex) return;
-                setPageDir(i >= storyIndex ? 'next' : 'prev');
-                setShowTranslation(false);
-                playPageFlip();
-                setStoryIndex(i);
-                speak(story[i].dialogue, 0.75);
-              }}
-              className={`h-2.5 rounded-full transition-all ${
-                i === storyIndex ? 'w-6 bg-purple-500' : i < storyIndex ? 'w-2.5 bg-green-300' : 'w-2.5 bg-gray-200'
+              key="cover"
+              onClick={openBook}
+              className="animate-page-next block w-full text-center relative rounded-r-3xl rounded-l-md overflow-hidden shadow-2xl min-h-[500px] bg-gradient-to-br from-amber-400 via-orange-400 to-rose-400 active:scale-[0.99] transition"
+            >
+              {/* 書背 */}
+              <div className="absolute left-0 top-0 bottom-0 w-4 bg-black/15" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10">
+                <p className="text-white/80 text-sm font-bold mb-1 tracking-wide">冒險英語 · 第 {level} 級</p>
+                <div className="text-8xl my-5 drop-shadow-lg">{story[0]?.image || '📖'}</div>
+                <h3 className="text-white text-3xl font-black drop-shadow mb-1">{titleEn || 'Story'}</h3>
+                <p className="text-white/90 text-lg font-bold mb-7">{title || '故事'}</p>
+                <div className="flex gap-1 mb-8">
+                  {['finn', 'coco', 'polly', 'benny', 'ruby'].map(c => (
+                    <img key={c} src={`/characters/${c}/${c}-normal.png`} alt="" className="w-9 h-9 object-contain" />
+                  ))}
+                </div>
+                <span className="inline-block bg-white/90 text-orange-500 px-6 py-2.5 rounded-full font-bold shadow">翻開書本 📖 →</span>
+              </div>
+            </button>
+          ) : (
+            /* ── 內頁 ── */
+            <div
+              key={storyIndex}
+              className={`relative bg-[#fffdf7] rounded-r-3xl rounded-l-md border border-amber-200 shadow-2xl overflow-hidden min-h-[500px] flex flex-col ${
+                pageDir === 'next' ? 'animate-page-next' : 'animate-page-prev'
               }`}
-            />
-          ))}
+            >
+              {/* 書背裝訂線 */}
+              <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-amber-200/80 to-transparent z-10" />
+
+              {/* 上半頁：插畫 */}
+              <div className="bg-gradient-to-b from-blue-100 to-purple-50 px-6 pt-8 pb-6 min-h-[230px] flex flex-col items-center justify-center">
+                <div className="text-8xl mb-3">{scene.image}</div>
+                <div className="flex gap-4 text-4xl">
+                  {scene.sceneEmojis.map((emoji, i) => (
+                    <span
+                      key={`${storyIndex}-${i}`}
+                      className={`inline-block ${animationClass[scene.animation] || 'animate-bounce'}`}
+                      style={{ animationDelay: `${i * 0.15}s`, animationDuration: '1s', animationIterationCount: '3' }}
+                    >
+                      {emoji}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* 下半頁：課文 */}
+              <div className="flex-1 px-6 py-5 flex items-start gap-3">
+                <img
+                  src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
+                  alt={scene.characterName}
+                  className="w-24 h-24 object-contain flex-shrink-0"
+                />
+                <div className="flex-1 min-w-0 pl-2">
+                  <p className="text-xs text-gray-400 font-bold mb-1">{scene.characterName}</p>
+                  <p className="font-bold leading-relaxed text-gray-800 text-lg">
+                    {scene.dialogue.split(' ').map((w, wi) => {
+                      const isHighlight = scene.highlightWords?.some(hw =>
+                        w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
+                        hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
+                      );
+                      return (
+                        <span key={wi}>
+                          <span
+                            className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer' : ''}
+                            onClick={() => { if (isHighlight) speak(w.replace(/[.,!?]/g, ''), 0.5); }}
+                          >
+                            {w}
+                          </span>{' '}
+                        </span>
+                      );
+                    })}
+                  </p>
+                  {showTranslation && (
+                    <p className="text-gray-500 text-sm mt-2 animate-slide-up">{scene.dialogueZh}</p>
+                  )}
+                </div>
+              </div>
+
+              {/* 頁碼 */}
+              <div className="text-center pb-3 text-xs text-amber-400 font-bold">
+                第 {storyIndex + 1} / {story.length} 頁
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* 操作列：上一頁 / 慢唸 / 中譯 / 下一頁 */}
-        <div className="flex justify-center items-center gap-3">
-          <button
-            onClick={() => {
-              if (storyIndex > 0) {
-                setPageDir('prev');
+        {/* 內頁才顯示圓點與翻頁列 */}
+        {bookOpen && (
+          <>
+            <div className="flex justify-center gap-1.5 mb-4">
+              {story.map((_, i) => (
+                <button
+                  key={i}
+                  aria-label={`第 ${i + 1} 頁`}
+                  onClick={() => {
+                    if (i === storyIndex) return;
+                    setPageDir(i >= storyIndex ? 'next' : 'prev');
+                    setShowTranslation(false);
+                    playPageFlip();
+                    setStoryIndex(i);
+                    speak(story[i].dialogue, 0.75);
+                  }}
+                  className={`h-2.5 rounded-full transition-all ${
+                    i === storyIndex ? 'w-6 bg-purple-500' : i < storyIndex ? 'w-2.5 bg-green-300' : 'w-2.5 bg-gray-200'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <div className="flex justify-center items-center gap-3">
+              <button
+                onClick={() => {
+                  setShowTranslation(false);
+                  setPageDir('prev');
+                  playPageFlip();
+                  if (storyIndex > 0) {
+                    const prev = storyIndex - 1;
+                    setStoryIndex(prev);
+                    speak(story[prev].dialogue, 0.75);
+                  } else {
+                    setBookOpen(false); // 第一頁再往前 → 回封面
+                  }
+                }}
+                className="bg-amber-100 text-amber-600 px-5 py-3 rounded-2xl font-bold hover:bg-amber-200 transition active:scale-95">
+                {storyIndex === 0 ? '📕' : '◀'}
+              </button>
+              <button onClick={() => speak(scene.dialogue, 0.5)}
+                className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
+                🐢
+              </button>
+              <button onClick={() => setShowTranslation(!showTranslation)}
+                className={`px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${
+                  showTranslation
+                    ? 'bg-purple-500 text-white hover:bg-purple-600'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                }`}>
+                {showTranslation ? '中 ✓' : '中'}
+              </button>
+              <button onClick={() => {
                 setShowTranslation(false);
-                playPageFlip();
-                const prev = storyIndex - 1;
-                setStoryIndex(prev);
-                speak(story[prev].dialogue, 0.75);
-              }
-            }}
-            disabled={storyIndex === 0}
-            className={`px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${
-              storyIndex === 0 ? 'bg-gray-100 text-gray-300' : 'bg-amber-100 text-amber-600 hover:bg-amber-200'
-            }`}>
-            ◀
-          </button>
-          <button onClick={() => speak(scene.dialogue, 0.5)}
-            className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
-            🐢
-          </button>
-          <button onClick={() => setShowTranslation(!showTranslation)}
-            className={`px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${
-              showTranslation
-                ? 'bg-purple-500 text-white hover:bg-purple-600'
-                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-            }`}>
-            {showTranslation ? '中 ✓' : '中'}
-          </button>
-          <button onClick={() => {
-            setShowTranslation(false);
-            if (storyIndex < story.length - 1) {
-              setPageDir('next');
-              playPageFlip();
-              const next = storyIndex + 1;
-              setStoryIndex(next);
-              speak(story[next].dialogue, 0.75);
-            } else {
-              setPhase('words');
-            }
-          }}
-            className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
-            {storyIndex < story.length - 1 ? '▶' : '📝'}
-          </button>
-        </div>
+                if (storyIndex < story.length - 1) {
+                  setPageDir('next');
+                  playPageFlip();
+                  const next = storyIndex + 1;
+                  setStoryIndex(next);
+                  speak(story[next].dialogue, 0.75);
+                } else {
+                  setPhase('words');
+                }
+              }}
+                className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+                {storyIndex < story.length - 1 ? '▶' : '📝'}
+              </button>
+            </div>
+          </>
+        )}
       </div>
     );
   }
