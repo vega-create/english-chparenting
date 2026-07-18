@@ -12,12 +12,12 @@ interface Props {
 }
 
 const typeLabel: Record<string, { icon: string; label: string; characterKey: string; characterAction: string }> = {
-  'listen-pick': { icon: '🎧', label: '聽力挑戰', characterKey: 'coco', characterAction: 'listen' },
-  'speak': { icon: '🗣', label: '口說挑戰', characterKey: 'polly', characterAction: 'sing' },
-  'match': { icon: '🔗', label: '配對挑戰', characterKey: 'benny', characterAction: 'read' },
-  'spell': { icon: '✍️', label: '拼寫挑戰', characterKey: 'ruby', characterAction: 'write' },
-  'fill-blank': { icon: '📝', label: '填空挑戰', characterKey: 'finn', characterAction: 'talk' },
-  'read': { icon: '📖', label: '讀故事找線索', characterKey: 'benny', characterAction: 'read' },
+  'listen-pick': { icon: '🎧', label: '聲音偵探', characterKey: 'coco', characterAction: 'listen' },
+  'speak': { icon: '🗣', label: '魔法咒語', characterKey: 'polly', characterAction: 'sing' },
+  'match': { icon: '🔗', label: '連連看尋寶', characterKey: 'benny', characterAction: 'read' },
+  'spell': { icon: '✍️', label: '字母拼圖', characterKey: 'ruby', characterAction: 'write' },
+  'fill-blank': { icon: '📝', label: '缺字之謎', characterKey: 'finn', characterAction: 'talk' },
+  'read': { icon: '📖', label: '故事解謎', characterKey: 'benny', characterAction: 'read' },
 };
 
 export default function Challenge({ challenges, onComplete, praiseLevel = 'low' }: Props) {

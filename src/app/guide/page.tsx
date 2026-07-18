@@ -47,7 +47,7 @@ export default function GuidePage() {
               { icon: "📚", name: "Discover 探索", time: "5-8 分鐘", color: "bg-blue-50 border-blue-200",
                 desc: "學習新內容！有動畫、圖片、聲音，Finn 會帶你認識新單字和句型。不需要死記，跟著互動自然就記住了。" },
               { icon: "🎮", name: "Challenge 挑戰", time: "5-8 分鐘", color: "bg-green-50 border-green-200",
-                desc: "最刺激的部分！各種遊戲化練習：\n• 🎧 聽力闖關 — 聽音選圖、聽寫挑戰\n• 📝 Spelling Bee — 拖拉字母拼單字\n• 🔗 連連看 — 配對圖片和單字\n• 📖 讀故事找線索 — 讀短文找答案" },
+                desc: "最刺激的部分！各種遊戲化練習：\n• 🎧 聲音偵探 — 聽音選圖、聽出線索\n• ✍️ 字母拼圖 — 拖拉字母拼單字\n• 🔗 連連看尋寶 — 配對圖片和單字\n• 📖 故事解謎 — 讀短文找答案" },
               { icon: "💬", name: "Talk Time 對話", time: "3-5 分鐘", color: "bg-purple-50 border-purple-200",
                 desc: "跟 AI 角色 Polly 對話！Polly 會問你問題，你對著麥克風回答。不用怕說錯，Polly 超有耐心。還能錄音回放，聽聽自己的聲音。" },
               { icon: "⭐", name: "Mission Done! 任務完成", time: "1-2 分鐘", color: "bg-pink-50 border-pink-200",
