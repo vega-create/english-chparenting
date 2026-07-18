@@ -5,14 +5,13 @@ import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 
 const NAV = [
-  { icon: "🗺", label: "冒險地圖", href: "#" },
-  { icon: "🌍", label: "六大世界", href: "#" },
-  { icon: "🤖", label: "AI 口說", href: "#" },
-  { icon: "📖", label: "閱讀故事", href: "#" },
-  { icon: "📜", label: "每日任務", href: "#" },
-  { icon: "🏆", label: "成就徽章", href: "#" },
-  { icon: "🏠", label: "我的小屋", href: "#" },
-  { icon: "👨‍👩‍👧", label: "家長中心", href: "#" },
+  { icon: "🗺", label: "冒險地圖", href: "/adventure-map" },
+  { icon: "🌍", label: "六大世界", href: "/courses" },
+  { icon: "📖", label: "閱讀故事", href: "/blog" },
+  { icon: "📜", label: "每日任務", href: "/tasks" },
+  { icon: "🏆", label: "成就徽章", href: "/badges" },
+  { icon: "🏠", label: "我的小屋", href: "/cabin" },
+  { icon: "👨‍👩‍👧", label: "家長中心", href: "/parents" },
 ];
 
 export default function LayeredBanner() {
@@ -400,10 +399,10 @@ export default function LayeredBanner() {
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 lg:gap-8">
             {[
-              { img: "today-task",    btn: "前往任務",     btnIcon: "📜", href: "/courses", color: "from-orange-400 to-amber-500", shadow: "rgba(234,88,12,0.4)" },
-              { img: "my-cabin",      btn: "進入小屋",     btnIcon: "🏠", href: "/adventure-map", color: "from-emerald-400 to-green-600", shadow: "rgba(5,150,105,0.4)" },
-              { img: "achievements",  btn: "查看全部",     btnIcon: "🏆", href: "/adventure-map", color: "from-blue-500 to-indigo-600",   shadow: "rgba(37,99,235,0.4)" },
-              { img: "parent-center", btn: "前往家長中心", btnIcon: "👨‍👩‍👧", href: "/guide",  color: "from-pink-500 to-rose-600",     shadow: "rgba(225,29,72,0.4)" },
+              { img: "today-task",    btn: "前往任務",     btnIcon: "📜", href: "/tasks", color: "from-orange-400 to-amber-500", shadow: "rgba(234,88,12,0.4)" },
+              { img: "my-cabin",      btn: "進入小屋",     btnIcon: "🏠", href: "/cabin", color: "from-emerald-400 to-green-600", shadow: "rgba(5,150,105,0.4)" },
+              { img: "achievements",  btn: "查看全部",     btnIcon: "🏆", href: "/badges", color: "from-blue-500 to-indigo-600",   shadow: "rgba(37,99,235,0.4)" },
+              { img: "parent-center", btn: "前往家長中心", btnIcon: "👨‍👩‍👧", href: "/parents",  color: "from-pink-500 to-rose-600",     shadow: "rgba(225,29,72,0.4)" },
             ].map((card, i) => (
               <motion.div
                 key={card.img}
