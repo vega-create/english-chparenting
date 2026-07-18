@@ -2197,6 +2197,7 @@ const L2_M20: Mission = {
 const L3_M1: Mission = {
   id: 1, slug: 'l3-m1-colors-1', level: 3, title: '顏色①', titleEn: 'Colors 1', theme: '市場街・彩虹攤位', themeEmoji: '🌈',
   focus: '10 個顏色單字；句型 It is + 顏色；冠詞 a + 顏色 + 名詞',
+  goal: { zh: '顏料攤的顏色被洗掉了！念對顏色單字，幫攤主把招牌重新塗上顏色。', char: 'finn' },
   story: [
     { image: '🌈', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Market Street! Look at the colors!", dialogueZh: '歡迎來到市場街！看看這些顏色！', highlightWords: ['colors'], sceneEmojis: ['🌈', '🏡', '✨'], animation: 'wave' },
     { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "It is a red apple! Red, red, red!", dialogueZh: '這是一顆紅蘋果！紅、紅、紅！', highlightWords: ['red', 'apple'], sceneEmojis: ['🍎', '🔴', '😊'], animation: 'bounce' },
@@ -2251,6 +2252,7 @@ const L3_M1: Mission = {
 const L3_M2: Mission = {
   id: 2, slug: 'l3-m2-colors-2', level: 3, title: '顏色② 問答', titleEn: 'Colors Q&A', theme: '市場街・顏色遊戲', themeEmoji: '🎨',
   focus: '句型：Is it red? Yes, it is. / No, it isn\'t. What color is it?',
+  goal: { zh: '有人問 Is it red？答對顏色，才能拿到對的氣球。', char: 'coco' },
   story: [
     { image: '🎨', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Let's play a color game! Ask and answer!", dialogueZh: '我們玩顏色遊戲！問和答！', highlightWords: ['ask', 'answer'], sceneEmojis: ['🎨', '❓', '✨'], animation: 'wave' },
     { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Is it red? Yes, it is!", dialogueZh: '它是紅色的嗎？是的！', highlightWords: ['Is', 'red'], sceneEmojis: ['🍎', '✅', '😊'], animation: 'bounce' },
@@ -2303,6 +2305,7 @@ const L3_M2: Mission = {
 const L3_M3: Mission = {
   id: 3, slug: 'l3-m3-numbers-1', level: 3, title: '數字 1–10', titleEn: 'Numbers 1–10', theme: '市場街・數數攤', themeEmoji: '🔢',
   focus: '數字 one–ten；句型 How many? / I have + 數字 + 名詞',
+  goal: { zh: '水果攤要你先數清楚 1 到 10 顆蘋果，數對了才賣你。', char: 'polly' },
   story: [
     { image: '🔢', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Let's count! One, two, three!", dialogueZh: '我們來數數！一、二、三！', highlightWords: ['count'], sceneEmojis: ['🔢', '☝️', '✨'], animation: 'wave' },
     { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "One apple, two apples, three apples!", dialogueZh: '一顆蘋果、兩顆蘋果、三顆蘋果！', highlightWords: ['One', 'two', 'three'], sceneEmojis: ['🍎', '🍎', '🍎'], animation: 'bounce' },
@@ -2355,6 +2358,7 @@ const L3_M3: Mission = {
 const L3_M4: Mission = {
   id: 4, slug: 'l3-m4-numbers-2', level: 3, title: '數字 11–20', titleEn: 'Numbers 11–20', theme: '市場街・大數字塔', themeEmoji: '🔢',
   focus: '數字 eleven–twenty；句型 How many are there? There are + 數字',
+  goal: { zh: '糖果太多啦！一路數到 20，才裝得下這一大袋。', char: 'benny' },
   story: [
     { image: '🔢', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Bigger numbers! Eleven, twelve, thirteen!", dialogueZh: '更大的數字！十一、十二、十三！', highlightWords: ['eleven', 'twelve'], sceneEmojis: ['🔢', '🗼', '✨'], animation: 'wave' },
     { image: '⭐', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "There are twelve stars! Count them!", dialogueZh: '有十二顆星星！數數看！', highlightWords: ['twelve', 'stars'], sceneEmojis: ['⭐', '🔢', '😊'], animation: 'bounce' },
@@ -2407,6 +2411,7 @@ const L3_M4: Mission = {
 const L3_M5: Mission = {
   id: 5, slug: 'l3-m5-review-color-num', level: 3, title: '複習① 顏色數字', titleEn: 'Review Colors & Numbers', theme: '市場街・彩色市集', themeEmoji: '🎪',
   focus: '複習顏色＋數字；整合句型 How many ___? / What color?',
+  goal: { zh: '闖過「幾個、什麼顏色」的關卡，拿到市集通行證。', char: 'ruby' },
   story: [
     { image: '🎪', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Big review! Colors and numbers together!", dialogueZh: '大複習！顏色和數字一起！', highlightWords: [], sceneEmojis: ['🎪', '🌈', '🔢'], animation: 'wave' },
     { image: '🎈', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Three red balloons and two blue balloons!", dialogueZh: '三顆紅氣球和兩顆藍氣球！', highlightWords: ['Three', 'red', 'two', 'blue'], sceneEmojis: ['🎈', '🔴', '🔵'], animation: 'tada' },
@@ -2458,6 +2463,7 @@ const L3_M5: Mission = {
 const L3_M6: Mission = {
   id: 6, slug: 'l3-m6-food-1', level: 3, title: '食物①', titleEn: 'Food 1', theme: '市場街・美食攤', themeEmoji: '🍎',
   focus: '10 個食物單字；冠詞 a / an（a banana, an egg）',
+  goal: { zh: 'Finn 肚子餓了！用 a / an 點對食物才吃得到（a banana、an egg）。', char: 'finn' },
   tip: { zh: '母音媽媽開頭用 an：an egg、an apple；子音開頭用 a：a banana。', char: 'coco' },
   story: [
     { image: '🍎', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Yummy food on Market Street! Let's see!", dialogueZh: '市場街有好吃的食物！來看看！', highlightWords: ['food'], sceneEmojis: ['🍎', '🍌', '✨'], animation: 'wave' },
@@ -2511,6 +2517,7 @@ const L3_M6: Mission = {
 const L3_M7: Mission = {
   id: 7, slug: 'l3-m7-food-2', level: 3, title: '食物② 喜好', titleEn: 'Food & Like', theme: '市場街・點餐區', themeEmoji: '🍽️',
   focus: '句型 I like / I don\'t like / Do you like…?；冠詞 the',
+  goal: { zh: '說出 I like 或 I do not like，攤主才知道要給你什麼。', char: 'coco' },
   story: [
     { image: '🍽️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Do you like pizza? Tell me what you like!", dialogueZh: '你喜歡披薩嗎？告訴我你喜歡什麼！', highlightWords: ['like'], sceneEmojis: ['🍽️', '🍕', '✨'], animation: 'wave' },
     { image: '🍕', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I like pizza! I like the noodles too!", dialogueZh: '我喜歡披薩！我也喜歡那個麵！', highlightWords: ['like', 'the'], sceneEmojis: ['🍕', '🍜', '😋'], animation: 'bounce' },
@@ -2563,6 +2570,7 @@ const L3_M7: Mission = {
 const L3_M8: Mission = {
   id: 8, slug: 'l3-m8-animals-1', level: 3, title: '動物①', titleEn: 'Animals 1', theme: '市場街・寵物角', themeEmoji: '🐾',
   focus: '10 個動物單字；句型 It is a + 動物 / I have a + 動物',
+  goal: { zh: '寵物攤有動物走失了！說出牠的名字，把牠叫回來。', char: 'polly' },
   story: [
     { image: '🐾', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "So many animals! A dog, a cat, a bird!", dialogueZh: '好多動物！一隻狗、一隻貓、一隻鳥！', highlightWords: ['dog', 'cat', 'bird'], sceneEmojis: ['🐶', '🐱', '🐦'], animation: 'wave' },
     { image: '🐰', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have a rabbit! It is white!", dialogueZh: '我有一隻兔子！牠是白色的！', highlightWords: ['rabbit'], sceneEmojis: ['🐰', '⚪', '😊'], animation: 'bounce' },
@@ -2615,6 +2623,7 @@ const L3_M8: Mission = {
 const L3_M9: Mission = {
   id: 9, slug: 'l3-m9-animals-2', level: 3, title: '動物② 複數', titleEn: 'Animals & Plurals', theme: '市場街・動物農場', themeEmoji: '🐔',
   focus: '名詞複數 -s（two dogs）；句型 How many? / They are…',
+  goal: { zh: '不只一隻喔！加 -s 數清楚到底有幾隻動物。', char: 'benny' },
   tip: { zh: '複數 -s 兩種音，記「有聲配有聲、無聲配無聲」：有聲結尾（dog /g/）→ -s 唸 /z/（dogs）；無聲結尾（cat /t/）→ -s 唸 /s/（cats）。', char: 'benny' },
   story: [
     { image: '🐔', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "One dog, two dogs! Add -s for more!", dialogueZh: '一隻狗，兩隻狗！多的加 -s！', highlightWords: ['dogs', '-s'], sceneEmojis: ['🐶', '🐶', '✨'], animation: 'wave' },
@@ -2668,6 +2677,7 @@ const L3_M9: Mission = {
 const L3_M10: Mission = {
   id: 10, slug: 'l3-m10-review-food-animal', level: 3, title: '複習② 食物動物', titleEn: 'Review Food & Animals', theme: '市場街・熱鬧市集', themeEmoji: '🎪',
   focus: '複習食物＋動物＋冠詞＋複數＋Do you like…?',
+  goal: { zh: '用 Do you like…? 通過市集的問答關卡。', char: 'ruby' },
   story: [
     { image: '🎪', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Review time! Food and animals!", dialogueZh: '複習時間！食物和動物！', highlightWords: [], sceneEmojis: ['🎪', '🍎', '🐾'], animation: 'wave' },
     { image: '🐶', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Two dogs like meat. Do you like meat?", dialogueZh: '兩隻狗喜歡肉。你喜歡肉嗎？', highlightWords: ['dogs', 'meat', 'like'], sceneEmojis: ['🐶', '🍖', '❓'], animation: 'tada' },
@@ -2719,6 +2729,7 @@ const L3_M10: Mission = {
 const L3_M11: Mission = {
   id: 11, slug: 'l3-m11-body', level: 3, title: '身體部位', titleEn: 'Body', theme: '市場街・健康站', themeEmoji: '🧍',
   focus: '10 個身體部位；句型 This is my… / I have two…',
+  goal: { zh: '娃娃缺了零件！說出身體部位，幫牠組回完整的樣子。', char: 'finn' },
   story: [
     { image: '🧍', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Touch your head! This is my head!", dialogueZh: '摸摸你的頭！這是我的頭！', highlightWords: ['head'], sceneEmojis: ['🧍', '👆', '✨'], animation: 'wave' },
     { image: '👀', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have two eyes and one nose!", dialogueZh: '我有兩隻眼睛和一個鼻子！', highlightWords: ['eyes', 'nose'], sceneEmojis: ['👀', '👃', '😊'], animation: 'bounce' },
@@ -2771,6 +2782,7 @@ const L3_M11: Mission = {
 const L3_M12: Mission = {
   id: 12, slug: 'l3-m12-family', level: 3, title: '家人', titleEn: 'Family', theme: '市場街・全家福', themeEmoji: '👨‍👩‍👧',
   focus: '10 個家人稱謂；句型 This is my… / Who is he/she?',
+  goal: { zh: '走散的一家人要團圓！說出家人的稱謂，幫他們找到彼此。', char: 'coco' },
   story: [
     { image: '👨‍👩‍👧', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "This is my family! Mom, Dad, and me!", dialogueZh: '這是我的家人！媽媽、爸爸和我！', highlightWords: ['family', 'Mom', 'Dad'], sceneEmojis: ['👨‍👩‍👧', '❤️', '✨'], animation: 'wave' },
     { image: '👦', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Who is he? He is my brother!", dialogueZh: '他是誰？他是我哥哥！', highlightWords: ['Who', 'brother'], sceneEmojis: ['👦', '❓', '😊'], animation: 'bounce' },
@@ -2823,6 +2835,7 @@ const L3_M12: Mission = {
 const L3_M13: Mission = {
   id: 13, slug: 'l3-m13-clothes', level: 3, title: '衣服', titleEn: 'Clothes', theme: '市場街・服飾店', themeEmoji: '👕',
   focus: '10 個衣物；句型 I wear… / Put on your… / 顏色+衣物',
+  goal: { zh: '天氣變冷了，用 I wear… 幫大家穿上對的衣服。', char: 'polly' },
   story: [
     { image: '👕', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "New clothes! I wear a red shirt!", dialogueZh: '新衣服！我穿一件紅襯衫！', highlightWords: ['wear', 'shirt'], sceneEmojis: ['👕', '🔴', '✨'], animation: 'wave' },
     { image: '👟', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Put on your shoes and socks!", dialogueZh: '穿上你的鞋子和襪子！', highlightWords: ['shoes', 'socks'], sceneEmojis: ['👟', '🧦', '😊'], animation: 'bounce' },
@@ -2875,6 +2888,7 @@ const L3_M13: Mission = {
 const L3_M14: Mission = {
   id: 14, slug: 'l3-m14-toys', level: 3, title: '玩具與文具', titleEn: 'Toys & School Things', theme: '市場街・玩具文具攤', themeEmoji: '🧸',
   focus: '10 個玩具/文具；句型 Whose…? It is my… / 冠詞複習',
+  goal: { zh: '玩具攤亂成一團！用 Whose…? 找出每樣東西的主人。', char: 'benny' },
   story: [
     { image: '🧸', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Toys and school things! A ball, a doll!", dialogueZh: '玩具和文具！一顆球、一個娃娃！', highlightWords: ['ball', 'doll'], sceneEmojis: ['⚽', '🧸', '✨'], animation: 'wave' },
     { image: '📖', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Whose book is this? It is my book!", dialogueZh: '這是誰的書？這是我的書！', highlightWords: ['Whose', 'book'], sceneEmojis: ['📖', '❓', '😊'], animation: 'bounce' },
@@ -2927,6 +2941,7 @@ const L3_M14: Mission = {
 const L3_M15: Mission = {
   id: 15, slug: 'l3-m15-review-body-etc', level: 3, title: '複習③ 身體家人衣物', titleEn: 'Review Body/Family/Clothes', theme: '市場街・大集合', themeEmoji: '🎪',
   focus: '複習身體/家人/衣物/玩具＋This is my… / Whose…?',
+  goal: { zh: '闖過 This is my… 的大關，拿到收集獎章。', char: 'ruby' },
   story: [
     { image: '🎪', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Big review! Body, family, clothes, toys!", dialogueZh: '大複習！身體、家人、衣服、玩具！', highlightWords: [], sceneEmojis: ['🎪', '🧍', '👨‍👩‍👧'], animation: 'wave' },
     { image: '👗', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "My sister wears a pink dress!", dialogueZh: '我姊姊穿一件粉紅洋裝！', highlightWords: ['sister', 'dress'], sceneEmojis: ['👧', '👗', '🩷'], animation: 'tada' },
@@ -2978,6 +2993,7 @@ const L3_M15: Mission = {
 const L3_M16: Mission = {
   id: 16, slug: 'l3-m16-articles', level: 3, title: '冠詞 a / an / the', titleEn: 'a / an / the', theme: '市場街・冠詞魔法', themeEmoji: '🎩',
   focus: 'a（子音前）、an（母音前）、the（特定的那個）',
+  goal: { zh: '三扇門分別要 a、an、the 才打得開，選對冠詞通過！', char: 'finn' },
   tip: { zh: 'a／an 指「一個（隨便哪個）」；the 指「就是那個特定的」。', char: 'benny' },
   story: [
     { image: '🎩', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Magic words! a, an, the — before nouns!", dialogueZh: '魔法字！a、an、the —— 放名詞前面！', highlightWords: ['a', 'an', 'the'], sceneEmojis: ['🎩', '🔤', '✨'], animation: 'wave' },
@@ -3031,6 +3047,7 @@ const L3_M16: Mission = {
 const L3_M17: Mission = {
   id: 17, slug: 'l3-m17-plurals', level: 3, title: '名詞複數', titleEn: 'Plurals', theme: '市場街・數量魔法', themeEmoji: '➕',
   focus: '複數規則：+s、+es（box→boxes）、不規則（foot→feet）',
+  goal: { zh: '箱子（box→boxes）、腳（foot→feet）的變身術，念對複數才變得出來。', char: 'coco' },
   tip: { zh: '複數不是全都加 -s：嘶音結尾（s/x/sh/ch）加 es 唸 /ɪz/（watch→watches、box→boxes）；子音+y 要去 y 加 ies（baby→babies）；不規則要背（foot→feet）。', char: 'benny' },
   story: [
     { image: '➕', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "More than one? Add -s! cat → cats!", dialogueZh: '不只一個？加 -s！cat → cats！', highlightWords: ['-s', 'cats'], sceneEmojis: ['➕', '🐱', '✨'], animation: 'wave' },
@@ -3084,6 +3101,7 @@ const L3_M17: Mission = {
 const L3_M18: Mission = {
   id: 18, slug: 'l3-m18-this-these', level: 3, title: 'This / These', titleEn: 'This & These', theme: '市場街・指指看', themeEmoji: '👉',
   focus: 'This is（近·單）/ These are（近·複）；That / Those（遠）',
+  goal: { zh: '近的、遠的、一個、很多個——用 this / these 指對了才拿得到寶物。', char: 'polly' },
   tip: { zh: 'this／that 配單數，these／those 配複數：this cat / these cats。', char: 'polly' },
   story: [
     { image: '👉', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "This is near! That is far! Point and say!", dialogueZh: 'This 是近的！That 是遠的！指指看說說看！', highlightWords: ['This', 'That'], sceneEmojis: ['👉', '👆', '✨'], animation: 'wave' },
@@ -3137,6 +3155,7 @@ const L3_M18: Mission = {
 const L3_M19: Mission = {
   id: 19, slug: 'l3-m19-reading', level: 3, title: '市場街閱讀', titleEn: 'Market Reading', theme: '市場街・故事時間', themeEmoji: '📖',
   focus: '綜合閱讀：把顏色/數字/食物/動物/句型讀成一個小故事',
+  goal: { zh: '讀懂市集地圖上的小故事，找到藏在最後的那個攤位。', char: 'benny' },
   story: [
     { image: '📖', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's read a story about Market Street!", dialogueZh: '我們來讀一個市場街的故事！', highlightWords: ['story'], sceneEmojis: ['📖', '🏡', '✨'], animation: 'wave' },
     { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "This is Coco. Coco has two red apples and a cat.", dialogueZh: '這是 Coco。Coco 有兩顆紅蘋果和一隻貓。', highlightWords: ['two', 'red', 'apples', 'cat'], sceneEmojis: ['🐱', '🍎', '🍎'], animation: 'bounce' },
@@ -3189,6 +3208,7 @@ const L3_M19: Mission = {
 const L3_M20: Mission = {
   id: 20, slug: 'l3-m20-boss', level: 3, title: '市場街大魔王', titleEn: 'Market Boss', theme: '市場街・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：顏色/數字/食物/動物/身體/家人/衣服＋冠詞/複數/疑問句',
+  goal: { zh: '市集大魔王守著出口！用學過的顏色、數字、食物、動物打敗牠，走出市場街！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Market Boss is here! Use all your words!", dialogueZh: '市場大魔王來了！用上你所有的單字！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏪'], animation: 'shake' },
     { image: '💪', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Colors, numbers, food, animals — you know them all!", dialogueZh: '顏色、數字、食物、動物 —— 你全會了！', highlightWords: [], sceneEmojis: ['💪', '🌈', '✨'], animation: 'bounce' },
@@ -3242,6 +3262,7 @@ const L3_M20: Mission = {
 const L4_M1: Mission = {
   id: 1, slug: 'l4-m1-i-am', level: 4, title: 'I am + 感覺', titleEn: 'I am…', theme: '學校路・心情站', themeEmoji: '😊',
   focus: '句型 I am + 形容詞；句型代換 I am ___.（happy/hungry…）',
+  goal: { zh: '新同學不敢開口，用 I am happy / hungry 說出心情，一起破冰交朋友。', char: 'finn' },
   story: [
     { image: '🏫', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Good morning! Welcome to School Road!", dialogueZh: '早安！歡迎來到學校路！', highlightWords: ['morning'], sceneEmojis: ['🏫', '🌅', '✨'], animation: 'wave' },
     { image: '😊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am happy! Are you happy too?", dialogueZh: '我很開心！你也開心嗎？', highlightWords: ['happy'], sceneEmojis: ['😊', '💛', '🎉'], animation: 'bounce' },
@@ -3294,6 +3315,7 @@ const L4_M1: Mission = {
 const L4_M2: Mission = {
   id: 2, slug: 'l4-m2-pronouns-be', level: 4, title: '代名詞 + be', titleEn: 'He is / She is', theme: '學校路・介紹夥伴', themeEmoji: '👥',
   focus: '主格代名詞 I/you/he/she/it/we/they ＋ be 變化（am/is/are）',
+  goal: { zh: '點名時間到！用對 am / is / are，全班才會到齊。', char: 'coco' },
   tip: { zh: 'be 動詞要看主詞：I am、he/she/it is、you/we/they are。別全用 is！', char: 'coco' },
   story: [
     { image: '👦', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I am Finn. He is Benny. She is Coco.", dialogueZh: '我是 Finn。他是 Benny。她是 Coco。', highlightWords: ['I', 'He', 'She'], sceneEmojis: ['🦊', '🐻', '🐱'], animation: 'wave' },
@@ -3347,6 +3369,7 @@ const L4_M2: Mission = {
 const L4_M3: Mission = {
   id: 3, slug: 'l4-m3-be-questions', level: 4, title: 'be 疑問句', titleEn: 'Are you…?', theme: '學校路・問問看', themeEmoji: '❓',
   focus: 'Yes/No 疑問：Are you…? Is he…? 短答 Yes, I am. / No, he isn\'t.',
+  goal: { zh: '用 Are you…? 問對問題，交到學校的第一個好朋友。', char: 'polly' },
   story: [
     { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Are you a student? Yes, I am!", dialogueZh: '你是學生嗎？是的，我是！', highlightWords: ['Are', 'am'], sceneEmojis: ['❓', '🎒', '✨'], animation: 'wave' },
     { image: '🐻', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Is he your teacher? No, he isn't. He is my friend.", dialogueZh: '他是你的老師嗎？不，他不是。他是我朋友。', highlightWords: ['Is', "isn't"], sceneEmojis: ['🐻', '🙅', '😊'], animation: 'shake' },
@@ -3399,6 +3422,7 @@ const L4_M3: Mission = {
 const L4_M4: Mission = {
   id: 4, slug: 'l4-m4-this-that', level: 4, title: 'This / That + 物品', titleEn: 'This is / That is', theme: '學校路・我的書包', themeEmoji: '🎒',
   focus: 'This is / That is / These are / Those are ＋ 教室物品',
+  goal: { zh: '教室東西亂了，用 this / that / these / those 把它們歸位。', char: 'benny' },
   story: [
     { image: '🎒', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "This is my book. That is your pen.", dialogueZh: '這是我的書。那是你的筆。', highlightWords: ['This', 'That'], sceneEmojis: ['📖', '🖊️', '✨'], animation: 'wave' },
     { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "These are books. Those are bags!", dialogueZh: '這些是書。那些是書包！', highlightWords: ['These', 'Those'], sceneEmojis: ['📚', '🎒', '😊'], animation: 'bounce' },
@@ -3451,6 +3475,7 @@ const L4_M4: Mission = {
 const L4_M5: Mission = {
   id: 5, slug: 'l4-m5-review-be', level: 4, title: 'Review① be 動詞', titleEn: 'Review: be', theme: '學校路・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：I am / He is / They are ＋ 疑問短答 ＋ this/that',
+  goal: { zh: '闖過 be 動詞大關，拿到你的學生證。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! I am, you are, he is!", dialogueZh: '來複習！I am、you are、he is！', highlightWords: ['am', 'are', 'is'], sceneEmojis: ['🔄', '📚', '✨'], animation: 'wave' },
     { image: '❓', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Are you ready? Yes, I am!", dialogueZh: '你準備好了嗎？是的，我準備好了！', highlightWords: ['Are', 'am'], sceneEmojis: ['❓', '💪', '😊'], animation: 'bounce' },
@@ -3503,6 +3528,7 @@ const L4_M5: Mission = {
 const L4_M6: Mission = {
   id: 6, slug: 'l4-m6-i-like', level: 4, title: 'I like…', titleEn: 'I like / I don\'t like', theme: '學校路・我喜歡', themeEmoji: '❤️',
   focus: '句型 I like + N / I don\'t like + N；句型代換替換名詞',
+  goal: { zh: '說出 I like，找到跟你喜歡一樣東西的同學。', char: 'finn' },
   story: [
     { image: '❤️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I like pizza! I like music too!", dialogueZh: '我喜歡披薩！我也喜歡音樂！', highlightWords: ['like'], sceneEmojis: ['🍕', '🎵', '❤️'], animation: 'bounce' },
     { image: '🚫', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I don't like candy. I like books!", dialogueZh: '我不喜歡糖果。我喜歡書！', highlightWords: ["don't", 'like'], sceneEmojis: ['🍬', '📚', '😊'], animation: 'shake' },
@@ -3555,6 +3581,7 @@ const L4_M6: Mission = {
 const L4_M7: Mission = {
   id: 7, slug: 'l4-m7-do-you-like', level: 4, title: 'Do you like…?', titleEn: 'Do you like…?', theme: '學校路・你喜歡嗎', themeEmoji: '🤔',
   focus: '疑問 Do you like…? 短答 Yes, I do. / No, I don\'t.',
+  goal: { zh: '用 Do you like…? 完成「好朋友問卷」。', char: 'coco' },
   tip: { zh: '問「喜不喜歡」用 Do：Do you like…?（不是 Are you like）。', char: 'benny' },
   story: [
     { image: '🤔', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Do you like pizza? Yes, I do!", dialogueZh: '你喜歡披薩嗎？是的，我喜歡！', highlightWords: ['Do', 'do'], sceneEmojis: ['🍕', '❓', '✨'], animation: 'wave' },
@@ -3608,6 +3635,7 @@ const L4_M7: Mission = {
 const L4_M8: Mission = {
   id: 8, slug: 'l4-m8-i-have', level: 4, title: 'I have…', titleEn: 'I have / Do you have…?', theme: '學校路・我有什麼', themeEmoji: '🎒',
   focus: '句型 I have + N / Do you have…? Yes, I do. / No, I don\'t.',
+  goal: { zh: '用 I have 說出你的文具，分享給缺東西的同學。', char: 'polly' },
   story: [
     { image: '🎒', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I have a bag. I have a book too!", dialogueZh: '我有一個書包。我也有一本書！', highlightWords: ['have'], sceneEmojis: ['🎒', '📖', '✨'], animation: 'wave' },
     { image: '🖊️', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "Do you have a pen? Yes, I do!", dialogueZh: '你有筆嗎？是的，我有！', highlightWords: ['have', 'do'], sceneEmojis: ['🖊️', '❓', '✅'], animation: 'bounce' },
@@ -3660,6 +3688,7 @@ const L4_M8: Mission = {
 const L4_M9: Mission = {
   id: 9, slug: 'l4-m9-i-can', level: 4, title: 'I can…', titleEn: 'I can / I can\'t', theme: '學校路・我會做', themeEmoji: '💪',
   focus: '句型 I can + V（能力）/ I can\'t + V；句型代換替換動詞',
+  goal: { zh: '才藝表演開始！用 I can 說出你會的本領。', char: 'benny' },
   story: [
     { image: '💪', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I can run! I can jump! Can you?", dialogueZh: '我會跑！我會跳！你會嗎？', highlightWords: ['can'], sceneEmojis: ['🏃', '🤸', '💪'], animation: 'bounce' },
     { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I can swim! But I can't fly.", dialogueZh: '我會游泳！但我不會飛。', highlightWords: ['can', "can't"], sceneEmojis: ['🏊', '🚫', '😊'], animation: 'wave' },
@@ -3712,6 +3741,7 @@ const L4_M9: Mission = {
 const L4_M10: Mission = {
   id: 10, slug: 'l4-m10-review-like-have-can', level: 4, title: 'Review② like/have/can', titleEn: 'Review: like/have/can', theme: '學校路・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：I like / I have / I can ＋ 疑問短答',
+  goal: { zh: '闖過 I like / I have / I can 的問答關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! I like, I have, I can!", dialogueZh: '來複習！I like、I have、I can！', highlightWords: ['like', 'have', 'can'], sceneEmojis: ['❤️', '🎒', '💪'], animation: 'wave' },
     { image: '🍕', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I like pizza. I have a book. I can swim!", dialogueZh: '我喜歡披薩。我有書。我會游泳！', highlightWords: ['like', 'have', 'can'], sceneEmojis: ['🍕', '📖', '🏊'], animation: 'bounce' },
@@ -3764,6 +3794,7 @@ const L4_M10: Mission = {
 const L4_M11: Mission = {
   id: 11, slug: 'l4-m11-can-you', level: 4, title: 'Can you…?', titleEn: 'Can you…?', theme: '學校路・你會嗎', themeEmoji: '🙋',
   focus: '疑問 Can you…? 短答 Yes, I can. / No, I can\'t.',
+  goal: { zh: '用 Can you…? 邀同學一起完成今天的任務。', char: 'finn' },
   story: [
     { image: '🙋', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Can you swim? Yes, I can!", dialogueZh: '你會游泳嗎？是的，我會！', highlightWords: ['Can', 'can'], sceneEmojis: ['🏊', '❓', '✅'], animation: 'wave' },
     { image: '🕊️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Can you fly? No, I can't. I can read!", dialogueZh: '你會飛嗎？不，我不會。我會閱讀！', highlightWords: ["can't", 'can'], sceneEmojis: ['🕊️', '🙅', '📖'], animation: 'shake' },
@@ -3816,6 +3847,7 @@ const L4_M11: Mission = {
 const L4_M12: Mission = {
   id: 12, slug: 'l4-m12-what-is-this', level: 4, title: 'What is this?', titleEn: 'What is this?', theme: '學校路・教室裡', themeEmoji: '🏫',
   focus: '疑問 What is this? — It is a…（教室物品）',
+  goal: { zh: '神祕箱出現了！用 What is this? 猜出裡面是什麼。', char: 'coco' },
   story: [
     { image: '🏫', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "What is this? It is a clock!", dialogueZh: '這是什麼？這是一個時鐘！', highlightWords: ['What', 'clock'], sceneEmojis: ['🕐', '❓', '✨'], animation: 'wave' },
     { image: '🚪', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "What is that? It is a door.", dialogueZh: '那是什麼？那是一扇門。', highlightWords: ['What', 'door'], sceneEmojis: ['🚪', '❓', '😊'], animation: 'bounce' },
@@ -3868,6 +3900,7 @@ const L4_M12: Mission = {
 const L4_M13: Mission = {
   id: 13, slug: 'l4-m13-where-is', level: 4, title: 'Where is…?', titleEn: 'Where is…?', theme: '學校路・找找看', themeEmoji: '🔍',
   focus: '疑問 Where is…? — It is in / on / under…',
+  goal: { zh: '東西不見了，用 Where is…? 問出它到底在哪裡。', char: 'polly' },
   story: [
     { image: '🔍', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Where is my cat? It is on the desk!", dialogueZh: '我的貓在哪？牠在書桌上！', highlightWords: ['Where', 'on'], sceneEmojis: ['🐱', '🖥️', '✨'], animation: 'wave' },
     { image: '📦', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Where is the ball? It is in the box.", dialogueZh: '球在哪？它在箱子裡。', highlightWords: ['Where', 'in'], sceneEmojis: ['⚽', '📦', '😊'], animation: 'bounce' },
@@ -3920,6 +3953,7 @@ const L4_M13: Mission = {
 const L4_M14: Mission = {
   id: 14, slug: 'l4-m14-prepositions', level: 4, title: '介系詞', titleEn: 'Prepositions', theme: '學校路・位置大集合', themeEmoji: '📍',
   focus: '介系詞 in / on / under / next to / behind',
+  goal: { zh: '用 in / on / under 說對位置，找回被藏起來的寶物。', char: 'benny' },
   story: [
     { image: '📍', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "The cat is next to the box.", dialogueZh: '貓在箱子旁邊。', highlightWords: ['next to'], sceneEmojis: ['🐱', '📦', '✨'], animation: 'wave' },
     { image: '🙈', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "The dog is behind the chair!", dialogueZh: '狗在椅子後面！', highlightWords: ['behind'], sceneEmojis: ['🐶', '🪑', '😊'], animation: 'bounce' },
@@ -3972,6 +4006,7 @@ const L4_M14: Mission = {
 const L4_M15: Mission = {
   id: 15, slug: 'l4-m15-review-questions', level: 4, title: 'Review③ 問句', titleEn: 'Review: Questions', theme: '學校路・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：Are you…? / Do you…? / Can you…? / What…? / Where…?',
+  goal: { zh: '闖過各種問句組成的大關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review our questions! Are you ready?", dialogueZh: '來複習問句！你準備好了嗎？', highlightWords: ['Are'], sceneEmojis: ['🔄', '❓', '✨'], animation: 'wave' },
     { image: '🤔', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Do you like it? Can you do it?", dialogueZh: '你喜歡嗎？你會嗎？', highlightWords: ['Do', 'Can'], sceneEmojis: ['❤️', '💪', '😊'], animation: 'bounce' },
@@ -4024,6 +4059,7 @@ const L4_M15: Mission = {
 const L4_M16: Mission = {
   id: 16, slug: 'l4-m16-past-intro', level: 4, title: '過去式入門', titleEn: 'Past Tense Intro', theme: '學校路・昨天做了什麼', themeEmoji: '⏪',
   focus: '動詞過去式入門：原形 → 過去式（play→played, go→went）先接觸',
+  goal: { zh: '時光倒帶！說出昨天做了什麼（go→went），完成回憶任務。', char: 'finn' },
   tip: { zh: '有些動詞過去式不加 ed，要整個變：go→went、eat→ate。這種要背起來。', char: 'ruby' },
   story: [
     { image: '⏪', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Today I play. Yesterday I played!", dialogueZh: '今天我玩。昨天我玩了！', highlightWords: ['play', 'played'], sceneEmojis: ['🎮', '⏪', '✨'], animation: 'wave' },
@@ -4077,6 +4113,7 @@ const L4_M16: Mission = {
 const L4_M17: Mission = {
   id: 17, slug: 'l4-m17-school-mix', level: 4, title: '學校情境綜合', titleEn: 'School Mix', theme: '學校路・我的一天', themeEmoji: '🏫',
   focus: '綜合運用 be / like / have / can 在學校情境',
+  goal: { zh: '用學過的 be / like / have / can，過完一整個上學日。', char: 'coco' },
   story: [
     { image: '🏫', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I am a student. I like school!", dialogueZh: '我是學生。我喜歡學校！', highlightWords: ['am', 'like'], sceneEmojis: ['🏫', '📚', '✨'], animation: 'wave' },
     { image: '🎒', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have a bag. I can read a book!", dialogueZh: '我有書包。我會讀書！', highlightWords: ['have', 'can'], sceneEmojis: ['🎒', '📖', '😊'], animation: 'bounce' },
@@ -4129,6 +4166,7 @@ const L4_M17: Mission = {
 const L4_M18: Mission = {
   id: 18, slug: 'l4-m18-classroom-talk', level: 4, title: '教室對話', titleEn: 'Classroom Talk', theme: '學校路・上課囉', themeEmoji: '🔔',
   focus: '教室用語與對話：Sit down. Stand up. Open your book. Listen.',
+  goal: { zh: '聽懂 Sit down、Stand up… 這些指令，完成教室任務。', char: 'polly' },
   story: [
     { image: '🔔', character: '👩‍🏫', characterKey: 'ruby', characterAction: 'talk', characterName: 'Miss Ruby', dialogue: "Good morning, class! Please sit down.", dialogueZh: '早安，同學們！請坐下。', highlightWords: ['sit down'], sceneEmojis: ['🔔', '🪑', '✨'], animation: 'wave' },
     { image: '📖', character: '👩‍🏫', characterKey: 'ruby', characterAction: 'write', characterName: 'Miss Ruby', dialogue: "Open your book. Look at page one.", dialogueZh: '打開書。看第一頁。', highlightWords: ['Open', 'Look'], sceneEmojis: ['📖', '👀', '😊'], animation: 'bounce' },
@@ -4181,6 +4219,7 @@ const L4_M18: Mission = {
 const L4_M19: Mission = {
   id: 19, slug: 'l4-m19-reading', level: 4, title: '學校閱讀', titleEn: 'School Reading', theme: '學校路・故事時間', themeEmoji: '📖',
   focus: '綜合閱讀：把 be/like/have/can 讀成一個上學小故事',
+  goal: { zh: '讀一篇上學的小故事，回答問題找到重點。', char: 'benny' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a story about a school day!", dialogueZh: '我們來讀一個上學日的故事！', highlightWords: ['story'], sceneEmojis: ['📖', '🏫', '✨'], animation: 'wave' },
     { image: '🦊', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "This is Finn. He is a student. He likes school.", dialogueZh: '這是 Finn。他是學生。他喜歡學校。', highlightWords: ['is', 'likes'], sceneEmojis: ['🦊', '🎒', '😊'], animation: 'bounce' },
@@ -4233,6 +4272,7 @@ const L4_M19: Mission = {
 const L4_M20: Mission = {
   id: 20, slug: 'l4-m20-boss', level: 4, title: '學校路大魔王', titleEn: 'School Boss', theme: '學校路・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：be / like / have / can ＋ 疑問句 ＋ 介系詞 ＋ 過去式入門',
+  goal: { zh: '學校大魔王考你所有句型，全部答對就畢業出關！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The School Boss is here! Use all your English!", dialogueZh: '學校大魔王來了！用上你所有的英文！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏫'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am, I like, I have, I can — I know them all!", dialogueZh: 'I am、I like、I have、I can —— 我全會了！', highlightWords: [], sceneEmojis: ['💪', '📚', '✨'], animation: 'bounce' },
@@ -4286,6 +4326,7 @@ const L4_M20: Mission = {
 const L5_M1: Mission = {
   id: 1, slug: 'l5-m1-adjectives-size', level: 5, title: '形容詞① 大小', titleEn: 'Adjectives: Size', theme: '珊瑚灘・大海生物', themeEmoji: '📏',
   focus: '形容詞（大小）：big/small/tall/short/long…；It is + 形容詞',
+  goal: { zh: '沙灘上有大有小的貝殼，用 big / small 描述，才撿得到對的那顆。', char: 'finn' },
   story: [
     { image: '🌊', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Coral Beach! Look at the big whale!", dialogueZh: '歡迎來到珊瑚灘！看那隻大鯨魚！', highlightWords: ['big'], sceneEmojis: ['🌊', '🐋', '✨'], animation: 'wave' },
     { image: '🐟', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The fish is small. The whale is big!", dialogueZh: '魚很小。鯨魚很大！', highlightWords: ['small', 'big'], sceneEmojis: ['🐟', '🐋', '😊'], animation: 'bounce' },
@@ -4338,6 +4379,7 @@ const L5_M1: Mission = {
 const L5_M2: Mission = {
   id: 2, slug: 'l5-m2-adjectives-2', level: 5, title: '形容詞② 相反', titleEn: 'Adjectives: Opposites', theme: '珊瑚灘・相反詞', themeEmoji: '↔️',
   focus: '形容詞（相反詞）：hot/cold, new/old, fast/slow, clean/dirty',
+  goal: { zh: '冷熱、新舊…說對相反詞，海底寶箱才會打開。', char: 'coco' },
   story: [
     { image: '↔️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "The sun is hot. The water is cold!", dialogueZh: '太陽很熱。水很冷！', highlightWords: ['hot', 'cold'], sceneEmojis: ['☀️', '❄️', '✨'], animation: 'wave' },
     { image: '🐢', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "The fish is fast. The turtle is slow!", dialogueZh: '魚很快。烏龜很慢！', highlightWords: ['fast', 'slow'], sceneEmojis: ['🐟', '🐢', '😊'], animation: 'bounce' },
@@ -4390,6 +4432,7 @@ const L5_M2: Mission = {
 const L5_M3: Mission = {
   id: 3, slug: 'l5-m3-comparative', level: 5, title: '比較級 -er', titleEn: 'Comparative -er', theme: '珊瑚灘・比一比', themeEmoji: '➕',
   focus: '比較級 -er：big→bigger, tall→taller, fast→faster',
+  goal: { zh: '兩隻寄居蟹在比大小，用 -er 比較（bigger）分出高下。', char: 'polly' },
   tip: { zh: '短母音字尾子音要「雙寫」再加 er：big→bigger、hot→hotter。', char: 'ruby' },
   story: [
     { image: '➕', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Big becomes bigger! Add -er!", dialogueZh: 'Big 變 bigger！加 -er！', highlightWords: ['bigger', '-er'], sceneEmojis: ['🐋', '➕', '✨'], animation: 'wave' },
@@ -4443,6 +4486,7 @@ const L5_M3: Mission = {
 const L5_M4: Mission = {
   id: 4, slug: 'l5-m4-bigger-than', level: 5, title: 'A is …er than B', titleEn: 'Bigger than', theme: '珊瑚灘・誰比較大', themeEmoji: '⚖️',
   focus: '句型 A is + 比較級 + than + B',
+  goal: { zh: '用 A is …er than B，把海洋生物排出正確順序。', char: 'benny' },
   story: [
     { image: '⚖️', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "A whale is bigger than a fish!", dialogueZh: '鯨魚比魚大！', highlightWords: ['bigger', 'than'], sceneEmojis: ['🐋', '🐟', '✨'], animation: 'wave' },
     { image: '🦈', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "A shark is faster than a crab!", dialogueZh: '鯊魚比螃蟹快！', highlightWords: ['faster', 'than'], sceneEmojis: ['🦈', '🦀', '😊'], animation: 'bounce' },
@@ -4495,6 +4539,7 @@ const L5_M4: Mission = {
 const L5_M5: Mission = {
   id: 5, slug: 'l5-m5-review-adjectives', level: 5, title: 'Review① 形容詞', titleEn: 'Review: Adjectives', theme: '珊瑚灘・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：形容詞 ＋ 相反詞 ＋ 比較級 A is …er than B',
+  goal: { zh: '闖過形容詞比較的大關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! Big, small, fast, slow!", dialogueZh: '來複習！大、小、快、慢！', highlightWords: [], sceneEmojis: ['🔄', '📏', '✨'], animation: 'wave' },
     { image: '🐋', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The whale is bigger than the fish!", dialogueZh: '鯨魚比魚大！', highlightWords: ['bigger', 'than'], sceneEmojis: ['🐋', '🐟', '😊'], animation: 'bounce' },
@@ -4547,6 +4592,7 @@ const L5_M5: Mission = {
 const L5_M6: Mission = {
   id: 6, slug: 'l5-m6-weather', level: 5, title: '天氣', titleEn: 'Weather', theme: '珊瑚灘・今天天氣', themeEmoji: '🌤️',
   focus: '天氣單字：sunny/rainy/cloudy/windy/snowy…',
+  goal: { zh: '出海前要看天氣！說對 sunny / rainy，決定今天的行程。', char: 'finn' },
   story: [
     { image: '☀️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "It is sunny today! Let's go to the beach!", dialogueZh: '今天是晴天！我們去海邊吧！', highlightWords: ['sunny'], sceneEmojis: ['☀️', '🏖️', '✨'], animation: 'wave' },
     { image: '🌧️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Oh no, now it is rainy and cloudy!", dialogueZh: '喔不，現在下雨又多雲！', highlightWords: ['rainy', 'cloudy'], sceneEmojis: ['🌧️', '☁️', '😊'], animation: 'bounce' },
@@ -4599,6 +4645,7 @@ const L5_M6: Mission = {
 const L5_M7: Mission = {
   id: 7, slug: 'l5-m7-how-weather', level: 5, title: 'How\'s the weather?', titleEn: "How's the weather?", theme: '珊瑚灘・問天氣', themeEmoji: '🌦️',
   focus: '句型 How\'s the weather? — It\'s sunny. 四季天氣',
+  goal: { zh: '問一句 How is the weather? 幫船長決定要不要出航。', char: 'coco' },
   story: [
     { image: '🌦️', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "How's the weather? It's sunny and warm!", dialogueZh: '天氣如何？晴朗又溫暖！', highlightWords: ["How's", "It's"], sceneEmojis: ['🌦️', '☀️', '✨'], animation: 'wave' },
     { image: '🍂', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "In fall, it's cool and windy.", dialogueZh: '秋天涼爽又有風。', highlightWords: ["It's", 'cool'], sceneEmojis: ['🍂', '💨', '😊'], animation: 'bounce' },
@@ -4651,6 +4698,7 @@ const L5_M7: Mission = {
 const L5_M8: Mission = {
   id: 8, slug: 'l5-m8-time', level: 5, title: '時間 o\'clock', titleEn: 'What time is it?', theme: '珊瑚灘・幾點鐘', themeEmoji: '🕐',
   focus: '句型 What time is it? — It is ___ o\'clock.（整點）',
+  goal: { zh: '看懂時鐘說出 o’clock，趕上準時出海的船。', char: 'polly' },
   story: [
     { image: '🕐', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "What time is it? It is one o'clock!", dialogueZh: '幾點了？一點鐘！', highlightWords: ['time', "o'clock"], sceneEmojis: ['🕐', '❓', '✨'], animation: 'wave' },
     { image: '🕖', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "It is seven o'clock. Time for breakfast!", dialogueZh: '七點鐘。吃早餐時間！', highlightWords: ["o'clock"], sceneEmojis: ['🕖', '🥞', '😊'], animation: 'bounce' },
@@ -4703,6 +4751,7 @@ const L5_M8: Mission = {
 const L5_M9: Mission = {
   id: 9, slug: 'l5-m9-daily-routine', level: 5, title: '日常作息', titleEn: 'Daily Routine', theme: '珊瑚灘・我的一天', themeEmoji: '🌅',
   focus: '日常作息動詞：get up / eat / go to school / sleep',
+  goal: { zh: '說出 get up、eat…，安排海邊的一整天。', char: 'benny' },
   story: [
     { image: '🌅', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I get up at seven. I wash my face.", dialogueZh: '我七點起床。我洗臉。', highlightWords: ['get up', 'wash'], sceneEmojis: ['🌅', '🧼', '✨'], animation: 'wave' },
     { image: '🥞', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I eat breakfast. Then I go to school.", dialogueZh: '我吃早餐。然後我去學校。', highlightWords: ['eat', 'go to school'], sceneEmojis: ['🥞', '🏫', '😊'], animation: 'bounce' },
@@ -4755,6 +4804,7 @@ const L5_M9: Mission = {
 const L5_M10: Mission = {
   id: 10, slug: 'l5-m10-review-weather-time', level: 5, title: 'Review② 天氣時間', titleEn: 'Review: Weather & Time', theme: '珊瑚灘・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：天氣 ＋ How\'s the weather ＋ 時間 o\'clock ＋ 作息',
+  goal: { zh: '闖過天氣與時間的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! How's the weather today?", dialogueZh: '來複習！今天天氣如何？', highlightWords: ["How's"], sceneEmojis: ['🔄', '🌦️', '✨'], animation: 'wave' },
     { image: '☀️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "It's sunny! It is nine o'clock. Time for school!", dialogueZh: '晴天！九點鐘。上學時間！', highlightWords: ["It's", "o'clock"], sceneEmojis: ['☀️', '🕘', '😊'], animation: 'bounce' },
@@ -4807,6 +4857,7 @@ const L5_M10: Mission = {
 const L5_M11: Mission = {
   id: 11, slug: 'l5-m11-days', level: 5, title: '星期', titleEn: 'Days of the Week', theme: '珊瑚灘・一週七天', themeEmoji: '📅',
   focus: '星期 Monday–Sunday ＋ on Monday',
+  goal: { zh: '排出 Monday 到 Sunday，找到藏著寶藏的那一天。', char: 'finn' },
   story: [
     { image: '📅', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "Monday, Tuesday, Wednesday — school days!", dialogueZh: '星期一、二、三 —— 上學日！', highlightWords: ['Monday', 'Tuesday'], sceneEmojis: ['📅', '🏫', '✨'], animation: 'wave' },
     { image: '🎨', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "On Friday, we have art class!", dialogueZh: '星期五我們有美術課！', highlightWords: ['Friday'], sceneEmojis: ['🎨', '🖌️', '😊'], animation: 'bounce' },
@@ -4859,6 +4910,7 @@ const L5_M11: Mission = {
 const L5_M12: Mission = {
   id: 12, slug: 'l5-m12-months', level: 5, title: '月份 / 季節', titleEn: 'Months & Seasons', theme: '珊瑚灘・一年四季', themeEmoji: '🗓️',
   focus: '月份 ＋ 季節 ＋ When is your birthday? — In May.',
+  goal: { zh: '用 When is your birthday? In May 找到你的生日寶藏。', char: 'coco' },
   story: [
     { image: '🗓️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A year has twelve months! January to December.", dialogueZh: '一年有十二個月！一月到十二月。', highlightWords: ['months'], sceneEmojis: ['🗓️', '📆', '✨'], animation: 'wave' },
     { image: '🌸', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "In spring, flowers bloom in April!", dialogueZh: '春天，四月花開！', highlightWords: ['spring', 'April'], sceneEmojis: ['🌸', '🌷', '😊'], animation: 'bounce' },
@@ -4911,6 +4963,7 @@ const L5_M12: Mission = {
 const L5_M13: Mission = {
   id: 13, slug: 'l5-m13-story-1', level: 5, title: '短篇故事① 海邊', titleEn: 'Story: The Beach', theme: '珊瑚灘・故事時間', themeEmoji: '📖',
   focus: '短篇閱讀①：讀一個海邊的小故事並回答問題',
+  goal: { zh: '讀一篇海邊的小故事，回答問題找出線索。', char: 'polly' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a story: A Day at the Beach!", dialogueZh: '我們來讀故事：海邊的一天！', highlightWords: ['story'], sceneEmojis: ['📖', '🏖️', '✨'], animation: 'wave' },
     { image: '🌞', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "It is a sunny day. Finn goes to the beach.", dialogueZh: '晴朗的一天。Finn 去海邊。', highlightWords: ['sunny', 'beach'], sceneEmojis: ['🌞', '🏖️', '😊'], animation: 'bounce' },
@@ -4963,6 +5016,7 @@ const L5_M13: Mission = {
 const L5_M14: Mission = {
   id: 14, slug: 'l5-m14-story-2', level: 5, title: '短篇故事② 小烏龜', titleEn: 'Story: Little Turtle', theme: '珊瑚灘・故事時間', themeEmoji: '🐢',
   focus: '短篇閱讀②：讀一個小烏龜的故事並回答問題',
+  goal: { zh: '讀小烏龜的故事，幫牠找到回家的路。', char: 'benny' },
   story: [
     { image: '🐢', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A new story: The Little Turtle!", dialogueZh: '新故事：小烏龜！', highlightWords: ['story'], sceneEmojis: ['🐢', '📖', '✨'], animation: 'wave' },
     { image: '🐢', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "A little turtle is slow. But he never gives up!", dialogueZh: '小烏龜很慢。但他從不放棄！', highlightWords: ['slow'], sceneEmojis: ['🐢', '💪', '😊'], animation: 'bounce' },
@@ -5015,6 +5069,7 @@ const L5_M14: Mission = {
 const L5_M15: Mission = {
   id: 15, slug: 'l5-m15-review-reading', level: 5, title: 'Review③ 閱讀理解', titleEn: 'Review: Reading', theme: '珊瑚灘・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：閱讀理解 ＋ 形容詞 ＋ 天氣時間 ＋ 星期月份',
+  goal: { zh: '闖過閱讀理解的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review reading! Read and answer!", dialogueZh: '來複習閱讀！讀完回答！', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
     { image: '🏖️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "On Sunday, it is sunny. We go to the beach!", dialogueZh: '星期日，晴天。我們去海邊！', highlightWords: ['Sunday', 'sunny'], sceneEmojis: ['🏖️', '☀️', '😊'], animation: 'bounce' },
@@ -5067,6 +5122,7 @@ const L5_M15: Mission = {
 const L5_M16: Mission = {
   id: 16, slug: 'l5-m16-present-continuous', level: 5, title: '現在進行式', titleEn: 'be + V-ing', theme: '珊瑚灘・正在做', themeEmoji: '🏃',
   focus: '現在進行式入門 be ＋ V-ing：I am reading.',
+  goal: { zh: '用 I am reading（be + V-ing）說出大家正在做什麼。', char: 'finn' },
   tip: { zh: '現在進行式別漏了 be 動詞：I am reading（不是 I reading）。', char: 'coco' },
   story: [
     { image: '🏃', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I am swimming! Look at me!", dialogueZh: '我正在游泳！看我！', highlightWords: ['am', 'swimming'], sceneEmojis: ['🏊', '🌊', '✨'], animation: 'wave' },
@@ -5120,6 +5176,7 @@ const L5_M16: Mission = {
 const L5_M17: Mission = {
   id: 17, slug: 'l5-m17-what-doing', level: 5, title: 'What are you doing?', titleEn: 'What are you doing?', theme: '珊瑚灘・你在做什麼', themeEmoji: '❓',
   focus: '疑問 What are you doing? — I am + V-ing.',
+  goal: { zh: '用 What are you doing? 找出誰正在偷偷做什麼。', char: 'coco' },
   story: [
     { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What are you doing? I am singing!", dialogueZh: '你在做什麼？我正在唱歌！', highlightWords: ['doing', 'singing'], sceneEmojis: ['❓', '🎤', '✨'], animation: 'wave' },
     { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "What is he doing? He is swimming!", dialogueZh: '他在做什麼？他正在游泳！', highlightWords: ['doing', 'swimming'], sceneEmojis: ['🏊', '🌊', '😊'], animation: 'bounce' },
@@ -5172,6 +5229,7 @@ const L5_M17: Mission = {
 const L5_M18: Mission = {
   id: 18, slug: 'l5-m18-beach-talk', level: 5, title: '海邊對話', titleEn: 'Beach Talk', theme: '珊瑚灘・海邊的一天', themeEmoji: '🏖️',
   focus: '情境對話：在海邊綜合運用形容詞/天氣/進行式',
+  goal: { zh: '綜合形容詞、天氣、進行式，完成一段海邊對話。', char: 'polly' },
   story: [
     { image: '🏖️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "It's a sunny day! What are you doing, Coco?", dialogueZh: '晴朗的一天！Coco，你在做什麼？', highlightWords: ['sunny', 'doing'], sceneEmojis: ['🏖️', '☀️', '✨'], animation: 'wave' },
     { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am swimming! The water is cool!", dialogueZh: '我正在游泳！水好涼！', highlightWords: ['swimming', 'cool'], sceneEmojis: ['🏊', '🌊', '😊'], animation: 'bounce' },
@@ -5224,6 +5282,7 @@ const L5_M18: Mission = {
 const L5_M19: Mission = {
   id: 19, slug: 'l5-m19-reading-mix', level: 5, title: '閱讀綜合', titleEn: 'Reading Mix', theme: '珊瑚灘・大閱讀', themeEmoji: '📚',
   focus: '綜合閱讀：形容詞/比較級/天氣/進行式讀成一篇短文',
+  goal: { zh: '讀一篇海邊短文，回答問題。', char: 'benny' },
   story: [
     { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a longer story today!", dialogueZh: '今天我們讀一篇長一點的故事！', highlightWords: ['story'], sceneEmojis: ['📚', '📖', '✨'], animation: 'wave' },
     { image: '🌞', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "On Saturday, it is sunny. The friends go to the beach.", dialogueZh: '星期六，晴天。朋友們去海邊。', highlightWords: ['sunny', 'beach'], sceneEmojis: ['🌞', '🏖️', '😊'], animation: 'bounce' },
@@ -5276,6 +5335,7 @@ const L5_M19: Mission = {
 const L5_M20: Mission = {
   id: 20, slug: 'l5-m20-boss', level: 5, title: '珊瑚灘大魔王', titleEn: 'Coral Boss', theme: '珊瑚灘・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：形容詞/比較級/天氣時間/星期月份/現在進行式',
+  goal: { zh: '珊瑚灘大魔王考你形容詞、天氣、進行式，通關前進！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Coral Boss is here! Use all your English!", dialogueZh: '珊瑚大魔王來了！用上你所有的英文！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🌊'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Big, small, faster, sunny — I know them all!", dialogueZh: '大、小、比較快、晴朗 —— 我全會了！', highlightWords: [], sceneEmojis: ['💪', '🌦️', '✨'], animation: 'bounce' },
@@ -5329,6 +5389,7 @@ const L5_M20: Mission = {
 const L6_M1: Mission = {
   id: 1, slug: 'l6-m1-describe', level: 6, title: '描述外觀', titleEn: 'Describing', theme: '燈塔角・美麗海景', themeEmoji: '🌅',
   focus: '描述外觀形容詞：beautiful/pretty/clean/dirty/new/old…',
+  goal: { zh: '用 beautiful / clean… 描述燈塔小鎮的美麗風景。', char: 'finn' },
   story: [
     { image: '🌅', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Welcome to Lighthouse Point! The view is beautiful!", dialogueZh: '歡迎來到燈塔角！景色好美！', highlightWords: ['beautiful'], sceneEmojis: ['🌅', '🏰', '✨'], animation: 'wave' },
     { image: '🏖️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The beach is clean. The old boat is pretty!", dialogueZh: '海灘很乾淨。那艘舊船好漂亮！', highlightWords: ['clean', 'old', 'pretty'], sceneEmojis: ['🏖️', '⛵', '😊'], animation: 'bounce' },
@@ -5381,6 +5442,7 @@ const L6_M1: Mission = {
 const L6_M2: Mission = {
   id: 2, slug: 'l6-m2-opinions', level: 6, title: '表達意見', titleEn: 'I think…', theme: '燈塔角・我覺得', themeEmoji: '💭',
   focus: '句型 I think it\'s… 表達意見；引導寫作 I think ___ because ___',
+  goal: { zh: '用 I think… 說出你對這裡的看法。', char: 'coco' },
   story: [
     { image: '💭', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "I think the lighthouse is cool!", dialogueZh: '我覺得燈塔很酷！', highlightWords: ['think', 'cool'], sceneEmojis: ['💭', '💡', '✨'], animation: 'wave' },
     { image: '🎨', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I think this picture is beautiful!", dialogueZh: '我覺得這幅畫很美！', highlightWords: ['think', 'beautiful'], sceneEmojis: ['🎨', '🖼️', '😊'], animation: 'bounce' },
@@ -5433,6 +5495,7 @@ const L6_M2: Mission = {
 const L6_M3: Mission = {
   id: 3, slug: 'l6-m3-shopping', level: 6, title: '購物 How much?', titleEn: 'How much?', theme: '燈塔角・海邊小店', themeEmoji: '🛍️',
   focus: '句型 How much is it? — It\'s ___ dollars.',
+  goal: { zh: '用 How much is it? 問價錢，買下喜歡的紀念品。', char: 'polly' },
   tip: { zh: '問價錢用 How much：How much is it?（不可數／價錢用 much）。', char: 'benny' },
   story: [
     { image: '🛍️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "How much is this shell? It's five dollars.", dialogueZh: '這個貝殼多少錢？五塊錢。', highlightWords: ['How much', 'dollars'], sceneEmojis: ['🐚', '💵', '✨'], animation: 'wave' },
@@ -5486,6 +5549,7 @@ const L6_M3: Mission = {
 const L6_M4: Mission = {
   id: 4, slug: 'l6-m4-cheap-expensive', level: 6, title: '便宜與貴', titleEn: 'Cheap / Expensive', theme: '燈塔角・買東西', themeEmoji: '💰',
   focus: '購物單字：cheap/expensive/buy/sell/money ＋ It is too expensive.',
+  goal: { zh: '用 cheap / expensive 分辨，挑出最划算的東西。', char: 'benny' },
   story: [
     { image: '💰', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "This hat is cheap. It's only one dollar!", dialogueZh: '這頂帽子很便宜。只要一塊錢！', highlightWords: ['cheap'], sceneEmojis: ['🎩', '💵', '✨'], animation: 'wave' },
     { image: '💎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "This ring is expensive. It's too expensive!", dialogueZh: '這個戒指很貴。太貴了！', highlightWords: ['expensive'], sceneEmojis: ['💎', '💸', '😮'], animation: 'shake' },
@@ -5538,6 +5602,7 @@ const L6_M4: Mission = {
 const L6_M5: Mission = {
   id: 5, slug: 'l6-m5-review-shopping', level: 6, title: 'Review① 描述購物', titleEn: 'Review: Describe & Shop', theme: '燈塔角・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：描述形容詞 ＋ 意見 I think ＋ 購物 How much/cheap/expensive',
+  goal: { zh: '闖過描述與購物的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! Describe, think, and shop!", dialogueZh: '來複習！形容、想法、購物！', highlightWords: [], sceneEmojis: ['🔄', '🛍️', '✨'], animation: 'wave' },
     { image: '🌅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The view is beautiful. I think it's amazing!", dialogueZh: '景色很美。我覺得太驚人了！', highlightWords: ['beautiful', 'think'], sceneEmojis: ['🌅', '💭', '😊'], animation: 'bounce' },
@@ -5590,6 +5655,7 @@ const L6_M5: Mission = {
 const L6_M6: Mission = {
   id: 6, slug: 'l6-m6-restaurant', level: 6, title: '餐廳點餐', titleEn: 'At the Restaurant', theme: '燈塔角・海鮮餐廳', themeEmoji: '🍽️',
   focus: '句型 Can I have…? / I\'d like…（點餐）',
+  goal: { zh: '用 Can I have…? 在燈塔餐廳點一頓大餐。', char: 'finn' },
   story: [
     { image: '🍽️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Can I have a menu, please?", dialogueZh: '可以給我菜單嗎？', highlightWords: ['Can I have'], sceneEmojis: ['🍽️', '📋', '✨'], animation: 'wave' },
     { image: '🍲', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I'd like some soup and salad.", dialogueZh: '我想要湯和沙拉。', highlightWords: ["I'd like"], sceneEmojis: ['🍲', '🥗', '😊'], animation: 'bounce' },
@@ -5642,6 +5708,7 @@ const L6_M6: Mission = {
 const L6_M7: Mission = {
   id: 7, slug: 'l6-m7-food-drinks', level: 6, title: '食物飲料', titleEn: 'Food & Drinks', theme: '燈塔角・美味餐點', themeEmoji: '🍔',
   focus: '更多食物飲料 ＋ 點餐對話綜合',
+  goal: { zh: '學更多食物飲料，完成完整的點餐對話。', char: 'coco' },
   story: [
     { image: '🍔', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I'd like a hamburger and fries!", dialogueZh: '我想要漢堡和薯條！', highlightWords: ['hamburger', 'fries'], sceneEmojis: ['🍔', '🍟', '✨'], animation: 'wave' },
     { image: '🍕', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Can I have pizza and a cola?", dialogueZh: '可以給我披薩和可樂嗎？', highlightWords: ['pizza'], sceneEmojis: ['🍕', '🥤', '😊'], animation: 'bounce' },
@@ -5694,6 +5761,7 @@ const L6_M7: Mission = {
 const L6_M8: Mission = {
   id: 8, slug: 'l6-m8-directions', level: 6, title: '問路', titleEn: 'Asking Directions', theme: '燈塔角・找路', themeEmoji: '🗺️',
   focus: '句型 Where is the…? / How do I get to…?（問路）',
+  goal: { zh: '迷路了！用 Where is the…? 問出通往燈塔的路。', char: 'polly' },
   story: [
     { image: '🗺️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Excuse me, where is the park?", dialogueZh: '不好意思，公園在哪裡？', highlightWords: ['Where is'], sceneEmojis: ['🗺️', '🏞️', '✨'], animation: 'wave' },
     { image: '🏦', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "How do I get to the bank?", dialogueZh: '我要怎麼去銀行？', highlightWords: ['How do I get to'], sceneEmojis: ['🏦', '❓', '😊'], animation: 'bounce' },
@@ -5746,6 +5814,7 @@ const L6_M8: Mission = {
 const L6_M9: Mission = {
   id: 9, slug: 'l6-m9-turn-left', level: 6, title: '方位指路', titleEn: 'Turn left / right', theme: '燈塔角・怎麼走', themeEmoji: '🧭',
   focus: '指路方位：turn left/right, go straight, in front of',
+  goal: { zh: '用 turn left / right、go straight，帶朋友一路走到燈塔。', char: 'benny' },
   story: [
     { image: '🧭', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Go straight and turn left!", dialogueZh: '直走然後左轉！', highlightWords: ['straight', 'left'], sceneEmojis: ['⬆️', '⬅️', '✨'], animation: 'wave' },
     { image: '➡️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Turn right at the corner.", dialogueZh: '在轉角右轉。', highlightWords: ['right', 'corner'], sceneEmojis: ['➡️', '📐', '😊'], animation: 'bounce' },
@@ -5798,6 +5867,7 @@ const L6_M9: Mission = {
 const L6_M10: Mission = {
   id: 10, slug: 'l6-m10-review-order-directions', level: 6, title: 'Review② 點餐問路', titleEn: 'Review: Order & Directions', theme: '燈塔角・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：點餐 Can I have ＋ 問路 Where is ＋ 方位 turn left/right',
+  goal: { zh: '闖過點餐與問路的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review! Order food and find the way!", dialogueZh: '來複習！點餐和找路！', highlightWords: [], sceneEmojis: ['🔄', '🍽️', '✨'], animation: 'wave' },
     { image: '🍽️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Can I have a hamburger, please?", dialogueZh: '可以給我漢堡嗎？', highlightWords: ['Can I have'], sceneEmojis: ['🍔', '🙏', '😊'], animation: 'bounce' },
@@ -5850,6 +5920,7 @@ const L6_M10: Mission = {
 const L6_M11: Mission = {
   id: 11, slug: 'l6-m11-invitations', level: 6, title: '邀約', titleEn: "Let's… / Do you want to…?", theme: '燈塔角・一起玩', themeEmoji: '🙌',
   focus: '句型 Let\'s… / Do you want to…?（邀約）',
+  goal: { zh: '用邀約句（Let us…）約朋友一起去燈塔看夕陽。', char: 'finn' },
   story: [
     { image: '🙌', character: '🦜', characterKey: 'polly', characterAction: 'cheer', characterName: 'Polly', dialogue: "Let's go to the beach!", dialogueZh: '我們去海邊吧！', highlightWords: ["Let's"], sceneEmojis: ['🏖️', '🙌', '✨'], animation: 'wave' },
     { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Do you want to swim with me?", dialogueZh: '你想跟我游泳嗎？', highlightWords: ['Do you want to'], sceneEmojis: ['🏊', '❓', '😊'], animation: 'bounce' },
@@ -5902,6 +5973,7 @@ const L6_M11: Mission = {
 const L6_M12: Mission = {
   id: 12, slug: 'l6-m12-feelings', level: 6, title: '感受', titleEn: 'Feelings', theme: '燈塔角・心情', themeEmoji: '😲',
   focus: '進階感受形容詞：excited/scared/bored/surprised…',
+  goal: { zh: '用 excited / scared… 說出燈塔探險時的心情。', char: 'coco' },
   story: [
     { image: '🤩', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am so excited! We are going to the beach!", dialogueZh: '我好興奮！我們要去海邊了！', highlightWords: ['excited'], sceneEmojis: ['🤩', '🏖️', '✨'], animation: 'bounce' },
     { image: '😱', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "The big wave is scary! I am scared!", dialogueZh: '大浪好可怕！我好害怕！', highlightWords: ['scared'], sceneEmojis: ['🌊', '😱', '😊'], animation: 'shake' },
@@ -5954,6 +6026,7 @@ const L6_M12: Mission = {
 const L6_M13: Mission = {
   id: 13, slug: 'l6-m13-long-reading-1', level: 6, title: '長文閱讀① 燈塔', titleEn: 'Reading: The Lighthouse', theme: '燈塔角・故事時間', themeEmoji: '📖',
   focus: '長文閱讀①：讀一篇關於燈塔的短文並回答問題',
+  goal: { zh: '讀一篇關於燈塔的長故事，找出裡面的祕密。', char: 'polly' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a longer story: The Old Lighthouse.", dialogueZh: '我們讀一篇長故事：老燈塔。', highlightWords: ['story'], sceneEmojis: ['📖', '🏰', '✨'], animation: 'wave' },
     { image: '💡', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The old lighthouse is tall. Its light is very bright.", dialogueZh: '老燈塔很高。它的光很亮。', highlightWords: ['tall', 'bright'], sceneEmojis: ['💡', '🏰', '😊'], animation: 'bounce' },
@@ -6006,6 +6079,7 @@ const L6_M13: Mission = {
 const L6_M14: Mission = {
   id: 14, slug: 'l6-m14-long-reading-2', level: 6, title: '長文閱讀② 市場日', titleEn: 'Reading: Market Day', theme: '燈塔角・故事時間', themeEmoji: '📚',
   focus: '長文閱讀②：讀一篇市場日的短文並回答問題',
+  goal: { zh: '讀市場日的故事，回答問題。', char: 'benny' },
   story: [
     { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A new story: Market Day!", dialogueZh: '新故事：市場日！', highlightWords: ['story'], sceneEmojis: ['📚', '🛍️', '✨'], animation: 'wave' },
     { image: '🍎', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "On Saturday, Ruby goes to the market.", dialogueZh: '星期六，Ruby 去市場。', highlightWords: ['market'], sceneEmojis: ['🍎', '🛒', '😊'], animation: 'bounce' },
@@ -6058,6 +6132,7 @@ const L6_M14: Mission = {
 const L6_M15: Mission = {
   id: 15, slug: 'l6-m15-review-reading', level: 6, title: 'Review③ 長文閱讀', titleEn: 'Review: Reading', theme: '燈塔角・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：長文閱讀 ＋ 描述 ＋ 意見 ＋ 感受',
+  goal: { zh: '闖過長文閱讀的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review our reading! Read and answer!", dialogueZh: '來複習閱讀！讀完回答！', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
     { image: '🏰', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "The lighthouse is tall and bright. I think it is beautiful!", dialogueZh: '燈塔又高又亮。我覺得它很美！', highlightWords: ['bright', 'think'], sceneEmojis: ['🏰', '💡', '😊'], animation: 'bounce' },
@@ -6110,6 +6185,7 @@ const L6_M15: Mission = {
 const L6_M16: Mission = {
   id: 16, slug: 'l6-m16-past-ed', level: 6, title: '過去式 -ed', titleEn: 'Past Tense -ed', theme: '燈塔角・昨天做了', themeEmoji: '⏪',
   focus: '過去式規則 -ed：played/walked/looked/cleaned',
+  goal: { zh: '用 -ed（played / walked）說出昨天做了哪些事。', char: 'finn' },
   tip: { zh: '過去式 -ed 有三種音，一樣「有聲配有聲、無聲配無聲」：無聲結尾唸 /t/（walked、jumped）；有聲結尾唸 /d/（played、cleaned）；t/d 結尾加一個音節唸 /ɪd/（wanted、needed）。', char: 'ruby' },
   story: [
     { image: '⏪', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Yesterday I played at the beach.", dialogueZh: '昨天我在海邊玩。', highlightWords: ['played'], sceneEmojis: ['🏖️', '⏪', '✨'], animation: 'wave' },
@@ -6163,6 +6239,7 @@ const L6_M16: Mission = {
 const L6_M17: Mission = {
   id: 17, slug: 'l6-m17-what-did-you-do', level: 6, title: 'What did you do?', titleEn: 'What did you do?', theme: '燈塔角・你昨天做了什麼', themeEmoji: '❓',
   focus: '疑問 What did you do? / Did you…? — I ___ed.',
+  goal: { zh: '用 Did you…? / What did you do? 聊聊過去發生的事。', char: 'coco' },
   story: [
     { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What did you do yesterday?", dialogueZh: '你昨天做了什麼？', highlightWords: ['did'], sceneEmojis: ['❓', '📅', '✨'], animation: 'wave' },
     { image: '🏖️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I played at the beach. I swam in the sea!", dialogueZh: '我在海邊玩。我在海裡游泳！', highlightWords: ['played'], sceneEmojis: ['🏖️', '🏊', '😊'], animation: 'bounce' },
@@ -6215,6 +6292,7 @@ const L6_M17: Mission = {
 const L6_M18: Mission = {
   id: 18, slug: 'l6-m18-dialogue-mix', level: 6, title: '情境對話綜合', titleEn: 'Dialogue Mix', theme: '燈塔角・出遊日', themeEmoji: '💬',
   focus: '綜合情境對話：邀約 ＋ 購物 ＋ 問路 ＋ 感受',
+  goal: { zh: '綜合邀約、購物、問路、感受，完成一段對話。', char: 'polly' },
   story: [
     { image: '🙌', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Let's go to the market! Do you want to come?", dialogueZh: '我們去市場！你想來嗎？', highlightWords: ["Let's", 'want'], sceneEmojis: ['🙌', '🛍️', '✨'], animation: 'wave' },
     { image: '🤩', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Sure! I am so excited! Where is the market?", dialogueZh: '好啊！我好興奮！市場在哪？', highlightWords: ['excited', 'Where'], sceneEmojis: ['🤩', '❓', '😊'], animation: 'bounce' },
@@ -6267,6 +6345,7 @@ const L6_M18: Mission = {
 const L6_M19: Mission = {
   id: 19, slug: 'l6-m19-read-write', level: 6, title: '閱讀＋寫短句', titleEn: 'Read & Write', theme: '燈塔角・讀與寫', themeEmoji: '✍️',
   focus: '閱讀短文 ＋ 引導式寫作：照樣造句寫出自己的短句',
+  goal: { zh: '讀一篇短文，再照樣造句寫出自己的句子。', char: 'benny' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read the story, then write your own!", dialogueZh: '讀故事，然後寫你自己的！', highlightWords: ['write'], sceneEmojis: ['📖', '✍️', '✨'], animation: 'wave' },
     { image: '🏖️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Yesterday I went to the beach. I played and swam.", dialogueZh: '昨天我去了海邊。我玩也游泳。', highlightWords: ['went', 'played'], sceneEmojis: ['🏖️', '🏊', '😊'], animation: 'bounce' },
@@ -6319,6 +6398,7 @@ const L6_M19: Mission = {
 const L6_M20: Mission = {
   id: 20, slug: 'l6-m20-boss', level: 6, title: '燈塔角大魔王', titleEn: 'Lighthouse Boss', theme: '燈塔角・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：描述/意見/購物/點餐/問路/感受/過去式 -ed',
+  goal: { zh: '燈塔大魔王考你描述、購物、問路、過去式，點亮燈塔！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Lighthouse Boss is here! Use all your English!", dialogueZh: '燈塔大魔王來了！用上你所有的英文！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏰'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Describe, shop, ask the way — I can do it all!", dialogueZh: '形容、購物、問路 —— 我全都會！', highlightWords: [], sceneEmojis: ['💪', '🛍️', '✨'], animation: 'bounce' },
@@ -6372,6 +6452,7 @@ const L6_M20: Mission = {
 const L7_M1: Mission = {
   id: 1, slug: 'l7-m1-present-simple', level: 7, title: '現在簡單式', titleEn: 'Present Simple', theme: '魔法門・每天做的事', themeEmoji: '🔁',
   focus: '現在簡單式 I / You / We ＋ 原形動詞（習慣、事實）',
+  goal: { zh: '用魔法句說出你每天的習慣，點亮第一道魔法門。', char: 'finn' },
   story: [
     { image: '🔁', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "I eat breakfast every day.", dialogueZh: '我每天吃早餐。', highlightWords: ['eat', 'every day'], sceneEmojis: ['🥞', '🔁', '✨'], animation: 'wave' },
     { image: '📚', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "You read books. We learn English.", dialogueZh: '你讀書。我們學英文。', highlightWords: ['read', 'learn'], sceneEmojis: ['📚', '🇬🇧', '😊'], animation: 'bounce' },
@@ -6424,6 +6505,7 @@ const L7_M1: Mission = {
 const L7_M2: Mission = {
   id: 2, slug: 'l7-m2-third-person', level: 7, title: '第三人稱 -s', titleEn: 'He / She + V-s', theme: '魔法門・他她它', themeEmoji: '➕',
   focus: '第三人稱單數 He / She / It ＋ 動詞 +s（likes/goes/watches）',
+  goal: { zh: 'he / she / it 要加 -s，咒語念對了才會生效。', char: 'coco' },
   tip: { zh: '主詞 he／she／it 動詞要加 -s（最容易漏！）；唸法跟複數一樣：有聲配 /z/、無聲配 /s/、嘶音加 es 唸 /ɪz/（watch→watches）；子音+y 去 y 加 ies（study→studies）。', char: 'ruby' },
   story: [
     { image: '➕', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "He likes soccer. Add -s for he/she!", dialogueZh: '他喜歡足球。he/she 加 -s！', highlightWords: ['likes', '-s'], sceneEmojis: ['⚽', '➕', '✨'], animation: 'wave' },
@@ -6477,6 +6559,7 @@ const L7_M2: Mission = {
 const L7_M3: Mission = {
   id: 3, slug: 'l7-m3-negative', level: 7, title: "否定 don't / doesn't", titleEn: "don't / doesn't", theme: '魔法門・不做', themeEmoji: '🚫',
   focus: "現在簡單式否定：I don't ＋ V / He doesn't ＋ V",
+  goal: { zh: '用否定句 do not / does not 說出不做的事，解開禁咒。', char: 'polly' },
   story: [
     { image: '🚫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I don't like carrots. I like apples!", dialogueZh: '我不喜歡紅蘿蔔。我喜歡蘋果！', highlightWords: ["don't"], sceneEmojis: ['🥕', '🚫', '✨'], animation: 'shake' },
     { image: '📺', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "He doesn't watch TV. He reads books.", dialogueZh: '他不看電視。他讀書。', highlightWords: ["doesn't"], sceneEmojis: ['📺', '🚫', '📚'], animation: 'bounce' },
@@ -6529,6 +6612,7 @@ const L7_M3: Mission = {
 const L7_M4: Mission = {
   id: 4, slug: 'l7-m4-do-does-q', level: 7, title: '問句 Do / Does', titleEn: 'Do…? / Does…?', theme: '魔法門・問問看', themeEmoji: '❓',
   focus: '現在簡單式問句：Do you…? / Does he…? — Yes/No 短答',
+  goal: { zh: '用 Do / Does 問對問題，門後的精靈才會回答你。', char: 'benny' },
   tip: { zh: '用 Does 問，後面動詞要變回「原形」：Does he like…?（不是 likes）。', char: 'ruby' },
   story: [
     { image: '❓', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Do you like soccer? Yes, I do!", dialogueZh: '你喜歡足球嗎？是的，我喜歡！', highlightWords: ['Do', 'do'], sceneEmojis: ['⚽', '❓', '✨'], animation: 'wave' },
@@ -6582,6 +6666,7 @@ const L7_M4: Mission = {
 const L7_M5: Mission = {
   id: 5, slug: 'l7-m5-review-present', level: 7, title: 'Review① 現在簡單式', titleEn: 'Review: Present Simple', theme: '魔法門・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：現在簡單式肯定 ＋ 第三人稱 -s ＋ 否定 ＋ 問句',
+  goal: { zh: '闖過現在簡單式的魔法關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the present simple!", dialogueZh: '來複習現在簡單式！', highlightWords: [], sceneEmojis: ['🔄', '📚', '✨'], animation: 'wave' },
     { image: '⚽', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I play soccer. He plays soccer too!", dialogueZh: '我踢足球。他也踢足球！', highlightWords: ['play', 'plays'], sceneEmojis: ['⚽', '➕', '😊'], animation: 'bounce' },
@@ -6634,6 +6719,7 @@ const L7_M5: Mission = {
 const L7_M6: Mission = {
   id: 6, slug: 'l7-m6-frequency', level: 7, title: '頻率副詞', titleEn: 'Frequency Adverbs', theme: '魔法門・多常做', themeEmoji: '📊',
   focus: '頻率副詞：always/usually/often/sometimes/never（放在一般動詞前）',
+  goal: { zh: '用 always / often / never 說出你多常施展魔法。', char: 'finn' },
   tip: { zh: '頻率副詞（always/often/never）放在「一般動詞前面」：I always eat…。', char: 'polly' },
   story: [
     { image: '📊', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I always eat breakfast.", dialogueZh: '我總是吃早餐。', highlightWords: ['always'], sceneEmojis: ['🥞', '📊', '✨'], animation: 'wave' },
@@ -6687,6 +6773,7 @@ const L7_M6: Mission = {
 const L7_M7: Mission = {
   id: 7, slug: 'l7-m7-in-on-at', level: 7, title: '介系詞 in/on/at', titleEn: 'in / on / at', theme: '魔法門・時間地點', themeEmoji: '📍',
   focus: '介系詞 in/on/at（時間與地點）：in the morning, on Monday, at 3',
+  goal: { zh: '用 in / on / at 說對時間地點，找到施法的最佳時刻。', char: 'coco' },
   story: [
     { image: '🌅', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I get up in the morning.", dialogueZh: '我在早上起床。', highlightWords: ['in'], sceneEmojis: ['🌅', '📍', '✨'], animation: 'wave' },
     { image: '📅', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "We have art on Monday.", dialogueZh: '我們星期一有美術。', highlightWords: ['on'], sceneEmojis: ['📅', '🎨', '😊'], animation: 'bounce' },
@@ -6739,6 +6826,7 @@ const L7_M7: Mission = {
 const L7_M8: Mission = {
   id: 8, slug: 'l7-m8-place-prep', level: 7, title: '位置介系詞', titleEn: 'Place Prepositions', theme: '魔法門・在哪裡', themeEmoji: '📦',
   focus: '位置介系詞：under/behind/between/next to/in front of',
+  goal: { zh: '用 under / behind… 說出魔法道具藏在哪裡。', char: 'polly' },
   story: [
     { image: '📦', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "The cat is under the table.", dialogueZh: '貓在桌子下面。', highlightWords: ['under'], sceneEmojis: ['🐱', '🪵', '✨'], animation: 'wave' },
     { image: '🚪', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "The ball is behind the door.", dialogueZh: '球在門後面。', highlightWords: ['behind'], sceneEmojis: ['⚽', '🚪', '😊'], animation: 'bounce' },
@@ -6791,6 +6879,7 @@ const L7_M8: Mission = {
 const L7_M9: Mission = {
   id: 9, slug: 'l7-m9-there-is-are', level: 7, title: 'There is / There are', titleEn: 'There is / are', theme: '魔法門・有什麼', themeEmoji: '🏙️',
   focus: '句型 There is + 單數 / There are + 複數',
+  goal: { zh: '用 There is / are 數出房間裡有哪些魔法物品。', char: 'benny' },
   story: [
     { image: '🏙️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "There is a park in my town.", dialogueZh: '我的城鎮有一座公園。', highlightWords: ['There is'], sceneEmojis: ['🏞️', '🏙️', '✨'], animation: 'wave' },
     { image: '🌳', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "There are many trees in the park.", dialogueZh: '公園裡有很多樹。', highlightWords: ['There are'], sceneEmojis: ['🌳', '🌳', '😊'], animation: 'bounce' },
@@ -6843,6 +6932,7 @@ const L7_M9: Mission = {
 const L7_M10: Mission = {
   id: 10, slug: 'l7-m10-review-freq-prep', level: 7, title: 'Review② 頻率介系詞', titleEn: 'Review: Adverbs & Prep', theme: '魔法門・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：頻率副詞 ＋ in/on/at ＋ 位置介系詞 ＋ There is/are',
+  goal: { zh: '闖過頻率與介系詞的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review adverbs and prepositions!", dialogueZh: '來複習副詞和介系詞！', highlightWords: [], sceneEmojis: ['🔄', '📍', '✨'], animation: 'wave' },
     { image: '🌅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I always get up at seven in the morning.", dialogueZh: '我總是早上七點起床。', highlightWords: ['always', 'at', 'in'], sceneEmojis: ['🌅', '🕖', '😊'], animation: 'bounce' },
@@ -6895,6 +6985,7 @@ const L7_M10: Mission = {
 const L7_M11: Mission = {
   id: 11, slug: 'l7-m11-verb-forms-regular', level: 7, title: '動詞三態① 規則', titleEn: 'Verb Forms: Regular', theme: '魔法門・三態背誦', themeEmoji: '📋',
   focus: '規則動詞三態（原形-過去-過去分詞同形 +ed）：play-played-played',
+  goal: { zh: '背出規則動詞三態（play-played-played），解開魔法鎖。', char: 'finn' },
   tip: { zh: '規則動詞三態同形：play-played-played；先把規則的背熟。', char: 'finn' },
   story: [
     { image: '📋', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Regular verbs: play, played, played!", dialogueZh: '規則動詞：play、played、played！', highlightWords: ['played'], sceneEmojis: ['📋', '➕', '✨'], animation: 'wave' },
@@ -6948,6 +7039,7 @@ const L7_M11: Mission = {
 const L7_M12: Mission = {
   id: 12, slug: 'l7-m12-verb-forms-irregular-1', level: 7, title: '動詞三態② 不規則', titleEn: 'Irregular Verbs 1', theme: '魔法門・三態背誦', themeEmoji: '🌀',
   focus: '常用不規則動詞三態①：go-went-gone, eat-ate-eaten, see-saw-seen',
+  goal: { zh: '背出 go-went-gone… 這些不規則三態，收服魔法動詞。', char: 'coco' },
   tip: { zh: '不規則三態要一組一組背：go-went-gone、eat-ate-eaten、see-saw-seen。', char: 'ruby' },
   story: [
     { image: '🌀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Irregular verbs change! go, went, gone!", dialogueZh: '不規則動詞會變！go、went、gone！', highlightWords: ['went', 'gone'], sceneEmojis: ['🌀', '🚶', '✨'], animation: 'wave' },
@@ -7001,6 +7093,7 @@ const L7_M12: Mission = {
 const L7_M13: Mission = {
   id: 13, slug: 'l7-m13-verb-forms-irregular-2', level: 7, title: '動詞三態③ 不規則', titleEn: 'Irregular Verbs 2', theme: '魔法門・三態背誦', themeEmoji: '🔀',
   focus: '常用不規則動詞三態②：run-ran-run, sing-sang-sung, write-wrote-written',
+  goal: { zh: '背出 run-ran-run… 更多不規則三態，力量更強大。', char: 'polly' },
   story: [
     { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "More irregular verbs! run, ran, run!", dialogueZh: '更多不規則動詞！run、ran、run！', highlightWords: ['ran'], sceneEmojis: ['🔀', '🏃', '✨'], animation: 'wave' },
     { image: '🎤', character: '🦜', characterKey: 'polly', characterAction: 'sing', characterName: 'Polly', dialogue: "sing, sang, sung. I sang a song!", dialogueZh: 'sing、sang、sung。我唱了一首歌！', highlightWords: ['sang', 'sung'], sceneEmojis: ['🎤', '🎵', '😊'], animation: 'bounce' },
@@ -7053,6 +7146,7 @@ const L7_M13: Mission = {
 const L7_M14: Mission = {
   id: 14, slug: 'l7-m14-verb-forms-quiz', level: 7, title: '三態綜合驗收', titleEn: 'Verb Forms Check', theme: '魔法門・三態驗收', themeEmoji: '🎯',
   focus: '動詞三態綜合背誦驗收（規則＋不規則混合）',
+  goal: { zh: '動詞三態總驗收，集滿你的魔法動詞。', char: 'benny' },
   story: [
     { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Time to check! Do you know your verb forms?", dialogueZh: '驗收時間！你會動詞三態了嗎？', highlightWords: [], sceneEmojis: ['🎯', '📋', '✨'], animation: 'wave' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "go-went-gone, play-played-played!", dialogueZh: 'go-went-gone、play-played-played！', highlightWords: [], sceneEmojis: ['💪', '🌀', '😊'], animation: 'bounce' },
@@ -7105,6 +7199,7 @@ const L7_M14: Mission = {
 const L7_M15: Mission = {
   id: 15, slug: 'l7-m15-review-verb-forms', level: 7, title: 'Review③ 動詞三態', titleEn: 'Review: Verb Forms', theme: '魔法門・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：規則＋不規則動詞三態 ＋ 過去式應用',
+  goal: { zh: '闖過動詞三態的魔法關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review all the verb forms!", dialogueZh: '來複習所有動詞三態！', highlightWords: [], sceneEmojis: ['🔄', '📋', '✨'], animation: 'wave' },
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Regular: -ed. Irregular: change the word!", dialogueZh: '規則：-ed。不規則：把字變一下！', highlightWords: [], sceneEmojis: ['📋', '🌀', '😊'], animation: 'bounce' },
@@ -7157,6 +7252,7 @@ const L7_M15: Mission = {
 const L7_M16: Mission = {
   id: 16, slug: 'l7-m16-facts-timeline', level: 7, title: '事實與習慣', titleEn: 'Facts & Habits', theme: '魔法門・時間軸', themeEmoji: '🕰️',
   focus: '現在簡單式表「事實/習慣」（時鐘/時間軸視覺）：The sun rises. I go to school every day.',
+  goal: { zh: '用現在簡單式說出永遠的事實（The sun rises）。', char: 'finn' },
   story: [
     { image: '🕰️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Present simple shows facts and habits!", dialogueZh: '現在簡單式表示事實和習慣！', highlightWords: ['facts', 'habits'], sceneEmojis: ['🕰️', '📊', '✨'], animation: 'wave' },
     { image: '☀️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "The sun rises in the east. That is a fact!", dialogueZh: '太陽從東邊升起。這是事實！', highlightWords: ['rises', 'fact'], sceneEmojis: ['☀️', '🌅', '😊'], animation: 'bounce' },
@@ -7209,6 +7305,7 @@ const L7_M16: Mission = {
 const L7_M17: Mission = {
   id: 17, slug: 'l7-m17-simple-vs-continuous', level: 7, title: '簡單式 vs 進行式', titleEn: 'Simple vs Continuous', theme: '魔法門・對比', themeEmoji: '⚖️',
   focus: '現在簡單（every day）vs 現在進行（now）對比',
+  goal: { zh: '分清「每天」和「現在正在」，用對時態才不會走火。', char: 'coco' },
   tip: { zh: '每天做的事用現在簡單式（every day），現在正在做用進行式（now）。', char: 'coco' },
   story: [
     { image: '⚖️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I play soccer every day. But now I am reading.", dialogueZh: '我每天踢足球。但現在我在讀書。', highlightWords: ['play', 'am reading'], sceneEmojis: ['⚽', '📖', '✨'], animation: 'wave' },
@@ -7262,6 +7359,7 @@ const L7_M17: Mission = {
 const L7_M18: Mission = {
   id: 18, slug: 'l7-m18-grammar-mix', level: 7, title: '文法綜合練習', titleEn: 'Grammar Mix', theme: '魔法門・綜合', themeEmoji: '🧩',
   focus: '綜合練習：現在簡單式 ＋ 第三人稱 ＋ 頻率副詞 ＋ 動詞三態',
+  goal: { zh: '綜合所有魔法句，來一場大練習。', char: 'polly' },
   story: [
     { image: '🧩', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's put it all together!", dialogueZh: '我們把它們組合起來！', highlightWords: [], sceneEmojis: ['🧩', '📚', '✨'], animation: 'wave' },
     { image: '📅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "She always reads. Yesterday she read a lot.", dialogueZh: '她總是讀書。昨天她讀了很多。', highlightWords: ['reads', 'read'], sceneEmojis: ['📅', '📖', '😊'], animation: 'bounce' },
@@ -7314,6 +7412,7 @@ const L7_M18: Mission = {
 const L7_M19: Mission = {
   id: 19, slug: 'l7-m19-reading', level: 7, title: '文法閱讀', titleEn: 'Grammar Reading', theme: '魔法門・故事時間', themeEmoji: '📖',
   focus: '閱讀：現在簡單式短文（介紹某人的一天）＋理解',
+  goal: { zh: '讀一篇介紹某人一天的短文，看懂魔法句。', char: 'benny' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read about Tom's day!", dialogueZh: '讀讀 Tom 的一天！', highlightWords: ['read'], sceneEmojis: ['📖', '👦', '✨'], animation: 'wave' },
     { image: '🌅', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Tom gets up early. He always eats breakfast.", dialogueZh: 'Tom 早起。他總是吃早餐。', highlightWords: ['gets', 'eats'], sceneEmojis: ['🌅', '🥞', '😊'], animation: 'bounce' },
@@ -7366,6 +7465,7 @@ const L7_M19: Mission = {
 const L7_M20: Mission = {
   id: 20, slug: 'l7-m20-boss', level: 7, title: '魔法門大魔王', titleEn: 'Grammar Boss', theme: '魔法門・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：現在簡單式/第三人稱/否定問句/頻率副詞/介系詞/動詞三態',
+  goal: { zh: '魔法大魔王考你所有魔法句，推開最後那道門！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Magic Boss is here! Show your magic power!", dialogueZh: '魔法大魔王來了！展現你的魔法力！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🚪'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "He plays, she reads, I went, they ate!", dialogueZh: 'He plays、she reads、I went、they ate！', highlightWords: [], sceneEmojis: ['💪', '📋', '✨'], animation: 'bounce' },
@@ -7419,6 +7519,7 @@ const L7_M20: Mission = {
 const L8_M1: Mission = {
   id: 1, slug: 'l8-m1-what', level: 8, title: 'What…?', titleEn: 'What…?', theme: '問題塔・什麼', themeEmoji: '❓',
   focus: 'What 問句：What is…? What do you…? ＋ 中翻英入門',
+  goal: { zh: '用 What…? 問出塔裡的祕密，登上第一層。', char: 'finn' },
   story: [
     { image: '❓', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "What is your name? My name is Finn.", dialogueZh: '你叫什麼名字？我叫 Finn。', highlightWords: ['What'], sceneEmojis: ['❓', '🦊', '✨'], animation: 'wave' },
     { image: '🎨', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What color do you like? I like blue.", dialogueZh: '你喜歡什麼顏色？我喜歡藍色。', highlightWords: ['What'], sceneEmojis: ['🎨', '🔵', '😊'], animation: 'bounce' },
@@ -7471,6 +7572,7 @@ const L8_M1: Mission = {
 const L8_M2: Mission = {
   id: 2, slug: 'l8-m2-where', level: 8, title: 'Where…?', titleEn: 'Where…?', theme: '問題塔・哪裡', themeEmoji: '📍',
   focus: 'Where 問句：Where is…? Where do you…? ＋ 中翻英',
+  goal: { zh: '用 Where…? 找出東西藏在塔的哪個角落。', char: 'coco' },
   story: [
     { image: '📍', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Where do you live? I live in Taipei.", dialogueZh: '你住哪裡？我住台北。', highlightWords: ['Where'], sceneEmojis: ['📍', '🏙️', '✨'], animation: 'wave' },
     { image: '🎒', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Where is my bag? It is on the chair.", dialogueZh: '我的書包在哪？在椅子上。', highlightWords: ['Where'], sceneEmojis: ['🎒', '🪑', '😊'], animation: 'bounce' },
@@ -7523,6 +7625,7 @@ const L8_M2: Mission = {
 const L8_M3: Mission = {
   id: 3, slug: 'l8-m3-when', level: 8, title: 'When…?', titleEn: 'When…?', theme: '問題塔・何時', themeEmoji: '📅',
   focus: 'When 問句：When is…? When do you…? ＋ 中翻英',
+  goal: { zh: '用 When…? 問出這道門會在什麼時候打開。', char: 'polly' },
   story: [
     { image: '📅', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "When is your birthday? It is in May.", dialogueZh: '你的生日是何時？在五月。', highlightWords: ['When'], sceneEmojis: ['📅', '🎂', '✨'], animation: 'wave' },
     { image: '🏫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "When do you go to school? At eight.", dialogueZh: '你何時上學？八點。', highlightWords: ['When'], sceneEmojis: ['🏫', '🕗', '😊'], animation: 'bounce' },
@@ -7575,6 +7678,7 @@ const L8_M3: Mission = {
 const L8_M4: Mission = {
   id: 4, slug: 'l8-m4-who', level: 8, title: 'Who…?', titleEn: 'Who…?', theme: '問題塔・誰', themeEmoji: '🧑',
   focus: 'Who 問句：Who is…? Who do you…? ＋ 中翻英',
+  goal: { zh: '用 Who…? 找出躲在塔裡的神祕人。', char: 'benny' },
   story: [
     { image: '🧑', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "Who is that? That is my teacher.", dialogueZh: '那是誰？那是我的老師。', highlightWords: ['Who'], sceneEmojis: ['🧑', '👩‍🏫', '✨'], animation: 'wave' },
     { image: '👫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Who is your best friend? Benny is!", dialogueZh: '你最好的朋友是誰？是 Benny！', highlightWords: ['Who'], sceneEmojis: ['👫', '🐻', '😊'], animation: 'bounce' },
@@ -7627,6 +7731,7 @@ const L8_M4: Mission = {
 const L8_M5: Mission = {
   id: 5, slug: 'l8-m5-review-wh', level: 8, title: 'Review① Wh 問句', titleEn: 'Review: Wh-', theme: '問題塔・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：What / Where / When / Who ＋ 中翻英',
+  goal: { zh: '闖過 What / Where / When / Who 的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review our Wh- questions!", dialogueZh: '來複習 Wh- 問句！', highlightWords: [], sceneEmojis: ['🔄', '❓', '✨'], animation: 'wave' },
     { image: '❓', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What is it? Where is it? When is it?", dialogueZh: '這是什麼？在哪？何時？', highlightWords: ['What', 'Where', 'When'], sceneEmojis: ['❓', '📍', '📅'], animation: 'bounce' },
@@ -7679,6 +7784,7 @@ const L8_M5: Mission = {
 const L8_M6: Mission = {
   id: 6, slug: 'l8-m6-why-because', level: 8, title: 'Why…? Because…', titleEn: 'Why…? Because…', theme: '問題塔・為什麼', themeEmoji: '🤔',
   focus: 'Why 問句 ＋ Because 回答 ＋ 中翻英',
+  goal: { zh: '用 Why…? 問原因，再用 Because 回答解開謎題。', char: 'finn' },
   story: [
     { image: '🤔', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Why are you happy? Because it is my birthday!", dialogueZh: '你為什麼開心？因為今天是我生日！', highlightWords: ['Why', 'Because'], sceneEmojis: ['🤔', '🎂', '✨'], animation: 'wave' },
     { image: '😢', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Why are you sad? Because I lost my toy.", dialogueZh: '你為什麼難過？因為我弄丟了玩具。', highlightWords: ['Why', 'Because'], sceneEmojis: ['😢', '🧸', '😊'], animation: 'bounce' },
@@ -7731,6 +7837,7 @@ const L8_M6: Mission = {
 const L8_M7: Mission = {
   id: 7, slug: 'l8-m7-how', level: 8, title: 'How…?', titleEn: 'How…?', theme: '問題塔・如何', themeEmoji: '🔧',
   focus: 'How 問句：How are you? How do you…? ＋ 中翻英',
+  goal: { zh: '用 How…? 問出繼續爬塔的方法。', char: 'coco' },
   story: [
     { image: '🔧', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "How are you? I am fine, thank you!", dialogueZh: '你好嗎？我很好，謝謝！', highlightWords: ['How'], sceneEmojis: ['🔧', '😊', '✨'], animation: 'wave' },
     { image: '🚌', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "How do you go to school? By bus.", dialogueZh: '你怎麼上學？搭公車。', highlightWords: ['How'], sceneEmojis: ['🚌', '🏫', '😊'], animation: 'bounce' },
@@ -7783,6 +7890,7 @@ const L8_M7: Mission = {
 const L8_M8: Mission = {
   id: 8, slug: 'l8-m8-how-many-much-old', level: 8, title: 'How many/much/old', titleEn: 'How many / much / old', theme: '問題塔・多少', themeEmoji: '🔢',
   focus: 'How many（可數）/ How much（不可數·價錢）/ How old（年齡）＋ 中翻英',
+  goal: { zh: '分清 many / much / old，答對數量、價錢、年齡。', char: 'polly' },
   tip: { zh: '可數的用 How many（many books），不可數／價錢用 How much（much water）。', char: 'benny' },
   story: [
     { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "How many apples? There are five.", dialogueZh: '有幾顆蘋果？有五顆。', highlightWords: ['How many'], sceneEmojis: ['🍎', '5️⃣', '✨'], animation: 'wave' },
@@ -7836,6 +7944,7 @@ const L8_M8: Mission = {
 const L8_M9: Mission = {
   id: 9, slug: 'l8-m9-whose-which', level: 8, title: 'Whose / Which', titleEn: 'Whose / Which', theme: '問題塔・誰的·哪個', themeEmoji: '🔀',
   focus: 'Whose（誰的）/ Which（哪一個）問句 ＋ 中翻英',
+  goal: { zh: '用 Whose / Which 找出這是誰的、到底是哪一個。', char: 'benny' },
   story: [
     { image: '🎒', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Whose bag is this? It is mine!", dialogueZh: '這是誰的書包？是我的！', highlightWords: ['Whose'], sceneEmojis: ['🎒', '🙋', '✨'], animation: 'wave' },
     { image: '🍎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Which apple do you want? The red one.", dialogueZh: '你要哪顆蘋果？紅色那顆。', highlightWords: ['Which'], sceneEmojis: ['🍎', '🍏', '😊'], animation: 'bounce' },
@@ -7888,6 +7997,7 @@ const L8_M9: Mission = {
 const L8_M10: Mission = {
   id: 10, slug: 'l8-m10-review-why-how', level: 8, title: 'Review② Why/How', titleEn: 'Review: Why/How', theme: '問題塔・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：Why/Because ＋ How ＋ How many/much/old ＋ Whose/Which ＋ 中翻英',
+  goal: { zh: '闖過 Why 與 How 的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review more questions!", dialogueZh: '來複習更多問句！', highlightWords: [], sceneEmojis: ['🔄', '❓', '✨'], animation: 'wave' },
     { image: '🤔', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Why are you happy? How are you?", dialogueZh: '你為什麼開心？你好嗎？', highlightWords: ['Why', 'How'], sceneEmojis: ['🤔', '🔧', '😊'], animation: 'bounce' },
@@ -7940,6 +8050,7 @@ const L8_M10: Mission = {
 const L8_M11: Mission = {
   id: 11, slug: 'l8-m11-do-does-aux', level: 8, title: '助動詞問句', titleEn: 'Do / Does in Questions', theme: '問題塔・問句語序', themeEmoji: '🔧',
   focus: '助動詞 Do/Does 在 Wh- 問句：What do you…? Where does he…? ＋ 中翻英',
+  goal: { zh: '用 Do / Does 開頭的 Wh 問句，往上再登一層。', char: 'finn' },
   tip: { zh: 'Wh- 問句用 Do/Does 時，後面動詞回原形：What does he do?（不是 does）。', char: 'ruby' },
   story: [
     { image: '🔧', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "What do you eat for lunch?", dialogueZh: '你午餐吃什麼？', highlightWords: ['do'], sceneEmojis: ['🔧', '🍱', '✨'], animation: 'wave' },
@@ -7993,6 +8104,7 @@ const L8_M11: Mission = {
 const L8_M12: Mission = {
   id: 12, slug: 'l8-m12-negative-q', level: 8, title: '否定疑問', titleEn: "Don't you…?", theme: '問題塔・不是嗎', themeEmoji: '❔',
   focus: "否定疑問：Don't you…? Doesn't he…?（表驚訝/確認）＋ 中翻英",
+  goal: { zh: '用否定疑問句，確認你心裡的答案。', char: 'coco' },
   story: [
     { image: '❔', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Don't you like ice cream? Everyone does!", dialogueZh: '你不喜歡冰淇淋嗎？大家都喜歡！', highlightWords: ["Don't you"], sceneEmojis: ['❔', '🍦', '✨'], animation: 'wave' },
     { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Doesn't he go to our school?", dialogueZh: '他不是我們學校的嗎？', highlightWords: ["Doesn't he"], sceneEmojis: ['📚', '🏫', '😊'], animation: 'bounce' },
@@ -8045,6 +8157,7 @@ const L8_M12: Mission = {
 const L8_M13: Mission = {
   id: 13, slug: 'l8-m13-tag-questions', level: 8, title: '附加問句', titleEn: 'Tag Questions', theme: '問題塔・對吧', themeEmoji: '➰',
   focus: "附加問句入門：…, right? / …, isn't it? / …, aren't you? ＋ 中翻英",
+  goal: { zh: '用附加問句（…, right?）再次確認。', char: 'polly' },
   story: [
     { image: '➰', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "It is sunny today, isn't it?", dialogueZh: '今天是晴天，對吧？', highlightWords: ["isn't it"], sceneEmojis: ['➰', '☀️', '✨'], animation: 'wave' },
     { image: '🍰', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "You like cake, don't you?", dialogueZh: '你喜歡蛋糕，對吧？', highlightWords: ["don't you"], sceneEmojis: ['🍰', '➰', '😊'], animation: 'bounce' },
@@ -8097,6 +8210,7 @@ const L8_M13: Mission = {
 const L8_M14: Mission = {
   id: 14, slug: 'l8-m14-qa-dialogue', level: 8, title: '問答對話', titleEn: 'Q&A Dialogue', theme: '問題塔・訪問時間', themeEmoji: '🎤',
   focus: '綜合問答對話：用各種 Wh- 問句訪問朋友 ＋ 中翻英',
+  goal: { zh: '用各種 Wh 問句，訪問塔裡遇到的朋友。', char: 'benny' },
   story: [
     { image: '🎤', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What is your name? How old are you?", dialogueZh: '你叫什麼名字？你幾歲？', highlightWords: ['What', 'How old'], sceneEmojis: ['🎤', '❓', '✨'], animation: 'wave' },
     { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I am Coco. I am eight years old.", dialogueZh: '我是 Coco。我八歲。', highlightWords: [], sceneEmojis: ['🐱', '8️⃣', '😊'], animation: 'bounce' },
@@ -8149,6 +8263,7 @@ const L8_M14: Mission = {
 const L8_M15: Mission = {
   id: 15, slug: 'l8-m15-review-questions', level: 8, title: 'Review③ 問句總複習', titleEn: 'Review: All Questions', theme: '問題塔・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：所有 Wh- 問句 ＋ 助動詞 ＋ 附加問句 ＋ 中翻英',
+  goal: { zh: '闖過所有問句組成的大關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review all our questions!", dialogueZh: '來複習所有問句！', highlightWords: [], sceneEmojis: ['🔄', '❓', '✨'], animation: 'wave' },
     { image: '❓', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What, where, when, who, why, how!", dialogueZh: 'What、where、when、who、why、how！', highlightWords: [], sceneEmojis: ['❓', '📊', '😊'], animation: 'bounce' },
@@ -8201,6 +8316,7 @@ const L8_M15: Mission = {
 const L8_M16: Mission = {
   id: 16, slug: 'l8-m16-past-questions', level: 8, title: '過去式問句', titleEn: 'Did you…?', theme: '問題塔・問過去', themeEmoji: '⏪',
   focus: '過去式問句：Did you…? / What did you do? 短答 Yes, I did. ＋ 中翻英',
+  goal: { zh: '用 Did you…? 問出過去發生了什麼事。', char: 'finn' },
   story: [
     { image: '⏪', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What did you do yesterday?", dialogueZh: '你昨天做了什麼？', highlightWords: ['did'], sceneEmojis: ['⏪', '❓', '✨'], animation: 'wave' },
     { image: '🏞️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I went to the park. I played with friends.", dialogueZh: '我去了公園。我和朋友玩。', highlightWords: ['went', 'played'], sceneEmojis: ['🏞️', '👫', '😊'], animation: 'bounce' },
@@ -8253,6 +8369,7 @@ const L8_M16: Mission = {
 const L8_M17: Mission = {
   id: 17, slug: 'l8-m17-past-vs-present-q', level: 8, title: '過去 vs 現在問句', titleEn: 'Past vs Present Q', theme: '問題塔・時間軸', themeEmoji: '⚖️',
   focus: '過去 vs 現在問句對比：Do you…? (現在) vs Did you…? (過去) ＋ 中翻英',
+  goal: { zh: '分清 Do 和 Did，問對現在還是過去。', char: 'coco' },
   story: [
     { image: '⚖️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Do you play soccer? — every day (now).", dialogueZh: '你踢足球嗎？—— 每天（現在）。', highlightWords: ['Do'], sceneEmojis: ['⚽', '📅', '✨'], animation: 'wave' },
     { image: '⏪', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Did you play soccer? — yesterday (past).", dialogueZh: '你踢足球了嗎？—— 昨天（過去）。', highlightWords: ['Did'], sceneEmojis: ['⚽', '⏪', '😊'], animation: 'bounce' },
@@ -8305,6 +8422,7 @@ const L8_M17: Mission = {
 const L8_M18: Mission = {
   id: 18, slug: 'l8-m18-grammar-mix', level: 8, title: '問句綜合', titleEn: 'Question Mix', theme: '問題塔・綜合', themeEmoji: '🧩',
   focus: '綜合練習：Wh- 問句 ＋ Do/Does/Did ＋ 中翻英',
+  goal: { zh: '綜合各種問句，來一場問答練習。', char: 'polly' },
   story: [
     { image: '🧩', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's mix all the questions!", dialogueZh: '我們把所有問句混在一起！', highlightWords: [], sceneEmojis: ['🧩', '❓', '✨'], animation: 'wave' },
     { image: '❤️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What do you like? Where did you go?", dialogueZh: '你喜歡什麼？你去了哪？', highlightWords: ['What', 'Where'], sceneEmojis: ['❤️', '🏞️', '😊'], animation: 'bounce' },
@@ -8357,6 +8475,7 @@ const L8_M18: Mission = {
 const L8_M19: Mission = {
   id: 19, slug: 'l8-m19-reading', level: 8, title: '問答閱讀', titleEn: 'Q&A Reading', theme: '問題塔・訪問短文', themeEmoji: '📖',
   focus: '閱讀：一篇問答訪問短文 ＋ 理解 ＋ 中翻英',
+  goal: { zh: '讀一篇問答訪問短文，回答問題。', char: 'benny' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read the interview with a new friend!", dialogueZh: '讀讀對新朋友的訪問！', highlightWords: ['interview'], sceneEmojis: ['📖', '🎤', '✨'], animation: 'wave' },
     { image: '👦', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "This is Sam. He is nine. He lives in Tainan.", dialogueZh: '這是 Sam。他九歲。他住台南。', highlightWords: ['is', 'lives'], sceneEmojis: ['👦', '🏙️', '😊'], animation: 'bounce' },
@@ -8409,6 +8528,7 @@ const L8_M19: Mission = {
 const L8_M20: Mission = {
   id: 20, slug: 'l8-m20-boss', level: 8, title: '問題塔大魔王', titleEn: 'Question Boss', theme: '問題塔・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：所有 Wh- 問句 ＋ Do/Does/Did ＋ 附加問句 ＋ 中翻英',
+  goal: { zh: '塔頂大魔王用問題轟炸你，全部答對就登頂！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Question Boss is here! Ask and answer!", dialogueZh: '問題大魔王來了！問答對決！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🗼'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "What, where, when, why, how, did — I know them!", dialogueZh: 'What、where、when、why、how、did —— 我都會！', highlightWords: [], sceneEmojis: ['💪', '❓', '✨'], animation: 'bounce' },
@@ -8462,6 +8582,7 @@ const L8_M20: Mission = {
 const L9_M1: Mission = {
   id: 1, slug: 'l9-m1-present-continuous', level: 9, title: '現在進行式', titleEn: 'Present Continuous', theme: '時光道・正在進行', themeEmoji: '⏳',
   focus: '現在進行式深化 be + V-ing（拼字：run→running, make→making）＋ 中翻英',
+  goal: { zh: '用 be + V-ing 說出「現在正在」發生的事，啟動時光機。', char: 'finn' },
   tip: { zh: '進行式拼字：短母音字尾子音雙寫再加 ing：run→running、swim→swimming。', char: 'ruby' },
   story: [
     { image: '⏳', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Look! I am running. Ruby is making a cake.", dialogueZh: '看！我正在跑。Ruby 正在做蛋糕。', highlightWords: ['am running', 'is making'], sceneEmojis: ['🏃', '🎂', '✨'], animation: 'wave' },
@@ -8515,6 +8636,7 @@ const L9_M1: Mission = {
 const L9_M2: Mission = {
   id: 2, slug: 'l9-m2-past-regular', level: 9, title: '過去式規則', titleEn: 'Past Regular', theme: '時光道・回到昨天', themeEmoji: '⏪',
   focus: '過去式規則 -ed 深化（拼字：stop→stopped, study→studied）＋ 中翻英',
+  goal: { zh: '用 -ed（stopped、studied）回到過去的時空。', char: 'coco' },
   tip: { zh: '過去式拼字：子音+y → 去 y 加 ied（study→studied）；短母音雙寫（stop→stopped）。', char: 'ruby' },
   story: [
     { image: '⏪', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Yesterday I studied and cleaned my room.", dialogueZh: '昨天我讀書也打掃房間。', highlightWords: ['studied', 'cleaned'], sceneEmojis: ['📚', '🧹', '✨'], animation: 'wave' },
@@ -8568,6 +8690,7 @@ const L9_M2: Mission = {
 const L9_M3: Mission = {
   id: 3, slug: 'l9-m3-past-irregular-1', level: 9, title: '過去式不規則①', titleEn: 'Past Irregular 1', theme: '時光道・特別的過去', themeEmoji: '🌀',
   focus: '常用不規則過去式①（三態）：go-went, have-had, make-made, come-came ＋ 中翻英',
+  goal: { zh: '背 go-went… 這些咒語，才能穿越到不同時代。', char: 'polly' },
   story: [
     { image: '🌀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Yesterday I went to the zoo. I saw a lion!", dialogueZh: '昨天我去了動物園。我看到一隻獅子！', highlightWords: ['went', 'saw'], sceneEmojis: ['🦁', '🌀', '✨'], animation: 'wave' },
     { image: '🎁', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Mom made a cake. She gave me a gift.", dialogueZh: '媽媽做了蛋糕。她給我一個禮物。', highlightWords: ['made', 'gave'], sceneEmojis: ['🎂', '🎁', '😊'], animation: 'bounce' },
@@ -8620,6 +8743,7 @@ const L9_M3: Mission = {
 const L9_M4: Mission = {
   id: 4, slug: 'l9-m4-past-irregular-2', level: 9, title: '過去式不規則②', titleEn: 'Past Irregular 2', theme: '時光道・更多過去', themeEmoji: '🔀',
   focus: '常用不規則過去式②（三態）：run-ran, swim-swam, write-wrote, buy-bought ＋ 中翻英',
+  goal: { zh: '背 run-ran… 更多穿越咒語，走得更遠。', char: 'benny' },
   story: [
     { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I ran in the race. I swam in the pool.", dialogueZh: '我在比賽跑步。我在泳池游泳。', highlightWords: ['ran', 'swam'], sceneEmojis: ['🏃', '🏊', '✨'], animation: 'wave' },
     { image: '✏️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "I wrote a story. I read it to my class.", dialogueZh: '我寫了一個故事。我唸給全班聽。', highlightWords: ['wrote', 'read'], sceneEmojis: ['✏️', '📖', '😊'], animation: 'bounce' },
@@ -8672,6 +8796,7 @@ const L9_M4: Mission = {
 const L9_M5: Mission = {
   id: 5, slug: 'l9-m5-review-past', level: 9, title: 'Review① 過去式', titleEn: 'Review: Past Tense', theme: '時光道・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：過去式規則＋不規則 ＋ 現在進行式 ＋ 中翻英',
+  goal: { zh: '闖過過去式的時光關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the past tense!", dialogueZh: '來複習過去式！', highlightWords: [], sceneEmojis: ['🔄', '⏪', '✨'], animation: 'wave' },
     { image: '⏪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Regular: played. Irregular: went, ate, saw!", dialogueZh: '規則：played。不規則：went、ate、saw！', highlightWords: [], sceneEmojis: ['⏪', '🌀', '😊'], animation: 'bounce' },
@@ -8724,6 +8849,7 @@ const L9_M5: Mission = {
 const L9_M6: Mission = {
   id: 6, slug: 'l9-m6-past-continuous', level: 9, title: '過去進行式', titleEn: 'Past Continuous', theme: '時光道・當時正在', themeEmoji: '⏱️',
   focus: '過去進行式 was/were + V-ing（當時正在做）＋ 中翻英',
+  goal: { zh: '用 was / were + V-ing 說出「當時正在」做的事。', char: 'finn' },
   story: [
     { image: '⏱️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "At eight, I was reading. Coco was sleeping.", dialogueZh: '八點時，我正在讀書。Coco 正在睡覺。', highlightWords: ['was reading', 'was sleeping'], sceneEmojis: ['📖', '😴', '✨'], animation: 'wave' },
     { image: '🌧️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "It was raining when I woke up.", dialogueZh: '我醒來時正在下雨。', highlightWords: ['was raining'], sceneEmojis: ['🌧️', '⏰', '😊'], animation: 'bounce' },
@@ -8776,6 +8902,7 @@ const L9_M6: Mission = {
 const L9_M7: Mission = {
   id: 7, slug: 'l9-m7-future-will', level: 9, title: '未來式 will', titleEn: 'Future: will', theme: '時光道・未來', themeEmoji: '🔮',
   focus: '未來式 will + 原形動詞（預測/決定）＋ 中翻英',
+  goal: { zh: '用 will 預測未來，看清前方的路。', char: 'coco' },
   tip: { zh: 'will 後面一定接原形動詞：I will go（不是 will goes / will went）。', char: 'coco' },
   story: [
     { image: '🔮', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Tomorrow I will visit my grandma.", dialogueZh: '明天我會去看奶奶。', highlightWords: ['will visit'], sceneEmojis: ['🔮', '👵', '✨'], animation: 'wave' },
@@ -8829,6 +8956,7 @@ const L9_M7: Mission = {
 const L9_M8: Mission = {
   id: 8, slug: 'l9-m8-be-going-to', level: 9, title: 'be going to', titleEn: 'be going to', theme: '時光道・計畫', themeEmoji: '📋',
   focus: '未來 be going to + 原形動詞（計畫/打算）＋ 中翻英',
+  goal: { zh: '用 be going to 說出你早就計畫好的事。', char: 'polly' },
   story: [
     { image: '📋', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "I am going to study tonight.", dialogueZh: '我今晚打算讀書。', highlightWords: ['going to'], sceneEmojis: ['📋', '📚', '✨'], animation: 'wave' },
     { image: '✈️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "We are going to travel next month.", dialogueZh: '我們下個月打算去旅行。', highlightWords: ['going to'], sceneEmojis: ['✈️', '🗓️', '😊'], animation: 'bounce' },
@@ -8881,6 +9009,7 @@ const L9_M8: Mission = {
 const L9_M9: Mission = {
   id: 9, slug: 'l9-m9-will-vs-going-to', level: 9, title: 'will vs going to', titleEn: 'will vs going to', theme: '時光道・兩種未來', themeEmoji: '⚖️',
   focus: 'will（當下決定/預測）vs be going to（已計畫）對比 ＋ 中翻英',
+  goal: { zh: '分清當下決定和早就計畫，選對未來的走法。', char: 'benny' },
   tip: { zh: '當下決定用 will；早就計畫好用 be going to。', char: 'finn' },
   story: [
     { image: '⚖️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I am going to travel — it is my plan.", dialogueZh: '我打算去旅行 —— 這是我的計畫。', highlightWords: ['going to'], sceneEmojis: ['✈️', '📋', '✨'], animation: 'wave' },
@@ -8934,6 +9063,7 @@ const L9_M9: Mission = {
 const L9_M10: Mission = {
   id: 10, slug: 'l9-m10-review-future', level: 9, title: 'Review② 未來式', titleEn: 'Review: Future', theme: '時光道・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：will ＋ be going to ＋ 過去進行式 ＋ 中翻英',
+  goal: { zh: '闖過未來式的時光關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the future!", dialogueZh: '來複習未來式！', highlightWords: [], sceneEmojis: ['🔄', '🔮', '✨'], animation: 'wave' },
     { image: '📋', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I am going to study. I will pass the test!", dialogueZh: '我打算讀書。我會通過考試！', highlightWords: ['going to', 'will'], sceneEmojis: ['📋', '💯', '😊'], animation: 'bounce' },
@@ -8986,6 +9116,7 @@ const L9_M10: Mission = {
 const L9_M11: Mission = {
   id: 11, slug: 'l9-m11-present-perfect', level: 9, title: '現在完成式', titleEn: 'Present Perfect', theme: '時光道・已經完成', themeEmoji: '✅',
   focus: '現在完成式 have/has + p.p.（過去到現在）★三態 ＋ 中翻英',
+  goal: { zh: '用 have / has + p.p. 把過去和現在連起來。', char: 'finn' },
   tip: { zh: '現在完成式 = have/has + 過去分詞（p.p.）：I have eaten。has 配 he/she/it。', char: 'ruby' },
   story: [
     { image: '✅', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I have finished my homework!", dialogueZh: '我已經寫完作業了！', highlightWords: ['have finished'], sceneEmojis: ['✅', '📚', '✨'], animation: 'wave' },
@@ -9039,6 +9170,7 @@ const L9_M11: Mission = {
 const L9_M12: Mission = {
   id: 12, slug: 'l9-m12-perfect-experience', level: 9, title: '完成式・經驗', titleEn: 'ever / never / just', theme: '時光道・你曾經', themeEmoji: '🌟',
   focus: '現在完成式：經驗 ever/never ＋ 剛剛 just/already/yet ＋ 中翻英',
+  goal: { zh: '用 ever / never / just / already 說出你的經驗。', char: 'coco' },
   story: [
     { image: '🌟', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "Have you ever been to Japan? Yes, I have!", dialogueZh: '你曾經去過日本嗎？有，我去過！', highlightWords: ['ever', 'have'], sceneEmojis: ['🌟', '🗾', '✨'], animation: 'wave' },
     { image: '🚫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I have never eaten snails.", dialogueZh: '我從沒吃過蝸牛。', highlightWords: ['never'], sceneEmojis: ['🐌', '🚫', '😊'], animation: 'bounce' },
@@ -9091,6 +9223,7 @@ const L9_M12: Mission = {
 const L9_M13: Mission = {
   id: 13, slug: 'l9-m13-past-perfect', level: 9, title: '過去完成式', titleEn: 'Past Perfect', theme: '時光道・過去的過去', themeEmoji: '⏮️',
   focus: '過去完成式 had + p.p.（過去某時之前已完成）＋ 中翻英',
+  goal: { zh: '用 had + p.p. 說出「更早以前」就完成的事。', char: 'polly' },
   story: [
     { image: '⏮️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "When I arrived, the bus had already left.", dialogueZh: '我到的時候，公車已經開走了。', highlightWords: ['had already left'], sceneEmojis: ['🚌', '⏮️', '✨'], animation: 'wave' },
     { image: '🍽️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "She had eaten before I came home.", dialogueZh: '在我回家前她已經吃過了。', highlightWords: ['had eaten'], sceneEmojis: ['🍽️', '🏠', '😊'], animation: 'bounce' },
@@ -9143,6 +9276,7 @@ const L9_M13: Mission = {
 const L9_M14: Mission = {
   id: 14, slug: 'l9-m14-tense-contrast', level: 9, title: '時態總對比', titleEn: 'Tense Contrast', theme: '時光道・時間軸大整理', themeEmoji: '🕰️',
   focus: '時態總整理（時間軸）：過去/現在/未來/完成式對比 ＋ 中翻英',
+  goal: { zh: '在時間軸上排出過去、現在、未來、完成式。', char: 'benny' },
   story: [
     { image: '🕰️', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's put all tenses on a timeline!", dialogueZh: '我們把所有時態放在時間軸上！', highlightWords: ['tenses'], sceneEmojis: ['🕰️', '📊', '✨'], animation: 'wave' },
     { image: '⏪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "Yesterday I played. Now I am playing.", dialogueZh: '昨天我玩了。現在我正在玩。', highlightWords: ['played', 'am playing'], sceneEmojis: ['⏪', '⚽', '😊'], animation: 'bounce' },
@@ -9195,6 +9329,7 @@ const L9_M14: Mission = {
 const L9_M15: Mission = {
   id: 15, slug: 'l9-m15-review-perfect', level: 9, title: 'Review③ 完成式', titleEn: 'Review: Perfect', theme: '時光道・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：現在完成式 ＋ 過去完成式 ＋ 時態對比 ＋ 中翻英',
+  goal: { zh: '闖過完成式的時光關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review the perfect tenses!", dialogueZh: '來複習完成式！', highlightWords: [], sceneEmojis: ['🔄', '✅', '✨'], animation: 'wave' },
     { image: '✅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have finished. She has eaten.", dialogueZh: '我已完成。她已吃過。', highlightWords: ['have finished', 'has eaten'], sceneEmojis: ['✅', '🍽️', '😊'], animation: 'bounce' },
@@ -9247,6 +9382,7 @@ const L9_M15: Mission = {
 const L9_M16: Mission = {
   id: 16, slug: 'l9-m16-tense-switch', level: 9, title: '時態切換練習', titleEn: 'Tense Switching', theme: '時光道・切換自如', themeEmoji: '🔀',
   focus: '看時間字選對時態：every day/yesterday/now/tomorrow/before ＋ 中翻英',
+  goal: { zh: '看時間字（yesterday / now / tomorrow）選對時態。', char: 'finn' },
   story: [
     { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The time word tells you the tense!", dialogueZh: '時間字告訴你用哪個時態！', highlightWords: [], sceneEmojis: ['🔀', '🕰️', '✨'], animation: 'wave' },
     { image: '📅', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "'every day' → simple. 'now' → continuous.", dialogueZh: '「every day」→ 簡單式。「now」→ 進行式。', highlightWords: [], sceneEmojis: ['📅', '⏰', '😊'], animation: 'bounce' },
@@ -9299,6 +9435,7 @@ const L9_M16: Mission = {
 const L9_M17: Mission = {
   id: 17, slug: 'l9-m17-tense-reading', level: 9, title: '時態閱讀', titleEn: 'Tense Reading', theme: '時光道・故事時間', themeEmoji: '📖',
   focus: '閱讀：一篇混合時態的短文（過去/現在/未來）＋ 理解 ＋ 中翻英',
+  goal: { zh: '讀一篇混合時態的短文，看懂整條時間線。', char: 'coco' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read a story with many tenses!", dialogueZh: '讀一篇有很多時態的故事！', highlightWords: ['tenses'], sceneEmojis: ['📖', '🕰️', '✨'], animation: 'wave' },
     { image: '🌏', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Last year, Sam went to Japan. Now he lives here.", dialogueZh: '去年，Sam 去了日本。現在他住這裡。', highlightWords: ['went', 'lives'], sceneEmojis: ['🌏', '🗾', '😊'], animation: 'bounce' },
@@ -9351,6 +9488,7 @@ const L9_M17: Mission = {
 const L9_M18: Mission = {
   id: 18, slug: 'l9-m18-tense-writing', level: 9, title: '時態寫作', titleEn: 'Tense Writing', theme: '時光道・寫寫看', themeEmoji: '✍️',
   focus: '引導式寫作：用不同時態寫「我的過去、現在、未來」＋ 中翻英',
+  goal: { zh: '用不同時態，寫下「我的過去、現在、未來」。', char: 'polly' },
   story: [
     { image: '✍️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's write about your life in three tenses!", dialogueZh: '我們用三種時態寫你的人生！', highlightWords: [], sceneEmojis: ['✍️', '📝', '✨'], animation: 'wave' },
     { image: '⏪', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Past: When I was little, I lived in a village.", dialogueZh: '過去：我小時候住在村莊。', highlightWords: ['lived'], sceneEmojis: ['⏪', '🏡', '😊'], animation: 'bounce' },
@@ -9403,6 +9541,7 @@ const L9_M18: Mission = {
 const L9_M19: Mission = {
   id: 19, slug: 'l9-m19-dialogue', level: 9, title: '時態綜合對話', titleEn: 'Tense Dialogue', theme: '時光道・聊聊時間', themeEmoji: '💬',
   focus: '綜合對話：用不同時態聊過去、現在、未來的事 ＋ 中翻英',
+  goal: { zh: '用不同時態，聊聊過去、現在和未來的事。', char: 'benny' },
   story: [
     { image: '💬', character: '🦜', characterKey: 'polly', characterAction: 'talk', characterName: 'Polly', dialogue: "What did you do last weekend?", dialogueZh: '你上週末做了什麼？', highlightWords: ['did'], sceneEmojis: ['💬', '⏪', '✨'], animation: 'wave' },
     { image: '🏞️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I went hiking. Right now I am resting.", dialogueZh: '我去健行。現在我在休息。', highlightWords: ['went', 'am resting'], sceneEmojis: ['🏞️', '😌', '😊'], animation: 'bounce' },
@@ -9455,6 +9594,7 @@ const L9_M19: Mission = {
 const L9_M20: Mission = {
   id: 20, slug: 'l9-m20-boss', level: 9, title: '時光道大魔王', titleEn: 'Time Boss', theme: '時光道・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：現在/過去/未來/進行/完成式 ＋ 動詞三態 ＋ 中翻英',
+  goal: { zh: '時光大魔王打亂了時間！用對所有時態修好時光機，回家！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Time Boss is here! Master every tense!", dialogueZh: '時光大魔王來了！精通每個時態！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🕰️'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I play, played, am playing, will play, have played!", dialogueZh: 'I play、played、am playing、will play、have played！', highlightWords: [], sceneEmojis: ['💪', '🕰️', '✨'], animation: 'bounce' },
@@ -9508,6 +9648,7 @@ const L9_M20: Mission = {
 const L10_M1: Mission = {
   id: 1, slug: 'l10-m1-and-but', level: 10, title: '連接詞 and / but', titleEn: 'and / but', theme: '未來橋・連起來', themeEmoji: '🔗',
   focus: '連接詞 and（並列）/ but（轉折）＋ 中翻英 ＋ 句子合併',
+  goal: { zh: '用 and / but 把兩塊橋板連在一起。', char: 'finn' },
   story: [
     { image: '🔗', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I like tea and coffee.", dialogueZh: '我喜歡茶和咖啡。', highlightWords: ['and'], sceneEmojis: ['🍵', '☕', '✨'], animation: 'wave' },
     { image: '↔️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I like cats, but I don't like dogs.", dialogueZh: '我喜歡貓，但我不喜歡狗。', highlightWords: ['but'], sceneEmojis: ['🐱', '↔️', '😊'], animation: 'bounce' },
@@ -9560,6 +9701,7 @@ const L10_M1: Mission = {
 const L10_M2: Mission = {
   id: 2, slug: 'l10-m2-because-so', level: 10, title: '連接詞 because / so', titleEn: 'because / so', theme: '未來橋・因為所以', themeEmoji: '➡️',
   focus: '連接詞 because（原因）/ so（結果）＋ 中翻英 ＋ 句子合併',
+  goal: { zh: '用 because / so 說出原因和結果，把橋加固。', char: 'coco' },
   tip: { zh: 'because 後面接「原因」，so 後面接「結果」——同一句不要兩個一起用。', char: 'benny' },
   story: [
     { image: '➡️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I am tired because I studied all night.", dialogueZh: '我很累因為我讀了整晚。', highlightWords: ['because'], sceneEmojis: ['😴', '📚', '✨'], animation: 'wave' },
@@ -9613,6 +9755,7 @@ const L10_M2: Mission = {
 const L10_M3: Mission = {
   id: 3, slug: 'l10-m3-then-after-before', level: 10, title: '順序連接詞', titleEn: 'then / after / before', theme: '未來橋・先後順序', themeEmoji: '🔢',
   focus: '順序連接詞 first/then/after/before/finally ＋ 中翻英 ＋ 描述流程',
+  goal: { zh: '用 first / then / finally 排出過橋的步驟。', char: 'polly' },
   story: [
     { image: '🔢', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "First I got up, then I ate breakfast.", dialogueZh: '首先我起床，然後吃早餐。', highlightWords: ['First', 'then'], sceneEmojis: ['🌅', '🥞', '✨'], animation: 'wave' },
     { image: '🦷', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I brush my teeth after I eat.", dialogueZh: '我吃完後刷牙。', highlightWords: ['after'], sceneEmojis: ['🍽️', '🪥', '😊'], animation: 'bounce' },
@@ -9665,6 +9808,7 @@ const L10_M3: Mission = {
 const L10_M4: Mission = {
   id: 4, slug: 'l10-m4-sentence-expansion', level: 10, title: '句子擴寫', titleEn: 'Sentence Expansion', theme: '未來橋・把句子變長', themeEmoji: '📏',
   focus: '句子擴寫：把短句用連接詞、形容詞、時間地點連成長句 ＋ 中翻英',
+  goal: { zh: '把短句擴寫成長句，讓這座橋更長更穩。', char: 'benny' },
   story: [
     { image: '📏', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Short: I have a dog. Long: I have a big brown dog.", dialogueZh: '短：我有一隻狗。長：我有一隻大棕狗。', highlightWords: ['big brown'], sceneEmojis: ['🐶', '📏', '✨'], animation: 'wave' },
     { image: '➕', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Add when and where: I play soccer at the park after school.", dialogueZh: '加時間地點：我放學後在公園踢足球。', highlightWords: ['at the park', 'after school'], sceneEmojis: ['⚽', '🏞️', '😊'], animation: 'bounce' },
@@ -9717,6 +9861,7 @@ const L10_M4: Mission = {
 const L10_M5: Mission = {
   id: 5, slug: 'l10-m5-review-connectors', level: 10, title: 'Review① 連接詞', titleEn: 'Review: Connectors', theme: '未來橋・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：and/but/or ＋ because/so ＋ 順序詞 ＋ 句子擴寫 ＋ 中翻英',
+  goal: { zh: '闖過連接詞造橋的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review all the connectors!", dialogueZh: '來複習所有連接詞！', highlightWords: [], sceneEmojis: ['🔄', '🔗', '✨'], animation: 'wave' },
     { image: '🔗', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I like tea and coffee, but not milk.", dialogueZh: '我喜歡茶和咖啡，但不喜歡牛奶。', highlightWords: ['and', 'but'], sceneEmojis: ['🍵', '☕', '😊'], animation: 'bounce' },
@@ -9769,6 +9914,7 @@ const L10_M5: Mission = {
 const L10_M6: Mission = {
   id: 6, slug: 'l10-m6-paragraph-1', level: 10, title: '段落閱讀①', titleEn: 'Paragraph Reading 1', theme: '未來橋・我的城市', themeEmoji: '📖',
   focus: '段落閱讀①：讀一段介紹城市的短文並回答理解問題 ＋ 中翻英',
+  goal: { zh: '讀一段介紹城市的短文，找出關鍵線索。', char: 'finn' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Let's read a paragraph about a city!", dialogueZh: '我們來讀一段介紹城市的短文！', highlightWords: ['paragraph'], sceneEmojis: ['📖', '🏙️', '✨'], animation: 'wave' },
     { image: '🏙️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Taipei is a big city. Many people live there.", dialogueZh: '台北是大城市。很多人住那裡。', highlightWords: ['big city'], sceneEmojis: ['🏙️', '👥', '😊'], animation: 'bounce' },
@@ -9821,6 +9967,7 @@ const L10_M6: Mission = {
 const L10_M7: Mission = {
   id: 7, slug: 'l10-m7-paragraph-2', level: 10, title: '段落閱讀②', titleEn: 'Paragraph Reading 2', theme: '未來橋・我的寵物', themeEmoji: '📚',
   focus: '段落閱讀②：讀一段介紹寵物的短文並回答理解問題 ＋ 中翻英',
+  goal: { zh: '讀一段介紹寵物的短文，找出關鍵線索。', char: 'coco' },
   story: [
     { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A new paragraph: My Pet Dog!", dialogueZh: '新段落：我的寵物狗！', highlightWords: ['paragraph'], sceneEmojis: ['📚', '🐶', '✨'], animation: 'wave' },
     { image: '🐶', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "I have a dog named Max. He is brown and friendly.", dialogueZh: '我有一隻叫 Max 的狗。他棕色又友善。', highlightWords: ['brown', 'friendly'], sceneEmojis: ['🐶', '🟤', '😊'], animation: 'bounce' },
@@ -9873,6 +10020,7 @@ const L10_M7: Mission = {
 const L10_M8: Mission = {
   id: 8, slug: 'l10-m8-reading-strategy', level: 10, title: '閱讀策略', titleEn: 'Main Idea & Detail', theme: '未來橋・抓重點', themeEmoji: '🎯',
   focus: '閱讀策略：找主旨（main idea）vs 細節（detail）＋ 中翻英',
+  goal: { zh: '分清主旨和細節，快速讀懂一段文章。', char: 'polly' },
   story: [
     { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The main idea is what the text is mostly about.", dialogueZh: '主旨是文章主要在講什麼。', highlightWords: ['main idea'], sceneEmojis: ['🎯', '📖', '✨'], animation: 'wave' },
     { image: '🔍', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "A detail is a small fact in the text.", dialogueZh: '細節是文章裡的小事實。', highlightWords: ['detail'], sceneEmojis: ['🔍', '📝', '😊'], animation: 'bounce' },
@@ -9925,6 +10073,7 @@ const L10_M8: Mission = {
 const L10_M9: Mission = {
   id: 9, slug: 'l10-m9-charts-notices', level: 10, title: '圖表與告示', titleEn: 'Charts & Notices', theme: '未來橋・看懂告示', themeEmoji: '📋',
   focus: '閱讀實用文本：告示/時刻表/菜單（open/closed/schedule）＋ 中翻英',
+  goal: { zh: '讀懂告示、時刻表、菜單，找到正確的方向。', char: 'benny' },
   story: [
     { image: '📋', character: '🐰', characterKey: 'ruby', characterAction: 'read', characterName: 'Ruby', dialogue: "The sign says: OPEN 9 to 5.", dialogueZh: '告示寫：開放 9 點到 5 點。', highlightWords: ['OPEN'], sceneEmojis: ['📋', '🕘', '✨'], animation: 'wave' },
     { image: '🚫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "This notice says: No food or drinks.", dialogueZh: '這告示寫：禁止飲食。', highlightWords: ['No food'], sceneEmojis: ['🚫', '🍔', '😊'], animation: 'bounce' },
@@ -9977,6 +10126,7 @@ const L10_M9: Mission = {
 const L10_M10: Mission = {
   id: 10, slug: 'l10-m10-review-reading', level: 10, title: 'Review② 閱讀理解', titleEn: 'Review: Reading', theme: '未來橋・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：段落閱讀 ＋ 主旨細節 ＋ 圖表告示 ＋ 中翻英',
+  goal: { zh: '闖過閱讀理解的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review reading! Find the main idea.", dialogueZh: '來複習閱讀！找出主旨。', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
     { image: '🏙️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "This text is about a big, busy city.", dialogueZh: '這篇文章是關於一個繁忙的大城市。', highlightWords: ['about'], sceneEmojis: ['🏙️', '🎯', '😊'], animation: 'bounce' },
@@ -10029,6 +10179,7 @@ const L10_M10: Mission = {
 const L10_M11: Mission = {
   id: 11, slug: 'l10-m11-about-myself', level: 10, title: '自我介紹短文', titleEn: 'About Myself', theme: '未來橋・介紹我自己', themeEmoji: '🙋',
   focus: '寫作：about myself（5–8 句自我介紹）＋ 中翻英',
+  goal: { zh: '寫一篇 about myself，好好介紹你自己。', char: 'finn' },
   story: [
     { image: '🙋', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's write about ourselves!", dialogueZh: '我們來寫自我介紹！', highlightWords: [], sceneEmojis: ['🙋', '✍️', '✨'], animation: 'wave' },
     { image: '🏷️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "My name is Coco. I am nine years old.", dialogueZh: '我叫 Coco。我九歲。', highlightWords: ['name', 'years old'], sceneEmojis: ['🏷️', '9️⃣', '😊'], animation: 'bounce' },
@@ -10081,6 +10232,7 @@ const L10_M11: Mission = {
 const L10_M12: Mission = {
   id: 12, slug: 'l10-m12-diary', level: 10, title: '日記', titleEn: 'Diary', theme: '未來橋・寫日記', themeEmoji: '📔',
   focus: '寫作：日記 First / Then / Finally（記錄一天）＋ 中翻英',
+  goal: { zh: '用 First / Then / Finally 寫一篇你的日記。', char: 'coco' },
   story: [
     { image: '📔', character: '🐱', characterKey: 'coco', characterAction: 'write', characterName: 'Coco', dialogue: "Dear Diary, today was a great day!", dialogueZh: '親愛的日記，今天是美好的一天！', highlightWords: ['Dear Diary'], sceneEmojis: ['📔', '☀️', '✨'], animation: 'wave' },
     { image: '🌅', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "First, I went to the park. Then, I met my friends.", dialogueZh: '首先，我去公園。然後，我遇到朋友。', highlightWords: ['First', 'Then'], sceneEmojis: ['🏞️', '👫', '😊'], animation: 'bounce' },
@@ -10133,6 +10285,7 @@ const L10_M12: Mission = {
 const L10_M13: Mission = {
   id: 13, slug: 'l10-m13-letter', level: 10, title: '寫信', titleEn: 'Writing a Letter', theme: '未來橋・寫封信', themeEmoji: '✉️',
   focus: '寫作：友善信件 Dear… / Best wishes（開頭與結尾）＋ 中翻英',
+  goal: { zh: '用 Dear… / Best wishes，寫一封友善的信。', char: 'polly' },
   story: [
     { image: '✉️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "A letter starts with 'Dear'.", dialogueZh: '信以「Dear」開頭。', highlightWords: ['Dear'], sceneEmojis: ['✉️', '📝', '✨'], animation: 'wave' },
     { image: '💌', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Dear Grandma, how are you? I miss you.", dialogueZh: '親愛的奶奶，你好嗎？我想你。', highlightWords: ['Dear', 'miss'], sceneEmojis: ['💌', '👵', '😊'], animation: 'bounce' },
@@ -10185,6 +10338,7 @@ const L10_M13: Mission = {
 const L10_M14: Mission = {
   id: 14, slug: 'l10-m14-picture-writing', level: 10, title: '看圖寫作', titleEn: 'Picture Writing', theme: '未來橋・看圖說故事', themeEmoji: '🖼️',
   focus: '寫作：看圖描述（There is/are ＋ 動作 ＋ 感受）＋ 中翻英',
+  goal: { zh: '看著圖，用 There is / are 描述你看到的畫面。', char: 'benny' },
   story: [
     { image: '🖼️', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Look at the picture and describe it!", dialogueZh: '看圖並描述它！', highlightWords: ['describe'], sceneEmojis: ['🖼️', '👀', '✨'], animation: 'wave' },
     { image: '🏞️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "In the picture, there is a park with trees.", dialogueZh: '圖裡有一座有樹的公園。', highlightWords: ['there is'], sceneEmojis: ['🏞️', '🌳', '😊'], animation: 'bounce' },
@@ -10237,6 +10391,7 @@ const L10_M14: Mission = {
 const L10_M15: Mission = {
   id: 15, slug: 'l10-m15-review-writing', level: 10, title: 'Review③ 寫作', titleEn: 'Review: Writing', theme: '未來橋・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：自我介紹 ＋ 日記 ＋ 信件 ＋ 看圖寫作 ＋ 連接詞 ＋ 中翻英',
+  goal: { zh: '闖過各種寫作的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'write', characterName: 'Finn', dialogue: "Let's review all our writing!", dialogueZh: '來複習所有寫作！', highlightWords: [], sceneEmojis: ['🔄', '✍️', '✨'], animation: 'wave' },
     { image: '🙋', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "My name is Coco, and I like to write.", dialogueZh: '我叫 Coco，我喜歡寫作。', highlightWords: ['and'], sceneEmojis: ['🙋', '📝', '😊'], animation: 'bounce' },
@@ -10289,6 +10444,7 @@ const L10_M15: Mission = {
 const L10_M16: Mission = {
   id: 16, slug: 'l10-m16-describe', level: 10, title: '描述人物地點', titleEn: 'Describe People & Places', theme: '未來橋・描寫', themeEmoji: '🧑‍🎨',
   focus: '寫作：描述人物與地點（外觀＋個性＋特色）＋ 中翻英',
+  goal: { zh: '寫一段文字，描述一個人物和一個地點。', char: 'finn' },
   story: [
     { image: '🧑‍🎨', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's describe a person and a place!", dialogueZh: '我們來描述一個人和一個地方！', highlightWords: ['describe'], sceneEmojis: ['🧑‍🎨', '✍️', '✨'], animation: 'wave' },
     { image: '👩‍🏫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "My teacher is tall and kind. She helps everyone.", dialogueZh: '我的老師又高又善良。她幫助大家。', highlightWords: ['tall', 'kind'], sceneEmojis: ['👩‍🏫', '❤️', '😊'], animation: 'bounce' },
@@ -10341,6 +10497,7 @@ const L10_M16: Mission = {
 const L10_M17: Mission = {
   id: 17, slug: 'l10-m17-opinion', level: 10, title: '意見短文', titleEn: 'Opinion Writing', theme: '未來橋・我的看法', themeEmoji: '💭',
   focus: '寫作：意見短文 I think… because…（觀點＋理由）＋ 中翻英',
+  goal: { zh: '用 I think… because… 寫出你的觀點。', char: 'coco' },
   story: [
     { image: '💭', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I think reading is great because it is fun.", dialogueZh: '我覺得閱讀很棒因為它很好玩。', highlightWords: ['think', 'because'], sceneEmojis: ['💭', '📚', '✨'], animation: 'wave' },
     { image: '🏫', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "In my opinion, school is important.", dialogueZh: '在我看來，學校很重要。', highlightWords: ['opinion'], sceneEmojis: ['🏫', '💡', '😊'], animation: 'bounce' },
@@ -10393,6 +10550,7 @@ const L10_M17: Mission = {
 const L10_M18: Mission = {
   id: 18, slug: 'l10-m18-read-write', level: 10, title: '讀寫綜合', titleEn: 'Read & Write', theme: '未來橋・讀完再寫', themeEmoji: '📖',
   focus: '讀寫綜合：讀一段短文，再仿寫自己的版本 ＋ 中翻英',
+  goal: { zh: '讀一段短文，再仿寫出你自己的版本。', char: 'polly' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read the model, then write your own!", dialogueZh: '讀範例，然後寫你自己的！', highlightWords: ['model'], sceneEmojis: ['📖', '✍️', '✨'], animation: 'wave' },
     { image: '🌞', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Model: My weekend was fun. I went to the beach.", dialogueZh: '範例：我的週末很好玩。我去了海邊。', highlightWords: ['went'], sceneEmojis: ['🌞', '🏖️', '😊'], animation: 'bounce' },
@@ -10445,6 +10603,7 @@ const L10_M18: Mission = {
 const L10_M19: Mission = {
   id: 19, slug: 'l10-m19-read-write-mix', level: 10, title: '綜合讀寫', titleEn: 'Reading + Writing', theme: '未來橋・讀寫大挑戰', themeEmoji: '📚',
   focus: '綜合：讀一篇短文，回答理解，再寫短回應 ＋ 中翻英',
+  goal: { zh: '讀一篇短文回答問題，再寫下一小段回應。', char: 'benny' },
   story: [
     { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read, understand, and respond!", dialogueZh: '讀懂、理解、回應！', highlightWords: ['respond'], sceneEmojis: ['📚', '💬', '✨'], animation: 'wave' },
     { image: '🌳', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Text: Trees are important. They give us air.", dialogueZh: '文章：樹很重要。它們給我們空氣。', highlightWords: ['important'], sceneEmojis: ['🌳', '💨', '😊'], animation: 'bounce' },
@@ -10497,6 +10656,7 @@ const L10_M19: Mission = {
 const L10_M20: Mission = {
   id: 20, slug: 'l10-m20-boss', level: 10, title: '未來橋大魔王', titleEn: 'Bridge Boss', theme: '未來橋・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：連接詞 ＋ 段落閱讀 ＋ 各類寫作 ＋ 中翻英',
+  goal: { zh: '大魔王想毀掉未來橋！用連接詞和文字把橋補好，走向未來！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Bridge Boss is here! Read and write!", dialogueZh: '未來橋大魔王來了！讀寫對決！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🌉'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I can connect ideas and write a paragraph!", dialogueZh: '我會連接想法也會寫段落！', highlightWords: [], sceneEmojis: ['💪', '✍️', '✨'], animation: 'bounce' },
@@ -10550,6 +10710,7 @@ const L10_M20: Mission = {
 const L11_M1: Mission = {
   id: 1, slug: 'l11-m1-can-could-should', level: 11, title: '情態 can/could/should', titleEn: 'can / could / should', theme: '挑戰場・能力與建議', themeEmoji: '💡',
   focus: '情態動詞 can（能力）/ could（禮貌·過去）/ should（建議）＋ 中翻英',
+  goal: { zh: '用 can / could / should 說出能力、禮貌和建議。', char: 'finn' },
   story: [
     { image: '💡', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I can swim, and I could swim when I was five.", dialogueZh: '我會游泳，我五歲時就會了。', highlightWords: ['can', 'could'], sceneEmojis: ['🏊', '💡', '✨'], animation: 'wave' },
     { image: '🙏', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Could you help me, please?", dialogueZh: '你可以幫我嗎？（禮貌）', highlightWords: ['Could'], sceneEmojis: ['🙏', '🤝', '😊'], animation: 'bounce' },
@@ -10602,6 +10763,7 @@ const L11_M1: Mission = {
 const L11_M2: Mission = {
   id: 2, slug: 'l11-m2-must-have-to', level: 11, title: '情態 must/have to', titleEn: 'must / have to', theme: '挑戰場・規則與義務', themeEmoji: '📏',
   focus: '情態動詞 must（必須）/ have to（不得不）/ don\'t have to（不必）＋ 中翻英',
+  goal: { zh: '用 must / have to 說出一定要做的事。', char: 'coco' },
   tip: { zh: 'must／have to 都是「必須」；否定要小心：must not 是「禁止做」，do not have to 是「不必做」。', char: 'benny' },
   story: [
     { image: '📏', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "You must wear a seatbelt in a car.", dialogueZh: '在車上你必須繫安全帶。', highlightWords: ['must'], sceneEmojis: ['🚗', '📏', '✨'], animation: 'wave' },
@@ -10655,6 +10817,7 @@ const L11_M2: Mission = {
 const L11_M3: Mission = {
   id: 3, slug: 'l11-m3-relative-pronouns', level: 11, title: '關係代名詞', titleEn: 'who / which / that', theme: '挑戰場・連接句子', themeEmoji: '🔗',
   focus: '關係代名詞 who（人）/ which（物）/ that（人或物）＋ 中翻英',
+  goal: { zh: '用 who / which / that 把兩句話連成一句。', char: 'polly' },
   tip: { zh: '關係代名詞：人用 who、東西用 which，that 人或物都可以。', char: 'benny' },
   story: [
     { image: '🔗', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The boy who is running is my brother.", dialogueZh: '那個正在跑的男孩是我弟弟。', highlightWords: ['who'], sceneEmojis: ['👦', '🏃', '✨'], animation: 'wave' },
@@ -10708,6 +10871,7 @@ const L11_M3: Mission = {
 const L11_M4: Mission = {
   id: 4, slug: 'l11-m4-superlative', level: 11, title: '最高級', titleEn: 'Superlatives', theme: '挑戰場・之最', themeEmoji: '🥇',
   focus: '最高級 the -est / the most（三者以上最…）＋ 中翻英',
+  goal: { zh: '用 the -est / the most 選出最厲害的那一個。', char: 'benny' },
   tip: { zh: '最高級（三者以上最…）：短的加 the -est（tallest），長的用 the most（the most beautiful）。', char: 'ruby' },
   story: [
     { image: '🥇', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The blue whale is the biggest animal.", dialogueZh: '藍鯨是最大的動物。', highlightWords: ['biggest'], sceneEmojis: ['🐋', '🥇', '✨'], animation: 'wave' },
@@ -10761,6 +10925,7 @@ const L11_M4: Mission = {
 const L11_M5: Mission = {
   id: 5, slug: 'l11-m5-review-modal', level: 11, title: 'Review① 情態關係比較', titleEn: 'Review: Modals & More', theme: '挑戰場・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：情態動詞 ＋ 關係代名詞 ＋ 最高級 ＋ 中翻英',
+  goal: { zh: '闖過情態、關係代名詞、最高級的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review modals, relatives, and superlatives!", dialogueZh: '來複習情態、關代、最高級！', highlightWords: [], sceneEmojis: ['🔄', '💡', '✨'], animation: 'wave' },
     { image: '💡', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "You should rest. You must sleep early.", dialogueZh: '你應該休息。你必須早睡。', highlightWords: ['should', 'must'], sceneEmojis: ['💡', '🛌', '😊'], animation: 'bounce' },
@@ -10813,6 +10978,7 @@ const L11_M5: Mission = {
 const L11_M6: Mission = {
   id: 6, slug: 'l11-m6-infinitive', level: 11, title: '不定詞 to V', titleEn: 'Infinitive: to V', theme: '挑戰場・想做的事', themeEmoji: '🎯',
   focus: '不定詞 to + 原形動詞：want to / hope to / It\'s fun to… ＋ 中翻英',
+  goal: { zh: '用 want to / hope to 說出你想做的事。', char: 'finn' },
   tip: { zh: '有些動詞後面接 to V（want to go），有些接 V-ing（enjoy going）——要分清楚。', char: 'ruby' },
   story: [
     { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I want to be a scientist.", dialogueZh: '我想成為科學家。', highlightWords: ['want to'], sceneEmojis: ['🎯', '🔬', '✨'], animation: 'wave' },
@@ -10866,6 +11032,7 @@ const L11_M6: Mission = {
 const L11_M7: Mission = {
   id: 7, slug: 'l11-m7-gerund', level: 11, title: '動名詞 V-ing', titleEn: 'Gerund: V-ing', theme: '挑戰場・喜歡做的事', themeEmoji: '🏊',
   focus: '動名詞 V-ing：enjoy/like/finish/keep + V-ing ＋ 中翻英',
+  goal: { zh: '用 enjoy / finish + V-ing 說出你喜歡做的事。', char: 'coco' },
   tip: { zh: 'enjoy、finish、keep 後面要接 V-ing（enjoy reading），不能接 to。', char: 'ruby' },
   story: [
     { image: '🏊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I enjoy swimming and reading.", dialogueZh: '我喜歡游泳和閱讀。', highlightWords: ['swimming', 'reading'], sceneEmojis: ['🏊', '📖', '✨'], animation: 'wave' },
@@ -10919,6 +11086,7 @@ const L11_M7: Mission = {
 const L11_M8: Mission = {
   id: 8, slug: 'l11-m8-used-to', level: 11, title: 'used to', titleEn: 'used to', theme: '挑戰場・以前的習慣', themeEmoji: '⏳',
   focus: 'used to + 原形（過去的習慣，現在不再）＋ 中翻英',
+  goal: { zh: '用 used to 說出你以前的習慣。', char: 'polly' },
   story: [
     { image: '⏳', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "I used to be short, but now I am tall.", dialogueZh: '我以前很矮，但現在很高。', highlightWords: ['used to'], sceneEmojis: ['⏳', '📏', '✨'], animation: 'wave' },
     { image: '🍬', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "She used to eat a lot of candy.", dialogueZh: '她以前吃很多糖。', highlightWords: ['used to'], sceneEmojis: ['🍬', '⏳', '😊'], animation: 'bounce' },
@@ -10971,6 +11139,7 @@ const L11_M8: Mission = {
 const L11_M9: Mission = {
   id: 9, slug: 'l11-m9-conditional', level: 11, title: '條件句 if', titleEn: 'Conditional: if', theme: '挑戰場・如果', themeEmoji: '🔀',
   focus: '第一條件句 If + 現在式, will + 原形（真實的可能）＋ 中翻英',
+  goal: { zh: '用 If…, will… 說出可能會發生的事。', char: 'benny' },
   tip: { zh: '第一條件句：If + 現在式, 主句 will + 原形（If it rains, I will stay home）。', char: 'coco' },
   story: [
     { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "If it rains, I will stay home.", dialogueZh: '如果下雨，我就待在家。', highlightWords: ['If', 'will'], sceneEmojis: ['🌧️', '🏠', '✨'], animation: 'wave' },
@@ -11024,6 +11193,7 @@ const L11_M9: Mission = {
 const L11_M10: Mission = {
   id: 10, slug: 'l11-m10-review-verbals', level: 11, title: 'Review② 不定詞條件句', titleEn: 'Review: to V / -ing / if', theme: '挑戰場・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：不定詞 to V ＋ 動名詞 V-ing ＋ used to ＋ 條件句 if ＋ 中翻英',
+  goal: { zh: '闖過不定詞與條件句的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review verbals and conditionals!", dialogueZh: '來複習不定詞、動名詞、條件句！', highlightWords: [], sceneEmojis: ['🔄', '🎯', '✨'], animation: 'wave' },
     { image: '🎯', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I want to travel, and I enjoy swimming.", dialogueZh: '我想旅行，而且我喜歡游泳。', highlightWords: ['to travel', 'swimming'], sceneEmojis: ['✈️', '🏊', '😊'], animation: 'bounce' },
@@ -11076,6 +11246,7 @@ const L11_M10: Mission = {
 const L11_M11: Mission = {
   id: 11, slug: 'l11-m11-passive', level: 11, title: '被動語態', titleEn: 'Passive Voice', theme: '挑戰場・被…', themeEmoji: '🔧',
   focus: '被動語態 be + p.p.（It is made of… / was built by…）＋ 中翻英',
+  goal: { zh: '用 be + p.p. 說出「被做」的事（It is made of…）。', char: 'finn' },
   tip: { zh: '被動語態 = be + 過去分詞（p.p.）：It is made of wood。主角是「被做的那個」。', char: 'ruby' },
   story: [
     { image: '🔧', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "This table is made of wood.", dialogueZh: '這張桌子是木頭做的。', highlightWords: ['is made'], sceneEmojis: ['🪵', '🔧', '✨'], animation: 'wave' },
@@ -11129,6 +11300,7 @@ const L11_M11: Mission = {
 const L11_M12: Mission = {
   id: 12, slug: 'l11-m12-advanced-connectors', level: 11, title: '進階連接詞', titleEn: 'although / however', theme: '挑戰場・雖然然而', themeEmoji: '🔀',
   focus: '進階連接詞 although / however / while（讓步與對比）＋ 中翻英',
+  goal: { zh: '用 although / however 表達讓步和轉折。', char: 'coco' },
   story: [
     { image: '🔀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Although it was raining, we went out.", dialogueZh: '雖然在下雨，我們還是出門了。', highlightWords: ['Although'], sceneEmojis: ['🌧️', '🚪', '✨'], animation: 'wave' },
     { image: '💭', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I like the city. However, it is too busy.", dialogueZh: '我喜歡城市。然而，它太繁忙了。', highlightWords: ['However'], sceneEmojis: ['🏙️', '💭', '😊'], animation: 'bounce' },
@@ -11181,6 +11353,7 @@ const L11_M12: Mission = {
 const L11_M13: Mission = {
   id: 13, slug: 'l11-m13-long-story-1', level: 11, title: '長篇故事①', titleEn: 'Long Story 1', theme: '挑戰場・勇敢的小船', themeEmoji: '📖',
   focus: '長篇故事閱讀①：讀較長的故事並回答理解問題 ＋ 中翻英',
+  goal: { zh: '讀一篇較長的故事，深入理解內容。', char: 'polly' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A long story: The Brave Little Boat!", dialogueZh: '一個長故事：勇敢的小船！', highlightWords: ['story'], sceneEmojis: ['📖', '⛵', '✨'], animation: 'wave' },
     { image: '⛵', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "A little boat wanted to cross the big sea.", dialogueZh: '一艘小船想橫越大海。', highlightWords: ['wanted'], sceneEmojis: ['⛵', '🌊', '😊'], animation: 'bounce' },
@@ -11233,6 +11406,7 @@ const L11_M13: Mission = {
 const L11_M14: Mission = {
   id: 14, slug: 'l11-m14-long-story-2', level: 11, title: '長篇故事②', titleEn: 'Long Story 2', theme: '挑戰場・善良的巨人', themeEmoji: '📚',
   focus: '長篇故事閱讀②：讀較長的故事並回答理解問題 ＋ 中翻英',
+  goal: { zh: '讀另一篇長故事，找出裡面的關鍵。', char: 'benny' },
   story: [
     { image: '📚', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A new story: The Kind Giant!", dialogueZh: '新故事：善良的巨人！', highlightWords: ['story'], sceneEmojis: ['📚', '🧌', '✨'], animation: 'wave' },
     { image: '🧌', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "People were afraid of the giant, although he was kind.", dialogueZh: '人們怕巨人，雖然他很善良。', highlightWords: ['although'], sceneEmojis: ['🧌', '😨', '😊'], animation: 'bounce' },
@@ -11285,6 +11459,7 @@ const L11_M14: Mission = {
 const L11_M15: Mission = {
   id: 15, slug: 'l11-m15-review-reading', level: 11, title: 'Review③ 進階閱讀', titleEn: 'Review: Reading', theme: '挑戰場・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：長篇故事理解 ＋ 進階連接詞 ＋ 被動語態 ＋ 中翻英',
+  goal: { zh: '闖過進階閱讀的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review advanced reading!", dialogueZh: '來複習進階閱讀！', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
     { image: '⛵', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Although it was hard, the little boat never gave up.", dialogueZh: '雖然很難，小船從不放棄。', highlightWords: ['Although'], sceneEmojis: ['⛵', '💪', '😊'], animation: 'bounce' },
@@ -11337,6 +11512,7 @@ const L11_M15: Mission = {
 const L11_M16: Mission = {
   id: 16, slug: 'l11-m16-opinion-writing', level: 11, title: '觀點寫作', titleEn: 'Opinion Writing', theme: '挑戰場・我的觀點', themeEmoji: '💭',
   focus: '觀點寫作：My opinion is… because… + 例子（觀點段落結構）＋ 中翻英',
+  goal: { zh: '用 My opinion is… because… 寫出你的觀點。', char: 'finn' },
   story: [
     { image: '💭', character: '🐻', characterKey: 'benny', characterAction: 'write', characterName: 'Benny', dialogue: "State your opinion, then give reasons and examples.", dialogueZh: '說出觀點，再給理由和例子。', highlightWords: ['opinion'], sceneEmojis: ['💭', '✍️', '✨'], animation: 'wave' },
     { image: '📚', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "In my opinion, reading is the best hobby.", dialogueZh: '在我看來，閱讀是最好的嗜好。', highlightWords: ['In my opinion'], sceneEmojis: ['📚', '🥇', '😊'], animation: 'bounce' },
@@ -11389,6 +11565,7 @@ const L11_M16: Mission = {
 const L11_M17: Mission = {
   id: 17, slug: 'l11-m17-descriptive', level: 11, title: '描述性寫作', titleEn: 'Descriptive Writing', theme: '挑戰場・生動描寫', themeEmoji: '🎨',
   focus: '描述性寫作：人物/地點/經驗（外觀＋個性＋感受）＋ 中翻英',
+  goal: { zh: '寫一段描述人物、地點或經驗的文字。', char: 'coco' },
   story: [
     { image: '🎨', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Use your five senses to describe!", dialogueZh: '用你的五感來描寫！', highlightWords: ['describe'], sceneEmojis: ['🎨', '👁️', '✨'], animation: 'wave' },
     { image: '👵', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "My grandma is gentle. She has kind eyes and a warm smile.", dialogueZh: '我奶奶很溫柔。她有慈祥的眼睛和溫暖的笑容。', highlightWords: ['gentle', 'kind'], sceneEmojis: ['👵', '❤️', '😊'], animation: 'bounce' },
@@ -11441,6 +11618,7 @@ const L11_M17: Mission = {
 const L11_M18: Mission = {
   id: 18, slug: 'l11-m18-discussion', level: 11, title: '口說：討論', titleEn: 'Discussion', theme: '挑戰場・一起討論', themeEmoji: '🗣️',
   focus: '口說：討論與表達意見（agree/disagree/What do you think?）＋ 中翻英',
+  goal: { zh: '用 agree / disagree 表達你的意見。', char: 'polly' },
   story: [
     { image: '🗣️', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "I think dogs are better than cats. What do you think?", dialogueZh: '我覺得狗比貓好。你覺得呢？', highlightWords: ['What do you think'], sceneEmojis: ['🗣️', '🐶', '✨'], animation: 'wave' },
     { image: '🤝', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I agree with you. Dogs are friendly.", dialogueZh: '我同意你。狗很友善。', highlightWords: ['agree'], sceneEmojis: ['🤝', '🐶', '😊'], animation: 'bounce' },
@@ -11493,6 +11671,7 @@ const L11_M18: Mission = {
 const L11_M19: Mission = {
   id: 19, slug: 'l11-m19-integrated', level: 11, title: '綜合應用', titleEn: 'Read + Write + Speak', theme: '挑戰場・全能挑戰', themeEmoji: '🎯',
   focus: '綜合應用：讀一篇文章，寫下觀點，再口說分享 ＋ 中翻英',
+  goal: { zh: '讀文章、寫下觀點，再開口說出來分享。', char: 'benny' },
   story: [
     { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Read, then write, then speak — all in one!", dialogueZh: '讀、寫、說 —— 一次全部！', highlightWords: [], sceneEmojis: ['🎯', '📖', '✨'], animation: 'wave' },
     { image: '🌳', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Text: We should protect the environment.", dialogueZh: '文章：我們應該保護環境。', highlightWords: ['should'], sceneEmojis: ['🌳', '🌍', '😊'], animation: 'bounce' },
@@ -11545,6 +11724,7 @@ const L11_M19: Mission = {
 const L11_M20: Mission = {
   id: 20, slug: 'l11-m20-boss', level: 11, title: '挑戰場大魔王', titleEn: 'Challenge Boss', theme: '挑戰場・大魔王挑戰', themeEmoji: '🏆',
   focus: '總驗收：情態/關係代名詞/被動/條件句/進階連接詞/寫作 ＋ 中翻英',
+  goal: { zh: '挑戰場的終極大魔王考你所有進階本領，證明你的實力！', char: 'ruby' },
   story: [
     { image: '🐲', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Challenge Boss is here! Show your B1 skills!", dialogueZh: '挑戰大魔王來了！展現你的 B1 實力！', highlightWords: [], sceneEmojis: ['🐲', '⚔️', '🏔️'], animation: 'shake' },
     { image: '💪', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "should, who, was made, if, although — I know them!", dialogueZh: 'should、who、was made、if、although —— 我都會！', highlightWords: [], sceneEmojis: ['💪', '📚', '✨'], animation: 'bounce' },
@@ -11598,6 +11778,7 @@ const L11_M20: Mission = {
 const L12_M1: Mission = {
   id: 1, slug: 'l12-m1-tense-mastery', level: 12, title: '進階時態綜合', titleEn: 'Tense Mastery', theme: '勝利峰・時態大師', themeEmoji: '🕰️',
   focus: '在情境中綜合運用各種時態（過去/現在/未來/完成）＋ 中翻英',
+  goal: { zh: '在情境中用對各種時態，踏出登頂的第一步。', char: 'finn' },
   story: [
     { image: '🕰️', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Welcome to Victory Summit! The final level!", dialogueZh: '歡迎來到勝利峰！最後一級！', highlightWords: [], sceneEmojis: ['🕰️', '⛰️', '✨'], animation: 'wave' },
     { image: '📖', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "I have studied English for years, and I am still learning.", dialogueZh: '我已學英文很多年了，而且我還在學。', highlightWords: ['have studied', 'am learning'], sceneEmojis: ['📖', '📚', '😊'], animation: 'bounce' },
@@ -11650,6 +11831,7 @@ const L12_M1: Mission = {
 const L12_M2: Mission = {
   id: 2, slug: 'l12-m2-sentence-mastery', level: 12, title: '進階句型綜合', titleEn: 'Sentence Mastery', theme: '勝利峰・句型大師', themeEmoji: '🧩',
   focus: '綜合進階句型（被動＋關係代名詞＋條件句＋連接詞）＋ 中翻英',
+  goal: { zh: '綜合被動、關係代名詞、條件句、連接詞，一起闖關。', char: 'coco' },
   story: [
     { image: '🧩', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "The book that I read was written by a famous author.", dialogueZh: '我讀的那本書是有名作家寫的。', highlightWords: ['that', 'was written'], sceneEmojis: ['📖', '✍️', '✨'], animation: 'wave' },
     { image: '🌧️', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "If it rains tomorrow, the game which we planned will be canceled.", dialogueZh: '如果明天下雨，我們計畫的比賽就會取消。', highlightWords: ['If', 'which'], sceneEmojis: ['🌧️', '⚽', '😊'], animation: 'bounce' },
@@ -11702,6 +11884,7 @@ const L12_M2: Mission = {
 const L12_M3: Mission = {
   id: 3, slug: 'l12-m3-emotions-personality', level: 12, title: '情緒與個性', titleEn: 'Emotions & Personality', theme: '勝利峰・認識自己', themeEmoji: '😌',
   focus: '主題單字擴充①：情緒與個性形容詞（confident/generous/honest…）＋ 中翻英',
+  goal: { zh: '學 confident / honest… 這些字，描述一個人的個性。', char: 'polly' },
   story: [
     { image: '😌', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "She is confident and always speaks up.", dialogueZh: '她很有自信，總是勇於發言。', highlightWords: ['confident'], sceneEmojis: ['😌', '🗣️', '✨'], animation: 'wave' },
     { image: '🎁', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "He is generous. He shares everything.", dialogueZh: '他很慷慨。他什麼都分享。', highlightWords: ['generous'], sceneEmojis: ['🎁', '🤝', '😊'], animation: 'bounce' },
@@ -11754,6 +11937,7 @@ const L12_M3: Mission = {
 const L12_M4: Mission = {
   id: 4, slug: 'l12-m4-world-nature', level: 12, title: '世界與自然', titleEn: 'World & Nature', theme: '勝利峰・大世界', themeEmoji: '🌍',
   focus: '主題單字擴充②：世界/文化/自然（culture/planet/forest…）＋ 中翻英',
+  goal: { zh: '學 culture / planet / forest… 這些字，認識這個世界。', char: 'benny' },
   story: [
     { image: '🌍', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Our planet has oceans, forests, and mountains.", dialogueZh: '我們的星球有海洋、森林和高山。', highlightWords: ['planet', 'forests'], sceneEmojis: ['🌍', '🌲', '✨'], animation: 'wave' },
     { image: '🎎', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Every country has its own culture and traditions.", dialogueZh: '每個國家都有自己的文化和傳統。', highlightWords: ['culture', 'traditions'], sceneEmojis: ['🎎', '🌏', '😊'], animation: 'bounce' },
@@ -11806,6 +11990,7 @@ const L12_M4: Mission = {
 const L12_M5: Mission = {
   id: 5, slug: 'l12-m5-review-language', level: 12, title: 'Review① 綜合語言', titleEn: 'Review: Language', theme: '勝利峰・複習關', themeEmoji: '🔄',
   focus: '螺旋複習①：進階時態 ＋ 進階句型 ＋ 主題單字 ＋ 中翻英',
+  goal: { zh: '闖過綜合語言的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Let's review advanced language!", dialogueZh: '來複習進階語言！', highlightWords: [], sceneEmojis: ['🔄', '📚', '✨'], animation: 'wave' },
     { image: '🕰️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "I have learned a lot, and I will keep going.", dialogueZh: '我學了很多，而且我會繼續。', highlightWords: ['have learned', 'will keep'], sceneEmojis: ['🕰️', '📈', '😊'], animation: 'bounce' },
@@ -11858,6 +12043,7 @@ const L12_M5: Mission = {
 const L12_M6: Mission = {
   id: 6, slug: 'l12-m6-story-reading', level: 12, title: '長篇故事閱讀', titleEn: 'Story Reading', theme: '勝利峰・追夢的女孩', themeEmoji: '📖',
   focus: '長篇故事閱讀：讀一個較長的敘事故事並深入理解 ＋ 中翻英',
+  goal: { zh: '讀一個長篇故事，深入理解整個情節。', char: 'finn' },
   story: [
     { image: '📖', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A story: The Girl Who Followed Her Dream.", dialogueZh: '故事：追夢的女孩。', highlightWords: ['story'], sceneEmojis: ['📖', '⭐', '✨'], animation: 'wave' },
     { image: '🎻', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Mia loved music, although her family was poor.", dialogueZh: 'Mia 熱愛音樂，雖然家裡窮。', highlightWords: ['although'], sceneEmojis: ['🎻', '❤️', '😊'], animation: 'bounce' },
@@ -11910,6 +12096,7 @@ const L12_M6: Mission = {
 const L12_M7: Mission = {
   id: 7, slug: 'l12-m7-article-reading', level: 12, title: '知識文章閱讀', titleEn: 'Article Reading', theme: '勝利峰・認識太空', themeEmoji: '🚀',
   focus: '知識文章閱讀：讀一篇說明文（太空）並抓重點 ＋ 中翻英',
+  goal: { zh: '讀一篇關於太空的知識文章，抓出重點。', char: 'coco' },
   story: [
     { image: '🚀', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "An article: Our Amazing Solar System.", dialogueZh: '文章：我們驚人的太陽系。', highlightWords: ['article'], sceneEmojis: ['🚀', '🪐', '✨'], animation: 'wave' },
     { image: '☀️', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "The sun is a star. Eight planets go around it.", dialogueZh: '太陽是一顆星星。八顆行星繞著它轉。', highlightWords: ['star', 'planets'], sceneEmojis: ['☀️', '🪐', '😊'], animation: 'bounce' },
@@ -11962,6 +12149,7 @@ const L12_M7: Mission = {
 const L12_M8: Mission = {
   id: 8, slug: 'l12-m8-poem-script', level: 12, title: '詩與劇本', titleEn: 'Poem & Script', theme: '勝利峰・文學之美', themeEmoji: '🎭',
   focus: '閱讀：短詩 / 對話劇本（感受節奏與角色語氣）＋ 中翻英',
+  goal: { zh: '讀短詩和劇本，感受文字的節奏和角色的語氣。', char: 'polly' },
   story: [
     { image: '🎭', character: '🐰', characterKey: 'ruby', characterAction: 'read', characterName: 'Ruby', dialogue: "Poems use rhythm and rhyme.", dialogueZh: '詩使用節奏和押韻。', highlightWords: ['rhythm', 'rhyme'], sceneEmojis: ['🎭', '📜', '✨'], animation: 'wave' },
     { image: '⭐', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "\"Stars so bright, in the night, shining light, pure delight.\"", dialogueZh: '「星星明亮，在夜晚，閃耀光芒，純粹喜悅。」', highlightWords: ['bright', 'night'], sceneEmojis: ['⭐', '🌙', '😊'], animation: 'bounce' },
@@ -12014,6 +12202,7 @@ const L12_M8: Mission = {
 const L12_M9: Mission = {
   id: 9, slug: 'l12-m9-deep-comprehension', level: 12, title: '閱讀理解深化', titleEn: 'Deep Comprehension', theme: '勝利峰・讀出言外之意', themeEmoji: '🧠',
   focus: '閱讀理解深化：推論、找主旨、猜字義（inference）＋ 中翻英',
+  goal: { zh: '練習推論、找主旨、猜字義，讀得更深。', char: 'benny' },
   story: [
     { image: '🧠', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "Good readers think beyond the words.", dialogueZh: '好讀者會想到字面之外。', highlightWords: ['beyond'], sceneEmojis: ['🧠', '📖', '✨'], animation: 'wave' },
     { image: '🔍', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "\"She smiled and wiped her tears.\" She feels happy but moved.", dialogueZh: '「她微笑著擦掉眼淚。」她開心又感動。', highlightWords: ['feels'], sceneEmojis: ['🔍', '😢', '😊'], animation: 'bounce' },
@@ -12066,6 +12255,7 @@ const L12_M9: Mission = {
 const L12_M10: Mission = {
   id: 10, slug: 'l12-m10-review-reading', level: 12, title: 'Review② 閱讀', titleEn: 'Review: Reading', theme: '勝利峰・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：故事/知識文章/詩/推論理解 ＋ 中翻英',
+  goal: { zh: '闖過閱讀深化的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'read', characterName: 'Finn', dialogue: "Let's review advanced reading!", dialogueZh: '來複習進階閱讀！', highlightWords: [], sceneEmojis: ['🔄', '📖', '✨'], animation: 'wave' },
     { image: '⭐', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "Mia followed her dream and became a musician.", dialogueZh: 'Mia 追隨夢想成了音樂家。', highlightWords: ['became'], sceneEmojis: ['⭐', '🎻', '😊'], animation: 'bounce' },
@@ -12118,6 +12308,7 @@ const L12_M10: Mission = {
 const L12_M11: Mission = {
   id: 11, slug: 'l12-m11-creative-story', level: 12, title: '創意故事寫作', titleEn: 'Creative Story', theme: '勝利峰・當個作家', themeEmoji: '✍️',
   focus: '創意寫作：故事結構（開頭/發展/結尾＋角色＋情節）＋ 中翻英',
+  goal: { zh: '寫一個有開頭、發展、結尾的完整故事。', char: 'finn' },
   story: [
     { image: '✍️', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "A story needs a beginning, a middle, and an end.", dialogueZh: '故事需要開頭、中段和結尾。', highlightWords: ['beginning', 'end'], sceneEmojis: ['✍️', '📖', '✨'], animation: 'wave' },
     { image: '🐉', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Beginning: Once upon a time, a dragon lived in a cave.", dialogueZh: '開頭：從前，一條龍住在洞穴裡。', highlightWords: ['Once upon a time'], sceneEmojis: ['🐉', '🕳️', '😊'], animation: 'bounce' },
@@ -12170,6 +12361,7 @@ const L12_M11: Mission = {
 const L12_M12: Mission = {
   id: 12, slug: 'l12-m12-how-to', level: 12, title: '說明文寫作', titleEn: 'How-To Writing', theme: '勝利峰・教學高手', themeEmoji: '📋',
   focus: '說明文寫作：How to…（步驟清楚、用順序詞）＋ 中翻英',
+  goal: { zh: '用順序詞寫一篇 How to…，把步驟講清楚。', char: 'coco' },
   tip: { zh: '寫步驟用順序詞讓文章更清楚：First… Then… Next… Finally…。', char: 'polly' },
   story: [
     { image: '📋', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A how-to text explains steps clearly.", dialogueZh: '說明文清楚地解釋步驟。', highlightWords: ['steps'], sceneEmojis: ['📋', '🪜', '✨'], animation: 'wave' },
@@ -12223,6 +12415,7 @@ const L12_M12: Mission = {
 const L12_M13: Mission = {
   id: 13, slug: 'l12-m13-email', level: 12, title: '書信 email 進階', titleEn: 'Email Writing', theme: '勝利峰・寫封email', themeEmoji: '📧',
   focus: '書信/email 進階：主旨、問候、正文、結尾（正式與友善）＋ 中翻英',
+  goal: { zh: '寫一封既正式又友善的 email。', char: 'polly' },
   story: [
     { image: '📧', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "An email has a subject, a greeting, a body, and a closing.", dialogueZh: 'email 有主旨、問候、正文和結尾。', highlightWords: ['subject', 'closing'], sceneEmojis: ['📧', '📝', '✨'], animation: 'wave' },
     { image: '👋', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Dear Mr. Lee, I am writing to ask about the class.", dialogueZh: '親愛的李老師，我寫信是想詢問課程。', highlightWords: ['Dear', 'writing to ask'], sceneEmojis: ['👋', '📚', '😊'], animation: 'bounce' },
@@ -12275,6 +12468,7 @@ const L12_M13: Mission = {
 const L12_M14: Mission = {
   id: 14, slug: 'l12-m14-project-writing', level: 12, title: '專題寫作', titleEn: 'Project: My Hero', theme: '勝利峰・我的英雄', themeEmoji: '🦸',
   focus: '專題寫作：My Dream / My Hero（個人主題短文）＋ 中翻英',
+  goal: { zh: '寫一篇 My Dream 或 My Hero 的專題短文。', char: 'benny' },
   story: [
     { image: '🦸', character: '🐰', characterKey: 'ruby', characterAction: 'write', characterName: 'Ruby', dialogue: "Let's write about a person we admire.", dialogueZh: '我們來寫一位我們敬佩的人。', highlightWords: ['admire'], sceneEmojis: ['🦸', '✍️', '✨'], animation: 'wave' },
     { image: '👵', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "My hero is my grandma. She is kind and strong.", dialogueZh: '我的英雄是我奶奶。她善良又堅強。', highlightWords: ['hero'], sceneEmojis: ['👵', '💪', '😊'], animation: 'bounce' },
@@ -12327,6 +12521,7 @@ const L12_M14: Mission = {
 const L12_M15: Mission = {
   id: 15, slug: 'l12-m15-review-writing', level: 12, title: 'Review③ 寫作', titleEn: 'Review: Writing', theme: '勝利峰・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：創意故事 ＋ 說明文 ＋ email ＋ 專題寫作 ＋ 中翻英',
+  goal: { zh: '闖過各種寫作的關卡。', char: 'ruby' },
   story: [
     { image: '🔄', character: '🦊', characterKey: 'finn', characterAction: 'write', characterName: 'Finn', dialogue: "Let's review all our writing types!", dialogueZh: '來複習所有寫作類型！', highlightWords: [], sceneEmojis: ['🔄', '✍️', '✨'], animation: 'wave' },
     { image: '🐉', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "A story has a beginning, middle, and end.", dialogueZh: '故事有開頭、中段和結尾。', highlightWords: [], sceneEmojis: ['🐉', '📖', '😊'], animation: 'bounce' },
@@ -12379,6 +12574,7 @@ const L12_M15: Mission = {
 const L12_M16: Mission = {
   id: 16, slug: 'l12-m16-storytelling', level: 12, title: '口說：說故事', titleEn: 'Storytelling', theme: '勝利峰・說書人', themeEmoji: '🎙️',
   focus: '口說：說故事（用表情、聲音、順序詞把故事說活）＋ 中翻英',
+  goal: { zh: '用表情和聲音，把一個故事說得活靈活現。', char: 'finn' },
   story: [
     { image: '🎙️', character: '🐰', characterKey: 'ruby', characterAction: 'talk', characterName: 'Ruby', dialogue: "A good storyteller uses expression and voice.", dialogueZh: '好的說書人會用表情和聲音。', highlightWords: ['expression', 'voice'], sceneEmojis: ['🎙️', '🎭', '✨'], animation: 'wave' },
     { image: '🐺', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "Once, a little wolf was lost in the forest.", dialogueZh: '從前，一隻小狼在森林裡迷路了。', highlightWords: ['Once', 'lost'], sceneEmojis: ['🐺', '🌲', '😊'], animation: 'bounce' },
@@ -12431,6 +12627,7 @@ const L12_M16: Mission = {
 const L12_M17: Mission = {
   id: 17, slug: 'l12-m17-presentation', level: 12, title: '口說：簡報', titleEn: 'Presentation', theme: '勝利峰・上台報告', themeEmoji: '📊',
   focus: '口說：簡報與自我介紹（開場/內容/結尾＋自信）＋ 中翻英',
+  goal: { zh: '做一場自信的簡報，好好介紹你自己。', char: 'coco' },
   story: [
     { image: '📊', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Hello, everyone. Today I will talk about my hobby.", dialogueZh: '大家好。今天我要談我的嗜好。', highlightWords: ['Today I will talk about'], sceneEmojis: ['📊', '🎤', '✨'], animation: 'wave' },
     { image: '🎨', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "First, I will show you my paintings.", dialogueZh: '首先，我會給大家看我的畫。', highlightWords: ['First'], sceneEmojis: ['🎨', '🖼️', '😊'], animation: 'bounce' },
@@ -12483,6 +12680,7 @@ const L12_M17: Mission = {
 const L12_M18: Mission = {
   id: 18, slug: 'l12-m18-project', level: 12, title: '綜合專題', titleEn: 'Project', theme: '勝利峰・我的專題', themeEmoji: '🎯',
   focus: '綜合專題：結合讀、寫、說完成一個主題（研究＋報告）＋ 中翻英',
+  goal: { zh: '結合讀、寫、說，完成一個完整的主題任務。', char: 'polly' },
   story: [
     { image: '🎯', character: '🐻', characterKey: 'benny', characterAction: 'read', characterName: 'Benny', dialogue: "A project uses reading, writing, and speaking together.", dialogueZh: '專題結合閱讀、寫作和口說。', highlightWords: ['project'], sceneEmojis: ['🎯', '📚', '✨'], animation: 'wave' },
     { image: '🔍', character: '🐱', characterKey: 'coco', characterAction: 'read', characterName: 'Coco', dialogue: "First, I read about sea animals. Then I wrote notes.", dialogueZh: '首先，我讀了海洋動物。然後我寫筆記。', highlightWords: ['read', 'wrote'], sceneEmojis: ['🔍', '🐠', '😊'], animation: 'bounce' },
@@ -12535,6 +12733,7 @@ const L12_M18: Mission = {
 const L12_M19: Mission = {
   id: 19, slug: 'l12-m19-showcase', level: 12, title: '成果展示', titleEn: 'Showcase', theme: '勝利峰・作品展', themeEmoji: '🌟',
   focus: '成果展示：分享並回顧自己的學習成果（回顧＋自我肯定）＋ 中翻英',
+  goal: { zh: '分享並回顧你這一路的學習成果。', char: 'benny' },
   story: [
     { image: '🌟', character: '🐰', characterKey: 'ruby', characterAction: 'star', characterName: 'Ruby', dialogue: "Today we showcase everything we have learned!", dialogueZh: '今天我們展示所有學過的！', highlightWords: ['showcase', 'have learned'], sceneEmojis: ['🌟', '🎨', '✨'], animation: 'wave' },
     { image: '📖', character: '🐱', characterKey: 'coco', characterAction: 'talk', characterName: 'Coco', dialogue: "I can read stories, write essays, and give talks.", dialogueZh: '我會讀故事、寫短文、做報告。', highlightWords: ['read', 'write', 'give'], sceneEmojis: ['📖', '✍️', '😊'], animation: 'bounce' },
@@ -12587,6 +12786,7 @@ const L12_M19: Mission = {
 const L12_M20: Mission = {
   id: 20, slug: 'l12-m20-graduation', level: 12, title: '畢業典禮 🎓', titleEn: 'Graduation!', theme: '勝利峰・畢業典禮', themeEmoji: '🎓',
   focus: '畢業典禮：回顧整趟旅程、頒發結業證書、勇敢繼續前進 ＋ 中翻英',
+  goal: { zh: '登上勝利峰之巔！回顧整趟冒險，領取畢業證書，成為真正的英文小勇者！', char: 'ruby' },
   story: [
     { image: '🎓', character: '🦊', characterKey: 'finn', characterAction: 'happy', characterName: 'Finn', dialogue: "Congratulations! You have reached Victory Summit!", dialogueZh: '恭喜！你抵達了勝利峰！', highlightWords: ['Congratulations'], sceneEmojis: ['🎓', '⛰️', '✨'], animation: 'tada' },
     { image: '🌈', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "We started at Letter Island, and now we can do so much!", dialogueZh: '我們從字母島出發，現在會這麼多了！', highlightWords: ['started'], sceneEmojis: ['🌈', '🏝️', '😊'], animation: 'bounce' },
