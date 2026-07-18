@@ -1181,6 +1181,7 @@ const L2_M1: Mission = {
 const L2_M2: Mission = {
   id: 2, slug: 'l2-m2-short-a', level: 2, title: '短母音 a', titleEn: 'Short a', theme: '聲音島・短音 a 沙灘', themeEmoji: '🅰️',
   focus: '短母音 a /æ/：-at / -an / -ap 家族',
+  goal: { zh: 'Coco 的帽子（hat）被風吹跑了！要念對短母音 a 的音，才能把它從貓咪堆裡叫回來。一起練 a 的音，幫 Coco 找回帽子！', char: 'coco' },
   tip: { zh: '短母音 a 唸 /æ/（嘴巴張大，像 cat 的 a），別唸成注音的ㄟ喔！', char: 'polly' },
   story: [
     { image: '🅰️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter a says /æ/! Like in cat!", dialogueZh: '字母 a 發 /æ/ 的音！像 cat 一樣！', highlightWords: ['a', 'cat'], sceneEmojis: ['🅰️', '🐱', '✨'], animation: 'wave' },
@@ -1234,6 +1235,7 @@ const L2_M2: Mission = {
 const L2_M3: Mission = {
   id: 3, slug: 'l2-m3-short-e', level: 2, title: '短母音 e', titleEn: 'Short e', theme: '聲音島・短音 e 森林', themeEmoji: '🇪',
   focus: '短母音 e /ɛ/：-ed / -en / -et 家族',
+  goal: { zh: 'Benny 想寫信，卻找不到紅筆（red pen）！念對短母音 e 的音，紅筆才會出現。來學 e 的音，幫 Benny 完成他的信！', char: 'benny' },
   story: [
     { image: '🛏️', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter e says /ɛ/! Like in bed!", dialogueZh: '字母 e 發 /ɛ/ 的音！像 bed 一樣！', highlightWords: ['e', 'bed'], sceneEmojis: ['🛏️', '🔤', '✨'], animation: 'wave' },
     { image: '🖊️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "bed, pen, red — all /ɛ/!", dialogueZh: 'bed、pen、red —— 都是 /ɛ/！', highlightWords: ['bed', 'pen', 'red'], sceneEmojis: ['🛏️', '🖊️', '🔴'], animation: 'bounce' },
@@ -1286,6 +1288,7 @@ const L2_M3: Mission = {
 const L2_M4: Mission = {
   id: 4, slug: 'l2-m4-short-i', level: 2, title: '短母音 i', titleEn: 'Short i', theme: '聲音島・短音 i 山洞', themeEmoji: '🇮',
   focus: '短母音 i /ɪ/：-ig / -it / -in 家族',
+  goal: { zh: '小豬（pig）躲進了數字迷宮！只有會念短母音 i 的音，才能找到牠。一起練 i 的音，把小豬帶出來！', char: 'polly' },
   story: [
     { image: '🐷', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter i says /ɪ/! Like in pig!", dialogueZh: '字母 i 發 /ɪ/ 的音！像 pig 一樣！', highlightWords: ['i', 'pig'], sceneEmojis: ['🐷', '🔤', '✨'], animation: 'wave' },
     { image: '🔢', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "pig, big, dig — all /ɪ/!", dialogueZh: 'pig、big、dig —— 都是 /ɪ/！', highlightWords: ['pig', 'big', 'dig'], sceneEmojis: ['🐷', '🔵', '⛏️'], animation: 'bounce' },
@@ -1338,6 +1341,7 @@ const L2_M4: Mission = {
 const L2_M5: Mission = {
   id: 5, slug: 'l2-m5-review-aei', level: 2, title: '拼讀複習① a e i', titleEn: 'Review a e i', theme: '聲音島・拼讀擂台', themeEmoji: '🎯',
   focus: '複習短母音 a /æ/、e /ɛ/、i /ɪ/ 的分辨與拼讀',
+  goal: { zh: '三扇聲音門擋住去路，要 a、e、i 三把媽媽鑰匙！把前面學的三個短母音都念對，三扇門就會一起打開。', char: 'finn' },
   story: [
     { image: '🎯', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Let's review a, e, i! Listen carefully!", dialogueZh: '我們複習 a、e、i！仔細聽！', highlightWords: ['a', 'e', 'i'], sceneEmojis: ['🎯', '🔤', '👂'], animation: 'wave' },
     { image: '🐱', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "cat /æ/, bed /ɛ/, pig /ɪ/ — different sounds!", dialogueZh: 'cat /æ/、bed /ɛ/、pig /ɪ/ —— 不同的音！', highlightWords: ['cat', 'bed', 'pig'], sceneEmojis: ['🐱', '🛏️', '🐷'], animation: 'bounce' },
@@ -1389,6 +1393,7 @@ const L2_M5: Mission = {
 const L2_M6: Mission = {
   id: 6, slug: 'l2-m6-short-o', level: 2, title: '短母音 o', titleEn: 'Short o', theme: '聲音島・短音 o 岩洞', themeEmoji: '🅾️',
   focus: '短母音 o /ɑ/：-ox / -ot / -op 家族',
+  goal: { zh: '一個神祕的箱子（box）鎖住了，鎖上有個大大的 o！念對短母音 o 的音，箱子就會打開。看看裡面藏了什麼寶物？', char: 'ruby' },
   story: [
     { image: '📦', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter o says /ɑ/! Like in box!", dialogueZh: '字母 o 發 /ɑ/ 的音！像 box 一樣！', highlightWords: ['o', 'box'], sceneEmojis: ['📦', '🔤', '✨'], animation: 'wave' },
     { image: '🦊', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "box, fox, hot — all /ɑ/!", dialogueZh: 'box、fox、hot —— 都是 /ɑ/！', highlightWords: ['box', 'fox', 'hot'], sceneEmojis: ['📦', '🦊', '🔥'], animation: 'bounce' },
@@ -1441,6 +1446,7 @@ const L2_M6: Mission = {
 const L2_M7: Mission = {
   id: 7, slug: 'l2-m7-short-u', level: 2, title: '短母音 u', titleEn: 'Short u', theme: '聲音島・短音 u 泥地', themeEmoji: '🆄',
   focus: '短母音 u /ʌ/：-un / -ug / -ut 家族',
+  goal: { zh: '太陽（sun）不見了，聲音島變好暗！只有念對短母音 u 的音，才能把太陽叫回天空，讓島上重新亮起來！', char: 'finn' },
   story: [
     { image: '🥤', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "The letter u says /ʌ/! Like in cup!", dialogueZh: '字母 u 發 /ʌ/ 的音！像 cup 一樣！', highlightWords: ['u', 'cup'], sceneEmojis: ['🥤', '🔤', '✨'], animation: 'wave' },
     { image: '☀️', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "sun, run, fun — all /ʌ/!", dialogueZh: 'sun、run、fun —— 都是 /ʌ/！', highlightWords: ['sun', 'run'], sceneEmojis: ['☀️', '🏃', '🎉'], animation: 'bounce' },
@@ -1493,6 +1499,7 @@ const L2_M7: Mission = {
 const L2_M8: Mission = {
   id: 8, slug: 'l2-m8-sh-ch', level: 2, title: '子音組合 sh · ch', titleEn: 'sh & ch', theme: '聲音島・海螺灣', themeEmoji: '🐚',
   focus: '兩個子音一個音：sh /ʃ/、ch /tʃ/',
+  goal: { zh: '海邊有艘小船（ship）要出發，引擎卻發不動——它需要 sh 和 ch 的聲音當燃料！學會這兩個合體音，幫小船開動吧！', char: 'polly' },
   tip: { zh: 'sh、ch 是兩個字母「合力發一個音」，不要分開唸成 s-h。', char: 'polly' },
   story: [
     { image: '🚢', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "s and h together make /ʃ/! Sh! Be quiet!", dialogueZh: 's 和 h 一起發 /ʃ/！噓！安靜！', highlightWords: ['sh'], sceneEmojis: ['🚢', '🤫', '✨'], animation: 'wave' },
@@ -1546,6 +1553,7 @@ const L2_M8: Mission = {
 const L2_M9: Mission = {
   id: 9, slug: 'l2-m9-th-ck-ng', level: 2, title: '子音組合 th · ck · ng', titleEn: 'th ck ng', theme: '聲音島・回音谷', themeEmoji: '👅',
   focus: 'th /ð·θ/、ck /k/、ng /ŋ/',
+  goal: { zh: '一隻在唱歌（sing）的鳥卡在會發光的環（ring）裡！念對 th、ck、ng 的聲音，才能解開魔法環救牠出來。', char: 'coco' },
   tip: { zh: 'th 要把舌頭輕輕放在牙齒中間吐氣（this / think），別唸成 s 或 f。', char: 'finn' },
   story: [
     { image: '👅', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "t and h make /ð/! Put your tongue out: this!", dialogueZh: 't 和 h 發 /ð/！把舌頭伸出來：this！', highlightWords: ['th', 'this'], sceneEmojis: ['👅', '🔤', '✨'], animation: 'wave' },
@@ -1599,6 +1607,7 @@ const L2_M9: Mission = {
 const L2_M10: Mission = {
   id: 10, slug: 'l2-m10-review-short', level: 2, title: '拼讀複習② 短母音＋子音組合', titleEn: 'Review Short Vowels', theme: '聲音島・回音音樂會', themeEmoji: '🎪',
   focus: '複習 5 個短母音 + sh/ch/th/ck/ng',
+  goal: { zh: '聲音島的大門要「五個短母音 + 合體音」全部到齊才會開！把前面學過的音組起來，一起通過這一關！', char: 'benny' },
   story: [
     { image: '🎪', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Big review! Short vowels and digraphs!", dialogueZh: '大複習！短母音和子音組合！', highlightWords: [], sceneEmojis: ['🎪', '🔤', '🎉'], animation: 'wave' },
     { image: '🎵', character: '🦜', characterKey: 'polly', characterAction: 'sing', characterName: 'Polly', dialogue: "a-e-i-o-u, sh-ch-th! Sing along!", dialogueZh: 'a-e-i-o-u，sh-ch-th！一起唱！', highlightWords: [], sceneEmojis: ['🎵', '🎶', '⭐'], animation: 'tada' },
@@ -1650,6 +1659,7 @@ const L2_M10: Mission = {
 const L2_M11: Mission = {
   id: 11, slug: 'l2-m11-long-a', level: 2, title: '長母音 a', titleEn: 'Long a', theme: '聲音島・魔法 e 城堡', themeEmoji: '✨',
   focus: '長母音 a /e/：a_e（magic e）、ai、ay',
+  goal: { zh: 'Ruby 想烤蛋糕（cake），但魔法 e 睡著了！長母音 a 會念「它自己的名字」，念對就能叫醒魔法 e，蛋糕才做得成。', char: 'ruby' },
   tip: { zh: '神奇的 e！字尾 e 不發音，卻會讓前面母音唸「自己的名字」：cap→cape、kit→kite。', char: 'ruby' },
   story: [
     { image: '🎂', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Magic e makes a say its name! cap → cape!", dialogueZh: '魔法 e 讓 a 唸自己的名字！cap → cape！', highlightWords: ['a_e'], sceneEmojis: ['✨', '🔤', '🎂'], animation: 'wave' },
@@ -1703,6 +1713,7 @@ const L2_M11: Mission = {
 const L2_M12: Mission = {
   id: 12, slug: 'l2-m12-long-e', level: 2, title: '長母音 e', titleEn: 'Long e', theme: '聲音島・綠樹林', themeEmoji: '🌳',
   focus: '長母音 e /i/：ee、ea、e_e',
+  goal: { zh: '一棵會結寶物的樹（tree）需要澆水，水在大海（sea）另一邊！念對長母音 e，才能搭橋過海。一起練 e 的長音！', char: 'finn' },
   story: [
     { image: '🌳', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Two e's say /i/! see, tree!", dialogueZh: '兩個 e 發 /i/！see、tree！', highlightWords: ['ee'], sceneEmojis: ['🌳', '🔤', '✨'], animation: 'wave' },
     { image: '🐝', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "bee, see, green — ee is /i/!", dialogueZh: 'bee、see、green —— ee 是 /i/！', highlightWords: ['bee', 'see', 'green'], sceneEmojis: ['🐝', '👀', '🟢'], animation: 'bounce' },
@@ -1755,6 +1766,7 @@ const L2_M12: Mission = {
 const L2_M13: Mission = {
   id: 13, slug: 'l2-m13-long-i', level: 2, title: '長母音 i', titleEn: 'Long i', theme: '聲音島・星空高塔', themeEmoji: '🌙',
   focus: '長母音 i /aɪ/：i_e、igh、y',
+  goal: { zh: 'Finn 想騎腳踏車（bike）飛上天空（sky）找星星！長母音 i 是啟動的鑰匙，念對它，我們就出發夜遊！', char: 'finn' },
   story: [
     { image: '🚲', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Magic e again! bike, kite — long i /aɪ/!", dialogueZh: '又是魔法 e！bike、kite —— 長母音 i /aɪ/！', highlightWords: ['i_e'], sceneEmojis: ['🚲', '🪁', '✨'], animation: 'wave' },
     { image: '🌙', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "night, light, high — igh is /aɪ/!", dialogueZh: 'night、light、high —— igh 是 /aɪ/！', highlightWords: ['night', 'light', 'high'], sceneEmojis: ['🌙', '💡', '⬆️'], animation: 'bounce' },
@@ -1807,6 +1819,7 @@ const L2_M13: Mission = {
 const L2_M14: Mission = {
   id: 14, slug: 'l2-m14-long-o', level: 2, title: '長母音 o', titleEn: 'Long o', theme: '聲音島・雪船港', themeEmoji: '⛵',
   focus: '長母音 o /o/：o_e、oa、ow',
+  goal: { zh: '一艘小船（boat）要載大家去雪地（snow）探險，但船繩打了結！念對長母音 o，繩結就會鬆開，一起出航吧！', char: 'polly' },
   story: [
     { image: '👃', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Magic e! nose, home — long o /o/!", dialogueZh: '魔法 e！nose、home —— 長母音 o /o/！', highlightWords: ['o_e'], sceneEmojis: ['👃', '🏠', '✨'], animation: 'wave' },
     { image: '⛵', character: '🐱', characterKey: 'coco', characterAction: 'clap', characterName: 'Coco', dialogue: "boat, coat, road — oa is /o/!", dialogueZh: 'boat、coat、road —— oa 是 /o/！', highlightWords: ['boat', 'coat', 'road'], sceneEmojis: ['⛵', '🧥', '🛣️'], animation: 'bounce' },
@@ -1859,6 +1872,7 @@ const L2_M14: Mission = {
 const L2_M15: Mission = {
   id: 15, slug: 'l2-m15-review-long', level: 2, title: '拼讀複習③ 長母音', titleEn: 'Review Long Vowels', theme: '聲音島・長音音樂廳', themeEmoji: '🎼',
   focus: '複習長母音 a/e/i/o（magic e + 母音組合）',
+  goal: { zh: '四把長母音鑰匙 a、e、i、o 要一起轉，才能打開通往下一站的門！把長母音都念對，完成這場拼讀考驗。', char: 'benny' },
   story: [
     { image: '🎼', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Review time! Long vowels say their names!", dialogueZh: '複習時間！長母音唸自己的名字！', highlightWords: [], sceneEmojis: ['🎼', '🔤', '🎉'], animation: 'wave' },
     { image: '🎵', character: '🦜', characterKey: 'polly', characterAction: 'sing', characterName: 'Polly', dialogue: "cake /e/, tree /i/, bike /aɪ/, boat /o/!", dialogueZh: 'cake /e/、tree /i/、bike /aɪ/、boat /o/！', highlightWords: [], sceneEmojis: ['🎵', '🎶', '⭐'], animation: 'tada' },
@@ -1910,6 +1924,7 @@ const L2_M15: Mission = {
 const L2_M16: Mission = {
   id: 16, slug: 'l2-m16-long-u-oo', level: 2, title: '長母音 u · oo', titleEn: 'Long u & oo', theme: '聲音島・月亮動物園', themeEmoji: '🌝',
   focus: '長母音 u /ju/·/u/：u_e、oo',
+  goal: { zh: '月亮（moon）掉進了藍色（blue）的海！念對長母音 u 和 oo 的音，才能把月亮撈回天上。一起練這兩個音！', char: 'coco' },
   tip: { zh: 'ue 有兩種音：blue 唸 /u/、cue 唸 /ju/（多一個 y 的音）。多聽幾次就會分了！', char: 'ruby' },
   story: [
     { image: '🧊', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "Magic e! cute, cube — long u!", dialogueZh: '魔法 e！cute、cube —— 長母音 u！', highlightWords: ['u_e'], sceneEmojis: ['🧊', '🔤', '✨'], animation: 'wave' },
@@ -1963,6 +1978,7 @@ const L2_M16: Mission = {
 const L2_M17: Mission = {
   id: 17, slug: 'l2-m17-soft-cg', level: 2, title: '軟音 c · g', titleEn: 'Soft c & g', theme: '聲音島・魔法冰宮', themeEmoji: '🧊',
   focus: '例外：c/g 在 e·i·y 前變軟音（c→/s/、g→/dʒ/）',
+  goal: { zh: '城市（city）裡有隻長頸鹿（giraffe）迷路了！c 和 g 遇到 e·i·y 會變「軟軟的音」，念對才能幫牠找到路。', char: 'ruby' },
   tip: { zh: '小心！c 和 g 遇到 e·i·y，就會變「軟音」：c 唸 /s/（city, ice）、g 唸 /dʒ/（gem, giraffe）。', char: 'polly' },
   story: [
     { image: '🏙️', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Careful! c before e, i, y says /s/! city!", dialogueZh: '小心！c 在 e、i、y 前發 /s/！city！', highlightWords: ['soft c'], sceneEmojis: ['🏙️', '🔤', '⚠️'], animation: 'wave' },
@@ -2016,6 +2032,7 @@ const L2_M17: Mission = {
 const L2_M18: Mission = {
   id: 18, slug: 'l2-m18-r-controlled', level: 2, title: 'r 控制母音', titleEn: 'r-Controlled', theme: '聲音島・海盜星港', themeEmoji: '⭐',
   focus: 'r 控制母音：ar /ɑr/、or /ɔr/、er·ir·ur /ɝ/',
+  goal: { zh: '一台車（car）拋錨在路邊，一隻鳥（bird）想幫忙！母音後面加 r 聲音會被拉走——念對這些音，才能修好車繼續冒險。', char: 'finn' },
   tip: { zh: '母音後面加 r，聲音會被 r 拉走：car、bird、corn（這就是 r 控制母音）。', char: 'finn' },
   story: [
     { image: '🚗', character: '🦊', characterKey: 'finn', characterAction: 'wave', characterName: 'Finn', dialogue: "r changes the vowel! ar says /ɑr/! car!", dialogueZh: 'r 會改變母音！ar 發 /ɑr/！car！', highlightWords: ['ar'], sceneEmojis: ['🚗', '⭐', '✨'], animation: 'wave' },
@@ -2069,6 +2086,7 @@ const L2_M18: Mission = {
 const L2_M19: Mission = {
   id: 19, slug: 'l2-m19-sight-words', level: 2, title: '常見字 Sight Words', titleEn: 'Sight Words', theme: '聲音島・記憶寶庫', themeEmoji: '⭐',
   focus: '高頻字（不能拼讀、要直接記）：the, is, you, are, have…',
+  goal: { zh: '聲音島有一批「魔法字」（the、is、you…），它們不守規則、不能用拼的！只有一眼認出來，才能通過最後的字之門。', char: 'benny' },
   tip: { zh: '⚠️ 這些字不守規則，不能用拼的——看到就直接記起來喔！（the, is, you, are, have）', char: 'benny' },
   story: [
     { image: '⭐', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "Some words can't be sounded out. Just remember them!", dialogueZh: '有些字沒辦法拼讀，直接記起來就好！', highlightWords: ['remember'], sceneEmojis: ['⭐', '🧠', '✨'], animation: 'wave' },
@@ -2122,6 +2140,7 @@ const L2_M19: Mission = {
 const L2_M20: Mission = {
   id: 20, slug: 'l2-m20-boss', level: 2, title: '聲音島大魔王', titleEn: 'Sound Boss', theme: '聲音島・拼讀魔王', themeEmoji: '🏆',
   focus: '拼讀總驗收：短母音＋長母音＋子音組合＋sight words',
+  goal: { zh: '聲音大魔王擋住了離開聲音島的路！牠會考你一路學的所有聲音——短母音、長母音、合體音、魔法字。用你的拼讀本領打敗牠，帶 Finn 回家！', char: 'finn' },
   story: [
     { image: '🐉', character: '🦊', characterKey: 'finn', characterAction: 'talk', characterName: 'Finn', dialogue: "The Sound Boss is here! Use all your phonics!", dialogueZh: '拼讀大魔王來了！用上你所有的拼讀！', highlightWords: ['phonics'], sceneEmojis: ['🐉', '⚔️', '🔊'], animation: 'shake' },
     { image: '💪', character: '🐻', characterKey: 'benny', characterAction: 'talk', characterName: 'Benny', dialogue: "Blend, read, and win! You can do it!", dialogueZh: '拼讀、閱讀、獲勝！你做得到！', highlightWords: [], sceneEmojis: ['💪', '📖', '✨'], animation: 'bounce' },
