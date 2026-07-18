@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak } from '@/lib/speech';
-import { playClip, sleep, wordSlug } from '@/lib/audio';
+import { playClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 
 interface Props {
@@ -203,8 +203,10 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               key={i}
               aria-label={`第 ${i + 1} 頁`}
               onClick={() => {
+                if (i === storyIndex) return;
                 setPageDir(i >= storyIndex ? 'next' : 'prev');
                 setShowTranslation(false);
+                playPageFlip();
                 setStoryIndex(i);
                 speak(story[i].dialogue, 0.75);
               }}
@@ -222,6 +224,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               if (storyIndex > 0) {
                 setPageDir('prev');
                 setShowTranslation(false);
+                playPageFlip();
                 const prev = storyIndex - 1;
                 setStoryIndex(prev);
                 speak(story[prev].dialogue, 0.75);
@@ -249,6 +252,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
             setShowTranslation(false);
             if (storyIndex < story.length - 1) {
               setPageDir('next');
+              playPageFlip();
               const next = storyIndex + 1;
               setStoryIndex(next);
               speak(story[next].dialogue, 0.75);

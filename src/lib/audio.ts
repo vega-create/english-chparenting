@@ -20,3 +20,41 @@ export function sleep(ms: number): Promise<void> {
 export function wordSlug(en: string): string {
   return en.toLowerCase().replace(/[^a-z]/g, '');
 }
+
+// 翻書「沙沙」音效：用 Web Audio 合成（不需外部音檔）
+let _ac: AudioContext | null = null;
+export function playPageFlip() {
+  if (typeof window === 'undefined') return;
+  try {
+    const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    if (!AC) return;
+    if (!_ac) _ac = new AC();
+    const ctx = _ac;
+    if (ctx.state === 'suspended') ctx.resume();
+    const dur = 0.22;
+    const buffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * dur), ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < data.length; i++) {
+      data[i] = (Math.random() * 2 - 1) * (1 - i / data.length); // 衰減白噪音
+    }
+    const src = ctx.createBufferSource();
+    src.buffer = buffer;
+    const bp = ctx.createBiquadFilter();
+    bp.type = 'bandpass';
+    bp.Q.value = 0.8;
+    const gain = ctx.createGain();
+    const now = ctx.currentTime;
+    bp.frequency.setValueAtTime(1800, now);
+    bp.frequency.exponentialRampToValueAtTime(4200, now + dur); // 頻率上掃＝翻頁的「沙——」
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.2, now + 0.03);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+    src.connect(bp);
+    bp.connect(gain);
+    gain.connect(ctx.destination);
+    src.start(now);
+    src.stop(now + dur);
+  } catch {
+    /* 音效失敗不影響翻頁 */
+  }
+}
