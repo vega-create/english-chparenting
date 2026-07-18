@@ -168,28 +168,28 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
             <button
               key="cover"
               onClick={openBook}
-              className="animate-page-next block w-full text-center relative rounded-r-3xl rounded-l-md overflow-hidden shadow-2xl min-h-[500px] bg-gradient-to-br from-amber-400 via-orange-400 to-rose-400 active:scale-[0.99] transition"
+              className="animate-page-next block w-full text-center relative rounded-r-3xl rounded-l-md overflow-hidden shadow-2xl min-h-[440px] sm:min-h-[500px] bg-gradient-to-br from-amber-400 via-orange-400 to-rose-400 active:scale-[0.99] transition"
             >
               {/* 書背 */}
               <div className="absolute left-0 top-0 bottom-0 w-4 bg-black/15" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10">
-                <p className="text-white/80 text-sm font-bold mb-1 tracking-wide">冒險英語 · 第 {level} 級</p>
-                <div className="text-8xl my-5 drop-shadow-lg">{story[0]?.image || '📖'}</div>
-                <h3 className="text-white text-3xl font-black drop-shadow mb-1">{titleEn || 'Story'}</h3>
-                <p className="text-white/90 text-lg font-bold mb-7">{title || '故事'}</p>
-                <div className="flex gap-1 mb-8">
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-5 sm:px-8 py-8 sm:py-10">
+                <p className="text-white/80 text-xs sm:text-sm font-bold mb-1 tracking-wide">冒險英語 · 第 {level} 級</p>
+                <div className="text-7xl sm:text-8xl my-4 sm:my-5 drop-shadow-lg">{story[0]?.image || '📖'}</div>
+                <h3 className="text-white text-2xl sm:text-3xl font-black drop-shadow mb-1">{titleEn || 'Story'}</h3>
+                <p className="text-white/90 text-base sm:text-lg font-bold mb-6 sm:mb-7">{title || '故事'}</p>
+                <div className="flex gap-1 mb-7 sm:mb-8">
                   {['finn', 'coco', 'polly', 'benny', 'ruby'].map(c => (
-                    <img key={c} src={`/characters/${c}/${c}-normal.png`} alt="" className="w-9 h-9 object-contain" />
+                    <img key={c} src={`/characters/${c}/${c}-normal.png`} alt="" className="w-8 h-8 sm:w-9 sm:h-9 object-contain" />
                   ))}
                 </div>
-                <span className="inline-block bg-white/90 text-orange-500 px-6 py-2.5 rounded-full font-bold shadow">翻開書本 📖 →</span>
+                <span className="inline-block bg-white/90 text-orange-500 px-5 sm:px-6 py-2.5 rounded-full font-bold shadow">翻開書本 📖 →</span>
               </div>
             </button>
           ) : (
             /* ── 內頁 ── */
             <div
               key={storyIndex}
-              className={`relative bg-[#fffdf7] rounded-r-3xl rounded-l-md border border-amber-200 shadow-2xl overflow-hidden min-h-[500px] flex flex-col ${
+              className={`relative bg-[#fffdf7] rounded-r-3xl rounded-l-md border border-amber-200 shadow-2xl overflow-hidden min-h-[440px] sm:min-h-[500px] flex flex-col ${
                 pageDir === 'next' ? 'animate-page-next' : 'animate-page-prev'
               }`}
             >
@@ -197,9 +197,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-amber-200/80 to-transparent z-10" />
 
               {/* 上半頁：插畫 */}
-              <div className="bg-gradient-to-b from-blue-100 to-purple-50 px-6 pt-8 pb-6 min-h-[230px] flex flex-col items-center justify-center">
-                <div className="text-8xl mb-3">{scene.image}</div>
-                <div className="flex gap-4 text-4xl">
+              <div className="bg-gradient-to-b from-blue-100 to-purple-50 px-4 sm:px-6 pt-6 sm:pt-8 pb-5 sm:pb-6 min-h-[190px] sm:min-h-[230px] flex flex-col items-center justify-center">
+                <div className="text-7xl sm:text-8xl mb-2 sm:mb-3">{scene.image}</div>
+                <div className="flex gap-3 sm:gap-4 text-3xl sm:text-4xl">
                   {scene.sceneEmojis.map((emoji, i) => (
                     <span
                       key={`${storyIndex}-${i}`}
@@ -213,15 +213,15 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               </div>
 
               {/* 下半頁：課文 */}
-              <div className="flex-1 px-6 py-5 flex items-start gap-3">
+              <div className="flex-1 px-4 sm:px-6 py-4 sm:py-5 flex items-start gap-2 sm:gap-3">
                 <img
                   src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
                   alt={scene.characterName}
-                  className="w-24 h-24 object-contain flex-shrink-0"
+                  className="w-16 h-16 sm:w-24 sm:h-24 object-contain flex-shrink-0"
                 />
-                <div className="flex-1 min-w-0 pl-2">
+                <div className="flex-1 min-w-0 pl-1 sm:pl-2">
                   <p className="text-xs text-gray-400 font-bold mb-1">{scene.characterName}</p>
-                  <p className="font-bold leading-relaxed text-gray-800 text-lg">
+                  <p className="font-bold leading-relaxed text-gray-800 text-base sm:text-lg">
                     {scene.dialogue.split(' ').map((w, wi) => {
                       const isHighlight = scene.highlightWords?.some(hw =>
                         w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
@@ -276,7 +276,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               ))}
             </div>
 
-            <div className="flex justify-center items-center gap-3">
+            <div className="flex justify-center items-center gap-2 sm:gap-3">
               <button
                 onClick={() => {
                   setShowTranslation(false);
@@ -290,15 +290,15 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     setBookOpen(false); // 第一頁再往前 → 回封面
                   }
                 }}
-                className="bg-amber-100 text-amber-600 px-5 py-3 rounded-2xl font-bold hover:bg-amber-200 transition active:scale-95">
+                className="bg-amber-100 text-amber-600 px-4 sm:px-5 py-3 rounded-2xl font-bold hover:bg-amber-200 transition active:scale-95">
                 {storyIndex === 0 ? '📕' : '◀'}
               </button>
               <button onClick={() => speak(scene.dialogue, 0.5)}
-                className="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
+                className="bg-blue-100 text-blue-600 px-4 sm:px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
                 🐢
               </button>
               <button onClick={() => setShowTranslation(!showTranslation)}
-                className={`px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${
+                className={`px-4 sm:px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${
                   showTranslation
                     ? 'bg-purple-500 text-white hover:bg-purple-600'
                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
@@ -317,7 +317,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   setPhase('words');
                 }
               }}
-                className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+                className="bg-green-500 text-white px-7 sm:px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
                 {storyIndex < story.length - 1 ? '▶' : '📝'}
               </button>
             </div>
