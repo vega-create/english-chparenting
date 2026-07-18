@@ -17,7 +17,7 @@ interface Props {
   onComplete: () => void;
 }
 
-type Phase = 'story' | 'words' | 'phonics' | 'sentences';
+type Phase = 'video' | 'story' | 'words' | 'phonics' | 'sentences';
 
 // YouTube 網址 → embed 網址
 function youtubeEmbed(url: string): string | null {
@@ -26,7 +26,8 @@ function youtubeEmbed(url: string): string | null {
 }
 
 export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, onComplete }: Props) {
-  const [phase, setPhase] = useState<Phase>('story');
+  const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
+  const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
   const [openCards, setOpenCards] = useState<number[]>([]);
@@ -70,7 +71,63 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     if (!okBlend) { await sleep(200); speak(w.en, 0.3); }
   }
 
-  // ===== Phase 1: 對話故事（全篇 + 點擊播放 + 動畫） =====
+  // ===== Phase 0: 對話影片（先一次看完，再進電子書） =====
+  if (phase === 'video') {
+    return (
+      <div className="animate-slide-up">
+        <div className="text-center mb-4">
+          <p className="text-sm font-medium text-purple-500 bg-purple-50 inline-block px-4 py-1 rounded-full">
+            🎬 先看影片
+          </p>
+        </div>
+
+        <div className="bg-white rounded-3xl border-2 border-purple-200 shadow-sm overflow-hidden max-w-xl mx-auto mb-6">
+          {videoUrl ? (
+            youtubeEmbed(videoUrl) ? (
+              <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}>
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={youtubeEmbed(videoUrl)!}
+                  title="對話影片"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <video className="w-full" controls autoPlay src={videoUrl} onEnded={() => setPhase('story')} />
+            )
+          ) : (
+            <div className="p-5">
+              <div className="bg-purple-500 text-white px-4 py-2 text-sm font-bold rounded-xl mb-3 inline-block">
+                🎬 對話影片（製作中）
+              </div>
+              <p className="text-xs text-gray-400 mb-2">影片還沒上，先看對話腳本（分鏡）：</p>
+              <div className="space-y-1.5">
+                {videoScript!.map((v, i) => (
+                  <div key={i} className="flex gap-2 text-sm">
+                    <span className="font-bold text-purple-600 shrink-0">{v.speaker}:</span>
+                    <span className="text-gray-700">{v.line} <span className="text-gray-400">（{v.lineZh}）</span></span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* 看完影片 → 進電子書 */}
+        <div className="flex justify-center">
+          <button
+            onClick={() => setPhase('story')}
+            className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-purple-600 hover:to-indigo-600 transition-all active:scale-95 shadow-lg"
+          >
+            看完了，開始翻書 📖 →
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ===== Phase 1: 電子書課文（一頁一課文，翻頁學習） =====
   if (phase === 'story') {
     const animationClass: Record<string, string> = {
       wave: 'animate-wave',
@@ -83,45 +140,14 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
     return (
       <div className="animate-slide-up">
-        {/* 🎬 對話影片位：有連結就播，沒連結顯示腳本分鏡（等 Vega 的影片） */}
-        {(videoUrl || (videoScript && videoScript.length > 0)) && (
-          <div className="mb-6 bg-white rounded-3xl border-2 border-purple-200 shadow-sm overflow-hidden max-w-xl mx-auto">
-            <div className="bg-purple-500 text-white px-4 py-2 text-sm font-bold">
-              🎬 對話影片{videoUrl ? '' : ' · 製作中'}
-            </div>
-            {videoUrl ? (
-              youtubeEmbed(videoUrl) ? (
-                <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}>
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src={youtubeEmbed(videoUrl)!}
-                    title="對話影片"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <video className="w-full" controls src={videoUrl} />
-              )
-            ) : (
-              <div className="p-4">
-                <p className="text-xs text-gray-400 mb-2">影片還沒上，先看對話腳本（分鏡）：</p>
-                <div className="space-y-1.5">
-                  {videoScript!.map((v, i) => (
-                    <div key={i} className="flex gap-2 text-sm">
-                      <span className="font-bold text-purple-600 shrink-0">{v.speaker}:</span>
-                      <span className="text-gray-700">{v.line} <span className="text-gray-400">（{v.lineZh}）</span></span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
         <div className="text-center mb-3">
+          {hasVideo && (
+            <button onClick={() => setPhase('video')} className="text-xs text-gray-400 hover:text-purple-500 mb-2 block mx-auto">
+              ← 回看影片
+            </button>
+          )}
           <p className="text-sm font-medium text-purple-500 bg-purple-50 inline-block px-4 py-1 rounded-full">
-            📖 Story Time · 翻書讀故事
+            📖 翻書學習 · 一頁一頁讀
           </p>
         </div>
 
