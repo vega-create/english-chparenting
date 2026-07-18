@@ -107,6 +107,21 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
               <h2 className="text-xl font-bold text-gray-600 mb-1">{mission.titleEn}</h2>
               <p className="text-lg text-gray-500 mb-4">{mission.title}</p>
 
+              {/* 🎯 今天的任務（故事目標 hook）：把「今天學 X」變成「幫角色完成任務」 */}
+              {mission.goal && (
+                <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-4 mb-4 text-left flex items-start gap-3">
+                  <img
+                    src={`/characters/${mission.goal.char || 'finn'}/${mission.goal.char || 'finn'}-talk.png`}
+                    alt=""
+                    className="w-16 h-16 object-contain flex-shrink-0"
+                  />
+                  <div>
+                    <p className="text-xs font-bold text-orange-500 mb-1">🎯 今天的任務</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">{mission.goal.zh}</p>
+                  </div>
+                </div>
+              )}
+
               <div className="flex justify-center gap-4 mb-4 text-sm text-gray-400">
                 <span>📝 {mission.words.length} 單字</span>
                 <span>💬 {mission.sentences.length} 句型</span>
@@ -114,7 +129,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
               </div>
 
               <div className="bg-gray-50 rounded-2xl p-4 mb-4">
-                <p className="text-sm text-gray-500 mb-2">今天學的單字：</p>
+                <p className="text-sm text-gray-500 mb-2">任務道具（今天會用到的字）：</p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {mission.words.map(w => (
                     <span key={w.en} className="bg-white px-3 py-1 rounded-full text-sm border border-gray-200">
