@@ -7,11 +7,13 @@ import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, is
 const NAV = [
   { icon: "🗺", label: "冒險地圖", href: "/adventure-map" },
   { icon: "🌍", label: "六大世界", href: "/courses" },
-  { icon: "📖", label: "閱讀故事", href: "/blog" },
-  { icon: "📜", label: "每日任務", href: "/tasks" },
-  { icon: "🏆", label: "成就徽章", href: "/badges" },
+  { icon: "📜", label: "今日任務", href: "/tasks" },
   { icon: "🏠", label: "我的小屋", href: "/cabin" },
+  { icon: "🏆", label: "成就徽章", href: "/badges" },
   { icon: "👨‍👩‍👧", label: "家長中心", href: "/parents" },
+  { icon: "📖", label: "使用說明", href: "/guide" },
+  { icon: "✏️", label: "學習文章", href: "/blog" },
+  { icon: "📕", label: "推薦書單", href: "/books" },
 ];
 
 export default function LayeredBanner() {
@@ -34,8 +36,8 @@ export default function LayeredBanner() {
         {muted ? "🔇" : "🔊"}
       </button>
 
-      {/* ===== Top Nav 桌機（純 CSS） ===== */}
-      <header className="relative z-30 hidden md:block bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-yellow-200/50">
+      {/* ===== Top Nav 桌機（純 CSS）— 用 div 不用 header，避免被 layout 的 body header{display:none} 隱藏 ===== */}
+      <div className="relative z-30 hidden md:block bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-yellow-200/50">
         <div className="max-w-[1400px] mx-auto px-4 py-2 flex items-center gap-2">
           <Link href="/" className="flex items-center gap-1 no-underline flex-shrink-0" onClick={() => playClick()}>
             <div className="font-black text-lg lg:text-xl bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent leading-none whitespace-nowrap">
@@ -60,16 +62,16 @@ export default function LayeredBanner() {
             </button>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* ===== Top Nav 手機 ===== */}
-      <header className="relative z-30 md:hidden bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-between px-4 py-2 border-b-2 border-yellow-200/50">
+      <div className="relative z-30 md:hidden bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-between px-4 py-2 border-b-2 border-yellow-200/50">
         <button onClick={() => { playOpen(); setMobileMenu(true); }} className="w-9 h-9 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-xl">☰</button>
         <Link href="/" className="font-black text-lg bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent leading-none no-underline text-center">
           Adventure<br />English
         </Link>
         <button className="w-9 h-9 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-lg">🔔</button>
-      </header>
+      </div>
 
       {/* ===== Hero 分層（手機+iPad:直式 / 桌機(xl+):16:9 寬螢幕） ===== */}
       <section className="relative w-full overflow-hidden min-h-[640px] sm:min-h-[720px] md:min-h-[780px] lg:min-h-[820px] xl:min-h-[860px]">
