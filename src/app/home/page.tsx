@@ -39,12 +39,6 @@ export default function LayeredBanner() {
       {/* ===== Top Nav 桌機（純 CSS）— 用 div 不用 header，避免被 layout 的 body header{display:none} 隱藏 ===== */}
       <div className="relative z-30 hidden md:block bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-yellow-200/50">
         <div className="max-w-[1400px] mx-auto px-4 py-2 flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-1 no-underline flex-shrink-0" onClick={() => playClick()}>
-            <div className="font-black text-lg lg:text-xl bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent leading-none whitespace-nowrap">
-              Adventure<br />English
-            </div>
-            <span className="text-amber-500">🐾</span>
-          </Link>
           <nav className="flex-1 flex justify-center gap-1 mx-2">
             {NAV.map(n => (
               <a key={n.label} href={n.href} onClick={() => playClick()} className="px-2 py-1.5 rounded-lg hover:bg-yellow-100/60 hover:-translate-y-0.5 transition flex flex-col items-center no-underline group">
