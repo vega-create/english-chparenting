@@ -23,6 +23,16 @@ const PALS = [
   { key: "vega", name: "Vega", color: "border-purple-300" },
 ];
 
+// 六大世界（首頁探索冒險世界輪播）
+const WORLDS = [
+  { img: "world-rainbow-valley", zh: "彩虹谷", en: "Rainbow Valley", href: "/adventure-map/rainbow-valley" },
+  { img: "world-friendly-town", zh: "友善小鎮", en: "Friendly Town", href: "/adventure-map/world/2" },
+  { img: "world-ocean-bay", zh: "海洋灣", en: "Ocean Bay", href: "/adventure-map/world/3" },
+  { img: "world-story-castle", zh: "故事城堡", en: "Story Castle", href: "/adventure-map/world/4" },
+  { img: "world-explorer-land", zh: "探索大陸", en: "Discovery Land", href: "/adventure-map/world/5" },
+  { img: "world-champion-peak", zh: "冠軍峰", en: "Champion Peak", href: "/adventure-map/world/6" },
+];
+
 const NAV = [
   { icon: "🗺", label: "冒險地圖", href: "/adventure-map" },
   { icon: "🌍", label: "六大世界", href: "/courses" },
@@ -411,22 +421,17 @@ export default function LayeredBanner() {
           {/* 1) 探索冒險世界 —— 島嶼輪播 */}
           <div>
             <h2 className="text-center text-2xl md:text-3xl font-black text-purple-800 mb-5">⭐ 探索冒險世界 ⭐</h2>
-            <div className="flex gap-4 overflow-x-auto pb-3 px-1 snap-x" style={{ scrollbarWidth: "thin" }}>
-              {COURSES.map(c => {
-                const img = ISLAND_IMG[c.slug];
-                return (
-                  <Link key={c.slug} href={`/courses/${c.slug}`} onClick={() => playClick()}
-                    className="snap-start flex-shrink-0 w-40 bg-white rounded-3xl p-3 shadow-md border-2 border-amber-100 hover:-translate-y-1 hover:shadow-lg transition no-underline text-center">
-                    <div className="w-full aspect-square rounded-2xl overflow-hidden mb-2 flex items-center justify-center bg-gradient-to-br from-sky-100 to-emerald-100">
-                      {img
-                        ? <img src={`/images/islands/${img}.webp`} alt={c.island} className="w-full h-full object-cover" />
-                        : <span className="text-5xl">{c.worldEmoji}</span>}
-                    </div>
-                    <p className="font-black text-gray-800 text-sm">{c.island}</p>
-                    <p className="text-xs text-gray-400">{c.islandEn}</p>
-                  </Link>
-                );
-              })}
+            <div className="flex gap-4 overflow-x-auto pb-3 px-1 snap-x justify-start md:justify-center" style={{ scrollbarWidth: "thin" }}>
+              {WORLDS.map(w => (
+                <Link key={w.img} href={w.href} onClick={() => playClick()}
+                  className="snap-start flex-shrink-0 w-40 bg-white rounded-3xl p-3 shadow-md border-2 border-amber-100 hover:-translate-y-1 hover:shadow-lg transition no-underline text-center">
+                  <div className="w-full aspect-square rounded-2xl overflow-hidden mb-2 bg-gradient-to-br from-sky-100 to-emerald-100">
+                    <img src={`/images/worlds/${w.img}.webp`} alt={w.zh} className="w-full h-full object-cover" />
+                  </div>
+                  <p className="font-black text-gray-800 text-sm">{w.zh}</p>
+                  <p className="text-xs text-gray-400">{w.en}</p>
+                </Link>
+              ))}
             </div>
             <div className="flex justify-center mt-4">
               <Link href="/adventure-map" onClick={() => playStar()}
