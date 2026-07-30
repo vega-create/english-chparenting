@@ -77,7 +77,7 @@ export default function GuidePage() {
               { key: "ruby", name: "Ruby", role: "寫作天才", job: "負責拼寫和寫作。Spelling Bee 冠軍！" },
             ].map(c => (
               <div key={c.name} className="glass rounded-2xl p-4 text-center">
-                <img src={`/characters/${c.key}/${c.key}-normal.png`} alt={c.name} className="w-40 h-40 mx-auto mb-2 object-contain" />
+                <img src={`/characters/${c.key}/${c.key}-normal.png`} alt={c.name} className="w-40 h-40 mx-auto mb-2 object-contain" style={{ transform: c.key === "ruby" ? "scale(1.3)" : undefined }} />
                 <div className="font-bold">{c.name}</div>
                 <div className="text-xs text-gray-500 mb-1">{c.role}</div>
                 <p className="text-xs text-gray-500">{c.job}</p>
