@@ -167,8 +167,9 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
     };
   }, []);
 
-  // 依裝置取出對應 image src + aspect ratio + 12 關位置
-  const mapCfg = MAP_CONFIG[device];
+  // 統一用桌機版地圖（手機請橫向玩，不再分版）
+  const mapCfg = MAP_CONFIG.desktop;
+  void device;
   const LEVELS: LevelDef[] = LEVELS_BASE.map((l, i) => ({
     ...l,
     x: mapCfg.positions[i].x,
