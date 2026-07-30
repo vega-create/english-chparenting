@@ -73,25 +73,17 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
         ← 返回地圖
       </Link>
 
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16 text-center">
-        {/* 世界名 */}
-        <p className="text-white/90 font-bold text-sm mb-1" style={{ textShadow: "0 1px 3px rgba(0,0,0,.55)" }}>World {world.id} · {world.level}</p>
-        <h1 className="text-4xl sm:text-6xl cute-text mb-1">{world.name}</h1>
-        <p className="text-white font-bold text-lg mb-6" style={{ textShadow: "0 1px 3px rgba(0,0,0,.55)" }}>{world.nameEn}</p>
-
-        {/* 狀態卡：解鎖=關卡即將開放；未解鎖=鎖定 */}
+      {/* 地圖本身已印有名字＋關卡踏腳石，只在底部放一張不擋圖的狀態小卡 */}
+      <div className="min-h-screen flex flex-col items-center justify-end px-4 pb-8 text-center">
         {isWorldUnlocked(world.id) ? (
-          <div className="bg-white/90 backdrop-blur rounded-3xl px-7 py-6 shadow-2xl max-w-sm">
-            <p className="text-5xl mb-2">🗺️</p>
-            <p className="font-black text-gray-800 text-lg mb-1">關卡即將開放</p>
-            <p className="text-sm text-gray-500 mb-3">這個世界的關卡正在設定中，敬請期待！</p>
-            <p className="text-xs text-gray-400">進度 {done}/{total}</p>
+          <div className="bg-white/90 backdrop-blur rounded-2xl px-6 py-3.5 shadow-xl max-w-xs">
+            <p className="font-black text-gray-800 text-base mb-0.5">🗺️ 關卡即將開放</p>
+            <p className="text-xs text-gray-500">這個世界的關卡正在設定中，敬請期待！<span className="text-gray-400"> · {done}/{total}</span></p>
           </div>
         ) : (
-          <div className="bg-black/50 backdrop-blur rounded-3xl px-7 py-6 shadow-2xl max-w-sm border-2 border-white/30">
-            <p className="text-5xl mb-2">🔒</p>
-            <p className="font-black text-white text-lg mb-1">尚未解鎖</p>
-            <p className="text-sm text-white/85">先完成前一個世界，才能來這裡冒險！</p>
+          <div className="bg-black/55 backdrop-blur rounded-2xl px-6 py-3.5 shadow-xl max-w-xs border border-white/30">
+            <p className="font-black text-white text-base mb-0.5">🔒 尚未解鎖</p>
+            <p className="text-xs text-white/85">先完成前一個世界，才能來這裡冒險！</p>
           </div>
         )}
       </div>
