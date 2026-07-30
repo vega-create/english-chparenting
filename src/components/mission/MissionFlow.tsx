@@ -74,7 +74,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   return (
     <div
       className="min-h-screen bg-cover bg-top bg-fixed"
-      style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.35)), url(/images/lesson-bg.webp)' }}
+      style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)), url(/images/maps/bg-sky-castles.webp)' }}
     >
       {/* 頂部導覽 */}
       <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
@@ -116,54 +116,56 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         {step === 'intro' && (
           <>
             <div className="fixed inset-0 bg-black/25 pointer-events-none z-0" />
-            <div className="animate-slide-up relative z-10 max-w-4xl mx-auto flex flex-col md:flex-row md:items-end justify-center gap-2 md:gap-0">
+            <div className="animate-slide-up relative z-10 w-full max-w-[460px] mx-auto">
+              {/* 羊皮紙外框 + 疊字 */}
+              <div className="relative w-full" style={{ aspectRatio: "1000 / 925" }}>
+                <img src="/images/lesson-frame.webp" alt="" className="absolute inset-0 w-full h-full object-contain pointer-events-none" />
 
-              {/* 左：Mission 羊皮紙卡 */}
-              <div className="w-full max-w-lg mx-auto md:mx-0">
-                {/* Mission 緞帶 */}
-                <div className="flex justify-center relative z-10 -mb-4">
-                  <div className="bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black text-xl px-10 py-2 rounded-full shadow-lg border-2 border-white/40">Mission {mission.id}</div>
+                {/* 標題（木牌/緞帶） */}
+                <div className="absolute left-0 right-0 text-center" style={{ top: "6%" }}>
+                  <span className="inline-block bg-pink-500 text-white text-[10px] font-black px-4 py-0.5 rounded-full shadow">LEVEL {course.level}</span>
+                  <h1 className="text-2xl sm:text-3xl cute-text leading-tight">{course.island}</h1>
+                  <p className="text-[11px] text-amber-50 font-bold" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>{course.islandEn}</p>
                 </div>
 
-                {/* 羊皮紙 */}
-                <div className="bg-gradient-to-b from-[#fdf3dc] to-[#efdcac] rounded-[28px] border-4 border-[#d8bd88] shadow-2xl px-5 sm:px-7 pt-8 pb-5 text-center">
-                  <h1 className="text-4xl sm:text-5xl font-black text-[#7a4a1f] leading-tight">{mission.titleEn}</h1>
-                  <p className="text-lg font-bold text-amber-700 mb-3">{mission.title}</p>
+                {/* 學習目標 */}
+                <div className="absolute" style={{ left: "15%", right: "15%", top: "29%" }}>
+                  <p className="text-[11px] font-black text-pink-500 leading-none mb-0.5">🎯 學習目標</p>
+                  <p className="text-[12px] text-gray-700 leading-snug line-clamp-2">{mission.focus || `${mission.titleEn}：${mission.words.slice(0, 4).map(w => w.en).join(", ")}`}</p>
+                </div>
 
-                  {/* 三個數量 */}
-                  <div className="flex justify-center gap-2 mb-4 flex-wrap">
-                    <span className="bg-white/80 border border-amber-200 rounded-full px-3 py-1 text-sm font-bold text-gray-600">📝 {mission.words.length} 單字</span>
-                    <span className="bg-white/80 border border-amber-200 rounded-full px-3 py-1 text-sm font-bold text-gray-600">💬 {mission.sentences.length} 句型</span>
-                    <span className="bg-white/80 border border-amber-200 rounded-full px-3 py-1 text-sm font-bold text-gray-600">🎮 {mission.challenges.length} 挑戰</span>
+                {/* Miss Vega */}
+                {mission.goal && (
+                  <div className="absolute flex items-center gap-1.5" style={{ left: "15%", right: "15%", top: "43.5%" }}>
+                    <img src="/characters/vega/vega-happy.png" alt="Vega" className="w-9 h-9 rounded-full object-cover object-top bg-purple-100 border-2 border-purple-200 flex-shrink-0" />
+                    <div className="min-w-0">
+                      <p className="text-[9px] font-black text-purple-500 leading-none">Miss Vega · 引導老師</p>
+                      <p className="text-[11px] text-gray-700 leading-snug line-clamp-2">{mission.goal.zh}</p>
+                    </div>
                   </div>
+                )}
 
-                  {/* 今天會用到的字 */}
-                  <p className="text-sm font-black text-amber-600 mb-2">✦ 今天會用到的字 ✦</p>
-                  <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 mb-5">
-                    {mission.words.map(w => (
-                      <div key={w.en} className="bg-white rounded-2xl border-2 border-amber-100 p-2 flex flex-col items-center shadow-sm">
-                        <WordImg en={w.en} emoji={w.image} />
-                        <span className="text-[11px] font-bold text-gray-700 mt-0.5 truncate max-w-full">{w.en}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* 開始冒險 */}
-                  <button
-                    onClick={() => setStep(course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup')}
-                    className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-black text-xl py-4 rounded-full shadow-lg hover:from-purple-600 hover:to-indigo-600 active:scale-95 transition-all"
-                  >
-                    開始冒險 ⭐
-                  </button>
+                {/* 4 單字格 */}
+                <div className="absolute flex justify-between" style={{ left: "13.5%", right: "13.5%", top: "64%" }}>
+                  {mission.words.slice(0, 4).map(w => (
+                    <div key={w.en} className="flex flex-col items-center justify-center" style={{ width: "22%", aspectRatio: "1" }}>
+                      <WordImg en={w.en} emoji={w.image} />
+                      <span className="text-[8px] font-bold text-gray-600 leading-none truncate max-w-full">{w.en}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* 右：Miss Vega + 泡泡 */}
-              <div className="flex md:flex-col items-end md:items-center justify-center flex-shrink-0 md:w-56 -mt-2 md:mt-0">
-                <div className="bg-white rounded-2xl rounded-br-none md:rounded-bl-none border-2 border-purple-200 px-4 py-3 shadow-lg max-w-[220px] md:mb-2 order-1 md:order-none">
-                  <p className="text-base text-gray-700 leading-relaxed">Hi! 我是 <span className="font-black text-purple-500">Miss Vega</span>！{mission.goal ? mission.goal.zh : '準備好一起冒險了嗎？'}</p>
-                </div>
-                <img src="/characters/vega/vega-point.png" alt="Miss Vega" className="w-40 md:w-56 object-contain flex-shrink-0 drop-shadow-xl order-2 md:order-none" />
+              {/* 按鈕（框下方） */}
+              <div className="-mt-1 px-8 space-y-2">
+                <button
+                  onClick={() => setStep(course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup')}
+                  className="w-full py-3.5 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg hover:from-pink-500 active:scale-95 transition text-lg"
+                >⭐ ▶ 開始任務 ⭐</button>
+                <button
+                  onClick={() => setStep('complete')}
+                  className="w-full py-2.5 bg-white border-2 border-green-300 text-green-600 font-black rounded-full shadow active:scale-95 transition text-sm"
+                >✓ 完成關卡（測試用）</button>
               </div>
             </div>
           </>
