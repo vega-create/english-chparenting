@@ -125,7 +125,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
                 style={{ backgroundImage: 'url(/images/wood-sign.webp)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
               >
                 <span className="inline-block bg-pink-500 text-white text-xs font-black px-4 py-0.5 rounded-full shadow mb-1">LEVEL {course.level}</span>
-                <h1 className="text-3xl font-black text-white" style={{ textShadow: '0 2px 3px rgba(90,45,10,0.9), 0 0 1px #7a4a1a' }}>{course.island}</h1>
+                <h1 className="text-3xl cute-text">{course.island}</h1>
                 <p className="text-sm font-bold text-amber-50" style={{ textShadow: '0 1px 2px rgba(90,45,10,0.8)' }}>{course.islandEn}</p>
               </div>
 

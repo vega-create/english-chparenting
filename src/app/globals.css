@@ -91,6 +91,17 @@ body {
 .animate-slide-up-d4 { animation: slideUp 0.8s ease-out 0.6s both; }
 .animate-star-spin { animation: star-spin 8s linear infinite; }
 
+/* 可愛字幕字：白字 + 粗深色描邊（用在圖片/深色底上的標題、字幕） */
+.cute-text {
+  color: #fff;
+  -webkit-text-stroke: 3px #4a2c12;
+  paint-order: stroke fill;
+  font-weight: 900;
+  text-shadow: 0 3px 0 rgba(74,44,18,0.35);
+  letter-spacing: 0.02em;
+}
+.cute-text-sm { -webkit-text-stroke-width: 2px; }
+
 /* 電子書翻頁 */
 @keyframes pageTurnNext {
   from { transform: rotateY(-105deg); opacity: 0; }

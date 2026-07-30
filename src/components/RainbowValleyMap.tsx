@@ -808,7 +808,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
                 {/* 標題（緞帶） */}
                 <div className="absolute left-0 right-0 text-center text-white" style={{ top: "9%" }}>
                   <p className="text-[9px] font-bold opacity-90 leading-none">LEVEL {openLevel.id}</p>
-                  <p className="text-lg sm:text-xl font-black leading-tight" style={{ textShadow: "0 1px 2px rgba(150,20,60,0.6)" }}>{openLevel.name}</p>
+                  <p className="text-lg sm:text-xl cute-text-sm cute-text leading-tight">{openLevel.name}</p>
                   <p className="text-[10px] opacity-90 leading-none">{openLevel.nameEn}</p>
                 </div>
 
