@@ -39,10 +39,8 @@ export default function ChooseCharacterPage() {
   }
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-sky-300 via-purple-100 to-amber-100 px-2 py-4">
-      {/* 對準底圖框的舞台（鎖定 3:2 比例，內容用 % 定位） */}
-      <div className="relative w-full max-w-[1120px] aspect-[3/2] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl"
-        style={{ backgroundImage: 'url(/images/choose-bg.webp)' }}>
+    <div className="relative w-full min-h-screen overflow-hidden bg-center"
+      style={{ backgroundImage: 'url(/images/choose-bg.webp)', backgroundSize: '100% 100%' }}>
 
         <img src="/images/logo-260530.webp" alt="Adventure English" className="absolute top-[2%] left-[2%] w-[16%] max-w-[150px] z-20"
           style={{ filter: 'drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 0 4px rgba(255,255,255,.9))' }} />
@@ -79,22 +77,21 @@ export default function ChooseCharacterPage() {
             </button>
           );
         })}
-      </div>
 
-      {/* 確認 / 稍後 */}
-      <div className="text-center mt-4">
-        <button onClick={confirm} disabled={!sel}
-          className={`px-12 sm:px-16 py-3 rounded-full font-black text-lg sm:text-xl text-white shadow-xl transition-all active:scale-95 ${
-            sel ? 'bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600' : 'bg-gray-400/70 cursor-not-allowed'
-          }`}>
-          確認選擇 ⭐
-        </button>
-        <div className="mt-2">
-          <Link href="/adventure-map" onClick={() => playClick()} className="no-underline text-gray-500 text-sm font-bold hover:text-gray-700">
-            🔒 稍後再選擇
-          </Link>
+        {/* 確認 / 稍後（疊在下方步道上） */}
+        <div className="absolute left-1/2 -translate-x-1/2 text-center z-20" style={{ bottom: '2.5%' }}>
+          <button onClick={confirm} disabled={!sel}
+            className={`px-12 sm:px-16 py-2.5 sm:py-3 rounded-full font-black text-base sm:text-xl text-white shadow-xl transition-all active:scale-95 ${
+              sel ? 'bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600' : 'bg-gray-400/70 cursor-not-allowed'
+            }`}>
+            確認選擇 ⭐
+          </button>
+          <div className="mt-1.5">
+            <Link href="/adventure-map" onClick={() => playClick()} className="no-underline text-white/90 text-xs sm:text-sm font-bold hover:text-white" style={{ textShadow: '0 1px 3px rgba(60,40,90,.7)' }}>
+              🔒 稍後再選擇
+            </Link>
+          </div>
         </div>
-      </div>
     </div>
   );
 }
