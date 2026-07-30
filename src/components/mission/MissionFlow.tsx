@@ -58,7 +58,10 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const maxStars = (mission.warmUpQuestions.length) + (mission.challenges.length);
 
   return (
-    <div className={`min-h-screen bg-gradient-to-b ${course.bgGradient} to-white`}>
+    <div
+      className="min-h-screen bg-cover bg-top bg-fixed"
+      style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.35)), url(/images/lesson-bg.webp)' }}
+    >
       {/* 頂部導覽 */}
       <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-3xl mx-auto px-4 py-3">
