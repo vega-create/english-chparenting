@@ -111,6 +111,11 @@ export default function AdventureMapPage() {
         >
           <img src="/images/maps/adventure-map.webp" alt="Adventure English Map" className="absolute inset-0 w-full h-full object-contain block select-none" draggable={false} />
 
+          {/* 底部羊皮紙橫幅：嚮導對話框（跟著地圖縮放） */}
+          <div className="absolute z-30" style={{ left: "5%", right: "5%", top: "79%", bottom: "4%" }}>
+            <MapDialogue />
+          </div>
+
           {/* ===== 動畫層：大朵雲 + 熱氣球 + 魔法粒子 ===== */}
 
           {/* SVG 噪聲濾鏡：雲的不規則邊緣 */}
@@ -455,9 +460,6 @@ export default function AdventureMapPage() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* 地圖嚮導對話框（打字機效果，之後可換真對話腳本） */}
-      <MapDialogue />
     </div>
   );
 }
