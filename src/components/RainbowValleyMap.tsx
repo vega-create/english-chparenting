@@ -791,36 +791,37 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
       <AnimatePresence>
         {openLevel && (
           <motion.div
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-3 sm:p-4"
+            className="fixed inset-0 z-50 bg-cover bg-center flex items-center justify-center p-3 sm:p-4"
+            style={{ backgroundImage: "linear-gradient(rgba(90,60,130,0.15), rgba(90,60,130,0.25)), url(/images/lesson-bg.webp)" }}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={() => setOpenLevel(null)}
           >
             <motion.div
-              className="w-full max-w-[380px]"
+              className="w-full max-w-[440px]"
               initial={{ y: 50, scale: 0.9 }} animate={{ y: 0, scale: 1 }} exit={{ y: 50, scale: 0.9 }}
               transition={{ type: "spring", stiffness: 200, damping: 22 }}
               onClick={e => e.stopPropagation()}
             >
               {/* 木牌：彩虹谷 / 字母島 / N/12 */}
               <div
-                className="relative mx-auto w-full max-w-[320px] h-[150px] flex flex-col items-center justify-center text-center"
+                className="relative mx-auto w-full max-w-[360px] h-[175px] flex flex-col items-center justify-center text-center"
                 style={{ backgroundImage: "url(/images/wood-sign.webp)", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}
               >
-                <p className="text-amber-50 text-xs font-bold mb-0.5" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>✦ 彩虹谷 ✦</p>
-                <h2 className="text-3xl cute-text leading-none">字母島</h2>
-                <p className="text-amber-50 text-sm font-black mt-1" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>{openLevel.id} / 12</p>
+                <p className="text-amber-50 text-sm font-bold mb-0.5" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>✦ 彩虹谷 ✦</p>
+                <h2 className="text-4xl cute-text leading-none">字母島</h2>
+                <p className="text-amber-50 text-base font-black mt-1.5" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>{openLevel.id} / 12</p>
               </div>
 
-              {/* Coco + 對話泡泡 */}
-              <div className="flex items-end gap-1.5 mt-1 justify-center">
-                <img src="/characters/coco/coco-point.png" alt="Coco" className="w-24 h-24 object-contain flex-shrink-0" />
-                <div className="bg-white rounded-2xl rounded-bl-none border-2 border-pink-200 px-4 py-2.5 shadow max-w-[220px] mb-4">
+              {/* Coco（大，左）+ 對話泡泡（右下） */}
+              <div className="flex items-end gap-0 -mt-3">
+                <img src="/characters/coco/coco-point.png" alt="Coco" className="w-44 h-44 sm:w-48 sm:h-48 object-contain flex-shrink-0 drop-shadow-xl -ml-2" />
+                <div className="flex-1 bg-white rounded-2xl rounded-bl-none border-2 border-pink-200 px-4 py-3 shadow-lg mb-8">
                   <p className="text-sm text-gray-700 leading-relaxed">嗨～我是 <span className="font-black text-pink-500">Coco</span>！這裡是彩虹谷的字母島，我們一起來認讀字母吧！</p>
                 </div>
               </div>
 
               {/* 按鈕 */}
-              <div className="mt-2 px-4 space-y-2">
+              <div className="-mt-2 px-4 space-y-2">
                 {statusOf(openLevel.id) === "locked" ? (
                   <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-3 bg-gray-300 text-gray-600 font-black rounded-full active:scale-95">🔒 先完成前一關</button>
                 ) : statusOf(openLevel.id) === "completed" ? (
