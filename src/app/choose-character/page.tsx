@@ -1,32 +1,28 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { playClick, playStar } from '@/lib/sfx';
 
-// 玩家可挑選的冒險角色（人物圖 Vega 陸續生成，放 /images/avatars/<slug>.webp）
+// 底圖已畫好 5 個玻璃卡框，內容用 % 疊進框裡（框中心 cx、上緣 34.2%、高 43.9%、寬 14%）
 const AVATARS = [
-  { slug: 'elly', zh: '艾莉', role: '熱愛探索的大冒險家', traits: '勇敢、好奇、充滿活力', pill: 'bg-indigo-500', glow: 'from-teal-200 to-emerald-100' },
-  { slug: 'sky',  zh: '小飛', role: '機智勇敢的探險家', traits: '聰明、勇敢、愛挑戰', pill: 'bg-blue-500', glow: 'from-sky-200 to-blue-100' },
-  { slug: 'coco', zh: '可可', role: '聰明可愛的小學者', traits: '喜愛學習、細心又善良', pill: 'bg-rose-500', glow: 'from-pink-200 to-rose-100' },
-  { slug: 'leo',  zh: '雷歐', role: '沉著冷靜的觀察家', traits: '冷靜、可靠、愛自然', pill: 'bg-green-600', glow: 'from-lime-200 to-green-100' },
-  { slug: 'vera', zh: '薇拉', role: '創意滿滿的藝術家', traits: '想像力豐富、愛創作', pill: 'bg-purple-500', glow: 'from-purple-200 to-fuchsia-100' },
+  { slug: 'elly', zh: '艾莉', role: '熱愛探索的大冒險家', traits: '勇敢、好奇、充滿活力', pill: 'bg-indigo-500', cx: 15.6 },
+  { slug: 'sky',  zh: '小飛', role: '機智勇敢的探險家', traits: '聰明、勇敢、愛挑戰', pill: 'bg-blue-500', cx: 32.3 },
+  { slug: 'coco', zh: '可可', role: '聰明可愛的小學者', traits: '喜愛學習、細心又善良', pill: 'bg-rose-500', cx: 48.8 },
+  { slug: 'leo',  zh: '雷歐', role: '沉著冷靜的觀察家', traits: '冷靜、可靠、愛自然', pill: 'bg-green-600', cx: 65.5 },
+  { slug: 'vera', zh: '薇拉', role: '創意滿滿的藝術家', traits: '想像力豐富、愛創作', pill: 'bg-purple-500', cx: 82.2 },
 ];
+const FRAME = { top: 34.2, height: 43.9, width: 14 };
 
-// 有去背人物圖就用圖，沒有先用柔和剪影佔位
 function AvatarImg({ slug, zh }: { slug: string; zh: string }) {
   const [ok, setOk] = useState(true);
   return ok ? (
-    <img
-      src={`/images/avatars/${slug}.webp`}
-      alt={zh}
-      onError={() => setOk(false)}
-      className="w-full h-full object-contain object-bottom drop-shadow-[0_8px_10px_rgba(80,60,120,0.25)]"
-    />
+    <img src={`/images/avatars/${slug}.webp`} alt={zh} onError={() => setOk(false)}
+      className="w-full h-full object-contain object-bottom drop-shadow-[0_6px_8px_rgba(80,60,120,0.28)]" />
   ) : (
-    <div className="w-full h-full flex flex-col items-center justify-end gap-2 text-purple-300">
-      <span className="text-6xl">🧭</span>
-      <span className="text-xs font-bold text-purple-300/80">人物即將登場</span>
+    <div className="w-full h-full flex flex-col items-center justify-center gap-1 text-purple-300/70">
+      <span className="text-4xl sm:text-6xl">🧭</span>
+      <span className="text-[9px] sm:text-xs font-bold">人物即將登場</span>
     </div>
   );
 }
@@ -34,12 +30,6 @@ function AvatarImg({ slug, zh }: { slug: string; zh: string }) {
 export default function ChooseCharacterPage() {
   const router = useRouter();
   const [sel, setSel] = useState<string | null>(null);
-  const rowRef = useRef<HTMLDivElement>(null);
-
-  function scroll(dir: 1 | -1) {
-    playClick();
-    rowRef.current?.scrollBy({ left: dir * 260, behavior: 'smooth' });
-  }
 
   function confirm() {
     if (!sel) return;
@@ -49,79 +39,60 @@ export default function ChooseCharacterPage() {
   }
 
   return (
-    <div
-      className="relative min-h-screen w-full bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: 'url(/images/choose-bg.webp)' }}
-    >
-      <div className="absolute inset-0 bg-white/10" />
+    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-sky-300 via-purple-100 to-amber-100 px-2 py-4">
+      {/* 對準底圖框的舞台（鎖定 3:2 比例，內容用 % 定位） */}
+      <div className="relative w-full max-w-[1120px] aspect-[3/2] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl"
+        style={{ backgroundImage: 'url(/images/choose-bg.webp)' }}>
 
-      {/* Logo */}
-      <img src="/images/logo-260530.webp" alt="Adventure English" className="absolute top-4 left-4 w-32 sm:w-44 z-20 drop-shadow" />
+        <img src="/images/logo-260530.webp" alt="Adventure English" className="absolute top-[2%] left-[2%] w-[16%] max-w-[150px] z-20"
+          style={{ filter: 'drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 0 4px rgba(255,255,255,.9))' }} />
 
-      <div className="relative z-10 min-h-screen flex flex-col items-center px-3 py-6 sm:py-8">
         {/* 標題緞帶 */}
-        <div className="mt-14 sm:mt-4 text-center">
-          <h1 className="inline-block bg-amber-50/90 text-amber-900 text-2xl sm:text-4xl font-black px-8 sm:px-14 py-2.5 sm:py-3 rounded-full shadow-lg border-2 border-amber-200"
-            style={{ textShadow: '0 1px 0 #fff' }}>
+        <div className="absolute left-1/2 -translate-x-1/2 text-center z-20" style={{ top: '5%', width: '80%' }}>
+          <h1 className="inline-block bg-amber-50/90 text-amber-900 text-lg sm:text-3xl font-black px-6 sm:px-12 py-1.5 sm:py-2.5 rounded-full shadow-lg border-2 border-amber-200" style={{ textShadow: '0 1px 0 #fff' }}>
             選擇你的冒險夥伴
           </h1>
-          <p className="mt-3 text-white font-bold text-sm sm:text-base" style={{ textShadow: '0 1px 4px rgba(60,40,90,.7)' }}>
-            ⭐ 選擇一位角色，和你一起開啟英語冒險之旅！⭐
+          <p className="mt-1.5 text-white font-bold text-[11px] sm:text-base" style={{ textShadow: '0 1px 4px rgba(60,40,90,.7)' }}>
+            ⭐ 選一位角色，一起開啟英語冒險！⭐
           </p>
         </div>
 
-        {/* 角色列（手機可左右滑，桌機箭頭捲動） */}
-        <div className="relative w-full max-w-5xl flex-1 flex items-center mt-4">
-          <button onClick={() => scroll(-1)} aria-label="上一個"
-            className="hidden sm:flex absolute left-0 z-20 w-11 h-11 items-center justify-center rounded-full bg-purple-500/90 text-white text-xl shadow-lg hover:bg-purple-600 active:scale-95">‹</button>
+        {/* 5 個角色（疊進框內） */}
+        {AVATARS.map(a => {
+          const active = sel === a.slug;
+          return (
+            <button key={a.slug} onClick={() => { playClick(); setSel(a.slug); }}
+              className="absolute z-10 flex flex-col items-center text-center"
+              style={{ left: `${a.cx}%`, top: `${FRAME.top}%`, width: '15.5%', transform: 'translateX(-50%)' }}>
+              {/* 框內：人物 + 選中光框 */}
+              <div className={`relative w-[90%] rounded-2xl transition-all ${active ? 'ring-4 ring-amber-300 bg-amber-100/30' : ''}`}
+                style={{ height: 0, paddingBottom: '118%' }}>
+                {active && <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-2xl">⭐</div>}
+                <div className="absolute inset-0 flex items-end justify-center p-1">
+                  <AvatarImg slug={a.slug} zh={a.zh} />
+                </div>
+              </div>
+              {/* 名字 + 介紹 */}
+              <div className={`${a.pill} text-white font-black text-sm sm:text-lg px-4 sm:px-6 py-0.5 sm:py-1 rounded-full shadow -mt-3 sm:-mt-4 relative z-10`}>{a.zh}</div>
+              <p className="mt-1 text-[10px] sm:text-[13px] font-bold text-gray-700 leading-tight">{a.role}</p>
+              <p className="text-[8px] sm:text-[11px] text-gray-500 leading-tight">{a.traits}</p>
+            </button>
+          );
+        })}
+      </div>
 
-          <div ref={rowRef}
-            className="flex gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory px-1 sm:px-12 py-2 w-full scrollbar-hide"
-            style={{ scrollbarWidth: 'none' }}>
-            {AVATARS.map(a => {
-              const active = sel === a.slug;
-              return (
-                <button
-                  key={a.slug}
-                  onClick={() => { playClick(); setSel(a.slug); }}
-                  className={`snap-center shrink-0 w-40 sm:w-44 rounded-3xl p-3 text-center transition-all border-2 ${
-                    active
-                      ? 'bg-amber-50/95 border-amber-300 scale-[1.04] shadow-2xl ring-4 ring-amber-200'
-                      : 'bg-white/75 border-white/60 hover:bg-white/90 shadow-lg'
-                  }`}
-                >
-                  {active && <div className="text-2xl -mt-1 -mb-1">⭐</div>}
-                  <div className={`relative h-52 sm:h-56 rounded-2xl bg-gradient-to-b ${a.glow} overflow-hidden flex items-end justify-center`}>
-                    <AvatarImg slug={a.slug} zh={a.zh} />
-                  </div>
-                  <div className={`inline-block mt-2 ${a.pill} text-white font-black text-lg px-6 py-1 rounded-full shadow`}>{a.zh}</div>
-                  <p className="mt-1.5 text-[13px] font-bold text-gray-700 leading-tight">{a.role}</p>
-                  <p className="text-[11px] text-gray-500 leading-tight">{a.traits}</p>
-                </button>
-              );
-            })}
-          </div>
-
-          <button onClick={() => scroll(1)} aria-label="下一個"
-            className="hidden sm:flex absolute right-0 z-20 w-11 h-11 items-center justify-center rounded-full bg-purple-500/90 text-white text-xl shadow-lg hover:bg-purple-600 active:scale-95">›</button>
-        </div>
-
-        {/* 確認 / 稍後 */}
-        <div className="text-center mb-2">
-          <button
-            onClick={confirm}
-            disabled={!sel}
-            className={`px-12 sm:px-16 py-3.5 rounded-full font-black text-xl text-white shadow-xl transition-all active:scale-95 ${
-              sel ? 'bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600' : 'bg-gray-400/70 cursor-not-allowed'
-            }`}
-          >
-            確認選擇 ⭐
-          </button>
-          <div className="mt-3">
-            <Link href="/adventure-map" onClick={() => playClick()} className="no-underline text-white/90 text-sm font-bold hover:text-white" style={{ textShadow: '0 1px 3px rgba(60,40,90,.7)' }}>
-              🔒 稍後再選擇
-            </Link>
-          </div>
+      {/* 確認 / 稍後 */}
+      <div className="text-center mt-4">
+        <button onClick={confirm} disabled={!sel}
+          className={`px-12 sm:px-16 py-3 rounded-full font-black text-lg sm:text-xl text-white shadow-xl transition-all active:scale-95 ${
+            sel ? 'bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600' : 'bg-gray-400/70 cursor-not-allowed'
+          }`}>
+          確認選擇 ⭐
+        </button>
+        <div className="mt-2">
+          <Link href="/adventure-map" onClick={() => playClick()} className="no-underline text-gray-500 text-sm font-bold hover:text-gray-700">
+            🔒 稍後再選擇
+          </Link>
         </div>
       </div>
     </div>
