@@ -1,9 +1,23 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { COURSES } from '@/data/courses';
 import { MISSIONS } from '@/data/missions';
 import { stopSpeaking } from '@/lib/speech';
 import { getLevelFromMissionId } from '@/lib/vega-audio';
+import { wordSlug } from '@/lib/audio';
+
+// 單字卡小圖：有去背 PNG 就用圖，沒有用 emoji
+function WordImg({ en, emoji }: { en: string; emoji: string }) {
+  const [ok, setOk] = useState(true);
+  const ref = useRef<HTMLImageElement>(null);
+  useEffect(() => {
+    // SSR 時圖若已載入失敗（naturalWidth=0），onError 可能沒觸發 → 掛載後補判
+    if (ref.current && ref.current.complete && ref.current.naturalWidth === 0) setOk(false);
+  }, []);
+  return ok
+    ? <img ref={ref} src={`/words/${wordSlug(en)}.png`} alt={en} onError={() => setOk(false)} className="w-12 h-12 object-contain" />
+    : <span className="text-3xl">{emoji}</span>;
+}
 import Welcome from '@/components/mission/Welcome';
 import WakeUp from '@/components/mission/WakeUp';
 import Discover from '@/components/mission/Discover';
@@ -100,65 +114,70 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
       {/* 內容區 */}
       <div className="max-w-3xl mx-auto px-4 py-8">
         {step === 'intro' && (
-          <div className="animate-slide-up text-center">
-            <img src="/images/guide/vega-point.webp" alt="Vega" className="w-32 h-32 mx-auto mb-4 object-contain animate-float" />
-            <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-gray-100 max-w-md mx-auto mb-6">
-              <p className="text-sm text-gray-400 mb-1">
-                {course.worldEmoji} {course.world} · {course.island}
-              </p>
-              <h1 className="text-3xl font-black text-gray-800 mb-2">Mission {mission.id}</h1>
-              <h2 className="text-xl font-bold text-gray-600 mb-1">{mission.titleEn}</h2>
-              <p className="text-lg text-gray-500 mb-4">{mission.title}</p>
+          <>
+            {/* 後面壓黑，讓卡片浮出來 */}
+            <div className="fixed inset-0 bg-black/30 pointer-events-none z-0" />
+            <div className="animate-slide-up relative z-10 max-w-xl mx-auto">
 
-              {/* 🎯 今天的任務（故事目標 hook）：把「今天學 X」變成「幫角色完成任務」 */}
-              {mission.goal && (
-                <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-4 mb-4 text-left flex items-start gap-3">
-                  <img
-                    src={`/characters/${mission.goal.char || 'finn'}/${mission.goal.char || 'finn'}-talk.png`}
-                    alt=""
-                    className="w-16 h-16 object-contain flex-shrink-0"
-                  />
-                  <div>
-                    <p className="text-xs font-bold text-orange-500 mb-1">🎯 今天的任務</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{mission.goal.zh}</p>
-                  </div>
-                </div>
-              )}
-
-              <div className="flex justify-center gap-4 mb-4 text-sm text-gray-400">
-                <span>📝 {mission.words.length} 單字</span>
-                <span>💬 {mission.sentences.length} 句型</span>
-                <span>🎮 {mission.challenges.length} 挑戰</span>
+              {/* 木牌島名 */}
+              <div
+                className="relative mx-auto w-full max-w-[440px] h-[168px] flex flex-col items-center justify-center text-center -mb-6"
+                style={{ backgroundImage: 'url(/images/wood-sign.webp)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
+              >
+                <span className="inline-block bg-pink-500 text-white text-xs font-black px-4 py-0.5 rounded-full shadow mb-1">LEVEL {course.level}</span>
+                <h1 className="text-3xl font-black text-white" style={{ textShadow: '0 2px 3px rgba(90,45,10,0.9), 0 0 1px #7a4a1a' }}>{course.island}</h1>
+                <p className="text-sm font-bold text-amber-50" style={{ textShadow: '0 1px 2px rgba(90,45,10,0.8)' }}>{course.islandEn}</p>
               </div>
 
-              <div className="bg-gray-50 rounded-2xl p-4 mb-4">
-                <p className="text-sm text-gray-500 mb-2">任務道具（今天會用到的字）：</p>
-                <div className="flex flex-wrap justify-center gap-2">
+              {/* 羊皮紙卡 */}
+              <div className="relative bg-gradient-to-b from-[#fdf3dc] to-[#f3e2ba] rounded-[28px] border-4 border-[#e6cd9c] shadow-2xl px-4 sm:px-6 pt-9 pb-5">
+
+                {/* 學習目標 */}
+                <div className="bg-white/70 rounded-2xl px-4 py-3 mb-3 border border-amber-200">
+                  <p className="text-sm font-black text-pink-500 mb-1">🎯 學習目標</p>
+                  <p className="text-sm text-gray-700 leading-relaxed">{mission.focus || `${mission.titleEn}：${mission.words.slice(0, 4).map(w => w.en).join(', ')}`}</p>
+                </div>
+
+                {/* Miss Vega 提示 */}
+                {mission.goal && (
+                  <div className="bg-white/70 rounded-2xl px-4 py-3 mb-4 border border-amber-200 flex items-start gap-2.5">
+                    <img src="/images/guide/vega-point.webp" alt="Vega" className="w-10 h-10 rounded-full object-cover flex-shrink-0 border-2 border-purple-200" />
+                    <div>
+                      <p className="text-xs font-black text-purple-500 mb-0.5">Miss Vega · 引導老師</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{mission.goal.zh}</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* 今天會用到的字 */}
+                <p className="text-center text-sm font-black text-amber-600 mb-2">✦ 今天會用到的字 ✦</p>
+                <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 mb-5">
                   {mission.words.map(w => (
-                    <span key={w.en} className="bg-white px-3 py-1 rounded-full text-sm border border-gray-200">
-                      {w.image} {w.en}
-                    </span>
+                    <div key={w.en} className="bg-white rounded-2xl border-2 border-amber-100 p-2 flex flex-col items-center shadow-sm">
+                      <WordImg en={w.en} emoji={w.image} />
+                      <span className="text-[11px] font-bold text-gray-700 mt-0.5 truncate max-w-full">{w.en}</span>
+                    </div>
                   ))}
                 </div>
+
+                {/* 開始任務 */}
+                <button
+                  onClick={() => setStep(course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup')}
+                  className="w-full bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black text-lg py-3.5 rounded-full shadow-lg hover:from-pink-500 hover:to-rose-600 active:scale-95 transition-all flex items-center justify-center gap-2"
+                >
+                  <span>⭐</span><span>▶ 開始任務</span><span>⭐</span>
+                </button>
               </div>
 
-              <p className="text-sm text-gray-400">Phonics: {mission.phonicsLetters.join(', ')}</p>
+              {/* Coco 嚮導 + 對話泡泡 */}
+              <div className="flex items-end gap-2 mt-4 max-w-[440px] mx-auto">
+                <img src="/characters/coco/coco-point.png" alt="Coco" className="w-24 h-24 object-contain flex-shrink-0" />
+                <div className="bg-white rounded-2xl rounded-bl-none border-2 border-pink-200 px-4 py-2 shadow mb-3">
+                  <p className="text-sm text-gray-700">嗨～我是 <span className="font-black text-pink-500">Coco</span>！一起去{course.island}冒險吧！💗</p>
+                </div>
+              </div>
             </div>
-
-            <div className="flex justify-center gap-4 mb-6">
-              {['finn', 'coco', 'polly', 'benny', 'ruby'].map((c, i) => (
-                <img key={c} src={`/characters/${c}/${c}-normal.png`} alt={c} className="w-28 h-28 object-contain animate-bounce" style={{ animationDelay: `${i * 0.1}s` }} />
-              ))}
-            </div>
-
-            <button
-              onClick={() => setStep(course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup')}
-              className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-10 py-4 rounded-full font-bold text-xl hover:from-yellow-500 hover:to-orange-500 transition-all active:scale-95 shadow-xl"
-            >
-              Let&apos;s Go! 出發！🚀
-            </button>
-            <p className="text-sm text-gray-400 mt-4">約 15-20 分鐘</p>
-          </div>
+          </>
         )}
 
         {step === 'welcome' && (
