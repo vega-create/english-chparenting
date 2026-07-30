@@ -6,14 +6,14 @@ import { playClick, playStar } from '@/lib/sfx';
 
 // 底圖已畫好 5 個玻璃卡框，內容用 % 疊進框裡（框中心 cx、上緣 34.2%、高 43.9%、寬 14%）
 const AVATARS = [
-  { slug: 'elly', zh: '艾莉', role: '熱愛探索的大冒險家', traits: '勇敢、好奇、充滿活力', pill: 'bg-indigo-500', cx: 15.6 },
-  { slug: 'sky',  zh: '小飛', role: '機智勇敢的探險家', traits: '聰明、勇敢、愛挑戰', pill: 'bg-blue-500', cx: 32.3 },
-  { slug: 'coco', zh: '可可', role: '聰明可愛的小學者', traits: '喜愛學習、細心又善良', pill: 'bg-rose-500', cx: 48.8 },
-  { slug: 'leo',  zh: '雷歐', role: '沉著冷靜的觀察家', traits: '冷靜、可靠、愛自然', pill: 'bg-green-600', cx: 65.5 },
-  { slug: 'vera', zh: '薇拉', role: '創意滿滿的藝術家', traits: '想像力豐富、愛創作', pill: 'bg-purple-500', cx: 82.2 },
+  { slug: 'elly', zh: '艾莉', role: '熱愛探索的大冒險家', traits: '勇敢、好奇、充滿活力', pill: 'bg-indigo-500', cx: 15.5 },
+  { slug: 'sky',  zh: '小飛', role: '機智勇敢的探險家', traits: '聰明、勇敢、愛挑戰', pill: 'bg-blue-500', cx: 33 },
+  { slug: 'coco', zh: '可可', role: '聰明可愛的小學者', traits: '喜愛學習、細心又善良', pill: 'bg-rose-500', cx: 50.8 },
+  { slug: 'leo',  zh: '雷歐', role: '沉著冷靜的觀察家', traits: '冷靜、可靠、愛自然', pill: 'bg-green-600', cx: 67.5 },
+  { slug: 'vera', zh: '薇拉', role: '創意滿滿的藝術家', traits: '想像力豐富、愛創作', pill: 'bg-purple-500', cx: 84.2 },
 ];
-const FRAME = { top: 34.2, height: 43.9, width: 14 };
-const SHIFT_X = 2; // 整排往右微調（對準底圖玻璃框）
+const FRAME = { top: 34.2, height: 43.9 };
+const CARD_H = FRAME.height + 18; // 卡片(可點區)高＝框高+下方文字區
 
 function AvatarImg({ slug, zh }: { slug: string; zh: string }) {
   const [ok, setOk] = useState(true);
@@ -61,20 +61,20 @@ export default function ChooseCharacterPage() {
           const active = sel === a.slug;
           return (
             <button key={a.slug} onClick={() => { playClick(); setSel(a.slug); }}
-              className="absolute z-10 flex flex-col items-center text-center"
-              style={{ left: `${a.cx + SHIFT_X}%`, top: `${FRAME.top + 5}%`, width: '16%', transform: 'translateX(-50%)' }}>
-              {/* 框內：人物 + 選中光框 */}
-              <div className={`relative w-[94%] rounded-2xl transition-all ${active ? 'ring-4 ring-amber-300 bg-amber-100/30' : ''}`}
-                style={{ height: 0, paddingBottom: '128%' }}>
-                {active && <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-2xl">⭐</div>}
-                <div className="absolute inset-0 flex items-end justify-center p-1">
-                  <AvatarImg slug={a.slug} zh={a.zh} />
-                </div>
+              className="absolute z-10"
+              style={{ left: `${a.cx}%`, top: `${FRAME.top}%`, width: '14.5%', height: `${CARD_H}%`, transform: 'translateX(-50%)' }}>
+              {/* 選中：星星（無黃框） */}
+              {active && <div className="absolute left-1/2 -translate-x-1/2 -top-2 text-3xl z-10 drop-shadow">⭐</div>}
+              {/* 人物：靠下站在框底、整組下移 */}
+              <div className="absolute flex items-end justify-center" style={{ left: '4%', right: '4%', top: '10%', bottom: '32%' }}>
+                <AvatarImg slug={a.slug} zh={a.zh} />
               </div>
-              {/* 名字 + 介紹 */}
-              <div className={`${a.pill} text-white font-black text-base sm:text-2xl px-5 sm:px-8 py-1 sm:py-1.5 rounded-full shadow mt-1.5 sm:mt-2.5 relative z-10`}>{a.zh}</div>
-              <p className="mt-1.5 sm:mt-2 text-[12px] sm:text-[15px] font-bold text-gray-700 leading-tight">{a.role}</p>
-              <p className="text-[10px] sm:text-[13px] text-gray-500 leading-tight">{a.traits}</p>
+              {/* 名字 + 介紹（下移，靠近腳邊） */}
+              <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ bottom: '6%', width: '150%' }}>
+                <div className={`${a.pill} inline-block text-white font-black text-base sm:text-2xl px-5 sm:px-8 py-1 sm:py-1.5 rounded-full shadow ${active ? 'ring-2 ring-white' : ''}`}>{a.zh}</div>
+                <p className="mt-1.5 sm:mt-2 text-[12px] sm:text-[15px] font-bold text-gray-700 leading-tight">{a.role}</p>
+                <p className="text-[10px] sm:text-[13px] text-gray-500 leading-tight">{a.traits}</p>
+              </div>
             </button>
           );
         })}
