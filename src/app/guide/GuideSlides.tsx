@@ -30,13 +30,19 @@ export default function GuideSlides() {
 
       {/* 5 張背景（淡入淡出切換） */}
       {Array.from({ length: N }, (_, idx) => (
-        <div key={idx} className="absolute inset-0 transition-opacity duration-500"
+        <div key={idx} className="absolute inset-0 transition-opacity duration-500 bg-cover bg-center"
           style={{
             backgroundImage: `url(/images/guide/guide${idx + 1}.webp)`,
-            backgroundSize: '100% 100%',
             opacity: idx === i ? 1 : 0,
             pointerEvents: idx === i ? 'auto' : 'none',
-          }} />
+          }}>
+          {/* slide 5：太空船疊在左邊天空飛 */}
+          {idx === 4 && (
+            <img src="/images/guide/guide5-ship.webp" alt=""
+              className="absolute animate-float drop-shadow-[0_10px_18px_rgba(40,30,80,0.35)]"
+              style={{ left: '4%', top: '26%', width: '46%', maxWidth: '640px' }} />
+          )}
+        </div>
       ))}
 
       {/* 頂部圓點 */}
