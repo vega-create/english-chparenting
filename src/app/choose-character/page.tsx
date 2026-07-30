@@ -13,7 +13,7 @@ const AVATARS = [
   { slug: 'vera', zh: '薇拉', role: '創意滿滿的藝術家', traits: '想像力豐富、愛創作', pill: 'bg-purple-500', cx: 84.2 },
 ];
 const FRAME = { top: 34.2, height: 43.9 };
-const CARD_H = FRAME.height + 18; // 卡片(可點區)高＝框高+下方文字區
+const CARD_H = FRAME.height; // 卡片(可點區)＝玻璃框，內容全部塞在框內
 
 function AvatarImg({ slug, zh }: { slug: string; zh: string }) {
   const [ok, setOk] = useState(true);
@@ -65,15 +65,15 @@ export default function ChooseCharacterPage() {
               style={{ left: `${a.cx}%`, top: `${FRAME.top}%`, width: '14.5%', height: `${CARD_H}%`, transform: 'translateX(-50%)' }}>
               {/* 選中：星星（無黃框） */}
               {active && <div className="absolute left-1/2 -translate-x-1/2 -top-2 text-3xl z-10 drop-shadow">⭐</div>}
-              {/* 人物：靠下站在框底、整組下移 */}
-              <div className="absolute flex items-end justify-center" style={{ left: '4%', right: '4%', top: '10%', bottom: '32%' }}>
+              {/* 人物：框內上半、靠下站 */}
+              <div className="absolute flex items-end justify-center" style={{ left: '5%', right: '5%', top: '3%', bottom: '44%' }}>
                 <AvatarImg slug={a.slug} zh={a.zh} />
               </div>
-              {/* 名字 + 介紹（下移，靠近腳邊） */}
-              <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ bottom: '6%', width: '150%' }}>
-                <div className={`${a.pill} inline-block text-white font-black text-base sm:text-2xl px-5 sm:px-8 py-1 sm:py-1.5 rounded-full shadow ${active ? 'ring-2 ring-white' : ''}`}>{a.zh}</div>
-                <p className="mt-1.5 sm:mt-2 text-[12px] sm:text-[15px] font-bold text-gray-700 leading-tight">{a.role}</p>
-                <p className="text-[10px] sm:text-[13px] text-gray-500 leading-tight">{a.traits}</p>
+              {/* 名字 + 介紹（框內下半） */}
+              <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ bottom: '4%', width: '96%' }}>
+                <div className={`${a.pill} inline-block text-white font-black text-sm sm:text-xl px-4 sm:px-6 py-0.5 sm:py-1 rounded-full shadow ${active ? 'ring-2 ring-white' : ''}`}>{a.zh}</div>
+                <p className="mt-1 sm:mt-1.5 text-[11px] sm:text-[14px] font-bold text-gray-700 leading-tight">{a.role}</p>
+                <p className="text-[9px] sm:text-[12px] text-gray-500 leading-tight">{a.traits}</p>
               </div>
             </button>
           );
