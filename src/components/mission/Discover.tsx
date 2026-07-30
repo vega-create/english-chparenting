@@ -27,6 +27,22 @@ function youtubeEmbed(url: string): string | null {
   return m ? `https://www.youtube.com/embed/${m[1]}` : null;
 }
 
+// 單字卡正面圖：有去背 PNG（public/words/<slug>.png）就用圖，沒有就用 emoji
+function WordFace({ en, emoji }: { en: string; emoji: string }) {
+  const [imgOk, setImgOk] = useState(true);
+  if (imgOk) {
+    return (
+      <img
+        src={`/words/${wordSlug(en)}.png`}
+        alt={en}
+        onError={() => setImgOk(false)}
+        className="w-20 h-20 sm:w-24 sm:h-24 object-contain mb-1"
+      />
+    );
+  }
+  return <div className="text-6xl mb-1">{emoji}</div>;
+}
+
 export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, onComplete }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
@@ -385,7 +401,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     }`}
                     style={{ backfaceVisibility: 'hidden' }}
                   >
-                    <div className="text-6xl mb-1">{w.image}</div>
+                    <WordFace en={w.en} emoji={w.image} />
                     <p className="text-gray-300 text-xs">👆 tap</p>
                   </div>
                   {/* 背面：單字 + 發音 */}
