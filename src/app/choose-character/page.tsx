@@ -13,6 +13,7 @@ const AVATARS = [
   { slug: 'vera', zh: '薇拉', role: '創意滿滿的藝術家', traits: '想像力豐富、愛創作', pill: 'bg-purple-500', cx: 82.2 },
 ];
 const FRAME = { top: 34.2, height: 43.9, width: 14 };
+const SHIFT_X = 2; // 整排往右微調（對準底圖玻璃框）
 
 function AvatarImg({ slug, zh }: { slug: string; zh: string }) {
   const [ok, setOk] = useState(true);
@@ -48,7 +49,7 @@ export default function ChooseCharacterPage() {
         {/* 標題緞帶 */}
         <div className="absolute left-1/2 -translate-x-1/2 text-center z-20" style={{ top: '5%', width: '80%' }}>
           <h1 className="inline-block bg-amber-50/90 text-amber-900 text-lg sm:text-3xl font-black px-6 sm:px-12 py-1.5 sm:py-2.5 rounded-full shadow-lg border-2 border-amber-200" style={{ textShadow: '0 1px 0 #fff' }}>
-            選擇你的冒險夥伴
+            選你自己的角色
           </h1>
           <p className="mt-1.5 text-white font-bold text-[11px] sm:text-base" style={{ textShadow: '0 1px 4px rgba(60,40,90,.7)' }}>
             ⭐ 選一位角色，一起開啟英語冒險！⭐
@@ -61,19 +62,19 @@ export default function ChooseCharacterPage() {
           return (
             <button key={a.slug} onClick={() => { playClick(); setSel(a.slug); }}
               className="absolute z-10 flex flex-col items-center text-center"
-              style={{ left: `${a.cx}%`, top: `${FRAME.top}%`, width: '15.5%', transform: 'translateX(-50%)' }}>
+              style={{ left: `${a.cx + SHIFT_X}%`, top: `${FRAME.top + 5}%`, width: '16%', transform: 'translateX(-50%)' }}>
               {/* 框內：人物 + 選中光框 */}
-              <div className={`relative w-[90%] rounded-2xl transition-all ${active ? 'ring-4 ring-amber-300 bg-amber-100/30' : ''}`}
-                style={{ height: 0, paddingBottom: '118%' }}>
+              <div className={`relative w-[94%] rounded-2xl transition-all ${active ? 'ring-4 ring-amber-300 bg-amber-100/30' : ''}`}
+                style={{ height: 0, paddingBottom: '128%' }}>
                 {active && <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-2xl">⭐</div>}
                 <div className="absolute inset-0 flex items-end justify-center p-1">
                   <AvatarImg slug={a.slug} zh={a.zh} />
                 </div>
               </div>
               {/* 名字 + 介紹 */}
-              <div className={`${a.pill} text-white font-black text-sm sm:text-lg px-4 sm:px-6 py-0.5 sm:py-1 rounded-full shadow -mt-3 sm:-mt-4 relative z-10`}>{a.zh}</div>
-              <p className="mt-1 text-[10px] sm:text-[13px] font-bold text-gray-700 leading-tight">{a.role}</p>
-              <p className="text-[8px] sm:text-[11px] text-gray-500 leading-tight">{a.traits}</p>
+              <div className={`${a.pill} text-white font-black text-base sm:text-2xl px-5 sm:px-8 py-1 sm:py-1.5 rounded-full shadow mt-1.5 sm:mt-2.5 relative z-10`}>{a.zh}</div>
+              <p className="mt-1.5 sm:mt-2 text-[12px] sm:text-[15px] font-bold text-gray-700 leading-tight">{a.role}</p>
+              <p className="text-[10px] sm:text-[13px] text-gray-500 leading-tight">{a.traits}</p>
             </button>
           );
         })}

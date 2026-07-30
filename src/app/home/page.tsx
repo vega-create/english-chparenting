@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
@@ -48,8 +49,22 @@ const NAV = [
 export default function LayeredBanner() {
   const [muted, setMuted] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const router = useRouter();
 
   useEffect(() => setMuted(isSfxMuted()), []);
+
+  // 開始冒險：第一次先看使用說明→選夥伴→地圖；看過就直接跳過
+  function startAdventure() {
+    playStar();
+    let seenGuide = false, hasAvatar = false;
+    try {
+      seenGuide = !!localStorage.getItem('ae_seen_guide');
+      hasAvatar = !!localStorage.getItem('ae_avatar');
+    } catch {}
+    if (!seenGuide) router.push('/guide');
+    else if (!hasAvatar) router.push('/choose-character');
+    else router.push('/adventure-map');
+  }
 
   function toggleMute() {
     const next = !muted;
@@ -305,7 +320,7 @@ export default function LayeredBanner() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="flex flex-wrap gap-5 md:gap-6 justify-center w-full relative z-10 mt-2"
             >
-              <Link href="/choose-character" onClick={() => playStar()} className="no-underline">
+              <div onClick={startAdventure} className="no-underline cursor-pointer">
                 <motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -337,7 +352,7 @@ export default function LayeredBanner() {
                     className="relative"
                   >⭐</motion.span>
                 </motion.div>
-              </Link>
+              </div>
               <motion.button
                 onClick={() => playSwoosh()}
                 whileHover={{ scale: 1.05, y: -2 }}

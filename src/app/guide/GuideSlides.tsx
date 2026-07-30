@@ -22,25 +22,28 @@ export default function GuideSlides() {
     if (Math.abs(dx) > 40) { go(dx < 0 ? i + 1 : i - 1); }
     touchX.current = null;
   }
-  function finish() { playStar(); router.push('/choose-character'); }
+  function markSeen() { try { localStorage.setItem('ae_seen_guide', '1'); } catch {} }
+  function finish() { playStar(); markSeen(); router.push('/choose-character'); }
 
   return (
     <div className="relative w-full h-screen overflow-hidden select-none bg-sky-200"
       onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 
-      {/* 5 張背景（淡入淡出切換） */}
+      {/* 5 張背景（淡入淡出切換）：完整顯示不裁切 + 後方模糊填滿 */}
       {Array.from({ length: N }, (_, idx) => (
-        <div key={idx} className="absolute inset-0 transition-opacity duration-500 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(/images/guide/guide${idx + 1}.webp)`,
-            opacity: idx === i ? 1 : 0,
-            pointerEvents: idx === i ? 'auto' : 'none',
-          }}>
+        <div key={idx} className="absolute inset-0 transition-opacity duration-500"
+          style={{ opacity: idx === i ? 1 : 0, pointerEvents: idx === i ? 'auto' : 'none' }}>
+          {/* 模糊填滿層 */}
+          <div className="absolute inset-0"
+            style={{ backgroundImage: `url(/images/guide/guide${idx + 1}.webp)`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(24px)', transform: 'scale(1.12)' }} />
+          {/* 完整 slide（contain 不裁切） */}
+          <div className="absolute inset-0 bg-no-repeat bg-center"
+            style={{ backgroundImage: `url(/images/guide/guide${idx + 1}.webp)`, backgroundSize: 'contain' }} />
           {/* slide 5：太空船疊在左邊天空飛 */}
           {idx === 4 && (
             <img src="/images/guide/guide5-ship.webp" alt=""
               className="absolute animate-float drop-shadow-[0_10px_18px_rgba(40,30,80,0.35)]"
-              style={{ left: '4%', top: '26%', width: '46%', maxWidth: '640px' }} />
+              style={{ left: '5%', top: '24%', width: '40%', maxWidth: '560px' }} />
           )}
         </div>
       ))}
@@ -54,7 +57,7 @@ export default function GuideSlides() {
       </div>
 
       {/* 略過 */}
-      <Link href="/choose-character" onClick={() => playClick()}
+      <Link href="/choose-character" onClick={() => { playClick(); markSeen(); }}
         className="absolute top-3 right-4 z-20 no-underline bg-white/85 text-purple-600 text-xs font-black px-3 py-1.5 rounded-full shadow hover:bg-white">
         略過 ›
       </Link>
