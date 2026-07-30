@@ -12,6 +12,12 @@ import {
 } from "@/lib/progress";
 import { playClick, playStar, playSuccess } from "@/lib/sfx";
 
+// 每個世界的關卡地圖圖（1=彩虹谷有自己的頁；這裡處理 2~6）
+const WORLD_IMG: Record<number, string> = {
+  1: "world-rainbow-valley", 2: "world-friendly-town", 3: "world-ocean-bay",
+  4: "world-story-castle", 5: "world-explorer-land", 6: "world-champion-peak",
+};
+
 export default function WorldDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const worldId = parseInt(id, 10);
@@ -22,15 +28,10 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
   const [justUnlocked, setJustUnlocked] = useState<number | null>(null);
   const [wasUnlocked, setWasUnlocked] = useState(false);
 
-  // 判斷此 world 是否允許進入
+  // 地圖頁永遠可看（是否解鎖只影響能不能玩；之後接登入）
   useEffect(() => {
-    if (!world) return;
-    if (!isWorldUnlocked(world.id)) {
-      router.replace("/adventure-map");
-      return;
-    }
     setWasUnlocked(true);
-  }, [world, router]);
+  }, [world]);
 
   // 監聽 progress 變化
   useEffect(() => {
@@ -65,98 +66,34 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden" style={{
-      background: "linear-gradient(180deg, #cbe6ff 0%, #ffd5e8 35%, #fff0a8 65%, #b8dec0 100%)",
+    <div className="relative min-h-screen overflow-hidden bg-cover bg-center" style={{
+      backgroundImage: `linear-gradient(rgba(50,35,100,0.25), rgba(50,35,100,0.4)), url(/images/worlds/${WORLD_IMG[world.id] || "world-friendly-town"}.webp)`,
     }}>
       <Link href="/adventure-map" onClick={() => playClick()} className="fixed top-3 left-3 z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
         ← 返回地圖
       </Link>
 
-      <div className="max-w-2xl mx-auto px-4 pt-16 pb-16">
-        {/* World 標題卡片 */}
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className={`bg-gradient-to-br ${world.color} rounded-3xl p-6 text-center text-white shadow-2xl mb-6 relative overflow-hidden`}
-        >
-          <div className="absolute -top-8 -right-8 text-8xl opacity-20">{world.emoji}</div>
-          <p className="text-xs font-bold opacity-90 relative">World {world.id}</p>
-          <p className="text-4xl font-black drop-shadow relative">{world.name}</p>
-          <p className="text-sm opacity-90 relative">{world.nameEn} · {world.level}</p>
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16 text-center">
+        {/* 世界名 */}
+        <p className="text-white/90 font-bold text-sm mb-1" style={{ textShadow: "0 1px 3px rgba(0,0,0,.55)" }}>World {world.id} · {world.level}</p>
+        <h1 className="text-4xl sm:text-6xl cute-text mb-1">{world.name}</h1>
+        <p className="text-white font-bold text-lg mb-6" style={{ textShadow: "0 1px 3px rgba(0,0,0,.55)" }}>{world.nameEn}</p>
 
-          {/* 進度條 */}
-          <div className="mt-4 relative">
-            <div className="flex items-center justify-between text-xs font-bold mb-1">
-              <span>進度</span>
-              <span>{done}/{total} {isComplete && "🎉 完成"}</span>
-            </div>
-            <div className="h-3 bg-white/30 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-white rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${(done / total) * 100}%` }}
-                transition={{ duration: 0.6 }}
-              />
-            </div>
+        {/* 狀態卡：解鎖=關卡即將開放；未解鎖=鎖定 */}
+        {isWorldUnlocked(world.id) ? (
+          <div className="bg-white/90 backdrop-blur rounded-3xl px-7 py-6 shadow-2xl max-w-sm">
+            <p className="text-5xl mb-2">🗺️</p>
+            <p className="font-black text-gray-800 text-lg mb-1">關卡即將開放</p>
+            <p className="text-sm text-gray-500 mb-3">這個世界的關卡正在設定中，敬請期待！</p>
+            <p className="text-xs text-gray-400">進度 {done}/{total}</p>
           </div>
-        </motion.div>
-
-        {/* Lesson 列表 */}
-        <div className="space-y-3">
-          {world.lessons.map((lesson, i) => {
-            const isDone = isLessonComplete(lesson.id);
-            return (
-              <motion.div
-                key={lesson.id}
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <button
-                  onClick={() => completeLesson(lesson.id)}
-                  className={`w-full p-4 rounded-2xl border-2 flex items-center gap-4 transition-all text-left ${
-                    isDone
-                      ? "bg-green-50 border-green-300"
-                      : "bg-white border-purple-200 hover:border-purple-400 hover:shadow-lg"
-                  }`}
-                >
-                  <div className={`w-14 h-14 rounded-full flex items-center justify-center text-3xl flex-shrink-0 ${
-                    isDone ? "bg-gradient-to-br from-green-400 to-emerald-600 text-white" : "bg-purple-100"
-                  }`}>
-                    {isDone ? "✓" : i + 1}
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-xs text-gray-500">Lesson {i + 1}</p>
-                    <p className="font-black text-gray-800 text-lg">{lesson.name}</p>
-                    <p className="text-xs text-gray-500">{lesson.nameEn}</p>
-                  </div>
-                  {!isDone && <div className="text-purple-500 text-xl">→</div>}
-                </button>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* 全部完成提示 */}
-        {isComplete && (
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="mt-6 bg-gradient-to-r from-amber-200 to-yellow-300 border-2 border-amber-400 rounded-2xl p-4 text-center"
-          >
-            <p className="text-3xl mb-1">🏆</p>
-            <p className="font-black text-amber-900">恭喜完成 {world.name}！</p>
-            {world.id < WORLDS.length && (
-              <Link href="/adventure-map" onClick={() => playStar()} className="inline-block mt-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black px-5 py-2 rounded-full text-sm no-underline">
-                回地圖看下一關 →
-              </Link>
-            )}
-          </motion.div>
+        ) : (
+          <div className="bg-black/50 backdrop-blur rounded-3xl px-7 py-6 shadow-2xl max-w-sm border-2 border-white/30">
+            <p className="text-5xl mb-2">🔒</p>
+            <p className="font-black text-white text-lg mb-1">尚未解鎖</p>
+            <p className="text-sm text-white/85">先完成前一個世界，才能來這裡冒險！</p>
+          </div>
         )}
-
-        <p className="text-xs text-center text-gray-400 mt-6">
-          （測試：點 lesson 切換完成狀態；完成全部會解鎖下個世界）
-        </p>
       </div>
 
       {/* === 新解鎖通知 === */}
