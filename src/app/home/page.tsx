@@ -461,14 +461,25 @@ export default function LayeredBanner() {
             {/* 和夥伴一起冒險 */}
             <div className="bg-gradient-to-br from-sky-50 to-indigo-50 rounded-3xl p-5 border-2 border-sky-200 shadow-sm">
               <h3 className="text-xl font-black text-indigo-500 text-center mb-4">✨ 和夥伴一起冒險！</h3>
-              <div className="grid grid-cols-3 gap-3 mb-4">
-                {PALS.map(p => (
-                  <div key={p.key} className="text-center">
-                    <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-white border-4 ${p.color} overflow-hidden flex items-center justify-center shadow`}>
-                      <img src={p.key === "vega" ? "/images/guide/vega-point.webp" : `/characters/${p.key}/${p.key}-normal.png`} alt={p.name} className="w-full h-full object-contain" />
-                    </div>
-                    <p className="text-xs font-bold text-gray-600 mt-1">{p.name}</p>
-                  </div>
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                {PALS.map((p, i) => (
+                  <motion.div
+                    key={p.key}
+                    className="text-center cursor-pointer"
+                    whileHover={{ scale: 1.12, y: -6 }}
+                    whileTap={{ scale: 0.95, rotate: -4 }}
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ y: { duration: 2.4, repeat: Infinity, delay: i * 0.2, ease: "easeInOut" } }}
+                    onClick={() => playStar()}
+                  >
+                    <img
+                      src={`/characters/${p.key}/${p.key}-normal.png`}
+                      alt={p.name}
+                      className="w-24 h-24 sm:w-28 sm:h-28 mx-auto object-contain"
+                      style={{ filter: "drop-shadow(0 6px 8px rgba(80,60,120,0.25))" }}
+                    />
+                    <p className="text-sm font-bold text-gray-600 -mt-1">{p.name}</p>
+                  </motion.div>
                 ))}
               </div>
               <Link href="/guide" onClick={() => playClick()} className="no-underline block text-center bg-white text-indigo-500 font-black py-2.5 rounded-full border-2 border-indigo-200 hover:bg-indigo-50 transition">認識更多夥伴 🐾</Link>
