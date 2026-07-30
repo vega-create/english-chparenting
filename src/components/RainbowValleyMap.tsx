@@ -792,7 +792,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
         {openLevel && (
           <motion.div
             className="fixed inset-0 z-50 bg-cover bg-center flex items-center justify-center p-3 sm:p-4"
-            style={{ backgroundImage: "linear-gradient(rgba(90,60,130,0.15), rgba(90,60,130,0.25)), url(/images/lesson-bg.webp)" }}
+            style={{ backgroundImage: "linear-gradient(rgba(70,50,120,0.15), rgba(70,50,120,0.3)), url(/images/maps/bg-sky-castles.webp)" }}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={() => setOpenLevel(null)}
           >
@@ -807,16 +807,16 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
                 className="relative mx-auto w-full max-w-[360px] h-[175px] flex flex-col items-center justify-center text-center"
                 style={{ backgroundImage: "url(/images/wood-sign.webp)", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}
               >
-                <p className="text-amber-50 text-sm font-bold mb-0.5" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>✦ 彩虹谷 ✦</p>
-                <h2 className="text-4xl cute-text leading-none">字母島</h2>
-                <p className="text-amber-50 text-base font-black mt-1.5" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>{openLevel.id} / 12</p>
+                <p className="text-amber-50 text-base font-bold mb-0.5" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>✦ 彩虹谷 ✦</p>
+                <h2 className="text-5xl cute-text leading-none">字母島</h2>
+                <p className="text-amber-50 text-lg font-black mt-2" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>{openLevel.id} / 12</p>
               </div>
 
               {/* Coco（大，左）+ 對話泡泡（右下） */}
               <div className="flex items-end gap-0 -mt-3">
-                <img src="/characters/coco/coco-point.png" alt="Coco" className="w-44 h-44 sm:w-48 sm:h-48 object-contain flex-shrink-0 drop-shadow-xl -ml-2" />
-                <div className="flex-1 bg-white rounded-2xl rounded-bl-none border-2 border-pink-200 px-4 py-3 shadow-lg mb-8">
-                  <p className="text-sm text-gray-700 leading-relaxed">嗨～我是 <span className="font-black text-pink-500">Coco</span>！這裡是彩虹谷的字母島，我們一起來認讀字母吧！</p>
+                <img src="/characters/coco/coco-point.png" alt="Coco" className="w-48 h-48 sm:w-52 sm:h-52 object-contain flex-shrink-0 drop-shadow-xl -ml-3" />
+                <div className="flex-1 bg-white rounded-2xl rounded-bl-none border-2 border-pink-200 px-4 py-3.5 shadow-lg mb-10">
+                  <p className="text-base text-gray-700 leading-relaxed font-medium">嗨～我是 <span className="font-black text-pink-500">Coco</span>！這裡是彩虹谷的字母島，我們一起來認讀字母吧！</p>
                 </div>
               </div>
 
@@ -827,12 +827,9 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
                 ) : statusOf(openLevel.id) === "completed" ? (
                   <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-black rounded-full shadow-lg active:scale-95">⭐ 已完成 · 之後可重新挑戰</button>
                 ) : (
-                  <>
-                    <Link href={`/courses/l1-letter-island/mission/${openLevel.id}`} onClick={() => playStar()} className="block w-full py-4 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg active:scale-95 text-lg text-center no-underline">Let&apos;s Go! 開始冒險 ⭐</Link>
-                    <button onClick={completeLevel} className="w-full py-2 bg-white/90 border-2 border-green-300 text-green-600 font-black rounded-full shadow active:scale-95 text-sm">✓ 完成關卡（測試用）</button>
-                  </>
+                  <Link href={`/courses/l1-letter-island/mission/${openLevel.id}`} onClick={() => playStar()} className="block w-full py-4 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg active:scale-95 text-xl text-center no-underline">Let&apos;s Go! 開始冒險 ⭐</Link>
                 )}
-                <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-1 text-xs text-white/80">關閉</button>
+                <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-1.5 text-sm text-white/80">關閉</button>
               </div>
             </motion.div>
           </motion.div>
