@@ -476,7 +476,7 @@ export default function LayeredBanner() {
                       src={`/characters/${p.key}/${p.key}-normal.png`}
                       alt={p.name}
                       className="w-24 h-24 sm:w-28 sm:h-28 mx-auto object-contain"
-                      style={{ filter: "drop-shadow(0 6px 8px rgba(80,60,120,0.25))" }}
+                      style={{ filter: "drop-shadow(0 6px 8px rgba(80,60,120,0.25))", transform: p.key === "ruby" ? "scale(1.3)" : undefined }}
                     />
                     <p className="text-sm font-bold text-gray-600 -mt-1">{p.name}</p>
                   </motion.div>
