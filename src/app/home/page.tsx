@@ -3,6 +3,25 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
+import { COURSES } from "@/data/courses";
+
+// 島嶼 slug → 島嶼圖（缺的用漸層占位）
+const ISLAND_IMG: Record<string, string> = {
+  "l1-letter-island": "island-letter", "l2-sound-island": "island-sound",
+  "l3-market-street": "island-market", "l4-school-road": "island-school",
+  "l5-coral-beach": "island-coral", "l6-lighthouse-point": "island-lighthouse",
+  "l7-grammar-gate": "island-grammar", "l8-question-tower": "island-question",
+  "l10-future-bridge": "island-future", "l11-challenge-arena": "island-challenge",
+};
+// 夥伴（頭像用 -normal；vega 用嚮導圖）
+const PALS = [
+  { key: "finn", name: "Finn", color: "border-orange-300" },
+  { key: "coco", name: "Coco", color: "border-pink-300" },
+  { key: "ruby", name: "Ruby", color: "border-red-300" },
+  { key: "benny", name: "Benny", color: "border-amber-300" },
+  { key: "polly", name: "Polly", color: "border-green-300" },
+  { key: "vega", name: "Vega", color: "border-purple-300" },
+];
 
 const NAV = [
   { icon: "🗺", label: "冒險地圖", href: "/adventure-map" },
@@ -382,65 +401,148 @@ export default function LayeredBanner() {
         </motion.div>
       </section>
 
-      {/* ===== 下方功能卡片區（4 張圖 + 按鈕，響應式，填滿整排） ===== */}
+      {/* ===== 下方內容區（世界輪播 / 任務+夥伴 / 徽章+課程 / 收集+家長） ===== */}
       <section
-        className="py-8 sm:py-10 md:py-14 px-3 sm:px-4 md:px-6 lg:px-8"
-        style={{
-          background: "linear-gradient(180deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%)",
-        }}
+        className="px-3 sm:px-4 md:px-6 pt-8 pb-4"
+        style={{ background: "linear-gradient(180deg, #fef9ec 0%, #fdf0d5 100%)" }}
       >
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 lg:gap-8">
-            {[
-              { img: "today-task",    btn: "前往任務",     btnIcon: "📜", href: "/tasks", color: "from-orange-400 to-amber-500", shadow: "rgba(234,88,12,0.4)" },
-              { img: "my-cabin",      btn: "進入小屋",     btnIcon: "🏠", href: "/cabin", color: "from-emerald-400 to-green-600", shadow: "rgba(5,150,105,0.4)" },
-              { img: "achievements",  btn: "查看全部",     btnIcon: "🏆", href: "/badges", color: "from-blue-500 to-indigo-600",   shadow: "rgba(37,99,235,0.4)" },
-              { img: "parent-center", btn: "前往家長中心", btnIcon: "👨‍👩‍👧", href: "/parents",  color: "from-pink-500 to-rose-600",     shadow: "rgba(225,29,72,0.4)" },
-            ].map((card, i) => (
-              <motion.div
-                key={card.img}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col gap-4"
-              >
-                {/* 卡片圖片（可點擊）*/}
-                <Link href={card.href} onClick={() => playClick()} className="block no-underline">
-                  <motion.img
-                    src={`/images/cards/${card.img}.webp?v=2`}
-                    alt={card.btn}
-                    whileHover={{ scale: 1.03, y: -4 }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="w-full h-auto rounded-3xl"
-                    style={{
-                      filter: "drop-shadow(0 8px 20px rgba(120,53,15,0.25)) drop-shadow(0 3px 6px rgba(0,0,0,0.12))",
-                    }}
-                  />
-                </Link>
+        <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
 
-                {/* CTA 按鈕 */}
-                <Link href={card.href} onClick={() => playStar()} className="no-underline block">
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full py-3 sm:py-3.5 rounded-full bg-gradient-to-r ${card.color} text-white font-black text-center flex items-center justify-center gap-2 cursor-pointer`}
-                    style={{
-                      fontSize: "clamp(15px, 1.2vw, 18px)",
-                      letterSpacing: "0.05em",
-                      boxShadow: `0 6px 16px ${card.shadow}, inset 0 1px 0 rgba(255,255,255,0.3)`,
-                    }}
-                  >
-                    <span>{card.btn}</span>
-                    <span>{card.btnIcon}</span>
-                  </motion.div>
-                </Link>
-              </motion.div>
-            ))}
+          {/* 1) 探索冒險世界 —— 島嶼輪播 */}
+          <div>
+            <h2 className="text-center text-2xl md:text-3xl font-black text-purple-800 mb-5">⭐ 探索冒險世界 ⭐</h2>
+            <div className="flex gap-4 overflow-x-auto pb-3 px-1 snap-x" style={{ scrollbarWidth: "thin" }}>
+              {COURSES.map(c => {
+                const img = ISLAND_IMG[c.slug];
+                return (
+                  <Link key={c.slug} href={`/courses/${c.slug}`} onClick={() => playClick()}
+                    className="snap-start flex-shrink-0 w-40 bg-white rounded-3xl p-3 shadow-md border-2 border-amber-100 hover:-translate-y-1 hover:shadow-lg transition no-underline text-center">
+                    <div className="w-full aspect-square rounded-2xl overflow-hidden mb-2 flex items-center justify-center bg-gradient-to-br from-sky-100 to-emerald-100">
+                      {img
+                        ? <img src={`/images/islands/${img}.webp`} alt={c.island} className="w-full h-full object-cover" />
+                        : <span className="text-5xl">{c.worldEmoji}</span>}
+                    </div>
+                    <p className="font-black text-gray-800 text-sm">{c.island}</p>
+                    <p className="text-xs text-gray-400">{c.islandEn}</p>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="flex justify-center mt-4">
+              <Link href="/adventure-map" onClick={() => playStar()}
+                className="no-underline inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-black px-8 py-3 rounded-full shadow-lg hover:from-purple-600 hover:to-indigo-600 transition">
+                🗺️ 進入世界地圖 →
+              </Link>
+            </div>
+          </div>
+
+          {/* 2) 今日任務 + 夥伴 */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* 今日冒險任務 */}
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-5 border-2 border-amber-200 shadow-sm">
+              <h3 className="text-xl font-black text-orange-500 text-center mb-3">📜 今日冒險任務</h3>
+              <div className="flex items-start gap-3">
+                <img src="/characters/finn/finn-happy.png" alt="Finn" className="w-24 h-24 object-contain flex-shrink-0" />
+                <div className="flex-1">
+                  <p className="text-sm text-gray-600 mb-3">陪 Finn 去冒險，完成任務拿豐富獎勵！</p>
+                  {[
+                    { t: "完成一個故事", n: "0/1" }, { t: "完成一個遊戲", n: "0/1" }, { t: "找到 3 個蘋果", n: "0/3" },
+                  ].map(x => (
+                    <div key={x.t} className="flex items-center justify-between bg-white/70 rounded-xl px-3 py-1.5 mb-1.5">
+                      <span className="text-sm text-gray-700">✅ {x.t}</span>
+                      <span className="text-xs font-bold text-orange-400">{x.n}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Link href="/tasks" onClick={() => playStar()} className="no-underline mt-3 block text-center bg-gradient-to-r from-orange-400 to-amber-500 text-white font-black py-2.5 rounded-full hover:from-orange-500 transition">開始任務 →</Link>
+            </div>
+
+            {/* 和夥伴一起冒險 */}
+            <div className="bg-gradient-to-br from-sky-50 to-indigo-50 rounded-3xl p-5 border-2 border-sky-200 shadow-sm">
+              <h3 className="text-xl font-black text-indigo-500 text-center mb-4">✨ 和夥伴一起冒險！</h3>
+              <div className="grid grid-cols-3 gap-3 mb-4">
+                {PALS.map(p => (
+                  <div key={p.key} className="text-center">
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-white border-4 ${p.color} overflow-hidden flex items-center justify-center shadow`}>
+                      <img src={p.key === "vega" ? "/images/guide/vega-point.webp" : `/characters/${p.key}/${p.key}-normal.png`} alt={p.name} className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-xs font-bold text-gray-600 mt-1">{p.name}</p>
+                  </div>
+                ))}
+              </div>
+              <Link href="/guide" onClick={() => playClick()} className="no-underline block text-center bg-white text-indigo-500 font-black py-2.5 rounded-full border-2 border-indigo-200 hover:bg-indigo-50 transition">認識更多夥伴 🐾</Link>
+            </div>
+          </div>
+
+          {/* 3) 成就徽章 + 最新課程 */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* 成就徽章 */}
+            <div className="bg-white rounded-3xl p-5 border-2 border-yellow-100 shadow-sm">
+              <h3 className="text-xl font-black text-gray-800 text-center mb-4">🏆 我的成就徽章</h3>
+              <div className="grid grid-cols-4 gap-2 mb-4">
+                {["🌱", "✍️", "📖", "⭐"].map((e, i) => (
+                  <div key={i} className="text-center">
+                    <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-yellow-100 to-amber-100 border-2 border-yellow-200 flex items-center justify-center text-2xl grayscale opacity-50">{e}</div>
+                  </div>
+                ))}
+              </div>
+              <Link href="/badges" onClick={() => playClick()} className="no-underline block text-center bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-black py-2.5 rounded-full hover:from-blue-600 transition">查看全部徽章 🏆</Link>
+            </div>
+
+            {/* 最新冒險課程 */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-5 border-2 border-purple-200 shadow-sm">
+              <h3 className="text-xl font-black text-purple-600 text-center mb-3">🆕 最新冒險課程</h3>
+              <Link href="/courses/l3-market-street/mission/1" onClick={() => playClick()} className="no-underline flex items-center gap-3">
+                <div className="w-24 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center text-4xl">🍎</div>
+                <div className="flex-1">
+                  <p className="text-xs text-gray-400">市場街 · 生活單字</p>
+                  <p className="font-black text-gray-800">Market Adventure</p>
+                  <p className="text-yellow-400">⭐⭐⭐</p>
+                </div>
+              </Link>
+              <Link href="/courses/l3-market-street/mission/1" onClick={() => playStar()} className="no-underline mt-3 block text-center bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black py-2.5 rounded-full hover:from-purple-600 transition">開始學習 →</Link>
+            </div>
+          </div>
+
+          {/* 4) 收集 + 家長專區 */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* 學習越多，收集越多 */}
+            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-5 border-2 border-cyan-200 shadow-sm">
+              <h3 className="text-xl font-black text-cyan-600 text-center mb-4">🎁 學習越多，收集越多！</h3>
+              <div className="grid grid-cols-4 gap-2">
+                {[{ e: "🏅", t: "徽章" }, { e: "💎", t: "寶石" }, { e: "🧰", t: "道具" }, { e: "🎩", t: "角色裝扮" }].map(x => (
+                  <Link key={x.t} href="/cabin" onClick={() => playClick()} className="no-underline text-center">
+                    <div className="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-cyan-100 flex items-center justify-center text-2xl shadow-sm">{x.e}</div>
+                    <p className="text-xs text-gray-500 mt-1">{x.t}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* 家長專區 */}
+            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl p-5 border-2 border-rose-200 shadow-sm flex items-center gap-4">
+              <div className="flex-1">
+                <h3 className="text-xl font-black text-rose-500 mb-1">👨‍👩‍👧 家長專區</h3>
+                <p className="text-sm text-gray-600 mb-3">了解孩子的學習進度，陪伴成長每一步。</p>
+                <Link href="/parents" onClick={() => playClick()} className="no-underline inline-block bg-gradient-to-r from-pink-500 to-rose-600 text-white font-black px-6 py-2.5 rounded-full hover:from-pink-600 transition">進入家長專區 🔒</Link>
+              </div>
+              <img src="/images/guide/vega-book.webp" alt="家長" className="w-24 h-24 object-contain flex-shrink-0 hidden sm:block" />
+            </div>
           </div>
         </div>
       </section>
+
+      {/* ===== Footer（用 div 不用 footer，避開 layout 的 body footer{display:none}） ===== */}
+      <div className="py-6 px-4 text-center" style={{ background: "#fdf0d5" }}>
+        <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 mb-2">
+          <Link href="/guide" className="hover:text-purple-600 no-underline">使用說明</Link>
+          <Link href="/blog" className="hover:text-purple-600 no-underline">學習文章</Link>
+          <Link href="/books" className="hover:text-purple-600 no-underline">推薦書單</Link>
+          <Link href="/parents" className="hover:text-purple-600 no-underline">家長專區</Link>
+        </div>
+        <p className="text-xs text-gray-400">© 2026 Adventure English 冒險英語 · 智慧媽咪國際有限公司</p>
+      </div>
 
       {/* 手機側邊選單 */}
       {mobileMenu && (
