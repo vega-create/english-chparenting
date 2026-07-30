@@ -1,8 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { playClick, playStar, playSuccess, playSwoosh } from "@/lib/sfx";
+import { wordSlug } from "@/lib/audio";
+
+// 單字小圖：有去背 PNG 就用圖，沒有用 emoji（emoji 從單字推不到，這裡只放圖或字）
+function WordImg({ en }: { en: string }) {
+  const [ok, setOk] = useState(true);
+  const ref = useRef<HTMLImageElement>(null);
+  useEffect(() => { if (ref.current && ref.current.complete && ref.current.naturalWidth === 0) setOk(false); }, []);
+  return ok
+    ? <img ref={ref} src={`/words/${wordSlug(en)}.png`} alt={en} onError={() => setOk(false)} className="w-[70%] h-[70%] object-contain" />
+    : <span className="text-lg">🔤</span>;
+}
 
 // ============ 12 個關卡資料 ============
 interface LevelDef {
@@ -785,79 +796,63 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
             onClick={() => setOpenLevel(null)}
           >
             <motion.div
-              className="bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden border-4 border-purple-200"
+              className="w-full max-w-[400px]"
               initial={{ y: 50, scale: 0.9 }} animate={{ y: 0, scale: 1 }} exit={{ y: 50, scale: 0.9 }}
               transition={{ type: "spring", stiffness: 200, damping: 22 }}
               onClick={e => e.stopPropagation()}
             >
-              <div className={`relative px-5 py-4 text-white text-center ${
-                statusOf(openLevel.id) === "completed"
-                  ? "bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-500"
-                  : statusOf(openLevel.id) === "current"
-                  ? "bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500"
-                  : "bg-gradient-to-br from-gray-500 to-gray-700"
-              }`}>
-                <div className="text-5xl mb-1 drop-shadow-lg">{openLevel.emoji}</div>
-                <p className="text-[10px] font-bold opacity-90">LEVEL {openLevel.id}</p>
-                <p className="text-2xl font-black drop-shadow">{openLevel.name}</p>
-                <p className="text-xs opacity-90">{openLevel.nameEn}</p>
-                {statusOf(openLevel.id) === "locked" && (
-                  <div className="absolute top-2 right-3 text-2xl">🔒</div>
-                )}
+              {/* 羊皮紙外框 + 疊字 */}
+              <div className="relative w-full" style={{ aspectRatio: "1000 / 925" }}>
+                <img src="/images/lesson-frame.webp" alt="" className="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+
+                {/* 標題（緞帶） */}
+                <div className="absolute left-0 right-0 text-center text-white" style={{ top: "9%" }}>
+                  <p className="text-[9px] font-bold opacity-90 leading-none">LEVEL {openLevel.id}</p>
+                  <p className="text-lg sm:text-xl font-black leading-tight" style={{ textShadow: "0 1px 2px rgba(150,20,60,0.6)" }}>{openLevel.name}</p>
+                  <p className="text-[10px] opacity-90 leading-none">{openLevel.nameEn}</p>
+                </div>
+
+                {/* 學習目標 */}
+                <div className="absolute" style={{ left: "15%", right: "15%", top: "26.5%" }}>
+                  <p className="text-[10px] font-black text-pink-500 leading-none mb-0.5">🎯 學習目標</p>
+                  <p className="text-[11px] text-gray-700 leading-tight line-clamp-2">{openLevel.goal}</p>
+                </div>
+
+                {/* Miss Vega */}
+                <div className="absolute flex items-center gap-1.5" style={{ left: "15%", right: "15%", top: "42%" }}>
+                  <img src="/images/guide/vega-point.webp" alt="Vega" className="w-8 h-8 rounded-full object-cover border-2 border-purple-200 flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-[9px] font-black text-purple-500 leading-none">Miss Vega · 引導老師</p>
+                    <p className="text-[10px] text-gray-700 leading-tight line-clamp-2">{openLevel.npcLine}</p>
+                  </div>
+                </div>
+
+                {/* 4 單字格 */}
+                <div className="absolute flex justify-between" style={{ left: "14%", right: "14%", top: "63%" }}>
+                  {(openLevel.goal.split(/[：:]/)[1] || "").split(/[,，]\s*/).map(s => s.trim()).filter(Boolean).slice(0, 4).map(w => (
+                    <div key={w} className="flex flex-col items-center justify-center" style={{ width: "22%", aspectRatio: "1" }}>
+                      <WordImg en={w} />
+                      <span className="text-[8px] font-bold text-gray-600 leading-none truncate max-w-full">{w}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {statusOf(openLevel.id) === "locked" && <div className="absolute top-[10%] right-[16%] text-2xl">🔒</div>}
               </div>
 
-              <div className="p-4 sm:p-5 space-y-3">
-                <div className="bg-purple-50 border-2 border-purple-200 rounded-2xl p-3">
-                  <p className="text-xs font-black text-purple-700 mb-1">🎯 學習目標</p>
-                  <p className="text-sm text-gray-800 leading-relaxed">{openLevel.goal}</p>
-                </div>
-
-                {/* Miss Vega 對話 */}
-                <div className="flex items-start gap-2.5">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 flex items-center justify-center text-2xl sm:text-3xl flex-shrink-0 shadow-lg border-2 border-white">
-                    👩‍🏫
-                  </div>
-                  <div className="flex-1 bg-pink-50 border-2 border-pink-200 rounded-2xl rounded-tl-none p-3 relative">
-                    <p className="text-[10px] text-pink-700 font-bold mb-1">Miss Vega · 引導老師</p>
-                    <p className="text-sm text-gray-800 leading-relaxed">{openLevel.npcLine}</p>
-                  </div>
-                </div>
-
+              {/* 按鈕（框下方） */}
+              <div className="mt-2 space-y-2 px-3">
                 {statusOf(openLevel.id) === "locked" ? (
-                  <button
-                    onClick={() => { playClick(); setOpenLevel(null); }}
-                    className="w-full py-3 bg-gray-200 text-gray-600 font-black rounded-2xl active:scale-95"
-                  >
-                    🔒 先完成前一關
-                  </button>
+                  <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-3 bg-gray-200 text-gray-600 font-black rounded-full active:scale-95">🔒 先完成前一關</button>
                 ) : statusOf(openLevel.id) === "completed" ? (
-                  <button
-                    onClick={() => { playClick(); setOpenLevel(null); }}
-                    className="w-full py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-black rounded-2xl shadow-lg active:scale-95"
-                  >
-                    ⭐ 已完成 · 之後可重新挑戰
-                  </button>
+                  <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-black rounded-full shadow-lg active:scale-95">⭐ 已完成 · 之後可重新挑戰</button>
                 ) : (
-                  <div className="space-y-2">
-                    <Link
-                      href={`/courses/l1-letter-island/mission/${openLevel.id}`}
-                      onClick={() => playStar()}
-                      className="block w-full py-3.5 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white font-black rounded-2xl shadow-lg active:scale-95 text-base text-center no-underline"
-                    >
-                      ▶ 開始任務
-                    </Link>
-                    <button
-                      onClick={completeLevel}
-                      className="w-full py-2.5 bg-white border-2 border-green-300 text-green-700 font-black rounded-2xl shadow active:scale-95 text-sm"
-                    >
-                      ✓ 完成關卡（測試用）
-                    </button>
-                  </div>
+                  <>
+                    <Link href={`/courses/l1-letter-island/mission/${openLevel.id}`} onClick={() => playStar()} className="block w-full py-3.5 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg active:scale-95 text-base text-center no-underline">⭐ ▶ 開始任務 ⭐</Link>
+                    <button onClick={completeLevel} className="w-full py-2.5 bg-white border-2 border-green-300 text-green-600 font-black rounded-full shadow active:scale-95 text-sm">✓ 完成關卡（測試用）</button>
+                  </>
                 )}
-
-                <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-1.5 text-xs text-gray-400">
-                  關閉
-                </button>
+                <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-1 text-xs text-white/80">關閉</button>
               </div>
             </motion.div>
           </motion.div>
