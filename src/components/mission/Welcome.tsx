@@ -1,6 +1,6 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { speak, speakChinese } from '@/lib/speech';
+import { useState, useEffect, useRef } from 'react';
+import { speak, speakChinese, stopSpeaking } from '@/lib/speech';
 
 interface Props {
   onComplete: () => void;
@@ -106,8 +106,18 @@ export default function Welcome({ onComplete }: Props) {
   const [showCharacterDetail, setShowCharacterDetail] = useState<number | null>(null);
   const [showStepDetail, setShowStepDetail] = useState<number | null>(null);
   const [starBurst, setStarBurst] = useState(false);
+  const speakTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const scene = WELCOME_SCENES[sceneIndex];
+
+  // 重整後留在同一幕（sessionStorage）
+  useEffect(() => {
+    const s = sessionStorage.getItem('ae_welcome_scene');
+    if (s !== null) setSceneIndex(Number(s));
+  }, []);
+  useEffect(() => {
+    sessionStorage.setItem('ae_welcome_scene', String(sceneIndex));
+  }, [sceneIndex]);
 
   // 自動播放中文語音引導
   useEffect(() => {
@@ -123,8 +133,9 @@ export default function Welcome({ onComplete }: Props) {
     const zhText = char.introZh;
     // 估算中文語音時間：每個字約 0.25 秒，rate 0.9
     const zhDuration = Math.max(2500, (zhText.length * 250) / 0.9 + 500);
+    if (speakTimer.current) clearTimeout(speakTimer.current);
     speakChinese(zhText, 0.9);
-    setTimeout(() => speak(char.intro, 0.75), zhDuration);
+    speakTimer.current = setTimeout(() => speak(char.intro, 0.75), zhDuration);
     setShowCharacterDetail(index);
     setCharactersClicked(prev => new Set(prev).add(index));
   }
@@ -150,6 +161,8 @@ export default function Welcome({ onComplete }: Props) {
   };
 
   function handleNext() {
+    stopSpeaking();
+    if (speakTimer.current) clearTimeout(speakTimer.current);
     setShowCharacterDetail(null);
     setShowStepDetail(null);
     if (sceneIndex < WELCOME_SCENES.length - 1) {

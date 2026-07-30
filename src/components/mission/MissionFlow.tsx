@@ -48,6 +48,20 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const [warmupScore, setWarmupScore] = useState(0);
   const [challengeScore, setChallengeScore] = useState(0);
 
+  const stepKey = course && mission ? `ae_mstep_${course.level}_${mission.id}` : '';
+
+  // 重整後留在同一步驟（sessionStorage，關掉分頁才清）
+  useEffect(() => {
+    if (!stepKey) return;
+    const saved = sessionStorage.getItem(stepKey) as Step | null;
+    if (saved) setStep(saved);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stepKey]);
+
+  useEffect(() => {
+    if (stepKey) sessionStorage.setItem(stepKey, step);
+  }, [stepKey, step]);
+
   // Stop TTS on step change and unmount
   useEffect(() => {
     return () => stopSpeaking();

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
-import { speak } from '@/lib/speech';
+import { speak, stopSpeaking } from '@/lib/speech';
 import { playClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 
@@ -279,6 +279,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   aria-label={`第 ${i + 1} 頁`}
                   onClick={() => {
                     if (i === storyIndex) return;
+                    stopSpeaking();
                     setPageDir(i >= storyIndex ? 'next' : 'prev');
                     setShowTranslation(false);
                     playPageFlip();
@@ -295,6 +296,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
             <div className="flex justify-center items-center gap-2 sm:gap-3">
               <button
                 onClick={() => {
+                  stopSpeaking();
                   setShowTranslation(false);
                   setPageDir('prev');
                   playPageFlip();
@@ -322,6 +324,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 {showTranslation ? '中 ✓' : '中'}
               </button>
               <button onClick={() => {
+                stopSpeaking();
                 setShowTranslation(false);
                 if (storyIndex < story.length - 1) {
                   setPageDir('next');
