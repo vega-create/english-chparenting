@@ -543,7 +543,7 @@ export default function LayeredBanner() {
                 <p className="text-sm text-gray-600 mb-3">了解孩子的學習進度，陪伴成長每一步。</p>
                 <Link href="/parents" onClick={() => playClick()} className="no-underline inline-block bg-gradient-to-r from-pink-500 to-rose-600 text-white font-black px-6 py-2.5 rounded-full hover:from-pink-600 transition">進入家長專區 🔒</Link>
               </div>
-              <img src="/images/guide/vega-book.webp" alt="家長" className="w-24 h-24 object-contain flex-shrink-0 hidden sm:block" />
+              <img src="/characters/vega/vega-read.png" alt="家長" className="w-24 h-24 object-contain flex-shrink-0 hidden sm:block" />
             </div>
           </div>
         </div>

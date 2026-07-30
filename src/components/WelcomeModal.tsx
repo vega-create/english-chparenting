@@ -87,7 +87,7 @@ export default function WelcomeModal() {
         {/* Vega character */}
         <div className="bg-gradient-to-br from-purple-100 to-pink-100 pt-8 pb-4 px-6 text-center">
           <img
-            src="/images/guide/vega-book.webp"
+            src="/characters/vega/vega-read.png"
             alt="Vega"
             className="w-28 h-28 mx-auto object-contain animate-float"
           />

@@ -10,7 +10,7 @@ export default function GuidePage() {
     <main className="min-h-screen py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12 animate-slide-up">
-          <img src="/images/guide/vega-book.webp" alt="Vega" className="w-28 h-28 md:w-36 md:h-36 mx-auto mb-4 object-contain animate-float" />
+          <img src="/characters/vega/vega-read.png" alt="Vega" className="w-28 h-28 md:w-36 md:h-36 mx-auto mb-4 object-contain animate-float" />
           <h1 className="text-3xl md:text-5xl font-black mb-3">
             <span className="gradient-text">使用說明</span> 📖
           </h1>
