@@ -69,8 +69,8 @@ export default function ChooseCharacterPage() {
               <div className="absolute flex items-end justify-center" style={{ left: '5%', right: '5%', top: '3%', bottom: '44%' }}>
                 <AvatarImg slug={a.slug} zh={a.zh} />
               </div>
-              {/* 名字 + 介紹（框內下半） */}
-              <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ bottom: '4%', width: '96%' }}>
+              {/* 名字 + 介紹（框內下半，往上提一些） */}
+              <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ bottom: '9%', width: '96%' }}>
                 <div className={`${a.pill} inline-block text-white font-black text-sm sm:text-xl px-4 sm:px-6 py-0.5 sm:py-1 rounded-full shadow ${active ? 'ring-2 ring-white' : ''}`}>{a.zh}</div>
                 <p className="mt-1 sm:mt-1.5 text-[11px] sm:text-[14px] font-bold text-gray-700 leading-tight">{a.role}</p>
                 <p className="text-[9px] sm:text-[12px] text-gray-500 leading-tight">{a.traits}</p>

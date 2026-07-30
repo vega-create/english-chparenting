@@ -11,6 +11,7 @@ import {
   type WorldDef,
 } from "@/lib/progress";
 import { playClick, playStar, playSwoosh } from "@/lib/sfx";
+import MapDialogue from "@/components/MapDialogue";
 
 // 六個世界在 adventure-map.png 上的位置（百分比，覆蓋整個島）
 const HOTSPOTS = [
@@ -454,6 +455,9 @@ export default function AdventureMapPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* 地圖嚮導對話框（打字機效果，之後可換真對話腳本） */}
+      <MapDialogue />
     </div>
   );
 }
