@@ -15,8 +15,8 @@ function WordImg({ en, emoji }: { en: string; emoji: string }) {
     if (ref.current && ref.current.complete && ref.current.naturalWidth === 0) setOk(false);
   }, []);
   return ok
-    ? <img ref={ref} src={`/words/${wordSlug(en)}.png`} alt={en} onError={() => setOk(false)} className="w-12 h-12 object-contain" />
-    : <span className="text-3xl">{emoji}</span>;
+    ? <img ref={ref} src={`/words/${wordSlug(en)}.png`} alt={en} onError={() => setOk(false)} className="w-full h-full object-contain" />
+    : <span className="text-[2.4rem] leading-none">{emoji}</span>;
 }
 import Welcome from '@/components/mission/Welcome';
 import WakeUp from '@/components/mission/WakeUp';
@@ -128,32 +128,30 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
                   <p className="text-[11px] text-amber-50 font-bold" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>{course.islandEn}</p>
                 </div>
 
-                {/* 學習目標 */}
-                <div className="absolute" style={{ left: "15%", right: "15%", top: "29%" }}>
-                  <p className="text-[11px] font-black text-pink-500 leading-none mb-0.5">🎯 學習目標</p>
+                {/* 學習目標（對準面板1，垂直置中） */}
+                <div className="absolute flex flex-col justify-center" style={{ left: "20%", right: "20%", top: "30%", height: "13%" }}>
+                  <p className="text-[11px] font-black text-pink-500 leading-none mb-1">🎯 學習目標</p>
                   <p className="text-[12px] text-gray-700 leading-snug line-clamp-2">{mission.focus || `${mission.titleEn}：${mission.words.slice(0, 4).map(w => w.en).join(", ")}`}</p>
                 </div>
 
-                {/* Miss Vega */}
-                {mission.goal && (
-                  <div className="absolute flex items-center gap-1.5" style={{ left: "15%", right: "15%", top: "43.5%" }}>
-                    <img src="/characters/vega/vega-happy.png" alt="Vega" className="w-9 h-9 rounded-full object-cover object-top bg-purple-100 border-2 border-purple-200 flex-shrink-0" />
-                    <div className="min-w-0">
-                      <p className="text-[9px] font-black text-purple-500 leading-none">Miss Vega · 引導老師</p>
-                      <p className="text-[11px] text-gray-700 leading-snug line-clamp-2">{mission.goal.zh}</p>
-                    </div>
+                {/* Miss Vega 引導（對準面板2，一律填） */}
+                <div className="absolute flex items-center gap-2" style={{ left: "20%", right: "20%", top: "46%", height: "12%" }}>
+                  <img src="/characters/vega/vega-happy.png" alt="Vega" className="w-9 h-9 rounded-full object-cover object-top bg-purple-100 border-2 border-purple-200 flex-shrink-0" />
+                  <div className="min-w-0 text-left">
+                    <p className="text-[9px] font-black text-purple-500 leading-none mb-0.5">Miss Vega · 引導老師</p>
+                    <p className="text-[11px] text-gray-700 leading-snug line-clamp-2">{mission.goal?.zh || "準備好了嗎？跟著 Miss Vega 一起出發冒險吧！"}</p>
                   </div>
-                )}
-
-                {/* 4 單字格 */}
-                <div className="absolute flex justify-between" style={{ left: "13.5%", right: "13.5%", top: "64%" }}>
-                  {mission.words.slice(0, 4).map(w => (
-                    <div key={w.en} className="flex flex-col items-center justify-center" style={{ width: "22%", aspectRatio: "1" }}>
-                      <WordImg en={w.en} emoji={w.image} />
-                      <span className="text-[8px] font-bold text-gray-600 leading-none truncate max-w-full">{w.en}</span>
-                    </div>
-                  ))}
                 </div>
+
+                {/* 4 單字格（各自對準框內 4 個槽，大小一致） */}
+                {mission.words.slice(0, 4).map((w, i) => (
+                  <div key={w.en} className="absolute flex flex-col items-center" style={{ left: `${[25, 41.5, 58.5, 75][i]}%`, top: "76%", width: "14%", transform: "translate(-50%, -50%)" }}>
+                    <div className="flex items-center justify-center" style={{ width: "82%", aspectRatio: "1" }}>
+                      <WordImg en={w.en} emoji={w.image} />
+                    </div>
+                    <span className="text-[8px] font-bold text-gray-600 leading-none truncate max-w-full mt-0.5">{w.en}</span>
+                  </div>
+                ))}
               </div>
 
               {/* 按鈕（框下方） */}
