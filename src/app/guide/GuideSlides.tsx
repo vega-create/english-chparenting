@@ -17,6 +17,14 @@ const FRIENDS = [
   { key: 'ruby',  name: 'Ruby',  trait: '寫作小天才',   cx: 79.9 },
 ];
 
+// slide 2「How You'll Learn」：4 個學習步驟圖示進框
+const STEPS = [
+  { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 18.7 },
+  { img: 'intro-listen',   en: 'Listen',     zh: '聽力',   cx: 39.5 },
+  { img: 'intro-speak',    en: 'Speak',      zh: '口說',   cx: 59.5 },
+  { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7 },
+];
+
 // slide 1「Welcome」：中間站 5 個玩家角色（人類）
 const PLAYERS = ['elly', 'sky', 'coco', 'leo', 'vera'];
 const PLAYER_CX = [37, 44.5, 52, 59.5, 67];
@@ -79,6 +87,23 @@ export default function GuideSlides() {
                     </div>
                     <img src="/images/avatars/vera.webp" alt="Vega" className="w-full object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" />
                   </div>
+                </>
+              )}
+
+              {/* slide 2：How You'll Learn（4 個學習步驟圖示） */}
+              {idx === 1 && (
+                <>
+                  {STEPS.map(s => (
+                    <div key={s.img} className="absolute flex items-center justify-center" style={{ left: `${s.cx}%`, top: '30%', width: '16%', height: '28%', transform: 'translateX(-50%)' }}>
+                      <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[82%] max-h-full object-contain drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" />
+                    </div>
+                  ))}
+                  {STEPS.map(s => (
+                    <div key={`l-${s.img}`} className="absolute text-center leading-tight" style={{ left: `${s.cx}%`, top: '62.5%', width: '18%', transform: 'translateX(-50%)' }}>
+                      <p className="text-white font-black" style={{ fontSize: 'clamp(11px,1.5vw,20px)', textShadow: '0 1px 2px rgba(0,0,0,.28)' }}>{s.en}</p>
+                      <p className="text-white/95 font-bold" style={{ fontSize: 'clamp(9px,1.1vw,14px)' }}>{s.zh}</p>
+                    </div>
+                  ))}
                 </>
               )}
 
