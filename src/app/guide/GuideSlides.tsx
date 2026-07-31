@@ -123,7 +123,7 @@ export default function GuideSlides() {
                   </div>
                   {/* 4 圖示（下拉、放大、貼近底色條） */}
                   {STEPS.map(s => (
-                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '26%', width: '16%', height: '42%', transform: 'translateX(-50%)', zIndex: 1 }}>
+                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '30%', width: '16%', height: '36%', transform: 'translateX(-50%)', zIndex: 1 }}>
                       <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
                     </div>
                   ))}
