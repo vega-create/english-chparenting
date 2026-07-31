@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_TC, Zen_Maru_Gothic } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -15,6 +15,12 @@ const zenMaru = Zen_Maru_Gothic({
   subsets: ["latin"],
   weight: ["500", "700", "900"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover", // 讓 env(safe-area-inset-*) 生效（手機瀏海/上下列）
+};
 
 export const metadata: Metadata = {
   title: {

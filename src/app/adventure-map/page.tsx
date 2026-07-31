@@ -66,10 +66,10 @@ export default function AdventureMapPage() {
       background: "linear-gradient(180deg, #cbe6ff 0%, #ffd5e8 35%, #fff0a8 65%, #b8dec0 100%)",
     }}>
       {/* 上方工具列 */}
-      <Link href="/" className="fixed top-3 left-3 z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
+      <Link href="/" style={{ top: "calc(0.75rem + env(safe-area-inset-top))", left: "calc(0.75rem + env(safe-area-inset-left))" }} className="fixed z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
         ← 返回
       </Link>
-      <div className="fixed top-3 right-3 z-50 flex gap-2">
+      <div style={{ top: "calc(0.75rem + env(safe-area-inset-top))", right: "calc(0.75rem + env(safe-area-inset-right))" }} className="fixed z-50 flex gap-2">
         <div className="bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-black shadow flex items-center gap-1">
           <span>🗺️</span>
           <span className="text-purple-700">World {currentWorld}/{WORLDS.length}</span>

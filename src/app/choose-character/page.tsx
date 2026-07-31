@@ -41,7 +41,7 @@ export default function ChooseCharacterPage() {
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-center"
-      style={{ backgroundImage: 'url(/images/choose-bg.webp)', backgroundSize: '100% 100%' }}>
+      style={{ backgroundImage: 'url(/images/choose-bg.webp)', backgroundSize: '100% 100%', height: '100dvh', minHeight: '100dvh' }}>
 
         <img src="/images/logo-260530.webp" alt="Adventure English" className="absolute top-[2%] left-[2%] w-[16%] max-w-[150px] z-20"
           style={{ filter: 'drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 0 4px rgba(255,255,255,.9))' }} />
@@ -80,7 +80,7 @@ export default function ChooseCharacterPage() {
         })}
 
         {/* 確認 / 稍後（疊在下方步道上） */}
-        <div className="absolute left-1/2 -translate-x-1/2 text-center z-20" style={{ bottom: '2.5%' }}>
+        <div className="absolute left-1/2 -translate-x-1/2 text-center z-20" style={{ bottom: 'calc(2.5% + env(safe-area-inset-bottom))' }}>
           <button onClick={confirm} disabled={!sel}
             className={`px-12 sm:px-16 py-2.5 sm:py-3 rounded-full font-black text-base sm:text-xl text-white shadow-xl transition-all active:scale-95 ${
               sel ? 'bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600' : 'bg-gray-400/70 cursor-not-allowed'

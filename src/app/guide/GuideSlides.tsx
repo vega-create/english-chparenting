@@ -27,6 +27,7 @@ export default function GuideSlides() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden select-none bg-sky-200"
+      style={{ height: '100dvh' }}
       onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 
       {/* 5 張背景（淡入淡出切換）：完整顯示不裁切 + 後方模糊填滿 */}
