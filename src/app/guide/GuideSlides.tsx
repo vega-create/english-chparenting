@@ -25,9 +25,14 @@ const STEPS = [
   { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7 },
 ];
 
-// slide 1「Welcome」：中間站 5 個玩家角色（人類）
-const PLAYERS = ['elly', 'sky', 'coco', 'leo', 'vera'];
-const PLAYER_CX = [37, 44.5, 52, 59.5, 67];
+// slide 1「Welcome」：中間站 5 個玩家角色（人類），混一些 happy 表情
+const PLAYERS = [
+  { slug: 'elly', pose: '-happy', cx: 36 },
+  { slug: 'sky',  pose: '',       cx: 44 },
+  { slug: 'coco', pose: '-happy', cx: 52 },
+  { slug: 'leo',  pose: '',       cx: 60 },
+  { slug: 'vera', pose: '-happy', cx: 68 },
+];
 
 export default function GuideSlides() {
   const [i, setI] = useState(0);
@@ -73,12 +78,12 @@ export default function GuideSlides() {
                     <p className="font-bold text-amber-800 mt-1.5 mb-2 sm:mb-3" style={{ fontSize: 'clamp(10px,1.4vw,18px)' }}>今天就出發，展開你的英語大冒險！</p>
                     <button onClick={() => go(i + 1)} className="rounded-full bg-gradient-to-b from-amber-400 to-orange-500 text-white font-black shadow-lg active:scale-95 hover:from-amber-500" style={{ fontSize: 'clamp(13px,1.8vw,24px)', padding: '0.4em 1.4em' }}>Start ▶</button>
                   </div>
-                  {PLAYERS.map((p, k) => (
-                    <img key={p} src={`/images/avatars/${p}.webp`} alt=""
-                      className="absolute object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.3)]"
-                      style={{ left: `${PLAYER_CX[k]}%`, bottom: '5%', width: '8.5%', transform: 'translateX(-50%)' }} />
+                  {PLAYERS.map(p => (
+                    <div key={p.slug} className="absolute flex items-end justify-center" style={{ left: `${p.cx}%`, bottom: '5%', width: '11%', height: '30%', transform: 'translateX(-50%)' }}>
+                      <img src={`/images/avatars/${p.slug}${p.pose}.webp`} alt="" className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.3)]" />
+                    </div>
                   ))}
-                  <div className="absolute" style={{ right: '2%', bottom: '4%', width: '13%' }}>
+                  <div className="absolute" style={{ right: '2%', bottom: '4%', width: '9.5%' }}>
                     <div className="absolute" style={{ right: '52%', bottom: '58%', width: '175%' }}>
                       <div className="relative">
                         <img src="/images/guide/intro-conversation1.webp" alt="" className="w-full" />
@@ -111,9 +116,9 @@ export default function GuideSlides() {
               {idx === 2 && (
                 <>
                   {FRIENDS.map(f => (
-                    <div key={f.key} className="absolute flex flex-col items-center" style={{ left: `${f.cx}%`, top: '22%', width: '14%', transform: 'translateX(-50%)' }}>
+                    <div key={f.key} className="absolute flex items-end justify-center" style={{ left: `${f.cx}%`, top: '20%', width: '13%', height: '44%', transform: 'translateX(-50%)' }}>
                       <img src={`/characters/${f.key}/${f.key}-wave.png`} alt={f.name}
-                        className="w-[92%] object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.3)]" style={{ height: '30vh', maxHeight: '210px' }} />
+                        className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.3)]" />
                     </div>
                   ))}
                   {/* 名字 + 特質（框底色條上） */}
@@ -126,9 +131,9 @@ export default function GuideSlides() {
                   {/* Vega 講話（右下角） */}
                   <img src="/characters/vega/vega-talk.png" alt="Vega"
                     className="absolute object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]"
-                    style={{ right: '0.5%', bottom: '0%', width: '12%' }} />
+                    style={{ right: '1%', bottom: '2%', width: '9%' }} />
                   {/* 對話泡泡（右上，不擋 Ruby） */}
-                  <div className="absolute" style={{ right: '1%', bottom: '46%', width: '19%' }}>
+                  <div className="absolute" style={{ right: '1.5%', bottom: '44%', width: '16%' }}>
                     <div className="relative">
                       <img src="/images/guide/intro-conversation.webp" alt="" className="w-full" />
                       <p className="absolute inset-0 flex items-center justify-center text-center font-black text-pink-500 px-[15%] pb-[8%]" style={{ fontSize: 'clamp(9px,1.1vw,15px)' }}>
