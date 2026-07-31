@@ -35,11 +35,11 @@ const REWARDS = [
 
 // slide 1「Welcome」：中間站 5 個玩家角色（人類），混一些 happy 表情
 const PLAYERS = [
-  { slug: 'elly', pose: '-happy', cx: 30 },
-  { slug: 'sky',  pose: '',       cx: 41 },
-  { slug: 'coco', pose: '',       cx: 52 },
-  { slug: 'leo',  pose: '',       cx: 63 },
-  { slug: 'vera', pose: '-happy', cx: 74 },
+  { slug: 'elly', pose: '-happy', cx: 30, sc: 1.22 },
+  { slug: 'sky',  pose: '',       cx: 41, sc: 1 },
+  { slug: 'coco', pose: '',       cx: 52, sc: 1 },
+  { slug: 'leo',  pose: '',       cx: 63, sc: 1 },
+  { slug: 'vera', pose: '-happy', cx: 74, sc: 1.15 },
 ];
 
 export default function GuideSlides() {
@@ -132,13 +132,20 @@ export default function GuideSlides() {
                       <p className="text-white/95 font-bold" style={{ fontSize: 'clamp(9px,1.1vw,14px)' }}>{s.zh}</p>
                     </div>
                   ))}
+                  {/* Speak 卡：白色 Hello 對話框（女孩右上） */}
+                  <div className="absolute" style={{ left: '65.5%', top: '31%', transform: 'translate(-50%,-50%)' }}>
+                    <div className="relative bg-white rounded-lg shadow-md border border-gray-200 px-1.5 py-0.5">
+                      <span className="font-black text-sky-500 leading-none" style={{ fontSize: 'clamp(8px,1vw,15px)' }}>Hello!</span>
+                      <span className="absolute left-2 -bottom-1 w-2 h-2 bg-white border-b border-r border-gray-200" style={{ transform: 'rotate(45deg)' }} />
+                    </div>
+                  </div>
                   {/* 底部副標 */}
                   <p className="absolute left-1/2 -translate-x-1/2 text-center font-bold text-amber-900" style={{ bottom: '5%', fontSize: 'clamp(10px,1.5vw,20px)', textShadow: '0 1px 2px rgba(255,255,255,.5)' }}>
                     每堂課只要 <span className="text-orange-500">5–10 分鐘</span>，學習超好玩！
                   </p>
-                  {/* 右下 Miss Vega 講話 + 泡泡（移到紫框下方） */}
+                  {/* 右下 Miss Vega 講話 + 泡泡（泡泡在 Vega 左下、較小不擋人） */}
                   <img src="/characters/vega/vega-talk.png" alt="Vega" className="absolute object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" style={{ right: '1%', bottom: '2%', width: '8.5%' }} />
-                  <div className="absolute" style={{ right: '1.5%', bottom: '17%', width: '12%' }}>
+                  <div className="absolute" style={{ right: '8.5%', bottom: '9%', width: '10%' }}>
                     <div className="relative">
                       <img src="/images/guide/intro-conversation1.webp" alt="" className="w-full" />
                       <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[13%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>一起來<br />學習吧！</p>
@@ -168,8 +175,8 @@ export default function GuideSlides() {
                   <img src="/characters/vega/vega-talk.png" alt="Vega"
                     className="absolute object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]"
                     style={{ right: '1%', bottom: '1%', width: '8.5%' }} />
-                  {/* 對話泡泡（黃框下方、Vega 上方，較小） */}
-                  <div className="absolute" style={{ right: '1%', bottom: '19%', width: '11%' }}>
+                  {/* 對話泡泡（Vega 左下、較小不擋人） */}
+                  <div className="absolute" style={{ right: '8.5%', bottom: '9%', width: '10%' }}>
                     <div className="relative">
                       <img src="/images/guide/intro-conversation.webp" alt="" className="w-full" />
                       <p className="absolute inset-0 flex items-center justify-center text-center font-black text-pink-500 px-[15%] pb-[8%]" style={{ fontSize: 'clamp(9px,1.1vw,15px)' }}>
@@ -188,8 +195,8 @@ export default function GuideSlides() {
                     <h2 className="font-black text-amber-900" style={{ fontSize: 'clamp(18px,2.7vw,40px)', textShadow: '0 1px 3px rgba(255,255,255,.5)' }}>Collect <span className="text-orange-500">Rewards</span></h2>
                   </div>
                   {REWARDS.map(r => (
-                    <div key={r.img} className="absolute flex items-end justify-center" style={{ left: `${r.cx}%`, top: '32%', width: '13%', height: '24%', transform: 'translateX(-50%)' }}>
-                      <img src={`/images/guide/${r.img}.webp`} alt={r.en} className="max-w-full max-h-full object-contain drop-shadow-[0_5px_8px_rgba(60,40,90,0.35)]" />
+                    <div key={r.img} className="absolute flex items-center justify-center rounded-2xl" style={{ left: `${r.cx}%`, top: '30%', width: '13%', height: '27%', transform: 'translateX(-50%)', background: 'rgba(255,255,255,0.38)', border: '3px solid rgba(255,255,255,0.85)', boxShadow: '0 6px 16px rgba(60,40,90,0.22)', backdropFilter: 'blur(2px)' }}>
+                      <img src={`/images/guide/${r.img}.webp`} alt={r.en} className="max-w-[80%] max-h-[85%] object-contain drop-shadow-[0_4px_6px_rgba(60,40,90,0.3)]" />
                     </div>
                   ))}
                   {['37.5', '50.5', '63.5'].map(x => (
@@ -204,14 +211,48 @@ export default function GuideSlides() {
                   <p className="absolute left-1/2 -translate-x-1/2 text-center font-bold text-amber-900" style={{ bottom: '6%', fontSize: 'clamp(10px,1.5vw,20px)', textShadow: '0 1px 2px rgba(255,255,255,.6)' }}>
                     完成課程、收集獎勵，成為<span className="text-orange-500">小冠軍</span> 🏆
                   </p>
+                  {/* 右下 Miss Vega 講話 */}
+                  <img src="/characters/vega/vega-talk.png" alt="Vega" className="absolute object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" style={{ right: '1%', bottom: '1%', width: '8.5%' }} />
+                  <div className="absolute" style={{ right: '8.5%', bottom: '9%', width: '11%' }}>
+                    <div className="relative">
+                      <img src="/images/guide/intro-conversation1.webp" alt="" className="w-full" />
+                      <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[13%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>一起收集<br />獎勵吧！</p>
+                    </div>
+                  </div>
                 </>
               )}
 
-              {/* slide 5：太空船飛過 */}
+              {/* slide 5：Ready?（火箭噴火焰 + 3 2 1 GO! + Vega） */}
               {idx === 4 && (
-                <img src="/images/guide/guide5-ship.webp" alt=""
-                  className="absolute animate-float drop-shadow-[0_10px_18px_rgba(40,30,80,0.35)]"
-                  style={{ left: '5%', top: '24%', width: '40%' }} />
+                <>
+                  {/* 標題 */}
+                  <div className="absolute flex items-center gap-2" style={{ left: '4%', top: '7%' }}>
+                    <span className="inline-flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-500 text-white font-black items-center justify-center" style={{ fontSize: 'clamp(14px,1.8vw,24px)' }}>5</span>
+                    <h2 className="font-black text-blue-600" style={{ fontSize: 'clamp(18px,2.7vw,40px)', textShadow: '0 1px 3px rgba(255,255,255,.6)' }}>Ready?</h2>
+                  </div>
+                  {/* 火箭 + 噴射火焰 */}
+                  <div className="absolute animate-float" style={{ left: '3%', top: '26%', width: '44%' }}>
+                    <div className="absolute" style={{ left: '-13%', top: '55%', width: '34%', height: '20%', transform: 'rotate(6deg)' }}>
+                      <div className="ae-flame w-full h-full" style={{ background: 'radial-gradient(ellipse at right, rgba(255,246,160,1) 0%, rgba(255,175,55,0.95) 35%, rgba(255,95,25,0.6) 65%, rgba(255,60,10,0) 100%)', filter: 'blur(2px)', borderRadius: '50%' }} />
+                    </div>
+                    <img src="/images/guide/guide5-ship.webp" alt="" className="w-full relative drop-shadow-[0_10px_18px_rgba(40,30,80,0.35)]" />
+                  </div>
+                  {/* 3 2 1 GO! */}
+                  <div className="absolute text-center leading-[0.95]" style={{ left: '60%', top: '18%' }}>
+                    <div className="font-black text-red-500" style={{ fontSize: 'clamp(20px,3.4vw,52px)', textShadow: '0 2px 4px rgba(255,255,255,.7)' }}>3</div>
+                    <div className="font-black text-orange-500 ml-3" style={{ fontSize: 'clamp(20px,3.4vw,52px)', textShadow: '0 2px 4px rgba(255,255,255,.7)' }}>2</div>
+                    <div className="font-black text-yellow-500 ml-6" style={{ fontSize: 'clamp(20px,3.4vw,52px)', textShadow: '0 2px 4px rgba(255,255,255,.7)' }}>1</div>
+                    <div className="font-black text-blue-600 ml-1" style={{ fontSize: 'clamp(24px,4vw,60px)', textShadow: '0 2px 5px rgba(255,255,255,.8)' }}>GO!</div>
+                  </div>
+                  {/* Miss Vega 右下 + 泡泡 */}
+                  <img src="/characters/vega/vega-talk.png" alt="Vega" className="absolute object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" style={{ right: '1%', bottom: '1%', width: '8.5%' }} />
+                  <div className="absolute" style={{ right: '8.5%', bottom: '9%', width: '10%' }}>
+                    <div className="relative">
+                      <img src="/images/guide/intro-conversation1.webp" alt="" className="w-full" />
+                      <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[12%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>準備好<br />出發囉！</p>
+                    </div>
+                  </div>
+                </>
               )}
             </div>
           </div>
