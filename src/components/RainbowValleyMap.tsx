@@ -744,7 +744,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
               left: `${playerLevel.x}%`,
               top: `${playerLevel.y}%`,
               // clamp(最小, 期望, 最大) — 手機小、桌機大
-              width: "clamp(80px, 14vw, 280px)",
+              width: "clamp(48px, 7vw, 120px)",
               transform: "translate(-50%, -85%)",
               // 白色光暈 + 黑色陰影：讓角色明顯浮起
               filter: "drop-shadow(0 0 12px rgba(255,255,255,0.95)) drop-shadow(0 0 24px rgba(255,255,255,0.8)) drop-shadow(0 0 40px rgba(255,255,255,0.55)) drop-shadow(0 10px 14px rgba(0,0,0,0.5))",

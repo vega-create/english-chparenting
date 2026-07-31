@@ -10,11 +10,11 @@ const N = HEIGHTS.length;
 
 // slide 3「認識夥伴」：5 隻動物依序放進 紫/藍/粉/綠/黃 框
 const FRIENDS = [
-  { key: 'finn',  name: 'Finn',  en: 'Brave team leader', cx: 16.3, sc: 1,    pill: 'bg-purple-500' },
-  { key: 'coco',  name: 'Coco',  en: 'A great listener',  cx: 32.9, sc: 0.86, pill: 'bg-sky-500' },
-  { key: 'polly', name: 'Polly', en: 'Loves to speak',    cx: 49.5, sc: 1,    pill: 'bg-pink-500' },
-  { key: 'benny', name: 'Benny', en: 'Loves reading',     cx: 66.2, sc: 1,    pill: 'bg-green-600' },
-  { key: 'ruby',  name: 'Ruby',  en: 'Writing star',      cx: 82.9, sc: 1,    pill: 'bg-amber-500' },
+  { key: 'finn',  name: 'Finn',  en: 'Brave team leader', cx: 16.3, sc: 0.98, pill: 'bg-purple-500' },
+  { key: 'coco',  name: 'Coco',  en: 'A great listener',  cx: 32.9, sc: 0.92, pill: 'bg-sky-500' },
+  { key: 'polly', name: 'Polly', en: 'Loves to speak',    cx: 49.5, sc: 0.95, pill: 'bg-pink-500' },
+  { key: 'benny', name: 'Benny', en: 'Loves reading',     cx: 66.2, sc: 0.8,  pill: 'bg-green-600' },
+  { key: 'ruby',  name: 'Ruby',  en: 'Writing star',      cx: 82.9, sc: 0.92, pill: 'bg-amber-500' },
 ];
 
 // slide 2「How You'll Learn」：4 個學習步驟圖示進框
@@ -123,7 +123,7 @@ export default function GuideSlides() {
                   </div>
                   {/* 4 圖示（下拉、放大、貼近底色條） */}
                   {STEPS.map(s => (
-                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '30%', width: '16%', height: '36%', transform: 'translateX(-50%)', zIndex: 1 }}>
+                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '30%', width: '15%', height: '31%', transform: 'translateX(-50%)', zIndex: 1 }}>
                       <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
                     </div>
                   ))}
@@ -164,7 +164,7 @@ export default function GuideSlides() {
                     <h2 className="font-black text-amber-900" style={{ fontSize: 'clamp(18px,2.7vw,40px)', textShadow: '0 1px 3px rgba(255,255,255,.6)' }}>Meet Your <span className="text-pink-500">Friends</span></h2>
                   </div>
                   {FRIENDS.map(f => (
-                    <div key={f.key} className="absolute flex items-end justify-center" style={{ left: `${f.cx}%`, top: '20%', width: '13%', height: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
+                    <div key={f.key} className="absolute flex items-end justify-center" style={{ left: `${f.cx}%`, top: '20%', width: '13%', height: '44%', transform: 'translateX(-50%)', zIndex: 1 }}>
                       <img src={`/characters/${f.key}/${f.key}-wave.png`} alt={f.name}
                         className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.3)]"
                         style={{ transform: `scale(${f.sc})`, transformOrigin: 'bottom center' }} />
@@ -172,7 +172,7 @@ export default function GuideSlides() {
                   ))}
                   {/* 名字 + 特質（框底色條上） */}
                   {FRIENDS.map(f => (
-                    <div key={`t-${f.key}`} className="absolute text-center" style={{ left: `${f.cx}%`, top: '68%', width: '16%', transform: 'translateX(-50%)', zIndex: 10 }}>
+                    <div key={`t-${f.key}`} className="absolute text-center" style={{ left: `${f.cx}%`, top: '65%', width: '16%', transform: 'translateX(-50%)', zIndex: 10 }}>
                       <span className={`${f.pill} inline-block text-white font-black px-3 py-0.5 rounded-full border-2 border-white shadow-md`} style={{ fontSize: 'clamp(9px,1.25vw,18px)' }}>⭐ {f.name}</span>
                       <p className="text-white font-black mt-1 leading-tight" style={{ fontSize: 'clamp(7px,0.95vw,13px)', WebkitTextStroke: '1.5px #5a3410', paintOrder: 'stroke fill' }}>{f.en}</p>
                     </div>
@@ -182,7 +182,7 @@ export default function GuideSlides() {
                     className="absolute object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]"
                     style={{ right: '1%', bottom: '1%', width: '7.5%' }} />
                   {/* 對話泡泡（Vega 正上方 far-right，不進 Ruby 框） */}
-                  <div className="absolute" style={{ right: '9%', bottom: '10%', width: '8.5%' }}>
+                  <div className="absolute" style={{ right: '9%', bottom: '3%', width: '8.5%' }}>
                     <div className="relative">
                       <img src="/images/guide/intro-conversation.webp" alt="" className="w-full" />
                       <p className="absolute inset-0 flex items-center justify-center text-center font-black text-pink-500 px-[15%] pb-[8%]" style={{ fontSize: 'clamp(9px,1.1vw,15px)' }}>
