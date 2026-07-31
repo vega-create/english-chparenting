@@ -10,11 +10,11 @@ const N = HEIGHTS.length;
 
 // slide 3「認識夥伴」：5 隻動物依序放進 紫/藍/粉/綠/黃 框
 const FRIENDS = [
-  { key: 'finn',  name: 'Finn',  trait: '勇敢探險隊長', cx: 16.3, sc: 1 },
-  { key: 'coco',  name: 'Coco',  trait: '聽力小高手',   cx: 32.9, sc: 0.86 },
-  { key: 'polly', name: 'Polly', trait: '口說小達人',   cx: 49.5, sc: 1 },
-  { key: 'benny', name: 'Benny', trait: '閱讀小博士',   cx: 66.2, sc: 1 },
-  { key: 'ruby',  name: 'Ruby',  trait: '寫作小天才',   cx: 82.9, sc: 1 },
+  { key: 'finn',  name: 'Finn',  en: 'Brave team leader', cx: 16.3, sc: 1,    pill: 'bg-purple-500' },
+  { key: 'coco',  name: 'Coco',  en: 'A great listener',  cx: 32.9, sc: 0.86, pill: 'bg-sky-500' },
+  { key: 'polly', name: 'Polly', en: 'Loves to speak',    cx: 49.5, sc: 1,    pill: 'bg-pink-500' },
+  { key: 'benny', name: 'Benny', en: 'Loves reading',     cx: 66.2, sc: 1,    pill: 'bg-green-600' },
+  { key: 'ruby',  name: 'Ruby',  en: 'Writing star',      cx: 82.9, sc: 1,    pill: 'bg-amber-500' },
 ];
 
 // slide 2「How You'll Learn」：4 個學習步驟圖示進框
@@ -89,11 +89,13 @@ export default function GuideSlides() {
               {/* slide 1：Welcome（左文字+Start / 中5個玩家角色 / 右Vega講話） */}
               {idx === 0 && (
                 <>
-                  <div className="absolute" style={{ left: '4%', top: '13%', width: '33%' }}>
-                    <span className="inline-flex w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-purple-500 text-white font-black items-center justify-center mb-1" style={{ fontSize: 'clamp(13px,1.6vw,22px)' }}>1</span>
-                    <h2 className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(20px,3.2vw,46px)' }}>Welcome,<br /><span className="text-purple-600">Explorer!</span></h2>
-                    <p className="font-bold text-amber-800 mt-1.5 mb-2 sm:mb-3" style={{ fontSize: 'clamp(10px,1.4vw,18px)' }}>今天就出發，展開你的英語大冒險！</p>
-                    <button onClick={() => go(i + 1)} className="rounded-full bg-gradient-to-b from-amber-400 to-orange-500 text-white font-black shadow-lg active:scale-95 hover:from-amber-500" style={{ fontSize: 'clamp(13px,1.8vw,24px)', padding: '0.4em 1.4em' }}>Start ▶</button>
+                  <div className="absolute" style={{ left: '4.5%', top: '11%', width: '35%' }}>
+                    <span className="inline-flex w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-purple-500 text-white font-black items-center justify-center mb-1 shadow" style={{ fontSize: 'clamp(13px,1.6vw,22px)' }}>1</span>
+                    <h2 className="font-black leading-[0.92]" style={{ fontSize: 'clamp(22px,3.7vw,52px)', letterSpacing: '-0.01em' }}>
+                      <span className="text-amber-900">Welcome,</span><br /><span className="text-purple-600">Explorer!</span>
+                    </h2>
+                    <p className="font-bold text-amber-800/90 mt-2 mb-3 leading-snug" style={{ fontSize: 'clamp(10px,1.35vw,18px)' }}>Today begins your<br />Adventure English journey!</p>
+                    <button onClick={() => go(i + 1)} className="rounded-full bg-gradient-to-b from-amber-400 to-orange-500 text-white font-black shadow-lg border-2 border-white/70 active:scale-95 hover:from-amber-500 transition" style={{ fontSize: 'clamp(14px,1.9vw,26px)', padding: '0.42em 1.6em' }}>Start ▶</button>
                   </div>
                   {PLAYERS.map(p => (
                     <div key={p.slug} className="absolute flex items-end justify-center" style={{ left: `${p.cx}%`, bottom: '5%', width: '11%', height: '35%', transform: 'translateX(-50%)' }}>
@@ -157,8 +159,12 @@ export default function GuideSlides() {
               {/* slide 3：認識夥伴（動物疊進框 + Vega 講話） */}
               {idx === 2 && (
                 <>
+                  <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 z-10" style={{ top: '4%' }}>
+                    <span className="inline-flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-500 text-white font-black items-center justify-center" style={{ fontSize: 'clamp(14px,1.8vw,24px)' }}>3</span>
+                    <h2 className="font-black text-amber-900" style={{ fontSize: 'clamp(18px,2.7vw,40px)', textShadow: '0 1px 3px rgba(255,255,255,.6)' }}>Meet Your <span className="text-pink-500">Friends</span></h2>
+                  </div>
                   {FRIENDS.map(f => (
-                    <div key={f.key} className="absolute flex items-end justify-center" style={{ left: `${f.cx}%`, top: '20%', width: '13%', height: '44%', transform: 'translateX(-50%)' }}>
+                    <div key={f.key} className="absolute flex items-end justify-center" style={{ left: `${f.cx}%`, top: '22%', width: '13%', height: '42%', transform: 'translateX(-50%)' }}>
                       <img src={`/characters/${f.key}/${f.key}-wave.png`} alt={f.name}
                         className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.3)]"
                         style={{ transform: `scale(${f.sc})`, transformOrigin: 'bottom center' }} />
@@ -166,9 +172,9 @@ export default function GuideSlides() {
                   ))}
                   {/* 名字 + 特質（框底色條上） */}
                   {FRIENDS.map(f => (
-                    <div key={`t-${f.key}`} className="absolute text-center leading-tight" style={{ left: `${f.cx}%`, top: '68%', width: '15%', transform: 'translateX(-50%)' }}>
-                      <p className="text-white font-black" style={{ fontSize: 'clamp(12px,1.5vw,20px)', WebkitTextStroke: '2.5px #5a3410', paintOrder: 'stroke fill' }}>{f.name}</p>
-                      <p className="text-white font-black" style={{ fontSize: 'clamp(9px,1.1vw,14px)', WebkitTextStroke: '1.8px #5a3410', paintOrder: 'stroke fill' }}>{f.trait}</p>
+                    <div key={`t-${f.key}`} className="absolute text-center" style={{ left: `${f.cx}%`, top: '63.5%', width: '16%', transform: 'translateX(-50%)' }}>
+                      <span className={`${f.pill} inline-block text-white font-black px-3 py-0.5 rounded-full border-2 border-white shadow-md`} style={{ fontSize: 'clamp(9px,1.25vw,18px)' }}>⭐ {f.name}</span>
+                      <p className="text-white font-black mt-1 leading-tight" style={{ fontSize: 'clamp(7px,0.95vw,13px)', WebkitTextStroke: '1.5px #5a3410', paintOrder: 'stroke fill' }}>{f.en}</p>
                     </div>
                   ))}
                   {/* Vega 講話（右下角，較小） */}
