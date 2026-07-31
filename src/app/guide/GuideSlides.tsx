@@ -19,10 +19,10 @@ const FRIENDS = [
 
 // slide 2「How You'll Learn」：4 個學習步驟圖示進框
 const STEPS = [
-  { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 18.7, sc: 1.32 },
-  { img: 'intro-listen',   en: 'Listen',     zh: '聽力',   cx: 39.5, sc: 1 },
-  { img: 'intro-speak',    en: 'Speak',      zh: '口說',   cx: 59.5, sc: 1 },
-  { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7, sc: 1 },
+  { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 18.7, sc: 1.32, dy: '-16%' },
+  { img: 'intro-listen',   en: 'Listen',     zh: '聽力',   cx: 39.5, sc: 1,    dy: '0%' },
+  { img: 'intro-speak',    en: 'Speak',      zh: '口說',   cx: 59.5, sc: 1,    dy: '0%' },
+  { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7, sc: 1,    dy: '0%' },
 ];
 
 // slide 4「Collect Rewards」：4 個獎勵圖示橫排（場景無框）
@@ -122,7 +122,7 @@ export default function GuideSlides() {
                   {/* 4 圖示（下拉、放大、貼近底色條） */}
                   {STEPS.map(s => (
                     <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '28%', width: '16%', height: '34%', transform: 'translateX(-50%)' }}>
-                      <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ transform: `scale(${s.sc})`, transformOrigin: 'bottom center' }} />
+                      <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
                     </div>
                   ))}
                   {/* 標籤 */}

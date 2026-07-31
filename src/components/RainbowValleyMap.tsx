@@ -129,6 +129,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
   const [device, setDevice] = useState<DeviceKind>("desktop");
   const [showDebug, setShowDebug] = useState(false);
   const [characterKey, setCharacterKey] = useState(CHARACTERS[0].key);
+  const [avatarSrc, setAvatarSrc] = useState<string | null>(null); // 選角頁選的角色
   const [showCharSwitcher, setShowCharSwitcher] = useState(false);
 
   // 偵測裝置：phone / ipad / desktop（依視窗大小 + 方向 + UA）
@@ -186,6 +187,9 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
       }
       const ch = localStorage.getItem(LS_CHAR);
       if (ch && CHARACTERS.some(c => c.key === ch)) setCharacterKey(ch);
+      // 選角頁選的角色（elly/sky/coco/leo/vera）→ 走關卡的主角
+      const av = localStorage.getItem("ae_avatar");
+      if (av && /^[a-z]+$/.test(av)) setAvatarSrc(`/images/avatars/${av}.webp`);
       // debug 模式（網址 ?debug=1）
       if (new URLSearchParams(window.location.search).has("debug")) setShowDebug(true);
     } catch {}
@@ -733,7 +737,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
         {/* 玩家角色 */}
         {!allDone && (
           <motion.img
-            src={currentChar.src}
+            src={avatarSrc || currentChar.src}
             alt={currentChar.name}
             className="absolute pointer-events-none"
             style={{
