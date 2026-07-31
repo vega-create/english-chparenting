@@ -123,13 +123,13 @@ export default function GuideSlides() {
                   </div>
                   {/* 4 圖示（下拉、放大、貼近底色條） */}
                   {STEPS.map(s => (
-                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '28%', width: '16%', height: '34%', transform: 'translateX(-50%)' }}>
+                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '26%', width: '16%', height: '42%', transform: 'translateX(-50%)', zIndex: 1 }}>
                       <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
                     </div>
                   ))}
                   {/* 標籤 */}
                   {STEPS.map(s => (
-                    <div key={`l-${s.img}`} className="absolute text-center leading-tight" style={{ left: `${s.cx}%`, top: '62.5%', width: '18%', transform: 'translateX(-50%)' }}>
+                    <div key={`l-${s.img}`} className="absolute text-center leading-tight" style={{ left: `${s.cx}%`, top: '63.5%', width: '18%', transform: 'translateX(-50%)', zIndex: 10 }}>
                       <p className="text-white font-black" style={{ fontSize: 'clamp(11px,1.5vw,20px)', textShadow: '0 1px 2px rgba(0,0,0,.28)' }}>{s.en}</p>
                       <p className="text-white/95 font-bold" style={{ fontSize: 'clamp(9px,1.1vw,14px)' }}>{s.zh}</p>
                     </div>
@@ -172,7 +172,7 @@ export default function GuideSlides() {
                   ))}
                   {/* 名字 + 特質（框底色條上） */}
                   {FRIENDS.map(f => (
-                    <div key={`t-${f.key}`} className="absolute text-center" style={{ left: `${f.cx}%`, top: '65.5%', width: '16%', transform: 'translateX(-50%)', zIndex: 10 }}>
+                    <div key={`t-${f.key}`} className="absolute text-center" style={{ left: `${f.cx}%`, top: '68%', width: '16%', transform: 'translateX(-50%)', zIndex: 10 }}>
                       <span className={`${f.pill} inline-block text-white font-black px-3 py-0.5 rounded-full border-2 border-white shadow-md`} style={{ fontSize: 'clamp(9px,1.25vw,18px)' }}>⭐ {f.name}</span>
                       <p className="text-white font-black mt-1 leading-tight" style={{ fontSize: 'clamp(7px,0.95vw,13px)', WebkitTextStroke: '1.5px #5a3410', paintOrder: 'stroke fill' }}>{f.en}</p>
                     </div>
