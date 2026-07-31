@@ -36,6 +36,13 @@ body {
   100% { transform: scaleX(1.28) scaleY(0.82); opacity: 0.75; }
 }
 .ae-flame { animation: flameFlick 0.18s ease-in-out infinite alternate; transform-origin: right center; }
+@keyframes aeRays { to { transform: rotate(360deg); } }
+.ae-rays { animation: aeRays 22s linear infinite; }
+@keyframes aeCountPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50%      { transform: translateX(-50%) scale(1.08); }
+}
+.ae-count { animation: aeCountPulse 1s ease-in-out infinite; }
 @keyframes floatSlow {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
