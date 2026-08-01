@@ -16,6 +16,7 @@ interface Props {
   tip?: { zh: string; char?: string; face?: boolean };
   title?: string;
   titleEn?: string;
+  missionId?: number;
   onComplete: () => void;
 }
 
@@ -43,10 +44,11 @@ function WordFace({ en, emoji }: { en: string; emoji: string }) {
   return <div className="text-6xl mb-1">{emoji}</div>;
 }
 
-export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, onComplete }: Props) {
+export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
   const [bookOpen, setBookOpen] = useState(false);
+  const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
   const [openCards, setOpenCards] = useState<number[]>([]);
@@ -181,6 +183,24 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
         <div className="book-perspective max-w-[380px] mx-auto mb-4">
           {!bookOpen ? (
             /* ── 封面 ── */
+            coverOk && missionId ? (
+              /* ── 封面（AI 生成整張封面圖） ── */
+              <button
+                key="cover"
+                onClick={openBook}
+                className="animate-page-next block w-full relative rounded-r-3xl rounded-l-md overflow-hidden shadow-2xl active:scale-[0.99] transition"
+                style={{ aspectRatio: '3 / 4' }}
+              >
+                <img
+                  src={`/images/ebook/l${level}-m${missionId}-cover.webp`}
+                  alt={titleEn || 'Story'}
+                  onError={() => setCoverOk(false)}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/20" />
+                <span className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/95 text-orange-500 px-5 sm:px-6 py-2 rounded-full font-black shadow-lg whitespace-nowrap">翻開書本 📖 →</span>
+              </button>
+            ) : (
             <button
               key="cover"
               onClick={openBook}
@@ -201,6 +221,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 <span className="inline-block bg-white/90 text-orange-500 px-5 sm:px-6 py-2.5 rounded-full font-bold shadow">翻開書本 📖 →</span>
               </div>
             </button>
+            )
           ) : (
             /* ── 內頁 ── */
             <div
