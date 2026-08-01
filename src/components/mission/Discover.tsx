@@ -50,6 +50,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const [bookOpen, setBookOpen] = useState(false);
   const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
   const [contentOk, setContentOk] = useState(true); // 每級內頁底圖：/images/ebook/l{級}-content.webp，缺圖用預設白頁
+  const [charZoom, setCharZoom] = useState(false); // 點動物放大/縮回
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
   const [openCards, setOpenCards] = useState<number[]>([]);
@@ -239,7 +240,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 onError={() => setContentOk(false)}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              {/* 內容區（米色面板範圍） */}
+              {/* 內容區（米色面板範圍）：只放場景 + 課文 */}
               <div className="absolute flex flex-col" style={{ left: '22%', right: '19.5%', top: '16.5%', bottom: '23%' }}>
                 {/* 場景插畫 */}
                 <div className="text-center">
@@ -256,41 +257,42 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     ))}
                   </div>
                 </div>
-                {/* 動物 + 課文 */}
-                <div className="flex-1 flex items-start gap-1.5 sm:gap-2 mt-2 min-h-0">
-                  <img
-                    src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
-                    alt={scene.characterName}
-                    className="w-14 h-14 sm:w-20 sm:h-20 object-contain flex-shrink-0"
-                  />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[10px] sm:text-xs text-amber-500 font-black mb-0.5">{scene.characterName}</p>
-                    <p className="font-bold leading-relaxed text-gray-800 text-sm sm:text-base">
-                      {scene.dialogue.split(' ').map((w, wi) => {
-                        const isHighlight = scene.highlightWords?.some(hw =>
-                          w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
-                          hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
-                        );
-                        return (
-                          <span key={wi}>
-                            <span
-                              className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer' : ''}
-                              onClick={() => { if (isHighlight) speak(w.replace(/[.,!?]/g, ''), 0.5); }}
-                            >
-                              {w}
-                            </span>{' '}
-                          </span>
-                        );
-                      })}
-                    </p>
-                    {showTranslation && (
-                      <p className="text-gray-500 text-xs sm:text-sm mt-1.5 animate-slide-up">{scene.dialogueZh}</p>
-                    )}
-                  </div>
+                {/* 課文（放大、置中偏上；左下留給動物） */}
+                <div className="flex-1 flex flex-col justify-center min-h-0 pl-[14%]">
+                  <p className="text-[11px] sm:text-sm text-amber-500 font-black mb-1">{scene.characterName}</p>
+                  <p className="font-bold leading-relaxed text-gray-800 text-base sm:text-xl">
+                    {scene.dialogue.split(' ').map((w, wi) => {
+                      const isHighlight = scene.highlightWords?.some(hw =>
+                        w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
+                        hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
+                      );
+                      return (
+                        <span key={wi}>
+                          <span
+                            className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer' : ''}
+                            onClick={() => { if (isHighlight) speak(w.replace(/[.,!?]/g, ''), 0.5); }}
+                          >
+                            {w}
+                          </span>{' '}
+                        </span>
+                      );
+                    })}
+                  </p>
+                  {showTranslation && (
+                    <p className="text-gray-500 text-xs sm:text-sm mt-1.5 animate-slide-up">{scene.dialogueZh}</p>
+                  )}
                 </div>
                 {/* 頁碼 */}
                 <p className="text-center text-[10px] sm:text-xs text-amber-400 font-bold">第 {storyIndex + 1} / {story.length} 頁</p>
               </div>
+              {/* 動物：頁面左下角（每頁都在這；點一下放大、再點縮回） */}
+              <img
+                src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
+                alt={scene.characterName}
+                onClick={e => { e.stopPropagation(); setCharZoom(z => !z); }}
+                className="absolute object-contain object-bottom drop-shadow-[0_6px_10px_rgba(60,40,90,0.35)] cursor-pointer transition-transform duration-300"
+                style={{ left: '5%', bottom: '13%', width: '27%', transform: charZoom ? 'scale(1.45)' : 'scale(1)', transformOrigin: 'bottom left', zIndex: 5 }}
+              />
             </div>
           ) : (
             /* ── 內頁（預設白頁） ── */
