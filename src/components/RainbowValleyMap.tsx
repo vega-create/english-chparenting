@@ -277,7 +277,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
           onClick={() => { playClick(); setShowGrad(true); }}
           className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-amber-300 text-amber-700 active:scale-95 transition flex items-center gap-1"
         >
-          🎓 畢業挑戰
+          📚 進階關卡
         </button>
         <button
           onClick={resetProgress}
@@ -913,9 +913,9 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
               initial={{ scale: 0.7 }} animate={{ scale: 1 }} exit={{ scale: 0.7 }}
               onClick={e => e.stopPropagation()}
             >
-              <p className="text-center font-black text-amber-600 text-lg mb-1">🎓 字母島畢業挑戰</p>
+              <p className="text-center font-black text-amber-600 text-lg mb-1">📚 進階關卡 13–20</p>
               <p className="text-center text-xs text-gray-500 mb-3">
-                {allDone ? "主線完成！把字母變成讀得懂的句子吧！" : `先完成主線 12 關才能解鎖（目前 ${Math.min(currentId - 1, LEVELS.length)}/12）`}
+                {allDone ? "繼續冒險！學會常見字，把字母變成讀得懂的句子！" : `完成地圖 12 關就能繼續冒險（目前 ${Math.min(currentId - 1, LEVELS.length)}/12）`}
               </p>
               <div className="grid grid-cols-2 gap-2">
                 {GRAD_LESSONS.map(g => (
