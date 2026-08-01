@@ -47,6 +47,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const [step, setStep] = useState<Step>('intro');
   const [warmupScore, setWarmupScore] = useState(0);
   const [challengeScore, setChallengeScore] = useState(0);
+  const discoverBackRef = useRef<(() => boolean) | null>(null); // Discover 內部逐層退
 
   const stepKey = course && mission ? `ae_mstep_${course.level}_${mission.id}` : '';
 
@@ -102,6 +103,8 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
                 <button
                   onClick={() => {
                     stopSpeaking();
+                    // 探索步驟內先逐層退（句型→拼讀→單字→電子書逐頁→封面→影片）
+                    if (step === 'discover' && discoverBackRef.current?.()) return;
                     const prevMap: Record<Step, Step> = { intro: 'intro', welcome: 'intro', wakeup: 'intro', discover: course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup', challenge: 'discover', talktime: 'challenge', complete: 'talktime' };
                     setStep(prevMap[step]);
                   }}
@@ -204,7 +207,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'discover' && (
-          <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onComplete={() => setStep('challenge')} />
+          <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onComplete={() => setStep('challenge')} />
         )}
 
         {step === 'challenge' && (

@@ -18,6 +18,7 @@ interface Props {
   titleEn?: string;
   missionId?: number;
   onComplete: () => void;
+  onRegisterBack?: (fn: () => boolean) => void; // 供外層「上一步」逐層退：回傳 true=內部已處理
 }
 
 type Phase = 'video' | 'story' | 'words' | 'phonics' | 'sentences';
@@ -44,7 +45,7 @@ function WordFace({ en, emoji }: { en: string; emoji: string }) {
   return <div className="text-6xl mb-1">{emoji}</div>;
 }
 
-export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete }: Props) {
+export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete, onRegisterBack }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
   const [bookOpen, setBookOpen] = useState(false);
@@ -79,6 +80,27 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   useEffect(() => {
     try { sessionStorage.setItem(ebookKey, JSON.stringify({ phase, bookOpen, storyIndex })); } catch {}
   }, [ebookKey, phase, bookOpen, storyIndex]);
+
+  // 外層「上一步」：逐層退（句型→拼讀→單字→電子書逐頁→封面→影片）；已在最前面回傳 false
+  useEffect(() => {
+    if (!onRegisterBack) return;
+    onRegisterBack(() => {
+      stopSpeaking();
+      if (phase === 'story') {
+        if (bookOpen && storyIndex > 0) { setPageDir('prev'); setStoryIndex(storyIndex - 1); return true; }
+        if (bookOpen) { setBookOpen(false); return true; }
+        if (hasVideo) { setPhase('video'); return true; }
+        return false;
+      }
+      const order: Phase[] = [...(hasVideo ? ['video' as Phase] : []), 'story', 'words', ...(phonicsLetters.length ? ['phonics' as Phase] : []), 'sentences'];
+      const idx = order.indexOf(phase);
+      if (idx <= 0) return false;
+      const target = order[idx - 1];
+      if (target === 'story') { setPhase('story'); setBookOpen(true); setStoryIndex(story.length - 1); }
+      else setPhase(target);
+      return true;
+    });
+  }, [onRegisterBack, phase, bookOpen, storyIndex, hasVideo, phonicsLetters.length, story.length]);
 
   // 故事自動播放語音
   const playStory = useCallback(() => {
