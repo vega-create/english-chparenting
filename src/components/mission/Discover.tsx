@@ -188,17 +188,18 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               <button
                 key="cover"
                 onClick={openBook}
-                className="animate-page-next block w-full relative rounded-r-3xl rounded-l-md overflow-hidden shadow-2xl active:scale-[0.99] transition"
-                style={{ aspectRatio: '3 / 4' }}
+                className="animate-page-next block w-full text-center active:scale-[0.99] transition"
               >
-                <img
-                  src={`/images/ebook/l${level}-m${missionId}-cover.webp`}
-                  alt={titleEn || 'Story'}
-                  onError={() => setCoverOk(false)}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/20" />
-                <span className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/95 text-orange-500 px-5 sm:px-6 py-2 rounded-full font-black shadow-lg whitespace-nowrap">翻開書本 📖 →</span>
+                <span className="block relative rounded-r-3xl rounded-l-md overflow-hidden shadow-2xl" style={{ aspectRatio: '3 / 4' }}>
+                  <img
+                    src={`/images/ebook/l${level}-m${missionId}-cover.webp`}
+                    alt={titleEn || 'Story'}
+                    onError={() => setCoverOk(false)}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <span className="absolute left-0 top-0 bottom-0 w-3 bg-black/20" />
+                </span>
+                <span className="inline-block mt-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-6 sm:px-8 py-2.5 rounded-full font-black shadow-lg whitespace-nowrap">翻開書本 📖 →</span>
               </button>
             ) : (
             <button
