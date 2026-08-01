@@ -47,10 +47,12 @@ export default function GuideSlides() {
   const router = useRouter();
   const touchX = useRef<number | null>(null);
 
-  // 重整後留在同一頁（sessionStorage）
+  // 重整後留在同一頁（sessionStorage）；讀取完成前不顯示，避免先閃第1頁
+  const [ready, setReady] = useState(false);
   useEffect(() => {
     const s = sessionStorage.getItem('ae_guide_slide');
     if (s !== null) setI(Math.min(N - 1, Number(s)));
+    setReady(true);
   }, []);
   useEffect(() => {
     sessionStorage.setItem('ae_guide_slide', String(i));
@@ -77,7 +79,7 @@ export default function GuideSlides() {
 
       {HEIGHTS.map((h, idx) => (
         <div key={idx} className="absolute inset-0 transition-opacity duration-500"
-          style={{ opacity: idx === i ? 1 : 0, pointerEvents: idx === i ? 'auto' : 'none' }}>
+          style={{ opacity: ready && idx === i ? 1 : 0, pointerEvents: idx === i ? 'auto' : 'none' }}>
           {/* 模糊填滿層 */}
           <div className="absolute inset-0"
             style={{ backgroundImage: `url(/images/guide/guide${idx + 1}.webp)`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(24px)', transform: 'scale(1.12)' }} />
@@ -107,7 +109,7 @@ export default function GuideSlides() {
                   <div className="absolute" style={{ right: '3%', bottom: '30%', width: '14%' }}>
                     <div className="relative">
                       <img src="/images/guide/intro-conversation1.webp" alt="" className="w-full" />
-                      <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[13%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>歡迎來到<br />我們的學校！</p>
+                      <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[13%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>歡迎一起<br />來冒險島！</p>
                     </div>
                   </div>
                 </>
@@ -151,7 +153,7 @@ export default function GuideSlides() {
                   <div className="absolute" style={{ right: '9%', bottom: '10%', width: '8.5%' }}>
                     <div className="relative">
                       <img src="/images/guide/intro-conversation1.webp" alt="" className="w-full" />
-                      <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[13%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>一起來<br />學習吧！</p>
+                      <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[13%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>一起來<br />闖關吧！</p>
                     </div>
                   </div>
                 </>
@@ -187,7 +189,7 @@ export default function GuideSlides() {
                     <div className="relative">
                       <img src="/images/guide/intro-conversation.webp" alt="" className="w-full" />
                       <p className="absolute inset-0 flex items-center justify-center text-center font-black text-pink-500 px-[15%] pb-[8%]" style={{ fontSize: 'clamp(9px,1.1vw,15px)' }}>
-                        我們都是你的<br />好夥伴！
+                        跟夥伴<br />說 Hi 吧！
                       </p>
                     </div>
                   </div>
@@ -216,14 +218,14 @@ export default function GuideSlides() {
                     </div>
                   ))}
                   <p className="absolute left-1/2 -translate-x-1/2 text-center font-black text-white whitespace-nowrap" style={{ bottom: '6%', fontSize: 'clamp(11px,1.6vw,22px)', WebkitTextStroke: '3px #6b3e12', paintOrder: 'stroke fill' }}>
-                    完成課程、收集獎勵，成為<span className="text-yellow-300">小冠軍</span> 🏆
+                    冒險成功，有機會變成<span className="text-yellow-300">小冠軍</span> 🏆
                   </p>
                   {/* 右下 Miss Vega 講話 */}
                   <div className="absolute flex items-end justify-center" style={{ right: '0.5%', bottom: '1%', width: '11%', height: '27%' }}><img src="/characters/vega/vega-talk.png" alt="Vega" className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" /></div>
                   <div className="absolute" style={{ right: '9%', bottom: '10%', width: '8.5%' }}>
                     <div className="relative">
                       <img src="/images/guide/intro-conversation1.webp" alt="" className="w-full" />
-                      <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[13%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>一起收集<br />獎勵吧！</p>
+                      <p className="absolute inset-0 flex items-center justify-center text-center font-black text-amber-800 px-[13%] pb-[8%]" style={{ fontSize: 'clamp(8px,1vw,14px)' }}>哇～闖關過<br />還有禮物！</p>
                     </div>
                   </div>
                 </>
