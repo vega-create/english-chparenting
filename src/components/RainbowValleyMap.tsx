@@ -276,6 +276,13 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
         >
           🧒 角色
         </button>
+        <Link
+          href="/adventure-map/island/sound-island"
+          onClick={() => playClick()}
+          className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-sky-200 text-sky-700 active:scale-95 transition no-underline"
+        >
+          ⛵ 聲音島
+        </Link>
         <button
           onClick={resetProgress}
           className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-red-200 text-red-600 active:scale-95 transition"

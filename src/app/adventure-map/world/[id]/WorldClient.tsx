@@ -27,6 +27,15 @@ const WORLD_ISLAND: Record<number, { zh: string; en: string; emoji: string }> = 
   6: { zh: "挑戰場", en: "Challenge Arena", emoji: "🏟️" },
 };
 
+// 各世界第二座島（完成第一座島後前往）
+const SECOND_ISLAND: Record<number, { zh: string; slug: string; emoji: string }> = {
+  2: { zh: "學校路", slug: "school-road",      emoji: "🏫" },
+  3: { zh: "燈塔角", slug: "lighthouse-point", emoji: "🗼" },
+  4: { zh: "問題塔", slug: "question-tower",   emoji: "❓" },
+  5: { zh: "未來橋", slug: "future-bridge",    emoji: "🌉" },
+  6: { zh: "勝利峰", slug: "victory-peak",     emoji: "🏔️" },
+};
+
 export default function WorldDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const worldId = parseInt(id, 10);
@@ -104,6 +113,12 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
             <p className="font-black text-white text-base mb-0.5">🔒 尚未解鎖</p>
             <p className="text-xs text-white/85">先完成前一個世界，才能來這裡冒險！</p>
           </div>
+        )}
+        {SECOND_ISLAND[world.id] && (
+          <Link href={`/adventure-map/island/${SECOND_ISLAND[world.id].slug}`} onClick={() => playClick()}
+            className="mt-2.5 bg-sky-500/90 backdrop-blur text-white font-black text-sm px-5 py-2 rounded-full shadow-xl no-underline active:scale-95 transition">
+            ⛵ 第二座島：{SECOND_ISLAND[world.id].emoji} {SECOND_ISLAND[world.id].zh}
+          </Link>
         )}
       </div>
 
