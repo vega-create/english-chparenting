@@ -13,7 +13,7 @@ const FRIENDS = [
   { key: 'finn',  name: 'Finn',  en: 'Brave team leader', cx: 16.3, sc: 0.88, pill: 'bg-purple-500' },
   { key: 'coco',  name: 'Coco',  en: 'A great listener',  cx: 32.9, sc: 0.84, pill: 'bg-sky-500' },
   { key: 'polly', name: 'Polly', en: 'Loves to speak',    cx: 49.5, sc: 0.95, pill: 'bg-pink-500' },
-  { key: 'benny', name: 'Benny', en: 'Loves reading',     cx: 66.2, sc: 0.8,  pill: 'bg-green-600' },
+  { key: 'benny', name: 'Benny', en: 'Loves reading',     cx: 66.2, sc: 0.92, pill: 'bg-green-600' },
   { key: 'ruby',  name: 'Ruby',  en: 'Writing star',      cx: 82.9, sc: 0.92, pill: 'bg-amber-500' },
 ];
 
@@ -122,24 +122,24 @@ export default function GuideSlides() {
                     <h2 className="font-black text-amber-900" style={{ fontSize: 'clamp(18px,2.7vw,40px)' }}>How You&apos;ll <span className="text-green-600">Learn</span></h2>
                   </div>
                   {/* 4 圖示（下拉、放大、貼近底色條） */}
-                  {/* 人物（去背，下半身延伸進按鈕區） */}
+                  {/* 人物（去背，下緣裁在背景原色條上緣＝藏在按鈕後） */}
                   {STEPS.map(s => (
-                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '26%', width: '15%', height: '42%', transform: 'translateX(-50%)', zIndex: 1 }}>
-                      <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
+                    <div key={s.img} className="absolute flex items-end justify-center overflow-hidden" style={{ left: `${s.cx}%`, top: '25%', width: '15%', height: '38%', transform: 'translateX(-50%)', zIndex: 1 }}>
+                      <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ height: '112%', transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
                     </div>
                   ))}
-                  {/* 前景彩色按鈕（蓋住人物下半身）+ 標籤 */}
+                  {/* 標籤（背景原本的色條上） */}
                   {STEPS.map(s => (
-                    <div key={`l-${s.img}`} className="absolute flex flex-col items-center justify-center text-center leading-tight rounded-2xl" style={{ left: `${s.cx}%`, top: '62%', width: '15.8%', height: '14.5%', transform: 'translateX(-50%)', zIndex: 5, background: s.color, boxShadow: '0 4px 10px rgba(60,40,90,.25)' }}>
+                    <div key={`l-${s.img}`} className="absolute text-center leading-tight" style={{ left: `${s.cx}%`, top: '65%', width: '18%', transform: 'translateX(-50%)', zIndex: 10 }}>
                       <p className="text-white font-black" style={{ fontSize: 'clamp(11px,1.5vw,20px)', textShadow: '0 1px 2px rgba(0,0,0,.28)' }}>{s.en}</p>
                       <p className="text-white/95 font-bold" style={{ fontSize: 'clamp(9px,1.1vw,14px)' }}>{s.zh}</p>
                     </div>
                   ))}
                   {/* Speak 卡：白色 Hello 對話框（女孩右上） */}
-                  <div className="absolute" style={{ left: '65.5%', top: '31%', transform: 'translate(-50%,-50%)' }}>
-                    <div className="relative bg-white rounded-lg shadow-md border border-gray-200 px-1.5 py-0.5">
-                      <span className="font-black text-sky-500 leading-none" style={{ fontSize: 'clamp(8px,1vw,15px)' }}>Hello!</span>
-                      <span className="absolute left-2 -bottom-1 w-2 h-2 bg-white border-b border-r border-gray-200" style={{ transform: 'rotate(45deg)' }} />
+                  <div className="absolute" style={{ left: '63%', top: '30%', transform: 'translate(-50%,-50%)', zIndex: 12 }}>
+                    <div className="relative bg-white rounded-xl shadow-md border border-gray-200 px-2.5 py-1">
+                      <span className="font-black text-sky-500 leading-none" style={{ fontSize: 'clamp(11px,1.4vw,20px)' }}>Hello!</span>
+                      <span className="absolute left-2.5 -bottom-1 w-2.5 h-2.5 bg-white border-b border-r border-gray-200" style={{ transform: 'rotate(45deg)' }} />
                     </div>
                   </div>
                   {/* 底部副標 */}
@@ -243,12 +243,12 @@ export default function GuideSlides() {
                   <div className="absolute" style={{ left: '62%', top: '31%', width: '30%', aspectRatio: '1', transform: 'translate(-50%,-50%)', zIndex: 1 }}>
                     <div className="ae-rays w-full h-full" style={{ borderRadius: '50%', background: 'repeating-conic-gradient(rgba(255,222,85,.7) 0deg 4deg, transparent 4deg 24deg)', WebkitMaskImage: 'radial-gradient(circle, #000 12%, transparent 56%)', maskImage: 'radial-gradient(circle, #000 12%, transparent 56%)' }} />
                   </div>
-                  {/* 3 2 1 GO!（外框字，脈動動畫） */}
-                  <div className="absolute text-center leading-[0.95] ae-count" style={{ left: '62%', top: '19%', transform: 'translateX(-50%)', zIndex: 2 }}>
-                    <div className="font-black text-red-500"    style={{ fontSize: 'clamp(22px,3.6vw,54px)', WebkitTextStroke: '2.5px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.25))' }}>3</div>
-                    <div className="font-black text-orange-500" style={{ fontSize: 'clamp(22px,3.6vw,54px)', WebkitTextStroke: '2.5px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.25))' }}>2</div>
-                    <div className="font-black text-amber-400"  style={{ fontSize: 'clamp(22px,3.6vw,54px)', WebkitTextStroke: '2.5px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.25))' }}>1</div>
-                    <div className="font-black text-blue-600 mt-1" style={{ fontSize: 'clamp(28px,4.8vw,76px)', WebkitTextStroke: '3px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 4px 4px rgba(0,0,0,.3))' }}>GO!</div>
+                  {/* 3 2 1 GO!（弧形排列、大間距、脈動動畫） */}
+                  <div className="absolute ae-count" style={{ left: '60%', top: '12%', width: '18%', height: '62%', transform: 'translateX(-50%)', zIndex: 2 }}>
+                    <div className="absolute font-black text-red-500"    style={{ left: '38%', top: '0%',  transform: 'rotate(-10deg)', fontSize: 'clamp(24px,3.8vw,58px)', WebkitTextStroke: '2.5px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.25))' }}>3</div>
+                    <div className="absolute font-black text-orange-500" style={{ left: '58%', top: '25%', transform: 'rotate(-4deg)',  fontSize: 'clamp(24px,3.8vw,58px)', WebkitTextStroke: '2.5px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.25))' }}>2</div>
+                    <div className="absolute font-black text-amber-400"  style={{ left: '66%', top: '50%', transform: 'rotate(4deg)',   fontSize: 'clamp(24px,3.8vw,58px)', WebkitTextStroke: '2.5px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.25))' }}>1</div>
+                    <div className="absolute font-black text-blue-600"   style={{ left: '8%',  top: '72%', transform: 'rotate(-6deg)',  fontSize: 'clamp(30px,5vw,80px)',  WebkitTextStroke: '3px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 4px 4px rgba(0,0,0,.3))' }}>GO!</div>
                   </div>
                   {/* Miss Vega 右下 + 泡泡 */}
                   <div className="absolute flex items-end justify-center" style={{ right: '0.5%', bottom: '1%', width: '11%', height: '27%' }}><img src="/characters/vega/vega-talk.png" alt="Vega" className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" /></div>
