@@ -330,7 +330,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 </div>
               </div>
               {/* 動物：頁面右下角、眼神朝向課文（會浮動；點一下放大、再點縮回） */}
-              <div className="absolute animate-float" style={{ right: '6%', bottom: '13%', width: '26%', height: '40%', zIndex: 5 }}>
+              <div className="absolute animate-float" style={{ right: '9%', bottom: '13%', width: '24%', height: '38%', zIndex: 5 }}>
                 <div className="w-full h-full flex items-end justify-center">
                   <img
                     src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
