@@ -41,6 +41,14 @@ const LEVELS_BASE = [
   { id: 10, name: "星空音樂會", nameEn: "Starry Concert", goal: "唱完整字母歌，複習 M 到 Z",             npcLine: "星空下開音樂會，唱完整的 ABC 歌！🌟",                                           emoji: "🌟" },
   { id: 11, name: "字母工坊",   nameEn: "Letter Workshop",goal: "大小寫配對 + 字母書寫",                 npcLine: "來字母工坊！把大寫和小寫配對，練習寫字母～",                                    emoji: "✏️" },
   { id: 12, name: "彩虹守護龍", nameEn: "Rainbow Dragon", goal: "A–Z 總驗收！擊敗守護龍拿字母徽章",     npcLine: "我是守護彩虹的龍！用上你所有字母 A 到 Z，打敗我吧 🐉🌈",                        emoji: "🐉" },
+  { id: 13, name: "大小寫小屋", nameEn: "Twin Letters",   goal: "大小寫配對：Big A → small a",           npcLine: "大寫和小寫是雙胞胎！幫 Big A 找到 small a 吧～",                                emoji: "🔠" },
+  { id: 14, name: "書寫工坊",   nameEn: "Writing Shop",   goal: "字母書寫：描一描、寫一寫",              npcLine: "拿起魔法筆，跟著虛線把字母寫出來！✏️",                                          emoji: "✏️" },
+  { id: 15, name: "字母歌廣場", nameEn: "ABC Plaza",      goal: "Review③：A–Z 完整字母歌＋大小寫",      npcLine: "廣場音樂會開始！把 A 到 Z 一次唱完～🎵",                                        emoji: "🎶" },
+  { id: 16, name: "魔法字巷①", nameEn: "Magic Words 1",  goal: "常見字：I / a / an / the / is",         npcLine: "這些是一看就認得的魔法字！I、a、an、the、is ✨",                                emoji: "👀" },
+  { id: 17, name: "魔法字巷②", nameEn: "Magic Words 2",  goal: "常見字：you / see / like / go / me",    npcLine: "更多魔法字來囉！you、see、like、go、me！",                                      emoji: "👁️" },
+  { id: 18, name: "一個東西商店", nameEn: "A/An Shop",    goal: "冠詞：a cat / an apple",                npcLine: "商店的規則：子音前用 a、母音前用 an！🛍️",                                      emoji: "🔢" },
+  { id: 19, name: "閱讀小徑",   nameEn: "Reading Path",   goal: "綜合閱讀：I see a cat.",                npcLine: "把學過的字串成句子讀讀看：I see a cat！📖",                                     emoji: "📖" },
+  { id: 20, name: "畢業城門",   nameEn: "Graduation Gate",goal: "字母島總驗收＋畢業 🏆",                 npcLine: "最終試煉！通過就從字母島畢業，之後前往聲音島！🎓",                              emoji: "🎓" },
 ];
 
 // === 三種裝置的地圖配置（圖檔、比例、12 關位置）===
@@ -64,6 +72,14 @@ const MAP_CONFIG: Record<DeviceKind, { src: string; aspectRatio: string; positio
       { x: 48, y: 82 }, // 10 拼讀森林
       { x: 84, y: 82 }, // 11 彩虹競技場
       { x: 82, y: 24 }, // 12 彩虹守護龍
+      { x: 91, y: 40 }, // 13 大小寫小屋
+      { x: 92, y: 58 }, // 14 書寫工坊
+      { x: 62, y: 74 }, // 15 字母歌廣場
+      { x: 36, y: 62 }, // 16 魔法字巷①
+      { x: 40, y: 45 }, // 17 魔法字巷②
+      { x: 17, y: 50 }, // 18 一個東西商店
+      { x: 7,  y: 43 }, // 19 閱讀小徑
+      { x: 7,  y: 77 }, // 20 畢業城門
     ],
   },
   // iPad (1448×1086, ~4:3)
@@ -106,18 +122,6 @@ const MAP_CONFIG: Record<DeviceKind, { src: string; aspectRatio: string; positio
   },
 };
 
-// 畢業挑戰（主線 12 關完成後解鎖的 M13-20）
-const GRAD_LESSONS = [
-  { id: 13, name: "大小寫配對", emoji: "🔠" },
-  { id: 14, name: "字母書寫",   emoji: "✏️" },
-  { id: 15, name: "字母歌 A–Z", emoji: "🎵" },
-  { id: 16, name: "常見字①",   emoji: "👀" },
-  { id: 17, name: "常見字②",   emoji: "👁️" },
-  { id: 18, name: "a / an",     emoji: "🔢" },
-  { id: 19, name: "綜合閱讀",   emoji: "📖" },
-  { id: 20, name: "畢業大魔王", emoji: "🎓" },
-];
-
 // 玩家角色列表（之後可以無限擴充）
 const CHARACTERS = [
   { key: "girl3_1", name: "小冒險家",   src: "/images/characters/girl3_1.webp?v=2" },
@@ -143,7 +147,6 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
   const [characterKey, setCharacterKey] = useState(CHARACTERS[0].key);
   const [avatarSrc, setAvatarSrc] = useState<string | null>(null); // 選角頁選的角色
   const [showCharSwitcher, setShowCharSwitcher] = useState(false);
-  const [showGrad, setShowGrad] = useState(false); // 畢業挑戰面板（M13-20）
 
   // 偵測裝置：phone / ipad / desktop（依視窗大小 + 方向 + UA）
   useEffect(() => {
@@ -272,12 +275,6 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
           className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-purple-200 text-purple-700 active:scale-95 transition flex items-center gap-1"
         >
           🧒 角色
-        </button>
-        <button
-          onClick={() => { playClick(); setShowGrad(true); }}
-          className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-amber-300 text-amber-700 active:scale-95 transition flex items-center gap-1"
-        >
-          📚 進階關卡
         </button>
         <button
           onClick={resetProgress}
@@ -753,6 +750,14 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
           );
         })}
 
+        {/* 島名浮動標示 */}
+        <div className="absolute animate-float pointer-events-none" style={{ left: "2.5%", top: "9%", zIndex: 25 }}>
+          <div className="bg-white/90 backdrop-blur rounded-2xl px-4 py-1.5 shadow-xl border-2 border-amber-300 text-center">
+            <p className="font-black text-amber-700" style={{ fontSize: "clamp(13px,1.4vw,20px)" }}>🏝️ 字母島</p>
+            <p className="text-[9px] sm:text-[11px] font-bold text-amber-500 leading-none">Letter Island</p>
+          </div>
+        </div>
+
         {/* 玩家角色（外層管定位錨點、內層管浮動動畫，避免 transform 打架） */}
         {!allDone && (
           <div
@@ -895,49 +900,6 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
                 )}
               </div>
               <button onClick={() => setShowCharSwitcher(false)} className="w-full mt-4 py-2 text-sm text-gray-500">關閉</button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* ============= 畢業挑戰（M13-20） ============= */}
-      <AnimatePresence>
-        {showGrad && (
-          <motion.div
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            onClick={() => setShowGrad(false)}
-          >
-            <motion.div
-              className="bg-white rounded-3xl p-5 max-w-md w-full shadow-2xl"
-              initial={{ scale: 0.7 }} animate={{ scale: 1 }} exit={{ scale: 0.7 }}
-              onClick={e => e.stopPropagation()}
-            >
-              <p className="text-center font-black text-amber-600 text-lg mb-1">📚 進階關卡 13–20</p>
-              <p className="text-center text-xs text-gray-500 mb-3">
-                {allDone ? "繼續冒險！學會常見字，把字母變成讀得懂的句子！" : `完成地圖 12 關就能繼續冒險（目前 ${Math.min(currentId - 1, LEVELS.length)}/12）`}
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {GRAD_LESSONS.map(g => (
-                  allDone ? (
-                    <Link
-                      key={g.id}
-                      href={`/courses/l1-letter-island/mission/${g.id}`}
-                      onClick={() => playStar()}
-                      className="flex items-center gap-2 rounded-2xl p-3 border-2 border-amber-200 bg-amber-50 hover:bg-amber-100 active:scale-95 transition no-underline"
-                    >
-                      <span className="text-2xl">{g.emoji}</span>
-                      <span className="text-sm font-black text-amber-800">{g.name}</span>
-                    </Link>
-                  ) : (
-                    <div key={g.id} className="flex items-center gap-2 rounded-2xl p-3 border-2 border-gray-200 bg-gray-50 opacity-60">
-                      <span className="text-2xl grayscale">{g.emoji}</span>
-                      <span className="text-sm font-black text-gray-400">{g.name} 🔒</span>
-                    </div>
-                  )
-                ))}
-              </div>
-              <button onClick={() => setShowGrad(false)} className="w-full mt-4 py-2 text-sm text-gray-500">關閉</button>
             </motion.div>
           </motion.div>
         )}
