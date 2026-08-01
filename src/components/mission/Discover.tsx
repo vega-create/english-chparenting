@@ -307,14 +307,18 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   ))}
                 </div>
               </div>
-              {/* 動物：頁面右下角、眼神朝向課文（每頁都在；點一下放大、再點縮回） */}
-              <img
-                src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
-                alt={scene.characterName}
-                onClick={e => { e.stopPropagation(); setCharZoom(z => !z); }}
-                className="absolute object-contain object-bottom drop-shadow-[0_6px_10px_rgba(60,40,90,0.35)] cursor-pointer transition-transform duration-300"
-                style={{ right: '5%', bottom: '13%', width: '27%', transform: charZoom ? 'scale(1.45)' : 'scale(1)', transformOrigin: 'bottom right', zIndex: 5 }}
-              />
+              {/* 動物：頁面右下角、眼神朝向課文（會浮動；點一下放大、再點縮回） */}
+              <div className="absolute animate-float" style={{ right: '6%', bottom: '13%', width: '26%', height: '40%', zIndex: 5 }}>
+                <div className="w-full h-full flex items-end justify-center">
+                  <img
+                    src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
+                    alt={scene.characterName}
+                    onClick={e => { e.stopPropagation(); setCharZoom(z => !z); }}
+                    className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_6px_10px_rgba(60,40,90,0.35)] cursor-pointer transition-transform duration-300"
+                    style={{ transform: charZoom ? 'scale(1.45)' : 'scale(1)', transformOrigin: 'bottom center' }}
+                  />
+                </div>
+              </div>
             </div>
           ) : (
             /* ── 內頁（預設白頁） ── */

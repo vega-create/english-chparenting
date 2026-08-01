@@ -94,9 +94,21 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
       <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-3xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between mb-2">
-            <a href={`/courses/${course.slug}`} className="text-gray-500 hover:text-gray-700 text-sm">
-              ← {course.island}
-            </a>
+            <div className="flex items-center gap-3">
+              <a href={`/courses/${course.slug}`} className="text-gray-500 hover:text-gray-700 text-sm">
+                ← {course.island}
+              </a>
+              {step !== 'intro' && (
+                <button
+                  onClick={() => {
+                    stopSpeaking();
+                    const prevMap: Record<Step, Step> = { intro: 'intro', welcome: 'intro', wakeup: 'intro', discover: course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup', challenge: 'discover', talktime: 'challenge', complete: 'talktime' };
+                    setStep(prevMap[step]);
+                  }}
+                  className="text-purple-500 hover:text-purple-700 text-sm font-bold bg-purple-50 px-3 py-0.5 rounded-full"
+                >← 上一步</button>
+              )}
+            </div>
             <div className="flex items-center gap-2">
               <span className="text-yellow-500">⭐ {totalStars}</span>
             </div>
