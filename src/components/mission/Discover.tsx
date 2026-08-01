@@ -62,6 +62,24 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const scene = story[storyIndex];
   const sentence = sentences[currentSentence];
 
+  // 重整後留在同一頁（sessionStorage：phase / 書開合 / 頁碼）
+  const ebookKey = `ae_ebook_${level}_${missionId ?? 0}`;
+  useEffect(() => {
+    try {
+      const s = sessionStorage.getItem(ebookKey);
+      if (s) {
+        const o = JSON.parse(s);
+        if (o.phase) setPhase(o.phase);
+        if (typeof o.bookOpen === 'boolean') setBookOpen(o.bookOpen);
+        if (typeof o.storyIndex === 'number' && o.storyIndex < story.length) setStoryIndex(o.storyIndex);
+      }
+    } catch {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    try { sessionStorage.setItem(ebookKey, JSON.stringify({ phase, bookOpen, storyIndex })); } catch {}
+  }, [ebookKey, phase, bookOpen, storyIndex]);
+
   // 故事自動播放語音
   const playStory = useCallback(() => {
     if (phase === 'story' && bookOpen && scene) {
@@ -182,7 +200,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
         </div>
 
         {/* 一本書：封面 + 內頁（書本比例） */}
-        <div className="book-perspective max-w-[380px] mx-auto mb-4">
+        <div className="book-perspective mx-auto mb-4" style={{ maxWidth: 'min(92vw, calc((100dvh - 250px) * 0.72), 620px)' }}>
           {!bookOpen ? (
             /* ── 封面 ── */
             coverOk && missionId ? (
@@ -257,8 +275,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     ))}
                   </div>
                 </div>
-                {/* 課文（放大、置中偏上；左下留給動物） */}
-                <div className="flex-1 flex flex-col justify-center min-h-0 pl-[14%]">
+                {/* 課文（放大、置中偏上；右下留給動物） */}
+                <div className="flex-1 flex flex-col justify-center min-h-0 pr-[14%]">
                   <p className="text-[11px] sm:text-sm text-amber-500 font-black mb-1">{scene.characterName}</p>
                   <p className="font-bold leading-relaxed text-gray-800 text-base sm:text-xl">
                     {scene.dialogue.split(' ').map((w, wi) => {
@@ -282,16 +300,20 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     <p className="text-gray-500 text-xs sm:text-sm mt-1.5 animate-slide-up">{scene.dialogueZh}</p>
                   )}
                 </div>
-                {/* 頁碼 */}
-                <p className="text-center text-[10px] sm:text-xs text-amber-400 font-bold">第 {storyIndex + 1} / {story.length} 頁</p>
+                {/* 頁數：星星表示（目前頁亮） */}
+                <div className="flex justify-center gap-0.5 sm:gap-1">
+                  {story.map((_, i) => (
+                    <span key={i} className="transition-all" style={{ fontSize: i === storyIndex ? 'clamp(14px,1.8vw,22px)' : 'clamp(10px,1.3vw,16px)', opacity: i === storyIndex ? 1 : 0.35, filter: i === storyIndex ? 'none' : 'grayscale(60%)' }}>⭐</span>
+                  ))}
+                </div>
               </div>
-              {/* 動物：頁面左下角（每頁都在這；點一下放大、再點縮回） */}
+              {/* 動物：頁面右下角、眼神朝向課文（每頁都在；點一下放大、再點縮回） */}
               <img
                 src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
                 alt={scene.characterName}
                 onClick={e => { e.stopPropagation(); setCharZoom(z => !z); }}
                 className="absolute object-contain object-bottom drop-shadow-[0_6px_10px_rgba(60,40,90,0.35)] cursor-pointer transition-transform duration-300"
-                style={{ left: '5%', bottom: '13%', width: '27%', transform: charZoom ? 'scale(1.45)' : 'scale(1)', transformOrigin: 'bottom left', zIndex: 5 }}
+                style={{ right: '5%', bottom: '13%', width: '27%', transform: charZoom ? 'scale(1.45)' : 'scale(1)', transformOrigin: 'bottom right', zIndex: 5 }}
               />
             </div>
           ) : (
