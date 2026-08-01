@@ -136,7 +136,7 @@ export default function GuideSlides() {
                     </div>
                   ))}
                   {/* Speak 卡：白色 Hello 對話框（女孩右上） */}
-                  <div className="absolute" style={{ left: '63%', top: '30%', transform: 'translate(-50%,-50%)', zIndex: 12 }}>
+                  <div className="absolute" style={{ left: '64.5%', top: '26%', transform: 'translate(-50%,-50%)', zIndex: 12 }}>
                     <div className="relative bg-white rounded-xl shadow-md border border-gray-200 px-2.5 py-1">
                       <span className="font-black text-sky-500 leading-none" style={{ fontSize: 'clamp(11px,1.4vw,20px)' }}>Hello!</span>
                       <span className="absolute left-2.5 -bottom-1 w-2.5 h-2.5 bg-white border-b border-r border-gray-200" style={{ transform: 'rotate(45deg)' }} />
