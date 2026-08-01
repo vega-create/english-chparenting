@@ -146,7 +146,7 @@ export default function GuideSlides() {
                   </div>
                   {/* 底部副標 */}
                   <p className="absolute left-1/2 -translate-x-1/2 text-center font-black text-white whitespace-nowrap" style={{ bottom: '5%', fontSize: 'clamp(11px,1.6vw,22px)', WebkitTextStroke: '3px #6b3e12', paintOrder: 'stroke fill' }}>
-                    每堂課只要 <span className="text-yellow-300">5–10 分鐘</span>，學習超好玩！
+                    每個關卡<span className="text-yellow-300">多元好玩</span>！
                   </p>
                   {/* 右下 Miss Vega 講話 + 泡泡（泡泡在 Vega 左下、較小不擋人） */}
                   <div className="absolute flex items-end justify-center" style={{ right: '0.5%', bottom: '1%', width: '11%', height: '27%' }}><img src="/characters/vega/vega-talk.png" alt="Vega" className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" /></div>
