@@ -18,6 +18,15 @@ const WORLD_IMG: Record<number, string> = {
   4: "world-story-castle", 5: "world-explorer-land", 6: "world-champion-peak",
 };
 
+// 各世界第一座島（此圖即該島的關卡地圖）
+const WORLD_ISLAND: Record<number, { zh: string; en: string; emoji: string }> = {
+  2: { zh: "市場街", en: "Market Street",   emoji: "🛒" },
+  3: { zh: "珊瑚灘", en: "Coral Beach",     emoji: "🏖️" },
+  4: { zh: "魔法門", en: "Magic Gate",      emoji: "✨" },
+  5: { zh: "時光道", en: "Time Road",       emoji: "⏳" },
+  6: { zh: "挑戰場", en: "Challenge Arena", emoji: "🏟️" },
+};
+
 export default function WorldDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const worldId = parseInt(id, 10);
@@ -72,6 +81,16 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
       <Link href="/adventure-map" onClick={() => playClick()} className="fixed top-3 left-3 z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
         ← 返回地圖
       </Link>
+
+      {/* 島名浮動標示（此圖＝該世界第一座島的關卡地圖） */}
+      {WORLD_ISLAND[world.id] && (
+        <div className="fixed animate-float pointer-events-none z-40" style={{ left: "3%", top: "10%" }}>
+          <div className="bg-white/90 backdrop-blur rounded-2xl px-4 py-1.5 shadow-xl border-2 border-amber-300 text-center">
+            <p className="font-black text-amber-700" style={{ fontSize: "clamp(13px,1.4vw,20px)" }}>{WORLD_ISLAND[world.id].emoji} {WORLD_ISLAND[world.id].zh}</p>
+            <p className="text-[9px] sm:text-[11px] font-bold text-amber-500 leading-none">{WORLD_ISLAND[world.id].en}</p>
+          </div>
+        </div>
+      )}
 
       {/* 地圖本身已印有名字＋關卡踏腳石，只在底部放一張不擋圖的狀態小卡 */}
       <div className="min-h-screen flex flex-col items-center justify-end px-4 pb-8 text-center">
