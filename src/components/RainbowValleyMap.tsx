@@ -734,31 +734,32 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
           );
         })}
 
-        {/* 玩家角色 */}
+        {/* 玩家角色（外層管定位錨點、內層管浮動動畫，避免 transform 打架） */}
         {!allDone && (
-          <motion.img
-            src={avatarSrc || currentChar.src}
-            alt={currentChar.name}
+          <div
             className="absolute pointer-events-none"
             style={{
               left: `${playerLevel.x}%`,
               top: `${playerLevel.y}%`,
-              // clamp(最小, 期望, 最大) — 手機小、桌機大
               width: "clamp(36px, 5vw, 84px)",
               transform: "translate(-50%, -100%)",
-              // 白色光暈 + 黑色陰影：讓角色明顯浮起
-              filter: "drop-shadow(0 0 12px rgba(255,255,255,0.95)) drop-shadow(0 0 24px rgba(255,255,255,0.8)) drop-shadow(0 0 40px rgba(255,255,255,0.55)) drop-shadow(0 10px 14px rgba(0,0,0,0.5))",
               zIndex: 30,
+              transition: "left 0.6s ease, top 0.6s ease",
             }}
-            initial={false}
-            animate={{ left: `${playerLevel.x}%`, top: `${playerLevel.y}%`, y: [0, -12, 0] }}
-            transition={{
-              left:  { type: "spring", stiffness: 80, damping: 14 },
-              top:   { type: "spring", stiffness: 80, damping: 14 },
-              y:     { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
-            }}
-            draggable={false}
-          />
+          >
+            <motion.img
+              src={avatarSrc || currentChar.src}
+              alt={currentChar.name}
+              className="w-full"
+              style={{
+                filter: "drop-shadow(0 0 12px rgba(255,255,255,0.95)) drop-shadow(0 0 24px rgba(255,255,255,0.8)) drop-shadow(0 0 40px rgba(255,255,255,0.55)) drop-shadow(0 10px 14px rgba(0,0,0,0.5))",
+              }}
+              initial={false}
+              animate={{ y: [0, -10, 0] }}
+              transition={{ y: { duration: 1.8, repeat: Infinity, ease: "easeInOut" } }}
+              draggable={false}
+            />
+          </div>
         )}
 
         {/* 全部完成 */}
