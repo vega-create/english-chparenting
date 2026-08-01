@@ -49,6 +49,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
   const [bookOpen, setBookOpen] = useState(false);
   const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
+  const [contentOk, setContentOk] = useState(true); // 每級內頁底圖：/images/ebook/l{級}-content.webp，缺圖用預設白頁
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
   const [openCards, setOpenCards] = useState<number[]>([]);
@@ -223,8 +224,76 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               </div>
             </button>
             )
+          ) : contentOk ? (
+            /* ── 內頁（固定底圖 + 內容疊在米色面板） ── */
+            <div
+              key={storyIndex}
+              className={`relative rounded-r-3xl rounded-l-md shadow-2xl overflow-hidden ${
+                pageDir === 'next' ? 'animate-page-next' : 'animate-page-prev'
+              }`}
+              style={{ aspectRatio: '1080 / 1456' }}
+            >
+              <img
+                src={`/images/ebook/l${level}-content.webp`}
+                alt=""
+                onError={() => setContentOk(false)}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* 內容區（米色面板範圍） */}
+              <div className="absolute flex flex-col" style={{ left: '22%', right: '19.5%', top: '16.5%', bottom: '23%' }}>
+                {/* 場景插畫 */}
+                <div className="text-center">
+                  <div className="text-6xl sm:text-7xl mb-1">{scene.image}</div>
+                  <div className="flex justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl">
+                    {scene.sceneEmojis.map((emoji, i) => (
+                      <span
+                        key={`${storyIndex}-${i}`}
+                        className={`inline-block ${animationClass[scene.animation] || 'animate-bounce'}`}
+                        style={{ animationDelay: `${i * 0.15}s`, animationDuration: '1s', animationIterationCount: '3' }}
+                      >
+                        {emoji}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {/* 動物 + 課文 */}
+                <div className="flex-1 flex items-start gap-1.5 sm:gap-2 mt-2 min-h-0">
+                  <img
+                    src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
+                    alt={scene.characterName}
+                    className="w-14 h-14 sm:w-20 sm:h-20 object-contain flex-shrink-0"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[10px] sm:text-xs text-amber-500 font-black mb-0.5">{scene.characterName}</p>
+                    <p className="font-bold leading-relaxed text-gray-800 text-sm sm:text-base">
+                      {scene.dialogue.split(' ').map((w, wi) => {
+                        const isHighlight = scene.highlightWords?.some(hw =>
+                          w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
+                          hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
+                        );
+                        return (
+                          <span key={wi}>
+                            <span
+                              className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer' : ''}
+                              onClick={() => { if (isHighlight) speak(w.replace(/[.,!?]/g, ''), 0.5); }}
+                            >
+                              {w}
+                            </span>{' '}
+                          </span>
+                        );
+                      })}
+                    </p>
+                    {showTranslation && (
+                      <p className="text-gray-500 text-xs sm:text-sm mt-1.5 animate-slide-up">{scene.dialogueZh}</p>
+                    )}
+                  </div>
+                </div>
+                {/* 頁碼 */}
+                <p className="text-center text-[10px] sm:text-xs text-amber-400 font-bold">第 {storyIndex + 1} / {story.length} 頁</p>
+              </div>
+            </div>
           ) : (
-            /* ── 內頁 ── */
+            /* ── 內頁（預設白頁） ── */
             <div
               key={storyIndex}
               className={`relative bg-[#fffdf7] rounded-r-3xl rounded-l-md border border-amber-200 shadow-2xl overflow-hidden min-h-[440px] sm:min-h-[500px] flex flex-col ${
