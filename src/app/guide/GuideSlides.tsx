@@ -35,7 +35,7 @@ const REWARDS = [
 
 // slide 1「Welcome」：中間站 5 個玩家角色（人類），混一些 happy 表情
 const PLAYERS = [
-  { slug: 'elly', pose: '', cx: 30, sc: 1 },
+  { slug: 'elly', pose: '', cx: 30, sc: 1.14 },
   { slug: 'sky',  pose: '', cx: 41, sc: 1 },
   { slug: 'coco', pose: '', cx: 52, sc: 1 },
   { slug: 'leo',  pose: '', cx: 63, sc: 1 },
