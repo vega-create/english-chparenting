@@ -106,6 +106,18 @@ const MAP_CONFIG: Record<DeviceKind, { src: string; aspectRatio: string; positio
   },
 };
 
+// 畢業挑戰（主線 12 關完成後解鎖的 M13-20）
+const GRAD_LESSONS = [
+  { id: 13, name: "大小寫配對", emoji: "🔠" },
+  { id: 14, name: "字母書寫",   emoji: "✏️" },
+  { id: 15, name: "字母歌 A–Z", emoji: "🎵" },
+  { id: 16, name: "常見字①",   emoji: "👀" },
+  { id: 17, name: "常見字②",   emoji: "👁️" },
+  { id: 18, name: "a / an",     emoji: "🔢" },
+  { id: 19, name: "綜合閱讀",   emoji: "📖" },
+  { id: 20, name: "畢業大魔王", emoji: "🎓" },
+];
+
 // 玩家角色列表（之後可以無限擴充）
 const CHARACTERS = [
   { key: "girl3_1", name: "小冒險家",   src: "/images/characters/girl3_1.webp?v=2" },
@@ -131,6 +143,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
   const [characterKey, setCharacterKey] = useState(CHARACTERS[0].key);
   const [avatarSrc, setAvatarSrc] = useState<string | null>(null); // 選角頁選的角色
   const [showCharSwitcher, setShowCharSwitcher] = useState(false);
+  const [showGrad, setShowGrad] = useState(false); // 畢業挑戰面板（M13-20）
 
   // 偵測裝置：phone / ipad / desktop（依視窗大小 + 方向 + UA）
   useEffect(() => {
@@ -259,6 +272,12 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
           className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-purple-200 text-purple-700 active:scale-95 transition flex items-center gap-1"
         >
           🧒 角色
+        </button>
+        <button
+          onClick={() => { playClick(); setShowGrad(true); }}
+          className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-amber-300 text-amber-700 active:scale-95 transition flex items-center gap-1"
+        >
+          🎓 畢業挑戰
         </button>
         <button
           onClick={resetProgress}
@@ -876,6 +895,49 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
                 )}
               </div>
               <button onClick={() => setShowCharSwitcher(false)} className="w-full mt-4 py-2 text-sm text-gray-500">關閉</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ============= 畢業挑戰（M13-20） ============= */}
+      <AnimatePresence>
+        {showGrad && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            onClick={() => setShowGrad(false)}
+          >
+            <motion.div
+              className="bg-white rounded-3xl p-5 max-w-md w-full shadow-2xl"
+              initial={{ scale: 0.7 }} animate={{ scale: 1 }} exit={{ scale: 0.7 }}
+              onClick={e => e.stopPropagation()}
+            >
+              <p className="text-center font-black text-amber-600 text-lg mb-1">🎓 字母島畢業挑戰</p>
+              <p className="text-center text-xs text-gray-500 mb-3">
+                {allDone ? "主線完成！把字母變成讀得懂的句子吧！" : `先完成主線 12 關才能解鎖（目前 ${Math.min(currentId - 1, LEVELS.length)}/12）`}
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {GRAD_LESSONS.map(g => (
+                  allDone ? (
+                    <Link
+                      key={g.id}
+                      href={`/courses/l1-letter-island/mission/${g.id}`}
+                      onClick={() => playStar()}
+                      className="flex items-center gap-2 rounded-2xl p-3 border-2 border-amber-200 bg-amber-50 hover:bg-amber-100 active:scale-95 transition no-underline"
+                    >
+                      <span className="text-2xl">{g.emoji}</span>
+                      <span className="text-sm font-black text-amber-800">{g.name}</span>
+                    </Link>
+                  ) : (
+                    <div key={g.id} className="flex items-center gap-2 rounded-2xl p-3 border-2 border-gray-200 bg-gray-50 opacity-60">
+                      <span className="text-2xl grayscale">{g.emoji}</span>
+                      <span className="text-sm font-black text-gray-400">{g.name} 🔒</span>
+                    </div>
+                  )
+                ))}
+              </div>
+              <button onClick={() => setShowGrad(false)} className="w-full mt-4 py-2 text-sm text-gray-500">關閉</button>
             </motion.div>
           </motion.div>
         )}
