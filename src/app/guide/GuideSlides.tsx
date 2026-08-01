@@ -10,8 +10,8 @@ const N = HEIGHTS.length;
 
 // slide 3「認識夥伴」：5 隻動物依序放進 紫/藍/粉/綠/黃 框
 const FRIENDS = [
-  { key: 'finn',  name: 'Finn',  en: 'Brave team leader', cx: 16.3, sc: 0.98, pill: 'bg-purple-500' },
-  { key: 'coco',  name: 'Coco',  en: 'A great listener',  cx: 32.9, sc: 0.92, pill: 'bg-sky-500' },
+  { key: 'finn',  name: 'Finn',  en: 'Brave team leader', cx: 16.3, sc: 0.88, pill: 'bg-purple-500' },
+  { key: 'coco',  name: 'Coco',  en: 'A great listener',  cx: 32.9, sc: 0.84, pill: 'bg-sky-500' },
   { key: 'polly', name: 'Polly', en: 'Loves to speak',    cx: 49.5, sc: 0.95, pill: 'bg-pink-500' },
   { key: 'benny', name: 'Benny', en: 'Loves reading',     cx: 66.2, sc: 0.8,  pill: 'bg-green-600' },
   { key: 'ruby',  name: 'Ruby',  en: 'Writing star',      cx: 82.9, sc: 0.92, pill: 'bg-amber-500' },
@@ -19,10 +19,10 @@ const FRIENDS = [
 
 // slide 2「How You'll Learn」：4 個學習步驟圖示進框
 const STEPS = [
-  { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 18.7, sc: 1.32, dy: '-16%' },
-  { img: 'intro-listen',   en: 'Listen',     zh: '聽力',   cx: 39.5, sc: 1,    dy: '0%' },
-  { img: 'intro-speak',    en: 'Speak',      zh: '口說',   cx: 59.5, sc: 1,    dy: '0%' },
-  { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7, sc: 1,    dy: '0%' },
+  { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 18.7, sc: 1.32, dy: '-6%', color: '#67a32e' },
+  { img: 'intro-listen',   en: 'Listen',     zh: '聽力',   cx: 39.5, sc: 1,    dy: '4%',  color: '#f29601' },
+  { img: 'intro-speak',    en: 'Speak',      zh: '口說',   cx: 59.5, sc: 1,    dy: '0%',  color: '#2c8be8' },
+  { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7, sc: 1,    dy: '0%',  color: '#945cc6' },
 ];
 
 // slide 4「Collect Rewards」：4 個獎勵圖示橫排（場景無框）
@@ -122,14 +122,15 @@ export default function GuideSlides() {
                     <h2 className="font-black text-amber-900" style={{ fontSize: 'clamp(18px,2.7vw,40px)' }}>How You&apos;ll <span className="text-green-600">Learn</span></h2>
                   </div>
                   {/* 4 圖示（下拉、放大、貼近底色條） */}
+                  {/* 人物（去背，下半身延伸進按鈕區） */}
                   {STEPS.map(s => (
-                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '30%', width: '15%', height: '31%', transform: 'translateX(-50%)', zIndex: 1 }}>
+                    <div key={s.img} className="absolute flex items-end justify-center" style={{ left: `${s.cx}%`, top: '26%', width: '15%', height: '42%', transform: 'translateX(-50%)', zIndex: 1 }}>
                       <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
                     </div>
                   ))}
-                  {/* 標籤 */}
+                  {/* 前景彩色按鈕（蓋住人物下半身）+ 標籤 */}
                   {STEPS.map(s => (
-                    <div key={`l-${s.img}`} className="absolute text-center leading-tight" style={{ left: `${s.cx}%`, top: '63.5%', width: '18%', transform: 'translateX(-50%)', zIndex: 10 }}>
+                    <div key={`l-${s.img}`} className="absolute flex flex-col items-center justify-center text-center leading-tight rounded-2xl" style={{ left: `${s.cx}%`, top: '62%', width: '15.8%', height: '14.5%', transform: 'translateX(-50%)', zIndex: 5, background: s.color, boxShadow: '0 4px 10px rgba(60,40,90,.25)' }}>
                       <p className="text-white font-black" style={{ fontSize: 'clamp(11px,1.5vw,20px)', textShadow: '0 1px 2px rgba(0,0,0,.28)' }}>{s.en}</p>
                       <p className="text-white/95 font-bold" style={{ fontSize: 'clamp(9px,1.1vw,14px)' }}>{s.zh}</p>
                     </div>
