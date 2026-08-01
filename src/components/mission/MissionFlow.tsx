@@ -96,7 +96,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         <div className="max-w-3xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-3">
-              <a href={`/courses/${course.slug}`} className="text-gray-500 hover:text-gray-700 text-sm">
+              <a href={course.level === 1 ? '/adventure-map/rainbow-valley' : `/courses/${course.slug}`} className="text-gray-500 hover:text-gray-700 text-sm">
                 ← {course.island}
               </a>
               {step !== 'intro' && (
