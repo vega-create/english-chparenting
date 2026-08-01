@@ -22,7 +22,7 @@ const STEPS = [
   { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 18.7, sc: 1.32, dy: '-6%', color: '#67a32e' },
   { img: 'intro-listen',   en: 'Listen',     zh: '聽力',   cx: 39.5, sc: 1,    dy: '4%',  color: '#f29601' },
   { img: 'intro-speak',    en: 'Speak',      zh: '口說',   cx: 59.5, sc: 1,    dy: '0%',  color: '#2c8be8' },
-  { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7, sc: 1,    dy: '0%',  color: '#945cc6' },
+  { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7, sc: 1,    dy: '7%',  color: '#945cc6' },
 ];
 
 // slide 4「Collect Rewards」：4 個獎勵圖示橫排（場景無框）
@@ -130,7 +130,7 @@ export default function GuideSlides() {
                   ))}
                   {/* 標籤（背景原本的色條上） */}
                   {STEPS.map(s => (
-                    <div key={`l-${s.img}`} className="absolute text-center leading-tight" style={{ left: `${s.cx}%`, top: '65%', width: '18%', transform: 'translateX(-50%)', zIndex: 10 }}>
+                    <div key={`l-${s.img}`} className="absolute text-center leading-tight" style={{ left: `${s.cx}%`, top: '62.5%', width: '18%', transform: 'translateX(-50%)', zIndex: 10 }}>
                       <p className="text-white font-black" style={{ fontSize: 'clamp(11px,1.5vw,20px)', textShadow: '0 1px 2px rgba(0,0,0,.28)' }}>{s.en}</p>
                       <p className="text-white/95 font-bold" style={{ fontSize: 'clamp(9px,1.1vw,14px)' }}>{s.zh}</p>
                     </div>
