@@ -30,6 +30,34 @@ export default function CoursesClient() {
       {/* 固定滿版底圖（不隨捲動移動、也不留白） */}
       <div className="fixed inset-0 -z-10 bg-cover bg-center" style={{ backgroundImage: "url(/images/courses/intro-bg.webp)" }} />
 
+      {/* 天空動畫層：飄動的雲 + 熱氣球 */}
+      <div className="fixed inset-0 -z-[5] pointer-events-none overflow-hidden">
+        {[
+          { top: "6%",  size: 90,  dur: 48, delay: 0,  op: 0.85 },
+          { top: "14%", size: 62,  dur: 62, delay: 8,  op: 0.7 },
+          { top: "24%", size: 110, dur: 74, delay: 20, op: 0.6 },
+          { top: "3%",  size: 70,  dur: 56, delay: 32, op: 0.75 },
+        ].map((c, i) => (
+          <motion.div key={`cloud-${i}`} className="absolute" style={{ top: c.top, opacity: c.op }}
+            initial={{ x: "-20vw" }} animate={{ x: "115vw" }}
+            transition={{ duration: c.dur, delay: c.delay, repeat: Infinity, ease: "linear" }}>
+            <div style={{ width: c.size, height: c.size * 0.42, background: "#fff", borderRadius: "999px", filter: "blur(1px)", boxShadow: `${c.size*0.22}px -${c.size*0.14}px 0 ${c.size*0.02}px #fff, ${c.size*0.45}px 0 0 -${c.size*0.03}px #fff` }} />
+          </motion.div>
+        ))}
+        {/* 熱氣球（左右飄＋上下浮） */}
+        {[
+          { top: "18%", left: "8%",  size: 46, dur: 26, rise: 22, delay: 0,  c1: "#f472b6", c2: "#fb7185" },
+          { top: "30%", left: "72%", size: 34, dur: 34, rise: 16, delay: 6,  c1: "#60a5fa", c2: "#818cf8" },
+        ].map((b, i) => (
+          <motion.div key={`bal-${i}`} className="absolute" style={{ top: b.top, left: b.left }}
+            animate={{ x: [0, 60, -30, 0], y: [0, -b.rise, b.rise * 0.5, 0] }}
+            transition={{ duration: b.dur, delay: b.delay, repeat: Infinity, ease: "easeInOut" }}>
+            <div style={{ width: b.size, height: b.size * 1.18, borderRadius: "50% 50% 45% 45%", background: `linear-gradient(160deg, ${b.c1}, ${b.c2})`, boxShadow: "0 4px 10px rgba(60,40,90,.18)" }} />
+            <div style={{ width: b.size * 0.26, height: b.size * 0.2, background: "#a16207", borderRadius: "3px", margin: `${b.size*0.1}px auto 0` }} />
+          </motion.div>
+        ))}
+      </div>
+
       {/* ===== 上方：標題 + 飛船 ===== */}
       <div className="relative max-w-6xl mx-auto px-4 pt-[2vh]">
         <div className="flex items-center justify-between gap-4">
@@ -54,7 +82,7 @@ export default function CoursesClient() {
       </div>
 
       {/* ===== 藏寶圖：6 座冒險島 ===== */}
-      <div className="relative mx-auto px-2 sm:px-4 pb-[2vh] mt-1" style={{ maxWidth: "min(72rem, calc(58vh * 1500 / 1006))" }}>
+      <div className="relative mx-auto px-1 sm:px-2 pb-[1.5vh] mt-0" style={{ maxWidth: "min(84rem, calc(66vh * 1500 / 1006))" }}>
         <div className="relative w-full" style={{ aspectRatio: "1500 / 1006" }}>
           <img src="/images/courses/intro-map.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
 
@@ -95,12 +123,12 @@ export default function CoursesClient() {
           {/* 底部特色列（4 格） */}
           <div className="absolute flex" style={{ left: "8%", right: "8%", top: "62.5%", height: "13%" }}>
             {FEATURES.map(f => (
-              <div key={f.title} className="flex-1 flex items-center justify-center gap-[4%] px-[2%]">
+              <div key={f.title} className="flex-1 flex items-center justify-start gap-[5%] px-[3%]">
                 <span className={`${f.color} text-white rounded-full flex items-center justify-center shrink-0 shadow`}
                   style={{ width: "clamp(20px,2.6vw,42px)", height: "clamp(20px,2.6vw,42px)", fontSize: "clamp(10px,1.3vw,20px)" }}>{f.icon}</span>
-                <div className="min-w-0">
-                  <p className="font-black text-amber-900 leading-tight" style={{ fontSize: "clamp(8px,1.05vw,16px)" }}>{f.title}</p>
-                  <p className="font-bold text-amber-700/85 leading-tight" style={{ fontSize: "clamp(6px,0.8vw,12px)" }}>{f.desc}</p>
+                <div className="min-w-0 flex flex-col justify-center" style={{ height: "80%" }}>
+                  <p className="font-black text-amber-900 leading-tight whitespace-nowrap" style={{ fontSize: "clamp(8px,1.05vw,16px)" }}>{f.title}</p>
+                  <p className="font-bold text-amber-700/85 leading-snug mt-[0.2em]" style={{ fontSize: "clamp(6px,0.78vw,12px)" }}>{f.desc}</p>
                 </div>
               </div>
             ))}
