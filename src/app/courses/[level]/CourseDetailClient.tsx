@@ -5,11 +5,6 @@ import type { Course } from "@/data/courses";
 import { playClick, playStar } from "@/lib/sfx";
 
 // 各級 → 世界圖 / 關卡地圖連結
-const WORLD_IMG: Record<number, string> = {
-  1: "world-rainbow-valley", 2: "world-rainbow-valley", 3: "world-friendly-town", 4: "world-friendly-town",
-  5: "world-ocean-bay", 6: "world-ocean-bay", 7: "world-story-castle", 8: "world-story-castle",
-  9: "world-explorer-land", 10: "world-explorer-land", 11: "world-champion-peak", 12: "world-champion-peak",
-};
 const MAP_LINK: Record<number, string> = {
   1: "/adventure-map/rainbow-valley", 2: "/adventure-map/island/sound-island",
   3: "/adventure-map/world/2", 4: "/adventure-map/island/school-road",
@@ -22,7 +17,9 @@ const AGE: Record<number, string> = {
   1: "3-6 歲", 2: "4-7 歲", 3: "5-8 歲", 4: "5-8 歲", 5: "6-9 歲", 6: "7-10 歲",
   7: "8-11 歲", 8: "8-11 歲", 9: "9-12 歲", 10: "9-12 歲", 11: "10-13 歲", 12: "11-14 歲",
 };
+// 各角色原圖身形比例不同 → 用個別縮放補償，讓視覺大小一致
 const PALS = ["finn", "coco", "benny", "ruby", "polly", "vega"];
+const PAL_SCALE: Record<string, number> = { finn: 1.3, coco: 1.0, benny: 1.05, ruby: 1.0, polly: 1.28, vega: 1.0 };
 const PAL_NAME: Record<string, string> = { finn: "Finn", coco: "Coco", benny: "Benny", ruby: "Ruby", polly: "Polly", vega: "Vega" };
 
 // hero 框槽位（量測自 frames/hero.webp）
@@ -77,7 +74,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
           <img src="/images/courses/frames/hero.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
           {/* 島圖 */}
           <div className="absolute overflow-hidden rounded-2xl" style={HERO.img}>
-            <img src={`/images/worlds/${WORLD_IMG[lv]}.webp`} alt={course.island} className="w-full h-full object-cover" />
+            <img src={`/images/courses/hero/${course.slug}.webp`} alt={course.island} className="w-full h-full object-cover" />
           </div>
           {/* 主資訊 */}
           <div className="absolute flex" style={HERO.main}>
@@ -94,7 +91,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
               {PALS.map((p, i) => (
                 <motion.div key={p} className="flex-1 flex flex-col items-center"
                   animate={{ y: [0, -4, 0] }} transition={{ duration: 2.4, delay: i * 0.18, repeat: Infinity, ease: "easeInOut" }}>
-                  <img src={`/characters/${p}/${p}-normal.png`} alt={PAL_NAME[p]} className="w-full object-contain" style={{ maxHeight: "clamp(44px,7.15vw,112px)" }} />
+                  <img src={`/characters/${p}/${p}-normal.png`} alt={PAL_NAME[p]} className="w-full object-contain object-bottom" style={{ maxHeight: "clamp(44px,7.15vw,112px)", transform: `scale(${PAL_SCALE[p] || 1})`, transformOrigin: "bottom center" }} />
                   <span className="bg-white/85 text-amber-800 font-black rounded-full px-1.5 leading-tight mt-0.5" style={{ fontSize: "clamp(8px,0.85vw,13px)" }}>{PAL_NAME[p]}</span>
                 </motion.div>
               ))}
@@ -103,7 +100,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
           {/* 三個資訊格 */}
           {[
             { icon: "👶", t: "建議年齡", v: AGE[lv] },
-            { icon: "🕐", t: "學習時間", v: `${course.lessons} 堂課` },
+            { icon: "🕐", t: "學習時間", v: `約 ${Math.round(course.lessons * 20 / 60)} 小時` },
             { icon: "⭐", t: "學習目標", v: course.skills[0] },
           ].map((info, i) => (
             <div key={info.t} className="absolute flex items-center gap-[4%] px-[3%]" style={HERO.info[i]}>
@@ -119,15 +116,15 @@ export default function CourseDetailClient({ course }: { course: Course }) {
         {/* ===== 2. 我會學到 / 特色 ===== */}
         <div className="grid md:grid-cols-2 gap-[1.5vw] mt-[1.5vh]">
           {[
-            { tag: "我會學到", items: course.topics.slice(0, 6).map((t, i): SecItem => ({ img: `/images/courses/icons/l${lv}-${i + 1}.webp`, icon: ["🔤", "🔊", "👂", "✏️", "🎵", "🎮"][i], t, d: course.skills[i % course.skills.length] })) },
+            { tag: "我會學到", items: [...course.topics, ...course.skills].filter((v, i, a) => a.indexOf(v) === i).slice(0, 6).map((t, i): SecItem => ({ img: `/images/courses/icons/l${lv}-${i + 1}.webp`, icon: ["🔤", "🔊", "👂", "✏️", "🎵", "🎮"][i], t, d: course.skills[i % course.skills.length] })) },
             { tag: `${course.island}特色`, items: FEATURES as SecItem[] },
           ].map(sec => (
             <div key={sec.tag} className="relative w-full" style={{ aspectRatio: "1396 / 1050" }}>
               <img src="/images/courses/frames/section.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
               {/* 紫緞帶標題 */}
               <p className="absolute font-black text-white" style={{ left: "6%", top: "6.5%", width: "34%", textAlign: "center", fontSize: "clamp(12px,1.49vw,22px)", textShadow: "0 1px 2px rgba(60,25,100,.5)" }}>{sec.tag}</p>
-              {/* 6 格 */}
-              {sec.items.map((it, i) => (
+              {/* 6 格（不足 6 個就只畫有的） */}
+              {sec.items.slice(0, 6).map((it, i) => (
                 <div key={i} className="absolute flex flex-col items-center justify-center text-center px-[1.5%]"
                   style={{ ...SEC_SLOTS[i], width: SEC_W, height: SEC_H }}>
                   {it.img ? (
@@ -148,14 +145,14 @@ export default function CourseDetailClient({ course }: { course: Course }) {
           <img src="/images/courses/frames/progress.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
           <p className="absolute font-black text-white" style={{ left: "2%", top: "6%", width: "22%", textAlign: "center", fontSize: "clamp(12px,1.49vw,22px)", textShadow: "0 1px 2px rgba(60,25,100,.5)" }}>{course.island}探險地圖</p>
           {zones.map((z, i) => (
-            <div key={z} className="absolute text-center" style={{ left: `${PROG_CX[i]}%`, top: "45%", width: "16%", transform: "translate(-50%,-50%)" }}>
-              <span style={{ fontSize: "clamp(18px,2.86vw,44px)" }}>{i === 4 ? "🎁" : "🔒"}</span>
+            <div key={z} className="absolute text-center" style={{ left: `${PROG_CX[i]}%`, top: "48%", width: "16%", transform: "translate(-50%,-50%)" }}>
+              <span className="drop-shadow-lg" style={{ fontSize: "clamp(30px,5vw,76px)" }}>{i === 4 ? "🎁" : "🔒"}</span>
             </div>
           ))}
           {zones.map((z, i) => (
-            <div key={`t-${z}`} className="absolute text-center" style={{ left: `${PROG_CX[i]}%`, top: "76%", width: "18%", transform: "translateX(-50%)" }}>
-              <p className="font-black text-amber-900 leading-tight" style={{ fontSize: "clamp(9px,1.20vw,18px)" }}>{z}</p>
-              <p className="font-bold text-amber-700/75 leading-tight line-clamp-1" style={{ fontSize: "clamp(8px,0.94vw,14px)" }}>{zoneSub[i]}</p>
+            <div key={`t-${z}`} className="absolute text-center" style={{ left: `${PROG_CX[i]}%`, top: "22%", width: "19%", transform: "translateX(-50%)" }}>
+              <p className="font-black text-amber-900 leading-tight" style={{ fontSize: "clamp(11px,1.4vw,21px)", WebkitTextStroke: "3px #fffdf5", paintOrder: "stroke fill" }}>{z}</p>
+              <p className="font-black text-amber-700 leading-tight line-clamp-1 mt-0.5" style={{ fontSize: "clamp(8px,1vw,15px)", WebkitTextStroke: "2.5px #fffdf5", paintOrder: "stroke fill" }}>{zoneSub[i]}</p>
             </div>
           ))}
         </div>

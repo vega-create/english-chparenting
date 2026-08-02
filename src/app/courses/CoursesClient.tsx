@@ -88,7 +88,7 @@ export default function CoursesClient() {
           {/* 標題牌 */}
           <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: "7.5%" }}>
             <p className="font-black text-amber-900" style={{ fontSize: "clamp(13px,1.9vw,28px)" }}>選擇你的冒險島</p>
-            <p className="font-bold text-amber-700/80 mt-[0.2em]" style={{ fontSize: "clamp(6px,0.8vw,12px)" }}>點島圖去闖關 · 點 <span className="text-purple-600">L1 L2</span> 看課程內容</p>
+            <p className="font-black text-amber-800 mt-[0.35em] whitespace-nowrap" style={{ fontSize: "clamp(8px,1.05vw,16px)", WebkitTextStroke: "3px #fffdf0", paintOrder: "stroke fill" }}>點島圖去闖關 · 點 <span className="text-purple-600">L1 L2</span> 看課程內容</p>
           </div>
 
           {/* 6 個世界卡：點島圖→關卡地圖／點 L1 L2→該級課程介紹 */}
@@ -100,7 +100,7 @@ export default function CoursesClient() {
                 className="absolute inset-0 no-underline group">
                 <div className="w-full h-full flex flex-col items-center justify-start pt-[6%] px-[6%] transition-transform group-hover:scale-[1.04] group-active:scale-95">
                   <div className="w-full rounded-lg overflow-hidden shadow-md border-2 border-amber-800/30" style={{ aspectRatio: "1/1" }}>
-                    <img src={w.image} alt={w.name} className="w-full h-full object-cover" />
+                    <img src={`/images/courses/hero/${COURSES.find(c => c.level === w.levels[0])?.slug}.webp`} alt={w.name} className="w-full h-full object-cover" />
                   </div>
                   <p className="font-black text-amber-900 mt-[7%] leading-none" style={{ fontSize: "clamp(9px,1.25vw,19px)" }}>{w.name}</p>
                   <p className="font-bold text-amber-700/80 leading-none mt-[2%]" style={{ fontSize: "clamp(6px,0.85vw,13px)" }}>{w.nameEn}</p>
