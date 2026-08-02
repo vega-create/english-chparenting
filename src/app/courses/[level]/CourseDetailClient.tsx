@@ -42,6 +42,8 @@ const SEC_W = "24.1%", SEC_H = "27%";
 // progress 5 個石台（等距）
 const PROG_CX = [17.5, 33.8, 50.0, 66.2, 82.5];
 
+type SecItem = { img?: string; icon: string; t: string; d: string };
+
 const FEATURES = [
   { icon: "📅", t: "40 堂課", d: "完整學習內容" },
   { icon: "⭐", t: "300+ 互動活動", d: "豐富有趣練習" },
@@ -117,8 +119,8 @@ export default function CourseDetailClient({ course }: { course: Course }) {
         {/* ===== 2. 我會學到 / 特色 ===== */}
         <div className="grid md:grid-cols-2 gap-[1.5vw] mt-[1.5vh]">
           {[
-            { tag: "我會學到", items: course.topics.slice(0, 6).map((t, i) => ({ icon: ["🔤", "🔊", "👂", "✏️", "🎵", "🎮"][i], t, d: course.skills[i % course.skills.length] })) },
-            { tag: `${course.island}特色`, items: FEATURES },
+            { tag: "我會學到", items: course.topics.slice(0, 6).map((t, i): SecItem => ({ img: `/images/courses/icons/l${lv}-${i + 1}.webp`, icon: ["🔤", "🔊", "👂", "✏️", "🎵", "🎮"][i], t, d: course.skills[i % course.skills.length] })) },
+            { tag: `${course.island}特色`, items: FEATURES as SecItem[] },
           ].map(sec => (
             <div key={sec.tag} className="relative w-full" style={{ aspectRatio: "1396 / 1050" }}>
               <img src="/images/courses/frames/section.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
@@ -128,7 +130,11 @@ export default function CourseDetailClient({ course }: { course: Course }) {
               {sec.items.map((it, i) => (
                 <div key={i} className="absolute flex flex-col items-center justify-center text-center px-[1.5%]"
                   style={{ ...SEC_SLOTS[i], width: SEC_W, height: SEC_H }}>
-                  <span style={{ fontSize: "clamp(20px,3.12vw,49px)" }}>{it.icon}</span>
+                  {it.img ? (
+                    <img src={it.img} alt="" className="object-contain" style={{ height: "clamp(26px,4vw,62px)" }} />
+                  ) : (
+                    <span style={{ fontSize: "clamp(20px,3.12vw,49px)" }}>{it.icon}</span>
+                  )}
                   <p className="font-black text-amber-900 leading-tight mt-[6%] line-clamp-2" style={{ fontSize: "clamp(9px,1.20vw,18px)" }}>{it.t}</p>
                   <p className="font-bold text-amber-700/75 leading-tight mt-[3%] line-clamp-2" style={{ fontSize: "clamp(8px,0.94vw,14px)" }}>{it.d}</p>
                 </div>
