@@ -23,6 +23,18 @@ interface Props {
 
 type Phase = 'video' | 'story' | 'words' | 'phonics' | 'sentences';
 
+// 各級內頁底圖的米色面板範圍（世界框共用：L1-2 彩虹谷／L3-4 友善小鎮／L5-6 海洋灣／L7-8 故事城堡）
+const PANEL: Record<number, { left: string; right: string; top: string; bottom: string }> = {
+  1: { left: '23%', right: '22%', top: '18%', bottom: '27%' },
+  2: { left: '23%', right: '22%', top: '18%', bottom: '27%' },
+  3: { left: '22%', right: '26%', top: '17%', bottom: '26%' },
+  4: { left: '22%', right: '26%', top: '17%', bottom: '26%' },
+  5: { left: '21%', right: '27%', top: '17%', bottom: '25%' },
+  6: { left: '21%', right: '27%', top: '17%', bottom: '25%' },
+  7: { left: '30%', right: '24%', top: '16%', bottom: '30%' },
+  8: { left: '30%', right: '24%', top: '16%', bottom: '30%' },
+};
+
 // YouTube 網址 → embed 網址
 function youtubeEmbed(url: string): string | null {
   const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
@@ -280,8 +292,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 onError={() => setContentOk(false)}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              {/* 內容區（米色面板範圍）：只放場景 + 課文 */}
-              <div className="absolute flex flex-col" style={{ left: '22%', right: '19.5%', top: '16.5%', bottom: '23%' }}>
+              {/* 內容區（米色面板範圍，各級底圖框位置不同）：只放場景 + 課文 */}
+              <div className="absolute flex flex-col" style={PANEL[level] || PANEL[1]}>
                 {/* 場景插畫 */}
                 <div className="text-center">
                   <div className="text-6xl sm:text-7xl mb-1">{scene.image}</div>
