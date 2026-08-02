@@ -59,13 +59,13 @@ export default function CoursesClient() {
       </div>
 
       {/* ===== 上方：標題 + 飛船 ===== */}
-      <div className="relative max-w-6xl mx-auto px-4 pt-[2vh]">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex-1 min-w-0">
-            <h1 className="font-black text-amber-900 leading-tight" style={{ fontSize: "clamp(22px,3.4vw,44px)" }}>
+      <div className="relative w-full px-[3vw] pt-[1.5vh]">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1 min-w-0 pt-[1vh]">
+            <h1 className="font-black text-amber-900 leading-tight" style={{ fontSize: "clamp(20px,3vw,42px)" }}>
               展開英語冒險之旅！
             </h1>
-            <p className="mt-2 font-bold text-amber-800/90 leading-snug" style={{ fontSize: "clamp(12px,1.5vw,19px)" }}>
+            <p className="mt-1.5 font-bold text-amber-800/90 leading-snug" style={{ fontSize: "clamp(11px,1.35vw,18px)" }}>
               從 12 座冒險島、240 堂課程，<br />陪伴孩子勇敢學習，自信開口！
             </p>
           </div>
@@ -73,8 +73,8 @@ export default function CoursesClient() {
           <motion.img
             src="/images/courses/intro-ship.webp"
             alt="冒險飛船"
-            className="w-[34%] object-contain drop-shadow-[0_10px_18px_rgba(40,30,80,0.28)]"
-            style={{ maxHeight: "30vh" }}
+            className="object-contain drop-shadow-[0_10px_18px_rgba(40,30,80,0.28)] -mt-[3vh]"
+            style={{ height: "26vh", width: "auto" }}
             animate={{ y: [0, -14, 0], rotate: [0, 1.2, 0, -1.2, 0] }}
             transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" } }}
           />
@@ -82,7 +82,7 @@ export default function CoursesClient() {
       </div>
 
       {/* ===== 藏寶圖：6 座冒險島 ===== */}
-      <div className="relative mx-auto px-1 sm:px-2 pb-[1.5vh] mt-0" style={{ maxWidth: "min(84rem, calc(66vh * 1500 / 1006))" }}>
+      <div className="relative mx-auto px-1 pb-[1vh] -mt-[2vh]" style={{ maxWidth: "min(94vw, calc(62vh * 1500 / 1006))" }}>
         <div className="relative w-full" style={{ aspectRatio: "1500 / 1006" }}>
           <img src="/images/courses/intro-map.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
 
