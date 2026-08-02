@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Course } from "@/data/courses";
 import { playClick, playStar } from "@/lib/sfx";
+import HomeButton from "@/components/HomeButton";
 
 // 各級 → 世界圖 / 關卡地圖連結
 const MAP_LINK: Record<number, string> = {
@@ -57,6 +58,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
 
   return (
     <div className="relative w-full min-h-screen">
+      <HomeButton />
       {/* 背景 */}
       <div className="fixed inset-0 -z-10 bg-cover bg-center" style={{ backgroundImage: "url(/images/courses/intro-bg.webp)", backgroundAttachment: "fixed" }} />
       <div className="fixed inset-0 -z-20" style={{ background: "linear-gradient(180deg,#8fd0f5 0%,#a8dc84 100%)" }} />

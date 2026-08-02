@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { playClick, playStar, playSuccess, playSwoosh } from "@/lib/sfx";
 import { wordSlug } from "@/lib/audio";
+import HomeButton from "@/components/HomeButton";
 
 // 單字小圖：有去背 PNG 就用圖，沒有用 emoji（emoji 從單字推不到，這裡只放圖或字）
 function WordImg({ en }: { en: string }) {
@@ -262,6 +263,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
         background: "linear-gradient(180deg, #ffe5e5 0%, #fff0d4 35%, #d4f0ff 70%, #c8efd0 100%)",
       }}
     >
+      <HomeButton />
       {/* 頂部工具列 */}
       <div className="fixed top-3 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 px-3">
         <div className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs sm:text-sm font-black shadow-xl flex items-center gap-1.5">

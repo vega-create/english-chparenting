@@ -12,6 +12,7 @@ import {
 } from "@/lib/progress";
 import { playClick, playStar, playSwoosh } from "@/lib/sfx";
 import MapDialogue from "@/components/MapDialogue";
+import HomeButton from "@/components/HomeButton";
 
 // 六個世界在 adventure-map.png 上的位置（百分比，覆蓋整個島）
 const HOTSPOTS = [
@@ -65,6 +66,7 @@ export default function AdventureMapPage() {
     <div className="relative min-h-screen overflow-hidden" style={{
       background: "linear-gradient(180deg, #cbe6ff 0%, #ffd5e8 35%, #fff0a8 65%, #b8dec0 100%)",
     }}>
+      <HomeButton />
       {/* 上方工具列 */}
       <Link href="/" style={{ top: "calc(0.75rem + env(safe-area-inset-top))", left: "calc(0.75rem + env(safe-area-inset-left))" }} className="fixed z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
         ← 返回

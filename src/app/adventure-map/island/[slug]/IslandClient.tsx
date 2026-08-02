@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { playClick } from "@/lib/sfx";
+import HomeButton from "@/components/HomeButton";
 
 interface Island {
   slug: string; zh: string; en: string; emoji: string; world: string; backHref: string;
@@ -28,6 +29,7 @@ export default function IslandClient({ island }: { island: Island }) {
     <div className="relative min-h-screen overflow-hidden bg-cover bg-center" style={{
       backgroundImage: `linear-gradient(rgba(50,35,100,0.15), rgba(50,35,100,0.25)), url(/images/islands/${island.slug}.webp)`,
     }}>
+      <HomeButton />
       <Link href={island.backHref} onClick={() => playClick()} className="fixed top-3 left-3 z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
         ← 返回{island.world}
       </Link>

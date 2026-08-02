@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { WORLDS, COURSES } from "@/data/courses";
 import { playClick } from "@/lib/sfx";
+import HomeButton from "@/components/HomeButton";
 
 // 6 個世界卡框（座標依藏寶圖實際框線量測）
 const CARD = { top: 22.0, height: 37.5, width: 12.5 };
@@ -27,6 +28,7 @@ const FEATURES = [
 export default function CoursesClient() {
   return (
     <div className="relative w-full min-h-screen">
+      <HomeButton />
       {/* 固定滿版底圖（不隨捲動移動、也不留白） */}
       <div className="fixed inset-0 -z-10 bg-cover bg-center" style={{ backgroundImage: "url(/images/courses/intro-bg.webp)" }} />
 

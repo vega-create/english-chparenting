@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { playClick, playStar } from '@/lib/sfx';
+import HomeButton from "@/components/HomeButton";
 
 // 底圖已畫好 5 個玻璃卡框，內容用 % 疊進框裡（框中心 cx、上緣 34.2%、高 43.9%、寬 14%）
 const AVATARS = [
@@ -42,6 +43,7 @@ export default function ChooseCharacterPage() {
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-center"
       style={{ backgroundImage: 'url(/images/choose-bg.webp)', backgroundSize: '100% 100%', height: '100dvh', minHeight: '100dvh' }}>
+      <HomeButton />
 
         <img src="/images/logo-260530.webp" alt="Adventure English" className="absolute top-[2%] left-[2%] w-[16%] max-w-[150px] z-20"
           style={{ filter: 'drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 0 4px rgba(255,255,255,.9))' }} />

@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { playClick, playStar } from '@/lib/sfx';
+import HomeButton from "@/components/HomeButton";
 
 // 每張 guide 背景（1600 寬）的高度 → 算 aspect，讓疊層對齊圖
 const HEIGHTS = [893, 735, 617, 616, 602];
@@ -76,6 +77,7 @@ export default function GuideSlides() {
     <div className="relative w-full h-screen overflow-hidden select-none bg-sky-200"
       style={{ height: '100dvh' }}
       onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+      <HomeButton />
 
       {HEIGHTS.map((h, idx) => (
         <div key={idx} className="absolute inset-0 transition-opacity duration-500"

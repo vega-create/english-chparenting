@@ -11,6 +11,7 @@ import {
   getWorldCompletion,
 } from "@/lib/progress";
 import { playClick, playStar, playSuccess } from "@/lib/sfx";
+import HomeButton from "@/components/HomeButton";
 
 // 每個世界的關卡地圖圖（1=彩虹谷有自己的頁；這裡處理 2~6）
 const WORLD_IMG: Record<number, string> = {
@@ -102,6 +103,7 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
     <div className="relative min-h-screen overflow-hidden bg-cover bg-center" style={{
       backgroundImage: `linear-gradient(rgba(50,35,100,0.25), rgba(50,35,100,0.4)), url(/images/worlds/${WORLD_IMG[world.id] || "world-friendly-town"}.webp)`,
     }}>
+      <HomeButton />
       <Link href="/adventure-map" onClick={() => playClick()} className="fixed top-3 left-3 z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
         ← 返回地圖
       </Link>
