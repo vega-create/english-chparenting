@@ -33,6 +33,10 @@ const PANEL: Record<number, { left: string; right: string; top: string; bottom: 
   6: { left: '21%', right: '27%', top: '17%', bottom: '25%' },
   7: { left: '30%', right: '24%', top: '16%', bottom: '30%' },
   8: { left: '30%', right: '24%', top: '16%', bottom: '30%' },
+  9:  { left: '27%', right: '26%', top: '18%', bottom: '29%' },
+  10: { left: '27%', right: '26%', top: '18%', bottom: '29%' },
+  11: { left: '28%', right: '24%', top: '16%', bottom: '30%' },
+  12: { left: '28%', right: '24%', top: '16%', bottom: '30%' },
 };
 
 // YouTube 網址 → embed 網址
