@@ -79,6 +79,10 @@ export default function CourseDetailClient({ course }: { course: Course }) {
           {/* 主資訊 */}
           <div className="absolute flex" style={HERO.main}>
             <div className="flex-1 min-w-0 pr-2">
+              {/* 世界 › 島（避免圖上世界名與島名混淆） */}
+              <p className="font-black text-amber-600/90 leading-none mb-0.5" style={{ fontSize: "clamp(10px,1.15vw,17px)" }}>
+                {course.worldEmoji} {course.world} <span className="text-amber-400">›</span> 第 {lv % 2 === 1 ? "一" : "二"} 座島
+              </p>
               <div className="flex items-baseline gap-2 flex-wrap">
                 <h1 className="font-black text-amber-900 leading-none" style={{ fontSize: "clamp(23px,3.38vw,49px)" }}>{course.island}</h1>
                 <span className="bg-purple-500 text-white font-black rounded-full px-3 py-0.5" style={{ fontSize: "clamp(12px,1.30vw,20px)" }}>L{lv}</span>
