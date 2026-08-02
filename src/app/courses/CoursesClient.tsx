@@ -75,7 +75,7 @@ export default function CoursesClient() {
             src="/images/courses/intro-ship.webp"
             alt="冒險飛船"
             className="object-contain drop-shadow-[0_10px_18px_rgba(40,30,80,0.28)] -mt-[3vh]"
-            style={{ height: "26vh", width: "auto" }}
+            style={{ height: "21vh", width: "auto" }}
             animate={{ y: [0, -14, 0], rotate: [0, 1.2, 0, -1.2, 0] }}
             transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" } }}
           />
@@ -83,7 +83,7 @@ export default function CoursesClient() {
       </div>
 
       {/* ===== 藏寶圖：6 座冒險島 ===== */}
-      <div className="relative mx-auto px-1 pb-[1vh] -mt-[2vh]" style={{ maxWidth: "min(94vw, calc(62vh * 1500 / 1006))" }}>
+      <div className="relative mx-auto px-1 pb-[1vh] -mt-[3vh]" style={{ maxWidth: "min(98vw, calc(76vh * 1500 / 1006))" }}>
         <div className="relative w-full" style={{ aspectRatio: "1500 / 1006" }}>
           <img src="/images/courses/intro-map.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
 
