@@ -20,9 +20,10 @@ const WORLD_LINK: Record<string, string> = {
 
 const FEATURES = [
   { icon: "📖", title: "240 堂課程", desc: "系統化學習，循序漸進", color: "bg-purple-500" },
-  { icon: "⭐", title: "有趣的互動學習", desc: "遊戲、故事、歌曲，讓學習更快樂", color: "bg-orange-500" },
-  { icon: "🛡️", title: "銜接英檢初級", desc: "培養聽、說、讀、寫完整英語能力", color: "bg-blue-500" },
-  { icon: "🎁", title: "完成挑戰", desc: "收集獎章，兌換專屬獎勵！", color: "bg-pink-500" },
+  { icon: "⭐", title: "有趣的互動學習", desc: "遊戲、故事、歌曲", color: "bg-orange-500" },
+  { icon: "🛡️", title: "銜接英檢初級", desc: "聽說讀寫完整能力", color: "bg-blue-500" },
+  { icon: "🎤", title: "AI 發音評測", desc: "即時偵測，開口不怕", color: "bg-green-600" },
+  { icon: "🎁", title: "完成挑戰", desc: "收集獎章換獎勵", color: "bg-pink-500" },
 ];
 
 export default function CoursesClient() {
@@ -124,15 +125,15 @@ export default function CoursesClient() {
             </div>
           ))}
 
-          {/* 底部特色列（4 格） */}
-          <div className="absolute flex" style={{ left: "8%", right: "8%", top: "62.5%", height: "13%" }}>
+          {/* 底部特色列（5 格，文字靠左貼齊格線內） */}
+          <div className="absolute flex" style={{ left: "7.5%", right: "7.5%", top: "62.5%", height: "13%" }}>
             {FEATURES.map(f => (
-              <div key={f.title} className="flex-1 flex items-center justify-start gap-[5%] px-[3%]">
+              <div key={f.title} className="flex-1 flex items-center justify-start gap-[6%] pl-[4%] pr-[1%]">
                 <span className={`${f.color} text-white rounded-full flex items-center justify-center shrink-0 shadow`}
-                  style={{ width: "clamp(20px,2.6vw,42px)", height: "clamp(20px,2.6vw,42px)", fontSize: "clamp(10px,1.3vw,20px)" }}>{f.icon}</span>
+                  style={{ width: "clamp(17px,2.2vw,36px)", height: "clamp(17px,2.2vw,36px)", fontSize: "clamp(9px,1.1vw,17px)" }}>{f.icon}</span>
                 <div className="min-w-0 flex flex-col justify-center" style={{ height: "80%" }}>
-                  <p className="font-black text-amber-900 leading-tight whitespace-nowrap" style={{ fontSize: "clamp(8px,1.05vw,16px)" }}>{f.title}</p>
-                  <p className="font-bold text-amber-700/85 leading-snug mt-[0.2em]" style={{ fontSize: "clamp(6px,0.78vw,12px)" }}>{f.desc}</p>
+                  <p className="font-black text-amber-900 leading-tight whitespace-nowrap" style={{ fontSize: "clamp(7px,0.92vw,14px)" }}>{f.title}</p>
+                  <p className="font-bold text-amber-700/85 leading-snug mt-[0.15em] whitespace-nowrap" style={{ fontSize: "clamp(6px,0.7vw,11px)" }}>{f.desc}</p>
                 </div>
               </div>
             ))}
