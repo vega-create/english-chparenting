@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { WORLDS } from "@/data/courses";
+import { WORLDS, COURSES } from "@/data/courses";
 import { playClick } from "@/lib/sfx";
 
 // 6 個世界卡框（座標依藏寶圖實際框線量測）
@@ -86,37 +86,40 @@ export default function CoursesClient() {
           <img src="/images/courses/intro-map.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
 
           {/* 標題牌 */}
-          <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: "8.5%" }}>
+          <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: "7.5%" }}>
             <p className="font-black text-amber-900" style={{ fontSize: "clamp(13px,1.9vw,28px)" }}>選擇你的冒險島</p>
+            <p className="font-bold text-amber-700/80 mt-[0.2em]" style={{ fontSize: "clamp(6px,0.8vw,12px)" }}>點島圖去闖關 · 點 <span className="text-purple-600">L1 L2</span> 看課程內容</p>
           </div>
 
-          {/* 6 個世界卡 */}
+          {/* 6 個世界卡：點島圖→關卡地圖／點 L1 L2→該級課程介紹 */}
           {WORLDS.map((w, i) => (
-            <Link
-              key={w.name}
-              href={WORLD_LINK[w.name] || "/adventure-map"}
-              onClick={() => playClick()}
-              className="absolute no-underline group"
-              style={{ left: `${CARD_CX[i]}%`, top: `${CARD.top}%`, width: `${CARD.width}%`, height: `${CARD.height}%`, transform: "translateX(-50%)" }}
-            >
-              <div className="w-full h-full flex flex-col items-center justify-start pt-[6%] px-[6%] transition-transform group-hover:scale-[1.04] group-active:scale-95">
-                {/* 島圖 */}
-                <div className="w-full rounded-lg overflow-hidden shadow-md border-2 border-amber-800/30" style={{ aspectRatio: "1/1" }}>
-                  <img src={w.image} alt={w.name} className="w-full h-full object-cover" />
+            <div key={w.name} className="absolute"
+              style={{ left: `${CARD_CX[i]}%`, top: `${CARD.top}%`, width: `${CARD.width}%`, height: `${CARD.height}%`, transform: "translateX(-50%)" }}>
+              {/* 整張卡 → 關卡地圖 */}
+              <Link href={WORLD_LINK[w.name] || "/adventure-map"} onClick={() => playClick()}
+                className="absolute inset-0 no-underline group">
+                <div className="w-full h-full flex flex-col items-center justify-start pt-[6%] px-[6%] transition-transform group-hover:scale-[1.04] group-active:scale-95">
+                  <div className="w-full rounded-lg overflow-hidden shadow-md border-2 border-amber-800/30" style={{ aspectRatio: "1/1" }}>
+                    <img src={w.image} alt={w.name} className="w-full h-full object-cover" />
+                  </div>
+                  <p className="font-black text-amber-900 mt-[7%] leading-none" style={{ fontSize: "clamp(9px,1.25vw,19px)" }}>{w.name}</p>
+                  <p className="font-bold text-amber-700/80 leading-none mt-[2%]" style={{ fontSize: "clamp(6px,0.85vw,13px)" }}>{w.nameEn}</p>
+                  <p className="font-bold text-amber-800 mt-[3%]" style={{ fontSize: "clamp(7px,0.95vw,14px)" }}>⭐ 40 課</p>
                 </div>
-                {/* 級數徽章 */}
-                <div className="flex gap-0.5 mt-[6%]">
-                  {w.levels.map(lv => (
-                    <span key={lv} className="bg-gradient-to-b from-purple-500 to-indigo-600 text-white font-black rounded-full px-[0.5em] py-[0.1em] shadow"
-                      style={{ fontSize: "clamp(8px,1vw,15px)" }}>L{lv}</span>
-                  ))}
-                </div>
-                {/* 名稱 */}
-                <p className="font-black text-amber-900 mt-[4%] leading-none" style={{ fontSize: "clamp(9px,1.25vw,19px)" }}>{w.name}</p>
-                <p className="font-bold text-amber-700/80 leading-none mt-[2%]" style={{ fontSize: "clamp(6px,0.85vw,13px)" }}>{w.nameEn}</p>
-                <p className="font-bold text-amber-800 mt-[5%]" style={{ fontSize: "clamp(7px,0.95vw,14px)" }}>⭐ 40 課</p>
+              </Link>
+              {/* 級數徽章 → 該級課程介紹（疊在卡片上、獨立可點） */}
+              <div className="absolute left-1/2 -translate-x-1/2 flex gap-1 z-10" style={{ bottom: "4%" }}>
+                {w.levels.map(lv => {
+                  const c = COURSES.find(x => x.level === lv);
+                  return (
+                    <Link key={lv} href={c ? `/courses/${c.slug}` : "#"} onClick={e => { e.stopPropagation(); playClick(); }}
+                      title={c ? `${c.island} 課程內容` : ""}
+                      className="no-underline bg-gradient-to-b from-purple-500 to-indigo-600 text-white font-black rounded-full px-[0.55em] py-[0.12em] shadow-md border border-white/60 hover:from-purple-400 hover:scale-110 active:scale-95 transition"
+                      style={{ fontSize: "clamp(8px,1vw,15px)" }}>L{lv}</Link>
+                  );
+                })}
               </div>
-            </Link>
+            </div>
           ))}
 
           {/* 底部特色列（4 格） */}
