@@ -1,0 +1,121 @@
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { WORLDS } from "@/data/courses";
+import { playClick } from "@/lib/sfx";
+
+// 6 個世界卡框（座標依藏寶圖實際框線量測）
+const CARD = { top: 22.0, height: 37.5, width: 12.5 };
+const CARD_CX = [15.2, 29.2, 43.1, 57.0, 70.9, 84.8];
+
+const WORLD_LINK: Record<string, string> = {
+  彩虹谷: "/adventure-map/rainbow-valley",
+  友善小鎮: "/adventure-map/world/2",
+  海洋灣: "/adventure-map/world/3",
+  故事城堡: "/adventure-map/world/4",
+  探索大陸: "/adventure-map/world/5",
+  冠軍峰: "/adventure-map/world/6",
+};
+
+const FEATURES = [
+  { icon: "📖", title: "240 堂課程", desc: "系統化學習，循序漸進", color: "bg-purple-500" },
+  { icon: "⭐", title: "有趣的互動學習", desc: "遊戲、故事、歌曲，讓學習更快樂", color: "bg-orange-500" },
+  { icon: "🛡️", title: "銜接英檢初級", desc: "培養聽、說、讀、寫完整英語能力", color: "bg-blue-500" },
+  { icon: "🎁", title: "完成挑戰", desc: "收集獎章，兌換專屬獎勵！", color: "bg-pink-500" },
+];
+
+export default function CoursesClient() {
+  return (
+    <div className="relative w-full min-h-screen">
+      {/* 固定滿版底圖（不隨捲動移動、也不留白） */}
+      <div className="fixed inset-0 -z-10 bg-cover bg-center" style={{ backgroundImage: "url(/images/courses/intro-bg.webp)" }} />
+
+      {/* ===== 上方：標題 + 飛船 ===== */}
+      <div className="relative max-w-6xl mx-auto px-4 pt-[2vh]">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex-1 min-w-0">
+            <h1 className="font-black text-amber-900 leading-tight" style={{ fontSize: "clamp(22px,3.4vw,44px)" }}>
+              展開英語冒險之旅！
+            </h1>
+            <p className="mt-2 font-bold text-amber-800/90 leading-snug" style={{ fontSize: "clamp(12px,1.5vw,19px)" }}>
+              從 12 座冒險島、240 堂課程，<br />陪伴孩子勇敢學習，自信開口！
+            </p>
+          </div>
+          {/* 飛船（漂浮動畫） */}
+          <motion.img
+            src="/images/courses/intro-ship.webp"
+            alt="冒險飛船"
+            className="w-[34%] object-contain drop-shadow-[0_10px_18px_rgba(40,30,80,0.28)]"
+            style={{ maxHeight: "30vh" }}
+            animate={{ y: [0, -14, 0], rotate: [0, 1.2, 0, -1.2, 0] }}
+            transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" } }}
+          />
+        </div>
+      </div>
+
+      {/* ===== 藏寶圖：6 座冒險島 ===== */}
+      <div className="relative mx-auto px-2 sm:px-4 pb-[2vh] mt-1" style={{ maxWidth: "min(72rem, calc(58vh * 1500 / 1006))" }}>
+        <div className="relative w-full" style={{ aspectRatio: "1500 / 1006" }}>
+          <img src="/images/courses/intro-map.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
+
+          {/* 標題牌 */}
+          <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: "8.5%" }}>
+            <p className="font-black text-amber-900" style={{ fontSize: "clamp(13px,1.9vw,28px)" }}>選擇你的冒險島</p>
+          </div>
+
+          {/* 6 個世界卡 */}
+          {WORLDS.map((w, i) => (
+            <Link
+              key={w.name}
+              href={WORLD_LINK[w.name] || "/adventure-map"}
+              onClick={() => playClick()}
+              className="absolute no-underline group"
+              style={{ left: `${CARD_CX[i]}%`, top: `${CARD.top}%`, width: `${CARD.width}%`, height: `${CARD.height}%`, transform: "translateX(-50%)" }}
+            >
+              <div className="w-full h-full flex flex-col items-center justify-start pt-[6%] px-[6%] transition-transform group-hover:scale-[1.04] group-active:scale-95">
+                {/* 島圖 */}
+                <div className="w-full rounded-lg overflow-hidden shadow-md border-2 border-amber-800/30" style={{ aspectRatio: "1/1" }}>
+                  <img src={w.image} alt={w.name} className="w-full h-full object-cover" />
+                </div>
+                {/* 級數徽章 */}
+                <div className="flex gap-0.5 mt-[6%]">
+                  {w.levels.map(lv => (
+                    <span key={lv} className="bg-gradient-to-b from-purple-500 to-indigo-600 text-white font-black rounded-full px-[0.5em] py-[0.1em] shadow"
+                      style={{ fontSize: "clamp(8px,1vw,15px)" }}>L{lv}</span>
+                  ))}
+                </div>
+                {/* 名稱 */}
+                <p className="font-black text-amber-900 mt-[4%] leading-none" style={{ fontSize: "clamp(9px,1.25vw,19px)" }}>{w.name}</p>
+                <p className="font-bold text-amber-700/80 leading-none mt-[2%]" style={{ fontSize: "clamp(6px,0.85vw,13px)" }}>{w.nameEn}</p>
+                <p className="font-bold text-amber-800 mt-[5%]" style={{ fontSize: "clamp(7px,0.95vw,14px)" }}>⭐ 40 課</p>
+              </div>
+            </Link>
+          ))}
+
+          {/* 底部特色列（4 格） */}
+          <div className="absolute flex" style={{ left: "8%", right: "8%", top: "62.5%", height: "13%" }}>
+            {FEATURES.map(f => (
+              <div key={f.title} className="flex-1 flex items-center justify-center gap-[4%] px-[2%]">
+                <span className={`${f.color} text-white rounded-full flex items-center justify-center shrink-0 shadow`}
+                  style={{ width: "clamp(20px,2.6vw,42px)", height: "clamp(20px,2.6vw,42px)", fontSize: "clamp(10px,1.3vw,20px)" }}>{f.icon}</span>
+                <div className="min-w-0">
+                  <p className="font-black text-amber-900 leading-tight" style={{ fontSize: "clamp(8px,1.05vw,16px)" }}>{f.title}</p>
+                  <p className="font-bold text-amber-700/85 leading-tight" style={{ fontSize: "clamp(6px,0.8vw,12px)" }}>{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-4">
+          <Link href="/adventure-map" onClick={() => playClick()}
+            className="inline-block no-underline bg-gradient-to-b from-amber-400 to-orange-500 text-white font-black px-10 py-3 rounded-full shadow-xl border-2 border-white/70 hover:from-amber-500 active:scale-95 transition"
+            style={{ fontSize: "clamp(14px,1.8vw,22px)" }}>
+            開始冒險 →
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
