@@ -44,17 +44,16 @@ export default function CoursesClient() {
             <div style={{ width: c.size, height: c.size * 0.42, background: "#fff", borderRadius: "999px", filter: "blur(1px)", boxShadow: `${c.size*0.22}px -${c.size*0.14}px 0 ${c.size*0.02}px #fff, ${c.size*0.45}px 0 0 -${c.size*0.03}px #fff` }} />
           </motion.div>
         ))}
-        {/* 熱氣球（左右飄＋上下浮） */}
+        {/* 熱氣球（原本的圖檔，左右飄＋上下浮） */}
         {[
-          { top: "18%", left: "8%",  size: 46, dur: 26, rise: 22, delay: 0,  c1: "#f472b6", c2: "#fb7185" },
-          { top: "30%", left: "72%", size: 34, dur: 34, rise: 16, delay: 6,  c1: "#60a5fa", c2: "#818cf8" },
+          { src: "/images/balloons/balloon-1.webp", top: "16%", left: "6%",  h: "13vh", dur: 26, rise: 26, delay: 0 },
+          { src: "/images/balloons/balloon-2.webp", top: "30%", left: "78%", h: "10vh", dur: 34, rise: 18, delay: 5 },
+          { src: "/images/balloons/balloon-3.webp", top: "8%",  left: "58%", h: "8vh",  dur: 42, rise: 14, delay: 12 },
         ].map((b, i) => (
-          <motion.div key={`bal-${i}`} className="absolute" style={{ top: b.top, left: b.left }}
-            animate={{ x: [0, 60, -30, 0], y: [0, -b.rise, b.rise * 0.5, 0] }}
-            transition={{ duration: b.dur, delay: b.delay, repeat: Infinity, ease: "easeInOut" }}>
-            <div style={{ width: b.size, height: b.size * 1.18, borderRadius: "50% 50% 45% 45%", background: `linear-gradient(160deg, ${b.c1}, ${b.c2})`, boxShadow: "0 4px 10px rgba(60,40,90,.18)" }} />
-            <div style={{ width: b.size * 0.26, height: b.size * 0.2, background: "#a16207", borderRadius: "3px", margin: `${b.size*0.1}px auto 0` }} />
-          </motion.div>
+          <motion.img key={`bal-${i}`} src={b.src} alt="" className="absolute object-contain drop-shadow-[0_6px_10px_rgba(60,40,90,0.2)]"
+            style={{ top: b.top, left: b.left, height: b.h, width: "auto" }}
+            animate={{ x: [0, 70, -35, 0], y: [0, -b.rise, b.rise * 0.5, 0] }}
+            transition={{ duration: b.dur, delay: b.delay, repeat: Infinity, ease: "easeInOut" }} />
         ))}
       </div>
 
