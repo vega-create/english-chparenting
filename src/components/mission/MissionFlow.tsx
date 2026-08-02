@@ -105,7 +105,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
                     stopSpeaking();
                     // 探索步驟內先逐層退（句型→拼讀→單字→電子書逐頁→封面→影片）
                     if (step === 'discover' && discoverBackRef.current?.()) return;
-                    const prevMap: Record<Step, Step> = { intro: 'intro', welcome: 'intro', wakeup: 'intro', discover: course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup', challenge: 'discover', talktime: 'challenge', complete: 'talktime' };
+                    const prevMap: Record<Step, Step> = { intro: 'intro', welcome: 'intro', wakeup: 'intro', discover: course.level === 1 && mission.id === 1 ? 'welcome' : 'wakeup', challenge: 'discover', talktime: 'challenge', complete: 'talktime' };
                     setStep(prevMap[step]);
                   }}
                   className="text-purple-500 hover:text-purple-700 text-sm font-bold bg-purple-50 px-3 py-0.5 rounded-full"
@@ -186,7 +186,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
               {/* 按鈕（框下方） */}
               <div className="-mt-1 px-8 space-y-2">
                 <button
-                  onClick={() => setStep(course.level === 1 && mission.id <= 3 ? 'welcome' : 'wakeup')}
+                  onClick={() => setStep(course.level === 1 && mission.id === 1 ? 'welcome' : 'wakeup')}
                   className="w-full py-3.5 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg hover:from-pink-500 active:scale-95 transition text-lg"
                 >⭐ ▶ 開始任務 ⭐</button>
                 <button
