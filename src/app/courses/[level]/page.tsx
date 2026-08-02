@@ -35,6 +35,12 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ l
           <span className="text-gray-700">L{course.level} {course.island}</span>
         </div>
 
+        {/* 課程橫幅圖（12 級各一張） */}
+        <div className="rounded-3xl overflow-hidden shadow-lg mb-6 animate-slide-up">
+          <img src={`/images/courses/hero/${course.slug}.webp`} alt={`${course.island} ${course.islandEn}`}
+            className="w-full h-auto block" loading="eager" />
+        </div>
+
         {/* Hero */}
         <div className={`bg-gradient-to-br ${course.bgGradient} ${course.borderColor} border-2 rounded-3xl p-8 mb-8 animate-slide-up`}>
           <div className="flex items-center gap-2 mb-2">
