@@ -301,89 +301,97 @@ export default function CabinClient() {
 
             {/* 右：圖書館 + 每日獎勵 (+升級) */}
             <div className="space-y-3 sm:space-y-4 mx-auto w-full" style={{ maxWidth: 'min(100%, 420px)' }}>
-              {/* 我的圖書館（木牌） */}
-              <div className="relative w-full" style={{ aspectRatio: '1200 / 382' }}>
-                <img src="/images/cabin/banner.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
-                <div className="absolute flex items-center gap-[4%]" style={{ left: '7%', width: '86%', top: '17%', height: '73%' }}>
-                  <span style={{ fontSize: 'clamp(22px,2.9vw,44px)' }}>📖</span>
-                  <div className="min-w-0 flex-1">
-                    <p className="font-bold text-amber-700 leading-none truncate" style={{ fontSize: 'clamp(8px,0.9vw,13px)' }}>我的圖書館</p>
-                    <p className="font-black text-amber-900 leading-none mt-[4%] whitespace-nowrap" style={{ fontSize: 'clamp(15px,1.9vw,28px)' }}>
-                      {isVip ? 86 : 12} <span style={{ fontSize: '0.45em' }}>本</span>
-                    </p>
+              {/* 我的圖書館（書櫃框） */}
+              <div className="relative w-full" style={{ aspectRatio: '1170 / 1345' }}>
+                <img src="/images/cabin/library.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
+                {/* 紫緞帶 */}
+                <p className="absolute text-center font-black text-white whitespace-nowrap"
+                  style={{ left: '12.9%', width: '73.7%', top: '4%', fontSize: 'clamp(10px,1.2vw,18px)', textShadow: '0 1px 2px rgba(55,20,95,.65)' }}>我的圖書館</p>
+                {/* 側邊層板放書 */}
+                {[['📕', 8.5, 20.5], ['📗', 8.5, 45.5], ['📘', 8.5, 70.5], ['📙', 75.6, 20.5], ['📓', 75.6, 45.5], ['📔', 75.6, 70.5]].map(([e, x, y], i) => (
+                  <div key={i} className="absolute flex items-end justify-center pb-[2%]"
+                    style={{ left: `${x}%`, top: `${y}%`, width: '15%', height: '18.5%' }}>
+                    <span style={{ fontSize: 'clamp(11px,1.5vw,24px)' }}>{e}</span>
                   </div>
+                ))}
+                {/* 中央木板 */}
+                <div className="absolute flex flex-col items-center justify-center"
+                  style={{ left: '23.4%', top: '19.5%', width: '52.2%', height: '71.4%' }}>
+                  <span style={{ fontSize: 'clamp(24px,3.1vw,48px)' }}>📖</span>
+                  <p className="font-bold text-amber-100/85 leading-none mt-[4%]" style={{ fontSize: 'clamp(8px,0.95vw,14px)', ...SLOT_TXT }}>已閱讀</p>
+                  <p className="font-black text-amber-50 leading-none mt-[3%]" style={{ fontSize: 'clamp(20px,2.6vw,40px)', ...SLOT_TXT }}>
+                    {isVip ? 86 : 12} <span style={{ fontSize: '0.42em' }}>本</span>
+                  </p>
                   <Link href="/books" onClick={() => playClick()}
-                    className="no-underline shrink-0 rounded-full bg-gradient-to-b from-purple-500 to-indigo-600 px-[0.9em] py-[0.3em] font-black text-white shadow border-2 border-white/50 active:scale-95 transition whitespace-nowrap"
+                    className="no-underline mt-[8%] rounded-full bg-gradient-to-b from-purple-500 to-indigo-600 px-[1em] py-[0.28em] font-black text-white shadow-lg border-2 border-white/50 active:scale-95 transition whitespace-nowrap"
                     style={{ fontSize: 'clamp(8px,1vw,15px)' }}>查看全部</Link>
                 </div>
               </div>
 
-              {/* 每日小獎勵（木牌） */}
-              <div className="relative w-full" style={{ aspectRatio: '1200 / 382' }}>
-                <img src="/images/cabin/banner.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
-                <div className="absolute flex items-center gap-[4%]" style={{ left: '7%', width: '86%', top: '17%', height: '73%' }}>
-                  <motion.span animate={{ y: [0, -5, 0], scale: [1, 1.06, 1] }} transition={{ duration: 2.2, repeat: Infinity }}
-                    style={{ fontSize: 'clamp(22px,2.9vw,44px)', display: 'inline-block' }}>🎁</motion.span>
-                  <div className="min-w-0 flex-1">
-                    <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>每日小獎勵</p>
-                    {isVip ? (
-                      <p className="font-black text-amber-900 leading-none mt-[3%]" style={{ fontSize: 'clamp(11px,1.35vw,20px)' }}>⏱ 12:45:33</p>
-                    ) : (
-                      <p className="font-black text-amber-900 leading-none mt-[3%]" style={{ fontSize: 'clamp(10px,1.2vw,18px)' }}>今天還沒領！</p>
-                    )}
+              {/* 每日小獎勵（寶箱框） */}
+              <div className="relative w-full" style={{ aspectRatio: '1 / 1' }}>
+                <img src="/images/cabin/reward.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
+                <p className="absolute text-center font-black text-white whitespace-nowrap"
+                  style={{ left: '17.8%', width: '63.8%', top: '8.5%', fontSize: 'clamp(10px,1.25vw,19px)', textShadow: '0 1px 2px rgba(55,20,95,.65)' }}>每日小獎勵</p>
+                {isVip ? (
+                  <div className="absolute flex items-center justify-center font-black text-white"
+                    style={{ left: '21.9%', top: '77.5%', width: '55.8%', height: '14.3%', fontSize: 'clamp(10px,1.2vw,18px)', textShadow: '0 1px 2px rgba(20,60,10,.7)' }}>
+                    已領取 ⏱ 12:45
                   </div>
-                  {isVip ? (
-                    <span className="shrink-0 rounded-full bg-amber-200/80 px-[0.9em] py-[0.3em] font-black text-amber-800 border-2 border-amber-700/25 whitespace-nowrap"
-                      style={{ fontSize: 'clamp(8px,1vw,15px)' }}>已領取</span>
-                  ) : (
-                    <button onClick={() => playStar()}
-                      className="shrink-0 rounded-full bg-gradient-to-b from-lime-400 to-green-600 px-[0.9em] py-[0.3em] font-black text-white shadow border-2 border-white/60 active:scale-95 transition whitespace-nowrap"
-                      style={{ fontSize: 'clamp(8px,1vw,15px)' }}>領取 ❗</button>
-                  )}
-                </div>
+                ) : (
+                  <button onClick={() => playStar()}
+                    className="absolute flex items-center justify-center font-black text-white active:scale-95 transition"
+                    style={{ left: '21.9%', top: '77.5%', width: '55.8%', height: '14.3%', fontSize: 'clamp(10px,1.25vw,19px)', textShadow: '0 1px 2px rgba(20,60,10,.7)' }}>
+                    領取獎勵 ❗
+                  </button>
+                )}
               </div>
-
-              {/* 升級會員（木牌） */}
-              {!isVip && (
-                <div className="relative w-full" style={{ aspectRatio: '1200 / 382' }}>
-                  <img src="/images/cabin/banner.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
-                  <div className="absolute flex flex-col justify-center" style={{ left: '7%', width: '86%', top: '17%', height: '73%' }}>
-                    <p className="font-black text-purple-700 leading-none" style={{ fontSize: 'clamp(10px,1.2vw,17px)' }}>✨ 升級會員</p>
-                    <p className="font-bold text-amber-800/85 leading-tight mt-[2%]" style={{ fontSize: 'clamp(6px,0.75vw,11px)' }}>
-                      解鎖所有功能與裝飾，享受完整冒險體驗！
-                    </p>
-                    <button onClick={() => setM('vip')}
-                      className="mt-[3%] w-full rounded-full bg-gradient-to-b from-amber-300 to-orange-500 py-[0.25em] font-black text-white shadow border-2 border-white/70 active:scale-95 transition"
-                      style={{ fontSize: 'clamp(9px,1.1vw,16px)', textShadow: '0 1px 2px rgba(150,70,0,.5)' }}>立即升級</button>
-                  </div>
-                </div>
-              )}
             </div>
 
-            {/* 下方 6 個功能卡 */}
+            {/* 下方：升級會員 + 6 個功能卡 */}
             <div className="lg:col-span-3">
-              {/* 6 個功能：木牌框 */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+              {/* 升級會員（星空框） */}
+              {!isVip && (
+                <div className="relative w-full mx-auto mb-3" style={{ aspectRatio: '1200 / 925', maxWidth: '430px' }}>
+                  <img src="/images/cabin/upgrade.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
+                  <div className="absolute text-center" style={{ left: '12%', width: '76%', top: '13%' }}>
+                    <p className="font-black text-amber-200 leading-none" style={{ fontSize: 'clamp(13px,1.6vw,24px)', textShadow: '0 2px 4px rgba(20,5,50,.8)' }}>✨ 升級會員</p>
+                    <p className="font-bold text-white/90 leading-snug mt-[4%]" style={{ fontSize: 'clamp(8px,0.95vw,14px)', textShadow: '0 1px 3px rgba(20,5,50,.8)' }}>
+                      解鎖所有功能與裝飾，<br />享受完整冒險體驗！
+                    </p>
+                    <div className="mt-[6%]" style={{ fontSize: 'clamp(14px,1.8vw,28px)' }}>🧰 🪑 🎖️ 🐱 💎</div>
+                  </div>
+                  <button onClick={() => setM('vip')}
+                    className="absolute flex items-center justify-center font-black text-amber-900 active:scale-95 transition"
+                    style={{ left: '13.6%', top: '71.2%', width: '73.6%', height: '11.9%', fontSize: 'clamp(12px,1.5vw,22px)' }}>
+                    立即升級
+                  </button>
+                </div>
+              )}
+
+              {/* 6 個功能：方形木框 */}
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3">
                 {FEATURES.map(f => {
                   const locked = f.vip && !isVip;
                   return (
-                    <div key={f.t} className="relative w-full" style={{ aspectRatio: '1200 / 382' }}>
-                      <img src="/images/cabin/banner.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
+                    <div key={f.t} className="relative w-full" style={{ aspectRatio: '1095 / 1128' }}>
+                      <img src="/images/cabin/feature-card.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
                       {f.vip && (
-                        <span className="absolute z-10 rounded-full bg-purple-600 px-[0.6em] font-black text-white border border-white/60"
-                          style={{ right: '6%', top: '10%', fontSize: 'clamp(7px,0.8vw,11px)' }}>VIP</span>
+                        <span className="absolute z-10 rounded-full bg-purple-600 px-[0.55em] font-black text-white border border-white/60 shadow"
+                          style={{ right: '4%', top: '2%', fontSize: 'clamp(7px,0.8vw,11px)' }}>VIP</span>
                       )}
-                      <div className="absolute flex items-center gap-[4%]" style={{ left: '7%', width: '86%', top: '17%', height: '73%' }}>
-                        <div className="flex items-center justify-center shrink-0" style={{ fontSize: 'clamp(18px,2.4vw,36px)', height: '1.15em' }}>
+                      <div className="absolute flex flex-col items-center justify-center gap-[4%]"
+                        style={{ left: '6.8%', top: '4.3%', width: '86.7%', height: '81.7%' }}>
+                        <div className="flex items-center justify-center" style={{ fontSize: 'clamp(20px,2.6vw,40px)', height: '1.15em' }}>
                           {locked
                             ? <img src="/images/cabin/lock.webp" alt="" className="object-contain h-full w-auto" />
                             : f.icon}
                         </div>
-                        <p className="flex-1 min-w-0 font-black text-amber-900 leading-tight truncate"
-                          style={{ fontSize: 'clamp(9px,1.1vw,17px)' }}>{f.t}</p>
-                        <span className={`shrink-0 rounded-full px-[0.8em] py-[0.25em] font-black text-white border-2 border-white/50 whitespace-nowrap ${
+                        <p className="font-black text-amber-900 leading-tight text-center whitespace-nowrap"
+                          style={{ fontSize: 'clamp(9px,1.05vw,16px)' }}>{f.t}</p>
+                        <span className={`rounded-full px-[0.7em] py-[0.2em] font-black text-white border-2 border-white/50 whitespace-nowrap ${
                           locked ? 'bg-purple-600' : 'bg-green-600'
-                        }`} style={{ fontSize: 'clamp(7px,0.85vw,12px)' }}>{locked ? 'VIP 解鎖' : '可查看'}</span>
+                        }`} style={{ fontSize: 'clamp(7px,0.82vw,12px)' }}>{locked ? 'VIP 解鎖' : '可查看'}</span>
                       </div>
                     </div>
                   );
