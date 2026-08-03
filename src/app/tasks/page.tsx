@@ -38,13 +38,13 @@ export default function TasksPage() {
               完成今天的任務，拿到冒險獎勵！
             </p>
           </div>
-          {/* 進度條 */}
+          {/* 進度：文字在左，填色直接畫進圖上原本的凹槽 */}
           <div className="absolute flex items-center gap-[2%]" style={{ left: '13%', right: '10%', top: '80%', height: '10%' }}>
             <span className="font-black text-amber-900 whitespace-nowrap" style={{ fontSize: 'clamp(9px,1.15vw,16px)' }}>
               今日進度 {done} / {TASKS.length}
             </span>
-            <div className="flex-1 h-[55%] bg-amber-200/60 rounded-full overflow-hidden border border-amber-700/20">
-              <motion.div className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"
+            <div className="relative flex-1 h-[70%]">
+              <motion.div className="absolute inset-y-0 left-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"
                 initial={{ width: 0 }} animate={{ width: `${(done / TASKS.length) * 100}%` }} transition={{ duration: 0.8 }} />
             </div>
           </div>
