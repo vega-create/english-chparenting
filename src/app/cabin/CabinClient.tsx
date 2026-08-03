@@ -93,6 +93,11 @@ export default function CabinClient() {
   const learned = Object.values(stats).reduce((s, x) => s + x.collected, 0);
   const isVip = member === 'vip';
 
+  // 目前進度（之後接真資料）
+  const CUR = isVip
+    ? { lv: 12, title: '冒險家 Adventurer', slug: 'l3-market-street', zh: 'L3 市場街', en: 'Market Street', xp: 1250, xpMax: 2000, days: 28, mins: 45, done: 32, words: 12, course: 'Course 12', lesson: 'What Is It?' }
+    : { lv: 5, title: '見習生 Explorer', slug: 'l1-letter-island', zh: 'L1 字母島', en: 'Letter Island', xp: 230, xpMax: 500, days: 3, mins: 25, done: 18, words: 8, course: 'Course 05', lesson: 'I to L' };
+
   return (
     <main className="relative min-h-screen">
       <div className="fixed inset-0 -z-10 bg-cover bg-center" style={{ backgroundImage: 'url(/images/cabin/bg.webp)' }} />
@@ -190,30 +195,33 @@ export default function CabinClient() {
                 style={{ left: '10%', width: '76%', top: '43.2%', fontSize: 'clamp(10px,1.15vw,17px)', textShadow: '0 1px 2px rgba(55,20,95,.65)' }}>
                 {AVATAR_NAME[avatar]}
               </p>
-              {/* 第 1 格：等級 + 經驗條 */}
-              <div className="absolute text-center" style={{ left: '12%', width: '76%', top: '52%' }}>
-                <p className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(14px,1.85vw,26px)' }}>⭐ LV.{isVip ? 12 : 5}</p>
-                <div className="mx-auto mt-[6%] h-[0.55em] w-[86%] rounded-full bg-amber-200 overflow-hidden border border-amber-700/30"
-                  style={{ fontSize: 'clamp(12px,1.5vw,22px)' }}>
-                  <div className="h-full bg-gradient-to-r from-lime-400 to-green-500" style={{ width: isVip ? '62%' : '46%' }} />
+              {/* 第 1 格：等級 + 稱號 */}
+              <div className="absolute text-center" style={{ left: '10%', width: '80%', top: '52%' }}>
+                <p className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(15px,1.95vw,28px)' }}>⭐ LV.{CUR.lv}</p>
+                <p className="font-bold text-amber-700 leading-none mt-[4%]" style={{ fontSize: 'clamp(8px,0.92vw,13px)' }}>{CUR.title}</p>
+              </div>
+              {/* 第 2～3 格：目前世界（縮圖＋中英島名） */}
+              <div className="absolute flex flex-col items-center" style={{ left: '10%', width: '80%', top: '63.5%' }}>
+                <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.9vw,13px)' }}>目前世界</p>
+                <div className="flex items-center gap-[5%] mt-[3%] w-full justify-center">
+                  <img src={`/images/courses/hero/${CUR.slug}.webp`} alt=""
+                    className="rounded-lg border-2 border-amber-800/35 object-cover shrink-0"
+                    style={{ width: 'clamp(22px,2.6vw,44px)', height: 'clamp(22px,2.6vw,44px)' }} />
+                  <div className="min-w-0">
+                    <p className="font-black text-amber-900 leading-none whitespace-nowrap" style={{ fontSize: 'clamp(9px,1.1vw,16px)' }}>{CUR.zh}</p>
+                    <p className="font-bold text-amber-700/85 leading-none mt-[8%] whitespace-nowrap" style={{ fontSize: 'clamp(7px,0.8vw,12px)' }}>{CUR.en}</p>
+                  </div>
                 </div>
               </div>
-              {/* 第 2 格：目前關卡 */}
-              <div className="absolute text-center" style={{ left: '12%', width: '76%', top: '64.5%' }}>
-                <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.9vw,13px)' }}>目前位置</p>
-                <p className="font-black text-amber-900 leading-none mt-[4%]" style={{ fontSize: 'clamp(10px,1.2vw,17px)' }}>{isVip ? 'L3 市場街' : 'L1 字母島'}</p>
-              </div>
-              {/* 第 3 格：已學單字 */}
-              <div className="absolute text-center" style={{ left: '12%', width: '76%', top: '73.6%' }}>
-                <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.9vw,13px)' }}>已學單字</p>
-                <p className="font-black text-amber-900 leading-none mt-[4%]" style={{ fontSize: 'clamp(12px,1.5vw,22px)' }}>
-                  {learned || (isVip ? 256 : 42)} <span style={{ fontSize: '0.55em' }}>個</span>
-                </p>
-              </div>
-              {/* 第 4 格：連續登入 */}
-              <div className="absolute text-center" style={{ left: '12%', width: '76%', top: '82.6%' }}>
-                <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.9vw,13px)' }}>連續登入</p>
-                <p className="font-black text-orange-600 leading-none mt-[4%]" style={{ fontSize: 'clamp(11px,1.35vw,20px)' }}>{isVip ? 28 : 3} 天 🔥</p>
+              {/* 第 4 格：EXP 條（數字在條內） */}
+              <div className="absolute flex items-center gap-[4%]" style={{ left: '11%', width: '78%', top: '82.5%' }}>
+                <span className="font-black text-amber-800 shrink-0" style={{ fontSize: 'clamp(7px,0.85vw,12px)' }}>EXP</span>
+                <div className="relative flex-1 rounded-full bg-amber-200 overflow-hidden border border-amber-700/30"
+                  style={{ height: 'clamp(11px,1.3vw,20px)' }}>
+                  <div className="h-full bg-gradient-to-r from-lime-400 to-green-500" style={{ width: `${CUR.xp / CUR.xpMax * 100}%` }} />
+                  <span className="absolute inset-0 flex items-center justify-center font-black text-amber-900 leading-none"
+                    style={{ fontSize: 'clamp(6px,0.72vw,11px)' }}>{CUR.xp} / {CUR.xpMax}</span>
+                </div>
               </div>
               {/* 底部按鈕槽 */}
               <Link href="/adventure-map" onClick={() => playClick()}
@@ -232,47 +240,75 @@ export default function CabinClient() {
                 <p className="absolute font-black text-white text-center whitespace-nowrap z-10"
                   style={{ left: '28%', width: '40%', top: '4.5%', fontSize: 'clamp(10px,1.2vw,17px)', textShadow: '0 1px 2px rgba(60,25,100,.6)' }}>冒險日誌</p>
 
-                {/* 左頁：今日學習 */}
-                <div className="absolute" style={{ left: '5.5%', width: '36%', top: '16%', bottom: '8%' }}>
-                  <p className="font-black text-amber-900 text-center leading-none" style={{ fontSize: 'clamp(10px,1.25vw,18px)' }}>📅 今日學習</p>
-                  <div className="mt-[6%] space-y-[3.5%]">
-                    {[
-                      { i: '📖', t: '故事閱讀', v: '1 本' },
-                      { i: '⭐', t: '魔法學習', v: '1 課' },
-                      { i: '🧩', t: '拼圖挑戰', v: '1 次' },
-                      { i: '✏️', t: '單字練習', v: `${learned || (isVip ? 12 : 8)} 個` },
-                      { i: '🎤', t: '發音練習', v: isVip ? '6 句' : '3 句' },
-                    ].map(r => (
-                      <div key={r.t} className="flex items-center gap-[4%] border-b border-amber-800/15 pb-[2%]">
-                        <span style={{ fontSize: 'clamp(11px,1.35vw,20px)' }}>{r.i}</span>
-                        <span className="flex-1 font-bold text-amber-800 whitespace-nowrap" style={{ fontSize: 'clamp(8px,1vw,15px)' }}>{r.t}</span>
-                        <span className="font-black text-amber-900 whitespace-nowrap" style={{ fontSize: 'clamp(8px,1vw,15px)' }}>{r.v} ✓</span>
-                      </div>
-                    ))}
+                {/* 左頁：今日學習 4 項 ＋ 連續登入 */}
+                <div className="absolute flex flex-col justify-between" style={{ left: '5.5%', width: '36%', top: '13%', bottom: '6%' }}>
+                  <div>
+                    <p className="font-black text-amber-900 text-center leading-none" style={{ fontSize: 'clamp(10px,1.25vw,18px)' }}>今日學習</p>
+                    <div className="mt-[6%] space-y-[4%]">
+                      {[
+                        { i: '📖', t: '故事閱讀', v: '1 篇' },
+                        { i: '⭐', t: '魔法學習', v: '1 課' },
+                        { i: '🧩', t: '拼圖挑戰', v: '1 次' },
+                        { i: '✏️', t: '單字練習', v: `${learned || CUR.words} 個` },
+                      ].map(r => (
+                        <div key={r.t} className="flex items-center gap-[4%]">
+                          <span style={{ fontSize: 'clamp(10px,1.25vw,19px)' }}>{r.i}</span>
+                          <span className="flex-1 font-bold text-amber-800 whitespace-nowrap" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>{r.t}</span>
+                          <span className="font-black text-amber-900 whitespace-nowrap" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>{r.v}</span>
+                          <span className="text-green-600 font-black" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>✓</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-[3%]">
+                      <span style={{ fontSize: 'clamp(11px,1.35vw,20px)' }}>📅</span>
+                      <span className="font-bold text-amber-800" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>連續登入</span>
+                    </div>
+                    <p className="font-black text-amber-900 leading-none mt-[2%]" style={{ fontSize: 'clamp(16px,2.1vw,32px)' }}>
+                      {CUR.days} <span style={{ fontSize: '0.45em' }}>天</span>
+                    </p>
+                    <p className="leading-none mt-[2%] whitespace-nowrap" style={{ fontSize: 'clamp(8px,1vw,16px)' }}>
+                      {'🔥'.repeat(Math.min(CUR.days, 6))}
+                    </p>
                   </div>
                 </div>
 
                 {/* 右頁 3 格 */}
                 <div className="absolute flex flex-col justify-center" style={{ left: '51.5%', width: '38%', top: '14.4%', height: '24.8%' }}>
-                  <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>⏱️ 學習時間</p>
-                  <p className="font-black text-amber-900 leading-none mt-[3%]" style={{ fontSize: 'clamp(14px,1.95vw,28px)' }}>{isVip ? 45 : 25} <span style={{ fontSize: '0.55em' }}>分鐘</span></p>
-                  <div className="mt-[4%] h-[0.5em] rounded-full bg-amber-200 overflow-hidden border border-amber-800/20" style={{ fontSize: 'clamp(12px,1.5vw,22px)' }}>
-                    <div className="h-full bg-gradient-to-r from-amber-400 to-orange-500" style={{ width: isVip ? '75%' : '42%' }} />
+                  <div className="flex items-center gap-[4%]">
+                    <span style={{ fontSize: 'clamp(12px,1.6vw,24px)' }}>⏱️</span>
+                    <span className="font-bold text-amber-700" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>學習時間</span>
+                  </div>
+                  <p className="font-black text-amber-900 leading-none mt-[3%]" style={{ fontSize: 'clamp(14px,1.95vw,28px)' }}>{CUR.mins} <span style={{ fontSize: '0.55em' }}>分鐘</span></p>
+                  <div className="mt-[5%] h-[0.5em] rounded-full bg-amber-200 overflow-hidden border border-amber-800/20" style={{ fontSize: 'clamp(12px,1.5vw,22px)' }}>
+                    <div className="h-full bg-gradient-to-r from-lime-400 to-green-500" style={{ width: isVip ? '75%' : '42%' }} />
                   </div>
                 </div>
                 <div className="absolute flex flex-col justify-center" style={{ left: '51.5%', width: '38%', top: '40.5%', height: '24.8%' }}>
-                  <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>✅ 完成任務</p>
-                  <p className="font-black text-amber-900 leading-none mt-[3%]" style={{ fontSize: 'clamp(14px,1.95vw,28px)' }}>{isVip ? 32 : 18} <span style={{ fontSize: '0.5em' }}>/ 40</span></p>
-                  <div className="mt-[4%] h-[0.5em] rounded-full bg-amber-200 overflow-hidden border border-amber-800/20" style={{ fontSize: 'clamp(12px,1.5vw,22px)' }}>
-                    <div className="h-full bg-gradient-to-r from-lime-400 to-green-500" style={{ width: isVip ? '80%' : '45%' }} />
+                  <div className="flex items-center gap-[4%]">
+                    <span style={{ fontSize: 'clamp(12px,1.6vw,24px)' }}>✅</span>
+                    <span className="font-bold text-amber-700" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>完成任務</span>
+                  </div>
+                  <p className="font-black text-amber-900 leading-none mt-[3%]" style={{ fontSize: 'clamp(14px,1.95vw,28px)' }}>{CUR.done} <span style={{ fontSize: '0.5em' }}>/ 40</span></p>
+                  <div className="mt-[5%] h-[0.5em] rounded-full bg-amber-200 overflow-hidden border border-amber-800/20" style={{ fontSize: 'clamp(12px,1.5vw,22px)' }}>
+                    <div className="h-full bg-gradient-to-r from-lime-400 to-green-500" style={{ width: `${CUR.done / 40 * 100}%` }} />
                   </div>
                 </div>
                 <div className="absolute flex flex-col justify-center" style={{ left: '51.5%', width: '38%', top: '66.6%', height: '24.8%' }}>
-                  <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>🏁 最近完成</p>
-                  <p className="font-black text-amber-900 leading-tight mt-[3%]" style={{ fontSize: 'clamp(9px,1.15vw,17px)' }}>
-                    {isVip ? 'L3 市場街 · Course 12' : 'L1 字母島 · Course 05'}
-                  </p>
-                  <p className="font-bold text-amber-700 leading-none mt-[3%]" style={{ fontSize: 'clamp(8px,0.9vw,13px)' }}>{isVip ? 'What Is It?' : 'I to L'}</p>
+                  <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>最近完成</p>
+                  <div className="flex items-center gap-[5%] mt-[4%]">
+                    <img src={`/images/courses/hero/${CUR.slug}.webp`} alt=""
+                      className="rounded-lg border-2 border-amber-800/30 object-cover shrink-0"
+                      style={{ width: 'clamp(24px,2.9vw,48px)', height: 'clamp(24px,2.9vw,48px)' }} />
+                    <div className="min-w-0 flex-1">
+                      <p className="font-bold text-amber-700 leading-none whitespace-nowrap" style={{ fontSize: 'clamp(7px,0.85vw,13px)' }}>{CUR.course}</p>
+                      <p className="font-black text-amber-900 leading-tight mt-[6%]" style={{ fontSize: 'clamp(9px,1.1vw,16px)' }}>{CUR.lesson}</p>
+                    </div>
+                    <Link href="/courses" onClick={() => playClick()}
+                      className="no-underline shrink-0 rounded-full bg-gradient-to-b from-purple-500 to-indigo-600 flex items-center justify-center font-black text-white border-2 border-white/60 shadow active:scale-95 transition"
+                      style={{ width: 'clamp(16px,1.9vw,30px)', height: 'clamp(16px,1.9vw,30px)', fontSize: 'clamp(8px,1vw,15px)' }}>›</Link>
+                  </div>
                 </div>
               </div>
 
@@ -328,9 +364,11 @@ export default function CabinClient() {
                 </div>
               </div>
 
-              {/* 每日小獎勵（寶箱框） */}
-              <div className="relative w-full" style={{ aspectRatio: '1 / 1' }}>
-                <img src="/images/cabin/reward.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
+              {/* 每日小獎勵（寶箱框；圓角＋木邊，避免整幅場景跟背景打架） */}
+              <div className="relative w-full overflow-hidden rounded-[6%] border-[3px] border-amber-800/60 shadow-2xl"
+                style={{ aspectRatio: '1 / 1' }}>
+                <img src="/images/cabin/reward.webp" alt="" className="absolute w-full h-full object-cover"
+                  style={{ transform: 'scale(1.08)' }} />
                 <p className="absolute text-center font-black text-white whitespace-nowrap"
                   style={{ left: '17.8%', width: '63.8%', top: '8.5%', fontSize: 'clamp(10px,1.25vw,19px)', textShadow: '0 1px 2px rgba(55,20,95,.65)' }}>每日小獎勵</p>
                 {isVip ? (
@@ -346,13 +384,10 @@ export default function CabinClient() {
                   </button>
                 )}
               </div>
-            </div>
 
-            {/* 下方：升級會員 + 6 個功能卡 */}
-            <div className="lg:col-span-3">
               {/* 升級會員（星空框） */}
               {!isVip && (
-                <div className="relative w-full mx-auto mb-3" style={{ aspectRatio: '1200 / 925', maxWidth: '430px' }}>
+                <div className="relative w-full" style={{ aspectRatio: '1200 / 925' }}>
                   <img src="/images/cabin/upgrade.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
                   <div className="absolute text-center" style={{ left: '12%', width: '76%', top: '13%' }}>
                     <p className="font-black text-amber-200 leading-none" style={{ fontSize: 'clamp(13px,1.6vw,24px)', textShadow: '0 2px 4px rgba(20,5,50,.8)' }}>✨ 升級會員</p>
@@ -368,8 +403,10 @@ export default function CabinClient() {
                   </button>
                 </div>
               )}
+            </div>
 
-              {/* 6 個功能：方形木框 */}
+            {/* 下方 6 個功能卡（占左＋中兩欄） */}
+            <div className="lg:col-span-2">
               <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3">
                 {FEATURES.map(f => {
                   const locked = f.vip && !isVip;
