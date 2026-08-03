@@ -63,7 +63,7 @@ const SLOT = { width: '12.4%', top: '35%', height: '46%' };
 const SLOT_TXT = { textShadow: '0 1px 2px rgba(0,0,0,.75)' };
 
 // 角色名（對應 choose-character 存的 ae_avatar）
-const AVATAR_NAME: Record<string, string> = { elly: '艾莉 Elly', sky: '小飛 Sky', coco: '可可 Coco', leo: '雷歐 Leo', vera: '薇拉 Vera' };
+const AVATAR_NAME: Record<string, string> = { elly: '艾莉', sky: '小飛', coco: '可可', leo: '雷歐', vera: '薇拉' };
 
 export default function CabinClient() {
   const [member, setMember] = useState<Member>('guest');
@@ -178,11 +178,13 @@ export default function CabinClient() {
             {/* 左：角色卡（圓框木牌） */}
             <div className="relative w-full mx-auto" style={{ aspectRatio: '869 / 1667', maxWidth: 'clamp(190px, 27vw, 330px)' }}>
               <img src="/images/cabin/avatar-frame.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
-              {/* 圓框內的角色 */}
-              <motion.img src={`/images/avatars/${avatar}-happy.webp`} alt=""
-                className="absolute object-contain"
-                style={{ left: '18%', top: '3%', width: '64%', height: '35%' }}
-                animate={{ y: [0, -6, 0] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }} />
+              {/* 圓框內的大頭像 */}
+              <div className="absolute overflow-hidden rounded-full"
+                style={{ left: '17.5%', top: '2.5%', width: '65%', aspectRatio: '1 / 1', background: 'linear-gradient(180deg,#bfe6ff 0%,#d9f2e4 55%,#f4e6c4 100%)' }}>
+                <motion.img src={`/images/avatars/face/${avatar}.webp`} alt=""
+                  className="w-full h-full object-contain"
+                  animate={{ y: [0, -5, 0] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }} />
+              </div>
               {/* 紫緞帶：名字 */}
               <p className="absolute text-center font-black text-white whitespace-nowrap"
                 style={{ left: '10%', width: '76%', top: '43.2%', fontSize: 'clamp(10px,1.15vw,17px)', textShadow: '0 1px 2px rgba(55,20,95,.65)' }}>
@@ -305,8 +307,10 @@ export default function CabinClient() {
                 <div className="absolute flex items-center gap-[4%]" style={{ left: '7%', width: '86%', top: '17%', height: '73%' }}>
                   <span style={{ fontSize: 'clamp(22px,2.9vw,44px)' }}>📖</span>
                   <div className="min-w-0 flex-1">
-                    <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(8px,0.95vw,14px)' }}>我的圖書館・已閱讀</p>
-                    <p className="font-black text-amber-900 leading-none mt-[3%]" style={{ fontSize: 'clamp(16px,2.1vw,30px)' }}>{isVip ? 86 : 12} <span style={{ fontSize: '0.45em' }}>本</span></p>
+                    <p className="font-bold text-amber-700 leading-none truncate" style={{ fontSize: 'clamp(8px,0.9vw,13px)' }}>我的圖書館</p>
+                    <p className="font-black text-amber-900 leading-none mt-[4%] whitespace-nowrap" style={{ fontSize: 'clamp(15px,1.9vw,28px)' }}>
+                      {isVip ? 86 : 12} <span style={{ fontSize: '0.45em' }}>本</span>
+                    </p>
                   </div>
                   <Link href="/books" onClick={() => playClick()}
                     className="no-underline shrink-0 rounded-full bg-gradient-to-b from-purple-500 to-indigo-600 px-[0.9em] py-[0.3em] font-black text-white shadow border-2 border-white/50 active:scale-95 transition whitespace-nowrap"
@@ -339,44 +343,48 @@ export default function CabinClient() {
                 </div>
               </div>
 
+              {/* 升級會員（木牌） */}
               {!isVip && (
-                <Panel>
-                  <div className="text-center rounded-2xl bg-gradient-to-b from-purple-600 to-indigo-700 p-3 border-2 border-amber-300/70">
-                    <p className="font-black text-amber-200" style={{ fontSize: 'clamp(12px,1.5vw,20px)' }}>✨ 升級會員</p>
-                    <p className="font-bold text-white/90 leading-snug mt-1" style={{ fontSize: 'clamp(8px,0.95vw,13px)' }}>
-                      解鎖所有功能與裝飾，<br />享受完整冒險體驗！
+                <div className="relative w-full" style={{ aspectRatio: '1200 / 382' }}>
+                  <img src="/images/cabin/banner.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
+                  <div className="absolute flex flex-col justify-center" style={{ left: '7%', width: '86%', top: '17%', height: '73%' }}>
+                    <p className="font-black text-purple-700 leading-none" style={{ fontSize: 'clamp(10px,1.2vw,17px)' }}>✨ 升級會員</p>
+                    <p className="font-bold text-amber-800/85 leading-tight mt-[2%]" style={{ fontSize: 'clamp(6px,0.75vw,11px)' }}>
+                      解鎖所有功能與裝飾，享受完整冒險體驗！
                     </p>
-                    <div className="my-2" style={{ fontSize: 'clamp(13px,1.7vw,24px)' }}>🧰 🪑 🎖️ 🐱 💎</div>
                     <button onClick={() => setM('vip')}
-                      className="w-full rounded-full bg-gradient-to-b from-amber-300 to-orange-500 py-2 font-black text-white shadow-lg border-2 border-white/70 active:scale-95 transition"
-                      style={{ fontSize: 'clamp(12px,1.4vw,20px)', textShadow: '0 1px 2px rgba(150,70,0,.5)' }}>立即升級</button>
+                      className="mt-[3%] w-full rounded-full bg-gradient-to-b from-amber-300 to-orange-500 py-[0.25em] font-black text-white shadow border-2 border-white/70 active:scale-95 transition"
+                      style={{ fontSize: 'clamp(9px,1.1vw,16px)', textShadow: '0 1px 2px rgba(150,70,0,.5)' }}>立即升級</button>
                   </div>
-                </Panel>
+                </div>
               )}
             </div>
 
             {/* 下方 6 個功能卡 */}
             <div className="lg:col-span-3">
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3">
+              {/* 6 個功能：木牌框 */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                 {FEATURES.map(f => {
                   const locked = f.vip && !isVip;
                   return (
-                    <div key={f.t} className={`relative rounded-2xl border-[3px] p-2 text-center shadow-lg ${
-                      locked ? 'border-purple-400/60 bg-stone-700/80' : 'border-amber-800/40'
-                    }`} style={!locked ? { background: 'linear-gradient(180deg,#fdf3d8,#f6e3b8)' } : undefined}>
+                    <div key={f.t} className="relative w-full" style={{ aspectRatio: '1200 / 382' }}>
+                      <img src="/images/cabin/banner.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
                       {f.vip && (
-                        <span className="absolute -top-2 right-1 rounded-full bg-purple-600 px-2 font-black text-white border border-white/60"
-                          style={{ fontSize: 'clamp(7px,0.8vw,11px)' }}>VIP</span>
+                        <span className="absolute z-10 rounded-full bg-purple-600 px-[0.6em] font-black text-white border border-white/60"
+                          style={{ right: '6%', top: '10%', fontSize: 'clamp(7px,0.8vw,11px)' }}>VIP</span>
                       )}
-                      <div className="flex items-center justify-center" style={{ fontSize: 'clamp(20px,2.6vw,38px)', height: '1.15em' }}>
-                        {locked
-                          ? <img src="/images/cabin/lock.webp" alt="" className="object-contain h-full w-auto" />
-                          : f.icon}
+                      <div className="absolute flex items-center gap-[4%]" style={{ left: '7%', width: '86%', top: '17%', height: '73%' }}>
+                        <div className="flex items-center justify-center shrink-0" style={{ fontSize: 'clamp(18px,2.4vw,36px)', height: '1.15em' }}>
+                          {locked
+                            ? <img src="/images/cabin/lock.webp" alt="" className="object-contain h-full w-auto" />
+                            : f.icon}
+                        </div>
+                        <p className="flex-1 min-w-0 font-black text-amber-900 leading-tight truncate"
+                          style={{ fontSize: 'clamp(9px,1.1vw,17px)' }}>{f.t}</p>
+                        <span className={`shrink-0 rounded-full px-[0.8em] py-[0.25em] font-black text-white border-2 border-white/50 whitespace-nowrap ${
+                          locked ? 'bg-purple-600' : 'bg-green-600'
+                        }`} style={{ fontSize: 'clamp(7px,0.85vw,12px)' }}>{locked ? 'VIP 解鎖' : '可查看'}</span>
                       </div>
-                      <p className={`font-black leading-tight mt-1 ${locked ? 'text-stone-200' : 'text-amber-900'}`}
-                        style={{ fontSize: 'clamp(9px,1.05vw,15px)' }}>{f.t}</p>
-                      <p className={`mt-1 rounded-full py-0.5 font-black text-white ${locked ? 'bg-purple-600' : 'bg-green-600'}`}
-                        style={{ fontSize: 'clamp(7px,0.85vw,12px)' }}>{locked ? 'VIP 解鎖' : '可查看'}</p>
                     </div>
                   );
                 })}
