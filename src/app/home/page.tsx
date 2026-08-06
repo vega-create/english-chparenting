@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 import { COURSES } from "@/data/courses";
+import { playGreeting } from "@/lib/vega-audio";
 
 // 島嶼 slug → 島嶼圖（缺的用漸層占位）
 const ISLAND_IMG: Record<string, string> = {
@@ -52,6 +53,9 @@ export default function LayeredBanner() {
   const router = useRouter();
 
   useEffect(() => setMuted(isSfxMuted()), []);
+
+  // Vega 語音：第一次來播歡迎詞，之後每天第一次回來播「歡迎回來」
+  useEffect(() => { playGreeting(); }, []);
 
   // 開始冒險：第一次先看使用說明→選夥伴→地圖；看過就直接跳過
   function startAdventure() {

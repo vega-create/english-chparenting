@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import type { QuizQuestion } from '@/data/missions';
-import { playPraise, getLevelFromMissionId } from '@/lib/vega-audio';
+import { playPraise, getLevelFromMissionId, playReward } from '@/lib/vega-audio';
 import { speak } from '@/lib/speech';
 import { recordMissionComplete } from '@/lib/missionProgress';
 
@@ -27,10 +27,14 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   const starPercent = Math.round((stars / maxStars) * 100);
   const starCount = starPercent >= 90 ? 3 : starPercent >= 70 ? 2 : 1;
 
-  // 進到結算畫面時播 Miss Vega 鼓勵語音 + 記錄完成進度（星數/寶石/單字圖鑑/徽章）
+  // 進到結算畫面時播 Miss Vega 鼓勵語音 + 星數獎勵語音 + 記錄完成進度
   useEffect(() => {
+    const lv = parseInt(String(courseSlug).match(/l?(\d+)/)?.[1] ?? '1', 10);
     playPraise(getLevelFromMissionId(courseSlug));
+    // 鼓勵語播完接星數獎勵（reward-star-1/2/3，L5+ 用英文版）
+    const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), 1800);
     recordMissionComplete(courseSlug, missionId, starCount);
+    return () => clearTimeout(t);
   }, [courseSlug, missionId, starCount]);
 
   function handleQuizAnswer(answer: string) {

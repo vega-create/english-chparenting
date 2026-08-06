@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { COURSES } from '@/data/courses';
 import { MISSIONS } from '@/data/missions';
 import { stopSpeaking } from '@/lib/speech';
-import { getLevelFromMissionId } from '@/lib/vega-audio';
+import { getLevelFromMissionId, playVega, stepAudio, CHAR_CUE_AUDIO } from '@/lib/vega-audio';
 import { wordSlug } from '@/lib/audio';
 
 // 單字卡小圖：有去背 PNG 就用圖，沒有用 emoji
@@ -67,6 +67,25 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   useEffect(() => {
     return () => stopSpeaking();
   }, [step]);
+
+  // 進到每個步驟時播 Vega 引導語 + 該關負責角色的口號
+  const lang = course && course.level <= 4 ? 'low' : 'high';
+  useEffect(() => {
+    if (!course) return;
+    const cue: Partial<Record<Step, string>> = {
+      discover: CHAR_CUE_AUDIO.read,    // Benny 帶讀
+      challenge: CHAR_CUE_AUDIO.listen, // Coco 帶聽
+      talktime: CHAR_CUE_AUDIO.speak,   // Polly 帶說
+    };
+    if (step === 'intro' || step === 'welcome') return;
+    let cancelled = false;
+    (async () => {
+      await playVega(stepAudio(step as 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'complete', lang));
+      if (!cancelled && cue[step]) playVega(cue[step]!, { interrupt: false });
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, lang]);
 
   if (!course || !mission) {
     return (
@@ -186,7 +205,10 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
               {/* 按鈕（框下方） */}
               <div className="-mt-1 px-8 space-y-2">
                 <button
-                  onClick={() => setStep(course.level === 1 && mission.id === 1 ? 'welcome' : 'wakeup')}
+                  onClick={() => {
+                    playVega(CHAR_CUE_AUDIO.start);   // Finn：Let's go!
+                    setStep(course.level === 1 && mission.id === 1 ? 'welcome' : 'wakeup');
+                  }}
                   className="w-full py-3.5 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg hover:from-pink-500 active:scale-95 transition text-lg"
                 >⭐ ▶ 開始任務 ⭐</button>
                 <button
@@ -211,7 +233,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'challenge' && (
-          <Challenge challenges={mission.challenges} praiseLevel={getLevelFromMissionId(levelSlug)} onComplete={(score) => { setChallengeScore(score); setStep('talktime'); }} />
+          <Challenge challenges={mission.challenges} praiseLevel={getLevelFromMissionId(levelSlug)} level={course.level} onComplete={(score) => { setChallengeScore(score); setStep('talktime'); }} />
         )}
 
         {step === 'talktime' && (

@@ -7,11 +7,13 @@ export function VegaPlayButton({
   audio,
   label = "🔊",
   className = "",
-}: { audio: string; label?: string; className?: string }) {
+  style,
+}: { audio: string; label?: string; className?: string; style?: React.CSSProperties }) {
   return (
     <button
       onClick={(e) => { e.preventDefault(); e.stopPropagation(); playVega(audio); }}
       title="點擊聽介紹"
+      style={style}
       className={`bg-white/90 hover:bg-white border border-purple-200 hover:border-purple-400 rounded-full text-sm shadow-sm transition active:scale-95 ${className}`}
     >
       {label}
@@ -20,23 +22,23 @@ export function VegaPlayButton({
 }
 
 /** 世界介紹按鈕（依索引） */
-export function WorldPlayButton({ worldIndex, className = "" }: { worldIndex: number; className?: string }) {
+export function WorldPlayButton({ worldIndex, className = "", style }: { worldIndex: number; className?: string; style?: React.CSSProperties }) {
   const keys = Object.keys(WORLD_AUDIO);
   const audio = WORLD_AUDIO[keys[worldIndex]];
   if (!audio) return null;
-  return <VegaPlayButton audio={audio} className={className} />;
+  return <VegaPlayButton audio={audio} className={className} style={style} />;
 }
 
 /** 島嶼介紹按鈕（依關卡編號 1-12） */
-export function IslandPlayButton({ level, className = "" }: { level: number; className?: string }) {
+export function IslandPlayButton({ level, className = "", style }: { level: number; className?: string; style?: React.CSSProperties }) {
   const keys = Object.keys(ISLAND_AUDIO);
   const audio = ISLAND_AUDIO[keys[level - 1]];
   if (!audio) return null;
-  return <VegaPlayButton audio={audio} className={className} />;
+  return <VegaPlayButton audio={audio} className={className} style={style} />;
 }
 
 /** 角色介紹（先放 Vega 中文介紹再播角色英文自介） */
-export function CharacterPlayButton({ characterKey, className = "" }: { characterKey: string; className?: string }) {
+export function CharacterPlayButton({ characterKey, className = "", style }: { characterKey: string; className?: string; style?: React.CSSProperties }) {
   const vegaIntro = VEGA_INTRO_AUDIO[characterKey];
   const charIntro = CHAR_INTRO_AUDIO[characterKey];
   return (
@@ -48,6 +50,7 @@ export function CharacterPlayButton({ characterKey, className = "" }: { characte
         if (charIntro) playVega(charIntro);
       }}
       title="聽介紹"
+      style={style}
       className={`bg-white/90 hover:bg-white border border-purple-200 hover:border-purple-400 rounded-full text-sm shadow-sm transition active:scale-95 ${className}`}
     >
       🔊

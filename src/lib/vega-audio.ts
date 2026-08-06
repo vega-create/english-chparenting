@@ -140,3 +140,42 @@ export function stepAudio(step: 'wakeup' | 'discover' | 'challenge' | 'talktime'
 export function rewardAudio(type: string, useEnglish = false) {
   return useEnglish ? `${type}-en` : type;
 }
+
+// 角色關卡口號：進到該步驟時，由負責的角色喊一句
+export const CHAR_CUE_AUDIO: Record<string, string> = {
+  start:     'finn-go',      // 點「開始」
+  listen:    'coco-listen',  // 聽力
+  speak:     'polly-speak',  // 口說
+  read:      'benny-read',   // 閱讀
+  write:     'ruby-write',   // 寫作
+};
+
+/** L1–L4 用中文版(low)，L5 以上用英文版(high) */
+export function audioLangByLevel(level: number): 'low' | 'high' {
+  return level <= 4 ? 'low' : 'high';
+}
+
+/** 播獎勵音效（依級別自動選中/英文版） */
+export function playReward(type: string, level: number): void {
+  playVega(rewardAudio(type, level > 4));
+}
+
+/**
+ * 進首頁的招呼語：第一次來播 01-welcome，之後每天第一次回來播 welcome-back。
+ * 兩者互斥（第一次來不會又播「歡迎回來」）。
+ */
+const BACK_KEY = 'vega-back-date';
+export function playGreeting(level = 1): void {
+  if (typeof window === 'undefined') return;
+  const today = new Date().toDateString();
+  const firstEver = !localStorage.getItem(WELCOMED_KEY);
+  if (firstEver) {
+    localStorage.setItem(WELCOMED_KEY, '1');
+    localStorage.setItem(BACK_KEY, today);   // 今天已打過招呼
+    setTimeout(() => playVega('01-welcome'), 1000);
+    return;
+  }
+  if (localStorage.getItem(BACK_KEY) === today) return;
+  localStorage.setItem(BACK_KEY, today);
+  playVega(`welcome-back-${audioLangByLevel(level)}`);
+}

@@ -3,6 +3,8 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { playClick, playStar } from '@/lib/sfx';
+import { playVega, stopVega } from '@/lib/vega-audio';
+import { CharacterPlayButton } from '@/components/VegaAudio';
 import HomeButton from "@/components/HomeButton";
 
 // 每張 guide 背景（1600 寬）的高度 → 算 aspect，讓疊層對齊圖
@@ -58,6 +60,13 @@ export default function GuideSlides() {
   useEffect(() => {
     sessionStorage.setItem('ae_guide_slide', String(i));
   }, [i]);
+
+  // 每張 slide 播對應的 Vega 說明（guide-step-1…5）
+  useEffect(() => {
+    if (!ready) return;
+    playVega(`guide-step-${i + 1}`);
+    return () => stopVega();
+  }, [i, ready]);
 
   function go(n: number) {
     const x = Math.max(0, Math.min(N - 1, n));
@@ -173,6 +182,9 @@ export default function GuideSlides() {
                       <img src={`/characters/${f.key}/${f.key}-wave.png`} alt={f.name}
                         className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.3)]"
                         style={{ transform: `scale(${f.sc})`, transformOrigin: 'bottom center' }} />
+                      {/* 🔊 Vega 中文介紹 → 角色英文自介 */}
+                      <CharacterPlayButton characterKey={f.key}
+                        className="absolute z-20 px-1.5 py-0.5" style={{ right: '-4%', top: '-2%' }} />
                     </div>
                   ))}
                   {/* 名字 + 特質（框底色條上） */}

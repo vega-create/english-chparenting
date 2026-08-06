@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { WORLDS, COURSES } from "@/data/courses";
 import { playClick } from "@/lib/sfx";
 import HomeButton from "@/components/HomeButton";
+import { WorldPlayButton } from "@/components/VegaAudio";
 
 // 6 個世界卡框（座標依藏寶圖實際框線量測）
 const CARD = { top: 22.0, height: 37.5, width: 12.5 };
@@ -110,6 +111,9 @@ export default function CoursesClient() {
                   <p className="font-bold text-amber-800 mt-[3%]" style={{ fontSize: "clamp(7px,0.95vw,14px)" }}>⭐ 40 課</p>
                 </div>
               </Link>
+              {/* 🔊 聽 Vega 介紹這個世界 */}
+              <WorldPlayButton worldIndex={i} className="absolute z-10 px-1.5 py-0.5"
+                style={{ right: '4%', top: '3%' }} />
               {/* 級數徽章 → 該級課程介紹（疊在卡片上、獨立可點） */}
               <div className="absolute left-1/2 -translate-x-1/2 flex gap-1 z-10" style={{ bottom: "4%" }}>
                 {w.levels.map(lv => {

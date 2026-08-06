@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Course } from "@/data/courses";
 import { playClick, playStar } from "@/lib/sfx";
 import HomeButton from "@/components/HomeButton";
+import { IslandPlayButton } from "@/components/VegaAudio";
 
 // 各級 → 世界圖 / 關卡地圖連結
 const MAP_LINK: Record<number, string> = {
@@ -88,6 +89,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
               <div className="flex items-baseline gap-2 flex-wrap">
                 <h1 className="font-black text-amber-900 leading-none" style={{ fontSize: "clamp(23px,3.38vw,49px)" }}>{course.island}</h1>
                 <span className="bg-purple-500 text-white font-black rounded-full px-3 py-0.5" style={{ fontSize: "clamp(12px,1.30vw,20px)" }}>L{lv}</span>
+                <IslandPlayButton level={lv} className="px-2 py-0.5 self-center" />
               </div>
               <p className="font-bold text-amber-700/80 leading-none mt-1" style={{ fontSize: "clamp(13px,1.56vw,22px)" }}>{course.islandEn}</p>
               <p className="text-amber-900/90 font-medium leading-snug mt-1.5 line-clamp-3" style={{ fontSize: "clamp(10px,1.30vw,18px)" }}>{course.longDescription}</p>

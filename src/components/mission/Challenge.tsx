@@ -3,12 +3,13 @@ import { useState } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
 import { playStar, playClick } from '@/lib/sfx';
-import { playPraise } from '@/lib/vega-audio';
+import { playPraise, playReward } from '@/lib/vega-audio';
 
 interface Props {
   challenges: QuizQuestion[];
   onComplete: (score: number, total: number) => void;
   praiseLevel?: 'low' | 'mid' | 'high';
+  level?: number;   // 課程級別，決定獎勵語音用中文(L1-4)或英文(L5+)
 }
 
 const typeLabel: Record<string, { icon: string; label: string; characterKey: string; characterAction: string }> = {
@@ -20,7 +21,7 @@ const typeLabel: Record<string, { icon: string; label: string; characterKey: str
   'read': { icon: '📖', label: '故事解謎', characterKey: 'benny', characterAction: 'read' },
 };
 
-export default function Challenge({ challenges, onComplete, praiseLevel = 'low' }: Props) {
+export default function Challenge({ challenges, onComplete, praiseLevel = 'low', level = 1 }: Props) {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -40,8 +41,12 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low' 
     if (correct) {
       playStar();
       const newCombo = combo + 1;
-      // 連對 3、5 題時播 Miss Vega 的鼓勵語音
-      if (newCombo === 3 || newCombo === 5) playPraise(praiseLevel);
+      // 連對 3/5/10 題播專屬獎勵語音，其餘節點播鼓勵語
+      if (newCombo === 3 || newCombo === 5 || newCombo === 10) {
+        playReward(`reward-streak-${newCombo}`, level);
+      } else if (newCombo === 7) {
+        playPraise(praiseLevel);
+      }
       setScore(s => s + 1);
       setCombo(newCombo);
     } else {
