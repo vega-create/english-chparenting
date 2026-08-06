@@ -2,9 +2,12 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { loadProgress, getBadges, type Badge } from '@/lib/missionProgress';
+import { playPageIntro } from '@/lib/vega-audio';
 
 // 成就徽章：完成里程碑解鎖，全部由進度推導、達標即點亮。
 export default function BadgesPage() {
+  useEffect(() => { playPageIntro('badges'); }, []);
+
   const [badges, setBadges] = useState<Badge[]>(() => getBadges({ completed: {} }));
   useEffect(() => {
     const refresh = () => setBadges(getBadges(loadProgress()));

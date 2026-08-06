@@ -1,10 +1,12 @@
 "use client";
+import { useEffect } from 'react';
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { WORLDS, COURSES } from "@/data/courses";
 import { playClick } from "@/lib/sfx";
 import HomeButton from "@/components/HomeButton";
 import { WorldPlayButton } from "@/components/VegaAudio";
+import { playPageIntro } from '@/lib/vega-audio';
 
 // 6 個世界卡框（座標依藏寶圖實際框線量測）
 const CARD = { top: 22.0, height: 37.5, width: 12.5 };
@@ -28,6 +30,8 @@ const FEATURES = [
 ];
 
 export default function CoursesClient() {
+  useEffect(() => { playPageIntro('courses'); }, []);
+
   return (
     <div className="relative w-full min-h-screen">
       <HomeButton />

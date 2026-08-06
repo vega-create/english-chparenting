@@ -143,6 +143,18 @@ export function rewardAudio(type: string, useEnglish = false) {
   return useEnglish ? `${type}-en` : type;
 }
 
+/**
+ * 頁面導覽語音：進到該頁時 Vega 說一句。
+ * 同一個分頁內每頁只播一次，避免來回切換一直重播。
+ */
+const PAGE_PLAYED = new Set<string>();
+export function playPageIntro(page: string): void {
+  if (typeof window === 'undefined') return;
+  if (PAGE_PLAYED.has(page)) return;
+  PAGE_PLAYED.add(page);
+  playVega(`page-${page}`);
+}
+
 // 角色關卡口號：進到該步驟時，由負責的角色喊一句
 export const CHAR_CUE_AUDIO: Record<string, string> = {
   start:     'finn-go',      // 點「開始」

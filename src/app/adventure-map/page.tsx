@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { playPageIntro } from '@/lib/vega-audio';
 import {
   WORLDS,
   isWorldUnlocked,
@@ -25,6 +26,8 @@ const HOTSPOTS = [
 ];
 
 export default function AdventureMapPage() {
+  useEffect(() => { playPageIntro('adventure-map'); }, []);
+
   const [tick, setTick] = useState(0);                            // 重新渲染用
   const [showLocked, setShowLocked] = useState<WorldDef | null>(null);
   const [showDebug, setShowDebug] = useState(false);

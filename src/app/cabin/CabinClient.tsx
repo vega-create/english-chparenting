@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import HomeButton from '@/components/HomeButton';
 import { playClick, playStar } from '@/lib/sfx';
 import { loadProgress, islandStats } from '@/lib/missionProgress';
+import { playPageIntro } from '@/lib/vega-audio';
 
 type Member = 'guest' | 'free' | 'vip';
 const KEY = 'ae_member';
@@ -66,6 +67,8 @@ const SLOT_TXT = { textShadow: '0 1px 2px rgba(0,0,0,.75)' };
 const AVATAR_NAME: Record<string, string> = { elly: '艾莉', sky: '小飛', coco: '可可', leo: '雷歐', vera: '薇拉' };
 
 export default function CabinClient() {
+  useEffect(() => { playPageIntro('cabin'); }, []);
+
   const [member, setMember] = useState<Member>('guest');
   const [avatar, setAvatar] = useState('coco');
   const [p, setP] = useState(() => ({ completed: {} as Record<string, number> }));

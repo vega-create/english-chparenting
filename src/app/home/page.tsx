@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 import { COURSES } from "@/data/courses";
-import { playGreeting } from "@/lib/vega-audio";
+import { playGreeting, isMuted as isVegaMuted, setMuted as setVegaMuted, playVega, stopVega } from "@/lib/vega-audio";
 
 // 島嶼 slug → 島嶼圖（缺的用漸層占位）
 const ISLAND_IMG: Record<string, string> = {
@@ -52,7 +52,7 @@ export default function LayeredBanner() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const router = useRouter();
 
-  useEffect(() => setMuted(isSfxMuted()), []);
+  useEffect(() => setMuted(isSfxMuted() && isVegaMuted()), []);
 
   // Vega 語音：第一次來播歡迎詞，之後每天第一次回來播「歡迎回來」
   useEffect(() => { playGreeting(); }, []);
@@ -70,19 +70,34 @@ export default function LayeredBanner() {
     else router.push('/adventure-map');
   }
 
+  // 🔊 一顆鈕同時管音效與 Vega 語音（之前只管音效，首頁關不掉語音）
   function toggleMute() {
     const next = !muted;
     setSfxMuted(next);
+    setVegaMuted(next);
     setMuted(next);
-    if (!next) playClick();
+    if (next) stopVega(); else playClick();
+  }
+
+  // 瀏覽器規定：使用者互動前不能自動出聲，所以歡迎詞給一顆按鈕自己點
+  function sayHello() {
+    if (isVegaMuted()) { setVegaMuted(false); setMuted(false); }
+    playVega('01-welcome');
   }
 
   return (
     <div className="relative w-full min-h-screen overflow-x-hidden">
-      {/* 音效切換 */}
-      <button onClick={toggleMute} className="fixed top-3 right-3 z-[60] bg-white/90 backdrop-blur w-10 h-10 rounded-full shadow flex items-center justify-center text-xl">
-        {muted ? "🔇" : "🔊"}
-      </button>
+      {/* 聲音控制：聽 Vega 說話 + 全站靜音 */}
+      <div className="fixed top-3 right-3 z-[60] flex items-center gap-2">
+        <button onClick={sayHello} title="聽 Vega 說話"
+          className="bg-white/90 backdrop-blur rounded-full shadow border-2 border-purple-200 px-3 h-10 flex items-center gap-1.5 font-black text-purple-700 text-sm active:scale-95 transition hover:bg-white">
+          <span className="text-lg">🔊</span><span className="hidden sm:inline">聽 Vega 說話</span>
+        </button>
+        <button onClick={toggleMute} title={muted ? "開啟聲音" : "關閉聲音"}
+          className="bg-white/90 backdrop-blur w-10 h-10 rounded-full shadow flex items-center justify-center text-xl active:scale-95 transition">
+          {muted ? "🔇" : "🔈"}
+        </button>
+      </div>
 
       {/* ===== Top Nav 桌機（純 CSS）— 用 div 不用 header，避免被 layout 的 body header{display:none} 隱藏 ===== */}
       <div className="relative z-30 hidden md:block bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-yellow-200/50">

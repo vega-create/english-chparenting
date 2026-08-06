@@ -1,8 +1,10 @@
 'use client';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import HomeButton from '@/components/HomeButton';
 import { playClick, playStar } from '@/lib/sfx';
+import { playPageIntro } from '@/lib/vega-audio';
 
 // 今日任務：每天 3 個小任務，完成拿獎勵。（進度之後接闖關紀錄）
 const TASKS = [
@@ -12,6 +14,8 @@ const TASKS = [
 ];
 
 export default function TasksPage() {
+  useEffect(() => { playPageIntro('tasks'); }, []);
+
   const done = 0;
 
   return (

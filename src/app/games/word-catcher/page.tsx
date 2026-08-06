@@ -3,6 +3,7 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { playStar, playClick, playSuccess, playSwoosh } from "@/lib/sfx";
 import { speak } from "@/lib/speech";
+import { playPageIntro } from '@/lib/vega-audio';
 
 /* ============================================================
    單字流星雨 Word Catcher — 真實 Canvas 遊戲迴圈 (60fps)
@@ -28,6 +29,8 @@ interface FallWord { x: number; y: number; vy: number; w: number; text: string; 
 interface Particle { x: number; y: number; vx: number; vy: number; life: number; ch: string; }
 
 export default function WordCatcherPage() {
+  useEffect(() => { playPageIntro('games'); }, []);
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [phase, setPhase] = useState<Phase>("start");
   const [finalScore, setFinalScore] = useState(0);
