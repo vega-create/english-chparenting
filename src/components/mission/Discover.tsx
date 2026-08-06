@@ -329,7 +329,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 {/* 課文（放大、置中偏上；右下留給動物） */}
                 <div className="flex-1 flex flex-col justify-center min-h-0 pr-[14%]">
                   <p className="text-[11px] sm:text-sm text-amber-500 font-black mb-1">{scene.characterName}</p>
-                  <p className="font-bold leading-relaxed text-gray-800 text-base sm:text-xl">
+                  <p className="ebook-text text-gray-800 text-base sm:text-xl">
                     {scene.dialogue.split(' ').map((w, wi) => {
                       const isHighlight = scene.highlightWords?.some(hw =>
                         w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
@@ -348,7 +348,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     })}
                   </p>
                   {showTranslation && (
-                    <p className="text-gray-500 text-xs sm:text-sm mt-1.5 animate-slide-up">{scene.dialogueZh}</p>
+                    <p className="ebook-text-zh text-gray-500 text-sm sm:text-base mt-2 animate-slide-up">{scene.dialogueZh}</p>
                   )}
                 </div>
                 {/* 頁數：星星表示（目前頁亮） */}
@@ -407,7 +407,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 />
                 <div className="flex-1 min-w-0 pl-1 sm:pl-2">
                   <p className="text-xs text-gray-400 font-bold mb-1">{scene.characterName}</p>
-                  <p className="font-bold leading-relaxed text-gray-800 text-base sm:text-lg">
+                  <p className="ebook-text text-gray-800 text-base sm:text-lg">
                     {scene.dialogue.split(' ').map((w, wi) => {
                       const isHighlight = scene.highlightWords?.some(hw =>
                         w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
@@ -426,7 +426,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     })}
                   </p>
                   {showTranslation && (
-                    <p className="text-gray-500 text-sm mt-2 animate-slide-up">{scene.dialogueZh}</p>
+                    <p className="ebook-text-zh text-gray-500 text-sm sm:text-base mt-2 animate-slide-up">{scene.dialogueZh}</p>
                   )}
                 </div>
               </div>
