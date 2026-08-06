@@ -1,3 +1,5 @@
+import { registerAudioChannel, stopOtherChannels } from './audioBus';
+
 // 目前正在播的課程音檔。開新的一定先停舊的 —— 兩個同時響聽起來就像回音。
 let currentClip: HTMLAudioElement | null = null;
 
@@ -14,6 +16,7 @@ export function stopClip(): void {
 export function playClip(url: string): Promise<boolean> {
   if (typeof window === 'undefined') return Promise.resolve(false);
   stopClip();
+  stopOtherChannels('clip');   // Vega 旁白／TTS 先停，避免三個聲音疊在一起
   return new Promise((resolve) => {
     const a = new Audio(url);
     currentClip = a;
@@ -98,3 +101,5 @@ export function playPageFlip() {
     /* 音效失敗不影響翻頁 */
   }
 }
+
+registerAudioChannel('clip', stopClip);

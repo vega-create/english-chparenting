@@ -3,6 +3,8 @@
 //   vega/     Vega 旁白、角色台詞、獎勵音效
 //   lessons/  課文音檔（之後放這裡）
 
+import { registerAudioChannel, stopOtherChannels } from './audioBus';
+
 const R2_BASE = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/vega';
 
 // localStorage keys
@@ -44,7 +46,7 @@ export function playVega(filename: string, options: { interrupt?: boolean } = {}
   if (isMuted()) return Promise.resolve();
 
   const { interrupt = true } = options;
-  if (interrupt) stopVega();
+  if (interrupt) { stopVega(); stopOtherChannels('vega'); }
   else if (currentAudio && !currentAudio.paused) return Promise.resolve();
 
   const audio = new Audio(`${R2_BASE}/${filename}.mp3`);
@@ -193,3 +195,5 @@ export function playGreeting(level = 1): void {
   localStorage.setItem(BACK_KEY, today);
   playVega(`welcome-back-${audioLangByLevel(level)}`);
 }
+
+registerAudioChannel('vega', stopVega);

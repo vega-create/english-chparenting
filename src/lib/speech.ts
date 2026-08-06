@@ -1,3 +1,4 @@
+import { registerAudioChannel, stopOtherChannels } from './audioBus';
 // 全站共用 TTS 函式 - 使用溫柔女性聲音
 
 let femaleVoice: SpeechSynthesisVoice | null = null;
@@ -113,3 +114,5 @@ export function speakChinese(text: string, rate = 1.0) {
 
   window.speechSynthesis.speak(u);
 }
+
+registerAudioChannel('tts', stopSpeaking);
