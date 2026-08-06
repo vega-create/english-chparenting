@@ -11,6 +11,16 @@ import HomeButton from "@/components/HomeButton";
 const HEIGHTS = [893, 735, 617, 616, 602];
 const N = HEIGHTS.length;
 
+// 每張 slide 對應的 Vega 說明音檔（null＝該張沒有專屬音檔）
+// 對照表見 scripts/音檔規劃-2026-08.md 第四節
+const SLIDE_AUDIO: (string | null)[] = [
+  'guide-intro',        // 1 Welcome, Explorer!
+  'guide-lesson-flow',  // 2 How You'll Learn（每節課 5 步驟）
+  null,                 // 3 Meet Your Friends → 由角色各自的 🔊 播
+  'guide-rewards',      // 4 Rewards
+  'guide-quickstart',   // 5 Ready?
+];
+
 // slide 3「認識夥伴」：5 隻動物依序放進 紫/藍/粉/綠/黃 框
 const FRIENDS = [
   { key: 'finn',  name: 'Finn',  en: 'Brave team leader', cx: 16.3, sc: 0.88, pill: 'bg-purple-500' },
@@ -61,10 +71,13 @@ export default function GuideSlides() {
     sessionStorage.setItem('ae_guide_slide', String(i));
   }, [i]);
 
-  // 每張 slide 播對應的 Vega 說明（guide-step-1…5）
+  // 每張 slide 播對應的 Vega 說明
+  // 註：guide-step-1~5 講的是「課程五步驟」，不是這五張說明頁，別再接錯
+  // slide 3（認識夥伴）尚無專屬音檔，改由角色各自的 🔊 播
   useEffect(() => {
     if (!ready) return;
-    playVega(`guide-step-${i + 1}`);
+    const f = SLIDE_AUDIO[i];
+    if (f) playVega(f);
     return () => stopVega();
   }, [i, ready]);
 
