@@ -1,7 +1,9 @@
 // Vega 語音播放系統
-// 音檔放在 Cloudflare R2，公開讀取
+// 音檔放在 Cloudflare R2 bucket `adventure-audio`（冒險英語專用，與 learn 站分開）
+//   vega/     Vega 旁白、角色台詞、獎勵音效
+//   lessons/  課文音檔（之後放這裡）
 
-const R2_BASE = 'https://pub-a36eb12da250439e9bdd35709d3d1cd4.r2.dev/vega';
+const R2_BASE = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/vega';
 
 // localStorage keys
 const MUTE_KEY = 'vega-muted';

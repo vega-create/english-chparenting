@@ -1,8 +1,15 @@
 # Vega 語音腳本（Adventure English）— ✅ 確認版
 
 **儲存位置：**
-- 本地：`~/Desktop/vega-voice/`（115 個 mp3）
-- R2：`https://pub-a36eb12da250439e9bdd35709d3d1cd4.r2.dev/vega/{檔名}.mp3`
+- 本地：`~/Desktop/vega-voice/`（134 個 mp3，`*.old.mp3` 是重生前的備份）
+- R2 bucket：**`adventure-audio`**（冒險英語專用，2026-08-06 從 `learn-audio` 搬出來，避免跟 learn 站混在一起）
+  - 公開網址：`https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/vega/{檔名}.mp3`
+  - 課文音檔之後放 `lessons/` 前綴
+- 上傳指令（**一定要加 `--remote`**，不然只會寫進本機模擬環境）：
+  ```bash
+  npx wrangler r2 object put "adventure-audio/vega/檔名.mp3" \
+    --file ~/Desktop/vega-voice/檔名.mp3 --content-type audio/mpeg --remote
+  ```
 
 **聲音設定：**
 - Vega（敘述）：Anna Su, Voice ID `9lHjugDhwqoxA5MhX0az`
