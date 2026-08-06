@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { speak, speakChinese, stopSpeaking } from '@/lib/speech';
+import { playVega, stopVega, VEGA_INTRO_AUDIO, CHAR_INTRO_AUDIO } from '@/lib/vega-audio';
 
 interface Props {
   onComplete: () => void;
@@ -23,60 +24,60 @@ const WELCOME_SCENES: Scene[] = [
   {
     bg: '🏝️',
     character: '🦊',
-    characterKey: 'finn',
+    characterKey: 'vega',
     characterAction: 'wave',
-    characterName: 'Finn',
-    dialogue: '嗨！歡迎來到 Adventure English！\n我是 Finn，你的冒險夥伴！\n我會用中文幫你介紹這裡怎麼玩 😊',
+    characterName: 'Vega',
+    dialogue: '嗨！歡迎來到冒險英語，\n我是 Vega。\n接下來我會告訴你這裡怎麼玩 😊',
     dialogueEn: 'Welcome to Adventure English!',
     action: 'none',
   },
   {
     bg: '🌈',
-    character: '🦊',
-    characterKey: 'finn',
+    character: '🦄',
+    characterKey: 'vega',
     characterAction: 'happy',
-    characterName: 'Finn',
+    characterName: 'Vega',
     dialogue: '在這裡，學英文就像玩遊戲一樣好玩！\n聽故事、看圖片、跟著念，\n不知不覺就學會英文了！',
     dialogueEn: "Learning English is fun here!",
     action: 'none',
   },
   {
     bg: '🚪',
-    character: '🦊',
-    characterKey: 'finn',
+    character: '🦄',
+    characterKey: 'vega',
     characterAction: 'talk',
-    characterName: 'Finn',
-    dialogue: '先來認識你的五個好朋友吧！\n他們每個人都有不同的超能力喔！\n👆 點點看他們，聽他們自我介紹！',
+    characterName: 'Vega',
+    dialogue: '先來認識你的 5 個好朋友！\n他們每個人都有不同的超能力。\n👆 點點看他們，聽他們自我介紹！',
     action: 'click-characters',
     actionHint: '👆 點擊每個角色認識他們！',
   },
   {
     bg: '📋',
-    character: '🦊',
-    characterKey: 'finn',
+    character: '🦄',
+    characterKey: 'vega',
     characterAction: 'talk',
-    characterName: 'Finn',
-    dialogue: '每一課都有 5 個關卡，\n就像闖關遊戲一樣！\n👆 點點看每個關卡是什麼！',
+    characterName: 'Vega',
+    dialogue: '每一堂課有 5 個關卡，\n就像闖關遊戲一樣。\n👆 點點看每個關卡是什麼！',
     action: 'click-steps',
     actionHint: '👆 點擊每個步驟了解內容！',
   },
   {
     bg: '⭐',
-    character: '🦊',
-    characterKey: 'finn',
-    characterAction: 'thumbsup',
-    characterName: 'Finn',
-    dialogue: '答對題目就能得到星星 ⭐\n集滿星星還有寶石 💎 可以收集！\n👆 試試看點星星！',
+    character: '🦄',
+    characterKey: 'vega',
+    characterAction: 'victory',
+    characterName: 'Vega',
+    dialogue: '題目做對就能拿到一顆星 ⭐\n拿到越多星星，獎勵也越多 💎\n👆 點點看星星試試！',
     action: 'click-star',
     actionHint: '👆 點擊星星試試看！',
   },
   {
     bg: '🚀',
-    character: '🦊',
-    characterKey: 'finn',
+    character: '🦄',
+    characterKey: 'vega',
     characterAction: 'happy',
-    characterName: 'Finn',
-    dialogue: '太棒了！準備好了嗎？\n接下來 Finn 會開始用英文跟你說話喔！\n別擔心，聽不懂可以按「中」看翻譯 😉',
+    characterName: 'Vega',
+    dialogue: '準備好了嗎？\n接下來夥伴們會開始用英文跟你說話。\n聽不懂沒關係，可以按翻譯鍵看中文 😉',
     dialogueEn: "Let's go! I'll speak English now. Ready?",
     action: 'none',
   },
@@ -119,30 +120,29 @@ export default function Welcome({ onComplete }: Props) {
     sessionStorage.setItem('ae_welcome_scene', String(sceneIndex));
   }, [sceneIndex]);
 
-  // 自動播放中文語音引導
+  // 自動播放 Vega 錄音（沒有檔案才 fallback 到瀏覽器 TTS）
   useEffect(() => {
-    // 先念中文對話
-    setTimeout(() => {
-      speakChinese(scene.dialogue.replace(/[😊😉👆🎉✅🚀]/g, ''), 0.9);
-    }, 500);
-  }, [sceneIndex, scene.dialogue]);
+    // 第一幕等久一點：讓「開始任務」時 Finn 的 "Let's go!" 講完再接
+    const t = setTimeout(() => {
+      playVega(`welcome-${sceneIndex + 1}`);
+    }, sceneIndex === 0 ? 1600 : 500);
+    return () => { clearTimeout(t); stopVega(); };
+  }, [sceneIndex]);
 
   function handleCharacterClick(index: number) {
     const char = CHARACTERS_INFO[index];
-    // 先念中文介紹，等講完再念英文
-    const zhText = char.introZh;
-    // 估算中文語音時間：每個字約 0.25 秒，rate 0.9
-    const zhDuration = Math.max(2500, (zhText.length * 250) / 0.9 + 500);
+    // Vega 中文介紹 → 角色英文自介（都用錄音，接續播）
     if (speakTimer.current) clearTimeout(speakTimer.current);
-    speakChinese(zhText, 0.9);
-    speakTimer.current = setTimeout(() => speak(char.intro, 0.75), zhDuration);
+    (async () => {
+      await playVega(VEGA_INTRO_AUDIO[char.key]);
+      playVega(CHAR_INTRO_AUDIO[char.key]);
+    })();
     setShowCharacterDetail(index);
     setCharactersClicked(prev => new Set(prev).add(index));
   }
 
   function handleStepClick(index: number) {
-    const step = STEPS_INFO[index];
-    speakChinese(step.voiceZh, 0.9);
+    playVega(`welcome-step-${index + 1}`);
     setShowStepDetail(index);
     setStepsClicked(prev => new Set(prev).add(index));
   }
@@ -162,6 +162,7 @@ export default function Welcome({ onComplete }: Props) {
 
   function handleNext() {
     stopSpeaking();
+    stopVega();
     if (speakTimer.current) clearTimeout(speakTimer.current);
     setShowCharacterDetail(null);
     setShowStepDetail(null);
