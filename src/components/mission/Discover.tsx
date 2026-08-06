@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
-import { playClip, playLesson, lessonPath, sleep, wordSlug, playPageFlip } from '@/lib/audio';
+import { playClip, playLesson, lessonPath, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 
 interface Props {
@@ -118,16 +118,14 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     });
   }, [onRegisterBack, phase, bookOpen, storyIndex, hasVideo, phonicsLetters.length, story.length]);
 
-  // 故事自動播放語音
-  const playStory = useCallback(() => {
-    if (phase === 'story' && bookOpen && scene) {
-      setTimeout(() => sayDialogue(storyIndex, scene.dialogue, 0.75), 300);
-    }
-  }, [phase, bookOpen, scene]);
-
+  // 故事自動播放語音：翻到哪一頁就播哪一句
+  // 只在這裡播，翻頁按鈕不要再自己播一次（會變兩聲疊在一起像回音）
   useEffect(() => {
-    playStory();
-  }, [storyIndex, playStory]);
+    if (phase !== 'story' || !bookOpen || !scene) return;
+    const t = setTimeout(() => sayDialogue(storyIndex, scene.dialogue, 0.75), 300);
+    return () => { clearTimeout(t); stopClip(); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, bookOpen, storyIndex]);
 
   // 點卡翻面：翻到背面時唸單字並記錄已看過
   function toggleCard(i: number) {
@@ -455,8 +453,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     setPageDir(i >= storyIndex ? 'next' : 'prev');
                     setShowTranslation(false);
                     playPageFlip();
-                    setStoryIndex(i);
-                    sayDialogue(i, story[i].dialogue, 0.75);
+                    setStoryIndex(i);   // 播音交給 storyIndex 的 useEffect，這裡再播會變兩聲
                   }}
                   className={`h-2.5 rounded-full transition-all ${
                     i === storyIndex ? 'w-6 bg-purple-500' : i < storyIndex ? 'w-2.5 bg-green-300' : 'w-2.5 bg-gray-200'
@@ -475,7 +472,6 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   if (storyIndex > 0) {
                     const prev = storyIndex - 1;
                     setStoryIndex(prev);
-                    sayDialogue(prev, story[prev].dialogue, 0.75);
                   } else {
                     setBookOpen(false); // 第一頁再往前 → 回封面
                   }
@@ -503,7 +499,6 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   playPageFlip();
                   const next = storyIndex + 1;
                   setStoryIndex(next);
-                  sayDialogue(next, story[next].dialogue, 0.75);
                 } else {
                   setPhase('words');
                 }

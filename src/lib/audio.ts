@@ -1,14 +1,34 @@
-// 播放單一 mp3；播完 resolve(true)，檔案不存在/失敗 resolve(false)
-// 用途：課程音檔優先播 Vega 的錄音，沒檔才由呼叫端 fallback 到 TTS
+// 目前正在播的課程音檔。開新的一定先停舊的 —— 兩個同時響聽起來就像回音。
+let currentClip: HTMLAudioElement | null = null;
+
+export function stopClip(): void {
+  if (currentClip) {
+    currentClip.pause();
+    currentClip.currentTime = 0;
+    currentClip = null;
+  }
+}
+
+// 播放單一 mp3；播完 resolve(true)，檔案不存在/失敗/被新的打斷 resolve(false)
+// 用途：課程音檔優先播錄音，沒檔才由呼叫端 fallback 到 TTS
 export function playClip(url: string): Promise<boolean> {
   if (typeof window === 'undefined') return Promise.resolve(false);
+  stopClip();
   return new Promise((resolve) => {
     const a = new Audio(url);
+    currentClip = a;
     let done = false;
-    const finish = (ok: boolean) => { if (!done) { done = true; resolve(ok); } };
+    const finish = (ok: boolean) => {
+      if (done) return;
+      done = true;
+      if (currentClip === a) currentClip = null;
+      resolve(ok);
+    };
     a.onended = () => finish(true);
     a.onerror = () => finish(false);
-    a.play().then(() => {/* playing */}).catch(() => finish(false));
+    // 被 stopClip() 打斷時算「有播到」，呼叫端才不會又補一次 TTS
+    a.onpause = () => { if (!a.ended && a.currentTime === 0) finish(true); };
+    a.play().catch(() => finish(false));
   });
 }
 
