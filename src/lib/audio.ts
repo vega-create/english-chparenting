@@ -21,6 +21,26 @@ export function wordSlug(en: string): string {
   return en.toLowerCase().replace(/[^a-z]/g, '');
 }
 
+// ── 課文音檔（R2 bucket adventure-audio/lessons/）────────────────
+//   L{n}/m{id}/d{i}.mp3   對話（角色各自的聲音）
+//   L{n}/m{id}/s{i}.mp3   句型（Benny 帶讀）
+//   L{n}/words/{slug}.mp3 單字（同一級去重共用，Polly 念）
+//   L{n}/words/{slug}-ex.mp3   單字例句
+const LESSON_BASE = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/lessons';
+
+/** 播課文音檔；沒有檔案回 false，呼叫端自行 fallback 到 TTS */
+export function playLesson(path: string): Promise<boolean> {
+  return playClip(`${LESSON_BASE}/${path}`);
+}
+
+export const lessonPath = {
+  dialogue: (level: number, missionId: number, i: number) => `L${level}/m${missionId}/d${i + 1}.mp3`,
+  sentence: (level: number, missionId: number, i: number) => `L${level}/m${missionId}/s${i + 1}.mp3`,
+  word:     (level: number, en: string) => `L${level}/words/${wordSlug(en)}.mp3`,
+  example:  (level: number, en: string) => `L${level}/words/${wordSlug(en)}-ex.mp3`,
+  blend:    (level: number, en: string) => `L${level}/words/${wordSlug(en)}-blend.mp3`,
+};
+
 // 翻書「沙沙」音效：用 Web Audio 合成（不需外部音檔）
 let _ac: AudioContext | null = null;
 export function playPageFlip() {

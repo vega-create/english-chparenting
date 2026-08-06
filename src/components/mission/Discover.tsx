@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
-import { playClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
+import { playClip, playLesson, lessonPath, sleep, wordSlug, playPageFlip } from '@/lib/audio';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 
 interface Props {
@@ -121,7 +121,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   // 故事自動播放語音
   const playStory = useCallback(() => {
     if (phase === 'story' && bookOpen && scene) {
-      setTimeout(() => speak(scene.dialogue, 0.75), 300);
+      setTimeout(() => sayDialogue(storyIndex, scene.dialogue, 0.75), 300);
     }
   }, [phase, bookOpen, scene]);
 
@@ -136,17 +136,32 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     } else {
       setOpenCards(o => [...o, i]);
       if (!seenCards.includes(i)) setSeenCards(s => [...s, i]);
-      speak(words[i].en, 0.6);
+      sayWord(words[i], 0.6);
     }
   }
 
+  // ── 播音：一律先試 R2 上的真人錄音，沒有檔案才 fallback 到瀏覽器 TTS ──
+  const mid = missionId ?? 1;
+
+  async function sayDialogue(i: number, text: string, rate = 0.75) {
+    if (await playLesson(lessonPath.dialogue(level, mid, i))) return;
+    speak(text, rate);
+  }
+  async function sayWord(w: Word, rate = 0.6) {
+    if (await playLesson(lessonPath.word(level, w.en))) return;
+    speak(w.en, rate);
+  }
+  async function saySentence(i: number, text: string, rate = 0.7) {
+    if (await playLesson(lessonPath.sentence(level, mid, i))) return;
+    speak(text, rate);
+  }
+
   // 拆音唸法：先唸完整單字，再用自然發音法拆音念（blue → bl [bl] ue [u] [blu]）
-  // 音檔優先播 Vega 的錄音；沒檔時暫時用慢速 TTS 佔位
+  // 音檔優先播錄音；沒檔時用慢速 TTS 佔位
   async function soundOut(w: Word) {
-    const slug = wordSlug(w.en);
-    const okWord = await playClip(`/lessons/L2/${slug}.mp3`);
+    const okWord = await playLesson(lessonPath.word(level, w.en));
     if (!okWord) { speak(w.en, 0.6); await sleep(1000); }
-    const okBlend = await playClip(`/lessons/L2/${slug}-blend.mp3`);
+    const okBlend = await playLesson(lessonPath.blend(level, w.en));
     if (!okBlend) { await sleep(200); speak(w.en, 0.3); }
   }
 
@@ -441,7 +456,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     setShowTranslation(false);
                     playPageFlip();
                     setStoryIndex(i);
-                    speak(story[i].dialogue, 0.75);
+                    sayDialogue(i, story[i].dialogue, 0.75);
                   }}
                   className={`h-2.5 rounded-full transition-all ${
                     i === storyIndex ? 'w-6 bg-purple-500' : i < storyIndex ? 'w-2.5 bg-green-300' : 'w-2.5 bg-gray-200'
@@ -460,7 +475,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   if (storyIndex > 0) {
                     const prev = storyIndex - 1;
                     setStoryIndex(prev);
-                    speak(story[prev].dialogue, 0.75);
+                    sayDialogue(prev, story[prev].dialogue, 0.75);
                   } else {
                     setBookOpen(false); // 第一頁再往前 → 回封面
                   }
@@ -468,7 +483,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 className="bg-amber-100 text-amber-600 px-4 sm:px-5 py-3 rounded-2xl font-bold hover:bg-amber-200 transition active:scale-95">
                 {storyIndex === 0 ? '📕' : '◀'}
               </button>
-              <button onClick={() => speak(scene.dialogue, 0.5)}
+              <button onClick={() => sayDialogue(storyIndex, scene.dialogue, 0.5)}
                 className="bg-blue-100 text-blue-600 px-4 sm:px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
                 🐢
               </button>
@@ -488,7 +503,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   playPageFlip();
                   const next = storyIndex + 1;
                   setStoryIndex(next);
-                  speak(story[next].dialogue, 0.75);
+                  sayDialogue(next, story[next].dialogue, 0.75);
                 } else {
                   setPhase('words');
                 }
@@ -574,7 +589,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     {w.kk && <p className="text-[11px] text-purple-600">KK {w.kk}</p>}
                     <div className="mt-1 flex items-center gap-2">
                       <button
-                        onClick={(e) => { e.stopPropagation(); speak(w.en, 0.5); }}
+                        onClick={(e) => { e.stopPropagation(); sayWord(w, 0.5); }}
                         className="bg-blue-500 text-white w-9 h-9 rounded-full font-bold hover:bg-blue-600 transition active:scale-95 flex items-center justify-center"
                         title="唸單字"
                       >
@@ -699,7 +714,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
         {!sentenceRepeated ? (
           <div className="flex justify-center gap-3">
-            <button onClick={() => speak(sentence.en, 0.7)}
+            <button onClick={() => saySentence(currentSentence, sentence.en, 0.7)}
               className="bg-orange-100 text-orange-600 px-6 py-4 rounded-2xl font-bold hover:bg-orange-200 transition active:scale-95">
               🔊
             </button>
@@ -707,7 +722,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               className="bg-blue-50 text-blue-500 px-5 py-4 rounded-2xl font-medium hover:bg-blue-100 transition active:scale-95">
               🐢
             </button>
-            <button onClick={() => { speak(sentence.en, 0.7); setSentenceRepeated(true); }}
+            <button onClick={() => { saySentence(currentSentence, sentence.en, 0.7); setSentenceRepeated(true); }}
               className="bg-green-500 text-white px-6 py-4 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
               🎤
             </button>
