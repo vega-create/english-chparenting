@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_TC, Zen_Maru_Gothic } from "next/font/google";
+import { Noto_Sans_TC, Zen_Maru_Gothic, Baloo_2 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,6 +14,13 @@ const zenMaru = Zen_Maru_Gothic({
   variable: "--font-zen-maru",
   subsets: ["latin"],
   weight: ["500", "700", "900"],
+});
+
+// 英文童趣圓體：電子書內文用（Zen Maru 的拉丁字偏一般，小朋友看不出差別）
+const baloo = Baloo_2({
+  variable: "--font-baloo",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
 });
 
 export const viewport: Viewport = {
@@ -125,7 +132,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(familySchema) }}
         />
       </head>
-      <body className={`${noto.variable} ${zenMaru.variable} font-sans antialiased`}>
+      <body className={`${noto.variable} ${zenMaru.variable} ${baloo.variable} font-sans antialiased`}>
         <Header />
         {children}
         <Footer />

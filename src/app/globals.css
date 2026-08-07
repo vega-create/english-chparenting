@@ -370,10 +370,11 @@ body {
 /* ── 電子書內文：童書風格（圓體、字大、行距鬆） ──
    給小朋友讀的，比一般內文再大一級、行距再鬆一點 */
 .ebook-text {
-  font-family: var(--font-zen-maru), "Zen Maru Gothic", "Noto Sans TC", sans-serif;
+  /* 英文用 Baloo 2（童趣圓體），中文接 Zen Maru 圓體 */
+  font-family: var(--font-baloo), var(--font-zen-maru), "Noto Sans TC", sans-serif;
   font-weight: 700;
-  line-height: 1.75;
-  letter-spacing: 0.02em;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 .ebook-text-zh {
   font-family: var(--font-zen-maru), "Zen Maru Gothic", "Noto Sans TC", sans-serif;
