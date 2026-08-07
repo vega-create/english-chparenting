@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
+import { playLesson, lessonPath } from '@/lib/audio';
 import { playStar, playClick } from '@/lib/sfx';
 import { playPraise, playReward } from '@/lib/vega-audio';
 
@@ -28,6 +29,13 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
   const [showResult, setShowResult] = useState(false);
   const [spellInput, setSpellInput] = useState('');
   const [combo, setCombo] = useState(0);
+
+  // 題目的答案多半是課文單字，先試真人錄音，沒有才用 TTS
+  async function sayAnswer(text: string, rate = 0.7) {
+    const one = text.trim();
+    if (/^[A-Za-z]+$/.test(one) && await playLesson(lessonPath.word(level, one))) return;
+    speak(text, rate);
+  }
 
   const q = challenges[current];
   const info = typeLabel[q.type] || typeLabel['fill-blank'];
@@ -109,7 +117,7 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
           <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 mb-5">
             <p className="text-base leading-relaxed text-gray-800 whitespace-pre-line">{q.passage}</p>
             <button
-              onClick={() => speak(q.passage!.replace(/\n/g, '. '))}
+              onClick={() => sayAnswer(q.passage!.replace(/\n/g, '. '))}
               className="mt-3 text-amber-600 text-sm font-bold hover:underline"
             >
               🔊 聽一次（可選）
@@ -123,7 +131,7 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
         {q.type === 'listen-pick' && (
           <div className="text-center mb-4">
             <button
-              onClick={() => speak(q.answer)}
+              onClick={() => sayAnswer(q.answer)}
               className="bg-blue-100 text-blue-600 px-6 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95"
             >
               🔊 播放音檔
@@ -135,7 +143,7 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
         {q.type === 'speak' && (
           <div className="text-center mb-4">
             <button
-              onClick={() => speak(q.answer)}
+              onClick={() => sayAnswer(q.answer)}
               className="bg-green-100 text-green-600 px-6 py-3 rounded-2xl font-bold hover:bg-green-200 transition active:scale-95 mb-3"
             >
               🔊 先聽示範

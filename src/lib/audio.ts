@@ -61,6 +61,7 @@ export const lessonPath = {
   sentence: (level: number, missionId: number, i: number) => `L${level}/m${missionId}/s${i + 1}.mp3`,
   word:     (level: number, en: string) => `L${level}/words/${wordSlug(en)}.mp3`,
   example:  (level: number, en: string) => `L${level}/words/${wordSlug(en)}-ex.mp3`,
+  spell:    (level: number, en: string) => `L${level}/words/${wordSlug(en)}-spell.mp3`,
   blend:    (level: number, en: string) => `L${level}/words/${wordSlug(en)}-blend.mp3`,
   // 字母卡：全站共用（不分級）
   letter:   (c: string, kind: 'capital' | 'lower' | 'word') => `letters/${c.toUpperCase()}-${kind}.mp3`,

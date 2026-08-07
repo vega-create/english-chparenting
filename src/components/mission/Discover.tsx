@@ -4,6 +4,7 @@ import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
+import SentenceMic from '@/components/mission/SentenceMic';
 
 interface Props {
   level: number;
@@ -145,7 +146,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     if (await playLesson(lessonPath.dialogue(level, mid, i))) return;
     speak(text, rate);
   }
+  // 單字卡：先拼字母再念單字（H-E-L-L-O, hello），沒有拼字檔就退回只念單字
   async function sayWord(w: Word, rate = 0.6) {
+    if (await playLesson(lessonPath.spell(level, w.en))) return;
     if (await playLesson(lessonPath.word(level, w.en))) return;
     speak(w.en, rate);
   }
@@ -731,10 +734,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               className="bg-blue-50 text-blue-500 px-5 py-4 rounded-2xl font-medium hover:bg-blue-100 transition active:scale-95">
               🐢
             </button>
-            <button onClick={() => { saySentence(currentSentence, sentence.en, 0.7); setSentenceRepeated(true); }}
-              className="bg-green-500 text-white px-6 py-4 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
-              🎤
-            </button>
+            <SentenceMic target={sentence.en} onDone={() => setSentenceRepeated(true)} />
           </div>
         ) : (
           <div className="text-center animate-slide-up">
