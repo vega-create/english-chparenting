@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
-import { playClip, playLesson, lessonPath, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
+import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 
 interface Props {
@@ -152,6 +152,22 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   async function saySentence(i: number, text: string, rate = 0.7) {
     if (await playLesson(lessonPath.sentence(level, mid, i))) return;
     speak(text, rate);
+  }
+
+  // 字母卡：大寫 → 小寫 → 舉例（Polly 錄音，沒檔才 fallback TTS）
+  // phonicsLetters 在 L2 以上放的是文法主題，那種只念標題就好
+  async function sayLetter(label: string, upper: string, lower: string) {
+    if (!isLetterCard(label)) { speak(label, 0.8); return; }
+    const seq: ('capital' | 'lower' | 'word')[] = ['capital', 'lower', 'word'];
+    for (const kind of seq) {
+      const ok = await playLesson(lessonPath.letter(upper, kind));
+      if (!ok) {
+        speak(kind === 'capital' ? `Capital ${upper}.`
+            : kind === 'lower' ? `Lowercase ${lower}.`
+            : `${upper} says ${lower}.`, 0.7);
+        await sleep(1500);
+      }
+    }
   }
 
   // 拆音唸法：先唸完整單字，再用自然發音法拆音念（blue → bl [bl] ue [u] [blu]）
@@ -653,9 +669,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 onClick={() => {
                   const upper = letter.charAt(0).toUpperCase();
                   const lower = letter.charAt(0).toLowerCase();
-                  speak(`Capital ${upper}.`, 0.7);
-                  setTimeout(() => speak(`Lowercase ${lower}.`, 0.7), 1500);
-                  setTimeout(() => speak(`${upper} says ${lower}.`, 0.7), 3000);
+                  sayLetter(letter, upper, lower);
                 }}
                 className="w-24 h-24 bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl flex items-center justify-center text-4xl font-black text-green-700 border-2 border-green-300 hover:scale-110 transition-all active:scale-95 shadow-md"
               >

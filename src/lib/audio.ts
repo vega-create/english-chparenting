@@ -62,7 +62,15 @@ export const lessonPath = {
   word:     (level: number, en: string) => `L${level}/words/${wordSlug(en)}.mp3`,
   example:  (level: number, en: string) => `L${level}/words/${wordSlug(en)}-ex.mp3`,
   blend:    (level: number, en: string) => `L${level}/words/${wordSlug(en)}-blend.mp3`,
+  // 字母卡：全站共用（不分級）
+  letter:   (c: string, kind: 'capital' | 'lower' | 'word') => `letters/${c.toUpperCase()}-${kind}.mp3`,
 };
+
+/** phonicsLetters 這個欄位 L2 以上放的是文法主題（"sight words"、"Can you…?"），
+ *  只有像 "Aa" "Bb" 這種才是真的字母卡，要念「大寫/小寫/舉例」。 */
+export function isLetterCard(label: string): boolean {
+  return /^([A-Za-z])\1$/i.test(label.trim());
+}
 
 // 翻書「沙沙」音效：用 Web Audio 合成（不需外部音檔）
 let _ac: AudioContext | null = null;
