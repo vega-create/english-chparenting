@@ -6,6 +6,8 @@ import HomeButton from '@/components/HomeButton';
 import { playClick, playStar } from '@/lib/sfx';
 import { loadProgress, islandStats } from '@/lib/missionProgress';
 import { playPageIntro } from '@/lib/vega-audio';
+import { useAuth } from '@/components/AuthProvider';
+import AuthButton from '@/components/AuthButton';
 import AdSlot from '@/components/AdSlot';
 
 type Member = 'guest' | 'free' | 'vip';
@@ -70,14 +72,16 @@ const AVATAR_NAME: Record<string, string> = { elly: '艾莉', sky: '小飛', coc
 export default function CabinClient() {
   useEffect(() => { playPageIntro('cabin'); }, []);
 
+  const { user, signIn } = useAuth();
+  // 身分現在由登入狀態決定：沒登入=訪客、登入=免費會員。
+  // VIP 那一層先保留（版面都做好了），等之後接付費再啟用。
   const [member, setMember] = useState<Member>('guest');
+  useEffect(() => { setMember(user ? 'free' : 'guest'); }, [user]);
   const [avatar, setAvatar] = useState('coco');
   const [p, setP] = useState(() => ({ completed: {} as Record<string, number> }));
 
   useEffect(() => {
     try {
-      const m = localStorage.getItem(KEY) as Member | null;
-      if (m === 'free' || m === 'vip') setMember(m);
       const av = localStorage.getItem('ae_avatar');
       if (av && AVATAR_NAME[av]) setAvatar(av);
     } catch {}
@@ -86,12 +90,6 @@ export default function CabinClient() {
     window.addEventListener('ae-mission-progress-change', refresh);
     return () => window.removeEventListener('ae-mission-progress-change', refresh);
   }, []);
-
-  function setM(m: Member) {
-    playClick();
-    setMember(m);
-    try { m === 'guest' ? localStorage.removeItem(KEY) : localStorage.setItem(KEY, m); } catch {}
-  }
 
   const stats = islandStats(p);
   const learned = Object.values(stats).reduce((s, x) => s + x.collected, 0);
@@ -108,16 +106,9 @@ export default function CabinClient() {
       <div className="fixed inset-0 -z-[5] bg-amber-950/25" />
       <HomeButton />
 
-      {/* 開發用：切換身分（之後接真登入可移除） */}
-      <div className="fixed left-3 z-50 flex gap-1" style={{ top: 'calc(0.75rem + env(safe-area-inset-top))' }}>
-        {(['guest', 'free', 'vip'] as Member[]).map(m => (
-          <button key={m} onClick={() => setM(m)}
-            className={`rounded-full px-2.5 py-1 text-[10px] font-black shadow border-2 transition ${
-              member === m ? 'bg-purple-600 text-white border-white/70' : 'bg-white/85 text-purple-700 border-purple-200'
-            }`}>
-            {m === 'guest' ? '未登入' : m === 'free' ? '免費' : '付費'}
-          </button>
-        ))}
+      {/* 登入／頭像 */}
+      <div className="fixed left-3 z-50" style={{ top: 'calc(0.75rem + env(safe-area-inset-top))' }}>
+        <AuthButton compact />
       </div>
 
       <div className="relative mx-auto px-3 py-[3vh]" style={{ maxWidth: '1200px' }}>
@@ -161,10 +152,10 @@ export default function CabinClient() {
                   登入後即可開啟<br />自己的冒險小屋
                 </p>
               </div>
-              <button onClick={() => setM('free')}
+              <button onClick={() => { playClick(); signIn('/cabin'); }}
                 className="absolute left-1/2 -translate-x-1/2 font-black text-white active:scale-95 transition"
-                style={{ top: '60.5%', width: '62%', height: '9%', fontSize: 'clamp(12px,1.45vw,20px)', textShadow: '0 1px 2px rgba(60,25,100,.6)' }}>登入</button>
-              <button onClick={() => setM('free')}
+                style={{ top: '60.5%', width: '62%', height: '9%', fontSize: 'clamp(12px,1.45vw,20px)', textShadow: '0 1px 2px rgba(60,25,100,.6)' }}>用 Google 登入</button>
+              <button onClick={() => { playClick(); signIn('/cabin'); }}
                 className="absolute left-1/2 -translate-x-1/2 font-black text-white active:scale-95 transition"
                 style={{ top: '73%', width: '62%', height: '9%', fontSize: 'clamp(12px,1.45vw,20px)', textShadow: '0 1px 2px rgba(10,60,110,.6)' }}>免費註冊</button>
             </div>
@@ -431,10 +422,10 @@ export default function CabinClient() {
                     </p>
                     <div className="mt-[6%]" style={{ fontSize: 'clamp(14px,1.8vw,28px)' }}>🧰 🪑 🎖️ 🐱 💎</div>
                   </div>
-                  <button onClick={() => setM('vip')}
-                    className="absolute flex items-center justify-center font-black text-amber-900 active:scale-95 transition"
-                    style={{ left: '13.6%', top: '71.2%', width: '73.6%', height: '11.9%', fontSize: 'clamp(12px,1.5vw,22px)' }}>
-                    立即升級
+                  <button onClick={() => playClick()} title="付費功能還在準備中"
+                    className="absolute flex items-center justify-center font-black text-amber-900/70 active:scale-95 transition"
+                    style={{ left: '13.6%', top: '71.2%', width: '73.6%', height: '11.9%', fontSize: 'clamp(11px,1.35vw,20px)' }}>
+                    敬請期待
                   </button>
                 </div>
               )}

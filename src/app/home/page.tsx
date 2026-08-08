@@ -7,6 +7,7 @@ import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, is
 import { COURSES } from "@/data/courses";
 import { playGreeting, isMuted as isVegaMuted, setMuted as setVegaMuted, playVega, stopVega } from "@/lib/vega-audio";
 import AdSlot from '@/components/AdSlot';
+import AuthButton from '@/components/AuthButton';
 
 // 島嶼 slug → 島嶼圖（缺的用漸層占位）
 const ISLAND_IMG: Record<string, string> = {
@@ -111,13 +112,8 @@ export default function LayeredBanner() {
               </a>
             ))}
           </nav>
-          <div className="flex gap-2 flex-shrink-0">
-            <button onClick={() => playClick()} className="px-5 py-2 rounded-full bg-white border-2 border-sky-400 text-sky-600 font-black text-sm shadow active:scale-95 hover:bg-sky-50 transition">
-              登入
-            </button>
-            <button onClick={() => playSuccess()} className="px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black text-sm shadow active:scale-95 hover:from-purple-600 hover:to-pink-600 transition">
-              註冊
-            </button>
+          <div className="flex gap-2 flex-shrink-0 items-center">
+            <AuthButton />
           </div>
         </div>
       </div>
@@ -611,8 +607,7 @@ export default function LayeredBanner() {
                 </a>
               ))}
               <div className="border-t border-gray-100 my-3" />
-              <button onClick={() => playClick()} className="w-full px-3 py-3 rounded-xl bg-white border-2 border-sky-400 text-sky-600 font-black">登入</button>
-              <button onClick={() => playSuccess()} className="w-full px-3 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black">註冊</button>
+              <div className="flex justify-center"><AuthButton /></div>
             </div>
           </motion.div>
         </div>

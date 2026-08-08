@@ -28,11 +28,13 @@ export function loadProgress(): Progress {
   }
 }
 
-function saveProgress(p: Progress) {
+export function saveProgress(p: Progress) {
   if (typeof window === 'undefined') return;
   try {
     localStorage.setItem(KEY, JSON.stringify(p));
     window.dispatchEvent(new Event('ae-mission-progress-change'));
+    // 有登入的話由 AuthProvider 接手上傳雲端（用事件解耦，這支檔不相依 auth）
+    window.dispatchEvent(new CustomEvent('ae-progress-save', { detail: p }));
   } catch { /* 容量問題忽略 */ }
 }
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PWA from "@/components/PWA";
+import AuthProvider from "@/components/AuthProvider";
 
 const noto = Noto_Sans_TC({
   variable: "--font-noto",
@@ -139,9 +140,11 @@ export default function RootLayout({
       </head>
       <body className={`${noto.variable} ${zenMaru.variable} ${baloo.variable} font-sans antialiased`}>
         <PWA />
+        <AuthProvider>
         <Header />
         {children}
         <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
