@@ -20,6 +20,9 @@ export default function Footer() {
             <li><Link href="/verbs" className="hover:text-purple-600 no-underline">動詞三態表</Link></li>
             <li><Link href="/guide" className="hover:text-purple-600 no-underline">使用說明</Link></li>
             <li><Link href="/books" className="hover:text-purple-600 no-underline">推薦書單</Link></li>
+            <li><Link href="/parents" className="hover:text-purple-600 no-underline">家長中心</Link></li>
+            {/* AdSense 規定放廣告的站必須有可從各頁到達的隱私權說明 */}
+            <li><Link href="/privacy" className="hover:text-purple-600 no-underline">隱私權與資料使用</Link></li>
           </ul>
         </div>
         <div>
