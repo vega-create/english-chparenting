@@ -109,7 +109,39 @@ export function track(e: LearnEvent) {
 }
 
 /**
+ * 退出時的匿名狀態快照，給退出問卷一起寫入。
+ * 完全不含身分欄位——只回答「退出時大概是什麼狀態」，不回答「是誰」。
+ * 沒登入的話多半拿不到事件數（RLS 讀不到），回傳 null 就好，不要硬猜。
+ */
+export async function exitContext(): Promise<{
+  events_count: number | null; lessons_done: number | null;
+  had_pretest: boolean; bucket: string; app_version: string;
+}> {
+  const base = { events_count: null, lessons_done: null, had_pretest: false,
+                 bucket: defaultBucket(), app_version: APP_VERSION };
+  try {
+    const { data } = await supa().auth.getUser();
+    const uid = data.user?.id;
+    if (!uid) return base;
+    const { data: rows } = await supa().from('ae_events').select('kind').eq('user_id', uid);
+    if (!rows) return base;
+    return {
+      ...base,
+      events_count: rows.length,
+      lessons_done: rows.filter(r => r.kind === 'lesson_end').length,
+      had_pretest: rows.some(r => r.kind === 'pretest'),
+    };
+  } catch {
+    return base;
+  }
+}
+
+/**
  * 撤回：刪掉這個帳號在研究資料裡的所有紀錄。
+ *
+ * ⚠️ 這裡**不寫**退出紀錄（墓碑）。墓碑由退出問卷那一步寫，
+ *    不管家長有沒有填原因都會寫、而且只寫一筆——
+ *    分兩個地方寫會變成同一次退出算成兩人，流失率直接失真。
  *
  * 只有登入時做得到。未登入的資料只有隨機 device_id，
  * 資料庫無從驗證那組代號真的屬於誰，開放用 device_id 刪等於任何人都能刪光整張表。
@@ -124,6 +156,7 @@ export async function deleteMyResearchData(): Promise<'ok' | 'not-logged-in' | '
     const { data } = await supa().auth.getUser();
     const uid = data.user?.id;
     if (!uid) return 'not-logged-in';
+
     const { error } = await supa().from('ae_events').delete().eq('user_id', uid);
     if (error) return 'error';
     await supa().from('ae_progress')

@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { hasConsent, setConsent, deleteMyResearchData } from '@/lib/analytics';
+import { hasConsent, setConsent, deleteMyResearchData, exitContext } from '@/lib/analytics';
+import ExitSurvey from '@/components/ExitSurvey';
 import { playClick } from '@/lib/sfx';
 import { RESEARCH_CONTACT, RESEARCH_PI, RETENTION_YEARS } from '@/lib/research';
 
@@ -13,20 +14,29 @@ export default function ResearchConsent() {
   const [ready, setReady] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState('');
+  // 退出問卷：一律在動作「做完之後」才顯示，不擋在前面（擋著問等於用資料換權利）
+  const [survey, setSurvey] = useState<null | {
+    exitType: 'consent_off' | 'delete';
+    context: Awaited<ReturnType<typeof exitContext>>;
+  }>(null);
 
   useEffect(() => { setOn(hasConsent()); setReady(true); }, []);
 
-  function toggle() {
+  async function toggle() {
     playClick();
     const next = !on;
+    // 關掉之前先把狀態抓下來，關掉之後就查不到了
+    const ctx = next ? null : await exitContext();
     setOn(next);
     setConsent(next);
     setMsg('');
+    if (!next && ctx) setSurvey({ exitType: 'consent_off', context: ctx });
   }
 
   async function removeData() {
     if (!confirm('確定要刪掉已經收集的學習紀錄嗎？刪掉就找不回來了。')) return;
     setBusy(true);
+    const ctx = await exitContext();   // 刪掉就查不到了，先抓
     const r = await deleteMyResearchData();
     setBusy(false);
     setOn(false);
@@ -35,6 +45,7 @@ export default function ResearchConsent() {
       : r === 'not-logged-in' ? '沒有登入，所以資料只有一組隨機代號、無法對應到你，我們也就沒辦法指定刪除。清掉瀏覽器資料就會換一組新代號。'
       : '刪除沒成功，請稍後再試一次。'
     );
+    if (r === 'ok') setSurvey({ exitType: 'delete', context: ctx });
   }
 
   if (!ready) return null;
@@ -83,6 +94,13 @@ export default function ResearchConsent() {
           沒登入的紀錄只有一組隨機代號、對不出是誰，
           所以<strong className="text-gray-800">沒辦法指定刪除</strong>——這也是它真的匿名的意思。
         </p>
+        <p className="mt-1">
+          刪除後我們只會留下一筆<strong className="text-gray-800">不含任何身分的退出紀錄</strong>
+          （某天有一位參與者退出、當時完成幾課），
+          因為研究報告必須寫出有多少人中途退出，否則統計會失真。
+          這筆紀錄回推不到任何人。另外，若資料已經納入分析或已經發表，
+          那部分就<strong className="text-gray-800">無法回收</strong>。
+        </p>
         {(RESEARCH_PI || RESEARCH_CONTACT) && (
           <>
             <p className="font-bold text-gray-700 mt-2 mb-1">有問題找誰</p>
@@ -124,6 +142,13 @@ export default function ResearchConsent() {
       <p className="mt-3 text-center text-[11px] text-gray-400">
         <a href="/privacy" className="underline">隱私權與資料使用說明</a>
       </p>
+      {survey && (
+        <ExitSurvey
+          exitType={survey.exitType}
+          context={survey.context}
+          onClose={() => setSurvey(null)}
+        />
+      )}
     </section>
   );
 }
