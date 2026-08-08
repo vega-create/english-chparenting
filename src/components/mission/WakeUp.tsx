@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
 import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
+import { track } from '@/lib/analytics';
 
 interface Props {
   questions: QuizQuestion[];
@@ -14,6 +15,7 @@ interface Props {
 export default function WakeUp({ questions, onComplete, level = 1, audioIndex = {} }: Props) {
   // 先播真人錄音，沒有才用 TTS
   async function say(text: string) {
+    track({ kind: 'replay', level, step: 'wakeup', item: text });
     const path = findLessonAudio(audioIndex, level, text);
     if (path && await playLesson(path)) return;
     speak(text);
@@ -40,6 +42,7 @@ export default function WakeUp({ questions, onComplete, level = 1, audioIndex = 
     if (selected) return;
     setSelected(option);
     const correct = option === q.answer;
+    track({ kind: 'answer', level, step: 'wakeup', item: q.answer, correct, meta: { q: current } });
     if (correct) setScore(s => s + 1);
     setShowResult(true);
 

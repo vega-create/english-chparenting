@@ -4,6 +4,7 @@ import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
+import { track } from '@/lib/analytics';
 import SentenceMic from '@/components/mission/SentenceMic';
 
 interface Props {
@@ -143,16 +144,19 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const mid = missionId ?? 1;
 
   async function sayDialogue(i: number, text: string, rate = 0.75) {
+    track({ kind: 'replay', level, mission: mid, step: 'story', item: `d${i + 1}` });
     if (await playLesson(lessonPath.dialogue(level, mid, i))) return;
     speak(text, rate);
   }
   // 單字卡：先拼字母再念單字（H-E-L-L-O, hello），沒有拼字檔就退回只念單字
   async function sayWord(w: Word, rate = 0.6) {
+    track({ kind: 'replay', level, mission: mid, step: 'words', item: w.en });
     if (await playLesson(lessonPath.spell(level, w.en))) return;
     if (await playLesson(lessonPath.word(level, w.en))) return;
     speak(w.en, rate);
   }
   async function saySentence(i: number, text: string, rate = 0.7) {
+    track({ kind: 'replay', level, mission: mid, step: 'sentences', item: `s${i + 1}` });
     if (await playLesson(lessonPath.sentence(level, mid, i))) return;
     speak(text, rate);
   }

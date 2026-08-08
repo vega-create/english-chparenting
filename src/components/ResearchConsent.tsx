@@ -27,8 +27,11 @@ export default function ResearchConsent() {
       <h2 className="text-lg font-black text-gray-800 mb-2">📊 學習資料與研究</h2>
 
       <p className="text-sm text-gray-600 leading-relaxed">
-        我們正在研究「遊戲化設計如何幫助孩子持續學英文」，希望讓這個平台做得更好。
-        如果你願意，孩子的學習行為可以匿名提供給這項研究使用。
+        冒險英語同時是一個<strong className="text-gray-800">研究場域</strong>，
+        長期觀察「遊戲化設計如何幫助孩子持續學英文」。
+        累積的匿名資料一方面用來把平台做得更好，
+        一方面可能整理成研究成果對外發表。
+        如果你願意，孩子的學習行為可以匿名納入這項研究。
       </p>
 
       <div className="mt-3 rounded-xl bg-gray-50 p-3 text-xs text-gray-600 leading-relaxed">
@@ -39,6 +42,11 @@ export default function ResearchConsent() {
           姓名、email、聲音內容都<strong className="text-gray-800">不會</strong>被記錄。
           孩子念的話只存「分數」，不存說了什麼。系統只用一組隨機代號辨識裝置，
           無法對應到任何一個人。
+        </p>
+        <p className="font-bold text-gray-700 mt-2 mb-1">發表的時候長什麼樣</p>
+        <p>
+          只會出現整體統計（例如「平均第三次遇到同一個單字時答對率上升到 80%」），
+          不會出現任何一個孩子的個別紀錄。
         </p>
         <p className="font-bold text-gray-700 mt-2 mb-1">你隨時可以關掉</p>
         <p>關掉之後就立刻停止記錄，不影響任何學習功能。</p>

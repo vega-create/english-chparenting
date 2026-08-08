@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { playPraise, getLevelFromMissionId, playReward } from '@/lib/vega-audio';
 import { playFanfare, stopFanfare } from '@/lib/sfx';
+import { track } from '@/lib/analytics';
 import { speak } from '@/lib/speech';
 import { recordMissionComplete } from '@/lib/missionProgress';
 
@@ -37,6 +38,8 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
     const t2 = setTimeout(() => playPraise(getLevelFromMissionId(courseSlug)), praiseAt);
     // 鼓勵語播完接星數獎勵（reward-star-1/2/3，L5+ 用英文版）
     const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), praiseAt + 2000);
+    track({ kind: 'lesson_end', level: lv, mission: missionId, score: starCount,
+            meta: { percent: starPercent, stars, maxStars } });
     recordMissionComplete(courseSlug, missionId, starCount);
     return () => { clearTimeout(t); clearTimeout(t2); stopFanfare(); };
   }, [courseSlug, missionId, starCount]);
