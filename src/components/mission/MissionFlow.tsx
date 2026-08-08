@@ -149,6 +149,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const maxStars = (mission.warmUpQuestions.length) + (mission.challenges.length);
 
   return (
+    <>
     <div
       className="min-h-screen bg-cover bg-top bg-fixed"
       style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)), url(/images/maps/bg-sky-castles.webp)' }}
@@ -288,8 +289,13 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
       </div>
 
-      {/* 廣告：只在整頁最下方，孩子要捲到底才看得到；答題／電子書區完全不放 */}
-      <AdSlot place="lessonBottom" className="pb-6 pt-2" />
     </div>
+
+    {/* 廣告放在背景圖「外面」的白底區，不壓在天空場景上。
+        位置一樣是整頁最下方，孩子要捲到底才看得到；答題／電子書區完全不放 */}
+    <div className="bg-white border-t border-gray-100">
+      <AdSlot place="lessonBottom" className="pb-6 pt-3" />
+    </div>
+    </>
   );
 }

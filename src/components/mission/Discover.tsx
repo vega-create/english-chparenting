@@ -173,6 +173,27 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     speak(text, rate);
   }
 
+  /**
+   * 電子書內文點單字 → 只念單字（不拼字母，閱讀中被打斷拼字很怪）。
+   * 一律先找 R2 上的真人錄音，沒有檔案才退回瀏覽器 TTS。
+   * 之前這裡是直接 speak()，所以內文的字全都是電子音。
+   */
+  async function sayInlineWord(raw: string) {
+    const clean = raw.replace(/[.,!?"'“”‘’]/g, '').trim();
+    if (!clean) return;
+    track({ kind: 'replay', level, mission: mid, step: 'story', item: clean, meta: { inline: true } });
+    // 課文單字表裡有的，用該級的單字檔
+    // 單一字母（L1/L2 課文裡的 A B C…）：用 Polly 錄好的字母檔，不要走 TTS
+    if (/^[A-Za-z]$/.test(clean)) {
+      if (await playLesson(lessonPath.letter(clean, 'capital'))) return;
+    }
+    const hit = words.find(w => w.en.toLowerCase() === clean.toLowerCase());
+    if (hit && await playLesson(lessonPath.word(level, hit.en))) return;
+    // 不在單字表也試一次：同一級的 words 資料夾是用 slug 命名的，可能有檔
+    if (await playLesson(lessonPath.word(level, clean))) return;
+    speak(clean, 0.5);
+  }
+
   // 字母卡：大寫 → 小寫 → 舉例（Polly 錄音，沒檔才 fallback TTS）
   // phonicsLetters 在 L2 以上放的是文法主題，那種只念標題就好
   async function sayLetter(label: string, upper: string, lower: string) {
@@ -373,8 +394,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                       return (
                         <span key={wi}>
                           <span
-                            className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer' : ''}
-                            onClick={() => { if (isHighlight) speak(w.replace(/[.,!?]/g, ''), 0.5); }}
+                            className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer underline decoration-dotted decoration-purple-400 underline-offset-4 active:bg-purple-200' : ''}
+                            onClick={() => { if (isHighlight) sayInlineWord(w); }}
                           >
                             {w}
                           </span>{' '}
@@ -384,6 +405,12 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   </p>
                   {showTranslation && (
                     <p className="ebook-text-zh text-gray-500 text-sm sm:text-base mt-2 animate-slide-up">{scene.dialogueZh}</p>
+                  )}
+                  {/* 讓孩子知道紫色的字可以點 —— 沒說的話多數人不會發現 */}
+                  {!!scene.highlightWords?.length && (
+                    <p className="mt-1.5 text-[10px] sm:text-xs font-bold text-purple-400">
+                      👆 點<span className="mx-0.5 rounded bg-purple-100 px-1 text-purple-600 underline decoration-dotted decoration-purple-400 underline-offset-2">紫色的字</span>，念給你聽 🔊
+                    </p>
                   )}
                 </div>
                 {/* 頁數：星星表示（目前頁亮） */}
@@ -451,8 +478,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                       return (
                         <span key={wi}>
                           <span
-                            className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer' : ''}
-                            onClick={() => { if (isHighlight) speak(w.replace(/[.,!?]/g, ''), 0.5); }}
+                            className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer underline decoration-dotted decoration-purple-400 underline-offset-4 active:bg-purple-200' : ''}
+                            onClick={() => { if (isHighlight) sayInlineWord(w); }}
                           >
                             {w}
                           </span>{' '}
@@ -462,6 +489,12 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   </p>
                   {showTranslation && (
                     <p className="ebook-text-zh text-gray-500 text-sm sm:text-base mt-2 animate-slide-up">{scene.dialogueZh}</p>
+                  )}
+                  {/* 讓孩子知道紫色的字可以點 —— 沒說的話多數人不會發現 */}
+                  {!!scene.highlightWords?.length && (
+                    <p className="mt-1.5 text-[10px] sm:text-xs font-bold text-purple-400">
+                      👆 點<span className="mx-0.5 rounded bg-purple-100 px-1 text-purple-600 underline decoration-dotted decoration-purple-400 underline-offset-2">紫色的字</span>，念給你聽 🔊
+                    </p>
                   )}
                 </div>
               </div>
