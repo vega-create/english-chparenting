@@ -39,9 +39,15 @@ export default function ResearchConsent() {
         <p>完成了哪一課、花多少時間、答對答錯、聽了幾次音檔、口說的分數。</p>
         <p className="font-bold text-gray-700 mt-2 mb-1">不會記錄什麼</p>
         <p>
-          姓名、email、聲音內容都<strong className="text-gray-800">不會</strong>被記錄。
-          孩子念的話只存「分數」，不存說了什麼。系統只用一組隨機代號辨識裝置，
-          無法對應到任何一個人。
+          姓名、email、孩子念出來的聲音內容，都<strong className="text-gray-800">不會</strong>
+          存進研究資料。口說只存「分數」，不存說了什麼。
+        </p>
+        <p className="font-bold text-gray-700 mt-2 mb-1">怎麼辨識是誰</p>
+        <p>
+          沒登入時只用一組隨機代號認裝置。
+          有登入的話，紀錄會連到你的<strong className="text-gray-800">帳號代號</strong>
+          （一串亂碼，不是 email），這樣孩子換手機、換平板，學習紀錄才接得起來。
+          分析時只看這串代號，不會回頭去對是哪一個帳號。
         </p>
         <p className="font-bold text-gray-700 mt-2 mb-1">發表的時候長什麼樣</p>
         <p>
