@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/data/blog-posts";
+import AutoAds from "@/components/AutoAds";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map(p => ({ slug: p.slug }));
@@ -93,6 +94,7 @@ function renderMarkdown(md: string) {
         const rows = lines.slice(1).map(r => r.split("|").filter(Boolean).map(c => c.trim()));
         return (
           <table key={i}>
+      <AutoAds />
             <thead>
               <tr>{headers?.map((h, j) => <th key={j}>{h}</th>)}</tr>
             </thead>

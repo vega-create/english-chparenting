@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BOOKS } from "@/data/blog-posts";
 import PageIntro from "@/components/PageIntro";
+import AutoAds from "@/components/AutoAds";
 
 export const metadata: Metadata = {
   title: "推薦書單 - 兒童英文繪本與學習書籍推薦",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function BooksPage() {
   return (
     <main className="min-h-screen py-12 px-4">
+      <AutoAds />
       <PageIntro page="books" />
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12 animate-slide-up">

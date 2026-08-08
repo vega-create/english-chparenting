@@ -24,6 +24,7 @@ import Discover from '@/components/mission/Discover';
 import Challenge from '@/components/mission/Challenge';
 import TalkTime from '@/components/mission/TalkTime';
 import MissionComplete from '@/components/mission/MissionComplete';
+import AdSlot from '@/components/AdSlot';
 
 type Step = 'intro' | 'welcome' | 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'complete';
 
@@ -244,6 +245,9 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
           <MissionComplete missionTitle={mission.title} missionTitleEn={mission.titleEn} stars={totalStars} maxStars={maxStars} reviewQuiz={mission.reviewQuiz} courseSlug={course.slug} missionId={mission.id} />
         )}
       </div>
+
+      {/* 廣告：只在整頁最下方，孩子要捲到底才看得到；答題／電子書區完全不放 */}
+      <AdSlot place="lessonBottom" className="pb-6 pt-2" />
     </div>
   );
 }

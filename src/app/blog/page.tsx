@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/data/blog-posts";
+import AutoAds from "@/components/AutoAds";
 
 export const metadata: Metadata = {
   title: "英文學習文章 - 兒童英語學習技巧、書單、考試攻略",
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <main className="min-h-screen py-12 px-4">
+      <AutoAds />
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12 animate-slide-up">
           <h1 className="text-3xl md:text-5xl font-black mb-3">

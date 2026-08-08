@@ -3,6 +3,7 @@ import { Noto_Sans_TC, Zen_Maru_Gothic, Baloo_2 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PWA from "@/components/PWA";
 
 const noto = Noto_Sans_TC({
   variable: "--font-noto",
@@ -27,6 +28,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover", // 讓 env(safe-area-inset-*) 生效（手機瀏海/上下列）
+  themeColor: "#FFF8EB", // 加到主畫面後的狀態列顏色
 };
 
 export const metadata: Metadata = {
@@ -38,6 +40,13 @@ export const metadata: Metadata = {
   keywords: ["兒童英文", "兒童美語", "免費英文學習", "小學英文", "phonics", "KK音標", "英檢初級", "自然發音", "英語學習", "Adventure English"],
   icons: {
     icon: "/icon.png",
+    apple: "/icons/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    title: "冒險英語",
+    statusBarStyle: "default",
   },
   metadataBase: new URL("https://english.chparenting.com"),
   alternates: {
@@ -122,17 +131,14 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3493526929407874"
-          crossOrigin="anonymous"
-        />
+        {/* AdSense 移到 <AutoAds /> — 只在家長／內容頁載入，課程區完全沒有廣告程式碼 */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(familySchema) }}
         />
       </head>
       <body className={`${noto.variable} ${zenMaru.variable} ${baloo.variable} font-sans antialiased`}>
+        <PWA />
         <Header />
         {children}
         <Footer />
