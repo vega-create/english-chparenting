@@ -4,10 +4,11 @@
  * 策略（刻意保守，避免小朋友看到舊內容）：
  * - 頁面（HTML）：network-first —— 有網路一律拿最新的，離線才用快取
  * - 靜態資源（圖片/字型/JS/CSS）：cache-first —— 這些檔名有 hash，不會過期
- * - 音檔（R2）：cache-first —— 同一課重複播不用重抓，省流量
+ * - 音檔（R2）：stale-while-revalidate —— 先播快取（不用等），同時背景抓新版，
+ *   下次就是新的。（v1 用 cache-first，結果換了音檔使用者永遠聽到舊的）
  * - 不快取：AdSense、任何第三方追蹤
  */
-const VERSION = 'v1';
+const VERSION = 'v2';   // 改版號會自動清掉舊快取
 const PAGE_CACHE = `pages-${VERSION}`;
 const ASSET_CACHE = `assets-${VERSION}`;
 const AUDIO_CACHE = `audio-${VERSION}`;
@@ -50,18 +51,35 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   if (skip(url)) return;
 
-  // 音檔與靜態資源：先看快取
-  if (isAudio(url) || isAsset(url)) {
-    const cacheName = isAudio(url) ? AUDIO_CACHE : ASSET_CACHE;
+  // 靜態資源（檔名有 hash，不會變）：cache-first
+  if (isAsset(url)) {
     e.respondWith(
       caches.match(req).then((hit) =>
         hit || fetch(req).then((res) => {
           if (res.ok || res.type === 'opaque') {
             const copy = res.clone();
-            caches.open(cacheName).then((c) => c.put(req, copy)).catch(() => {});
+            caches.open(ASSET_CACHE).then((c) => c.put(req, copy)).catch(() => {});
           }
           return res;
         }).catch(() => hit)
+      )
+    );
+    return;
+  }
+
+  // 音檔：stale-while-revalidate
+  // 檔名固定但內容會換（修正發音時），所以先播快取讓孩子不用等，
+  // 同時背景抓新版存起來，下次播就是新的。
+  if (isAudio(url)) {
+    e.respondWith(
+      caches.open(AUDIO_CACHE).then((cache) =>
+        cache.match(req).then((hit) => {
+          const fresh = fetch(req).then((res) => {
+            if (res.ok) cache.put(req, res.clone()).catch(() => {});
+            return res;
+          }).catch(() => hit);
+          return hit || fresh;
+        })
       )
     );
     return;
