@@ -14,6 +14,7 @@ import {
 import { playClick, playStar, playSwoosh } from "@/lib/sfx";
 import MapDialogue from "@/components/MapDialogue";
 import HomeButton from "@/components/HomeButton";
+import AdSlot from '@/components/AdSlot';
 
 // 六個世界在 adventure-map.png 上的位置（百分比，覆蓋整個島）
 const HOTSPOTS = [
@@ -465,6 +466,8 @@ export default function AdventureMapPage() {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* 廣告：整頁最下方，不擋內容 */}
+      <AdSlot place="mapBottom" className="pb-6 pt-2" />
     </div>
   );
 }

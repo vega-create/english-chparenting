@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { AD_CLIENT, AD_SLOTS, type AdPlace } from '@/lib/ads';
+import { AD_CLIENT, AD_SLOTS, loadAdSense, type AdPlace } from '@/lib/ads';
 
 /**
  * 固定版位廣告（手動指定位置，不是自動廣告）。
@@ -22,11 +22,9 @@ export default function AdSlot({ place, className = '' }: { place: AdPlace; clas
     if (!slot || pushed.current) return;
     pushed.current = true;
     try {
+      loadAdSense();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const w = window as any;
-      w.adsbygoogle = w.adsbygoogle || [];
-      w.adsbygoogle.requestNonPersonalizedAds = 1;   // 兒童導向：非個人化廣告
-      w.adsbygoogle.push({});
+      (window as any).adsbygoogle.push({});
     } catch {
       /* 廣告載入失敗不影響課程 */
     }

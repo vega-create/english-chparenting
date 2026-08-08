@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 import { COURSES } from "@/data/courses";
 import { playGreeting, isMuted as isVegaMuted, setMuted as setVegaMuted, playVega, stopVega } from "@/lib/vega-audio";
+import AdSlot from '@/components/AdSlot';
 
 // 島嶼 slug → 島嶼圖（缺的用漸層占位）
 const ISLAND_IMG: Record<string, string> = {
@@ -616,6 +617,8 @@ export default function LayeredBanner() {
           </motion.div>
         </div>
       )}
+      {/* 廣告：整頁最下方，不擋內容 */}
+      <AdSlot place="homeBottom" className="pb-6 pt-2" />
     </div>
   );
 }

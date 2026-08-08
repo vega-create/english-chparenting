@@ -6,6 +6,7 @@ import HomeButton from '@/components/HomeButton';
 import { playClick, playStar } from '@/lib/sfx';
 import { loadProgress, islandStats } from '@/lib/missionProgress';
 import { playPageIntro } from '@/lib/vega-audio';
+import AdSlot from '@/components/AdSlot';
 
 type Member = 'guest' | 'free' | 'vip';
 const KEY = 'ae_member';
@@ -441,6 +442,8 @@ export default function CabinClient() {
           </div>
         )}
       </div>
+      {/* 廣告：整頁最下方，不擋內容 */}
+      <AdSlot place="cabinBottom" className="pb-6 pt-2" />
     </main>
   );
 }
