@@ -2,13 +2,22 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
+import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
 
 interface Props {
   questions: QuizQuestion[];
   onComplete: (score: number) => void;
+  level?: number;
+  audioIndex?: LessonAudioIndex;
 }
 
-export default function WakeUp({ questions, onComplete }: Props) {
+export default function WakeUp({ questions, onComplete, level = 1, audioIndex = {} }: Props) {
+  // 先播真人錄音，沒有才用 TTS
+  async function say(text: string) {
+    const path = findLessonAudio(audioIndex, level, text);
+    if (path && await playLesson(path)) return;
+    speak(text);
+  }
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -19,7 +28,7 @@ export default function WakeUp({ questions, onComplete }: Props) {
   // 每題出現時自動播放答案音檔
   const playAnswer = useCallback(() => {
     if (q.type === 'listen-pick') {
-      setTimeout(() => speak(q.answer), 500);
+      setTimeout(() => say(q.answer), 500);
     }
   }, [q]);
 
@@ -73,7 +82,7 @@ export default function WakeUp({ questions, onComplete }: Props) {
         {q.type === 'listen-pick' && (
           <div className="text-center mb-4">
             <button
-              onClick={() => speak(q.answer)}
+              onClick={() => say(q.answer)}
               className="bg-blue-100 text-blue-600 px-6 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95"
             >
               🔊 再聽一次

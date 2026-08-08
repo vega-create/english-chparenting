@@ -4,7 +4,7 @@ import { COURSES } from '@/data/courses';
 import { MISSIONS } from '@/data/missions';
 import { stopSpeaking } from '@/lib/speech';
 import { getLevelFromMissionId, playVega, stepAudio, CHAR_CUE_AUDIO } from '@/lib/vega-audio';
-import { wordSlug } from '@/lib/audio';
+import { wordSlug, buildLessonAudioIndex } from '@/lib/audio';
 
 // 單字卡小圖：有去背 PNG 就用圖，沒有用 emoji
 function WordImg({ en, emoji }: { en: string; emoji: string }) {
@@ -101,6 +101,9 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
       </div>
     );
   }
+
+  // 該課「文字→錄音」對照：讓答案是整句的題目也能播真人錄音
+  const audioIndex = buildLessonAudioIndex(mission.level, mission.id, mission.story, mission.sentences);
 
   const currentStepIndex = STEPS.findIndex(s => s.key === step);
   const totalStars = warmupScore + challengeScore;
@@ -226,7 +229,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'wakeup' && (
-          <WakeUp questions={mission.warmUpQuestions} onComplete={(score) => { setWarmupScore(score); setStep('discover'); }} />
+          <WakeUp questions={mission.warmUpQuestions} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setWarmupScore(score); setStep('discover'); }} />
         )}
 
         {step === 'discover' && (
@@ -234,7 +237,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'challenge' && (
-          <Challenge challenges={mission.challenges} praiseLevel={getLevelFromMissionId(levelSlug)} level={course.level} onComplete={(score) => { setChallengeScore(score); setStep('talktime'); }} />
+          <Challenge challenges={mission.challenges} praiseLevel={getLevelFromMissionId(levelSlug)} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setChallengeScore(score); setStep('talktime'); }} />
         )}
 
         {step === 'talktime' && (

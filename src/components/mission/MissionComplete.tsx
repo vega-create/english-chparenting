@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { playPraise, getLevelFromMissionId, playReward } from '@/lib/vega-audio';
+import { playFanfare } from '@/lib/sfx';
 import { speak } from '@/lib/speech';
 import { recordMissionComplete } from '@/lib/missionProgress';
 
@@ -30,9 +31,10 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   // 進到結算畫面時播 Miss Vega 鼓勵語音 + 星數獎勵語音 + 記錄完成進度
   useEffect(() => {
     const lv = parseInt(String(courseSlug).match(/l?(\d+)/)?.[1] ?? '1', 10);
-    playPraise(getLevelFromMissionId(courseSlug));
+    playFanfare(starCount);                       // 先響破關配樂
+    setTimeout(() => playPraise(getLevelFromMissionId(courseSlug)), 1200);  // 再接 Vega 鼓勵語
     // 鼓勵語播完接星數獎勵（reward-star-1/2/3，L5+ 用英文版）
-    const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), 1800);
+    const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), 3200);
     recordMissionComplete(courseSlug, missionId, starCount);
     return () => clearTimeout(t);
   }, [courseSlug, missionId, starCount]);

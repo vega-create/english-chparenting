@@ -67,6 +67,34 @@ export const lessonPath = {
   letter:   (c: string, kind: 'capital' | 'lower' | 'word') => `letters/${c.toUpperCase()}-${kind}.mp3`,
 };
 
+/** 課文音檔索引：把該課的對話與句型建成「文字 → 檔案路徑」的表，
+ *  題目答案是整句時就能找到對應錄音（單字則走 lessonPath.word）。 */
+export type LessonAudioIndex = Record<string, string>;
+
+function normText(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+export function buildLessonAudioIndex(
+  level: number,
+  missionId: number,
+  story: { dialogue: string }[],
+  sentences: { en: string }[],
+): LessonAudioIndex {
+  const idx: LessonAudioIndex = {};
+  sentences.forEach((s, i) => { idx[normText(s.en)] = lessonPath.sentence(level, missionId, i); });
+  story.forEach((s, i) => { idx[normText(s.dialogue)] = lessonPath.dialogue(level, missionId, i); });
+  return idx;
+}
+
+/** 先查課文錄音（整句）→ 再查單字錄音 → 都沒有回 null（呼叫端 fallback TTS）*/
+export function findLessonAudio(idx: LessonAudioIndex, level: number, text: string): string | null {
+  const key = normText(text);
+  if (idx[key]) return idx[key];
+  if (/^[A-Za-z]+$/.test(text.trim())) return lessonPath.word(level, text.trim());
+  return null;
+}
+
 /** phonicsLetters 這個欄位 L2 以上放的是文法主題（"sight words"、"Can you…?"），
  *  只有像 "Aa" "Bb" 這種才是真的字母卡，要念「大寫/小寫/舉例」。 */
 export function isLetterCard(label: string): boolean {

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
-import { playLesson, lessonPath } from '@/lib/audio';
+import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
 import { playStar, playClick } from '@/lib/sfx';
 import { playPraise, playReward } from '@/lib/vega-audio';
 
@@ -11,6 +11,7 @@ interface Props {
   onComplete: (score: number, total: number) => void;
   praiseLevel?: 'low' | 'mid' | 'high';
   level?: number;   // 課程級別，決定獎勵語音用中文(L1-4)或英文(L5+)
+  audioIndex?: LessonAudioIndex;   // 該課的「文字→錄音」對照，讓整句題目也能播真人錄音
 }
 
 const typeLabel: Record<string, { icon: string; label: string; characterKey: string; characterAction: string }> = {
@@ -22,7 +23,7 @@ const typeLabel: Record<string, { icon: string; label: string; characterKey: str
   'read': { icon: '📖', label: '故事解謎', characterKey: 'benny', characterAction: 'read' },
 };
 
-export default function Challenge({ challenges, onComplete, praiseLevel = 'low', level = 1 }: Props) {
+export default function Challenge({ challenges, onComplete, praiseLevel = 'low', level = 1, audioIndex = {} }: Props) {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -32,8 +33,8 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
 
   // 題目的答案多半是課文單字，先試真人錄音，沒有才用 TTS
   async function sayAnswer(text: string, rate = 0.7) {
-    const one = text.trim();
-    if (/^[A-Za-z]+$/.test(one) && await playLesson(lessonPath.word(level, one))) return;
+    const path = findLessonAudio(audioIndex, level, text);
+    if (path && await playLesson(path)) return;
     speak(text, rate);
   }
 
