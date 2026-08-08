@@ -4,6 +4,7 @@ import type { QuizQuestion } from '@/data/missions';
 import { playPraise, getLevelFromMissionId, playReward } from '@/lib/vega-audio';
 import { playFanfare, stopFanfare } from '@/lib/sfx';
 import { track } from '@/lib/analytics';
+import LoginNudge from '@/components/LoginNudge';
 import { speak } from '@/lib/speech';
 import { recordMissionComplete } from '@/lib/missionProgress';
 
@@ -133,6 +134,9 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
           >
             繼續冒險 · 下一站 🗺 →
           </a>
+
+          {/* 剛拿到星星，這是最有說服力的時機講「不登入會不見」 */}
+          <LoginNudge variant="inline" />
         </div>
       </div>
     );

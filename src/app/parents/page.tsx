@@ -5,6 +5,7 @@ import { loadProgress, completedCount, totalStars, currentIsland, type Progress 
 import AutoAds from "@/components/AutoAds";
 import ResearchConsent from "@/components/ResearchConsent";
 import PlacementPrompt from "@/components/PlacementPrompt";
+import LoginNudge from "@/components/LoginNudge";
 
 // 家長中心：家長視角的進度/報告/時間管理。可追蹤的數據由進度推導；時間類尚未追蹤，誠實留白。
 export default function ParentsPage() {
@@ -49,7 +50,8 @@ export default function ParentsPage() {
   return (
     <main className="min-h-screen py-12 px-4">
       <AutoAds />
-      <div className="max-w-3xl mx-auto px-4"><PlacementPrompt />
+      <div className="max-w-3xl mx-auto px-4"><LoginNudge />
+        <PlacementPrompt />
         <ResearchConsent /></div>
       <div className="max-w-3xl mx-auto">
         <Link href="/home" className="text-gray-400 hover:text-rose-600 text-sm no-underline">← 回冒險基地</Link>
