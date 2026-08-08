@@ -25,6 +25,7 @@ import Challenge from '@/components/mission/Challenge';
 import TalkTime from '@/components/mission/TalkTime';
 import MissionComplete from '@/components/mission/MissionComplete';
 import AdSlot from '@/components/AdSlot';
+import { track } from '@/lib/analytics';
 
 type Step = 'intro' | 'welcome' | 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'complete';
 
@@ -67,6 +68,25 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   // Stop TTS on step change and unmount
   useEffect(() => {
     return () => stopSpeaking();
+  }, [step]);
+
+  // 學習行為記錄：每個步驟停留多久（家長沒同意就不會寫入）
+  const stepStart = useRef<number>(Date.now());
+  useEffect(() => {
+    stepStart.current = Date.now();
+    if (!course || !mission) return;
+    if (step === 'intro') {
+      track({ kind: 'lesson_start', level: mission.level, mission: mission.id });
+    }
+    return () => {
+      if (!course || !mission) return;
+      track({
+        kind: step === 'complete' ? 'lesson_end' : 'session',
+        level: mission.level, mission: mission.id, step,
+        ms: Date.now() - stepStart.current,
+      });
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   // 進到每個步驟時播 Vega 引導語 + 該關負責角色的口號

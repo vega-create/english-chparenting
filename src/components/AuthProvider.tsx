@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState, useCallback } from 'rea
 import { supa } from '@/lib/supabase';
 import { toAuthUser, syncProgress, pushProgress, signInWithGoogle, signOut, type AuthUser } from '@/lib/auth';
 import type { Progress } from '@/lib/missionProgress';
+import { setAnalyticsUser } from '@/lib/analytics';
 
 type Ctx = {
   user: AuthUser | null;
@@ -26,6 +27,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
       if (!alive) return;
       const u = toAuthUser(data.session?.user ?? null);
       setUser(u);
+      setAnalyticsUser(u?.id ?? null);
       setLoading(false);
       if (u) syncProgress(u.id);          // 登入狀態還在 → 把雲端與本機合併
     });
@@ -33,6 +35,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
     const { data: sub } = supa().auth.onAuthStateChange((event, session) => {
       const u = toAuthUser(session?.user ?? null);
       setUser(u);
+      setAnalyticsUser(u?.id ?? null);
       setLoading(false);
       if (u && event === 'SIGNED_IN') syncProgress(u.id);   // 剛登入 → 搬家
     });

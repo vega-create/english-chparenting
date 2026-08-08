@@ -5,6 +5,7 @@ import { speak } from '@/lib/speech';
 import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
 import { playStar, playClick } from '@/lib/sfx';
 import { playPraise, playReward } from '@/lib/vega-audio';
+import { track } from '@/lib/analytics';
 
 interface Props {
   challenges: QuizQuestion[];
@@ -33,6 +34,7 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
 
   // 題目的答案多半是課文單字，先試真人錄音，沒有才用 TTS
   async function sayAnswer(text: string, rate = 0.7) {
+    track({ kind: 'replay', level, step: 'challenge', item: text });
     const path = findLessonAudio(audioIndex, level, text);
     if (path && await playLesson(path)) return;
     speak(text, rate);
@@ -47,6 +49,8 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
     if (showResult) return;
     setSelected(answer);
     const correct = answer.toLowerCase().trim() === q.answer.toLowerCase().trim();
+    track({ kind: 'answer', level, step: 'challenge', item: q.answer, correct,
+            meta: { type: q.type } });
     if (correct) {
       playStar();
       const newCombo = combo + 1;

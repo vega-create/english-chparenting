@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { playClick, playStar } from '@/lib/sfx';
+import { track } from '@/lib/analytics';
 
 type Status = 'idle' | 'listening' | 'ok' | 'close' | 'again' | 'denied';
 
@@ -70,6 +71,8 @@ export default function SentenceMic({ target, onDone }: { target: string; onDone
       const text = String(e.results[0][0].transcript);
       setHeard(text);
       const s = score(text, target);
+      // 只記分數，不記孩子說了什麼
+      track({ kind: 'speak', item: target, score: Number(s.toFixed(2)), attempt: tries + 1, correct: s >= 0.75 });
       if (s >= 0.75) { setStatus('ok'); playStar(); onDone(); }   // 只有念得夠像才過關
       else if (s >= 0.4) { setStatus('close'); setTries(t => t + 1); }
       else { setStatus('again'); setTries(t => t + 1); }
