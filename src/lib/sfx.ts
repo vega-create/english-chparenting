@@ -69,34 +69,37 @@ export function playOpen() {
 }
 
 /**
- * 破關配樂：一小段上行的勝利旋律（依星數長度不同）。
- * 用合成音而不是音檔，好處是不用下載、不會跟語音搶頻寬，音量也好控制。
+ * 破關配樂：真人歡呼 + 旋律的混音檔（放 R2）。
+ * 三個星數各一版，星數越多越長越熱鬧。
+ * 檔案載不到時退回合成音，不會沒聲音。
  */
+const SFX_BASE = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/sfx';
+let fanfareEl: HTMLAudioElement | null = null;
+
 export function playFanfare(stars = 3) {
+  if (typeof window === 'undefined' || isSfxMuted()) return;
+  const n = Math.min(3, Math.max(1, stars));
+
+  if (fanfareEl) { fanfareEl.pause(); fanfareEl = null; }
+  const a = new Audio(`${SFX_BASE}/fanfare-${n}.mp3`);
+  fanfareEl = a;
+  a.volume = 0.85;
+  a.onerror = () => { fanfareEl = null; synthFanfare(n); };   // 沒網路時還是有聲音
+  a.play().catch(() => { fanfareEl = null; synthFanfare(n); });
+}
+
+export function stopFanfare() {
+  if (fanfareEl) { fanfareEl.pause(); fanfareEl.currentTime = 0; fanfareEl = null; }
+}
+
+/** 備用：純合成的破關音（音檔載不到時用）*/
+function synthFanfare(stars: number) {
   const c = getCtx();
-  if (!c || isSfxMuted()) return;
-
-  // C大調上行 + 收尾和弦：星星越多旋律越長越華麗
-  const melody =
-    stars >= 3 ? [523, 659, 784, 1047, 1319]      // Do Mi Sol Do Mi（三顆星）
-    : stars === 2 ? [523, 659, 784, 1047]          // Do Mi Sol Do
-    : [523, 659, 784];                             // Do Mi Sol
-
-  melody.forEach((f, i) => {
-    setTimeout(() => beep(f, 0.18, 'triangle', 0.13), i * 130);
-  });
-
-  // 收尾和弦（三音齊響）
-  const endAt = melody.length * 130 + 120;
-  setTimeout(() => {
-    [523, 659, 784].forEach(f => beep(f, 0.5, 'sine', 0.09));
-    if (stars >= 3) beep(1047, 0.5, 'sine', 0.07);
-  }, endAt);
-
-  // 三顆星再加一串小閃光
-  if (stars >= 3) {
-    [0, 90, 180].forEach((d, i) =>
-      setTimeout(() => beep(1568 + i * 200, 0.09, 'sine', 0.05), endAt + 260 + d)
-    );
-  }
+  if (!c) return;
+  const run = stars >= 3 ? [523, 587, 659, 784, 880, 1047, 1319]
+            : stars === 2 ? [523, 659, 784, 1047, 1319]
+            : [523, 659, 784, 1047];
+  run.forEach((f, i) => setTimeout(() => beep(f, 0.14, 'triangle', 0.11), i * 75));
+  const hit = run.length * 75;
+  [523, 659, 784, 1047].forEach(f => setTimeout(() => beep(f, 0.9, 'triangle', 0.085), hit));
 }

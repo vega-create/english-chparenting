@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { playPraise, getLevelFromMissionId, playReward } from '@/lib/vega-audio';
-import { playFanfare } from '@/lib/sfx';
+import { playFanfare, stopFanfare } from '@/lib/sfx';
 import { speak } from '@/lib/speech';
 import { recordMissionComplete } from '@/lib/missionProgress';
 
@@ -32,11 +32,13 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   useEffect(() => {
     const lv = parseInt(String(courseSlug).match(/l?(\d+)/)?.[1] ?? '1', 10);
     playFanfare(starCount);                       // 先響破關配樂
-    setTimeout(() => playPraise(getLevelFromMissionId(courseSlug)), 1200);  // 再接 Vega 鼓勵語
+    // 配樂約 2.4-3.5 秒，等它結束再接 Vega 的鼓勵語，不要疊在一起
+    const praiseAt = starCount >= 3 ? 3700 : starCount === 2 ? 3500 : 2600;
+    const t2 = setTimeout(() => playPraise(getLevelFromMissionId(courseSlug)), praiseAt);
     // 鼓勵語播完接星數獎勵（reward-star-1/2/3，L5+ 用英文版）
-    const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), 3200);
+    const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), praiseAt + 2000);
     recordMissionComplete(courseSlug, missionId, starCount);
-    return () => clearTimeout(t);
+    return () => { clearTimeout(t); clearTimeout(t2); stopFanfare(); };
   }, [courseSlug, missionId, starCount]);
 
   function handleQuizAnswer(answer: string) {
