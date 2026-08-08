@@ -241,7 +241,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'talktime' && (
-          <TalkTime prompts={mission.talkTimePrompts} onComplete={() => setStep('complete')} />
+          <TalkTime prompts={mission.talkTimePrompts} level={course.level} missionId={mission.id} audioIndex={audioIndex} onComplete={() => setStep('complete')} />
         )}
 
         {step === 'complete' && (

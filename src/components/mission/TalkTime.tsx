@@ -1,19 +1,37 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { speak } from '@/lib/speech';
+import { playLesson, lessonPath, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
 
 interface Props {
   prompts: string[];
   onComplete: () => void;
+  level?: number;
+  missionId?: number;
+  audioIndex?: LessonAudioIndex;
 }
 
-export default function TalkTime({ prompts, onComplete }: Props) {
+export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1, audioIndex = {} }: Props) {
+  // 提示句先播 Finn 的錄音（L{級}/m{課}/t{序}.mp3），沒有才查課文表，再沒有才 TTS
+  async function sayPrompt(i: number, text: string) {
+    if (await playLesson(lessonPath.talk(level, missionId, i))) return;
+    const path = findLessonAudio(audioIndex, level, text);
+    if (path && await playLesson(path)) return;
+    speak(text);
+  }
   const [current, setCurrent] = useState(0);
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [responses, setResponses] = useState<string[]>([]);
 
   const prompt = prompts[current];
+
+  // 換題時自動播 Finn 的問題
+  useEffect(() => {
+    const t = setTimeout(() => sayPrompt(current, prompts[current]), 400);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current]);
 
   // speak imported from @/lib/speech
 
@@ -83,7 +101,7 @@ export default function TalkTime({ prompts, onComplete }: Props) {
           <div className="bg-blue-50 rounded-3xl rounded-tl-none px-6 py-4 border-2 border-blue-200 flex-1">
             <p className="text-lg font-bold text-gray-800">{prompt}</p>
             <button
-              onClick={() => speak(prompt)}
+              onClick={() => sayPrompt(current, prompt)}
               className="mt-2 text-sm text-blue-500 hover:text-blue-700 transition"
             >
               🔊 聽 Finn 說
