@@ -144,20 +144,32 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const mid = missionId ?? 1;
 
   async function sayDialogue(i: number, text: string, rate = 0.75) {
-    track({ kind: 'replay', level, mission: mid, step: 'story', item: `d${i + 1}` });
-    if (await playLesson(lessonPath.dialogue(level, mid, i))) return;
+    if (await playLesson(lessonPath.dialogue(level, mid, i))) {
+      track({ kind: 'replay', level, mission: mid, step: 'story', item: `d${i + 1}`, audioSrc: 'el' });
+      return;
+    }
+    track({ kind: 'replay', level, mission: mid, step: 'story', item: `d${i + 1}`, audioSrc: 'tts' });
     speak(text, rate);
   }
   // 單字卡：先拼字母再念單字（H-E-L-L-O, hello），沒有拼字檔就退回只念單字
   async function sayWord(w: Word, rate = 0.6) {
-    track({ kind: 'replay', level, mission: mid, step: 'words', item: w.en });
-    if (await playLesson(lessonPath.spell(level, w.en))) return;
-    if (await playLesson(lessonPath.word(level, w.en))) return;
+    if (await playLesson(lessonPath.spell(level, w.en))) {
+      track({ kind: 'replay', level, mission: mid, step: 'words', item: w.en, audioSrc: 'el', meta: { kind: 'spell' } });
+      return;
+    }
+    if (await playLesson(lessonPath.word(level, w.en))) {
+      track({ kind: 'replay', level, mission: mid, step: 'words', item: w.en, audioSrc: 'el' });
+      return;
+    }
+    track({ kind: 'replay', level, mission: mid, step: 'words', item: w.en, audioSrc: 'tts' });
     speak(w.en, rate);
   }
   async function saySentence(i: number, text: string, rate = 0.7) {
-    track({ kind: 'replay', level, mission: mid, step: 'sentences', item: `s${i + 1}` });
-    if (await playLesson(lessonPath.sentence(level, mid, i))) return;
+    if (await playLesson(lessonPath.sentence(level, mid, i))) {
+      track({ kind: 'replay', level, mission: mid, step: 'sentences', item: `s${i + 1}`, audioSrc: 'el' });
+      return;
+    }
+    track({ kind: 'replay', level, mission: mid, step: 'sentences', item: `s${i + 1}`, audioSrc: 'tts' });
     speak(text, rate);
   }
 

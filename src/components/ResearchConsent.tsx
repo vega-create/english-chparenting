@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { hasConsent, setConsent } from '@/lib/analytics';
+import { hasConsent, setConsent, deleteMyResearchData } from '@/lib/analytics';
 import { playClick } from '@/lib/sfx';
+import { RESEARCH_CONTACT, RESEARCH_PI, RETENTION_YEARS } from '@/lib/research';
 
 /**
  * 研究資料同意開關（家長中心）。
@@ -10,6 +11,8 @@ import { playClick } from '@/lib/sfx';
 export default function ResearchConsent() {
   const [on, setOn] = useState(false);
   const [ready, setReady] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState('');
 
   useEffect(() => { setOn(hasConsent()); setReady(true); }, []);
 
@@ -18,6 +21,20 @@ export default function ResearchConsent() {
     const next = !on;
     setOn(next);
     setConsent(next);
+    setMsg('');
+  }
+
+  async function removeData() {
+    if (!confirm('確定要刪掉已經收集的學習紀錄嗎？刪掉就找不回來了。')) return;
+    setBusy(true);
+    const r = await deleteMyResearchData();
+    setBusy(false);
+    setOn(false);
+    setMsg(
+      r === 'ok' ? '已經刪除，同時也把同意關掉了。'
+      : r === 'not-logged-in' ? '沒有登入，所以資料只有一組隨機代號、無法對應到你，我們也就沒辦法指定刪除。清掉瀏覽器資料就會換一組新代號。'
+      : '刪除沒成功，請稍後再試一次。'
+    );
   }
 
   if (!ready) return null;
@@ -54,8 +71,27 @@ export default function ResearchConsent() {
           只會出現整體統計（例如「平均第三次遇到同一個單字時答對率上升到 80%」），
           不會出現任何一個孩子的個別紀錄。
         </p>
-        <p className="font-bold text-gray-700 mt-2 mb-1">你隨時可以關掉</p>
-        <p>關掉之後就立刻停止記錄，不影響任何學習功能。</p>
+        <p className="font-bold text-gray-700 mt-2 mb-1">資料放多久</p>
+        <p>
+          最多保存 {RETENTION_YEARS} 年，到期後刪除。
+          期間只有研究者本人存取得到，不會提供給第三方，也不會用來投放廣告。
+        </p>
+        <p className="font-bold text-gray-700 mt-2 mb-1">你隨時可以關掉，也可以要求刪除</p>
+        <p>
+          關掉之後就立刻停止記錄，不影響任何學習功能。
+          有登入的話，下面的按鈕可以把已經收集的紀錄整批刪掉。
+          沒登入的紀錄只有一組隨機代號、對不出是誰，
+          所以<strong className="text-gray-800">沒辦法指定刪除</strong>——這也是它真的匿名的意思。
+        </p>
+        {(RESEARCH_PI || RESEARCH_CONTACT) && (
+          <>
+            <p className="font-bold text-gray-700 mt-2 mb-1">有問題找誰</p>
+            {RESEARCH_PI && <p>研究主持人：{RESEARCH_PI}</p>}
+            {RESEARCH_CONTACT && (
+              <p>聯絡信箱：<a className="underline" href={`mailto:${RESEARCH_CONTACT}`}>{RESEARCH_CONTACT}</a></p>
+            )}
+          </>
+        )}
       </div>
 
       <button
@@ -69,11 +105,25 @@ export default function ResearchConsent() {
         {on ? '✓ 已同意提供匿名學習資料（點此關閉）' : '同意提供匿名學習資料'}
       </button>
 
-      {!on && (
+      {!on && !msg && (
         <p className="mt-2 text-center text-[11px] text-gray-400">
           目前沒有記錄任何學習行為
         </p>
       )}
+
+      <button
+        onClick={removeData}
+        disabled={busy}
+        className="mt-2 w-full text-[11px] text-gray-400 underline disabled:opacity-50"
+      >
+        {busy ? '刪除中…' : '刪除已收集的學習紀錄'}
+      </button>
+
+      {msg && <p className="mt-2 text-[11px] text-gray-500 leading-relaxed">{msg}</p>}
+
+      <p className="mt-3 text-center text-[11px] text-gray-400">
+        <a href="/privacy" className="underline">隱私權與資料使用說明</a>
+      </p>
     </section>
   );
 }

@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
 import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
@@ -15,9 +15,12 @@ interface Props {
 export default function WakeUp({ questions, onComplete, level = 1, audioIndex = {} }: Props) {
   // 先播真人錄音，沒有才用 TTS
   async function say(text: string) {
-    track({ kind: 'replay', level, step: 'wakeup', item: text });
     const path = findLessonAudio(audioIndex, level, text);
-    if (path && await playLesson(path)) return;
+    if (path && await playLesson(path)) {
+      track({ kind: 'replay', level, step: 'wakeup', item: text, audioSrc: 'el' });
+      return;
+    }
+    track({ kind: 'replay', level, step: 'wakeup', item: text, audioSrc: 'tts' });
     speak(text);
   }
   const [current, setCurrent] = useState(0);
@@ -34,7 +37,9 @@ export default function WakeUp({ questions, onComplete, level = 1, audioIndex = 
     }
   }, [q]);
 
+  const qStart = useRef<number>(Date.now());
   useEffect(() => {
+    qStart.current = Date.now();
     playAnswer();
   }, [current, playAnswer]);
 
@@ -42,7 +47,14 @@ export default function WakeUp({ questions, onComplete, level = 1, audioIndex = 
     if (selected) return;
     setSelected(option);
     const correct = option === q.answer;
-    track({ kind: 'answer', level, step: 'wakeup', item: q.answer, correct, meta: { q: current } });
+    track({
+      kind: 'answer', level, step: 'wakeup',
+      item: `q${current + 1}:${q.answer}`,
+      correct,
+      ms: Date.now() - qStart.current,
+      attempt: 1,                                   // 熱身題不給重答，固定 1
+      meta: { type: q.type, chose: option },
+    });
     if (correct) setScore(s => s + 1);
     setShowResult(true);
 

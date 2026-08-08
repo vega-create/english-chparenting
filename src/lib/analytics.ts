@@ -1,5 +1,7 @@
 'use client';
 import { supa } from './supabase';
+import { APP_VERSION } from './version';
+import { defaultBucket } from './experiment';
 
 /**
  * 學習行為記錄（給日後論文用）。
@@ -12,34 +14,37 @@ import { supa } from './supabase';
  * 送出方式是「批次 + 失敗就算了」：孩子在學習，不該因為記錄失敗被打斷。
  */
 
-const DEVICE_KEY = 'ae_device_id';
 const CONSENT_KEY = 'ae_research_consent';
 
-export type EventKind = 'lesson_start' | 'lesson_end' | 'answer' | 'replay' | 'speak' | 'session';
+export type EventKind =
+  | 'lesson_start' | 'lesson_end' | 'answer' | 'replay' | 'speak' | 'session'
+  | 'abandon'      // 中途離開（沒走到破關就退出）
+  | 'pretest' | 'posttest';   // 前測／後測，用來證明「有沒有進步」
 
 export interface LearnEvent {
   kind: EventKind;
   level?: number;
   mission?: number;
   step?: string;
-  item?: string;
+  item?: string;      // 題目 ID
   correct?: boolean;
-  attempt?: number;
+  attempt?: number;   // 第幾次嘗試
   score?: number;
-  ms?: number;
+  ms?: number;        // 作答耗時 —— 能分辨「會但慢」和「猜對」，分數看不出這個差別
+  /**
+   * 這次播的音檔是什麼來源。之後想比較「AI 合成語音 vs 真人配音對學習的影響」
+   * 就靠這個欄位切；現在不記，之後要補就得重錄。
+   *   el    = ElevenLabs 合成（目前絕大多數）
+   *   human = 真人錄音
+   *   tts   = 瀏覽器內建語音（沒有檔案時的 fallback，音質最差）
+   */
+  audioSrc?: 'el' | 'human' | 'tts';
   meta?: Record<string, unknown>;
 }
 
 /** 隨機裝置代號（不含任何個資，清瀏覽器就會換一組） */
-export function deviceId(): string {
-  if (typeof window === 'undefined') return '';
-  let id = localStorage.getItem(DEVICE_KEY);
-  if (!id) {
-    id = crypto.randomUUID();
-    localStorage.setItem(DEVICE_KEY, id);
-  }
-  return id;
-}
+export { deviceId } from './deviceId';
+import { deviceId } from './deviceId';
 
 export function hasConsent(): boolean {
   if (typeof window === 'undefined') return false;
@@ -85,6 +90,8 @@ export function track(e: LearnEvent) {
   queue.push({
     device_id: deviceId(),
     user_id: userId,
+    app_version: APP_VERSION,   // 改版後的資料才切得開
+    bucket: defaultBucket(),    // A/B 分組，之後要做因果推論用
     kind: e.kind,
     level: e.level ?? null,
     mission: e.mission ?? null,
@@ -94,10 +101,38 @@ export function track(e: LearnEvent) {
     attempt: e.attempt ?? null,
     score: e.score ?? null,
     ms: e.ms ?? null,
+    audio_src: e.audioSrc ?? null,
     meta: e.meta ?? null,
   });
   if (queue.length >= 20) { flush(); return; }
   if (!timer) timer = setTimeout(flush, 5000);
+}
+
+/**
+ * 撤回：刪掉這個帳號在研究資料裡的所有紀錄。
+ *
+ * 只有登入時做得到。未登入的資料只有隨機 device_id，
+ * 資料庫無從驗證那組代號真的屬於誰，開放用 device_id 刪等於任何人都能刪光整張表。
+ * 所以未登入的資料在設計上就是不可回溯的匿名資料——同意書要據實說明。
+ *
+ * 回傳 'ok' | 'not-logged-in' | 'error'
+ */
+export async function deleteMyResearchData(): Promise<'ok' | 'not-logged-in' | 'error'> {
+  queue = [];                       // 還沒送出的先丟掉，不然刪完又被補寫進去
+  if (timer) { clearTimeout(timer); timer = null; }
+  try {
+    const { data } = await supa().auth.getUser();
+    const uid = data.user?.id;
+    if (!uid) return 'not-logged-in';
+    const { error } = await supa().from('ae_events').delete().eq('user_id', uid);
+    if (error) return 'error';
+    await supa().from('ae_progress')
+      .update({ research_consent: false, consent_at: null })
+      .eq('user_id', uid);
+    return 'ok';
+  } catch {
+    return 'error';
+  }
 }
 
 /** 關頁前把還沒送的補送掉 */

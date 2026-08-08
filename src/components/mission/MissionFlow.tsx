@@ -72,6 +72,25 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
 
   // 學習行為記錄：每個步驟停留多久（家長沒同意就不會寫入）
   const stepStart = useRef<number>(Date.now());
+  const lessonStart = useRef<number>(Date.now());
+  const reachedComplete = useRef(false);
+
+  // 中途離開：關頁／切走時還沒走到破關，就記一筆 abandon
+  // （流失分析要的是「在哪一步放棄」，不是只知道沒完成）
+  useEffect(() => {
+    if (!course || !mission) return;
+    const bail = () => {
+      if (reachedComplete.current) return;
+      track({
+        kind: 'abandon',
+        level: mission.level, mission: mission.id, step,
+        ms: Date.now() - lessonStart.current,
+      });
+      reachedComplete.current = true;   // 只記一次，切走再切回來不重複
+    };
+    window.addEventListener('pagehide', bail);
+    return () => window.removeEventListener('pagehide', bail);
+  }, [course, mission, step]);
   useEffect(() => {
     stepStart.current = Date.now();
     if (!course || !mission) return;

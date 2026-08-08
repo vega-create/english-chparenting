@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
 import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
@@ -31,12 +31,19 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
   const [showResult, setShowResult] = useState(false);
   const [spellInput, setSpellInput] = useState('');
   const [combo, setCombo] = useState(0);
+  // 作答耗時：從題目出現到按下答案。能分辨「會但慢」和「猜對」，分數看不出這個差別
+  const qStart = useRef<number>(Date.now());
+  const attempts = useRef<Record<number, number>>({});
+  useEffect(() => { qStart.current = Date.now(); }, [current]);
 
   // 題目的答案多半是課文單字，先試真人錄音，沒有才用 TTS
   async function sayAnswer(text: string, rate = 0.7) {
-    track({ kind: 'replay', level, step: 'challenge', item: text });
     const path = findLessonAudio(audioIndex, level, text);
-    if (path && await playLesson(path)) return;
+    if (path && await playLesson(path)) {
+      track({ kind: 'replay', level, step: 'challenge', item: text, audioSrc: 'el' });
+      return;
+    }
+    track({ kind: 'replay', level, step: 'challenge', item: text, audioSrc: 'tts' });
     speak(text, rate);
   }
 
@@ -49,8 +56,15 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
     if (showResult) return;
     setSelected(answer);
     const correct = answer.toLowerCase().trim() === q.answer.toLowerCase().trim();
-    track({ kind: 'answer', level, step: 'challenge', item: q.answer, correct,
-            meta: { type: q.type } });
+    attempts.current[current] = (attempts.current[current] ?? 0) + 1;
+    track({
+      kind: 'answer', level, step: 'challenge',
+      item: `q${current + 1}:${q.answer}`,          // 題目 ID：第幾題＋答案
+      correct,
+      ms: Date.now() - qStart.current,              // 作答耗時
+      attempt: attempts.current[current],
+      meta: { type: q.type, chose: answer },
+    });
     if (correct) {
       playStar();
       const newCombo = combo + 1;

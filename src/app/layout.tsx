@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PWA from "@/components/PWA";
 import AuthProvider from "@/components/AuthProvider";
+import ConsentGate from "@/components/ConsentGate";
 
 const noto = Noto_Sans_TC({
   variable: "--font-noto",
@@ -144,6 +145,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <ConsentGate />
         </AuthProvider>
       </body>
     </html>

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import PlacementPrompt from "@/components/PlacementPrompt";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -613,6 +614,10 @@ export default function LayeredBanner() {
         </div>
       )}
       {/* 廣告：整頁最下方，不擋內容 */}
+      <div className="max-w-3xl mx-auto px-4">
+        <PlacementPrompt />
+      </div>
+
       <AdSlot place="homeBottom" className="pb-6 pt-2" />
     </div>
   );
