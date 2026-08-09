@@ -160,8 +160,8 @@ export default function GuideSlides() {
                   <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2" style={{ top: '6%' }}>
                     <span className="inline-flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-500 text-white font-black items-center justify-center" style={{ fontSize: 'clamp(14px,1.8vw,24px)' }}>2</span>
                     <h2 className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(18px,2.7vw,40px)' }}>
-                      一課<span className="text-green-600">怎麼玩</span>
-                      <span className="block font-black text-green-600/70" style={{ fontSize: 'clamp(9px,1.1vw,16px)' }}>How You&apos;ll Learn</span>
+                      如何<span className="text-green-600">開始冒險</span>
+                      <span className="block font-black text-green-600/70" style={{ fontSize: 'clamp(9px,1.1vw,16px)' }}>How to Start</span>
                     </h2>
                   </div>
                   {/* 4 圖示（下拉、放大、貼近底色條） */}
