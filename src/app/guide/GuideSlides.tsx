@@ -40,11 +40,15 @@ const FRIENDS = [
 //     intro-listen  → 暖身（熱身題本來就多是聽力題，耳朵圖示合理）
 //     intro-playgame→ 闖關（遊戲手把＝闖關，比「玩遊戲」精準；小遊戲區在課程外）
 //   sc / dy 是各圖自己的微調，跟著圖走不要跟著位置走。
+// ⚠️ 英文標籤必須跟 MissionFlow 的 STEPS 一字不差。
+//    孩子在引導看到「Read Story」、進課程看到「Discover」，會認不出是同一關。
+//    小字說明是為了補足標籤講不清楚的地方（尤其 Discover 其實包含
+//    影片→故事→單字卡→拼音→句型五個階段，是整課最大的一步）。
 const STEPS = [
-  { img: 'intro-listen',   en: 'Wake Up',    zh: '暖身',   cx: 18.7, sc: 1,    dy: '4%',  color: '#f29601' },
-  { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 39.5, sc: 1.32, dy: '-6%', color: '#67a32e' },
-  { img: 'intro-playgame', en: 'Challenge',  zh: '闖關',   cx: 59.5, sc: 1,    dy: '7%',  color: '#945cc6' },
-  { img: 'intro-speak',    en: 'Talk Time',  zh: '開口說', cx: 79.7, sc: 1,    dy: '0%',  color: '#2c8be8' },
+  { img: 'intro-wakeup',   en: 'Wake Up!',  zh: '暖身',   tip: '動動耳朵，準備開始', cx: 18.7, sc: 1,    dy: '4%',  color: '#f29601', fallback: 'intro-listen' },
+  { img: 'intro-book',     en: 'Discover',  zh: '探索',   tip: '看故事、學單字、練句子', cx: 39.5, sc: 1.32, dy: '-6%', color: '#67a32e' },
+  { img: 'intro-playgame', en: 'Challenge', zh: '闖關',   tip: '六種小遊戲等你破解', cx: 59.5, sc: 1,    dy: '7%',  color: '#945cc6' },
+  { img: 'intro-speak',    en: 'Talk Time', zh: '開口說', tip: '換你念，麥克風會聽', cx: 79.7, sc: 1,    dy: '0%',  color: '#2c8be8' },
 ];
 
 // slide 4「Collect Rewards」：4 個獎勵圖示橫排（場景無框）
@@ -168,14 +172,17 @@ export default function GuideSlides() {
                   {/* 人物（去背，下緣裁在背景原色條上緣＝藏在按鈕後） */}
                   {STEPS.map(s => (
                     <div key={s.img} className="absolute flex items-end justify-center overflow-hidden" style={{ left: `${s.cx}%`, top: '25%', width: '15%', height: '35.4%', transform: 'translateX(-50%)', zIndex: 1 }}>
-                      <img src={`/images/guide/${s.img}.webp`} alt={s.en} className="max-w-[92%] object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ height: '112%', transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
+                      <img src={`/images/guide/${s.img}.webp`} alt={s.en}
+                        onError={e => { const f = (s as { fallback?: string }).fallback; if (f) (e.currentTarget as HTMLImageElement).src = `/images/guide/${f}.webp`; }}
+                        className="max-w-[92%] object-contain object-bottom drop-shadow-[0_5px_6px_rgba(60,40,90,0.25)]" style={{ height: '112%', transform: `translateY(${s.dy}) scale(${s.sc})`, transformOrigin: 'bottom center' }} />
                     </div>
                   ))}
                   {/* 標籤（背景原本的色條上） */}
                   {STEPS.map(s => (
                     <div key={`l-${s.img}`} className="absolute text-center leading-tight" style={{ left: `${s.cx}%`, top: '62.5%', width: '18%', transform: 'translateX(-50%)', zIndex: 10 }}>
-                      <p className="text-white font-black" style={{ fontSize: 'clamp(11px,1.5vw,20px)', textShadow: '0 1px 2px rgba(0,0,0,.28)' }}>{s.en}</p>
-                      <p className="text-white/95 font-bold" style={{ fontSize: 'clamp(9px,1.1vw,14px)' }}>{s.zh}</p>
+                      <p className="text-white font-black" style={{ fontSize: 'clamp(11px,1.45vw,19px)', textShadow: '0 1px 2px rgba(0,0,0,.28)' }}>{s.en}</p>
+                      <p className="text-white/95 font-black" style={{ fontSize: 'clamp(9px,1.15vw,15px)' }}>{s.zh}</p>
+                      <p className="text-white/85 font-bold leading-tight" style={{ fontSize: 'clamp(6px,0.8vw,11px)' }}>{s.tip}</p>
                     </div>
                   ))}
                   {/* Speak 卡：白色 Hello 對話框（女孩右上） */}
@@ -187,7 +194,7 @@ export default function GuideSlides() {
                   </div>
                   {/* 底部副標 */}
                   <p className="absolute left-1/2 -translate-x-1/2 text-center font-black text-white whitespace-nowrap" style={{ bottom: '5%', fontSize: 'clamp(11px,1.6vw,22px)', WebkitTextStroke: '3px #6b3e12', paintOrder: 'stroke fill' }}>
-                    五個小關卡，<span className="text-yellow-300">一課就走完</span> 🎯
+                    最後拿到<span className="text-yellow-300">星星</span>，就完成一課！ ⭐
                   </p>
                   {/* 右下 Miss Vega 講話 + 泡泡（泡泡在 Vega 左下、較小不擋人） */}
                   <div className="absolute flex items-end justify-center" style={{ right: '0.5%', bottom: '1%', width: '11%', height: '27%' }}><img src="/characters/vega/vega-talk.png" alt="Vega" className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" /></div>
