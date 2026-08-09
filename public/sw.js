@@ -8,7 +8,7 @@
  *   下次就是新的。（v1 用 cache-first，結果換了音檔使用者永遠聽到舊的）
  * - 不快取：AdSense、任何第三方追蹤
  */
-const VERSION = 'v2';   // 改版號會自動清掉舊快取
+const VERSION = 'v3';   // 改版號會自動清掉舊快取（v3：2026-08-09 換了 7 個中文旁白與角色音檔）
 const PAGE_CACHE = `pages-${VERSION}`;
 const ASSET_CACHE = `assets-${VERSION}`;
 const AUDIO_CACHE = `audio-${VERSION}`;
