@@ -22,28 +22,41 @@ const SLIDE_AUDIO: (string | null)[] = [
 ];
 
 // slide 3「認識夥伴」：5 隻動物依序放進 紫/藍/粉/綠/黃 框
+// 五隻各守一關，跟課程實際流程對得起來（孩子看完就知道等一下會遇到誰）
+// Ruby 原本是「Writing star」，但流程裡沒有寫作步驟——改成守破關後的「寶藏挑戰」，
+// 那一關本來就沒有角色代言。
 const FRIENDS = [
-  { key: 'finn',  name: 'Finn',  en: 'Brave team leader', cx: 16.3, sc: 0.88, pill: 'bg-purple-500' },
-  { key: 'coco',  name: 'Coco',  en: 'A great listener',  cx: 32.9, sc: 0.84, pill: 'bg-sky-500' },
-  { key: 'polly', name: 'Polly', en: 'Loves to speak',    cx: 49.5, sc: 0.95, pill: 'bg-pink-500' },
-  { key: 'benny', name: 'Benny', en: 'Loves reading',     cx: 66.2, sc: 0.92, pill: 'bg-green-600' },
-  { key: 'ruby',  name: 'Ruby',  en: 'Writing star',      cx: 82.9, sc: 0.92, pill: 'bg-amber-500' },
+  { key: 'finn',  name: 'Finn',  zh: '帶隊出發',   en: 'Team leader',     cx: 16.3, sc: 0.88, pill: 'bg-purple-500' },
+  { key: 'coco',  name: 'Coco',  zh: '聽力高手',   en: 'A great listener', cx: 32.9, sc: 0.84, pill: 'bg-sky-500' },
+  { key: 'polly', name: 'Polly', zh: '陪你開口說', en: 'Loves to speak',   cx: 49.5, sc: 0.95, pill: 'bg-pink-500' },
+  { key: 'benny', name: 'Benny', zh: '帶你讀故事', en: 'Loves reading',    cx: 66.2, sc: 0.92, pill: 'bg-green-600' },
+  { key: 'ruby',  name: 'Ruby',  zh: '守寶藏的兔子', en: 'Treasure keeper', cx: 82.9, sc: 0.92, pill: 'bg-amber-500' },
 ];
 
-// slide 2「How You'll Learn」：4 個學習步驟圖示進框
+// slide 2「How You'll Learn」：對齊課程真實流程的前四步
+//   實際流程是 暖身 → 讀故事 → 闖關 → 開口說 → 破關（五步），
+//   底圖只有四個框，所以圖上放前四步，破關的獎勵交給 slide 4 講。
+//   四張圖沿用原本的，只是換位置與標籤：
+//     intro-listen  → 暖身（熱身題本來就多是聽力題，耳朵圖示合理）
+//     intro-playgame→ 闖關（遊戲手把＝闖關，比「玩遊戲」精準；小遊戲區在課程外）
+//   sc / dy 是各圖自己的微調，跟著圖走不要跟著位置走。
 const STEPS = [
-  { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 18.7, sc: 1.32, dy: '-6%', color: '#67a32e' },
-  { img: 'intro-listen',   en: 'Listen',     zh: '聽力',   cx: 39.5, sc: 1,    dy: '4%',  color: '#f29601' },
-  { img: 'intro-speak',    en: 'Speak',      zh: '口說',   cx: 59.5, sc: 1,    dy: '0%',  color: '#2c8be8' },
-  { img: 'intro-playgame', en: 'Play Game',  zh: '玩遊戲', cx: 79.7, sc: 1,    dy: '7%',  color: '#945cc6' },
+  { img: 'intro-listen',   en: 'Wake Up',    zh: '暖身',   cx: 18.7, sc: 1,    dy: '4%',  color: '#f29601' },
+  { img: 'intro-book',     en: 'Read Story', zh: '讀故事', cx: 39.5, sc: 1.32, dy: '-6%', color: '#67a32e' },
+  { img: 'intro-playgame', en: 'Challenge',  zh: '闖關',   cx: 59.5, sc: 1,    dy: '7%',  color: '#945cc6' },
+  { img: 'intro-speak',    en: 'Talk Time',  zh: '開口說', cx: 79.7, sc: 1,    dy: '0%',  color: '#2c8be8' },
 ];
 
 // slide 4「Collect Rewards」：4 個獎勵圖示橫排（場景無框）
+// 原本第四格是「開寶箱」，但寶箱是小屋的**每日**獎勵、不是闖關獎勵，
+// 放在有箭頭串起來的進度列裡會讓孩子以為破關就開寶箱。改成「布置小屋」，
+// 四格變成 星星→寶石→徽章→都收進小屋，跟實際的獎勵流向一致。
+// fallback: 新圖還沒放進來之前先顯示原本的禮物盒，不會破圖。
 const REWARDS = [
-  { img: 'intro-star', en: 'Earn Stars',  zh: '得星星', cx: 31, pill: 'bg-amber-500' },
-  { img: 'intro-gem',  en: 'Get Gems',    zh: '收寶石', cx: 44, pill: 'bg-sky-500' },
-  { img: 'intro-king', en: 'Win Badges',  zh: '拿徽章', cx: 57, pill: 'bg-purple-500' },
-  { img: 'intro-gift', en: 'Open Chests', zh: '開寶箱', cx: 70, pill: 'bg-green-600' },
+  { img: 'intro-star',  en: 'Earn Stars', zh: '得星星',   cx: 31, pill: 'bg-amber-500' },
+  { img: 'intro-gem',   en: 'Get Gems',   zh: '收寶石',   cx: 44, pill: 'bg-sky-500' },
+  { img: 'intro-king',  en: 'Win Badges', zh: '拿徽章',   cx: 57, pill: 'bg-purple-500' },
+  { img: 'intro-cabin', en: 'Your Cabin', zh: '布置小屋', cx: 70, pill: 'bg-green-600', fallback: 'intro-gift' },
 ];
 
 // slide 1「Welcome」：中間站 5 個玩家角色（人類），混一些 happy 表情
@@ -117,10 +130,11 @@ export default function GuideSlides() {
                 <>
                   <div className="absolute" style={{ left: '4.5%', top: '11%', width: '35%' }}>
                     <span className="inline-flex w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-purple-500 text-white font-black items-center justify-center mb-1 shadow" style={{ fontSize: 'clamp(13px,1.6vw,22px)' }}>1</span>
-                    <h2 className="font-black leading-[0.92]" style={{ fontSize: 'clamp(22px,3.7vw,52px)', letterSpacing: '-0.01em' }}>
-                      <span className="text-amber-900">Welcome,</span><br /><span className="text-purple-600">Explorer!</span>
+                    <h2 className="font-black leading-[0.95]" style={{ fontSize: 'clamp(20px,3.2vw,46px)', letterSpacing: '-0.01em' }}>
+                      <span className="text-amber-900">歡迎來</span><span className="text-purple-600">冒險！</span>
                     </h2>
-                    <p className="font-bold text-amber-800/90 mt-2 mb-3 leading-snug" style={{ fontSize: 'clamp(10px,1.35vw,18px)' }}>Today begins your<br />Adventure English journey!</p>
+                    <p className="font-black text-purple-500/80 leading-none mt-0.5" style={{ fontSize: 'clamp(11px,1.5vw,20px)' }}>Welcome, Explorer!</p>
+                    <p className="font-bold text-amber-800/90 mt-1.5 mb-3 leading-snug" style={{ fontSize: 'clamp(10px,1.3vw,17px)' }}>今天開始，你的英文冒險！</p>
                     <button onClick={() => go(i + 1)} className="rounded-full bg-gradient-to-b from-amber-400 to-orange-500 text-white font-black shadow-lg border-2 border-white/70 active:scale-95 hover:from-amber-500 transition" style={{ fontSize: 'clamp(14px,1.9vw,26px)', padding: '0.42em 1.6em' }}>Start ▶</button>
                   </div>
                   {PLAYERS.map(p => (
@@ -145,7 +159,10 @@ export default function GuideSlides() {
                   {/* 標題 */}
                   <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2" style={{ top: '6%' }}>
                     <span className="inline-flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-500 text-white font-black items-center justify-center" style={{ fontSize: 'clamp(14px,1.8vw,24px)' }}>2</span>
-                    <h2 className="font-black text-amber-900" style={{ fontSize: 'clamp(18px,2.7vw,40px)' }}>How You&apos;ll <span className="text-green-600">Learn</span></h2>
+                    <h2 className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(18px,2.7vw,40px)' }}>
+                      一課<span className="text-green-600">怎麼玩</span>
+                      <span className="block font-black text-green-600/70" style={{ fontSize: 'clamp(9px,1.1vw,16px)' }}>How You&apos;ll Learn</span>
+                    </h2>
                   </div>
                   {/* 4 圖示（下拉、放大、貼近底色條） */}
                   {/* 人物（去背，下緣裁在背景原色條上緣＝藏在按鈕後） */}
@@ -162,7 +179,7 @@ export default function GuideSlides() {
                     </div>
                   ))}
                   {/* Speak 卡：白色 Hello 對話框（女孩右上） */}
-                  <div className="absolute" style={{ left: '64.5%', top: '26%', transform: 'translate(-50%,-50%)', zIndex: 12 }}>
+                  <div className="absolute" style={{ left: '84.7%', top: '26%', transform: 'translate(-50%,-50%)', zIndex: 12 }}>
                     <div className="relative bg-white rounded-xl shadow-md border border-gray-200 px-2.5 py-1">
                       <span className="font-black text-sky-500 leading-none" style={{ fontSize: 'clamp(11px,1.4vw,20px)' }}>Hello!</span>
                       <span className="absolute left-2.5 -bottom-1 w-2.5 h-2.5 bg-white border-b border-r border-gray-200" style={{ transform: 'rotate(45deg)' }} />
@@ -170,7 +187,7 @@ export default function GuideSlides() {
                   </div>
                   {/* 底部副標 */}
                   <p className="absolute left-1/2 -translate-x-1/2 text-center font-black text-white whitespace-nowrap" style={{ bottom: '5%', fontSize: 'clamp(11px,1.6vw,22px)', WebkitTextStroke: '3px #6b3e12', paintOrder: 'stroke fill' }}>
-                    每個關卡<span className="text-yellow-300">多元好玩</span>！
+                    五個小關卡，<span className="text-yellow-300">一課就走完</span> 🎯
                   </p>
                   {/* 右下 Miss Vega 講話 + 泡泡（泡泡在 Vega 左下、較小不擋人） */}
                   <div className="absolute flex items-end justify-center" style={{ right: '0.5%', bottom: '1%', width: '11%', height: '27%' }}><img src="/characters/vega/vega-talk.png" alt="Vega" className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" /></div>
@@ -188,7 +205,10 @@ export default function GuideSlides() {
                 <>
                   <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 z-10" style={{ top: '4%' }}>
                     <span className="inline-flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-500 text-white font-black items-center justify-center" style={{ fontSize: 'clamp(14px,1.8vw,24px)' }}>3</span>
-                    <h2 className="font-black text-amber-900" style={{ fontSize: 'clamp(18px,2.7vw,40px)', textShadow: '0 1px 3px rgba(255,255,255,.6)' }}>Meet Your <span className="text-pink-500">Friends</span></h2>
+                    <h2 className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(18px,2.7vw,40px)', textShadow: '0 1px 3px rgba(255,255,255,.6)' }}>
+                      認識你的<span className="text-pink-500">夥伴</span>
+                      <span className="block font-black text-pink-500/70" style={{ fontSize: 'clamp(9px,1.1vw,16px)' }}>Meet Your Friends</span>
+                    </h2>
                   </div>
                   {FRIENDS.map(f => (
                     <div key={f.key} className="absolute flex items-end justify-center" style={{ left: `${f.cx}%`, top: '20%', width: '13%', height: '44%', transform: 'translateX(-50%)', zIndex: 1 }}>
@@ -204,7 +224,8 @@ export default function GuideSlides() {
                   {FRIENDS.map(f => (
                     <div key={`t-${f.key}`} className="absolute text-center" style={{ left: `${f.cx}%`, top: '65%', width: '16%', transform: 'translateX(-50%)', zIndex: 10 }}>
                       <span className={`${f.pill} inline-block text-white font-black px-3 py-0.5 rounded-full border-2 border-white shadow-md`} style={{ fontSize: 'clamp(9px,1.25vw,18px)' }}>⭐ {f.name}</span>
-                      <p className="text-white font-black mt-1 leading-tight" style={{ fontSize: 'clamp(7px,0.95vw,13px)', WebkitTextStroke: '1.5px #5a3410', paintOrder: 'stroke fill' }}>{f.en}</p>
+                      <p className="text-white font-black mt-1 leading-tight" style={{ fontSize: 'clamp(8px,1.05vw,15px)', WebkitTextStroke: '1.5px #5a3410', paintOrder: 'stroke fill' }}>{f.zh}</p>
+                      <p className="text-white/90 font-bold leading-tight" style={{ fontSize: 'clamp(6px,0.8vw,11px)', WebkitTextStroke: '1.2px #5a3410', paintOrder: 'stroke fill' }}>{f.en}</p>
                     </div>
                   ))}
                   {/* Vega 講話（右下角，較小） */}
@@ -228,11 +249,16 @@ export default function GuideSlides() {
                 <>
                   <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2" style={{ top: '6%' }}>
                     <span className="inline-flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-amber-500 text-white font-black items-center justify-center" style={{ fontSize: 'clamp(14px,1.8vw,24px)' }}>4</span>
-                    <h2 className="font-black text-amber-900" style={{ fontSize: 'clamp(18px,2.7vw,40px)', textShadow: '0 1px 3px rgba(255,255,255,.5)' }}>Collect <span className="text-orange-500">Rewards</span></h2>
+                    <h2 className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(18px,2.7vw,40px)', textShadow: '0 1px 3px rgba(255,255,255,.5)' }}>
+                      收集<span className="text-orange-500">獎勵</span>
+                      <span className="block font-black text-orange-500/70" style={{ fontSize: 'clamp(9px,1.1vw,16px)' }}>Collect Rewards</span>
+                    </h2>
                   </div>
                   {REWARDS.map(r => (
                     <div key={r.img} className="absolute flex items-center justify-center rounded-2xl" style={{ left: `${r.cx}%`, top: '30%', width: '13%', height: '27%', transform: 'translateX(-50%)', background: 'rgba(255,255,255,0.38)', border: '3px solid rgba(255,255,255,0.85)', boxShadow: '0 6px 16px rgba(60,40,90,0.22)', backdropFilter: 'blur(2px)' }}>
-                      <img src={`/images/guide/${r.img}.webp`} alt={r.en} className="max-w-[80%] max-h-[85%] object-contain drop-shadow-[0_4px_6px_rgba(60,40,90,0.3)]" />
+                      <img src={`/images/guide/${r.img}.webp`} alt={r.en}
+                        onError={e => { const f = (r as { fallback?: string }).fallback; if (f) (e.currentTarget as HTMLImageElement).src = `/images/guide/${f}.webp`; }}
+                        className="max-w-[80%] max-h-[85%] object-contain drop-shadow-[0_4px_6px_rgba(60,40,90,0.3)]" />
                     </div>
                   ))}
                   {['37.5', '50.5', '63.5'].map(x => (
@@ -245,7 +271,7 @@ export default function GuideSlides() {
                     </div>
                   ))}
                   <p className="absolute left-1/2 -translate-x-1/2 text-center font-black text-white whitespace-nowrap" style={{ bottom: '6%', fontSize: 'clamp(11px,1.6vw,22px)', WebkitTextStroke: '3px #6b3e12', paintOrder: 'stroke fill' }}>
-                    冒險成功，有機會變成<span className="text-yellow-300">小冠軍</span> 🏆
+                    通通<span className="text-yellow-300">收進你的小屋</span> 🏠
                   </p>
                   {/* 右下 Miss Vega 講話 */}
                   <div className="absolute flex items-end justify-center" style={{ right: '0.5%', bottom: '1%', width: '11%', height: '27%' }}><img src="/characters/vega/vega-talk.png" alt="Vega" className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_6px_8px_rgba(60,40,90,0.35)]" /></div>
@@ -264,7 +290,10 @@ export default function GuideSlides() {
                   {/* 標題 */}
                   <div className="absolute flex items-center gap-2" style={{ left: '4%', top: '7%' }}>
                     <span className="inline-flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-500 text-white font-black items-center justify-center" style={{ fontSize: 'clamp(14px,1.8vw,24px)' }}>5</span>
-                    <h2 className="font-black text-blue-500" style={{ fontSize: 'clamp(20px,3vw,44px)', WebkitTextStroke: '3px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.25))' }}>Ready?</h2>
+                    <h2 className="font-black text-blue-500 leading-none" style={{ fontSize: 'clamp(20px,3vw,44px)', WebkitTextStroke: '3px #fff', paintOrder: 'stroke fill', filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.25))' }}>
+                      準備好了嗎？
+                      <span className="block" style={{ fontSize: 'clamp(11px,1.4vw,20px)', WebkitTextStroke: '2px #fff' }}>Ready?</span>
+                    </h2>
                   </div>
                   {/* 火箭（圖已含真火焰＋尾巴） */}
                   <img src="/images/guide/guide5-ship.webp" alt="" className="absolute animate-float drop-shadow-[0_10px_18px_rgba(40,30,80,0.35)]" style={{ left: '1%', top: '27%', width: '48%' }} />

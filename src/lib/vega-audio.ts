@@ -163,7 +163,7 @@ export const CHAR_CUE_AUDIO: Record<string, string> = {
   listen:    'coco-listen',  // 聽力
   speak:     'polly-speak',  // 口說
   read:      'benny-read',   // 閱讀
-  write:     'ruby-write',   // 寫作
+  treasure:  'ruby-treasure', // 破關後的寶藏挑戰（Ruby 守這一關）
 };
 
 /** L1–L4 用中文版(low)，L5 以上用英文版(high) */

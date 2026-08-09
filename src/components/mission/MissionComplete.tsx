@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import type { QuizQuestion } from '@/data/missions';
-import { playPraise, getLevelFromMissionId, playReward } from '@/lib/vega-audio';
+import { playPraise, getLevelFromMissionId, playReward, playVega, CHAR_CUE_AUDIO } from '@/lib/vega-audio';
 import { playFanfare, stopFanfare } from '@/lib/sfx';
 import { track } from '@/lib/analytics';
 import LoginNudge from '@/components/LoginNudge';
@@ -122,7 +122,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
         <div className="flex flex-col gap-3 max-w-md mx-auto">
           {!quizDone && !showQuiz && (
             <button
-              onClick={() => setShowQuiz(true)}
+              onClick={() => { playVega(CHAR_CUE_AUDIO.treasure); setShowQuiz(true); }}
               className="bg-yellow-400 text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-500 transition active:scale-95 shadow-lg"
             >
               🎁 寶藏挑戰（{reviewQuiz.length} 關）
