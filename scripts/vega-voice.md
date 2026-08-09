@@ -17,7 +17,7 @@
 - Coco：Terra, Voice ID `aFueGIISJUmscc05ZNfD`
 - Polly：Fena, Voice ID `BlgEcC0TfWpBak7FmvHW`
 - Benny：Ahmed, Voice ID `9lJhQTNhE6XNSstSyMzH`
-- Ruby：Abby, Voice ID `IKuPqyuiEnnZFcU4OVzH`
+- Ruby：**Jessica**, Voice ID `cgSgspJ2msm6clMCkdW9`（2026-08-09 換掉舊的 Abby `IKuPqyuiEnnZFcU4OVzH`）
 
 **生成參數：**
 - model: `eleven_multilingual_v2`
@@ -184,13 +184,13 @@ Anna Su 對某些字念錯，已調整文字避開：
 - `char-coco.mp3`（Terra）：Hi, I'm Coco. Listen carefully.
 - `char-polly.mp3`（Fena）：Hi! I'm Polly! Repeat after me!
 - `char-benny.mp3`（Ahmed）：Hello, friend. I'm Benny. Let's read.
-- `char-ruby.mp3`（Abby）：Hi, I'm Ruby. Let's write together!
+- `char-ruby.mp3`（Jessica）：Hi, I'm Ruby! Let's find the treasure!
 
 ### Part 7-C：5 角色關卡口號（英文，各自聲音）
 - `coco-listen.mp3`：Listen carefully!（聽力關時播）
 - `polly-speak.mp3`：Repeat after me!（口說關時播）
 - `benny-read.mp3`：Let's read together!（閱讀關時播）
-- `ruby-write.mp3`：Let's write it!（寫作關時播）
+- `ruby-treasure.mp3`（Jessica）：Treasure time! Let's go!（破關後按「寶藏挑戰」時播）
 - `finn-go.mp3`：Let's go!（任何「開始」按鈕）
 
 ### Part 8：7 學習提醒（Vega）
@@ -243,7 +243,7 @@ Anna Su 對某些字念錯，已調整文字避開：
 | 進入聽力關 | `coco-listen.mp3` |
 | 進入口說關 | `polly-speak.mp3` |
 | 進入閱讀關 | `benny-read.mp3` |
-| 進入寫作關 | `ruby-write.mp3` |
+| 按下寶藏挑戰 | `ruby-treasure.mp3` |
 | 點「開始」按鈕 | `finn-go.mp3` |
 | 推播通知 | `reminder-*.mp3` |
 
@@ -272,3 +272,62 @@ Anna Su 對某些字念錯，已調整文字避開：
 **重生時要注意**：`guide-lesson-flow`、`guide-rewards`、`guide-quickstart`、`guide-intro`
 都是 Anna Su `9lHjugDhwqoxA5MhX0az`，stability 1.0 / similarity 0.85 / speed 0.95。
 生完**一定要 Vega 本人聽過**——STT 過不代表人耳聽得對。
+
+---
+
+## 🔴 中文旁白的真相（2026-08-09 大量實測後）
+
+### 1. STT 抓不到聲調錯誤，別想用它省時間
+
+試過用 Scribe（`language_code=zho`，**不是** `cmn`）先篩一輪再給 Vega 聽。**行不通**：
+STT 會把聽到的音自動修正成最合理的詞。實測 stability 1.0 那版
+STT 判「獎牌」正確，Vega 一聽是「蔣派」。
+
+STT 只抓得到「念成完全不同的詞」（手機/环保师那種），抓不到聲調偏差。
+**中文旁白唯一可靠的驗收是 Vega 的耳朵。**
+
+### 2. stability 不是解方
+
+同一句話測 1.0 / 0.7 / 0.5 / 0.3，每個都錯不同的字，沒有哪個明顯較好。
+維持 1.0（跟既有檔一致）就好，不要為了發音去調它。
+
+### 3. ⚠️ 同一個詞換位置就會走音 —— 這是最重要的一條
+
+- 「拿到」在 **`就能拿到一顆星`** ✅ 對
+- 「拿到」放到句首 **`拿到越多`** ❌ 變成「那到」
+- 「顆」在 **`一顆星`** ✅ 對，在 **`越多顆星`** ❌ 變成「可星」
+- 「換到」在 A 版 ✅ 對，在 C 版同樣的詞 ❌ 變成「環島」
+
+**所以陷阱表不能只記「哪些字不能用」，要連用在什麼位置一起記。**
+每次換字＝換了新位置＝又一次賭博，這就是為什麼改寫會一直繞不完。
+
+### 4. 正確做法：整句沿用，不要拆開重組
+
+累積「Vega 耳朵確認過的完整句子」，寫新旁白時**整句複製**，
+拼不出來再冒險用新詞，而且要有心理準備要重來幾輪。
+
+## ✅ 安全句庫（Vega 本人確認發音正確）
+
+| 句子 | 用在 |
+|---|---|
+| 題目做對就能拿到一顆星。 | 獎勵說明 |
+| 做對越多，就能換到更好的獎勵。 | 獎勵說明 |
+| 這些通通會放進你的木屋裡！ | 獎勵說明 |
+| 每一課有 5 個步驟。 | 流程說明 |
+| 先熱身，再聽一段故事，然後挑戰題目，接著開口說英文，最後就能拿到一顆星！ | 流程說明 |
+| 這是 Ruby，認真細心的兔子。 | 角色介紹 |
+| 她會在每一課的最後等你，陪你拿到獎勵。 | 角色介紹 |
+
+## ⚠️ 新增陷阱（2026-08-09）
+
+| 原字 | 念成 | 條件 / 改用 |
+|------|------|------|
+| 大（大獎勵）| 打 | 拿掉「大」|
+| 關（關卡／一關／過關／闖關）| 館 | **`關` 整個不能用** → 步驟、最後、就能拿到一顆星 |
+| 星星 | 信心 | 一顆星 |
+| 收集 | 手機 | 拿到越多 / 做對越多 |
+| 寶石 | 环保師 / 寶是 | 不講寶石，改「更好的獎勵」|
+| 章（徽章／勳章）| 張 | **`章` 不能用** → 獎牌…但獎牌也會變「蔣派」，**乾脆不要提徽章** |
+| 顆（前面沒有「一」）| 可 | 只用「一顆星」，不要用「越多顆星」|
+| 拿到（放句首）| 那到 | 只用在句中（「就能拿到…」），句首改「做對越多」|
+| 木屋（0.7 stability 時）| 墓物 | 用 stability 1.0 |

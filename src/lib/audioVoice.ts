@@ -50,8 +50,8 @@ export const VOICES: Record<string, VoiceSpec> = {
     stability: 0.6, similarityBoost: 0.85, speed: 0.95, createdAt: '2026-08',
   },
   ruby: {
-    // ⚠️ 待確認：定版表寫 Abby，但後來換過一次。以實際生成用的為準，確認後改這裡＋vega-voice.md
-    voiceId: 'IKuPqyuiEnnZFcU4OVzH', name: 'Abby', character: 'Ruby（寫作）',
+    // 2026-08-09 定案：改用 Jessica。原本是 Abby，但那是舊版；Vega 比對後選定 Jessica。
+    voiceId: 'cgSgspJ2msm6clMCkdW9', name: 'Jessica', character: 'Ruby（寶藏挑戰）',
     accent: 'us', model: 'eleven_multilingual_v2',
     stability: 0.6, similarityBoost: 0.85, speed: 0.95, createdAt: '2026-08',
   },
