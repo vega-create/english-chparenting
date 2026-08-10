@@ -317,12 +317,11 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 onClick={openBook}
                 className="animate-page-next block w-full text-center active:scale-[0.99] transition"
               >
-                {/* 封面比例 9:16 —— 全 240 張封面統一成這個比例（2026-08-10）。
-                    原本寫死 3/4，但 L3 M11 之後的圖都是 9:16，塞進 3:4 容器會上下各裁 12.5%，
-                    把最上面的招牌和最下面的「ADVENTURE LEVEL n」紫帶切掉。
-                    L1–L3 M10 那 50 張原本是 3:4，已用模糊填滿補成 9:16，內容一格都沒少。 */}
-                <span className="block relative mx-auto rounded-r-3xl rounded-l-md overflow-hidden shadow-2xl"
-                  style={{ aspectRatio: '9 / 16', maxHeight: '68vh' }}>
+                {/* 封面比例＝內頁比例（1080/1456）。書封和翻開後的內頁必須同一個形狀，
+                    不然一打開書就變形。2026-08-10 統一：L3 M11 之後那 70 張原本是 9:16，
+                    塞進來會上下各裁 12.5%（切掉招牌與「ADVENTURE LEVEL n」紫帶），已全部重生成 3:4。 */}
+                <span className="block relative rounded-r-3xl rounded-l-md overflow-hidden shadow-2xl"
+                  style={{ aspectRatio: '1080 / 1456' }}>
                   <img
                     src={`/images/ebook/l${level}-m${missionId}-cover.webp`}
                     alt={titleEn || 'Story'}
