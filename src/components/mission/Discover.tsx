@@ -6,6 +6,7 @@ import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSl
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 import { track } from '@/lib/analytics';
 import SentenceMic from '@/components/mission/SentenceMic';
+import SceneImage from '@/components/mission/SceneImage';
 
 interface Props {
   level: number;
@@ -373,7 +374,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               <div className="absolute flex flex-col" style={PANEL[level] || PANEL[1]}>
                 {/* 場景插畫 */}
                 <div className="text-center">
-                  <div className="text-6xl sm:text-7xl mb-1">{scene.image}</div>
+                  <SceneImage emoji={scene.image} className="text-6xl sm:text-7xl mb-1 w-20 h-20 sm:w-24 sm:h-24" />
                   <div className="flex justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl">
                     {scene.sceneEmojis.map((emoji, i) => (
                       <span
@@ -450,7 +451,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
               {/* 上半頁：插畫 */}
               <div className="bg-gradient-to-b from-blue-100 to-purple-50 px-4 sm:px-6 pt-6 sm:pt-8 pb-5 sm:pb-6 min-h-[190px] sm:min-h-[230px] flex flex-col items-center justify-center">
-                <div className="text-7xl sm:text-8xl mb-2 sm:mb-3">{scene.image}</div>
+                <SceneImage emoji={scene.image} className="text-7xl sm:text-8xl mb-2 sm:mb-3 w-24 h-24 sm:w-28 sm:h-28" />
                 <div className="flex gap-3 sm:gap-4 text-3xl sm:text-4xl">
                   {scene.sceneEmojis.map((emoji, i) => (
                     <span
