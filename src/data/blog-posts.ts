@@ -979,8 +979,6 @@ export const BOOKS = [
     items: [
       { title: "Brown Bear, Brown Bear, What Do You See?", author: "Eric Carle", age: "3-5", amazon: "https://amzn.to/4bw6xfB", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F012778662?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐻", description: "最經典的英文繪本入門，重複句型+鮮豔圖畫" , match: "L3 市場街 Animals & Colors" , cover: "/images/books/covers/brown-bear.webp" },
       { title: "The Very Hungry Caterpillar", author: "Eric Carle", age: "3-6", amazon: "https://amzn.to/4bDewaN", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F017496739?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐛", description: "學數字、食物、星期，孩子百看不膩" , match: "L3 市場街 Food & Numbers" , cover: "/images/books/covers/hungry-caterpillar.webp" },
-      { title: "Dear Zoo", author: "Rod Campbell", age: "2-5", amazon: "https://amzn.to/4sk0T7B", books: "", image: "🦁", description: "翻翻書互動設計，學動物和形容詞" , match: "L3 市場街 Animals" , cover: "/images/books/covers/dear-zoo.webp" },
-      { title: "Goodnight Moon", author: "Margaret Wise Brown", age: "2-5", amazon: "https://amzn.to/4rFSKt6", books: "", image: "🌙", description: "睡前讀物經典，韻律優美好記憶" , match: "L2 聲音島 Phonics" , cover: "/images/books/covers/goodnight-moon.webp" },
     ],
   },
   {
