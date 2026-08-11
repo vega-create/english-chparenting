@@ -45,10 +45,10 @@ const NAV = [
   { icon: "📜", label: "今日任務", href: "/tasks" },
   { icon: "🏠", label: "我的小屋", href: "/cabin" },
   { icon: "🏆", label: "成就徽章", href: "/badges" },
-  { icon: "👨‍👩‍👧", label: "家長中心", href: "/parents" },
+  { icon: "👨‍👩‍👧", label: "家長冒險中心", href: "/parents" },
   { icon: "📖", label: "使用說明", href: "/guide" },
-  { icon: "✏️", label: "學習文章", href: "/blog" },
-  { icon: "📕", label: "推薦書單", href: "/books" },
+  { icon: "✏️", label: "冒險圖書館", href: "/blog" },
+  { icon: "📕", label: "閱讀花園", href: "/books" },
 ];
 
 export default function LayeredBanner() {

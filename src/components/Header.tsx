@@ -9,10 +9,10 @@ const NAV = [
   { href: "/tasks", label: "📜 今日任務" },
   { href: "/cabin", label: "🏠 我的小屋" },
   { href: "/badges", label: "🏆 成就徽章" },
-  { href: "/parents", label: "👨‍👩‍👧 家長中心" },
+  { href: "/parents", label: "👨‍👩‍👧 家長冒險中心" },
   { href: "/guide", label: "📖 使用說明" },
-  { href: "/blog", label: "✏️ 學習文章" },
-  { href: "/books", label: "📕 推薦書單" },
+  { href: "/blog", label: "✏️ 冒險圖書館" },
+  { href: "/books", label: "📕 閱讀花園" },
 ];
 
 export default function Header() {
