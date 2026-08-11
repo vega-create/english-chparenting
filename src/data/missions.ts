@@ -198,6 +198,12 @@ const L1_M1: Mission = {
     { type: 'fill-blank', question: "What's your ___?", options: ['name', 'friend', 'hello', 'please'], answer: 'name' },
     { type: 'match', question: '選出正確的回答：Nice to meet you!', options: ['Nice to meet you too!', 'Bye bye!', 'No, thank you.', 'My name is hi.'], answer: 'Nice to meet you too!' },
   ],
+  videoScript: [
+    { speaker: 'Finn', line: "Hi! I'm Finn. Let's meet our friends!", lineZh: '嗨！我是 Finn。我們來認識新朋友！' },
+    { speaker: 'Coco', line: "Say hello, say your name, say bye!", lineZh: '打招呼、說名字、說再見！' },
+    { speaker: 'Benny', line: "What's your name? My name is Benny.", lineZh: '你叫什麼名字？我叫 Benny。' },
+    { speaker: 'Finn', line: "Now you can say hello to a new friend!", lineZh: '現在你會跟新朋友打招呼了！' },
+  ],
 };
 
 // L1 Mission 2: A to D（字母的開始）— 官方字 apple/ball/cat/dog + KK/自然發音
@@ -289,6 +295,12 @@ const L1_M2: Mission = {
     { type: 'fill-blank', question: 'C is for ___.', options: ['cat', 'dog', 'ball', 'apple'], answer: 'cat' },
     { type: 'match', question: '🐶 狗是哪個字母開頭？', options: ['A', 'B', 'C', 'D'], answer: 'D' },
   ],
+  videoScript: [
+    { speaker: 'Finn', line: "Let's start with A, B, C and D!", lineZh: '我們從 A、B、C、D 開始！' },
+    { speaker: 'Coco', line: "A is for apple. B is for ball.", lineZh: 'A 是 apple。B 是 ball。' },
+    { speaker: 'Benny', line: "C is for cat. D is for dog.", lineZh: 'C 是 cat。D 是 dog。' },
+    { speaker: 'Finn', line: "Four letters, four new words!", lineZh: '四個字母，四個新單詞！' },
+  ],
 };
 
 // L1 M3: E to H（森林字母）
@@ -330,6 +342,12 @@ const L1_M3: Mission = {
     { type: 'listen-pick', question: '"F" 開頭的字是？', options: ['egg', 'fish', 'goat', 'hat'], answer: 'fish' },
     { type: 'fill-blank', question: 'E is for ___.', options: ['egg', 'fish', 'goat', 'hat'], answer: 'egg' },
     { type: 'match', question: '🎩 帽子是哪個字母開頭？', options: ['E', 'F', 'G', 'H'], answer: 'H' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Welcome to the forest! E, F, G, H.", lineZh: '歡迎來到森林！E、F、G、H。' },
+    { speaker: 'Coco', line: "E is for egg. F is for fish.", lineZh: 'E 是 egg。F 是 fish。' },
+    { speaker: 'Benny', line: "G is for goat. H is for hat.", lineZh: 'G 是 goat。H 是 hat。' },
+    { speaker: 'Finn', line: "Say them with me: E, F, G, H!", lineZh: '跟我一起念：E、F、G、H！' },
   ],
 };
 
@@ -373,6 +391,12 @@ const L1_M4: Mission = {
     { type: 'fill-blank', question: 'K is for ___.', options: ['igloo', 'jam', 'kite', 'lion'], answer: 'kite' },
     { type: 'match', question: '🍓 果醬是哪個字母開頭？', options: ['I', 'J', 'K', 'L'], answer: 'J' },
   ],
+  videoScript: [
+    { speaker: 'Finn', line: "Up the hill we go! I, J, K, L.", lineZh: '我們爬上山丘！I、J、K、L。' },
+    { speaker: 'Coco', line: "I is for igloo. J is for jam.", lineZh: 'I 是 igloo。J 是 jam。' },
+    { speaker: 'Benny', line: "K is for kite. L is for lion.", lineZh: 'K 是 kite。L 是 lion。' },
+    { speaker: 'Finn', line: "Four more letters. You are doing great!", lineZh: '又四個字母。你做得很好！' },
+  ],
 };
 
 // L1 M5: 字母歌大複習① A–L
@@ -412,6 +436,12 @@ const L1_M5: Mission = {
     { type: 'fill-blank', question: 'D, E, ___, G', options: ['F', 'H', 'C', 'B'], answer: 'F' },
     { type: 'match', question: '🛖 冰屋是哪個字母開頭？', options: ['I', 'J', 'K', 'L'], answer: 'I' },
     { type: 'listen-pick', question: '"A" 開頭的字是？', options: ['apple', 'egg', 'igloo', 'lion'], answer: 'apple' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Time to review! A all the way to L.", lineZh: '複習時間！從 A 一路到 L。' },
+    { speaker: 'Coco', line: "Let's sing the letters together.", lineZh: '我們一起唱字母。' },
+    { speaker: 'Benny', line: "Listen, then say each letter out loud.", lineZh: '先聽，再大聲念出每個字母。' },
+    { speaker: 'Finn', line: "Twelve letters done. Halfway there!", lineZh: '十二個字母完成，走一半了！' },
   ],
 };
 
@@ -455,6 +485,12 @@ const L1_M6: Mission = {
     { type: 'fill-blank', question: 'M is for ___.', options: ['moon', 'nest', 'orange', 'pig'], answer: 'moon' },
     { type: 'match', question: '🍊 柳橙是哪個字母開頭？', options: ['M', 'N', 'O', 'P'], answer: 'O' },
   ],
+  videoScript: [
+    { speaker: 'Finn', line: "Down to the beach! M, N, O, P.", lineZh: '來到海邊！M、N、O、P。' },
+    { speaker: 'Coco', line: "M is for moon. N is for nest.", lineZh: 'M 是 moon。N 是 nest。' },
+    { speaker: 'Benny', line: "O is for orange. P is for pig.", lineZh: 'O 是 orange。P 是 pig。' },
+    { speaker: 'Finn', line: "Say each letter, then say its word!", lineZh: '念字母，再念它的單詞！' },
+  ],
 };
 
 // L1 M7: Q to T（城堡字母）
@@ -496,6 +532,12 @@ const L1_M7: Mission = {
     { type: 'listen-pick', question: '"S" 開頭的字是？', options: ['queen', 'rabbit', 'sun', 'tiger'], answer: 'sun' },
     { type: 'fill-blank', question: 'T is for ___.', options: ['queen', 'rabbit', 'sun', 'tiger'], answer: 'tiger' },
     { type: 'match', question: '🐰 兔子是哪個字母開頭？', options: ['Q', 'R', 'S', 'T'], answer: 'R' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "Into the castle! Q, R, S, T.", lineZh: '進入城堡！Q、R、S、T。' },
+    { speaker: 'Coco', line: "Q is for queen. R is for rabbit.", lineZh: 'Q 是 queen。R 是 rabbit。' },
+    { speaker: 'Benny', line: "S is for sun. T is for tiger.", lineZh: 'S 是 sun。T 是 tiger。' },
+    { speaker: 'Finn', line: "Four royal letters for you!", lineZh: '四個城堡字母送給你！' },
   ],
 };
 
@@ -539,6 +581,12 @@ const L1_M8: Mission = {
     { type: 'fill-blank', question: 'W is for ___.', options: ['umbrella', 'van', 'watch', 'fox'], answer: 'watch' },
     { type: 'match', question: '🚐 廂型車是哪個字母開頭？', options: ['U', 'V', 'W', 'X'], answer: 'V' },
   ],
+  videoScript: [
+    { speaker: 'Finn', line: "Look up at the sky! U, V, W, X.", lineZh: '抬頭看天空！U、V、W、X。' },
+    { speaker: 'Coco', line: "U is for umbrella. V is for van.", lineZh: 'U 是 umbrella。V 是 van。' },
+    { speaker: 'Benny', line: "W is for watch. X is in fox!", lineZh: 'W 是 watch。X 在 fox 裡面！' },
+    { speaker: 'Finn', line: "X is tricky. It likes to hide at the end!", lineZh: 'X 很調皮，它喜歡躲在字尾！' },
+  ],
 };
 
 // L1 M9: Y and Z（字母之巔）
@@ -576,6 +624,12 @@ const L1_M9: Mission = {
     { type: 'listen-pick', question: '"Z" 開頭的字是？', options: ['yoyo', 'zebra', 'van', 'fox'], answer: 'zebra' },
     { type: 'fill-blank', question: 'Y is for ___.', options: ['yoyo', 'zebra', 'van', 'fox'], answer: 'yoyo' },
     { type: 'fill-blank', question: 'W, X, Y, ___', options: ['Z', 'A', 'B', 'V'], answer: 'Z' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The last two brothers: Y and Z!", lineZh: '最後兩兄弟：Y 和 Z！' },
+    { speaker: 'Coco', line: "Y is for yoyo. Z is for zebra.", lineZh: 'Y 是 yoyo。Z 是 zebra。' },
+    { speaker: 'Benny', line: "Now we know all twenty-six letters!", lineZh: '現在我們認識全部二十六個字母了！' },
+    { speaker: 'Finn', line: "You finished the alphabet. Amazing!", lineZh: '你把字母學完了，太棒了！' },
   ],
 };
 
@@ -617,6 +671,12 @@ const L1_M10: Mission = {
     { type: 'match', question: '☂️ 雨傘是哪個字母開頭？', options: ['M', 'Q', 'U', 'Z'], answer: 'U' },
     { type: 'listen-pick', question: '"Z" 開頭的字是？', options: ['moon', 'queen', 'umbrella', 'zebra'], answer: 'zebra' },
   ],
+  videoScript: [
+    { speaker: 'Finn', line: "Big review! From M all the way to Z.", lineZh: '大複習！從 M 一路到 Z。' },
+    { speaker: 'Coco', line: "Sing them, don't just read them.", lineZh: '用唱的，不要只是用讀的。' },
+    { speaker: 'Benny', line: "Listen carefully and say each one.", lineZh: '仔細聽，然後念出每一個。' },
+    { speaker: 'Finn', line: "Twenty-six letters, all yours now!", lineZh: '二十六個字母，全都是你的了！' },
+  ],
 };
 
 // L1 M11: 字母書寫大挑戰（大小寫配對）
@@ -657,6 +717,12 @@ const L1_M11: Mission = {
     { type: 'match', question: '大寫 Z 配哪個小寫？', options: ['z', 's', 'x', 'v'], answer: 'z' },
     { type: 'spell', question: '拼拼看：e g _（蛋）', answer: 'egg', image: '✍️' },
   ],
+  videoScript: [
+    { speaker: 'Finn', line: "Now let's write the letters!", lineZh: '現在我們來寫字母！' },
+    { speaker: 'Coco', line: "Start at the top. Follow the line.", lineZh: '從上面開始，跟著線走。' },
+    { speaker: 'Benny', line: "Slow is fine. Neat is better!", lineZh: '慢慢來沒關係，寫整齊更重要！' },
+    { speaker: 'Finn', line: "Your hand is learning too!", lineZh: '你的手也在學習喔！' },
+  ],
 };
 
 // L1 M12: 字母島大魔王（總驗收 + 畢業）
@@ -696,6 +762,12 @@ const L1_M12: Mission = {
     { type: 'listen-pick', question: '"Q" 開頭的字是？', options: ['apple', 'fish', 'queen', 'zebra'], answer: 'queen' },
     { type: 'fill-blank', question: 'F is for ___.', options: ['apple', 'fish', 'queen', 'zebra'], answer: 'fish' },
     { type: 'fill-blank', question: 'The last letter of A-Z is ___.', options: ['Z', 'A', 'Y', 'X'], answer: 'Z' },
+  ],
+  videoScript: [
+    { speaker: 'Finn', line: "The Alphabet Island boss is here!", lineZh: '字母島的大魔王來了！' },
+    { speaker: 'Coco', line: "Use everything you learned. You can do it!", lineZh: '用上你學過的全部，你做得到！' },
+    { speaker: 'Benny', line: "Listen, match, spell, and speak!", lineZh: '聽、配對、拼字、開口說！' },
+    { speaker: 'Finn', line: "Beat the boss and the island is yours!", lineZh: '打敗大魔王，這座島就是你的！' },
   ],
 };
 
