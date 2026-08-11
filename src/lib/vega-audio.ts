@@ -7,6 +7,10 @@ import { registerAudioChannel, stopOtherChannels } from './audioBus';
 
 const R2_BASE = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/vega';
 
+// 音檔改稿後瀏覽器還是會播舊的（R2 沒帶版本、瀏覽器整份快取住）。
+// 每次重錄旁白就把這個數字 +1，網址不同就會重抓。
+const AUDIO_V = '2';
+
 // localStorage keys
 const MUTE_KEY = 'vega-muted';
 const WELCOMED_KEY = 'vega-welcomed';
@@ -49,7 +53,7 @@ export function playVega(filename: string, options: { interrupt?: boolean } = {}
   if (interrupt) { stopVega(); stopOtherChannels('vega'); }
   else if (currentAudio && !currentAudio.paused) return Promise.resolve();
 
-  const audio = new Audio(`${R2_BASE}/${filename}.mp3`);
+  const audio = new Audio(`${R2_BASE}/${filename}.mp3?v=${AUDIO_V}`);
   currentAudio = audio;
   return new Promise(resolve => {
     audio.onended = () => { currentAudio = null; resolve(); };

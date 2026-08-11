@@ -73,7 +73,7 @@ export default function BadgesPage() {
           style={{ background: 'linear-gradient(#8b5a2b,#6d4420)' }}>
           <div className="text-center py-2 bg-amber-100/90 border-b-4 border-amber-800/50">
             <h1 className="font-black text-amber-900 text-xl sm:text-2xl m-0">成就徽章</h1>
-            <p className="text-amber-800/80 font-bold text-[11px] sm:text-xs m-0">收集徽章，成為最棒的冒險家！</p>
+            <p className="text-amber-800/80 font-bold text-xs sm:text-sm m-0">收集徽章，成為最棒的冒險家！</p>
           </div>
 
           {/* 兩層架子，各五格 */}
@@ -116,7 +116,7 @@ export default function BadgesPage() {
           </div>
           <div className="shrink-0 flex items-center gap-2 border-l-2 border-amber-300 pl-3">
             <img src="/images/badges/ach-chest.webp" alt="" className="w-11 sm:w-14" />
-            <p className="m-0 font-bold text-amber-900 text-[11px] sm:text-xs leading-tight">
+            <p className="m-0 font-bold text-amber-900 text-xs sm:text-sm leading-tight">
               再解鎖 {nextChestIn(badges)} 個徽章<br />可領取神祕寶箱！
             </p>
           </div>
@@ -146,8 +146,8 @@ export default function BadgesPage() {
               }`}>
               <img src={b.got ? img(b.key) : LOCKED} alt=""
                 className={`w-full max-w-[84px] mx-auto object-contain ${b.got ? '' : 'opacity-80'}`} />
-              <p className={`font-black text-[13px] sm:text-sm mt-1 mb-0 ${b.got ? 'text-amber-900' : 'text-gray-500'}`}>{b.name}</p>
-              <p className="text-[10px] sm:text-[11px] text-amber-800/70 font-bold m-0 leading-tight">{b.desc}</p>
+              <p className={`font-black text-sm sm:text-base mt-1 mb-0 ${b.got ? 'text-amber-900' : 'text-gray-500'}`}>{b.name}</p>
+              <p className="text-xs sm:text-[13px] text-amber-800/70 font-bold m-0 leading-tight">{b.desc}</p>
 
               {/* 狀態：拿到打勾、看得到進度的畫條、其餘上鎖 */}
               <div className="mt-1.5 h-5 flex items-center justify-center">
@@ -157,7 +157,7 @@ export default function BadgesPage() {
                   <div className="relative w-full h-5 rounded-full bg-amber-100 border border-amber-300 overflow-hidden">
                     <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-lime-400 to-green-600"
                       style={{ width: `${Math.min(100, ((b.now || 0) / b.need) * 100)}%` }} />
-                    <span className="absolute inset-0 flex items-center justify-center font-black text-[10px] text-amber-900">
+                    <span className="absolute inset-0 flex items-center justify-center font-black text-xs text-amber-900">
                       {b.now}/{b.need}
                     </span>
                   </div>
@@ -173,7 +173,7 @@ export default function BadgesPage() {
         <div className="flex items-center gap-2 mt-4 rounded-2xl border-4 border-purple-300/70 shadow-lg px-3 py-2"
           style={{ background: 'linear-gradient(#7c3aed,#5b21b6)' }}>
           <img src="/characters/coco/coco-cheer.png" alt="" className="w-12 sm:w-16 shrink-0" />
-          <p className="m-0 flex-1 text-white font-black text-[11px] sm:text-sm leading-snug text-center">
+          <p className="m-0 flex-1 text-white font-black text-sm sm:text-base leading-snug text-center">
             每完成一個挑戰，就能獲得一枚徽章！<br />收集更多徽章，成為最厲害的冒險家吧！
           </p>
           <img src="/images/rewards/chest-explorer.webp" alt="" className="w-12 sm:w-16 shrink-0" />
