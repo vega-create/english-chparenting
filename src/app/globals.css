@@ -433,3 +433,18 @@ body {
 @media (min-width: 640px) {
   .ae-frame { border-width: 28px; border-image-width: 28px; }
 }
+
+/* ===== 大面板框（羊皮紙＋木框＋四角葉子）=====
+   給家長中心那種整塊的面板用。切點 300（原圖 1254）＝木框 132px 加四角花葉的延伸，
+   切小於 300 會把角落的花切成兩半、拉邊時葉子會被抹開。 */
+.ae-frame-parchment {
+  border-style: solid;
+  border-width: 26px;
+  border-image-source: url('/images/ui/frame-parchment.webp');
+  border-image-slice: 300 fill;
+  border-image-width: 26px;
+  border-image-repeat: stretch;
+}
+@media (min-width: 640px) {
+  .ae-frame-parchment { border-width: 32px; border-image-width: 32px; }
+}

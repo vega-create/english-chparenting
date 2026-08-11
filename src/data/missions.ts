@@ -1243,10 +1243,10 @@ const L2_M1: Mission = {
     { type: 'match', question: '📦 箱子是哪個字？', options: ['box', 'bus', 'bed', 'big'], answer: 'box' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Look! c... a... t. What word is it?", lineZh: '看！c… a… t。是什麼字？' },
-    { speaker: 'Coco', line: "It's a cat! Meow!", lineZh: '是 cat（貓）！喵！' },
-    { speaker: 'Finn', line: "Now try: s... u... n.", lineZh: '現在試試：s… u… n。' },
-    { speaker: 'Coco', line: "Sun! I did it!", lineZh: 'Sun（太陽）！我做到了！' },
+    { speaker: 'Finn', line: "Look, Coco! C-a-t… cat!", lineZh: '你看 Coco！C-a-t… cat（貓）！' },
+    { speaker: 'Coco', line: "Wow! Can I try? H-a-t… hat!", lineZh: '哇！我可以試試看嗎？H-a-t… hat（帽子）！' },
+    { speaker: 'Benny', line: "I found a big dog and a red box!", lineZh: '我找到一隻大狗和一個紅色的盒子！' },
+    { speaker: 'Finn', line: "You did it! Now we can read new words!", lineZh: '你們做到了！現在我們會讀新單字了！' },
   ],
 };
 
@@ -1297,10 +1297,10 @@ const L2_M2: Mission = {
     { type: 'match', question: '🐀 老鼠是哪個字？', options: ['rat', 'cat', 'bat', 'can'], answer: 'rat' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "Look, a cat with a hat!", lineZh: '看，一隻戴帽子的貓！' },
-    { speaker: 'Polly', line: "cat, hat — they rhyme! /æ/!", lineZh: 'cat、hat —— 押韻！/æ/！' },
-    { speaker: 'Coco', line: "And a bat in a bag!", lineZh: '還有袋子裡的蝙蝠！' },
-    { speaker: 'Polly', line: "bat, bag — /æ/ again! So fun!", lineZh: 'bat、bag —— 又是 /æ/！好好玩！' },
+    { speaker: 'Coco', line: "Finn, a cat in a hat!", lineZh: 'Finn，有一隻貓戴著帽子！' },
+    { speaker: 'Finn', line: "And a bat with a map!", lineZh: '還有一隻蝙蝠拿著地圖！' },
+    { speaker: 'Ruby', line: "Look, a fan in my bag!", lineZh: '你看，我的袋子裡有一把扇子！' },
+    { speaker: 'Coco', line: "A, a, a — I hear it in every word!", lineZh: 'a、a、a——每個字裡我都聽到它！' },
   ],
 };
 
@@ -1350,10 +1350,10 @@ const L2_M3: Mission = {
     { type: 'match', question: '🦵 腿是哪個字？', options: ['leg', 'net', 'jet', 'wet'], answer: 'leg' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A hen is on my bed!", lineZh: '一隻母雞在我床上！' },
-    { speaker: 'Ruby', line: "hen, bed — /ɛ/! Get the hen!", lineZh: 'hen、bed —— /ɛ/！去抓母雞！' },
-    { speaker: 'Benny', line: "I have a net!", lineZh: '我有一個網子！' },
-    { speaker: 'Ruby', line: "net — /ɛ/ too! Catch it!", lineZh: 'net —— 也是 /ɛ/！抓住牠！' },
+    { speaker: 'Benny', line: "Ruby, my pen is on the bed!", lineZh: 'Ruby，我的筆在床上！' },
+    { speaker: 'Ruby', line: "A red hen is on your leg!", lineZh: '有一隻紅色的母雞在你的腿上！' },
+    { speaker: 'Benny', line: "Ten hens? Get the net!", lineZh: '十隻母雞？快拿網子！' },
+    { speaker: 'Ruby', line: "Oh no, now we are all wet!", lineZh: '糟糕，我們現在全身都濕了！' },
   ],
 };
 
@@ -1403,10 +1403,10 @@ const L2_M4: Mission = {
     { type: 'match', question: '🧒 小孩是哪個字？', options: ['kid', 'pig', 'lip', 'win'], answer: 'kid' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "A big pig can dig!", lineZh: '大豬會挖洞！' },
-    { speaker: 'Coco', line: "big, pig, dig — /ɪ/! Look!", lineZh: 'big、pig、dig —— /ɪ/！看！' },
-    { speaker: 'Finn', line: "Sit and count to six!", lineZh: '坐下數到六！' },
-    { speaker: 'Coco', line: "sit, six — /ɪ/ again! Fun!", lineZh: 'sit、six —— 又是 /ɪ/！好玩！' },
+    { speaker: 'Polly', line: "Finn, look! A big pig!", lineZh: 'Finn 你看！一隻大豬！' },
+    { speaker: 'Finn', line: "He can dig. Let's sit and watch!", lineZh: '牠會挖洞。我們坐下來看吧！' },
+    { speaker: 'Polly', line: "Six little pigs! Who will win?", lineZh: '六隻小豬！誰會贏呢？' },
+    { speaker: 'Finn', line: "The big one! Good job, pig!", lineZh: '那隻大的！做得好，小豬！' },
   ],
 };
 
@@ -1455,10 +1455,10 @@ const L2_M5: Mission = {
     { type: 'match', question: '🥅 網子是哪個母音？', options: ['e', 'a', 'i', 'o'], answer: 'e' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "cat, bed, pig — listen to the middle sound!", lineZh: 'cat、bed、pig —— 聽中間的音！' },
-    { speaker: 'Coco', line: "/æ/, /ɛ/, /ɪ/ — all different!", lineZh: '/æ/、/ɛ/、/ɪ/ —— 都不一樣！' },
-    { speaker: 'Polly', line: "Can you sort them?", lineZh: '你能分類嗎？' },
-    { speaker: 'Coco', line: "Yes! I'm a phonics champion!", lineZh: '可以！我是拼讀冠軍！' },
+    { speaker: 'Finn', line: "Time for the spelling race! Cat, bat!", lineZh: '拼字比賽開始！cat、bat！' },
+    { speaker: 'Coco', line: "Bed, pen! I love short e!", lineZh: 'bed、pen！我最喜歡短音 e！' },
+    { speaker: 'Benny', line: "Pig, six! That's short i!", lineZh: 'pig、six！那是短音 i！' },
+    { speaker: 'Finn', line: "A, e, i — we know them all!", lineZh: 'a、e、i——我們全都會了！' },
   ],
 };
 
@@ -1508,10 +1508,10 @@ const L2_M6: Mission = {
     { type: 'match', question: '🧹 拖把是哪個字？', options: ['mop', 'hop', 'pop', 'top'], answer: 'mop' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "A fox is in the box!", lineZh: '狐狸在箱子裡！' },
-    { speaker: 'Coco', line: "fox, box — /ɑ/! Look out!", lineZh: 'fox、box —— /ɑ/！小心！' },
-    { speaker: 'Finn', line: "The pot is hot. Don't touch!", lineZh: '鍋子很燙。別碰！' },
-    { speaker: 'Coco', line: "hot, pot — /ɑ/ again!", lineZh: 'hot、pot —— 又是 /ɑ/！' },
+    { speaker: 'Coco', line: "Finn, a fox is in the box!", lineZh: 'Finn，有一隻狐狸在盒子裡！' },
+    { speaker: 'Finn', line: "He can hop on top of the log!", lineZh: '牠會跳到木頭上面！' },
+    { speaker: 'Coco', line: "Careful, the pot is hot!", lineZh: '小心，那個鍋子很燙！' },
+    { speaker: 'Finn', line: "Get the mop! Oh no, the fox ran!", lineZh: '快拿拖把！糟了，狐狸跑掉了！' },
   ],
 };
 
@@ -1561,10 +1561,10 @@ const L2_M7: Mission = {
     { type: 'match', question: '🤗 擁抱是哪個字？', options: ['hug', 'jug', 'bug', 'mud'], answer: 'hug' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A bug is in my cup!", lineZh: '一隻蟲在我杯子裡！' },
-    { speaker: 'Ruby', line: "bug, cup — /ʌ/! Run!", lineZh: 'bug、cup —— /ʌ/！快跑！' },
-    { speaker: 'Benny', line: "The sun is fun. Let's run!", lineZh: '太陽很棒。我們去跑步！' },
-    { speaker: 'Ruby', line: "sun, fun, run — /ʌ/! Yay!", lineZh: 'sun、fun、run —— /ʌ/！耶！' },
+    { speaker: 'Ruby', line: "Benny, the sun is up! Let's run!", lineZh: 'Benny，太陽出來了！我們去跑步！' },
+    { speaker: 'Benny', line: "A bug is in my cup!", lineZh: '有一隻蟲在我的杯子裡！' },
+    { speaker: 'Ruby', line: "Watch out — mud!", lineZh: '小心——泥巴！' },
+    { speaker: 'Benny', line: "Ha ha! Give me a hug, Ruby!", lineZh: '哈哈！抱我一下嘛，Ruby！' },
   ],
 };
 
@@ -1615,10 +1615,10 @@ const L2_M8: Mission = {
     { type: 'match', question: '🪑 椅子是哪個字？', options: ['chair', 'chip', 'chin', 'ship'], answer: 'chair' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "Sh! Look, a fish on the ship!", lineZh: '噓！看，船上有一條魚！' },
-    { speaker: 'Coco', line: "ship, fish — sh sound! /ʃ/", lineZh: 'ship、fish —— sh 的音！/ʃ/' },
-    { speaker: 'Polly', line: "Let's eat chips for lunch!", lineZh: '我們午餐吃薯片！' },
-    { speaker: 'Coco', line: "chip, lunch — ch sound! /tʃ/", lineZh: 'chip、lunch —— ch 的音！/tʃ/' },
+    { speaker: 'Polly', line: "A big ship! Sh, sh, ship!", lineZh: '一艘大船！sh、sh、ship！' },
+    { speaker: 'Coco', line: "Look, a fish and a shell!", lineZh: '你看，一條魚和一個貝殼！' },
+    { speaker: 'Polly', line: "Let's shop for lunch. Cheese and chips!", lineZh: '我們去買午餐吧。起司和薯片！' },
+    { speaker: 'Coco', line: "Ch, ch, cheese! Yummy!", lineZh: 'ch、ch、cheese！好好吃！' },
   ],
 };
 
@@ -1669,10 +1669,10 @@ const L2_M9: Mission = {
     { type: 'match', question: '💍 戒指是哪個字？', options: ['ring', 'king', 'sing', 'long'], answer: 'ring' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The king has a gold ring!", lineZh: '國王有一枚金戒指！' },
-    { speaker: 'Polly', line: "king, ring, sing — ng sound! /ŋ/", lineZh: 'king、ring、sing —— ng 的音！/ŋ/' },
-    { speaker: 'Finn', line: "Look at that duck in a sock!", lineZh: '看那隻穿襪子的鴨子！' },
-    { speaker: 'Polly', line: "duck, sock — ck sound! /k/", lineZh: 'duck、sock —— ck 的音！/k/' },
+    { speaker: 'Benny', line: "This duck has a sock!", lineZh: '這隻鴨子穿著襪子！' },
+    { speaker: 'Finn', line: "That duck can kick!", lineZh: '那隻鴨子還會踢！' },
+    { speaker: 'Benny', line: "Look, a gold ring! Is he a king?", lineZh: '你看，一個金戒指！牠是國王嗎？' },
+    { speaker: 'Finn', line: "Let's sing a long song for the duck king!", lineZh: '我們為鴨子國王唱一首長長的歌吧！' },
   ],
 };
 
@@ -1721,10 +1721,10 @@ const L2_M10: Mission = {
     { type: 'spell', question: '拼拼看：fi _ h（魚）', answer: 'fish', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's read together: cat, bed, pig, box, cup!", lineZh: '一起讀：cat、bed、pig、box、cup！' },
-    { speaker: 'Coco', line: "Five short vowels! /æ/ /ɛ/ /ɪ/ /ɑ/ /ʌ/", lineZh: '五個短母音！/æ/ /ɛ/ /ɪ/ /ɑ/ /ʌ/' },
-    { speaker: 'Polly', line: "And fish, chip, duck, ring!", lineZh: '還有 fish、chip、duck、ring！' },
-    { speaker: 'Finn', line: "You can read now! Amazing!", lineZh: '你會讀了！太棒了！' },
+    { speaker: 'Finn', line: "Welcome to the echo concert!", lineZh: '歡迎來到回音音樂會！' },
+    { speaker: 'Coco', line: "Cat, bed, pig — short vowels!", lineZh: 'cat、bed、pig——都是短母音！' },
+    { speaker: 'Benny', line: "Fish, chip, duck, ring — sound teams!", lineZh: 'fish、chip、duck、ring——是字母組合！' },
+    { speaker: 'Finn', line: "Listen, the echo is singing with us!", lineZh: '聽，回音在跟我們一起唱！' },
   ],
 };
 
@@ -1775,10 +1775,10 @@ const L2_M11: Mission = {
     { type: 'match', question: '⚽ 玩是哪個字？', options: ['play', 'say', 'day', 'rain'], answer: 'play' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "It's a rainy day. Let's play a game!", lineZh: '今天下雨。我們來玩遊戲！' },
-    { speaker: 'Polly', line: "rain, day, play — long a /e/!", lineZh: 'rain、day、play —— 長母音 a /e/！' },
-    { speaker: 'Coco', line: "And eat cake by the lake!", lineZh: '還有在湖邊吃蛋糕！' },
-    { speaker: 'Polly', line: "cake, lake — magic e! Yum!", lineZh: 'cake、lake —— 魔法 e！好吃！' },
+    { speaker: 'Coco', line: "Finn, look at the magic gate!", lineZh: 'Finn，你看那道魔法門！' },
+    { speaker: 'Finn', line: "Say the magic word and we can play!", lineZh: '說出魔法字，我們就能進去玩！' },
+    { speaker: 'Coco', line: "Cake! Rain! Train! Did I say it right?", lineZh: 'cake！rain！train！我念對了嗎？' },
+    { speaker: 'Finn', line: "Yes! The gate is open. What a day!", lineZh: '對！門開了。今天真棒！' },
   ],
 };
 
@@ -1828,10 +1828,10 @@ const L2_M12: Mission = {
     { type: 'match', question: '🍖 肉是哪個字？', options: ['meat', 'eat', 'tea', 'read'], answer: 'meat' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I see a bee in the green tree!", lineZh: '我看到綠樹上有一隻蜜蜂！' },
-    { speaker: 'Coco', line: "bee, see, tree, green — long e /i/!", lineZh: 'bee、see、tree、green —— 長母音 e /i/！' },
-    { speaker: 'Benny', line: "Let's eat meat by the sea.", lineZh: '我們去海邊吃肉。' },
-    { speaker: 'Coco', line: "eat, meat, sea — ea is /i/!", lineZh: 'eat、meat、sea —— ea 是 /i/！' },
+    { speaker: 'Ruby', line: "Benny, I see three bees!", lineZh: 'Benny，我看到三隻蜜蜂！' },
+    { speaker: 'Benny', line: "In the big green tree?", lineZh: '在那棵綠色的大樹上嗎？' },
+    { speaker: 'Ruby', line: "Yes! Let's have tea and eat under it.", lineZh: '對！我們在樹下喝茶吃東西吧。' },
+    { speaker: 'Benny', line: "Then I will read you a story. E, e, e!", lineZh: '然後我念故事給你聽。e、e、e！' },
   ],
 };
 
@@ -1881,10 +1881,10 @@ const L2_M13: Mission = {
     { type: 'match', question: '🌙 夜晚是哪個字？', options: ['night', 'light', 'high', 'sky'], answer: 'night' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "My kite can fly high in the sky!", lineZh: '我的風箏能在天空飛得高！' },
-    { speaker: 'Polly', line: "kite, fly, high, sky — long i /aɪ/!", lineZh: 'kite、fly、high、sky —— 長母音 i /aɪ/！' },
-    { speaker: 'Finn', line: "At night, I ride my bike.", lineZh: '晚上，我騎我的腳踏車。' },
-    { speaker: 'Polly', line: "night, bike — long i again!", lineZh: 'night、bike —— 又是長母音 i！' },
+    { speaker: 'Polly', line: "Finn, my kite can fly so high!", lineZh: 'Finn，我的風箏飛得好高！' },
+    { speaker: 'Finn', line: "Look at the sky! I see five stars.", lineZh: '看天空！我看到五顆星星。' },
+    { speaker: 'Polly', line: "Nine now! The night is bright.", lineZh: '現在有九顆了！夜空好亮。' },
+    { speaker: 'Finn', line: "Let's ride my bike home. Good night!", lineZh: '我們騎腳踏車回家吧。晚安！' },
   ],
 };
 
@@ -1934,10 +1934,10 @@ const L2_M14: Mission = {
     { type: 'match', question: '❄️ 雪是哪個字？', options: ['snow', 'slow', 'grow', 'home'], answer: 'snow' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "The boat is slow on the road home.", lineZh: '船在回家的路上慢慢走。' },
-    { speaker: 'Coco', line: "boat, road, home, slow — long o /o/!", lineZh: 'boat、road、home、slow —— 長母音 o /o/！' },
-    { speaker: 'Ruby', line: "It's cold! Wear your coat in the snow!", lineZh: '好冷！在雪中穿上外套！' },
-    { speaker: 'Coco', line: "coat, snow — long o again!", lineZh: 'coat、snow —— 又是長母音 o！' },
+    { speaker: 'Benny', line: "Coco, put on your coat. It's snowing!", lineZh: 'Coco，穿上外套。下雪了！' },
+    { speaker: 'Coco', line: "My nose is cold! Let's take the boat.", lineZh: '我的鼻子好冷！我們搭船吧。' },
+    { speaker: 'Benny', line: "Slow down! The road is white.", lineZh: '慢一點！路都白了。' },
+    { speaker: 'Coco', line: "Look — a rose in the snow. Let's go home!", lineZh: '你看——雪裡有一朵玫瑰。我們回家吧！' },
   ],
 };
 
@@ -1986,10 +1986,10 @@ const L2_M15: Mission = {
     { type: 'spell', question: '拼拼看：b _ ke（腳踏車）', answer: 'bike', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "cake, tree, bike, boat — say their names!", lineZh: 'cake、tree、bike、boat —— 唸出名字！' },
-    { speaker: 'Coco', line: "/e/ /i/ /aɪ/ /o/ — long vowels!", lineZh: '/e/ /i/ /aɪ/ /o/ —— 長母音！' },
-    { speaker: 'Polly', line: "Short is /æ/, long is /e/. Can you hear?", lineZh: '短音 /æ/，長音 /e/。聽得出來嗎？' },
-    { speaker: 'Coco', line: "Yes! I can read both now!", lineZh: '可以！我兩種都會讀了！' },
+    { speaker: 'Finn', line: "Welcome to the long vowel concert!", lineZh: '歡迎來到長母音音樂廳！' },
+    { speaker: 'Coco', line: "Cake and rain — long a!", lineZh: 'cake 和 rain——長音 a！' },
+    { speaker: 'Ruby', line: "Tree and eat — long e!", lineZh: 'tree 和 eat——長音 e！' },
+    { speaker: 'Finn', line: "Bike, boat, snow — you sang them all!", lineZh: 'bike、boat、snow——你們全都唱出來了！' },
   ],
 };
 
@@ -2040,10 +2040,10 @@ const L2_M16: Mission = {
     { type: 'match', question: '🦷 牙齒是哪個字？', options: ['tooth', 'room', 'pool', 'zoo'], answer: 'tooth' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Look at the moon over the zoo!", lineZh: '看動物園上的月亮！' },
-    { speaker: 'Coco', line: "moon, zoo — oo says /u/!", lineZh: 'moon、zoo —— oo 發 /u/！' },
-    { speaker: 'Finn', line: "Let's eat food in my room.", lineZh: '我們在我房間吃東西。' },
-    { speaker: 'Coco', line: "food, room — /u/ again! Yum!", lineZh: 'food、room —— 又是 /u/！好吃！' },
+    { speaker: 'Polly', line: "Look at the moon! It's so blue tonight.", lineZh: '看月亮！今晚好藍。' },
+    { speaker: 'Coco', line: "The zoo is open! Look at the cute animals.", lineZh: '動物園開門了！看那些可愛的動物。' },
+    { speaker: 'Polly', line: "Let's get food and jump in the pool!", lineZh: '我們去拿食物，然後跳進游泳池！' },
+    { speaker: 'Coco', line: "Oo, oo, oo — moon, food, zoo, pool!", lineZh: 'oo、oo、oo——moon、food、zoo、pool！' },
   ],
 };
 
@@ -2094,10 +2094,10 @@ const L2_M17: Mission = {
     { type: 'match', question: '💎 寶石是哪個字？', options: ['gem', 'cage', 'page', 'age'], answer: 'gem' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "A giraffe eats rice in the city!", lineZh: '長頸鹿在城市吃飯！' },
-    { speaker: 'Polly', line: "giraffe /dʒ/, city /s/, rice /s/ — soft sounds!", lineZh: 'giraffe /dʒ/、city /s/、rice /s/ —— 軟音！' },
-    { speaker: 'Coco', line: "The ice gem is nice!", lineZh: '這顆冰寶石很棒！' },
-    { speaker: 'Polly', line: "ice, gem, nice — c and g go soft!", lineZh: 'ice、gem、nice —— c 和 g 變軟！' },
+    { speaker: 'Ruby', line: "Benny, look at the ice city!", lineZh: 'Benny，你看那座冰之城！' },
+    { speaker: 'Benny', line: "So nice! Is that a gem?", lineZh: '好美！那是寶石嗎？' },
+    { speaker: 'Ruby', line: "A giraffe is holding it!", lineZh: '有一隻長頸鹿拿著它！' },
+    { speaker: 'Benny', line: "Turn the page — the story is not over!", lineZh: '翻到下一頁——故事還沒完呢！' },
   ],
 };
 
@@ -2148,10 +2148,10 @@ const L2_M18: Mission = {
     { type: 'match', question: '🌽 玉米是哪個字？', options: ['corn', 'fork', 'car', 'star'], answer: 'corn' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "A star and a car! ar says /ɑr/!", lineZh: '星星和汽車！ar 發 /ɑr/！' },
-    { speaker: 'Coco', line: "star, car — bossy r! /ɑr/", lineZh: 'star、car —— 霸道的 r！/ɑr/' },
-    { speaker: 'Finn', line: "The girl saw a bird. Turn and look!", lineZh: '女孩看到一隻鳥。轉頭看！' },
-    { speaker: 'Coco', line: "girl, bird, turn — all /ɝ/!", lineZh: 'girl、bird、turn —— 都是 /ɝ/！' },
+    { speaker: 'Finn', line: "Look, Polly! A star car!", lineZh: '你看，Polly！一台星星車！' },
+    { speaker: 'Polly', line: "A bird and a girl are inside!", lineZh: '裡面有一隻鳥和一個女孩！' },
+    { speaker: 'Finn', line: "Turn here! There is corn for everyone.", lineZh: '在這裡轉彎！這裡有玉米給大家吃。' },
+    { speaker: 'Polly', line: "Ar, or, er — I can hear the r!", lineZh: 'ar、or、er——我聽得到 r 的聲音！' },
   ],
 };
 
@@ -2202,10 +2202,10 @@ const L2_M19: Mission = {
     { type: 'fill-blank', question: 'a cup ___ tea', options: ['of', 'to', 'is', 'the'], answer: 'of' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "The cat is on the bed. Read it!", lineZh: '貓在床上。讀讀看！' },
-    { speaker: 'Benny', line: "the, is, on — I know these words!", lineZh: 'the、is、on —— 我認得這些字！' },
-    { speaker: 'Coco', line: "You have a book. They are friends.", lineZh: '你有一本書。他們是朋友。' },
-    { speaker: 'Benny', line: "you, have, they, are — sight words! Easy!", lineZh: 'you、have、they、are —— 常見字！簡單！' },
+    { speaker: 'Coco', line: "Finn, what is in the treasure box?", lineZh: 'Finn，寶箱裡面是什麼？' },
+    { speaker: 'Finn', line: "Words! They are everywhere in books.", lineZh: '是單字！書裡到處都是它們。' },
+    { speaker: 'Coco', line: "\"The\", \"is\", \"you\", \"have\"… I know them!", lineZh: 'the、is、you、have… 我都認得！' },
+    { speaker: 'Finn', line: "Yes! You have to know them by heart.", lineZh: '對！這些字要記在心裡。' },
   ],
 };
 
@@ -2255,10 +2255,10 @@ const L2_M20: Mission = {
     { type: 'fill-blank', question: 'I can ___ now!（讀）', options: ['read', 'the', 'you', 'moon'], answer: 'read' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Sound Boss says: read this word!", lineZh: '拼讀大魔王說：讀這個字！' },
-    { speaker: 'Benny', line: "b-oa-t... boat! I blended it!", lineZh: 'b-oa-t… boat！我拼出來了！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Reading star!", lineZh: '你打敗大魔王了！閱讀之星！' },
-    { speaker: 'Finn', line: "On to Market Street! Let's learn words!", lineZh: '前進市場街！我們來學單字！' },
+    { speaker: 'Finn', line: "The Sound Boss is here! Are you ready?", lineZh: '聲音魔王來了！準備好了嗎？' },
+    { speaker: 'Coco', line: "Cat! Tree! Bike! Boat!", lineZh: 'cat！tree！bike！boat！' },
+    { speaker: 'Benny', line: "Fish! Moon! Star! Rice!", lineZh: 'fish！moon！star！rice！' },
+    { speaker: 'Finn', line: "You did it! Sound Island is ours!", lineZh: '你做到了！聲音島是我們的了！' },
   ],
 };
 

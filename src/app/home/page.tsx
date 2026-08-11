@@ -19,14 +19,13 @@ const ISLAND_IMG: Record<string, string> = {
   "l7-grammar-gate": "island-grammar", "l8-question-tower": "island-question",
   "l10-future-bridge": "island-future", "l11-challenge-arena": "island-challenge",
 };
-// 夥伴（頭像用 -normal；vega 用嚮導圖）
+// 自選角色（跟 /choose-character 同一組；Finn 那群是課程裡的教學角色，不放這裡）
 const PALS = [
-  { key: "finn", name: "Finn", color: "border-orange-300" },
-  { key: "coco", name: "Coco", color: "border-pink-300" },
-  { key: "ruby", name: "Ruby", color: "border-red-300" },
-  { key: "benny", name: "Benny", color: "border-amber-300" },
-  { key: "polly", name: "Polly", color: "border-green-300" },
-  { key: "vega", name: "Vega", color: "border-purple-300" },
+  { key: "elly", name: "艾莉" },
+  { key: "sky", name: "小飛" },
+  { key: "coco", name: "可可" },
+  { key: "leo", name: "雷歐" },
+  { key: "vera", name: "薇拉" },
 ];
 
 // 六大世界（首頁探索冒險世界輪播）
@@ -54,6 +53,8 @@ const NAV = [
 export default function LayeredBanner() {
   const [muted, setMuted] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [avatar, setAvatar] = useState<string | null>(null);
+  useEffect(() => { try { setAvatar(localStorage.getItem('ae_avatar')); } catch {} }, []);
   const router = useRouter();
 
   useEffect(() => setMuted(isSfxMuted() && isVegaMuted()), []);
@@ -497,15 +498,15 @@ export default function LayeredBanner() {
 
           </div>
 
-          {/* 2b) 我的冒險夥伴 —— 六隻站在森林空地上（背景是畫的，角色是去背 PNG 疊上去） */}
+          {/* 2b) 我的冒險角色 —— /choose-character 的五位自選角色站在森林空地上（背景是畫的，角色是去背圖疊上去） */}
           <div className="relative rounded-3xl overflow-hidden border-4 border-amber-200 shadow-lg">
             <img src="/images/home/pals-band.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div className="relative px-3 pt-3 pb-4">
               <h3 className="text-lg sm:text-2xl font-black text-white mb-2" style={{ textShadow: "0 2px 6px rgba(20,60,20,.75)" }}>
-                ⭐ 我的冒險夥伴
+                ⭐ 我的冒險角色
               </h3>
               <div className="flex items-end gap-2 sm:gap-4">
-                <div className="flex-1 grid grid-cols-6 gap-0.5 sm:gap-2 items-end">
+                <div className="flex-1 grid grid-cols-5 gap-0.5 sm:gap-2 items-end">
                   {PALS.map((p, i) => (
                     <motion.div
                       key={p.key}
@@ -517,24 +518,27 @@ export default function LayeredBanner() {
                       onClick={() => playStar()}
                     >
                       <img
-                        src={`/characters/${p.key}/${p.key}-normal.png`}
+                        src={`/images/avatars/${p.key}.webp`}
                         alt={p.name}
                         className="w-full max-w-[92px] mx-auto object-contain"
                         style={{ filter: "drop-shadow(0 6px 8px rgba(30,60,30,0.4))" }}
                       />
-                      <p className="text-[11px] sm:text-sm font-black text-amber-900 bg-amber-50/90 rounded-full px-1 -mt-1 inline-block">{p.name}</p>
+                      <p className={`text-[11px] sm:text-sm font-black rounded-full px-1.5 -mt-1 inline-block ${
+                        avatar === p.key ? "text-white bg-orange-500" : "text-amber-900 bg-amber-50/90"}`}>
+                        {avatar === p.key ? `⭐ ${p.name}` : p.name}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
-                {/* 目前夥伴（桌機才放得下） */}
+                {/* 目前角色（桌機才放得下） */}
                 <div className="hidden lg:block shrink-0 w-36 bg-amber-50/95 rounded-2xl border-2 border-amber-300 shadow p-2 text-center">
-                  <p className="m-0 font-black text-amber-900 text-xs">目前夥伴</p>
-                  <p className="m-0 font-black text-amber-700 text-lg leading-tight">Finn</p>
-                  <div className="mt-1.5"><GameButton href="/choose-character" color="gold" size="sm" sound="click">換夥伴 →</GameButton></div>
+                  <p className="m-0 font-black text-amber-900 text-xs">目前角色</p>
+                  <p className="m-0 font-black text-amber-700 text-lg leading-tight">{PALS.find(p => p.key === avatar)?.name ?? "還沒選"}</p>
+                  <div className="mt-1.5"><GameButton href="/choose-character" color="gold" size="sm" sound="click">換角色 →</GameButton></div>
                 </div>
               </div>
               <div className="text-center mt-2 lg:hidden">
-                <GameButton href="/choose-character" color="gold" size="sm" sound="click">換夥伴 →</GameButton>
+                <GameButton href="/choose-character" color="gold" size="sm" sound="click">換角色 →</GameButton>
               </div>
             </div>
           </div>

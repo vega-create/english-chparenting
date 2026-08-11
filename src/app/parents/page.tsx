@@ -124,7 +124,7 @@ export default function ParentsPage() {
         <div className="grid lg:grid-cols-3 gap-4 mt-5">
 
           {/* ===== 能力成長花園（還沒有資料，誠實標即將推出）===== */}
-          <section className="rounded-3xl border-4 border-green-200 bg-green-50/80 shadow-lg p-4 relative overflow-hidden">
+          <section className="ae-frame-parchment relative overflow-hidden p-2">
             <h2 className="font-black text-green-800 text-base m-0">🌿 能力成長花園</h2>
             <p className="m-0 text-green-700/70 font-bold text-[11px]">聽、說、讀、寫、字彙五大能力成長狀況</p>
             <ul className="mt-3 mb-0 space-y-1.5 list-none pl-0">
@@ -145,36 +145,43 @@ export default function ParentsPage() {
             </div>
           </section>
 
-          {/* ===== 學習報告 ===== */}
-          <section className="rounded-3xl border-4 border-amber-300 bg-amber-50 shadow-lg p-4">
-            <h2 className="font-black text-amber-900 text-base m-0 mb-2">📖 學習報告</h2>
-            <div className="space-y-1.5">
-              {[
-                ['📗 完成課程', `${done} 課`],
-                ['⭐ 獲得星星', `${stars} 顆`],
-                ['🔥 連續學習', `${streak} 天`],
-                ['🏆 解鎖徽章', `${badges.filter(b => b.got).length} / ${badges.length}`],
-              ].map(([k, v]) => (
-                <div key={k} className="flex items-center justify-between bg-white rounded-xl border border-amber-200 px-3 py-1.5">
-                  <span className="font-bold text-gray-600 text-xs">{k}</span>
-                  <span className="font-black text-amber-900 text-sm">{v}</span>
+          {/* ===== 學習報告（攤開的書：圖上疊字，框跟圖同比例）===== */}
+          <section className="relative w-full lg:self-center" style={{ aspectRatio: '1536 / 1024' }}>
+            <img src="/images/ui/frame-book.webp" alt="" className="absolute inset-0 w-full h-full" />
+            <div className="absolute left-[13%] right-[13%] top-[10%] bottom-[14%] flex gap-[7%]">
+              {/* 左頁：數字 */}
+              <div className="flex-1 min-w-0">
+                <h2 className="font-black text-amber-900 text-sm sm:text-base m-0 mb-1.5">📖 學習報告</h2>
+                <div className="space-y-1">
+                  {[
+                    ['📗 完成課程', `${done} 課`],
+                    ['⭐ 獲得星星', `${stars} 顆`],
+                    ['🔥 連續學習', `${streak} 天`],
+                    ['🏆 解鎖徽章', `${badges.filter(b => b.got).length} / ${badges.length}`],
+                  ].map(([k, v]) => (
+                    <div key={k} className="flex items-center justify-between border-b border-amber-900/15 pb-0.5">
+                      <span className="font-bold text-amber-950/70 text-[10px] sm:text-xs">{k}</span>
+                      <span className="font-black text-amber-900 text-[11px] sm:text-sm">{v}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <div className="mt-3 bg-white rounded-xl border border-amber-200 px-3 py-2">
-              <p className="m-0 font-black text-amber-800 text-xs">🚩 下一個目標</p>
-              <p className="m-0 text-gray-600 font-bold text-[11px] leading-snug mt-0.5">
-                {done === 0
-                  ? '還沒開始，陪孩子完成第一課吧！'
-                  : nextGoal
-                    ? `再完成 ${nextGoal.left} 課，就能通關${nextGoal.island}！`
-                    : `${island}已經通關，往下一座島出發！`}
-              </p>
+              </div>
+              {/* 右頁：下一個目標 */}
+              <div className="flex-1 min-w-0 flex flex-col justify-center">
+                <p className="m-0 font-black text-amber-800 text-xs sm:text-sm">🚩 下一個目標</p>
+                <p className="m-0 text-amber-950/75 font-bold text-[10px] sm:text-xs leading-snug mt-1">
+                  {done === 0
+                    ? '還沒開始，陪孩子完成第一課吧！'
+                    : nextGoal
+                      ? `再完成 ${nextGoal.left} 課，就能通關${nextGoal.island}！`
+                      : `${island}已經通關，往下一座島出發！`}
+                </p>
+              </div>
             </div>
           </section>
 
           {/* ===== 使用時間（沒有追蹤）===== */}
-          <section className="rounded-3xl border-4 border-purple-200 bg-purple-50/80 shadow-lg p-4 relative overflow-hidden">
+          <section className="ae-frame-parchment relative overflow-hidden p-2">
             <h2 className="font-black text-purple-800 text-base m-0">🕐 健康學習時間</h2>
             <p className="m-0 text-purple-700/70 font-bold text-[11px]">建立好習慣，快樂學習每一天！</p>
             <div className="mt-3 bg-white rounded-xl border border-purple-200 px-3 py-4 text-center">
