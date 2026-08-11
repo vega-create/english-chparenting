@@ -6,7 +6,6 @@ import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSl
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 import { track } from '@/lib/analytics';
 import SentenceMic from '@/components/mission/SentenceMic';
-import SceneImage from '@/components/mission/SceneImage';
 
 interface Props {
   level: number;
@@ -278,14 +277,6 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
   // ===== Phase 1: 電子書課文（一頁一課文，翻頁學習） =====
   if (phase === 'story') {
-    const animationClass: Record<string, string> = {
-      wave: 'animate-wave',
-      bounce: 'animate-bounce',
-      shake: 'animate-shake',
-      spin: 'animate-spin',
-      float: 'animate-float',
-      tada: 'animate-tada',
-    };
 
     const openBook = () => {
       setPageDir('next');
@@ -372,25 +363,12 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               />
               {/* 內容區（米色面板範圍，各級底圖框位置不同）：只放場景 + 課文 */}
               <div className="absolute flex flex-col" style={PANEL[level] || PANEL[1]}>
-                {/* 場景插畫 */}
-                <div className="text-center">
-                  <SceneImage emoji={scene.image} className="text-6xl sm:text-7xl mb-1 w-20 h-20 sm:w-24 sm:h-24" />
-                  <div className="flex justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl">
-                    {scene.sceneEmojis.map((emoji, i) => (
-                      <span
-                        key={`${storyIndex}-${i}`}
-                        className={`inline-block ${animationClass[scene.animation] || 'animate-bounce'}`}
-                        style={{ animationDelay: `${i * 0.15}s`, animationDuration: '1s', animationIterationCount: '3' }}
-                      >
-                        {emoji}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                {/* 課文（放大、置中偏上；右下留給動物） */}
+                {/* 課文占滿整個米色面板（右下留給動物）——
+                    原本上面有一顆大 emoji 加三顆彈跳小 emoji，Vega 說那些手勢 emoji 不好看，
+                    拿掉之後把字放大填滿版面 */}
                 <div className="flex-1 flex flex-col justify-center min-h-0 pr-[14%]">
-                  <p className="text-[11px] sm:text-sm text-amber-500 font-black mb-1">{scene.characterName}</p>
-                  <p className="ebook-text text-gray-800 text-lg sm:text-2xl">
+                  <p className="text-xs sm:text-base text-amber-500 font-black mb-2">{scene.characterName}</p>
+                  <p className="ebook-text text-gray-800 text-2xl sm:text-4xl leading-relaxed">
                     {scene.dialogue.split(' ').map((w, wi) => {
                       const isHighlight = scene.highlightWords?.some(hw =>
                         w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
@@ -409,7 +387,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     })}
                   </p>
                   {showTranslation && (
-                    <p className="ebook-text-zh text-gray-500 text-sm sm:text-base mt-2 animate-slide-up">{scene.dialogueZh}</p>
+                    <p className="ebook-text-zh text-gray-500 text-base sm:text-lg mt-3 animate-slide-up">{scene.dialogueZh}</p>
                   )}
                   {/* 讓孩子知道紫色的字可以點 —— 沒說的話多數人不會發現 */}
                   {!!scene.highlightWords?.length && (
@@ -449,32 +427,17 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               {/* 書背裝訂線 */}
               <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-amber-200/80 to-transparent z-10" />
 
-              {/* 上半頁：插畫 */}
-              <div className="bg-gradient-to-b from-blue-100 to-purple-50 px-4 sm:px-6 pt-6 sm:pt-8 pb-5 sm:pb-6 min-h-[190px] sm:min-h-[230px] flex flex-col items-center justify-center">
-                <SceneImage emoji={scene.image} className="text-7xl sm:text-8xl mb-2 sm:mb-3 w-24 h-24 sm:w-28 sm:h-28" />
-                <div className="flex gap-3 sm:gap-4 text-3xl sm:text-4xl">
-                  {scene.sceneEmojis.map((emoji, i) => (
-                    <span
-                      key={`${storyIndex}-${i}`}
-                      className={`inline-block ${animationClass[scene.animation] || 'animate-bounce'}`}
-                      style={{ animationDelay: `${i * 0.15}s`, animationDuration: '1s', animationIterationCount: '3' }}
-                    >
-                      {emoji}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* 下半頁：課文 */}
-              <div className="flex-1 px-4 sm:px-6 py-4 sm:py-5 flex items-start gap-2 sm:gap-3">
+              {/* 課文占滿整頁 —— 原本上半頁放 emoji 插畫，Vega 說那些手勢 emoji 不好看，
+                  拿掉之後把字放大填滿，孩子看課文比較專心 */}
+              <div className="flex-1 px-5 sm:px-7 py-6 sm:py-8 flex items-start gap-3 sm:gap-4">
                 <img
                   src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
                   alt={scene.characterName}
-                  className="w-16 h-16 sm:w-24 sm:h-24 object-contain flex-shrink-0"
+                  className="w-20 h-20 sm:w-28 sm:h-28 object-contain flex-shrink-0"
                 />
                 <div className="flex-1 min-w-0 pl-1 sm:pl-2">
-                  <p className="text-xs text-gray-400 font-bold mb-1">{scene.characterName}</p>
-                  <p className="ebook-text text-gray-800 text-lg sm:text-xl">
+                  <p className="text-sm text-gray-400 font-bold mb-2">{scene.characterName}</p>
+                  <p className="ebook-text text-gray-800 text-2xl sm:text-3xl leading-relaxed">
                     {scene.dialogue.split(' ').map((w, wi) => {
                       const isHighlight = scene.highlightWords?.some(hw =>
                         w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
