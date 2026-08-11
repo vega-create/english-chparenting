@@ -64,9 +64,17 @@ export const lessonPath = {
   talk:     (level: number, missionId: number, i: number) => `L${level}/m${missionId}/t${i + 1}.mp3`,
   spell:    (level: number, en: string) => `L${level}/words/${wordSlug(en)}-spell.mp3`,
   blend:    (level: number, en: string) => `L${level}/words/${wordSlug(en)}-blend.mp3`,
+  // 闖關題目的答案句：不在課文句型裡，所以另外錄一份（同一級去重共用）
+  quiz:     (level: number, text: string) => `L${level}/quiz/${quizSlug(text)}.mp3`,
   // 字母卡：全站共用（不分級）
   letter:   (c: string, kind: 'capital' | 'lower' | 'word') => `letters/${c.toUpperCase()}-${kind}.mp3`,
 };
+
+/** 題目答案當檔名：小寫、非字母數字換底線、去掉頭尾底線。
+ *  跟 wordSlug 不同——這裡要保留字間分隔，不然 "a cat" 和 "acat" 會撞在一起。 */
+export function quizSlug(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 60);
+}
 
 /** 課文音檔索引：把該課的對話與句型建成「文字 → 檔案路徑」的表，
  *  題目答案是整句時就能找到對應錄音（單字則走 lessonPath.word）。 */
@@ -93,6 +101,9 @@ export function findLessonAudio(idx: LessonAudioIndex, level: number, text: stri
   const key = normText(text);
   if (idx[key]) return idx[key];
   if (/^[A-Za-z]+$/.test(text.trim())) return lessonPath.word(level, text.trim());
+  // 闖關答案多半不是課文原句（例："Hi, I'm Coco!" 課文只有 "Hi! I'm Finn."），
+  // 查不到就試 quiz 錄音；沒檔案 playLesson 會回 false，呼叫端照樣 fallback TTS。
+  if (/[A-Za-z]/.test(text) && !/[\u4e00-\u9fff]/.test(text)) return lessonPath.quiz(level, text);
   return null;
 }
 
