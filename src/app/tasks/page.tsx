@@ -8,10 +8,12 @@ import { playPageIntro } from '@/lib/vega-audio';
 import AdSlot from '@/components/AdSlot';
 
 // 今日任務：每天 3 個小任務，完成拿獎勵。（進度之後接闖關紀錄）
+// 圖示不用 emoji——emoji 在每台裝置長得不一樣，跟這頁的木牌插畫也搭不起來。
+// 改用站上原本就有的技能徽章與獎勵圖。
 const TASKS = [
-  { icon: '🗣️', name: '魔法咒語', desc: '大聲念一課的句子', href: '/courses', reward: '⭐', count: 2 },
-  { icon: '📖', name: '故事解謎', desc: '讀完一課的故事書', href: '/courses', reward: '⭐', count: 2 },
-  { icon: '✏️', name: '字母拼圖', desc: '拼出 5 個新單字', href: '/courses', reward: '💎', count: 5 },
+  { icon: '/images/tasks/icon-speaking.webp', name: '魔法咒語', desc: '大聲念一課的句子', href: '/courses', reward: '/images/tasks/icon-star.webp', count: 2 },
+  { icon: '/images/tasks/icon-reading.webp', name: '故事解謎', desc: '讀完一課的故事書', href: '/courses', reward: '/images/tasks/icon-star.webp', count: 2 },
+  { icon: '/images/tasks/icon-writing.webp', name: '字母拼圖', desc: '拼出 5 個新單字', href: '/courses', reward: '/images/tasks/icon-gem.webp', count: 5 },
 ];
 
 export default function TasksPage() {
@@ -37,7 +39,7 @@ export default function TasksPage() {
           {/* 主標題 */}
           <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: '48%', width: '70%' }}>
             <h1 className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(22px,3.4vw,46px)' }}>
-              🌿 今日任務 🌿
+              今日任務
             </h1>
             <p className="font-bold text-amber-800/85 mt-1.5" style={{ fontSize: 'clamp(10px,1.3vw,18px)' }}>
               完成今天的任務，拿到冒險獎勵！
@@ -62,8 +64,8 @@ export default function TasksPage() {
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.12 }}>
               <img src="/images/tasks/card.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
               {/* 吊牌圖示 */}
-              <div className="absolute flex items-center justify-center" style={{ left: '7.5%', top: '28%', width: '9%', height: '46%' }}>
-                <span style={{ fontSize: 'clamp(16px,2.6vw,40px)' }}>{t.icon}</span>
+              <div className="absolute flex items-center justify-center" style={{ left: '6.6%', top: '22%', width: '11%', height: '58%' }}>
+                <img src={t.icon} alt="" className="w-full h-full object-contain drop-shadow-[0_2px_4px_rgba(90,55,20,.35)]" />
               </div>
               {/* 任務名 + 說明 */}
               <div className="absolute flex flex-col justify-center" style={{ left: '20%', right: '30%', top: '22%', height: '56%' }}>
@@ -72,7 +74,7 @@ export default function TasksPage() {
               </div>
               {/* 獎勵 */}
               <div className="absolute flex items-center gap-1" style={{ right: '9%', top: '20%' }}>
-                <span style={{ fontSize: 'clamp(12px,1.7vw,26px)' }}>{t.reward}</span>
+                <img src={t.reward} alt="" className="object-contain" style={{ height: 'clamp(16px,2.2vw,34px)' }} />
                 <span className="font-black text-amber-900" style={{ fontSize: 'clamp(10px,1.3vw,20px)' }}>×{t.count}</span>
               </div>
               {/* 去完成 */}
@@ -90,7 +92,7 @@ export default function TasksPage() {
           <img src="/images/tasks/bottom.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
           <p className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 font-black text-amber-900 whitespace-nowrap"
             style={{ fontSize: 'clamp(9px,1.25vw,18px)' }}>
-            任務每天更新，完成越多，收穫越多寶物 🏠
+            任務每天更新，完成越多，收穫越多寶物
           </p>
         </div>
 
