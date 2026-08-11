@@ -204,7 +204,7 @@ export default function ParentsPage() {
               { tag: '會拼、也讀得懂短句', from: 'L3 市場街', why: '進入生活單字與句型，開始用英文講日常的事。', href: '/courses/l3-market-street/mission/1' },
             ].map(x => (
               <Link key={x.tag} href={x.href} className="no-underline">
-                <article className="h-full bg-white rounded-2xl border-2 border-sky-200 shadow p-3 hover:shadow-lg hover:-translate-y-0.5 transition">
+                <article className="ae-frame h-full hover:-translate-y-0.5 transition">
                   <p className="m-0 inline-block bg-sky-100 text-sky-700 font-black text-[11px] rounded-full px-2 py-0.5">{x.tag}</p>
                   <p className="m-0 font-black text-gray-800 text-base mt-1.5">從 {x.from} 開始</p>
                   <p className="m-0 text-gray-500 font-bold text-[11px] leading-snug mt-1">{x.why}</p>
@@ -226,7 +226,7 @@ export default function ParentsPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {SUPPLY.map(s => (
               <Link key={s.t} href={s.href} className="no-underline">
-                <article className="h-full bg-amber-50 rounded-2xl border-2 border-amber-200 shadow p-3 text-center hover:shadow-lg hover:-translate-y-0.5 transition">
+                <article className="ae-frame h-full text-center hover:-translate-y-0.5 transition">
                   <img src={s.img} alt="" className="w-12 sm:w-16 mx-auto object-contain" />
                   <p className="m-0 font-black text-gray-800 text-[13px] sm:text-sm mt-1">{s.t}</p>
                   <p className="m-0 text-gray-500 font-bold text-[10px] leading-snug mt-0.5">{s.d}</p>

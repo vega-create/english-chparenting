@@ -417,3 +417,19 @@ body {
 .ae-btn-sm { font-size: clamp(11px, 1.15vw, 14px); }
 .ae-btn-md { font-size: clamp(13px, 1.35vw, 17px); }
 .ae-btn-lg { font-size: clamp(15px, 1.7vw, 22px); }
+
+/* ===== 圖片框（不是 CSS 邊框）=====
+   四邊等厚的木框，用 border-image 九宮格：四角維持原樣、四邊跟著內容拉長。
+   切點 120（原圖 1254 的約 10%）＝木框加轉角葉子的厚度。 */
+.ae-frame {
+  border-style: solid;
+  border-width: 22px;
+  border-image-source: url('/images/ui/frame-card.webp');
+  border-image-slice: 120 fill;
+  border-image-width: 22px;
+  border-image-repeat: stretch;
+  padding: 2px 6px 6px;
+}
+@media (min-width: 640px) {
+  .ae-frame { border-width: 28px; border-image-width: 28px; }
+}
