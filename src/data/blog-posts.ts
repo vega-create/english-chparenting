@@ -977,34 +977,34 @@ export const BOOKS = [
   {
     category: "3-5 歲入門",
     items: [
-      { title: "Brown Bear, Brown Bear, What Do You See?", author: "Eric Carle", age: "3-5", amazon: "https://amzn.to/4bw6xfB", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F012778662?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐻", description: "最經典的英文繪本入門，重複句型+鮮豔圖畫" },
-      { title: "The Very Hungry Caterpillar", author: "Eric Carle", age: "3-6", amazon: "https://amzn.to/4bDewaN", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F017496739?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐛", description: "學數字、食物、星期，孩子百看不膩" },
-      { title: "Dear Zoo", author: "Rod Campbell", age: "2-5", amazon: "https://amzn.to/4sk0T7B", books: "", image: "🦁", description: "翻翻書互動設計，學動物和形容詞" },
-      { title: "Goodnight Moon", author: "Margaret Wise Brown", age: "2-5", amazon: "https://amzn.to/4rFSKt6", books: "", image: "🌙", description: "睡前讀物經典，韻律優美好記憶" },
+      { title: "Brown Bear, Brown Bear, What Do You See?", author: "Eric Carle", age: "3-5", amazon: "https://amzn.to/4bw6xfB", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F012778662?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐻", description: "最經典的英文繪本入門，重複句型+鮮豔圖畫" , match: "L3 市場街 Animals & Colors" },
+      { title: "The Very Hungry Caterpillar", author: "Eric Carle", age: "3-6", amazon: "https://amzn.to/4bDewaN", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F017496739?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐛", description: "學數字、食物、星期，孩子百看不膩" , match: "L3 市場街 Food & Numbers" },
+      { title: "Dear Zoo", author: "Rod Campbell", age: "2-5", amazon: "https://amzn.to/4sk0T7B", books: "", image: "🦁", description: "翻翻書互動設計，學動物和形容詞" , match: "L3 市場街 Animals" },
+      { title: "Goodnight Moon", author: "Margaret Wise Brown", age: "2-5", amazon: "https://amzn.to/4rFSKt6", books: "", image: "🌙", description: "睡前讀物經典，韻律優美好記憶" , match: "L2 聲音島 Phonics" },
     ],
   },
   {
     category: "5-8 歲進階",
     items: [
-      { title: "Elephant & Piggie 系列", author: "Mo Willems", age: "5-8", amazon: "https://amzn.to/40ZENvf", books: "", image: "🐘", description: "對話式繪本，最適合練口說" },
-      { title: "Fly Guy 系列", author: "Tedd Arnold", age: "5-8", amazon: "https://amzn.to/47brgEh", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F010718271?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🪰", description: "橋樑書，從繪本跨到章節書" },
-      { title: "Oxford Reading Tree 系列", author: "Oxford", age: "4-8", amazon: "https://amzn.to/4lEkltg", books: "", image: "🌳", description: "英國小學指定教材，分級閱讀最完整" },
+      { title: "Elephant & Piggie 系列", author: "Mo Willems", age: "5-8", amazon: "https://amzn.to/40ZENvf", books: "", image: "🐘", description: "對話式繪本，最適合練口說" , match: "L4 學校路 Feelings" },
+      { title: "Fly Guy 系列", author: "Tedd Arnold", age: "5-8", amazon: "https://amzn.to/47brgEh", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F010718271?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🪰", description: "橋樑書，從繪本跨到章節書" , match: "L2 聲音島 Phonics" },
+      { title: "Oxford Reading Tree 系列", author: "Oxford", age: "4-8", amazon: "https://amzn.to/4lEkltg", books: "", image: "🌳", description: "英國小學指定教材，分級閱讀最完整" , match: "L4 學校路 Daily Life" },
     ],
   },
   {
     category: "8-12 歲挑戰",
     items: [
-      { title: "Magic Tree House 系列", author: "Mary Pope Osborne", age: "7-12", amazon: "https://amzn.to/4rJBZ06", books: "", image: "🏠", description: "冒險+知識，學過去式最自然的方式" },
-      { title: "Diary of a Wimpy Kid 系列", author: "Jeff Kinney", age: "8-12", amazon: "https://amzn.to/4lFVSDQ", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F01b140253?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "📔", description: "超受歡迎！漫畫風格輕鬆讀" },
-      { title: "Dog Man 系列", author: "Dav Pilkey", age: "7-12", amazon: "https://amzn.to/47tXv1J", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F015311445?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐕", description: "圖多字少，讓不愛讀書的孩子也愛上" },
-      { title: "Who Was 系列", author: "Various", age: "8-12", amazon: "https://amzn.to/40ZFFA1", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F010874629?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🧑‍🔬", description: "人物傳記，學英文也學歷史" },
+      { title: "Magic Tree House 系列", author: "Mary Pope Osborne", age: "7-12", amazon: "https://amzn.to/4rJBZ06", books: "", image: "🏠", description: "冒險+知識，學過去式最自然的方式" , match: "L9 時光道 Time Road" },
+      { title: "Diary of a Wimpy Kid 系列", author: "Jeff Kinney", age: "8-12", amazon: "https://amzn.to/4lFVSDQ", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F01b140253?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "📔", description: "超受歡迎！漫畫風格輕鬆讀" , match: "L8 問題塔 Q&A" },
+      { title: "Dog Man 系列", author: "Dav Pilkey", age: "7-12", amazon: "https://amzn.to/47tXv1J", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F015311445?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐕", description: "圖多字少，讓不愛讀書的孩子也愛上" , match: "L11 挑戰場 Quiz" },
+      { title: "Who Was 系列", author: "Various", age: "8-12", amazon: "https://amzn.to/40ZFFA1", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F010874629?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🧑‍🔬", description: "人物傳記，學英文也學歷史" , match: "L10 未來橋 Future Bridge" },
     ],
   },
   {
     category: "家長工具書",
     items: [
-      { title: "用有聲書輕鬆聽出英語力", author: "廖彩杏", age: "家長", amazon: "", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/0010796072?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🎧", description: "台灣最經典的英文啟蒙書單" },
-      { title: "英文繪本創意教學", author: "張湘君", age: "家長", amazon: "", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/0010312470?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "📚", description: "如何用繪本教孩子英文" },
+      { title: "用有聲書輕鬆聽出英語力", author: "廖彩杏", age: "家長", amazon: "", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/0010796072?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🎧", description: "台灣最經典的英文啟蒙書單" , match: "有聲書引導＋語感建立" },
+      { title: "英文繪本創意教學", author: "張湘君", age: "家長", amazon: "", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/0010312470?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "📚", description: "如何用繪本教孩子英文" , match: "繪本教學技巧與策略" },
     ],
   },
 ];

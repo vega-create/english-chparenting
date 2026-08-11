@@ -292,12 +292,15 @@ export default function CabinClient() {
                 <img src="/images/cabin/trophy-shelf.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
                 <p className="absolute left-1/2 -translate-x-1/2 font-black text-white whitespace-nowrap z-10"
                   style={{ top: '3%', fontSize: 'clamp(9px,1.15vw,16px)', textShadow: '0 1px 2px rgba(60,25,100,.6)' }}>成就展示櫃</p>
-                {badges.slice(0, 6).map((b, i) => (
-                  <div key={b.name} className="absolute flex flex-col items-center justify-center gap-[3%]"
+                {/* 這裡是「已經拿到的」獎盃櫃，不是待辦清單——拿到的排前面，
+                    條件、進度、還沒解鎖的全部留給 /badges，兩頁才不會講一樣的事 */}
+                {[...badges].sort((a, b) => Number(b.got) - Number(a.got)).slice(0, 6).map((b, i) => (
+                  <div key={b.key} className="absolute flex flex-col items-center justify-center gap-[3%]"
                     style={{ left: `${SHELF_SLOTS[i]}%`, ...SLOT }}>
-                    <span style={{ fontSize: 'clamp(15px,2.1vw,34px)', opacity: b.got ? 1 : 0.28, filter: b.got ? 'none' : 'grayscale(1)' }}>{b.icon}</span>
+                    <img src={b.got ? `/images/badges/ach-${b.key}.webp` : '/images/badges/ach-locked.webp'}
+                      alt="" className="object-contain" style={{ height: '58%', opacity: b.got ? 1 : 0.45 }} />
                     <p className="text-center font-black leading-tight px-[4%]"
-                      style={{ fontSize: 'clamp(6px,0.8vw,12px)', color: b.got ? '#fffbeb' : '#d6c7ae', ...SLOT_TXT }}>{b.name}</p>
+                      style={{ fontSize: 'clamp(6px,0.8vw,12px)', color: b.got ? '#fffbeb' : '#d6c7ae', ...SLOT_TXT }}>{b.got ? b.name : '未解鎖'}</p>
                   </div>
                 ))}
               </div>
