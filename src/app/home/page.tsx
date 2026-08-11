@@ -19,8 +19,17 @@ const ISLAND_IMG: Record<string, string> = {
   "l7-grammar-gate": "island-grammar", "l8-question-tower": "island-question",
   "l10-future-bridge": "island-future", "l11-challenge-arena": "island-challenge",
 };
-// 自選角色（跟 /choose-character 同一組；Finn 那群是課程裡的教學角色，不放這裡）
+// 冒險夥伴介紹（課程裡的六位教學夥伴；頭像用 -normal，vega 用嚮導圖）
 const PALS = [
+  { key: "finn", name: "Finn" },
+  { key: "coco", name: "Coco" },
+  { key: "ruby", name: "Ruby" },
+  { key: "benny", name: "Benny" },
+  { key: "polly", name: "Polly" },
+  { key: "vega", name: "Vega" },
+];
+// 自選角色（跟 /choose-character 同一組）——「目前角色」小卡用
+const AVATARS = [
   { key: "elly", name: "艾莉" },
   { key: "sky", name: "小飛" },
   { key: "coco", name: "可可" },
@@ -498,15 +507,15 @@ export default function LayeredBanner() {
 
           </div>
 
-          {/* 2b) 我的冒險角色 —— /choose-character 的五位自選角色站在森林空地上（背景是畫的，角色是去背圖疊上去） */}
+          {/* 2b) 我的冒險夥伴 —— 六位教學夥伴的介紹（照設計稿）；旁邊小卡點進去是「自己的角色」/choose-character */}
           <div className="relative rounded-3xl overflow-hidden border-4 border-amber-200 shadow-lg">
             <img src="/images/home/pals-band.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div className="relative px-3 pt-3 pb-4">
               <h3 className="text-lg sm:text-2xl font-black text-white mb-2" style={{ textShadow: "0 2px 6px rgba(20,60,20,.75)" }}>
-                ⭐ 我的冒險角色
+                ⭐ 我的冒險夥伴
               </h3>
               <div className="flex items-end gap-2 sm:gap-4">
-                <div className="flex-1 grid grid-cols-5 gap-0.5 sm:gap-2 items-end">
+                <div className="flex-1 grid grid-cols-6 gap-0.5 sm:gap-2 items-end">
                   {PALS.map((p, i) => (
                     <motion.div
                       key={p.key}
@@ -518,27 +527,24 @@ export default function LayeredBanner() {
                       onClick={() => playStar()}
                     >
                       <img
-                        src={`/images/avatars/${p.key}.webp`}
+                        src={`/characters/${p.key}/${p.key}-normal.png`}
                         alt={p.name}
                         className="w-full max-w-[92px] mx-auto object-contain"
                         style={{ filter: "drop-shadow(0 6px 8px rgba(30,60,30,0.4))" }}
                       />
-                      <p className={`text-[11px] sm:text-sm font-black rounded-full px-1.5 -mt-1 inline-block ${
-                        avatar === p.key ? "text-white bg-orange-500" : "text-amber-900 bg-amber-50/90"}`}>
-                        {avatar === p.key ? `⭐ ${p.name}` : p.name}
-                      </p>
+                      <span className="ae-name-plaque">{p.name}</span>
                     </motion.div>
                   ))}
                 </div>
-                {/* 目前角色（桌機才放得下） */}
-                <div className="hidden lg:block shrink-0 w-36 bg-amber-50/95 rounded-2xl border-2 border-amber-300 shadow p-2 text-center">
+                {/* 目前角色（桌機才放得下）：點進去到 /choose-character 選自己的角色 */}
+                <div className="hidden lg:block shrink-0 w-36 ae-frame text-center">
                   <p className="m-0 font-black text-amber-900 text-xs">目前角色</p>
-                  <p className="m-0 font-black text-amber-700 text-lg leading-tight">{PALS.find(p => p.key === avatar)?.name ?? "還沒選"}</p>
-                  <div className="mt-1.5"><GameButton href="/choose-character" color="gold" size="sm" sound="click">換角色 →</GameButton></div>
+                  <p className="m-0 font-black text-amber-700 text-lg leading-tight">{AVATARS.find(a => a.key === avatar)?.name ?? "還沒選"}</p>
+                  <div className="mt-1.5"><GameButton href="/choose-character" color="gold" size="sm" sound="click">我的角色 →</GameButton></div>
                 </div>
               </div>
               <div className="text-center mt-2 lg:hidden">
-                <GameButton href="/choose-character" color="gold" size="sm" sound="click">換角色 →</GameButton>
+                <GameButton href="/choose-character" color="gold" size="sm" sound="click">我的角色 →</GameButton>
               </div>
             </div>
           </div>

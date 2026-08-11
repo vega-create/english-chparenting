@@ -448,3 +448,22 @@ body {
 @media (min-width: 640px) {
   .ae-frame-parchment { border-width: 32px; border-image-width: 32px; }
 }
+
+/* ===== 名牌（木牌，字疊上去）=====
+   跟 .ae-btn 同一招：左右兩端固定、中段跟著文字伸縮。
+   左切 220 是因為葉子畫到 x=194，切少了葉子會被拉開；右切 160＝右圓角＋崁邊。 */
+.ae-name-plaque {
+  display: inline-block;
+  font-size: clamp(10px, 1.1vw, 14px);
+  font-weight: 900;
+  color: #5a2d0a;
+  text-shadow: 0 1px 0 rgba(255, 235, 190, 0.6);
+  white-space: nowrap;
+  border-style: solid;
+  border-width: 0 0.65em 0 0.9em;
+  border-image-source: url('/images/ui/plaque-name.webp');
+  border-image-slice: 0 160 0 220 fill;
+  border-image-width: 0 0.65em 0 0.9em;
+  border-image-repeat: stretch;
+  padding: 0.4em 0.35em;
+}
