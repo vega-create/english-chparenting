@@ -38,7 +38,7 @@ export default function BooksPage() {
           <div className="rounded-2xl border-4 border-amber-900/70 shadow-xl px-4 py-3"
             style={{ background: 'linear-gradient(#e6c08a,#c99a5c)' }}>
             <p className="m-0 text-amber-900/80 font-black tracking-[0.18em] text-[10px] sm:text-xs">ADVENTURE BOOK GARDEN</p>
-            <h1 className="m-0 font-black text-amber-950 text-xl sm:text-3xl leading-tight">英文冒險閱讀花園</h1>
+            <h1 className="m-0 font-black text-amber-950 text-lg sm:text-3xl leading-tight whitespace-nowrap">英文冒險閱讀花園</h1>
           </div>
           <p className="inline-block mt-2 rounded-full px-4 py-1.5 font-black text-white text-[11px] sm:text-sm shadow-lg"
             style={{ background: 'linear-gradient(#8b5cf6,#6d28d9)', textShadow: '0 1px 2px rgba(50,20,90,.6)' }}>
@@ -95,9 +95,15 @@ export default function BooksPage() {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 mt-3">
                 {group.items.map(book => (
                   <article key={book.title} className="bg-white rounded-2xl border-2 border-white shadow-md p-3 flex flex-col">
-                    <div className="flex items-start gap-2">
-                      <span className="text-3xl sm:text-4xl leading-none shrink-0">{book.image}</span>
-                      <span className="ml-auto shrink-0 bg-green-100 text-green-700 font-black text-[9px] rounded-md px-1.5 py-0.5 leading-tight text-center">
+                    {/* 書封來自 Open Library（免金鑰、用 ISBN 查）；沒有封面的書退回 emoji */}
+                    <div className="relative">
+                      {'cover' in book && (book as { cover?: string }).cover ? (
+                        <img src={(book as { cover?: string }).cover} alt={book.title}
+                          className="w-full h-24 sm:h-32 object-contain" loading="lazy" />
+                      ) : (
+                        <div className="w-full h-24 sm:h-32 flex items-center justify-center text-4xl">{book.image}</div>
+                      )}
+                      <span className="absolute right-0 top-0 bg-green-100 text-green-700 font-black text-[9px] rounded-md px-1.5 py-0.5 leading-tight text-center">
                         適齡<br />{book.age}
                       </span>
                     </div>

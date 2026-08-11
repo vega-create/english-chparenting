@@ -76,7 +76,7 @@ export default function ParentsPage() {
           <div className="rounded-2xl border-4 border-amber-900/70 shadow-xl px-4 py-3"
             style={{ background: 'linear-gradient(#e6c08a,#c99a5c)' }}>
             <p className="m-0 text-amber-900/80 font-black tracking-[0.18em] text-[10px] sm:text-xs">PARENT ADVENTURE CENTER</p>
-            <h1 className="m-0 font-black text-amber-950 text-xl sm:text-3xl leading-tight">家長冒險中心</h1>
+            <h1 className="m-0 font-black text-amber-950 text-lg sm:text-3xl leading-tight whitespace-nowrap">家長冒險中心</h1>
           </div>
           <p className="inline-block mt-2 rounded-full px-4 py-1.5 font-black text-white text-[11px] sm:text-sm shadow-lg"
             style={{ background: 'linear-gradient(#8b5cf6,#6d28d9)', textShadow: '0 1px 2px rgba(50,20,90,.6)' }}>

@@ -33,20 +33,6 @@ export default function AdventureMapPage() {
   const [showLocked, setShowLocked] = useState<WorldDef | null>(null);
   const [showDebug, setShowDebug] = useState(false);
   const [currentWorld, setCurrentWorld] = useState(1);
-  const [isPortrait, setIsPortrait] = useState(false);
-
-  // 手機直式自動轉橫向
-  useEffect(() => {
-    const check = () => setIsPortrait(window.innerHeight > window.innerWidth && window.innerWidth < 900);
-    check();
-    window.addEventListener("resize", check);
-    window.addEventListener("orientationchange", check);
-    return () => {
-      window.removeEventListener("resize", check);
-      window.removeEventListener("orientationchange", check);
-    };
-  }, []);
-
   // 依 localStorage 重新渲染
   useEffect(() => {
     const refresh = () => { setTick(t => t + 1); setCurrentWorld(getCurrentWorldId()); };
@@ -86,25 +72,6 @@ export default function AdventureMapPage() {
           </button>
         )}
       </div>
-
-      {/* 手機直式時：建議橫向操作 */}
-      {isPortrait && (
-        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 bg-white/95 backdrop-blur rounded-2xl shadow-2xl px-5 py-4 text-center max-w-[280px]">
-          <div className="text-5xl mb-2" style={{ animation: "wiggle 2.5s ease-in-out infinite" }}>📱</div>
-          <p className="font-black text-purple-700 text-base">把手機轉橫向</p>
-          <p className="text-xs text-gray-600 mt-1">橫著拿才看得清楚整張地圖喔！</p>
-          <button
-            onClick={() => setIsPortrait(false)}
-            className="mt-3 text-xs text-purple-500 underline"
-          >直立繼續（地圖會比較小）</button>
-          <style dangerouslySetInnerHTML={{ __html: `
-            @keyframes wiggle {
-              0%, 100% { transform: rotate(0deg); }
-              50% { transform: rotate(90deg); }
-            }
-          `}} />
-        </div>
-      )}
 
       {/* 地圖容器（依比例填滿視窗，不自動旋轉）*/}
       <div className="min-h-screen flex items-center justify-center p-2 md:p-4">

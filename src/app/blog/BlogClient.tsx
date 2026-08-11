@@ -55,7 +55,7 @@ export default function BlogClient() {
             <div className="rounded-2xl border-4 border-amber-900/70 shadow-xl px-4 py-3"
               style={{ background: 'linear-gradient(#c98a4b,#a9713a)' }}>
               <p className="m-0 text-amber-50/90 font-black tracking-[0.2em] text-[10px] sm:text-xs">ADVENTURE LIBRARY</p>
-              <h1 className="m-0 font-black text-white text-xl sm:text-3xl leading-tight"
+              <h1 className="m-0 font-black text-white text-lg sm:text-3xl leading-tight whitespace-nowrap"
                 style={{ textShadow: '0 2px 4px rgba(80,40,10,.6)' }}>英語冒險圖書館</h1>
               <p className="m-0 text-amber-50/90 font-bold text-[10px] sm:text-sm mt-0.5">陪孩子找到適合自己的英語學習方式</p>
             </div>

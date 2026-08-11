@@ -389,7 +389,9 @@ export default function LayeredBanner() {
 
           {/* 右側(桌機 xl+) / 下方(手機+iPad)：飛船 PNG（浮動）*/}
           <motion.div
-            className="w-full xl:w-[55%] flex items-center justify-center relative xl:-ml-12 mt-0 px-2 xl:px-0 flex-1 xl:flex-none min-h-0 overflow-hidden"
+            // 這裡本來有 overflow-hidden：飛船算出來比容器高（205 vs 196），
+            // 就被切掉上下各一條，看起來像鸚鵡旁邊卡了一條線。飛船本來就去背有陰影，不需要裁。
+            className="w-full xl:w-[55%] flex items-center justify-center relative xl:-ml-12 mt-0 px-2 xl:px-0 flex-1 xl:flex-none min-h-0"
             initial={{ x: 200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}

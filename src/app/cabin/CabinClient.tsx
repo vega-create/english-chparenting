@@ -121,14 +121,14 @@ export default function CabinClient() {
 
       <div className="relative mx-auto px-3 py-[3vh]" style={{ maxWidth: '1200px' }}>
         {/* ===== 標題木牌（頭標圖框） ===== */}
-        <div className="relative w-full mx-auto" style={{ aspectRatio: '1200 / 378', maxWidth: 'min(94%, 560px)' }}>
+        <div className="relative w-full mx-auto" style={{ aspectRatio: '1200 / 346', maxWidth: 'min(94%, 560px)' }}>
           <img src="/images/cabin/title-plate.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
           <h1 className="absolute left-1/2 -translate-x-1/2 font-black text-amber-900 leading-none whitespace-nowrap"
-            style={{ top: '22%', fontSize: 'clamp(20px,3vw,40px)', textShadow: '0 2px 3px rgba(255,240,200,.55)' }}>
+            style={{ top: '24%', fontSize: 'clamp(20px,3vw,40px)', textShadow: '0 2px 3px rgba(255,240,200,.55)' }}>
             🏠 我的小屋
           </h1>
           <p className="absolute text-center font-black text-white whitespace-nowrap"
-            style={{ left: '24.8%', width: '52.2%', top: '64%', fontSize: 'clamp(10px,1.3vw,19px)', textShadow: '0 1px 2px rgba(55,20,95,.7)' }}>
+            style={{ left: '24.8%', width: '52.2%', top: '70%', fontSize: 'clamp(10px,1.3vw,19px)', textShadow: '0 1px 2px rgba(55,20,95,.7)' }}>
             {member === 'guest' ? '訪客模式' : isVip ? '💎 冒險會員' : '免費會員'}
           </p>
         </div>

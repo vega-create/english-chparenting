@@ -142,7 +142,6 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
   const [openLevel, setOpenLevel] = useState<LevelDef | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [hydrated, setHydrated] = useState(false);
-  const [isPortrait, setIsPortrait] = useState(false);
   const [device, setDevice] = useState<DeviceKind>("desktop");
   const [showDebug, setShowDebug] = useState(false);
   const [characterKey, setCharacterKey] = useState(CHARACTERS[0].key);
@@ -155,8 +154,6 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
       const w = window.innerWidth;
       const h = window.innerHeight;
       const ua = navigator.userAgent;
-      const portrait = h > w;
-      setIsPortrait(portrait && w < 900);
 
       // 真實裝置 UA 偵測（最可靠）
       const isPhone = /iPhone|Android.*Mobile/i.test(ua);
@@ -293,26 +290,6 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
         </button>
       </div>
 
-      {/* 手機直式時：建議橫向操作 */}
-      {isPortrait && (
-        <motion.div
-          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 bg-white/95 backdrop-blur rounded-2xl shadow-2xl px-5 py-4 text-center max-w-[280px]"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-        >
-          <motion.div
-            className="text-5xl mb-2"
-            animate={{ rotate: [0, 90, 90, 0, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity, times: [0, 0.3, 0.6, 0.9, 1] }}
-          >📱</motion.div>
-          <p className="font-black text-purple-700 text-base">把手機轉橫向</p>
-          <p className="text-xs text-gray-600 mt-1">橫著拿才看得清楚整張地圖喔！</p>
-          <button
-            onClick={() => setIsPortrait(false)}
-            className="mt-3 text-xs text-purple-500 underline"
-          >直立繼續（地圖會比較小）</button>
-        </motion.div>
-      )}
 
       {/* 地圖區（滿版，依裝置切換圖檔與比例）*/}
       <div className="relative w-full overflow-hidden" style={{ height: "100vh", maxHeight: "100svh" }}>
