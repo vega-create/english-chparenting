@@ -199,10 +199,10 @@ const L1_M1: Mission = {
     { type: 'match', question: '選出正確的回答：Nice to meet you!', options: ['Nice to meet you too!', 'Bye bye!', 'No, thank you.', 'My name is hi.'], answer: 'Nice to meet you too!' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Hi! I'm Finn. Let's meet our friends!", lineZh: '嗨！我是 Finn。我們來認識新朋友！' },
-    { speaker: 'Coco', line: "Say hello, say your name, say bye!", lineZh: '打招呼、說名字、說再見！' },
-    { speaker: 'Benny', line: "What's your name? My name is Benny.", lineZh: '你叫什麼名字？我叫 Benny。' },
-    { speaker: 'Finn', line: "Now you can say hello to a new friend!", lineZh: '現在你會跟新朋友打招呼了！' },
+    { speaker: 'Polly', line: "Hello! I'm Polly. What's your name?", lineZh: '你好！我是 Polly。你叫什麼名字？' },
+    { speaker: 'Finn', line: "Hi, Polly! My name is Finn. Nice to meet you!", lineZh: '嗨 Polly！我叫 Finn。很高興認識你！' },
+    { speaker: 'Coco', line: "Hello! I'm Coco. Can we be friends?", lineZh: '你好！我是 Coco。我們可以當朋友嗎？' },
+    { speaker: 'Finn', line: "Yes! Bye for now, friends. See you soon!", lineZh: '好啊！朋友們先再見，很快見！' },
   ],
 };
 
@@ -296,10 +296,10 @@ const L1_M2: Mission = {
     { type: 'match', question: '🐶 狗是哪個字母開頭？', options: ['A', 'B', 'C', 'D'], answer: 'D' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's start with A, B, C and D!", lineZh: '我們從 A、B、C、D 開始！' },
-    { speaker: 'Coco', line: "A is for apple. B is for ball.", lineZh: 'A 是 apple。B 是 ball。' },
-    { speaker: 'Benny', line: "C is for cat. D is for dog.", lineZh: 'C 是 cat。D 是 dog。' },
-    { speaker: 'Finn', line: "Four letters, four new words!", lineZh: '四個字母，四個新單詞！' },
+    { speaker: 'Coco', line: "Look, Finn! I found an apple!", lineZh: '你看，Finn！我找到一顆蘋果！' },
+    { speaker: 'Finn', line: "A is for apple! And look — a ball!", lineZh: 'A 是 apple！你看，還有一顆球！' },
+    { speaker: 'Benny', line: "A cat is playing with the ball!", lineZh: '有一隻貓在玩那顆球！' },
+    { speaker: 'Finn', line: "And here comes a dog! A, B, C, D!", lineZh: '還有一隻狗跑來了！A、B、C、D！' },
   ],
 };
 
@@ -344,10 +344,10 @@ const L1_M3: Mission = {
     { type: 'match', question: '🎩 帽子是哪個字母開頭？', options: ['E', 'F', 'G', 'H'], answer: 'H' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Welcome to the forest! E, F, G, H.", lineZh: '歡迎來到森林！E、F、G、H。' },
-    { speaker: 'Coco', line: "E is for egg. F is for fish.", lineZh: 'E 是 egg。F 是 fish。' },
-    { speaker: 'Benny', line: "G is for goat. H is for hat.", lineZh: 'G 是 goat。H 是 hat。' },
-    { speaker: 'Finn', line: "Say them with me: E, F, G, H!", lineZh: '跟我一起念：E、F、G、H！' },
+    { speaker: 'Ruby', line: "Finn, look! An egg in the nest!", lineZh: 'Finn 你看！巢裡有一顆蛋！' },
+    { speaker: 'Finn', line: "E is for egg! Oh — a fish in the water!", lineZh: 'E 是 egg！哇，水裡有一條魚！' },
+    { speaker: 'Benny', line: "A goat is eating my hat!", lineZh: '有一隻山羊在吃我的帽子！' },
+    { speaker: 'Ruby', line: "Come back, goat! That's Benny's hat!", lineZh: '回來啦山羊！那是 Benny 的帽子！' },
   ],
 };
 
@@ -392,10 +392,10 @@ const L1_M4: Mission = {
     { type: 'match', question: '🍓 果醬是哪個字母開頭？', options: ['I', 'J', 'K', 'L'], answer: 'J' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Up the hill we go! I, J, K, L.", lineZh: '我們爬上山丘！I、J、K、L。' },
-    { speaker: 'Coco', line: "I is for igloo. J is for jam.", lineZh: 'I 是 igloo。J 是 jam。' },
-    { speaker: 'Benny', line: "K is for kite. L is for lion.", lineZh: 'K 是 kite。L 是 lion。' },
-    { speaker: 'Finn', line: "Four more letters. You are doing great!", lineZh: '又四個字母。你做得很好！' },
+    { speaker: 'Polly', line: "Brrr! Look at that igloo!", lineZh: '好冷！你看那間冰屋！' },
+    { speaker: 'Coco', line: "Come in and have some jam!", lineZh: '進來吃點果醬吧！' },
+    { speaker: 'Polly', line: "Look up! A kite is flying!", lineZh: '抬頭看！有風箏在飛！' },
+    { speaker: 'Finn', line: "Careful — a lion is sleeping here!", lineZh: '小心，有一隻獅子在這裡睡覺！' },
   ],
 };
 
@@ -438,10 +438,10 @@ const L1_M5: Mission = {
     { type: 'listen-pick', question: '"A" 開頭的字是？', options: ['apple', 'egg', 'igloo', 'lion'], answer: 'apple' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Time to review! A all the way to L.", lineZh: '複習時間！從 A 一路到 L。' },
-    { speaker: 'Coco', line: "Let's sing the letters together.", lineZh: '我們一起唱字母。' },
-    { speaker: 'Benny', line: "Listen, then say each letter out loud.", lineZh: '先聽，再大聲念出每個字母。' },
-    { speaker: 'Finn', line: "Twelve letters done. Halfway there!", lineZh: '十二個字母完成，走一半了！' },
+    { speaker: 'Finn', line: "Sing with me, everyone! A, B, C, D...", lineZh: '大家跟我一起唱！A、B、C、D…' },
+    { speaker: 'Coco', line: "E, F, G, H — I love this song!", lineZh: 'E、F、G、H —— 我好喜歡這首歌！' },
+    { speaker: 'Benny', line: "I, J, K, L! Let's sing it again!", lineZh: 'I、J、K、L！我們再唱一次！' },
+    { speaker: 'Finn', line: "You all sing so well!", lineZh: '你們唱得好棒！' },
   ],
 };
 
@@ -486,10 +486,10 @@ const L1_M6: Mission = {
     { type: 'match', question: '🍊 柳橙是哪個字母開頭？', options: ['M', 'N', 'O', 'P'], answer: 'O' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Down to the beach! M, N, O, P.", lineZh: '來到海邊！M、N、O、P。' },
-    { speaker: 'Coco', line: "M is for moon. N is for nest.", lineZh: 'M 是 moon。N 是 nest。' },
-    { speaker: 'Benny', line: "O is for orange. P is for pig.", lineZh: 'O 是 orange。P 是 pig。' },
-    { speaker: 'Finn', line: "Say each letter, then say its word!", lineZh: '念字母，再念它的單詞！' },
+    { speaker: 'Coco', line: "Look at the moon tonight, Finn!", lineZh: 'Finn，你看今晚的月亮！' },
+    { speaker: 'Finn', line: "And there's a nest up in the tree!", lineZh: '樹上還有一個鳥巢！' },
+    { speaker: 'Ruby', line: "I brought oranges for everyone!", lineZh: '我帶了柳橙給大家！' },
+    { speaker: 'Benny', line: "Oink! A pig wants one too!", lineZh: '呼嚕！有隻小豬也想要一顆！' },
   ],
 };
 
@@ -534,10 +534,10 @@ const L1_M7: Mission = {
     { type: 'match', question: '🐰 兔子是哪個字母開頭？', options: ['Q', 'R', 'S', 'T'], answer: 'R' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Into the castle! Q, R, S, T.", lineZh: '進入城堡！Q、R、S、T。' },
-    { speaker: 'Coco', line: "Q is for queen. R is for rabbit.", lineZh: 'Q 是 queen。R 是 rabbit。' },
-    { speaker: 'Benny', line: "S is for sun. T is for tiger.", lineZh: 'S 是 sun。T 是 tiger。' },
-    { speaker: 'Finn', line: "Four royal letters for you!", lineZh: '四個城堡字母送給你！' },
+    { speaker: 'Vega', line: "Welcome to the castle! Meet the queen!", lineZh: '歡迎來到城堡！來見見皇后！' },
+    { speaker: 'Ruby', line: "Hello, Queen! I am a rabbit.", lineZh: '皇后您好！我是一隻兔子。' },
+    { speaker: 'Coco', line: "The sun is shining on the castle.", lineZh: '陽光照在城堡上。' },
+    { speaker: 'Finn', line: "Shh! A tiger is coming!", lineZh: '噓！有一隻老虎過來了！' },
   ],
 };
 
@@ -582,10 +582,10 @@ const L1_M8: Mission = {
     { type: 'match', question: '🚐 廂型車是哪個字母開頭？', options: ['U', 'V', 'W', 'X'], answer: 'V' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Look up at the sky! U, V, W, X.", lineZh: '抬頭看天空！U、V、W、X。' },
-    { speaker: 'Coco', line: "U is for umbrella. V is for van.", lineZh: 'U 是 umbrella。V 是 van。' },
-    { speaker: 'Benny', line: "W is for watch. X is in fox!", lineZh: 'W 是 watch。X 在 fox 裡面！' },
-    { speaker: 'Finn', line: "X is tricky. It likes to hide at the end!", lineZh: 'X 很調皮，它喜歡躲在字尾！' },
+    { speaker: 'Polly', line: "It's raining! Take my umbrella!", lineZh: '下雨了！拿我的雨傘！' },
+    { speaker: 'Benny', line: "Quick, get in the van!", lineZh: '快，上車！' },
+    { speaker: 'Coco', line: "What time is it? Look at my watch!", lineZh: '現在幾點？看我的手錶！' },
+    { speaker: 'Finn', line: "Wait — a fox wants a ride too!", lineZh: '等等，有隻狐狸也想搭車！' },
   ],
 };
 
@@ -626,10 +626,10 @@ const L1_M9: Mission = {
     { type: 'fill-blank', question: 'W, X, Y, ___', options: ['Z', 'A', 'B', 'V'], answer: 'Z' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The last two brothers: Y and Z!", lineZh: '最後兩兄弟：Y 和 Z！' },
-    { speaker: 'Coco', line: "Y is for yoyo. Z is for zebra.", lineZh: 'Y 是 yoyo。Z 是 zebra。' },
-    { speaker: 'Benny', line: "Now we know all twenty-six letters!", lineZh: '現在我們認識全部二十六個字母了！' },
-    { speaker: 'Finn', line: "You finished the alphabet. Amazing!", lineZh: '你把字母學完了，太棒了！' },
+    { speaker: 'Ruby', line: "Finn, look at my yoyo! Up and down!", lineZh: 'Finn 看我的溜溜球！上上下下！' },
+    { speaker: 'Finn', line: "Wow! Can I try it, Ruby?", lineZh: '哇！Ruby，我可以試試看嗎？' },
+    { speaker: 'Coco', line: "A zebra wants to play too!", lineZh: '有一隻斑馬也想一起玩！' },
+    { speaker: 'Finn', line: "Y and Z — we made it to the end!", lineZh: 'Y 和 Z —— 我們走到最後了！' },
   ],
 };
 
@@ -672,10 +672,10 @@ const L1_M10: Mission = {
     { type: 'listen-pick', question: '"Z" 開頭的字是？', options: ['moon', 'queen', 'umbrella', 'zebra'], answer: 'zebra' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Big review! From M all the way to Z.", lineZh: '大複習！從 M 一路到 Z。' },
-    { speaker: 'Coco', line: "Sing them, don't just read them.", lineZh: '用唱的，不要只是用讀的。' },
-    { speaker: 'Benny', line: "Listen carefully and say each one.", lineZh: '仔細聽，然後念出每一個。' },
-    { speaker: 'Finn', line: "Twenty-six letters, all yours now!", lineZh: '二十六個字母，全都是你的了！' },
+    { speaker: 'Coco', line: "Sing with me! M, N, O, P...", lineZh: '跟我一起唱！M、N、O、P…' },
+    { speaker: 'Benny', line: "Q, R, S, T! Keep going!", lineZh: 'Q、R、S、T！繼續！' },
+    { speaker: 'Polly', line: "U, V, W... X, Y, Z!", lineZh: 'U、V、W… X、Y、Z！' },
+    { speaker: 'Finn', line: "We did it — all the way to Z!", lineZh: '我們做到了 —— 一路唱到 Z！' },
   ],
 };
 
@@ -718,10 +718,10 @@ const L1_M11: Mission = {
     { type: 'spell', question: '拼拼看：e g _（蛋）', answer: 'egg', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Now let's write the letters!", lineZh: '現在我們來寫字母！' },
-    { speaker: 'Coco', line: "Start at the top. Follow the line.", lineZh: '從上面開始，跟著線走。' },
-    { speaker: 'Benny', line: "Slow is fine. Neat is better!", lineZh: '慢慢來沒關係，寫整齊更重要！' },
-    { speaker: 'Finn', line: "Your hand is learning too!", lineZh: '你的手也在學習喔！' },
+    { speaker: 'Benny', line: "Coco, look at my big A!", lineZh: 'Coco，你看我的大寫 A！' },
+    { speaker: 'Coco', line: "Nice! Now write a small a next to it.", lineZh: '很棒！現在在旁邊寫一個小寫 a。' },
+    { speaker: 'Benny', line: "Big B, small b. Is this one good?", lineZh: '大寫 B，小寫 b。這樣可以嗎？' },
+    { speaker: 'Coco', line: "Yes! Your letters look great, Benny!", lineZh: '可以！Benny，你的字寫得真好！' },
   ],
 };
 
@@ -764,10 +764,10 @@ const L1_M12: Mission = {
     { type: 'fill-blank', question: 'The last letter of A-Z is ___.', options: ['Z', 'A', 'Y', 'X'], answer: 'Z' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Alphabet Island boss is here!", lineZh: '字母島的大魔王來了！' },
-    { speaker: 'Coco', line: "Use everything you learned. You can do it!", lineZh: '用上你學過的全部，你做得到！' },
-    { speaker: 'Benny', line: "Listen, match, spell, and speak!", lineZh: '聽、配對、拼字、開口說！' },
-    { speaker: 'Finn', line: "Beat the boss and the island is yours!", lineZh: '打敗大魔王，這座島就是你的！' },
+    { speaker: 'Vega', line: "The Boss is here! Ready, Finn?", lineZh: '大魔王來了！Finn，準備好了嗎？' },
+    { speaker: 'Finn', line: "Ready! A is for apple!", lineZh: '準備好了！A 是 apple！' },
+    { speaker: 'Ruby', line: "Z is for zebra! Keep going!", lineZh: 'Z 是 zebra！繼續！' },
+    { speaker: 'Finn', line: "We beat the Boss! Great teamwork!", lineZh: '我們打敗大魔王了！團隊合作真棒！' },
   ],
 };
 
@@ -818,10 +818,10 @@ const L1_M13: Mission = {
     { type: 'match', question: '大寫和小寫是？', options: ['同一個字母', '不同字母', '數字', '符號'], answer: '同一個字母' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Every letter has two forms: big and small!", lineZh: '每個字母有兩種樣子：大寫和小寫！' },
-    { speaker: 'Coco', line: "Big A and small a are the same letter!", lineZh: '大寫 A 和小寫 a 是同一個字母！' },
-    { speaker: 'Benny', line: "Big B, small b. Match them up!", lineZh: '大寫 B，小寫 b。把它們配對！' },
-    { speaker: 'Finn', line: "You can match big and small letters now!", lineZh: '你會配大小寫了！' },
+    { speaker: 'Coco', line: "Finn, is big A the same as small a?", lineZh: 'Finn，大寫 A 跟小寫 a 一樣嗎？' },
+    { speaker: 'Finn', line: "Yes! They are the same letter.", lineZh: '一樣！它們是同一個字母。' },
+    { speaker: 'Benny', line: "Then big B goes with small b!", lineZh: '那大寫 B 就配小寫 b！' },
+    { speaker: 'Coco', line: "You two are so quick!", lineZh: '你們兩個好快！' },
   ],
 };
 
@@ -870,10 +870,10 @@ const L1_M14: Mission = {
     { type: 'match', question: 'up 的相反是？', options: ['down', 'across', 'circle', 'line'], answer: 'down' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Let's write our letters! Trace them slowly.", lineZh: '我們來寫字母！慢慢地描。' },
-    { speaker: 'Coco', line: "A goes down, down, and across!", lineZh: 'A 往下、往下、再一橫！' },
-    { speaker: 'Benny', line: "O is a circle. Round and round!", lineZh: 'O 是一個圈。轉一圈！' },
-    { speaker: 'Ruby', line: "Great writing! You can write letters now!", lineZh: '寫得好！你會寫字母了！' },
+    { speaker: 'Vega', line: "Take your pencil, Ruby. Let's write A.", lineZh: 'Ruby，拿起鉛筆，我們來寫 A。' },
+    { speaker: 'Ruby', line: "Down, down, and across. Like this?", lineZh: '往下、往下，再一橫。像這樣嗎？' },
+    { speaker: 'Vega', line: "Perfect! Now trace an O — it's a circle.", lineZh: '完美！現在描一個 O —— 它是個圓。' },
+    { speaker: 'Ruby', line: "Round and round! I did it!", lineZh: '繞一圈！我做到了！' },
   ],
 };
 
@@ -922,10 +922,10 @@ const L1_M15: Mission = {
     { type: 'match', question: '🦓 zebra 是哪個字母？', options: ['Z', 'S', 'M', 'A'], answer: 'Z' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's sing the ABC song from A to Z!", lineZh: '我們從 A 唱到 Z！' },
-    { speaker: 'Polly', line: "A, B, C, D, E, F, G...", lineZh: 'A、B、C、D、E、F、G…' },
-    { speaker: 'Benny', line: "26 letters, big and small. You know them all!", lineZh: '26 個字母，大寫小寫。你全會了！' },
-    { speaker: 'Finn', line: "You are an ABC star! Amazing!", lineZh: '你是 ABC 之星！太厲害！' },
+    { speaker: 'Polly', line: "I spy something red. An apple!", lineZh: '我看到紅紅的東西，是蘋果！' },
+    { speaker: 'Coco', line: "I spy an egg. E, e, egg!", lineZh: '我看到一顆蛋。E、e、egg！' },
+    { speaker: 'Benny', line: "I spy an igloo, and an orange too!", lineZh: '我看到冰屋，還有一顆柳橙！' },
+    { speaker: 'Polly', line: "And an umbrella! What a fun game!", lineZh: '還有一把雨傘！這遊戲真好玩！' },
   ],
 };
 
@@ -975,10 +975,10 @@ const L1_M16: Mission = {
     { type: 'match', question: '「是」的英文是？', options: ['is', 'I', 'a', 'the'], answer: 'is' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Some words we just know by sight!", lineZh: '有些字我們一看就認得！' },
-    { speaker: 'Coco', line: "I is for me. I am Coco!", lineZh: 'I 是「我」。我是 Coco！' },
-    { speaker: 'Polly', line: "It is an apple. The apple is red.", lineZh: '這是一顆蘋果。這蘋果是紅的。' },
-    { speaker: 'Benny', line: "I, a, an, the, is — remember them!", lineZh: 'I、a、an、the、is —— 記住它們！' },
+    { speaker: 'Coco', line: "Hi! I am Coco. Who are you?", lineZh: '嗨！我是 Coco。你是誰？' },
+    { speaker: 'Benny', line: "I am Benny. Look — it is a cat!", lineZh: '我是 Benny。你看，那是一隻貓！' },
+    { speaker: 'Coco', line: "And it is an apple. The apple is red!", lineZh: '那是一顆蘋果。蘋果是紅色的！' },
+    { speaker: 'Benny', line: "A red apple for the cat!", lineZh: '一顆紅蘋果給貓咪！' },
   ],
 };
 
@@ -1027,10 +1027,10 @@ const L1_M17: Mission = {
     { type: 'match', question: '「來」的英文是？', options: ['come', 'go', 'see', 'me'], answer: 'come' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I see you! Do you see me?", lineZh: '我看到你！你看到我嗎？' },
-    { speaker: 'Benny', line: "I like you! I like to play.", lineZh: '我喜歡你！我喜歡玩。' },
-    { speaker: 'Polly', line: "Let's go! Come with me!", lineZh: '我們走！跟我來！' },
-    { speaker: 'Coco', line: "you, see, like, go, me — say them!", lineZh: 'you、see、like、go、me —— 說出來！' },
+    { speaker: 'Polly', line: "I see you, Finn! Do you see me?", lineZh: 'Finn，我看到你了！你看到我嗎？' },
+    { speaker: 'Finn', line: "I see you, Polly! I like your feathers!", lineZh: '我看到你了 Polly！我喜歡你的羽毛！' },
+    { speaker: 'Polly', line: "Let's go and play!", lineZh: '我們去玩吧！' },
+    { speaker: 'Finn', line: "Come on! We can play together!", lineZh: '來吧！我們可以一起玩！' },
   ],
 };
 
@@ -1080,10 +1080,10 @@ const L1_M18: Mission = {
     { type: 'match', question: 'an 用在？', options: ['母音(a/e/i/o/u)前', '子音前', '句尾', '數字前'], answer: '母音(a/e/i/o/u)前' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "One thing? Use a or an!", lineZh: '一個東西？用 a 或 an！' },
-    { speaker: 'Coco', line: "a cat, a dog, a ball — 'a' before a sound!", lineZh: 'a cat、a dog、a ball —— 子音前用 a！' },
-    { speaker: 'Polly', line: "an apple, an egg — 'an' before a, e, i, o, u!", lineZh: 'an apple、an egg —— 母音前用 an！' },
-    { speaker: 'Benny', line: "a for most, an for a-e-i-o-u!", lineZh: '大部分用 a，母音用 an！' },
+    { speaker: 'Ruby', line: "Look, Benny! I have a cat.", lineZh: 'Benny 你看！我有一隻貓。' },
+    { speaker: 'Benny', line: "And I have an apple. Want a bite?", lineZh: '我有一顆蘋果。要咬一口嗎？' },
+    { speaker: 'Ruby', line: "Yes, please! Is that a ball too?", lineZh: '好啊，謝謝！那也是一顆球嗎？' },
+    { speaker: 'Benny', line: "It is an egg, Ruby! Be careful!", lineZh: '那是一顆蛋，Ruby！小心一點！' },
   ],
 };
 
@@ -1132,10 +1132,10 @@ const L1_M19: Mission = {
     { type: 'fill-blank', question: 'The cat ___ big.（是）', options: ['is', 'see', 'a', 'like'], answer: 'is' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Now you can read short sentences!", lineZh: '現在你會讀短句了！' },
-    { speaker: 'Coco', line: "I see a cat. The cat is big.", lineZh: '我看到一隻貓。這隻貓很大。' },
-    { speaker: 'Polly', line: "It is an egg. I like the egg!", lineZh: '這是一顆蛋。我喜歡這顆蛋！' },
-    { speaker: 'Benny', line: "You read your first sentences! Amazing!", lineZh: '你讀出你的第一批句子了！太厲害！' },
+    { speaker: 'Coco', line: "I see a cat. The cat is big!", lineZh: '我看到一隻貓。那隻貓好大！' },
+    { speaker: 'Finn', line: "The big cat is sleeping. Shh!", lineZh: '大貓在睡覺。噓！' },
+    { speaker: 'Coco', line: "Look, it is an egg!", lineZh: '你看，那是一顆蛋！' },
+    { speaker: 'Finn', line: "I like the egg. Let's keep it safe.", lineZh: '我喜歡這顆蛋。我們把它保護好。' },
   ],
 };
 
@@ -1184,10 +1184,10 @@ const L1_M20: Mission = {
     { type: 'read', question: 'Can the writer read now?（作者會讀了嗎？）', passage: 'I know A to Z.\nI can read sight words.\nI can read: I see a cat!', options: ['Yes, I can read', 'No', 'Only ABC', 'Not yet'], answer: 'Yes, I can read' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Island Boss says: use letters, words, and reading!", lineZh: '字母島大魔王說：用上字母、常見字和閱讀！' },
-    { speaker: 'Coco', line: "A to Z, big and small, I see a cat — I know it all!", lineZh: 'A 到 Z、大寫小寫、I see a cat —— 我全會了！' },
-    { speaker: 'Ruby', line: "You beat the Boss! You graduate from Letter Island!", lineZh: '你打敗大魔王了！你從字母島畢業了！' },
-    { speaker: 'Finn', line: "Congratulations! On to Sound Island for phonics!", lineZh: '恭喜！前進聲音島學自然發音！' },
+    { speaker: 'Vega', line: "This is the last Boss. Ready, everyone?", lineZh: '這是最後的大魔王。大家準備好了嗎？' },
+    { speaker: 'Finn', line: "I know A to Z! Big A, small a!", lineZh: '我會 A 到 Z 了！大寫 A、小寫 a！' },
+    { speaker: 'Coco', line: "I see a cat. It is an egg!", lineZh: '我看到一隻貓。那是一顆蛋！' },
+    { speaker: 'Vega', line: "You did it! On to Sound Island!", lineZh: '你們辦到了！前進聲音島！' },
   ],
 };
 
