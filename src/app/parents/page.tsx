@@ -190,6 +190,33 @@ export default function ParentsPage() {
           </section>
         </div>
 
+        {/* ===== 孩子該從哪裡開始 =====
+             站上沒有別的地方回答這件事，家長最常問的也是這一題，所以放在家長中心。 */}
+        <section className="mt-6 rounded-3xl border-4 border-sky-200 bg-sky-50/80 shadow-lg p-4 sm:p-5">
+          <div className="flex items-baseline gap-2 mb-1">
+            <h2 className="font-black text-sky-800 text-base sm:text-lg m-0">孩子該從哪裡開始？</h2>
+            <p className="m-0 text-gray-500 font-bold text-[11px]">不用先問程度，照下面對一下就好</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-3 mt-3">
+            {[
+              { tag: '完全沒學過', from: 'L1 字母島', why: '從 26 個字母的形狀與聲音開始，先認得字母再談其他。', href: '/courses/l1-letter-island/mission/1' },
+              { tag: '認得字母，但不會拼', from: 'L2 聲音島', why: '自然發音：看到 c-a-t 能自己拼讀出 cat，是閱讀的關鍵一步。', href: '/courses/l2-sound-island/mission/1' },
+              { tag: '會拼、也讀得懂短句', from: 'L3 市場街', why: '進入生活單字與句型，開始用英文講日常的事。', href: '/courses/l3-market-street/mission/1' },
+            ].map(x => (
+              <Link key={x.tag} href={x.href} className="no-underline">
+                <article className="h-full bg-white rounded-2xl border-2 border-sky-200 shadow p-3 hover:shadow-lg hover:-translate-y-0.5 transition">
+                  <p className="m-0 inline-block bg-sky-100 text-sky-700 font-black text-[11px] rounded-full px-2 py-0.5">{x.tag}</p>
+                  <p className="m-0 font-black text-gray-800 text-base mt-1.5">從 {x.from} 開始</p>
+                  <p className="m-0 text-gray-500 font-bold text-[11px] leading-snug mt-1">{x.why}</p>
+                </article>
+              </Link>
+            ))}
+          </div>
+          <p className="text-center text-gray-500 font-bold text-[11px] mt-3 mb-0">
+            還是不確定？<Link href="/placement" className="text-sky-700 font-black underline">做個起點測驗</Link>，10 題 3 分鐘，系統直接告訴你從哪一課開始。
+          </p>
+        </section>
+
         {/* ===== 家長補給站 ===== */}
         <section className="mt-6">
           <div className="flex items-baseline gap-2 mb-3">

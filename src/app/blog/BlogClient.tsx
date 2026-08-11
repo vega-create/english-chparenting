@@ -180,11 +180,11 @@ export default function BlogClient() {
               不知道孩子現在適合學什麼？
             </h2>
             <p className="text-white/95 font-bold text-xs sm:text-sm mt-2 mb-4" style={{ textShadow: '0 1px 4px rgba(0,0,0,.5)' }}>
-              從字母、自然發音到 GEPT 檢定，<br className="sm:hidden" />跟著冒險英語一步一步前進！
+              先看一次使用說明，三分鐘就知道怎麼陪孩子開始。
             </p>
-            <Link href="/adventure-map"
+            <Link href="/guide"
               className="inline-block no-underline bg-gradient-to-b from-green-400 to-green-600 text-white font-black rounded-full px-7 py-2.5 shadow-lg border-2 border-white/80 text-sm">
-              查看學習地圖 →
+              看使用說明 →
             </Link>
           </div>
         </section>

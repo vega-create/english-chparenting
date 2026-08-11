@@ -495,49 +495,70 @@ export default function LayeredBanner() {
               <div className="mt-3 text-center"><GameButton href="/tasks" color="gold">開始任務 →</GameButton></div>
             </div>
 
-            {/* 和夥伴一起冒險 */}
-            <div className="bg-gradient-to-br from-sky-50 to-indigo-50 rounded-3xl p-5 border-2 border-sky-200 shadow-sm">
-              <h3 className="text-xl font-black text-indigo-500 text-center mb-4">✨ 和夥伴一起冒險！</h3>
-              <div className="grid grid-cols-3 gap-2 mb-4">
-                {PALS.map((p, i) => (
-                  <motion.div
-                    key={p.key}
-                    className="text-center cursor-pointer"
-                    whileHover={{ scale: 1.12, y: -6 }}
-                    whileTap={{ scale: 0.95, rotate: -4 }}
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ y: { duration: 2.4, repeat: Infinity, delay: i * 0.2, ease: "easeInOut" } }}
-                    onClick={() => playStar()}
-                  >
-                    <img
-                      src={`/characters/${p.key}/${p.key}-normal.png`}
-                      alt={p.name}
-                      className="w-24 h-24 sm:w-28 sm:h-28 mx-auto object-contain"
-                      style={{ filter: "drop-shadow(0 6px 8px rgba(80,60,120,0.25))", transform: p.key === "finn" ? "scale(1.12)" : undefined }}
-                    />
-                    <p className="text-sm font-bold text-gray-600 -mt-1">{p.name}</p>
-                  </motion.div>
-                ))}
+          </div>
+
+          {/* 2b) 我的冒險夥伴 —— 六隻站在森林空地上（背景是畫的，角色是去背 PNG 疊上去） */}
+          <div className="relative rounded-3xl overflow-hidden border-4 border-amber-200 shadow-lg">
+            <img src="/images/home/pals-band.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="relative px-3 pt-3 pb-4">
+              <h3 className="text-lg sm:text-2xl font-black text-white mb-2" style={{ textShadow: "0 2px 6px rgba(20,60,20,.75)" }}>
+                ⭐ 我的冒險夥伴
+              </h3>
+              <div className="flex items-end gap-2 sm:gap-4">
+                <div className="flex-1 grid grid-cols-6 gap-0.5 sm:gap-2 items-end">
+                  {PALS.map((p, i) => (
+                    <motion.div
+                      key={p.key}
+                      className="text-center cursor-pointer"
+                      whileHover={{ scale: 1.12, y: -6 }}
+                      whileTap={{ scale: 0.95, rotate: -4 }}
+                      animate={{ y: [0, -5, 0] }}
+                      transition={{ y: { duration: 2.4, repeat: Infinity, delay: i * 0.2, ease: "easeInOut" } }}
+                      onClick={() => playStar()}
+                    >
+                      <img
+                        src={`/characters/${p.key}/${p.key}-normal.png`}
+                        alt={p.name}
+                        className="w-full max-w-[92px] mx-auto object-contain"
+                        style={{ filter: "drop-shadow(0 6px 8px rgba(30,60,30,0.4))" }}
+                      />
+                      <p className="text-[11px] sm:text-sm font-black text-amber-900 bg-amber-50/90 rounded-full px-1 -mt-1 inline-block">{p.name}</p>
+                    </motion.div>
+                  ))}
+                </div>
+                {/* 目前夥伴（桌機才放得下） */}
+                <div className="hidden lg:block shrink-0 w-36 bg-amber-50/95 rounded-2xl border-2 border-amber-300 shadow p-2 text-center">
+                  <p className="m-0 font-black text-amber-900 text-xs">目前夥伴</p>
+                  <p className="m-0 font-black text-amber-700 text-lg leading-tight">Finn</p>
+                  <div className="mt-1.5"><GameButton href="/choose-character" color="gold" size="sm" sound="click">換夥伴 →</GameButton></div>
+                </div>
               </div>
-              <div className="text-center"><GameButton href="/guide" color="green" sound="click">認識更多夥伴 🐾</GameButton></div>
+              <div className="text-center mt-2 lg:hidden">
+                <GameButton href="/choose-character" color="gold" size="sm" sound="click">換夥伴 →</GameButton>
+              </div>
             </div>
           </div>
 
-          {/* 3) 成就徽章 + 最新課程 */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* 成就徽章 */}
-            <div className="bg-white rounded-3xl p-5 border-2 border-yellow-100 shadow-sm">
-              <h3 className="text-xl font-black text-gray-800 text-center mb-4">🏆 我的成就徽章</h3>
-              <div className="grid grid-cols-4 gap-2 mb-4">
-                {["🌱", "✍️", "📖", "⭐"].map((e, i) => (
-                  <div key={i} className="text-center">
-                    <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-yellow-100 to-amber-100 border-2 border-yellow-200 flex items-center justify-center text-2xl grayscale opacity-50">{e}</div>
-                  </div>
+          {/* 3) 成就徽章 —— 六格木架，圖上的凹槽就是格子，位置量測自 badge-shelf.webp */}
+          <div>
+            {/* 框跟圖同比例，格子才對得上凹槽；只限寬度，不要限高度（限高會讓框比圖寬，格子就飛出去了）*/}
+            <div className="relative w-full mx-auto" style={{ aspectRatio: "1536 / 1024", maxWidth: "640px" }}>
+              <img src="/images/home/badge-shelf.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
+              <h3 className="absolute left-1/2 -translate-x-1/2 top-[4%] font-black text-white text-base sm:text-2xl whitespace-nowrap"
+                style={{ textShadow: "0 2px 6px rgba(20,60,20,.85)" }}>🏆 我的成就徽章</h3>
+              <div className="absolute flex items-center justify-between" style={{ left: "15.5%", right: "15.5%", top: "42%", height: "16%" }}>
+                {[0, 1, 2, 3, 4, 5].map(i => (
+                  <img key={i} src="/images/badges/ach-locked.webp" alt="" className="h-full object-contain opacity-75" />
                 ))}
               </div>
-              <div className="text-center"><GameButton href="/badges" color="purple" sound="click">查看全部徽章 🏆</GameButton></div>
             </div>
+            <div className="text-center -mt-2">
+              <GameButton href="/badges" color="purple" sound="click">查看全部徽章 🏆</GameButton>
+            </div>
+          </div>
 
+          {/* 4) 最新課程 + 收集 */}
+          <div className="grid md:grid-cols-2 gap-6">
             {/* 最新冒險課程 */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-5 border-2 border-purple-200 shadow-sm">
               <h3 className="text-xl font-black text-purple-600 text-center mb-3">🆕 最新冒險課程</h3>
@@ -551,14 +572,11 @@ export default function LayeredBanner() {
               </Link>
               <div className="mt-3 text-center"><GameButton href="/courses/l3-market-street/mission/1" color="orange">開始學習 →</GameButton></div>
             </div>
-          </div>
 
-          {/* 4) 收集 + 家長專區 */}
-          <div className="grid md:grid-cols-2 gap-6">
             {/* 學習越多，收集越多 */}
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-5 border-2 border-cyan-200 shadow-sm">
               <h3 className="text-xl font-black text-cyan-600 text-center mb-4">🎁 學習越多，收集越多！</h3>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-4 gap-2 mb-4">
                 {[{ e: "🏅", t: "徽章" }, { e: "💎", t: "寶石" }, { e: "🧰", t: "道具" }, { e: "🎩", t: "角色裝扮" }].map(x => (
                   <Link key={x.t} href="/cabin" onClick={() => playClick()} className="no-underline text-center">
                     <div className="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-cyan-100 flex items-center justify-center text-2xl shadow-sm">{x.e}</div>
@@ -566,16 +584,40 @@ export default function LayeredBanner() {
                   </Link>
                 ))}
               </div>
+              <div className="text-center"><GameButton href="/cabin" color="green" sound="click">打開我的收藏 →</GameButton></div>
             </div>
+          </div>
 
-            {/* 家長專區 */}
-            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl p-5 border-2 border-rose-200 shadow-sm flex items-center gap-4">
-              <div className="flex-1">
-                <h3 className="text-xl font-black text-rose-500 mb-1">👨‍👩‍👧 家長專區</h3>
-                <p className="text-sm text-gray-600 mb-3">了解孩子的學習進度，陪伴成長每一步。</p>
-                <GameButton href="/parents" color="orange" sound="click">進入家長專區 🔒</GameButton>
+          {/* 5) 家長專區 —— 左邊放插圖，右邊講重點 */}
+          <div className="grid md:grid-cols-[1fr_1.3fr] gap-0 rounded-3xl overflow-hidden border-4 border-rose-200 shadow-lg bg-rose-50">
+            <img src="/images/home/parent-photo.webp" alt="" className="w-full h-44 md:h-full object-cover" />
+            <div className="p-4 sm:p-6 flex flex-col justify-center">
+              <h3 className="text-lg sm:text-2xl font-black text-rose-600 m-0">了解孩子學習進度，陪伴成長每一步！</h3>
+              <p className="text-xs sm:text-sm text-gray-600 mt-1 mb-3">在家長專區查看學習報告、推薦書單與學習攻略。</p>
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                {[{ i: "📗", t: "學習報告" }, { i: "📕", t: "推薦書單" }, { i: "💡", t: "學習攻略" }].map(x => (
+                  <div key={x.t} className="bg-white rounded-xl border-2 border-rose-200 px-1 py-2 text-center">
+                    <div className="text-xl sm:text-2xl leading-none">{x.i}</div>
+                    <p className="m-0 font-black text-gray-600 text-[11px] sm:text-xs mt-1">{x.t}</p>
+                  </div>
+                ))}
               </div>
-              <img src="/characters/vega/vega-read.png" alt="家長" className="w-24 h-24 object-contain flex-shrink-0 hidden sm:block" />
+              <div><GameButton href="/parents" color="orange" sound="click">進入家長專區 →</GameButton></div>
+            </div>
+          </div>
+
+          {/* 6) 收尾 CTA */}
+          <div className="relative rounded-3xl overflow-hidden border-4 border-amber-300 shadow-lg">
+            <img src="/images/maps/bg-sky-castles.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-amber-900/30" />
+            <div className="relative px-4 py-7 text-center">
+              <h3 className="font-black text-white text-lg sm:text-3xl m-0" style={{ textShadow: "0 2px 8px rgba(0,0,0,.5)" }}>
+                準備好開始你的英文冒險了嗎？
+              </h3>
+              <p className="text-white/95 font-bold text-xs sm:text-base mt-2 mb-4" style={{ textShadow: "0 1px 5px rgba(0,0,0,.55)" }}>
+                跟著 Finn 和夥伴們，一起探索 6 大世界、完成 240 堂課程！
+              </p>
+              <GameButton href="/adventure-map" color="gold" size="lg">🗺️ 探索學習地圖 →</GameButton>
             </div>
           </div>
         </div>
