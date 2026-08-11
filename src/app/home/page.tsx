@@ -3,6 +3,7 @@ import Link from "next/link";
 import PlacementPrompt from "@/components/PlacementPrompt";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import GameButton from "@/components/GameButton";
 import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 import { COURSES } from "@/data/courses";
@@ -468,10 +469,7 @@ export default function LayeredBanner() {
               ))}
             </div>
             <div className="flex justify-center mt-4">
-              <Link href="/adventure-map" onClick={() => playStar()}
-                className="no-underline inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-black px-8 py-3 rounded-full shadow-lg hover:from-purple-600 hover:to-indigo-600 transition">
-                🗺️ 進入世界地圖 →
-              </Link>
+              <GameButton href="/adventure-map" color="purple" size="lg">🗺️ 進入世界地圖 →</GameButton>
             </div>
           </div>
 
@@ -494,7 +492,7 @@ export default function LayeredBanner() {
                   ))}
                 </div>
               </div>
-              <Link href="/tasks" onClick={() => playStar()} className="no-underline mt-3 block text-center bg-gradient-to-r from-orange-400 to-amber-500 text-white font-black py-2.5 rounded-full hover:from-orange-500 transition">開始任務 →</Link>
+              <div className="mt-3 text-center"><GameButton href="/tasks" color="gold">開始任務 →</GameButton></div>
             </div>
 
             {/* 和夥伴一起冒險 */}
@@ -521,7 +519,7 @@ export default function LayeredBanner() {
                   </motion.div>
                 ))}
               </div>
-              <Link href="/guide" onClick={() => playClick()} className="no-underline block text-center bg-white text-indigo-500 font-black py-2.5 rounded-full border-2 border-indigo-200 hover:bg-indigo-50 transition">認識更多夥伴 🐾</Link>
+              <div className="text-center"><GameButton href="/guide" color="green" sound="click">認識更多夥伴 🐾</GameButton></div>
             </div>
           </div>
 
@@ -537,7 +535,7 @@ export default function LayeredBanner() {
                   </div>
                 ))}
               </div>
-              <Link href="/badges" onClick={() => playClick()} className="no-underline block text-center bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-black py-2.5 rounded-full hover:from-blue-600 transition">查看全部徽章 🏆</Link>
+              <div className="text-center"><GameButton href="/badges" color="purple" sound="click">查看全部徽章 🏆</GameButton></div>
             </div>
 
             {/* 最新冒險課程 */}
@@ -551,7 +549,7 @@ export default function LayeredBanner() {
                   <p className="text-yellow-400">⭐⭐⭐</p>
                 </div>
               </Link>
-              <Link href="/courses/l3-market-street/mission/1" onClick={() => playStar()} className="no-underline mt-3 block text-center bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black py-2.5 rounded-full hover:from-purple-600 transition">開始學習 →</Link>
+              <div className="mt-3 text-center"><GameButton href="/courses/l3-market-street/mission/1" color="orange">開始學習 →</GameButton></div>
             </div>
           </div>
 
@@ -575,7 +573,7 @@ export default function LayeredBanner() {
               <div className="flex-1">
                 <h3 className="text-xl font-black text-rose-500 mb-1">👨‍👩‍👧 家長專區</h3>
                 <p className="text-sm text-gray-600 mb-3">了解孩子的學習進度，陪伴成長每一步。</p>
-                <Link href="/parents" onClick={() => playClick()} className="no-underline inline-block bg-gradient-to-r from-pink-500 to-rose-600 text-white font-black px-6 py-2.5 rounded-full hover:from-pink-600 transition">進入家長專區 🔒</Link>
+                <GameButton href="/parents" color="orange" sound="click">進入家長專區 🔒</GameButton>
               </div>
               <img src="/characters/vega/vega-read.png" alt="家長" className="w-24 h-24 object-contain flex-shrink-0 hidden sm:block" />
             </div>

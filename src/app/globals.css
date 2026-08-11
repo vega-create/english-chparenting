@@ -382,3 +382,38 @@ body {
   line-height: 1.8;
   letter-spacing: 0.03em;
 }
+
+/* ===== 遊戲風按鈕（底圖用畫的，不用 CSS 漸層）=====
+   膠囊圖直接拉伸的話兩端圓角會被壓成長橢圓，所以用 border-image 九宮格：
+   左右兩塊固定原樣、只有中間跟著文字長度伸縮。切點 106px 是圖上圓角端的寬度。 */
+.ae-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 2px 3px rgba(90, 45, 10, 0.55);
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border-style: solid;
+  border-width: 0 1.2em;
+  border-image-slice: 0 106 fill;
+  border-image-width: 0 1.2em;
+  border-image-repeat: stretch;
+  padding: 0.55em 0.15em;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+.ae-btn:hover { filter: brightness(1.06); }
+.ae-btn:active { transform: scale(0.96); }
+
+.ae-btn-gold   { border-image-source: url('/images/ui/btn-gold.webp'); }
+.ae-btn-purple { border-image-source: url('/images/ui/btn-purple.webp'); }
+.ae-btn-green  { border-image-source: url('/images/ui/btn-green.webp'); }
+.ae-btn-orange { border-image-source: url('/images/ui/btn-orange.webp'); }
+
+.ae-btn-sm { font-size: clamp(11px, 1.15vw, 14px); }
+.ae-btn-md { font-size: clamp(13px, 1.35vw, 17px); }
+.ae-btn-lg { font-size: clamp(15px, 1.7vw, 22px); }
