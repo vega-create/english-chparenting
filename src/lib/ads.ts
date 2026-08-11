@@ -14,7 +14,7 @@
 
 export const AD_CLIENT = 'ca-pub-3493526929407874';
 
-export type AdPlace = 'lessonBottom' | 'mapBottom' | 'homeBottom' | 'cabinBottom' | 'tasksBottom';
+export type AdPlace = 'lessonBottom' | 'mapBottom' | 'homeBottom' | 'cabinBottom' | 'tasksBottom' | 'badgesBottom';
 
 /**
  * AdSense 後台 →「廣告」→「依廣告單元」→ 建立「多媒體廣告」（回應式），
@@ -31,6 +31,7 @@ export const AD_SLOTS: Record<AdPlace, string> = {
   homeBottom: DEFAULT_SLOT,     // 首頁最下方
   cabinBottom: DEFAULT_SLOT,    // 我的小屋最下方
   tasksBottom: DEFAULT_SLOT,    // 今日任務最下方
+  badgesBottom: DEFAULT_SLOT,   // 成就徽章最下方
 };
 
 /**

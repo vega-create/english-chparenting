@@ -126,25 +126,54 @@ function islandCleared(p: Progress, slug: string): boolean {
   return done >= total;
 }
 
-export interface Badge { icon: string; name: string; desc: string; got: boolean; }
+/** 徽章分類，成就頁上方的頁籤用。 */
+export type BadgeCat = 'learn' | 'explore' | 'collect' | 'final';
+export const BADGE_CATS: { key: BadgeCat | 'all'; label: string }[] = [
+  { key: 'all', label: '全部' },
+  { key: 'learn', label: '學習' },
+  { key: 'explore', label: '探索' },
+  { key: 'collect', label: '收藏' },
+  { key: 'final', label: '終極成就' },
+];
+
+export interface Badge {
+  key: string;          // 對應 /images/badges/ach-<key>.webp
+  icon: string;         // 圖還沒好時的備援
+  name: string;
+  desc: string;
+  got: boolean;
+  cat: BadgeCat;
+  now?: number;         // 還沒拿到時顯示的進度，例如 8 / 10
+  need?: number;
+  verb?: string;        // Finn 提示用：「再<verb> N <unit>」
+  unit?: string;
+}
 
 export function getBadges(p: Progress): Badge[] {
   const count = completedCount(p);
   const words = collectedWordCount(p);
   const hasThreeStar = Object.values(p.completed).some(s => s >= 3);
-  const allCleared = COURSES.every(c => islandCleared(p, c.slug));
+  const clearedIslands = COURSES.filter(c => islandCleared(p, c.slug)).length;
+  const allCleared = clearedIslands === COURSES.length;
   return [
-    { icon: '🌱', name: '冒險新手', desc: '完成第一課', got: count >= 1 },
-    { icon: '⭐', name: '滿星勇者', desc: '一課拿滿 3 顆星', got: hasThreeStar },
-    { icon: '🔊', name: '拼讀達人', desc: '通關聲音島', got: islandCleared(p, 'l2-sound-island') },
-    { icon: '🛒', name: '生活小達人', desc: '通關市場街', got: islandCleared(p, 'l3-market-street') },
-    { icon: '📚', name: '故事讀者', desc: '完成 10 課', got: count >= 10 },
-    { icon: '✍️', name: '拼字大師', desc: '收集 50 個單字', got: words >= 50 },
-    { icon: '🗺️', name: '半程英雄', desc: '完成 100 課', got: count >= 100 },
-    { icon: '💯', name: '單字收藏家', desc: '收集 300 個單字', got: words >= 300 },
-    { icon: '🏝️', name: '環島英雄', desc: '通關所有島嶼', got: allCleared },
-    { icon: '🎓', name: '畢業勇者', desc: '完成勝利峰大魔王', got: !!p.completed['l12-victory-summit/20'] },
+    { key: 'rookie', icon: '🌱', name: '冒險新手', desc: '完成第一課', got: count >= 1, cat: 'learn' },
+    { key: 'starhero', icon: '⭐', name: '滿星勇者', desc: '一課拿滿 3 顆星', got: hasThreeStar, cat: 'learn' },
+    { key: 'phonics', icon: '🔊', name: '拼讀達人', desc: '通關聲音島', got: islandCleared(p, 'l2-sound-island'), cat: 'explore' },
+    { key: 'market', icon: '🛒', name: '生活小達人', desc: '通關市場街', got: islandCleared(p, 'l3-market-street'), cat: 'explore' },
+    { key: 'reader', icon: '📚', name: '故事讀者', desc: '完成 10 課', got: count >= 10, cat: 'learn', now: count, need: 10, verb: '完成', unit: '課' },
+    { key: 'speller', icon: '✍️', name: '拼字大師', desc: '收集 50 個單字', got: words >= 50, cat: 'collect', now: words, need: 50, verb: '收集', unit: '個單字' },
+    { key: 'halfway', icon: '🗺️', name: '半程英雄', desc: '完成 100 課', got: count >= 100, cat: 'learn', now: count, need: 100, verb: '完成', unit: '課' },
+    { key: 'collector', icon: '💯', name: '單字收藏家', desc: '收集 300 個單字', got: words >= 300, cat: 'collect', now: words, need: 300, verb: '收集', unit: '個單字' },
+    { key: 'islands', icon: '🏝️', name: '環島英雄', desc: '通關所有島嶼', got: allCleared, cat: 'explore', now: clearedIslands, need: COURSES.length, verb: '通關', unit: '座島嶼' },
+    { key: 'graduate', icon: '🎓', name: '畢業勇者', desc: '完成勝利峰大魔王', got: !!p.completed['l12-victory-summit/20'], cat: 'final' },
   ];
+}
+
+/** 「再解鎖 N 個就能開寶箱」——每 6 枚一個寶箱，湊個看得到的近程目標。 */
+export const CHEST_EVERY = 6;
+export function nextChestIn(badges: Badge[]): number {
+  const got = badges.filter(b => b.got).length;
+  return CHEST_EVERY - (got % CHEST_EVERY);
 }
 
 export function currentIsland(p: Progress): string {
