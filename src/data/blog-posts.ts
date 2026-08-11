@@ -6,18 +6,18 @@ export interface BlogPost {
   category: string;
   tags: string[];
   readTime: number;
-  cover: { emoji: string; gradient: string; subtitle: string };
+  cover: { emoji: string; gradient: string; subtitle: string; image?: string };
   content: string; // markdown
 }
 
-export const BLOG_CATEGORIES = [
-  { slug: "phonics", name: "自然發音", emoji: "🔤", description: "Phonics 教學方法與技巧" },
-  { slug: "vocabulary", name: "單字學習", emoji: "📚", description: "有效記單字的方法" },
-  { slug: "speaking", name: "口說練習", emoji: "🗣️", description: "讓孩子勇敢開口說英文" },
-  { slug: "reading", name: "閱讀養成", emoji: "📖", description: "培養英文閱讀習慣" },
-  { slug: "parenting", name: "家長指南", emoji: "👨‍👩‍👧", description: "家長如何協助孩子學英文" },
-  { slug: "exam", name: "英檢準備", emoji: "📝", description: "全民英檢初級準備攻略" },
-  { slug: "resources", name: "學習資源", emoji: "🎯", description: "推薦書籍、App、教材" },
+export const BLOG_CATEGORIES: { slug: string; name: string; emoji: string; description: string; book: string }[] = [
+  { book: "/images/blog/book-phonics.webp", slug: "phonics", name: "自然發音", emoji: "🔤", description: "Phonics 教學方法與技巧" },
+  { book: "/images/blog/book-vocabulary.webp", slug: "vocabulary", name: "單字學習", emoji: "📚", description: "有效記單字的方法" },
+  { book: "/images/blog/book-speaking.webp", slug: "speaking", name: "口說練習", emoji: "🗣️", description: "讓孩子勇敢開口說英文" },
+  { book: "/images/blog/book-reading.webp", slug: "reading", name: "閱讀養成", emoji: "📖", description: "培養英文閱讀習慣" },
+  { book: "/images/blog/book-parenting.webp", slug: "parenting", name: "家長指南", emoji: "👨‍👩‍👧", description: "家長如何協助孩子學英文" },
+  { book: "/images/blog/book-exam.webp", slug: "exam", name: "英檢準備", emoji: "📝", description: "全民英檢初級準備攻略" },
+  { book: "/images/blog/book-resources.webp", slug: "resources", name: "學習資源", emoji: "🎯", description: "推薦書籍、App、教材" },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -29,7 +29,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "phonics",
     tags: ["Phonics", "KK音標", "自然發音", "兒童英文", "發音教學"],
     readTime: 8,
-    cover: { emoji: "🔤", gradient: "from-blue-500 via-purple-500 to-pink-500", subtitle: "Phonics vs KK 音標完整比較" },
+    cover: { emoji: "🔤", gradient: "from-blue-500 via-purple-500 to-pink-500", subtitle: "Phonics vs KK 音標完整比較" , image: "/images/blog/cover-phonics-kk.webp" },
     content: `你家小孩正在學「自然發音」還是「KK 音標」？還是兩個都在學但搞得一團亂？台灣有超過 **85% 的國小學生**同時接觸 Phonics 和 KK 音標兩種系統（國家教育研究院, 2024），但大多數家長分不清楚這兩套東西到底差在哪。
 
 這篇文章用科學數據和實際教學經驗，幫你一次搞懂：差別在哪、先學哪個、怎麼搭配最有效。
@@ -203,7 +203,7 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
     category: "speaking",
     tags: ["口說練習", "居家英文", "親子英文", "開口說英文"],
     readTime: 6,
-    cover: { emoji: "🗣️", gradient: "from-green-400 via-teal-500 to-blue-500", subtitle: "5 個方法讓孩子自然開口說英文" },
+    cover: { emoji: "🗣️", gradient: "from-green-400 via-teal-500 to-blue-500", subtitle: "5 個方法讓孩子自然開口說英文" , image: "/images/blog/cover-speaking.webp" },
     content: `「我家小孩英文考試都還不錯，但叫他說一句就整個人僵住……」這是我聽過最多的家長煩惱。你不孤單——根據 EF Education First (2025) 的英語能力指標報告，台灣有 **72% 的國小學生屬於「會考不會說」的類型**。
 
 問題不出在孩子的能力，而是我們的環境。台灣的英語教育太偏重「讀」和「寫」，口說練習的時間不到總學習時間的 **15%**（國教院, 2024）。孩子不是不會說，是沒有練習的機會，更沒有安全犯錯的空間。
@@ -382,7 +382,7 @@ AI 語音工具最大的優勢是什麼？**永遠不會嘲笑孩子、永遠不
     category: "resources",
     tags: ["英文繪本", "兒童書籍", "閱讀推薦", "英文書單"],
     readTime: 10,
-    cover: { emoji: "📚", gradient: "from-orange-400 via-red-400 to-pink-500", subtitle: "10 本最推薦的兒童英文繪本" },
+    cover: { emoji: "📚", gradient: "from-orange-400 via-red-400 to-pink-500", subtitle: "10 本最推薦的兒童英文繪本" , image: "/images/blog/cover-books.webp" },
     content: `你是不是也在想：該買哪些英文繪本給孩子？市面上千千萬萬本，到底哪些值得投資？根據 Scholastic (2025) 的全球閱讀報告，**每天閱讀 20 分鐘英文書的孩子，語言能力在前 10% 的比例是不閱讀孩子的 5 倍**。但前提是——選對書。
 
 我花了三年時間，從上百本繪本中挑出這 10 本，按 3-5 歲、5-8 歲、8-12 歲三個階段分類。每本都是我家兩個孩子實測過、反覆要求再讀的經典。這篇文章除了書單，更會教你怎麼用這些書引導孩子從「聽故事」進化到「自己讀」。
@@ -584,7 +584,7 @@ Dog Man 的特色是幾乎全部用漫畫形式呈現，每頁的文字量很少
     category: "exam",
     tags: ["全民英檢", "GEPT", "英檢初級", "考試準備"],
     readTime: 12,
-    cover: { emoji: "📝", gradient: "from-purple-500 via-indigo-500 to-blue-600", subtitle: "全民英檢初級完整準備攻略" },
+    cover: { emoji: "📝", gradient: "from-purple-500 via-indigo-500 to-blue-600", subtitle: "全民英檢初級完整準備攻略" , image: "/images/blog/cover-gept.webp" },
     content: `你知道嗎？2025 年全民英檢初級報考人數突破 **18 萬人**，其中國小考生佔比達 **23%**——等於每 4 個考生中就有 1 個是國小學生（LTTC, 2025）。英檢初級不再是「國中以後的事」，越來越多家庭把它當成國小高年級的里程碑目標。
 
 但我也遇過不少家長因為準備不當，孩子第一次考就被嚇到、從此抗拒英文。所以這篇攻略要幫你避開那些坑：從考什麼、幾歲開始、四大技能怎麼練、免費資源用哪些，到考試當天的注意事項——一次講清楚。
@@ -772,7 +772,7 @@ LTTC 官方建議初級需掌握約 **2,000 個單字**。但不要被這個數�
     category: "parenting",
     tags: ["螢幕時間", "3C教養", "家長指南", "學習習慣"],
     readTime: 7,
-    cover: { emoji: "📱", gradient: "from-yellow-400 via-orange-500 to-red-500", subtitle: "螢幕時間 vs 英文學習的平衡" },
+    cover: { emoji: "📱", gradient: "from-yellow-400 via-orange-500 to-red-500", subtitle: "螢幕時間 vs 英文學習的平衡" , image: "/images/blog/cover-screen-time.webp" },
     content: `「我知道用平板學英文很方便，但又怕他越看越沉迷……」你是不是也有這個矛盾？根據兒童福利聯盟 (2025) 的最新調查，**76% 的台灣家長**對孩子使用 3C 學習感到焦慮——既想利用科技的優勢，又害怕孩子被螢幕綁架。
 
 好消息是：科學研究已經給出了清楚的答案。**不是所有的螢幕時間都一樣。** 被動滑影片和主動互動學習，對孩子大腦的影響完全不同。這篇文章用最新的研究數據，告訴你怎麼讓螢幕時間從「罪惡感來源」變成「高效學習工具」。
