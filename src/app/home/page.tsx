@@ -395,7 +395,7 @@ export default function LayeredBanner() {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <motion.img
-              src="/images/maps/hero-ship-crew.webp?v=2"
+              src="/images/maps/hero-ship-crew.webp?v=3"
               alt="Adventure English crew"
               className="object-contain"
               style={{
