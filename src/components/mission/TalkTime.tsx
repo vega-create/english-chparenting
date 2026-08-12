@@ -23,6 +23,17 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [responses, setResponses] = useState<string[]>([]);
+  // ⚠️ 不支援語音辨識（iOS Safari 一大半）或沒給麥克風權限時，
+  //    改成手動確認的「我念完了」。之前的版本會默默跳過整題，看起來就像壞掉。
+  const [supported, setSupported] = useState<boolean | null>(null);
+  const [denied, setDenied] = useState(false);
+  const [missed, setMissed] = useState(false);   // 有開始聽但沒聽到聲音
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    setSupported(!!(w.SpeechRecognition || w.webkitSpeechRecognition));
+  }, []);
 
   const prompt = prompts[current];
 
@@ -39,29 +50,39 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
     if (typeof window === 'undefined') return;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const SpeechRecognitionAPI = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (!SpeechRecognitionAPI) {
-      handleSkip();
-      return;
-    }
+    if (!SpeechRecognitionAPI) { setSupported(false); return; }
 
+    let got = false;
     const recognition = new SpeechRecognitionAPI();
     recognition.lang = 'en-US';
     recognition.continuous = false;
     recognition.interimResults = false;
 
-    recognition.onstart = () => setIsListening(true);
+    recognition.onstart = () => { setMissed(false); setIsListening(true); };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onresult = (event: any) => {
+      got = true;
       const text = event.results[0][0].transcript;
       setTranscript(text);
       setResponses(prev => [...prev, text]);
       setIsListening(false);
     };
-    recognition.onerror = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    recognition.onerror = (e: any) => {
       setIsListening(false);
+      if (e?.error === 'not-allowed' || e?.error === 'service-not-allowed') { setDenied(true); return; }
+      setMissed(true);
     };
-    recognition.onend = () => setIsListening(false);
-    recognition.start();
+    recognition.onend = () => { setIsListening(false); if (!got) setMissed(true); };
+    try { recognition.start(); } catch { setIsListening(false); setMissed(true); }
+  }
+
+  // 手動確認：當作有回答，往下走
+  function handleManualDone() {
+    setResponses(prev => [...prev, '(manual)']);
+    setTranscript('');
+    if (current < prompts.length - 1) setCurrent(c => c + 1);
+    else onComplete();
   }
 
   function handleNext() {
@@ -136,9 +157,22 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
         </div>
 
         {/* 操作按鈕 */}
-        <div className="flex justify-center gap-3">
-          {!transcript ? (
+        <div className="flex flex-col items-center gap-2">
+          {supported === false || denied ? (
+            /* 不支援 or 沒麥克風權限：孩子念完自己按，不要默默跳過 */
             <>
+              <button
+                onClick={handleManualDone}
+                className="bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition active:scale-95 shadow-lg"
+              >
+                🎤 我念完了！
+              </button>
+              <p className="text-[11px] text-gray-400">
+                {denied ? '沒有麥克風權限，念完按這裡就好' : '這個瀏覽器不能自動聽，念完按這裡就好'}
+              </p>
+            </>
+          ) : !transcript ? (
+            <div className="flex justify-center gap-3">
               <button
                 onClick={startListening}
                 disabled={isListening}
@@ -146,7 +180,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
                   isListening ? 'bg-red-500 animate-pulse' : 'bg-indigo-500 hover:bg-indigo-600'
                 } text-white px-8 py-4 rounded-full font-bold text-lg transition active:scale-95 shadow-lg`}
               >
-                {isListening ? '🎤 聽取中...' : '🎤 按住說話'}
+                {isListening ? '🔴 聽你說…' : missed ? '💪 沒聽清楚，再說一次' : '🎤 按一下開始說'}
               </button>
               <button
                 onClick={handleSkip}
@@ -154,7 +188,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
               >
                 跳過 ▶
               </button>
-            </>
+            </div>
           ) : (
             <button
               onClick={handleNext}
