@@ -39,6 +39,13 @@ const AVATARS = [
   { key: "vera", name: "薇拉" },
 ];
 
+// 今日任務（跟 /tasks 頁同一份定義；圖示是畫的，見 public/images/tasks/）
+const DAILY_TASKS = [
+  { icon: '/images/tasks/icon-speaking.webp', name: '魔法咒語', desc: '大聲念一課的句子', reward: '/images/tasks/icon-star.webp', count: 2 },
+  { icon: '/images/tasks/icon-reading.webp', name: '故事解謎', desc: '讀完一課的故事書', reward: '/images/tasks/icon-star.webp', count: 2 },
+  { icon: '/images/tasks/icon-writing.webp', name: '字母拼圖', desc: '拼出 5 個新單字', reward: '/images/tasks/icon-gem.webp', count: 5 },
+];
+
 // 六大世界（首頁探索冒險世界輪播）
 const WORLDS = [
   { img: "world-rainbow-valley", zh: "彩虹谷", en: "Rainbow Valley", href: "/adventure-map/rainbow-valley" },
@@ -496,28 +503,30 @@ export default function LayeredBanner() {
             </div>
           </div>
 
-          {/* 2) 今日任務 + 夥伴 */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* 今日冒險任務 */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-5 border-2 border-amber-200 shadow-sm">
-              <h3 className="text-xl font-black text-orange-500 text-center mb-3">📜 今日冒險任務</h3>
-              <div className="flex items-start gap-3">
-                <img src="/characters/finn/finn-happy.png" alt="Finn" className="w-24 h-24 object-contain flex-shrink-0" />
-                <div className="flex-1">
-                  <p className="text-sm text-gray-600 mb-3">陪 Finn 去冒險，完成任務拿豐富獎勵！</p>
-                  {[
-                    { t: "完成一個故事", n: "0/1" }, { t: "完成一個遊戲", n: "0/1" }, { t: "找到 3 個蘋果", n: "0/3" },
-                  ].map(x => (
-                    <div key={x.t} className="flex items-center justify-between bg-white/70 rounded-xl px-3 py-1.5 mb-1.5">
-                      <span className="text-sm text-gray-700">✅ {x.t}</span>
-                      <span className="text-xs font-bold text-orange-400">{x.n}</span>
+          {/* 2) 今日冒險任務 —— 羊皮紙面板（照設計稿）；任務跟 /tasks 頁同一份定義，不再放編出來的假任務 */}
+          <div className="ae-frame-parchment">
+            <h3 className="text-lg sm:text-2xl font-black text-amber-900 text-center mt-0 mb-1">📜 今日冒險任務</h3>
+            <p className="text-center text-amber-950/70 font-bold text-xs sm:text-sm mt-0 mb-3">完成任務獲得星星，繼續你的冒險吧！</p>
+            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6">
+              <img src="/characters/finn/finn-happy.png" alt="Finn" className="w-24 sm:w-32 object-contain shrink-0"
+                style={{ filter: "drop-shadow(0 6px 8px rgba(120,80,20,0.25))" }} />
+              <div className="flex-1 w-full min-w-0">
+                {DAILY_TASKS.map(x => (
+                  <div key={x.name} className="flex items-center gap-2.5 bg-white/80 rounded-xl border border-amber-200 px-3 py-2 mb-1.5">
+                    <img src={x.icon} alt="" className="w-8 h-8 object-contain shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <p className="m-0 font-black text-gray-800 text-sm">{x.name}</p>
+                      <p className="m-0 text-gray-500 font-bold text-[11px]">{x.desc}</p>
                     </div>
-                  ))}
-                </div>
+                    <img src={x.reward} alt="" className="w-6 h-6 object-contain" />
+                    <span className="font-black text-amber-600 text-xs">×{x.count}</span>
+                  </div>
+                ))}
               </div>
-              <div className="mt-3 text-center"><GameButton href="/tasks" color="gold">開始任務 →</GameButton></div>
+              <div className="shrink-0 text-center">
+                <GameButton href="/tasks" color="gold">繼續今天的冒險 →</GameButton>
+              </div>
             </div>
-
           </div>
 
           {/* 2b) 我的冒險夥伴 —— 六位教學夥伴的介紹（照設計稿）；旁邊小卡點進去是「自己的角色」/choose-character */}
