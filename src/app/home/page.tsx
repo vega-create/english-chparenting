@@ -101,8 +101,8 @@ export default function LayeredBanner() {
 
   return (
     <div className="relative w-full min-h-screen overflow-x-hidden">
-      {/* 聲音控制：聽 Vega 說話 + 全站靜音 */}
-      <div className="fixed top-3 right-3 z-[60] flex items-center gap-2">
+      {/* 聲音控制：聽 Vega 說話 + 全站靜音（放 header 下方，別蓋住右上角的家長登入／🔔） */}
+      <div className="fixed top-[60px] md:top-[80px] right-3 z-[60] flex items-center gap-2">
         <button onClick={sayHello} title="聽 Vega 說話"
           className="bg-white/90 backdrop-blur rounded-full shadow border-2 border-purple-200 px-3 h-10 flex items-center gap-1.5 font-black text-purple-700 text-sm active:scale-95 transition hover:bg-white">
           <span className="text-lg">🔊</span><span className="hidden sm:inline">聽 Vega 說話</span>
