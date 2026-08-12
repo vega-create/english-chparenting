@@ -7,6 +7,7 @@ import GameButton from "@/components/GameButton";
 import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 import { COURSES } from "@/data/courses";
+import { loadProgress, getBadges, type Badge } from "@/lib/missionProgress";
 import { playGreeting, isMuted as isVegaMuted, setMuted as setVegaMuted, playVega, stopVega } from "@/lib/vega-audio";
 import AdSlot from '@/components/AdSlot';
 import AuthButton from '@/components/AuthButton';
@@ -20,13 +21,14 @@ const ISLAND_IMG: Record<string, string> = {
   "l10-future-bridge": "island-future", "l11-challenge-arena": "island-challenge",
 };
 // 冒險夥伴介紹（課程裡的六位教學夥伴；頭像用 -normal，vega 用嚮導圖）
+// scale：圖檔同高但體型不同，瘦長的（Ruby）看起來小一號，個別放大補回視覺份量
 const PALS = [
-  { key: "finn", name: "Finn" },
-  { key: "coco", name: "Coco" },
-  { key: "ruby", name: "Ruby" },
-  { key: "benny", name: "Benny" },
-  { key: "polly", name: "Polly" },
-  { key: "vega", name: "Vega" },
+  { key: "finn", name: "Finn", scale: 1 },
+  { key: "coco", name: "Coco", scale: 1 },
+  { key: "ruby", name: "Ruby", scale: 1.18 },
+  { key: "benny", name: "Benny", scale: 1 },
+  { key: "polly", name: "Polly", scale: 1 },
+  { key: "vega", name: "Vega", scale: 1.06 },
 ];
 // 自選角色（跟 /choose-character 同一組）——「目前角色」小卡用
 const AVATARS = [
@@ -64,6 +66,11 @@ export default function LayeredBanner() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [avatar, setAvatar] = useState<string | null>(null);
   useEffect(() => { try { setAvatar(localStorage.getItem('ae_avatar')); } catch {} }, []);
+  // 成就徽章：拿到的排前面，架上放 5 枚
+  const [badges, setBadges] = useState<Badge[]>([]);
+  useEffect(() => { setBadges(getBadges(loadProgress())); }, []);
+  const shelfBadges = [...badges].sort((a, b) => Number(b.got) - Number(a.got)).slice(0, 5);
+  const gotCount = badges.filter(b => b.got).length;
   const router = useRouter();
 
   useEffect(() => setMuted(isSfxMuted() && isVegaMuted()), []);
@@ -530,8 +537,12 @@ export default function LayeredBanner() {
                       <img
                         src={`/characters/${p.key}/${p.key}-normal.png`}
                         alt={p.name}
-                        className="h-[76px] sm:h-[120px] w-auto mx-auto object-contain"
-                        style={{ filter: "drop-shadow(0 6px 8px rgba(30,60,30,0.4))" }}
+                        className="w-auto mx-auto object-contain h-[var(--pal-h-sm)] sm:h-[var(--pal-h)]"
+                        style={{
+                          filter: "drop-shadow(0 6px 8px rgba(30,60,30,0.4))",
+                          ["--pal-h-sm" as string]: `${Math.round(76 * p.scale)}px`,
+                          ["--pal-h" as string]: `${Math.round(120 * p.scale)}px`,
+                        }}
                       />
                       <span className="ae-name-plaque">{p.name}</span>
                     </motion.div>
@@ -550,52 +561,79 @@ export default function LayeredBanner() {
             </div>
           </div>
 
-          {/* 3) 成就徽章 —— 六格木架，圖上的凹槽就是格子，位置量測自 badge-shelf.webp */}
-          <div>
-            {/* 框跟圖同比例，格子才對得上凹槽；只限寬度，不要限高度（限高會讓框比圖寬，格子就飛出去了）*/}
-            <div className="relative w-full mx-auto" style={{ aspectRatio: "1536 / 1024", maxWidth: "640px" }}>
-              <img src="/images/home/badge-shelf.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
-              <h3 className="absolute left-1/2 -translate-x-1/2 top-[4%] font-black text-white text-base sm:text-2xl whitespace-nowrap"
-                style={{ textShadow: "0 2px 6px rgba(20,60,20,.85)" }}>🏆 我的成就徽章</h3>
-              <div className="absolute flex items-center justify-between" style={{ left: "15.5%", right: "15.5%", top: "42%", height: "16%" }}>
-                {[0, 1, 2, 3, 4, 5].map(i => (
-                  <img key={i} src="/images/badges/ach-locked.webp" alt="" className="h-full object-contain opacity-75" />
-                ))}
+          {/* 3) 成就徽章 —— 羊皮紙面板＋五格木架（照設計稿）；格子與下方木板位置量測自 badge-shelf-row.webp */}
+          <div className="ae-frame-parchment">
+            <h3 className="text-lg sm:text-2xl font-black text-amber-900 text-center mt-0 mb-3">🏆 我的成就徽章</h3>
+            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-5">
+              <div className="relative w-full flex-1 min-w-0" style={{ aspectRatio: "1509 / 535" }}>
+                <img src="/images/home/badge-shelf-row.webp" alt="" className="absolute inset-0 w-full h-full" />
+                {/* 徽章疊進五個凹槽 */}
+                <div className="absolute flex items-center justify-between" style={{ left: "7.6%", right: "7.4%", top: "28%", height: "40%" }}>
+                  {shelfBadges.length
+                    ? shelfBadges.map(b => (
+                        <div key={b.key} className="h-full flex items-center justify-center" style={{ width: "16.6%" }}>
+                          <img src={b.got ? `/images/badges/ach-${b.key}.webp` : "/images/badges/ach-locked.webp"} alt={b.name}
+                            className={`h-full object-contain ${b.got ? "" : "opacity-70"}`} />
+                        </div>
+                      ))
+                    : [0, 1, 2, 3, 4].map(i => (
+                        <div key={i} className="h-full flex items-center justify-center" style={{ width: "16.6%" }}>
+                          <img src="/images/badges/ach-locked.webp" alt="" className="h-full object-contain opacity-70" />
+                        </div>
+                      ))}
+                </div>
+                {/* 名字印在下方木板上；沒拿到的顯示 ??? */}
+                <div className="absolute flex items-center justify-between" style={{ left: "7.6%", right: "7.4%", top: "72%", height: "14%" }}>
+                  {(shelfBadges.length ? shelfBadges : Array(5).fill(null)).map((b, i) => (
+                    <p key={b ? b.key : i} className="m-0 text-center font-black text-amber-50 text-[9px] sm:text-[11px] leading-none"
+                      style={{ width: "16.6%", textShadow: "0 1px 2px rgba(80,40,0,.8)" }}>
+                      {b && b.got ? b.name : "???"}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="text-center -mt-2">
-              <GameButton href="/badges" color="purple" sound="click">查看全部徽章 🏆</GameButton>
+              <div className="shrink-0 flex md:flex-col items-center gap-3">
+                <div className="relative w-[140px] sm:w-[160px]" style={{ aspectRatio: "900 / 607" }}>
+                  <img src="/images/ui/sign-purple.webp" alt="" className="absolute inset-0 w-full h-full" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <p className="m-0 font-black text-purple-100 text-xs">已獲得徽章</p>
+                    <p className="m-0 font-black text-white text-3xl leading-none mt-1">{gotCount}</p>
+                  </div>
+                </div>
+                <GameButton href="/badges" color="gold" sound="click">查看全部徽章 🏆</GameButton>
+              </div>
             </div>
           </div>
 
-          {/* 4) 最新課程 + 收集 */}
+          {/* 4) 最新課程 + 收集 —— 羊皮紙面板（照設計稿），圖示用畫的不用 emoji */}
           <div className="grid md:grid-cols-2 gap-6">
             {/* 最新冒險課程 */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-5 border-2 border-purple-200 shadow-sm">
-              <h3 className="text-xl font-black text-purple-600 text-center mb-3">🆕 最新冒險課程</h3>
+            <div className="ae-frame-parchment flex flex-col">
+              <h3 className="text-lg sm:text-xl font-black text-amber-900 text-center mt-0 mb-3">🆕 最新冒險課程</h3>
               <Link href="/courses/l3-market-street/mission/1" onClick={() => playClick()} className="no-underline flex items-center gap-3">
-                <div className="w-24 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center text-4xl">🍎</div>
+                <img src="/images/worlds/world-friendly-town.webp" alt="" className="w-24 h-20 rounded-2xl object-cover border-2 border-amber-200 flex-shrink-0" />
                 <div className="flex-1">
-                  <p className="text-xs text-gray-400">市場街 · 生活單字</p>
-                  <p className="font-black text-gray-800">Market Adventure</p>
-                  <p className="text-yellow-400">⭐⭐⭐</p>
+                  <p className="m-0 inline-block bg-purple-600 text-white font-black text-[10px] rounded-full px-2 py-0.5">L3 市場街</p>
+                  <p className="m-0 font-black text-gray-800 mt-1">Market Adventure</p>
+                  <p className="m-0 text-xs text-gray-500 font-bold">生活單字，把日常說成英文</p>
+                  <p className="m-0 text-yellow-500 text-sm">⭐⭐⭐</p>
                 </div>
               </Link>
-              <div className="mt-3 text-center"><GameButton href="/courses/l3-market-street/mission/1" color="orange">開始學習 →</GameButton></div>
+              <div className="mt-auto pt-3 text-center"><GameButton href="/courses/l3-market-street/mission/1" color="purple">開始學習 →</GameButton></div>
             </div>
 
             {/* 學習越多，收集越多 */}
-            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-5 border-2 border-cyan-200 shadow-sm">
-              <h3 className="text-xl font-black text-cyan-600 text-center mb-4">🎁 學習越多，收集越多！</h3>
-              <div className="grid grid-cols-4 gap-2 mb-4">
-                {[{ e: "🏅", t: "徽章" }, { e: "💎", t: "寶石" }, { e: "🧰", t: "道具" }, { e: "🎩", t: "角色裝扮" }].map(x => (
+            <div className="ae-frame-parchment flex flex-col">
+              <h3 className="text-lg sm:text-xl font-black text-amber-900 text-center mt-0 mb-3">🎁 學習越多，收集越多！</h3>
+              <div className="grid grid-cols-4 gap-2">
+                {[{ img: "collect-badge", t: "徽章" }, { img: "collect-gem", t: "寶石" }, { img: "collect-kit", t: "道具" }, { img: "collect-hat", t: "角色裝扮" }].map(x => (
                   <Link key={x.t} href="/cabin" onClick={() => playClick()} className="no-underline text-center">
-                    <div className="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-cyan-100 flex items-center justify-center text-2xl shadow-sm">{x.e}</div>
-                    <p className="text-xs text-gray-500 mt-1">{x.t}</p>
+                    <img src={`/images/home/${x.img}.webp`} alt={x.t} className="w-12 sm:w-16 mx-auto object-contain drop-shadow hover:scale-110 transition" />
+                    <p className="m-0 text-[11px] sm:text-xs font-black text-amber-900 mt-1">{x.t}</p>
                   </Link>
                 ))}
               </div>
-              <div className="text-center"><GameButton href="/cabin" color="green" sound="click">打開我的收藏 →</GameButton></div>
+              <div className="mt-auto pt-3 text-center"><GameButton href="/cabin" color="green" sound="click">打開我的收藏 →</GameButton></div>
             </div>
           </div>
 
