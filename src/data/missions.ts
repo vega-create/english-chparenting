@@ -204,6 +204,8 @@ const L1_M1: Mission = {
     { speaker: 'Coco', line: "Hello! I'm Coco. Can we be friends?", lineZh: '你好！我是 Coco。我們可以當朋友嗎？' },
     { speaker: 'Finn', line: "Yes! Bye for now, friends. See you soon!", lineZh: '好啊！朋友們先再見，很快見！' },
   ],
+  // 2026-08-12 樣品：一句一張圖、四段 Lipsync HD + Voice Changer 串接（流程見 scripts/課文錄音與影片規劃-2026-08.md）
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m1.mp4',
 };
 
 // L1 Mission 2: A to D（字母的開始）— 官方字 apple/ball/cat/dog + KK/自然發音
