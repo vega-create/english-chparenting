@@ -424,7 +424,7 @@ body {
 .ae-frame {
   border-style: solid;
   border-width: 22px;
-  border-image-source: url('/images/ui/frame-card.webp');
+  border-image-source: url('/images/ui/frame-card.webp?v=2');
   border-image-slice: 120 fill;
   border-image-width: 22px;
   border-image-repeat: stretch;
@@ -440,7 +440,7 @@ body {
 .ae-frame-parchment {
   border-style: solid;
   border-width: 26px;
-  border-image-source: url('/images/ui/frame-parchment.webp');
+  border-image-source: url('/images/ui/frame-parchment.webp?v=2');
   border-image-slice: 300 fill;
   border-image-width: 26px;
   border-image-repeat: stretch;

@@ -526,10 +526,11 @@ export default function LayeredBanner() {
                       transition={{ y: { duration: 2.4, repeat: Infinity, delay: i * 0.2, ease: "easeInOut" } }}
                       onClick={() => playStar()}
                     >
+                      {/* 圖檔同高但寬度不一，要用「高度」縮放才會一樣大；用寬度縮的話寬的變矮、窄的變高 */}
                       <img
                         src={`/characters/${p.key}/${p.key}-normal.png`}
                         alt={p.name}
-                        className="w-full max-w-[92px] mx-auto object-contain"
+                        className="h-[76px] sm:h-[120px] w-auto mx-auto object-contain"
                         style={{ filter: "drop-shadow(0 6px 8px rgba(30,60,30,0.4))" }}
                       />
                       <span className="ae-name-plaque">{p.name}</span>
