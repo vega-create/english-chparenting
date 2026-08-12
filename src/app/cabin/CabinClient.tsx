@@ -214,8 +214,9 @@ export default function CabinClient() {
                 <p className="absolute font-black text-white text-center whitespace-nowrap z-10"
                   style={{ left: '28%', width: '40%', top: '4.5%', fontSize: 'clamp(14px,1.2vw,17px)', textShadow: '0 1px 2px rgba(60,25,100,.6)' }}>冒險日誌</p>
 
-                {/* 左頁：今日學習 4 項 ＋ 連續登入 */}
-                <div className="absolute flex flex-col justify-between" style={{ left: '5.5%', width: '36%', top: '13%', bottom: '6%' }}>
+                {/* 左頁：今日學習 4 項 ＋ 連續登入
+                    top 19%＝紫緞帶（垂到 17.6%）下緣以下；bottom 9.5%＝頁面內緣（91.4%）以內，🔥 才不會掉出頁面 */}
+                <div className="absolute flex flex-col justify-between" style={{ left: '7.5%', width: '32%', top: '19%', bottom: '9.5%' }}>
                   <div>
                     <p className="font-black text-amber-900 text-center leading-none" style={{ fontSize: 'clamp(14px,1.25vw,18px)' }}>學習總覽</p>
                     <div className="mt-[6%] space-y-[4%]">
@@ -248,7 +249,8 @@ export default function CabinClient() {
                 </div>
 
                 {/* 右頁 3 格 */}
-                <div className="absolute flex flex-col justify-center" style={{ left: '51.5%', width: '38%', top: '14.4%', height: '24.8%' }}>
+                {/* 右頁三格：圖上格子在 x 51.5–88.75%、y 15/41/67%，內容要縮進格內（含 padding），按鈕才不會戳出格子 */}
+                <div className="absolute flex flex-col justify-center" style={{ left: '54.5%', width: '31.5%', top: '16%', height: '22%' }}>
                   <div className="flex items-center gap-[4%]">
                     <span style={{ fontSize: 'clamp(12px,1.6vw,24px)' }}>⭐</span>
                     <span className="font-bold text-amber-700" style={{ fontSize: 'clamp(12px,0.95vw,14px)' }}>累積星星</span>
@@ -258,7 +260,7 @@ export default function CabinClient() {
                     <div className="h-full bg-gradient-to-r from-lime-400 to-green-500" style={{ width: `${Math.min(100, Math.round(stars / 720 * 100))}%` }} />
                   </div>
                 </div>
-                <div className="absolute flex flex-col justify-center" style={{ left: '51.5%', width: '38%', top: '40.5%', height: '24.8%' }}>
+                <div className="absolute flex flex-col justify-center" style={{ left: '54.5%', width: '31.5%', top: '42%', height: '22%' }}>
                   <div className="flex items-center gap-[4%]">
                     <span style={{ fontSize: 'clamp(12px,1.6vw,24px)' }}>✅</span>
                     <span className="font-bold text-amber-700" style={{ fontSize: 'clamp(12px,0.95vw,14px)' }}>完成任務</span>
@@ -268,7 +270,7 @@ export default function CabinClient() {
                     <div className="h-full bg-gradient-to-r from-lime-400 to-green-500" style={{ width: `${Math.min(100, done / 240 * 100)}%` }} />
                   </div>
                 </div>
-                <div className="absolute flex flex-col justify-center" style={{ left: '51.5%', width: '38%', top: '66.6%', height: '24.8%' }}>
+                <div className="absolute flex flex-col justify-center" style={{ left: '54.5%', width: '31.5%', top: '68%', height: '22%' }}>
                   <p className="font-bold text-amber-700 leading-none" style={{ fontSize: 'clamp(12px,0.95vw,14px)' }}>最近完成</p>
                   <div className="flex items-center gap-[5%] mt-[4%]">
                     <img src={`/images/courses/hero/${CUR.slug}.webp`} alt=""

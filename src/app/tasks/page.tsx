@@ -31,30 +31,30 @@ export default function TasksPage() {
         {/* ===== 標題 banner ===== */}
         <div className="relative w-full" style={{ aspectRatio: '1400 / 576' }}>
           <img src="/images/tasks/banner.webp" alt="" className="absolute inset-0 w-full h-full object-contain" />
-          {/* 紫緞帶 */}
-          <p className="absolute left-1/2 -translate-x-1/2 font-black text-white whitespace-nowrap"
-            style={{ top: '26%', fontSize: 'clamp(10px,1.25vw,18px)', textShadow: '0 1px 2px rgba(60,25,100,.55)' }}>
+          {/* 「每日冒險」寫在中央的小卷軸上（緞帶被卷軸打斷，字放緞帶中央會壓到卷軸） */}
+          <p className="absolute left-1/2 -translate-x-1/2 font-black text-amber-900 whitespace-nowrap"
+            style={{ top: '11.5%', fontSize: 'clamp(10px,1.3vw,19px)' }}>
             每日冒險
           </p>
-          {/* 主標題 */}
-          <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: '48%', width: '70%' }}>
-            <h1 className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(22px,3.4vw,46px)' }}>
+          {/* 主標題＋副標：放在緞帶(41.7%)與凹槽(62%)之間的空白帶 */}
+          <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: '43%', width: '70%' }}>
+            <h1 className="font-black text-amber-900 leading-none" style={{ fontSize: 'clamp(18px,2.9vw,40px)' }}>
               今日任務
             </h1>
-            <p className="font-bold text-amber-800/85 mt-1.5" style={{ fontSize: 'clamp(10px,1.3vw,18px)' }}>
+            <p className="font-bold text-amber-800/85 mt-1" style={{ fontSize: 'clamp(9px,1.2vw,16px)' }}>
               完成今天的任務，拿到冒險獎勵！
             </p>
           </div>
-          {/* 進度：文字在左，填色直接畫進圖上原本的凹槽 */}
-          <div className="absolute flex items-center gap-[2%]" style={{ left: '13%', right: '10%', top: '80%', height: '10%' }}>
-            <span className="font-black text-amber-900 whitespace-nowrap" style={{ fontSize: 'clamp(9px,1.15vw,16px)' }}>
-              今日進度 {done} / {TASKS.length}
-            </span>
-            <div className="relative flex-1 h-[70%]">
-              <motion.div className="absolute inset-y-0 left-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"
-                initial={{ width: 0 }} animate={{ width: `${(done / TASKS.length) * 100}%` }} transition={{ duration: 0.8 }} />
-            </div>
+          {/* 進度填色：對準圖上畫好的凹槽（y 62–74%、x 25.5–90%） */}
+          <div className="absolute" style={{ left: '25.7%', right: '10%', top: '63%', height: '10.5%' }}>
+            <motion.div className="absolute inset-y-[12%] left-[0.5%] bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"
+              initial={{ width: 0 }} animate={{ width: `${(done / TASKS.length) * 99}%` }} transition={{ duration: 0.8 }} />
           </div>
+          {/* 今日進度：寫在禮物圓框正下方 */}
+          <p className="absolute text-center font-black text-amber-900 whitespace-nowrap"
+            style={{ left: '8%', width: '13.5%', top: '80%', fontSize: 'clamp(9px,1.15vw,16px)' }}>
+            今日進度 {done} / {TASKS.length}
+          </p>
         </div>
 
         {/* ===== 3 張任務卡 ===== */}
