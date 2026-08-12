@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/components/AuthProvider';
+import GameButton from '@/components/GameButton';
 import { playClick } from '@/lib/sfx';
 import { loadProgress, completedCount, totalStars } from '@/lib/missionProgress';
 
@@ -51,30 +52,31 @@ export default function LoginNudge({ variant = 'card' }: { variant?: 'card' | 'i
   if (!show) return null;
 
   return (
-    <section className={`rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 ${variant === 'card' ? 'my-5' : 'mt-4'}`}>
-      <p className="font-black text-gray-800">
-        ⭐ 已經拿到 {stars} 顆星、完成 {lessons} 課了
-      </p>
-      <p className="mt-1 text-sm leading-relaxed text-gray-600">
-        這些目前只存在這台裝置裡。
-        <strong className="text-gray-800">清掉瀏覽器資料或換一台，就會全部歸零。</strong>
-        家長登入之後就存得起來，換手機、換平板都接得回來。
-      </p>
+    <section className={`ae-frame-parchment relative ${variant === 'card' ? 'my-5' : 'mt-4'}`}>
+      <div className="pr-20 sm:pr-32">
+        <p className="font-black text-gray-800">
+          ⭐ 已經拿到 {stars} 顆星、完成 {lessons} 課了
+        </p>
+        <p className="mt-1 text-sm leading-relaxed text-gray-600">
+          這些目前只存在這台裝置裡。
+          <strong className="text-gray-800">清掉瀏覽器資料或換一台，就會全部歸零。</strong>
+          家長登入之後就存得起來，換手機、換平板都接得回來。
+        </p>
 
-      <div className="mt-3 flex gap-2">
-        <button onClick={snooze}
-          className="rounded-full border-2 border-gray-200 bg-white px-4 py-2 text-xs font-black text-gray-400 active:scale-95">
-          以後再說
-        </button>
-        <button onClick={() => { playClick(); signIn(); }}
-          className="flex-1 rounded-full bg-sky-500 px-4 py-2 text-sm font-black text-white shadow active:scale-95">
-          家長登入，保存進度
-        </button>
+        <div className="mt-3 flex items-center gap-2">
+          <button onClick={snooze}
+            className="rounded-full border-2 border-gray-200 bg-white px-4 py-2 text-xs font-black text-gray-400 active:scale-95">
+            以後再說
+          </button>
+          <GameButton onClick={signIn} color="gold" size="sm" sound="click">家長登入，保存進度</GameButton>
+        </div>
+
+        <p className="mt-2 text-[11px] text-gray-400">
+          用 Google 登入，不用另外註冊。孩子不需要自己的帳號。
+        </p>
       </div>
-
-      <p className="mt-2 text-center text-[11px] text-gray-400">
-        用 Google 登入，不用另外註冊。孩子不需要自己的帳號。
-      </p>
+      {/* 寶箱貼紙：提醒「這些進度是寶物，要收好」 */}
+      <img src="/images/ui/sticker-chest.webp" alt="" className="absolute right-1 bottom-1 w-20 sm:w-28 object-contain drop-shadow" />
     </section>
   );
 }

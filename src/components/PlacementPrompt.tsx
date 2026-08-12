@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import GameButton from '@/components/GameButton';
 import { needsPretest, canPosttest, improvement, POSTTEST_AFTER } from '@/lib/placement';
 import { loadProgress, completedCount } from '@/lib/missionProgress';
 
@@ -36,7 +36,7 @@ export default function PlacementPrompt() {
   if (state === 'result' && imp) {
     const diff = imp.post - imp.pre;
     return (
-      <Card tone="green">
+      <Card>
         <p className="font-black text-gray-800">📈 你的進步</p>
         <p className="mt-1 text-sm text-gray-600">
           起點 {imp.pre} 分 → 現在 {imp.post} 分（滿分 {imp.total}）
@@ -48,33 +48,36 @@ export default function PlacementPrompt() {
 
   if (state === 'post') {
     return (
-      <Card tone="purple">
+      <Card sticker="/images/ui/sticker-puppy.webp">
         <p className="font-black text-gray-800">🔁 上滿 {POSTTEST_AFTER} 課了，再測一次？</p>
         <p className="mt-1 text-sm text-gray-600">
           用一模一樣的 10 題，看看跟起點比進步多少。
         </p>
-        <Link href="/placement" className="mt-3 inline-block rounded-full bg-purple-500 px-6 py-2 text-sm font-black text-white active:scale-95">
-          開始複測
-        </Link>
+        <div className="mt-3"><GameButton href="/placement" color="purple" size="sm" sound="click">開始複測</GameButton></div>
       </Card>
     );
   }
 
   return (
-    <Card tone="purple">
+    <Card sticker="/images/ui/sticker-puppy.webp">
       <p className="font-black text-gray-800">🧭 先做個起點測驗？</p>
       <p className="mt-1 text-sm text-gray-600">
         10 題、3 分鐘，記下你現在的程度。之後再測一次，就看得出自己進步多少。
         {doneCount > 0 && '（已經上過課也可以做，還是比得出來。）'}
       </p>
-      <Link href="/placement" className="mt-3 inline-block rounded-full bg-purple-500 px-6 py-2 text-sm font-black text-white active:scale-95">
-        開始測驗
-      </Link>
+      <div className="mt-3"><GameButton href="/placement" color="purple" size="sm" sound="click">開始測驗</GameButton></div>
     </Card>
   );
 }
 
-function Card({ tone, children }: { tone: 'purple' | 'green'; children: React.ReactNode }) {
-  const c = tone === 'green' ? 'border-green-200 bg-green-50' : 'border-purple-200 bg-purple-50';
-  return <section className={`my-5 rounded-2xl border-2 p-4 ${c}`}>{children}</section>;
+/* 羊皮紙面板（畫的框），右下角可以站一隻貼紙角色 */
+function Card({ sticker, children }: { sticker?: string; children: React.ReactNode }) {
+  return (
+    <section className="ae-frame-parchment my-5 relative">
+      <div className={sticker ? 'pr-20 sm:pr-32' : ''}>{children}</div>
+      {sticker && (
+        <img src={sticker} alt="" className="absolute right-1 bottom-1 w-20 sm:w-28 object-contain drop-shadow" />
+      )}
+    </section>
+  );
 }

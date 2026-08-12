@@ -3,16 +3,17 @@ import { useState } from "react";
 import Link from "next/link";
 import { VegaMuteButton } from "@/components/VegaAudio";
 
+// 選單 icon 用畫的（/images/ui/nav/），不用 emoji——每台裝置的 emoji 長相不同
 const NAV = [
-  { href: "/", label: "首頁" },
-  { href: "/adventure-map", label: "🗺️ 冒險地圖" },
-  { href: "/tasks", label: "📜 今日任務" },
-  { href: "/cabin", label: "🏠 我的小屋" },
-  { href: "/badges", label: "🏆 成就徽章" },
-  { href: "/parents", label: "👨‍👩‍👧 家長冒險中心" },
-  { href: "/guide", label: "📖 使用說明" },
-  { href: "/blog", label: "✏️ 冒險圖書館" },
-  { href: "/books", label: "📕 閱讀花園" },
+  { href: "/", label: "首頁", icon: "home" },
+  { href: "/adventure-map", label: "冒險地圖", icon: "map" },
+  { href: "/tasks", label: "今日任務", icon: "tasks" },
+  { href: "/cabin", label: "我的小屋", icon: "cabin" },
+  { href: "/badges", label: "成就徽章", icon: "badges" },
+  { href: "/parents", label: "家長冒險中心", icon: "parents" },
+  { href: "/guide", label: "使用說明", icon: "guide" },
+  { href: "/blog", label: "冒險圖書館", icon: "blog" },
+  { href: "/books", label: "閱讀花園", icon: "books" },
 ];
 
 export default function Header() {
@@ -23,7 +24,8 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex gap-0.5 items-center flex-1">
           {NAV.map(n => (
-            <Link key={n.href} href={n.href} className="px-2.5 py-1.5 rounded-full text-[13px] font-medium text-gray-700 whitespace-nowrap hover:bg-purple-50 hover:text-purple-700 transition-colors no-underline">
+            <Link key={n.href} href={n.href} className="px-2.5 py-1.5 rounded-full text-[13px] font-medium text-gray-700 whitespace-nowrap hover:bg-purple-50 hover:text-purple-700 transition-colors no-underline flex items-center gap-1">
+              <img src={`/images/ui/nav/${n.icon}.webp`} alt="" className="w-5 h-5 object-contain" />
               {n.label}
             </Link>
           ))}
@@ -39,7 +41,8 @@ export default function Header() {
       {open && (
         <nav className="lg:hidden bg-white border-t border-gray-100 py-2">
           {NAV.map(n => (
-            <Link key={n.href} href={n.href} onClick={() => setOpen(false)} className="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-purple-50 no-underline">
+            <Link key={n.href} href={n.href} onClick={() => setOpen(false)} className="flex items-center gap-2.5 px-6 py-3 text-sm font-medium text-gray-700 hover:bg-purple-50 no-underline">
+              <img src={`/images/ui/nav/${n.icon}.webp`} alt="" className="w-6 h-6 object-contain" />
               {n.label}
             </Link>
           ))}

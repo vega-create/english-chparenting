@@ -7,7 +7,7 @@ import GameButton from "@/components/GameButton";
 import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 import { COURSES } from "@/data/courses";
-import { loadProgress, getBadges, type Badge } from "@/lib/missionProgress";
+import { loadProgress, getBadges, completedCount, totalStars, type Badge } from "@/lib/missionProgress";
 import { playGreeting, isMuted as isVegaMuted, setMuted as setVegaMuted, playVega, stopVega } from "@/lib/vega-audio";
 import AdSlot from '@/components/AdSlot';
 import AuthButton from '@/components/AuthButton';
@@ -49,16 +49,17 @@ const WORLDS = [
   { img: "world-champion-peak", zh: "冠軍峰", en: "Champion Peak", href: "/adventure-map/world/6" },
 ];
 
+// 選單 icon 用畫的（/images/ui/nav/，MENU-ICONS-1~3 切出來的），不用 emoji——每台裝置的 emoji 長相不同
 const NAV = [
-  { icon: "🗺", label: "冒險地圖", href: "/adventure-map" },
-  { icon: "🌍", label: "六大世界", href: "/courses" },
-  { icon: "📜", label: "今日任務", href: "/tasks" },
-  { icon: "🏠", label: "我的小屋", href: "/cabin" },
-  { icon: "🏆", label: "成就徽章", href: "/badges" },
-  { icon: "👨‍👩‍👧", label: "家長冒險中心", href: "/parents" },
-  { icon: "📖", label: "使用說明", href: "/guide" },
-  { icon: "✏️", label: "冒險圖書館", href: "/blog" },
-  { icon: "📕", label: "閱讀花園", href: "/books" },
+  { icon: "map", label: "冒險地圖", href: "/adventure-map" },
+  { icon: "globe", label: "六大世界", href: "/courses" },
+  { icon: "tasks", label: "今日任務", href: "/tasks" },
+  { icon: "cabin", label: "我的小屋", href: "/cabin" },
+  { icon: "badges", label: "成就徽章", href: "/badges" },
+  { icon: "parents", label: "家長冒險中心", href: "/parents" },
+  { icon: "guide", label: "使用說明", href: "/guide" },
+  { icon: "blog", label: "冒險圖書館", href: "/blog" },
+  { icon: "books", label: "閱讀花園", href: "/books" },
 ];
 
 export default function LayeredBanner() {
@@ -66,9 +67,14 @@ export default function LayeredBanner() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [avatar, setAvatar] = useState<string | null>(null);
   useEffect(() => { try { setAvatar(localStorage.getItem('ae_avatar')); } catch {} }, []);
-  // 成就徽章：拿到的排前面，架上放 5 枚
+  // 成就徽章：拿到的排前面，架上放 5 枚；家長專區的數據同一份進度
   const [badges, setBadges] = useState<Badge[]>([]);
-  useEffect(() => { setBadges(getBadges(loadProgress())); }, []);
+  const [stats, setStats] = useState({ done: 0, stars: 0, streak: 0 });
+  useEffect(() => {
+    const p = loadProgress();
+    setBadges(getBadges(p));
+    setStats({ done: completedCount(p), stars: totalStars(p), streak: p.streak || 0 });
+  }, []);
   const shelfBadges = [...badges].sort((a, b) => Number(b.got) - Number(a.got)).slice(0, 5);
   const gotCount = badges.filter(b => b.got).length;
   const router = useRouter();
@@ -126,8 +132,8 @@ export default function LayeredBanner() {
           <nav className="flex-1 flex justify-center gap-1 mx-2">
             {NAV.map(n => (
               <a key={n.label} href={n.href} onClick={() => playClick()} className="px-2 py-1.5 rounded-lg hover:bg-yellow-100/60 hover:-translate-y-0.5 transition flex flex-col items-center no-underline group">
-                <span className="text-2xl group-hover:scale-110 transition">{n.icon}</span>
-                <span className="text-[11px] font-bold text-gray-700">{n.label}</span>
+                <img src={`/images/ui/nav/${n.icon}.webp`} alt="" className="w-7 h-7 object-contain group-hover:scale-110 transition" />
+                <span className="text-[11px] font-bold text-gray-700 mt-0.5">{n.label}</span>
               </a>
             ))}
           </nav>
@@ -637,21 +643,29 @@ export default function LayeredBanner() {
             </div>
           </div>
 
-          {/* 5) 家長專區 —— 左邊放插圖，右邊講重點 */}
-          <div className="grid md:grid-cols-[1fr_1.3fr] gap-0 rounded-3xl overflow-hidden border-4 border-rose-200 shadow-lg bg-rose-50">
-            <img src="/images/home/parent-photo.webp" alt="" className="w-full h-44 md:h-full object-cover" />
-            <div className="p-4 sm:p-6 flex flex-col justify-center">
-              <h3 className="text-lg sm:text-2xl font-black text-rose-600 m-0">了解孩子學習進度，陪伴成長每一步！</h3>
-              <p className="text-xs sm:text-sm text-gray-600 mt-1 mb-3">在家長專區查看學習報告、推薦書單與學習攻略。</p>
-              <div className="grid grid-cols-3 gap-2 mb-4">
-                {[{ i: "📗", t: "學習報告" }, { i: "📕", t: "推薦書單" }, { i: "💡", t: "學習攻略" }].map(x => (
-                  <div key={x.t} className="bg-white rounded-xl border-2 border-rose-200 px-1 py-2 text-center">
-                    <div className="text-xl sm:text-2xl leading-none">{x.i}</div>
-                    <p className="m-0 font-black text-gray-600 text-[11px] sm:text-xs mt-1">{x.t}</p>
-                  </div>
-                ))}
+          {/* 5) 家長專區 —— 羊皮紙面板（照設計稿）：左插圖、右講重點＋三個真實數據籤 */}
+          <div className="ae-frame-parchment">
+            <div className="grid md:grid-cols-[1fr_1.3fr] gap-4 items-center">
+              <img src="/images/home/parent-photo.webp" alt="" className="w-full h-44 md:h-full object-cover rounded-2xl border-2 border-amber-200" />
+              <div className="flex flex-col justify-center py-1">
+                <h3 className="text-lg sm:text-2xl font-black text-amber-900 m-0">了解孩子學習進度，陪伴成長每一步！</h3>
+                <p className="text-xs sm:text-sm text-amber-950/70 font-bold mt-1 mb-3">在家長專區查看學習報告、設定學習時間與更多功能。</p>
+                {/* 數據是真的（跟家長中心同一份進度），不寫估的數字 */}
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  {[
+                    { img: "stat-lessons", t: "完成課程", v: stats.done, u: "課" },
+                    { img: "stat-stars", t: "獲得星星", v: stats.stars, u: "顆" },
+                    { img: "stat-streak", t: "連續學習", v: stats.streak, u: "天" },
+                  ].map(x => (
+                    <div key={x.t} className="bg-white/80 rounded-xl border-2 border-amber-200 px-1 py-2 text-center">
+                      <img src={`/images/parents/${x.img}.webp`} alt="" className="w-7 sm:w-9 mx-auto object-contain" />
+                      <p className="m-0 font-black text-gray-800 text-sm sm:text-lg leading-none mt-1">{x.v}<span className="text-[10px]">{x.u}</span></p>
+                      <p className="m-0 font-black text-gray-500 text-[10px] sm:text-[11px] mt-0.5">{x.t}</p>
+                    </div>
+                  ))}
+                </div>
+                <div><GameButton href="/parents" color="purple" sound="click">進入家長專區 →</GameButton></div>
               </div>
-              <div><GameButton href="/parents" color="orange" sound="click">進入家長專區 →</GameButton></div>
             </div>
           </div>
 
@@ -694,7 +708,7 @@ export default function LayeredBanner() {
             <div className="space-y-1">
               {NAV.map(n => (
                 <a key={n.label} href={n.href} onClick={() => { playClick(); setMobileMenu(false); }} className="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-yellow-50 no-underline">
-                  <span className="text-2xl">{n.icon}</span>
+                  <img src={`/images/ui/nav/${n.icon}.webp`} alt="" className="w-7 h-7 object-contain" />
                   <span className="font-bold text-gray-700">{n.label}</span>
                 </a>
               ))}

@@ -51,8 +51,8 @@ export default function ResearchConsent() {
   if (!ready) return null;
 
   return (
-    <section className="glass rounded-2xl p-5 my-8 border-2 border-purple-100">
-      <h2 className="text-lg font-black text-gray-800 mb-2">📊 學習資料與研究</h2>
+    <section className="ae-frame-parchment my-8">
+      <h2 className="text-lg font-black text-gray-800 mb-2 mt-0">📊 學習資料與研究</h2>
 
       <p className="text-sm text-gray-600 leading-relaxed">
         冒險英語同時是一個<strong className="text-gray-800">研究場域</strong>，
@@ -62,53 +62,58 @@ export default function ResearchConsent() {
         如果你願意，孩子的學習行為可以匿名納入這項研究。
       </p>
 
-      <div className="mt-3 rounded-xl bg-gray-50 p-3 text-xs text-gray-600 leading-relaxed">
-        <p className="font-bold text-gray-700 mb-1">會記錄什麼</p>
-        <p>完成了哪一課、花多少時間、答對答錯、聽了幾次音檔、口說的分數。</p>
-        <p className="font-bold text-gray-700 mt-2 mb-1">不會記錄什麼</p>
-        <p>
-          姓名、email、孩子念出來的聲音內容，都<strong className="text-gray-800">不會</strong>
-          存進研究資料。口說只存「分數」，不存說了什麼。
-        </p>
-        <p className="font-bold text-gray-700 mt-2 mb-1">怎麼辨識是誰</p>
-        <p>
-          沒登入時只用一組隨機代號認裝置。
-          有登入的話，紀錄會連到你的<strong className="text-gray-800">帳號代號</strong>
-          （一串亂碼，不是 email），這樣孩子換手機、換平板，學習紀錄才接得起來。
-          分析時只看這串代號，不會回頭去對是哪一個帳號。
-        </p>
-        <p className="font-bold text-gray-700 mt-2 mb-1">發表的時候長什麼樣</p>
-        <p>
-          只會出現整體統計（例如「平均第三次遇到同一個單字時答對率上升到 80%」），
-          不會出現任何一個孩子的個別紀錄。
-        </p>
-        <p className="font-bold text-gray-700 mt-2 mb-1">資料放多久</p>
-        <p>
-          最多保存 {RETENTION_YEARS} 年，到期後刪除。
-          期間只有研究者本人存取得到，不會提供給第三方，也不會用來投放廣告。
-        </p>
-        <p className="font-bold text-gray-700 mt-2 mb-1">你隨時可以關掉，也可以要求刪除</p>
-        <p>
-          關掉之後就立刻停止記錄，不影響任何學習功能。
-          有登入的話，下面的按鈕可以把已經收集的紀錄整批刪掉。
-          沒登入的紀錄只有一組隨機代號、對不出是誰，
-          所以<strong className="text-gray-800">沒辦法指定刪除</strong>——這也是它真的匿名的意思。
-        </p>
-        <p className="mt-1">
-          刪除後我們只會留下一筆<strong className="text-gray-800">不含任何身分的退出紀錄</strong>
-          （某天有一位參與者退出、當時完成幾課），
-          因為研究報告必須寫出有多少人中途退出，否則統計會失真。
-          這筆紀錄回推不到任何人。另外，若資料已經納入分析或已經發表，
-          那部分就<strong className="text-gray-800">無法回收</strong>。
-        </p>
+      <div className="mt-3 rounded-xl bg-white/70 border border-amber-200 p-3 text-xs text-gray-600 leading-relaxed space-y-2.5">
+        <Row icon="checklist" title="會記錄什麼">
+          <p>完成了哪一課、花多少時間、答對答錯、聽了幾次音檔、口說的分數。</p>
+        </Row>
+        <Row icon="lock" title="不會記錄什麼">
+          <p>
+            姓名、email、孩子念出來的聲音內容，都<strong className="text-gray-800">不會</strong>
+            存進研究資料。口說只存「分數」，不存說了什麼。
+          </p>
+        </Row>
+        <Row icon="person" title="怎麼辨識是誰">
+          <p>
+            沒登入時只用一組隨機代號認裝置。
+            有登入的話，紀錄會連到你的<strong className="text-gray-800">帳號代號</strong>
+            （一串亂碼，不是 email），這樣孩子換手機、換平板，學習紀錄才接得起來。
+            分析時只看這串代號，不會回頭去對是哪一個帳號。
+          </p>
+        </Row>
+        <Row icon="chart" title="發表的時候長什麼樣">
+          <p>
+            只會出現整體統計（例如「平均第三次遇到同一個單字時答對率上升到 80%」），
+            不會出現任何一個孩子的個別紀錄。
+          </p>
+        </Row>
+        <Row icon="hourglass" title="資料放多久">
+          <p>
+            最多保存 {RETENTION_YEARS} 年，到期後刪除。
+            期間只有研究者本人存取得到，不會提供給第三方，也不會用來投放廣告。
+          </p>
+        </Row>
+        <Row icon="trash" title="你隨時可以關掉，也可以要求刪除">
+          <p>
+            關掉之後就立刻停止記錄，不影響任何學習功能。
+            有登入的話，下面的按鈕可以把已經收集的紀錄整批刪掉。
+            沒登入的紀錄只有一組隨機代號、對不出是誰，
+            所以<strong className="text-gray-800">沒辦法指定刪除</strong>——這也是它真的匿名的意思。
+          </p>
+          <p className="mt-1">
+            刪除後我們只會留下一筆<strong className="text-gray-800">不含任何身分的退出紀錄</strong>
+            （某天有一位參與者退出、當時完成幾課），
+            因為研究報告必須寫出有多少人中途退出，否則統計會失真。
+            這筆紀錄回推不到任何人。另外，若資料已經納入分析或已經發表，
+            那部分就<strong className="text-gray-800">無法回收</strong>。
+          </p>
+        </Row>
         {(RESEARCH_PI || RESEARCH_CONTACT) && (
-          <>
-            <p className="font-bold text-gray-700 mt-2 mb-1">有問題找誰</p>
+          <Row icon="mail" title="有問題找誰">
             {RESEARCH_PI && <p>研究主持人：{RESEARCH_PI}</p>}
             {RESEARCH_CONTACT && (
               <p>聯絡信箱：<a className="underline" href={`mailto:${RESEARCH_CONTACT}`}>{RESEARCH_CONTACT}</a></p>
             )}
-          </>
+          </Row>
         )}
       </div>
 
@@ -150,5 +155,18 @@ export default function ResearchConsent() {
         />
       )}
     </section>
+  );
+}
+
+/* 一列說明：左邊畫的小圖示、右邊標題＋內文 */
+function Row({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
+  return (
+    <div className="flex items-start gap-2.5">
+      <img src={`/images/ui/research/${icon}.webp`} alt="" className="w-8 h-8 object-contain shrink-0 mt-0.5" />
+      <div className="min-w-0">
+        <p className="font-bold text-gray-700 mb-0.5">{title}</p>
+        {children}
+      </div>
+    </div>
   );
 }
