@@ -3334,6 +3334,7 @@ const L3_M19: Mission = {
     { speaker: 'Finn', line: "Does Coco like fish?", lineZh: 'Coco 喜歡魚嗎？' },
     { speaker: 'Coco', line: "No, I don't like fish. I'm happy!", lineZh: '不，我不喜歡魚。我很開心！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m19.mp4',
 };
 
 const L3_M20: Mission = {
@@ -3387,6 +3388,7 @@ const L3_M20: Mission = {
     { speaker: 'Ruby', line: "You beat the Boss! Market champion!", lineZh: '你打敗大魔王了！市場冠軍！' },
     { speaker: 'Finn', line: "On to School Road! Let's learn sentences!", lineZh: '前進學校路！我們來學句型！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m20.mp4',
 };
 
 // ===================== L4 學校路 School Road（A1・基本句型 be/like/have/can） =====================
