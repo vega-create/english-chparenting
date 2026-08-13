@@ -303,6 +303,7 @@ const L1_M2: Mission = {
     { speaker: 'Benny', line: "A cat is playing with the ball!", lineZh: '有一隻貓在玩那顆球！' },
     { speaker: 'Finn', line: "And here comes a dog! A, B, C, D!", lineZh: '還有一隻狗跑來了！A、B、C、D！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m2.mp4',
 };
 
 // L1 M3: E to H（森林字母）
