@@ -2522,6 +2522,7 @@ const L3_M4: Mission = {
     { speaker: 'Coco', line: "And twenty balloons!", lineZh: '還有二十顆氣球！' },
     { speaker: 'Polly', line: "Wow, that's a lot! Twenty!", lineZh: '哇，好多！二十！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m4.mp4',
 };
 
 const L3_M5: Mission = {
@@ -2574,6 +2575,7 @@ const L3_M5: Mission = {
     { speaker: 'Polly', line: "What color do you like?", lineZh: '你喜歡什麼顏色？' },
     { speaker: 'Coco', line: "I like the red ones! Three, please!", lineZh: '我喜歡紅色的！三顆，謝謝！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m5.mp4',
 };
 
 const L3_M6: Mission = {
@@ -2628,6 +2630,7 @@ const L3_M6: Mission = {
     { speaker: 'Coco', line: "'an' before a, e, i, o, u! an egg!", lineZh: '母音前用 an！an egg！' },
     { speaker: 'Benny', line: "Then I want an egg and a banana. Yum!", lineZh: '那我要一顆蛋和一根香蕉。好吃！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m6.mp4',
 };
 
 const L3_M7: Mission = {
