@@ -1756,6 +1756,7 @@ const L2_M10: Mission = {
     { speaker: 'Benny', line: "Fish, chip, duck, ring — sound teams!", lineZh: 'fish、chip、duck、ring——是字母組合！' },
     { speaker: 'Finn', line: "Listen, the echo is singing with us!", lineZh: '聽，回音在跟我們一起唱！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m10.mp4',
 };
 
 const L2_M11: Mission = {
@@ -1810,6 +1811,7 @@ const L2_M11: Mission = {
     { speaker: 'Coco', line: "Cake! Rain! Train! Did I say it right?", lineZh: 'cake！rain！train！我念對了嗎？' },
     { speaker: 'Finn', line: "Yes! The gate is open. What a day!", lineZh: '對！門開了。今天真棒！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m11.mp4',
 };
 
 const L2_M12: Mission = {
@@ -1863,6 +1865,7 @@ const L2_M12: Mission = {
     { speaker: 'Ruby', line: "Yes! Let's have tea and eat under it.", lineZh: '對！我們在樹下喝茶吃東西吧。' },
     { speaker: 'Benny', line: "Then I will read you a story. E, e, e!", lineZh: '然後我念故事給你聽。e、e、e！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m12.mp4',
 };
 
 const L2_M13: Mission = {
