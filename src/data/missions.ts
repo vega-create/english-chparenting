@@ -497,6 +497,7 @@ const L1_M6: Mission = {
     { speaker: 'Ruby', line: "I brought oranges for everyone!", lineZh: '我帶了柳橙給大家！' },
     { speaker: 'Benny', line: "Oink! A pig wants one too!", lineZh: '呼嚕！有隻小豬也想要一顆！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m6.mp4',
 };
 
 // L1 M7: Q to T（城堡字母）
@@ -545,6 +546,7 @@ const L1_M7: Mission = {
     { speaker: 'Coco', line: "The sun is shining on the castle.", lineZh: '陽光照在城堡上。' },
     { speaker: 'Finn', line: "Shh! A tiger is coming!", lineZh: '噓！有一隻老虎過來了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m7.mp4',
 };
 
 // L1 M8: U to X（天空字母）
@@ -593,6 +595,7 @@ const L1_M8: Mission = {
     { speaker: 'Coco', line: "What time is it? Look at my watch!", lineZh: '現在幾點？看我的手錶！' },
     { speaker: 'Finn', line: "Wait — a fox wants a ride too!", lineZh: '等等，有隻狐狸也想搭車！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m8.mp4',
 };
 
 // L1 M9: Y and Z（字母之巔）
