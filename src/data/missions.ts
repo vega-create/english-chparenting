@@ -2458,8 +2458,8 @@ const L3_M3: Mission = {
   videoScript: [
     { speaker: 'Coco', line: "How many apples? Let's count!", lineZh: '有幾顆蘋果？我們來數！' },
     { speaker: 'Polly', line: "One, two, three! Three apples!", lineZh: '一、二、三！三顆蘋果！' },
-    { speaker: 'Coco', line: "How old are you?", lineZh: '你幾歲？' },
-    { speaker: 'Polly', line: "I am seven! Count with me!", lineZh: '我七歲！跟我一起數！' },
+    { speaker: 'Coco', line: "I have four bananas. How many do you have?", lineZh: '我有四根香蕉。你有幾根？' },
+    { speaker: 'Polly', line: "I have ten! Let's count to ten together!", lineZh: '我有十根！我們一起數到十！' },
   ],
 };
 
@@ -2618,7 +2618,7 @@ const L3_M6: Mission = {
     { speaker: 'Coco', line: "It's an apple and a banana!", lineZh: '這是一顆蘋果和一根香蕉！' },
     { speaker: 'Benny', line: "an apple, a banana — a or an?", lineZh: 'an apple、a banana —— a 還是 an？' },
     { speaker: 'Coco', line: "'an' before a, e, i, o, u! an egg!", lineZh: '母音前用 an！an egg！' },
-    { speaker: 'Benny', line: "I want soup and bread. Yum!", lineZh: '我要湯和麵包。好吃！' },
+    { speaker: 'Benny', line: "Then I want an egg and a banana. Yum!", lineZh: '那我要一顆蛋和一根香蕉。好吃！' },
   ],
 };
 
@@ -2723,7 +2723,7 @@ const L3_M8: Mission = {
   videoScript: [
     { speaker: 'Coco', line: "I have a white rabbit! Do you have a pet?", lineZh: '我有一隻白兔！你有寵物嗎？' },
     { speaker: 'Benny', line: "Yes! I have a big dog and a cat.", lineZh: '有！我有一隻大狗和一隻貓。' },
-    { speaker: 'Coco', line: "Look, a lion and a tiger!", lineZh: '看，一隻獅子和一隻老虎！' },
+    { speaker: 'Coco', line: "Look at that picture — a lion and a tiger!", lineZh: '你看那張圖——一隻獅子和一隻老虎！' },
     { speaker: 'Benny', line: "Roar! They are so big!", lineZh: '吼！牠們好大！' },
   ],
 };
@@ -2829,7 +2829,7 @@ const L3_M10: Mission = {
   videoScript: [
     { speaker: 'Polly', line: "My two dogs like meat. Do you like meat?", lineZh: '我的兩隻狗喜歡肉。你喜歡肉嗎？' },
     { speaker: 'Coco', line: "No, I don't. I like apples and cake!", lineZh: '不喜歡。我喜歡蘋果和蛋糕！' },
-    { speaker: 'Polly', line: "Is it an egg or an apple?", lineZh: '這是蛋還是蘋果？' },
+    { speaker: 'Polly', line: "Then look at this — is it an egg or an apple?", lineZh: '那你看這個——是蛋還是蘋果？' },
     { speaker: 'Coco', line: "It's an apple! Yum!", lineZh: '是蘋果！好吃！' },
   ],
 };
