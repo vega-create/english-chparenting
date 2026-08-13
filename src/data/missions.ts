@@ -3008,6 +3008,7 @@ const L3_M13: Mission = {
     { speaker: 'Coco', line: "And a hat and gloves!", lineZh: '還有帽子和手套！' },
     { speaker: 'Benny', line: "Now I'm warm! Let's go!", lineZh: '現在我暖了！走吧！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m13.mp4',
 };
 
 const L3_M14: Mission = {
@@ -3061,6 +3062,7 @@ const L3_M14: Mission = {
     { speaker: 'Coco', line: "Wow, a robot! Is it yours?", lineZh: '哇，機器人！是你的嗎？' },
     { speaker: 'Benny', line: "Yes! It is my robot. Cool, right?", lineZh: '是！這是我的機器人。很酷吧？' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m14.mp4',
 };
 
 const L3_M15: Mission = {
@@ -3113,6 +3115,7 @@ const L3_M15: Mission = {
     { speaker: 'Polly', line: "It's my brother's ball!", lineZh: '這是我哥哥的球！' },
     { speaker: 'Coco', line: "You know so many words now!", lineZh: '你現在會好多單字了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m15.mp4',
 };
 
 const L3_M16: Mission = {
