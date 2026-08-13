@@ -3170,6 +3170,7 @@ const L3_M16: Mission = {
     { speaker: 'Coco', line: "'an' before a, e, i, o, u! Look at the moon!", lineZh: '母音前用 an！看那個月亮！' },
     { speaker: 'Benny', line: "the moon — the special one! Got it!", lineZh: 'the moon —— 特定的那個！懂了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m16.mp4',
 };
 
 const L3_M17: Mission = {
@@ -3224,6 +3225,7 @@ const L3_M17: Mission = {
     { speaker: 'Coco', line: "And foot becomes feet! Tricky!", lineZh: '還有 foot 變 feet！很狡猾！' },
     { speaker: 'Benny', line: "One foot, two feet! I remember!", lineZh: '一隻腳，兩隻腳！我記得了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m17.mp4',
 };
 
 const L3_M18: Mission = {
@@ -3278,6 +3280,7 @@ const L3_M18: Mission = {
     { speaker: 'Coco', line: "That is a dog, over there!", lineZh: '那是一隻狗，在那邊！' },
     { speaker: 'Benny', line: "And those are dogs! Far away!", lineZh: '那些是狗！在遠方！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m18.mp4',
 };
 
 const L3_M19: Mission = {
