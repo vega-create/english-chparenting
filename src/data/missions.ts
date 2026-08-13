@@ -2846,6 +2846,7 @@ const L3_M10: Mission = {
     { speaker: 'Polly', line: "Then look at this — is it an egg or an apple?", lineZh: '那你看這個——是蛋還是蘋果？' },
     { speaker: 'Coco', line: "It's an apple! Yum!", lineZh: '是蘋果！好吃！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m10.mp4',
 };
 
 const L3_M11: Mission = {
@@ -2899,6 +2900,7 @@ const L3_M11: Mission = {
     { speaker: 'Coco', line: "How many eyes do you have?", lineZh: '你有幾隻眼睛？' },
     { speaker: 'Benny', line: "I have two eyes and two ears!", lineZh: '我有兩隻眼睛和兩隻耳朵！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m11.mp4',
 };
 
 const L3_M12: Mission = {
@@ -2952,6 +2954,7 @@ const L3_M12: Mission = {
     { speaker: 'Coco', line: "He is my brother! And she is my sister.", lineZh: '他是我哥哥！她是我姊姊。' },
     { speaker: 'Benny', line: "I love my family too!", lineZh: '我也愛我的家人！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m12.mp4',
 };
 
 const L3_M13: Mission = {
