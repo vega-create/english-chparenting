@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { playClick, playStar } from '@/lib/sfx';
 import { playVega, stopVega } from '@/lib/vega-audio';
+import { stopAllAudio } from '@/lib/audioBus';
 import { CharacterPlayButton } from '@/components/VegaAudio';
 import HomeButton from "@/components/HomeButton";
 
@@ -95,7 +96,7 @@ export default function GuideSlides() {
     if (!ready) return;
     const f = SLIDE_AUDIO[i];
     if (f) playVega(f);
-    return () => stopVega();
+    return () => stopAllAudio();   // 角色 🔊 的課文聲也要停，不只 Vega
   }, [i, ready]);
 
   function go(n: number) {

@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { stopAllAudio } from '@/lib/audioBus';
 import { COURSES } from '@/data/courses';
 import { MISSIONS } from '@/data/missions';
 import { stopSpeaking } from '@/lib/speech';
@@ -47,6 +48,8 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const mission = MISSIONS.find(m => m.level === course?.level && m.id === missionId);
 
   const [step, setStep] = useState<Step>('intro');
+  // 換步驟（熱身→探索→挑戰…）先把聲音停乾淨
+  useEffect(() => { stopAllAudio(); }, [step]);
   const [warmupScore, setWarmupScore] = useState(0);
   const [challengeScore, setChallengeScore] = useState(0);
   const discoverBackRef = useRef<(() => boolean) | null>(null); // Discover 內部逐層退

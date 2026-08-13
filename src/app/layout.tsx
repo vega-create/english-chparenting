@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PWA from "@/components/PWA";
+import AudioRouteGuard from "@/components/AudioRouteGuard";
 import AuthProvider from "@/components/AuthProvider";
 import ConsentGate from "@/components/ConsentGate";
 
@@ -141,6 +142,7 @@ export default function RootLayout({
       </head>
       <body className={`${noto.variable} ${zenMaru.variable} ${baloo.variable} font-sans antialiased`}>
         <PWA />
+        <AudioRouteGuard />
         <AuthProvider>
         <Header />
         {children}

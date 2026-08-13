@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
+import { stopAllAudio } from '@/lib/audioBus';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 import { track } from '@/lib/analytics';
 import SentenceMic from '@/components/mission/SentenceMic';
@@ -95,6 +96,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     } catch {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // 換階段（電子書→單字卡→句型…）就把還在講的聲音停掉，別讓上一段跨階段繼續講
+  useEffect(() => { stopAllAudio(); }, [phase]);
+
   useEffect(() => {
     try { sessionStorage.setItem(ebookKey, JSON.stringify({ phase, bookOpen, storyIndex })); } catch {}
   }, [ebookKey, phase, bookOpen, storyIndex]);
@@ -368,7 +372,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     拿掉之後把字放大填滿版面 */}
                 <div className="flex-1 flex flex-col justify-center min-h-0 pr-[14%]">
                   <p className="text-xs sm:text-base text-amber-500 font-black mb-2">{scene.characterName}</p>
-                  <p className="ebook-text text-gray-800 text-2xl sm:text-4xl leading-relaxed">
+                  {/* 手機面板窄，字太大會一行一個字還壓到星星；手機 lg、平板 3xl、桌機才 4xl */}
+                  <p className="ebook-text text-gray-800 text-lg sm:text-3xl lg:text-4xl leading-relaxed">
                     {scene.dialogue.split(' ').map((w, wi) => {
                       const isHighlight = scene.highlightWords?.some(hw =>
                         w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
@@ -387,7 +392,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     })}
                   </p>
                   {showTranslation && (
-                    <p className="ebook-text-zh text-gray-500 text-base sm:text-lg mt-3 animate-slide-up">{scene.dialogueZh}</p>
+                    <p className="ebook-text-zh text-gray-500 text-sm sm:text-lg mt-3 animate-slide-up">{scene.dialogueZh}</p>
                   )}
                   {/* 讓孩子知道紫色的字可以點 —— 沒說的話多數人不會發現 */}
                   {!!scene.highlightWords?.length && (
@@ -437,7 +442,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 />
                 <div className="flex-1 min-w-0 pl-1 sm:pl-2">
                   <p className="text-sm text-gray-400 font-bold mb-2">{scene.characterName}</p>
-                  <p className="ebook-text text-gray-800 text-2xl sm:text-3xl leading-relaxed">
+                  <p className="ebook-text text-gray-800 text-lg sm:text-3xl leading-relaxed">
                     {scene.dialogue.split(' ').map((w, wi) => {
                       const isHighlight = scene.highlightWords?.some(hw =>
                         w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
