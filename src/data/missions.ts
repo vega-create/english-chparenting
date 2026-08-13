@@ -2081,6 +2081,7 @@ const L2_M16: Mission = {
     { speaker: 'Polly', line: "Let's get food and jump in the pool!", lineZh: '我們去拿食物，然後跳進游泳池！' },
     { speaker: 'Coco', line: "Oo, oo, oo — moon, food, zoo, pool!", lineZh: 'oo、oo、oo——moon、food、zoo、pool！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m16.mp4',
 };
 
 const L2_M17: Mission = {
@@ -2135,6 +2136,7 @@ const L2_M17: Mission = {
     { speaker: 'Ruby', line: "A giraffe is holding it!", lineZh: '有一隻長頸鹿拿著它！' },
     { speaker: 'Benny', line: "Turn the page — the story is not over!", lineZh: '翻到下一頁——故事還沒完呢！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m17.mp4',
 };
 
 const L2_M18: Mission = {
@@ -2189,6 +2191,7 @@ const L2_M18: Mission = {
     { speaker: 'Finn', line: "Turn here! There is corn for everyone.", lineZh: '在這裡轉彎！這裡有玉米給大家吃。' },
     { speaker: 'Polly', line: "Ar, or, er — I can hear the r!", lineZh: 'ar、or、er——我聽得到 r 的聲音！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m18.mp4',
 };
 
 const L2_M19: Mission = {
@@ -2243,6 +2246,7 @@ const L2_M19: Mission = {
     { speaker: 'Coco', line: "\"The\", \"is\", \"you\", \"have\"… I know them!", lineZh: 'the、is、you、have… 我都認得！' },
     { speaker: 'Finn', line: "Yes! You have to know them by heart.", lineZh: '對！這些字要記在心裡。' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m19.mp4',
 };
 
 const L2_M20: Mission = {
@@ -2296,6 +2300,7 @@ const L2_M20: Mission = {
     { speaker: 'Benny', line: "Fish! Moon! Star! Rice!", lineZh: 'fish！moon！star！rice！' },
     { speaker: 'Finn', line: "You did it! Sound Island is ours!", lineZh: '你做到了！聲音島是我們的了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m20.mp4',
 };
 
 /* ============================================================
