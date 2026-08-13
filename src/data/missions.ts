@@ -1593,6 +1593,7 @@ const L2_M7: Mission = {
     { speaker: 'Ruby', line: "Watch out — mud!", lineZh: '小心——泥巴！' },
     { speaker: 'Benny', line: "Ha ha! Give me a hug, Ruby!", lineZh: '哈哈！抱我一下嘛，Ruby！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m7.mp4',
 };
 
 const L2_M8: Mission = {
@@ -1647,6 +1648,7 @@ const L2_M8: Mission = {
     { speaker: 'Polly', line: "Let's shop for lunch. Cheese and chips!", lineZh: '我們去買午餐吧。起司和薯片！' },
     { speaker: 'Coco', line: "Ch, ch, cheese! Yummy!", lineZh: 'ch、ch、cheese！好好吃！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m8.mp4',
 };
 
 const L2_M9: Mission = {
@@ -1701,6 +1703,7 @@ const L2_M9: Mission = {
     { speaker: 'Benny', line: "Look, a gold ring! Is he a king?", lineZh: '你看，一個金戒指！牠是國王嗎？' },
     { speaker: 'Finn', line: "Let's sing a long song for the duck king!", lineZh: '我們為鴨子國王唱一首長長的歌吧！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m9.mp4',
 };
 
 const L2_M10: Mission = {
