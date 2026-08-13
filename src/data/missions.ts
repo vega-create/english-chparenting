@@ -398,10 +398,10 @@ const L1_M4: Mission = {
   videoScript: [
     { speaker: 'Polly', line: "Brrr! Look at that igloo!", lineZh: '好冷！你看那間冰屋！' },
     { speaker: 'Coco', line: "Come in and have some jam!", lineZh: '進來吃點果醬吧！' },
-    { speaker: 'Polly', line: "Look up! A kite is flying!", lineZh: '抬頭看！有風箏在飛！' },
-    { speaker: 'Finn', line: "Careful — a lion is sleeping here!", lineZh: '小心，有一隻獅子在這裡睡覺！' },
+    { speaker: 'Polly', line: "Yummy! Now let's go fly my kite!", lineZh: '好好吃！現在我們去放風箏吧！' },
+    { speaker: 'Finn', line: "Shh, fly it far — a lion is sleeping here!", lineZh: '噓，放遠一點——有一隻獅子在這裡睡覺！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m4.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m4.mp4?v=2',
 };
 
 // L1 M5: 字母歌大複習① A–L
