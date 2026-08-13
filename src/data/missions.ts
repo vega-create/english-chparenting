@@ -942,6 +942,7 @@ const L1_M15: Mission = {
     { speaker: 'Benny', line: "I spy an igloo, and an orange too!", lineZh: '我看到冰屋，還有一顆柳橙！' },
     { speaker: 'Polly', line: "And an umbrella! What a fun game!", lineZh: '還有一把雨傘！這遊戲真好玩！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m15.mp4',
 };
 
 const L1_M16: Mission = {
@@ -995,6 +996,7 @@ const L1_M16: Mission = {
     { speaker: 'Coco', line: "And it is an apple. The apple is red!", lineZh: '那是一顆蘋果。蘋果是紅色的！' },
     { speaker: 'Benny', line: "A red apple for the cat!", lineZh: '一顆紅蘋果給貓咪！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m16.mp4',
 };
 
 const L1_M17: Mission = {
@@ -1047,6 +1049,7 @@ const L1_M17: Mission = {
     { speaker: 'Polly', line: "Let's go and play!", lineZh: '我們去玩吧！' },
     { speaker: 'Finn', line: "Come on! We can play together!", lineZh: '來吧！我們可以一起玩！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m17.mp4',
 };
 
 const L1_M18: Mission = {
