@@ -2684,6 +2684,7 @@ const L3_M7: Mission = {
     { speaker: 'Coco', line: "Do you like ice cream?", lineZh: '你喜歡冰淇淋嗎？' },
     { speaker: 'Polly', line: "Yes! I love the ice cream here!", lineZh: '喜歡！我愛這裡的冰淇淋！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m7.mp4',
 };
 
 const L3_M8: Mission = {
@@ -2737,6 +2738,7 @@ const L3_M8: Mission = {
     { speaker: 'Coco', line: "Look at that picture — a lion and a tiger!", lineZh: '你看那張圖——一隻獅子和一隻老虎！' },
     { speaker: 'Benny', line: "Roar! They are so big!", lineZh: '吼！牠們好大！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m8.mp4',
 };
 
 const L3_M9: Mission = {
@@ -2791,6 +2793,7 @@ const L3_M9: Mission = {
     { speaker: 'Coco', line: "How many ducks are there?", lineZh: '有幾隻鴨子？' },
     { speaker: 'Polly', line: "Five ducks! They are yellow!", lineZh: '五隻鴨子！牠們是黃色的！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m9.mp4',
 };
 
 const L3_M10: Mission = {
