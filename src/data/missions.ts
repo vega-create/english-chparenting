@@ -781,6 +781,7 @@ const L1_M12: Mission = {
     { speaker: 'Ruby', line: "Z is for zebra! Keep going!", lineZh: 'Z 是 zebra！繼續！' },
     { speaker: 'Finn', line: "We beat the Boss! Great teamwork!", lineZh: '我們打敗大魔王了！團隊合作真棒！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m12.mp4',
 };
 
 // ===================== L1 字母島擴充 M13-M20（大小寫/書寫/sight words/冠詞/閱讀/畢業） =====================
@@ -835,6 +836,7 @@ const L1_M13: Mission = {
     { speaker: 'Benny', line: "Then big B goes with small b!", lineZh: '那大寫 B 就配小寫 b！' },
     { speaker: 'Coco', line: "You two are so quick!", lineZh: '你們兩個好快！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m13.mp4',
 };
 
 const L1_M14: Mission = {
@@ -887,6 +889,7 @@ const L1_M14: Mission = {
     { speaker: 'Vega', line: "Perfect! Now trace an O — it's a circle.", lineZh: '完美！現在描一個 O —— 它是個圓。' },
     { speaker: 'Ruby', line: "Round and round! I did it!", lineZh: '繞一圈！我做到了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m14.mp4',
 };
 
 const L1_M15: Mission = {
