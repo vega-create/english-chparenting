@@ -1103,6 +1103,7 @@ const L1_M18: Mission = {
     { speaker: 'Ruby', line: "Yes, please! Is that a ball too?", lineZh: '好啊，謝謝！那也是一顆球嗎？' },
     { speaker: 'Benny', line: "It is an egg, Ruby! Be careful!", lineZh: '那是一顆蛋，Ruby！小心一點！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m18.mp4',
 };
 
 const L1_M19: Mission = {
@@ -1155,6 +1156,7 @@ const L1_M19: Mission = {
     { speaker: 'Coco', line: "Look, it is an egg!", lineZh: '你看，那是一顆蛋！' },
     { speaker: 'Finn', line: "I like the egg. Let's keep it safe.", lineZh: '我喜歡這顆蛋。我們把它保護好。' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m19.mp4',
 };
 
 const L1_M20: Mission = {
@@ -1207,6 +1209,7 @@ const L1_M20: Mission = {
     { speaker: 'Coco', line: "I see a cat. It is an egg!", lineZh: '我看到一隻貓。那是一顆蛋！' },
     { speaker: 'Vega', line: "You did it! On to Sound Island!", lineZh: '你們辦到了！前進聲音島！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m20.mp4',
 };
 
 /* ============================================================
