@@ -1919,6 +1919,7 @@ const L2_M13: Mission = {
     { speaker: 'Polly', line: "Nine now! The night is bright.", lineZh: '現在有九顆了！夜空好亮。' },
     { speaker: 'Finn', line: "Let's ride my bike home. Good night!", lineZh: '我們騎腳踏車回家吧。晚安！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m13.mp4',
 };
 
 const L2_M14: Mission = {
@@ -1972,6 +1973,7 @@ const L2_M14: Mission = {
     { speaker: 'Benny', line: "Slow down! The road is white.", lineZh: '慢一點！路都白了。' },
     { speaker: 'Coco', line: "Look — a rose in the snow. Let's go home!", lineZh: '你看——雪裡有一朵玫瑰。我們回家吧！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m14.mp4',
 };
 
 const L2_M15: Mission = {
@@ -2024,6 +2026,7 @@ const L2_M15: Mission = {
     { speaker: 'Ruby', line: "Tree and eat — long e!", lineZh: 'tree 和 eat——長音 e！' },
     { speaker: 'Finn', line: "Bike, boat, snow — you sang them all!", lineZh: 'bike、boat、snow——你們全都唱出來了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m15.mp4',
 };
 
 const L2_M16: Mission = {
