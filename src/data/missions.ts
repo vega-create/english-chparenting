@@ -1269,6 +1269,7 @@ const L2_M1: Mission = {
     { speaker: 'Benny', line: "I found a big dog and a red box!", lineZh: '我找到一隻大狗和一個紅色的盒子！' },
     { speaker: 'Finn', line: "You did it! Now we can read new words!", lineZh: '你們做到了！現在我們會讀新單字了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m1.mp4',
 };
 
 const L2_M2: Mission = {
@@ -1323,6 +1324,7 @@ const L2_M2: Mission = {
     { speaker: 'Ruby', line: "Look, a fan in my bag!", lineZh: '你看，我的袋子裡有一把扇子！' },
     { speaker: 'Coco', line: "A, a, a — I hear it in every word!", lineZh: 'a、a、a——每個字裡我都聽到它！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m2.mp4',
 };
 
 const L2_M3: Mission = {
@@ -1376,6 +1378,7 @@ const L2_M3: Mission = {
     { speaker: 'Benny', line: "Ten hens? Get the net!", lineZh: '十隻母雞？快拿網子！' },
     { speaker: 'Ruby', line: "Oh no, now we are all wet!", lineZh: '糟糕，我們現在全身都濕了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m3.mp4',
 };
 
 const L2_M4: Mission = {
