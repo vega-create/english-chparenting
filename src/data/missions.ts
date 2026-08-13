@@ -352,6 +352,7 @@ const L1_M3: Mission = {
     { speaker: 'Benny', line: "A goat is eating my hat!", lineZh: '有一隻山羊在吃我的帽子！' },
     { speaker: 'Ruby', line: "Come back, goat! That's Benny's hat!", lineZh: '回來啦山羊！那是 Benny 的帽子！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m3.mp4',
 };
 
 // L1 M4: I to L（山丘字母）
@@ -400,6 +401,7 @@ const L1_M4: Mission = {
     { speaker: 'Polly', line: "Look up! A kite is flying!", lineZh: '抬頭看！有風箏在飛！' },
     { speaker: 'Finn', line: "Careful — a lion is sleeping here!", lineZh: '小心，有一隻獅子在這裡睡覺！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m4.mp4',
 };
 
 // L1 M5: 字母歌大複習① A–L
@@ -446,6 +448,7 @@ const L1_M5: Mission = {
     { speaker: 'Benny', line: "I, J, K, L! Let's sing it again!", lineZh: 'I、J、K、L！我們再唱一次！' },
     { speaker: 'Finn', line: "You all sing so well!", lineZh: '你們唱得好棒！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m5.mp4',
 };
 
 // L1 M6: M to P（海邊字母）
