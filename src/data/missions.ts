@@ -1432,6 +1432,7 @@ const L2_M4: Mission = {
     { speaker: 'Polly', line: "Six little pigs! Who will win?", lineZh: '六隻小豬！誰會贏呢？' },
     { speaker: 'Finn', line: "The big one! Good job, pig!", lineZh: '那隻大的！做得好，小豬！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m4.mp4',
 };
 
 const L2_M5: Mission = {
@@ -1484,6 +1485,7 @@ const L2_M5: Mission = {
     { speaker: 'Benny', line: "Pig, six! That's short i!", lineZh: 'pig、six！那是短音 i！' },
     { speaker: 'Finn', line: "A, e, i — we know them all!", lineZh: 'a、e、i——我們全都會了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m5.mp4',
 };
 
 const L2_M6: Mission = {
@@ -1537,6 +1539,7 @@ const L2_M6: Mission = {
     { speaker: 'Coco', line: "Careful, the pot is hot!", lineZh: '小心，那個鍋子很燙！' },
     { speaker: 'Finn', line: "Get the mop! Oh no, the fox ran!", lineZh: '快拿拖把！糟了，狐狸跑掉了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m6.mp4',
 };
 
 const L2_M7: Mission = {
