@@ -640,6 +640,7 @@ const L1_M9: Mission = {
     { speaker: 'Coco', line: "A zebra wants to play too!", lineZh: '有一隻斑馬也想一起玩！' },
     { speaker: 'Finn', line: "Y and Z — we made it to the end!", lineZh: 'Y 和 Z —— 我們走到最後了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m9.mp4',
 };
 
 // L1 M10: 字母歌大複習② M–Z
@@ -686,6 +687,7 @@ const L1_M10: Mission = {
     { speaker: 'Polly', line: "U, V, W... X, Y, Z!", lineZh: 'U、V、W… X、Y、Z！' },
     { speaker: 'Finn', line: "We did it — all the way to Z!", lineZh: '我們做到了 —— 一路唱到 Z！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m10.mp4',
 };
 
 // L1 M11: 字母書寫大挑戰（大小寫配對）
@@ -732,6 +734,7 @@ const L1_M11: Mission = {
     { speaker: 'Benny', line: "Big B, small b. Is this one good?", lineZh: '大寫 B，小寫 b。這樣可以嗎？' },
     { speaker: 'Coco', line: "Yes! Your letters look great, Benny!", lineZh: '可以！Benny，你的字寫得真好！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m11.mp4',
 };
 
 // L1 M12: 字母島大魔王（總驗收 + 畢業）
