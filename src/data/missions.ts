@@ -2360,6 +2360,7 @@ const L3_M1: Mission = {
     { speaker: 'Coco', line: "I like pink and purple!", lineZh: '我喜歡粉紅色和紫色！' },
     { speaker: 'Polly', line: "So many colors on Market Street!", lineZh: '市場街好多顏色！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m1.mp4',
 };
 
 const L3_M2: Mission = {
@@ -2413,6 +2414,7 @@ const L3_M2: Mission = {
     { speaker: 'Coco', line: "Is the banana red?", lineZh: '香蕉是紅色的嗎？' },
     { speaker: 'Benny', line: "No, it isn't. It's yellow!", lineZh: '不，不是。它是黃色的！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m2.mp4',
 };
 
 const L3_M3: Mission = {
@@ -2466,6 +2468,7 @@ const L3_M3: Mission = {
     { speaker: 'Coco', line: "I have four bananas. How many do you have?", lineZh: '我有四根香蕉。你有幾根？' },
     { speaker: 'Polly', line: "I have ten! Let's count to ten together!", lineZh: '我有十根！我們一起數到十！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m3.mp4',
 };
 
 const L3_M4: Mission = {
