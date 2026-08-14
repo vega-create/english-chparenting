@@ -3446,6 +3446,7 @@ const L4_M1: Mission = {
     { speaker: 'Ruby', line: "Look! The school gate! Are you sleepy now?", lineZh: '你們看！校門到了！現在還想睡嗎？' },
     { speaker: 'Finn', line: "No! I am not sleepy. I am excited! Let's go!", lineZh: '不！我不想睡了，我好興奮！走吧！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m1.mp4',
 };
 
 const L4_M2: Mission = {
@@ -3503,6 +3504,7 @@ const L4_M2: Mission = {
     { speaker: 'Coco', line: "We are classmates now!", lineZh: '我們現在是同班同學了！' },
     { speaker: 'Finn', line: "Yes! We are a team. Let's go to class!", lineZh: '對！我們是一隊的。進教室吧！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m2.mp4',
 };
 
 const L4_M3: Mission = {
