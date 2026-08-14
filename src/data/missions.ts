@@ -4247,6 +4247,7 @@ const L4_M15: Mission = {
     { speaker: 'Ruby', line: "Are we good at questions?", lineZh: '我們很會問句了嗎？' },
     { speaker: 'Vega', line: "Yes, you are! Champions!", lineZh: '是的！你們是問句冠軍！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m15.mp4',
 };
 
 const L4_M16: Mission = {
