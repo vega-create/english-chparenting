@@ -3562,6 +3562,7 @@ const L4_M3: Mission = {
     { speaker: 'Vega', line: "Hello, everyone! Are you ready for class?", lineZh: '大家好！準備好上課了嗎？' },
     { speaker: 'Finn', line: "Yes, we are!", lineZh: '準備好了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m3.mp4',
 };
 
 const L4_M4: Mission = {
@@ -3618,6 +3619,7 @@ const L4_M4: Mission = {
     { speaker: 'Ruby', line: "This near, that far. Easy!", lineZh: '近的用 this，遠的用 that，簡單！' },
     { speaker: 'Vega', line: "Great job! You know this and that!", lineZh: '太棒了！你們學會 this 和 that 了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m4.mp4',
 };
 
 const L4_M5: Mission = {
