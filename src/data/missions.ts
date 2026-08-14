@@ -3676,6 +3676,7 @@ const L4_M5: Mission = {
     { speaker: 'Coco', line: "Yes, we are! We are a team!", lineZh: '是的！我們是一隊的！' },
     { speaker: 'Finn', line: "This is our school. We are happy here!", lineZh: '這是我們的學校，我們在這裡好開心！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m5.mp4',
 };
 
 const L4_M6: Mission = {
@@ -3732,6 +3733,7 @@ const L4_M6: Mission = {
     { speaker: 'Coco', line: "Pizza, music, art... we like school!", lineZh: '披薩、音樂、美術⋯⋯我們喜歡上學！' },
     { speaker: 'Benny', line: "Yum! I like lunch time best!", lineZh: '好吃！我最喜歡午餐時間！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m6.mp4',
 };
 
 const L4_M7: Mission = {
