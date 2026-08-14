@@ -4019,6 +4019,7 @@ const L4_M11: Mission = {
     { speaker: 'Finn', line: "Can you kick the ball?", lineZh: '你們會踢球嗎？' },
     { speaker: 'Benny', line: "Yes, I can! Goal!", lineZh: '會！射門！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m11.mp4',
 };
 
 const L4_M12: Mission = {
@@ -4075,6 +4076,7 @@ const L4_M12: Mission = {
     { speaker: 'Ruby', line: "And this is my desk!", lineZh: '這是我的書桌！' },
     { speaker: 'Finn', line: "We found them all! What a fun hunt!", lineZh: '全部找到了！好好玩的尋寶！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m12.mp4',
 };
 
 const L4_M13: Mission = {
