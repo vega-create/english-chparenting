@@ -4305,6 +4305,7 @@ const L4_M16: Mission = {
     { speaker: 'Ruby', line: "Yesterday words are magic words!", lineZh: '「昨天的字」是魔法字！' },
     { speaker: 'Vega', line: "Yes! Past words tell old stories!", lineZh: '對！過去式會說以前的故事！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m16.mp4',
 };
 
 const L4_M17: Mission = {
