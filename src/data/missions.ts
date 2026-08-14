@@ -4133,6 +4133,7 @@ const L4_M13: Mission = {
     { speaker: 'Ruby', line: "Look under the chair!", lineZh: '看看椅子下面！' },
     { speaker: 'Benny', line: "Yes! It is under the chair! Thank you!", lineZh: '找到了！在椅子下面！謝謝！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m13.mp4',
 };
 
 const L4_M14: Mission = {
@@ -4189,6 +4190,7 @@ const L4_M14: Mission = {
     { speaker: 'Ruby', line: "It is next to the box... no, behind the box!", lineZh: '在箱子旁邊⋯⋯不對，在箱子後面！' },
     { speaker: 'Finn', line: "In, on, under, next to, behind! You got them all!", lineZh: '裡面、上面、下面、旁邊、後面！全學會了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m14.mp4',
 };
 
 const L4_M15: Mission = {
