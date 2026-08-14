@@ -3791,6 +3791,7 @@ const L4_M7: Mission = {
     { speaker: 'Ruby', line: "Do you like music?", lineZh: '你們喜歡音樂嗎？' },
     { speaker: 'Polly', line: "Yes, we do! Let's sing together!", lineZh: '喜歡！我們一起唱歌吧！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m7.mp4',
 };
 
 const L4_M8: Mission = {
@@ -3847,6 +3848,7 @@ const L4_M8: Mission = {
     { speaker: 'Finn', line: "Yes! We have time after school.", lineZh: '好！放學後我們有時間。' },
     { speaker: 'Benny', line: "Great! And I have fast legs!", lineZh: '太好了！我還有飛毛腿！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m8.mp4',
 };
 
 const L4_M9: Mission = {
