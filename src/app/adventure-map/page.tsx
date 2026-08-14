@@ -6,6 +6,7 @@ import { playPageIntro } from '@/lib/vega-audio';
 import {
   WORLDS,
   isWorldUnlocked,
+  isWorldSkipped,
   getWorldCompletion,
   getCurrentWorldId,
   resetProgress,
@@ -340,10 +341,10 @@ export default function AdventureMapPage() {
                   />
                 )}
 
-                {/* 進度小條（已解鎖才顯示）*/}
+                {/* 進度小條（已解鎖才顯示）；起點通行證跳過的世界標「已跳過」 */}
                 {unlocked && total > 0 && (
                   <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur px-2 py-0.5 rounded-full text-[10px] md:text-xs font-black shadow pointer-events-none whitespace-nowrap">
-                    {done}/{total}
+                    {isWorldSkipped(world.id) ? `已跳過 ${done}/${total}` : `${done}/${total}`}
                   </div>
                 )}
 

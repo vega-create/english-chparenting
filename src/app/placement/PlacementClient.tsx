@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { PLACEMENT_ITEMS, saveResult, loadResults, type PlacementResult } from '@/lib/placement';
 import { track } from '@/lib/analytics';
+import { setStartLevel } from '@/lib/progress';
 import { playClick, playStar } from '@/lib/sfx';
 import { loadProgress, completedCount } from '@/lib/missionProgress';
 
@@ -97,13 +98,31 @@ export default function PlacementClient() {
           )}
 
           <p className="mt-5 text-sm text-gray-500 leading-relaxed">
-            這個分數只是<strong>起點紀錄</strong>，不是考試成績，
-            不會影響孩子能玩哪幾課——全部課程本來就都打得開。
+            這個分數只是<strong>起點紀錄</strong>，不是考試成績。
           </p>
 
+          {done.kind === 'pre' && (() => {
+            // 依分數建議起點：0-3 從頭、4-6 聲音島、7+ 市場街（保守估，寧低勿高）
+            const rec = done.score <= 3 ? { level: 1, name: 'L1 字母島', href: '/courses/l1-letter-island/mission/1' }
+                      : done.score <= 6 ? { level: 2, name: 'L2 聲音島', href: '/courses/l2-sound-island/mission/1' }
+                      : { level: 3, name: 'L3 市場街', href: '/courses/l3-market-street/mission/1' };
+            return (
+              <div className="mt-5 rounded-2xl bg-purple-50 border-2 border-purple-200 p-4">
+                <p className="m-0 text-sm font-black text-purple-800">建議從「{rec.name}」開始</p>
+                <p className="m-0 mt-1 text-[11px] text-gray-500 font-bold leading-snug">
+                  按下面按鈕會把起點設在這裡：前面的島直接開門（之後想回頭玩也可以），從這裡開始一關一關解鎖。
+                </p>
+                <Link href={rec.href} onClick={() => setStartLevel(rec.level)}
+                  className="mt-3 inline-block rounded-full bg-purple-500 px-6 py-2.5 font-black text-white shadow active:scale-95 no-underline">
+                  就從{rec.name}出發 →
+                </Link>
+              </div>
+            );
+          })()}
+
           <Link href="/adventure-map"
-            className="mt-6 inline-block rounded-full bg-purple-500 px-8 py-3 font-black text-white shadow active:scale-95">
-            開始冒險 →
+            className="mt-4 inline-block rounded-full bg-white border-2 border-purple-300 px-8 py-3 font-black text-purple-600 shadow active:scale-95">
+            自己選，去冒險地圖 →
           </Link>
         </div>
       </Wrap>

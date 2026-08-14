@@ -8,6 +8,7 @@ import { WORLDS, COURSES } from '@/data/courses';
 import AutoAds from '@/components/AutoAds';
 import ResearchConsent from '@/components/ResearchConsent';
 import PlacementPrompt from '@/components/PlacementPrompt';
+import { setStartLevel } from '@/lib/progress';
 import LoginNudge from '@/components/LoginNudge';
 
 // 家長補給站
@@ -206,11 +207,11 @@ export default function ParentsPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-3 mt-3">
             {[
-              { tag: '完全沒學過', from: 'L1 字母島', why: '從 26 個字母的形狀與聲音開始，先認得字母再談其他。', href: '/courses/l1-letter-island/mission/1' },
-              { tag: '認得字母，但不會拼', from: 'L2 聲音島', why: '自然發音：看到 c-a-t 能自己拼讀出 cat，是閱讀的關鍵一步。', href: '/courses/l2-sound-island/mission/1' },
-              { tag: '會拼、也讀得懂短句', from: 'L3 市場街', why: '進入生活單字與句型，開始用英文講日常的事。', href: '/courses/l3-market-street/mission/1' },
+              { tag: '完全沒學過', from: 'L1 字母島', why: '從 26 個字母的形狀與聲音開始，先認得字母再談其他。', href: '/courses/l1-letter-island/mission/1', level: 1 },
+              { tag: '認得字母，但不會拼', from: 'L2 聲音島', why: '自然發音：看到 c-a-t 能自己拼讀出 cat，是閱讀的關鍵一步。', href: '/courses/l2-sound-island/mission/1', level: 2 },
+              { tag: '會拼、也讀得懂短句', from: 'L3 市場街', why: '進入生活單字與句型，開始用英文講日常的事。', href: '/courses/l3-market-street/mission/1', level: 3 },
             ].map(x => (
-              <Link key={x.tag} href={x.href} className="no-underline">
+              <Link key={x.tag} href={x.href} onClick={() => setStartLevel(x.level)} className="no-underline">
                 <article className="ae-frame h-full hover:-translate-y-0.5 transition">
                   <p className="m-0 inline-block bg-sky-100 text-sky-700 font-black text-[11px] rounded-full px-2 py-0.5">{x.tag}</p>
                   <p className="m-0 font-black text-gray-800 text-base mt-1.5">從 {x.from} 開始</p>

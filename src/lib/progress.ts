@@ -136,9 +136,38 @@ export function getWorldCompletion(worldId: number): { done: number; total: numb
   return { done, total: w.lessons.length, isComplete: done === w.lessons.length && w.lessons.length > 0 };
 }
 
-// World 解鎖：第 1 個世界永遠解鎖；後面的世界要看前一個是否全部完成
+// === 起點通行證 ===
+// 家長選起點（家長中心三張卡）或起點測驗設定後，起點以前的世界「視同解鎖」——
+// 只開門、不給星星徽章，孩子隨時可以回頭玩補收集。
+const START_KEY = "ae_start_level";
+
+export function getStartLevel(): number {
+  if (typeof window === "undefined") return 1;
+  const n = parseInt(localStorage.getItem(START_KEY) || "1", 10);
+  return Number.isFinite(n) && n >= 1 && n <= 12 ? n : 1;
+}
+
+export function setStartLevel(level: number) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(START_KEY, String(level));
+  window.dispatchEvent(new Event("ae-progress-change"));
+}
+
+// 每個世界涵蓋 2 個等級（w1=L1-2 … w6=L11-12）
+export function startWorldId(): number {
+  return Math.ceil(getStartLevel() / 2);
+}
+
+// 「已跳過」＝在起點之前、又還沒真的全破的世界（地圖上標示用）
+export function isWorldSkipped(worldId: number): boolean {
+  return worldId < startWorldId() && !getWorldCompletion(worldId).isComplete;
+}
+
+// World 解鎖：第 1 個世界永遠解鎖；起點通行證涵蓋的世界一律解鎖；
+// 之後照舊「前一個世界全破才開下一個」。
 export function isWorldUnlocked(worldId: number): boolean {
   if (worldId <= 1) return true;
+  if (worldId <= startWorldId()) return true;
   return getWorldCompletion(worldId - 1).isComplete;
 }
 
