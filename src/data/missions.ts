@@ -3438,10 +3438,13 @@ const L4_M1: Mission = {
     { type: 'spell', question: '拼拼看：s _ d（難過）', answer: 'sad', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Good morning, Coco! How are you?", lineZh: '早安 Coco！你好嗎？' },
-    { speaker: 'Coco', line: "I am happy! And I am hungry!", lineZh: '我很開心！而且我餓了！' },
-    { speaker: 'Benny', line: "Me too! I am hungry and tired.", lineZh: '我也是！我又餓又累。' },
-    { speaker: 'Finn', line: "It is lunch time! Let's eat!", lineZh: '午餐時間到了！我們去吃吧！' },
+    { speaker: 'Finn', line: "Good morning! First day on School Road! I am happy!", lineZh: '早安！學校路的第一天！我好開心！' },
+    { speaker: 'Coco', line: "I am happy, too! But walking is long... now I am tired.", lineZh: '我也開心！但走好久⋯⋯現在我累了。' },
+    { speaker: 'Benny', line: "I am hungry! Where is my sandwich?", lineZh: '我餓了！我的三明治呢？' },
+    { speaker: 'Polly', line: "Here! And water for you. Are you thirsty?", lineZh: '在這！水也給你。你渴了嗎？' },
+    { speaker: 'Benny', line: "Yes! I am thirsty. Thank you, Polly!", lineZh: '對！我渴了。謝謝 Polly！' },
+    { speaker: 'Ruby', line: "Look! The school gate! Are you sleepy now?", lineZh: '你們看！校門到了！現在還想睡嗎？' },
+    { speaker: 'Finn', line: "No! I am not sleepy. I am excited! Let's go!", lineZh: '不！我不想睡了，我好興奮！走吧！' },
   ],
 };
 
@@ -3492,10 +3495,13 @@ const L4_M2: Mission = {
     { type: 'fill-blank', question: 'It ___ a book.（be動詞）', options: ['is', 'am', 'are', 'be'], answer: 'is' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Hi! I am Finn. This is Benny.", lineZh: '嗨！我是 Finn。這是 Benny。' },
-    { speaker: 'Coco', line: "He is Benny. She is me, Coco!", lineZh: '他是 Benny。她是我，Coco！' },
-    { speaker: 'Polly', line: "We are all friends. They are nice!", lineZh: '我們都是朋友。他們人很好！' },
-    { speaker: 'Finn', line: "I, you, he, she, we, they! Great team!", lineZh: 'I、you、he、she、we、they！好棒的一隊！' },
+    { speaker: 'Finn', line: "Welcome to our school! I am Finn.", lineZh: '歡迎來我們學校！我是 Finn。' },
+    { speaker: 'Coco', line: "And I am Coco. You are new, right?", lineZh: '我是 Coco。你是新來的對吧？' },
+    { speaker: 'Polly', line: "He is Benny. He is very friendly!", lineZh: '他是 Benny，他超友善！' },
+    { speaker: 'Benny', line: "She is Polly. She is a great speaker!", lineZh: '她是 Polly，她超會說話！' },
+    { speaker: 'Ruby', line: "Look at the school bell. It is big!", lineZh: '你們看學校的鐘，它好大！' },
+    { speaker: 'Coco', line: "We are classmates now!", lineZh: '我們現在是同班同學了！' },
+    { speaker: 'Finn', line: "Yes! We are a team. Let's go to class!", lineZh: '對！我們是一隊的。進教室吧！' },
   ],
 };
 
@@ -3545,10 +3551,14 @@ const L4_M3: Mission = {
     { type: 'match', question: '❌ 不是 的英文？', options: ['no', 'yes', 'nice', 'boy'], answer: 'no' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "Are you a student?", lineZh: '你是學生嗎？' },
-    { speaker: 'Coco', line: "Yes, I am! Is he a teacher?", lineZh: '是的，我是！他是老師嗎？' },
-    { speaker: 'Polly', line: "No, he isn't. He is my friend Benny.", lineZh: '不，他不是。他是我朋友 Benny。' },
-    { speaker: 'Benny', line: "Yes! I am a student too!", lineZh: '對！我也是學生！' },
+    { speaker: 'Coco', line: "Look! Is she a teacher?", lineZh: '你看！她是老師嗎？' },
+    { speaker: 'Finn', line: "Yes, she is. She is Miss Vega!", lineZh: '是的，她是 Miss Vega！' },
+    { speaker: 'Benny', line: "Is he a student?", lineZh: '他是學生嗎？' },
+    { speaker: 'Polly', line: "Yes, he is. He is a new boy.", lineZh: '是的，他是新來的男孩。' },
+    { speaker: 'Ruby', line: "Is the girl your friend?", lineZh: '那個女孩是你的朋友嗎？' },
+    { speaker: 'Coco', line: "Yes! She is my friend.", lineZh: '對！她是我的朋友。' },
+    { speaker: 'Vega', line: "Hello, everyone! Are you ready for class?", lineZh: '大家好！準備好上課了嗎？' },
+    { speaker: 'Finn', line: "Yes, we are!", lineZh: '準備好了！' },
   ],
 };
 
@@ -3598,10 +3608,13 @@ const L4_M4: Mission = {
     { type: 'spell', question: '拼拼看：r _ ler（尺）', answer: 'ruler', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "This is my book. What is that?", lineZh: '這是我的書。那是什麼？' },
-    { speaker: 'Benny', line: "That is my bag. These are my pens.", lineZh: '那是我的書包。這些是我的筆。' },
-    { speaker: 'Coco', line: "Wow! Those are nice pencils!", lineZh: '哇！那些是很棒的鉛筆！' },
-    { speaker: 'Ruby', line: "Thank you! This is fun!", lineZh: '謝謝！這好好玩！' },
+    { speaker: 'Vega', line: "This is a book. Say it: this!", lineZh: '這是一本書。跟著說：this！' },
+    { speaker: 'Coco', line: "This is a pen! It is near.", lineZh: '這是一支筆！它很近。' },
+    { speaker: 'Finn', line: "That is a clock. It is far!", lineZh: '那是時鐘，它很遠！' },
+    { speaker: 'Benny', line: "These are my crayons!", lineZh: '這些是我的蠟筆！' },
+    { speaker: 'Polly', line: "Those are your bags, over there!", lineZh: '那些是你們的書包，在那邊！' },
+    { speaker: 'Ruby', line: "This near, that far. Easy!", lineZh: '近的用 this，遠的用 that，簡單！' },
+    { speaker: 'Vega', line: "Great job! You know this and that!", lineZh: '太棒了！你們學會 this 和 that 了！' },
   ],
 };
 
@@ -3651,10 +3664,13 @@ const L4_M5: Mission = {
     { type: 'read', question: 'Who is a teacher?（誰是老師？）', passage: 'Coco is a student.\nMiss Vega is a teacher.\nBenny is a student.', options: ['Miss Vega', 'Coco', 'Benny', 'Finn'], answer: 'Miss Vega' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Are you ready to review?", lineZh: '準備好複習了嗎？' },
-    { speaker: 'Coco', line: "Yes, I am! I am a student.", lineZh: '是的！我是學生。' },
-    { speaker: 'Ruby', line: "She is my friend. They are nice.", lineZh: '她是我朋友。他們人很好。' },
-    { speaker: 'Finn', line: "Great! You know your be verbs!", lineZh: '太棒了！你會 be 動詞了！' },
+    { speaker: 'Finn', line: "Class is over! I am happy!", lineZh: '下課了！我好開心！' },
+    { speaker: 'Coco', line: "Me too! But Benny is tired.", lineZh: '我也是！但 Benny 累了。' },
+    { speaker: 'Benny', line: "Yes, I am tired... and hungry!", lineZh: '對，我累了⋯⋯還餓了！' },
+    { speaker: 'Polly', line: "Is Miss Vega a teacher? Yes, she is!", lineZh: 'Miss Vega 是老師嗎？是的，她是！' },
+    { speaker: 'Ruby', line: "Are we friends?", lineZh: '我們是朋友嗎？' },
+    { speaker: 'Coco', line: "Yes, we are! We are a team!", lineZh: '是的！我們是一隊的！' },
+    { speaker: 'Finn', line: "This is our school. We are happy here!", lineZh: '這是我們的學校，我們在這裡好開心！' },
   ],
 };
 
@@ -3704,10 +3720,13 @@ const L4_M6: Mission = {
     { type: 'fill-blank', question: "I don't ___ sports.（喜歡）", options: ['like', 'likes', 'am', 'is'], answer: 'like' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I like pizza and music! What do you like?", lineZh: '我喜歡披薩和音樂！你喜歡什麼？' },
-    { speaker: 'Benny', line: "I like books. I don't like candy.", lineZh: '我喜歡書。我不喜歡糖果。' },
-    { speaker: 'Ruby', line: "I like art and games!", lineZh: '我喜歡美術和遊戲！' },
-    { speaker: 'Coco', line: "We all like different things! Cool!", lineZh: '我們喜歡不同的東西！好酷！' },
+    { speaker: 'Benny', line: "Lunch time! I like pizza!", lineZh: '午餐時間！我喜歡披薩！' },
+    { speaker: 'Coco', line: "I like ice cream. Sweet and cold!", lineZh: '我喜歡冰淇淋，又甜又冰！' },
+    { speaker: 'Polly', line: "I like candy! But not too much.", lineZh: '我喜歡糖果！但不能吃太多。' },
+    { speaker: 'Finn', line: "After lunch is music class. I like music!", lineZh: '午餐後是音樂課，我喜歡音樂！' },
+    { speaker: 'Ruby', line: "I like art! I draw every day.", lineZh: '我喜歡美術！我每天畫畫。' },
+    { speaker: 'Coco', line: "Pizza, music, art... we like school!", lineZh: '披薩、音樂、美術⋯⋯我們喜歡上學！' },
+    { speaker: 'Benny', line: "Yum! I like lunch time best!", lineZh: '好吃！我最喜歡午餐時間！' },
   ],
 };
 
@@ -3758,10 +3777,13 @@ const L4_M7: Mission = {
     { type: 'fill-blank', question: "Do you like candy? No, I ___.", options: ["don't", 'do', 'am', 'not'], answer: "don't" },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "Do you like pizza?", lineZh: '你喜歡披薩嗎？' },
-    { speaker: 'Coco', line: "Yes, I do! Do you like dogs?", lineZh: '是的！你喜歡狗嗎？' },
-    { speaker: 'Polly', line: "No, I don't. I like cats!", lineZh: '不，我不喜歡。我喜歡貓！' },
-    { speaker: 'Benny', line: "Me too! I love cats!", lineZh: '我也是！我很愛貓！' },
+    { speaker: 'Coco', line: "Do you like cats? I am a cat!", lineZh: '你喜歡貓嗎？我就是貓！' },
+    { speaker: 'Benny', line: "Yes, I do! Do you like dogs?", lineZh: '喜歡！那妳喜歡狗嗎？' },
+    { speaker: 'Coco', line: "Yes, I do. Dogs are fun!", lineZh: '喜歡，狗狗很好玩！' },
+    { speaker: 'Polly', line: "Do you like pizza, Finn?", lineZh: 'Finn，你喜歡披薩嗎？' },
+    { speaker: 'Finn', line: "Yes, I do! I like pizza a lot!", lineZh: '喜歡！我超喜歡披薩！' },
+    { speaker: 'Ruby', line: "Do you like music?", lineZh: '你們喜歡音樂嗎？' },
+    { speaker: 'Polly', line: "Yes, we do! Let's sing together!", lineZh: '喜歡！我們一起唱歌吧！' },
   ],
 };
 
@@ -3811,10 +3833,13 @@ const L4_M8: Mission = {
     { type: 'fill-blank', question: 'She ___ a dog.（有·第三人稱）', options: ['has', 'have', 'is', 'do'], answer: 'has' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I have a bag and a book. Do you have a pen?", lineZh: '我有書包和書。你有筆嗎？' },
-    { speaker: 'Ruby', line: "Yes, I do! Do you have a ball?", lineZh: '是的！你有球嗎？' },
-    { speaker: 'Finn', line: "No, I don't. But I have a bike!", lineZh: '不，我沒有。但我有腳踏車！' },
-    { speaker: 'Benny', line: "Cool! We all have something fun!", lineZh: '酷！我們都有好玩的東西！' },
+    { speaker: 'Finn', line: "I have a new bag! Look!", lineZh: '我有一個新書包！你看！' },
+    { speaker: 'Coco', line: "I have two books and a pen.", lineZh: '我有兩本書和一支筆。' },
+    { speaker: 'Benny', line: "I have a toy in my bag... shh!", lineZh: '我書包裡有一個玩具⋯⋯噓！' },
+    { speaker: 'Polly', line: "Benny! Toys at home!", lineZh: '班尼！玩具要放家裡！' },
+    { speaker: 'Ruby', line: "I have a ball. Play after school?", lineZh: '我有一顆球，放學後玩嗎？' },
+    { speaker: 'Finn', line: "Yes! We have time after school.", lineZh: '好！放學後我們有時間。' },
+    { speaker: 'Benny', line: "Great! And I have fast legs!", lineZh: '太好了！我還有飛毛腿！' },
   ],
 };
 
@@ -3864,10 +3889,13 @@ const L4_M9: Mission = {
     { type: 'fill-blank', question: 'Can you dance? Yes, I ___.', options: ['can', 'am', 'do', 'is'], answer: 'can' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "I can run and jump! Can you swim?", lineZh: '我會跑也會跳！你會游泳嗎？' },
-    { speaker: 'Coco', line: "Yes, I can! But I can't fly.", lineZh: '是的，我會！但我不會飛。' },
-    { speaker: 'Ruby', line: "I can draw and write! What can you do?", lineZh: '我會畫畫和寫字！你會做什麼？' },
-    { speaker: 'Finn', line: "We can do so many things! Awesome!", lineZh: '我們會好多事！太棒了！' },
+    { speaker: 'Vega', line: "PE time! What can you do?", lineZh: '體育課！你們會做什麼？' },
+    { speaker: 'Finn', line: "I can run! Watch me!", lineZh: '我會跑步！看我的！' },
+    { speaker: 'Coco', line: "I can jump high!", lineZh: '我會跳很高！' },
+    { speaker: 'Benny', line: "I can swim. Splash splash!", lineZh: '我會游泳，撲通撲通！' },
+    { speaker: 'Polly', line: "I can sing! La la la!", lineZh: '我會唱歌！啦啦啦！' },
+    { speaker: 'Ruby', line: "I can dance! Look at me spin!", lineZh: '我會跳舞！看我轉圈！' },
+    { speaker: 'Vega', line: "Wow! You can do so many things!", lineZh: '哇！你們會好多事！' },
   ],
 };
 
@@ -3917,10 +3945,13 @@ const L4_M10: Mission = {
     { type: 'read', question: 'Does Coco have a book?（Coco 有書嗎？）', passage: 'Coco has a book and a bag.\nShe can read the book.\nShe likes it!', options: ['Yes', 'No', 'Maybe', 'Never'], answer: 'Yes' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "I like pizza, I have a ball, and I can run!", lineZh: '我喜歡披薩，我有球，我會跑！' },
-    { speaker: 'Coco', line: "I can swim! Do you like dogs?", lineZh: '我會游泳！你喜歡狗嗎？' },
-    { speaker: 'Polly', line: "Yes, I do! Can you sing?", lineZh: '是的！你會唱歌嗎？' },
-    { speaker: 'Finn', line: "Yes, I can! Great review, everyone!", lineZh: '是的，我會！複習得很好，大家！' },
+    { speaker: 'Finn', line: "Let's do a talent show!", lineZh: '我們來辦才藝表演吧！' },
+    { speaker: 'Polly', line: "I like singing. I can sing!", lineZh: '我喜歡唱歌，我也會唱！' },
+    { speaker: 'Ruby', line: "I can dance. I have a pink dress!", lineZh: '我會跳舞，我還有粉紅洋裝！' },
+    { speaker: 'Benny', line: "I have a drum. Boom boom!", lineZh: '我有一個鼓，咚咚！' },
+    { speaker: 'Coco', line: "I like music. I can play, too!", lineZh: '我喜歡音樂，我也會演奏！' },
+    { speaker: 'Finn', line: "We have a great team!", lineZh: '我們的隊伍超棒！' },
+    { speaker: 'Coco', line: "We can do it! Show time!", lineZh: '我們做得到！表演開始！' },
   ],
 };
 
@@ -3970,10 +4001,13 @@ const L4_M11: Mission = {
     { type: 'fill-blank', question: 'Can you cook? Yes, I ___.', options: ['can', "can't", 'do', 'is'], answer: 'can' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "Can you swim?", lineZh: '你會游泳嗎？' },
-    { speaker: 'Coco', line: "Yes, I can! Can you fly?", lineZh: '是的，我會！你會飛嗎？' },
-    { speaker: 'Polly', line: "No, I can't! But I can read.", lineZh: '不，我不會！但我會閱讀。' },
-    { speaker: 'Benny', line: "I can cook and climb! Can you?", lineZh: '我會煮飯和攀爬！你會嗎？' },
+    { speaker: 'Coco', line: "Question game! Can you swim, Benny?", lineZh: '問答遊戲！Benny 你會游泳嗎？' },
+    { speaker: 'Benny', line: "Yes, I can! Can you climb, Coco?", lineZh: '會！Coco 妳會爬高嗎？' },
+    { speaker: 'Coco', line: "Yes, I can. Cats can climb!", lineZh: '會，貓咪最會爬了！' },
+    { speaker: 'Polly', line: "Can you cook, Ruby?", lineZh: 'Ruby 妳會煮飯嗎？' },
+    { speaker: 'Ruby', line: "No, I can't. But I can read!", lineZh: '不會，但我會閱讀！' },
+    { speaker: 'Finn', line: "Can you kick the ball?", lineZh: '你們會踢球嗎？' },
+    { speaker: 'Benny', line: "Yes, I can! Goal!", lineZh: '會！射門！' },
   ],
 };
 
@@ -4023,10 +4057,13 @@ const L4_M12: Mission = {
     { type: 'spell', question: '拼拼看：cl _ ck（時鐘）', answer: 'clock', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "What is this?", lineZh: '這是什麼？' },
-    { speaker: 'Coco', line: "It is a clock! What is that?", lineZh: '這是時鐘！那是什麼？' },
-    { speaker: 'Benny', line: "It is a map. What is this?", lineZh: '那是地圖。這是什麼？' },
-    { speaker: 'Ruby', line: "It is a window! Our classroom is nice!", lineZh: '這是窗戶！我們的教室好棒！' },
+    { speaker: 'Vega', line: "Word hunt! What is this?", lineZh: '單字尋寶！這是什麼？' },
+    { speaker: 'Coco', line: "It is a clock! Tick tock.", lineZh: '是時鐘！滴答滴答。' },
+    { speaker: 'Vega', line: "Good! What is that?", lineZh: '很好！那是什麼？' },
+    { speaker: 'Benny', line: "It is a door. And that is a window!", lineZh: '是門。那是窗戶！' },
+    { speaker: 'Polly', line: "What is this? It is a chair!", lineZh: '這是什麼？是椅子！' },
+    { speaker: 'Ruby', line: "And this is my desk!", lineZh: '這是我的書桌！' },
+    { speaker: 'Finn', line: "We found them all! What a fun hunt!", lineZh: '全部找到了！好好玩的尋寶！' },
   ],
 };
 
@@ -4076,10 +4113,13 @@ const L4_M13: Mission = {
     { type: 'match', question: '📦 是什麼？', options: ['box', 'bag', 'ball', 'desk'], answer: 'box' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "Where is my cat?", lineZh: '我的貓在哪？' },
-    { speaker: 'Benny', line: "It is on the desk! Where is the ball?", lineZh: '牠在書桌上！球在哪？' },
-    { speaker: 'Coco', line: "It is in the box. Where is my bag?", lineZh: '它在箱子裡。我的書包在哪？' },
-    { speaker: 'Ruby', line: "It is under the chair! Found it!", lineZh: '它在椅子下！找到了！' },
+    { speaker: 'Benny', line: "Oh no! Where is my pen?", lineZh: '糟糕！我的筆呢？' },
+    { speaker: 'Coco', line: "Is it in your bag?", lineZh: '在你的書包裡嗎？' },
+    { speaker: 'Benny', line: "No... it is not in my bag.", lineZh: '沒有⋯⋯不在書包裡。' },
+    { speaker: 'Polly', line: "Is it on the desk?", lineZh: '在書桌上嗎？' },
+    { speaker: 'Benny', line: "No, it is not on the desk.", lineZh: '不在書桌上。' },
+    { speaker: 'Ruby', line: "Look under the chair!", lineZh: '看看椅子下面！' },
+    { speaker: 'Benny', line: "Yes! It is under the chair! Thank you!", lineZh: '找到了！在椅子下面！謝謝！' },
   ],
 };
 
@@ -4129,10 +4169,13 @@ const L4_M14: Mission = {
     { type: 'fill-blank', question: 'The book is ___ the table.（上面）', options: ['on', 'under', 'behind', 'is'], answer: 'on' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "The cat is next to the box.", lineZh: '貓在箱子旁邊。' },
-    { speaker: 'Coco', line: "The dog is behind the chair!", lineZh: '狗在椅子後面！' },
-    { speaker: 'Benny', line: "The ball is under the table.", lineZh: '球在桌子下面。' },
-    { speaker: 'Ruby', line: "In, on, under, next to, behind! Perfect!", lineZh: 'In、on、under、next to、behind！完美！' },
+    { speaker: 'Finn', line: "Let's play! Where is the ball?", lineZh: '來玩吧！球在哪裡？' },
+    { speaker: 'Coco', line: "It is in the box!", lineZh: '在箱子裡！' },
+    { speaker: 'Finn', line: "Now look again. Where is it?", lineZh: '再看一次，球在哪？' },
+    { speaker: 'Benny', line: "It is on the box!", lineZh: '在箱子上！' },
+    { speaker: 'Polly', line: "Now it is under the box!", lineZh: '現在在箱子下面！' },
+    { speaker: 'Ruby', line: "It is next to the box... no, behind the box!", lineZh: '在箱子旁邊⋯⋯不對，在箱子後面！' },
+    { speaker: 'Finn', line: "In, on, under, next to, behind! You got them all!", lineZh: '裡面、上面、下面、旁邊、後面！全學會了！' },
   ],
 };
 
@@ -4182,10 +4225,13 @@ const L4_M15: Mission = {
     { type: 'read', question: 'Is the cat on the desk?（貓在書桌上嗎？）', passage: 'Where is the cat?\nThe cat is on the desk.\nThe clock is on the wall.', options: ['Yes', 'No', 'Maybe', 'Under'], answer: 'Yes' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Are you ready? Do you like questions?", lineZh: '你準備好了嗎？你喜歡問句嗎？' },
-    { speaker: 'Polly', line: "Yes, I do! Can you ask one?", lineZh: '是的！你能問一個嗎？' },
-    { speaker: 'Benny', line: "What is this? Where is the cat?", lineZh: '這是什麼？貓在哪？' },
-    { speaker: 'Finn', line: "Great! You know all the questions!", lineZh: '太棒了！你會所有問句了！' },
+    { speaker: 'Vega', line: "Question relay! Are you ready?", lineZh: '問句接力賽！準備好了嗎？' },
+    { speaker: 'Finn', line: "Yes! What is this? It is a book!", lineZh: '好了！這是什麼？是書！' },
+    { speaker: 'Coco', line: "Where is the pen? It is on the desk!", lineZh: '筆在哪？在書桌上！' },
+    { speaker: 'Benny', line: "Do you like pizza? Yes, I do!", lineZh: '你喜歡披薩嗎？喜歡！' },
+    { speaker: 'Polly', line: "Can you sing? Yes, I can!", lineZh: '你會唱歌嗎？會！' },
+    { speaker: 'Ruby', line: "Are we good at questions?", lineZh: '我們很會問句了嗎？' },
+    { speaker: 'Vega', line: "Yes, you are! Champions!", lineZh: '是的！你們是問句冠軍！' },
   ],
 };
 
@@ -4236,10 +4282,13 @@ const L4_M16: Mission = {
     { type: 'match', question: 'eat 的過去式是？', options: ['ate', 'eated', 'eats', 'eaten'], answer: 'ate' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Today I play games. Yesterday I played too!", lineZh: '今天我玩遊戲。昨天我也玩了！' },
-    { speaker: 'Coco', line: "I went to school yesterday. Did you?", lineZh: '我昨天去了學校。你呢？' },
-    { speaker: 'Polly', line: "Yes! And I ate a big lunch!", lineZh: '有！而且我吃了一頓大餐！' },
-    { speaker: 'Benny', line: "Past tense is fun! play, played!", lineZh: '過去式好好玩！play、played！' },
+    { speaker: 'Vega', line: "What did you do yesterday?", lineZh: '你們昨天做了什麼？' },
+    { speaker: 'Finn', line: "I played ball in the park!", lineZh: '我在公園玩了球！' },
+    { speaker: 'Coco', line: "I went to the library.", lineZh: '我去了圖書館。' },
+    { speaker: 'Benny', line: "I ate a big cake! Yum!", lineZh: '我吃了一個大蛋糕！好吃！' },
+    { speaker: 'Polly', line: "Play, played. Go, went. Eat, ate!", lineZh: '玩是 played、去是 went、吃是 ate！' },
+    { speaker: 'Ruby', line: "Yesterday words are magic words!", lineZh: '「昨天的字」是魔法字！' },
+    { speaker: 'Vega', line: "Yes! Past words tell old stories!", lineZh: '對！過去式會說以前的故事！' },
   ],
 };
 
@@ -4289,10 +4338,13 @@ const L4_M17: Mission = {
     { type: 'fill-blank', question: 'Do you ___ your class?（喜歡）', options: ['like', 'am', 'is', 'can'], answer: 'like' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "I am a student. I like school!", lineZh: '我是學生。我喜歡學校！' },
-    { speaker: 'Coco', line: "Me too! I have many books.", lineZh: '我也是！我有很多書。' },
-    { speaker: 'Benny', line: "I can read fast. It is lunch time now!", lineZh: '我讀得快。現在午餐時間！' },
-    { speaker: 'Finn', line: "School is fun. Let's learn together!", lineZh: '學校好好玩。我們一起學習！' },
+    { speaker: 'Finn', line: "School day! First, we go to class.", lineZh: '上學日！首先我們去教室。' },
+    { speaker: 'Coco', line: "I read a book in class.", lineZh: '我在課堂上讀書。' },
+    { speaker: 'Benny', line: "Lunch time! I eat with my friends.", lineZh: '午餐時間！我和朋友一起吃。' },
+    { speaker: 'Polly', line: "After lunch, we play outside.", lineZh: '午餐後我們去外面玩。' },
+    { speaker: 'Ruby', line: "Then the teacher reads a story.", lineZh: '然後老師讀故事給我們聽。' },
+    { speaker: 'Coco', line: "School is fun with friends!", lineZh: '和朋友一起上學好好玩！' },
+    { speaker: 'Finn', line: "I love our school day!", lineZh: '我愛我們的上學日！' },
   ],
 };
 
@@ -4342,10 +4394,13 @@ const L4_M18: Mission = {
     { type: 'spell', question: '拼拼看：pl _ ase（請）', answer: 'please', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Miss Ruby', line: "Good morning! Please sit down.", lineZh: '早安！請坐下。' },
-    { speaker: 'Coco', line: "Good morning, teacher!", lineZh: '早安，老師！' },
-    { speaker: 'Miss Ruby', line: "Open your book. Look at page one.", lineZh: '打開書。看第一頁。' },
-    { speaker: 'Benny', line: "Yes! Thank you, teacher!", lineZh: '好！謝謝老師！' },
+    { speaker: 'Vega', line: "Listen and do! Stand up!", lineZh: '聽指令做動作！起立！' },
+    { speaker: 'Finn', line: "We stand up!", lineZh: '我們站起來了！' },
+    { speaker: 'Vega', line: "Sit down, please.", lineZh: '請坐下。' },
+    { speaker: 'Coco', line: "We sit down. Nice and quiet.", lineZh: '我們坐下，安安靜靜。' },
+    { speaker: 'Vega', line: "Open your book. Look at page one.", lineZh: '打開課本，看第一頁。' },
+    { speaker: 'Benny', line: "Open... look... I am doing it!", lineZh: '打開⋯⋯看⋯⋯我做到了！' },
+    { speaker: 'Vega', line: "Close your book. Great listening!", lineZh: '闔上課本。你們好會聽指令！' },
   ],
 };
 
@@ -4395,10 +4450,13 @@ const L4_M19: Mission = {
     { type: 'match', question: 'play 是什麼意思？', options: ['玩', '讀', '寫', '跑'], answer: '玩' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "This is Finn. He is a student.", lineZh: '這是 Finn。他是學生。' },
-    { speaker: 'Finn', line: "I like school! I have a book.", lineZh: '我喜歡學校！我有一本書。' },
-    { speaker: 'Benny', line: "Can Finn read?", lineZh: 'Finn 會閱讀嗎？' },
-    { speaker: 'Finn', line: "Yes, I can! I play with friends. I'm happy!", lineZh: '是的，我會！我和朋友玩。我很開心！' },
+    { speaker: 'Vega', line: "Story time! This is Sunny the student.", lineZh: '說故事時間！這是學生 Sunny。' },
+    { speaker: 'Finn', line: "Sunny goes to school every day.", lineZh: 'Sunny 每天上學。' },
+    { speaker: 'Coco', line: "She likes books. She has three books!", lineZh: '她喜歡書，她有三本書！' },
+    { speaker: 'Benny', line: "She can read and sing.", lineZh: '她會閱讀也會唱歌。' },
+    { speaker: 'Polly', line: "Where is Sunny? She is in the library!", lineZh: 'Sunny 在哪？她在圖書館！' },
+    { speaker: 'Ruby', line: "Sunny is happy at school.", lineZh: 'Sunny 在學校很開心。' },
+    { speaker: 'Finn', line: "The end! What a nice day!", lineZh: '故事結束！真美好的一天！' },
   ],
 };
 
@@ -4448,10 +4506,13 @@ const L4_M20: Mission = {
     { type: 'read', question: 'Where did the student go?（學生去了哪？）', passage: 'Yesterday I went to school.\nI played with my friends.\nWe were very happy.', options: ['to school', 'to the zoo', 'home', 'to the sea'], answer: 'to school' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The School Boss says: tell me about you!", lineZh: '學校大魔王說：介紹你自己！' },
-    { speaker: 'Coco', line: "I am happy! I like school! I can swim!", lineZh: '我很開心！我喜歡學校！我會游泳！' },
-    { speaker: 'Ruby', line: "You beat the Boss! School champion!", lineZh: '你打敗大魔王了！學校冠軍！' },
-    { speaker: 'Finn', line: "On to Coral Beach! Let's learn adjectives!", lineZh: '前進珊瑚灘！我們來學形容詞！' },
+    { speaker: 'Finn', line: "The School Boss is here! Answer the questions!", lineZh: '學校魔王來了！回答問題！' },
+    { speaker: 'Vega', line: "Question one: Are you a student?", lineZh: '第一題：你是學生嗎？' },
+    { speaker: 'Coco', line: "Yes, I am! I am a student!", lineZh: '是的！我是學生！' },
+    { speaker: 'Vega', line: "Question two: What can you do?", lineZh: '第二題：你會做什麼？' },
+    { speaker: 'Benny', line: "I can read! I have many books!", lineZh: '我會閱讀！我有好多書！' },
+    { speaker: 'Ruby', line: "You beat the School Boss! Amazing!", lineZh: '你打敗學校魔王了！太厲害！' },
+    { speaker: 'Polly', line: "Next stop: Ocean Bay! See you there!", lineZh: '下一站：海洋灣！我們那裡見！' },
   ],
 };
 
