@@ -3905,6 +3905,7 @@ const L4_M9: Mission = {
     { speaker: 'Ruby', line: "I can dance! Look at me spin!", lineZh: '我會跳舞！看我轉圈！' },
     { speaker: 'Vega', line: "Wow! You can do so many things!", lineZh: '哇！你們會好多事！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m9.mp4',
 };
 
 const L4_M10: Mission = {
@@ -3961,6 +3962,7 @@ const L4_M10: Mission = {
     { speaker: 'Finn', line: "We have a great team!", lineZh: '我們的隊伍超棒！' },
     { speaker: 'Coco', line: "We can do it! Show time!", lineZh: '我們做得到！表演開始！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m10.mp4',
 };
 
 const L4_M11: Mission = {
