@@ -7,6 +7,7 @@ import { stopAllAudio } from '@/lib/audioBus';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 import { track } from '@/lib/analytics';
 import SentenceMic from '@/components/mission/SentenceMic';
+import VideoKaraoke from '@/components/mission/VideoKaraoke';
 
 interface Props {
   level: number;
@@ -246,7 +247,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 />
               </div>
             ) : (
-              <video className="w-full" controls autoPlay src={videoUrl} onEnded={() => setPhase('story')} />
+              <VideoKaraoke videoUrl={videoUrl} videoScript={videoScript} onEnded={() => setPhase('story')} />
             )
           ) : (
             <div className="p-5">
