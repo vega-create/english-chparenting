@@ -4476,6 +4476,7 @@ const L4_M19: Mission = {
     { speaker: 'Ruby', line: "Sunny is happy at school.", lineZh: 'Sunny 在學校很開心。' },
     { speaker: 'Finn', line: "The end! What a nice day!", lineZh: '故事結束！真美好的一天！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m19.mp4',
 };
 
 const L4_M20: Mission = {
@@ -4532,6 +4533,7 @@ const L4_M20: Mission = {
     { speaker: 'Ruby', line: "You beat the School Boss! Amazing!", lineZh: '你打敗學校魔王了！太厲害！' },
     { speaker: 'Polly', line: "Next stop: Ocean Bay! See you there!", lineZh: '下一站：海洋灣！我們那裡見！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m20.mp4',
 };
 
 // ===================== L5 珊瑚灘 Coral Beach（A1・形容詞＋比較級＋閱讀起步） =====================
