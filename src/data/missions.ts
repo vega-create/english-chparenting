@@ -4362,6 +4362,7 @@ const L4_M17: Mission = {
     { speaker: 'Coco', line: "School is fun with friends!", lineZh: '和朋友一起上學好好玩！' },
     { speaker: 'Finn', line: "I love our school day!", lineZh: '我愛我們的上學日！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m17.mp4',
 };
 
 const L4_M18: Mission = {
@@ -4418,6 +4419,7 @@ const L4_M18: Mission = {
     { speaker: 'Benny', line: "Open... look... I am doing it!", lineZh: '打開⋯⋯看⋯⋯我做到了！' },
     { speaker: 'Vega', line: "Close your book. Great listening!", lineZh: '闔上課本。你們好會聽指令！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m18.mp4',
 };
 
 const L4_M19: Mission = {
