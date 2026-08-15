@@ -225,6 +225,39 @@ export default function ParentsPage() {
           </p>
         </section>
 
+        {/* ===== 冒險規則 =====
+             家長最常見的三個疑問：進度存哪、為什麼有的島鎖著、獎勵是什麼。
+             跟「孩子該從哪裡開始」放一起，家長一頁看完就懂。 */}
+        <section className="mt-6 ae-frame-parchment">
+          <h2 className="font-black text-amber-900 text-base sm:text-lg m-0 mb-2">冒險規則，三分鐘看懂</h2>
+          <div className="grid md:grid-cols-3 gap-3">
+            <div>
+              <p className="m-0 font-black text-gray-800 text-sm">💾 進度存在哪？</p>
+              <p className="m-0 mt-1 text-gray-600 font-bold text-[12px] leading-relaxed">
+                不登入也能完整玩，進度存在<strong>這台裝置</strong>（清瀏覽器資料會歸零）。
+                家長用 Google 登入後，進度自動備份到雲端，<strong>換手機換平板都接得上</strong>，
+                兩邊進度會自動合併、只會變多不會倒退。
+              </p>
+            </div>
+            <div>
+              <p className="m-0 font-black text-gray-800 text-sm">🗺️ 島嶼怎麼解鎖？</p>
+              <p className="m-0 mt-1 text-gray-600 font-bold text-[12px] leading-relaxed">
+                世界一個接一個解鎖：全破前一個世界，下一個才開門。
+                如果孩子從 L2 或 L3 起步（上面選起點或做測驗），前面的島會<strong>直接開門並標「已跳過」</strong>——
+                不會白拿星星，想回頭玩隨時可以補收集。
+              </p>
+            </div>
+            <div>
+              <p className="m-0 font-black text-gray-800 text-sm">⭐ 獎勵有哪些？</p>
+              <p className="m-0 mt-1 text-gray-600 font-bold text-[12px] leading-relaxed">
+                每課依表現最多 <strong>3 顆星</strong>；完課拿<strong>寶石</strong>；
+                累積成就解鎖<strong>徽章</strong>。全部收進「我的小屋」和「成就徽章」頁，
+                孩子可以隨時回去看自己的收藏。
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ===== 家長補給站 ===== */}
         <section className="mt-6">
           <div className="flex items-baseline gap-2 mb-3">
