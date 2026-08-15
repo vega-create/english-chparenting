@@ -11,7 +11,7 @@ const NAV = [
   { href: "/cabin", label: "我的小屋", icon: "cabin" },
   { href: "/badges", label: "成就徽章", icon: "badges" },
   { href: "/parents", label: "家長冒險中心", icon: "parents" },
-  { href: "/guide", label: "使用說明", icon: "guide" },
+  { href: "/guide", label: "冒險規則", icon: "guide" },
   { href: "/blog", label: "冒險圖書館", icon: "blog" },
   { href: "/books", label: "閱讀花園", icon: "books" },
 ];

@@ -18,7 +18,7 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-500">
             <li><Link href="/adventure-map" className="hover:text-purple-600 no-underline">冒險地圖</Link></li>
             <li><Link href="/verbs" className="hover:text-purple-600 no-underline">動詞三態表</Link></li>
-            <li><Link href="/guide" className="hover:text-purple-600 no-underline">使用說明</Link></li>
+            <li><Link href="/guide" className="hover:text-purple-600 no-underline">冒險規則</Link></li>
             <li><Link href="/books" className="hover:text-purple-600 no-underline">推薦書單</Link></li>
             <li><Link href="/parents" className="hover:text-purple-600 no-underline">家長中心</Link></li>
             {/* AdSense 規定放廣告的站必須有可從各頁到達的隱私權說明 */}

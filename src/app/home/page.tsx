@@ -64,7 +64,7 @@ const NAV = [
   { icon: "cabin", label: "我的小屋", href: "/cabin" },
   { icon: "badges", label: "成就徽章", href: "/badges" },
   { icon: "parents", label: "家長冒險中心", href: "/parents" },
-  { icon: "guide", label: "使用說明", href: "/guide" },
+  { icon: "guide", label: "冒險規則", href: "/guide" },
   { icon: "blog", label: "冒險圖書館", href: "/blog" },
   { icon: "books", label: "閱讀花園", href: "/books" },
 ];
@@ -698,7 +698,7 @@ export default function LayeredBanner() {
       {/* ===== Footer（用 div 不用 footer，避開 layout 的 body footer{display:none}） ===== */}
       <div className="py-6 px-4 text-center" style={{ background: "#fdf0d5" }}>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 mb-2">
-          <Link href="/guide" className="hover:text-purple-600 no-underline">使用說明</Link>
+          <Link href="/guide" className="hover:text-purple-600 no-underline">冒險規則</Link>
           <Link href="/blog" className="hover:text-purple-600 no-underline">學習文章</Link>
           <Link href="/books" className="hover:text-purple-600 no-underline">推薦書單</Link>
           <Link href="/parents" className="hover:text-purple-600 no-underline">家長專區</Link>
