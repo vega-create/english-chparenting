@@ -292,11 +292,13 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
       <div className="animate-slide-up">
         <div className="text-center mb-3">
           {hasVideo && (
-            <button onClick={() => { setBookOpen(false); setPhase('video'); }} className="text-xs text-gray-400 hover:text-purple-500 mb-2 block mx-auto">
-              ← 回看影片
-            </button>
+            <div className="mb-2">
+              <GameButton onClick={() => { setBookOpen(false); setPhase('video'); }} color="purple" size="sm" sound="click">
+                ← 回看影片
+              </GameButton>
+            </div>
           )}
-          <p className="text-sm font-medium text-purple-500 bg-purple-50 inline-block px-4 py-1 rounded-full">
+          <p className="ae-name-plaque inline-block text-white font-black text-base sm:text-lg px-1.5 py-0.5 drop-shadow">
             📖 翻書學習 · 像一本書
           </p>
         </div>
@@ -325,7 +327,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   />
                   <span className="absolute left-0 top-0 bottom-0 w-3 bg-black/20" />
                 </span>
-                <span className="inline-block mt-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-6 sm:px-8 py-2.5 rounded-full font-black shadow-lg whitespace-nowrap">翻開書本 📖 →</span>
+                <span className="ae-btn ae-btn-gold ae-btn-md inline-block mt-3 whitespace-nowrap">翻開書本 📖 →</span>
               </button>
             ) : (
             <button
