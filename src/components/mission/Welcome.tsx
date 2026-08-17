@@ -68,7 +68,7 @@ const WELCOME_SCENES: Scene[] = [
     characterKey: 'vega',
     characterAction: 'victory',
     characterName: 'Vega',
-    dialogue: '題目做對就能拿到一顆星 ⭐\n拿到越多星星，獎勵也越多！\n👆 快點點看星星！',
+    dialogue: '題目做對就能拿到一顆星 ⭐\n拿到越多星，獎勵也越多！\n👆 快點點看吧！',
     action: 'click-star',
     actionHint: '👆 點擊星星試試看！',
   },
