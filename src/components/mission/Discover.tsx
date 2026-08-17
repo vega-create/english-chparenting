@@ -11,6 +11,8 @@ import SentenceMic from '@/components/mission/SentenceMic';
 import GameButton from '@/components/GameButton';
 import VideoKaraoke from '@/components/mission/VideoKaraoke';
 import StoryCritters from '@/components/mission/StoryCritters';
+import GrammarGuideCard from '@/components/mission/GrammarGuideCard';
+import { GRAMMAR_GUIDES } from '@/data/grammarGuides';
 
 interface Props {
   level: number;
@@ -28,7 +30,7 @@ interface Props {
   onRegisterBack?: (fn: () => boolean) => void; // 供外層「上一步」逐層退：回傳 true=內部已處理
 }
 
-type Phase = 'video' | 'story' | 'words' | 'phonics' | 'sentences';
+type Phase = 'video' | 'grammar' | 'story' | 'words' | 'phonics' | 'sentences';
 
 // 各級內頁底圖的米色面板範圍（世界框共用：L1-2 彩虹谷／L3-4 友善小鎮／L5-6 海洋灣／L7-8 故事城堡）
 const PANEL: Record<number, { left: string; right: string; top: string; bottom: string }> = {
@@ -70,6 +72,7 @@ function WordFace({ en, emoji }: { en: string; emoji: string }) {
 
 export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete, onRegisterBack }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
+  const grammarGuide = GRAMMAR_GUIDES[`${level}-${missionId ?? 0}`];
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
   const [bookOpen, setBookOpen] = useState(false);
   const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
@@ -254,7 +257,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 />
               </div>
             ) : (
-              <VideoKaraoke videoUrl={videoUrl} videoScript={videoScript} onEnded={() => setPhase('story')} />
+              <VideoKaraoke videoUrl={videoUrl} videoScript={videoScript} onEnded={() => setPhase(grammarGuide ? 'grammar' : 'story')} />
             )
           ) : (
             <div className="p-5">
@@ -276,8 +279,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
         {/* 看完影片 → 進電子書 */}
         <div className="flex justify-center">
-          <GameButton onClick={() => setPhase('story')} color="purple" size="lg">
-            看完了，開始翻書 📖 →
+          <GameButton onClick={() => setPhase(grammarGuide ? 'grammar' : 'story')} color="purple" size="lg">
+            {grammarGuide ? '看完了，下一步 →' : '看完了，開始翻書 📖 →'}
           </GameButton>
         </div>
       </div>
@@ -285,6 +288,10 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   }
 
   // ===== Phase 1: 電子書課文（一頁一課文，翻頁學習） =====
+  if (phase === 'grammar' && grammarGuide) {
+    return <GrammarGuideCard guide={grammarGuide} level={level} onDone={() => setPhase('story')} />;
+  }
+
   if (phase === 'story') {
 
     const openBook = () => {
