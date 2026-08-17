@@ -227,7 +227,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   // ===== Phase 0: 對話影片（先一次看完，再進電子書） =====
   if (phase === 'video') {
     return (
-      <div className="animate-slide-up">
+      <div className="animate-slide-up min-h-[72vh] flex flex-col justify-center">
         <div className="text-center mb-4">
           <p className="ae-name-plaque inline-block text-white font-black text-xl sm:text-2xl px-2 py-1 drop-shadow">
             🎬 先看影片
