@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { playTada, playStreamWash, playForestWash } from '@/lib/sfx';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
@@ -72,7 +72,19 @@ function WordFace({ en, emoji }: { en: string; emoji: string }) {
 
 export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete, onRegisterBack }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
-  const grammarGuide = GRAMMAR_GUIDES[`${level}-${missionId ?? 0}`];
+  // 每課影片後都要過「小挑戰」才能翻書（Vega 定案）：
+  // 文法重點課走文法引導卡；其他課自動用本課單字生聽力挑戰（每次隨機）。
+  const grammarGuide = useMemo(() => {
+    const g = GRAMMAR_GUIDES[`${level}-${missionId ?? 0}`];
+    if (g) return g;
+    const pool = words.filter(w => w.en && w.zh && /^[A-Za-z' -]{1,20}$/.test(w.en));
+    if (pool.length < 3) return null;
+    const practice = pool.map(w => {
+      const distract = pool.filter(x => x.en !== w.en).sort(() => Math.random() - 0.5).slice(0, 2).map(x => x.en);
+      return { prompt: w.en, hint: `聽聽看（${w.zh}），點出你聽到的字！`, options: [w.en, ...distract], answer: w.en };
+    });
+    return { title: '聽力小挑戰！', concept: '🎧', demos: [], practice };
+  }, [level, missionId, words]);
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
   const [bookOpen, setBookOpen] = useState(false);
   const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
@@ -280,7 +292,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
         {/* 看完影片 → 進電子書 */}
         <div className="flex justify-center">
           <GameButton onClick={() => setPhase(grammarGuide ? 'grammar' : 'story')} color="purple" size="lg">
-            {grammarGuide ? '看完了，下一步 →' : '看完了，開始翻書 📖 →'}
+            {grammarGuide ? '先來個小挑戰 ⚔️ →' : '看完了，開始翻書 📖 →'}
           </GameButton>
         </div>
       </div>

@@ -21,7 +21,7 @@ async function sayWord(level: number, en: string) {
 export default function GrammarGuideCard({ guide, level, onDone }: {
   guide: GrammarGuide; level: number; onDone: () => void;
 }) {
-  const [stage, setStage] = useState<'demo' | 'practice'>('demo');
+  const [stage, setStage] = useState<'demo' | 'practice'>(guide.demos.length ? 'demo' : 'practice');
   // 每次進來隨機抽 5 題、選項也洗牌（Vega：每次要不一樣）
   const quiz = useMemo(() => {
     const pool = [...guide.practice].sort(() => Math.random() - 0.5).slice(0, 5);
@@ -57,7 +57,7 @@ export default function GrammarGuideCard({ guide, level, onDone }: {
     <div className="animate-slide-up min-h-[72vh] flex flex-col justify-center">
       <div className="text-center mb-4">
         <p className="ae-name-plaque inline-block text-white font-black text-xl px-2 py-1 drop-shadow">
-          🔍 發現小規則
+          ⚔️ 小挑戰時間
         </p>
       </div>
 
