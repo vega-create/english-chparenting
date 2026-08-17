@@ -75,27 +75,32 @@ export default function VideoKaraoke({ videoUrl, videoScript, onEnded }: {
 
   return (
     <div>
-      <video
-        ref={videoRef}
-        className="w-full"
-        controls
-        autoPlay
-        src={videoUrl}
-        onPlay={() => stopAllAudio()}  // 影片一響就把 Vega 引導語等其他聲音停掉，不疊音
-        onTimeUpdate={onTime}
-        onEnded={onEnded}
-      />
-      {lines && (
-        <div className="relative bg-purple-50/70 px-12 pt-3 pb-4 min-h-[76px]">
+      <div className="relative">
+        <video
+          ref={videoRef}
+          className="w-full"
+          controls
+          autoPlay
+          src={videoUrl}
+          onPlay={() => stopAllAudio()}  // 影片一響就把 Vega 引導語等其他聲音停掉，不疊音
+          onTimeUpdate={onTime}
+          onEnded={onEnded}
+        />
+        {/* 開關浮在影片右上角，字幕區才不會被擋（Vega 抓的） */}
+        {lines && (
           <button
             onClick={toggleSubs}
-            className={`absolute top-2 right-2 text-[11px] font-black rounded-full px-2.5 py-1 border-2 transition ${
-              subOn ? 'bg-purple-500 border-purple-500 text-white' : 'bg-white border-gray-300 text-gray-400'
+            className={`absolute top-2 right-2 z-10 text-[11px] font-black rounded-full px-2.5 py-1 border-2 transition ${
+              subOn ? 'bg-purple-500/90 border-purple-400 text-white' : 'bg-white/80 border-gray-300 text-gray-500'
             }`}
             aria-label={subOn ? '關閉字幕' : '開啟字幕'}
           >
             字幕 {subOn ? '開' : '關'}
           </button>
+        )}
+      </div>
+      {lines && (
+        <div className="bg-purple-50/70 px-4 pt-3 pb-4 min-h-[76px]">
           {subOn && (cur ? (
             <div className="text-center">
               <p className="m-0 text-lg sm:text-xl font-black leading-relaxed">
