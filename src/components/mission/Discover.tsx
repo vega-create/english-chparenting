@@ -79,12 +79,20 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     if (g) return g;
     const pool = words.filter(w => w.en && w.zh && /^[A-Za-z' -]{1,20}$/.test(w.en));
     if (pool.length < 3) return null;
-    const practice = pool.map(w => {
+    // 混合小挑戰（Vega 定案）：聽力選字＋句型配對＋簡單口說
+    const listenItems = pool.map(w => {
       const distract = pool.filter(x => x.en !== w.en).sort(() => Math.random() - 0.5).slice(0, 2).map(x => x.en);
-      return { prompt: w.en, hint: '聽聽看，點出你聽到的字！', options: [w.en, ...distract], answer: w.en };
+      return { type: 'listen' as const, prompt: w.en, hint: '聽聽看，點出你聽到的字！', options: [w.en, ...distract], answer: w.en };
     });
-    // listen: 聽力題——題目不能露出單字本身，卡片只給喇叭按鈕
-    return { title: '聽力小挑戰！', concept: '🎧', demos: [], practice, listen: true };
+    const senPool = sentences.map((sen, i) => ({ sen, i })).filter(x => x.sen.en && x.sen.zh);
+    const matchItems = senPool.length >= 3 ? senPool.map(({ sen, i }) => {
+      const distract = senPool.filter(x => x.i !== i).sort(() => Math.random() - 0.5).slice(0, 2).map(x => x.sen.zh);
+      return { type: 'match' as const, prompt: sen.en, si: i, hint: '這句是什麼意思？', options: [sen.zh, ...distract], answer: sen.zh };
+    }) : [];
+    const speakItems = senPool.map(({ sen, i }) => (
+      { type: 'speak' as const, prompt: sen.en, si: i, zh: sen.zh, hint: '', options: [], answer: sen.en }
+    ));
+    return { title: '小挑戰！', concept: '🎧', demos: [], practice: [...listenItems, ...matchItems, ...speakItems] };
   }, [level, missionId, words]);
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
   const [bookOpen, setBookOpen] = useState(false);
@@ -307,7 +315,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
   // ===== Phase 1: 電子書課文（一頁一課文，翻頁學習） =====
   if (phase === 'grammar' && grammarGuide) {
-    return <GrammarGuideCard guide={grammarGuide} level={level} onDone={() => setPhase('story')} />;
+    return <GrammarGuideCard guide={grammarGuide} level={level} missionId={missionId ?? 0} onDone={() => setPhase('story')} />;
   }
 
   if (phase === 'story') {

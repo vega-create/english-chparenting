@@ -5,7 +5,8 @@ import GameButton from '@/components/GameButton';
 import { playLesson, lessonPath } from '@/lib/audio';
 import { speak } from '@/lib/speech';
 import { playStar, playClick, playSuccess } from '@/lib/sfx';
-import type { GrammarGuide } from '@/data/grammarGuides';
+import type { GrammarGuide, GrammarPractice } from '@/data/grammarGuides';
+import SentenceMic from '@/components/mission/SentenceMic';
 
 /**
  * 文法引導卡（Vega 設計）：影片後、電子書前的一小關。
@@ -18,14 +19,28 @@ async function sayWord(level: number, en: string) {
   speak(en, 0.7);
 }
 
-export default function GrammarGuideCard({ guide, level, onDone }: {
-  guide: GrammarGuide; level: number; onDone: () => void;
+export default function GrammarGuideCard({ guide, level, missionId, onDone }: {
+  guide: GrammarGuide; level: number; missionId?: number; onDone: () => void;
 }) {
   const [stage, setStage] = useState<'demo' | 'practice'>(guide.demos.length ? 'demo' : 'practice');
   // 每次進來隨機抽 5 題、選項也洗牌（Vega：每次要不一樣）
   const quiz = useMemo(() => {
-    const pool = [...guide.practice].sort(() => Math.random() - 0.5).slice(0, 5);
-    return pool.map(q => ({ ...q, options: [...q.options].sort(() => Math.random() - 0.5) }));
+    const rand = () => Math.random() - 0.5;
+    const plain = guide.practice.filter(x => !x.type);
+    let pool: GrammarPractice[];
+    if (plain.length) {
+      pool = [...plain].sort(rand).slice(0, 5);
+    } else {
+      // 混合小挑戰：2 聽力＋2 句型配對＋1 口說，缺的用其他題補滿
+      const by = (t: string) => guide.practice.filter(x => x.type === t).sort(rand);
+      pool = [...by('listen').slice(0, 2), ...by('match').slice(0, 2), ...by('speak').slice(0, 1)];
+      if (pool.length < 5) {
+        const used = new Set(pool);
+        pool.push(...guide.practice.filter(x => !used.has(x)).sort(rand).slice(0, 5 - pool.length));
+      }
+      pool.sort(rand);
+    }
+    return pool.map(q => ({ ...q, options: [...q.options].sort(rand) }));
   }, [guide]);
   const [heard, setHeard] = useState<Set<number>>(new Set());
   const [pi, setPi] = useState(0);
@@ -33,13 +48,29 @@ export default function GrammarGuideCard({ guide, level, onDone }: {
 
   const q = quiz[pi];
 
-  // 聽力題自動播音（題目不顯示字，靠耳朵）
+  // 播題目音：聽力題播單字、句型題播整句（真人錄音優先）
+  async function sayItem(item: GrammarPractice) {
+    if (item.si != null) {
+      if (await playLesson(lessonPath.sentence(level, missionId ?? 0, item.si))) return;
+      speak(item.prompt, 0.8);
+      return;
+    }
+    sayWord(level, item.prompt);
+  }
+
+  // 混合題自動播音（進題就唸，聽力題不顯示字、靠耳朵）
   useEffect(() => {
-    if (guide.listen && stage === 'practice' && q) {
-      const t = setTimeout(() => sayWord(level, q.prompt), 400);
+    if (stage === 'practice' && q?.type) {
+      const t = setTimeout(() => sayItem(q), 400);
       return () => clearTimeout(t);
     }
-  }, [guide.listen, stage, pi]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [stage, pi]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function nextQ() {
+    setWrong(null);
+    if (pi + 1 < quiz.length) setPi(pi + 1);
+    else onDone();
+  }
 
   function tapDemo(i: number) {
     const d = guide.demos[i];
@@ -51,9 +82,7 @@ export default function GrammarGuideCard({ guide, level, onDone }: {
   function pick(opt: string) {
     if (opt === q.answer) {
       playSuccess();
-      setWrong(null);
-      if (pi + 1 < quiz.length) setPi(pi + 1);
-      else onDone();
+      nextQ();
     } else {
       playClick();
       setWrong(opt);
@@ -104,27 +133,42 @@ export default function GrammarGuideCard({ guide, level, onDone }: {
           ) : (
             <motion.div key={`p${pi}`} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} className="text-center">
               <p className="m-0 text-xs font-black text-gray-400">換你了 {pi + 1}/{quiz.length}</p>
-              {guide.listen ? (
-                <button onClick={() => sayWord(level, q.prompt)} aria-label="再聽一次"
+              {q.type === 'listen' && (
+                <button onClick={() => sayItem(q)} aria-label="再聽一次"
                   className="mt-2 mx-auto flex items-center justify-center w-20 h-20 rounded-full bg-purple-100 border-4 border-purple-300 text-4xl active:scale-95 transition animate-pulse">
                   🔊
                 </button>
-              ) : (
+              )}
+              {(q.type === 'match' || q.type === 'speak') && (
+                <button onClick={() => sayItem(q)}
+                  className="mt-2 text-2xl font-black text-gray-800 leading-snug">
+                  {q.prompt} <span className="text-base">🔊</span>
+                </button>
+              )}
+              {!q.type && (
                 <button onClick={() => sayWord(level, q.prompt)}
                   className="mt-2 text-3xl font-black text-gray-800 underline decoration-dotted decoration-purple-300 underline-offset-4">
                   {q.prompt} 🔊
                 </button>
               )}
-              <p className="m-0 mt-1 text-sm text-gray-500 font-bold">{q.hint}</p>
-              <div className="mt-4 grid gap-2">
-                {q.options.map(opt => (
-                  <motion.button key={opt} onClick={() => pick(opt)}
-                    animate={wrong === opt ? { x: [0, -8, 8, -6, 6, 0] } : {}}
-                    className={`ae-frame !py-2.5 font-black text-lg text-gray-800 active:scale-[0.98] transition ${wrong === opt ? 'opacity-60' : ''}`}>
-                    {opt}
-                  </motion.button>
-                ))}
-              </div>
+              <p className="m-0 mt-1 text-sm text-gray-500 font-bold">
+                {q.type === 'speak' ? `（${q.zh}）跟著唸唸看！` : q.hint}
+              </p>
+              {q.type === 'speak' ? (
+                <div className="mt-4 flex justify-center">
+                  <SentenceMic target={q.prompt} onDone={() => { setTimeout(nextQ, 900); }} />
+                </div>
+              ) : (
+                <div className="mt-4 grid gap-2">
+                  {q.options.map(opt => (
+                    <motion.button key={opt} onClick={() => pick(opt)}
+                      animate={wrong === opt ? { x: [0, -8, 8, -6, 6, 0] } : {}}
+                      className={`ae-frame !py-2.5 font-black text-lg text-gray-800 active:scale-[0.98] transition ${wrong === opt ? 'opacity-60' : ''}`}>
+                      {opt}
+                    </motion.button>
+                  ))}
+                </div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>

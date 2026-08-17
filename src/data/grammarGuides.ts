@@ -15,6 +15,10 @@ export interface GrammarPractice {
   hint: string;       // 畫面小提示（中文，不發音）
   options: string[];
   answer: string;
+  // 以下為「自動生成混合小挑戰」用；未填＝文法變化題（顯示原字讓孩子選變化形）
+  type?: 'listen' | 'match' | 'speak';  // 聽單字選字／句型配對意思／跟著唸
+  si?: number;        // 句子索引（match/speak 播 lessonPath.sentence 用）
+  zh?: string;        // speak 題顯示的中文意思
 }
 
 export interface GrammarGuide {
@@ -22,7 +26,6 @@ export interface GrammarGuide {
   concept: string;    // 大大顯示的規則，如 '+ er'
   demos: GrammarDemo[];
   practice: GrammarPractice[];
-  listen?: boolean;   // 聽力題：題目只播音不顯示單字（不然答案直接寫在題目上）
 }
 
 export const GRAMMAR_GUIDES: Record<string, GrammarGuide> = {
