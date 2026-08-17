@@ -6089,6 +6089,7 @@ const L5_M9: Mission = {
     { speaker: 'Polly', line: "I made breakfast for everyone. Eat fast!", lineZh: '我幫大家做了早餐，快點吃！' },
     { speaker: 'Benny', line: "Okay okay! Best morning ever!", lineZh: '好啦好啦！最棒的早晨！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m9.mp4?v=1',
 };
 
 const L5_M10: Mission = {
@@ -6364,6 +6365,7 @@ const L5_M13: Mission = {
     { speaker: 'Coco', line: "My bag is full of shells. Best day!", lineZh: '我的袋子裝滿貝殼，最棒的一天！' },
     { speaker: 'Finn', line: "The sea always has surprises!", lineZh: '大海總是有驚喜！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m13.mp4?v=1',
 };
 
 const L5_M14: Mission = {
