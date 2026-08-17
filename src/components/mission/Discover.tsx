@@ -7,6 +7,7 @@ import { stopAllAudio } from '@/lib/audioBus';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 import { track } from '@/lib/analytics';
 import SentenceMic from '@/components/mission/SentenceMic';
+import GameButton from '@/components/GameButton';
 import VideoKaraoke from '@/components/mission/VideoKaraoke';
 
 interface Props {
@@ -269,12 +270,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
         {/* 看完影片 → 進電子書 */}
         <div className="flex justify-center">
-          <button
-            onClick={() => setPhase('story')}
-            className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-purple-600 hover:to-indigo-600 transition-all active:scale-95 shadow-lg"
-          >
+          <GameButton onClick={() => setPhase('story')} color="purple" size="lg">
             看完了，開始翻書 📖 →
-          </button>
+          </GameButton>
         </div>
       </div>
     );
@@ -654,17 +652,15 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
           {!allSeen && (
             <p className="text-sm text-gray-400 mb-2">翻開全部單字就能繼續 🔓</p>
           )}
-          <button
-            onClick={() => setPhase('phonics')}
-            disabled={!allSeen}
-            className={`px-8 py-3 rounded-2xl font-bold transition active:scale-95 ${
-              allSeen
-                ? 'bg-green-500 text-white hover:bg-green-600'
-                : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-            }`}
-          >
+          {allSeen ? (
+            <GameButton onClick={() => setPhase('phonics')} color="green" size="md">
+            {allSeen ? '🔤 ▶' : `還有 ${words.length - seenCards.length} 張`}
+          </GameButton>
+          ) : (
+            <button disabled className="px-8 py-3 rounded-2xl font-bold bg-gray-200 text-gray-400 cursor-not-allowed">
             {allSeen ? '🔤 ▶' : `還有 ${words.length - seenCards.length} 張`}
           </button>
+          )}
         </div>
       </div>
     );
@@ -708,10 +704,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
           </p>
 
           <div className="text-center">
-            <button onClick={() => setPhase('sentences')}
-              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-green-600 transition active:scale-95">
+            <GameButton onClick={() => setPhase('sentences')} color="green" size="md">
               💬 ▶
-            </button>
+            </GameButton>
           </div>
         </div>
       </div>
@@ -762,14 +757,13 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
         ) : (
           <div className="text-center animate-slide-up">
             <p className="text-green-600 font-bold text-lg mb-4">⭐ Great!</p>
-            <button onClick={() => {
+            <GameButton onClick={() => {
               setSentenceRepeated(false);
               if (currentSentence < sentences.length - 1) setCurrentSentence(c => c + 1);
               else onComplete();
-            }}
-              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+            }} color="green" size="md">
               {currentSentence < sentences.length - 1 ? '▶' : '🎮'}
-            </button>
+            </GameButton>
           </div>
         )}
       </div>
