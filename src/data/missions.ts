@@ -6434,6 +6434,7 @@ const L5_M14: Mission = {
     { speaker: 'Finn', line: "Wake up, Ruby! The turtle is at the finish line!", lineZh: 'Ruby 醒醒！烏龜到終點了！' },
     { speaker: 'Ruby', line: "What?! Okay okay, slow and steady wins...", lineZh: '什麼？！好吧好吧，慢而穩會贏⋯⋯' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m14.mp4?v=1',
 };
 
 const L5_M15: Mission = {
@@ -6502,6 +6503,7 @@ const L5_M15: Mission = {
     { speaker: 'Benny', line: "The turtle one! Slow and steady!", lineZh: '烏龜那個！慢而穩！' },
     { speaker: 'Finn', line: "Every story teaches us something!", lineZh: '每個故事都教我們一件事！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m15.mp4?v=1',
 };
 
 const L5_M16: Mission = {
@@ -6571,6 +6573,7 @@ const L5_M16: Mission = {
     { speaker: 'Polly', line: "And I am singing to the waves!", lineZh: '我在對海浪唱歌！' },
     { speaker: 'Finn', line: "Everyone is busy... I am joining Benny!", lineZh: '大家都好忙⋯⋯我要去加入 Benny！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m16.mp4?v=1',
 };
 
 const L5_M17: Mission = {
