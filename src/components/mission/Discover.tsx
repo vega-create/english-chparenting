@@ -366,11 +366,18 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               />
               {/* 內容區（米色面板範圍，各級底圖框位置不同）：只放場景 + 課文 */}
               <div className="absolute flex flex-col" style={PANEL[level] || PANEL[1]}>
-                {/* 課文占滿整個米色面板（右下留給動物）——
-                    原本上面有一顆大 emoji 加三顆彈跳小 emoji，Vega 說那些手勢 emoji 不好看，
-                    拿掉之後把字放大填滿版面 */}
+                {/* 面板頂：課名木牌＋頁碼——補掉原本空蕩蕩的上方（Vega 2026-08-15）；
+                    不放 emoji（她之前退過手勢 emoji）。 */}
+                <div className="flex items-center justify-between gap-2 pt-1">
+                  <p className="ae-name-plaque m-0 inline-block text-white font-black text-sm sm:text-lg px-1.5 py-0.5 drop-shadow">
+                    {titleEn || title}
+                  </p>
+                  <p className="m-0 text-[10px] sm:text-xs font-black text-amber-600/80 whitespace-nowrap">
+                    {storyIndex + 1} / {story.length}
+                  </p>
+                </div>
                 <div className="flex-1 flex flex-col justify-center min-h-0 pr-[14%]">
-                  <p className="text-xs sm:text-base text-amber-500 font-black mb-2">{scene.characterName}</p>
+                  <p className="text-sm sm:text-xl font-black mb-2 text-amber-600">{scene.characterName}</p>
                   {/* 手機面板窄，字太大會一行一個字還壓到星星；手機 lg、平板 3xl、桌機才 4xl */}
                   <p className="ebook-text text-gray-800 text-lg sm:text-3xl lg:text-4xl leading-relaxed">
                     {scene.dialogue.split(' ').map((w, wi) => {
