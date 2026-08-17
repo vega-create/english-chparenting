@@ -22,6 +22,7 @@ export interface GrammarGuide {
   concept: string;    // 大大顯示的規則，如 '+ er'
   demos: GrammarDemo[];
   practice: GrammarPractice[];
+  listen?: boolean;   // 聽力題：題目只播音不顯示單字（不然答案直接寫在題目上）
 }
 
 export const GRAMMAR_GUIDES: Record<string, GrammarGuide> = {

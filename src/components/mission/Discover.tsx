@@ -81,9 +81,10 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     if (pool.length < 3) return null;
     const practice = pool.map(w => {
       const distract = pool.filter(x => x.en !== w.en).sort(() => Math.random() - 0.5).slice(0, 2).map(x => x.en);
-      return { prompt: w.en, hint: `聽聽看（${w.zh}），點出你聽到的字！`, options: [w.en, ...distract], answer: w.en };
+      return { prompt: w.en, hint: '聽聽看，點出你聽到的字！', options: [w.en, ...distract], answer: w.en };
     });
-    return { title: '聽力小挑戰！', concept: '🎧', demos: [], practice };
+    // listen: 聽力題——題目不能露出單字本身，卡片只給喇叭按鈕
+    return { title: '聽力小挑戰！', concept: '🎧', demos: [], practice, listen: true };
   }, [level, missionId, words]);
   const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
   const [bookOpen, setBookOpen] = useState(false);
@@ -130,6 +131,11 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
       if (phase === 'story') {
         if (bookOpen && storyIndex > 0) { setPageDir('prev'); setStoryIndex(storyIndex - 1); return true; }
         if (bookOpen) { setBookOpen(false); return true; }
+        if (grammarGuide) { setPhase('grammar'); return true; }
+        if (hasVideo) { setPhase('video'); return true; }
+        return false;
+      }
+      if (phase === 'grammar') {
         if (hasVideo) { setPhase('video'); return true; }
         return false;
       }
@@ -141,7 +147,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
       else setPhase(target);
       return true;
     });
-  }, [onRegisterBack, phase, bookOpen, storyIndex, hasVideo, phonicsLetters.length, story.length]);
+  }, [onRegisterBack, phase, bookOpen, storyIndex, hasVideo, grammarGuide, phonicsLetters.length, story.length]);
 
   // 故事自動播放語音：翻到哪一頁就播哪一句
   // 只在這裡播，翻頁按鈕不要再自己播一次（會變兩聲疊在一起像回音）
