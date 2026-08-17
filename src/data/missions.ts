@@ -5528,10 +5528,13 @@ const L5_M1: Mission = {
     { type: 'spell', question: '拼拼看：l _ ng（長的）', answer: 'long', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Look! The whale is so big!", lineZh: '看！鯨魚好大！' },
-    { speaker: 'Coco', line: "And the fish is small. So little!", lineZh: '魚很小。好小喔！' },
-    { speaker: 'Polly', line: "The eel is long. The crab is short!", lineZh: '鰻魚很長。螃蟹很短！' },
-    { speaker: 'Finn', line: "Big, small, long, short — great words!", lineZh: '大、小、長、短 —— 好棒的字！' },
+    { speaker: 'Finn', line: "Let's play! Find something big on the beach!", lineZh: '來玩遊戲！在海灘找一個大大的東西！' },
+    { speaker: 'Benny', line: "Easy! Look at that big rock!", lineZh: '簡單！你看那顆大石頭！' },
+    { speaker: 'Coco', line: "I found a small shell. It fits in my paw!", lineZh: '我找到一個小貝殼，剛好放進我的手掌！' },
+    { speaker: 'Ruby', line: "That palm tree is so tall! I can't reach it.", lineZh: '那棵椰子樹好高！我搆不到。' },
+    { speaker: 'Polly', line: "My beach towel is long. We can all sit!", lineZh: '我的海灘巾長長的，大家都能坐！' },
+    { speaker: 'Coco', line: "Wait... something big is moving in the water!", lineZh: '等等⋯⋯水裡有個大大的東西在動！' },
+    { speaker: 'Finn', line: "A whale! That's the biggest thing today!", lineZh: '是鯨魚！那是今天最大的東西了！' },
   ],
 };
 
@@ -5593,10 +5596,13 @@ const L5_M2: Mission = {
     { type: 'spell', question: '拼拼看：c _ ld（冷的）', answer: 'cold', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "The sun is hot, but the water is cold!", lineZh: '太陽很熱，但水很冷！' },
-    { speaker: 'Benny', line: "The fish is fast. The turtle is slow.", lineZh: '魚很快。烏龜很慢。' },
-    { speaker: 'Ruby', line: "My shell is new. Yours is old!", lineZh: '我的貝殼是新的。你的是舊的！' },
-    { speaker: 'Coco', line: "Opposites everywhere! So cool!", lineZh: '到處都是相反詞！好酷！' },
+    { speaker: 'Benny', line: "Phew! The sand is so hot today!", lineZh: '呼！今天沙子好燙！' },
+    { speaker: 'Coco', line: "Come here! The water is cold and nice!", lineZh: '過來這裡！水又涼又舒服！' },
+    { speaker: 'Ruby', line: "Whose boat is that? It looks so old.", lineZh: '那是誰的船？看起來好舊。' },
+    { speaker: 'Finn', line: "Grandpa Turtle's! His new boat is over there.", lineZh: '是烏龜爺爺的！他的新船在那邊。' },
+    { speaker: 'Polly', line: "The new one is fast! Look at it go!", lineZh: '新船跑得好快！你看它衝！' },
+    { speaker: 'Benny', line: "I still like the old one. It's slow but cozy.", lineZh: '我還是喜歡舊的，慢慢的但很舒服。' },
+    { speaker: 'Coco', line: "Hot sand, cold water — I love this beach!", lineZh: '燙燙的沙、涼涼的水——我愛這個海灘！' },
   ],
 };
 
@@ -5659,10 +5665,13 @@ const L5_M3: Mission = {
     { type: 'spell', question: '拼拼看：bigg _ r（比較大）', answer: 'bigger', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Big becomes bigger. Just add -er!", lineZh: 'Big 變 bigger。加 -er 就好！' },
-    { speaker: 'Coco', line: "The whale is bigger than the fish!", lineZh: '鯨魚比魚大！' },
-    { speaker: 'Polly', line: "And this fish is faster than that one!", lineZh: '這隻魚比那隻快！' },
-    { speaker: 'Benny', line: "Bigger, faster, taller! Add -er!", lineZh: 'Bigger、faster、taller！加 -er！' },
+    { speaker: 'Finn', line: "Sandcastle contest! Ready, go!", lineZh: '沙堡比賽！預備，開始！' },
+    { speaker: 'Benny', line: "Ha! My castle is bigger than yours!", lineZh: '哈！我的城堡比你的大！' },
+    { speaker: 'Coco', line: "But mine is taller! Look at the tower!", lineZh: '但我的比較高！你看塔樓！' },
+    { speaker: 'Ruby', line: "Oh no, a wave! Build faster!", lineZh: '糟了，浪來了！蓋快一點！' },
+    { speaker: 'Polly', line: "Move higher! The water is coming!", lineZh: '往高處搬！水衝過來了！' },
+    { speaker: 'Benny', line: "Too late... my castle is gone.", lineZh: '來不及了⋯⋯我的城堡沒了。' },
+    { speaker: 'Finn', line: "Next time we build stronger and higher!", lineZh: '下次我們蓋得更堅固、更高！' },
   ],
 };
 
@@ -5724,10 +5733,13 @@ const L5_M4: Mission = {
     { type: 'fill-blank', question: 'A shark is bigger ___ a shrimp.（比）', options: ['than', 'then', 'that', 'the'], answer: 'than' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "A whale is bigger than a fish!", lineZh: '鯨魚比魚大！' },
-    { speaker: 'Coco', line: "A shark is faster than a crab!", lineZh: '鯊魚比螃蟹快！' },
-    { speaker: 'Benny', line: "An octopus is bigger than a shrimp!", lineZh: '章魚比蝦子大！' },
-    { speaker: 'Polly', line: "A is bigger than B! Now you compare!", lineZh: 'A 比 B 大！現在你會比較了！' },
+    { speaker: 'Coco', line: "Look! A shark! It swims so fast!", lineZh: '你看！鯊魚！牠游好快！' },
+    { speaker: 'Benny', line: "The dolphin is faster than the shark, right?", lineZh: '海豚比鯊魚快，對吧？' },
+    { speaker: 'Polly', line: "And the whale is bigger than both!", lineZh: '鯨魚比牠們兩個都大！' },
+    { speaker: 'Ruby', line: "But the octopus is smarter. It can hide!", lineZh: '但章魚比較聰明，牠會躲起來！' },
+    { speaker: 'Finn', line: "Smarter than you, Ruby?", lineZh: '比妳還聰明嗎，Ruby？' },
+    { speaker: 'Ruby', line: "Hey! Nobody is smarter than me!", lineZh: '嘿！沒有誰比我聰明！' },
+    { speaker: 'Coco', line: "Ha! The sea is full of amazing friends!", lineZh: '哈！大海裡都是厲害的朋友！' },
   ],
 };
 
@@ -5789,10 +5801,13 @@ const L5_M5: Mission = {
     { type: 'read', question: 'Is the whale small?（鯨魚小嗎？）', passage: 'The whale is very big.\nIt is bigger than a shark.\nIt is the biggest in the sea!', options: ['No, it is big', 'Yes, it is small', 'It is fast', 'It is cold'], answer: 'No, it is big' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review! Big, small, hot, cold!", lineZh: '來複習！大、小、熱、冷！' },
-    { speaker: 'Coco', line: "The whale is bigger than the fish!", lineZh: '鯨魚比魚大！' },
-    { speaker: 'Benny', line: "A shark is faster than a crab!", lineZh: '鯊魚比螃蟹快！' },
-    { speaker: 'Finn', line: "You can describe and compare! Great!", lineZh: '你會形容也會比較了！太棒了！' },
+    { speaker: 'Finn', line: "Grandpa Turtle needs help with his boxes!", lineZh: '烏龜爺爺需要人幫忙搬箱子！' },
+    { speaker: 'Benny', line: "I'll take the big one. I'm strong!", lineZh: '大的我來，我力氣大！' },
+    { speaker: 'Coco', line: "The small one is for me!", lineZh: '小的給我！' },
+    { speaker: 'Ruby', line: "Careful! That old box is heavy!", lineZh: '小心！那個舊箱子很重！' },
+    { speaker: 'Polly', line: "Benny, you are slower than a turtle!", lineZh: 'Benny，你比烏龜還慢！' },
+    { speaker: 'Benny', line: "This box is heavier than a whale...", lineZh: '這箱子比鯨魚還重啦⋯⋯' },
+    { speaker: 'Finn', line: "All done! Grandpa says thank you!", lineZh: '搬完了！爺爺說謝謝大家！' },
   ],
 };
 
@@ -5854,10 +5869,13 @@ const L5_M6: Mission = {
     { type: 'spell', question: '拼拼看：w _ ndy（風大）', answer: 'windy', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "It is sunny today! Let's go out!", lineZh: '今天晴天！我們出去吧！' },
-    { speaker: 'Coco', line: "Wait, now it is rainy and cloudy!", lineZh: '等等，現在下雨又多雲！' },
-    { speaker: 'Polly', line: "And windy! My kite can fly!", lineZh: '風也大！我的風箏能飛！' },
-    { speaker: 'Finn', line: "Look! After the rain — a rainbow!", lineZh: '看！雨後 —— 彩虹！' },
+    { speaker: 'Polly', line: "Good morning! It's sunny! Picnic day!", lineZh: '早安！晴天！野餐日！' },
+    { speaker: 'Coco', line: "Wait... yesterday was rainy. I got all wet.", lineZh: '等等⋯⋯昨天下雨，我全身濕透。' },
+    { speaker: 'Benny', line: "Don't worry! The sky is blue today!", lineZh: '別擔心！今天天空藍藍的！' },
+    { speaker: 'Ruby', line: "It's windy though. Hold your hats!", lineZh: '不過風很大，抓好帽子！' },
+    { speaker: 'Finn', line: "Hmm, I see clouds over there...", lineZh: '嗯，那邊有雲飄過來⋯⋯' },
+    { speaker: 'Coco', line: "Then let's go now, before it rains!", lineZh: '那趁還沒下雨，現在就出發！' },
+    { speaker: 'Polly', line: "Grab the basket! Beach picnic time!", lineZh: '拿起野餐籃！海灘野餐去！' },
   ],
 };
 
@@ -5919,10 +5937,13 @@ const L5_M7: Mission = {
     { type: 'fill-blank', question: "___ the weather? It's cloudy.", options: ["How's", "What's", "It's", "Where's"], answer: "How's" },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "How's the weather today?", lineZh: '今天天氣如何？' },
-    { speaker: 'Benny', line: "It's sunny and warm. It's spring!", lineZh: '晴朗又溫暖。是春天！' },
-    { speaker: 'Coco', line: "In winter, it's cold and snowy!", lineZh: '冬天又冷又下雪！' },
-    { speaker: 'Ruby', line: "Now you can ask about the weather!", lineZh: '現在你會問天氣了！' },
+    { speaker: 'Finn', line: "Hello, Coco! How's the weather there?", lineZh: '喂，Coco！妳那邊天氣怎麼樣？' },
+    { speaker: 'Coco', line: "It's warm and sunny! Come over!", lineZh: '又暖又晴！快過來！' },
+    { speaker: 'Benny', line: "Is it hot? Should I bring ice cream?", lineZh: '會熱嗎？要不要帶冰淇淋？' },
+    { speaker: 'Coco', line: "Yes! Summer ice cream is the best!", lineZh: '要！夏天的冰淇淋最棒了！' },
+    { speaker: 'Ruby', line: "I'm bringing my kite. Is it windy?", lineZh: '我要帶風箏，風大嗎？' },
+    { speaker: 'Coco', line: "A little! Perfect for kites!", lineZh: '一點點！放風箏剛剛好！' },
+    { speaker: 'Finn', line: "Great! See you at the beach!", lineZh: '太好了！海灘見！' },
   ],
 };
 
@@ -5984,10 +6005,13 @@ const L5_M8: Mission = {
     { type: 'spell', question: '拼拼看：ni _ ht（夜晚）', answer: 'night', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "What time is it?", lineZh: '幾點了？' },
-    { speaker: 'Coco', line: "It is seven o'clock. Time for breakfast!", lineZh: '七點鐘。吃早餐時間！' },
-    { speaker: 'Polly', line: "Now it is nine o'clock. Time for school!", lineZh: '現在九點。上學時間！' },
-    { speaker: 'Benny', line: "Don't be late! Let's go!", lineZh: '別遲到！走吧！' },
+    { speaker: 'Coco', line: "The dolphin show is at three o'clock!", lineZh: '海豚秀三點開始！' },
+    { speaker: 'Benny', line: "What time is it now?", lineZh: '現在幾點了？' },
+    { speaker: 'Ruby', line: "It's two o'clock. One more hour!", lineZh: '兩點，還有一小時！' },
+    { speaker: 'Finn', line: "Benny, don't be late like last time...", lineZh: 'Benny，別像上次一樣遲到喔⋯⋯' },
+    { speaker: 'Benny', line: "That was one time! Okay, two thirty at the gate?", lineZh: '就那麼一次嘛！好啦，兩點半門口見？' },
+    { speaker: 'Polly', line: "Deal! I'll bring snacks for everyone!", lineZh: '說定了！我帶點心給大家！' },
+    { speaker: 'Coco', line: "It's almost time! Let's go, go, go!", lineZh: '時間快到了！走走走！' },
   ],
 };
 
@@ -6049,10 +6073,13 @@ const L5_M9: Mission = {
     { type: 'spell', question: '拼拼看：st _ dy（讀書）', answer: 'study', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I get up at seven. I wash my face.", lineZh: '我七點起床。我洗臉。' },
-    { speaker: 'Benny', line: "I eat breakfast. Then I go to school.", lineZh: '我吃早餐。然後去學校。' },
-    { speaker: 'Ruby', line: "At night, I brush my teeth and sleep.", lineZh: '晚上，我刷牙然後睡覺。' },
-    { speaker: 'Coco', line: "That is my day! What about you?", lineZh: '這是我的一天！你呢？' },
+    { speaker: 'Finn', line: "Benny! Wake up! It's seven o'clock!", lineZh: 'Benny！起床！七點了！' },
+    { speaker: 'Benny', line: "Five more minutes...", lineZh: '再五分鐘⋯⋯' },
+    { speaker: 'Coco', line: "We get up early today, remember? Beach trip!", lineZh: '今天要早起，記得嗎？海灘小旅行！' },
+    { speaker: 'Benny', line: "Oh no! I still need to wash my face!", lineZh: '糟糕！我還要洗臉！' },
+    { speaker: 'Ruby', line: "And brush your teeth! Hurry!", lineZh: '還要刷牙！快點！' },
+    { speaker: 'Polly', line: "I made breakfast for everyone. Eat fast!", lineZh: '我幫大家做了早餐，快點吃！' },
+    { speaker: 'Benny', line: "Okay okay! Best morning ever!", lineZh: '好啦好啦！最棒的早晨！' },
   ],
 };
 
@@ -6114,10 +6141,13 @@ const L5_M10: Mission = {
     { type: 'read', question: 'Is it rainy?（下雨嗎？）', passage: "How's the weather?\nIt's sunny and warm today.\nLet's go to the beach!", options: ['No, it is sunny', 'Yes, it is rainy', 'It is snowy', 'It is night'], answer: 'No, it is sunny' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "How's the weather today?", lineZh: '今天天氣如何？' },
-    { speaker: 'Coco', line: "It's sunny! It is nine o'clock. Time for school!", lineZh: '晴天！九點鐘。上學時間！' },
-    { speaker: 'Benny', line: "At night, I sleep. Good night!", lineZh: '晚上我睡覺。晚安！' },
-    { speaker: 'Finn', line: "Weather, time, routine — great review!", lineZh: '天氣、時間、作息 —— 複習得好！' },
+    { speaker: 'Polly', line: "Let's plan tomorrow! What time do we meet?", lineZh: '來計畫明天！我們幾點集合？' },
+    { speaker: 'Finn', line: "Nine o'clock in the morning, okay?", lineZh: '早上九點，可以嗎？' },
+    { speaker: 'Benny', line: "Too early... ten o'clock?", lineZh: '太早了⋯⋯十點好不好？' },
+    { speaker: 'Coco', line: "But what if it's rainy tomorrow?", lineZh: '但要是明天下雨怎麼辦？' },
+    { speaker: 'Ruby', line: "Then we read stories at my house!", lineZh: '那就來我家看故事書！' },
+    { speaker: 'Polly', line: "Sunny or rainy, we have a plan!", lineZh: '不管晴天雨天，我們都有計畫！' },
+    { speaker: 'Finn', line: "Perfect! See you at ten!", lineZh: '完美！十點見！' },
   ],
 };
 
@@ -6179,10 +6209,13 @@ const L5_M11: Mission = {
     { type: 'spell', question: '拼拼看：Mond _ y（星期一）', answer: 'Monday', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Monday, Tuesday, Wednesday — school days!", lineZh: '一、二、三 —— 上學日！' },
-    { speaker: 'Coco', line: "On Friday, we have art class!", lineZh: '星期五有美術課！' },
-    { speaker: 'Benny', line: "Saturday and Sunday — weekend fun!", lineZh: '週六週日 —— 週末好玩！' },
-    { speaker: 'Ruby', line: "Seven days in a week! Great!", lineZh: '一週七天！太棒了！' },
+    { speaker: 'Benny', line: "What day is it today?", lineZh: '今天星期幾？' },
+    { speaker: 'Coco', line: "It's Wednesday. Why?", lineZh: '星期三，怎麼了？' },
+    { speaker: 'Benny', line: "The beach party is on Saturday...", lineZh: '海灘派對在星期六⋯⋯' },
+    { speaker: 'Ruby', line: "Three more days! Be patient!", lineZh: '還有三天！耐心點！' },
+    { speaker: 'Finn', line: "On Friday, we can make cookies for the party!", lineZh: '星期五我們可以先做派對餅乾！' },
+    { speaker: 'Polly', line: "And on Sunday, we rest all day!", lineZh: '然後星期日整天耍廢休息！' },
+    { speaker: 'Benny', line: "Saturday, please come faster!", lineZh: '星期六，拜託快點來！' },
   ],
 };
 
@@ -6244,10 +6277,13 @@ const L5_M12: Mission = {
     { type: 'match', question: '🍁 season 是什麼意思？', options: ['季節', '月份', '星期', '年'], answer: '季節' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A year has twelve months!", lineZh: '一年有十二個月！' },
-    { speaker: 'Coco', line: "In spring, flowers bloom in April!", lineZh: '春天，四月花開！' },
-    { speaker: 'Ruby', line: "When is your birthday? Mine is in May!", lineZh: '你生日哪個月？我的在五月！' },
-    { speaker: 'Benny', line: "Twelve months, four seasons! Cool!", lineZh: '十二個月，四季！酷！' },
+    { speaker: 'Coco', line: "My birthday is in May! When is yours?", lineZh: '我的生日在五月！你們的呢？' },
+    { speaker: 'Benny', line: "July! Beach party birthday!", lineZh: '七月！海灘派對生日！' },
+    { speaker: 'Ruby', line: "Mine is in January. It's cold, but there's cake!", lineZh: '我的在一月，很冷，但有蛋糕！' },
+    { speaker: 'Finn', line: "April for me. The flowers bloom!", lineZh: '我是四月，花開的時候！' },
+    { speaker: 'Polly', line: "So we have birthdays all year!", lineZh: '所以我們一整年都有生日可以慶祝！' },
+    { speaker: 'Benny', line: "Twelve months, so many cakes!", lineZh: '十二個月，好多蛋糕！' },
+    { speaker: 'Coco', line: "Next one is yours, Finn! April is coming!", lineZh: '下一個是你，Finn！四月快到了！' },
   ],
 };
 
@@ -6309,10 +6345,13 @@ const L5_M13: Mission = {
     { type: 'fill-blank', question: 'Finn is very ___.（開心）', options: ['happy', 'sad', 'cold', 'tired'], answer: 'happy' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A story: A Day at the Beach!", lineZh: '故事：海邊的一天！' },
-    { speaker: 'Finn', line: "It is sunny! I go to the beach.", lineZh: '晴天！我去海邊。' },
-    { speaker: 'Coco', line: "Look! Finn finds a big shell!", lineZh: '看！Finn 找到一個大貝殼！' },
-    { speaker: 'Finn', line: "I can swim! I am so happy!", lineZh: '我會游泳！我好開心！' },
+    { speaker: 'Finn', line: "The sand is warm! Let's hunt for treasure!", lineZh: '沙子暖暖的！我們來尋寶！' },
+    { speaker: 'Coco', line: "I found a shell! It's pink inside!", lineZh: '我找到貝殼！裡面是粉紅色的！' },
+    { speaker: 'Benny', line: "The waves took my bucket! Help!", lineZh: '浪把我的桶子捲走了！救命！' },
+    { speaker: 'Polly', line: "I'll get it! I can swim fast!", lineZh: '我去撿！我游得快！' },
+    { speaker: 'Ruby', line: "Look, tiny crabs! They walk sideways!", lineZh: '你看，小螃蟹！牠們橫著走路！' },
+    { speaker: 'Coco', line: "My bag is full of shells. Best day!", lineZh: '我的袋子裝滿貝殼，最棒的一天！' },
+    { speaker: 'Finn', line: "The sea always has surprises!", lineZh: '大海總是有驚喜！' },
   ],
 };
 
@@ -6374,10 +6413,13 @@ const L5_M14: Mission = {
     { type: 'fill-blank', question: 'The turtle never ___ up.（放棄）', options: ['gives', 'give', 'gave', 'giving'], answer: 'gives' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A story: The Little Turtle!", lineZh: '故事：小烏龜！' },
-    { speaker: 'Polly', line: "The turtle is slow, but he never gives up!", lineZh: '烏龜很慢，但他從不放棄！' },
-    { speaker: 'Coco', line: "The rabbit sleeps. The turtle walks and walks!", lineZh: '兔子睡著了。烏龜一直走！' },
-    { speaker: 'Benny', line: "The turtle wins! Slow and steady wins!", lineZh: '烏龜贏了！慢而穩者勝！' },
+    { speaker: 'Polly', line: "A race! The rabbit and the turtle!", lineZh: '比賽開始！兔子對烏龜！' },
+    { speaker: 'Ruby', line: "I'm the rabbit! Nobody is faster than me!", lineZh: '我當兔子！沒有誰比我快！' },
+    { speaker: 'Benny', line: "Go, little turtle, go!", lineZh: '小烏龜加油，加油！' },
+    { speaker: 'Ruby', line: "So slow... I'll take a nap first.", lineZh: '太慢了吧⋯⋯我先睡個午覺。' },
+    { speaker: 'Coco', line: "The turtle keeps walking... step by step...", lineZh: '烏龜一直走⋯⋯一步一步⋯⋯' },
+    { speaker: 'Finn', line: "Wake up, Ruby! The turtle is at the finish line!", lineZh: 'Ruby 醒醒！烏龜到終點了！' },
+    { speaker: 'Ruby', line: "What?! Okay okay, slow and steady wins...", lineZh: '什麼？！好吧好吧，慢而穩會贏⋯⋯' },
   ],
 };
 
@@ -6439,10 +6481,13 @@ const L5_M15: Mission = {
     { type: 'match', question: '💨 fast 是什麼意思？', options: ['快', '慢', '大', '冷'], answer: '快' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review reading! Read and answer!", lineZh: '來複習閱讀！讀完回答！' },
-    { speaker: 'Coco', line: "On Sunday, it is sunny. We go to the beach!", lineZh: '星期日晴天。我們去海邊！' },
-    { speaker: 'Benny', line: "We see a slow turtle and a fast fish!", lineZh: '我們看到慢烏龜和快魚！' },
-    { speaker: 'Finn', line: "You are a great reader! Amazing!", lineZh: '你是很棒的讀者！太厲害！' },
+    { speaker: 'Finn', line: "Remember the race? Who won?", lineZh: '記得那場比賽嗎？誰贏了？' },
+    { speaker: 'Benny', line: "The turtle! Ruby slept too long!", lineZh: '烏龜！Ruby 睡太久了！' },
+    { speaker: 'Ruby', line: "Don't remind me...", lineZh: '別再提了啦⋯⋯' },
+    { speaker: 'Coco', line: "And the beach day! My shells are still here!", lineZh: '還有海灘那天！我的貝殼都還在！' },
+    { speaker: 'Polly', line: "Which story do you like more?", lineZh: '你們比較喜歡哪個故事？' },
+    { speaker: 'Benny', line: "The turtle one! Slow and steady!", lineZh: '烏龜那個！慢而穩！' },
+    { speaker: 'Finn', line: "Every story teaches us something!", lineZh: '每個故事都教我們一件事！' },
   ],
 };
 
@@ -6505,10 +6550,13 @@ const L5_M16: Mission = {
     { type: 'match', question: '🎤 正在做什麼？', options: ['singing', 'drawing', 'eating', 'running'], answer: 'singing' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I am swimming! Look at me!", lineZh: '我正在游泳！看我！' },
-    { speaker: 'Benny', line: "I am reading a book. It is fun!", lineZh: '我正在讀書。很好玩！' },
-    { speaker: 'Ruby', line: "Ruby is drawing. Finn is running!", lineZh: 'Ruby 正在畫畫。Finn 正在跑！' },
-    { speaker: 'Coco', line: "Add -ing for now! I am playing!", lineZh: '正在做加 -ing！我正在玩！' },
+    { speaker: 'Finn', line: "Where is everyone? Coco! What are you doing?", lineZh: '大家都去哪了？Coco！妳在做什麼？' },
+    { speaker: 'Coco', line: "Shh! I am drawing the sea. Don't move the water!", lineZh: '噓！我在畫大海，別讓水動來動去！' },
+    { speaker: 'Finn', line: "Benny? Are you eating again?", lineZh: 'Benny？你又在吃東西？' },
+    { speaker: 'Benny', line: "No! I am swimming! ...Okay, and eating.", lineZh: '才沒有！我在游泳！⋯⋯好啦，邊游邊吃。' },
+    { speaker: 'Ruby', line: "I am reading under the tree. So cozy!", lineZh: '我在樹下看書，好舒服！' },
+    { speaker: 'Polly', line: "And I am singing to the waves!", lineZh: '我在對海浪唱歌！' },
+    { speaker: 'Finn', line: "Everyone is busy... I am joining Benny!", lineZh: '大家都好忙⋯⋯我要去加入 Benny！' },
   ],
 };
 
@@ -6570,10 +6618,13 @@ const L5_M17: Mission = {
     { type: 'match', question: '🍳 正在做什麼？', options: ['cooking', 'looking', 'making', 'playing'], answer: 'cooking' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "What are you doing?", lineZh: '你在做什麼？' },
-    { speaker: 'Coco', line: "I am swimming! What is Benny doing?", lineZh: '我正在游泳！Benny 在做什麼？' },
-    { speaker: 'Benny', line: "I am eating lunch. Yum!", lineZh: '我正在吃午餐。好吃！' },
-    { speaker: 'Polly', line: "Now you can ask what someone is doing!", lineZh: '現在你會問別人在做什麼了！' },
+    { speaker: 'Finn', line: "Game time! Guess what I am doing!", lineZh: '遊戲時間！猜猜我在做什麼！' },
+    { speaker: 'Coco', line: "You are swimming? No... dancing?", lineZh: '你在游泳？不對⋯⋯在跳舞？' },
+    { speaker: 'Finn', line: "Yes! Dancing! Your turn, Benny!", lineZh: '答對了！跳舞！換你了，Benny！' },
+    { speaker: 'Benny', line: "Mmm... guess!", lineZh: '嗯嗯⋯⋯猜！' },
+    { speaker: 'Ruby', line: "Easy. You are eating. Again.", lineZh: '太簡單，你在吃東西，又在吃。' },
+    { speaker: 'Benny', line: "How did you know?!", lineZh: '妳怎麼知道？！' },
+    { speaker: 'Polly', line: "Your mouth is full! Ha! Next round!", lineZh: '你嘴巴塞滿滿！哈！下一輪！' },
   ],
 };
 
@@ -6635,10 +6686,13 @@ const L5_M18: Mission = {
     { type: 'read', question: 'Whose shell is bigger?（誰的貝殼大？）', passage: "Coco has a small shell.\nBenny has a big shell.\nBenny's shell is bigger than Coco's.", options: ["Benny's", "Coco's", 'the same', 'no shell'], answer: "Benny's" },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "It's a sunny day! What are you doing, Coco?", lineZh: '晴天！Coco，你在做什麼？' },
-    { speaker: 'Coco', line: "I am swimming! The water is cool!", lineZh: '我正在游泳！水好涼！' },
-    { speaker: 'Benny', line: "Look! My shell is bigger than yours!", lineZh: '看！我的貝殼比你的大！' },
-    { speaker: 'Finn', line: "What a fun day at the beach!", lineZh: '海邊真是好玩的一天！' },
+    { speaker: 'Coco', line: "What a day! The sun is shining!", lineZh: '天氣真好！太陽亮晶晶！' },
+    { speaker: 'Benny', line: "Last one in the water is a rotten egg!", lineZh: '最後下水的是臭雞蛋！' },
+    { speaker: 'Polly', line: "Hey! Wait for me!", lineZh: '嘿！等等我！' },
+    { speaker: 'Ruby', line: "I found a shell bigger than my ear!", lineZh: '我找到一個比我耳朵還大的貝殼！' },
+    { speaker: 'Finn', line: "We are building the greatest sandcastle ever!", lineZh: '我們正在蓋史上最強沙堡！' },
+    { speaker: 'Coco', line: "The water is cooler than yesterday. Perfect!", lineZh: '今天的水比昨天涼，剛剛好！' },
+    { speaker: 'Benny', line: "Can we stay until the stars come out?", lineZh: '我們可以待到星星出來嗎？' },
   ],
 };
 
@@ -6700,10 +6754,13 @@ const L5_M19: Mission = {
     { type: 'match', question: '🐚 是什麼？', options: ['shell', 'sand', 'sea', 'home'], answer: 'shell' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Let's read a longer story today!", lineZh: '今天讀一篇長一點的故事！' },
-    { speaker: 'Coco', line: "On Saturday, it is sunny. We go to the beach!", lineZh: '星期六晴天。我們去海邊！' },
-    { speaker: 'Polly', line: "A dolphin is swimming. It is faster than a fish!", lineZh: '海豚在游。牠比魚快！' },
-    { speaker: 'Benny', line: "You read a big story! Wonderful!", lineZh: '你讀了大故事！了不起！' },
+    { speaker: 'Finn', line: "Story time! Last Saturday was sunny...", lineZh: '說故事囉！上星期六是晴天⋯⋯' },
+    { speaker: 'Coco', line: "We went to Coral Beach in the morning!", lineZh: '我們一早就去了珊瑚灘！' },
+    { speaker: 'Benny', line: "And then — a dolphin jumped out of the water!", lineZh: '然後——一隻海豚跳出水面！' },
+    { speaker: 'Ruby', line: "It was faster than Polly! Sorry, Polly.", lineZh: '牠比 Polly 還快！抱歉啦 Polly。' },
+    { speaker: 'Polly', line: "It's true! It was amazing!", lineZh: '是真的！超級厲害！' },
+    { speaker: 'Coco', line: "We watched until the evening.", lineZh: '我們看到傍晚才回家。' },
+    { speaker: 'Finn', line: "And that was our best Saturday. The end!", lineZh: '那就是我們最棒的星期六。故事結束！' },
   ],
 };
 
@@ -6765,10 +6822,13 @@ const L5_M20: Mission = {
     { type: 'read', question: 'Are they sad?（他們難過嗎？）', passage: 'It is a sunny Saturday.\nThe friends are swimming at the beach.\nThey are very happy!', options: ['No, they are happy', 'Yes, they are sad', 'They are cold', 'They are tired'], answer: 'No, they are happy' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Coral Boss says: describe the sea!", lineZh: '珊瑚大魔王說：描述大海！' },
-    { speaker: 'Coco', line: "The whale is bigger than the fish. It is sunny!", lineZh: '鯨魚比魚大。天氣晴朗！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Coral champion!", lineZh: '你打敗大魔王了！珊瑚冠軍！' },
-    { speaker: 'Finn', line: "On to Lighthouse Point! Let's keep going!", lineZh: '前進燈塔角！繼續加油！' },
+    { speaker: 'Finn', line: "The Ocean Boss is here! He looks grumpy!", lineZh: '海洋魔王出現了！他看起來心情很差！' },
+    { speaker: 'Coco', line: "He says: answer me, or no more beach days!", lineZh: '他說：回答我，不然別想再來海灘！' },
+    { speaker: 'Benny', line: "Bring it on! Ask us anything!", lineZh: '放馬過來！儘管問！' },
+    { speaker: 'Polly', line: "Which is bigger — a whale or a fish? A whale, easy!", lineZh: '鯨魚和魚誰大？鯨魚，太簡單！' },
+    { speaker: 'Ruby', line: "What am I doing now? I am winning!", lineZh: '我現在在做什麼？我正在贏！' },
+    { speaker: 'Coco', line: "The Boss is smiling... we did it!", lineZh: '魔王笑了⋯⋯我們過關了！' },
+    { speaker: 'Finn', line: "To Story Castle, team! Adventure continues!", lineZh: '夥伴們，前進故事城堡！旅程繼續！' },
   ],
 };
 
