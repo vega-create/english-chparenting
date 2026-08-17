@@ -5536,6 +5536,7 @@ const L5_M1: Mission = {
     { speaker: 'Coco', line: "Wait... something big is moving in the water!", lineZh: '等等⋯⋯水裡有個大大的東西在動！' },
     { speaker: 'Finn', line: "A whale! That's the biggest thing today!", lineZh: '是鯨魚！那是今天最大的東西了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m1.mp4?v=1',
 };
 
 const L5_M2: Mission = {
@@ -5604,6 +5605,7 @@ const L5_M2: Mission = {
     { speaker: 'Benny', line: "I still like the old one. It's slow but cozy.", lineZh: '我還是喜歡舊的，慢慢的但很舒服。' },
     { speaker: 'Coco', line: "Hot sand, cold water — I love this beach!", lineZh: '燙燙的沙、涼涼的水——我愛這個海灘！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m2.mp4?v=1',
 };
 
 const L5_M3: Mission = {
