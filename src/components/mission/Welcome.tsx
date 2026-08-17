@@ -58,7 +58,7 @@ const WELCOME_SCENES: Scene[] = [
     characterKey: 'vega',
     characterAction: 'talk',
     characterName: 'Vega',
-    dialogue: '每一堂課有 5 個關卡，\n就像闖關遊戲一樣。\n👆 點點看每個關卡是什麼！',
+    dialogue: '每一堂課有 5 個關卡，\n照順序玩下去，就像玩遊戲一樣。\n👆 點點看每個關卡是什麼！',
     action: 'click-steps',
     actionHint: '👆 點擊每個步驟了解內容！',
   },
@@ -68,7 +68,7 @@ const WELCOME_SCENES: Scene[] = [
     characterKey: 'vega',
     characterAction: 'victory',
     characterName: 'Vega',
-    dialogue: '題目做對就能拿到一顆星 ⭐\n拿到越多星星，獎勵也越多 💎\n👆 點點看星星試試！',
+    dialogue: '題目做對就能拿到一顆星 ⭐\n拿到越多星星，獎勵也越多！\n👆 快點點看星星！',
     action: 'click-star',
     actionHint: '👆 點擊星星試試看！',
   },
@@ -94,10 +94,10 @@ const CHARACTERS_INFO = [
 
 const STEPS_INFO = [
   { icon: '📖', name: 'Story Time', nameZh: '故事時間', desc: '先聽一段有趣的英文故事，跟著角色們一起出發！故事裡會用到今天要學的新單字和句型，聽不懂沒關係，看影片就能猜到意思！', voiceZh: '第一關是故事時間！聽角色們說故事，看動畫猜意思，超好玩的！' },
-  { icon: '📝', name: 'Word Time', nameZh: '學單字', desc: '用閃卡學今天的新單字！看圖片、聽發音、跟著大聲念出來。還可以錄下自己的聲音，跟標準發音比比看！', voiceZh: '接下來學新單字！看圖片、聽發音、跟著念，還可以錄自己的聲音喔！' },
-  { icon: '🎮', name: 'Challenge', nameZh: '挑戰遊戲', desc: '用遊戲測試你剛學到的東西！有聽力挑戰、連連看、拼字遊戲，答對就能得到星星，連續答對還有 Combo 加分！', voiceZh: '第三關是挑戰遊戲！用遊戲練習剛學的東西，答對就有星星！' },
+  { icon: '📝', name: 'Word Time', nameZh: '學單字', desc: '用字卡學今天要學的英文字！看圖片、聽發音、跟著大聲念出來，還可以錄下自己的聲音，比比看誰念得標準！', voiceZh: '接下來學新單字！看圖片、聽發音、跟著念，還可以錄自己的聲音喔！' },
+  { icon: '🎮', name: 'Challenge', nameZh: '挑戰遊戲', desc: '用小遊戲玩一玩剛學到的東西！有用聽的、有連連看、有拼拼看，做對就能拿到星星，一直做對還會加分！', voiceZh: '第三關是挑戰遊戲！用遊戲練習剛學的東西，答對就有星星！' },
   { icon: '💬', name: 'Talk Time', nameZh: '對話時間', desc: '跟 Finn 用英文聊天！他會問你問題，你用麥克風回答。不用怕說錯，Finn 會陪你再試一次！', voiceZh: '第四關是對話時間！跟 Finn 用英文聊天，不用怕說錯喔！' },
-  { icon: '⭐', name: 'Mission Complete', nameZh: '任務完成', desc: '恭喜你完成任務！看看得了幾顆星星，寶石也會增加，你的學習寵物也會跟著成長喔！', voiceZh: '最後一關是結算時間！看看你得了幾顆星星，寵物也會長大喔！' },
+  { icon: '⭐', name: 'Mission Complete', nameZh: '任務完成', desc: '恭喜你完成任務！看看這次拿到幾顆星星，寶石也會變多，收集起來布置你的小屋吧！', voiceZh: '最後一關是結算時間！看看你得了幾顆星星，寵物也會長大喔！' },
 ];
 
 export default function Welcome({ onComplete }: Props) {
