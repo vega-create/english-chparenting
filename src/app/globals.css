@@ -469,6 +469,18 @@ body {
 }
 
 /* 介紹卡角色圖的緩慢彈跳 */
+/* 電子書飄雲：柔白暈染橢圓，極慢速左→右橫越 */
+.ae-cloud {
+  position: absolute;
+  left: -30%;
+  width: 150px; height: 46px;
+  background: radial-gradient(ellipse 60% 55% at 35% 60%, rgba(255,255,255,.95), rgba(255,255,255,0) 70%),
+              radial-gradient(ellipse 45% 50% at 65% 45%, rgba(255,255,255,.9), rgba(255,255,255,0) 70%),
+              radial-gradient(ellipse 70% 45% at 50% 70%, rgba(255,255,255,.85), rgba(255,255,255,0) 72%);
+  filter: blur(2px);
+  animation: ae-cloud-drift linear infinite;
+}
+@keyframes ae-cloud-drift { from { transform: translateX(0) } to { transform: translateX(160vw) } }
 @keyframes ae-bounce-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 .animate-bounce-slow { animation: ae-bounce-slow 2.4s ease-in-out infinite; }
 

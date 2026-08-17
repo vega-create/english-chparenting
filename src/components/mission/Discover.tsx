@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { playTada, playStreamWash, playForestWash } from '@/lib/sfx';
+import { playTada } from '@/lib/sfx';
+import { startAmbience, stopAmbience } from '@/lib/ambience';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
@@ -157,13 +158,18 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     });
   }, [onRegisterBack, phase, bookOpen, storyIndex, hasVideo, grammarGuide, phonicsLetters.length, story.length]);
 
+  // 電子書自然環境音：打開書就低音量循環（海洋灣聽海浪、其他森林/溪流），闔上或離開就停
+  useEffect(() => {
+    if (phase === 'story' && bookOpen) startAmbience(level);
+    else stopAmbience();
+    return () => stopAmbience();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, bookOpen]);
+
   // 故事自動播放語音：翻到哪一頁就播哪一句
   // 只在這裡播，翻頁按鈕不要再自己播一次（會變兩聲疊在一起像回音）
   useEffect(() => {
     if (phase !== 'story' || !bookOpen || !scene) return;
-    // 環境小音效（Vega 定案：不要激昂）：翻頁後輕鋪 2.5 秒自然聲——
-    // 隨機溪流或森林微風＋遠處鳥叫，音量壓很低；最後一頁加一點小亮片
-    if (Math.random() < 0.5) playStreamWash(); else playForestWash();
     if (storyIndex === story.length - 1) setTimeout(() => playTada(), 900);
     const t = setTimeout(() => sayDialogue(storyIndex, scene.dialogue, 0.75), 450);
     return () => { clearTimeout(t); stopClip(); };

@@ -29,8 +29,8 @@ export default function StoryCritters({ pageKey }: { pageKey: string | number })
   const [flight, setFlight] = useState<Flight | null>(null);
 
   useEffect(() => {
-    // 每次翻頁 55% 機率派一隻，隨機延遲登場，不搶戲
-    if (Math.random() > 0.55) { setFlight(null); return; }
+    // 每次翻頁 85% 機率派一隻，隨機延遲登場，不搶戲（Vega：要看得到小動物）
+    if (Math.random() > 0.85) { setFlight(null); return; }
     const f: Flight = {
       img: CRITTERS[Math.floor(Math.random() * CRITTERS.length)],
       top: `${12 + Math.random() * 55}%`,
@@ -42,10 +42,12 @@ export default function StoryCritters({ pageKey }: { pageKey: string | number })
     setFlight(f);
   }, [pageKey]);
 
-  if (!flight) return null;
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-20" aria-hidden>
-      <img
+      {/* 慢慢飄過的小雲（畫風：柔軟白色暈染），永遠有、非常慢、不搶戲 */}
+      <div className="ae-cloud" style={{ top: '4%', animationDuration: '75s', animationDelay: '-20s', opacity: 0.5, transform: 'scale(0.8)' }} />
+      <div className="ae-cloud" style={{ top: '14%', animationDuration: '95s', animationDelay: '-60s', opacity: 0.35 }} />
+      {flight && <img
         src={flight.img}
         alt=""
         className="absolute ae-critter"
@@ -58,7 +60,7 @@ export default function StoryCritters({ pageKey }: { pageKey: string | number })
           ['--critter-dir' as string]: flight.flip ? '-1' : '1',
           left: flight.flip ? '104%' : '-10%',
         }}
-      />
+      />}
     </div>
   );
 }
