@@ -2963,7 +2963,7 @@ const L3_M3: Mission = {
     { speaker: 'Coco', line: "I have four bananas. How many do you have?", lineZh: '我有四根香蕉。你有幾根？' },
     { speaker: 'Polly', line: "I have ten! Let's count to ten together!", lineZh: '我有十根！我們一起數到十！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m3.mp4?v=3',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m3.mp4?v=4',
 };
 
 const L3_M4: Mission = {
@@ -3161,7 +3161,7 @@ const L3_M6: Mission = {
     { speaker: 'Coco', line: "Look, an egg! And an apple too!", lineZh: '你看，一顆蛋！還有一顆蘋果！' },
     { speaker: 'Benny', line: "Then I want an egg and a banana. Yum!", lineZh: '那我要一顆蛋和一根香蕉。好吃！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m6.mp4?v=3',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m6.mp4?v=4',
 };
 
 const L3_M7: Mission = {
@@ -3360,7 +3360,7 @@ const L3_M9: Mission = {
     { speaker: 'Coco', line: "How many ducks are there?", lineZh: '有幾隻鴨子？' },
     { speaker: 'Polly', line: "Five ducks! They are yellow!", lineZh: '五隻鴨子！牠們是黃色的！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m9.mp4?v=3',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m9.mp4?v=4',
 };
 
 const L3_M10: Mission = {
@@ -3819,7 +3819,7 @@ const L3_M16: Mission = {
     { speaker: 'Coco', line: "Wow, look at the moon! It is so bright tonight!", lineZh: '哇，你看月亮！今晚好亮！' },
     { speaker: 'Benny', line: "The moon is beautiful! I love market nights!", lineZh: '月亮好美！我愛市場的夜晚！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m16.mp4?v=3',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m16.mp4?v=4',
 };
 
 const L3_M17: Mission = {
@@ -3886,7 +3886,7 @@ const L3_M17: Mission = {
     { speaker: 'Coco', line: "And foot becomes feet! Tricky!", lineZh: '還有 foot 變 feet！很狡猾！' },
     { speaker: 'Benny', line: "One foot, two feet! I remember!", lineZh: '一隻腳，兩隻腳！我記得了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m17.mp4?v=3',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m17.mp4?v=4',
 };
 
 const L3_M18: Mission = {
@@ -3953,7 +3953,7 @@ const L3_M18: Mission = {
     { speaker: 'Coco', line: "That is a dog, over there!", lineZh: '那是一隻狗，在那邊！' },
     { speaker: 'Benny', line: "And those are dogs! Far away!", lineZh: '那些是狗！在遠方！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m18.mp4?v=3',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m18.mp4?v=4',
 };
 
 const L3_M19: Mission = {
@@ -5053,7 +5053,7 @@ const L4_M14: Mission = {
     { speaker: 'Ruby', line: "It is next to the box... no, behind the box!", lineZh: '在箱子旁邊⋯⋯不對，在箱子後面！' },
     { speaker: 'Finn', line: "We found the ball every time! What a great game!", lineZh: '我們每次都找到球！好棒的遊戲！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m14.mp4?v=3',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m14.mp4?v=4',
 };
 
 const L4_M15: Mission = {
@@ -5192,7 +5192,7 @@ const L4_M16: Mission = {
     { speaker: 'Ruby', line: "Yesterday words are magic words!", lineZh: '「昨天的字」是魔法字！' },
     { speaker: 'Vega', line: "Yes! Past words tell old stories!", lineZh: '對！過去式會說以前的故事！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m16.mp4?v=3',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m16.mp4?v=4',
 };
 
 const L4_M17: Mission = {
