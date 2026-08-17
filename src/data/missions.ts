@@ -189,6 +189,8 @@ const L1_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bye', 'hello', 'hi', 'name'], answer: 'bye', image: '🎧' },
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bye', 'hello', 'hi', 'name'], answer: 'name', image: '🎧' },
     { type: 'speak', question: '跟著念：bye', answer: 'bye', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b y _', answer: 'bye', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n a _ e', answer: 'name', image: '✍️' },
   ],
   talkTimePrompts: [
     "Hi! What's your name?",
@@ -292,6 +294,8 @@ const L1_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'ball', 'cat', 'dog'], answer: 'ball', image: '🎧' },
     { type: 'speak', question: '跟著念：apple', answer: 'apple', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A is for Apple.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a p _ _ e', answer: 'apple', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b a _ l', answer: 'ball', image: '✍️' },
   ],
   talkTimePrompts: [
     "A is for apple! Can you say 'apple'?",
@@ -350,6 +354,8 @@ const L1_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['egg', 'fish', 'goat', 'hat'], answer: 'goat', image: '🎧' },
     { type: 'speak', question: '跟著念：fish', answer: 'fish', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'E is for Egg.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：f i _ h', answer: 'fish', image: '✍️' },
+    { type: 'spell', question: '拼拼看：g o _ t', answer: 'goat', image: '✍️' },
   ],
   talkTimePrompts: ["E is for egg! Can you say 'egg'?", "F is for fish! Do you like fish?", "G is for goat! Can you say 'goat'?", "H is for hat! Do you have a hat?"],
   reviewQuiz: [
@@ -403,6 +409,8 @@ const L1_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['igloo', 'jam', 'kite', 'lion'], answer: 'jam', image: '🎧' },
     { type: 'speak', question: '跟著念：igloo', answer: 'igloo', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I is for Igloo.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：i g _ _ o', answer: 'igloo', image: '✍️' },
+    { type: 'spell', question: '拼拼看：j a _', answer: 'jam', image: '✍️' },
   ],
   talkTimePrompts: ["I is for igloo! Can you say 'igloo'?", "J is for jam! Do you like jam?", "K is for kite! Can you fly a kite?", "L is for lion! Can you roar like a lion?"],
   reviewQuiz: [
@@ -454,6 +462,8 @@ const L1_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'egg', 'igloo', 'lion'], answer: 'igloo', image: '🎧' },
     { type: 'speak', question: '跟著念：apple', answer: 'apple', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A, B, C, D...', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a p _ _ e', answer: 'apple', image: '✍️' },
+    { type: 'spell', question: '拼拼看：i g _ _ o', answer: 'igloo', image: '✍️' },
   ],
   talkTimePrompts: ["Can you sing A to L?", "What comes after C?", "A is for apple! What is E for?", "You are a great singer!"],
   reviewQuiz: [
@@ -507,6 +517,8 @@ const L1_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['moon', 'nest', 'orange', 'pig'], answer: 'nest', image: '🎧' },
     { type: 'speak', question: '跟著念：moon', answer: 'moon', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'M is for Moon.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m o _ n', answer: 'moon', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n e _ t', answer: 'nest', image: '✍️' },
   ],
   talkTimePrompts: ["M is for moon! Can you say 'moon'?", "N is for nest! What lives in a nest?", "O is for orange! Do you like oranges?", "P is for pig! Can you say 'oink'?"],
   reviewQuiz: [
@@ -560,6 +572,8 @@ const L1_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['queen', 'rabbit', 'sun', 'tiger'], answer: 'rabbit', image: '🎧' },
     { type: 'speak', question: '跟著念：queen', answer: 'queen', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Q is for Queen.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：q u _ _ n', answer: 'queen', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r a _ b _ t', answer: 'rabbit', image: '✍️' },
   ],
   talkTimePrompts: ["Q is for queen! Can you say 'queen'?", "R is for rabbit! Can you hop like a rabbit?", "S is for sun! Is the sun hot?", "T is for tiger! Can you roar?"],
   reviewQuiz: [
@@ -613,6 +627,8 @@ const L1_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['fox', 'umbrella', 'van', 'watch'], answer: 'watch', image: '🎧' },
     { type: 'speak', question: '跟著念：umbrella', answer: 'umbrella', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'U is for Umbrella.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：u m b _ e _ l a', answer: 'umbrella', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w a _ _ h', answer: 'watch', image: '✍️' },
   ],
   talkTimePrompts: ["U is for umbrella! Do you use an umbrella?", "V is for van! Can you say 'van'?", "W is for watch! What time is it?", "X is in fox! Can you say 'fox'?"],
   reviewQuiz: [
@@ -658,6 +674,7 @@ const L1_M9: Mission = {
     { type: 'speak', question: '跟著念：Zebra!', answer: 'Zebra', image: '🗣' },
     { type: 'fill-blank', question: '___ is for yoyo.', options: ['Y', 'Z', 'X', 'W'], answer: 'Y' },
     { type: 'fill-blank', question: 'The last letter is ___.', options: ['Z', 'Y', 'A', 'X'], answer: 'Z' },
+    { type: 'spell', question: '拼拼看：y o _ o', answer: 'yoyo', image: '✍️' },
   ],
   talkTimePrompts: ["Y is for yoyo! Can you play with a yoyo?", "Z is for zebra! Can you say 'zebra'?", "Can you say A to Z?", "You know all the letters! Amazing!"],
   reviewQuiz: [
@@ -709,6 +726,8 @@ const L1_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['moon', 'queen', 'umbrella', 'zebra'], answer: 'umbrella', image: '🎧' },
     { type: 'speak', question: '跟著念：queen', answer: 'queen', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'M, N, O, P...', image: '🗣' },
+    { type: 'spell', question: '拼拼看：q u _ _ n', answer: 'queen', image: '✍️' },
+    { type: 'spell', question: '拼拼看：u m b _ e _ l a', answer: 'umbrella', image: '✍️' },
   ],
   talkTimePrompts: ["Can you sing M to Z?", "What comes after Q?", "Can you sing the whole ABC song?", "You are an ABC star!"],
   reviewQuiz: [
@@ -760,6 +779,8 @@ const L1_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'egg', 'moon', 'zebra'], answer: 'zebra', image: '🎧' },
     { type: 'speak', question: '跟著念：egg', answer: 'egg', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Big A, small a.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e g _', answer: 'egg', image: '✍️' },
+    { type: 'spell', question: '拼拼看：z e _ _ a', answer: 'zebra', image: '✍️' },
   ],
   talkTimePrompts: ["Can you write the letter A?", "Big B and small b — can you match them?", "What letter does apple start with?", "You are great at writing letters!"],
   reviewQuiz: [
@@ -811,6 +832,8 @@ const L1_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'fish', 'queen', 'zebra'], answer: 'queen', image: '🎧' },
     { type: 'speak', question: '跟著念：apple', answer: 'apple', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I know A to Z!', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a p _ _ e', answer: 'apple', image: '✍️' },
+    { type: 'spell', question: '拼拼看：q u _ _ n', answer: 'queen', image: '✍️' },
   ],
   talkTimePrompts: ["Can you say A to Z?", "What is A for?", "You beat the Letter Boss! How do you feel?", "You are an ABC champion! Say 'I did it!'"],
   reviewQuiz: [
@@ -927,6 +950,8 @@ const L1_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['circle', 'line', 'trace', 'write'], answer: 'line', image: '🎧' },
     { type: 'speak', question: '跟著念：trace', answer: 'trace', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Let\'s write the letter A.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t r _ _ e', answer: 'trace', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'line', image: '✍️' },
   ],
   talkTimePrompts: ["Say: down, down, across for A.", "Trace a letter in the air.", "What shape is O?", "Can you write your name's first letter?"],
   reviewQuiz: [
@@ -984,6 +1009,8 @@ const L1_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'egg', 'igloo', 'orange'], answer: 'igloo', image: '🎧' },
     { type: 'speak', question: '跟著念：apple', answer: 'apple', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A B C D E F G.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a p _ _ e', answer: 'apple', image: '✍️' },
+    { type: 'spell', question: '拼拼看：i g _ _ o', answer: 'igloo', image: '✍️' },
   ],
   talkTimePrompts: ["Sing the ABC song!", "Say a word for A, B, C.", "What is Z for?", "You know your ABCs! Say 'I did it!'"],
   reviewQuiz: [
@@ -1042,6 +1069,8 @@ const L1_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['I', 'a', 'an', 'is'], answer: 'is', image: '🎧' },
     { type: 'speak', question: '跟著念：an', answer: 'an', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am Coco.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t h _', answer: 'the', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e _', answer: 'red', image: '✍️' },
   ],
   talkTimePrompts: ["Say: I am ___.", "Say: It is a ___ / an ___.", "Read: The ___ is red.", "Point and say: I, a, an, the, is."],
   reviewQuiz: [
@@ -1099,6 +1128,8 @@ const L1_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['like', 'see', 'we', 'you'], answer: 'we', image: '🎧' },
     { type: 'speak', question: '跟著念：like', answer: 'like', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I see you.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：y o _', answer: 'you', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s e _', answer: 'see', image: '✍️' },
   ],
   talkTimePrompts: ["Say: I see you!", "Say: I like ___.", "Say: Let's go!", "Say: Come with me."],
   reviewQuiz: [
@@ -1214,6 +1245,8 @@ const L1_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['I', 'a', 'an', 'see'], answer: 'see', image: '🎧' },
     { type: 'speak', question: '跟著念：I', answer: 'I', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I see a cat.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s e _', answer: 'see', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t h _', answer: 'the', image: '✍️' },
   ],
   talkTimePrompts: ["Read: I see a cat.", "Read: It is an egg.", "Read: The cat is big.", "Make your own: I see a ___."],
   reviewQuiz: [
@@ -1271,6 +1304,8 @@ const L1_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['I', 'apple', 'see', 'zebra'], answer: 'zebra', image: '🎧' },
     { type: 'speak', question: '跟著念：apple', answer: 'apple', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I know A to Z.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a p _ _ e', answer: 'apple', image: '✍️' },
+    { type: 'spell', question: '拼拼看：z e _ _ a', answer: 'zebra', image: '✍️' },
   ],
   talkTimePrompts: ["Sing A to Z!", "Say: I see a cat. It is an egg.", "Match a big letter to a small one.", "You graduated from Letter Island! Say 'I did it!'"],
   reviewQuiz: [
@@ -1335,6 +1370,8 @@ const L2_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bus', 'cat', 'hat', 'sun'], answer: 'bus', image: '🎧' },
     { type: 'speak', question: '跟著念：hat', answer: 'hat', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'c-a-t → cat', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a _', answer: 'hat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b u _', answer: 'bus', image: '✍️' },
   ],
   talkTimePrompts: ["Can you blend c-a-t?", "What is s-u-n?", "Say a word that starts with /b/.", "You can blend sounds! Great!"],
   reviewQuiz: [
@@ -1394,6 +1431,8 @@ const L2_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bag', 'bat', 'cat', 'hat'], answer: 'bag', image: '🎧' },
     { type: 'speak', question: '跟著念：hat', answer: 'hat', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A cat has a hat.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a _', answer: 'hat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b a _', answer: 'bat', image: '✍️' },
   ],
   talkTimePrompts: ["Say three words with /æ/.", "What has /æ/: cat or dog?", "Can you find a hat?", "Great job with short a!"],
   reviewQuiz: [
@@ -1452,6 +1491,8 @@ const L2_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bed', 'hen', 'pen', 'red'], answer: 'red', image: '🎧' },
     { type: 'speak', question: '跟著念：pen', answer: 'pen', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The hen is on the bed.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p e _', answer: 'pen', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e _', answer: 'red', image: '✍️' },
   ],
   talkTimePrompts: ["Say three words with /ɛ/.", "What is red in your bag?", "How old are you? I am ___.", "Great job with short e!"],
   reviewQuiz: [
@@ -1510,6 +1551,8 @@ const L2_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['big', 'dig', 'pig', 'sit'], answer: 'sit', image: '🎧' },
     { type: 'speak', question: '跟著念：dig', answer: 'dig', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The big pig can dig.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b i _', answer: 'big', image: '✍️' },
+    { type: 'spell', question: '拼拼看：d i _', answer: 'dig', image: '✍️' },
   ],
   talkTimePrompts: ["Say three words with /ɪ/.", "How old are you? Can you say six?", "What is big?", "Great job with short i!"],
   reviewQuiz: [
@@ -1567,6 +1610,8 @@ const L2_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bat', 'bed', 'cat', 'pen'], answer: 'pen', image: '🎧' },
     { type: 'speak', question: '跟著念：bat', answer: 'bat', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A cat on a bed.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b a _', answer: 'bat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p e _', answer: 'pen', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with /æ/.", "Say a word with /ɛ/.", "Say a word with /ɪ/.", "You are a phonics champion!"],
   reviewQuiz: [
@@ -1625,6 +1670,8 @@ const L2_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['box', 'fox', 'hot', 'top'], answer: 'top', image: '🎧' },
     { type: 'speak', question: '跟著念：fox', answer: 'fox', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The fox is in the box.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：f o _', answer: 'fox', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h o _', answer: 'hot', image: '✍️' },
   ],
   talkTimePrompts: ["Say three words with /ɑ/.", "What is hot?", "Can you hop like a rabbit?", "Great job with short o!"],
   reviewQuiz: [
@@ -1683,6 +1730,8 @@ const L2_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bug', 'bus', 'cup', 'sun'], answer: 'bus', image: '🎧' },
     { type: 'speak', question: '跟著念：cup', answer: 'cup', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The bug is in the cup.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c u _', answer: 'cup', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b u _', answer: 'bus', image: '✍️' },
   ],
   talkTimePrompts: ["Say three words with /ʌ/.", "Can you run fast?", "Give me a hug!", "You know all five short vowels!"],
   reviewQuiz: [
@@ -1742,6 +1791,8 @@ const L2_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['fish', 'shell', 'ship', 'shop'], answer: 'shop', image: '🎧' },
     { type: 'speak', question: '跟著念：fish', answer: 'fish', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The fish is on the ship.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：f i _ h', answer: 'fish', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s h _ p', answer: 'shop', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with sh.", "Say a word with ch.", "What do you eat for lunch?", "Great job with sh and ch!"],
   reviewQuiz: [
@@ -1801,6 +1852,8 @@ const L2_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['duck', 'that', 'thin', 'this'], answer: 'that', image: '🎧' },
     { type: 'speak', question: '跟著念：this', answer: 'this', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The king has a ring.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t h _ s', answer: 'this', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t h _ t', answer: 'that', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with ck.", "Say a word with ng.", "Can you sing a song?", "Great job with th, ck, ng!"],
   reviewQuiz: [
@@ -1858,6 +1911,8 @@ const L2_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bed', 'box', 'cat', 'pig'], answer: 'bed', image: '🎧' },
     { type: 'speak', question: '跟著念：cat', answer: 'cat', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A cat, a pig, a duck.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c a _', answer: 'cat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b e _', answer: 'bed', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with each short vowel!", "Say a word with sh.", "Can you read cat, pig, cup?", "You are a reading star!"],
   reviewQuiz: [
@@ -1917,6 +1972,8 @@ const L2_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cake', 'game', 'gate', 'name'], answer: 'name', image: '🎧' },
     { type: 'speak', question: '跟著念：cake', answer: 'cake', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'We play a game in the rain.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c a _ e', answer: 'cake', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n a _ e', answer: 'name', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with long a.", "What is your name?", "Do you like to play games?", "Great job with long a!"],
   reviewQuiz: [
@@ -1975,6 +2032,8 @@ const L2_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bee', 'green', 'see', 'tree'], answer: 'see', image: '🎧' },
     { type: 'speak', question: '跟著念：bee', answer: 'bee', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I see a bee in the tree.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b e _', answer: 'bee', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s e _', answer: 'see', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with long e.", "Can you see a tree?", "Do you like tea?", "Great job with long e!"],
   reviewQuiz: [
@@ -2033,6 +2092,8 @@ const L2_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bike', 'five', 'kite', 'nine'], answer: 'nine', image: '🎧' },
     { type: 'speak', question: '跟著念：kite', answer: 'kite', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'My kite can fly high.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：k i _ e', answer: 'kite', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n i _ e', answer: 'nine', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with long i.", "Can you ride a bike?", "What do you see in the sky?", "Great job with long i!"],
   reviewQuiz: [
@@ -2091,6 +2152,8 @@ const L2_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bone', 'home', 'nose', 'rose'], answer: 'rose', image: '🎧' },
     { type: 'speak', question: '跟著念：nose', answer: 'nose', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The boat is slow on the road.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：n o _ e', answer: 'nose', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r o _ e', answer: 'rose', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with long o.", "Do you have a coat?", "Can you touch your nose?", "Great job with long o!"],
   reviewQuiz: [
@@ -2148,6 +2211,8 @@ const L2_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cake', 'eat', 'rain', 'tree'], answer: 'eat', image: '🎧' },
     { type: 'speak', question: '跟著念：rain', answer: 'rain', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I ride my bike home.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r a _ n', answer: 'rain', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e a _', answer: 'eat', image: '✍️' },
   ],
   talkTimePrompts: ["Say a long a word.", "Say a long e word.", "Say a long i and long o word.", "You can read long vowels!"],
   reviewQuiz: [
@@ -2207,6 +2272,8 @@ const L2_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['June', 'cube', 'cute', 'moon'], answer: 'cube', image: '🎧' },
     { type: 'speak', question: '跟著念：cute', answer: 'cute', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The moon is over the zoo.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c u _ e', answer: 'cute', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c u _ e', answer: 'cube', image: '✍️' },
   ],
   talkTimePrompts: ["Say a word with oo.", "Do you like the zoo?", "What food do you like?", "Great job with long u!"],
   reviewQuiz: [
@@ -2266,6 +2333,8 @@ const L2_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['city', 'face', 'ice', 'rice'], answer: 'rice', image: '🎧' },
     { type: 'speak', question: '跟著念：city', answer: 'city', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The giraffe is in the city.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c i _ y', answer: 'city', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r i _ e', answer: 'rice', image: '✍️' },
   ],
   talkTimePrompts: ["Say a soft c word.", "Say a soft g word.", "Do you like rice?", "Great job with tricky sounds!"],
   reviewQuiz: [
@@ -2325,6 +2394,8 @@ const L2_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['arm', 'car', 'corn', 'star'], answer: 'arm', image: '🎧' },
     { type: 'speak', question: '跟著念：star', answer: 'star', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The bird is on the car.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s t _ r', answer: 'star', image: '✍️' },
+    { type: 'spell', question: '拼拼看：a r _', answer: 'arm', image: '✍️' },
   ],
   talkTimePrompts: ["Say an ar word.", "Say an or word.", "Say an er/ir/ur word.", "Great job with bossy r!"],
   reviewQuiz: [
@@ -2384,6 +2455,8 @@ const L2_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['are', 'is', 'the', 'you'], answer: 'is', image: '🎧' },
     { type: 'speak', question: '跟著念：the', answer: 'the', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The cat is on the mat.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t h _', answer: 'the', image: '✍️' },
+    { type: 'spell', question: '拼拼看：a r _', answer: 'are', image: '✍️' },
   ],
   talkTimePrompts: ["Read: The cat is big.", "Read: You have a bag.", "Read: They are my friends.", "You can read sentences now!"],
   reviewQuiz: [
@@ -2442,6 +2515,8 @@ const L2_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bike', 'boat', 'cat', 'tree'], answer: 'bike', image: '🎧' },
     { type: 'speak', question: '跟著念：cat', answer: 'cat', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The cat is by the tree.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c a _', answer: 'cat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b i _ e', answer: 'bike', image: '✍️' },
   ],
   talkTimePrompts: ["Read: The cat is by the tree.", "Say a short vowel word and a long vowel word.", "You beat the Sound Boss! How do you feel?", "You are a reading star! Say 'I can read!'"],
   reviewQuiz: [
@@ -2506,6 +2581,8 @@ const L3_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['blue', 'green', 'red', 'yellow'], answer: 'yellow', image: '🎧' },
     { type: 'speak', question: '跟著念：blue', answer: 'blue', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'It is red.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b l _ e', answer: 'blue', image: '✍️' },
+    { type: 'spell', question: '拼拼看：y e _ l _ w', answer: 'yellow', image: '✍️' },
   ],
   talkTimePrompts: ["What is your favorite color?", "What color is an apple?", "Point to something blue!", "Say three colors you like!"],
   reviewQuiz: [
@@ -2564,6 +2641,8 @@ const L3_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['blue', 'green', 'red', 'yellow'], answer: 'yellow', image: '🎧' },
     { type: 'speak', question: '跟著念：red', answer: 'red', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Is it red?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r e _', answer: 'red', image: '✍️' },
+    { type: 'spell', question: '拼拼看：y e _ l _ w', answer: 'yellow', image: '✍️' },
   ],
   talkTimePrompts: ["Is your bag red?", "What color is the sky?", "Ask me: What color is it?", "Answer: Is an apple red?"],
   reviewQuiz: [
@@ -2622,6 +2701,8 @@ const L3_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['four', 'one', 'three', 'two'], answer: 'two', image: '🎧' },
     { type: 'speak', question: '跟著念：one', answer: 'one', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'How many apples?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：o n _', answer: 'one', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t w _', answer: 'two', image: '✍️' },
   ],
   talkTimePrompts: ["Count from one to ten!", "How old are you?", "How many fingers do you have?", "How many pens are in your bag?"],
   reviewQuiz: [
@@ -2680,6 +2761,8 @@ const L3_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eleven', 'fourteen', 'thirteen', 'twelve'], answer: 'thirteen', image: '🎧' },
     { type: 'speak', question: '跟著念：eleven', answer: 'eleven', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'How many are there?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e l _ v _ n', answer: 'eleven', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t w _ l _ e', answer: 'twelve', image: '✍️' },
   ],
   talkTimePrompts: ["Count from eleven to twenty!", "How many students in your class?", "How many are there? (show fingers)", "Count the stars with me!"],
   reviewQuiz: [
@@ -2737,6 +2820,8 @@ const L3_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['blue', 'green', 'red', 'yellow'], answer: 'blue', image: '🎧' },
     { type: 'speak', question: '跟著念：red', answer: 'red', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Three red balloons.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r e _', answer: 'red', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b l _ e', answer: 'blue', image: '✍️' },
   ],
   talkTimePrompts: ["How many red things can you see?", "What color is your bag?", "Count your fingers by color!", "Say: two green apples!"],
   reviewQuiz: [
@@ -2796,6 +2881,8 @@ const L3_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'banana', 'bread', 'rice'], answer: 'banana', image: '🎧' },
     { type: 'speak', question: '跟著念：apple', answer: 'apple', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'It is an apple.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a p _ _ e', answer: 'apple', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b a _ a _ a', answer: 'banana', image: '✍️' },
   ],
   talkTimePrompts: ["What food do you like?", "Do you like rice?", "Say: a banana, an egg.", "What do you eat for breakfast?"],
   reviewQuiz: [
@@ -2854,6 +2941,8 @@ const L3_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['juice', 'noodles', 'pizza', 'water'], answer: 'noodles', image: '🎧' },
     { type: 'speak', question: '跟著念：pizza', answer: 'pizza', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I like pizza.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p i _ _ a', answer: 'pizza', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n o o _ l _ s', answer: 'noodles', image: '✍️' },
   ],
   talkTimePrompts: ["What food do you like?", "Do you like broccoli?", "I like ___. What about you?", "Do you like ice cream or candy?"],
   reviewQuiz: [
@@ -2912,6 +3001,8 @@ const L3_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bird', 'cat', 'dog', 'fish'], answer: 'bird', image: '🎧' },
     { type: 'speak', question: '跟著念：cat', answer: 'cat', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'It is a dog.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c a _', answer: 'cat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b i _ d', answer: 'bird', image: '✍️' },
   ],
   talkTimePrompts: ["What is your favorite animal?", "Do you have a pet?", "Can you make a lion sound?", "Point to a bird!"],
   reviewQuiz: [
@@ -2971,6 +3062,8 @@ const L3_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['birds', 'cats', 'dogs', 'ducks'], answer: 'birds', image: '🎧' },
     { type: 'speak', question: '跟著念：dogs', answer: 'dogs', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'One dog, two dogs.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d o _ s', answer: 'dogs', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c a _ s', answer: 'cats', image: '✍️' },
   ],
   talkTimePrompts: ["How many pets do you have?", "Count the animals: two ___, three ___.", "Are they cats or dogs?", "How many students are girls?"],
   reviewQuiz: [
@@ -3028,6 +3121,8 @@ const L3_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'cake', 'dog', 'egg'], answer: 'egg', image: '🎧' },
     { type: 'speak', question: '跟著念：apple', answer: 'apple', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I like apples and cake.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a p _ _ e', answer: 'apple', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e g _', answer: 'egg', image: '✍️' },
   ],
   talkTimePrompts: ["What food and animals do you like?", "Do you like fish? (food or pet!)", "How many pets do you want?", "Say: I like ___ and ___."],
   reviewQuiz: [
@@ -3086,6 +3181,8 @@ const L3_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eye', 'foot', 'hand', 'head'], answer: 'eye', image: '🎧' },
     { type: 'speak', question: '跟著念：foot', answer: 'foot', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'This is my head.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h e _ d', answer: 'head', image: '✍️' },
+    { type: 'spell', question: '拼拼看：f o _ t', answer: 'foot', image: '✍️' },
   ],
   talkTimePrompts: ["Touch your nose!", "How many eyes do you have?", "Point to your ears!", "This is my ___. (point to body parts)"],
   reviewQuiz: [
@@ -3144,6 +3241,8 @@ const L3_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['brother', 'dad', 'mom', 'sister'], answer: 'sister', image: '🎧' },
     { type: 'speak', question: '跟著念：dad', answer: 'dad', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'This is my mom.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d a _', answer: 'dad', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b r o _ h _ r', answer: 'brother', image: '✍️' },
   ],
   talkTimePrompts: ["Who is in your family?", "Do you have a brother or sister?", "This is my ___. (introduce family)", "How many people in your family?"],
   reviewQuiz: [
@@ -3202,6 +3301,8 @@ const L3_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['hat', 'pants', 'shirt', 'shoes'], answer: 'pants', image: '🎧' },
     { type: 'speak', question: '跟著念：shirt', answer: 'shirt', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I wear a red shirt.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s h _ _ t', answer: 'shirt', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p a _ _ s', answer: 'pants', image: '✍️' },
   ],
   talkTimePrompts: ["What are you wearing today?", "What color is your shirt?", "Do you like hats?", "Put on your shoes! (act it out)"],
   reviewQuiz: [
@@ -3260,6 +3361,8 @@ const L3_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['ball', 'book', 'car', 'doll'], answer: 'car', image: '🎧' },
     { type: 'speak', question: '跟著念：doll', answer: 'doll', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'It is my ball.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d o _ l', answer: 'doll', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c a _', answer: 'car', image: '✍️' },
   ],
   talkTimePrompts: ["What toys do you have?", "What is in your school bag?", "Whose pencil is this?", "What is your favorite toy?"],
   reviewQuiz: [
@@ -3317,6 +3420,8 @@ const L3_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['brother', 'eye', 'hand', 'mom'], answer: 'hand', image: '🎧' },
     { type: 'speak', question: '跟著念：eye', answer: 'eye', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'This is my hand.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e y _', answer: 'eye', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h a _ d', answer: 'hand', image: '✍️' },
   ],
   talkTimePrompts: ["Introduce your family!", "What are you wearing?", "Point to your eyes and hands!", "Whose bag is this?"],
   reviewQuiz: [
@@ -3435,6 +3540,8 @@ const L3_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apples', 'boxes', 'cats', 'dogs'], answer: 'dogs', image: '🎧' },
     { type: 'speak', question: '跟著念：cats', answer: 'cats', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'One cat, two cats.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c a _ s', answer: 'cats', image: '✍️' },
+    { type: 'spell', question: '拼拼看：d o _ s', answer: 'dogs', image: '✍️' },
   ],
   talkTimePrompts: ["Say the plural: cat → ?", "Say the plural: box → ?", "How many feet do you have?", "Count: one apple, two apples..."],
   reviewQuiz: [
@@ -3494,6 +3601,8 @@ const L3_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['that', 'these', 'this', 'those'], answer: 'these', image: '🎧' },
     { type: 'speak', question: '跟著念：this', answer: 'this', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'This is a cat.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t h _ s', answer: 'this', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t h _ _ e', answer: 'these', image: '✍️' },
   ],
   talkTimePrompts: ["Point near: This is ___.", "Point to many: These are ___.", "Point far: That is ___.", "What is this? / What are these?"],
   reviewQuiz: [
@@ -3552,6 +3661,8 @@ const L3_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['has', 'likes', 'market', 'story'], answer: 'market', image: '🎧' },
     { type: 'speak', question: '跟著念：story', answer: 'story', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'This is Coco.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s t _ _ y', answer: 'story', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m a _ k _ t', answer: 'market', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the story about Coco.", "What does Coco have?", "What does Coco like?", "Make your own story: I have ___."],
   reviewQuiz: [
@@ -3610,6 +3721,8 @@ const L3_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'dog', 'red', 'three'], answer: 'three', image: '🎧' },
     { type: 'speak', question: '跟著念：red', answer: 'red', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I have three red apples.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r e _', answer: 'red', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t h _ _ e', answer: 'three', image: '✍️' },
   ],
   talkTimePrompts: ["Tell me: your favorite color, food, and animal!", "Introduce your family in English!", "What are you wearing?", "You beat the Market Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -3669,6 +3782,8 @@ const L4_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['happy', 'hungry', 'sad', 'thirsty'], answer: 'hungry', image: '🎧' },
     { type: 'speak', question: '跟著念：sad', answer: 'sad', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am happy.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s a _', answer: 'sad', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h u _ g _ y', answer: 'hungry', image: '✍️' },
   ],
   talkTimePrompts: ["How are you today? I am ___.", "Say: I am happy!", "Are you hungry? Yes, I am. / No, I'm not.", "Change the word: I am ___ (tired/hot/fine)."],
   reviewQuiz: [
@@ -3731,6 +3846,8 @@ const L4_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['I', 'he', 'she', 'you'], answer: 'you', image: '🎧' },
     { type: 'speak', question: '跟著念：I', answer: 'I', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am a student.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：y o _', answer: 'you', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s h _', answer: 'she', image: '✍️' },
   ],
   talkTimePrompts: ["Point and say: He is ___. / She is ___.", "Say: We are friends!", "Introduce a friend: This is ___. He/She is ___.", "Change the word: ___ is happy (He/She/It)."],
   reviewQuiz: [
@@ -3792,6 +3909,8 @@ const L4_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['boy', 'friend', 'student', 'teacher'], answer: 'student', image: '🎧' },
     { type: 'speak', question: '跟著念：teacher', answer: 'teacher', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Are you a student?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t e a _ h _ r', answer: 'teacher', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s t u _ e _ t', answer: 'student', image: '✍️' },
   ],
   talkTimePrompts: ["Ask a friend: Are you happy?", "Answer: Yes, I am. / No, I'm not.", "Ask about someone: Is he/she a student?", "Change it: Is she ___? (a teacher / happy / tired)"],
   reviewQuiz: [
@@ -3854,6 +3973,8 @@ const L4_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['that', 'these', 'this', 'those'], answer: 'that', image: '🎧' },
     { type: 'speak', question: '跟著念：this', answer: 'this', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'This is a book.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t h _ s', answer: 'this', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t h _ t', answer: 'that', image: '✍️' },
   ],
   talkTimePrompts: ["Point near: This is a ___.", "Point far: That is a ___.", "Ask: What is this?", "Change it: These are ___. (books/pens/bags)"],
   reviewQuiz: [
@@ -3915,6 +4036,8 @@ const L4_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['happy', 'he', 'she', 'tired'], answer: 'tired', image: '🎧' },
     { type: 'speak', question: '跟著念：happy', answer: 'happy', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am a student.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a _ _ y', answer: 'happy', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t i _ _ d', answer: 'tired', image: '✍️' },
   ],
   talkTimePrompts: ["Say: I am a student.", "Introduce: He is / She is my friend.", "Ask and answer: Are you happy? Yes, I am.", "Point: This is my ___."],
   reviewQuiz: [
@@ -3976,6 +4099,8 @@ const L4_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['candy', 'ice cream', 'like', 'pizza'], answer: 'pizza', image: '🎧' },
     { type: 'speak', question: '跟著念：like', answer: 'like', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I like pizza.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'like', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p i _ _ a', answer: 'pizza', image: '✍️' },
   ],
   talkTimePrompts: ["What do you like? I like ___.", "Say something you don't like: I don't like ___.", "Name three things you like!", "Change it: I like ___ (pizza/music/games)."],
   reviewQuiz: [
@@ -4038,6 +4163,8 @@ const L4_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cat', 'do', 'dog', 'like'], answer: 'like', image: '🎧' },
     { type: 'speak', question: '跟著念：do', answer: 'do', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Do you like pizza?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'like', image: '✍️' },
+    { type: 'spell', question: '拼拼看：d o _', answer: 'dog', image: '✍️' },
   ],
   talkTimePrompts: ["Ask a friend: Do you like ___?", "Answer: Yes, I do. / No, I don't.", "Ask about pizza, dogs, music!", "Change it: Do you like ___? (apples/milk/games)"],
   reviewQuiz: [
@@ -4099,6 +4226,8 @@ const L4_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bag', 'book', 'have', 'pen'], answer: 'bag', image: '🎧' },
     { type: 'speak', question: '跟著念：have', answer: 'have', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I have a bag.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a _ e', answer: 'have', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b a _', answer: 'bag', image: '✍️' },
   ],
   talkTimePrompts: ["What do you have? I have a ___.", "Ask: Do you have a ___?", "Answer: Yes, I do. / No, I don't.", "Change it: I have a ___ (toy/bike/hat)."],
   reviewQuiz: [
@@ -4160,6 +4289,8 @@ const L4_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['can', 'jump', 'run', 'swim'], answer: 'swim', image: '🎧' },
     { type: 'speak', question: '跟著念：can', answer: 'can', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I can swim.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c a _', answer: 'can', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s w _ m', answer: 'swim', image: '✍️' },
   ],
   talkTimePrompts: ["What can you do? I can ___.", "Say something you can't do: I can't ___.", "Ask: Can you swim?", "Change it: I can ___ (run/sing/draw)."],
   reviewQuiz: [
@@ -4221,6 +4352,8 @@ const L4_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['can', 'have', 'like', 'pizza'], answer: 'pizza', image: '🎧' },
     { type: 'speak', question: '跟著念：have', answer: 'have', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I like pizza.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'like', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h a _ e', answer: 'have', image: '✍️' },
   ],
   talkTimePrompts: ["Say: I like ___, I have ___, I can ___.", "Ask a friend one question with 'Do you…?'", "Ask a friend one question with 'Can you…?'", "Tell me three things about you!"],
   reviewQuiz: [
@@ -4282,6 +4415,8 @@ const L4_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['can', 'cook', 'read', 'swim'], answer: 'read', image: '🎧' },
     { type: 'speak', question: '跟著念：swim', answer: 'swim', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Can you swim?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c a _', answer: 'can', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s w _ m', answer: 'swim', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Can you swim?", "Answer: Yes, I can. / No, I can't.", "Ask about cook, climb, ride!", "Change it: Can you ___? (jump/read/kick)"],
   reviewQuiz: [
@@ -4343,6 +4478,8 @@ const L4_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['board', 'clock', 'door', 'window'], answer: 'window', image: '🎧' },
     { type: 'speak', question: '跟著念：clock', answer: 'clock', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What is this?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c l _ _ k', answer: 'clock', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w i _ d _ w', answer: 'window', image: '✍️' },
   ],
   talkTimePrompts: ["Point and ask: What is this?", "Answer: It is a ___.", "Ask about 3 things in your room!", "Change it: What is that? It is a ___."],
   reviewQuiz: [
@@ -4404,6 +4541,8 @@ const L4_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['in', 'on', 'under', 'where'], answer: 'in', image: '🎧' },
     { type: 'speak', question: '跟著念：where', answer: 'where', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Where is my cat?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'where', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b o _', answer: 'box', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Where is my bag?", "Answer: It is in / on / under the ___.", "Hide something and ask: Where is it?", "Change it: The cat is ___ the box (in/on/under)."],
   reviewQuiz: [
@@ -4465,6 +4604,8 @@ const L4_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['in', 'next to', 'on', 'under'], answer: 'on', image: '🎧' },
     { type: 'speak', question: '跟著念：in', answer: 'in', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The cat is in the box.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：u n _ _ r', answer: 'under', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b o _', answer: 'box', image: '✍️' },
   ],
   talkTimePrompts: ["Say where your bag is: It is ___ the ___.", "Use 'next to' in a sentence.", "Use 'behind' in a sentence.", "Change it: The cat is ___ the box (in/on/next to)."],
   reviewQuiz: [
@@ -4526,6 +4667,8 @@ const L4_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['are', 'can', 'do', 'what'], answer: 'do', image: '🎧' },
     { type: 'speak', question: '跟著念：are', answer: 'are', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Are you happy?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a r _', answer: 'are', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c a _', answer: 'can', image: '✍️' },
   ],
   talkTimePrompts: ["Ask a friend: Are you…?", "Ask: Do you like…?", "Ask: Can you…?", "Ask: What is this? / Where is it?"],
   reviewQuiz: [
@@ -4588,6 +4731,8 @@ const L4_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['go', 'play', 'played', 'went'], answer: 'played', image: '🎧' },
     { type: 'speak', question: '跟著念：play', answer: 'play', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Today I play.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ y _ d', answer: 'played', image: '✍️' },
   ],
   talkTimePrompts: ["Say: Today I play. Yesterday I played.", "What did you eat yesterday? I ate ___.", "Where did you go? I went to ___.", "Change it: Yesterday I ___ (played/went/ate)."],
   reviewQuiz: [
@@ -4649,6 +4794,8 @@ const L4_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['book', 'class', 'lunch', 'school'], answer: 'lunch', image: '🎧' },
     { type: 'speak', question: '跟著念：class', answer: 'class', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am a student.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c l _ _ s', answer: 'class', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l u _ _ h', answer: 'lunch', image: '✍️' },
   ],
   talkTimePrompts: ["Tell me about school: I am ___. I like ___.", "Say what you have: I have ___.", "Say what you can do at school.", "Is school fun? Yes/No, why?"],
   reviewQuiz: [
@@ -4710,6 +4857,8 @@ const L4_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['close', 'open', 'sit down', 'stand up'], answer: 'stand up', image: '🎧' },
     { type: 'speak', question: '跟著念：sit down', answer: 'sit down', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Please sit down.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：o p _ n', answer: 'open', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c l _ _ e', answer: 'close', image: '✍️' },
   ],
   talkTimePrompts: ["Give a command: Please ___.", "Say: Open your book. / Close the door.", "Say 'thank you' to your teacher.", "Play teacher: tell the class to sit down!"],
   reviewQuiz: [
@@ -4771,6 +4920,8 @@ const L4_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['day', 'like', 'story', 'student'], answer: 'student', image: '🎧' },
     { type: 'speak', question: '跟著念：day', answer: 'day', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Finn is a student.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d a _', answer: 'day', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s t u _ e _ t', answer: 'student', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the story about Finn.", "What does Finn have?", "What can Finn do?", "Make your own: I am ___. I like ___. I can ___."],
   reviewQuiz: [
@@ -4832,6 +4983,8 @@ const L4_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['can', 'happy', 'have', 'like'], answer: 'have', image: '🎧' },
     { type: 'speak', question: '跟著念：happy', answer: 'happy', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am happy and I like school.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a _ _ y', answer: 'happy', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'like', image: '✍️' },
   ],
   talkTimePrompts: ["Tell me about you: I am ___, I like ___, I have ___, I can ___.", "Ask 3 questions: Are you…? Do you…? Can you…?", "Say where your bag is.", "You beat the School Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -4894,6 +5047,8 @@ const L5_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['big', 'short', 'small', 'tall'], answer: 'short', image: '🎧' },
     { type: 'speak', question: '跟著念：tall', answer: 'tall', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The whale is big.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b i _', answer: 'big', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t a _ l', answer: 'tall', image: '✍️' },
   ],
   talkTimePrompts: ["Describe it: It is big / small.", "Point to something long and short.", "Ask: Is it big?", "Change it: It is ___ (tall/little/huge)."],
   reviewQuiz: [
@@ -4951,6 +5106,8 @@ const L5_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cold', 'hot', 'new', 'old'], answer: 'new', image: '🎧' },
     { type: 'speak', question: '跟著念：hot', answer: 'hot', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The sun is hot.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h o _', answer: 'hot', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c o _ d', answer: 'cold', image: '✍️' },
   ],
   talkTimePrompts: ["Say opposites: hot / cold.", "Describe the water: It is ___.", "Ask: Is it fast or slow?", "Change it: It is ___ (new/old/clean)."],
   reviewQuiz: [
@@ -5009,6 +5166,8 @@ const L5_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bigger', 'longer', 'smaller', 'taller'], answer: 'taller', image: '🎧' },
     { type: 'speak', question: '跟著念：smaller', answer: 'smaller', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The whale is bigger.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b i _ g _ r', answer: 'bigger', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s m a _ l _ r', answer: 'smaller', image: '✍️' },
   ],
   talkTimePrompts: ["Make it -er: big → ?", "Compare two things: A is ___er.", "Which is bigger? A or B?", "Change it: It is ___er (taller/faster/older)."],
   reviewQuiz: [
@@ -5066,6 +5225,8 @@ const L5_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['fish', 'shark', 'than', 'whale'], answer: 'fish', image: '🎧' },
     { type: 'speak', question: '跟著念：whale', answer: 'whale', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A whale is bigger than a fish.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t h _ n', answer: 'than', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'whale', image: '✍️' },
   ],
   talkTimePrompts: ["Compare: A ___ is bigger than a ___.", "Which is faster, a shark or a crab?", "Make a sentence with 'than'.", "Change it: A ___ is bigger than a ___."],
   reviewQuiz: [
@@ -5123,6 +5284,8 @@ const L5_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['big', 'fast', 'slow', 'small'], answer: 'fast', image: '🎧' },
     { type: 'speak', question: '跟著念：big', answer: 'big', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The whale is big.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b i _', answer: 'big', image: '✍️' },
+    { type: 'spell', question: '拼拼看：f a _ t', answer: 'fast', image: '✍️' },
   ],
   talkTimePrompts: ["Describe the sea: It is ___.", "Compare two sea animals.", "Say two opposites.", "Which is bigger, a whale or a fish?"],
   reviewQuiz: [
@@ -5180,6 +5343,8 @@ const L5_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cloudy', 'rainy', 'sunny', 'windy'], answer: 'windy', image: '🎧' },
     { type: 'speak', question: '跟著念：cloudy', answer: 'cloudy', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'It is sunny today.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r a _ _ y', answer: 'rainy', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c l _ u _ y', answer: 'cloudy', image: '✍️' },
   ],
   talkTimePrompts: ["What is the weather today? It is ___.", "Say two kinds of weather.", "Ask: Is it sunny?", "Change it: It is ___ (windy/cloudy/cold)."],
   reviewQuiz: [
@@ -5237,6 +5402,8 @@ const L5_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['fall', 'spring', 'summer', 'weather'], answer: 'spring', image: '🎧' },
     { type: 'speak', question: '跟著念：weather', answer: 'weather', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'In summer, it is hot.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w e a _ h _ r', answer: 'weather', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s p _ i _ g', answer: 'spring', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: How's the weather?", "Answer: It's ___.", "What is the weather in summer?", "Change it: In ___, it is ___."],
   reviewQuiz: [
@@ -5294,6 +5461,8 @@ const L5_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['afternoon', 'clock', 'morning', 'time'], answer: 'morning', image: '🎧' },
     { type: 'speak', question: '跟著念：time', answer: 'time', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What time is it?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t i _ e', answer: 'time', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m o r _ i _ g', answer: 'morning', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: What time is it?", "Answer: It is ___ o'clock.", "Say good morning / good night!", "What time do you go to school?"],
   reviewQuiz: [
@@ -5351,6 +5520,8 @@ const L5_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['brush', 'eat', 'get up', 'wash'], answer: 'wash', image: '🎧' },
     { type: 'speak', question: '跟著念：get up', answer: 'get up', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I get up at seven.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w a _ h', answer: 'wash', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e a _', answer: 'eat', image: '✍️' },
   ],
   talkTimePrompts: ["What do you do in the morning? I ___.", "Say three things you do every day.", "What time do you get up?", "Change it: I ___ (eat/play/study)."],
   reviewQuiz: [
@@ -5408,6 +5579,8 @@ const L5_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['rainy', 'sunny', 'time', 'weather'], answer: 'weather', image: '🎧' },
     { type: 'speak', question: '跟著念：rainy', answer: 'rainy', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I get up in the morning.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r a _ _ y', answer: 'rainy', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w e a _ h _ r', answer: 'weather', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: How's the weather? / What time is it?", "Tell me your morning routine.", "Say the weather and time now.", "Say good morning and good night."],
   reviewQuiz: [
@@ -5465,6 +5638,8 @@ const L5_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['Monday', 'Thursday', 'Tuesday', 'Wednesday'], answer: 'Tuesday', image: '🎧' },
     { type: 'speak', question: '跟著念：Monday', answer: 'Monday', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Today is Monday.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m o _ d _ y', answer: 'monday', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t u e _ d _ y', answer: 'tuesday', image: '✍️' },
   ],
   talkTimePrompts: ["What day is today?", "Say the seven days!", "What do you do on the weekend?", "Change it: On ___, I ___."],
   reviewQuiz: [
@@ -5522,6 +5697,8 @@ const L5_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['April', 'January', 'month', 'year'], answer: 'January', image: '🎧' },
     { type: 'speak', question: '跟著念：year', answer: 'year', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A year has twelve months.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：y e _ r', answer: 'year', image: '✍️' },
+    { type: 'spell', question: '拼拼看：j a n _ a _ y', answer: 'january', image: '✍️' },
   ],
   talkTimePrompts: ["When is your birthday? It is in ___.", "Say four months you know.", "What is your favorite season?", "Change it: My birthday is in ___."],
   reviewQuiz: [
@@ -5579,6 +5756,8 @@ const L5_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['beach', 'sand', 'shell', 'sunny'], answer: 'sunny', image: '🎧' },
     { type: 'speak', question: '跟著念：beach', answer: 'beach', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'It is a sunny day.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b e _ _ h', answer: 'beach', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s u _ _ y', answer: 'sunny', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the story about Finn.", "What does Finn find at the beach?", "What can you do at the beach?", "Make your own: I go to the ___."],
   reviewQuiz: [
@@ -5636,6 +5815,8 @@ const L5_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['race', 'slow', 'turtle', 'walk'], answer: 'walk', image: '🎧' },
     { type: 'speak', question: '跟著念：slow', answer: 'slow', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The turtle is slow.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s l _ w', answer: 'slow', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w a _ k', answer: 'walk', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the turtle story.", "Who is fast? Who is slow?", "Who wins the race?", "What can we learn? Never give up!"],
   reviewQuiz: [
@@ -5693,6 +5874,8 @@ const L5_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['Sunday', 'beach', 'sunny', 'turtle'], answer: 'Sunday', image: '🎧' },
     { type: 'speak', question: '跟著念：sunny', answer: 'sunny', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'On Sunday, it is sunny.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s u _ _ y', answer: 'sunny', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s u _ d _ y', answer: 'sunday', image: '✍️' },
   ],
   talkTimePrompts: ["Tell a short story about the beach.", "Describe the weather and the day.", "Compare the turtle and the fish.", "What did you find? I found a ___."],
   reviewQuiz: [
@@ -5751,6 +5934,8 @@ const L5_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eating', 'reading', 'running', 'swimming'], answer: 'reading', image: '🎧' },
     { type: 'speak', question: '跟著念：swimming', answer: 'swimming', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am swimming.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s w i _ m _ n g', answer: 'swimming', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e a _ i _ g', answer: 'reading', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you are doing: I am ___ing.", "Act it out and say: I am jumping!", "Ask a friend: what are they doing?", "Change it: I am ___ing (reading/playing/singing)."],
   reviewQuiz: [
@@ -5808,6 +5993,8 @@ const L5_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['doing', 'eating', 'singing', 'swimming'], answer: 'eating', image: '🎧' },
     { type: 'speak', question: '跟著念：singing', answer: 'singing', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What are you doing?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d o _ _ g', answer: 'doing', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s i n _ i _ g', answer: 'singing', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: What are you doing?", "Answer: I am ___ing.", "Ask about a friend: What is he/she doing?", "Change it: I am ___ing (cooking/dancing/playing)."],
   reviewQuiz: [
@@ -5865,6 +6052,8 @@ const L5_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['beach', 'cool', 'sunny', 'swimming'], answer: 'cool', image: '🎧' },
     { type: 'speak', question: '跟著念：swimming', answer: 'swimming', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What are you doing?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s u _ _ y', answer: 'sunny', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s w i _ m _ n g', answer: 'swimming', image: '✍️' },
   ],
   talkTimePrompts: ["Talk about the beach: It's sunny. I am ___.", "Compare two shells: Mine is bigger.", "Ask a friend: What are you doing?", "Describe the sea and the sand."],
   reviewQuiz: [
@@ -5922,6 +6111,8 @@ const L5_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['Saturday', 'beach', 'dolphin', 'sunny'], answer: 'beach', image: '🎧' },
     { type: 'speak', question: '跟著念：sunny', answer: 'sunny', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'On Saturday, it is sunny.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s a t _ r _ a y', answer: 'saturday', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s u _ _ y', answer: 'sunny', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the beach story.", "What is the dolphin doing?", "Compare the dolphin and the fish.", "What day and weather is it in the story?"],
   reviewQuiz: [
@@ -5979,6 +6170,8 @@ const L5_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['Monday', 'big', 'faster', 'sunny'], answer: 'sunny', image: '🎧' },
     { type: 'speak', question: '跟著念：big', answer: 'big', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The whale is bigger than the fish.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b i _', answer: 'big', image: '✍️' },
+    { type: 'spell', question: '拼拼看：f a _ t _ r', answer: 'faster', image: '✍️' },
   ],
   talkTimePrompts: ["Describe today: weather, day, time.", "Compare two things with -er.", "Say what you are doing now.", "You beat the Coral Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -6037,6 +6230,8 @@ const L6_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['beautiful', 'clean', 'dirty', 'pretty'], answer: 'clean', image: '🎧' },
     { type: 'speak', question: '跟著念：pretty', answer: 'pretty', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The view is beautiful.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b e a _ t i _ u l', answer: 'beautiful', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p r _ t _ y', answer: 'pretty', image: '✍️' },
   ],
   talkTimePrompts: ["Describe the view: It is ___.", "Say two opposite adjectives.", "Describe something in your room.", "✍️ 引導寫作：The ___ is ___. (寫一句描述)"],
   reviewQuiz: [
@@ -6094,6 +6289,8 @@ const L6_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['boring', 'cool', 'great', 'think'], answer: 'cool', image: '🎧' },
     { type: 'speak', question: '跟著念：think', answer: 'think', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I think the picture is beautiful.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t h _ _ k', answer: 'think', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c o _ l', answer: 'cool', image: '✍️' },
   ],
   talkTimePrompts: ["What do you think? I think it's ___.", "Give an opinion about school.", "Use 'because': I like it because ___.", "✍️ 引導寫作：I think ___ because ___."],
   reviewQuiz: [
@@ -6152,6 +6349,8 @@ const L6_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['dollar', 'how much', 'money', 'price'], answer: 'dollar', image: '🎧' },
     { type: 'speak', question: '跟著念：how much', answer: 'how much', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'How much is it?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d o _ l _ r', answer: 'dollar', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p r _ _ e', answer: 'price', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: How much is it?", "Answer: It's ___ dollars.", "Buy something: I want to buy ___.", "✍️ 引導寫作：I want to buy a ___. It is ___ dollars."],
   reviewQuiz: [
@@ -6209,6 +6408,8 @@ const L6_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['buy', 'cheap', 'expensive', 'sell'], answer: 'buy', image: '🎧' },
     { type: 'speak', question: '跟著念：cheap', answer: 'cheap', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'This hat is cheap.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c h _ _ p', answer: 'cheap', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e x p _ n s _ v e', answer: 'expensive', image: '✍️' },
   ],
   talkTimePrompts: ["Say: This is cheap / expensive.", "Ask: Do you want to buy it?", "Use 'too': It is too expensive.", "✍️ 引導寫作：The ___ is cheap/expensive. I ___ it."],
   reviewQuiz: [
@@ -6266,6 +6467,8 @@ const L6_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['beautiful', 'clean', 'cool', 'think'], answer: 'clean', image: '🎧' },
     { type: 'speak', question: '跟著念：beautiful', answer: 'beautiful', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The view is beautiful.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b e a _ t i _ u l', answer: 'beautiful', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c l _ _ n', answer: 'clean', image: '✍️' },
   ],
   talkTimePrompts: ["Describe and give an opinion: It is ___. I think it's ___.", "Go shopping: How much? Buy it.", "Say cheap or expensive.", "✍️ 引導寫作：I think the ___ is ___ because ___."],
   reviewQuiz: [
@@ -6323,6 +6526,8 @@ const L6_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['menu', 'order', 'salad', 'soup'], answer: 'order', image: '🎧' },
     { type: 'speak', question: '跟著念：menu', answer: 'menu', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Can I have a menu, please?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m e _ u', answer: 'menu', image: '✍️' },
+    { type: 'spell', question: '拼拼看：o r _ _ r', answer: 'order', image: '✍️' },
   ],
   talkTimePrompts: ["Order food: Can I have ___?", "Say: I'd like ___.", "Be polite: ___, please. / Thank you!", "✍️ 引導寫作：I'd like ___ and ___, please."],
   reviewQuiz: [
@@ -6380,6 +6585,8 @@ const L6_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cola', 'fries', 'hamburger', 'pizza'], answer: 'cola', image: '🎧' },
     { type: 'speak', question: '跟著念：fries', answer: 'fries', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Can I have pizza and a cola?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a m _ u r _ e r', answer: 'hamburger', image: '✍️' },
+    { type: 'spell', question: '拼拼看：f r _ _ s', answer: 'fries', image: '✍️' },
   ],
   talkTimePrompts: ["Order a meal: I'd like ___ and ___.", "What do you want to drink?", "Order dessert!", "✍️ 引導寫作：For lunch, I'd like ___. For dessert, I'd like ___."],
   reviewQuiz: [
@@ -6437,6 +6644,8 @@ const L6_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bank', 'hospital', 'park', 'where'], answer: 'park', image: '🎧' },
     { type: 'speak', question: '跟著念：where', answer: 'where', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Where is the park?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'where', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p a _ k', answer: 'park', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Where is the ___?", "Ask: How do I get to the ___?", "Say: It is near / far.", "✍️ 引導寫作：The ___ is near the ___."],
   reviewQuiz: [
@@ -6494,6 +6703,8 @@ const L6_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['left', 'right', 'straight', 'turn'], answer: 'straight', image: '🎧' },
     { type: 'speak', question: '跟著念：left', answer: 'left', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Go straight.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l e _ t', answer: 'left', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r i _ _ t', answer: 'right', image: '✍️' },
   ],
   talkTimePrompts: ["Give directions: Go straight. Turn ___.", "Say where something is: in front of / behind.", "Ask: How do I get there?", "✍️ 引導寫作：Go straight, then turn ___. It is ___ the ___."],
   reviewQuiz: [
@@ -6551,6 +6762,8 @@ const L6_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['hamburger', 'menu', 'park', 'where'], answer: 'where', image: '🎧' },
     { type: 'speak', question: '跟著念：menu', answer: 'menu', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Can I have a hamburger, please?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m e _ u', answer: 'menu', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h a m _ u r _ e r', answer: 'hamburger', image: '✍️' },
   ],
   talkTimePrompts: ["Order food and drinks.", "Ask and give directions.", "Role-play: customer and waiter.", "✍️ 引導寫作：I'd like ___. The park is ___ and turn ___."],
   reviewQuiz: [
@@ -6608,6 +6821,8 @@ const L6_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['go', 'play', 'swim', 'want'], answer: 'go', image: '🎧' },
     { type: 'speak', question: '跟著念：want', answer: 'want', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Do you want to swim?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w a _ t', answer: 'want', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
   ],
   talkTimePrompts: ["Invite a friend: Let's ___!", "Ask: Do you want to ___?", "Answer: Sure! / Sorry, I can't.", "✍️ 引導寫作：Let's ___ together! Do you want to ___?"],
   reviewQuiz: [
@@ -6665,6 +6880,8 @@ const L6_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['bored', 'excited', 'scared', 'surprised'], answer: 'bored', image: '🎧' },
     { type: 'speak', question: '跟著念：excited', answer: 'excited', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am so excited!', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e x c _ t _ d', answer: 'excited', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b o _ _ d', answer: 'bored', image: '✍️' },
   ],
   talkTimePrompts: ["How do you feel? I am ___.", "Say when you feel scared or excited.", "Ask: Are you nervous?", "✍️ 引導寫作：I am ___ because ___."],
   reviewQuiz: [
@@ -6722,6 +6939,8 @@ const L6_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['boat', 'bright', 'light', 'lighthouse'], answer: 'bright', image: '🎧' },
     { type: 'speak', question: '跟著念：lighthouse', answer: 'lighthouse', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The old lighthouse is tall.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l i g h _ h o _ s e', answer: 'lighthouse', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b r _ g _ t', answer: 'bright', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the lighthouse story.", "What does the lighthouse do?", "Why is it important?", "✍️ 引導寫作：The lighthouse is ___. It helps ___."],
   reviewQuiz: [
@@ -6779,6 +6998,8 @@ const L6_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['apple', 'buy', 'cheap', 'market'], answer: 'cheap', image: '🎧' },
     { type: 'speak', question: '跟著念：buy', answer: 'buy', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'On Saturday, Ruby goes to the market.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b u _', answer: 'buy', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c h _ _ p', answer: 'cheap', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the market story.", "What does Ruby buy?", "How much are the apples?", "✍️ 引導寫作：I go to the market. I buy ___. It is ___ dollars."],
   reviewQuiz: [
@@ -6836,6 +7057,8 @@ const L6_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['beautiful', 'bright', 'lighthouse', 'market'], answer: 'bright', image: '🎧' },
     { type: 'speak', question: '跟著念：lighthouse', answer: 'lighthouse', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The lighthouse is tall and bright.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l i g h _ h o _ s e', answer: 'lighthouse', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b r _ g _ t', answer: 'bright', image: '✍️' },
   ],
   talkTimePrompts: ["Retell one story you read.", "Give your opinion: I think ___.", "Describe the lighthouse or market.", "✍️ 引導寫作：I think the ___ is ___ because ___."],
   reviewQuiz: [
@@ -6894,6 +7117,8 @@ const L6_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cooked', 'looked', 'played', 'walked'], answer: 'looked', image: '🎧' },
     { type: 'speak', question: '跟著念：played', answer: 'played', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Yesterday I played.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y _ d', answer: 'played', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w a _ k _ d', answer: 'walked', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you did: Yesterday I ___ed.", "Use walked, played, cleaned.", "Ask: Did you help your mom?", "✍️ 引導寫作：Yesterday I ___ed and ___ed."],
   reviewQuiz: [
@@ -6951,6 +7176,8 @@ const L6_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['did', 'played', 'visited', 'watched'], answer: 'played', image: '🎧' },
     { type: 'speak', question: '跟著念：did', answer: 'did', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What did you do yesterday?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d i _', answer: 'did', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ y _ d', answer: 'played', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: What did you do yesterday?", "Answer: I ___ed.", "Ask: Did you ___? Yes, I did. / No, I didn't.", "✍️ 引導寫作：Yesterday I ___ed. Then I ___ed."],
   reviewQuiz: [
@@ -7008,6 +7235,8 @@ const L6_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['excited', 'straight', 'want', 'where'], answer: 'straight', image: '🎧' },
     { type: 'speak', question: '跟著念：where', answer: 'where', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Do you want to come?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w a _ t', answer: 'want', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e x c _ t _ d', answer: 'excited', image: '✍️' },
   ],
   talkTimePrompts: ["Invite a friend and ask directions.", "Role-play: go to the market together.", "Say how you feel about the trip.", "✍️ 引導寫作：Let's go to the ___! I am ___ because ___."],
   reviewQuiz: [
@@ -7065,6 +7294,8 @@ const L6_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['read', 'sentence', 'went', 'write'], answer: 'read', image: '🎧' },
     { type: 'speak', question: '跟著念：write', answer: 'write', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Yesterday I went to the beach.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w r _ _ e', answer: 'write', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e _ d', answer: 'read', image: '✍️' },
   ],
   talkTimePrompts: ["Read the story out loud.", "Say what you did yesterday with First / Then.", "✍️ 引導寫作：Yesterday I went to ___.", "✍️ 引導寫作：First I ___ed. Then I ___ed."],
   reviewQuiz: [
@@ -7122,6 +7353,8 @@ const L6_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['beautiful', 'cheap', 'how much', 'think'], answer: 'think', image: '🎧' },
     { type: 'speak', question: '跟著念：beautiful', answer: 'beautiful', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The view is beautiful. I think it is amazing.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b e a _ t i _ u l', answer: 'beautiful', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t h _ _ k', answer: 'think', image: '✍️' },
   ],
   talkTimePrompts: ["Describe something and give your opinion.", "Order food and ask directions.", "Say what you did yesterday.", "You beat the Lighthouse Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -7180,6 +7413,8 @@ const L7_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['drink', 'eat', 'like', 'play'], answer: 'drink', image: '🎧' },
     { type: 'speak', question: '跟著念：eat', answer: 'eat', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I eat breakfast every day.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e a _', answer: 'eat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：d r _ _ k', answer: 'drink', image: '✍️' },
   ],
   talkTimePrompts: ["Say a habit: I ___ every day.", "Say what you like: I like ___.", "Say what we do: We ___.", "✍️ 引導寫作：Every day, I ___ and ___."],
   reviewQuiz: [
@@ -7238,6 +7473,8 @@ const L7_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['goes', 'likes', 'plays', 'reads'], answer: 'plays', image: '🎧' },
     { type: 'speak', question: '跟著念：likes', answer: 'likes', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'He likes soccer.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l i _ _ s', answer: 'likes', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e _ _ s', answer: 'reads', image: '✍️' },
   ],
   talkTimePrompts: ["Say about a friend: He/She ___s.", "Change the verb: like → likes.", "Say: He watches / She goes.", "✍️ 引導寫作：My friend ___s every day."],
   reviewQuiz: [
@@ -7294,6 +7531,8 @@ const L7_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eat', 'like', 'swim', 'watch'], answer: 'like', image: '🎧' },
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eat', 'like', 'swim', 'watch'], answer: 'watch', image: '🎧' },
     { type: 'speak', question: '跟著念：like', answer: 'like', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'like', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w a _ _ h', answer: 'watch', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you don't like: I don't like ___.", "Say about a friend: He doesn't ___.", "Use don't and doesn't.", "✍️ 引導寫作：I don't ___, but I like ___."],
   reviewQuiz: [
@@ -7352,6 +7591,8 @@ const L7_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['do', 'does', 'like', 'read'], answer: 'does', image: '🎧' },
     { type: 'speak', question: '跟著念：do', answer: 'do', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Do you like soccer?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d o _ s', answer: 'does', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'like', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Do you like ___?", "Ask about a friend: Does he/she ___?", "Answer: Yes, I do. / No, he doesn't.", "✍️ 引導寫作：Do you ___? Does your friend ___?"],
   reviewQuiz: [
@@ -7409,6 +7650,8 @@ const L7_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['goes', 'like', 'play', 'plays'], answer: 'plays', image: '🎧' },
     { type: 'speak', question: '跟著念：play', answer: 'play', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I play soccer.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ _ s', answer: 'plays', image: '✍️' },
   ],
   talkTimePrompts: ["Say a habit: I ___ every day.", "Say about a friend: He/She ___s.", "Ask: Do you ___? / Does he ___?", "✍️ 引導寫作：I ___ every day, but I don't ___."],
   reviewQuiz: [
@@ -7467,6 +7710,8 @@ const L7_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['always', 'often', 'sometimes', 'usually'], answer: 'usually', image: '🎧' },
     { type: 'speak', question: '跟著念：always', answer: 'always', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I always eat breakfast.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a l _ a _ s', answer: 'always', image: '✍️' },
+    { type: 'spell', question: '拼拼看：u s u _ l _ y', answer: 'usually', image: '✍️' },
   ],
   talkTimePrompts: ["Say a habit: I always / usually / never ___.", "How often do you read?", "Use 'sometimes' in a sentence.", "✍️ 引導寫作：I always ___. I never ___."],
   reviewQuiz: [
@@ -7524,6 +7769,8 @@ const L7_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['at', 'in', 'night', 'on'], answer: 'night', image: '🎧' },
     { type: 'speak', question: '跟著念：morning', answer: 'morning', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I get up in the morning.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m o r _ i _ g', answer: 'morning', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n i _ _ t', answer: 'night', image: '✍️' },
   ],
   talkTimePrompts: ["Say a time: in the morning / at night.", "Say a day: on ___.", "When do you get up? At ___.", "✍️ 引導寫作：I get up ___ the morning. School starts ___ eight."],
   reviewQuiz: [
@@ -7581,6 +7828,8 @@ const L7_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['behind', 'between', 'next to', 'under'], answer: 'between', image: '🎧' },
     { type: 'speak', question: '跟著念：behind', answer: 'behind', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The cat is under the table.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：u n _ _ r', answer: 'under', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b e _ i _ d', answer: 'behind', image: '✍️' },
   ],
   talkTimePrompts: ["Say where things are: It is ___ the ___.", "Use 'between' and 'next to'.", "Ask: Where is the cat?", "✍️ 引導寫作：The ___ is ___ the ___."],
   reviewQuiz: [
@@ -7638,6 +7887,8 @@ const L7_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['park', 'there are', 'there is', 'tree'], answer: 'there are', image: '🎧' },
     { type: 'speak', question: '跟著念：there is', answer: 'there is', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'There is a park in my town.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p a _ k', answer: 'park', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l a _ e', answer: 'lake', image: '✍️' },
   ],
   talkTimePrompts: ["Say what is in your town: There is / are ___.", "Use 'There are many ___.'", "Ask: Is there a ___?", "✍️ 引導寫作：In my town, there is ___ and there are ___."],
   reviewQuiz: [
@@ -7695,6 +7946,8 @@ const L7_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['always', 'in', 'never', 'on'], answer: 'never', image: '🎧' },
     { type: 'speak', question: '跟著念：always', answer: 'always', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I always get up at seven.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a l _ a _ s', answer: 'always', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n e _ _ r', answer: 'never', image: '✍️' },
   ],
   talkTimePrompts: ["Say your routine with always / at / in.", "Say what is near your house: There is ___.", "Say where something is.", "✍️ 引導寫作：I always ___ in the morning. There is a ___ next to my house."],
   reviewQuiz: [
@@ -7753,6 +8006,8 @@ const L7_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['look', 'play', 'walk', 'want'], answer: 'walk', image: '🎧' },
     { type: 'speak', question: '跟著念：play', answer: 'play', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'play - played - played', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w a _ k', answer: 'walk', image: '✍️' },
   ],
   talkTimePrompts: ["Say three forms: play, played, played.", "Make a past sentence: I ___ed.", "Practice: walk, walked, walked!", "✍️ 引導寫作：Yesterday I ___ed and ___ed."],
   reviewQuiz: [
@@ -7811,6 +8066,8 @@ const L7_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['come', 'eat', 'go', 'see'], answer: 'eat', image: '🎧' },
     { type: 'speak', question: '跟著念：go', answer: 'go', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'go - went - gone', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e a _', answer: 'eat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s e _', answer: 'see', image: '✍️' },
   ],
   talkTimePrompts: ["Say three forms: go, went, gone.", "Make a past sentence: I went to ___.", "Practice: eat, ate, eaten!", "✍️ 引導寫作：Yesterday I went to ___ and saw ___."],
   reviewQuiz: [
@@ -7868,6 +8125,8 @@ const L7_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['drink', 'run', 'sing', 'swim'], answer: 'swim', image: '🎧' },
     { type: 'speak', question: '跟著念：run', answer: 'run', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'run - ran - run', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r u _', answer: 'run', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s w _ m', answer: 'swim', image: '✍️' },
   ],
   talkTimePrompts: ["Say three forms: run, ran, run.", "Make a past sentence: I ___ (past).", "Practice: sing, sang, sung!", "✍️ 引導寫作：Yesterday I ___ (past) and ___ (past)."],
   reviewQuiz: [
@@ -7925,6 +8184,8 @@ const L7_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eat', 'go', 'play', 'run'], answer: 'eat', image: '🎧' },
     { type: 'speak', question: '跟著念：go', answer: 'go', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'go - went - gone', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e a _', answer: 'eat', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
   ],
   talkTimePrompts: ["Say five verbs in three forms.", "Make a past sentence with an irregular verb.", "Quiz a friend: what is the past of 'go'?", "✍️ 引導寫作：Yesterday I ate ___, went to ___, and saw ___."],
   reviewQuiz: [
@@ -7982,6 +8243,8 @@ const L7_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eat', 'go', 'play', 'walk'], answer: 'play', image: '🎧' },
     { type: 'speak', question: '跟著念：go', answer: 'go', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Yesterday I went to the park.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e a _', answer: 'eat', image: '✍️' },
   ],
   talkTimePrompts: ["Say five verbs in three forms.", "Tell me what you did yesterday (past tense).", "Quiz: what is the past of 'eat'?", "✍️ 引導寫作：Yesterday I went to ___. I ___ and ___."],
   reviewQuiz: [
@@ -8039,6 +8302,8 @@ const L7_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['fact', 'habit', 'rise', 'set'], answer: 'habit', image: '🎧' },
     { type: 'speak', question: '跟著念：fact', answer: 'fact', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The sun rises in the east.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：f a _ t', answer: 'fact', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h a _ _ t', answer: 'habit', image: '✍️' },
   ],
   talkTimePrompts: ["Say a fact: The sun ___.", "Say a habit: I ___ every day.", "Ask: Does water boil?", "✍️ 引導寫作：The ___ is ___. I ___ every day."],
   reviewQuiz: [
@@ -8097,6 +8362,8 @@ const L7_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eat', 'eating', 'play', 'playing'], answer: 'playing', image: '🎧' },
     { type: 'speak', question: '跟著念：play', answer: 'play', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I play soccer every day.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l a _ i _ g', answer: 'playing', image: '✍️' },
   ],
   talkTimePrompts: ["Say a habit and what you do now.", "What do you do every day? What are you doing now?", "Compare: I eat / I am eating.", "✍️ 引導寫作：Every day I ___. Right now I am ___ing."],
   reviewQuiz: [
@@ -8154,6 +8421,8 @@ const L7_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['always', 'does', 'read', 'reads'], answer: 'does', image: '🎧' },
     { type: 'speak', question: '跟著念：reads', answer: 'reads', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'She always reads books.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a l _ a _ s', answer: 'always', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e _ _ s', answer: 'reads', image: '✍️' },
   ],
   talkTimePrompts: ["Say a habit with a frequency adverb.", "Ask a Does…? question.", "Say what you did yesterday (past).", "✍️ 引導寫作：He always ___. Yesterday he ___ (past)."],
   reviewQuiz: [
@@ -8211,6 +8480,8 @@ const L7_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eats', 'gets up', 'goes', 'studies'], answer: 'eats', image: '🎧' },
     { type: 'speak', question: '跟著念：gets up', answer: 'gets up', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Tom gets up early.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e a _ s', answer: 'eats', image: '✍️' },
+    { type: 'spell', question: '拼拼看：g o _ s', answer: 'goes', image: '✍️' },
   ],
   talkTimePrompts: ["Retell Tom's day.", "What does Tom do every morning?", "Describe your own day with he/she verbs.", "✍️ 引導寫作：My friend gets up ___. He/She ___s every day."],
   reviewQuiz: [
@@ -8268,6 +8539,8 @@ const L7_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['ate', 'plays', 'reads', 'went'], answer: 'reads', image: '🎧' },
     { type: 'speak', question: '跟著念：plays', answer: 'plays', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'He plays soccer every day.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ _ s', answer: 'plays', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e _ _ s', answer: 'reads', image: '✍️' },
   ],
   talkTimePrompts: ["Say a habit with a frequency adverb.", "Say what you did yesterday (past tense).", "Ask a Does…? question.", "You beat the Grammar Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -8326,6 +8599,8 @@ const L8_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['color', 'name', 'time', 'what'], answer: 'name', image: '🎧' },
     { type: 'speak', question: '跟著念：what', answer: 'what', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What is your name?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ t', answer: 'what', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n a _ e', answer: 'name', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: What is your name?", "Ask: What do you like?", "Answer with 'What' questions.", "✍️ 引導寫作＋翻譯：把「你喜歡什麼食物？」寫成英文。"],
   reviewQuiz: [
@@ -8383,6 +8658,8 @@ const L8_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['from', 'go', 'live', 'where'], answer: 'live', image: '🎧' },
     { type: 'speak', question: '跟著念：where', answer: 'where', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Where do you live?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'where', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'live', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Where do you live?", "Ask: Where are you from?", "Answer with 'Where' questions.", "✍️ 引導寫作＋翻譯：把「你住哪裡？」寫成英文。"],
   reviewQuiz: [
@@ -8440,6 +8717,8 @@ const L8_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['birthday', 'party', 'start', 'when'], answer: 'birthday', image: '🎧' },
     { type: 'speak', question: '跟著念：when', answer: 'when', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'When is your birthday?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ n', answer: 'when', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b i r _ h _ a y', answer: 'birthday', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: When is your birthday?", "Ask: When do you go to school?", "Answer with 'When' questions.", "✍️ 引導寫作＋翻譯：把「派對是何時？」寫成英文。"],
   reviewQuiz: [
@@ -8497,6 +8776,8 @@ const L8_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['best', 'friend', 'teacher', 'who'], answer: 'teacher', image: '🎧' },
     { type: 'speak', question: '跟著念：who', answer: 'who', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Who is that?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _', answer: 'who', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t e a _ h _ r', answer: 'teacher', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Who is your teacher?", "Ask: Who is your best friend?", "Answer with 'Who' questions.", "✍️ 引導寫作＋翻譯：把「誰在家煮飯？」寫成英文。"],
   reviewQuiz: [
@@ -8554,6 +8835,8 @@ const L8_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['what', 'when', 'where', 'who'], answer: 'where', image: '🎧' },
     { type: 'speak', question: '跟著念：what', answer: 'what', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What is your name?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ t', answer: 'what', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'where', image: '✍️' },
   ],
   talkTimePrompts: ["Ask 4 Wh- questions to a friend.", "Answer: My name is / I live in ___.", "Match Wh- word to its meaning.", "✍️ 引導寫作＋翻譯：把「你的生日是何時？」寫成英文。"],
   reviewQuiz: [
@@ -8611,6 +8894,8 @@ const L8_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['because', 'happy', 'sad', 'why'], answer: 'because', image: '🎧' },
     { type: 'speak', question: '跟著念：why', answer: 'why', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Why are you happy?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _', answer: 'why', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b e c _ u _ e', answer: 'because', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Why are you happy/sad?", "Answer: Because ___.", "Give a reason with 'because'.", "✍️ 引導寫作＋翻譯：把「你為什麼開心？」寫成英文。"],
   reviewQuiz: [
@@ -8668,6 +8953,8 @@ const L8_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['by bus', 'by car', 'fine', 'how'], answer: 'fine', image: '🎧' },
     { type: 'speak', question: '跟著念：how', answer: 'how', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'How are you?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h o _', answer: 'how', image: '✍️' },
+    { type: 'spell', question: '拼拼看：f i _ e', answer: 'fine', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: How are you?", "Ask: How do you go to school?", "Answer: I am fine. / I go by ___.", "✍️ 引導寫作＋翻譯：把「你感覺如何？」寫成英文。"],
   reviewQuiz: [
@@ -8726,6 +9013,8 @@ const L8_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['how many', 'how much', 'how old', 'many'], answer: 'how much', image: '🎧' },
     { type: 'speak', question: '跟著念：how many', answer: 'how many', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'How many apples are there?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m a _ y', answer: 'many', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m u _ h', answer: 'much', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: How old are you?", "Ask: How many / How much…?", "Answer: I am ___ years old. / It is ___ dollars.", "✍️ 引導寫作＋翻譯：把「多少錢？」寫成英文。"],
   reviewQuiz: [
@@ -8783,6 +9072,8 @@ const L8_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['mine', 'which', 'whose', 'yours'], answer: 'which', image: '🎧' },
     { type: 'speak', question: '跟著念：whose', answer: 'whose', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Whose bag is this?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'whose', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w h _ _ h', answer: 'which', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Whose ___ is this?", "Ask: Which one do you want?", "Answer: It is mine/yours/hers.", "✍️ 引導寫作＋翻譯：把「哪一個是你的？」寫成英文。"],
   reviewQuiz: [
@@ -8840,6 +9131,8 @@ const L8_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['because', 'how', 'how many', 'why'], answer: 'because', image: '🎧' },
     { type: 'speak', question: '跟著念：why', answer: 'why', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Why are you happy?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _', answer: 'why', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b e c _ u _ e', answer: 'because', image: '✍️' },
   ],
   talkTimePrompts: ["Ask Why and answer with Because.", "Ask How / How old / How many.", "Ask Whose / Which.", "✍️ 引導寫作＋翻譯：把「你好嗎？」寫成英文。"],
   reviewQuiz: [
@@ -8898,6 +9191,8 @@ const L8_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['do', 'does', 'eat', 'go'], answer: 'eat', image: '🎧' },
     { type: 'speak', question: '跟著念：does', answer: 'does', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What do you eat for lunch?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d o _ s', answer: 'does', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e a _', answer: 'eat', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: What do you eat for lunch?", "Ask: Where does he/she go?", "Answer your friend's questions.", "✍️ 引導寫作＋翻譯：把「你何時做作業？」寫成英文。"],
   reviewQuiz: [
@@ -8955,6 +9250,8 @@ const L8_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['everyone', 'know', 'late', 'surprise'], answer: 'everyone', image: '🎧' },
     { type: 'speak', question: '跟著念：surprise', answer: 'surprise', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Yes, I do!', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s u r _ r _ s e', answer: 'surprise', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e v e _ y _ n e', answer: 'everyone', image: '✍️' },
   ],
   talkTimePrompts: ["Ask with surprise: Don't you like ___?", "Ask: Aren't you tired?", "Answer: Yes, I do! / No, I don't.", "✍️ 引導寫作＋翻譯：把「他不是我們學校的嗎？」寫成英文。"],
   reviewQuiz: [
@@ -9012,6 +9309,8 @@ const L8_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cake', 'easy', 'nice', 'sunny'], answer: 'cake', image: '🎧' },
     { type: 'speak', question: '跟著念：sunny', answer: 'sunny', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Yes, it is.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s u _ _ y', answer: 'sunny', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c a _ e', answer: 'cake', image: '✍️' },
   ],
   talkTimePrompts: ["Add a tag: It is nice, isn't it?", "Add a tag: You like ___, don't you?", "Answer: Yes, it is. / Yes, I do.", "✍️ 引導寫作＋翻譯：把「這很簡單，對吧？」寫成英文。"],
   reviewQuiz: [
@@ -9069,6 +9368,8 @@ const L8_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['age', 'like', 'live', 'name'], answer: 'age', image: '🎧' },
     { type: 'speak', question: '跟著念：name', answer: 'name', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What is your name?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：n a _ e', answer: 'name', image: '✍️' },
+    { type: 'spell', question: '拼拼看：a g _', answer: 'age', image: '✍️' },
   ],
   talkTimePrompts: ["Interview a friend with 4 Wh- questions.", "Answer: My name is / I am ___ years old.", "Ask: Where do you live? What do you like?", "✍️ 引導寫作＋翻譯：把「介紹一下你自己。」寫成英文。"],
   reviewQuiz: [
@@ -9126,6 +9427,8 @@ const L8_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['what', 'when', 'where', 'who'], answer: 'where', image: '🎧' },
     { type: 'speak', question: '跟著念：what', answer: 'what', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What is your name?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ t', answer: 'what', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'where', image: '✍️' },
   ],
   talkTimePrompts: ["Ask 6 different Wh- questions.", "Answer your friend's questions.", "Add a tag: It is fun, isn't it?", "✍️ 引導寫作＋翻譯：把「你為什麼開心？」寫成英文。"],
   reviewQuiz: [
@@ -9183,6 +9486,8 @@ const L8_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['did', 'eat', 'go', 'yesterday'], answer: 'go', image: '🎧' },
     { type: 'speak', question: '跟著念：yesterday', answer: 'yesterday', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What did you do yesterday?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d i _', answer: 'did', image: '✍️' },
+    { type: 'spell', question: '拼拼看：y e s _ e r _ a y', answer: 'yesterday', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: What did you do yesterday?", "Ask: Did you ___? (past)", "Answer: Yes, I did. / No, I didn't.", "✍️ 引導寫作＋翻譯：把「你上週末去哪了？」寫成英文。"],
   reviewQuiz: [
@@ -9240,6 +9545,8 @@ const L8_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['did', 'do', 'now', 'yesterday'], answer: 'did', image: '🎧' },
     { type: 'speak', question: '跟著念：do', answer: 'do', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Do you play soccer every day?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d i _', answer: 'did', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n o _', answer: 'now', image: '✍️' },
   ],
   talkTimePrompts: ["Ask about a habit: Do you ___?", "Ask about the past: Did you ___?", "Match the time word to Do or Did.", "✍️ 引導寫作＋翻譯：把「你昨晚做了什麼？」寫成英文。"],
   reviewQuiz: [
@@ -9297,6 +9604,8 @@ const L8_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['how old', 'what', 'where', 'why'], answer: 'where', image: '🎧' },
     { type: 'speak', question: '跟著念：what', answer: 'what', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What do you like?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ t', answer: 'what', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'where', image: '✍️' },
   ],
   talkTimePrompts: ["Ask a present and a past question.", "Ask Why and answer Because.", "Interview a friend with 4 questions.", "✍️ 引導寫作＋翻譯：把「你何時回家的？」寫成英文。"],
   reviewQuiz: [
@@ -9354,6 +9663,8 @@ const L8_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['interview', 'like', 'live', 'name'], answer: 'live', image: '🎧' },
     { type: 'speak', question: '跟著念：name', answer: 'name', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'His name is Sam.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：n a _ e', answer: 'name', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l i _ e', answer: 'live', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the interview about Sam.", "Answer: What does Sam like? How old is he?", "Interview a real friend.", "✍️ 引導寫作＋翻譯：把「他喜歡足球。」寫成英文。"],
   reviewQuiz: [
@@ -9411,6 +9722,8 @@ const L8_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['how old', 'what', 'where', 'why'], answer: 'where', image: '🎧' },
     { type: 'speak', question: '跟著念：what', answer: 'what', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What is your name?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ t', answer: 'what', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w h _ _ e', answer: 'where', image: '✍️' },
   ],
   talkTimePrompts: ["Ask 5 different questions.", "Ask a past question with 'Did'.", "Add a tag question.", "You beat the Question Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -9470,6 +9783,8 @@ const L9_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['making', 'reading', 'running', 'writing'], answer: 'writing', image: '🎧' },
     { type: 'speak', question: '跟著念：running', answer: 'running', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am running now.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r u n _ i _ g', answer: 'running', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m a _ i _ g', answer: 'making', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you are doing now.", "Say what a friend is doing.", "Spell: run → running, make → making.", "✍️ 引導寫作＋翻譯：把「他正在寫信。」寫成英文。"],
   reviewQuiz: [
@@ -9528,6 +9843,8 @@ const L9_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['cleaned', 'played', 'stopped', 'studied'], answer: 'cleaned', image: '🎧' },
     { type: 'speak', question: '跟著念：studied', answer: 'studied', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Yesterday I studied English.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s t u _ i _ d', answer: 'studied', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s t o _ p _ d', answer: 'stopped', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you did yesterday: I ___ed.", "Spell: study → studied, stop → stopped.", "Use cleaned, played, watched.", "✍️ 引導寫作＋翻譯：把「我打掃了房間。」寫成英文。"],
   reviewQuiz: [
@@ -9585,6 +9902,8 @@ const L9_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['gave', 'made', 'saw', 'went'], answer: 'made', image: '🎧' },
     { type: 'speak', question: '跟著念：went', answer: 'went', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Yesterday I went to the zoo.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w e _ t', answer: 'went', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s a _', answer: 'saw', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you did: I went / saw / ate.", "Practice: go-went, see-saw, make-made.", "Tell me about a fun day (past).", "✍️ 引導寫作＋翻譯：把「她給我一個禮物。」寫成英文。"],
   reviewQuiz: [
@@ -9642,6 +9961,8 @@ const L9_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['ran', 'read', 'swam', 'wrote'], answer: 'swam', image: '🎧' },
     { type: 'speak', question: '跟著念：ran', answer: 'ran', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I ran in the race.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r a _', answer: 'ran', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s w _ m', answer: 'swam', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you did: I ran / swam / bought.", "Practice: run-ran, swim-swam, buy-bought.", "Tell me about a race or game (past).", "✍️ 引導寫作＋翻譯：把「我們贏了比賽！」寫成英文。"],
   reviewQuiz: [
@@ -9699,6 +10020,8 @@ const L9_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['ate', 'played', 'saw', 'went'], answer: 'ate', image: '🎧' },
     { type: 'speak', question: '跟著念：played', answer: 'played', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Yesterday I played soccer.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y _ d', answer: 'played', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w e _ t', answer: 'went', image: '✍️' },
   ],
   talkTimePrompts: ["Tell me what you did yesterday.", "Mix regular and irregular past verbs.", "Say: Now I am ___ing.", "✍️ 引導寫作＋翻譯：把「你昨天做了什麼？」寫成英文。"],
   reviewQuiz: [
@@ -9756,6 +10079,8 @@ const L9_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['reading', 'sleeping', 'was', 'were'], answer: 'reading', image: '🎧' },
     { type: 'speak', question: '跟著念：were', answer: 'were', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'At eight, I was reading.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w a _', answer: 'was', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w e _ e', answer: 'were', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you were doing at a time: I was ___ing.", "Use was/were correctly.", "Ask: What were you doing at five?", "✍️ 引導寫作＋翻譯：把「我醒來時正在下雨。」寫成英文。"],
   reviewQuiz: [
@@ -9814,6 +10139,8 @@ const L9_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['rain', 'tomorrow', 'visit', 'will'], answer: 'visit', image: '🎧' },
     { type: 'speak', question: '跟著念：tomorrow', answer: 'tomorrow', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Tomorrow I will visit my grandma.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w i _ l', answer: 'will', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t o m _ r _ o w', answer: 'tomorrow', image: '✍️' },
   ],
   talkTimePrompts: ["Say a future plan: I will ___.", "Make a prediction: It will ___.", "Offer help: I will help you.", "✍️ 引導寫作＋翻譯：把「我會幫你。」寫成英文。"],
   reviewQuiz: [
@@ -9871,6 +10198,8 @@ const L9_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['going to', 'plan', 'study', 'tonight'], answer: 'plan', image: '🎧' },
     { type: 'speak', question: '跟著念：going to', answer: 'going to', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am going to study tonight.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ n', answer: 'plan', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t o n _ g _ t', answer: 'tonight', image: '✍️' },
   ],
   talkTimePrompts: ["Say a plan: I am going to ___.", "Ask: What are you going to do?", "Say a weekend plan.", "✍️ 引導寫作＋翻譯：把「我打算買腳踏車。」寫成英文。"],
   reviewQuiz: [
@@ -9929,6 +10258,8 @@ const L9_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['decide', 'going to', 'plan', 'will'], answer: 'plan', image: '🎧' },
     { type: 'speak', question: '跟著念：going to', answer: 'going to', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am going to travel next week.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w i _ l', answer: 'will', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ n', answer: 'plan', image: '✍️' },
   ],
   talkTimePrompts: ["Say a plan with 'going to'.", "Make a quick decision with 'will'.", "Make a prediction with 'will'.", "✍️ 引導寫作＋翻譯：把「我們打算辦派對。」寫成英文。"],
   reviewQuiz: [
@@ -9986,6 +10317,8 @@ const L9_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['going to', 'was', 'were', 'will'], answer: 'going to', image: '🎧' },
     { type: 'speak', question: '跟著念：will', answer: 'will', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Tomorrow I will help you.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w i _ l', answer: 'will', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w a _', answer: 'was', image: '✍️' },
   ],
   talkTimePrompts: ["Say a plan (going to) and a prediction (will).", "Say what you were doing at a past time.", "Talk about your plan for tomorrow.", "✍️ 引導寫作＋翻譯：把「你明天打算做什麼？」寫成英文。"],
   reviewQuiz: [
@@ -10044,6 +10377,8 @@ const L9_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['eaten', 'finished', 'has', 'have'], answer: 'finished', image: '🎧' },
     { type: 'speak', question: '跟著念：have', answer: 'have', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I have finished my homework.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a _ e', answer: 'have', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h a _', answer: 'has', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you have finished: I have ___.", "Practice p.p.: eaten, gone, seen, done.", "Ask: Have you done it?", "✍️ 引導寫作＋翻譯：把「他已經寫好了信。」寫成英文。"],
   reviewQuiz: [
@@ -10101,6 +10436,8 @@ const L9_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['already', 'ever', 'just', 'never'], answer: 'never', image: '🎧' },
     { type: 'speak', question: '跟著念：ever', answer: 'ever', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Have you ever been to Japan?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e v _ r', answer: 'ever', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n e _ _ r', answer: 'never', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: Have you ever ___?", "Say: I have never ___.", "Say: I have just ___.", "✍️ 引導寫作＋翻譯：把「我從沒吃過蝸牛。」寫成英文。"],
   reviewQuiz: [
@@ -10158,6 +10495,8 @@ const L9_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['arrived', 'eaten', 'had', 'left'], answer: 'arrived', image: '🎧' },
     { type: 'speak', question: '跟著念：left', answer: 'left', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'When I arrived, the bus had left.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a _', answer: 'had', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l e _ t', answer: 'left', image: '✍️' },
   ],
   talkTimePrompts: ["Say two past actions in order with 'had'.", "Use 'before' + past perfect.", "Say: I had never ___ before.", "✍️ 引導寫作＋翻譯：把「我以前從沒看過雪。」寫成英文。"],
   reviewQuiz: [
@@ -10215,6 +10554,8 @@ const L9_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['am playing', 'play', 'played', 'will play'], answer: 'played', image: '🎧' },
     { type: 'speak', question: '跟著念：play', answer: 'play', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I play every day.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ y _ d', answer: 'played', image: '✍️' },
   ],
   talkTimePrompts: ["Say the same verb in 4 tenses.", "Match a time word to a tense.", "Tell a mini story using 3 tenses.", "✍️ 引導寫作＋翻譯：把「現在我正在玩。」寫成英文。"],
   reviewQuiz: [
@@ -10272,6 +10613,8 @@ const L9_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['finished', 'had', 'has', 'have'], answer: 'has', image: '🎧' },
     { type: 'speak', question: '跟著念：have', answer: 'have', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I have finished my homework.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h a _ e', answer: 'have', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h a _', answer: 'has', image: '✍️' },
   ],
   talkTimePrompts: ["Say what you have finished today.", "Ask: Have you ever ___?", "Use past perfect: had + p.p.", "✍️ 引導寫作＋翻譯：把「他們已經回家了。」寫成英文。"],
   reviewQuiz: [
@@ -10329,6 +10672,8 @@ const L9_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['every day', 'now', 'tomorrow', 'yesterday'], answer: 'now', image: '🎧' },
     { type: 'speak', question: '跟著念：every day', answer: 'every day', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I play soccer every day.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：n o _', answer: 'now', image: '✍️' },
+    { type: 'spell', question: '拼拼看：y e s _ e r _ a y', answer: 'yesterday', image: '✍️' },
   ],
   talkTimePrompts: ["Match a time word to the right tense.", "Say the same verb in 4 tenses.", "Make sentences with now, yesterday, tomorrow.", "✍️ 引導寫作＋翻譯：把「五點時我正在玩。」寫成英文。"],
   reviewQuiz: [
@@ -10386,6 +10731,8 @@ const L9_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['has learned', 'lives', 'went', 'will visit'], answer: 'lives', image: '🎧' },
     { type: 'speak', question: '跟著念：went', answer: 'went', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Last year, Sam went to Japan.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w e _ t', answer: 'went', image: '✍️' },
+    { type: 'spell', question: '拼拼看：l i _ _ s', answer: 'lives', image: '✍️' },
   ],
   talkTimePrompts: ["Retell Sam's story using past, present, future.", "What did Sam do last year?", "What will he do next year?", "✍️ 引導寫作＋翻譯：把「現在他住這裡。」寫成英文。"],
   reviewQuiz: [
@@ -10443,6 +10790,8 @@ const L9_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['lived', 'now', 'one day', 'when I was little'], answer: 'lived', image: '🎧' },
     { type: 'speak', question: '跟著念：when I was little', answer: 'when I was little', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'When I was little, I lived in a village.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：l i _ _ d', answer: 'lived', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n o _', answer: 'now', image: '✍️' },
   ],
   talkTimePrompts: ["Tell about your past: When I was little, I ___.", "Tell about your present: Now I ___.", "Tell about your future: One day, I will ___.", "✍️ 引導寫作＋翻譯：把「那是我的夢想。」寫成英文，再寫你自己的三時態短文。"],
   reviewQuiz: [
@@ -10500,6 +10849,8 @@ const L9_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['last weekend', 'next weekend', 'resting', 'went hiking'], answer: 'went hiking', image: '🎧' },
     { type: 'speak', question: '跟著念：last weekend', answer: 'last weekend', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What did you do last weekend?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r e s _ i _ g', answer: 'resting', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ n', answer: 'plan', image: '✍️' },
   ],
   talkTimePrompts: ["Ask and answer about last weekend.", "Say what you are doing now.", "Say your plan for next weekend.", "✍️ 引導寫作＋翻譯：把「現在我在休息。」寫成英文。"],
   reviewQuiz: [
@@ -10557,6 +10908,8 @@ const L9_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['am playing', 'play', 'played', 'will play'], answer: 'played', image: '🎧' },
     { type: 'speak', question: '跟著念：play', answer: 'play', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I play soccer every day.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ y', answer: 'play', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ y _ d', answer: 'played', image: '✍️' },
   ],
   talkTimePrompts: ["Say one verb in 5 tenses.", "Tell me about yesterday, now, and tomorrow.", "Use a perfect tense sentence.", "You beat the Time Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -10615,6 +10968,8 @@ const L10_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['also', 'and', 'but', 'or'], answer: 'also', image: '🎧' },
     { type: 'speak', question: '跟著念：and', answer: 'and', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I like tea and coffee.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a n _', answer: 'and', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b u _', answer: 'but', image: '✍️' },
   ],
   talkTimePrompts: ["Join two ideas with 'and'.", "Show a contrast with 'but'.", "Combine: I like ___, but I don't like ___.", "✍️ 引導寫作＋翻譯：把「它便宜但好。」寫成英文，再用 and/but 各造一句。"],
   reviewQuiz: [
@@ -10673,6 +11028,8 @@ const L10_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['because', 'reason', 'result', 'so'], answer: 'result', image: '🎧' },
     { type: 'speak', question: '跟著念：reason', answer: 'reason', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I am tired because I studied all night.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b e c _ u _ e', answer: 'because', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e _ s _ n', answer: 'reason', image: '✍️' },
   ],
   talkTimePrompts: ["Give a reason with 'because'.", "Give a result with 'so'.", "Combine: I am ___ because ___.", "✍️ 引導寫作＋翻譯：把「他生病，所以待在家。」寫成英文。"],
   reviewQuiz: [
@@ -10730,6 +11087,8 @@ const L10_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['after', 'first', 'next', 'then'], answer: 'next', image: '🎧' },
     { type: 'speak', question: '跟著念：first', answer: 'first', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'First, I got up.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：f i _ _ t', answer: 'first', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t h _ n', answer: 'then', image: '✍️' },
   ],
   talkTimePrompts: ["Describe your morning: First, then, finally.", "Use 'after' and 'before'.", "Tell the steps of making a sandwich.", "✍️ 引導寫作＋翻譯：用 First/Then/Finally 寫你的晨間流程。"],
   reviewQuiz: [
@@ -10787,6 +11146,8 @@ const L10_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['add', 'adjective', 'detail', 'when'], answer: 'detail', image: '🎧' },
     { type: 'speak', question: '跟著念：add', answer: 'add', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I have a dog.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a d _', answer: 'add', image: '✍️' },
+    { type: 'spell', question: '拼拼看：d e _ a _ l', answer: 'detail', image: '✍️' },
   ],
   talkTimePrompts: ["Make a short sentence longer with an adjective.", "Add when and where to a sentence.", "Combine two sentences with because.", "✍️ 引導寫作＋翻譯：把「我有一隻狗。」擴寫成長句並翻成英文。"],
   reviewQuiz: [
@@ -10844,6 +11205,8 @@ const L10_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['and', 'because', 'but', 'or'], answer: 'or', image: '🎧' },
     { type: 'speak', question: '跟著念：and', answer: 'and', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I like tea and coffee.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a n _', answer: 'and', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b u _', answer: 'but', image: '✍️' },
   ],
   talkTimePrompts: ["Use and, but, or in sentences.", "Give a reason (because) and a result (so).", "Describe steps: First, then, finally.", "✍️ 引導寫作＋翻譯：用 3 個連接詞寫一段小短文。"],
   reviewQuiz: [
@@ -10901,6 +11264,8 @@ const L10_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['building', 'city', 'people', 'train'], answer: 'people', image: '🎧' },
     { type: 'speak', question: '跟著念：city', answer: 'city', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Taipei is a big city.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c i _ y', answer: 'city', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p e _ p _ e', answer: 'people', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the paragraph about Taipei.", "Describe a city you know.", "What does the city have?", "✍️ 引導寫作＋翻譯：寫 3 句介紹你住的城市。"],
   reviewQuiz: [
@@ -10958,6 +11323,8 @@ const L10_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['brown', 'friendly', 'named', 'pet'], answer: 'named', image: '🎧' },
     { type: 'speak', question: '跟著念：pet', answer: 'pet', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I have a dog named Max.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p e _', answer: 'pet', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n a _ _ d', answer: 'named', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the paragraph about Max.", "Describe a pet or animal you like.", "What do they do every day?", "✍️ 引導寫作＋翻譯：寫 3 句介紹一隻寵物。"],
   reviewQuiz: [
@@ -11015,6 +11382,8 @@ const L10_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['detail', 'main idea', 'title', 'topic'], answer: 'detail', image: '🎧' },
     { type: 'speak', question: '跟著念：main idea', answer: 'main idea', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The main idea is the big picture.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d e _ a _ l', answer: 'detail', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t i _ _ e', answer: 'title', image: '✍️' },
   ],
   talkTimePrompts: ["Read a text and say the main idea.", "Find one detail in a paragraph.", "What is this text mostly about?", "✍️ 引導寫作＋翻譯：寫一句主旨句，再加一個細節句。"],
   reviewQuiz: [
@@ -11072,6 +11441,8 @@ const L10_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['closed', 'notice', 'open', 'sign'], answer: 'notice', image: '🎧' },
     { type: 'speak', question: '跟著念：sign', answer: 'sign', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The sign says OPEN 9 to 5.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s i _ n', answer: 'sign', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n o _ i _ e', answer: 'notice', image: '✍️' },
   ],
   talkTimePrompts: ["Read a sign and say what it means.", "When does the shop open/close?", "What time does the train leave?", "✍️ 引導寫作＋翻譯：把「商店週日打烊。」寫成英文。"],
   reviewQuiz: [
@@ -11129,6 +11500,8 @@ const L10_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['city', 'detail', 'main idea', 'pet'], answer: 'detail', image: '🎧' },
     { type: 'speak', question: '跟著念：main idea', answer: 'main idea', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What is the text about?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d e _ a _ l', answer: 'detail', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c i _ y', answer: 'city', image: '✍️' },
   ],
   talkTimePrompts: ["Read a paragraph and say the main idea.", "Find one detail.", "Read a sign and say the opening time.", "✍️ 引導寫作＋翻譯：讀一段短文，用英文寫出它的主旨句。"],
   reviewQuiz: [
@@ -11186,6 +11559,8 @@ const L10_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['live', 'myself', 'name', 'years old'], answer: 'name', image: '🎧' },
     { type: 'speak', question: '跟著念：myself', answer: 'myself', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'My name is Coco.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m y _ e _ f', answer: 'myself', image: '✍️' },
+    { type: 'spell', question: '拼拼看：n a _ e', answer: 'name', image: '✍️' },
   ],
   talkTimePrompts: ["Introduce yourself in 5 sentences.", "Say your name, age, and where you live.", "Say what you like and your dream.", "✍️ 引導寫作＋翻譯：寫 5-8 句英文自我介紹（名字/年齡/住哪/喜好/夢想）。"],
   reviewQuiz: [
@@ -11243,6 +11618,8 @@ const L10_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['diary', 'first', 'then', 'today'], answer: 'today', image: '🎧' },
     { type: 'speak', question: '跟著念：diary', answer: 'diary', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Dear Diary, today was a great day.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d i _ _ y', answer: 'diary', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t o _ _ y', answer: 'today', image: '✍️' },
   ],
   talkTimePrompts: ["Tell about your day: First, Then, Finally.", "Start with 'Dear Diary'.", "Use past tense verbs.", "✍️ 引導寫作＋翻譯：寫一篇日記，用 First/Then/Finally 記錄你的一天。"],
   reviewQuiz: [
@@ -11300,6 +11677,8 @@ const L10_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['Best wishes', 'Dear', 'letter', 'miss'], answer: 'miss', image: '🎧' },
     { type: 'speak', question: '跟著念：Dear', answer: 'Dear', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Dear Grandma,', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d e _ r', answer: 'dear', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m i _ s', answer: 'miss', image: '✍️' },
   ],
   talkTimePrompts: ["Start a letter with 'Dear ___,'.", "Say: I miss you. I hope you are well.", "End with 'Best wishes' and your name.", "✍️ 引導寫作＋翻譯：寫一封短信給奶奶或朋友（Dear…／Best wishes）。"],
   reviewQuiz: [
@@ -11357,6 +11736,8 @@ const L10_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['describe', 'picture', 'there are', 'there is'], answer: 'there is', image: '🎧' },
     { type: 'speak', question: '跟著念：picture', answer: 'picture', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'In the picture, there is a park.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p i c _ u _ e', answer: 'picture', image: '✍️' },
+    { type: 'spell', question: '拼拼看：d e s _ r _ b e', answer: 'describe', image: '✍️' },
   ],
   talkTimePrompts: ["Describe a picture: There is / are ___.", "Say what people are doing.", "Say how they feel: They look ___.", "✍️ 引導寫作＋翻譯：看一張圖，寫 4 句描述（有什麼/做什麼/感覺）。"],
   reviewQuiz: [
@@ -11414,6 +11795,8 @@ const L10_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['and', 'check', 'plan', 'write'], answer: 'plan', image: '🎧' },
     { type: 'speak', question: '跟著念：write', answer: 'write', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'My name is Coco, and I like to write.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w r _ _ e', answer: 'write', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p l _ n', answer: 'plan', image: '✍️' },
   ],
   talkTimePrompts: ["Introduce yourself in a few sentences.", "Say the writing steps: First, then, finally.", "Use 'and', 'but', 'because'.", "✍️ 引導寫作＋翻譯：選一種（日記/信/看圖），寫一小段英文。"],
   reviewQuiz: [
@@ -11471,6 +11854,8 @@ const L10_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['describe', 'kind', 'quiet', 'tall'], answer: 'tall', image: '🎧' },
     { type: 'speak', question: '跟著念：kind', answer: 'kind', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'My teacher is tall and kind.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：k i _ d', answer: 'kind', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t a _ l', answer: 'tall', image: '✍️' },
   ],
   talkTimePrompts: ["Describe a person: He/She is ___ and ___.", "Describe a place: It is ___.", "Use two adjectives in one sentence.", "✍️ 引導寫作＋翻譯：寫 3 句描述一個你喜歡的人或地方。"],
   reviewQuiz: [
@@ -11528,6 +11913,8 @@ const L10_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['agree', 'because', 'opinion', 'think'], answer: 'because', image: '🎧' },
     { type: 'speak', question: '跟著念：think', answer: 'think', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I think reading is great.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：o p i _ i _ n', answer: 'opinion', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t h _ _ k', answer: 'think', image: '✍️' },
   ],
   talkTimePrompts: ["Give an opinion: I think ___.", "Add a reason: because ___.", "Say: In my opinion, ___ is the best.", "✍️ 引導寫作＋翻譯：寫 3 句意見短文（I think… because…）。"],
   reviewQuiz: [
@@ -11585,6 +11972,8 @@ const L10_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['fun', 'model', 'weekend', 'went'], answer: 'weekend', image: '🎧' },
     { type: 'speak', question: '跟著念：model', answer: 'model', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'My weekend was fun.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m o _ _ l', answer: 'model', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w e e _ e _ d', answer: 'weekend', image: '✍️' },
   ],
   talkTimePrompts: ["Read a model sentence, then say your own version.", "Talk about your weekend (past tense).", "Change the model to fit you.", "✍️ 引導寫作＋翻譯：仿照「My weekend was ___. I went to ___.」寫你自己的週末。"],
   reviewQuiz: [
@@ -11642,6 +12031,8 @@ const L10_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['air', 'important', 'respond', 'tree'], answer: 'tree', image: '🎧' },
     { type: 'speak', question: '跟著念：respond', answer: 'respond', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Trees are important.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：r e s _ o _ d', answer: 'respond', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t r _ e', answer: 'tree', image: '✍️' },
   ],
   talkTimePrompts: ["Read the text, then say the main idea.", "Give your opinion about trees.", "Use 'because' to give a reason.", "✍️ 引導寫作＋翻譯：讀完短文，寫 2-3 句你對樹木的看法。"],
   reviewQuiz: [
@@ -11699,6 +12090,8 @@ const L10_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['and', 'because', 'but', 'so'], answer: 'but', image: '🎧' },
     { type: 'speak', question: '跟著念：and', answer: 'and', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I like tea and cake, but not milk.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a n _', answer: 'and', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b u _', answer: 'but', image: '✍️' },
   ],
   talkTimePrompts: ["Connect two ideas with and/but/because/so.", "Say the main idea of a short text.", "Introduce yourself or describe a place.", "You beat the Bridge Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -11757,6 +12150,8 @@ const L11_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['advice', 'can', 'could', 'should'], answer: 'should', image: '🎧' },
     { type: 'speak', question: '跟著念：can', answer: 'can', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I can swim well.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c a _', answer: 'can', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c o _ _ d', answer: 'could', image: '✍️' },
   ],
   talkTimePrompts: ["Say an ability: I can ___.", "Ask politely: Could you ___?", "Give advice: You should ___.", "✍️ 引導寫作＋翻譯：把「我五歲時就會游泳。」寫成英文。"],
   reviewQuiz: [
@@ -11815,6 +12210,8 @@ const L11_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['have to', 'must', 'rule', 'seatbelt'], answer: 'have to', image: '🎧' },
     { type: 'speak', question: '跟著念：must', answer: 'must', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'You must wear a seatbelt.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：m u _ t', answer: 'must', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r u _ e', answer: 'rule', image: '✍️' },
   ],
   talkTimePrompts: ["Say a rule: You must ___.", "Say an obligation: I have to ___.", "Say something not necessary: I don't have to ___.", "✍️ 引導寫作＋翻譯：把「我們必須遵守規則。」寫成英文。"],
   reviewQuiz: [
@@ -11873,6 +12270,8 @@ const L11_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['brother', 'that', 'which', 'who'], answer: 'brother', image: '🎧' },
     { type: 'speak', question: '跟著念：which', answer: 'which', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The boy who is running is my brother.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _', answer: 'who', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w h _ _ h', answer: 'which', image: '✍️' },
   ],
   talkTimePrompts: ["Describe a person: the person who ___.", "Describe a thing: the thing which ___.", "Use 'that' to join two sentences.", "✍️ 引導寫作＋翻譯：把「這是我做的蛋糕。」寫成英文。"],
   reviewQuiz: [
@@ -11931,6 +12330,8 @@ const L11_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['best', 'biggest', 'fastest', 'tallest'], answer: 'best', image: '🎧' },
     { type: 'speak', question: '跟著念：biggest', answer: 'biggest', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The blue whale is the biggest animal.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b i g _ e _ t', answer: 'biggest', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t a l _ e _ t', answer: 'tallest', image: '✍️' },
   ],
   talkTimePrompts: ["Say a superlative: ___ is the biggest.", "Use 'the most' with a long word.", "Compare three things: A is the ___est.", "✍️ 引導寫作＋翻譯：把「他是最快的跑者。」寫成英文。"],
   reviewQuiz: [
@@ -11988,6 +12389,8 @@ const L11_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['could', 'must', 'should', 'who'], answer: 'must', image: '🎧' },
     { type: 'speak', question: '跟著念：should', answer: 'should', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'You should rest.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s h _ u _ d', answer: 'should', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m u _ t', answer: 'must', image: '✍️' },
   ],
   talkTimePrompts: ["Give advice with 'should'.", "Ask politely with 'could'.", "Use a relative pronoun (who/which/that).", "✍️ 引導寫作＋翻譯：把「贏的男孩很快。」寫成英文（用 who）。"],
   reviewQuiz: [
@@ -12046,6 +12449,8 @@ const L11_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['decide to', 'hope to', 'need to', 'want to'], answer: 'hope to', image: '🎧' },
     { type: 'speak', question: '跟著念：want to', answer: 'want to', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I want to be a scientist.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s c i _ n t _ s t', answer: 'scientist', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t r _ v _ l', answer: 'travel', image: '✍️' },
   ],
   talkTimePrompts: ["Say a goal: I want to ___.", "Say a hope: I hope to ___.", "Say: It is fun/easy to ___.", "✍️ 引導寫作＋翻譯：把「我希望環遊世界。」寫成英文。"],
   reviewQuiz: [
@@ -12104,6 +12509,8 @@ const L11_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['enjoy', 'finish', 'keep', 'stop'], answer: 'finish', image: '🎧' },
     { type: 'speak', question: '跟著念：enjoy', answer: 'enjoy', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I enjoy swimming and reading.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e n _ _ y', answer: 'enjoy', image: '✍️' },
+    { type: 'spell', question: '拼拼看：f i _ i _ h', answer: 'finish', image: '✍️' },
   ],
   talkTimePrompts: ["Say a hobby: I enjoy ___ing.", "Use keep / stop / finish + V-ing.", "Say what you are good at: good at ___ing.", "✍️ 引導寫作＋翻譯：把「別停止練習。」寫成英文。"],
   reviewQuiz: [
@@ -12161,6 +12568,8 @@ const L11_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['short', 'tall', 'used to', 'village'], answer: 'village', image: '🎧' },
     { type: 'speak', question: '跟著念：tall', answer: 'tall', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I used to be short.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s h _ _ t', answer: 'short', image: '✍️' },
+    { type: 'spell', question: '拼拼看：t a _ l', answer: 'tall', image: '✍️' },
   ],
   talkTimePrompts: ["Say a past habit: I used to ___.", "Compare past and now: I used to ___, but now ___.", "Ask: Did you use to ___?", "✍️ 引導寫作＋翻譯：把「她以前吃很多糖。」寫成英文。"],
   reviewQuiz: [
@@ -12219,6 +12628,8 @@ const L11_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['if', 'rain', 'stay', 'will'], answer: 'rain', image: '🎧' },
     { type: 'speak', question: '跟著念：if', answer: 'if', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'If it rains, I will stay home.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w i _ l', answer: 'will', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r a _ n', answer: 'rain', image: '✍️' },
   ],
   talkTimePrompts: ["Make an if-sentence: If ___, I will ___.", "Say: If it rains, I will ___.", "Ask: What will you do if ___?", "✍️ 引導寫作＋翻譯：把「如果我有時間，我會幫你。」寫成英文。"],
   reviewQuiz: [
@@ -12276,6 +12687,8 @@ const L11_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['enjoy', 'if', 'used to', 'want to'], answer: 'enjoy', image: '🎧' },
     { type: 'speak', question: '跟著念：want to', answer: 'want to', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I want to travel.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e n _ _ y', answer: 'enjoy', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w i _ l', answer: 'will', image: '✍️' },
   ],
   talkTimePrompts: ["Use 'want to' and 'enjoy + ing' in sentences.", "Say a past habit with 'used to'.", "Make an if-sentence.", "✍️ 引導寫作＋翻譯：把「持續努力你就會通過。」寫成英文。"],
   reviewQuiz: [
@@ -12334,6 +12747,8 @@ const L11_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['by', 'is made of', 'was built', 'was written'], answer: 'was built', image: '🎧' },
     { type: 'speak', question: '跟著念：is made of', answer: 'is made of', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'This table is made of wood.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w o _ d', answer: 'wood', image: '✍️' },
+    { type: 'spell', question: '拼拼看：u s _ d', answer: 'used', image: '✍️' },
   ],
   talkTimePrompts: ["Say what something is made of: It is made of ___.", "Use passive: was built / was written.", "Say: English is spoken in many countries.", "✍️ 引導寫作＋翻譯：把「城堡很久以前建成。」寫成英文。"],
   reviewQuiz: [
@@ -12391,6 +12806,8 @@ const L11_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['although', 'however', 'though', 'while'], answer: 'however', image: '🎧' },
     { type: 'speak', question: '跟著念：although', answer: 'although', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Although it was raining, we went out.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a l t _ o _ g h', answer: 'although', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h o w _ v _ r', answer: 'however', image: '✍️' },
   ],
   talkTimePrompts: ["Use 'although' to show contrast.", "Use 'however' to add a different point.", "Use 'while' for two actions at once.", "✍️ 引導寫作＋翻譯：把「雖然他小，他很強壯。」寫成英文。"],
   reviewQuiz: [
@@ -12448,6 +12865,8 @@ const L11_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['brave', 'cross', 'sea', 'wave'], answer: 'sea', image: '🎧' },
     { type: 'speak', question: '跟著念：cross', answer: 'cross', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A little boat wanted to cross the sea.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c r _ _ s', answer: 'cross', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s e _', answer: 'sea', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the story of the brave boat.", "What is the lesson of the story?", "Use 'although' to describe the boat.", "✍️ 引導寫作＋翻譯：把「最後，它抵達岸邊。」寫成英文。"],
   reviewQuiz: [
@@ -12505,6 +12924,8 @@ const L11_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['afraid', 'build', 'giant', 'kind'], answer: 'kind', image: '🎧' },
     { type: 'speak', question: '跟著念：giant', answer: 'giant', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'There was a kind giant.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：g i _ _ t', answer: 'giant', image: '✍️' },
+    { type: 'spell', question: '拼拼看：k i _ d', answer: 'kind', image: '✍️' },
   ],
   talkTimePrompts: ["Retell the story of the kind giant.", "What is the lesson of the story?", "Describe the giant with 'although'.", "✍️ 引導寫作＋翻譯：把「他們成了好朋友。」寫成英文。"],
   reviewQuiz: [
@@ -12562,6 +12983,8 @@ const L11_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['although', 'brave', 'however', 'was built'], answer: 'however', image: '🎧' },
     { type: 'speak', question: '跟著念：although', answer: 'although', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Although it was hard, the boat never gave up.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a l t _ o _ g h', answer: 'although', image: '✍️' },
+    { type: 'spell', question: '拼拼看：h o w _ v _ r', answer: 'however', image: '✍️' },
   ],
   talkTimePrompts: ["Retell a story with a lesson.", "Use 'although' and passive voice.", "Say what something is made of.", "✍️ 引導寫作＋翻譯：把「不要以貌取人。」寫成英文。"],
   reviewQuiz: [
@@ -12619,6 +13042,8 @@ const L11_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['because', 'believe', 'for example', 'opinion'], answer: 'because', image: '🎧' },
     { type: 'speak', question: '跟著念：opinion', answer: 'opinion', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'In my opinion, reading is the best hobby.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：o p i _ i _ n', answer: 'opinion', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b e l _ e _ e', answer: 'believe', image: '✍️' },
   ],
   talkTimePrompts: ["State an opinion: In my opinion, ___.", "Give a reason with 'because'.", "Give an example with 'For example'.", "✍️ 引導寫作＋翻譯：寫一段觀點文（觀點＋理由＋例子＋結論）。"],
   reviewQuiz: [
@@ -12676,6 +13101,8 @@ const L11_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['appearance', 'describe', 'gentle', 'personality'], answer: 'gentle', image: '🎧' },
     { type: 'speak', question: '跟著念：describe', answer: 'describe', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'My grandma is gentle.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d e s _ r _ b e', answer: 'describe', image: '✍️' },
+    { type: 'spell', question: '拼拼看：g e _ t _ e', answer: 'gentle', image: '✍️' },
   ],
   talkTimePrompts: ["Describe a person's appearance and personality.", "Describe a place using your senses.", "Describe a memorable experience.", "✍️ 引導寫作＋翻譯：寫一段描寫（人/地點/經驗），用形容詞和感官。"],
   reviewQuiz: [
@@ -12733,6 +13160,8 @@ const L11_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['agree', 'disagree', 'discuss', 'in my view'], answer: 'agree', image: '🎧' },
     { type: 'speak', question: '跟著念：discuss', answer: 'discuss', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'What do you think?', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d i s _ u _ s', answer: 'discuss', image: '✍️' },
+    { type: 'spell', question: '拼拼看：a g _ _ e', answer: 'agree', image: '✍️' },
   ],
   talkTimePrompts: ["Ask: What do you think?", "Agree: I agree because ___.", "Disagree politely: I disagree. In my view, ___.", "✍️ 引導寫作＋翻譯：把「這是個好論點。」寫成英文，再寫一句你的看法。"],
   reviewQuiz: [
@@ -12790,6 +13219,8 @@ const L11_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['environment', 'pollution', 'protect', 'recycle'], answer: 'pollution', image: '🎧' },
     { type: 'speak', question: '跟著念：environment', answer: 'environment', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'We should protect the environment.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e n v i _ o n _ e n t', answer: 'environment', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p o l _ u t _ o n', answer: 'pollution', image: '✍️' },
   ],
   talkTimePrompts: ["Read the text and say the main idea.", "Write your opinion about the environment.", "Speak: I think we should ___ because ___.", "✍️ 引導寫作＋翻譯：讀完後寫 3 句你對保護環境的看法。"],
   reviewQuiz: [
@@ -12847,6 +13278,8 @@ const L11_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['must', 'should', 'was made', 'who'], answer: 'must', image: '🎧' },
     { type: 'speak', question: '跟著念：should', answer: 'should', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'You should rest because you are tired.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s h _ u _ d', answer: 'should', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m u _ t', answer: 'must', image: '✍️' },
   ],
   talkTimePrompts: ["Give advice with should/must.", "Use a relative pronoun and passive voice.", "Make an if-sentence and use 'although'.", "You beat the Challenge Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -12905,6 +13338,8 @@ const L12_M1: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['am learning', 'graduate', 'have studied', 'will use'], answer: 'am learning', image: '🎧' },
     { type: 'speak', question: '跟著念：have studied', answer: 'have studied', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I have studied English for years.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：g r a _ u _ t e', answer: 'graduate', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p r o _ r _ s s', answer: 'progress', image: '✍️' },
   ],
   talkTimePrompts: ["Talk about your English journey in different tenses.", "Say: I used to ___, but now I ___.", "Say a future goal with 'will'.", "✍️ 引導寫作＋翻譯：用 3 種時態寫你的英文學習旅程。"],
   reviewQuiz: [
@@ -12962,6 +13397,8 @@ const L12_M2: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['if', 'that', 'was written', 'which'], answer: 'was written', image: '🎧' },
     { type: 'speak', question: '跟著念：that', answer: 'that', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The book that I read was written by an author.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：t h _ t', answer: 'that', image: '✍️' },
+    { type: 'spell', question: '拼拼看：w h _ _ h', answer: 'which', image: '✍️' },
   ],
   talkTimePrompts: ["Combine a relative clause and passive voice.", "Make an if-sentence with a relative clause.", "Use 'although' with a relative clause.", "✍️ 引導寫作＋翻譯：把「雖然很難，隊伍贏了。」寫成英文（用 although + who）。"],
   reviewQuiz: [
@@ -13019,6 +13456,8 @@ const L12_M3: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['confident', 'curious', 'generous', 'honest'], answer: 'honest', image: '🎧' },
     { type: 'speak', question: '跟著念：confident', answer: 'confident', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'She is confident and brave.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：c o n _ i d _ n t', answer: 'confident', image: '✍️' },
+    { type: 'spell', question: '拼拼看：g e n _ r _ u s', answer: 'generous', image: '✍️' },
   ],
   talkTimePrompts: ["Describe your personality: I am ___ and ___.", "Describe a friend's character.", "Say which trait you value most and why.", "✍️ 引導寫作＋翻譯：用 3 個個性形容詞介紹你自己。"],
   reviewQuiz: [
@@ -13076,6 +13515,8 @@ const L12_M4: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['culture', 'forest', 'planet', 'tradition'], answer: 'tradition', image: '🎧' },
     { type: 'speak', question: '跟著念：planet', answer: 'planet', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Our planet has oceans and forests.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p l _ n _ t', answer: 'planet', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c u l _ u _ e', answer: 'culture', image: '✍️' },
   ],
   talkTimePrompts: ["Describe our planet: It has ___.", "Talk about a culture or festival you know.", "Say why we should protect nature.", "✍️ 引導寫作＋翻譯：寫 3 句關於世界或大自然。"],
   reviewQuiz: [
@@ -13133,6 +13574,8 @@ const L12_M5: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['have learned', 'was built', 'which', 'will keep'], answer: 'will keep', image: '🎧' },
     { type: 'speak', question: '跟著念：have learned', answer: 'have learned', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'I have learned a lot.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：w h _ _ h', answer: 'which', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c o n _ i d _ n t', answer: 'confident', image: '✍️' },
   ],
   talkTimePrompts: ["Use a perfect tense and a future tense.", "Make a sentence with a relative pronoun.", "Describe yourself with personality words.", "✍️ 引導寫作＋翻譯：把「如果我們努力，就會成功。」寫成英文。"],
   reviewQuiz: [
@@ -13190,6 +13633,8 @@ const L12_M6: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['dream', 'music', 'poor', 'practice'], answer: 'poor', image: '🎧' },
     { type: 'speak', question: '跟著念：dream', answer: 'dream', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Mia loved music.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d r _ _ m', answer: 'dream', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m u _ _ c', answer: 'music', image: '✍️' },
   ],
   talkTimePrompts: ["Retell Mia's story.", "What is the lesson of the story?", "Talk about a dream you have.", "✍️ 引導寫作＋翻譯：把「追隨你的夢想！」寫成英文，再寫你的夢想。"],
   reviewQuiz: [
@@ -13247,6 +13692,8 @@ const L12_M7: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['article', 'planet', 'solar system', 'star'], answer: 'solar system', image: '🎧' },
     { type: 'speak', question: '跟著念：article', answer: 'article', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'The sun is a star.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：a r t _ c _ e', answer: 'article', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s t _ r', answer: 'star', image: '✍️' },
   ],
   talkTimePrompts: ["Say two facts about the solar system.", "What makes Earth special?", "Would you like to explore space? Why?", "✍️ 引導寫作＋翻譯：寫 3 句關於太陽系的事實。"],
   reviewQuiz: [
@@ -13304,6 +13751,8 @@ const L12_M8: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['poem', 'rhyme', 'rhythm', 'script'], answer: 'rhythm', image: '🎧' },
     { type: 'speak', question: '跟著念：poem', answer: 'poem', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Poems use rhythm and rhyme.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p o _ m', answer: 'poem', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r h _ t _ m', answer: 'rhythm', image: '✍️' },
   ],
   talkTimePrompts: ["Read the star poem out loud with rhythm.", "Find two words that rhyme.", "Read a script line with feeling.", "✍️ 引導寫作＋翻譯：寫一首 2-4 行的英文小詩（試著押韻）。"],
   reviewQuiz: [
@@ -13361,6 +13810,8 @@ const L12_M9: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['clue', 'guess', 'infer', 'meaning'], answer: 'guess', image: '🎧' },
     { type: 'speak', question: '跟著念：infer', answer: 'infer', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Good readers think beyond the words.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：i n _ _ r', answer: 'infer', image: '✍️' },
+    { type: 'spell', question: '拼拼看：g u _ _ s', answer: 'guess', image: '✍️' },
   ],
   talkTimePrompts: ["Infer a character's feeling from a clue.", "Guess a hard word from context.", "Explain what a passage really means.", "✍️ 引導寫作＋翻譯：讀一段文字，寫出你推論到的言外之意。"],
   reviewQuiz: [
@@ -13418,6 +13869,8 @@ const L12_M10: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['dream', 'musician', 'orbit', 'planet'], answer: 'musician', image: '🎧' },
     { type: 'speak', question: '跟著念：dream', answer: 'dream', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Mia became a musician.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：d r _ _ m', answer: 'dream', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m u s _ c _ a n', answer: 'musician', image: '✍️' },
   ],
   talkTimePrompts: ["Retell a story you read.", "Say two facts from an article.", "Read a poem line with rhythm.", "✍️ 引導寫作＋翻譯：把「閱讀打開新世界。」寫成英文。"],
   reviewQuiz: [
@@ -13475,6 +13928,8 @@ const L12_M11: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['beginning', 'character', 'end', 'middle'], answer: 'middle', image: '🎧' },
     { type: 'speak', question: '跟著念：beginning', answer: 'beginning', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A story needs a beginning, middle, and end.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：b e g _ n n _ n g', answer: 'beginning', image: '✍️' },
+    { type: 'spell', question: '拼拼看：m i _ d _ e', answer: 'middle', image: '✍️' },
   ],
   talkTimePrompts: ["Tell the beginning of a story: Once upon a time…", "Describe a character and a problem.", "Say how the story ends.", "✍️ 引導寫作＋翻譯：寫一個有開頭/中段/結尾的短篇故事。"],
   reviewQuiz: [
@@ -13533,6 +13988,8 @@ const L12_M12: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['first', 'how to', 'instructions', 'step'], answer: 'step', image: '🎧' },
     { type: 'speak', question: '跟著念：how to', answer: 'how to', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'How to make a sandwich.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s t _ p', answer: 'step', image: '✍️' },
+    { type: 'spell', question: '拼拼看：i n s t _ u c t _ o n s', answer: 'instructions', image: '✍️' },
   ],
   talkTimePrompts: ["Explain how to make something with First/Next/Finally.", "Give clear steps for a simple task.", "Teach a friend how to do something.", "✍️ 引導寫作＋翻譯：寫一篇「How to…」說明文（3-4 步驟）。"],
   reviewQuiz: [
@@ -13590,6 +14047,8 @@ const L12_M13: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['body', 'email', 'greeting', 'subject'], answer: 'subject', image: '🎧' },
     { type: 'speak', question: '跟著念：email', answer: 'email', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Dear Mr. Lee,', image: '🗣' },
+    { type: 'spell', question: '拼拼看：e m _ _ l', answer: 'email', image: '✍️' },
+    { type: 'spell', question: '拼拼看：s u b _ e _ t', answer: 'subject', image: '✍️' },
   ],
   talkTimePrompts: ["Start an email: Dear ___, I am writing to ___.", "Make a polite request: Could you please ___?", "Close an email politely.", "✍️ 引導寫作＋翻譯：寫一封短 email（主旨/問候/正文/結尾）。"],
   reviewQuiz: [
@@ -13647,6 +14106,8 @@ const L12_M14: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['admire', 'dream', 'hero', 'inspire'], answer: 'admire', image: '🎧' },
     { type: 'speak', question: '跟著念：hero', answer: 'hero', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'My hero is my grandma.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：h e _ o', answer: 'hero', image: '✍️' },
+    { type: 'spell', question: '拼拼看：a d _ i _ e', answer: 'admire', image: '✍️' },
   ],
   talkTimePrompts: ["Say who your hero is: My hero is ___.", "Describe their qualities.", "Say why they inspire you.", "✍️ 引導寫作＋翻譯：寫一篇「My Hero」或「My Dream」短文。"],
   reviewQuiz: [
@@ -13704,6 +14165,8 @@ const L12_M15: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['beginning', 'how to', 'step', 'story'], answer: 'beginning', image: '🎧' },
     { type: 'speak', question: '跟著念：story', answer: 'story', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A story has a beginning, middle, and end.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s t _ _ y', answer: 'story', image: '✍️' },
+    { type: 'spell', question: '拼拼看：b e g _ n n _ n g', answer: 'beginning', image: '✍️' },
   ],
   talkTimePrompts: ["Say the parts of a story.", "Give steps for something with First/Next/Finally.", "Say how to start and end an email.", "✍️ 引導寫作＋翻譯：選一種寫作類型，寫一小段。"],
   reviewQuiz: [
@@ -13761,6 +14224,8 @@ const L12_M16: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['audience', 'expression', 'storyteller', 'voice'], answer: 'expression', image: '🎧' },
     { type: 'speak', question: '跟著念：storyteller', answer: 'storyteller', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A good storyteller uses expression.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s t o r _ t e _ l e r', answer: 'storyteller', image: '✍️' },
+    { type: 'spell', question: '拼拼看：e x p r _ s s _ o n', answer: 'expression', image: '✍️' },
   ],
   talkTimePrompts: ["Tell a short story out loud with expression.", "Change your voice for different characters.", "Look up and speak to your 'audience'.", "✍️ 引導寫作＋翻譯：寫下你要說的故事的開頭 2 句。"],
   reviewQuiz: [
@@ -13818,6 +14283,8 @@ const L12_M17: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['confident', 'introduce', 'presentation', 'topic'], answer: 'introduce', image: '🎧' },
     { type: 'speak', question: '跟著念：presentation', answer: 'presentation', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Hello, everyone.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p r e s _ n t a _ i o n', answer: 'presentation', image: '✍️' },
+    { type: 'spell', question: '拼拼看：i n t _ o d _ c e', answer: 'introduce', image: '✍️' },
   ],
   talkTimePrompts: ["Open a presentation: Hello, today I will talk about ___.", "Introduce yourself confidently.", "Close: Thank you for listening. Any questions?", "✍️ 引導寫作＋翻譯：寫你簡報的開場和結尾兩句。"],
   reviewQuiz: [
@@ -13875,6 +14342,8 @@ const L12_M18: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['notes', 'poster', 'project', 'research'], answer: 'research', image: '🎧' },
     { type: 'speak', question: '跟著念：project', answer: 'project', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'A project uses reading, writing, and speaking.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：p r o _ e _ t', answer: 'project', image: '✍️' },
+    { type: 'spell', question: '拼拼看：r e s _ a _ c h', answer: 'research', image: '✍️' },
   ],
   talkTimePrompts: ["Describe your project steps: First, then, finally.", "Say what topic you researched.", "Present one fact you learned.", "✍️ 引導寫作＋翻譯：規劃一個小專題的 3 個步驟。"],
   reviewQuiz: [
@@ -13932,6 +14401,8 @@ const L12_M19: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['achieve', 'progress', 'proud', 'showcase'], answer: 'achieve', image: '🎧' },
     { type: 'speak', question: '跟著念：showcase', answer: 'showcase', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Today we showcase our work.', image: '🗣' },
+    { type: 'spell', question: '拼拼看：s h o _ c _ s e', answer: 'showcase', image: '✍️' },
+    { type: 'spell', question: '拼拼看：p r _ _ d', answer: 'proud', image: '✍️' },
   ],
   talkTimePrompts: ["Showcase your skills: I can ___, ___, and ___.", "Say what you are proud of.", "Look back: I have learned so much!", "✍️ 引導寫作＋翻譯：寫 3 句回顧你的學習成果並肯定自己。"],
   reviewQuiz: [
@@ -13989,6 +14460,8 @@ const L12_M20: Mission = {
     { type: 'listen-pick', question: '🎧 聽聽看，這是哪個字？', options: ['certificate', 'congratulations', 'graduate', 'journey'], answer: 'congratulations', image: '🎧' },
     { type: 'speak', question: '跟著念：graduate', answer: 'graduate', image: '🗣' },
     { type: 'speak', question: '大聲說出這句話！', answer: 'Congratulations on your graduation!', image: '🗣' },
+    { type: 'spell', question: '拼拼看：g r a _ u _ t e', answer: 'graduate', image: '✍️' },
+    { type: 'spell', question: '拼拼看：c e r t _ f i _ a t e', answer: 'certificate', image: '✍️' },
   ],
   talkTimePrompts: ["Say: I can read, write, and speak English now!", "Look back on your journey from L1 to L12.", "Say what you are most proud of.", "✍️ 引導寫作＋翻譯：寫一段畢業感言，回顧旅程並展望未來。"],
   reviewQuiz: [
