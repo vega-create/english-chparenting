@@ -303,6 +303,8 @@ const L1_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'ball', 'cat', 'dog'], answer: 'dog', image: '🎧' },
     { type: 'speak', question: '大聲念出來：ball', answer: 'ball', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'C is for Cat.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'bye', 'hello', 'hi'], answer: 'hi', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：hello', answer: 'hello', image: '🔄' },
   ],
   talkTimePrompts: [
     "A is for apple! Can you say 'apple'?",
@@ -367,6 +369,8 @@ const L1_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['egg', 'fish', 'goat', 'hat'], answer: 'hat', image: '🎧' },
     { type: 'speak', question: '大聲念出來：egg', answer: 'egg', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'G is for Goat.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'ball', 'cat', 'egg'], answer: 'apple', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：ball', answer: 'ball', image: '🔄' },
   ],
   talkTimePrompts: ["E is for egg! Can you say 'egg'?", "F is for fish! Do you like fish?", "G is for goat! Can you say 'goat'?", "H is for hat! Do you have a hat?"],
   reviewQuiz: [
@@ -426,6 +430,8 @@ const L1_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['igloo', 'jam', 'kite', 'lion'], answer: 'lion', image: '🎧' },
     { type: 'speak', question: '大聲念出來：jam', answer: 'jam', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'K is for Kite.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['egg', 'fish', 'goat', 'igloo'], answer: 'egg', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：fish', answer: 'fish', image: '🔄' },
   ],
   talkTimePrompts: ["I is for igloo! Can you say 'igloo'?", "J is for jam! Do you like jam?", "K is for kite! Can you fly a kite?", "L is for lion! Can you roar like a lion?"],
   reviewQuiz: [
@@ -483,6 +489,8 @@ const L1_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'egg', 'igloo', 'lion'], answer: 'lion', image: '🎧' },
     { type: 'speak', question: '大聲念出來：egg', answer: 'egg', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I, J, K, L!', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'igloo', 'jam', 'kite'], answer: 'igloo', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：jam', answer: 'jam', image: '🔄' },
   ],
   talkTimePrompts: ["Can you sing A to L?", "What comes after C?", "A is for apple! What is E for?", "You are a great singer!"],
   reviewQuiz: [
@@ -542,6 +550,8 @@ const L1_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['moon', 'nest', 'orange', 'pig'], answer: 'pig', image: '🎧' },
     { type: 'speak', question: '大聲念出來：nest', answer: 'nest', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'O is for Orange.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'egg', 'igloo', 'moon'], answer: 'apple', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：egg', answer: 'egg', image: '🔄' },
   ],
   talkTimePrompts: ["M is for moon! Can you say 'moon'?", "N is for nest! What lives in a nest?", "O is for orange! Do you like oranges?", "P is for pig! Can you say 'oink'?"],
   reviewQuiz: [
@@ -601,6 +611,8 @@ const L1_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['queen', 'rabbit', 'sun', 'tiger'], answer: 'tiger', image: '🎧' },
     { type: 'speak', question: '大聲念出來：rabbit', answer: 'rabbit', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'S is for Sun.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['moon', 'nest', 'orange', 'queen'], answer: 'moon', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：nest', answer: 'nest', image: '🔄' },
   ],
   talkTimePrompts: ["Q is for queen! Can you say 'queen'?", "R is for rabbit! Can you hop like a rabbit?", "S is for sun! Is the sun hot?", "T is for tiger! Can you roar?"],
   reviewQuiz: [
@@ -660,6 +672,8 @@ const L1_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['fox', 'umbrella', 'van', 'watch'], answer: 'fox', image: '🎧' },
     { type: 'speak', question: '大聲念出來：van', answer: 'van', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'W is for Watch.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['queen', 'rabbit', 'sun', 'umbrella'], answer: 'queen', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：rabbit', answer: 'rabbit', image: '🔄' },
   ],
   talkTimePrompts: ["U is for umbrella! Do you use an umbrella?", "V is for van! Can you say 'van'?", "W is for watch! What time is it?", "X is in fox! Can you say 'fox'?"],
   reviewQuiz: [
@@ -706,6 +720,8 @@ const L1_M9: Mission = {
     { type: 'fill-blank', question: '___ is for yoyo.', options: ['Y', 'Z', 'X', 'W'], answer: 'Y' },
     { type: 'fill-blank', question: 'The last letter is ___.', options: ['Z', 'Y', 'A', 'X'], answer: 'Z' },
     { type: 'spell', question: '拼拼看：y o _ o', answer: 'yoyo', image: '✍️' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['umbrella', 'van', 'watch', 'yoyo'], answer: 'umbrella', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：van', answer: 'van', image: '🔄' },
   ],
   talkTimePrompts: ["Y is for yoyo! Can you play with a yoyo?", "Z is for zebra! Can you say 'zebra'?", "Can you say A to Z?", "You know all the letters! Amazing!"],
   reviewQuiz: [
@@ -763,6 +779,8 @@ const L1_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['moon', 'queen', 'umbrella', 'zebra'], answer: 'zebra', image: '🎧' },
     { type: 'speak', question: '大聲念出來：moon', answer: 'moon', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'U, V, W...', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['moon', 'queen', 'yoyo', 'zebra'], answer: 'yoyo', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：zebra', answer: 'zebra', image: '🔄' },
   ],
   talkTimePrompts: ["Can you sing M to Z?", "What comes after Q?", "Can you sing the whole ABC song?", "You are an ABC star!"],
   reviewQuiz: [
@@ -820,6 +838,8 @@ const L1_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'egg', 'moon', 'zebra'], answer: 'moon', image: '🎧' },
     { type: 'speak', question: '大聲念出來：apple', answer: 'apple', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Match the letters!', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'moon', 'queen', 'umbrella'], answer: 'moon', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：queen', answer: 'queen', image: '🔄' },
   ],
   talkTimePrompts: ["Can you write the letter A?", "Big B and small b — can you match them?", "What letter does apple start with?", "You are great at writing letters!"],
   reviewQuiz: [
@@ -877,6 +897,8 @@ const L1_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'fish', 'queen', 'zebra'], answer: 'zebra', image: '🎧' },
     { type: 'speak', question: '大聲念出來：fish', answer: 'fish', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Z is for zebra.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'egg', 'moon'], answer: 'apple', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：egg', answer: 'egg', image: '🔄' },
   ],
   talkTimePrompts: ["Can you say A to Z?", "What is A for?", "You beat the Letter Boss! How do you feel?", "You are an ABC champion! Say 'I did it!'"],
   reviewQuiz: [
@@ -940,6 +962,8 @@ const L1_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['A a', 'B b', 'C c', 'D d'], answer: 'D d', image: '🎧' },
     { type: 'speak', question: '大聲念出來：B b', answer: 'B b', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'They are the same letter.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['A a', 'apple', 'fish', 'queen'], answer: 'apple', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：fish', answer: 'fish', image: '🔄' },
   ],
   talkTimePrompts: ["Say: Big A, small a!", "Match a big letter to a small one.", "Point to a big letter and its small one.", "Can you write A and a?"],
   reviewQuiz: [
@@ -1003,6 +1027,8 @@ const L1_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['circle', 'line', 'trace', 'write'], answer: 'circle', image: '🎧' },
     { type: 'speak', question: '大聲念出來：write', answer: 'write', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Trace it slowly.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['A a', 'B b', 'C c', 'write'], answer: 'A a', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：B b', answer: 'B b', image: '🔄' },
   ],
   talkTimePrompts: ["Say: down, down, across for A.", "Trace a letter in the air.", "What shape is O?", "Can you write your name's first letter?"],
   reviewQuiz: [
@@ -1066,6 +1092,8 @@ const L1_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'egg', 'igloo', 'orange'], answer: 'orange', image: '🎧' },
     { type: 'speak', question: '大聲念出來：egg', answer: 'egg', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'E is for egg.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'line', 'trace', 'write'], answer: 'write', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：trace', answer: 'trace', image: '🔄' },
   ],
   talkTimePrompts: ["Sing the ABC song!", "Say a word for A, B, C.", "What is Z for?", "You know your ABCs! Say 'I did it!'"],
   reviewQuiz: [
@@ -1130,6 +1158,8 @@ const L1_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['I', 'a', 'an', 'the'], answer: 'a', image: '🎧' },
     { type: 'speak', question: '大聲念出來：I', answer: 'I', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is an apple.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['I', 'apple', 'egg', 'igloo'], answer: 'apple', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：egg', answer: 'egg', image: '🔄' },
   ],
   talkTimePrompts: ["Say: I am ___.", "Say: It is a ___ / an ___.", "Read: The ___ is red.", "Point and say: I, a, an, the, is."],
   reviewQuiz: [
@@ -1193,6 +1223,8 @@ const L1_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['go', 'like', 'see', 'you'], answer: 'see', image: '🎧' },
     { type: 'speak', question: '大聲念出來：you', answer: 'you', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I like you.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['I', 'a', 'an', 'you'], answer: 'I', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：a', answer: 'a', image: '🔄' },
   ],
   talkTimePrompts: ["Say: I see you!", "Say: I like ___.", "Say: Let's go!", "Say: Come with me."],
   reviewQuiz: [
@@ -1255,6 +1287,8 @@ const L1_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['a ball', 'a cat', 'a dog', 'a sun'], answer: 'a sun', image: '🎧' },
     { type: 'speak', question: '大聲念出來：a dog', answer: 'a dog', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is a ball.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['a cat', 'like', 'see', 'you'], answer: 'you', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：see', answer: 'see', image: '🔄' },
   ],
   talkTimePrompts: ["Say 'a' or 'an': ___ cat, ___ apple.", "Point and say: a dog, an egg.", "Make a sentence: I have a ___ / an ___.", "a or an? Try 'orange' and 'ball'."],
   reviewQuiz: [
@@ -1318,6 +1352,8 @@ const L1_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['I', 'a', 'an', 'see'], answer: 'an', image: '🎧' },
     { type: 'speak', question: '大聲念出來：see', answer: 'see', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is an egg.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['I', 'a ball', 'a cat', 'a dog'], answer: 'a cat', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：a dog', answer: 'a dog', image: '🔄' },
   ],
   talkTimePrompts: ["Read: I see a cat.", "Read: It is an egg.", "Read: The cat is big.", "Make your own: I see a ___."],
   reviewQuiz: [
@@ -1381,6 +1417,8 @@ const L1_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['I', 'apple', 'see', 'zebra'], answer: 'see', image: '🎧' },
     { type: 'speak', question: '大聲念出來：zebra', answer: 'zebra', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I see a cat.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['I', 'a', 'apple', 'see'], answer: 'I', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：see', answer: 'see', image: '🔄' },
   ],
   talkTimePrompts: ["Sing A to Z!", "Say: I see a cat. It is an egg.", "Match a big letter to a small one.", "You graduated from Letter Island! Say 'I did it!'"],
   reviewQuiz: [
@@ -1516,6 +1554,8 @@ const L2_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bat', 'cat', 'hat', 'map'], answer: 'bat', image: '🎧' },
     { type: 'speak', question: '大聲念出來：cat', answer: 'cat', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it a cat?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cat', 'hat', 'sun'], answer: 'cat', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：hat', answer: 'hat', image: '🔄' },
   ],
   talkTimePrompts: ["Say three words with /æ/.", "What has /æ/: cat or dog?", "Can you find a hat?", "Great job with short a!"],
   reviewQuiz: [
@@ -1580,6 +1620,8 @@ const L2_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bed', 'hen', 'pen', 'red'], answer: 'hen', image: '🎧' },
     { type: 'speak', question: '大聲念出來：bed', answer: 'bed', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is the pen red?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bat', 'bed', 'cat', 'hat'], answer: 'cat', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：hat', answer: 'hat', image: '🔄' },
   ],
   talkTimePrompts: ["Say three words with /ɛ/.", "What is red in your bag?", "How old are you? I am ___.", "Great job with short e!"],
   reviewQuiz: [
@@ -1644,6 +1686,8 @@ const L2_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['big', 'dig', 'pig', 'sit'], answer: 'big', image: '🎧' },
     { type: 'speak', question: '大聲念出來：pig', answer: 'pig', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it big?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bed', 'pen', 'pig', 'red'], answer: 'bed', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：pen', answer: 'pen', image: '🔄' },
   ],
   talkTimePrompts: ["Say three words with /ɪ/.", "How old are you? Can you say six?", "What is big?", "Great job with short i!"],
   reviewQuiz: [
@@ -1707,6 +1751,8 @@ const L2_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bat', 'bed', 'cat', 'pen'], answer: 'bed', image: '🎧' },
     { type: 'speak', question: '大聲念出來：cat', answer: 'cat', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it a cat or a pig?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['big', 'cat', 'dig', 'pig'], answer: 'pig', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：big', answer: 'big', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with /æ/.", "Say a word with /ɛ/.", "Say a word with /ɪ/.", "You are a phonics champion!"],
   reviewQuiz: [
@@ -1771,6 +1817,8 @@ const L2_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['box', 'fox', 'hot', 'top'], answer: 'hot', image: '🎧' },
     { type: 'speak', question: '大聲念出來：box', answer: 'box', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is the pot hot?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bat', 'bed', 'box', 'cat'], answer: 'cat', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：bat', answer: 'bat', image: '🔄' },
   ],
   talkTimePrompts: ["Say three words with /ɑ/.", "What is hot?", "Can you hop like a rabbit?", "Great job with short o!"],
   reviewQuiz: [
@@ -1835,6 +1883,8 @@ const L2_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bug', 'bus', 'cup', 'sun'], answer: 'bug', image: '🎧' },
     { type: 'speak', question: '大聲念出來：bus', answer: 'bus', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Can you run?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['box', 'cup', 'fox', 'hot'], answer: 'box', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：fox', answer: 'fox', image: '🔄' },
   ],
   talkTimePrompts: ["Say three words with /ʌ/.", "Can you run fast?", "Give me a hug!", "You know all five short vowels!"],
   reviewQuiz: [
@@ -1900,6 +1950,8 @@ const L2_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['fish', 'shell', 'ship', 'shop'], answer: 'shell', image: '🎧' },
     { type: 'speak', question: '大聲念出來：ship', answer: 'ship', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it a ship?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bus', 'cup', 'ship', 'sun'], answer: 'cup', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：bus', answer: 'bus', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with sh.", "Say a word with ch.", "What do you eat for lunch?", "Great job with sh and ch!"],
   reviewQuiz: [
@@ -1965,6 +2017,8 @@ const L2_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['duck', 'that', 'thin', 'this'], answer: 'duck', image: '🎧' },
     { type: 'speak', question: '大聲念出來：that', answer: 'that', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is this a duck?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['fish', 'ship', 'shop', 'this'], answer: 'ship', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：fish', answer: 'fish', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with ck.", "Say a word with ng.", "Can you sing a song?", "Great job with th, ck, ng!"],
   reviewQuiz: [
@@ -2028,6 +2082,8 @@ const L2_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bed', 'box', 'cat', 'pig'], answer: 'box', image: '🎧' },
     { type: 'speak', question: '大聲念出來：bed', answer: 'bed', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'What is this?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cat', 'that', 'thin', 'this'], answer: 'this', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：that', answer: 'that', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with each short vowel!", "Say a word with sh.", "Can you read cat, pig, cup?", "You are a reading star!"],
   reviewQuiz: [
@@ -2093,6 +2149,8 @@ const L2_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['cake', 'game', 'gate', 'name'], answer: 'gate', image: '🎧' },
     { type: 'speak', question: '大聲念出來：name', answer: 'name', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'What is your name?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bed', 'cake', 'cat', 'pig'], answer: 'cat', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：bed', answer: 'bed', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with long a.", "What is your name?", "Do you like to play games?", "Great job with long a!"],
   reviewQuiz: [
@@ -2157,6 +2215,8 @@ const L2_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bee', 'green', 'see', 'tree'], answer: 'green', image: '🎧' },
     { type: 'speak', question: '大聲念出來：tree', answer: 'tree', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Can you see the sea?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cake', 'game', 'name', 'tree'], answer: 'cake', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：name', answer: 'name', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with long e.", "Can you see a tree?", "Do you like tea?", "Great job with long e!"],
   reviewQuiz: [
@@ -2221,6 +2281,8 @@ const L2_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bike', 'five', 'kite', 'nine'], answer: 'five', image: '🎧' },
     { type: 'speak', question: '大聲念出來：bike', answer: 'bike', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Can you fly a kite?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bee', 'bike', 'see', 'tree'], answer: 'tree', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：bee', answer: 'bee', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with long i.", "Can you ride a bike?", "What do you see in the sky?", "Great job with long i!"],
   reviewQuiz: [
@@ -2285,6 +2347,8 @@ const L2_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bone', 'home', 'nose', 'rose'], answer: 'bone', image: '🎧' },
     { type: 'speak', question: '大聲念出來：home', answer: 'home', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it a boat?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bike', 'kite', 'nine', 'nose'], answer: 'bike', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：kite', answer: 'kite', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with long o.", "Do you have a coat?", "Can you touch your nose?", "Great job with long o!"],
   reviewQuiz: [
@@ -2348,6 +2412,8 @@ const L2_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['cake', 'eat', 'rain', 'tree'], answer: 'tree', image: '🎧' },
     { type: 'speak', question: '大聲念出來：cake', answer: 'cake', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it a boat?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cake', 'home', 'nose', 'rose'], answer: 'nose', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：home', answer: 'home', image: '🔄' },
   ],
   talkTimePrompts: ["Say a long a word.", "Say a long e word.", "Say a long i and long o word.", "You can read long vowels!"],
   reviewQuiz: [
@@ -2413,6 +2479,8 @@ const L2_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['June', 'cube', 'cute', 'moon'], answer: 'moon', image: '🎧' },
     { type: 'speak', question: '大聲念出來：cube', answer: 'cube', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is the cat cute?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cake', 'cute', 'rain', 'tree'], answer: 'cake', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：rain', answer: 'rain', image: '🔄' },
   ],
   talkTimePrompts: ["Say a word with oo.", "Do you like the zoo?", "What food do you like?", "Great job with long u!"],
   reviewQuiz: [
@@ -2478,6 +2546,8 @@ const L2_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['city', 'face', 'ice', 'rice'], answer: 'face', image: '🎧' },
     { type: 'speak', question: '大聲念出來：ice', answer: 'ice', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it a gem?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['June', 'city', 'cube', 'cute'], answer: 'cute', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：cube', answer: 'cube', image: '🔄' },
   ],
   talkTimePrompts: ["Say a soft c word.", "Say a soft g word.", "Do you like rice?", "Great job with tricky sounds!"],
   reviewQuiz: [
@@ -2543,6 +2613,8 @@ const L2_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['arm', 'car', 'corn', 'star'], answer: 'corn', image: '🎧' },
     { type: 'speak', question: '大聲念出來：car', answer: 'car', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it a star?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['car', 'city', 'face', 'ice'], answer: 'city', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：ice', answer: 'ice', image: '🔄' },
   ],
   talkTimePrompts: ["Say an ar word.", "Say an or word.", "Say an er/ir/ur word.", "Great job with bossy r!"],
   reviewQuiz: [
@@ -2608,6 +2680,8 @@ const L2_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['are', 'is', 'the', 'you'], answer: 'you', image: '🎧' },
     { type: 'speak', question: '大聲念出來：is', answer: 'is', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Are they big?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['arm', 'car', 'star', 'the'], answer: 'car', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：star', answer: 'star', image: '🔄' },
   ],
   talkTimePrompts: ["Read: The cat is big.", "Read: You have a bag.", "Read: They are my friends.", "You can read sentences now!"],
   reviewQuiz: [
@@ -2672,6 +2746,8 @@ const L2_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bike', 'boat', 'cat', 'tree'], answer: 'boat', image: '🎧' },
     { type: 'speak', question: '大聲念出來：tree', answer: 'tree', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is the fish in the sea?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['are', 'cat', 'is', 'the'], answer: 'the', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：is', answer: 'is', image: '🔄' },
   ],
   talkTimePrompts: ["Read: The cat is by the tree.", "Say a short vowel word and a long vowel word.", "You beat the Sound Boss! How do you feel?", "You are a reading star! Say 'I can read!'"],
   reviewQuiz: [
@@ -2806,6 +2882,8 @@ const L3_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['blue', 'green', 'red', 'yellow'], answer: 'green', image: '🎧' },
     { type: 'speak', question: '大聲念出來：yellow', answer: 'yellow', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'No, it isn\'t.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['blue', 'red', 'yellow'], answer: 'red', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：blue', answer: 'blue', image: '🔄' },
   ],
   talkTimePrompts: ["Is your bag red?", "What color is the sky?", "Ask me: What color is it?", "Answer: Is an apple red?"],
   reviewQuiz: [
@@ -2870,6 +2948,8 @@ const L3_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['four', 'one', 'three', 'two'], answer: 'four', image: '🎧' },
     { type: 'speak', question: '大聲念出來：two', answer: 'two', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Count to ten!', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['blue', 'one', 'red', 'yellow'], answer: 'red', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：yellow', answer: 'yellow', image: '🔄' },
   ],
   talkTimePrompts: ["Count from one to ten!", "How old are you?", "How many fingers do you have?", "How many pens are in your bag?"],
   reviewQuiz: [
@@ -2934,6 +3014,8 @@ const L3_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eleven', 'fourteen', 'thirteen', 'twelve'], answer: 'fourteen', image: '🎧' },
     { type: 'speak', question: '大聲念出來：twelve', answer: 'twelve', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Count to twenty!', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['eleven', 'one', 'three', 'two'], answer: 'one', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：two', answer: 'two', image: '🔄' },
   ],
   talkTimePrompts: ["Count from eleven to twenty!", "How many students in your class?", "How many are there? (show fingers)", "Count the stars with me!"],
   reviewQuiz: [
@@ -2997,6 +3079,8 @@ const L3_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['blue', 'green', 'red', 'yellow'], answer: 'yellow', image: '🎧' },
     { type: 'speak', question: '大聲念出來：blue', answer: 'blue', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'There are five.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['eleven', 'red', 'thirteen', 'twelve'], answer: 'eleven', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：twelve', answer: 'twelve', image: '🔄' },
   ],
   talkTimePrompts: ["How many red things can you see?", "What color is your bag?", "Count your fingers by color!", "Say: two green apples!"],
   reviewQuiz: [
@@ -3062,6 +3146,8 @@ const L3_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'banana', 'bread', 'rice'], answer: 'bread', image: '🎧' },
     { type: 'speak', question: '大聲念出來：banana', answer: 'banana', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I want bread and milk.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'blue', 'green', 'red'], answer: 'red', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：blue', answer: 'blue', image: '🔄' },
   ],
   talkTimePrompts: ["What food do you like?", "Do you like rice?", "Say: a banana, an egg.", "What do you eat for breakfast?"],
   reviewQuiz: [
@@ -3126,6 +3212,8 @@ const L3_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['juice', 'noodles', 'pizza', 'water'], answer: 'juice', image: '🎧' },
     { type: 'speak', question: '大聲念出來：noodles', answer: 'noodles', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Yes, I do. / No, I don\'t.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'banana', 'pizza', 'rice'], answer: 'apple', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：banana', answer: 'banana', image: '🔄' },
   ],
   talkTimePrompts: ["What food do you like?", "Do you like broccoli?", "I like ___. What about you?", "Do you like ice cream or candy?"],
   reviewQuiz: [
@@ -3190,6 +3278,8 @@ const L3_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bird', 'cat', 'dog', 'fish'], answer: 'fish', image: '🎧' },
     { type: 'speak', question: '大聲念出來：dog', answer: 'dog', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The rabbit is white.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['dog', 'noodles', 'pizza', 'water'], answer: 'pizza', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：noodles', answer: 'noodles', image: '🔄' },
   ],
   talkTimePrompts: ["What is your favorite animal?", "Do you have a pet?", "Can you make a lion sound?", "Point to a bird!"],
   reviewQuiz: [
@@ -3255,6 +3345,8 @@ const L3_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['birds', 'cats', 'dogs', 'ducks'], answer: 'ducks', image: '🎧' },
     { type: 'speak', question: '大聲念出來：cats', answer: 'cats', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'How many ducks?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bird', 'cat', 'dog', 'dogs'], answer: 'dog', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：cat', answer: 'cat', image: '🔄' },
   ],
   talkTimePrompts: ["How many pets do you have?", "Count the animals: two ___, three ___.", "Are they cats or dogs?", "How many students are girls?"],
   reviewQuiz: [
@@ -3318,6 +3410,8 @@ const L3_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'cake', 'dog', 'egg'], answer: 'dog', image: '🎧' },
     { type: 'speak', question: '大聲念出來：egg', answer: 'egg', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Do you like fish?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'birds', 'cats', 'dogs'], answer: 'dogs', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：cats', answer: 'cats', image: '🔄' },
   ],
   talkTimePrompts: ["What food and animals do you like?", "Do you like fish? (food or pet!)", "How many pets do you want?", "Say: I like ___ and ___."],
   reviewQuiz: [
@@ -3382,6 +3476,8 @@ const L3_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eye', 'foot', 'hand', 'head'], answer: 'hand', image: '🎧' },
     { type: 'speak', question: '大聲念出來：head', answer: 'head', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Touch your nose!', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apple', 'cake', 'egg', 'head'], answer: 'apple', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：egg', answer: 'egg', image: '🔄' },
   ],
   talkTimePrompts: ["Touch your nose!", "How many eyes do you have?", "Point to your ears!", "This is my ___. (point to body parts)"],
   reviewQuiz: [
@@ -3446,6 +3542,8 @@ const L3_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['brother', 'dad', 'mom', 'sister'], answer: 'brother', image: '🎧' },
     { type: 'speak', question: '大聲念出來：mom', answer: 'mom', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Who is she?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['foot', 'hand', 'head', 'mom'], answer: 'head', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：hand', answer: 'hand', image: '🔄' },
   ],
   talkTimePrompts: ["Who is in your family?", "Do you have a brother or sister?", "This is my ___. (introduce family)", "How many people in your family?"],
   reviewQuiz: [
@@ -3510,6 +3608,8 @@ const L3_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['hat', 'pants', 'shirt', 'shoes'], answer: 'shoes', image: '🎧' },
     { type: 'speak', question: '大聲念出來：pants', answer: 'pants', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is a pink dress.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['brother', 'dad', 'mom', 'shirt'], answer: 'mom', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：dad', answer: 'dad', image: '🔄' },
   ],
   talkTimePrompts: ["What are you wearing today?", "What color is your shirt?", "Do you like hats?", "Put on your shoes! (act it out)"],
   reviewQuiz: [
@@ -3574,6 +3674,8 @@ const L3_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['ball', 'book', 'car', 'doll'], answer: 'book', image: '🎧' },
     { type: 'speak', question: '大聲念出來：ball', answer: 'ball', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is my book.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['ball', 'hat', 'pants', 'shirt'], answer: 'shirt', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：pants', answer: 'pants', image: '🔄' },
   ],
   talkTimePrompts: ["What toys do you have?", "What is in your school bag?", "Whose pencil is this?", "What is your favorite toy?"],
   reviewQuiz: [
@@ -3637,6 +3739,8 @@ const L3_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['brother', 'eye', 'hand', 'mom'], answer: 'brother', image: '🎧' },
     { type: 'speak', question: '大聲念出來：hand', answer: 'hand', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Whose ball is this?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['ball', 'car', 'doll', 'eye'], answer: 'ball', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：doll', answer: 'doll', image: '🔄' },
   ],
   talkTimePrompts: ["Introduce your family!", "What are you wearing?", "Point to your eyes and hands!", "Whose bag is this?"],
   reviewQuiz: [
@@ -3700,6 +3804,8 @@ const L3_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['a ball', 'a cat', 'a dog', 'an apple'], answer: 'an apple', image: '🎧' },
     { type: 'speak', question: '大聲念出來：a cat', answer: 'a cat', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The sun is hot.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['a dog', 'eye', 'hand', 'mom'], answer: 'eye', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：hand', answer: 'hand', image: '🔄' },
   ],
   talkTimePrompts: ["Say 'a' or 'an': ___ apple, ___ cat.", "Point and say: an egg, a ball.", "Look at the sun! Say it.", "Make a sentence with 'the'."],
   reviewQuiz: [
@@ -3765,6 +3871,8 @@ const L3_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apples', 'boxes', 'cats', 'dogs'], answer: 'boxes', image: '🎧' },
     { type: 'speak', question: '大聲念出來：dogs', answer: 'dogs', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'One foot, two feet.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['a ball', 'a cat', 'a dog', 'cats'], answer: 'a dog', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：a cat', answer: 'a cat', image: '🔄' },
   ],
   talkTimePrompts: ["Say the plural: cat → ?", "Say the plural: box → ?", "How many feet do you have?", "Count: one apple, two apples..."],
   reviewQuiz: [
@@ -3830,6 +3938,8 @@ const L3_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['that', 'these', 'this', 'those'], answer: 'those', image: '🎧' },
     { type: 'speak', question: '大聲念出來：these', answer: 'these', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'That is a dog.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['apples', 'cats', 'dogs', 'this'], answer: 'cats', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：dogs', answer: 'dogs', image: '🔄' },
   ],
   talkTimePrompts: ["Point near: This is ___.", "Point to many: These are ___.", "Point far: That is ___.", "What is this? / What are these?"],
   reviewQuiz: [
@@ -3894,6 +4004,8 @@ const L3_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['has', 'likes', 'market', 'story'], answer: 'likes', image: '🎧' },
     { type: 'speak', question: '大聲念出來：market', answer: 'market', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She has a cat.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['story', 'that', 'these', 'this'], answer: 'this', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：these', answer: 'these', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the story about Coco.", "What does Coco have?", "What does Coco like?", "Make your own story: I have ___."],
   reviewQuiz: [
@@ -3958,6 +4070,8 @@ const L3_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'dog', 'red', 'three'], answer: 'dog', image: '🎧' },
     { type: 'speak', question: '大聲念出來：three', answer: 'three', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Do you like the dog?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['has', 'market', 'red', 'story'], answer: 'story', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：market', answer: 'market', image: '🔄' },
   ],
   talkTimePrompts: ["Tell me: your favorite color, food, and animal!", "Introduce your family in English!", "What are you wearing?", "You beat the Market Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -4091,6 +4205,8 @@ const L4_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['I', 'he', 'she', 'you'], answer: 'she', image: '🎧' },
     { type: 'speak', question: '大聲念出來：you', answer: 'you', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She is happy.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['I', 'happy', 'hungry', 'sad'], answer: 'happy', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：sad', answer: 'sad', image: '🔄' },
   ],
   talkTimePrompts: ["Point and say: He is ___. / She is ___.", "Say: We are friends!", "Introduce a friend: This is ___. He/She is ___.", "Change the word: ___ is happy (He/She/It)."],
   reviewQuiz: [
@@ -4158,6 +4274,8 @@ const L4_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['boy', 'friend', 'student', 'teacher'], answer: 'boy', image: '🎧' },
     { type: 'speak', question: '大聲念出來：student', answer: 'student', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is he a teacher?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['I', 'he', 'teacher', 'you'], answer: 'I', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：you', answer: 'you', image: '🔄' },
   ],
   talkTimePrompts: ["Ask a friend: Are you happy?", "Answer: Yes, I am. / No, I'm not.", "Ask about someone: Is he/she a student?", "Change it: Is she ___? (a teacher / happy / tired)"],
   reviewQuiz: [
@@ -4226,6 +4344,8 @@ const L4_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['that', 'these', 'this', 'those'], answer: 'those', image: '🎧' },
     { type: 'speak', question: '大聲念出來：that', answer: 'that', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'These are bags.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['friend', 'student', 'teacher', 'this'], answer: 'teacher', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：student', answer: 'student', image: '🔄' },
   ],
   talkTimePrompts: ["Point near: This is a ___.", "Point far: That is a ___.", "Ask: What is this?", "Change it: These are ___. (books/pens/bags)"],
   reviewQuiz: [
@@ -4293,6 +4413,8 @@ const L4_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['happy', 'he', 'she', 'tired'], answer: 'she', image: '🎧' },
     { type: 'speak', question: '大聲念出來：tired', answer: 'tired', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Are they happy?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['happy', 'that', 'these', 'this'], answer: 'this', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：that', answer: 'that', image: '🔄' },
   ],
   talkTimePrompts: ["Say: I am a student.", "Introduce: He is / She is my friend.", "Ask and answer: Are you happy? Yes, I am.", "Point: This is my ___."],
   reviewQuiz: [
@@ -4360,6 +4482,8 @@ const L4_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['candy', 'ice cream', 'like', 'pizza'], answer: 'candy', image: '🎧' },
     { type: 'speak', question: '大聲念出來：pizza', answer: 'pizza', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'What do you like?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['happy', 'he', 'like', 'tired'], answer: 'happy', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：tired', answer: 'tired', image: '🔄' },
   ],
   talkTimePrompts: ["What do you like? I like ___.", "Say something you don't like: I don't like ___.", "Name three things you like!", "Change it: I like ___ (pizza/music/games)."],
   reviewQuiz: [
@@ -4428,6 +4552,8 @@ const L4_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['cat', 'do', 'dog', 'like'], answer: 'cat', image: '🎧' },
     { type: 'speak', question: '大聲念出來：like', answer: 'like', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Do you like dogs?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['do', 'ice cream', 'like', 'pizza'], answer: 'like', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：pizza', answer: 'pizza', image: '🔄' },
   ],
   talkTimePrompts: ["Ask a friend: Do you like ___?", "Answer: Yes, I do. / No, I don't.", "Ask about pizza, dogs, music!", "Change it: Do you like ___? (apples/milk/games)"],
   reviewQuiz: [
@@ -4495,6 +4621,8 @@ const L4_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bag', 'book', 'have', 'pen'], answer: 'pen', image: '🎧' },
     { type: 'speak', question: '大聲念出來：bag', answer: 'bag', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Do you have a toy?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['do', 'dog', 'have', 'like'], answer: 'do', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：like', answer: 'like', image: '🔄' },
   ],
   talkTimePrompts: ["What do you have? I have a ___.", "Ask: Do you have a ___?", "Answer: Yes, I do. / No, I don't.", "Change it: I have a ___ (toy/bike/hat)."],
   reviewQuiz: [
@@ -4562,6 +4690,8 @@ const L4_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['can', 'jump', 'run', 'swim'], answer: 'jump', image: '🎧' },
     { type: 'speak', question: '大聲念出來：swim', answer: 'swim', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Can you sing?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bag', 'book', 'can', 'have'], answer: 'have', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：bag', answer: 'bag', image: '🔄' },
   ],
   talkTimePrompts: ["What can you do? I can ___.", "Say something you can't do: I can't ___.", "Ask: Can you swim?", "Change it: I can ___ (run/sing/draw)."],
   reviewQuiz: [
@@ -4629,6 +4759,8 @@ const L4_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['can', 'have', 'like', 'pizza'], answer: 'can', image: '🎧' },
     { type: 'speak', question: '大聲念出來：like', answer: 'like', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I can swim.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['can', 'like', 'run', 'swim'], answer: 'can', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：swim', answer: 'swim', image: '🔄' },
   ],
   talkTimePrompts: ["Say: I like ___, I have ___, I can ___.", "Ask a friend one question with 'Do you…?'", "Ask a friend one question with 'Can you…?'", "Tell me three things about you!"],
   reviewQuiz: [
@@ -4696,6 +4828,8 @@ const L4_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['can', 'cook', 'read', 'swim'], answer: 'cook', image: '🎧' },
     { type: 'speak', question: '大聲念出來：can', answer: 'can', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Can you fly?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['can', 'have', 'like'], answer: 'like', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：have', answer: 'have', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Can you swim?", "Answer: Yes, I can. / No, I can't.", "Ask about cook, climb, ride!", "Change it: Can you ___? (jump/read/kick)"],
   reviewQuiz: [
@@ -4763,6 +4897,8 @@ const L4_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['board', 'clock', 'door', 'window'], answer: 'board', image: '🎧' },
     { type: 'speak', question: '大聲念出來：door', answer: 'door', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'What is that?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['can', 'clock', 'read', 'swim'], answer: 'can', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：swim', answer: 'swim', image: '🔄' },
   ],
   talkTimePrompts: ["Point and ask: What is this?", "Answer: It is a ___.", "Ask about 3 things in your room!", "Change it: What is that? It is a ___."],
   reviewQuiz: [
@@ -4830,6 +4966,8 @@ const L4_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['in', 'on', 'under', 'where'], answer: 'under', image: '🎧' },
     { type: 'speak', question: '大聲念出來：in', answer: 'in', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Where is the ball?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['clock', 'door', 'where', 'window'], answer: 'clock', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：door', answer: 'door', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Where is my bag?", "Answer: It is in / on / under the ___.", "Hide something and ask: Where is it?", "Change it: The cat is ___ the box (in/on/under)."],
   reviewQuiz: [
@@ -4897,6 +5035,8 @@ const L4_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['in', 'next to', 'on', 'under'], answer: 'next to', image: '🎧' },
     { type: 'speak', question: '大聲念出來：on', answer: 'on', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The ball is under the chair.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['in', 'on', 'where'], answer: 'where', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：in', answer: 'in', image: '🔄' },
   ],
   talkTimePrompts: ["Say where your bag is: It is ___ the ___.", "Use 'next to' in a sentence.", "Use 'behind' in a sentence.", "Change it: The cat is ___ the box (in/on/next to)."],
   reviewQuiz: [
@@ -4964,6 +5104,8 @@ const L4_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['are', 'can', 'do', 'what'], answer: 'what', image: '🎧' },
     { type: 'speak', question: '大聲念出來：do', answer: 'do', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Can you swim?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['are', 'in', 'on', 'under'], answer: 'in', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：on', answer: 'on', image: '🔄' },
   ],
   talkTimePrompts: ["Ask a friend: Are you…?", "Ask: Do you like…?", "Ask: Can you…?", "Ask: What is this? / Where is it?"],
   reviewQuiz: [
@@ -5032,6 +5174,8 @@ const L4_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eat', 'go', 'play', 'played'], answer: 'eat', image: '🎧' },
     { type: 'speak', question: '大聲念出來：played', answer: 'played', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I go to school.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['are', 'can', 'do', 'play'], answer: 'are', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：do', answer: 'do', image: '🔄' },
   ],
   talkTimePrompts: ["Say: Today I play. Yesterday I played.", "What did you eat yesterday? I ate ___.", "Where did you go? I went to ___.", "Change it: Yesterday I ___ (played/went/ate)."],
   reviewQuiz: [
@@ -5099,6 +5243,8 @@ const L4_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['book', 'class', 'lunch', 'school'], answer: 'book', image: '🎧' },
     { type: 'speak', question: '大聲念出來：school', answer: 'school', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I have a book and a bag.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['go', 'play', 'played', 'school'], answer: 'play', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：played', answer: 'played', image: '🔄' },
   ],
   talkTimePrompts: ["Tell me about school: I am ___. I like ___.", "Say what you have: I have ___.", "Say what you can do at school.", "Is school fun? Yes/No, why?"],
   reviewQuiz: [
@@ -5166,6 +5312,8 @@ const L4_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['close', 'open', 'sit down', 'stand up'], answer: 'close', image: '🎧' },
     { type: 'speak', question: '大聲念出來：stand up', answer: 'stand up', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Open your book.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['class', 'lunch', 'school', 'sit down'], answer: 'school', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：class', answer: 'class', image: '🔄' },
   ],
   talkTimePrompts: ["Give a command: Please ___.", "Say: Open your book. / Close the door.", "Say 'thank you' to your teacher.", "Play teacher: tell the class to sit down!"],
   reviewQuiz: [
@@ -5233,6 +5381,8 @@ const L4_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['day', 'like', 'story', 'student'], answer: 'like', image: '🎧' },
     { type: 'speak', question: '大聲念出來：story', answer: 'story', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'He has a book and a bag.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['open', 'sit down', 'stand up', 'story'], answer: 'sit down', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：stand up', answer: 'stand up', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the story about Finn.", "What does Finn have?", "What can Finn do?", "Make your own: I am ___. I like ___. I can ___."],
   reviewQuiz: [
@@ -5300,6 +5450,8 @@ const L4_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['can', 'happy', 'have', 'like'], answer: 'can', image: '🎧' },
     { type: 'speak', question: '大聲念出來：like', answer: 'like', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Where is the cat? It is on the desk.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['day', 'happy', 'story', 'student'], answer: 'story', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：day', answer: 'day', image: '🔄' },
   ],
   talkTimePrompts: ["Tell me about you: I am ___, I like ___, I have ___, I can ___.", "Ask 3 questions: Are you…? Do you…? Can you…?", "Say where your bag is.", "You beat the School Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -5431,6 +5583,8 @@ const L5_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['cold', 'hot', 'new', 'old'], answer: 'old', image: '🎧' },
     { type: 'speak', question: '大聲念出來：cold', answer: 'cold', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it fast or slow?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['big', 'hot', 'small', 'tall'], answer: 'big', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：small', answer: 'small', image: '🔄' },
   ],
   talkTimePrompts: ["Say opposites: hot / cold.", "Describe the water: It is ___.", "Ask: Is it fast or slow?", "Change it: It is ___ (new/old/clean)."],
   reviewQuiz: [
@@ -5495,6 +5649,8 @@ const L5_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bigger', 'longer', 'smaller', 'taller'], answer: 'longer', image: '🎧' },
     { type: 'speak', question: '大聲念出來：bigger', answer: 'bigger', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'This fish is faster.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bigger', 'cold', 'hot', 'new'], answer: 'hot', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：cold', answer: 'cold', image: '🔄' },
   ],
   talkTimePrompts: ["Make it -er: big → ?", "Compare two things: A is ___er.", "Which is bigger? A or B?", "Change it: It is ___er (taller/faster/older)."],
   reviewQuiz: [
@@ -5558,6 +5714,8 @@ const L5_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['fish', 'shark', 'than', 'whale'], answer: 'shark', image: '🎧' },
     { type: 'speak', question: '大聲念出來：than', answer: 'than', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Which is bigger?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bigger', 'smaller', 'taller', 'than'], answer: 'bigger', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：smaller', answer: 'smaller', image: '🔄' },
   ],
   talkTimePrompts: ["Compare: A ___ is bigger than a ___.", "Which is faster, a shark or a crab?", "Make a sentence with 'than'.", "Change it: A ___ is bigger than a ___."],
   reviewQuiz: [
@@ -5621,6 +5779,8 @@ const L5_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['big', 'fast', 'slow', 'small'], answer: 'slow', image: '🎧' },
     { type: 'speak', question: '大聲念出來：small', answer: 'small', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The whale is bigger than the fish.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['big', 'fish', 'than', 'whale'], answer: 'than', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：whale', answer: 'whale', image: '🔄' },
   ],
   talkTimePrompts: ["Describe the sea: It is ___.", "Compare two sea animals.", "Say two opposites.", "Which is bigger, a whale or a fish?"],
   reviewQuiz: [
@@ -5684,6 +5844,8 @@ const L5_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['cloudy', 'rainy', 'sunny', 'windy'], answer: 'rainy', image: '🎧' },
     { type: 'speak', question: '大聲念出來：sunny', answer: 'sunny', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it windy?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['big', 'fast', 'small', 'sunny'], answer: 'big', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：small', answer: 'small', image: '🔄' },
   ],
   talkTimePrompts: ["What is the weather today? It is ___.", "Say two kinds of weather.", "Ask: Is it sunny?", "Change it: It is ___ (windy/cloudy/cold)."],
   reviewQuiz: [
@@ -5747,6 +5909,8 @@ const L5_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['fall', 'spring', 'summer', 'weather'], answer: 'fall', image: '🎧' },
     { type: 'speak', question: '大聲念出來：spring', answer: 'spring', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'In winter, it is cold.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cloudy', 'rainy', 'sunny', 'weather'], answer: 'sunny', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：rainy', answer: 'rainy', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: How's the weather?", "Answer: It's ___.", "What is the weather in summer?", "Change it: In ___, it is ___."],
   reviewQuiz: [
@@ -5810,6 +5974,8 @@ const L5_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['afternoon', 'clock', 'morning', 'time'], answer: 'afternoon', image: '🎧' },
     { type: 'speak', question: '大聲念出來：clock', answer: 'clock', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it late?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['spring', 'summer', 'time', 'weather'], answer: 'weather', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：spring', answer: 'spring', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: What time is it?", "Answer: It is ___ o'clock.", "Say good morning / good night!", "What time do you go to school?"],
   reviewQuiz: [
@@ -5873,6 +6039,8 @@ const L5_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['brush', 'eat', 'get up', 'wash'], answer: 'brush', image: '🎧' },
     { type: 'speak', question: '大聲念出來：wash', answer: 'wash', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I go to school.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['clock', 'get up', 'morning', 'time'], answer: 'time', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：clock', answer: 'clock', image: '🔄' },
   ],
   talkTimePrompts: ["What do you do in the morning? I ___.", "Say three things you do every day.", "What time do you get up?", "Change it: I ___ (eat/play/study)."],
   reviewQuiz: [
@@ -5936,6 +6104,8 @@ const L5_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['rainy', 'sunny', 'time', 'weather'], answer: 'time', image: '🎧' },
     { type: 'speak', question: '大聲念出來：sunny', answer: 'sunny', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is it rainy today?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['eat', 'get up', 'sunny', 'wash'], answer: 'get up', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：wash', answer: 'wash', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: How's the weather? / What time is it?", "Tell me your morning routine.", "Say the weather and time now.", "Say good morning and good night."],
   reviewQuiz: [
@@ -5999,6 +6169,8 @@ const L5_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['Monday', 'Thursday', 'Tuesday', 'Wednesday'], answer: 'Thursday', image: '🎧' },
     { type: 'speak', question: '大聲念出來：Tuesday', answer: 'Tuesday', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'What day is today?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['Monday', 'rainy', 'sunny', 'weather'], answer: 'sunny', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：rainy', answer: 'rainy', image: '🔄' },
   ],
   talkTimePrompts: ["What day is today?", "Say the seven days!", "What do you do on the weekend?", "Change it: On ___, I ___."],
   reviewQuiz: [
@@ -6062,6 +6234,8 @@ const L5_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['April', 'January', 'month', 'year'], answer: 'April', image: '🎧' },
     { type: 'speak', question: '大聲念出來：month', answer: 'month', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'When is your birthday?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['Monday', 'Tuesday', 'Wednesday', 'month'], answer: 'Monday', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：Tuesday', answer: 'Tuesday', image: '🔄' },
   ],
   talkTimePrompts: ["When is your birthday? It is in ___.", "Say four months you know.", "What is your favorite season?", "Change it: My birthday is in ___."],
   reviewQuiz: [
@@ -6125,6 +6299,8 @@ const L5_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['beach', 'sand', 'shell', 'sunny'], answer: 'shell', image: '🎧' },
     { type: 'speak', question: '大聲念出來：sunny', answer: 'sunny', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'He finds a big shell.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['January', 'beach', 'month', 'year'], answer: 'month', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：year', answer: 'year', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the story about Finn.", "What does Finn find at the beach?", "What can you do at the beach?", "Make your own: I go to the ___."],
   reviewQuiz: [
@@ -6188,6 +6364,8 @@ const L5_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['race', 'slow', 'turtle', 'walk'], answer: 'race', image: '🎧' },
     { type: 'speak', question: '大聲念出來：turtle', answer: 'turtle', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The turtle never gives up.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beach', 'sand', 'sunny', 'turtle'], answer: 'beach', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：sunny', answer: 'sunny', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the turtle story.", "Who is fast? Who is slow?", "Who wins the race?", "What can we learn? Never give up!"],
   reviewQuiz: [
@@ -6251,6 +6429,8 @@ const L5_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['Sunday', 'beach', 'sunny', 'turtle'], answer: 'turtle', image: '🎧' },
     { type: 'speak', question: '大聲念出來：beach', answer: 'beach', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The turtle is slow.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beach', 'slow', 'turtle', 'walk'], answer: 'turtle', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：slow', answer: 'slow', image: '🔄' },
   ],
   talkTimePrompts: ["Tell a short story about the beach.", "Describe the weather and the day.", "Compare the turtle and the fish.", "What did you find? I found a ___."],
   reviewQuiz: [
@@ -6315,6 +6495,8 @@ const L5_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eating', 'reading', 'running', 'swimming'], answer: 'eating', image: '🎧' },
     { type: 'speak', question: '大聲念出來：reading', answer: 'reading', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She is drawing.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['Sunday', 'beach', 'sunny', 'swimming'], answer: 'beach', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：sunny', answer: 'sunny', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you are doing: I am ___ing.", "Act it out and say: I am jumping!", "Ask a friend: what are they doing?", "Change it: I am ___ing (reading/playing/singing)."],
   reviewQuiz: [
@@ -6378,6 +6560,8 @@ const L5_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['doing', 'eating', 'singing', 'swimming'], answer: 'swimming', image: '🎧' },
     { type: 'speak', question: '大聲念出來：doing', answer: 'doing', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'What is he doing?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['doing', 'reading', 'running', 'swimming'], answer: 'swimming', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：reading', answer: 'reading', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: What are you doing?", "Answer: I am ___ing.", "Ask about a friend: What is he/she doing?", "Change it: I am ___ing (cooking/dancing/playing)."],
   reviewQuiz: [
@@ -6441,6 +6625,8 @@ const L5_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['beach', 'cool', 'sunny', 'swimming'], answer: 'sunny', image: '🎧' },
     { type: 'speak', question: '大聲念出來：beach', answer: 'beach', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'My shell is bigger than yours.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beach', 'doing', 'singing', 'swimming'], answer: 'doing', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：singing', answer: 'singing', image: '🔄' },
   ],
   talkTimePrompts: ["Talk about the beach: It's sunny. I am ___.", "Compare two shells: Mine is bigger.", "Ask a friend: What are you doing?", "Describe the sea and the sand."],
   reviewQuiz: [
@@ -6504,6 +6690,8 @@ const L5_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['Saturday', 'beach', 'dolphin', 'sunny'], answer: 'dolphin', image: '🎧' },
     { type: 'speak', question: '大聲念出來：Saturday', answer: 'Saturday', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'A dolphin is swimming.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['Saturday', 'beach', 'sunny', 'swimming'], answer: 'beach', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：sunny', answer: 'sunny', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the beach story.", "What is the dolphin doing?", "Compare the dolphin and the fish.", "What day and weather is it in the story?"],
   reviewQuiz: [
@@ -6567,6 +6755,8 @@ const L5_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['Monday', 'big', 'faster', 'sunny'], answer: 'Monday', image: '🎧' },
     { type: 'speak', question: '大聲念出來：faster', answer: 'faster', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I am swimming in the sea.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['Saturday', 'beach', 'big', 'sunny'], answer: 'Saturday', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：sunny', answer: 'sunny', image: '🔄' },
   ],
   talkTimePrompts: ["Describe today: weather, day, time.", "Compare two things with -er.", "Say what you are doing now.", "You beat the Coral Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -6693,6 +6883,8 @@ const L6_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['boring', 'cool', 'great', 'think'], answer: 'great', image: '🎧' },
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['boring', 'cool', 'great', 'think'], answer: 'boring', image: '🎧' },
     { type: 'speak', question: '大聲念出來：cool', answer: 'cool', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beautiful', 'clean', 'pretty', 'think'], answer: 'beautiful', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：pretty', answer: 'pretty', image: '🔄' },
   ],
   talkTimePrompts: ["What do you think? I think it's ___.", "Give an opinion about school.", "Use 'because': I like it because ___.", "✍️ 引導寫作：I think ___ because ___."],
   reviewQuiz: [
@@ -6757,6 +6949,8 @@ const L6_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['dollar', 'how much', 'money', 'price'], answer: 'price', image: '🎧' },
     { type: 'speak', question: '大聲念出來：dollar', answer: 'dollar', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Here is the money.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cool', 'great', 'how much', 'think'], answer: 'think', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：cool', answer: 'cool', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: How much is it?", "Answer: It's ___ dollars.", "Buy something: I want to buy ___.", "✍️ 引導寫作：I want to buy a ___. It is ___ dollars."],
   reviewQuiz: [
@@ -6820,6 +7014,8 @@ const L6_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['buy', 'cheap', 'expensive', 'sell'], answer: 'sell', image: '🎧' },
     { type: 'speak', question: '大聲念出來：expensive', answer: 'expensive', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is too expensive!', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cheap', 'dollar', 'how much', 'money'], answer: 'how much', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：dollar', answer: 'dollar', image: '🔄' },
   ],
   talkTimePrompts: ["Say: This is cheap / expensive.", "Ask: Do you want to buy it?", "Use 'too': It is too expensive.", "✍️ 引導寫作：The ___ is cheap/expensive. I ___ it."],
   reviewQuiz: [
@@ -6883,6 +7079,8 @@ const L6_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['beautiful', 'clean', 'cool', 'think'], answer: 'cool', image: '🎧' },
     { type: 'speak', question: '大聲念出來：clean', answer: 'clean', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is too expensive.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beautiful', 'buy', 'cheap', 'expensive'], answer: 'cheap', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：expensive', answer: 'expensive', image: '🔄' },
   ],
   talkTimePrompts: ["Describe and give an opinion: It is ___. I think it's ___.", "Go shopping: How much? Buy it.", "Say cheap or expensive.", "✍️ 引導寫作：I think the ___ is ___ because ___."],
   reviewQuiz: [
@@ -6946,6 +7144,8 @@ const L6_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['menu', 'order', 'salad', 'soup'], answer: 'salad', image: '🎧' },
     { type: 'speak', question: '大聲念出來：order', answer: 'order', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'What would you like?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beautiful', 'clean', 'menu', 'think'], answer: 'beautiful', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：clean', answer: 'clean', image: '🔄' },
   ],
   talkTimePrompts: ["Order food: Can I have ___?", "Say: I'd like ___.", "Be polite: ___, please. / Thank you!", "✍️ 引導寫作：I'd like ___ and ___, please."],
   reviewQuiz: [
@@ -7009,6 +7209,8 @@ const L6_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['cola', 'fries', 'hamburger', 'pizza'], answer: 'pizza', image: '🎧' },
     { type: 'speak', question: '大聲念出來：hamburger', answer: 'hamburger', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'For dessert, I want cake.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['hamburger', 'menu', 'order', 'soup'], answer: 'menu', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：order', answer: 'order', image: '🔄' },
   ],
   talkTimePrompts: ["Order a meal: I'd like ___ and ___.", "What do you want to drink?", "Order dessert!", "✍️ 引導寫作：For lunch, I'd like ___. For dessert, I'd like ___."],
   reviewQuiz: [
@@ -7072,6 +7274,8 @@ const L6_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bank', 'hospital', 'park', 'where'], answer: 'hospital', image: '🎧' },
     { type: 'speak', question: '大聲念出來：park', answer: 'park', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is near the school.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['fries', 'hamburger', 'pizza', 'where'], answer: 'hamburger', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：fries', answer: 'fries', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Where is the ___?", "Ask: How do I get to the ___?", "Say: It is near / far.", "✍️ 引導寫作：The ___ is near the ___."],
   reviewQuiz: [
@@ -7135,6 +7339,8 @@ const L6_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['left', 'right', 'straight', 'turn'], answer: 'turn', image: '🎧' },
     { type: 'speak', question: '大聲念出來：right', answer: 'right', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Turn right.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bank', 'left', 'park', 'where'], answer: 'where', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：park', answer: 'park', image: '🔄' },
   ],
   talkTimePrompts: ["Give directions: Go straight. Turn ___.", "Say where something is: in front of / behind.", "Ask: How do I get there?", "✍️ 引導寫作：Go straight, then turn ___. It is ___ the ___."],
   reviewQuiz: [
@@ -7198,6 +7404,8 @@ const L6_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['hamburger', 'menu', 'park', 'where'], answer: 'park', image: '🎧' },
     { type: 'speak', question: '大聲念出來：hamburger', answer: 'hamburger', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Go straight and turn left.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['left', 'menu', 'right', 'straight'], answer: 'left', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：right', answer: 'right', image: '🔄' },
   ],
   talkTimePrompts: ["Order food and drinks.", "Ask and give directions.", "Role-play: customer and waiter.", "✍️ 引導寫作：I'd like ___. The park is ___ and turn ___."],
   reviewQuiz: [
@@ -7261,6 +7469,8 @@ const L6_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['go', 'play', 'swim', 'want'], answer: 'swim', image: '🎧' },
     { type: 'speak', question: '大聲念出來：go', answer: 'go', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Do you want to come?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['hamburger', 'menu', 'want', 'where'], answer: 'menu', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：hamburger', answer: 'hamburger', image: '🔄' },
   ],
   talkTimePrompts: ["Invite a friend: Let's ___!", "Ask: Do you want to ___?", "Answer: Sure! / Sorry, I can't.", "✍️ 引導寫作：Let's ___ together! Do you want to ___?"],
   reviewQuiz: [
@@ -7324,6 +7534,8 @@ const L6_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['bored', 'excited', 'scared', 'surprised'], answer: 'surprised', image: '🎧' },
     { type: 'speak', question: '大聲念出來：scared', answer: 'scared', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Why are you bored?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['excited', 'go', 'play', 'want'], answer: 'want', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：go', answer: 'go', image: '🔄' },
   ],
   talkTimePrompts: ["How do you feel? I am ___.", "Say when you feel scared or excited.", "Ask: Are you nervous?", "✍️ 引導寫作：I am ___ because ___."],
   reviewQuiz: [
@@ -7387,6 +7599,8 @@ const L6_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['boat', 'bright', 'light', 'lighthouse'], answer: 'boat', image: '🎧' },
     { type: 'speak', question: '大聲念出來：light', answer: 'light', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'At night, it helps the boats.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bored', 'excited', 'lighthouse', 'scared'], answer: 'excited', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：scared', answer: 'scared', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the lighthouse story.", "What does the lighthouse do?", "Why is it important?", "✍️ 引導寫作：The lighthouse is ___. It helps ___."],
   reviewQuiz: [
@@ -7450,6 +7664,8 @@ const L6_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['apple', 'buy', 'cheap', 'market'], answer: 'apple', image: '🎧' },
     { type: 'speak', question: '大聲念出來：market', answer: 'market', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She buys cheap apples.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['bright', 'light', 'lighthouse', 'market'], answer: 'lighthouse', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：light', answer: 'light', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the market story.", "What does Ruby buy?", "How much are the apples?", "✍️ 引導寫作：I go to the market. I buy ___. It is ___ dollars."],
   reviewQuiz: [
@@ -7513,6 +7729,8 @@ const L6_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['beautiful', 'bright', 'lighthouse', 'market'], answer: 'market', image: '🎧' },
     { type: 'speak', question: '大聲念出來：bright', answer: 'bright', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The fruit is cheap and fresh.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['buy', 'cheap', 'lighthouse', 'market'], answer: 'market', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：buy', answer: 'buy', image: '🔄' },
   ],
   talkTimePrompts: ["Retell one story you read.", "Give your opinion: I think ___.", "Describe the lighthouse or market.", "✍️ 引導寫作：I think the ___ is ___ because ___."],
   reviewQuiz: [
@@ -7577,6 +7795,8 @@ const L6_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['jumped', 'looked', 'played', 'walked'], answer: 'jumped', image: '🎧' },
     { type: 'speak', question: '大聲念出來：walked', answer: 'walked', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I looked at the sea.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beautiful', 'bright', 'lighthouse', 'played'], answer: 'lighthouse', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：bright', answer: 'bright', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you did: Yesterday I ___ed.", "Use walked, played, cleaned.", "Ask: Did you help your mom?", "✍️ 引導寫作：Yesterday I ___ed and ___ed."],
   reviewQuiz: [
@@ -7640,6 +7860,8 @@ const L6_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['did', 'played', 'visited', 'watched'], answer: 'visited', image: '🎧' },
     { type: 'speak', question: '大聲念出來：played', answer: 'played', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Did you watch TV?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['did', 'looked', 'played', 'walked'], answer: 'played', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：walked', answer: 'walked', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: What did you do yesterday?", "Answer: I ___ed.", "Ask: Did you ___? Yes, I did. / No, I didn't.", "✍️ 引導寫作：Yesterday I ___ed. Then I ___ed."],
   reviewQuiz: [
@@ -7703,6 +7925,8 @@ const L6_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['excited', 'straight', 'want', 'where'], answer: 'excited', image: '🎧' },
     { type: 'speak', question: '大聲念出來：want', answer: 'want', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Where is the market?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['did', 'played', 'want', 'watched'], answer: 'did', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：played', answer: 'played', image: '🔄' },
   ],
   talkTimePrompts: ["Invite a friend and ask directions.", "Role-play: go to the market together.", "Say how you feel about the trip.", "✍️ 引導寫作：Let's go to the ___! I am ___ because ___."],
   reviewQuiz: [
@@ -7766,6 +7990,8 @@ const L6_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['read', 'sentence', 'went', 'write'], answer: 'went', image: '🎧' },
     { type: 'speak', question: '大聲念出來：read', answer: 'read', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Then, I swam in the sea.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['excited', 'want', 'where', 'write'], answer: 'want', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：excited', answer: 'excited', image: '🔄' },
   ],
   talkTimePrompts: ["Read the story out loud.", "Say what you did yesterday with First / Then.", "✍️ 引導寫作：Yesterday I went to ___.", "✍️ 引導寫作：First I ___ed. Then I ___ed."],
   reviewQuiz: [
@@ -7829,6 +8055,8 @@ const L6_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['beautiful', 'cheap', 'how much', 'think'], answer: 'cheap', image: '🎧' },
     { type: 'speak', question: '大聲念出來：think', answer: 'think', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Where is the park? Turn left.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beautiful', 'read', 'sentence', 'write'], answer: 'write', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：read', answer: 'read', image: '🔄' },
   ],
   talkTimePrompts: ["Describe something and give your opinion.", "Order food and ask directions.", "Say what you did yesterday.", "You beat the Lighthouse Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -7957,6 +8185,8 @@ const L7_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['goes', 'likes', 'plays', 'reads'], answer: 'goes', image: '🎧' },
     { type: 'speak', question: '大聲念出來：reads', answer: 'reads', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'He watches TV.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['drink', 'eat', 'like', 'likes'], answer: 'eat', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：drink', answer: 'drink', image: '🔄' },
   ],
   talkTimePrompts: ["Say about a friend: He/She ___s.", "Change the verb: like → likes.", "Say: He watches / She goes.", "✍️ 引導寫作：My friend ___s every day."],
   reviewQuiz: [
@@ -8018,6 +8248,8 @@ const L7_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eat', 'like', 'swim', 'watch'], answer: 'eat', image: '🎧' },
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eat', 'like', 'swim', 'watch'], answer: 'swim', image: '🎧' },
     { type: 'speak', question: '大聲念出來：watch', answer: 'watch', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['like', 'likes', 'plays', 'reads'], answer: 'likes', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：reads', answer: 'reads', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you don't like: I don't like ___.", "Say about a friend: He doesn't ___.", "Use don't and doesn't.", "✍️ 引導寫作：I don't ___, but I like ___."],
   reviewQuiz: [
@@ -8082,6 +8314,8 @@ const L7_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['do', 'does', 'like', 'read'], answer: 'read', image: '🎧' },
     { type: 'speak', question: '大聲念出來：does', answer: 'does', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Does she read books?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['do', 'eat', 'like', 'watch'], answer: 'like', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：watch', answer: 'watch', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Do you like ___?", "Ask about a friend: Does he/she ___?", "Answer: Yes, I do. / No, he doesn't.", "✍️ 引導寫作：Do you ___? Does your friend ___?"],
   reviewQuiz: [
@@ -8145,6 +8379,8 @@ const L7_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['goes', 'like', 'play', 'plays'], answer: 'goes', image: '🎧' },
     { type: 'speak', question: '大聲念出來：plays', answer: 'plays', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She reads books.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['do', 'does', 'like', 'play'], answer: 'do', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：does', answer: 'does', image: '🔄' },
   ],
   talkTimePrompts: ["Say a habit: I ___ every day.", "Say about a friend: He/She ___s.", "Ask: Do you ___? / Does he ___?", "✍️ 引導寫作：I ___ every day, but I don't ___."],
   reviewQuiz: [
@@ -8209,6 +8445,8 @@ const L7_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['always', 'often', 'sometimes', 'usually'], answer: 'sometimes', image: '🎧' },
     { type: 'speak', question: '大聲念出來：usually', answer: 'usually', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Sometimes I play games.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['always', 'like', 'play', 'plays'], answer: 'play', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：plays', answer: 'plays', image: '🔄' },
   ],
   talkTimePrompts: ["Say a habit: I always / usually / never ___.", "How often do you read?", "Use 'sometimes' in a sentence.", "✍️ 引導寫作：I always ___. I never ___."],
   reviewQuiz: [
@@ -8272,6 +8510,8 @@ const L7_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['at', 'in', 'morning', 'on'], answer: 'on', image: '🎧' },
     { type: 'speak', question: '大聲念出來：in', answer: 'in', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I am at home now.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['always', 'in', 'often', 'usually'], answer: 'always', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：usually', answer: 'usually', image: '🔄' },
   ],
   talkTimePrompts: ["Say a time: in the morning / at night.", "Say a day: on ___.", "When do you get up? At ___.", "✍️ 引導寫作：I get up ___ the morning. School starts ___ eight."],
   reviewQuiz: [
@@ -8335,6 +8575,8 @@ const L7_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['behind', 'between', 'next to', 'under'], answer: 'next to', image: '🎧' },
     { type: 'speak', question: '大聲念出來：under', answer: 'under', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The park is between the shops.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['at', 'in', 'on', 'under'], answer: 'in', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：on', answer: 'on', image: '🔄' },
   ],
   talkTimePrompts: ["Say where things are: It is ___ the ___.", "Use 'between' and 'next to'.", "Ask: Where is the cat?", "✍️ 引導寫作：The ___ is ___ the ___."],
   reviewQuiz: [
@@ -8398,6 +8640,8 @@ const L7_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['park', 'there are', 'there is', 'tree'], answer: 'tree', image: '🎧' },
     { type: 'speak', question: '大聲念出來：there are', answer: 'there are', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Is there a lake?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['behind', 'between', 'there is', 'under'], answer: 'under', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：behind', answer: 'behind', image: '🔄' },
   ],
   talkTimePrompts: ["Say what is in your town: There is / are ___.", "Use 'There are many ___.'", "Ask: Is there a ___?", "✍️ 引導寫作：In my town, there is ___ and there are ___."],
   reviewQuiz: [
@@ -8461,6 +8705,8 @@ const L7_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['always', 'in', 'never', 'on'], answer: 'on', image: '🎧' },
     { type: 'speak', question: '大聲念出來：never', answer: 'never', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The cat is under the table.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['always', 'park', 'there are', 'there is'], answer: 'there is', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：there are', answer: 'there are', image: '🔄' },
   ],
   talkTimePrompts: ["Say your routine with always / at / in.", "Say what is near your house: There is ___.", "Say where something is.", "✍️ 引導寫作：I always ___ in the morning. There is a ___ next to my house."],
   reviewQuiz: [
@@ -8525,6 +8771,8 @@ const L7_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['look', 'play', 'walk', 'want'], answer: 'want', image: '🎧' },
     { type: 'speak', question: '大聲念出來：walk', answer: 'walk', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I played soccer yesterday.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['always', 'in', 'never', 'play'], answer: 'always', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：never', answer: 'never', image: '🔄' },
   ],
   talkTimePrompts: ["Say three forms: play, played, played.", "Make a past sentence: I ___ed.", "Practice: walk, walked, walked!", "✍️ 引導寫作：Yesterday I ___ed and ___ed."],
   reviewQuiz: [
@@ -8589,6 +8837,8 @@ const L7_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['come', 'eat', 'go', 'see'], answer: 'come', image: '🎧' },
     { type: 'speak', question: '大聲念出來：eat', answer: 'eat', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I went to school yesterday.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['go', 'look', 'play', 'walk'], answer: 'play', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：walk', answer: 'walk', image: '🔄' },
   ],
   talkTimePrompts: ["Say three forms: go, went, gone.", "Make a past sentence: I went to ___.", "Practice: eat, ate, eaten!", "✍️ 引導寫作：Yesterday I went to ___ and saw ___."],
   reviewQuiz: [
@@ -8652,6 +8902,8 @@ const L7_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['drink', 'run', 'sing', 'swim'], answer: 'drink', image: '🎧' },
     { type: 'speak', question: '大聲念出來：swim', answer: 'swim', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I ran fast in the race.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['eat', 'go', 'run', 'see'], answer: 'go', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：eat', answer: 'eat', image: '🔄' },
   ],
   talkTimePrompts: ["Say three forms: run, ran, run.", "Make a past sentence: I ___ (past).", "Practice: sing, sang, sung!", "✍️ 引導寫作：Yesterday I ___ (past) and ___ (past)."],
   reviewQuiz: [
@@ -8715,6 +8967,8 @@ const L7_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eat', 'go', 'play', 'run'], answer: 'run', image: '🎧' },
     { type: 'speak', question: '大聲念出來：eat', answer: 'eat', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I ate breakfast and went to school.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['go', 'run', 'sing', 'swim'], answer: 'run', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：swim', answer: 'swim', image: '🔄' },
   ],
   talkTimePrompts: ["Say five verbs in three forms.", "Make a past sentence with an irregular verb.", "Quiz a friend: what is the past of 'go'?", "✍️ 引導寫作：Yesterday I ate ___, went to ___, and saw ___."],
   reviewQuiz: [
@@ -8778,6 +9032,8 @@ const L7_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eat', 'go', 'play', 'walk'], answer: 'walk', image: '🎧' },
     { type: 'speak', question: '大聲念出來：play', answer: 'play', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She has written a story.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['eat', 'go', 'play'], answer: 'go', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：eat', answer: 'eat', image: '🔄' },
   ],
   talkTimePrompts: ["Say five verbs in three forms.", "Tell me what you did yesterday (past tense).", "Quiz: what is the past of 'eat'?", "✍️ 引導寫作：Yesterday I went to ___. I ___ and ___."],
   reviewQuiz: [
@@ -8841,6 +9097,8 @@ const L7_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['fact', 'habit', 'rise', 'set'], answer: 'set', image: '🎧' },
     { type: 'speak', question: '大聲念出來：habit', answer: 'habit', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I go to school every day.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['eat', 'fact', 'go', 'play'], answer: 'go', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：play', answer: 'play', image: '🔄' },
   ],
   talkTimePrompts: ["Say a fact: The sun ___.", "Say a habit: I ___ every day.", "Ask: Does water boil?", "✍️ 引導寫作：The ___ is ___. I ___ every day."],
   reviewQuiz: [
@@ -8905,6 +9163,8 @@ const L7_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eat', 'eating', 'play', 'playing'], answer: 'eating', image: '🎧' },
     { type: 'speak', question: '大聲念出來：playing', answer: 'playing', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She eats lunch at noon.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['fact', 'habit', 'play', 'rise'], answer: 'fact', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：habit', answer: 'habit', image: '🔄' },
   ],
   talkTimePrompts: ["Say a habit and what you do now.", "What do you do every day? What are you doing now?", "Compare: I eat / I am eating.", "✍️ 引導寫作：Every day I ___. Right now I am ___ing."],
   reviewQuiz: [
@@ -8968,6 +9228,8 @@ const L7_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['always', 'does', 'read', 'reads'], answer: 'read', image: '🎧' },
     { type: 'speak', question: '大聲念出來：always', answer: 'always', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Does he go to school?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['always', 'eat', 'play', 'playing'], answer: 'play', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：playing', answer: 'playing', image: '🔄' },
   ],
   talkTimePrompts: ["Say a habit with a frequency adverb.", "Ask a Does…? question.", "Say what you did yesterday (past).", "✍️ 引導寫作：He always ___. Yesterday he ___ (past)."],
   reviewQuiz: [
@@ -9031,6 +9293,8 @@ const L7_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eats', 'gets up', 'goes', 'studies'], answer: 'studies', image: '🎧' },
     { type: 'speak', question: '大聲念出來：eats', answer: 'eats', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'He goes to school.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['always', 'gets up', 'read', 'reads'], answer: 'always', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：reads', answer: 'reads', image: '🔄' },
   ],
   talkTimePrompts: ["Retell Tom's day.", "What does Tom do every morning?", "Describe your own day with he/she verbs.", "✍️ 引導寫作：My friend gets up ___. He/She ___s every day."],
   reviewQuiz: [
@@ -9094,6 +9358,8 @@ const L7_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['ate', 'plays', 'reads', 'went'], answer: 'ate', image: '🎧' },
     { type: 'speak', question: '大聲念出來：reads', answer: 'reads', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Yesterday I went home and ate dinner.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['eats', 'gets up', 'goes', 'plays'], answer: 'gets up', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：eats', answer: 'eats', image: '🔄' },
   ],
   talkTimePrompts: ["Say a habit with a frequency adverb.", "Say what you did yesterday (past tense).", "Ask a Does…? question.", "You beat the Grammar Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -9221,6 +9487,8 @@ const L8_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['from', 'go', 'live', 'where'], answer: 'go', image: '🎧' },
     { type: 'speak', question: '大聲念出來：live', answer: 'live', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Where is my bag?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['color', 'name', 'what', 'where'], answer: 'what', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：name', answer: 'name', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Where do you live?", "Ask: Where are you from?", "Answer with 'Where' questions.", "✍️ 引導寫作＋翻譯：把「你住哪裡？」寫成英文。"],
   reviewQuiz: [
@@ -9284,6 +9552,8 @@ const L8_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['birthday', 'party', 'start', 'when'], answer: 'party', image: '🎧' },
     { type: 'speak', question: '大聲念出來：birthday', answer: 'birthday', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'When do you go to school?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['from', 'live', 'when', 'where'], answer: 'where', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：live', answer: 'live', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: When is your birthday?", "Ask: When do you go to school?", "Answer with 'When' questions.", "✍️ 引導寫作＋翻譯：把「派對是何時？」寫成英文。"],
   reviewQuiz: [
@@ -9347,6 +9617,8 @@ const L8_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['best', 'friend', 'teacher', 'who'], answer: 'best', image: '🎧' },
     { type: 'speak', question: '大聲念出來：teacher', answer: 'teacher', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Who is your best friend?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['birthday', 'start', 'when', 'who'], answer: 'when', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：birthday', answer: 'birthday', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Who is your teacher?", "Ask: Who is your best friend?", "Answer with 'Who' questions.", "✍️ 引導寫作＋翻譯：把「誰在家煮飯？」寫成英文。"],
   reviewQuiz: [
@@ -9410,6 +9682,8 @@ const L8_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['what', 'when', 'where', 'who'], answer: 'who', image: '🎧' },
     { type: 'speak', question: '大聲念出來：where', answer: 'where', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'When is your birthday?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['friend', 'teacher', 'what', 'who'], answer: 'who', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：teacher', answer: 'teacher', image: '🔄' },
   ],
   talkTimePrompts: ["Ask 4 Wh- questions to a friend.", "Answer: My name is / I live in ___.", "Match Wh- word to its meaning.", "✍️ 引導寫作＋翻譯：把「你的生日是何時？」寫成英文。"],
   reviewQuiz: [
@@ -9473,6 +9747,8 @@ const L8_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['because', 'happy', 'sad', 'why'], answer: 'sad', image: '🎧' },
     { type: 'speak', question: '大聲念出來：because', answer: 'because', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Why are you sad?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['what', 'when', 'where', 'why'], answer: 'what', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：where', answer: 'where', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Why are you happy/sad?", "Answer: Because ___.", "Give a reason with 'because'.", "✍️ 引導寫作＋翻譯：把「你為什麼開心？」寫成英文。"],
   reviewQuiz: [
@@ -9536,6 +9812,8 @@ const L8_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['by bus', 'by car', 'fine', 'how'], answer: 'by car', image: '🎧' },
     { type: 'speak', question: '大聲念出來：fine', answer: 'fine', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'How do you go to school?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['because', 'happy', 'how', 'why'], answer: 'why', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：because', answer: 'because', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: How are you?", "Ask: How do you go to school?", "Answer: I am fine. / I go by ___.", "✍️ 引導寫作＋翻譯：把「你感覺如何？」寫成英文。"],
   reviewQuiz: [
@@ -9600,6 +9878,8 @@ const L8_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['how many', 'how much', 'how old', 'many'], answer: 'many', image: '🎧' },
     { type: 'speak', question: '大聲念出來：how much', answer: 'how much', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'How much is it?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['by bus', 'fine', 'how', 'how many'], answer: 'how', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：fine', answer: 'fine', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: How old are you?", "Ask: How many / How much…?", "Answer: I am ___ years old. / It is ___ dollars.", "✍️ 引導寫作＋翻譯：把「多少錢？」寫成英文。"],
   reviewQuiz: [
@@ -9663,6 +9943,8 @@ const L8_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['mine', 'which', 'whose', 'yours'], answer: 'yours', image: '🎧' },
     { type: 'speak', question: '大聲念出來：which', answer: 'which', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Which apple do you want?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['how many', 'how much', 'how old', 'whose'], answer: 'how many', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：how much', answer: 'how much', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Whose ___ is this?", "Ask: Which one do you want?", "Answer: It is mine/yours/hers.", "✍️ 引導寫作＋翻譯：把「哪一個是你的？」寫成英文。"],
   reviewQuiz: [
@@ -9726,6 +10008,8 @@ const L8_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['because', 'how', 'how many', 'why'], answer: 'how many', image: '🎧' },
     { type: 'speak', question: '大聲念出來：because', answer: 'because', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'How are you?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['mine', 'which', 'whose', 'why'], answer: 'whose', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：which', answer: 'which', image: '🔄' },
   ],
   talkTimePrompts: ["Ask Why and answer with Because.", "Ask How / How old / How many.", "Ask Whose / Which.", "✍️ 引導寫作＋翻譯：把「你好嗎？」寫成英文。"],
   reviewQuiz: [
@@ -9790,6 +10074,8 @@ const L8_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['do', 'does', 'eat', 'go'], answer: 'go', image: '🎧' },
     { type: 'speak', question: '大聲念出來：do', answer: 'do', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'When do you do your homework?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['because', 'do', 'how', 'why'], answer: 'why', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：because', answer: 'because', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: What do you eat for lunch?", "Ask: Where does he/she go?", "Answer your friend's questions.", "✍️ 引導寫作＋翻譯：把「你何時做作業？」寫成英文。"],
   reviewQuiz: [
@@ -9852,6 +10138,8 @@ const L8_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['everyone', 'know', 'late', 'surprise'], answer: 'late', image: '🎧' },
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['everyone', 'know', 'late', 'surprise'], answer: 'know', image: '🎧' },
     { type: 'speak', question: '大聲念出來：everyone', answer: 'everyone', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['do', 'does', 'eat', 'surprise'], answer: 'do', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：does', answer: 'does', image: '🔄' },
   ],
   talkTimePrompts: ["Ask with surprise: Don't you like ___?", "Ask: Aren't you tired?", "Answer: Yes, I do! / No, I don't.", "✍️ 引導寫作＋翻譯：把「他不是我們學校的嗎？」寫成英文。"],
   reviewQuiz: [
@@ -9915,6 +10203,8 @@ const L8_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['cake', 'easy', 'nice', 'sunny'], answer: 'nice', image: '🎧' },
     { type: 'speak', question: '大聲念出來：cake', answer: 'cake', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'This is easy, right?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['everyone', 'late', 'sunny', 'surprise'], answer: 'surprise', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：everyone', answer: 'everyone', image: '🔄' },
   ],
   talkTimePrompts: ["Add a tag: It is nice, isn't it?", "Add a tag: You like ___, don't you?", "Answer: Yes, it is. / Yes, I do.", "✍️ 引導寫作＋翻譯：把「這很簡單，對吧？」寫成英文。"],
   reviewQuiz: [
@@ -9978,6 +10268,8 @@ const L8_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['age', 'like', 'live', 'name'], answer: 'like', image: '🎧' },
     { type: 'speak', question: '大聲念出來：age', answer: 'age', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Where do you live?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cake', 'easy', 'name', 'sunny'], answer: 'sunny', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：cake', answer: 'cake', image: '🔄' },
   ],
   talkTimePrompts: ["Interview a friend with 4 Wh- questions.", "Answer: My name is / I am ___ years old.", "Ask: Where do you live? What do you like?", "✍️ 引導寫作＋翻譯：把「介紹一下你自己。」寫成英文。"],
   reviewQuiz: [
@@ -10041,6 +10333,8 @@ const L8_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['what', 'when', 'where', 'who'], answer: 'who', image: '🎧' },
     { type: 'speak', question: '大聲念出來：where', answer: 'where', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Why are you happy?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['age', 'live', 'name', 'what'], answer: 'name', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：age', answer: 'age', image: '🔄' },
   ],
   talkTimePrompts: ["Ask 6 different Wh- questions.", "Answer your friend's questions.", "Add a tag: It is fun, isn't it?", "✍️ 引導寫作＋翻譯：把「你為什麼開心？」寫成英文。"],
   reviewQuiz: [
@@ -10104,6 +10398,8 @@ const L8_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['did', 'eat', 'go', 'yesterday'], answer: 'eat', image: '🎧' },
     { type: 'speak', question: '大聲念出來：did', answer: 'did', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Did you eat ice cream?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['did', 'what', 'when', 'where'], answer: 'what', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：where', answer: 'where', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: What did you do yesterday?", "Ask: Did you ___? (past)", "Answer: Yes, I did. / No, I didn't.", "✍️ 引導寫作＋翻譯：把「你上週末去哪了？」寫成英文。"],
   reviewQuiz: [
@@ -10167,6 +10463,8 @@ const L8_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['did', 'do', 'now', 'yesterday'], answer: 'yesterday', image: '🎧' },
     { type: 'speak', question: '大聲念出來：did', answer: 'did', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Do you eat breakfast?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['did', 'do', 'go', 'yesterday'], answer: 'did', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：yesterday', answer: 'yesterday', image: '🔄' },
   ],
   talkTimePrompts: ["Ask about a habit: Do you ___?", "Ask about the past: Did you ___?", "Match the time word to Do or Did.", "✍️ 引導寫作＋翻譯：把「你昨晚做了什麼？」寫成英文。"],
   reviewQuiz: [
@@ -10230,6 +10528,8 @@ const L8_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['how old', 'what', 'where', 'why'], answer: 'how old', image: '🎧' },
     { type: 'speak', question: '大聲念出來：where', answer: 'where', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Why does she cry?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['did', 'do', 'now', 'what'], answer: 'do', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：did', answer: 'did', image: '🔄' },
   ],
   talkTimePrompts: ["Ask a present and a past question.", "Ask Why and answer Because.", "Interview a friend with 4 questions.", "✍️ 引導寫作＋翻譯：把「你何時回家的？」寫成英文。"],
   reviewQuiz: [
@@ -10293,6 +10593,8 @@ const L8_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['interview', 'like', 'live', 'name'], answer: 'like', image: '🎧' },
     { type: 'speak', question: '大聲念出來：interview', answer: 'interview', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'He lives in Tainan.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['interview', 'what', 'where', 'why'], answer: 'what', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：where', answer: 'where', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the interview about Sam.", "Answer: What does Sam like? How old is he?", "Interview a real friend.", "✍️ 引導寫作＋翻譯：把「他喜歡足球。」寫成英文。"],
   reviewQuiz: [
@@ -10356,6 +10658,8 @@ const L8_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['how old', 'what', 'where', 'why'], answer: 'how old', image: '🎧' },
     { type: 'speak', question: '大聲念出來：where', answer: 'where', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Why are you happy? Because it is my birthday.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['interview', 'live', 'name', 'what'], answer: 'interview', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：name', answer: 'name', image: '🔄' },
   ],
   talkTimePrompts: ["Ask 5 different questions.", "Ask a past question with 'Did'.", "Add a tag question.", "You beat the Question Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -10485,6 +10789,8 @@ const L9_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['cleaned', 'played', 'stopped', 'studied'], answer: 'played', image: '🎧' },
     { type: 'speak', question: '大聲念出來：stopped', answer: 'stopped', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I cleaned my room.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['making', 'running', 'studied', 'writing'], answer: 'running', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：making', answer: 'making', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you did yesterday: I ___ed.", "Spell: study → studied, stop → stopped.", "Use cleaned, played, watched.", "✍️ 引導寫作＋翻譯：把「我打掃了房間。」寫成英文。"],
   reviewQuiz: [
@@ -10548,6 +10854,8 @@ const L9_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['gave', 'made', 'saw', 'went'], answer: 'gave', image: '🎧' },
     { type: 'speak', question: '大聲念出來：saw', answer: 'saw', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Mom made a cake.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['cleaned', 'stopped', 'studied', 'went'], answer: 'studied', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：stopped', answer: 'stopped', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you did: I went / saw / ate.", "Practice: go-went, see-saw, make-made.", "Tell me about a fun day (past).", "✍️ 引導寫作＋翻譯：把「她給我一個禮物。」寫成英文。"],
   reviewQuiz: [
@@ -10611,6 +10919,8 @@ const L9_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['ran', 'read', 'swam', 'wrote'], answer: 'read', image: '🎧' },
     { type: 'speak', question: '大聲念出來：swam', answer: 'swam', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I wrote a story.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['made', 'ran', 'saw', 'went'], answer: 'went', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：saw', answer: 'saw', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you did: I ran / swam / bought.", "Practice: run-ran, swim-swam, buy-bought.", "Tell me about a race or game (past).", "✍️ 引導寫作＋翻譯：把「我們贏了比賽！」寫成英文。"],
   reviewQuiz: [
@@ -10674,6 +10984,8 @@ const L9_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['ate', 'played', 'saw', 'went'], answer: 'saw', image: '🎧' },
     { type: 'speak', question: '大聲念出來：went', answer: 'went', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I ate lunch and studied.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['played', 'ran', 'swam', 'wrote'], answer: 'ran', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：swam', answer: 'swam', image: '🔄' },
   ],
   talkTimePrompts: ["Tell me what you did yesterday.", "Mix regular and irregular past verbs.", "Say: Now I am ___ing.", "✍️ 引導寫作＋翻譯：把「你昨天做了什麼？」寫成英文。"],
   reviewQuiz: [
@@ -10737,6 +11049,8 @@ const L9_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['reading', 'sleeping', 'was', 'were'], answer: 'sleeping', image: '🎧' },
     { type: 'speak', question: '大聲念出來：was', answer: 'was', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It was raining when I woke up.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['ate', 'played', 'was', 'went'], answer: 'played', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：went', answer: 'went', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you were doing at a time: I was ___ing.", "Use was/were correctly.", "Ask: What were you doing at five?", "✍️ 引導寫作＋翻譯：把「我醒來時正在下雨。」寫成英文。"],
   reviewQuiz: [
@@ -10801,6 +11115,8 @@ const L9_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['rain', 'tomorrow', 'visit', 'will'], answer: 'rain', image: '🎧' },
     { type: 'speak', question: '大聲念出來：will', answer: 'will', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I will help you.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['sleeping', 'was', 'were', 'will'], answer: 'was', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：were', answer: 'were', image: '🔄' },
   ],
   talkTimePrompts: ["Say a future plan: I will ___.", "Make a prediction: It will ___.", "Offer help: I will help you.", "✍️ 引導寫作＋翻譯：把「我會幫你。」寫成英文。"],
   reviewQuiz: [
@@ -10864,6 +11180,8 @@ const L9_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['going to', 'plan', 'study', 'tonight'], answer: 'study', image: '🎧' },
     { type: 'speak', question: '大聲念出來：plan', answer: 'plan', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'He is going to play soccer.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['going to', 'tomorrow', 'visit', 'will'], answer: 'will', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：tomorrow', answer: 'tomorrow', image: '🔄' },
   ],
   talkTimePrompts: ["Say a plan: I am going to ___.", "Ask: What are you going to do?", "Say a weekend plan.", "✍️ 引導寫作＋翻譯：把「我打算買腳踏車。」寫成英文。"],
   reviewQuiz: [
@@ -10928,6 +11246,8 @@ const L9_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['decide', 'going to', 'plan', 'will'], answer: 'decide', image: '🎧' },
     { type: 'speak', question: '大聲念出來：will', answer: 'will', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Look at the clouds. It will rain.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['going to', 'plan', 'tonight', 'will'], answer: 'going to', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：plan', answer: 'plan', image: '🔄' },
   ],
   talkTimePrompts: ["Say a plan with 'going to'.", "Make a quick decision with 'will'.", "Make a prediction with 'will'.", "✍️ 引導寫作＋翻譯：把「我們打算辦派對。」寫成英文。"],
   reviewQuiz: [
@@ -10991,6 +11311,8 @@ const L9_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['going to', 'was', 'were', 'will'], answer: 'were', image: '🎧' },
     { type: 'speak', question: '大聲念出來：going to', answer: 'going to', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'At eight, I was reading.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['going to', 'plan', 'will'], answer: 'will', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：going to', answer: 'going to', image: '🔄' },
   ],
   talkTimePrompts: ["Say a plan (going to) and a prediction (will).", "Say what you were doing at a past time.", "Talk about your plan for tomorrow.", "✍️ 引導寫作＋翻譯：把「你明天打算做什麼？」寫成英文。"],
   reviewQuiz: [
@@ -11055,6 +11377,8 @@ const L9_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['eaten', 'finished', 'has', 'have'], answer: 'eaten', image: '🎧' },
     { type: 'speak', question: '大聲念出來：has', answer: 'has', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'They have gone home.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['going to', 'have', 'was', 'will'], answer: 'will', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：going to', answer: 'going to', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you have finished: I have ___.", "Practice p.p.: eaten, gone, seen, done.", "Ask: Have you done it?", "✍️ 引導寫作＋翻譯：把「他已經寫好了信。」寫成英文。"],
   reviewQuiz: [
@@ -11118,6 +11442,8 @@ const L9_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['already', 'ever', 'just', 'never'], answer: 'already', image: '🎧' },
     { type: 'speak', question: '大聲念出來：never', answer: 'never', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I have never eaten snails.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['ever', 'finished', 'has', 'have'], answer: 'have', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：has', answer: 'has', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: Have you ever ___?", "Say: I have never ___.", "Say: I have just ___.", "✍️ 引導寫作＋翻譯：把「我從沒吃過蝸牛。」寫成英文。"],
   reviewQuiz: [
@@ -11181,6 +11507,8 @@ const L9_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['arrived', 'eaten', 'had', 'left'], answer: 'eaten', image: '🎧' },
     { type: 'speak', question: '大聲念出來：had', answer: 'had', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I had never seen snow before.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['ever', 'had', 'just', 'never'], answer: 'ever', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：never', answer: 'never', image: '🔄' },
   ],
   talkTimePrompts: ["Say two past actions in order with 'had'.", "Use 'before' + past perfect.", "Say: I had never ___ before.", "✍️ 引導寫作＋翻譯：把「我以前從沒看過雪。」寫成英文。"],
   reviewQuiz: [
@@ -11244,6 +11572,8 @@ const L9_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['am playing', 'play', 'played', 'will play'], answer: 'will play', image: '🎧' },
     { type: 'speak', question: '大聲念出來：played', answer: 'played', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Now I am playing.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['arrived', 'had', 'left', 'play'], answer: 'had', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：left', answer: 'left', image: '🔄' },
   ],
   talkTimePrompts: ["Say the same verb in 4 tenses.", "Match a time word to a tense.", "Tell a mini story using 3 tenses.", "✍️ 引導寫作＋翻譯：把「現在我正在玩。」寫成英文。"],
   reviewQuiz: [
@@ -11307,6 +11637,8 @@ const L9_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['finished', 'had', 'has', 'have'], answer: 'finished', image: '🎧' },
     { type: 'speak', question: '大聲念出來：has', answer: 'has', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Have you ever been to Japan?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['am playing', 'have', 'play', 'played'], answer: 'play', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：played', answer: 'played', image: '🔄' },
   ],
   talkTimePrompts: ["Say what you have finished today.", "Ask: Have you ever ___?", "Use past perfect: had + p.p.", "✍️ 引導寫作＋翻譯：把「他們已經回家了。」寫成英文。"],
   reviewQuiz: [
@@ -11370,6 +11702,8 @@ const L9_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['every day', 'now', 'tomorrow', 'yesterday'], answer: 'tomorrow', image: '🎧' },
     { type: 'speak', question: '大聲念出來：now', answer: 'now', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I played yesterday.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['every day', 'had', 'has', 'have'], answer: 'have', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：has', answer: 'has', image: '🔄' },
   ],
   talkTimePrompts: ["Match a time word to the right tense.", "Say the same verb in 4 tenses.", "Make sentences with now, yesterday, tomorrow.", "✍️ 引導寫作＋翻譯：把「五點時我正在玩。」寫成英文。"],
   reviewQuiz: [
@@ -11433,6 +11767,8 @@ const L9_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['has learned', 'lives', 'went', 'will visit'], answer: 'has learned', image: '🎧' },
     { type: 'speak', question: '大聲念出來：lives', answer: 'lives', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'He has learned a lot.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['every day', 'now', 'went', 'yesterday'], answer: 'every day', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：now', answer: 'now', image: '🔄' },
   ],
   talkTimePrompts: ["Retell Sam's story using past, present, future.", "What did Sam do last year?", "What will he do next year?", "✍️ 引導寫作＋翻譯：把「現在他住這裡。」寫成英文。"],
   reviewQuiz: [
@@ -11496,6 +11832,8 @@ const L9_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['lived', 'now', 'one day', 'when I was little'], answer: 'one day', image: '🎧' },
     { type: 'speak', question: '大聲念出來：lived', answer: 'lived', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I go to school every day.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['lives', 'went', 'when I was little', 'will visit'], answer: 'went', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：lives', answer: 'lives', image: '🔄' },
   ],
   talkTimePrompts: ["Tell about your past: When I was little, I ___.", "Tell about your present: Now I ___.", "Tell about your future: One day, I will ___.", "✍️ 引導寫作＋翻譯：把「那是我的夢想。」寫成英文，再寫你自己的三時態短文。"],
   reviewQuiz: [
@@ -11559,6 +11897,8 @@ const L9_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['last weekend', 'next weekend', 'resting', 'went hiking'], answer: 'next weekend', image: '🎧' },
     { type: 'speak', question: '大聲念出來：went hiking', answer: 'went hiking', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Right now I am resting.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['last weekend', 'lived', 'now', 'when I was little'], answer: 'when I was little', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：lived', answer: 'lived', image: '🔄' },
   ],
   talkTimePrompts: ["Ask and answer about last weekend.", "Say what you are doing now.", "Say your plan for next weekend.", "✍️ 引導寫作＋翻譯：把「現在我在休息。」寫成英文。"],
   reviewQuiz: [
@@ -11622,6 +11962,8 @@ const L9_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['am playing', 'play', 'played', 'will play'], answer: 'will play', image: '🎧' },
     { type: 'speak', question: '大聲念出來：played', answer: 'played', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Right now I am reading.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['last weekend', 'play', 'resting', 'went hiking'], answer: 'last weekend', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：went hiking', answer: 'went hiking', image: '🔄' },
   ],
   talkTimePrompts: ["Say one verb in 5 tenses.", "Tell me about yesterday, now, and tomorrow.", "Use a perfect tense sentence.", "You beat the Time Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -11750,6 +12092,8 @@ const L10_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['because', 'reason', 'result', 'so'], answer: 'so', image: '🎧' },
     { type: 'speak', question: '大聲念出來：because', answer: 'because', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I am hungry because I did not eat.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['and', 'because', 'but', 'or'], answer: 'and', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：but', answer: 'but', image: '🔄' },
   ],
   talkTimePrompts: ["Give a reason with 'because'.", "Give a result with 'so'.", "Combine: I am ___ because ___.", "✍️ 引導寫作＋翻譯：把「他生病，所以待在家。」寫成英文。"],
   reviewQuiz: [
@@ -11813,6 +12157,8 @@ const L10_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['after', 'first', 'next', 'then'], answer: 'after', image: '🎧' },
     { type: 'speak', question: '大聲念出來：then', answer: 'then', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I brush my teeth after I eat.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['because', 'first', 'reason', 'so'], answer: 'because', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：so', answer: 'so', image: '🔄' },
   ],
   talkTimePrompts: ["Describe your morning: First, then, finally.", "Use 'after' and 'before'.", "Tell the steps of making a sandwich.", "✍️ 引導寫作＋翻譯：用 First/Then/Finally 寫你的晨間流程。"],
   reviewQuiz: [
@@ -11876,6 +12222,8 @@ const L10_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['add', 'adjective', 'detail', 'when'], answer: 'when', image: '🎧' },
     { type: 'speak', question: '大聲念出來：detail', answer: 'detail', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I play soccer at the park after school.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['add', 'first', 'next', 'then'], answer: 'first', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：then', answer: 'then', image: '🔄' },
   ],
   talkTimePrompts: ["Make a short sentence longer with an adjective.", "Add when and where to a sentence.", "Combine two sentences with because.", "✍️ 引導寫作＋翻譯：把「我有一隻狗。」擴寫成長句並翻成英文。"],
   reviewQuiz: [
@@ -11939,6 +12287,8 @@ const L10_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['and', 'because', 'but', 'or'], answer: 'because', image: '🎧' },
     { type: 'speak', question: '大聲念出來：but', answer: 'but', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I slept because I was tired.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['add', 'adjective', 'and', 'detail'], answer: 'add', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：detail', answer: 'detail', image: '🔄' },
   ],
   talkTimePrompts: ["Use and, but, or in sentences.", "Give a reason (because) and a result (so).", "Describe steps: First, then, finally.", "✍️ 引導寫作＋翻譯：用 3 個連接詞寫一段小短文。"],
   reviewQuiz: [
@@ -12002,6 +12352,8 @@ const L10_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['building', 'city', 'people', 'train'], answer: 'train', image: '🎧' },
     { type: 'speak', question: '大聲念出來：people', answer: 'people', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It has a fast train.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['and', 'but', 'city', 'or'], answer: 'and', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：but', answer: 'but', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the paragraph about Taipei.", "Describe a city you know.", "What does the city have?", "✍️ 引導寫作＋翻譯：寫 3 句介紹你住的城市。"],
   reviewQuiz: [
@@ -12065,6 +12417,8 @@ const L10_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['brown', 'friendly', 'named', 'pet'], answer: 'brown', image: '🎧' },
     { type: 'speak', question: '大聲念出來：named', answer: 'named', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Every day, we play in the park.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['building', 'city', 'people', 'pet'], answer: 'city', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：people', answer: 'people', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the paragraph about Max.", "Describe a pet or animal you like.", "What do they do every day?", "✍️ 引導寫作＋翻譯：寫 3 句介紹一隻寵物。"],
   reviewQuiz: [
@@ -12128,6 +12482,8 @@ const L10_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['detail', 'main idea', 'title', 'topic'], answer: 'topic', image: '🎧' },
     { type: 'speak', question: '大聲念出來：detail', answer: 'detail', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The title gives the topic.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['friendly', 'main idea', 'named', 'pet'], answer: 'pet', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：named', answer: 'named', image: '🔄' },
   ],
   talkTimePrompts: ["Read a text and say the main idea.", "Find one detail in a paragraph.", "What is this text mostly about?", "✍️ 引導寫作＋翻譯：寫一句主旨句，再加一個細節句。"],
   reviewQuiz: [
@@ -12191,6 +12547,8 @@ const L10_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['closed', 'notice', 'open', 'sign'], answer: 'closed', image: '🎧' },
     { type: 'speak', question: '大聲念出來：notice', answer: 'notice', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The train leaves at 3:00.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['detail', 'main idea', 'sign', 'title'], answer: 'main idea', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：detail', answer: 'detail', image: '🔄' },
   ],
   talkTimePrompts: ["Read a sign and say what it means.", "When does the shop open/close?", "What time does the train leave?", "✍️ 引導寫作＋翻譯：把「商店週日打烊。」寫成英文。"],
   reviewQuiz: [
@@ -12254,6 +12612,8 @@ const L10_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['city', 'detail', 'main idea', 'pet'], answer: 'pet', image: '🎧' },
     { type: 'speak', question: '大聲念出來：detail', answer: 'detail', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'A detail is a small fact.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['main idea', 'notice', 'open', 'sign'], answer: 'sign', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：notice', answer: 'notice', image: '🔄' },
   ],
   talkTimePrompts: ["Read a paragraph and say the main idea.", "Find one detail.", "Read a sign and say the opening time.", "✍️ 引導寫作＋翻譯：讀一段短文，用英文寫出它的主旨句。"],
   reviewQuiz: [
@@ -12317,6 +12677,8 @@ const L10_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['live', 'myself', 'name', 'years old'], answer: 'live', image: '🎧' },
     { type: 'speak', question: '大聲念出來：name', answer: 'name', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I live in Taipei.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['city', 'detail', 'main idea', 'myself'], answer: 'main idea', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：detail', answer: 'detail', image: '🔄' },
   ],
   talkTimePrompts: ["Introduce yourself in 5 sentences.", "Say your name, age, and where you live.", "Say what you like and your dream.", "✍️ 引導寫作＋翻譯：寫 5-8 句英文自我介紹（名字/年齡/住哪/喜好/夢想）。"],
   reviewQuiz: [
@@ -12380,6 +12742,8 @@ const L10_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['diary', 'first', 'then', 'today'], answer: 'then', image: '🎧' },
     { type: 'speak', question: '大聲念出來：today', answer: 'today', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Then, I met my friends.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['diary', 'myself', 'name', 'years old'], answer: 'myself', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：name', answer: 'name', image: '🔄' },
   ],
   talkTimePrompts: ["Tell about your day: First, Then, Finally.", "Start with 'Dear Diary'.", "Use past tense verbs.", "✍️ 引導寫作＋翻譯：寫一篇日記，用 First/Then/Finally 記錄你的一天。"],
   reviewQuiz: [
@@ -12443,6 +12807,8 @@ const L10_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['Best wishes', 'Dear', 'letter', 'miss'], answer: 'Best wishes', image: '🎧' },
     { type: 'speak', question: '大聲念出來：letter', answer: 'letter', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I hope you are well.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['diary', 'first', 'letter', 'today'], answer: 'diary', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：today', answer: 'today', image: '🔄' },
   ],
   talkTimePrompts: ["Start a letter with 'Dear ___,'.", "Say: I miss you. I hope you are well.", "End with 'Best wishes' and your name.", "✍️ 引導寫作＋翻譯：寫一封短信給奶奶或朋友（Dear…／Best wishes）。"],
   reviewQuiz: [
@@ -12506,6 +12872,8 @@ const L10_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['describe', 'picture', 'there are', 'there is'], answer: 'describe', image: '🎧' },
     { type: 'speak', question: '大聲念出來：there is', answer: 'there is', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'A girl is playing.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['Best wishes', 'Dear', 'letter', 'picture'], answer: 'letter', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：Dear', answer: 'Dear', image: '🔄' },
   ],
   talkTimePrompts: ["Describe a picture: There is / are ___.", "Say what people are doing.", "Say how they feel: They look ___.", "✍️ 引導寫作＋翻譯：看一張圖，寫 4 句描述（有什麼/做什麼/感覺）。"],
   reviewQuiz: [
@@ -12569,6 +12937,8 @@ const L10_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['and', 'check', 'plan', 'write'], answer: 'and', image: '🎧' },
     { type: 'speak', question: '大聲念出來：plan', answer: 'plan', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Finally, I check my work.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['picture', 'there are', 'there is', 'write'], answer: 'picture', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：there is', answer: 'there is', image: '🔄' },
   ],
   talkTimePrompts: ["Introduce yourself in a few sentences.", "Say the writing steps: First, then, finally.", "Use 'and', 'but', 'because'.", "✍️ 引導寫作＋翻譯：選一種（日記/信/看圖），寫一小段英文。"],
   reviewQuiz: [
@@ -12632,6 +13002,8 @@ const L10_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['describe', 'kind', 'quiet', 'tall'], answer: 'quiet', image: '🎧' },
     { type: 'speak', question: '大聲念出來：describe', answer: 'describe', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'My favorite place is the park.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['check', 'describe', 'plan', 'write'], answer: 'write', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：plan', answer: 'plan', image: '🔄' },
   ],
   talkTimePrompts: ["Describe a person: He/She is ___ and ___.", "Describe a place: It is ___.", "Use two adjectives in one sentence.", "✍️ 引導寫作＋翻譯：寫 3 句描述一個你喜歡的人或地方。"],
   reviewQuiz: [
@@ -12695,6 +13067,8 @@ const L10_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['agree', 'because', 'opinion', 'think'], answer: 'agree', image: '🎧' },
     { type: 'speak', question: '大聲念出來：opinion', answer: 'opinion', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'In my opinion, school is important.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['describe', 'kind', 'opinion', 'tall'], answer: 'describe', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：kind', answer: 'kind', image: '🔄' },
   ],
   talkTimePrompts: ["Give an opinion: I think ___.", "Add a reason: because ___.", "Say: In my opinion, ___ is the best.", "✍️ 引導寫作＋翻譯：寫 3 句意見短文（I think… because…）。"],
   reviewQuiz: [
@@ -12758,6 +13132,8 @@ const L10_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['fun', 'model', 'weekend', 'went'], answer: 'fun', image: '🎧' },
     { type: 'speak', question: '大聲念出來：weekend', answer: 'weekend', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I swam and played.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['because', 'model', 'opinion', 'think'], answer: 'opinion', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：think', answer: 'think', image: '🔄' },
   ],
   talkTimePrompts: ["Read a model sentence, then say your own version.", "Talk about your weekend (past tense).", "Change the model to fit you.", "✍️ 引導寫作＋翻譯：仿照「My weekend was ___. I went to ___.」寫你自己的週末。"],
   reviewQuiz: [
@@ -12821,6 +13197,8 @@ const L10_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['air', 'important', 'respond', 'tree'], answer: 'air', image: '🎧' },
     { type: 'speak', question: '大聲念出來：tree', answer: 'tree', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'We should protect trees.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['model', 'respond', 'weekend', 'went'], answer: 'model', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：weekend', answer: 'weekend', image: '🔄' },
   ],
   talkTimePrompts: ["Read the text, then say the main idea.", "Give your opinion about trees.", "Use 'because' to give a reason.", "✍️ 引導寫作＋翻譯：讀完短文，寫 2-3 句你對樹木的看法。"],
   reviewQuiz: [
@@ -12884,6 +13262,8 @@ const L10_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['and', 'because', 'but', 'so'], answer: 'so', image: '🎧' },
     { type: 'speak', question: '大聲念出來：but', answer: 'but', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'First I plan, then I write.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['and', 'important', 'respond', 'tree'], answer: 'respond', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：tree', answer: 'tree', image: '🔄' },
   ],
   talkTimePrompts: ["Connect two ideas with and/but/because/so.", "Say the main idea of a short text.", "Introduce yourself or describe a place.", "You beat the Bridge Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -13012,6 +13392,8 @@ const L11_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['have to', 'must', 'rule', 'seatbelt'], answer: 'seatbelt', image: '🎧' },
     { type: 'speak', question: '大聲念出來：have to', answer: 'have to', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'We must follow the rules.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['can', 'could', 'must', 'should'], answer: 'can', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：could', answer: 'could', image: '🔄' },
   ],
   talkTimePrompts: ["Say a rule: You must ___.", "Say an obligation: I have to ___.", "Say something not necessary: I don't have to ___.", "✍️ 引導寫作＋翻譯：把「我們必須遵守規則。」寫成英文。"],
   reviewQuiz: [
@@ -13076,6 +13458,8 @@ const L11_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['brother', 'that', 'which', 'who'], answer: 'that', image: '🎧' },
     { type: 'speak', question: '大聲念出來：who', answer: 'who', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The dog that barks is friendly.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['have to', 'must', 'rule', 'who'], answer: 'must', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：have to', answer: 'have to', image: '🔄' },
   ],
   talkTimePrompts: ["Describe a person: the person who ___.", "Describe a thing: the thing which ___.", "Use 'that' to join two sentences.", "✍️ 引導寫作＋翻譯：把「這是我做的蛋糕。」寫成英文。"],
   reviewQuiz: [
@@ -13140,6 +13524,8 @@ const L11_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['best', 'biggest', 'fastest', 'tallest'], answer: 'fastest', image: '🎧' },
     { type: 'speak', question: '大聲念出來：tallest', answer: 'tallest', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'This is the most beautiful gem.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['biggest', 'that', 'which', 'who'], answer: 'who', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：which', answer: 'which', image: '🔄' },
   ],
   talkTimePrompts: ["Say a superlative: ___ is the biggest.", "Use 'the most' with a long word.", "Compare three things: A is the ___est.", "✍️ 引導寫作＋翻譯：把「他是最快的跑者。」寫成英文。"],
   reviewQuiz: [
@@ -13203,6 +13589,8 @@ const L11_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['could', 'must', 'should', 'who'], answer: 'who', image: '🎧' },
     { type: 'speak', question: '大聲念出來：must', answer: 'must', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Could you help me?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['biggest', 'fastest', 'should', 'tallest'], answer: 'biggest', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：tallest', answer: 'tallest', image: '🔄' },
   ],
   talkTimePrompts: ["Give advice with 'should'.", "Ask politely with 'could'.", "Use a relative pronoun (who/which/that).", "✍️ 引導寫作＋翻譯：把「贏的男孩很快。」寫成英文（用 who）。"],
   reviewQuiz: [
@@ -13267,6 +13655,8 @@ const L11_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['decide to', 'hope to', 'need to', 'want to'], answer: 'decide to', image: '🎧' },
     { type: 'speak', question: '大聲念出來：hope to', answer: 'hope to', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'It is fun to learn new things.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['could', 'must', 'should', 'want to'], answer: 'should', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：must', answer: 'must', image: '🔄' },
   ],
   talkTimePrompts: ["Say a goal: I want to ___.", "Say a hope: I hope to ___.", "Say: It is fun/easy to ___.", "✍️ 引導寫作＋翻譯：把「我希望環遊世界。」寫成英文。"],
   reviewQuiz: [
@@ -13331,6 +13721,8 @@ const L11_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['enjoy', 'finish', 'keep', 'stop'], answer: 'stop', image: '🎧' },
     { type: 'speak', question: '大聲念出來：finish', answer: 'finish', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Keep trying!', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['enjoy', 'hope to', 'need to', 'want to'], answer: 'want to', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：hope to', answer: 'hope to', image: '🔄' },
   ],
   talkTimePrompts: ["Say a hobby: I enjoy ___ing.", "Use keep / stop / finish + V-ing.", "Say what you are good at: good at ___ing.", "✍️ 引導寫作＋翻譯：把「別停止練習。」寫成英文。"],
   reviewQuiz: [
@@ -13394,6 +13786,8 @@ const L11_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['short', 'tall', 'used to', 'village'], answer: 'short', image: '🎧' },
     { type: 'speak', question: '大聲念出來：used to', answer: 'used to', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'We used to live in a village.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['enjoy', 'finish', 'keep', 'used to'], answer: 'enjoy', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：finish', answer: 'finish', image: '🔄' },
   ],
   talkTimePrompts: ["Say a past habit: I used to ___.", "Compare past and now: I used to ___, but now ___.", "Ask: Did you use to ___?", "✍️ 引導寫作＋翻譯：把「她以前吃很多糖。」寫成英文。"],
   reviewQuiz: [
@@ -13458,6 +13852,8 @@ const L11_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['if', 'rain', 'stay', 'will'], answer: 'stay', image: '🎧' },
     { type: 'speak', question: '大聲念出來：will', answer: 'will', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'If we hurry, we will catch the bus.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['if', 'short', 'tall', 'used to'], answer: 'used to', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：short', answer: 'short', image: '🔄' },
   ],
   talkTimePrompts: ["Make an if-sentence: If ___, I will ___.", "Say: If it rains, I will ___.", "Ask: What will you do if ___?", "✍️ 引導寫作＋翻譯：把「如果我有時間，我會幫你。」寫成英文。"],
   reviewQuiz: [
@@ -13521,6 +13917,8 @@ const L11_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['enjoy', 'if', 'used to', 'want to'], answer: 'if', image: '🎧' },
     { type: 'speak', question: '大聲念出來：enjoy', answer: 'enjoy', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I used to live in a village.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['if', 'rain', 'want to', 'will'], answer: 'if', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：will', answer: 'will', image: '🔄' },
   ],
   talkTimePrompts: ["Use 'want to' and 'enjoy + ing' in sentences.", "Say a past habit with 'used to'.", "Make an if-sentence.", "✍️ 引導寫作＋翻譯：把「持續努力你就會通過。」寫成英文。"],
   reviewQuiz: [
@@ -13585,6 +13983,8 @@ const L11_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['by', 'is made of', 'was built', 'was written'], answer: 'by', image: '🎧' },
     { type: 'speak', question: '大聲念出來：was built', answer: 'was built', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'This book was written by a famous author.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['enjoy', 'is made of', 'used to', 'want to'], answer: 'want to', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：enjoy', answer: 'enjoy', image: '🔄' },
   ],
   talkTimePrompts: ["Say what something is made of: It is made of ___.", "Use passive: was built / was written.", "Say: English is spoken in many countries.", "✍️ 引導寫作＋翻譯：把「城堡很久以前建成。」寫成英文。"],
   reviewQuiz: [
@@ -13648,6 +14048,8 @@ const L11_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['although', 'however', 'though', 'while'], answer: 'though', image: '🎧' },
     { type: 'speak', question: '大聲念出來：however', answer: 'however', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'While I cooked, she cleaned.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['although', 'is made of', 'was built', 'was written'], answer: 'is made of', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：was built', answer: 'was built', image: '🔄' },
   ],
   talkTimePrompts: ["Use 'although' to show contrast.", "Use 'however' to add a different point.", "Use 'while' for two actions at once.", "✍️ 引導寫作＋翻譯：把「雖然他小，他很強壯。」寫成英文。"],
   reviewQuiz: [
@@ -13711,6 +14113,8 @@ const L11_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['brave', 'cross', 'sea', 'wave'], answer: 'wave', image: '🎧' },
     { type: 'speak', question: '大聲念出來：brave', answer: 'brave', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'A storm came, but the boat stayed brave.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['although', 'brave', 'however', 'while'], answer: 'although', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：however', answer: 'however', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the story of the brave boat.", "What is the lesson of the story?", "Use 'although' to describe the boat.", "✍️ 引導寫作＋翻譯：把「最後，它抵達岸邊。」寫成英文。"],
   reviewQuiz: [
@@ -13774,6 +14178,8 @@ const L11_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['afraid', 'build', 'giant', 'kind'], answer: 'build', image: '🎧' },
     { type: 'speak', question: '大聲念出來：kind', answer: 'kind', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'One day, he built a bridge.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['brave', 'cross', 'giant', 'sea'], answer: 'brave', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：cross', answer: 'cross', image: '🔄' },
   ],
   talkTimePrompts: ["Retell the story of the kind giant.", "What is the lesson of the story?", "Describe the giant with 'although'.", "✍️ 引導寫作＋翻譯：把「他們成了好朋友。」寫成英文。"],
   reviewQuiz: [
@@ -13837,6 +14243,8 @@ const L11_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['although', 'brave', 'however', 'was built'], answer: 'brave', image: '🎧' },
     { type: 'speak', question: '大聲念出來：however', answer: 'however', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The table is made of wood.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['afraid', 'although', 'giant', 'kind'], answer: 'giant', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：kind', answer: 'kind', image: '🔄' },
   ],
   talkTimePrompts: ["Retell a story with a lesson.", "Use 'although' and passive voice.", "Say what something is made of.", "✍️ 引導寫作＋翻譯：把「不要以貌取人。」寫成英文。"],
   reviewQuiz: [
@@ -13900,6 +14308,8 @@ const L11_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['because', 'believe', 'for example', 'opinion'], answer: 'for example', image: '🎧' },
     { type: 'speak', question: '大聲念出來：believe', answer: 'believe', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'For example, we learn about history.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['although', 'however', 'opinion', 'was built'], answer: 'although', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：however', answer: 'however', image: '🔄' },
   ],
   talkTimePrompts: ["State an opinion: In my opinion, ___.", "Give a reason with 'because'.", "Give an example with 'For example'.", "✍️ 引導寫作＋翻譯：寫一段觀點文（觀點＋理由＋例子＋結論）。"],
   reviewQuiz: [
@@ -13963,6 +14373,8 @@ const L11_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['appearance', 'describe', 'gentle', 'personality'], answer: 'personality', image: '🎧' },
     { type: 'speak', question: '大聲念出來：gentle', answer: 'gentle', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The beach was peaceful.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['because', 'believe', 'describe', 'opinion'], answer: 'opinion', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：believe', answer: 'believe', image: '🔄' },
   ],
   talkTimePrompts: ["Describe a person's appearance and personality.", "Describe a place using your senses.", "Describe a memorable experience.", "✍️ 引導寫作＋翻譯：寫一段描寫（人/地點/經驗），用形容詞和感官。"],
   reviewQuiz: [
@@ -14026,6 +14438,8 @@ const L11_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['agree', 'disagree', 'discuss', 'in my view'], answer: 'in my view', image: '🎧' },
     { type: 'speak', question: '大聲念出來：agree', answer: 'agree', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I disagree.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['appearance', 'describe', 'discuss', 'gentle'], answer: 'describe', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：gentle', answer: 'gentle', image: '🔄' },
   ],
   talkTimePrompts: ["Ask: What do you think?", "Agree: I agree because ___.", "Disagree politely: I disagree. In my view, ___.", "✍️ 引導寫作＋翻譯：把「這是個好論點。」寫成英文，再寫一句你的看法。"],
   reviewQuiz: [
@@ -14089,6 +14503,8 @@ const L11_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['environment', 'pollution', 'protect', 'recycle'], answer: 'recycle', image: '🎧' },
     { type: 'speak', question: '大聲念出來：protect', answer: 'protect', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'We should recycle and save water.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['agree', 'disagree', 'discuss', 'environment'], answer: 'discuss', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：agree', answer: 'agree', image: '🔄' },
   ],
   talkTimePrompts: ["Read the text and say the main idea.", "Write your opinion about the environment.", "Speak: I think we should ___ because ___.", "✍️ 引導寫作＋翻譯：讀完後寫 3 句你對保護環境的看法。"],
   reviewQuiz: [
@@ -14152,6 +14568,8 @@ const L11_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['must', 'should', 'was made', 'who'], answer: 'was made', image: '🎧' },
     { type: 'speak', question: '大聲念出來：must', answer: 'must', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The bridge was made of stone.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['environment', 'pollution', 'protect', 'should'], answer: 'environment', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：protect', answer: 'protect', image: '🔄' },
   ],
   talkTimePrompts: ["Give advice with should/must.", "Use a relative pronoun and passive voice.", "Make an if-sentence and use 'although'.", "You beat the Challenge Boss! Say 'I did it!'"],
   reviewQuiz: [
@@ -14279,6 +14697,8 @@ const L12_M2: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['if', 'that', 'was written', 'which'], answer: 'if', image: '🎧' },
     { type: 'speak', question: '大聲念出來：which', answer: 'which', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Although it was hard, the team won.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['am learning', 'have studied', 'that', 'will use'], answer: 'have studied', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：am learning', answer: 'am learning', image: '🔄' },
   ],
   talkTimePrompts: ["Combine a relative clause and passive voice.", "Make an if-sentence with a relative clause.", "Use 'although' with a relative clause.", "✍️ 引導寫作＋翻譯：把「雖然很難，隊伍贏了。」寫成英文（用 although + who）。"],
   reviewQuiz: [
@@ -14342,6 +14762,8 @@ const L12_M3: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['confident', 'curious', 'generous', 'honest'], answer: 'curious', image: '🎧' },
     { type: 'speak', question: '大聲念出來：generous', answer: 'generous', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I am curious and creative.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['confident', 'that', 'was written', 'which'], answer: 'that', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：which', answer: 'which', image: '🔄' },
   ],
   talkTimePrompts: ["Describe your personality: I am ___ and ___.", "Describe a friend's character.", "Say which trait you value most and why.", "✍️ 引導寫作＋翻譯：用 3 個個性形容詞介紹你自己。"],
   reviewQuiz: [
@@ -14405,6 +14827,8 @@ const L12_M4: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['culture', 'forest', 'planet', 'tradition'], answer: 'forest', image: '🎧' },
     { type: 'speak', question: '大聲念出來：culture', answer: 'culture', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'We must protect nature.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['confident', 'generous', 'honest', 'planet'], answer: 'confident', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：generous', answer: 'generous', image: '🔄' },
   ],
   talkTimePrompts: ["Describe our planet: It has ___.", "Talk about a culture or festival you know.", "Say why we should protect nature.", "✍️ 引導寫作＋翻譯：寫 3 句關於世界或大自然。"],
   reviewQuiz: [
@@ -14468,6 +14892,8 @@ const L12_M5: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['have learned', 'was built', 'which', 'will keep'], answer: 'was built', image: '🎧' },
     { type: 'speak', question: '大聲念出來：will keep', answer: 'will keep', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The world which we protect is our home.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['culture', 'have learned', 'planet', 'tradition'], answer: 'planet', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：culture', answer: 'culture', image: '🔄' },
   ],
   talkTimePrompts: ["Use a perfect tense and a future tense.", "Make a sentence with a relative pronoun.", "Describe yourself with personality words.", "✍️ 引導寫作＋翻譯：把「如果我們努力，就會成功。」寫成英文。"],
   reviewQuiz: [
@@ -14531,6 +14957,8 @@ const L12_M6: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['dream', 'music', 'poor', 'practice'], answer: 'practice', image: '🎧' },
     { type: 'speak', question: '大聲念出來：music', answer: 'music', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She practiced every day.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['dream', 'have learned', 'which', 'will keep'], answer: 'have learned', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：will keep', answer: 'will keep', image: '🔄' },
   ],
   talkTimePrompts: ["Retell Mia's story.", "What is the lesson of the story?", "Talk about a dream you have.", "✍️ 引導寫作＋翻譯：把「追隨你的夢想！」寫成英文，再寫你的夢想。"],
   reviewQuiz: [
@@ -14594,6 +15022,8 @@ const L12_M7: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['article', 'planet', 'solar system', 'star'], answer: 'planet', image: '🎧' },
     { type: 'speak', question: '大聲念出來：solar system', answer: 'solar system', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Earth is the only planet with life.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['article', 'dream', 'music', 'poor'], answer: 'dream', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：music', answer: 'music', image: '🔄' },
   ],
   talkTimePrompts: ["Say two facts about the solar system.", "What makes Earth special?", "Would you like to explore space? Why?", "✍️ 引導寫作＋翻譯：寫 3 句關於太陽系的事實。"],
   reviewQuiz: [
@@ -14657,6 +15087,8 @@ const L12_M8: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['poem', 'rhyme', 'rhythm', 'script'], answer: 'script', image: '🎧' },
     { type: 'speak', question: '大聲念出來：rhythm', answer: 'rhythm', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'In a script, each character has a voice.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['article', 'poem', 'solar system', 'star'], answer: 'article', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：solar system', answer: 'solar system', image: '🔄' },
   ],
   talkTimePrompts: ["Read the star poem out loud with rhythm.", "Find two words that rhyme.", "Read a script line with feeling.", "✍️ 引導寫作＋翻譯：寫一首 2-4 行的英文小詩（試著押韻）。"],
   reviewQuiz: [
@@ -14720,6 +15152,8 @@ const L12_M9: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['clue', 'guess', 'infer', 'meaning'], answer: 'clue', image: '🎧' },
     { type: 'speak', question: '大聲念出來：guess', answer: 'guess', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'We can infer she feels moved.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['infer', 'poem', 'rhyme', 'rhythm'], answer: 'poem', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：rhythm', answer: 'rhythm', image: '🔄' },
   ],
   talkTimePrompts: ["Infer a character's feeling from a clue.", "Guess a hard word from context.", "Explain what a passage really means.", "✍️ 引導寫作＋翻譯：讀一段文字，寫出你推論到的言外之意。"],
   reviewQuiz: [
@@ -14783,6 +15217,8 @@ const L12_M10: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['dream', 'musician', 'orbit', 'planet'], answer: 'orbit', image: '🎧' },
     { type: 'speak', question: '大聲念出來：musician', answer: 'musician', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Poems use rhythm and rhyme.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['dream', 'guess', 'infer', 'meaning'], answer: 'infer', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：guess', answer: 'guess', image: '🔄' },
   ],
   talkTimePrompts: ["Retell a story you read.", "Say two facts from an article.", "Read a poem line with rhythm.", "✍️ 引導寫作＋翻譯：把「閱讀打開新世界。」寫成英文。"],
   reviewQuiz: [
@@ -14846,6 +15282,8 @@ const L12_M11: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['beginning', 'character', 'end', 'middle'], answer: 'character', image: '🎧' },
     { type: 'speak', question: '大聲念出來：middle', answer: 'middle', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'The main character had a big problem.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beginning', 'dream', 'musician', 'planet'], answer: 'dream', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：musician', answer: 'musician', image: '🔄' },
   ],
   talkTimePrompts: ["Tell the beginning of a story: Once upon a time…", "Describe a character and a problem.", "Say how the story ends.", "✍️ 引導寫作＋翻譯：寫一個有開頭/中段/結尾的短篇故事。"],
   reviewQuiz: [
@@ -14910,6 +15348,8 @@ const L12_M12: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['first', 'how to', 'instructions', 'step'], answer: 'first', image: '🎧' },
     { type: 'speak', question: '大聲念出來：step', answer: 'step', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Next, add cheese and tomato.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beginning', 'end', 'how to', 'middle'], answer: 'beginning', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：middle', answer: 'middle', image: '🔄' },
   ],
   talkTimePrompts: ["Explain how to make something with First/Next/Finally.", "Give clear steps for a simple task.", "Teach a friend how to do something.", "✍️ 引導寫作＋翻譯：寫一篇「How to…」說明文（3-4 步驟）。"],
   reviewQuiz: [
@@ -14973,6 +15413,8 @@ const L12_M13: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['body', 'email', 'greeting', 'subject'], answer: 'body', image: '🎧' },
     { type: 'speak', question: '大聲念出來：subject', answer: 'subject', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Could you please tell me the time?', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['email', 'how to', 'instructions', 'step'], answer: 'how to', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：step', answer: 'step', image: '🔄' },
   ],
   talkTimePrompts: ["Start an email: Dear ___, I am writing to ___.", "Make a polite request: Could you please ___?", "Close an email politely.", "✍️ 引導寫作＋翻譯：寫一封短 email（主旨/問候/正文/結尾）。"],
   reviewQuiz: [
@@ -15036,6 +15478,8 @@ const L12_M14: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['admire', 'dream', 'hero', 'inspire'], answer: 'dream', image: '🎧' },
     { type: 'speak', question: '大聲念出來：admire', answer: 'admire', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'She inspires me to never give up.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['email', 'greeting', 'hero', 'subject'], answer: 'email', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：subject', answer: 'subject', image: '🔄' },
   ],
   talkTimePrompts: ["Say who your hero is: My hero is ___.", "Describe their qualities.", "Say why they inspire you.", "✍️ 引導寫作＋翻譯：寫一篇「My Hero」或「My Dream」短文。"],
   reviewQuiz: [
@@ -15099,6 +15543,8 @@ const L12_M15: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['beginning', 'how to', 'step', 'story'], answer: 'step', image: '🎧' },
     { type: 'speak', question: '大聲念出來：beginning', answer: 'beginning', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'An email starts with Dear.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['admire', 'hero', 'inspire', 'story'], answer: 'hero', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：admire', answer: 'admire', image: '🔄' },
   ],
   talkTimePrompts: ["Say the parts of a story.", "Give steps for something with First/Next/Finally.", "Say how to start and end an email.", "✍️ 引導寫作＋翻譯：選一種寫作類型，寫一小段。"],
   reviewQuiz: [
@@ -15162,6 +15608,8 @@ const L12_M16: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['audience', 'expression', 'storyteller', 'voice'], answer: 'audience', image: '🎧' },
     { type: 'speak', question: '大聲念出來：expression', answer: 'expression', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Speak clearly and slowly.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['beginning', 'how to', 'story', 'storyteller'], answer: 'story', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：beginning', answer: 'beginning', image: '🔄' },
   ],
   talkTimePrompts: ["Tell a short story out loud with expression.", "Change your voice for different characters.", "Look up and speak to your 'audience'.", "✍️ 引導寫作＋翻譯：寫下你要說的故事的開頭 2 句。"],
   reviewQuiz: [
@@ -15225,6 +15673,8 @@ const L12_M17: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['confident', 'introduce', 'presentation', 'topic'], answer: 'confident', image: '🎧' },
     { type: 'speak', question: '大聲念出來：introduce', answer: 'introduce', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'First, I will show you my paintings.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['expression', 'presentation', 'storyteller', 'voice'], answer: 'storyteller', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：expression', answer: 'expression', image: '🔄' },
   ],
   talkTimePrompts: ["Open a presentation: Hello, today I will talk about ___.", "Introduce yourself confidently.", "Close: Thank you for listening. Any questions?", "✍️ 引導寫作＋翻譯：寫你簡報的開場和結尾兩句。"],
   reviewQuiz: [
@@ -15288,6 +15738,8 @@ const L12_M18: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['notes', 'poster', 'project', 'research'], answer: 'poster', image: '🎧' },
     { type: 'speak', question: '大聲念出來：research', answer: 'research', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Then, I wrote my notes.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['introduce', 'presentation', 'project', 'topic'], answer: 'presentation', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：introduce', answer: 'introduce', image: '🔄' },
   ],
   talkTimePrompts: ["Describe your project steps: First, then, finally.", "Say what topic you researched.", "Present one fact you learned.", "✍️ 引導寫作＋翻譯：規劃一個小專題的 3 個步驟。"],
   reviewQuiz: [
@@ -15351,6 +15803,8 @@ const L12_M19: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['achieve', 'progress', 'proud', 'showcase'], answer: 'progress', image: '🎧' },
     { type: 'speak', question: '大聲念出來：proud', answer: 'proud', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'I have made a lot of progress.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['notes', 'project', 'research', 'showcase'], answer: 'project', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：research', answer: 'research', image: '🔄' },
   ],
   talkTimePrompts: ["Showcase your skills: I can ___, ___, and ___.", "Say what you are proud of.", "Look back: I have learned so much!", "✍️ 引導寫作＋翻譯：寫 3 句回顧你的學習成果並肯定自己。"],
   reviewQuiz: [
@@ -15414,6 +15868,8 @@ const L12_M20: Mission = {
     { type: 'listen-pick', question: '🎧 仔細聽，選出你聽到的字！', options: ['certificate', 'congratulations', 'graduate', 'journey'], answer: 'journey', image: '🎧' },
     { type: 'speak', question: '大聲念出來：congratulations', answer: 'congratulations', image: '🗣' },
     { type: 'speak', question: '換你說這一句！', answer: 'Now I can read, write, and speak English.', image: '🗣' },
+    { type: 'listen-pick', question: '🔄 複習時間！聽聽看是上次學的哪個字？', options: ['graduate', 'progress', 'proud', 'showcase'], answer: 'showcase', image: '🔄' },
+    { type: 'speak', question: '🔄 複習時間！大聲念出上次學的字：proud', answer: 'proud', image: '🔄' },
   ],
   talkTimePrompts: ["Say: I can read, write, and speak English now!", "Look back on your journey from L1 to L12.", "Say what you are most proud of.", "✍️ 引導寫作＋翻譯：寫一段畢業感言，回顧旅程並展望未來。"],
   reviewQuiz: [
