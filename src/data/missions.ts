@@ -5744,6 +5744,7 @@ const L5_M4: Mission = {
     { speaker: 'Ruby', line: "Hey! Nobody is smarter than me!", lineZh: '嘿！沒有誰比我聰明！' },
     { speaker: 'Coco', line: "Ha! The sea is full of amazing friends!", lineZh: '哈！大海裡都是厲害的朋友！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m4.mp4?v=1',
 };
 
 const L5_M5: Mission = {
@@ -5812,6 +5813,7 @@ const L5_M5: Mission = {
     { speaker: 'Benny', line: "This box is heavier than a whale...", lineZh: '這箱子比鯨魚還重啦⋯⋯' },
     { speaker: 'Finn', line: "All done! Grandpa says thank you!", lineZh: '搬完了！爺爺說謝謝大家！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m5.mp4?v=1',
 };
 
 const L5_M6: Mission = {
