@@ -6020,6 +6020,7 @@ const L5_M8: Mission = {
     { speaker: 'Polly', line: "Deal! I'll bring snacks for everyone!", lineZh: '說定了！我帶點心給大家！' },
     { speaker: 'Coco', line: "It's almost time! Let's go, go, go!", lineZh: '時間快到了！走走走！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m8.mp4?v=1',
 };
 
 const L5_M9: Mission = {
@@ -6156,6 +6157,7 @@ const L5_M10: Mission = {
     { speaker: 'Polly', line: "Sunny or rainy, we have a plan!", lineZh: '不管晴天雨天，我們都有計畫！' },
     { speaker: 'Finn', line: "Perfect! See you at ten!", lineZh: '完美！十點見！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m10.mp4?v=1',
 };
 
 const L5_M11: Mission = {
