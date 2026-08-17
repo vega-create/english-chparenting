@@ -93,11 +93,11 @@ const CHARACTERS_INFO = [
 ];
 
 const STEPS_INFO = [
-  { icon: '📖', name: 'Story Time', nameZh: '故事時間', desc: '先聽一段有趣的英文故事，跟著角色們一起出發！故事裡會用到今天要學的新單字和句型，聽不懂沒關係，看影片就能猜到意思！', voiceZh: '第一關是故事時間！聽角色們說故事，看動畫猜意思，超好玩的！' },
-  { icon: '📝', name: 'Word Time', nameZh: '學單字', desc: '用字卡學今天要學的英文字！看圖片、聽發音、跟著大聲念出來，還可以錄下自己的聲音，比比看誰念得標準！', voiceZh: '接下來學新單字！看圖片、聽發音、跟著念，還可以錄自己的聲音喔！' },
-  { icon: '🎮', name: 'Challenge', nameZh: '挑戰遊戲', desc: '用小遊戲玩一玩剛學到的東西！有用聽的、有連連看、有拼拼看，做對就能拿到星星，一直做對還會加分！', voiceZh: '第三關是挑戰遊戲！用遊戲練習剛學的東西，答對就有星星！' },
-  { icon: '💬', name: 'Talk Time', nameZh: '對話時間', desc: '跟 Finn 用英文聊天！他會問你問題，你用麥克風回答。不用怕說錯，Finn 會陪你再試一次！', voiceZh: '第四關是對話時間！跟 Finn 用英文聊天，不用怕說錯喔！' },
-  { icon: '⭐', name: 'Mission Complete', nameZh: '任務完成', desc: '恭喜你完成任務！看看這次拿到幾顆星星，寶石也會變多，收集起來布置你的小屋吧！', voiceZh: '最後一關是結算時間！看看你得了幾顆星星，寵物也會長大喔！' },
+  { icon: '📖', name: 'Story Time', img: '/images/ui/steps/story.webp', nameZh: '故事時間', desc: '先聽一段有趣的英文故事，跟著角色們一起出發！故事裡會用到今天要學的新單字和句型，聽不懂沒關係，看影片就能猜到意思！', voiceZh: '第一關是故事時間！聽角色們說故事，看動畫猜意思，超好玩的！' },
+  { icon: '📝', name: 'Word Time', img: '/images/ui/steps/words.webp', nameZh: '學單字', desc: '用字卡學今天要學的英文字！看圖片、聽發音、跟著大聲念出來，還可以錄下自己的聲音，比比看誰念得標準！', voiceZh: '接下來學新單字！看圖片、聽發音、跟著念，還可以錄自己的聲音喔！' },
+  { icon: '🎮', name: 'Challenge', img: '/images/ui/steps/challenge.webp', nameZh: '挑戰遊戲', desc: '用小遊戲玩一玩剛學到的東西！有用聽的、有連連看、有拼拼看，做對就能拿到星星，一直做對還會加分！', voiceZh: '第三關是挑戰遊戲！用遊戲練習剛學的東西，答對就有星星！' },
+  { icon: '💬', name: 'Talk Time', img: '/images/ui/steps/talk.webp', nameZh: '對話時間', desc: '跟 Finn 用英文聊天！他會問你問題，你用麥克風回答。不用怕說錯，Finn 會陪你再試一次！', voiceZh: '第四關是對話時間！跟 Finn 用英文聊天，不用怕說錯喔！' },
+  { icon: '⭐', name: 'Mission Complete', img: '/images/ui/steps/star.webp', nameZh: '任務完成', desc: '恭喜你完成任務！看看這次拿到幾顆星星，寶石也會變多，收集起來布置你的小屋吧！', voiceZh: '最後一關是結算時間！看看你得了幾顆星星，寵物也會長大喔！' },
 ];
 
 export default function Welcome({ onComplete }: Props) {
@@ -269,13 +269,13 @@ export default function Welcome({ onComplete }: Props) {
               <button
                 key={step.name}
                 onClick={() => handleStepClick(i)}
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center text-2xl border-2 transition-all hover:scale-110 active:scale-95 ${
+                className={`w-16 h-16 rounded-2xl flex items-center justify-center border-2 transition-all hover:scale-110 active:scale-95 ${
                   stepsClicked.has(i)
                     ? 'bg-green-100 border-green-400 scale-105'
                     : 'bg-gray-100 border-gray-200'
                 }`}
               >
-                {step.icon}
+                <img src={step.img} alt={step.nameZh} className="w-12 h-12 object-contain" />
               </button>
             ))}
           </div>
@@ -283,7 +283,7 @@ export default function Welcome({ onComplete }: Props) {
           {showStepDetail !== null && (
             <div className="bg-white rounded-2xl p-5 border-2 border-green-100 shadow-md animate-slide-up">
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-3xl">{STEPS_INFO[showStepDetail].icon}</span>
+                <img src={STEPS_INFO[showStepDetail].img} alt="" className="w-14 h-14 object-contain" />
                 <div>
                   <p className="font-black text-gray-800">{STEPS_INFO[showStepDetail].name}</p>
                   <p className="text-sm text-gray-500">{STEPS_INFO[showStepDetail].nameZh}</p>
