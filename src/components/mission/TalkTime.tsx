@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import GameButton from '@/components/GameButton';
 import { speak } from '@/lib/speech';
 import { playLesson, lessonPath, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
 
@@ -161,12 +162,9 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
           {supported === false || denied ? (
             /* 不支援 or 沒麥克風權限：孩子念完自己按，不要默默跳過 */
             <>
-              <button
-                onClick={handleManualDone}
-                className="bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition active:scale-95 shadow-lg"
-              >
+              <GameButton onClick={handleManualDone} color="green" size="lg">
                 🎤 我念完了！
-              </button>
+              </GameButton>
               <p className="text-[11px] text-gray-400">
                 {denied ? '沒有麥克風權限，念完按這裡就好' : '這個瀏覽器不能自動聽，念完按這裡就好'}
               </p>
@@ -190,12 +188,9 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
               </button>
             </div>
           ) : (
-            <button
-              onClick={handleNext}
-              className="bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition active:scale-95 shadow-lg"
-            >
+            <GameButton onClick={handleNext} color="green" size="lg">
               {current < prompts.length - 1 ? '下一題 ▶' : '完成對話！🎉'}
-            </button>
+            </GameButton>
           )}
         </div>
       </div>

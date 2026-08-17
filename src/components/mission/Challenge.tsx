@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import GameButton from '@/components/GameButton';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
 import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';

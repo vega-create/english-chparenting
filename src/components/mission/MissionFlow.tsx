@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import GameButton from '@/components/GameButton';
 import { stopAllAudio } from '@/lib/audioBus';
 import { COURSES } from '@/data/courses';
 import { MISSIONS } from '@/data/missions';
@@ -251,13 +252,13 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
 
               {/* 按鈕（框下方） */}
               <div className="-mt-1 px-8 space-y-2">
-                <button
+                <GameButton
                   onClick={() => {
                     playVega(CHAR_CUE_AUDIO.start);   // Finn：Let's go!
                     setStep(course.level === 1 && mission.id === 1 ? 'welcome' : 'wakeup');
                   }}
-                  className="w-full py-3.5 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg hover:from-pink-500 active:scale-95 transition text-lg"
-                >⭐ ▶ 開始任務 ⭐</button>
+                  color="gold" size="lg" className="w-full block text-center"
+                >⭐ ▶ 開始任務 ⭐</GameButton>
                 <button
                   onClick={() => setStep('complete')}
                   className="w-full py-2.5 bg-white border-2 border-green-300 text-green-600 font-black rounded-full shadow active:scale-95 transition text-sm"

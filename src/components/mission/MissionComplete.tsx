@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import GameButton from '@/components/GameButton';
 import type { QuizQuestion } from '@/data/missions';
 import { playPraise, getLevelFromMissionId, playReward, playVega, CHAR_CUE_AUDIO } from '@/lib/vega-audio';
 import { playFanfare, stopFanfare } from '@/lib/sfx';
@@ -121,19 +122,13 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
         {/* 操作按鈕 */}
         <div className="flex flex-col gap-3 max-w-md mx-auto">
           {!quizDone && !showQuiz && (
-            <button
-              onClick={() => { playVega(CHAR_CUE_AUDIO.treasure); setShowQuiz(true); }}
-              className="bg-yellow-400 text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-500 transition active:scale-95 shadow-lg"
-            >
+            <GameButton onClick={() => { playVega(CHAR_CUE_AUDIO.treasure); setShowQuiz(true); }} color="gold" size="lg">
               🎁 寶藏挑戰（{reviewQuiz.length} 關）
-            </button>
+            </GameButton>
           )}
-          <a
-            href={`/courses/${courseSlug}`}
-            className="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:from-green-500 hover:to-emerald-600 transition active:scale-95 text-center"
-          >
+          <GameButton href={`/courses/${courseSlug}`} color="green" size="lg" className="text-center">
             繼續冒險 · 下一站 🗺 →
-          </a>
+          </GameButton>
 
           {/* 剛拿到星星，這是最有說服力的時機講「不登入會不見」 */}
           <LoginNudge variant="inline" />
@@ -210,10 +205,11 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
               🔊 先聽示範
             </button>
             <p className="text-sm text-gray-400 mb-3">跟著念一次，再按下面按鈕</p>
-            <button onClick={() => handleQuizAnswer(q.answer)} disabled={showResult}
-              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-green-600 transition active:scale-95 disabled:opacity-50">
-              🎤 我念完了！
-            </button>
+            {showResult ? (
+              <button disabled className="px-8 py-3 rounded-2xl font-bold text-lg bg-gray-200 text-gray-400">🎤 我念完了！</button>
+            ) : (
+              <GameButton onClick={() => handleQuizAnswer(q.answer)} color="green" size="md">🎤 我念完了！</GameButton>
+            )}
           </div>
         ) : (
           /* 選擇題（listen-pick / match / fill-blank / read） */

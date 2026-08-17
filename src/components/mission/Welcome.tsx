@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import GameButton from '@/components/GameButton';
 import { speak, speakChinese, stopSpeaking } from '@/lib/speech';
 import { playVega, stopVega, VEGA_INTRO_AUDIO, CHAR_INTRO_AUDIO } from '@/lib/vega-audio';
 
@@ -339,17 +340,15 @@ export default function Welcome({ onComplete }: Props) {
 
       {/* 下一步按鈕 */}
       <div className="text-center">
-        <button
-          onClick={handleNext}
-          disabled={!canProceed()}
-          className={`px-8 py-4 rounded-full font-bold text-lg transition-all active:scale-95 shadow-lg ${
-            canProceed()
-              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600'
-              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-          }`}
-        >
-          {sceneIndex < WELCOME_SCENES.length - 1 ? '下一步 ▶' : "Let's Go! 開始上課！🚀"}
-        </button>
+        {canProceed() ? (
+          <GameButton onClick={handleNext} color="purple" size="lg">
+            {sceneIndex < WELCOME_SCENES.length - 1 ? '下一步 ▶' : "Let's Go! 開始上課！🚀"}
+          </GameButton>
+        ) : (
+          <button disabled className="px-8 py-4 rounded-full font-bold text-lg bg-gray-200 text-gray-400 cursor-not-allowed">
+            {sceneIndex < WELCOME_SCENES.length - 1 ? '下一步 ▶' : "Let's Go! 開始上課！🚀"}
+          </button>
+        )}
       </div>
     </div>
   );

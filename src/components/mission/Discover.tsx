@@ -538,7 +538,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 }`}>
                 {showTranslation ? '中 ✓' : '中'}
               </button>
-              <button onClick={() => {
+              <GameButton color="green" size="md" onClick={() => {
                 stopSpeaking();
                 setShowTranslation(false);
                 if (storyIndex < story.length - 1) {
@@ -550,9 +550,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                   setPhase('words');
                 }
               }}
-                className="bg-green-500 text-white px-7 sm:px-8 py-3 rounded-2xl font-bold hover:bg-green-600 transition active:scale-95">
+                >
                 {storyIndex < story.length - 1 ? '▶' : '📝'}
-              </button>
+              </GameButton>
             </div>
           </>
         )}
