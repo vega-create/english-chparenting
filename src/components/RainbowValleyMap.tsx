@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { playVega, stopVega } from '@/lib/vega-audio';
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { playClick, playStar, playSuccess, playSwoosh } from "@/lib/sfx";
@@ -140,6 +141,13 @@ interface Props {
 export default function RainbowValleyMap({ onAllComplete }: Props) {
   const [currentId, setCurrentId] = useState(1);
   const [openLevel, setOpenLevel] = useState<LevelDef | null>(null);
+
+  // 彈窗打開播 Coco 介紹語音；關閉即停（目標用戶識字量少，要用聽的）
+  useEffect(() => {
+    if (openLevel) playVega('island-intro-l1');
+    else stopVega();
+    return () => stopVega();
+  }, [openLevel]);
   const [showConfetti, setShowConfetti] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [device, setDevice] = useState<DeviceKind>("desktop");
@@ -832,7 +840,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
               <div className="flex items-end gap-0 -mt-3">
                 <img src="/characters/coco/coco-point.png" alt="Coco" className="w-48 h-48 sm:w-52 sm:h-52 object-contain flex-shrink-0 drop-shadow-xl -ml-3" />
                 <div className="flex-1 bg-white rounded-2xl rounded-bl-none border-2 border-pink-200 px-4 py-3.5 shadow-lg mb-10">
-                  <p className="text-base text-gray-700 leading-relaxed font-medium">嗨～我是 <span className="font-black text-pink-500">Coco</span>！這裡是彩虹谷的字母島，我們一起來認讀字母吧！</p>
+                  <p className="text-base text-gray-700 leading-relaxed font-medium">嗨～我是 <span className="font-black text-pink-500">Coco</span>！這裡是彩虹谷的字母島，我們一起來認識字母吧！</p>
                 </div>
               </div>
 
