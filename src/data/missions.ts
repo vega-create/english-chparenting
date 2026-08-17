@@ -205,7 +205,7 @@ const L1_M1: Mission = {
     { speaker: 'Finn', line: "Yes! Bye for now, friends. See you soon!", lineZh: '好啊！朋友們先再見，很快見！' },
   ],
   // 2026-08-12 樣品：一句一張圖、四段 Lipsync HD + Voice Changer 串接（流程見 scripts/課文錄音與影片規劃-2026-08.md）
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m1.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m1.mp4?v=2',
 };
 
 // L1 Mission 2: A to D（字母的開始）— 官方字 apple/ball/cat/dog + KK/自然發音
@@ -303,7 +303,7 @@ const L1_M2: Mission = {
     { speaker: 'Benny', line: "A cat is playing with the ball!", lineZh: '有一隻貓在玩那顆球！' },
     { speaker: 'Finn', line: "And here comes a dog! A, B, C, D!", lineZh: '還有一隻狗跑來了！A、B、C、D！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m2.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m2.mp4?v=2',
 };
 
 // L1 M3: E to H（森林字母）
@@ -352,7 +352,7 @@ const L1_M3: Mission = {
     { speaker: 'Benny', line: "A goat is eating my hat!", lineZh: '有一隻山羊在吃我的帽子！' },
     { speaker: 'Ruby', line: "Come back, goat! That's Benny's hat!", lineZh: '回來啦山羊！那是 Benny 的帽子！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m3.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m3.mp4?v=2',
 };
 
 // L1 M4: I to L（山丘字母）
@@ -448,7 +448,7 @@ const L1_M5: Mission = {
     { speaker: 'Benny', line: "I, J, K, L! Let's sing it again!", lineZh: 'I、J、K、L！我們再唱一次！' },
     { speaker: 'Finn', line: "You all sing so well!", lineZh: '你們唱得好棒！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m5.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m5.mp4?v=2',
 };
 
 // L1 M6: M to P（海邊字母）
@@ -497,7 +497,7 @@ const L1_M6: Mission = {
     { speaker: 'Ruby', line: "I brought oranges for everyone!", lineZh: '我帶了柳橙給大家！' },
     { speaker: 'Benny', line: "Oink! A pig wants one too!", lineZh: '呼嚕！有隻小豬也想要一顆！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m6.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m6.mp4?v=2',
 };
 
 // L1 M7: Q to T（城堡字母）
@@ -546,7 +546,7 @@ const L1_M7: Mission = {
     { speaker: 'Coco', line: "The sun is shining on the castle.", lineZh: '陽光照在城堡上。' },
     { speaker: 'Finn', line: "Shh! A tiger is coming!", lineZh: '噓！有一隻老虎過來了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m7.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m7.mp4?v=2',
 };
 
 // L1 M8: U to X（天空字母）
@@ -595,7 +595,7 @@ const L1_M8: Mission = {
     { speaker: 'Coco', line: "What time is it? Look at my watch!", lineZh: '現在幾點？看我的手錶！' },
     { speaker: 'Finn', line: "Wait — a fox wants a ride too!", lineZh: '等等，有隻狐狸也想搭車！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m8.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m8.mp4?v=2',
 };
 
 // L1 M9: Y and Z（字母之巔）
@@ -640,7 +640,7 @@ const L1_M9: Mission = {
     { speaker: 'Coco', line: "A zebra wants to play too!", lineZh: '有一隻斑馬也想一起玩！' },
     { speaker: 'Finn', line: "Y and Z — we made it to the end!", lineZh: 'Y 和 Z —— 我們走到最後了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m9.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m9.mp4?v=2',
 };
 
 // L1 M10: 字母歌大複習② M–Z
@@ -687,7 +687,7 @@ const L1_M10: Mission = {
     { speaker: 'Polly', line: "U, V, W... X, Y, Z!", lineZh: 'U、V、W… X、Y、Z！' },
     { speaker: 'Finn', line: "We did it — all the way to Z!", lineZh: '我們做到了 —— 一路唱到 Z！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m10.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m10.mp4?v=2',
 };
 
 // L1 M11: 字母書寫大挑戰（大小寫配對）
@@ -734,7 +734,7 @@ const L1_M11: Mission = {
     { speaker: 'Benny', line: "Big B, small b. Is this one good?", lineZh: '大寫 B，小寫 b。這樣可以嗎？' },
     { speaker: 'Coco', line: "Yes! Your letters look great, Benny!", lineZh: '可以！Benny，你的字寫得真好！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m11.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m11.mp4?v=2',
 };
 
 // L1 M12: 字母島大魔王（總驗收 + 畢業）
@@ -781,7 +781,7 @@ const L1_M12: Mission = {
     { speaker: 'Ruby', line: "Z is for zebra! Keep going!", lineZh: 'Z 是 zebra！繼續！' },
     { speaker: 'Finn', line: "We beat the Boss! Great teamwork!", lineZh: '我們打敗大魔王了！團隊合作真棒！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m12.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m12.mp4?v=2',
 };
 
 // ===================== L1 字母島擴充 M13-M20（大小寫/書寫/sight words/冠詞/閱讀/畢業） =====================
@@ -836,7 +836,7 @@ const L1_M13: Mission = {
     { speaker: 'Benny', line: "Then big B goes with small b!", lineZh: '那大寫 B 就配小寫 b！' },
     { speaker: 'Coco', line: "You two are so quick!", lineZh: '你們兩個好快！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m13.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m13.mp4?v=2',
 };
 
 const L1_M14: Mission = {
@@ -889,7 +889,7 @@ const L1_M14: Mission = {
     { speaker: 'Vega', line: "Perfect! Now trace an O — it's a circle.", lineZh: '完美！現在描一個 O —— 它是個圓。' },
     { speaker: 'Ruby', line: "Round and round! I did it!", lineZh: '繞一圈！我做到了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m14.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m14.mp4?v=2',
 };
 
 const L1_M15: Mission = {
@@ -942,7 +942,7 @@ const L1_M15: Mission = {
     { speaker: 'Benny', line: "I spy an igloo, and an orange too!", lineZh: '我看到冰屋，還有一顆柳橙！' },
     { speaker: 'Polly', line: "And an umbrella! What a fun game!", lineZh: '還有一把雨傘！這遊戲真好玩！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m15.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m15.mp4?v=2',
 };
 
 const L1_M16: Mission = {
@@ -996,7 +996,7 @@ const L1_M16: Mission = {
     { speaker: 'Coco', line: "And it is an apple. The apple is red!", lineZh: '那是一顆蘋果。蘋果是紅色的！' },
     { speaker: 'Benny', line: "A red apple for the cat!", lineZh: '一顆紅蘋果給貓咪！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m16.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m16.mp4?v=2',
 };
 
 const L1_M17: Mission = {
@@ -1049,7 +1049,7 @@ const L1_M17: Mission = {
     { speaker: 'Polly', line: "Let's go and play!", lineZh: '我們去玩吧！' },
     { speaker: 'Finn', line: "Come on! We can play together!", lineZh: '來吧！我們可以一起玩！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m17.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m17.mp4?v=2',
 };
 
 const L1_M18: Mission = {
@@ -1103,7 +1103,7 @@ const L1_M18: Mission = {
     { speaker: 'Ruby', line: "Yes, please! Is that a ball too?", lineZh: '好啊，謝謝！那也是一顆球嗎？' },
     { speaker: 'Benny', line: "It is an egg, Ruby! Be careful!", lineZh: '那是一顆蛋，Ruby！小心一點！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m18.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m18.mp4?v=2',
 };
 
 const L1_M19: Mission = {
@@ -1156,7 +1156,7 @@ const L1_M19: Mission = {
     { speaker: 'Coco', line: "Look, it is an egg!", lineZh: '你看，那是一顆蛋！' },
     { speaker: 'Finn', line: "I like the egg. Let's keep it safe.", lineZh: '我喜歡這顆蛋。我們把它保護好。' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m19.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m19.mp4?v=2',
 };
 
 const L1_M20: Mission = {
@@ -1209,7 +1209,7 @@ const L1_M20: Mission = {
     { speaker: 'Coco', line: "I see a cat. It is an egg!", lineZh: '我看到一隻貓。那是一顆蛋！' },
     { speaker: 'Vega', line: "You did it! On to Sound Island!", lineZh: '你們辦到了！前進聲音島！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m20.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L1/m20.mp4?v=2',
 };
 
 /* ============================================================
@@ -1269,7 +1269,7 @@ const L2_M1: Mission = {
     { speaker: 'Benny', line: "I found a big dog and a red box!", lineZh: '我找到一隻大狗和一個紅色的盒子！' },
     { speaker: 'Finn', line: "You did it! Now we can read new words!", lineZh: '你們做到了！現在我們會讀新單字了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m1.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m1.mp4?v=2',
 };
 
 const L2_M2: Mission = {
@@ -1324,7 +1324,7 @@ const L2_M2: Mission = {
     { speaker: 'Ruby', line: "Look, a fan in my bag!", lineZh: '你看，我的袋子裡有一把扇子！' },
     { speaker: 'Coco', line: "A, a, a — I hear it in every word!", lineZh: 'a、a、a——每個字裡我都聽到它！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m2.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m2.mp4?v=2',
 };
 
 const L2_M3: Mission = {
@@ -1378,7 +1378,7 @@ const L2_M3: Mission = {
     { speaker: 'Benny', line: "Ten hens? Get the net!", lineZh: '十隻母雞？快拿網子！' },
     { speaker: 'Ruby', line: "Oh no, now we are all wet!", lineZh: '糟糕，我們現在全身都濕了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m3.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m3.mp4?v=2',
 };
 
 const L2_M4: Mission = {
@@ -1432,7 +1432,7 @@ const L2_M4: Mission = {
     { speaker: 'Polly', line: "Six little pigs! Who will win?", lineZh: '六隻小豬！誰會贏呢？' },
     { speaker: 'Finn', line: "The big one! Good job, pig!", lineZh: '那隻大的！做得好，小豬！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m4.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m4.mp4?v=2',
 };
 
 const L2_M5: Mission = {
@@ -1485,7 +1485,7 @@ const L2_M5: Mission = {
     { speaker: 'Benny', line: "Pig, six! That's short i!", lineZh: 'pig、six！那是短音 i！' },
     { speaker: 'Finn', line: "A, e, i — we know them all!", lineZh: 'a、e、i——我們全都會了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m5.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m5.mp4?v=2',
 };
 
 const L2_M6: Mission = {
@@ -1539,7 +1539,7 @@ const L2_M6: Mission = {
     { speaker: 'Coco', line: "Careful, the pot is hot!", lineZh: '小心，那個鍋子很燙！' },
     { speaker: 'Finn', line: "Get the mop! Oh no, the fox ran!", lineZh: '快拿拖把！糟了，狐狸跑掉了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m6.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m6.mp4?v=2',
 };
 
 const L2_M7: Mission = {
@@ -1593,7 +1593,7 @@ const L2_M7: Mission = {
     { speaker: 'Ruby', line: "Watch out — mud!", lineZh: '小心——泥巴！' },
     { speaker: 'Benny', line: "Ha ha! Give me a hug, Ruby!", lineZh: '哈哈！抱我一下嘛，Ruby！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m7.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m7.mp4?v=2',
 };
 
 const L2_M8: Mission = {
@@ -1648,7 +1648,7 @@ const L2_M8: Mission = {
     { speaker: 'Polly', line: "Let's shop for lunch. Cheese and chips!", lineZh: '我們去買午餐吧。起司和薯片！' },
     { speaker: 'Coco', line: "Ch, ch, cheese! Yummy!", lineZh: 'ch、ch、cheese！好好吃！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m8.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m8.mp4?v=2',
 };
 
 const L2_M9: Mission = {
@@ -1703,7 +1703,7 @@ const L2_M9: Mission = {
     { speaker: 'Benny', line: "Look, a gold ring! Is he a king?", lineZh: '你看，一個金戒指！牠是國王嗎？' },
     { speaker: 'Finn', line: "Let's sing a long song for the duck king!", lineZh: '我們為鴨子國王唱一首長長的歌吧！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m9.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m9.mp4?v=2',
 };
 
 const L2_M10: Mission = {
@@ -1756,7 +1756,7 @@ const L2_M10: Mission = {
     { speaker: 'Benny', line: "Fish, chip, duck, ring — sound teams!", lineZh: 'fish、chip、duck、ring——是字母組合！' },
     { speaker: 'Finn', line: "Listen, the echo is singing with us!", lineZh: '聽，回音在跟我們一起唱！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m10.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m10.mp4?v=2',
 };
 
 const L2_M11: Mission = {
@@ -1811,7 +1811,7 @@ const L2_M11: Mission = {
     { speaker: 'Coco', line: "Cake! Rain! Train! Did I say it right?", lineZh: 'cake！rain！train！我念對了嗎？' },
     { speaker: 'Finn', line: "Yes! The gate is open. What a day!", lineZh: '對！門開了。今天真棒！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m11.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m11.mp4?v=2',
 };
 
 const L2_M12: Mission = {
@@ -1865,7 +1865,7 @@ const L2_M12: Mission = {
     { speaker: 'Ruby', line: "Yes! Let's have tea and eat under it.", lineZh: '對！我們在樹下喝茶吃東西吧。' },
     { speaker: 'Benny', line: "Then I will read you a story. E, e, e!", lineZh: '然後我念故事給你聽。e、e、e！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m12.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m12.mp4?v=2',
 };
 
 const L2_M13: Mission = {
@@ -1919,7 +1919,7 @@ const L2_M13: Mission = {
     { speaker: 'Polly', line: "Nine now! The night is bright.", lineZh: '現在有九顆了！夜空好亮。' },
     { speaker: 'Finn', line: "Let's ride my bike home. Good night!", lineZh: '我們騎腳踏車回家吧。晚安！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m13.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m13.mp4?v=2',
 };
 
 const L2_M14: Mission = {
@@ -1973,7 +1973,7 @@ const L2_M14: Mission = {
     { speaker: 'Benny', line: "Slow down! The road is white.", lineZh: '慢一點！路都白了。' },
     { speaker: 'Coco', line: "Look — a rose in the snow. Let's go home!", lineZh: '你看——雪裡有一朵玫瑰。我們回家吧！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m14.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m14.mp4?v=2',
 };
 
 const L2_M15: Mission = {
@@ -2026,7 +2026,7 @@ const L2_M15: Mission = {
     { speaker: 'Ruby', line: "Tree and eat — long e!", lineZh: 'tree 和 eat——長音 e！' },
     { speaker: 'Finn', line: "Bike, boat, snow — you sang them all!", lineZh: 'bike、boat、snow——你們全都唱出來了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m15.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m15.mp4?v=2',
 };
 
 const L2_M16: Mission = {
@@ -2081,7 +2081,7 @@ const L2_M16: Mission = {
     { speaker: 'Polly', line: "Let's get food and jump in the pool!", lineZh: '我們去拿食物，然後跳進游泳池！' },
     { speaker: 'Coco', line: "Oo, oo, oo — moon, food, zoo, pool!", lineZh: 'oo、oo、oo——moon、food、zoo、pool！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m16.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m16.mp4?v=2',
 };
 
 const L2_M17: Mission = {
@@ -2136,7 +2136,7 @@ const L2_M17: Mission = {
     { speaker: 'Ruby', line: "A giraffe is holding it!", lineZh: '有一隻長頸鹿拿著它！' },
     { speaker: 'Benny', line: "Turn the page — the story is not over!", lineZh: '翻到下一頁——故事還沒完呢！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m17.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m17.mp4?v=2',
 };
 
 const L2_M18: Mission = {
@@ -2191,7 +2191,7 @@ const L2_M18: Mission = {
     { speaker: 'Finn', line: "Turn here! There is corn for everyone.", lineZh: '在這裡轉彎！這裡有玉米給大家吃。' },
     { speaker: 'Polly', line: "Ar, or, er — I can hear the r!", lineZh: 'ar、or、er——我聽得到 r 的聲音！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m18.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m18.mp4?v=2',
 };
 
 const L2_M19: Mission = {
@@ -2246,7 +2246,7 @@ const L2_M19: Mission = {
     { speaker: 'Coco', line: "\"The\", \"is\", \"you\", \"have\"… I know them!", lineZh: 'the、is、you、have… 我都認得！' },
     { speaker: 'Finn', line: "Yes! You have to know them by heart.", lineZh: '對！這些字要記在心裡。' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m19.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m19.mp4?v=2',
 };
 
 const L2_M20: Mission = {
@@ -2300,7 +2300,7 @@ const L2_M20: Mission = {
     { speaker: 'Benny', line: "Fish! Moon! Star! Rice!", lineZh: 'fish！moon！star！rice！' },
     { speaker: 'Finn', line: "You did it! Sound Island is ours!", lineZh: '你做到了！聲音島是我們的了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m20.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L2/m20.mp4?v=2',
 };
 
 /* ============================================================
@@ -2360,7 +2360,7 @@ const L3_M1: Mission = {
     { speaker: 'Coco', line: "I like pink and purple!", lineZh: '我喜歡粉紅色和紫色！' },
     { speaker: 'Polly', line: "So many colors on Market Street!", lineZh: '市場街好多顏色！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m1.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m1.mp4?v=2',
 };
 
 const L3_M2: Mission = {
@@ -2414,7 +2414,7 @@ const L3_M2: Mission = {
     { speaker: 'Coco', line: "Is the banana red?", lineZh: '香蕉是紅色的嗎？' },
     { speaker: 'Benny', line: "No, it isn't. It's yellow!", lineZh: '不，不是。它是黃色的！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m2.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m2.mp4?v=2',
 };
 
 const L3_M3: Mission = {
@@ -2468,7 +2468,7 @@ const L3_M3: Mission = {
     { speaker: 'Coco', line: "I have four bananas. How many do you have?", lineZh: '我有四根香蕉。你有幾根？' },
     { speaker: 'Polly', line: "I have ten! Let's count to ten together!", lineZh: '我有十根！我們一起數到十！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m3.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m3.mp4?v=2',
 };
 
 const L3_M4: Mission = {
@@ -2522,7 +2522,7 @@ const L3_M4: Mission = {
     { speaker: 'Coco', line: "And twenty balloons!", lineZh: '還有二十顆氣球！' },
     { speaker: 'Polly', line: "Wow, that's a lot! Twenty!", lineZh: '哇，好多！二十！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m4.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m4.mp4?v=2',
 };
 
 const L3_M5: Mission = {
@@ -2575,7 +2575,7 @@ const L3_M5: Mission = {
     { speaker: 'Polly', line: "What color do you like?", lineZh: '你喜歡什麼顏色？' },
     { speaker: 'Coco', line: "I like the red ones! Three, please!", lineZh: '我喜歡紅色的！三顆，謝謝！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m5.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m5.mp4?v=2',
 };
 
 const L3_M6: Mission = {
@@ -2630,7 +2630,7 @@ const L3_M6: Mission = {
     { speaker: 'Coco', line: "'an' before a, e, i, o, u! an egg!", lineZh: '母音前用 an！an egg！' },
     { speaker: 'Benny', line: "Then I want an egg and a banana. Yum!", lineZh: '那我要一顆蛋和一根香蕉。好吃！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m6.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m6.mp4?v=2',
 };
 
 const L3_M7: Mission = {
@@ -2684,7 +2684,7 @@ const L3_M7: Mission = {
     { speaker: 'Coco', line: "Do you like ice cream?", lineZh: '你喜歡冰淇淋嗎？' },
     { speaker: 'Polly', line: "Yes! I love the ice cream here!", lineZh: '喜歡！我愛這裡的冰淇淋！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m7.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m7.mp4?v=2',
 };
 
 const L3_M8: Mission = {
@@ -2738,7 +2738,7 @@ const L3_M8: Mission = {
     { speaker: 'Coco', line: "Look at that picture — a lion and a tiger!", lineZh: '你看那張圖——一隻獅子和一隻老虎！' },
     { speaker: 'Benny', line: "Roar! They are so big!", lineZh: '吼！牠們好大！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m8.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m8.mp4?v=2',
 };
 
 const L3_M9: Mission = {
@@ -2793,7 +2793,7 @@ const L3_M9: Mission = {
     { speaker: 'Coco', line: "How many ducks are there?", lineZh: '有幾隻鴨子？' },
     { speaker: 'Polly', line: "Five ducks! They are yellow!", lineZh: '五隻鴨子！牠們是黃色的！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m9.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m9.mp4?v=2',
 };
 
 const L3_M10: Mission = {
@@ -2846,7 +2846,7 @@ const L3_M10: Mission = {
     { speaker: 'Polly', line: "Then look at this — is it an egg or an apple?", lineZh: '那你看這個——是蛋還是蘋果？' },
     { speaker: 'Coco', line: "It's an apple! Yum!", lineZh: '是蘋果！好吃！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m10.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m10.mp4?v=2',
 };
 
 const L3_M11: Mission = {
@@ -2900,7 +2900,7 @@ const L3_M11: Mission = {
     { speaker: 'Coco', line: "How many eyes do you have?", lineZh: '你有幾隻眼睛？' },
     { speaker: 'Benny', line: "I have two eyes and two ears!", lineZh: '我有兩隻眼睛和兩隻耳朵！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m11.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m11.mp4?v=2',
 };
 
 const L3_M12: Mission = {
@@ -2954,7 +2954,7 @@ const L3_M12: Mission = {
     { speaker: 'Coco', line: "He is my brother! And she is my sister.", lineZh: '他是我哥哥！她是我姊姊。' },
     { speaker: 'Benny', line: "I love my family too!", lineZh: '我也愛我的家人！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m12.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m12.mp4?v=2',
 };
 
 const L3_M13: Mission = {
@@ -3008,7 +3008,7 @@ const L3_M13: Mission = {
     { speaker: 'Coco', line: "And a hat and gloves!", lineZh: '還有帽子和手套！' },
     { speaker: 'Benny', line: "Now I'm warm! Let's go!", lineZh: '現在我暖了！走吧！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m13.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m13.mp4?v=2',
 };
 
 const L3_M14: Mission = {
@@ -3062,7 +3062,7 @@ const L3_M14: Mission = {
     { speaker: 'Coco', line: "Wow, a robot! Is it yours?", lineZh: '哇，機器人！是你的嗎？' },
     { speaker: 'Benny', line: "Yes! It is my robot. Cool, right?", lineZh: '是！這是我的機器人。很酷吧？' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m14.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m14.mp4?v=2',
 };
 
 const L3_M15: Mission = {
@@ -3115,7 +3115,7 @@ const L3_M15: Mission = {
     { speaker: 'Polly', line: "It's my brother's ball!", lineZh: '這是我哥哥的球！' },
     { speaker: 'Coco', line: "You know so many words now!", lineZh: '你現在會好多單字了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m15.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m15.mp4?v=2',
 };
 
 const L3_M16: Mission = {
@@ -3170,7 +3170,7 @@ const L3_M16: Mission = {
     { speaker: 'Coco', line: "'an' before a, e, i, o, u! Look at the moon!", lineZh: '母音前用 an！看那個月亮！' },
     { speaker: 'Benny', line: "the moon — the special one! Got it!", lineZh: 'the moon —— 特定的那個！懂了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m16.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m16.mp4?v=2',
 };
 
 const L3_M17: Mission = {
@@ -3225,7 +3225,7 @@ const L3_M17: Mission = {
     { speaker: 'Coco', line: "And foot becomes feet! Tricky!", lineZh: '還有 foot 變 feet！很狡猾！' },
     { speaker: 'Benny', line: "One foot, two feet! I remember!", lineZh: '一隻腳，兩隻腳！我記得了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m17.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m17.mp4?v=2',
 };
 
 const L3_M18: Mission = {
@@ -3280,7 +3280,7 @@ const L3_M18: Mission = {
     { speaker: 'Coco', line: "That is a dog, over there!", lineZh: '那是一隻狗，在那邊！' },
     { speaker: 'Benny', line: "And those are dogs! Far away!", lineZh: '那些是狗！在遠方！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m18.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m18.mp4?v=2',
 };
 
 const L3_M19: Mission = {
@@ -3334,7 +3334,7 @@ const L3_M19: Mission = {
     { speaker: 'Finn', line: "Does Coco like fish?", lineZh: 'Coco 喜歡魚嗎？' },
     { speaker: 'Coco', line: "No, I don't like fish. I'm happy!", lineZh: '不，我不喜歡魚。我很開心！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m19.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m19.mp4?v=2',
 };
 
 const L3_M20: Mission = {
@@ -3388,7 +3388,7 @@ const L3_M20: Mission = {
     { speaker: 'Ruby', line: "You beat the Boss! Market champion!", lineZh: '你打敗大魔王了！市場冠軍！' },
     { speaker: 'Finn', line: "On to School Road! Let's learn sentences!", lineZh: '前進學校路！我們來學句型！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m20.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m20.mp4?v=2',
 };
 
 // ===================== L4 學校路 School Road（A1・基本句型 be/like/have/can） =====================
@@ -3446,7 +3446,7 @@ const L4_M1: Mission = {
     { speaker: 'Ruby', line: "Look! The school gate! Are you sleepy now?", lineZh: '你們看！校門到了！現在還想睡嗎？' },
     { speaker: 'Finn', line: "No! I am not sleepy. I am excited! Let's go!", lineZh: '不！我不想睡了，我好興奮！走吧！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m1.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m1.mp4?v=2',
 };
 
 const L4_M2: Mission = {
@@ -3504,7 +3504,7 @@ const L4_M2: Mission = {
     { speaker: 'Coco', line: "We are classmates now!", lineZh: '我們現在是同班同學了！' },
     { speaker: 'Finn', line: "Yes! We are a team. Let's go to class!", lineZh: '對！我們是一隊的。進教室吧！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m2.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m2.mp4?v=2',
 };
 
 const L4_M3: Mission = {
@@ -3562,7 +3562,7 @@ const L4_M3: Mission = {
     { speaker: 'Vega', line: "Hello, everyone! Are you ready for class?", lineZh: '大家好！準備好上課了嗎？' },
     { speaker: 'Finn', line: "Yes, we are!", lineZh: '準備好了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m3.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m3.mp4?v=2',
 };
 
 const L4_M4: Mission = {
@@ -3619,7 +3619,7 @@ const L4_M4: Mission = {
     { speaker: 'Ruby', line: "This near, that far. Easy!", lineZh: '近的用 this，遠的用 that，簡單！' },
     { speaker: 'Vega', line: "Great job! You know this and that!", lineZh: '太棒了！你們學會 this 和 that 了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m4.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m4.mp4?v=2',
 };
 
 const L4_M5: Mission = {
@@ -3676,7 +3676,7 @@ const L4_M5: Mission = {
     { speaker: 'Coco', line: "Yes, we are! We are a team!", lineZh: '是的！我們是一隊的！' },
     { speaker: 'Finn', line: "This is our school. We are happy here!", lineZh: '這是我們的學校，我們在這裡好開心！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m5.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m5.mp4?v=2',
 };
 
 const L4_M6: Mission = {
@@ -3733,7 +3733,7 @@ const L4_M6: Mission = {
     { speaker: 'Coco', line: "Pizza, music, art... we like school!", lineZh: '披薩、音樂、美術⋯⋯我們喜歡上學！' },
     { speaker: 'Benny', line: "Yum! I like lunch time best!", lineZh: '好吃！我最喜歡午餐時間！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m6.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m6.mp4?v=2',
 };
 
 const L4_M7: Mission = {
@@ -3791,7 +3791,7 @@ const L4_M7: Mission = {
     { speaker: 'Ruby', line: "Do you like music?", lineZh: '你們喜歡音樂嗎？' },
     { speaker: 'Polly', line: "Yes, we do! Let's sing together!", lineZh: '喜歡！我們一起唱歌吧！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m7.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m7.mp4?v=2',
 };
 
 const L4_M8: Mission = {
@@ -3848,7 +3848,7 @@ const L4_M8: Mission = {
     { speaker: 'Finn', line: "Yes! We have time after school.", lineZh: '好！放學後我們有時間。' },
     { speaker: 'Benny', line: "Great! And I have fast legs!", lineZh: '太好了！我還有飛毛腿！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m8.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m8.mp4?v=2',
 };
 
 const L4_M9: Mission = {
@@ -3905,7 +3905,7 @@ const L4_M9: Mission = {
     { speaker: 'Ruby', line: "I can dance! Look at me spin!", lineZh: '我會跳舞！看我轉圈！' },
     { speaker: 'Vega', line: "Wow! You can do so many things!", lineZh: '哇！你們會好多事！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m9.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m9.mp4?v=2',
 };
 
 const L4_M10: Mission = {
@@ -3962,7 +3962,7 @@ const L4_M10: Mission = {
     { speaker: 'Finn', line: "We have a great team!", lineZh: '我們的隊伍超棒！' },
     { speaker: 'Coco', line: "We can do it! Show time!", lineZh: '我們做得到！表演開始！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m10.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m10.mp4?v=2',
 };
 
 const L4_M11: Mission = {
@@ -4019,7 +4019,7 @@ const L4_M11: Mission = {
     { speaker: 'Finn', line: "Can you kick the ball?", lineZh: '你們會踢球嗎？' },
     { speaker: 'Benny', line: "Yes, I can! Goal!", lineZh: '會！射門！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m11.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m11.mp4?v=2',
 };
 
 const L4_M12: Mission = {
@@ -4076,7 +4076,7 @@ const L4_M12: Mission = {
     { speaker: 'Ruby', line: "And this is my desk!", lineZh: '這是我的書桌！' },
     { speaker: 'Finn', line: "We found them all! What a fun hunt!", lineZh: '全部找到了！好好玩的尋寶！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m12.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m12.mp4?v=2',
 };
 
 const L4_M13: Mission = {
@@ -4133,7 +4133,7 @@ const L4_M13: Mission = {
     { speaker: 'Ruby', line: "Look under the chair!", lineZh: '看看椅子下面！' },
     { speaker: 'Benny', line: "Yes! It is under the chair! Thank you!", lineZh: '找到了！在椅子下面！謝謝！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m13.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m13.mp4?v=2',
 };
 
 const L4_M14: Mission = {
@@ -4190,7 +4190,7 @@ const L4_M14: Mission = {
     { speaker: 'Ruby', line: "It is next to the box... no, behind the box!", lineZh: '在箱子旁邊⋯⋯不對，在箱子後面！' },
     { speaker: 'Finn', line: "In, on, under, next to, behind! You got them all!", lineZh: '裡面、上面、下面、旁邊、後面！全學會了！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m14.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m14.mp4?v=2',
 };
 
 const L4_M15: Mission = {
@@ -4247,7 +4247,7 @@ const L4_M15: Mission = {
     { speaker: 'Ruby', line: "Are we good at questions?", lineZh: '我們很會問句了嗎？' },
     { speaker: 'Vega', line: "Yes, you are! Champions!", lineZh: '是的！你們是問句冠軍！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m15.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m15.mp4?v=2',
 };
 
 const L4_M16: Mission = {
@@ -4305,7 +4305,7 @@ const L4_M16: Mission = {
     { speaker: 'Ruby', line: "Yesterday words are magic words!", lineZh: '「昨天的字」是魔法字！' },
     { speaker: 'Vega', line: "Yes! Past words tell old stories!", lineZh: '對！過去式會說以前的故事！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m16.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m16.mp4?v=2',
 };
 
 const L4_M17: Mission = {
@@ -4362,7 +4362,7 @@ const L4_M17: Mission = {
     { speaker: 'Coco', line: "School is fun with friends!", lineZh: '和朋友一起上學好好玩！' },
     { speaker: 'Finn', line: "I love our school day!", lineZh: '我愛我們的上學日！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m17.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m17.mp4?v=2',
 };
 
 const L4_M18: Mission = {
@@ -4419,7 +4419,7 @@ const L4_M18: Mission = {
     { speaker: 'Benny', line: "Open... look... I am doing it!", lineZh: '打開⋯⋯看⋯⋯我做到了！' },
     { speaker: 'Vega', line: "Close your book. Great listening!", lineZh: '闔上課本。你們好會聽指令！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m18.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m18.mp4?v=2',
 };
 
 const L4_M19: Mission = {
@@ -4476,7 +4476,7 @@ const L4_M19: Mission = {
     { speaker: 'Ruby', line: "Sunny is happy at school.", lineZh: 'Sunny 在學校很開心。' },
     { speaker: 'Finn', line: "The end! What a nice day!", lineZh: '故事結束！真美好的一天！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m19.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m19.mp4?v=2',
 };
 
 const L4_M20: Mission = {
@@ -4533,7 +4533,7 @@ const L4_M20: Mission = {
     { speaker: 'Ruby', line: "You beat the School Boss! Amazing!", lineZh: '你打敗學校魔王了！太厲害！' },
     { speaker: 'Polly', line: "Next stop: Ocean Bay! See you there!", lineZh: '下一站：海洋灣！我們那裡見！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m20.mp4',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m20.mp4?v=2',
 };
 
 // ===================== L5 珊瑚灘 Coral Beach（A1・形容詞＋比較級＋閱讀起步） =====================

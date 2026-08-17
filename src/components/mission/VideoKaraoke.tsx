@@ -40,7 +40,7 @@ export default function VideoKaraoke({ videoUrl, videoScript, onEnded }: {
   // 抓字幕時間軸；404 就靜默略過
   useEffect(() => {
     let dead = false;
-    fetch(videoUrl.replace(/\.mp4$/, '.words.json'))
+    fetch(videoUrl.replace(/\.mp4(\?.*)?$/, '.words.json'))
       .then(r => (r.ok ? r.json() : null))
       .then(d => { if (!dead && d?.lines?.length) setLines(d.lines); })
       .catch(() => {});
