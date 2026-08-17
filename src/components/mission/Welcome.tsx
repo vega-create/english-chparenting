@@ -38,7 +38,7 @@ const WELCOME_SCENES: Scene[] = [
     characterKey: 'vega',
     characterAction: 'happy',
     characterName: 'Vega',
-    dialogue: '在這裡，學英文就像玩遊戲一樣好玩！\n聽故事、看圖片、跟著念，\n不知不覺就學會英文了！',
+    dialogue: '在這裡，學英文就像在玩遊戲，超級好玩！\n聽故事、看圖片、跟著念，\n不知不覺就學會英文了！',
     dialogueEn: "Learning English is fun here!",
     action: 'none',
   },
@@ -93,10 +93,10 @@ const CHARACTERS_INFO = [
 ];
 
 const STEPS_INFO = [
-  { icon: '📖', name: 'Story Time', nameZh: '故事時間', desc: '先聽一段有趣的英文故事，跟著角色們一起冒險！故事裡會用到今天要學的新單字和句型，聽不懂沒關係，看動畫就能猜到意思！', voiceZh: '第一關是故事時間！聽角色們說故事，看動畫猜意思，超好玩的！' },
+  { icon: '📖', name: 'Story Time', nameZh: '故事時間', desc: '先聽一段有趣的英文故事，跟著角色們一起出發！故事裡會用到今天要學的新單字和句型，聽不懂沒關係，看動畫就能猜到意思！', voiceZh: '第一關是故事時間！聽角色們說故事，看動畫猜意思，超好玩的！' },
   { icon: '📝', name: 'Word Time', nameZh: '學單字', desc: '用閃卡學今天的新單字！看圖片、聽發音、跟著大聲念出來。還可以錄下自己的聲音，跟標準發音比比看！', voiceZh: '接下來學新單字！看圖片、聽發音、跟著念，還可以錄自己的聲音喔！' },
   { icon: '🎮', name: 'Challenge', nameZh: '挑戰遊戲', desc: '用遊戲測試你剛學到的東西！有聽力挑戰、連連看、拼字遊戲，答對就能得到星星，連續答對還有 Combo 加分！', voiceZh: '第三關是挑戰遊戲！用遊戲練習剛學的東西，答對就有星星！' },
-  { icon: '💬', name: 'Talk Time', nameZh: '對話時間', desc: '跟 Finn 用英文聊天！他會問你問題，你用麥克風回答。不用怕說錯，Finn 會鼓勵你再試一次！', voiceZh: '第四關是對話時間！跟 Finn 用英文聊天，不用怕說錯喔！' },
+  { icon: '💬', name: 'Talk Time', nameZh: '對話時間', desc: '跟 Finn 用英文聊天！他會問你問題，你用麥克風回答。不用怕說錯，Finn 會陪你再試一次！', voiceZh: '第四關是對話時間！跟 Finn 用英文聊天，不用怕說錯喔！' },
   { icon: '⭐', name: 'Mission Complete', nameZh: '任務完成', desc: '恭喜你完成任務！看看得了幾顆星星，寶石也會增加，你的學習寵物也會跟著成長喔！', voiceZh: '最後一關是結算時間！看看你得了幾顆星星，寵物也會長大喔！' },
 ];
 
