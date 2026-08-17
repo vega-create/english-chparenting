@@ -10,6 +10,7 @@ import { track } from '@/lib/analytics';
 import SentenceMic from '@/components/mission/SentenceMic';
 import GameButton from '@/components/GameButton';
 import VideoKaraoke from '@/components/mission/VideoKaraoke';
+import StoryCritters from '@/components/mission/StoryCritters';
 
 interface Props {
   level: number;
@@ -311,7 +312,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
         </div>
 
         {/* 一本書：封面 + 內頁（書本比例） */}
-        <div className="book-perspective mx-auto mb-4" style={{ maxWidth: 'min(92vw, calc((100dvh - 250px) * 0.72), 620px)' }}>
+        <div className="book-perspective mx-auto mb-4 relative" style={{ maxWidth: 'min(92vw, calc((100dvh - 250px) * 0.72), 620px)' }}>
+          {bookOpen && <StoryCritters pageKey={storyIndex} />}
           {!bookOpen ? (
             /* ── 封面 ── */
             coverOk && missionId ? (

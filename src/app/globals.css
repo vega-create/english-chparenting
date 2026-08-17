@@ -471,3 +471,15 @@ body {
 /* 介紹卡角色圖的緩慢彈跳 */
 @keyframes ae-bounce-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 .animate-bounce-slow { animation: ae-bounce-slow 2.4s ease-in-out infinite; }
+
+/* 電子書小動物飛行：橫越畫面＋上下起伏＋輕拍翅（縮放） */
+@keyframes ae-critter-fly {
+  0%   { transform: translateX(0) translateY(0) scaleX(var(--critter-dir,1)) scale(1); opacity: 0; }
+  6%   { opacity: 1; }
+  25%  { transform: translateX(calc(var(--critter-dir,1) * -28vw)) translateY(-18px) scaleX(var(--critter-dir,1)) scale(0.94); }
+  50%  { transform: translateX(calc(var(--critter-dir,1) * -56vw)) translateY(8px)  scaleX(var(--critter-dir,1)) scale(1.05); }
+  75%  { transform: translateX(calc(var(--critter-dir,1) * -84vw)) translateY(-14px) scaleX(var(--critter-dir,1)) scale(0.96); }
+  94%  { opacity: 1; }
+  100% { transform: translateX(calc(var(--critter-dir,1) * -114vw)) translateY(0) scaleX(var(--critter-dir,1)) scale(1); opacity: 0; }
+}
+.ae-critter { animation-name: ae-critter-fly; animation-timing-function: ease-in-out; animation-fill-mode: both; filter: drop-shadow(0 3px 4px rgba(60,40,90,0.25)); }
