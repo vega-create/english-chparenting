@@ -2959,7 +2959,7 @@ const L3_M3: Mission = {
   ],
   videoScript: [
     { speaker: 'Coco', line: "How many apples? Let's count!", lineZh: '有幾顆蘋果？我們來數！' },
-    { speaker: 'Polly', line: "One, two, three! Three apples!", lineZh: '一、二、三！三顆蘋果！' },
+    { speaker: 'Polly', line: "Let me count them! One... two... three apples!", lineZh: '我來數數看！一⋯⋯二⋯⋯三顆蘋果！' },
     { speaker: 'Coco', line: "I have four bananas. How many do you have?", lineZh: '我有四根香蕉。你有幾根？' },
     { speaker: 'Polly', line: "I have ten! Let's count to ten together!", lineZh: '我有十根！我們一起數到十！' },
   ],
@@ -3158,7 +3158,7 @@ const L3_M6: Mission = {
   videoScript: [
     { speaker: 'Coco', line: "It's an apple and a banana!", lineZh: '這是一顆蘋果和一根香蕉！' },
     { speaker: 'Benny', line: "an apple, a banana — a or an?", lineZh: 'an apple、a banana —— a 還是 an？' },
-    { speaker: 'Coco', line: "'an' before a, e, i, o, u! an egg!", lineZh: '母音前用 an！an egg！' },
+    { speaker: 'Coco', line: "Look, an egg! And an apple too!", lineZh: '你看，一顆蛋！還有一顆蘋果！' },
     { speaker: 'Benny', line: "Then I want an egg and a banana. Yum!", lineZh: '那我要一顆蛋和一根香蕉。好吃！' },
   ],
   videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m6.mp4?v=3',
@@ -3355,8 +3355,8 @@ const L3_M9: Mission = {
     { type: 'match', question: '🐑 綿羊複數是？', options: ['sheep', 'sheeps', 'sheepes', 'ship'], answer: 'sheep' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "One dog, two dogs, three dogs!", lineZh: '一隻狗、兩隻狗、三隻狗！' },
-    { speaker: 'Polly', line: "Add -s for more! dogs, cats, ducks!", lineZh: '多的加 -s！dogs、cats、ducks！' },
+    { speaker: 'Coco', line: "Puppies! One, two, three little dogs!", lineZh: '小狗狗！一、二、三隻小狗！' },
+    { speaker: 'Polly', line: "So many dogs and cats and ducks here!", lineZh: '這裡好多狗狗、貓咪和鴨子！' },
     { speaker: 'Coco', line: "How many ducks are there?", lineZh: '有幾隻鴨子？' },
     { speaker: 'Polly', line: "Five ducks! They are yellow!", lineZh: '五隻鴨子！牠們是黃色的！' },
   ],
@@ -3816,8 +3816,8 @@ const L3_M16: Mission = {
   videoScript: [
     { speaker: 'Coco', line: "I have a dog and an apple.", lineZh: '我有一隻狗和一顆蘋果。' },
     { speaker: 'Benny', line: "a dog, an apple — a or an?", lineZh: 'a dog、an apple —— a 還是 an？' },
-    { speaker: 'Coco', line: "'an' before a, e, i, o, u! Look at the moon!", lineZh: '母音前用 an！看那個月亮！' },
-    { speaker: 'Benny', line: "the moon — the special one! Got it!", lineZh: 'the moon —— 特定的那個！懂了！' },
+    { speaker: 'Coco', line: "Wow, look at the moon! It is so bright tonight!", lineZh: '哇，你看月亮！今晚好亮！' },
+    { speaker: 'Benny', line: "The moon is beautiful! I love market nights!", lineZh: '月亮好美！我愛市場的夜晚！' },
   ],
   videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L3/m16.mp4?v=3',
 };
@@ -3881,7 +3881,7 @@ const L3_M17: Mission = {
     { type: 'match', question: 'dish 的複數是？', options: ['dishes', 'dishs', 'dish', 'dishies'], answer: 'dishes' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "One cat, two cats. Add -s!", lineZh: '一隻貓，兩隻貓。加 -s！' },
+    { speaker: 'Coco', line: "Look! One cat... and two more cats on the roof!", lineZh: '你看！一隻貓⋯⋯屋頂上還有兩隻貓！' },
     { speaker: 'Benny', line: "But box becomes boxes! -es!", lineZh: '但 box 變 boxes！加 -es！' },
     { speaker: 'Coco', line: "And foot becomes feet! Tricky!", lineZh: '還有 foot 變 feet！很狡猾！' },
     { speaker: 'Benny', line: "One foot, two feet! I remember!", lineZh: '一隻腳，兩隻腳！我記得了！' },
@@ -3949,7 +3949,7 @@ const L3_M18: Mission = {
   ],
   videoScript: [
     { speaker: 'Coco', line: "This is an apple. These are apples!", lineZh: '這是一顆蘋果。這些是蘋果！' },
-    { speaker: 'Benny', line: "this — one, these — many! Got it!", lineZh: 'this —— 一個，these —— 很多！懂了！' },
+    { speaker: 'Benny', line: "This apple is mine. These apples are for you!", lineZh: '這顆蘋果是我的，這些蘋果給你！' },
     { speaker: 'Coco', line: "That is a dog, over there!", lineZh: '那是一隻狗，在那邊！' },
     { speaker: 'Benny', line: "And those are dogs! Far away!", lineZh: '那些是狗！在遠方！' },
   ],
@@ -5051,7 +5051,7 @@ const L4_M14: Mission = {
     { speaker: 'Benny', line: "It is on the box!", lineZh: '在箱子上！' },
     { speaker: 'Polly', line: "Now it is under the box!", lineZh: '現在在箱子下面！' },
     { speaker: 'Ruby', line: "It is next to the box... no, behind the box!", lineZh: '在箱子旁邊⋯⋯不對，在箱子後面！' },
-    { speaker: 'Finn', line: "In, on, under, next to, behind! You got them all!", lineZh: '裡面、上面、下面、旁邊、後面！全學會了！' },
+    { speaker: 'Finn', line: "We found the ball every time! What a great game!", lineZh: '我們每次都找到球！好棒的遊戲！' },
   ],
   videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L4/m14.mp4?v=3',
 };
@@ -5188,7 +5188,7 @@ const L4_M16: Mission = {
     { speaker: 'Finn', line: "I played ball in the park!", lineZh: '我在公園玩了球！' },
     { speaker: 'Coco', line: "I went to the library.", lineZh: '我去了圖書館。' },
     { speaker: 'Benny', line: "I ate a big cake! Yum!", lineZh: '我吃了一個大蛋糕！好吃！' },
-    { speaker: 'Polly', line: "Play, played. Go, went. Eat, ate!", lineZh: '玩是 played、去是 went、吃是 ate！' },
+    { speaker: 'Polly', line: "Yesterday I played outside, went to the park, and ate a big apple!", lineZh: '昨天我在外面玩、去了公園、還吃了一顆大蘋果！' },
     { speaker: 'Ruby', line: "Yesterday words are magic words!", lineZh: '「昨天的字」是魔法字！' },
     { speaker: 'Vega', line: "Yes! Past words tell old stories!", lineZh: '對！過去式會說以前的故事！' },
   ],
