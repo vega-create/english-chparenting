@@ -4,6 +4,7 @@ import GameButton from '@/components/GameButton';
 import type { QuizQuestion } from '@/data/missions';
 import { playPraise, getLevelFromMissionId, playReward, playVega, CHAR_CUE_AUDIO } from '@/lib/vega-audio';
 import { playFanfare, stopFanfare } from '@/lib/sfx';
+import { stopAmbience } from '@/lib/ambience';
 import { track } from '@/lib/analytics';
 import LoginNudge from '@/components/LoginNudge';
 import { speak } from '@/lib/speech';
@@ -34,16 +35,18 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   // 進到結算畫面時播 Miss Vega 鼓勵語音 + 星數獎勵語音 + 記錄完成進度
   useEffect(() => {
     const lv = parseInt(String(courseSlug).match(/l?(\d+)/)?.[1] ?? '1', 10);
+    stopAmbience();                               // 電子書環境音在結算畫面一定要停
     playFanfare(starCount);                       // 先響破關配樂
-    // 配樂約 2.4-3.5 秒，等它結束再接 Vega 的鼓勵語，不要疊在一起
-    const praiseAt = starCount >= 3 ? 3700 : starCount === 2 ? 3500 : 2600;
+    // 配樂約 2.4-3.5 秒；鼓勵語開始前先把配樂尾音切掉，人聲才不會被蓋過（Vega 抓的）
+    const praiseAt = starCount >= 3 ? 3900 : starCount === 2 ? 3700 : 2800;
+    const tCut = setTimeout(() => stopFanfare(), praiseAt - 150);
     const t2 = setTimeout(() => playPraise(getLevelFromMissionId(courseSlug)), praiseAt);
     // 鼓勵語播完接星數獎勵（reward-star-1/2/3，L5+ 用英文版）
     const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), praiseAt + 2000);
     track({ kind: 'lesson_end', level: lv, mission: missionId, score: starCount,
             meta: { percent: starPercent, stars, maxStars } });
     recordMissionComplete(courseSlug, missionId, starCount);
-    return () => { clearTimeout(t); clearTimeout(t2); stopFanfare(); };
+    return () => { clearTimeout(t); clearTimeout(t2); clearTimeout(tCut); stopFanfare(); };
   }, [courseSlug, missionId, starCount]);
 
   function handleQuizAnswer(answer: string) {
