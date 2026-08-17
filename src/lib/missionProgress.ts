@@ -11,6 +11,7 @@ export interface Progress {
   completed: Record<string, number>; // "<courseSlug>/<missionId>" -> 最佳星數
   lastActive?: string;               // YYYY-M-D
   streak?: number;                   // 連續學習天數
+  guard?: number;                    // 守島戰累計守成次數（登入會同步）
 }
 
 const EMPTY: Progress = { completed: {} };
@@ -22,7 +23,7 @@ export function loadProgress(): Progress {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { ...EMPTY };
     const p = JSON.parse(raw);
-    return { completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak };
+    return { completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard };
   } catch {
     return { ...EMPTY };
   }
@@ -88,7 +89,7 @@ export function totalStars(p: Progress): number {
   return Object.values(p.completed).reduce((a, b) => a + b, 0);
 }
 export function totalGems(p: Progress): number {
-  return completedCount(p) * 10;
+  return completedCount(p) * 10 + (p.guard || 0) * 5; // 守島每場 +5 寶石（可推導、不怕重複計）
 }
 export function isMissionDone(p: Progress, courseSlug: string, missionId: number): boolean {
   return `${courseSlug}/${missionId}` in p.completed;
@@ -165,6 +166,9 @@ export function getBadges(p: Progress): Badge[] {
     { key: 'halfway', icon: '🗺️', name: '半程英雄', desc: '完成 100 課', got: count >= 100, cat: 'learn', now: count, need: 100, verb: '完成', unit: '課' },
     { key: 'collector', icon: '💯', name: '單字收藏家', desc: '收集 300 個單字', got: words >= 300, cat: 'collect', now: words, need: 300, verb: '收集', unit: '個單字' },
     { key: 'islands', icon: '🏝️', name: '環島英雄', desc: '通關所有島嶼', got: allCleared, cat: 'explore', now: clearedIslands, need: COURSES.length, verb: '通關', unit: '座島嶼' },
+    { key: 'guard1', icon: '🛡️', name: '守島新兵', desc: '守島戰勝利 3 次', got: (p.guard || 0) >= 3, cat: 'explore', now: p.guard || 0, need: 3, verb: '守成', unit: '次' },
+    { key: 'guard2', icon: '🛡️', name: '守島騎士', desc: '守島戰勝利 10 次', got: (p.guard || 0) >= 10, cat: 'explore', now: p.guard || 0, need: 10, verb: '守成', unit: '次' },
+    { key: 'guard3', icon: '🛡️', name: '守島大將軍', desc: '守島戰勝利 30 次', got: (p.guard || 0) >= 30, cat: 'explore', now: p.guard || 0, need: 30, verb: '守成', unit: '次' },
     { key: 'graduate', icon: '🎓', name: '畢業勇者', desc: '完成勝利峰大魔王', got: !!p.completed['l12-victory-summit/20'], cat: 'final' },
   ];
 }

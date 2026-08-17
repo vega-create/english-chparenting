@@ -16,6 +16,8 @@ import { playClick, playStar, playSwoosh } from "@/lib/sfx";
 import MapDialogue from "@/components/MapDialogue";
 import HomeButton from "@/components/HomeButton";
 import AdSlot from '@/components/AdSlot';
+import IslandDefense from '@/components/IslandDefense';
+import { getTodayInvasion, invasionMission, MONSTERS, type GuardState } from '@/lib/islandDefense';
 
 // 六個世界在 adventure-map.png 上的位置（百分比，覆蓋整個島）
 const HOTSPOTS = [
@@ -33,10 +35,12 @@ export default function AdventureMapPage() {
   const [tick, setTick] = useState(0);                            // 重新渲染用
   const [showLocked, setShowLocked] = useState<WorldDef | null>(null);
   const [showDebug, setShowDebug] = useState(false);
+  const [guardOpen, setGuardOpen] = useState(false);
+  const [invasion, setInvasion] = useState<GuardState | null>(null);
   const [currentWorld, setCurrentWorld] = useState(1);
   // 依 localStorage 重新渲染
   useEffect(() => {
-    const refresh = () => { setTick(t => t + 1); setCurrentWorld(getCurrentWorldId()); };
+    const refresh = () => { setTick(t => t + 1); setCurrentWorld(getCurrentWorldId()); setInvasion(getTodayInvasion()); };
     refresh();
     window.addEventListener("ae-progress-change", refresh);
     window.addEventListener("storage", refresh);
@@ -58,6 +62,7 @@ export default function AdventureMapPage() {
       background: "linear-gradient(180deg, #cbe6ff 0%, #ffd5e8 35%, #fff0a8 65%, #b8dec0 100%)",
     }}>
       <HomeButton />
+      {guardOpen && <IslandDefense onClose={() => { setGuardOpen(false); setInvasion(getTodayInvasion()); setTick(t => t + 1); }} />}
       {/* 上方工具列 */}
       <Link href="/" style={{ top: "calc(0.75rem + env(safe-area-inset-top))", left: "calc(0.75rem + env(safe-area-inset-left))" }} className="fixed z-50 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 shadow no-underline">
         ← 返回
@@ -312,6 +317,30 @@ export default function AdventureMapPage() {
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                 )}
+
+                {/* 守島戰：怪獸入侵標記（點了開戰）。守成後換成小旗子 */}
+                {(() => {
+                  if (!invasion) return null;
+                  const inv = invasionMission(invasion);
+                  if (!inv || Math.ceil(inv.level / 2) !== world.id) return null;
+                  if (invasion.defended) {
+                    return (
+                      <img src="/images/guard/celebrate.webp" alt="今日已守島"
+                        className="absolute -top-2 -left-2 z-20 w-10 h-10 md:w-14 md:h-14 object-contain pointer-events-none drop-shadow" />
+                    );
+                  }
+                  return (
+                    <motion.button
+                      onClick={() => { playClick(); setGuardOpen(true); }}
+                      animate={{ y: [0, -6, 0] }} transition={{ duration: 1.2, repeat: Infinity }}
+                      className="absolute -top-3 -left-2 z-20 w-12 h-12 md:w-16 md:h-16 cursor-pointer"
+                      aria-label="怪獸入侵！點我守島"
+                    >
+                      <img src={MONSTERS[invasion.monster % MONSTERS.length].img} alt="怪獸" className="w-full h-full object-contain drop-shadow-lg" />
+                      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-red-500 text-white text-[9px] md:text-[11px] font-black rounded-full px-1.5 py-0.5 whitespace-nowrap shadow">入侵！</span>
+                    </motion.button>
+                  );
+                })()}
 
                 {/* 完成勾勾 */}
                 {isComplete && (

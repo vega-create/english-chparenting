@@ -56,8 +56,10 @@ export function mergeProgress(a: Progress, b: Progress): Progress {
   for (const [k, v] of Object.entries(b.completed ?? {})) {
     completed[k] = Math.max(completed[k] ?? 0, v);
   }
+  const guard = Math.max(a.guard ?? 0, b.guard ?? 0);
   const pick = (x?: string, y?: string) => (!x ? y : !y ? x : x > y ? x : y);
   return {
+    guard,
     completed,
     lastActive: pick(a.lastActive, b.lastActive),
     streak: Math.max(a.streak ?? 0, b.streak ?? 0),
