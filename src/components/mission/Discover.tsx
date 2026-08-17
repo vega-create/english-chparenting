@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
+import { playFanfare, playCheer, playTada } from '@/lib/sfx';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
@@ -130,7 +131,13 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   // 只在這裡播，翻頁按鈕不要再自己播一次（會變兩聲疊在一起像回音）
   useEffect(() => {
     if (phase !== 'story' || !bookOpen || !scene) return;
-    const t = setTimeout(() => sayDialogue(storyIndex, scene.dialogue, 0.75), 300);
+    // 情境音效：台詞講到冒險/出發吹號角、歡呼詞放琶音、最後一頁灑花——書才不會乾
+    const line = `${scene.dialogue} ${scene.dialogueZh || ''}`;
+    let delay = 300;
+    if (/adventure|let'?s go|here we go|出發|冒險/i.test(line)) { playFanfare(); delay = 750; }
+    else if (/yay|hooray|wow|amazing|great|super|太棒|好耶|萬歲/i.test(line)) { playCheer(); delay = 600; }
+    else if (storyIndex === story.length - 1) { playTada(); delay = 650; }
+    const t = setTimeout(() => sayDialogue(storyIndex, scene.dialogue, 0.75), delay);
     return () => { clearTimeout(t); stopClip(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, bookOpen, storyIndex]);

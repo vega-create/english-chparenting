@@ -103,3 +103,17 @@ function synthFanfare(stars: number) {
   const hit = run.length * 75;
   [523, 659, 784, 1047].forEach(f => setTimeout(() => beep(f, 0.9, 'triangle', 0.085), hit));
 }
+
+// ── 電子書情境音效（Vega 2026-08-17：故事講到冒險/歡呼時別那麼乾）──
+
+// 歡呼：快速上行琶音（答對/太棒了氣氛）
+export function playCheer() {
+  [[523, 0], [659, 70], [784, 140], [1047, 210]].forEach(([f, d]) =>
+    setTimeout(() => beep(f, 0.16, "sine", 0.1), d));
+}
+
+// 完結灑花：高音亮片三連
+export function playTada() {
+  [[1047, 0], [1319, 90], [1568, 180], [2093, 300]].forEach(([f, d]) =>
+    setTimeout(() => beep(f, 0.22, "sine", 0.07), d));
+}
