@@ -117,3 +117,64 @@ export function playTada() {
   [[1047, 0], [1319, 90], [1568, 180], [2093, 300]].forEach(([f, d]) =>
     setTimeout(() => beep(f, 0.22, "sine", 0.07), d));
 }
+
+// ── 電子書自然環境音（Vega：不要激昂，要小小的水流/森林聲）──
+
+function noiseBuffer(c: AudioContext, seconds: number): AudioBuffer {
+  const buf = c.createBuffer(1, c.sampleRate * seconds, c.sampleRate);
+  const data = buf.getChannelData(0);
+  for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+  return buf;
+}
+
+/** 小溪流水：白噪音過低通濾波＋濾波頻率緩慢晃動（咕嚕感），2.5 秒淡入淡出 */
+export function playStreamWash() {
+  const c = getCtx();
+  if (!c || muted || isSfxMuted()) return;
+  const src = c.createBufferSource();
+  src.buffer = noiseBuffer(c, 2.6);
+  const filter = c.createBiquadFilter();
+  filter.type = 'lowpass';
+  filter.frequency.value = 500;
+  const lfo = c.createOscillator();
+  const lfoGain = c.createGain();
+  lfo.frequency.value = 2.2; lfoGain.gain.value = 220;
+  lfo.connect(lfoGain); lfoGain.connect(filter.frequency);
+  const gain = c.createGain();
+  gain.gain.setValueAtTime(0.0001, c.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.05, c.currentTime + 0.5);
+  gain.gain.setValueAtTime(0.05, c.currentTime + 1.8);
+  gain.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 2.6);
+  src.connect(filter); filter.connect(gain); gain.connect(c.destination);
+  lfo.start(); src.start();
+  src.stop(c.currentTime + 2.7); lfo.stop(c.currentTime + 2.7);
+}
+
+/** 森林微風＋兩聲遠處小鳥：帶通噪音當風、正弦下滑音當鳥 */
+export function playForestWash() {
+  const c = getCtx();
+  if (!c || muted || isSfxMuted()) return;
+  const src = c.createBufferSource();
+  src.buffer = noiseBuffer(c, 2.6);
+  const filter = c.createBiquadFilter();
+  filter.type = 'bandpass';
+  filter.frequency.value = 900; filter.Q.value = 0.6;
+  const gain = c.createGain();
+  gain.gain.setValueAtTime(0.0001, c.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.028, c.currentTime + 0.7);
+  gain.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 2.6);
+  src.connect(filter); filter.connect(gain); gain.connect(c.destination);
+  src.start(); src.stop(c.currentTime + 2.7);
+  // 兩聲遠處鳥叫（高頻快速下滑）
+  const chirp = (at: number, f0: number) => {
+    const o = c.createOscillator(); const g = c.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(f0, c.currentTime + at);
+    o.frequency.exponentialRampToValueAtTime(f0 * 0.65, c.currentTime + at + 0.12);
+    g.gain.setValueAtTime(0.0001, c.currentTime + at);
+    g.gain.exponentialRampToValueAtTime(0.035, c.currentTime + at + 0.03);
+    g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + at + 0.15);
+    o.connect(g); g.connect(c.destination);
+    o.start(c.currentTime + at); o.stop(c.currentTime + at + 0.2);
+  };
+  chirp(0.9, 2800); chirp(1.35, 3200);
+}
