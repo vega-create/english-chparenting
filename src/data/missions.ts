@@ -6226,6 +6226,7 @@ const L5_M11: Mission = {
     { speaker: 'Polly', line: "And on Sunday, we rest all day!", lineZh: '然後星期日整天耍廢休息！' },
     { speaker: 'Benny', line: "Saturday, please come faster!", lineZh: '星期六，拜託快點來！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m11.mp4?v=1',
 };
 
 const L5_M12: Mission = {
@@ -6294,6 +6295,7 @@ const L5_M12: Mission = {
     { speaker: 'Benny', line: "Twelve months, so many cakes!", lineZh: '十二個月，好多蛋糕！' },
     { speaker: 'Coco', line: "Next one is yours, Finn! April is coming!", lineZh: '下一個是你，Finn！四月快到了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m12.mp4?v=1',
 };
 
 const L5_M13: Mission = {
