@@ -5675,6 +5675,7 @@ const L5_M3: Mission = {
     { speaker: 'Benny', line: "Too late... my castle is gone.", lineZh: '來不及了⋯⋯我的城堡沒了。' },
     { speaker: 'Finn', line: "Next time we build stronger and higher!", lineZh: '下次我們蓋得更堅固、更高！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m3.mp4?v=1',
 };
 
 const L5_M4: Mission = {
