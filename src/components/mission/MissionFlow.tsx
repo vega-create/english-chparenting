@@ -58,9 +58,11 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const stepKey = course && mission ? `ae_mstep_${course.level}_${mission.id}` : '';
 
   // 重整後留在同一步驟（sessionStorage，關掉分頁才清）
+  // 但破關後再進來＝想重玩，從頭開始（不然會直接跳到結算畫面，Vega 抓的）
   useEffect(() => {
     if (!stepKey) return;
     const saved = sessionStorage.getItem(stepKey) as Step | null;
+    if (saved === 'complete') { sessionStorage.removeItem(stepKey); return; }
     if (saved) setStep(saved);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stepKey]);
