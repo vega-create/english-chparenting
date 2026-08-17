@@ -467,3 +467,7 @@ body {
   border-image-repeat: stretch;
   padding: 0.4em 0.35em;
 }
+
+/* 介紹卡角色圖的緩慢彈跳 */
+@keyframes ae-bounce-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+.animate-bounce-slow { animation: ae-bounce-slow 2.4s ease-in-out infinite; }

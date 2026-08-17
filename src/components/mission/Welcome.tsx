@@ -129,12 +129,17 @@ export default function Welcome({ onComplete }: Props) {
     return () => { clearTimeout(t); stopVega(); };
   }, [sceneIndex]);
 
+  const lastCharClick = useRef(0);
   function handleCharacterClick(index: number) {
     const char = CHARACTERS_INFO[index];
-    // Vega 中文介紹 → 角色英文自介（都用錄音，接續播）
+    // Vega 中文介紹 → 角色英文自介（接續播）。
+    // 快速連點時每次點擊都會排自己的兩段鏈，舊鏈的第二段會蓋掉新鏈——
+    // 用 token 檢查：await 回來發現已經不是最新一次點擊，就閉嘴。
     if (speakTimer.current) clearTimeout(speakTimer.current);
+    const token = ++lastCharClick.current;
     (async () => {
       await playVega(VEGA_INTRO_AUDIO[char.key]);
+      if (lastCharClick.current !== token) return;
       playVega(CHAR_INTRO_AUDIO[char.key]);
     })();
     setShowCharacterDetail(index);
@@ -222,20 +227,30 @@ export default function Welcome({ onComplete }: Props) {
             ))}
           </div>
 
-          {showCharacterDetail !== null && (
-            <div className="bg-white rounded-2xl p-5 border-2 border-purple-100 shadow-md animate-slide-up">
-              <div className="flex items-center gap-3 mb-2">
-                <img src={`/characters/${CHARACTERS_INFO[showCharacterDetail].key}/${CHARACTERS_INFO[showCharacterDetail].key}-talk.png`} alt={CHARACTERS_INFO[showCharacterDetail].name} className="w-32 h-32 object-contain" />
-                <div>
-                  <p className="font-black text-lg text-gray-800">{CHARACTERS_INFO[showCharacterDetail].name}</p>
-                  <p className="text-sm text-purple-500 font-medium">{CHARACTERS_INFO[showCharacterDetail].role}</p>
+          {showCharacterDetail !== null && (() => {
+            const c = CHARACTERS_INFO[showCharacterDetail];
+            return (
+              <div className="ae-frame animate-slide-up overflow-hidden">
+                <div className="flex items-stretch gap-3">
+                  {/* 左：文字直排填滿 */}
+                  <div className="flex-1 min-w-0 py-1">
+                    <p className="m-0 font-black text-2xl text-gray-800">{c.name}
+                      <span className="ml-2 align-middle inline-block bg-purple-100 text-purple-600 text-xs font-black rounded-full px-2 py-0.5">{c.role}</span>
+                    </p>
+                    <p className="m-0 mt-2 text-blue-600 font-black text-lg leading-snug">{c.intro}</p>
+                    <p className="m-0 mt-1 text-gray-500 font-bold text-sm">{c.introZh}</p>
+                    <p className="m-0 mt-2 inline-block bg-amber-50 border border-amber-200 rounded-full px-3 py-1 text-xs font-black text-amber-700">✨ {c.skill}</p>
+                  </div>
+                  {/* 右：角色大圖撐滿高度，不再留白 */}
+                  <img
+                    src={`/characters/${c.key}/${c.key}-talk.png`}
+                    alt={c.name}
+                    className="w-36 sm:w-44 self-end object-contain drop-shadow-[0_6px_10px_rgba(80,50,120,0.25)] animate-bounce-slow"
+                  />
                 </div>
               </div>
-              <p className="text-blue-600 font-medium mb-1">{CHARACTERS_INFO[showCharacterDetail].intro}</p>
-              <p className="text-gray-500 text-sm mb-1">{CHARACTERS_INFO[showCharacterDetail].introZh}</p>
-              <p className="text-xs text-gray-400">✨ {CHARACTERS_INFO[showCharacterDetail].skill}</p>
-            </div>
-          )}
+            );
+          })()}
 
           <p className="text-center text-sm text-gray-400 mt-3">
             {charactersClicked.size < 5
