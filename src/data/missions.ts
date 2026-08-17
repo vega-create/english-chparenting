@@ -6642,6 +6642,7 @@ const L5_M17: Mission = {
     { speaker: 'Benny', line: "How did you know?!", lineZh: '妳怎麼知道？！' },
     { speaker: 'Polly', line: "Your mouth is full! Ha! Next round!", lineZh: '你嘴巴塞滿滿！哈！下一輪！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m17.mp4?v=1',
 };
 
 const L5_M18: Mission = {
@@ -6710,6 +6711,7 @@ const L5_M18: Mission = {
     { speaker: 'Coco', line: "The water is cooler than yesterday. Perfect!", lineZh: '今天的水比昨天涼，剛剛好！' },
     { speaker: 'Benny', line: "Can we stay until the stars come out?", lineZh: '我們可以待到星星出來嗎？' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m18.mp4?v=1',
 };
 
 const L5_M19: Mission = {
@@ -6778,6 +6780,7 @@ const L5_M19: Mission = {
     { speaker: 'Coco', line: "We watched until the evening.", lineZh: '我們看到傍晚才回家。' },
     { speaker: 'Finn', line: "And that was our best Saturday. The end!", lineZh: '那就是我們最棒的星期六。故事結束！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m19.mp4?v=1',
 };
 
 const L5_M20: Mission = {
