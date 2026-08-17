@@ -86,7 +86,7 @@ export default function VideoKaraoke({ videoUrl, videoScript, onEnded }: {
         onEnded={onEnded}
       />
       {lines && (
-        <div className="relative bg-purple-50/70 px-4 pt-3 pb-4 min-h-[76px]">
+        <div className="relative bg-purple-50/70 px-12 pt-3 pb-4 min-h-[76px]">
           <button
             onClick={toggleSubs}
             className={`absolute top-2 right-2 text-[11px] font-black rounded-full px-2.5 py-1 border-2 transition ${

@@ -229,12 +229,12 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     return (
       <div className="animate-slide-up">
         <div className="text-center mb-4">
-          <p className="text-sm font-medium text-purple-500 bg-purple-50 inline-block px-4 py-1 rounded-full">
+          <p className="ae-name-plaque inline-block text-white font-black text-xl sm:text-2xl px-2 py-1 drop-shadow">
             🎬 先看影片
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl border-2 border-purple-200 shadow-sm overflow-hidden max-w-xl mx-auto mb-6">
+        <div className="ae-frame max-w-xl mx-auto mb-6">
           {videoUrl ? (
             youtubeEmbed(videoUrl) ? (
               <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}>
