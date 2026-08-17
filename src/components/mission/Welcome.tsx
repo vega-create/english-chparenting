@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import GameButton from '@/components/GameButton';
 import { speak, speakChinese, stopSpeaking } from '@/lib/speech';
 import { playVega, stopVega, VEGA_INTRO_AUDIO, CHAR_INTRO_AUDIO } from '@/lib/vega-audio';
+import { stopAllAudio } from '@/lib/audioBus';
 
 interface Props {
   onComplete: () => void;
@@ -132,6 +133,7 @@ export default function Welcome({ onComplete }: Props) {
 
   const lastCharClick = useRef(0);
   function handleCharacterClick(index: number) {
+    stopAllAudio();  // 換內容先停光所有聲音（含 TTS），不留上一段殘響
     const char = CHARACTERS_INFO[index];
     // Vega 中文介紹 → 角色英文自介（接續播）。
     // 快速連點時每次點擊都會排自己的兩段鏈，舊鏈的第二段會蓋掉新鏈——
@@ -148,12 +150,14 @@ export default function Welcome({ onComplete }: Props) {
   }
 
   function handleStepClick(index: number) {
+    stopAllAudio();  // 換內容先停光所有聲音（含 TTS），不留上一段殘響
     playVega(`welcome-step-${index + 1}`);
     setShowStepDetail(index);
     setStepsClicked(prev => new Set(prev).add(index));
   }
 
   function handleStarClick() {
+    stopAllAudio();  // 換內容先停光所有聲音（含 TTS），不留上一段殘響
     setStarsCollected(s => s + 1);
     setStarBurst(true);
     setTimeout(() => setStarBurst(false), 600);
@@ -167,6 +171,7 @@ export default function Welcome({ onComplete }: Props) {
   };
 
   function handleNext() {
+    stopAllAudio();  // 換內容先停光所有聲音（含 TTS），不留上一段殘響
     stopSpeaking();
     stopVega();
     if (speakTimer.current) clearTimeout(speakTimer.current);

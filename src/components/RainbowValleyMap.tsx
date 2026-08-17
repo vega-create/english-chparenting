@@ -759,7 +759,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
             style={{
               left: `${playerLevel.x}%`,
               top: `${playerLevel.y}%`,
-              width: "clamp(36px, 5vw, 84px)",
+              width: "clamp(50px, 6.8vw, 112px)",
               transform: "translate(-50%, -100%)",
               zIndex: 30,
               transition: "left 0.6s ease, top 0.6s ease",
