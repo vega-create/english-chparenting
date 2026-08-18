@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { playTada } from '@/lib/sfx';
 import { startAmbience, stopAmbience } from '@/lib/ambience';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
@@ -100,6 +100,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
   const [contentOk, setContentOk] = useState(true); // 每級內頁底圖：/images/ebook/l{級}-content.webp，缺圖用預設白頁
   const [charZoom, setCharZoom] = useState(false); // 點動物放大/縮回
+  const [letterPlay, setLetterPlay] = useState<{ letter: string; part: 'capital' | 'lower' | 'word' } | null>(null); // 字母卡唸到哪
+  const letterPlayToken = useRef(0);
   const [storyIndex, setStoryIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
   const [openCards, setOpenCards] = useState<number[]>([]);
@@ -246,7 +248,10 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   async function sayLetter(label: string, upper: string, lower: string) {
     if (!isLetterCard(label)) { speak(label, 0.8); return; }
     const seq: ('capital' | 'lower' | 'word')[] = ['capital', 'lower', 'word'];
+    const token = ++letterPlayToken.current;
     for (const kind of seq) {
+      if (letterPlayToken.current !== token) return; // 點了別張卡就讓位
+      setLetterPlay({ letter: label, part: kind });  // 唸到哪個字形、哪個字形跳（Vega 定案）
       const ok = await playLesson(lessonPath.letter(upper, kind));
       if (!ok) {
         speak(kind === 'capital' ? `Capital ${upper}.`
@@ -255,6 +260,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
         await sleep(1500);
       }
     }
+    if (letterPlayToken.current === token) setLetterPlay(null);
   }
 
   // 拆音唸法：先唸完整單字，再用自然發音法拆音念（blue → bl [bl] ue [u] [blu]）
@@ -750,7 +756,12 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 }}
                 className="w-24 h-24 bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl flex items-center justify-center text-4xl font-black text-green-700 border-2 border-green-300 hover:scale-110 transition-all active:scale-95 shadow-md"
               >
-                {letter}
+                {/^[A-Za-z]{2}$/.test(letter.trim()) ? (
+                  <span className="flex items-end gap-0.5">
+                    <span className={`inline-block transition-transform duration-200 ${letterPlay?.letter === letter && letterPlay.part === 'capital' ? 'scale-150 -translate-y-1 text-emerald-500' : ''}`}>{letter.trim().charAt(0)}</span>
+                    <span className={`inline-block transition-transform duration-200 ${letterPlay?.letter === letter && letterPlay.part === 'lower' ? 'scale-150 -translate-y-1 text-emerald-500' : ''}`}>{letter.trim().charAt(1)}</span>
+                  </span>
+                ) : letter}
               </button>
             ))}
           </div>

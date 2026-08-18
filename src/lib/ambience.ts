@@ -5,7 +5,7 @@ import { isSfxMuted } from '@/lib/sfx';
  * 電子書自然環境音（Vega 定案：要「真的」流水鳥叫，不要合成噪音；音量若有似無）。
  *
  * 真實音檔（ElevenLabs 音效引擎生成、無縫循環 20 秒）放 R2 sfx/：
- *   ambience-forest / ambience-stream / ambience-beach
+ *   ambience-forest / ambience-stream / ambience-wind / ambience-insects / ambience-beach
  * 翻書時低音量循環鋪底，離開電子書就停。
  *
  * ⚠️ 教訓：淡入淡出若共用一支計時器，快速開闔書會互相取消，
@@ -44,7 +44,8 @@ function kill(amb: Amb) {
 /** 依世界選環境音：海洋灣(L5+)聽海浪，其他隨機森林/溪流 */
 export function startAmbience(level: number) {
   if (typeof window === 'undefined' || isSfxMuted()) return;
-  const name = level >= 5 ? 'ambience-beach' : (Math.random() < 0.5 ? 'ambience-forest' : 'ambience-stream');
+  const pool = ['ambience-forest', 'ambience-stream', 'ambience-wind', 'ambience-insects'];
+  const name = level >= 5 ? 'ambience-beach' : pool[Math.floor(Math.random() * pool.length)];
   const src = `${R2}/${name}.mp3`;
   if (current && current.el.src === src && !current.el.paused) return; // 已在播同一首
   stopAmbience();

@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import GameButton from '@/components/GameButton';
 import { stopAllAudio } from '@/lib/audioBus';
 import { COURSES } from '@/data/courses';
@@ -151,8 +151,26 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const audioIndex = buildLessonAudioIndex(mission.level, mission.id, mission.story, mission.sentences);
 
   const currentStepIndex = STEPS.findIndex(s => s.key === step);
+  // 暖身補到 8 題（Vega 定案）：原本 3 題不動，用本課單字自動加聽力選字題
+  const warmUp8 = useMemo(() => {
+    const base = [...mission.warmUpQuestions];
+    const pool = mission.words.filter(w => w.en && /^[A-Za-z' -]{1,20}$/.test(w.en));
+    if (pool.length < 3) return base;
+    const extras = [...pool].sort(() => Math.random() - 0.5).map(w => {
+      const distract = pool.filter(x => x.en !== w.en).sort(() => Math.random() - 0.5).slice(0, 2).map(x => x.en);
+      return {
+        type: 'listen-pick' as const,
+        question: '🔊 聽聽看，你聽到哪個單字？',
+        options: [w.en, ...distract].sort(() => Math.random() - 0.5),
+        answer: w.en,
+      };
+    });
+    return [...base, ...extras].slice(0, 8);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mission]);
+
   const totalStars = warmupScore + challengeScore;
-  const maxStars = (mission.warmUpQuestions.length) + (mission.challenges.length);
+  const maxStars = warmUp8.length + (mission.challenges.length);
 
   return (
     <>
@@ -275,7 +293,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'wakeup' && (
-          <WakeUp questions={mission.warmUpQuestions} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setWarmupScore(score); setStep('discover'); }} />
+          <WakeUp questions={warmUp8} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setWarmupScore(score); setStep('discover'); }} />
         )}
 
         {step === 'discover' && (
