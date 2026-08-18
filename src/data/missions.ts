@@ -8289,10 +8289,13 @@ const L7_M1: Mission = {
     { type: 'spell', question: '拼拼看：ev _ ry day（每天）', answer: 'every', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "I eat breakfast every day.", lineZh: '我每天吃早餐。' },
-    { speaker: 'Coco', line: "You read books. We learn English.", lineZh: '你讀書。我們學英文。' },
-    { speaker: 'Benny', line: "We play soccer after school.", lineZh: '我們放學後踢足球。' },
-    { speaker: 'Finn', line: "I, you, we — use the base verb!", lineZh: 'I、you、we —— 用原形動詞！' },
+    { speaker: 'Finn', line: 'Look! The Magic Gate is opening!', lineZh: '看！魔法門打開了！' },
+    { speaker: 'Coco', line: 'I read books every day. This library is for me!', lineZh: '我每天都讀書，這圖書館根本為我開的！' },
+    { speaker: 'Benny', line: 'I eat breakfast every day... and lunch... and dinner!', lineZh: '我每天吃早餐…和午餐…和晚餐！' },
+    { speaker: 'Ruby', line: 'We play in the garden every day, right?', lineZh: '我們每天都在花園玩，對吧？' },
+    { speaker: 'Polly', line: 'They live in the castle! Look, little mice!', lineZh: '他們住在城堡裡！你看，小老鼠！' },
+    { speaker: 'Finn', line: 'I like this place already!', lineZh: '我已經喜歡上這裡了！' },
+    { speaker: 'Coco', line: 'New home, new adventure, every day!', lineZh: '新家、新冒險，每一天！' },
   ],
 };
 
@@ -8355,10 +8358,13 @@ const L7_M2: Mission = {
     { type: 'fill-blank', question: 'She ___ a dog.（有·第三人稱）', options: ['has', 'have', 'haves', 'having'], answer: 'has' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "He likes soccer. Add -s for he/she!", lineZh: '他喜歡足球。he/she 加 -s！' },
-    { speaker: 'Coco', line: "She reads books. She goes to school.", lineZh: '她讀書。她去上學。' },
-    { speaker: 'Ruby', line: "He watches TV. -ch adds -es!", lineZh: '他看電視。-ch 加 -es！' },
-    { speaker: 'Benny', line: "He, she, it — add -s or -es!", lineZh: 'he、she、it —— 加 -s 或 -es！' },
+    { speaker: 'Polly', line: 'Shh! Watch the castle friends!', lineZh: '噓！看城堡的朋友們！' },
+    { speaker: 'Coco', line: 'The little knight mouse likes cheese!', lineZh: '小騎士老鼠喜歡起司！' },
+    { speaker: 'Ruby', line: 'The owl reads books all night!', lineZh: '貓頭鷹整晚都在讀書！' },
+    { speaker: 'Benny', line: 'The cook makes soup. It smells so good!', lineZh: '廚師在煮湯，好香喔！' },
+    { speaker: 'Finn', line: 'The guard dog watches the gate!', lineZh: '守衛狗看守大門！' },
+    { speaker: 'Coco', line: 'And Benny watches the soup!', lineZh: '然後 Benny 在看湯！' },
+    { speaker: 'Benny', line: 'Hey! ...Okay, he watches. I eat!', lineZh: '喂！…好啦，他用看的，我用吃的！' },
   ],
 };
 
@@ -8418,10 +8424,13 @@ const L7_M3: Mission = {
     { type: 'read', question: 'Does she eat meat?（她吃肉嗎？）', passage: "Coco likes vegetables.\nShe doesn't eat meat.\nShe eats a lot of fruit.", options: ["No, she doesn't", "Yes, she does", "She eats meat", "She is hungry"], answer: "No, she doesn't" },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I don't like carrots. I like apples!", lineZh: '我不喜歡紅蘿蔔。我喜歡蘋果！' },
-    { speaker: 'Benny', line: "He doesn't watch TV. He reads books.", lineZh: '他不看電視。他讀書。' },
-    { speaker: 'Polly', line: "She doesn't swim, but she runs!", lineZh: '她不游泳，但她跑步！' },
-    { speaker: 'Coco', line: "I don't, he doesn't — now you know!", lineZh: 'I don\'t、he doesn\'t —— 現在你懂了！' },
+    { speaker: 'Ruby', line: "Castle dinner time! But I don't eat carrots!", lineZh: '城堡晚餐時間！但我不吃紅蘿蔔！' },
+    { speaker: 'Benny', line: "What?! I don't understand. Carrots are yummy!", lineZh: '什麼？！我不懂，紅蘿蔔很好吃耶！' },
+    { speaker: 'Coco', line: "The owl doesn't eat carrots either. He likes fish.", lineZh: '貓頭鷹也不吃紅蘿蔔，他喜歡魚。' },
+    { speaker: 'Finn', line: "I don't like coffee. Too bitter!", lineZh: '我不喝咖啡，太苦了！' },
+    { speaker: 'Polly', line: "She doesn't eat meat. More veggies for Ruby!", lineZh: '她不吃肉，蔬菜都給 Ruby！' },
+    { speaker: 'Ruby', line: 'Yes! But no carrots, please!', lineZh: '耶！但拜託不要紅蘿蔔！' },
+    { speaker: 'Benny', line: "Fine... I don't share my honey then!", lineZh: '好喔…那我也不分你蜂蜜！' },
   ],
 };
 
@@ -8484,10 +8493,13 @@ const L7_M4: Mission = {
     { type: 'read', question: 'Does Benny watch TV?（Benny 看電視嗎？）', passage: '"Does Benny watch TV?"\nNo, he doesn\'t.\nHe reads books instead.', options: ["No, he doesn't", 'Yes, he does', 'He plays', 'He swims'], answer: "No, he doesn't" },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "Do you like soccer? Yes, I do!", lineZh: '你喜歡足球嗎？是的！' },
-    { speaker: 'Coco', line: "Does she read books? Yes, she does.", lineZh: '她讀書嗎？是的。' },
-    { speaker: 'Benny', line: "Does he watch TV? No, he doesn't.", lineZh: '他看電視嗎？不，不看。' },
-    { speaker: 'Polly', line: "Do and Does — now you can ask!", lineZh: 'Do 和 Does —— 現在你會問了！' },
+    { speaker: 'Finn', line: 'Question game at the Magic Gate!', lineZh: '魔法門問答遊戲！' },
+    { speaker: 'Coco', line: 'Do you like soccer, Benny?', lineZh: 'Benny，你喜歡足球嗎？' },
+    { speaker: 'Benny', line: 'Yes, I do! And snacks!', lineZh: '喜歡！還有零食！' },
+    { speaker: 'Ruby', line: 'Does the owl sleep at night?', lineZh: '貓頭鷹晚上睡覺嗎？' },
+    { speaker: 'Polly', line: "No, he doesn't! He reads all night!", lineZh: '不睡！他整晚讀書！' },
+    { speaker: 'Coco', line: 'Do you want to see the tower?', lineZh: '你們想看塔樓嗎？' },
+    { speaker: 'Finn', line: 'Yes, we do! Race you there!', lineZh: '想！比賽誰先到！' },
   ],
 };
 
@@ -8549,10 +8561,13 @@ const L7_M5: Mission = {
     { type: 'read', question: 'Does Coco watch a lot of TV?（Coco 看很多電視嗎？）', passage: 'Coco reads books every day.\nShe plays soccer.\nShe doesn\'t watch much TV.', options: ["No, she doesn't", 'Yes, she does', 'She loves TV', 'She has no books'], answer: "No, she doesn't" },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review the present simple!", lineZh: '來複習現在簡單式！' },
-    { speaker: 'Coco', line: "I play soccer. He plays soccer too!", lineZh: '我踢足球。他也踢！' },
-    { speaker: 'Benny', line: "Do you like it? She doesn't like carrots.", lineZh: '你喜歡嗎？她不喜歡紅蘿蔔。' },
-    { speaker: 'Finn', line: "You know the present simple! Great!", lineZh: '你會現在簡單式了！太棒了！' },
+    { speaker: 'Polly', line: "Let's interview the castle owl!", lineZh: '我們來訪問城堡貓頭鷹！' },
+    { speaker: 'Coco', line: 'He reads big books every night!', lineZh: '他每天晚上讀大部頭的書！' },
+    { speaker: 'Ruby', line: 'Does he like visitors?', lineZh: '他喜歡訪客嗎？' },
+    { speaker: 'Polly', line: 'Yes, he does! He likes questions!', lineZh: '喜歡！他最喜歡問題了！' },
+    { speaker: 'Benny', line: "Do owls eat honey? ...No? I don't understand owls.", lineZh: '貓頭鷹吃蜂蜜嗎？…不吃？我不懂貓頭鷹。' },
+    { speaker: 'Finn', line: 'I play in the garden. The owl watches us!', lineZh: '我在花園玩，貓頭鷹會看著我們！' },
+    { speaker: 'Coco', line: 'Castle life is the best!', lineZh: '城堡生活最棒了！' },
   ],
 };
 
@@ -8615,10 +8630,13 @@ const L7_M6: Mission = {
     { type: 'spell', question: '拼拼看：alw _ ys（總是）', answer: 'always', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I always eat breakfast.", lineZh: '我總是吃早餐。' },
-    { speaker: 'Benny', line: "I usually read after school. Sometimes I play.", lineZh: '我通常放學後讀書。有時我玩。' },
-    { speaker: 'Ruby', line: "I never eat candy before dinner!", lineZh: '我晚餐前從不吃糖！' },
-    { speaker: 'Coco', line: "Always, usually, sometimes, never — how often!", lineZh: '總是、通常、有時、從不 —— 多常做！' },
+    { speaker: 'Finn', line: 'I always get up early at the castle!', lineZh: '在城堡我總是早起！' },
+    { speaker: 'Benny', line: 'I usually get up... for breakfast.', lineZh: '我通常起床…是為了早餐。' },
+    { speaker: 'Coco', line: 'I often read in the tower. So quiet!', lineZh: '我常常在塔樓讀書，好安靜！' },
+    { speaker: 'Ruby', line: 'Sometimes I play with the little mice!', lineZh: '有時候我跟小老鼠玩！' },
+    { speaker: 'Polly', line: 'I never miss the sunrise. Best view!', lineZh: '我從不錯過日出，風景最讚！' },
+    { speaker: 'Benny', line: 'And I never eat candy before dinner... usually.', lineZh: '我晚餐前從不吃糖…通常啦。' },
+    { speaker: 'Finn', line: 'Ha! Every day here is different!', lineZh: '哈！這裡每天都不一樣！' },
   ],
 };
 
@@ -8680,10 +8698,13 @@ const L7_M7: Mission = {
     { type: 'fill-blank', question: 'It snows ___ winter.（在·季節）', options: ['in', 'on', 'at', 'to'], answer: 'in' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I get up in the morning.", lineZh: '我在早上起床。' },
-    { speaker: 'Coco', line: "We have art on Monday.", lineZh: '我們星期一有美術。' },
-    { speaker: 'Polly', line: "School starts at eight o'clock.", lineZh: '學校八點開始。' },
-    { speaker: 'Benny', line: "in the morning, on Monday, at eight!", lineZh: 'in 早上、on 星期、at 幾點！' },
+    { speaker: 'Coco', line: 'The castle school starts at eight!', lineZh: '城堡學校八點開始上課！' },
+    { speaker: 'Finn', line: 'I get up in the morning, no problem!', lineZh: '我早上起床，沒問題！' },
+    { speaker: 'Benny', line: 'We have cooking class on Monday! My favorite!', lineZh: '星期一有烹飪課！我的最愛！' },
+    { speaker: 'Ruby', line: 'Art class is on Friday. I love painting!', lineZh: '美術課在星期五，我愛畫畫！' },
+    { speaker: 'Polly', line: 'At night, the stars come out over the tower.', lineZh: '晚上，星星會在塔樓上出現。' },
+    { speaker: 'Coco', line: 'I am at the library now. Come study!', lineZh: '我現在在圖書館，來讀書吧！' },
+    { speaker: 'Benny', line: 'I am at the kitchen... just looking!', lineZh: '我在廚房…只是看看！' },
   ],
 };
 
@@ -8745,10 +8766,13 @@ const L7_M8: Mission = {
     { type: 'spell', question: '拼拼看：beh _ nd（後面）', answer: 'behind', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "The cat is under the table.", lineZh: '貓在桌子下面。' },
-    { speaker: 'Benny', line: "The ball is behind the door.", lineZh: '球在門後面。' },
-    { speaker: 'Coco', line: "The park is between the school and the shop.", lineZh: '公園在學校和商店之間。' },
-    { speaker: 'Ruby', line: "Under, behind, between — you found them!", lineZh: '下面、後面、之間 —— 你找到了！' },
+    { speaker: 'Ruby', line: 'Oh no! The little kitten is lost in the castle!', lineZh: '糟糕！小貓咪在城堡裡走丟了！' },
+    { speaker: 'Finn', line: 'Is she under the table? ...No!', lineZh: '在桌子下嗎？…沒有！' },
+    { speaker: 'Coco', line: 'Behind the door? ...Not here!', lineZh: '門後面呢？…不在！' },
+    { speaker: 'Benny', line: 'Between the boxes? ...Just cheese here!', lineZh: '箱子中間？…只有起司！' },
+    { speaker: 'Polly', line: 'Next to the fireplace? ...Nope!', lineZh: '壁爐旁邊？…也沒有！' },
+    { speaker: 'Ruby', line: 'Wait! She is in front of the gate! Sleeping!', lineZh: '等等！她在大門前面！睡著了！' },
+    { speaker: 'Finn', line: 'Found her! Good teamwork, everyone!', lineZh: '找到了！大家合作得真好！' },
   ],
 };
 
@@ -8810,10 +8834,13 @@ const L7_M9: Mission = {
     { type: 'read', question: 'Are there ducks in the lake?（湖裡有鴨子嗎？）', passage: 'There is a lake in the park.\nThere are some ducks in it.\nThe ducks swim happily.', options: ['Yes, there are', 'No, there are not', 'There is a cat', 'The lake is empty'], answer: 'Yes, there are' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "There is a park in my town.", lineZh: '我的城鎮有一座公園。' },
-    { speaker: 'Coco', line: "There are many trees in the park.", lineZh: '公園裡有很多樹。' },
-    { speaker: 'Polly', line: "There is a lake. There are ducks in it!", lineZh: '有一個湖。裡面有鴨子！' },
-    { speaker: 'Benny', line: "There is one, there are many!", lineZh: 'There is 一個，there are 很多！' },
+    { speaker: 'Finn', line: "Let's explore the castle garden!", lineZh: '來探索城堡花園！' },
+    { speaker: 'Coco', line: 'Wow! There is a little lake!', lineZh: '哇！有一個小湖耶！' },
+    { speaker: 'Ruby', line: 'There are so many flowers!', lineZh: '有好多好多花！' },
+    { speaker: 'Benny', line: 'Is there a fruit tree? ...There is! Apples!', lineZh: '有果樹嗎？…有！蘋果！' },
+    { speaker: 'Polly', line: 'There are ducks on the lake! Hello!', lineZh: '湖上有鴨子！哈囉！' },
+    { speaker: 'Coco', line: 'There is even a tiny bridge!', lineZh: '竟然還有一座小橋！' },
+    { speaker: 'Finn', line: 'This garden is full of surprises!', lineZh: '這座花園處處是驚喜！' },
   ],
 };
 
@@ -8875,10 +8902,13 @@ const L7_M10: Mission = {
     { type: 'read', question: 'Is there a park near Benny\'s house?（Benny 家附近有公園嗎？）', passage: 'There is a park next to my house.\nThere are many trees and a lake.\nI often play there.', options: ['Yes, there is', 'No, there is not', 'There is a shop', 'There is nothing'], answer: 'Yes, there is' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review adverbs and prepositions!", lineZh: '來複習副詞和介系詞！' },
-    { speaker: 'Coco', line: "I always get up at seven in the morning.", lineZh: '我總是早上七點起床。' },
-    { speaker: 'Benny', line: "There is a park next to my house.", lineZh: '我家旁邊有一座公園。' },
-    { speaker: 'Finn', line: "You know adverbs and prepositions! Great!", lineZh: '你會副詞和介系詞了！太棒了！' },
+    { speaker: 'Coco', line: "A new mouse friend! Let's show him around!", lineZh: '新來的老鼠朋友！帶他逛逛！' },
+    { speaker: 'Finn', line: "School starts at eight. Don't be late!", lineZh: '學校八點開始，別遲到！' },
+    { speaker: 'Ruby', line: "We have art on Friday. It's fun!", lineZh: '星期五有美術課，很好玩！' },
+    { speaker: 'Benny', line: 'The kitchen is next to the big hall. Important!', lineZh: '廚房在大廳旁邊，很重要！' },
+    { speaker: 'Polly', line: 'There is a garden behind the castle!', lineZh: '城堡後面有座花園！' },
+    { speaker: 'Coco', line: 'I always read in the tower. Join me!', lineZh: '我總是在塔樓讀書，一起來！' },
+    { speaker: 'Finn', line: 'Welcome home, little friend!', lineZh: '歡迎回家，小朋友！' },
   ],
 };
 
@@ -8941,10 +8971,13 @@ const L7_M11: Mission = {
     { type: 'match', question: 'jump 的過去式是？', options: ['jumped', 'jumps', 'jumping', 'jump'], answer: 'jumped' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Regular verbs: play, played, played!", lineZh: '規則動詞：play、played、played！' },
-    { speaker: 'Coco', line: "walk, walked, walked. Just add -ed!", lineZh: 'walk、walked、walked。加 -ed！' },
-    { speaker: 'Ruby', line: "clean, cleaned, cleaned. Say them three times!", lineZh: 'clean、cleaned、cleaned。念三次！' },
-    { speaker: 'Benny', line: "Regular verbs are easy — all +ed!", lineZh: '規則動詞很簡單 —— 都加 +ed！' },
+    { speaker: 'Coco', line: 'The owl teaches us a magic chant today!', lineZh: '貓頭鷹今天教我們魔法咒語！' },
+    { speaker: 'Polly', line: 'Play, played, played! Say it with me!', lineZh: 'Play, played, played！跟我唸！' },
+    { speaker: 'Benny', line: 'Walk, walked, walked! Am I magic now?', lineZh: 'Walk, walked, walked！我變魔法師了嗎？' },
+    { speaker: 'Ruby', line: 'I cleaned my room with the magic chant!', lineZh: '我用魔法咒語打掃了房間！' },
+    { speaker: 'Finn', line: 'I helped the guard. Help, helped, helped!', lineZh: '我幫了守衛。Help, helped, helped！' },
+    { speaker: 'Coco', line: 'Yesterday I watched the stars. Watch, watched!', lineZh: '昨天我看了星星。Watch, watched！' },
+    { speaker: 'Polly', line: 'The magic words make your English strong!', lineZh: '魔法句會讓你的英文變強！' },
   ],
 };
 
@@ -9007,10 +9040,13 @@ const L7_M12: Mission = {
     { type: 'match', question: 'give 的過去分詞是？', options: ['given', 'gave', 'gived', 'gives'], answer: 'given' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Irregular verbs change! go, went, gone!", lineZh: '不規則動詞會變！go、went、gone！' },
-    { speaker: 'Coco', line: "eat, ate, eaten. They are special!", lineZh: 'eat、ate、eaten。很特別！' },
-    { speaker: 'Ruby', line: "see, saw, seen. You must remember them!", lineZh: 'see、saw、seen。必須記住！' },
-    { speaker: 'Benny', line: "Irregular verbs — practice every day!", lineZh: '不規則動詞 —— 每天練習！' },
+    { speaker: 'Polly', line: 'Careful! These magic words change shape!', lineZh: '小心！這些魔法字會變形！' },
+    { speaker: 'Coco', line: 'Go, went, gone! Whoosh!', lineZh: 'Go, went, gone！咻！' },
+    { speaker: 'Benny', line: 'Eat, ate, eaten! My favorite spell!', lineZh: 'Eat, ate, eaten！我最愛的咒語！' },
+    { speaker: 'Finn', line: 'I went to the tower and saw the whole town!', lineZh: '我去了塔樓，看見整個小鎮！' },
+    { speaker: 'Ruby', line: 'See, saw, seen! I saw a shooting star!', lineZh: 'See, saw, seen！我看到流星了！' },
+    { speaker: 'Benny', line: 'I ate the cake. Eat, ate... all gone!', lineZh: '我吃了蛋糕。Eat, ate…全沒了！' },
+    { speaker: 'Coco', line: 'Ha! The spell works on cake too!', lineZh: '哈！咒語對蛋糕也有效！' },
   ],
 };
 
@@ -9072,10 +9108,13 @@ const L7_M13: Mission = {
     { type: 'match', question: 'speak 的過去分詞是？', options: ['spoken', 'spoke', 'speaked', 'speaks'], answer: 'spoken' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "More irregular verbs! run, ran, run!", lineZh: '更多不規則動詞！run、ran、run！' },
-    { speaker: 'Polly', line: "sing, sang, sung. I sang a song!", lineZh: 'sing、sang、sung。我唱了一首歌！' },
-    { speaker: 'Ruby', line: "write, wrote, written. I wrote a story!", lineZh: 'write、wrote、written。我寫了一個故事！' },
-    { speaker: 'Benny', line: "Keep practicing irregular verbs!", lineZh: '繼續練習不規則動詞！' },
+    { speaker: 'Finn', line: 'Magic sports day! Run, ran, run!', lineZh: '魔法運動會！Run, ran, run！' },
+    { speaker: 'Ruby', line: 'I ran fast in the race! So fast!', lineZh: '我比賽跑得超快！咻咻叫！' },
+    { speaker: 'Polly', line: 'Sing, sang, sung! La la la!', lineZh: 'Sing, sang, sung！啦啦啦！' },
+    { speaker: 'Coco', line: 'Write, wrote, written! I have written a story!', lineZh: 'Write, wrote, written！我寫完一個故事了！' },
+    { speaker: 'Benny', line: 'Drink, drank, drunk! ...The juice is gone.', lineZh: 'Drink, drank, drunk！…果汁沒了。' },
+    { speaker: 'Polly', line: 'Fly, flew, flown! Watch me go!', lineZh: 'Fly, flew, flown！看我飛！' },
+    { speaker: 'Finn', line: 'Magic words everywhere today!', lineZh: '今天到處都是魔法字！' },
   ],
 };
 
@@ -9137,10 +9176,13 @@ const L7_M14: Mission = {
     { type: 'match', question: 'make → 過去 → ?', options: ['made', 'maked', 'made', 'makes'], answer: 'made' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Time to check! Do you know your verb forms?", lineZh: '驗收時間！你會動詞三態了嗎？' },
-    { speaker: 'Coco', line: "go-went-gone, play-played-played!", lineZh: 'go-went-gone、play-played-played！' },
-    { speaker: 'Ruby', line: "eat-ate-eaten, write-wrote-written!", lineZh: 'eat-ate-eaten、write-wrote-written！' },
-    { speaker: 'Benny', line: "You remember them all! Amazing!", lineZh: '你全記住了！太厲害了！' },
+    { speaker: 'Coco', line: 'Spell duel! Ready, Benny?', lineZh: '咒語對決！Benny 準備好了嗎？' },
+    { speaker: 'Benny', line: 'Go! ...Went! ...Gone! Ha!', lineZh: 'Go！…Went！…Gone！哈！' },
+    { speaker: 'Coco', line: 'Nice! Eat?', lineZh: '漂亮！Eat 呢？' },
+    { speaker: 'Benny', line: 'Ate! Eaten! Easy, I do it every day!', lineZh: 'Ate！Eaten！簡單，我每天都在做！' },
+    { speaker: 'Ruby', line: 'Write, wrote, written! My turn to win!', lineZh: 'Write, wrote, written！換我贏了！' },
+    { speaker: 'Finn', line: 'I played, I helped, I made it! All spells!', lineZh: 'I played、I helped、I made it！全部咒語！' },
+    { speaker: 'Polly', line: 'Everyone passed! Magic masters!', lineZh: '全員過關！魔法大師！' },
   ],
 };
 
@@ -9202,10 +9244,13 @@ const L7_M15: Mission = {
     { type: 'read', question: 'Did they have fun?（他們玩得開心嗎？）', passage: 'The friends went to the park.\nThey played and ate ice cream.\nThey had a lot of fun!', options: ['Yes, they had fun', 'No, they were bored', 'They were sad', 'They stayed home'], answer: 'Yes, they had fun' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review all the verb forms!", lineZh: '來複習所有動詞三態！' },
-    { speaker: 'Benny', line: "Regular: -ed. Irregular: change the word!", lineZh: '規則：-ed。不規則：把字變一下！' },
-    { speaker: 'Coco', line: "Yesterday I went, ate, and played!", lineZh: '昨天我去了、吃了、玩了！' },
-    { speaker: 'Finn', line: "You know your verb forms! Wonderful!", lineZh: '你會動詞三態了！太棒了！' },
+    { speaker: 'Finn', line: 'Yesterday I went to the park!', lineZh: '昨天我去了公園！' },
+    { speaker: 'Coco', line: 'I played and ran with Ruby!', lineZh: '我跟 Ruby 又玩又跑！' },
+    { speaker: 'Ruby', line: 'I saw a rainbow after the rain!', lineZh: '雨後我看到彩虹！' },
+    { speaker: 'Benny', line: 'I ate three sandwiches. Three!', lineZh: '我吃了三個三明治。三個！' },
+    { speaker: 'Polly', line: 'She has written the whole story down!', lineZh: '她把整個故事都寫下來了！' },
+    { speaker: 'Coco', line: 'We walked home under the stars.', lineZh: '我們在星空下走路回家。' },
+    { speaker: 'Finn', line: 'Best day, saved in our story book!', lineZh: '最棒的一天，收進我們的故事書！' },
   ],
 };
 
@@ -9267,10 +9312,13 @@ const L7_M16: Mission = {
     { type: 'read', question: 'Is the earth round?（地球是圓的嗎？）', passage: 'The earth is round.\nIt goes around the sun.\nThis is a fact.', options: ['Yes, it is round', 'No, it is flat', 'It is square', 'It is a habit'], answer: 'Yes, it is round' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Present simple shows facts and habits!", lineZh: '現在簡單式表示事實和習慣！' },
-    { speaker: 'Coco', line: "The sun rises in the east. That is a fact!", lineZh: '太陽從東邊升起。這是事實！' },
-    { speaker: 'Polly', line: "I go to school every day. That is a habit!", lineZh: '我每天上學。這是習慣！' },
-    { speaker: 'Benny', line: "Facts and habits — use present simple!", lineZh: '事實和習慣 —— 用現在簡單式！' },
+    { speaker: 'Polly', line: 'Owl school time! The sun rises in the east!', lineZh: '貓頭鷹學堂！太陽從東邊升起！' },
+    { speaker: 'Coco', line: 'The earth is round, like an apple!', lineZh: '地球是圓的，像顆蘋果！' },
+    { speaker: 'Benny', line: 'Water is wet! ...I checked!', lineZh: '水是濕的！…我驗證過了！' },
+    { speaker: 'Ruby', line: "I go to school every day. That's my habit!", lineZh: '我每天上學，這是我的習慣！' },
+    { speaker: 'Finn', line: 'The stars come out every night here.', lineZh: '這裡每晚都會有星星出來。' },
+    { speaker: 'Benny', line: 'And I check the kitchen every night. Habit!', lineZh: '我每晚都巡廚房，習慣！' },
+    { speaker: 'Polly', line: 'Facts and habits, all around us!', lineZh: '事實和習慣，就在我們身邊！' },
   ],
 };
 
@@ -9333,10 +9381,13 @@ const L7_M17: Mission = {
     { type: 'read', question: 'Does Benny play soccer every day?（Benny 每天踢足球嗎？）', passage: 'Benny plays soccer every day.\nRight now he is reading.\nHe loves both.', options: ['Yes, every day', 'No, never', 'Only now', 'He hates soccer'], answer: 'Yes, every day' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I play soccer every day. But now I am reading.", lineZh: '我每天踢足球。但現在我在讀書。' },
-    { speaker: 'Coco', line: "Every day = simple. Now = continuous!", lineZh: '每天 = 簡單式。現在 = 進行式！' },
-    { speaker: 'Polly', line: "She eats lunch at noon. Now she is eating!", lineZh: '她中午吃午餐。現在她正在吃！' },
-    { speaker: 'Benny', line: "Habit vs now — two different tenses!", lineZh: '習慣 vs 現在 —— 兩種不同時態！' },
+    { speaker: 'Finn', line: 'I play soccer every day. But look at me now!', lineZh: '我每天踢足球，但看看我現在！' },
+    { speaker: 'Coco', line: 'Ha! Now you are dancing!', lineZh: '哈！你現在在跳舞！' },
+    { speaker: 'Ruby', line: 'I read books every night. And right now...', lineZh: '我每晚都讀書，而現在…' },
+    { speaker: 'Benny', line: 'Now she is reading too! In the tree!', lineZh: '現在她也在讀！還爬到樹上！' },
+    { speaker: 'Polly', line: 'I sing every morning. Listen! I am singing now!', lineZh: '我每天早上唱歌。聽！我現在正在唱！' },
+    { speaker: 'Benny', line: 'I eat lunch at noon. And now... I am eating!', lineZh: '我中午吃午餐，而現在…我正在吃！' },
+    { speaker: 'Coco', line: 'Benny, it is not noon yet!', lineZh: 'Benny，現在還沒中午耶！' },
   ],
 };
 
@@ -9398,10 +9449,13 @@ const L7_M18: Mission = {
     { type: 'read', question: 'Does Coco like stories?（Coco 喜歡故事嗎？）', passage: 'Coco reads every day.\nShe loves stories.\nYesterday she read a long book.', options: ['Yes, she loves them', 'No, she hates them', 'She never reads', 'She only plays'], answer: 'Yes, she loves them' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's put it all together!", lineZh: '我們把它們組合起來！' },
-    { speaker: 'Coco', line: "She always reads. Yesterday she read a lot.", lineZh: '她總是讀書。昨天她讀了很多。' },
-    { speaker: 'Benny', line: "Does he go to school? Yes, every day.", lineZh: '他上學嗎？是的，每天。' },
-    { speaker: 'Finn', line: "You use magic sentences like a pro!", lineZh: '你用魔法句像高手一樣！' },
+    { speaker: 'Coco', line: 'Grammar game night at the castle!', lineZh: '城堡文法遊戲之夜！' },
+    { speaker: 'Polly', line: 'She always reads books. True or false?', lineZh: '她總是在讀書，是真是假？' },
+    { speaker: 'Finn', line: 'True! Coco reads every day!', lineZh: '真的！Coco 每天都讀！' },
+    { speaker: 'Ruby', line: 'Yesterday she read a whole big book!', lineZh: '昨天她讀完一整本大書！' },
+    { speaker: 'Benny', line: 'Does Finn go to the garden? Yes, he goes every day!', lineZh: 'Finn 去花園嗎？去，他每天去！' },
+    { speaker: 'Coco', line: "He doesn't skip a day. Never!", lineZh: '他一天都沒漏過，從來沒有！' },
+    { speaker: 'Finn', line: 'We all win! Grammar champions!', lineZh: '我們都贏了！文法冠軍！' },
   ],
 };
 
@@ -9463,10 +9517,13 @@ const L7_M19: Mission = {
     { type: 'match', question: 'always 是什麼意思？', options: ['總是', '從不', '有時', '昨天'], answer: '總是' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Read about Tom's day!", lineZh: '讀讀 Tom 的一天！' },
-    { speaker: 'Coco', line: "Tom gets up early. He always eats breakfast.", lineZh: 'Tom 早起。他總是吃早餐。' },
-    { speaker: 'Polly', line: "He goes to school and studies hard.", lineZh: '他上學而且努力讀書。' },
-    { speaker: 'Benny', line: "You read about Tom's day! Great!", lineZh: '你讀了 Tom 的一天！太棒了！' },
+    { speaker: 'Polly', line: 'Story time! This is Tom, the knight mouse!', lineZh: '故事時間！這是騎士老鼠 Tom！' },
+    { speaker: 'Coco', line: 'Tom gets up early every day.', lineZh: 'Tom 每天都早起。' },
+    { speaker: 'Ruby', line: 'He always eats a big breakfast!', lineZh: '他總是吃豐盛的早餐！' },
+    { speaker: 'Benny', line: 'A mouse after my own heart!', lineZh: '這老鼠太懂我了！' },
+    { speaker: 'Finn', line: 'He goes to the castle school and studies hard.', lineZh: '他去城堡學校，用功讀書。' },
+    { speaker: 'Coco', line: 'After school, he plays with his friends.', lineZh: '放學後，他跟朋友一起玩。' },
+    { speaker: 'Polly', line: 'Small mouse, great habits! The end!', lineZh: '小小老鼠，大大好習慣！完！' },
   ],
 };
 
@@ -9528,10 +9585,13 @@ const L7_M20: Mission = {
     { type: 'read', question: 'Does the writer play soccer daily?（作者每天踢足球嗎？）', passage: 'I play soccer every day.\nI love it very much.\nYesterday I played for two hours.', options: ['Yes, every day', 'No, never', 'Only yesterday', 'He hates it'], answer: 'Yes, every day' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Magic Boss says: use your magic sentences!", lineZh: '魔法大魔王說：用你的魔法句！' },
-    { speaker: 'Coco', line: "He plays, she reads, I went, they ate!", lineZh: 'He plays、she reads、I went、they ate！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Magic champion!", lineZh: '你打敗大魔王了！魔法冠軍！' },
-    { speaker: 'Finn', line: "On to Question Tower! Let's learn Wh- questions!", lineZh: '前進問題塔！我們來學 Wh- 問句！' },
+    { speaker: 'Finn', line: 'The Gate Keeper wakes up! He looks huge!', lineZh: '守門人醒了！他看起來超巨大！' },
+    { speaker: 'Coco', line: 'He asks: what does she do every day?', lineZh: '他問：她每天做什麼？' },
+    { speaker: 'Ruby', line: 'She always reads books! Every day!', lineZh: '她總是讀書！每天都讀！' },
+    { speaker: 'Benny', line: 'Yesterday I went home and ate dinner! True story!', lineZh: '昨天我回家吃了晚餐！真人真事！' },
+    { speaker: 'Polly', line: "Does he like tea? No, he doesn't!", lineZh: '他喜歡茶嗎？不，他不喜歡！' },
+    { speaker: 'Coco', line: 'The Gate is opening... we did it!', lineZh: '大門打開了…我們成功了！' },
+    { speaker: 'Finn', line: 'To Question Tower, team! Keep going!', lineZh: '夥伴們，前進問題塔！繼續衝！' },
   ],
 };
 
