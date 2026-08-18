@@ -6847,7 +6847,7 @@ const L5_M20: Mission = {
     { speaker: 'Polly', line: "Which is bigger — a whale or a fish? A whale, easy!", lineZh: '鯨魚和魚誰大？鯨魚，太簡單！' },
     { speaker: 'Ruby', line: "What am I doing now? I am winning!", lineZh: '我現在在做什麼？我正在贏！' },
     { speaker: 'Coco', line: "The Boss is smiling... we did it!", lineZh: '魔王笑了⋯⋯我們過關了！' },
-    { speaker: 'Finn', line: "To Story Castle, team! Adventure continues!", lineZh: '夥伴們，前進故事城堡！旅程繼續！' },
+    { speaker: 'Finn', line: "To Lighthouse Point, team! Adventure continues!", lineZh: '夥伴們，前進燈塔角！旅程繼續！' },
   ],
   videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m20.mp4?v=1',
 };
@@ -6909,10 +6909,13 @@ const L6_M1: Mission = {
     { type: 'spell', question: '拼拼看：pre _ ty（漂亮）', answer: 'pretty', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Welcome to Lighthouse Point! It's beautiful!", lineZh: '歡迎來到燈塔角！好美！' },
-    { speaker: 'Coco', line: "The beach is clean. The old boat is pretty!", lineZh: '海灘乾淨。舊船漂亮！' },
-    { speaker: 'Benny', line: "The lighthouse is tall and bright!", lineZh: '燈塔又高又亮！' },
-    { speaker: 'Finn', line: "You can describe things now! Wonderful!", lineZh: '你會形容東西了！太棒了！' },
+    { speaker: 'Finn', line: "Wow! Welcome to Lighthouse Point! It's so beautiful!", lineZh: '哇！歡迎來到燈塔角！好美！' },
+    { speaker: 'Coco', line: "Look at the lighthouse! It's tall and bright!", lineZh: '看那座燈塔！又高又亮！' },
+    { speaker: 'Benny', line: 'The old boat looks pretty. Can we ride it?', lineZh: '那艘舊船好漂亮，可以坐嗎？' },
+    { speaker: 'Ruby', line: 'This rock is dirty... but the beach is so clean!', lineZh: '這顆石頭髒髒的…但沙灘好乾淨！' },
+    { speaker: 'Polly', line: 'My feathers look pretty in this light!', lineZh: '這光線下我的羽毛好漂亮！' },
+    { speaker: 'Benny', line: "It's getting dark. The lighthouse is so bright now!", lineZh: '天黑了，燈塔現在好亮！' },
+    { speaker: 'Finn', line: 'New place, new adventure. I love it here!', lineZh: '新地方、新冒險，我愛這裡！' },
   ],
 };
 
@@ -6973,10 +6976,13 @@ const L6_M2: Mission = {
     { type: 'fill-blank', question: "It's fun ___ we play together.（因為）", options: ['because', 'think', 'but', 'and'], answer: 'because' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "I think the lighthouse is cool!", lineZh: '我覺得燈塔很酷！' },
-    { speaker: 'Coco', line: "I think this picture is beautiful!", lineZh: '我覺得這幅畫很美！' },
-    { speaker: 'Benny', line: "I think it's fun because we are together!", lineZh: '我覺得好玩因為我們在一起！' },
-    { speaker: 'Ruby', line: "Now you can share your ideas!", lineZh: '現在你會分享想法了！' },
+    { speaker: 'Coco', line: 'I think this place is amazing!', lineZh: '我覺得這地方太棒了！' },
+    { speaker: 'Benny', line: "I think fishing is boring... I'm hungry.", lineZh: '我覺得釣魚好無聊…我餓了。' },
+    { speaker: 'Finn', line: 'Boring? Fishing is fun! Try it!', lineZh: '無聊？釣魚很好玩耶！試試看！' },
+    { speaker: 'Ruby', line: 'I think the waves sound great.', lineZh: '我覺得海浪的聲音好好聽。' },
+    { speaker: 'Polly', line: 'Look, a dolphin! So cool!', lineZh: '看，海豚！好酷！' },
+    { speaker: 'Benny', line: 'Okay, I think fishing is... not bad!', lineZh: '好啦，我覺得釣魚…還不錯！' },
+    { speaker: 'Finn', line: 'See? Everything is fun with friends!', lineZh: '看吧！跟朋友一起做什麼都好玩！' },
   ],
 };
 
@@ -7039,10 +7045,13 @@ const L6_M3: Mission = {
     { type: 'spell', question: '拼拼看：doll _ r（元）', answer: 'dollar', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "How much is this shell?", lineZh: '這個貝殼多少錢？' },
-    { speaker: 'Polly', line: "It's five dollars. How much is the ice cream?", lineZh: '五塊錢。冰淇淋多少錢？' },
-    { speaker: 'Benny', line: "It's two dollars. Here is the money!", lineZh: '兩塊錢。錢在這裡！' },
-    { speaker: 'Coco', line: "Thank you! Now you can go shopping!", lineZh: '謝謝！現在你會購物了！' },
+    { speaker: 'Ruby', line: 'Look! A little shop by the sea!', lineZh: '看！海邊有一間小店！' },
+    { speaker: 'Coco', line: 'I want this shell necklace. How much is it?', lineZh: '我想要這條貝殼項鍊，多少錢？' },
+    { speaker: 'Polly', line: "It's five dollars.", lineZh: '五塊錢。' },
+    { speaker: 'Coco', line: "Five dollars? Here's my money!", lineZh: '五塊錢？錢給你！' },
+    { speaker: 'Benny', line: 'How much are the cookies? I have three coins!', lineZh: '餅乾多少錢？我有三個硬幣！' },
+    { speaker: 'Ruby', line: "I'll buy this hat. Good price!", lineZh: '我要買這頂帽子，價錢真好！' },
+    { speaker: 'Finn', line: 'Everyone, pay first, then we go!', lineZh: '大家先付錢，我們再出發！' },
   ],
 };
 
@@ -7104,10 +7113,13 @@ const L6_M4: Mission = {
     { type: 'spell', question: '拼拼看：ch _ ap（便宜）', answer: 'cheap', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "This hat is cheap. Only one dollar!", lineZh: '這帽子便宜。只要一塊！' },
-    { speaker: 'Coco', line: "This ring is too expensive!", lineZh: '這戒指太貴了！' },
-    { speaker: 'Polly', line: "The shop sells shells. People buy them!", lineZh: '店賣貝殼。人們買！' },
-    { speaker: 'Benny', line: "Cheap or expensive — you decide!", lineZh: '便宜或貴 —— 你決定！' },
+    { speaker: 'Benny', line: 'Wow, this big cake is only two dollars!', lineZh: '哇，這個大蛋糕只要兩塊錢！' },
+    { speaker: 'Coco', line: "That's so cheap! Buy it!", lineZh: '太便宜了！買下去！' },
+    { speaker: 'Ruby', line: 'Look at this pretty lamp... ten dollars?!', lineZh: '看這盞漂亮的燈…十塊錢？！' },
+    { speaker: 'Polly', line: 'Too expensive! Put it back!', lineZh: '太貴了！放回去！' },
+    { speaker: 'Finn', line: "There's a sale! Everything is cheap today!", lineZh: '有特賣！今天什麼都便宜！' },
+    { speaker: 'Benny', line: "I'll buy snacks with all my money!", lineZh: '我要把錢全部拿去買零食！' },
+    { speaker: 'Coco', line: 'Benny! Save some money for tomorrow!', lineZh: 'Benny！留點錢明天用啦！' },
   ],
 };
 
@@ -7169,10 +7181,13 @@ const L6_M5: Mission = {
     { type: 'read', question: 'Is it expensive?（貴嗎？）', passage: 'The hat is only two dollars.\nIt is very cheap.\nCoco buys the hat.', options: ['No, it is cheap', 'Yes, it is expensive', 'It is dirty', 'It is old'], answer: 'No, it is cheap' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review! Describe, think, and shop!", lineZh: '來複習！形容、想法、購物！' },
-    { speaker: 'Coco', line: "The view is beautiful. I think it's amazing!", lineZh: '景色很美。我覺得驚人！' },
-    { speaker: 'Benny', line: "How much? It's cheap — only two dollars!", lineZh: '多少錢？便宜 —— 只要兩塊！' },
-    { speaker: 'Finn', line: "You can describe, share, and shop! Amazing!", lineZh: '你會形容、分享、購物了！太厲害！' },
+    { speaker: 'Finn', line: "Grandma Turtle's shop is new! Let's look!", lineZh: '龜奶奶的店新開的！去看看！' },
+    { speaker: 'Coco', line: 'I think this cup is beautiful. How much?', lineZh: '我覺得這個杯子好美，多少錢？' },
+    { speaker: 'Ruby', line: "It's four dollars. Cheap!", lineZh: '四塊錢，好便宜！' },
+    { speaker: 'Benny', line: 'The honey is expensive... but I really want it!', lineZh: '蜂蜜好貴…但我真的好想要！' },
+    { speaker: 'Polly', line: 'The shop is so clean and bright!', lineZh: '這間店好乾淨好明亮！' },
+    { speaker: 'Coco', line: "I'll buy the cup. Here you go!", lineZh: '我買這個杯子，錢給你！' },
+    { speaker: 'Finn', line: 'Great shopping day at Lighthouse Point!', lineZh: '燈塔角的購物日太棒了！' },
   ],
 };
 
@@ -7234,10 +7249,13 @@ const L6_M6: Mission = {
     { type: 'spell', question: '拼拼看：men _ （菜單）', answer: 'menu', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "Can I have a menu, please?", lineZh: '可以給我菜單嗎？' },
-    { speaker: 'Benny', line: "I'd like some soup and salad.", lineZh: '我想要湯和沙拉。' },
-    { speaker: 'Polly', line: "Can I have some juice? Thank you!", lineZh: '可以給我果汁嗎？謝謝！' },
-    { speaker: 'Coco', line: "Now you can order food in English!", lineZh: '現在你會用英文點餐了！' },
+    { speaker: 'Polly', line: "Welcome to the Seaside Restaurant! Here's the menu!", lineZh: '歡迎光臨海邊餐廳！這是菜單！' },
+    { speaker: 'Finn', line: "I'd like the fish soup, please.", lineZh: '我想要魚湯，謝謝。' },
+    { speaker: 'Coco', line: "I'd like chicken and salad!", lineZh: '我要雞肉和沙拉！' },
+    { speaker: 'Benny', line: "I'd like... everything! ...Okay, just the big soup.", lineZh: '我想要…全部！…好啦，大碗湯就好。' },
+    { speaker: 'Ruby', line: 'Water for me, please. And apple juice for Benny!', lineZh: '我要水，Benny 要蘋果汁！' },
+    { speaker: 'Polly', line: "Great! I'll bring your order soon!", lineZh: '好的！餐點馬上來！' },
+    { speaker: 'Finn', line: 'This is the best restaurant by the sea!', lineZh: '這是海邊最棒的餐廳！' },
   ],
 };
 
@@ -7299,10 +7317,13 @@ const L6_M7: Mission = {
     { type: 'spell', question: '拼拼看：c _ ke（蛋糕）', answer: 'cake', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I'd like a hamburger and fries!", lineZh: '我想要漢堡和薯條！' },
-    { speaker: 'Coco', line: "Can I have pizza and a cola?", lineZh: '可以給我披薩和可樂嗎？' },
-    { speaker: 'Ruby', line: "For dessert, I'd like cake and tea!", lineZh: '甜點我想要蛋糕和茶！' },
-    { speaker: 'Benny', line: "Yummy! We ordered a big meal!", lineZh: '好吃！我們點了一大餐！' },
+    { speaker: 'Benny', line: 'Pizza! Hamburgers! Fries! I love this menu!', lineZh: '披薩！漢堡！薯條！我愛這份菜單！' },
+    { speaker: 'Coco', line: 'One hamburger and fries for me!', lineZh: '我要一個漢堡加薯條！' },
+    { speaker: 'Ruby', line: "I'd like noodles, please. They smell great!", lineZh: '我要麵，聞起來好香！' },
+    { speaker: 'Finn', line: 'Cake and tea for me. So fancy!', lineZh: '我要蛋糕配茶，好高級！' },
+    { speaker: 'Polly', line: 'No cola, Benny. Juice is better for you!', lineZh: '不能喝可樂喔 Benny，果汁比較好！' },
+    { speaker: 'Benny', line: 'Okay, okay... pizza AND noodles then!', lineZh: '好啦好啦…那披薩「和」麵都要！' },
+    { speaker: 'Coco', line: 'Benny, you are always eating!', lineZh: 'Benny，你怎麼一直在吃！' },
   ],
 };
 
@@ -7364,10 +7385,13 @@ const L6_M8: Mission = {
     { type: 'spell', question: '拼拼看：n _ ar（附近）', answer: 'near', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "Excuse me, where is the park?", lineZh: '不好意思，公園在哪？' },
-    { speaker: 'Benny', line: "How do I get to the bank?", lineZh: '我要怎麼去銀行？' },
-    { speaker: 'Polly', line: "The hospital is near the school!", lineZh: '醫院在學校附近！' },
-    { speaker: 'Coco', line: "Now you can ask for directions!", lineZh: '現在你會問路了！' },
+    { speaker: 'Coco', line: 'Excuse me, where is the library?', lineZh: '請問，圖書館在哪裡？' },
+    { speaker: 'Polly', line: "It's on Sea Street, near the park.", lineZh: '在海街上，公園附近。' },
+    { speaker: 'Benny', line: 'And where is the snack store?', lineZh: '那零食店在哪裡？' },
+    { speaker: 'Ruby', line: "Next to the bank. It's very near!", lineZh: '在銀行旁邊，很近！' },
+    { speaker: 'Finn', line: 'Is the hospital far? Just asking!', lineZh: '醫院遠嗎？先問起來放！' },
+    { speaker: 'Polly', line: 'No, everything is near in this little town!', lineZh: '不遠，這個小鎮什麼都很近！' },
+    { speaker: 'Coco', line: 'I love Lighthouse Point. So easy to explore!', lineZh: '我愛燈塔角，到處都好逛！' },
   ],
 };
 
@@ -7429,10 +7453,13 @@ const L6_M9: Mission = {
     { type: 'match', question: 'between 是什麼意思？', options: ['在…之間', '在…前面', '在…後面', '轉角'], answer: '在…之間' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Go straight and turn left!", lineZh: '直走然後左轉！' },
-    { speaker: 'Coco', line: "Turn right at the corner.", lineZh: '在轉角右轉。' },
-    { speaker: 'Polly', line: "The shop is in front of the park!", lineZh: '商店在公園前面！' },
-    { speaker: 'Benny', line: "Left, right, straight — you found it!", lineZh: '左、右、直走 —— 你找到了！' },
+    { speaker: 'Benny', line: "I'm lost! Where is the ice cream shop?", lineZh: '我迷路了！冰淇淋店在哪？' },
+    { speaker: 'Coco', line: 'Go straight, then turn left at the corner.', lineZh: '直走，然後在轉角左轉。' },
+    { speaker: 'Benny', line: 'Straight... then left... okay!', lineZh: '直走…然後左轉…好！' },
+    { speaker: 'Ruby', line: 'Stop! Not that way! Turn right!', lineZh: '停！不是那邊！右轉！' },
+    { speaker: 'Finn', line: "Look, it's right in front of you, Benny!", lineZh: '看，就在你正前方啦 Benny！' },
+    { speaker: 'Benny', line: 'Ice cream! I found it! Thank you!', lineZh: '冰淇淋！找到了！謝謝！' },
+    { speaker: 'Polly', line: 'Ha! Follow your nose next time!', lineZh: '哈！下次跟著鼻子走就好！' },
   ],
 };
 
@@ -7494,10 +7521,13 @@ const L6_M10: Mission = {
     { type: 'read', question: 'Is the park far?（公園遠嗎？）', passage: 'Where is the park?\nGo straight and turn left.\nIt is near — not far!', options: ['No, it is near', 'Yes, it is far', 'It is closed', 'It is behind'], answer: 'No, it is near' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review! Order food and find the way!", lineZh: '來複習！點餐和找路！' },
-    { speaker: 'Coco', line: "Can I have a hamburger, please?", lineZh: '可以給我漢堡嗎？' },
-    { speaker: 'Benny', line: "Where is the park? Go straight and turn left!", lineZh: '公園在哪？直走左轉！' },
-    { speaker: 'Finn', line: "You can order and find your way! Great!", lineZh: '你會點餐也會找路了！太棒了！' },
+    { speaker: 'Finn', line: "I'm hungry. Where is the Seaside Restaurant?", lineZh: '我餓了，海邊餐廳在哪裡？' },
+    { speaker: 'Polly', line: "Go straight and turn right. It's near the lighthouse.", lineZh: '直走右轉，就在燈塔附近。' },
+    { speaker: 'Coco', line: 'Found it! Table for five, please!', lineZh: '找到了！五位，謝謝！' },
+    { speaker: 'Benny', line: "I'd like a hamburger... no, two hamburgers!", lineZh: '我要一個漢堡…不，兩個！' },
+    { speaker: 'Ruby', line: 'Noodles for me. And water, please!', lineZh: '我要麵，還要水，謝謝！' },
+    { speaker: 'Coco', line: 'The food here is cheap and yummy!', lineZh: '這裡的食物又便宜又好吃！' },
+    { speaker: 'Finn', line: 'Eat up, team! Then back to the beach!', lineZh: '大家吃飽！然後回海灘！' },
   ],
 };
 
@@ -7559,10 +7589,13 @@ const L6_M11: Mission = {
     { type: 'fill-blank', question: "___ swim!（我們來…吧）", options: ["Let's", 'Do', 'Are', 'Is'], answer: "Let's" },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "Let's go to the beach!", lineZh: '我們去海邊吧！' },
-    { speaker: 'Coco', line: "Do you want to swim with me?", lineZh: '你想跟我游泳嗎？' },
-    { speaker: 'Benny', line: "Sure! Let's play together!", lineZh: '好啊！我們一起玩！' },
-    { speaker: 'Polly', line: "Now you can invite your friends!", lineZh: '現在你會邀請朋友了！' },
+    { speaker: 'Coco', line: "The sun is out! Let's go to the beach!", lineZh: '出太陽了！我們去海灘吧！' },
+    { speaker: 'Benny', line: 'Do you want to swim with me?', lineZh: '你要跟我一起游泳嗎？' },
+    { speaker: 'Ruby', line: 'Sure! Wait for me!', lineZh: '好啊！等等我！' },
+    { speaker: 'Finn', line: 'Polly, come join us! The water is great!', lineZh: 'Polly 快來！水超舒服！' },
+    { speaker: 'Polly', line: "I'll watch from the sky! Too splashy!", lineZh: '我在天上看就好！水花太多啦！' },
+    { speaker: 'Benny', line: 'Come on! Playing together is more fun!', lineZh: '來嘛！一起玩比較好玩！' },
+    { speaker: 'Polly', line: 'Okay, okay! Here I come!', lineZh: '好啦好啦！我來了！' },
   ],
 };
 
@@ -7624,10 +7657,13 @@ const L6_M12: Mission = {
     { type: 'spell', question: '拼拼看：exc _ ted（興奮）', answer: 'excited', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I am so excited! We are going to the beach!", lineZh: '我好興奮！我們要去海邊！' },
-    { speaker: 'Benny', line: "The big wave is scary! I am scared!", lineZh: '大浪好可怕！我好害怕！' },
-    { speaker: 'Ruby', line: "A dolphin! I am surprised!", lineZh: '一隻海豚！我好驚訝！' },
-    { speaker: 'Coco', line: "You can talk about your feelings now!", lineZh: '現在你會說感受了！' },
+    { speaker: 'Finn', line: "The boat race is today! I'm so excited!", lineZh: '今天是划船比賽！我好興奮！' },
+    { speaker: 'Benny', line: "I'm a little scared of the big waves...", lineZh: '我有點怕大浪…' },
+    { speaker: 'Coco', line: "Don't be worried. We're all together!", lineZh: '別擔心，我們都在一起！' },
+    { speaker: 'Ruby', line: "I'm nervous too... but let's try!", lineZh: '我也好緊張…但我們試試看！' },
+    { speaker: 'Polly', line: "Surprise! You're winning! Go, go!", lineZh: '沒想到吧！你們領先了！衝衝衝！' },
+    { speaker: 'Benny', line: "We did it! I'm so proud of us!", lineZh: '我們做到了！我好驕傲！' },
+    { speaker: 'Finn', line: 'See? Being brave together is the best!', lineZh: '看吧！一起勇敢最棒了！' },
   ],
 };
 
@@ -7689,10 +7725,13 @@ const L6_M13: Mission = {
     { type: 'fill-blank', question: 'The boats find their way ___.（家）', options: ['home', 'sea', 'light', 'night'], answer: 'home' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A story: The Old Lighthouse!", lineZh: '故事：老燈塔！' },
-    { speaker: 'Finn', line: "The old lighthouse is tall. Its light is bright.", lineZh: '老燈塔很高。它的光很亮。' },
-    { speaker: 'Coco', line: "At night, it helps the boats find the way home.", lineZh: '晚上它幫船找到回家的路。' },
-    { speaker: 'Benny', line: "You read a long story! Great reader!", lineZh: '你讀了長故事！了不起！' },
+    { speaker: 'Finn', line: 'Story time! Look at the old lighthouse!', lineZh: '說故事時間！看那座老燈塔！' },
+    { speaker: 'Coco', line: "It's so tall. Its light is very bright!", lineZh: '好高喔，它的光好亮！' },
+    { speaker: 'Ruby', line: 'At night, it helps the boats find home.', lineZh: '晚上它幫船找到回家的路。' },
+    { speaker: 'Benny', line: 'The sailors wave at us! Hello!', lineZh: '水手在跟我們揮手！哈囉！' },
+    { speaker: 'Polly', line: 'Without the light, boats get lost.', lineZh: '沒有那道光，船會迷路。' },
+    { speaker: 'Coco', line: 'Someone turns on the light every night.', lineZh: '每天晚上都有人點亮它。' },
+    { speaker: 'Finn', line: 'Thank you, lighthouse! You keep everyone safe!', lineZh: '謝謝你，燈塔！你守護大家！' },
   ],
 };
 
@@ -7754,10 +7793,13 @@ const L6_M14: Mission = {
     { type: 'fill-blank', question: 'Her basket is ___.（滿的）', options: ['full', 'empty', 'small', 'old'], answer: 'full' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A new story: Market Day!", lineZh: '新故事：市場日！' },
-    { speaker: 'Ruby', line: "On Saturday, I go to the market.", lineZh: '星期六，我去市場。' },
-    { speaker: 'Coco', line: "She buys cheap apples. Only two dollars!", lineZh: '她買便宜蘋果。只要兩塊！' },
-    { speaker: 'Benny', line: "You read another story! Wonderful!", lineZh: '你又讀了一篇故事！太棒了！' },
+    { speaker: 'Ruby', line: "It's Saturday! Market day!", lineZh: '星期六到了！市場日！' },
+    { speaker: 'Coco', line: 'The fruit looks so fresh!', lineZh: '水果看起來好新鮮！' },
+    { speaker: 'Ruby', line: 'Apples! Only two dollars!', lineZh: '蘋果！只要兩塊錢！' },
+    { speaker: 'Benny', line: "That's cheap! Buy a lot!", lineZh: '好便宜！多買一點！' },
+    { speaker: 'Ruby', line: 'My basket is full now!', lineZh: '我的籃子裝滿了！' },
+    { speaker: 'Polly', line: 'Fresh bread too! It smells amazing!', lineZh: '還有新鮮麵包！聞起來超香！' },
+    { speaker: 'Finn', line: 'Best Saturday market ever!', lineZh: '史上最棒的星期六市場！' },
   ],
 };
 
@@ -7819,10 +7861,13 @@ const L6_M15: Mission = {
     { type: 'match', question: 'beautiful 是什麼意思？', options: ['美麗的', '便宜的', '無聊的', '害怕的'], answer: '美麗的' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review our reading! Read and answer!", lineZh: '來複習閱讀！讀完回答！' },
-    { speaker: 'Coco', line: "The lighthouse is tall and bright. I think it is beautiful!", lineZh: '燈塔又高又亮。我覺得很美！' },
-    { speaker: 'Benny', line: "At the market, the fruit is cheap and fresh!", lineZh: '在市場，水果便宜又新鮮！' },
-    { speaker: 'Finn', line: "You are a great reader now! Wonderful!", lineZh: '你現在是很棒的讀者了！太棒了！' },
+    { speaker: 'Finn', line: 'What a day! The lighthouse is shining!', lineZh: '多棒的一天！燈塔在發光！' },
+    { speaker: 'Coco', line: "I think it's so beautiful at night!", lineZh: '我覺得晚上的它好美！' },
+    { speaker: 'Ruby', line: 'The market fruit was fresh and cheap!', lineZh: '市場的水果又新鮮又便宜！' },
+    { speaker: 'Benny', line: "I'm excited for dinner! Fresh fish!", lineZh: '我好期待晚餐！新鮮的魚！' },
+    { speaker: 'Polly', line: 'The boats are safe. The light is bright!', lineZh: '船都平安，燈也好亮！' },
+    { speaker: 'Coco', line: 'I love our little town by the sea.', lineZh: '我愛我們這個海邊小鎮。' },
+    { speaker: 'Finn', line: 'Every day here is an adventure!', lineZh: '在這裡每天都是冒險！' },
   ],
 };
 
@@ -7885,10 +7930,13 @@ const L6_M16: Mission = {
     { type: 'spell', question: '拼拼看：play _ d（玩了）', answer: 'played', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Yesterday I played at the beach.", lineZh: '昨天我在海邊玩。' },
-    { speaker: 'Coco', line: "I walked to the lighthouse. I looked at the sea.", lineZh: '我走去燈塔。我看著海。' },
-    { speaker: 'Ruby', line: "I cleaned my room and helped my mom.", lineZh: '我打掃房間也幫了媽媽。' },
-    { speaker: 'Benny', line: "Add -ed for the past! played, walked!", lineZh: '過去式加 -ed！played、walked！' },
+    { speaker: 'Finn', line: 'Yesterday was busy! I walked to the lighthouse!', lineZh: '昨天好忙！我走路去了燈塔！' },
+    { speaker: 'Coco', line: 'I played on the beach all day!', lineZh: '我在沙灘玩了一整天！' },
+    { speaker: 'Benny', line: 'I cooked fish soup. And I... ate it all.', lineZh: '我煮了魚湯，然後…全吃光了。' },
+    { speaker: 'Ruby', line: 'I cleaned my room. It looked great!', lineZh: '我打掃了房間，看起來超棒！' },
+    { speaker: 'Polly', line: 'I watched the boats and jumped in the wind!', lineZh: '我看了船，還在風裡跳來跳去！' },
+    { speaker: 'Coco', line: 'And we all helped Grandma Turtle!', lineZh: '而且我們都幫了龜奶奶！' },
+    { speaker: 'Finn', line: 'What a great day it was!', lineZh: '昨天真是太棒的一天！' },
   ],
 };
 
@@ -7950,10 +7998,13 @@ const L6_M17: Mission = {
     { type: 'read', question: 'Did Benny watch TV?（Benny 看電視了嗎？）', passage: '"Did you watch TV last night?"\nBenny says, "Yes, I did.\nI watched a fun show."', options: ['Yes, he did', 'No, he did not', 'He played', 'He slept'], answer: 'Yes, he did' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "What did you do yesterday?", lineZh: '你昨天做了什麼？' },
-    { speaker: 'Coco', line: "I played at the beach. I swam in the sea!", lineZh: '我在海邊玩。我在海裡游泳！' },
-    { speaker: 'Benny', line: "Did you watch TV? Yes, I did!", lineZh: '你看電視了嗎？是的，我看了！' },
-    { speaker: 'Polly', line: "Now you can talk about the past!", lineZh: '現在你會講過去的事了！' },
+    { speaker: 'Coco', line: 'What did you do yesterday, Benny?', lineZh: 'Benny，你昨天做了什麼？' },
+    { speaker: 'Benny', line: 'I played at the beach. And ate cake!', lineZh: '我在海灘玩，還吃了蛋糕！' },
+    { speaker: 'Coco', line: 'Did you clean your room?', lineZh: '那你打掃房間了嗎？' },
+    { speaker: 'Benny', line: "Um... no, I didn't...", lineZh: '呃…沒有…' },
+    { speaker: 'Ruby', line: 'Ha! I knew it!', lineZh: '哈！我就知道！' },
+    { speaker: 'Benny', line: 'But I helped Polly cook! I did!', lineZh: '但我有幫 Polly 煮飯！真的！' },
+    { speaker: 'Coco', line: 'Okay, you win. Good job, Benny!', lineZh: '好啦算你贏，做得好 Benny！' },
   ],
 };
 
@@ -8015,10 +8066,13 @@ const L6_M18: Mission = {
     { type: 'read', question: 'Where do they want to go?（他們想去哪？）', passage: 'Finn wants to go to the market.\nCoco is excited to come.\nThey buy cheap apples.', options: ['the market', 'the school', 'the sea', 'home'], answer: 'the market' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's go to the market! Do you want to come?", lineZh: '我們去市場！你想來嗎？' },
-    { speaker: 'Coco', line: "Sure! I am so excited! Where is the market?", lineZh: '好啊！我好興奮！市場在哪？' },
-    { speaker: 'Benny', line: "Go straight and turn left. The apples are cheap!", lineZh: '直走左轉。蘋果便宜！' },
-    { speaker: 'Finn', line: "What a great day out! Let's go!", lineZh: '出遊真棒！走吧！' },
+    { speaker: 'Finn', line: "Let's go to the market! Do you want to come?", lineZh: '我們去市場吧！你要來嗎？' },
+    { speaker: 'Benny', line: "Yes! I'm so excited!", lineZh: '要！我好興奮！' },
+    { speaker: 'Coco', line: 'Where is the market again?', lineZh: '市場在哪來著？' },
+    { speaker: 'Ruby', line: 'Go straight and turn left!', lineZh: '直走然後左轉！' },
+    { speaker: 'Benny', line: 'Look! The cookies are so cheap!', lineZh: '看！餅乾超便宜！' },
+    { speaker: 'Finn', line: 'Buy some for everyone!', lineZh: '買一些請大家！' },
+    { speaker: 'Coco', line: 'Shopping with friends is the best!', lineZh: '跟朋友一起逛街最棒了！' },
   ],
 };
 
@@ -8080,10 +8134,13 @@ const L6_M19: Mission = {
     { type: 'spell', question: '拼拼看：wr _ te（寫）', answer: 'write', image: '✍️' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Read the story, then write your own!", lineZh: '讀故事，然後寫你自己的！' },
-    { speaker: 'Coco', line: "Yesterday I went to the beach. I played and swam.", lineZh: '昨天我去海邊。我玩也游泳。' },
-    { speaker: 'Ruby', line: "Now write: Yesterday I ___. I ___ and ___.", lineZh: '現在寫：昨天我___。我___和___。' },
-    { speaker: 'Benny', line: "Great! You are a reader and a writer!", lineZh: '太棒了！你是讀者也是作者！' },
+    { speaker: 'Finn', line: "Let's write about yesterday!", lineZh: '我們來寫昨天的事吧！' },
+    { speaker: 'Coco', line: 'Yesterday I went to the beach.', lineZh: '昨天我去了海灘。' },
+    { speaker: 'Benny', line: 'First, I played in the sand!', lineZh: '首先，我玩了沙子！' },
+    { speaker: 'Ruby', line: 'Then, I swam in the sea!', lineZh: '然後，我去海裡游泳！' },
+    { speaker: 'Polly', line: 'I found a big shell!', lineZh: '我找到一個大貝殼！' },
+    { speaker: 'Coco', line: 'It was a fun day!', lineZh: '真是好玩的一天！' },
+    { speaker: 'Finn', line: "Great story, team! Let's read it again!", lineZh: '好棒的故事！我們再讀一次！' },
   ],
 };
 
@@ -8145,10 +8202,13 @@ const L6_M20: Mission = {
     { type: 'read', question: 'Were the friends happy?（朋友們開心嗎？）', passage: 'The friends played at the beach.\nThey found shells.\nThey were very happy!', options: ['Yes, they were happy', 'No, they were sad', 'They were tired', 'They were bored'], answer: 'Yes, they were happy' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Lighthouse Boss says: describe your day!", lineZh: '燈塔大魔王說：描述你的一天！' },
-    { speaker: 'Coco', line: "Yesterday I played at the beach. It was beautiful!", lineZh: '昨天我在海邊玩。好美！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Lighthouse champion!", lineZh: '你打敗大魔王了！燈塔冠軍！' },
-    { speaker: 'Finn', line: "On to the Magic Gate! Let's learn magic sentences!", lineZh: '前進魔法門！我們來學魔法句！' },
+    { speaker: 'Finn', line: 'The Lighthouse Boss is here! He looks serious!', lineZh: '燈塔魔王來了！他看起來好嚴肅！' },
+    { speaker: 'Coco', line: 'He asks: is the view beautiful?', lineZh: '他問：風景美嗎？' },
+    { speaker: 'Ruby', line: "Yes! I think it's amazing!", lineZh: '美！我覺得超讚！' },
+    { speaker: 'Benny', line: 'How much is the hamburger? ...So cheap!', lineZh: '漢堡多少錢？…好便宜！' },
+    { speaker: 'Polly', line: 'Where is the park? Go straight and turn left!', lineZh: '公園在哪？直走左轉！' },
+    { speaker: 'Coco', line: 'What did you do yesterday? I played at the beach!', lineZh: '你昨天做了什麼？我在海灘玩！' },
+    { speaker: 'Finn', line: 'We win! On to Story Castle, team!', lineZh: '我們贏了！夥伴們，前進故事城堡！' },
   ],
 };
 
