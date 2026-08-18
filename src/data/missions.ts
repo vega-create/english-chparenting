@@ -8367,7 +8367,6 @@ const L7_M2: Mission = {
     { speaker: 'Coco', line: 'And Benny watches the soup!', lineZh: '然後 Benny 在看湯！' },
     { speaker: 'Benny', line: 'Hey! ...Okay, he watches. I eat!', lineZh: '喂！…好啦，他用看的，我用吃的！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m2.mp4?v=1',
 };
 
 const L7_M3: Mission = {
