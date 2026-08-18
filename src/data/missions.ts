@@ -9128,6 +9128,7 @@ const L7_M13: Mission = {
     { speaker: 'Polly', line: 'Fly, flew, flown! Watch me go!', lineZh: 'Fly, flew, flown！看我飛！' },
     { speaker: 'Finn', line: 'Magic words everywhere today!', lineZh: '今天到處都是魔法字！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m13.mp4?v=1',
 };
 
 const L7_M14: Mission = {
@@ -9196,6 +9197,7 @@ const L7_M14: Mission = {
     { speaker: 'Finn', line: 'I played, I helped, I made it! All spells!', lineZh: 'I played、I helped、I made it！全部咒語！' },
     { speaker: 'Polly', line: 'Everyone passed! Magic masters!', lineZh: '全員過關！魔法大師！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m14.mp4?v=1',
 };
 
 const L7_M15: Mission = {
@@ -9264,6 +9266,7 @@ const L7_M15: Mission = {
     { speaker: 'Coco', line: 'We walked home under the stars.', lineZh: '我們在星空下走路回家。' },
     { speaker: 'Finn', line: 'Best day, saved in our story book!', lineZh: '最棒的一天，收進我們的故事書！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m15.mp4?v=1',
 };
 
 const L7_M16: Mission = {
@@ -9332,6 +9335,7 @@ const L7_M16: Mission = {
     { speaker: 'Benny', line: 'And I check the kitchen every night. Habit!', lineZh: '我每晚都巡廚房，習慣！' },
     { speaker: 'Polly', line: 'Facts and habits, all around us!', lineZh: '事實和習慣，就在我們身邊！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m16.mp4?v=1',
 };
 
 const L7_M17: Mission = {
@@ -9401,6 +9405,7 @@ const L7_M17: Mission = {
     { speaker: 'Benny', line: 'I eat lunch at noon. And now... I am eating!', lineZh: '我中午吃午餐，而現在…我正在吃！' },
     { speaker: 'Coco', line: 'Benny, it is not noon yet!', lineZh: 'Benny，現在還沒中午耶！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m17.mp4?v=1',
 };
 
 const L7_M18: Mission = {
@@ -9469,6 +9474,7 @@ const L7_M18: Mission = {
     { speaker: 'Coco', line: "He doesn't skip a day. Never!", lineZh: '他一天都沒漏過，從來沒有！' },
     { speaker: 'Finn', line: 'We all win! Grammar champions!', lineZh: '我們都贏了！文法冠軍！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m18.mp4?v=1',
 };
 
 const L7_M19: Mission = {
