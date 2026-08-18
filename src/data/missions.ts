@@ -7676,6 +7676,7 @@ const L6_M12: Mission = {
     { speaker: 'Benny', line: "We did it! I'm so proud of us!", lineZh: '我們做到了！我好驕傲！' },
     { speaker: 'Finn', line: 'See? Being brave together is the best!', lineZh: '看吧！一起勇敢最棒了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m12.mp4?v=1',
 };
 
 const L6_M13: Mission = {
@@ -7744,6 +7745,7 @@ const L6_M13: Mission = {
     { speaker: 'Coco', line: 'Someone turns on the light every night.', lineZh: '每天晚上都有人點亮它。' },
     { speaker: 'Finn', line: 'Thank you, lighthouse! You keep everyone safe!', lineZh: '謝謝你，燈塔！你守護大家！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m13.mp4?v=1',
 };
 
 const L6_M14: Mission = {
