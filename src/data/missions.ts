@@ -8572,6 +8572,7 @@ const L7_M5: Mission = {
     { speaker: 'Finn', line: 'I play in the garden. The owl watches us!', lineZh: '我在花園玩，貓頭鷹會看著我們！' },
     { speaker: 'Coco', line: 'Castle life is the best!', lineZh: '城堡生活最棒了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m5.mp4?v=1',
 };
 
 const L7_M6: Mission = {
@@ -8641,6 +8642,7 @@ const L7_M6: Mission = {
     { speaker: 'Benny', line: 'And I never eat candy before dinner... usually.', lineZh: '我晚餐前從不吃糖…通常啦。' },
     { speaker: 'Finn', line: 'Ha! Every day here is different!', lineZh: '哈！這裡每天都不一樣！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m6.mp4?v=1',
 };
 
 const L7_M7: Mission = {
