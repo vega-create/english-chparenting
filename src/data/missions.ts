@@ -6917,6 +6917,7 @@ const L6_M1: Mission = {
     { speaker: 'Benny', line: "It's getting dark. The lighthouse is so bright now!", lineZh: '天黑了，燈塔現在好亮！' },
     { speaker: 'Finn', line: 'New place, new adventure. I love it here!', lineZh: '新地方、新冒險，我愛這裡！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m1.mp4?v=1',
 };
 
 const L6_M2: Mission = {
@@ -6984,6 +6985,7 @@ const L6_M2: Mission = {
     { speaker: 'Benny', line: 'Okay, I think fishing is... not bad!', lineZh: '好啦，我覺得釣魚…還不錯！' },
     { speaker: 'Finn', line: 'See? Everything is fun with friends!', lineZh: '看吧！跟朋友一起做什麼都好玩！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m2.mp4?v=1',
 };
 
 const L6_M3: Mission = {
@@ -7053,6 +7055,7 @@ const L6_M3: Mission = {
     { speaker: 'Ruby', line: "I'll buy this hat. Good price!", lineZh: '我要買這頂帽子，價錢真好！' },
     { speaker: 'Finn', line: 'Everyone, pay first, then we go!', lineZh: '大家先付錢，我們再出發！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m3.mp4?v=1',
 };
 
 const L6_M4: Mission = {
@@ -7121,6 +7124,7 @@ const L6_M4: Mission = {
     { speaker: 'Benny', line: "I'll buy snacks with all my money!", lineZh: '我要把錢全部拿去買零食！' },
     { speaker: 'Coco', line: 'Benny! Save some money for tomorrow!', lineZh: 'Benny！留點錢明天用啦！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m4.mp4?v=1',
 };
 
 const L6_M5: Mission = {
@@ -7189,6 +7193,7 @@ const L6_M5: Mission = {
     { speaker: 'Coco', line: "I'll buy the cup. Here you go!", lineZh: '我買這個杯子，錢給你！' },
     { speaker: 'Finn', line: 'Great shopping day at Lighthouse Point!', lineZh: '燈塔角的購物日太棒了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m5.mp4?v=1',
 };
 
 const L6_M6: Mission = {
