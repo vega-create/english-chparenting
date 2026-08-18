@@ -8091,6 +8091,7 @@ const L6_M18: Mission = {
     { speaker: 'Finn', line: 'Buy some for everyone!', lineZh: '買一些請大家！' },
     { speaker: 'Coco', line: 'Shopping with friends is the best!', lineZh: '跟朋友一起逛街最棒了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m18.mp4?v=1',
 };
 
 const L6_M19: Mission = {
@@ -8159,6 +8160,7 @@ const L6_M19: Mission = {
     { speaker: 'Coco', line: 'It was a fun day!', lineZh: '真是好玩的一天！' },
     { speaker: 'Finn', line: "Great story, team! Let's read it again!", lineZh: '好棒的故事！我們再讀一次！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m19.mp4?v=1',
 };
 
 const L6_M20: Mission = {
