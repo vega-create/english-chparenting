@@ -52,7 +52,7 @@ export function wordSlug(en: string): string {
 const LESSON_BASE = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/lessons';
 // 課文音檔重生替換後瀏覽器仍播舊快取（跟 vega-audio 的 AUDIO_V 同一個坑）。
 // 每次大批替換音檔就 +1。
-const LESSON_V = '2';
+const LESSON_V = '3';
 
 /** 播課文音檔；沒有檔案回 false，呼叫端自行 fallback 到 TTS */
 export function playLesson(path: string): Promise<boolean> {
