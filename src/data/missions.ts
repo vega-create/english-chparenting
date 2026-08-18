@@ -8297,6 +8297,7 @@ const L7_M1: Mission = {
     { speaker: 'Finn', line: 'I like this place already!', lineZh: '我已經喜歡上這裡了！' },
     { speaker: 'Coco', line: 'New home, new adventure, every day!', lineZh: '新家、新冒險，每一天！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m1.mp4?v=1',
 };
 
 const L7_M2: Mission = {
@@ -8366,6 +8367,7 @@ const L7_M2: Mission = {
     { speaker: 'Coco', line: 'And Benny watches the soup!', lineZh: '然後 Benny 在看湯！' },
     { speaker: 'Benny', line: 'Hey! ...Okay, he watches. I eat!', lineZh: '喂！…好啦，他用看的，我用吃的！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m2.mp4?v=1',
 };
 
 const L7_M3: Mission = {
@@ -8432,6 +8434,7 @@ const L7_M3: Mission = {
     { speaker: 'Ruby', line: 'Yes! But no carrots, please!', lineZh: '耶！但拜託不要紅蘿蔔！' },
     { speaker: 'Benny', line: "Fine... I don't share my honey then!", lineZh: '好喔…那我也不分你蜂蜜！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m3.mp4?v=1',
 };
 
 const L7_M4: Mission = {
@@ -8501,6 +8504,7 @@ const L7_M4: Mission = {
     { speaker: 'Coco', line: 'Do you want to see the tower?', lineZh: '你們想看塔樓嗎？' },
     { speaker: 'Finn', line: 'Yes, we do! Race you there!', lineZh: '想！比賽誰先到！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m4.mp4?v=1',
 };
 
 const L7_M5: Mission = {
