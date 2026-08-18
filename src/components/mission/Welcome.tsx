@@ -347,11 +347,11 @@ export default function Welcome({ onComplete }: Props) {
       <div className="text-center">
         {canProceed() ? (
           <GameButton onClick={handleNext} color="purple" size="lg">
-            {sceneIndex < WELCOME_SCENES.length - 1 ? '下一步 ▶' : "Let's Go! 開始上課！🚀"}
+            {sceneIndex < WELCOME_SCENES.length - 1 ? '下一步 ▶' : "Let's Go! 開始冒險！🚀"}
           </GameButton>
         ) : (
           <button disabled className="px-8 py-4 rounded-full font-bold text-lg bg-gray-200 text-gray-400 cursor-not-allowed">
-            {sceneIndex < WELCOME_SCENES.length - 1 ? '下一步 ▶' : "Let's Go! 開始上課！🚀"}
+            {sceneIndex < WELCOME_SCENES.length - 1 ? '下一步 ▶' : "Let's Go! 開始冒險！🚀"}
           </button>
         )}
       </div>
