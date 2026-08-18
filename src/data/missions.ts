@@ -6849,7 +6849,7 @@ const L5_M20: Mission = {
     { speaker: 'Coco', line: "The Boss is smiling... we did it!", lineZh: '魔王笑了⋯⋯我們過關了！' },
     { speaker: 'Finn', line: "To Lighthouse Point, team! Adventure continues!", lineZh: '夥伴們，前進燈塔角！旅程繼續！' },
   ],
-  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m20.mp4?v=1',
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L5/m20.mp4?v=2',
 };
 
 // ===================== L6 燈塔角 Lighthouse Point（A1+・進階對話＋過去式入門＋引導式寫作） =====================
