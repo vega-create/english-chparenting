@@ -9543,6 +9543,7 @@ const L7_M19: Mission = {
     { speaker: 'Coco', line: 'After school, he plays with his friends.', lineZh: '放學後，他跟朋友一起玩。' },
     { speaker: 'Polly', line: 'Small mouse, great habits! The end!', lineZh: '小小老鼠，大大好習慣！完！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m19.mp4?v=1',
 };
 
 const L7_M20: Mission = {
@@ -9611,6 +9612,7 @@ const L7_M20: Mission = {
     { speaker: 'Coco', line: 'The Gate is opening... we did it!', lineZh: '大門打開了…我們成功了！' },
     { speaker: 'Finn', line: 'To Question Tower, team! Keep going!', lineZh: '夥伴們，前進問題塔！繼續衝！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m20.mp4?v=1',
 };
 
 // ===================== L8 問題塔 Question Tower（A2・Wh- 問句＋中翻英翻譯） =====================
