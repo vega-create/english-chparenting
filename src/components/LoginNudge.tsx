@@ -55,7 +55,7 @@ export default function LoginNudge({ variant = 'card' }: { variant?: 'card' | 'i
     <section className={`ae-frame-parchment relative ${variant === 'card' ? 'my-5' : 'mt-4'}`}>
       <div className="pr-20 sm:pr-32">
         <p className="font-black text-gray-800">
-          ⭐ 已經拿到 {stars} 顆星、完成 {lessons} 課了
+          🌟 已經完成 {lessons} 課、拿到 {stars} 顆大星星了
         </p>
         <p className="mt-1 text-sm leading-relaxed text-gray-600">
           這些目前只存在這台裝置裡。

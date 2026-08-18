@@ -86,6 +86,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
           </div>
         </div>
 
+        <p className="text-xs font-bold text-gray-400 mb-1">本課成績（正確率 7 成拿 2 顆、9 成拿 3 顆）</p>
         <h2 className="text-3xl font-black text-gray-800 mb-2">Mission Complete!</h2>
         <p className="text-xl text-gray-600 mb-1">{missionTitleEn}</p>
         <p className="text-lg text-gray-500 mb-6">{missionTitle}</p>
@@ -95,7 +96,8 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
           <div className="grid grid-cols-3 gap-4">
             <div>
               <p className="text-3xl font-black text-yellow-500">{stars}</p>
-              <p className="text-sm text-gray-500">星星</p>
+              <p className="text-sm text-gray-500">小星星</p>
+              <p className="text-[10px] text-gray-400 leading-tight">答對 1 題拿 1 顆</p>
             </div>
             <div>
               <p className="text-3xl font-black text-green-500">{starPercent}%</p>

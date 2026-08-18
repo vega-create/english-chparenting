@@ -82,6 +82,7 @@ export function playFanfare(stars = 3) {
 
   if (fanfareEl) { fanfareEl.pause(); fanfareEl = null; }
   const a = new Audio(`${SFX_BASE}/fanfare-${n}.mp3`);
+  a.volume = 0.45;  // 結算畫面同時有鼓勵語音，配樂壓小聲（Vega 定案）
   fanfareEl = a;
   a.volume = 0.85;
   a.onerror = () => { fanfareEl = null; synthFanfare(n); };   // 沒網路時還是有聲音
