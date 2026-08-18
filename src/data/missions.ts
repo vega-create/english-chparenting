@@ -7814,6 +7814,7 @@ const L6_M14: Mission = {
     { speaker: 'Polly', line: 'Fresh bread too! It smells amazing!', lineZh: '還有新鮮麵包！聞起來超香！' },
     { speaker: 'Finn', line: 'Best Saturday market ever!', lineZh: '史上最棒的星期六市場！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m14.mp4?v=1',
 };
 
 const L6_M15: Mission = {
@@ -7882,6 +7883,7 @@ const L6_M15: Mission = {
     { speaker: 'Coco', line: 'I love our little town by the sea.', lineZh: '我愛我們這個海邊小鎮。' },
     { speaker: 'Finn', line: 'Every day here is an adventure!', lineZh: '在這裡每天都是冒險！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m15.mp4?v=1',
 };
 
 const L6_M16: Mission = {
