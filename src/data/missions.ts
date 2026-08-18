@@ -7262,6 +7262,7 @@ const L6_M6: Mission = {
     { speaker: 'Polly', line: "Great! I'll bring your order soon!", lineZh: '好的！餐點馬上來！' },
     { speaker: 'Finn', line: 'This is the best restaurant by the sea!', lineZh: '這是海邊最棒的餐廳！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m6.mp4?v=1',
 };
 
 const L6_M7: Mission = {
@@ -7330,6 +7331,7 @@ const L6_M7: Mission = {
     { speaker: 'Benny', line: 'Okay, okay... pizza AND noodles then!', lineZh: '好啦好啦…那披薩「和」麵都要！' },
     { speaker: 'Coco', line: 'Benny, you are always eating!', lineZh: 'Benny，你怎麼一直在吃！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m7.mp4?v=1',
 };
 
 const L6_M8: Mission = {
