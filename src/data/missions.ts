@@ -8712,6 +8712,7 @@ const L7_M7: Mission = {
     { speaker: 'Coco', line: 'I am at the library now. Come study!', lineZh: '我現在在圖書館，來讀書吧！' },
     { speaker: 'Benny', line: 'I am at the kitchen... just looking!', lineZh: '我在廚房…只是看看！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m7.mp4?v=1',
 };
 
 const L7_M8: Mission = {
@@ -8918,6 +8919,7 @@ const L7_M10: Mission = {
     { speaker: 'Coco', line: 'I always read in the tower. Join me!', lineZh: '我總是在塔樓讀書，一起來！' },
     { speaker: 'Finn', line: 'Welcome home, little friend!', lineZh: '歡迎回家，小朋友！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m10.mp4?v=1',
 };
 
 const L7_M11: Mission = {
@@ -8987,6 +8989,7 @@ const L7_M11: Mission = {
     { speaker: 'Coco', line: 'Yesterday I watched the stars. Watch, watched!', lineZh: '昨天我看了星星。Watch, watched！' },
     { speaker: 'Polly', line: 'The magic words make your English strong!', lineZh: '魔法句會讓你的英文變強！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m11.mp4?v=1',
 };
 
 const L7_M12: Mission = {
@@ -9056,6 +9059,7 @@ const L7_M12: Mission = {
     { speaker: 'Benny', line: 'I ate the cake. Eat, ate... all gone!', lineZh: '我吃了蛋糕。Eat, ate…全沒了！' },
     { speaker: 'Coco', line: 'Ha! The spell works on cake too!', lineZh: '哈！咒語對蛋糕也有效！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m12.mp4?v=1',
 };
 
 const L7_M13: Mission = {
