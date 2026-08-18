@@ -8367,6 +8367,7 @@ const L7_M2: Mission = {
     { speaker: 'Coco', line: 'And Benny watches the soup!', lineZh: '然後 Benny 在看湯！' },
     { speaker: 'Benny', line: 'Hey! ...Okay, he watches. I eat!', lineZh: '喂！…好啦，他用看的，我用吃的！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m2.mp4?v=1',
 };
 
 const L7_M3: Mission = {
@@ -8779,6 +8780,7 @@ const L7_M8: Mission = {
     { speaker: 'Ruby', line: 'Wait! She is in front of the gate! Sleeping!', lineZh: '等等！她在大門前面！睡著了！' },
     { speaker: 'Finn', line: 'Found her! Good teamwork, everyone!', lineZh: '找到了！大家合作得真好！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m8.mp4?v=1',
 };
 
 const L7_M9: Mission = {
@@ -8847,6 +8849,7 @@ const L7_M9: Mission = {
     { speaker: 'Coco', line: 'There is even a tiny bridge!', lineZh: '竟然還有一座小橋！' },
     { speaker: 'Finn', line: 'This garden is full of surprises!', lineZh: '這座花園處處是驚喜！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L7/m9.mp4?v=1',
 };
 
 const L7_M10: Mission = {
