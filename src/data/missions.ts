@@ -8229,6 +8229,7 @@ const L6_M20: Mission = {
     { speaker: 'Coco', line: 'What did you do yesterday? I played at the beach!', lineZh: '你昨天做了什麼？我在海灘玩！' },
     { speaker: 'Finn', line: 'We win! On to Story Castle, team!', lineZh: '我們贏了！夥伴們，前進故事城堡！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m20.mp4?v=1',
 };
 
 // ===================== L7 魔法門 Magic Gate（A1+・現在簡單式＋動詞三態背誦） =====================
