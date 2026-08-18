@@ -7953,6 +7953,7 @@ const L6_M16: Mission = {
     { speaker: 'Coco', line: 'And we all helped Grandma Turtle!', lineZh: '而且我們都幫了龜奶奶！' },
     { speaker: 'Finn', line: 'What a great day it was!', lineZh: '昨天真是太棒的一天！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m16.mp4?v=1',
 };
 
 const L6_M17: Mission = {
@@ -8021,6 +8022,7 @@ const L6_M17: Mission = {
     { speaker: 'Benny', line: 'But I helped Polly cook! I did!', lineZh: '但我有幫 Polly 煮飯！真的！' },
     { speaker: 'Coco', line: 'Okay, you win. Good job, Benny!', lineZh: '好啦算你贏，做得好 Benny！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m17.mp4?v=1',
 };
 
 const L6_M18: Mission = {
