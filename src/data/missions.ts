@@ -7400,6 +7400,7 @@ const L6_M8: Mission = {
     { speaker: 'Polly', line: 'No, everything is near in this little town!', lineZh: '不遠，這個小鎮什麼都很近！' },
     { speaker: 'Coco', line: 'I love Lighthouse Point. So easy to explore!', lineZh: '我愛燈塔角，到處都好逛！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m8.mp4?v=1',
 };
 
 const L6_M9: Mission = {
@@ -7468,6 +7469,7 @@ const L6_M9: Mission = {
     { speaker: 'Benny', line: 'Ice cream! I found it! Thank you!', lineZh: '冰淇淋！找到了！謝謝！' },
     { speaker: 'Polly', line: 'Ha! Follow your nose next time!', lineZh: '哈！下次跟著鼻子走就好！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m9.mp4?v=1',
 };
 
 const L6_M10: Mission = {
@@ -7536,6 +7538,7 @@ const L6_M10: Mission = {
     { speaker: 'Coco', line: 'The food here is cheap and yummy!', lineZh: '這裡的食物又便宜又好吃！' },
     { speaker: 'Finn', line: 'Eat up, team! Then back to the beach!', lineZh: '大家吃飽！然後回海灘！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m10.mp4?v=1',
 };
 
 const L6_M11: Mission = {
@@ -7604,6 +7607,7 @@ const L6_M11: Mission = {
     { speaker: 'Benny', line: 'Come on! Playing together is more fun!', lineZh: '來嘛！一起玩比較好玩！' },
     { speaker: 'Polly', line: 'Okay, okay! Here I come!', lineZh: '好啦好啦！我來了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L6/m11.mp4?v=1',
 };
 
 const L6_M12: Mission = {
