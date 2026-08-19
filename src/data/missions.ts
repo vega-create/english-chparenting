@@ -9680,6 +9680,7 @@ const L8_M1: Mission = {
     { speaker: 'Polly', line: 'What do you see up there, Finn?', lineZh: 'Finn，你在上面看到什麼？' },
     { speaker: 'Finn', line: 'Stairs! So many stairs! Let\'s climb!', lineZh: '樓梯！好多樓梯！我們爬吧！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m1.mp4?v=1',
 };
 
 const L8_M2: Mission = {
@@ -9748,6 +9749,7 @@ const L8_M2: Mission = {
     { speaker: 'Coco', line: 'Here! I\'m behind the big book!', lineZh: '在這裡！我在大書後面！' },
     { speaker: 'Benny', line: 'And the bread is where I am. Ha!', lineZh: '而麵包就在我在的地方。哈！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m2.mp4?v=1',
 };
 
 const L8_M3: Mission = {
@@ -9816,6 +9818,7 @@ const L8_M3: Mission = {
     { speaker: 'Ruby', line: 'When do we sleep? After one more game!', lineZh: '我們什麼時候睡？再玩一場就睡！' },
     { speaker: 'Finn', line: 'One more game! Then bed. Promise!', lineZh: '再一場！然後就睡覺。說好囉！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m3.mp4?v=1',
 };
 
 const L8_M4: Mission = {
