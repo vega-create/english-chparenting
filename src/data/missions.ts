@@ -10509,6 +10509,7 @@ const L8_M13: Mission = {
     { speaker: 'Coco', line: 'Almost! You can hear the wind, can\'t you?', lineZh: '快了！你聽得到風聲，對吧？' },
     { speaker: 'Benny', line: 'One more cup first. That\'s fair, right?', lineZh: '先再喝一杯。這很合理，對吧？' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m13.mp4?v=1',
 };
 
 const L8_M14: Mission = {
@@ -10577,6 +10578,7 @@ const L8_M14: Mission = {
     { speaker: 'Ruby', line: 'By the lake! When do you visit me?', lineZh: '在湖邊！妳什麼時候來找我玩？' },
     { speaker: 'Polly', line: 'Tomorrow! I promise!', lineZh: '明天！我保證！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m14.mp4?v=1',
 };
 
 const L8_M15: Mission = {
@@ -10645,6 +10647,7 @@ const L8_M15: Mission = {
     { speaker: 'Finn', line: 'This room is fun, isn\'t it? Isn\'t it!', lineZh: '這房間好好玩，對吧？對吧！' },
     { speaker: 'Coco', line: 'Bye, echo! Bye... bye... bye!', lineZh: '回音掰掰！掰…掰…掰！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m15.mp4?v=1',
 };
 
 const L8_M16: Mission = {
