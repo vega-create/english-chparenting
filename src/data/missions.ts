@@ -10302,6 +10302,7 @@ const L8_M10: Mission = {
     { speaker: 'Benny', line: 'The carrot one. How did I do?', lineZh: '紅蘿蔔口味的。我表現得怎麼樣？' },
     { speaker: 'Ruby', line: 'Perfect! You know me so well!', lineZh: '滿分！你太懂我了！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m10.mp4?v=1',
 };
 
 const L8_M11: Mission = {
@@ -10371,6 +10372,7 @@ const L8_M11: Mission = {
     { speaker: 'Benny', line: 'In my dreams, yes!', lineZh: '在我的夢裡，是的！' },
     { speaker: 'Coco', line: 'What do we do now? Keep climbing!', lineZh: '我們現在做什麼？繼續爬！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m11.mp4?v=1',
 };
 
 const L8_M12: Mission = {
@@ -10438,6 +10440,7 @@ const L8_M12: Mission = {
     { speaker: 'Finn', line: 'Okay, okay. Five minutes!', lineZh: '好啦好啦，休息五分鐘！' },
     { speaker: 'Benny', line: 'Doesn\'t a break need snacks? It does!', lineZh: '休息難道不需要點心嗎？當然需要！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m12.mp4?v=1',
 };
 
 const L8_M13: Mission = {
