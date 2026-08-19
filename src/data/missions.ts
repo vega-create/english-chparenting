@@ -9672,10 +9672,13 @@ const L8_M1: Mission = {
     { type: 'match', question: 'favorite 是什麼意思？', options: ['最愛的', '顏色', '名字', '食物'], answer: '最愛的' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "What is your name? My name is Finn.", lineZh: '你叫什麼名字？我叫 Finn。' },
-    { speaker: 'Coco', line: "What color do you like? I like blue.", lineZh: '你喜歡什麼顏色？我喜歡藍色。' },
-    { speaker: 'Benny', line: "What time is it? It is three o'clock.", lineZh: '幾點了？三點鐘。' },
-    { speaker: 'Finn', line: "What asks about things! Great!", lineZh: 'What 問「什麼東西」！太棒了！' },
+    { speaker: 'Finn', line: 'Look! The tower is full of floating questions!', lineZh: '看！塔裡飄滿了問號！' },
+    { speaker: 'Coco', line: 'What is that? A talking door!', lineZh: '那是什麼？一扇會說話的門！' },
+    { speaker: 'Benny', line: 'What is in your bag, Ruby?', lineZh: 'Ruby，妳袋子裡有什麼？' },
+    { speaker: 'Ruby', line: 'Carrots! What do you have, Benny?', lineZh: '紅蘿蔔！Benny 你有什麼？' },
+    { speaker: 'Benny', line: 'Cookies! I always have cookies!', lineZh: '餅乾！我永遠都有餅乾！' },
+    { speaker: 'Polly', line: 'What do you see up there, Finn?', lineZh: 'Finn，你在上面看到什麼？' },
+    { speaker: 'Finn', line: 'Stairs! So many stairs! Let\'s climb!', lineZh: '樓梯！好多樓梯！我們爬吧！' },
   ],
 };
 
@@ -9737,10 +9740,13 @@ const L8_M2: Mission = {
     { type: 'match', question: 'country 是什麼意思？', options: ['國家', '城市', '學校', '家'], answer: '國家' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "Where do you live? I live in Taipei.", lineZh: '你住哪裡？我住台北。' },
-    { speaker: 'Benny', line: "Where is my bag? It is on the chair.", lineZh: '我的書包在哪？在椅子上。' },
-    { speaker: 'Polly', line: "Where are you from? I am from Taiwan.", lineZh: '你來自哪裡？我來自台灣。' },
-    { speaker: 'Coco', line: "Where asks about places! Great!", lineZh: 'Where 問「地方」！太棒了！' },
+    { speaker: 'Coco', line: 'Where are we? This room is round!', lineZh: '我們在哪裡？這房間是圓的！' },
+    { speaker: 'Benny', line: 'Where is the kitchen? I smell bread!', lineZh: '廚房在哪裡？我聞到麵包香！' },
+    { speaker: 'Ruby', line: 'Where is my map? ...Oh, it\'s on my ear!', lineZh: '我的地圖在哪？…喔，掛在我耳朵上！' },
+    { speaker: 'Finn', line: 'Where do the stairs go? Up, up, up!', lineZh: '樓梯通到哪裡？一直往上！' },
+    { speaker: 'Polly', line: 'Where is Coco? I can\'t see her!', lineZh: 'Coco 在哪裡？我看不到她！' },
+    { speaker: 'Coco', line: 'Here! I\'m behind the big book!', lineZh: '在這裡！我在大書後面！' },
+    { speaker: 'Benny', line: 'And the bread is where I am. Ha!', lineZh: '而麵包就在我在的地方。哈！' },
   ],
 };
 
@@ -9802,10 +9808,13 @@ const L8_M3: Mission = {
     { type: 'match', question: 'tomorrow 是什麼意思？', options: ['明天', '今天', '昨天', '週末'], answer: '明天' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "When is your birthday? It is in May.", lineZh: '你的生日是何時？在五月。' },
-    { speaker: 'Coco', line: "When do you go to school? At eight.", lineZh: '你何時上學？八點。' },
-    { speaker: 'Polly', line: "When is the party? On Saturday!", lineZh: '派對是何時？星期六！' },
-    { speaker: 'Benny', line: "When asks about time! Great!", lineZh: 'When 問「時間」！太棒了！' },
+    { speaker: 'Polly', line: 'When is breakfast here? I\'m curious.', lineZh: '這裡的早餐是什麼時候？我好好奇。' },
+    { speaker: 'Benny', line: 'Breakfast? Now! It\'s always now!', lineZh: '早餐？現在！永遠都是現在！' },
+    { speaker: 'Ruby', line: 'When do the stars come out, Finn?', lineZh: 'Finn，星星什麼時候出來？' },
+    { speaker: 'Finn', line: 'At night! We can watch from the top!', lineZh: '晚上！我們可以在塔頂看！' },
+    { speaker: 'Coco', line: 'When is the tower quiet? Never!', lineZh: '塔什麼時候安靜？從來不會！' },
+    { speaker: 'Ruby', line: 'When do we sleep? After one more game!', lineZh: '我們什麼時候睡？再玩一場就睡！' },
+    { speaker: 'Finn', line: 'One more game! Then bed. Promise!', lineZh: '再一場！然後就睡覺。說好囉！' },
   ],
 };
 
@@ -9867,10 +9876,13 @@ const L8_M4: Mission = {
     { type: 'match', question: 'best 是什麼意思？', options: ['最好的', '朋友', '老師', '認識'], answer: '最好的' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Who is that? That is my teacher.", lineZh: '那是誰？那是我的老師。' },
-    { speaker: 'Coco', line: "Who is your best friend? Benny is!", lineZh: '你最好的朋友是誰？是 Benny！' },
-    { speaker: 'Benny', line: "Who cooks at home? My mom does.", lineZh: '誰在家煮飯？我媽媽。' },
-    { speaker: 'Ruby', line: "Who asks about people! Great!", lineZh: 'Who 問「人」！太棒了！' },
+    { speaker: 'Finn', line: 'Who lives in this tower? Let\'s find out!', lineZh: '誰住在這座塔裡？我們去找答案！' },
+    { speaker: 'Coco', line: 'Who is that? A little owl with a key!', lineZh: '那是誰？一隻拿著鑰匙的小貓頭鷹！' },
+    { speaker: 'Benny', line: 'Who made these cookies? They\'re so good!', lineZh: '這些餅乾是誰做的？太好吃了！' },
+    { speaker: 'Ruby', line: 'Who wants to play hide and seek?', lineZh: '誰想玩捉迷藏？' },
+    { speaker: 'Polly', line: 'Me! Who is counting? Not me!', lineZh: '我！誰來數數？不要是我！' },
+    { speaker: 'Benny', line: 'I count! One... two... ten! Ready!', lineZh: '我來數！一…二…十！好了！' },
+    { speaker: 'Coco', line: 'Who found me first? Ruby did!', lineZh: '誰先找到我？是 Ruby！' },
   ],
 };
 
@@ -9932,10 +9944,13 @@ const L8_M5: Mission = {
     { type: 'match', question: 'When 問的是？', options: ['時間', '地方', '人', '東西'], answer: '時間' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review our Wh- questions!", lineZh: '來複習 Wh- 問句！' },
-    { speaker: 'Coco', line: "What is it? Where is it? When is it?", lineZh: '這是什麼？在哪？何時？' },
-    { speaker: 'Benny', line: "Who is that? Ask the right question!", lineZh: '那是誰？問對的問題！' },
-    { speaker: 'Finn', line: "You know your Wh- questions! Great!", lineZh: '你會 Wh- 問句了！太棒了！' },
+    { speaker: 'Coco', line: 'Ask me anything! I\'m ready!', lineZh: '什麼都可以問我！我準備好了！' },
+    { speaker: 'Finn', line: 'What is your favorite book?', lineZh: '妳最喜歡的書是什麼？' },
+    { speaker: 'Coco', line: 'The star book! Where do you play, Benny?', lineZh: '星星之書！Benny 你都在哪裡玩？' },
+    { speaker: 'Benny', line: 'In the kitchen. When is lunch, by the way?', lineZh: '廚房。對了，午餐是什麼時候？' },
+    { speaker: 'Ruby', line: 'Benny! Who thinks about food all day?', lineZh: 'Benny！誰整天都在想食物啊？' },
+    { speaker: 'Benny', line: 'Me! I do! Ha ha!', lineZh: '我！就是我！哈哈！' },
+    { speaker: 'Polly', line: 'Great questions, everyone! More tomorrow!', lineZh: '大家問得真好！明天繼續！' },
   ],
 };
 
@@ -9997,10 +10012,13 @@ const L8_M6: Mission = {
     { type: 'match', question: 'reason 是什麼意思？', options: ['原因', '因為', '為什麼', '生病'], answer: '原因' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "Why are you happy? Because it is my birthday!", lineZh: '你為什麼開心？因為今天是我生日！' },
-    { speaker: 'Coco', line: "Why are you sad? Because I lost my toy.", lineZh: '你為什麼難過？因為我弄丟了玩具。' },
-    { speaker: 'Benny', line: "Why are you tired? Because I studied all night.", lineZh: '你為什麼累？因為我讀了整晚。' },
-    { speaker: 'Polly', line: "Why asks the reason. Because gives it!", lineZh: 'Why 問原因。Because 給答案！' },
+    { speaker: 'Ruby', line: 'Why is the sky blue, Polly?', lineZh: 'Polly，天空為什麼是藍色的？' },
+    { speaker: 'Polly', line: 'Because sunlight loves to play tricks!', lineZh: '因為陽光最愛變魔術！' },
+    { speaker: 'Benny', line: 'Why am I hungry again? It\'s a mystery.', lineZh: '我為什麼又餓了？真是個謎。' },
+    { speaker: 'Coco', line: 'Because you only ate five minutes ago!', lineZh: '因為你五分鐘前才剛吃過！' },
+    { speaker: 'Finn', line: 'Why do we climb this tower?', lineZh: '我們為什麼要爬這座塔？' },
+    { speaker: 'Ruby', line: 'Because the top has the best view!', lineZh: '因為塔頂有最棒的風景！' },
+    { speaker: 'Benny', line: 'And because climbing makes snacks taste better!', lineZh: '而且爬完樓梯，點心更好吃！' },
   ],
 };
 
@@ -10062,10 +10080,13 @@ const L8_M7: Mission = {
     { type: 'match', question: 'by bus 是什麼意思？', options: ['搭公車', '走路', '搭車', '騎車'], answer: '搭公車' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "How are you? I am fine, thank you!", lineZh: '你好嗎？我很好，謝謝！' },
-    { speaker: 'Coco', line: "How do you go to school? By bus.", lineZh: '你怎麼上學？搭公車。' },
-    { speaker: 'Benny', line: "How do you make a cake? Let me show you!", lineZh: '你怎麼做蛋糕？我示範給你看！' },
-    { speaker: 'Ruby', line: "How asks about the way! Great!", lineZh: 'How 問「方式」！太棒了！' },
+    { speaker: 'Coco', line: 'How are you today, Ruby?', lineZh: 'Ruby，妳今天好嗎？' },
+    { speaker: 'Ruby', line: 'Great! How do you open this door?', lineZh: '超好！這扇門要怎麼打開？' },
+    { speaker: 'Finn', line: 'Push? Pull? How does it work?', lineZh: '用推的？用拉的？它到底怎麼開？' },
+    { speaker: 'Polly', line: 'Ask it nicely! Watch. Hello, door!', lineZh: '有禮貌地問它！看好囉。門你好！' },
+    { speaker: 'Benny', line: 'Wow, it opened! How did you know?', lineZh: '哇，門開了！妳怎麼知道的？' },
+    { speaker: 'Polly', line: 'Magic doors love good manners!', lineZh: '魔法門最喜歡有禮貌的人！' },
+    { speaker: 'Coco', line: 'How cool is that? So cool!', lineZh: '這有多酷？超級酷！' },
   ],
 };
 
@@ -10128,10 +10149,13 @@ const L8_M8: Mission = {
     { type: 'match', question: 'how much 通常問？', options: ['價錢/不可數量', '可數數量', '年齡', '時間'], answer: '價錢/不可數量' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "How many apples? There are five.", lineZh: '有幾顆蘋果？有五顆。' },
-    { speaker: 'Benny', line: "How much is it? It is ten dollars.", lineZh: '多少錢？十塊錢。' },
-    { speaker: 'Ruby', line: "How old are you? I am eight years old.", lineZh: '你幾歲？我八歲。' },
-    { speaker: 'Coco', line: "many for count, much for money, old for age!", lineZh: 'many 數數、much 價錢、old 年齡！' },
+    { speaker: 'Benny', line: 'How many cookies are left? ...Zero.', lineZh: '還剩幾塊餅乾？…零塊。' },
+    { speaker: 'Coco', line: 'How much is this teapot? Ten coins!', lineZh: '這個茶壺多少錢？十枚金幣！' },
+    { speaker: 'Ruby', line: 'How old is this tower, Polly?', lineZh: 'Polly，這座塔幾歲了？' },
+    { speaker: 'Polly', line: 'A thousand years old! Maybe more!', lineZh: '一千歲！說不定更老！' },
+    { speaker: 'Finn', line: 'How many stairs did we climb? A hundred!', lineZh: '我們爬了幾階樓梯？一百階！' },
+    { speaker: 'Benny', line: 'How much water is left? I need it all!', lineZh: '還剩多少水？我全部都要！' },
+    { speaker: 'Coco', line: 'How many jokes does Benny know? Too many!', lineZh: 'Benny 會講幾個笑話？多到數不完！' },
   ],
 };
 
@@ -10193,10 +10217,13 @@ const L8_M9: Mission = {
     { type: 'match', question: 'hers 是什麼意思？', options: ['她的', '他的', '我的', '你的'], answer: '她的' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Whose bag is this? It is mine!", lineZh: '這是誰的書包？是我的！' },
-    { speaker: 'Coco', line: "Which apple do you want? The red one.", lineZh: '你要哪顆蘋果？紅色那顆。' },
-    { speaker: 'Ruby', line: "Whose book is that? It is hers.", lineZh: '那是誰的書？是她的。' },
-    { speaker: 'Benny', line: "Whose = 誰的, Which = 哪一個!", lineZh: 'Whose = 誰的，Which = 哪一個！' },
+    { speaker: 'Finn', line: 'Whose scarf is this? It\'s so soft!', lineZh: '這是誰的圍巾？好柔軟！' },
+    { speaker: 'Benny', line: 'Mine! Which hat is yours, Finn?', lineZh: '我的！Finn，哪一頂帽子是你的？' },
+    { speaker: 'Finn', line: 'The red one, of course!', lineZh: '當然是紅色那頂！' },
+    { speaker: 'Coco', line: 'Whose glasses are these? ...Oh. Mine.', lineZh: '這是誰的眼鏡？…喔，是我的。' },
+    { speaker: 'Ruby', line: 'Which door goes up? Left or right?', lineZh: '哪扇門是往上的？左邊還右邊？' },
+    { speaker: 'Polly', line: 'The left one! I can feel the wind!', lineZh: '左邊那扇！我感覺到風了！' },
+    { speaker: 'Ruby', line: 'Whose idea was this climb? Best idea ever!', lineZh: '爬塔是誰的主意？史上最棒的主意！' },
   ],
 };
 
@@ -10258,10 +10285,13 @@ const L8_M10: Mission = {
     { type: 'read', question: 'What does "How old" ask about?（How old 問什麼？）', passage: 'How old are you?\nThis question asks about age.\nAnswer: I am eight years old.', options: ['age', 'price', 'place', 'time'], answer: 'age' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review more questions!", lineZh: '來複習更多問句！' },
-    { speaker: 'Coco', line: "Why are you happy? How are you?", lineZh: '你為什麼開心？你好嗎？' },
-    { speaker: 'Benny', line: "How old are you? Whose bag is this?", lineZh: '你幾歲？這是誰的書包？' },
-    { speaker: 'Finn', line: "You can ask any question now! Amazing!", lineZh: '你現在什麼都能問了！太厲害！' },
+    { speaker: 'Polly', line: 'Why are we resting here?', lineZh: '我們為什麼在這裡休息？' },
+    { speaker: 'Finn', line: 'Because my legs are tired!', lineZh: '因為我的腿好痠！' },
+    { speaker: 'Coco', line: 'How many floors are left? Just two!', lineZh: '還剩幾層樓？只剩兩層！' },
+    { speaker: 'Benny', line: 'Whose backpack has snacks? Mine!', lineZh: '誰的背包裡有點心？我的！' },
+    { speaker: 'Ruby', line: 'Which snack is for me?', lineZh: '哪一份點心是給我的？' },
+    { speaker: 'Benny', line: 'The carrot one. How did I do?', lineZh: '紅蘿蔔口味的。我表現得怎麼樣？' },
+    { speaker: 'Ruby', line: 'Perfect! You know me so well!', lineZh: '滿分！你太懂我了！' },
   ],
 };
 
@@ -10324,10 +10354,13 @@ const L8_M11: Mission = {
     { type: 'match', question: 'does 用在哪個主詞？', options: ['he/she/it', 'I/you/we', 'they', '全部'], answer: 'he/she/it' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "What do you eat for lunch?", lineZh: '你午餐吃什麼？' },
-    { speaker: 'Coco', line: "Where does he go after school?", lineZh: '他放學後去哪？' },
-    { speaker: 'Polly', line: "When do you do your homework?", lineZh: '你何時做作業？' },
-    { speaker: 'Benny', line: "Wh- word + do/does + subject + verb!", lineZh: 'Wh- 字 + do/does + 主詞 + 動詞！' },
+    { speaker: 'Coco', line: 'What do you do every morning, Finn?', lineZh: 'Finn，你每天早上都做什麼？' },
+    { speaker: 'Finn', line: 'I run! Where does Polly fly?', lineZh: '我跑步！Polly 都飛去哪裡？' },
+    { speaker: 'Polly', line: 'Over the lake! It sparkles!', lineZh: '飛過湖面！湖水亮晶晶的！' },
+    { speaker: 'Benny', line: 'What does the owl eat? Not cookies?', lineZh: '貓頭鷹都吃什麼？不吃餅乾嗎？' },
+    { speaker: 'Ruby', line: 'No, Benny! Does everything eat cookies?', lineZh: '不是啦 Benny！難道所有東西都吃餅乾嗎？' },
+    { speaker: 'Benny', line: 'In my dreams, yes!', lineZh: '在我的夢裡，是的！' },
+    { speaker: 'Coco', line: 'What do we do now? Keep climbing!', lineZh: '我們現在做什麼？繼續爬！' },
   ],
 };
 
@@ -10388,10 +10421,13 @@ const L8_M12: Mission = {
     { type: 'match', question: 'agree 是什麼意思？', options: ['同意', '驚訝', '記得', '知道'], answer: '同意' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "Don't you like ice cream? Everyone does!", lineZh: '你不喜歡冰淇淋嗎？大家都喜歡！' },
-    { speaker: 'Benny', line: "Doesn't he go to our school?", lineZh: '他不是我們學校的嗎？' },
-    { speaker: 'Polly', line: "Aren't you tired? It is so late!", lineZh: '你不累嗎？已經很晚了！' },
-    { speaker: 'Coco', line: "Negative questions show surprise!", lineZh: '否定疑問表示驚訝！' },
+    { speaker: 'Ruby', line: 'Don\'t you love this view?', lineZh: '你不覺得這風景超美嗎？' },
+    { speaker: 'Coco', line: 'I do! It\'s like a painting!', lineZh: '超愛！像一幅畫一樣！' },
+    { speaker: 'Benny', line: 'Doesn\'t Finn ever get tired?', lineZh: 'Finn 難道都不會累嗎？' },
+    { speaker: 'Finn', line: 'Nope! Well... maybe a little.', lineZh: '不會！嗯…好吧，有一點點。' },
+    { speaker: 'Polly', line: 'Don\'t you want a break, Finn?', lineZh: 'Finn，你不想休息一下嗎？' },
+    { speaker: 'Finn', line: 'Okay, okay. Five minutes!', lineZh: '好啦好啦，休息五分鐘！' },
+    { speaker: 'Benny', line: 'Doesn\'t a break need snacks? It does!', lineZh: '休息難道不需要點心嗎？當然需要！' },
   ],
 };
 
@@ -10453,10 +10489,13 @@ const L8_M13: Mission = {
     { type: 'match', question: 'check 是什麼意思？', options: ['確認', '同意', '簡單', '好的'], answer: '確認' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "It is sunny today, isn't it?", lineZh: '今天是晴天，對吧？' },
-    { speaker: 'Coco', line: "You like cake, don't you?", lineZh: '你喜歡蛋糕，對吧？' },
-    { speaker: 'Benny', line: "This is easy, right? Yes, it is!", lineZh: '這很簡單，對吧？對！' },
-    { speaker: 'Ruby', line: "Add a tag to check! isn't it, right?", lineZh: '加個小尾巴來確認！' },
+    { speaker: 'Coco', line: 'This room is cozy, isn\'t it?', lineZh: '這房間好舒服，對吧？' },
+    { speaker: 'Ruby', line: 'It is! The fire is warm, right?', lineZh: '真的！爐火好溫暖，對不對？' },
+    { speaker: 'Benny', line: 'You made cocoa, didn\'t you, Polly?', lineZh: 'Polly，可可是妳煮的，對吧？' },
+    { speaker: 'Polly', line: 'I did! It\'s sweet, isn\'t it?', lineZh: '是我煮的！很香甜，對吧？' },
+    { speaker: 'Finn', line: 'We\'re near the top, aren\'t we?', lineZh: '我們快到塔頂了，對不對？' },
+    { speaker: 'Coco', line: 'Almost! You can hear the wind, can\'t you?', lineZh: '快了！你聽得到風聲，對吧？' },
+    { speaker: 'Benny', line: 'One more cup first. That\'s fair, right?', lineZh: '先再喝一杯。這很合理，對吧？' },
   ],
 };
 
@@ -10518,10 +10557,13 @@ const L8_M14: Mission = {
     { type: 'read', question: 'Where does Coco live?（Coco 住哪？）', passage: 'Coco lives in Taipei.\nShe likes music and art.\nShe is eight years old.', options: ['Taipei', 'Tainan', 'Taichung', 'Japan'], answer: 'Taipei' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "What is your name? How old are you?", lineZh: '你叫什麼名字？你幾歲？' },
-    { speaker: 'Coco', line: "I am Coco. I am eight years old.", lineZh: '我是 Coco。我八歲。' },
-    { speaker: 'Polly', line: "Where do you live? What do you like?", lineZh: '你住哪？你喜歡什麼？' },
-    { speaker: 'Coco', line: "I live in Taipei. I like music!", lineZh: '我住台北。我喜歡音樂！' },
+    { speaker: 'Polly', line: 'Ruby! May I ask you some questions?', lineZh: 'Ruby！我可以問妳幾個問題嗎？' },
+    { speaker: 'Ruby', line: 'Sure! Ask away!', lineZh: '當然！儘管問！' },
+    { speaker: 'Polly', line: 'What do you eat for breakfast?', lineZh: '妳早餐都吃什麼？' },
+    { speaker: 'Ruby', line: 'Carrot pancakes! Every single day!', lineZh: '紅蘿蔔鬆餅！每天都吃！' },
+    { speaker: 'Polly', line: 'Where do you play after school?', lineZh: '放學後妳都在哪裡玩？' },
+    { speaker: 'Ruby', line: 'By the lake! When do you visit me?', lineZh: '在湖邊！妳什麼時候來找我玩？' },
+    { speaker: 'Polly', line: 'Tomorrow! I promise!', lineZh: '明天！我保證！' },
   ],
 };
 
@@ -10583,10 +10625,13 @@ const L8_M15: Mission = {
     { type: 'read', question: 'What does "Where" ask about?（Where 問什麼？）', passage: 'What asks about things.\nWhere asks about places.\nWho asks about people.', options: ['places', 'things', 'people', 'time'], answer: 'places' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review all our questions!", lineZh: '來複習所有問句！' },
-    { speaker: 'Coco', line: "What, where, when, who, why, how!", lineZh: 'What、where、when、who、why、how！' },
-    { speaker: 'Benny', line: "You know a lot, don't you?", lineZh: '你懂很多，對吧？' },
-    { speaker: 'Finn', line: "You are a question master! Amazing!", lineZh: '你是問句大師了！太厲害！' },
+    { speaker: 'Finn', line: 'Hello? Hello... hello... hello!', lineZh: '哈囉？哈囉…哈囉…哈囉！' },
+    { speaker: 'Coco', line: 'Where is my voice going? ...going... going!', lineZh: '我的聲音去哪裡了？…哪裡了…哪裡了！' },
+    { speaker: 'Benny', line: 'Do echoes eat? Eat... eat... eat!', lineZh: '回音吃東西嗎？吃…吃…吃！' },
+    { speaker: 'Ruby', line: 'It answered you, didn\'t it?', lineZh: '它回答你了，對吧？' },
+    { speaker: 'Polly', line: 'What did it say? Say... say... say!', lineZh: '它說了什麼？什麼…什麼…什麼！' },
+    { speaker: 'Finn', line: 'This room is fun, isn\'t it? Isn\'t it!', lineZh: '這房間好好玩，對吧？對吧！' },
+    { speaker: 'Coco', line: 'Bye, echo! Bye... bye... bye!', lineZh: '回音掰掰！掰…掰…掰！' },
   ],
 };
 
@@ -10648,10 +10693,13 @@ const L8_M16: Mission = {
     { type: 'read', question: 'Did Benny eat ice cream?（Benny 吃冰淇淋了嗎？）', passage: '"Did you eat ice cream?"\nBenny says, "Yes, I did!\nIt was so yummy."', options: ['Yes, he did', "No, he didn't", 'He ate cake', 'He was full'], answer: 'Yes, he did' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "What did you do yesterday?", lineZh: '你昨天做了什麼？' },
-    { speaker: 'Coco', line: "I went to the park. I played with friends.", lineZh: '我去了公園。我和朋友玩。' },
-    { speaker: 'Benny', line: "Did you eat ice cream? Yes, I did!", lineZh: '你吃冰淇淋了嗎？是的！' },
-    { speaker: 'Polly', line: "Did + subject + base verb for the past!", lineZh: 'Did + 主詞 + 原形動詞問過去！' },
+    { speaker: 'Coco', line: 'Did you sleep well, Benny?', lineZh: 'Benny，你昨晚睡得好嗎？' },
+    { speaker: 'Benny', line: 'I did! I dreamed about pancakes!', lineZh: '睡得超好！我夢到鬆餅！' },
+    { speaker: 'Finn', line: 'What did you do last night, Ruby?', lineZh: 'Ruby，妳昨晚做了什麼？' },
+    { speaker: 'Ruby', line: 'I read about the tower! It has a secret room!', lineZh: '我讀了塔的故事！它有一間密室！' },
+    { speaker: 'Polly', line: 'Did you find it? Tell me!', lineZh: '妳找到了嗎？快告訴我！' },
+    { speaker: 'Ruby', line: 'Not yet! But I found this old key!', lineZh: '還沒！但我找到了這把舊鑰匙！' },
+    { speaker: 'Benny', line: 'A key! Did someone say adventure?', lineZh: '鑰匙！剛剛是誰說要冒險的？' },
   ],
 };
 
@@ -10713,10 +10761,13 @@ const L8_M17: Mission = {
     { type: 'match', question: 'every day 搭配哪個助動詞？', options: ['Do', 'Did', 'Was', 'Were'], answer: 'Do' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Do you play soccer? — every day (now).", lineZh: '你踢足球嗎？—— 每天（現在）。' },
-    { speaker: 'Coco', line: "Did you play soccer? — yesterday (past).", lineZh: '你踢足球了嗎？—— 昨天（過去）。' },
-    { speaker: 'Polly', line: "Do = now. Did = past. Check the time word!", lineZh: 'Do = 現在。Did = 過去。看時間字！' },
-    { speaker: 'Benny', line: "Now vs past — choose the right helper!", lineZh: '現在 vs 過去 —— 選對助動詞！' },
+    { speaker: 'Finn', line: 'Do you see the little door today?', lineZh: '你今天有看到那扇小門嗎？' },
+    { speaker: 'Coco', line: 'Yes! Did you see it yesterday?', lineZh: '有！你昨天有看到它嗎？' },
+    { speaker: 'Finn', line: 'No! It just appeared!', lineZh: '沒有！它是剛剛才出現的！' },
+    { speaker: 'Ruby', line: 'Does the key fit? Try it!', lineZh: '鑰匙合嗎？試試看！' },
+    { speaker: 'Benny', line: 'Did it click? I heard a click!', lineZh: '有喀一聲嗎？我聽到喀一聲了！' },
+    { speaker: 'Coco', line: 'It works! The door is opening!', lineZh: '成功了！門打開了！' },
+    { speaker: 'Polly', line: 'Do you believe it? A secret garden!', lineZh: '你敢相信嗎？是祕密花園！' },
   ],
 };
 
@@ -10778,10 +10829,13 @@ const L8_M18: Mission = {
     { type: 'read', question: 'Does "Where" ask about a place?（Where 問地方嗎？）', passage: 'Where asks about places.\nWhen asks about time.\nWho asks about people.', options: ['Yes', 'No', 'It asks time', 'It asks people'], answer: 'Yes' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's mix all the questions!", lineZh: '我們把所有問句混在一起！' },
-    { speaker: 'Coco', line: "What do you like? Where did you go?", lineZh: '你喜歡什麼？你去了哪？' },
-    { speaker: 'Benny', line: "Why does she cry? How old are you?", lineZh: '她為什麼哭？你幾歲？' },
-    { speaker: 'Finn', line: "You can ask about anything, anytime!", lineZh: '你隨時都能問任何事！' },
+    { speaker: 'Ruby', line: 'A garden inside the tower! How?', lineZh: '塔裡竟然有花園！怎麼可能？' },
+    { speaker: 'Polly', line: 'Where do these butterflies come from?', lineZh: '這些蝴蝶是從哪裡來的？' },
+    { speaker: 'Benny', line: 'What is that tree? It has candy fruit!', lineZh: '那棵樹是什麼？它結糖果果實！' },
+    { speaker: 'Coco', line: 'Did you taste one, Benny?', lineZh: 'Benny，你是不是偷吃了一顆？' },
+    { speaker: 'Benny', line: 'I did! Does it look like I\'m sorry?', lineZh: '吃了！我看起來像會後悔的樣子嗎？' },
+    { speaker: 'Finn', line: 'Ha! Who wants to plant a seed?', lineZh: '哈！誰想種一顆種子？' },
+    { speaker: 'Ruby', line: 'Me! It will grow big, won\'t it?', lineZh: '我！它會長得很大，對吧？' },
   ],
 };
 
@@ -10843,10 +10897,13 @@ const L8_M19: Mission = {
     { type: 'match', question: 'new 是什麼意思？', options: ['新的', '舊的', '大的', '快的'], answer: '新的' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Read the interview with a new friend!", lineZh: '讀讀對新朋友的訪問！' },
-    { speaker: 'Coco', line: "This is Sam. He is nine. He lives in Tainan.", lineZh: '這是 Sam。他九歲。他住台南。' },
-    { speaker: 'Polly', line: "He likes soccer. Yesterday he played with friends.", lineZh: '他喜歡足球。昨天他和朋友玩。' },
-    { speaker: 'Benny', line: "You read the whole interview! Great!", lineZh: '你讀完整篇訪問了！太棒了！' },
+    { speaker: 'Coco', line: 'Look, an old diary on the bench!', lineZh: '看，長椅上有一本舊日記！' },
+    { speaker: 'Finn', line: 'Someone wrote questions in it!', lineZh: '有人在裡面寫滿了問題！' },
+    { speaker: 'Ruby', line: 'What was the tower keeper\'s name? Milo!', lineZh: '塔的守護者叫什麼名字？Milo！' },
+    { speaker: 'Polly', line: 'Where did Milo live? Right here!', lineZh: 'Milo 住在哪裡？就住在這裡！' },
+    { speaker: 'Benny', line: 'What did Milo eat? ...It doesn\'t say.', lineZh: 'Milo 都吃什麼？…上面沒寫。' },
+    { speaker: 'Coco', line: 'Why did Milo build this tower?', lineZh: 'Milo 為什麼要蓋這座塔？' },
+    { speaker: 'Finn', line: 'Because he loved questions! Just like us!', lineZh: '因為他熱愛問問題！跟我們一樣！' },
   ],
 };
 
@@ -10908,10 +10965,13 @@ const L8_M20: Mission = {
     { type: 'read', question: 'Did the friends have fun?（朋友們玩得開心嗎？）', passage: 'The friends went to the park.\nThey played all day.\nThey had a lot of fun!', options: ['Yes, they had fun', 'No, they were bored', 'They were sad', 'They stayed home'], answer: 'Yes, they had fun' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Question Boss says: ask and answer!", lineZh: '問題大魔王說：問答對決！' },
-    { speaker: 'Coco', line: "What, where, when, why, how, did — I know them!", lineZh: 'What、where、when、why、how、did —— 我都會！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Question champion!", lineZh: '你打敗大魔王了！問題冠軍！' },
-    { speaker: 'Finn', line: "On to Time Road! Let's learn tenses!", lineZh: '前進時光道！我們來學時態！' },
+    { speaker: 'Finn', line: 'The tower top! And a giant talking bell!', lineZh: '塔頂到了！還有一座會說話的大鐘！' },
+    { speaker: 'Coco', line: 'It asks: where do you play every day?', lineZh: '它問：你們每天都在哪裡玩？' },
+    { speaker: 'Ruby', line: 'In the garden! We play every day!', lineZh: '在花園！我們每天都玩！' },
+    { speaker: 'Benny', line: 'Did we eat cookies today? Yes, we did!', lineZh: '我們今天吃餅乾了嗎？當然吃了！' },
+    { speaker: 'Polly', line: 'You love questions, don\'t you? We do!', lineZh: '你們很愛問問題對吧？沒錯！' },
+    { speaker: 'Coco', line: 'The bell is ringing! It\'s so happy!', lineZh: '大鐘響了！它好開心！' },
+    { speaker: 'Finn', line: 'The Time Road is open! Let\'s go, team!', lineZh: '時光道打開了！夥伴們出發！' },
   ],
 };
 
