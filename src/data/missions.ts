@@ -10094,6 +10094,7 @@ const L8_M7: Mission = {
     { speaker: 'Polly', line: 'Magic doors love good manners!', lineZh: '魔法門最喜歡有禮貌的人！' },
     { speaker: 'Coco', line: 'How cool is that? So cool!', lineZh: '這有多酷？超級酷！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m7.mp4?v=1',
 };
 
 const L8_M8: Mission = {
@@ -10163,6 +10164,7 @@ const L8_M8: Mission = {
     { speaker: 'Benny', line: 'How much water is left? I need it all!', lineZh: '還剩多少水？我全部都要！' },
     { speaker: 'Coco', line: 'How many jokes does Benny know? Too many!', lineZh: 'Benny 會講幾個笑話？多到數不完！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m8.mp4?v=1',
 };
 
 const L8_M9: Mission = {
@@ -10231,6 +10233,7 @@ const L8_M9: Mission = {
     { speaker: 'Polly', line: 'The left one! I can feel the wind!', lineZh: '左邊那扇！我感覺到風了！' },
     { speaker: 'Ruby', line: 'Whose idea was this climb? Best idea ever!', lineZh: '爬塔是誰的主意？史上最棒的主意！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m9.mp4?v=1',
 };
 
 const L8_M10: Mission = {
