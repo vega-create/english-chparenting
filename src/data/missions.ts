@@ -9887,6 +9887,7 @@ const L8_M4: Mission = {
     { speaker: 'Benny', line: 'I count! One... two... ten! Ready!', lineZh: '我來數！一…二…十！好了！' },
     { speaker: 'Coco', line: 'Who found me first? Ruby did!', lineZh: '誰先找到我？是 Ruby！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m4.mp4?v=1',
 };
 
 const L8_M5: Mission = {
@@ -9955,6 +9956,7 @@ const L8_M5: Mission = {
     { speaker: 'Benny', line: 'Me! I do! Ha ha!', lineZh: '我！就是我！哈哈！' },
     { speaker: 'Polly', line: 'Great questions, everyone! More tomorrow!', lineZh: '大家問得真好！明天繼續！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m5.mp4?v=1',
 };
 
 const L8_M6: Mission = {
@@ -10023,6 +10025,7 @@ const L8_M6: Mission = {
     { speaker: 'Ruby', line: 'Because the top has the best view!', lineZh: '因為塔頂有最棒的風景！' },
     { speaker: 'Benny', line: 'And because climbing makes snacks taste better!', lineZh: '而且爬完樓梯，點心更好吃！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m6.mp4?v=1',
 };
 
 const L8_M7: Mission = {
