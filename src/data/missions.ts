@@ -10716,6 +10716,7 @@ const L8_M16: Mission = {
     { speaker: 'Ruby', line: 'Not yet! But I found this old key!', lineZh: '還沒！但我找到了這把舊鑰匙！' },
     { speaker: 'Benny', line: 'A key! Did someone say adventure?', lineZh: '鑰匙！剛剛是誰說要冒險的？' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m16.mp4?v=1',
 };
 
 const L8_M17: Mission = {
@@ -10784,6 +10785,7 @@ const L8_M17: Mission = {
     { speaker: 'Coco', line: 'It works! The door is opening!', lineZh: '成功了！門打開了！' },
     { speaker: 'Polly', line: 'Do you believe it? A secret garden!', lineZh: '你敢相信嗎？是祕密花園！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m17.mp4?v=1',
 };
 
 const L8_M18: Mission = {
@@ -10852,6 +10854,7 @@ const L8_M18: Mission = {
     { speaker: 'Finn', line: 'Ha! Who wants to plant a seed?', lineZh: '哈！誰想種一顆種子？' },
     { speaker: 'Ruby', line: 'Me! It will grow big, won\'t it?', lineZh: '我！它會長得很大，對吧？' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m18.mp4?v=1',
 };
 
 const L8_M19: Mission = {
@@ -10920,6 +10923,7 @@ const L8_M19: Mission = {
     { speaker: 'Coco', line: 'Why did Milo build this tower?', lineZh: 'Milo 為什麼要蓋這座塔？' },
     { speaker: 'Finn', line: 'Because he loved questions! Just like us!', lineZh: '因為他熱愛問問題！跟我們一樣！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m19.mp4?v=1',
 };
 
 const L8_M20: Mission = {
@@ -10988,6 +10992,7 @@ const L8_M20: Mission = {
     { speaker: 'Coco', line: 'The bell is ringing! It\'s so happy!', lineZh: '大鐘響了！它好開心！' },
     { speaker: 'Finn', line: 'The Time Road is open! Let\'s go, team!', lineZh: '時光道打開了！夥伴們出發！' },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L8/m20.mp4?v=1',
 };
 
 // ===================== L9 時光道 Time Travel Path（A2・時態含完成式，時間軸視覺） =====================
