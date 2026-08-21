@@ -11338,6 +11338,7 @@ const L9_M5: Mission = {
     { speaker: 'Benny', line: "Now I am reading. Shh. It's a cookie book.", lineZh: "現在我在看書。噓。是餅乾的書。" },
     { speaker: 'Coco', line: "Past and now — we did it! Next door!", lineZh: "過去和現在——我們搞定了！下一扇門！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m5.mp4?v=1',
 };
 
 const L9_M6: Mission = {
