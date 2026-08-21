@@ -12376,6 +12376,7 @@ const L9_M20: Mission = {
     { speaker: 'Finn', line: "I have finished my homework! Tock! The clocks stopped!", lineZh: "我寫完功課了！答！時鐘停了！" },
     { speaker: 'Coco', line: "We did it! The Future Bridge is open. Let's go!", lineZh: "我們做到了！未來橋打開了。出發！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m20.mp4?v=1',
 };
 
 // ===================== L10 未來橋 Future Bridge（A2・讀寫，連接詞＋作文） =====================
