@@ -11755,6 +11755,7 @@ const L9_M11: Mission = {
     { speaker: 'Finn', line: "Have you seen that door? It's new!", lineZh: "你們看到那扇門了嗎？是新的！" },
     { speaker: 'Coco', line: "I have seen it! It says: Done. Let's open it!", lineZh: "我看到了！上面寫著：完成。打開吧！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m11.mp4?v=1',
 };
 
 const L9_M12: Mission = {
