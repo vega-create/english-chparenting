@@ -11824,6 +11824,7 @@ const L9_M12: Mission = {
     { speaker: 'Benny', line: "Oh! I have already finished it. Here!", lineZh: "喔！我已經畫完了。在這！" },
     { speaker: 'Polly', line: "Have you ever seen a bear draw? Now you have!", lineZh: "你看過熊畫畫嗎？現在看過了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m12.mp4?v=1',
 };
 
 const L9_M13: Mission = {
