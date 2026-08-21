@@ -11200,6 +11200,7 @@ const L9_M3: Mission = {
     { speaker: 'Benny', line: "I ate three pieces of cake. Three!", lineZh: "我吃了三塊蛋糕。三塊！" },
     { speaker: 'Coco', line: "We know, Benny. We all know.", lineZh: "我們知道，Benny。我們都知道。" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m3.mp4?v=1',
 };
 
 const L9_M4: Mission = {
