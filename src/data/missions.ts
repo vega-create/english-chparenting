@@ -12031,6 +12031,7 @@ const L9_M15: Mission = {
     { speaker: 'Coco', line: "Very! And they have already gone home. Brr!", lineZh: "超冷！而且他們已經回家了。好冷！" },
     { speaker: 'Polly', line: "Three doors done! The Time Path is almost open!", lineZh: "三扇門完成！時光道快打開了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m15.mp4?v=1',
 };
 
 const L9_M16: Mission = {
