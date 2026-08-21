@@ -11616,6 +11616,7 @@ const L9_M9: Mission = {
     { speaker: 'Polly', line: "We are going to have a party! Everyone is coming!", lineZh: "我們要辦派對！大家都會來！" },
     { speaker: 'Benny', line: "A party? I will bring cookies. Decided!", lineZh: "派對？我會帶餅乾。決定了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m9.mp4?v=1',
 };
 
 const L9_M10: Mission = {
