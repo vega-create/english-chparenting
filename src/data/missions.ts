@@ -11893,6 +11893,7 @@ const L9_M13: Mission = {
     { speaker: 'Benny', line: "We had already eaten dinner. Then I ate again.", lineZh: "我們已經吃過晚餐了。然後我又吃。" },
     { speaker: 'Coco', line: "The past before the past. My head is spinning!", lineZh: "過去的過去。我頭都暈了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m13.mp4?v=1',
 };
 
 const L9_M14: Mission = {
