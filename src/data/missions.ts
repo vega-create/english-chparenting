@@ -11962,6 +11962,7 @@ const L9_M14: Mission = {
     { speaker: 'Finn', line: "I have played before. Past to now, one long line!", lineZh: "我以前玩過。從過去到現在，一條長線！" },
     { speaker: 'Benny', line: "At five, I was playing. Can I stop walking now?", lineZh: "五點的時候我正在玩。我可以不走了嗎？" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m14.mp4?v=1',
 };
 
 const L9_M15: Mission = {
