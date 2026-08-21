@@ -12100,6 +12100,7 @@ const L9_M16: Mission = {
     { speaker: 'Benny', line: "At five, I was playing... with my lunch.", lineZh: "五點的時候我正在玩……我的午餐。" },
     { speaker: 'Coco', line: "Find the sign, then speak. That's the trick!", lineZh: "先找牌子，再開口。訣竅就是這樣！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m16.mp4?v=1',
 };
 
 const L9_M17: Mission = {
