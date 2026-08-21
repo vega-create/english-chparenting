@@ -11685,6 +11685,7 @@ const L9_M10: Mission = {
     { speaker: 'Finn', line: "I am going to find the next door. Let's go!", lineZh: "我要去找下一扇門。走吧！" },
     { speaker: 'Coco', line: "It will be a great day. I can feel it!", lineZh: "會是美好的一天。我感覺得到！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m10.mp4?v=1',
 };
 
 const L9_M11: Mission = {
