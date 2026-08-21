@@ -11269,6 +11269,7 @@ const L9_M4: Mission = {
     { speaker: 'Finn', line: "And we won the game! Everybody won!", lineZh: "而且我們贏了比賽！大家都贏了！" },
     { speaker: 'Benny', line: "I slept well that night. Very, very well.", lineZh: "那晚我睡得很好。非常非常好。" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m4.mp4?v=1',
 };
 
 const L9_M5: Mission = {
