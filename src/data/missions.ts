@@ -11061,6 +11061,7 @@ const L9_M1: Mission = {
     { speaker: 'Finn', line: "No! I am jumping! Jump, jump, jump!", lineZh: "沒有！我在跳！跳、跳、跳！" },
     { speaker: 'Coco', line: "We are having fun already. Let's go!", lineZh: "我們已經玩得很開心了。出發！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m1.mp4?v=1',
 };
 
 const L9_M2: Mission = {
@@ -11130,6 +11131,7 @@ const L9_M2: Mission = {
     { speaker: 'Finn', line: "And then? Did you cry, Benny?", lineZh: "然後呢？你哭了嗎，Benny？" },
     { speaker: 'Benny', line: "No! I smiled. I had cookies! Ha!", lineZh: "沒有！我在笑。我有餅乾！哈！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m2.mp4?v=1',
 };
 
 const L9_M3: Mission = {
