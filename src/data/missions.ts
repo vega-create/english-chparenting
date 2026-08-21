@@ -12307,6 +12307,7 @@ const L9_M19: Mission = {
     { speaker: 'Coco', line: "I will watch a movie. On the sofa. No hills!", lineZh: "我會看電影。在沙發上。不爬山！" },
     { speaker: 'Finn', line: "It was so much fun! Let's talk again tomorrow!", lineZh: "真的好好玩！明天再聊！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m19.mp4?v=1',
 };
 
 const L9_M20: Mission = {
