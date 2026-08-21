@@ -11546,6 +11546,7 @@ const L9_M8: Mission = {
     { speaker: 'Benny', line: "I am going to buy a bike. A big one!", lineZh: "我要買一台腳踏車。大台的！" },
     { speaker: 'Finn', line: "And we are going to watch a movie tonight. All of us!", lineZh: "今晚我們要一起看電影。所有人！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m8.mp4?v=1',
 };
 
 const L9_M9: Mission = {
