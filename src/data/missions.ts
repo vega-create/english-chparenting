@@ -11053,10 +11053,13 @@ const L9_M1: Mission = {
     { type: 'fill-blank', question: '中翻英：「我正在跑。」', options: ['I am running.', 'I run.', 'I will run.', 'Do I run?'], answer: 'I am running.' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Look! I am running. Ruby is making a cake.", lineZh: '看！我正在跑。Ruby 正在做蛋糕。' },
-    { speaker: 'Coco', line: "Right now, they are reading books.", lineZh: '現在，他們正在讀書。' },
-    { speaker: 'Ruby', line: "write becomes writing. Drop the e, add -ing!", lineZh: 'write 變 writing。去 e 加 -ing！' },
-    { speaker: 'Finn', line: "be + V-ing for actions now!", lineZh: '現在的動作用 be + V-ing！' },
+    { speaker: 'Finn', line: "Look! The Time Path is glowing! It is moving!", lineZh: "看！時光道在發光！它在動！" },
+    { speaker: 'Coco', line: "The clocks are spinning. Tick, tick, tick!", lineZh: "時鐘都在轉。滴答滴答！" },
+    { speaker: 'Benny', line: "I am running! Why am I running? I don't know!", lineZh: "我在跑！我為什麼在跑？不知道！" },
+    { speaker: 'Ruby', line: "I am making a map. We need a map!", lineZh: "我在畫地圖。我們需要地圖！" },
+    { speaker: 'Polly', line: "What are you doing, Finn? Are you flying?", lineZh: "Finn 你在做什麼？你在飛嗎？" },
+    { speaker: 'Finn', line: "No! I am jumping! Jump, jump, jump!", lineZh: "沒有！我在跳！跳、跳、跳！" },
+    { speaker: 'Coco', line: "We are having fun already. Let's go!", lineZh: "我們已經玩得很開心了。出發！" },
   ],
 };
 
@@ -11119,10 +11122,13 @@ const L9_M2: Mission = {
     { type: 'fill-blank', question: '中翻英：「公車停在這裡。」', options: ['The bus stopped here.', 'The bus stops here.', 'The bus will stop.', 'Does the bus stop?'], answer: 'The bus stopped here.' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Yesterday I studied and cleaned my room.", lineZh: '昨天我讀書也打掃房間。' },
-    { speaker: 'Coco', line: "The bus stopped. stop becomes stopped!", lineZh: '公車停了。stop 變 stopped！' },
-    { speaker: 'Polly', line: "study becomes studied. y changes to ied!", lineZh: 'study 變 studied。y 變 ied！' },
-    { speaker: 'Benny', line: "Regular past: +ed, +ied, or double letter!", lineZh: '規則過去式：+ed、+ied 或雙寫！' },
+    { speaker: 'Benny', line: "A door! It says: Yesterday. Let's open it!", lineZh: "一扇門！上面寫著：昨天。打開吧！" },
+    { speaker: 'Coco', line: "Wow! This is yesterday! I played here!", lineZh: "哇！這是昨天！我在這裡玩過！" },
+    { speaker: 'Ruby', line: "Yesterday I studied English. Look, my book!", lineZh: "昨天我讀了英文。看，我的書！" },
+    { speaker: 'Polly', line: "And I cleaned my feathers. Shiny!", lineZh: "而我清了羽毛。亮晶晶！" },
+    { speaker: 'Benny', line: "The bus stopped here. I waited and waited.", lineZh: "公車在這裡停下來。我等了又等。" },
+    { speaker: 'Finn', line: "And then? Did you cry, Benny?", lineZh: "然後呢？你哭了嗎，Benny？" },
+    { speaker: 'Benny', line: "No! I smiled. I had cookies! Ha!", lineZh: "沒有！我在笑。我有餅乾！哈！" },
   ],
 };
 
@@ -11184,10 +11190,13 @@ const L9_M3: Mission = {
     { type: 'fill-blank', question: '中翻英：「我們玩得很開心。」', options: ['We had a lot of fun.', 'We have fun.', 'We will have fun.', 'Do we have fun?'], answer: 'We had a lot of fun.' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Yesterday I went to the zoo. I saw a lion!", lineZh: '昨天我去了動物園。我看到一隻獅子！' },
-    { speaker: 'Coco', line: "Mom made a cake. She gave me a gift.", lineZh: '媽媽做了蛋糕。她給我一個禮物。' },
-    { speaker: 'Polly', line: "We had fun. Then we came home.", lineZh: '我們玩得開心。然後我們回家了。' },
-    { speaker: 'Benny', line: "Irregular verbs — you must remember them!", lineZh: '不規則動詞 —— 你必須記住！' },
+    { speaker: 'Benny', line: "Another door! It says: Last Sunday.", lineZh: "又一扇門！寫著：上個星期天。" },
+    { speaker: 'Finn', line: "Last Sunday I went to the zoo. I saw a lion!", lineZh: "上星期天我去了動物園。我看到獅子！" },
+    { speaker: 'Coco', line: "The lion saw you too. You ran so fast!", lineZh: "獅子也看到你了。你跑超快！" },
+    { speaker: 'Ruby', line: "Mom made a cake that day. She gave me a gift!", lineZh: "那天媽媽做了蛋糕。她給我一份禮物！" },
+    { speaker: 'Polly', line: "We had fun. Then we came home, tired and happy.", lineZh: "我們玩得很開心。然後回家，又累又開心。" },
+    { speaker: 'Benny', line: "I ate three pieces of cake. Three!", lineZh: "我吃了三塊蛋糕。三塊！" },
+    { speaker: 'Coco', line: "We know, Benny. We all know.", lineZh: "我們知道，Benny。我們都知道。" },
   ],
 };
 
@@ -11249,10 +11258,13 @@ const L9_M4: Mission = {
     { type: 'fill-blank', question: '中翻英：「我在泳池游泳。」', options: ['I swam in the pool.', 'I swim in the pool.', 'I will swim.', 'Do you swim?'], answer: 'I swam in the pool.' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I ran in the race. I swam in the pool.", lineZh: '我在比賽跑步。我在泳池游泳。' },
-    { speaker: 'Ruby', line: "I wrote a story. I read it to my class.", lineZh: '我寫了故事。我唸給全班聽。' },
-    { speaker: 'Coco', line: "Mom bought fruit. Dad found his keys.", lineZh: '媽媽買了水果。爸爸找到鑰匙。' },
-    { speaker: 'Benny', line: "More irregular verbs — keep practicing!", lineZh: '更多不規則動詞 —— 繼續練習！' },
+    { speaker: 'Finn', line: "This door says: Sports Day! Open it!", lineZh: "這扇門寫著：運動會！打開！" },
+    { speaker: 'Benny', line: "I ran in the race. I ran and ran and... fell.", lineZh: "我跑了賽跑。我跑啊跑啊……然後跌倒。" },
+    { speaker: 'Coco', line: "But you got up! And I swam in the pool.", lineZh: "但你爬起來了！而我在泳池游了泳。" },
+    { speaker: 'Ruby', line: "I wrote a story about you. I read it to everyone!", lineZh: "我寫了一個關於你們的故事。我讀給大家聽！" },
+    { speaker: 'Polly', line: "Mom bought fruit. Dad found his keys. Finally!", lineZh: "媽媽買了水果。爸爸找到鑰匙了。終於！" },
+    { speaker: 'Finn', line: "And we won the game! Everybody won!", lineZh: "而且我們贏了比賽！大家都贏了！" },
+    { speaker: 'Benny', line: "I slept well that night. Very, very well.", lineZh: "那晚我睡得很好。非常非常好。" },
   ],
 };
 
@@ -11314,10 +11326,13 @@ const L9_M5: Mission = {
     { type: 'read', question: 'Was it a fun day?（那天好玩嗎？）', passage: 'I went to the zoo and had fun.\nI saw many animals.\nIt was a great day!', options: ['Yes, it was fun', 'No, it was boring', 'It rained', 'He stayed home'], answer: 'Yes, it was fun' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review the past tense!", lineZh: '來複習過去式！' },
-    { speaker: 'Coco', line: "Regular: played. Irregular: went, ate, saw!", lineZh: '規則：played。不規則：went、ate、saw！' },
-    { speaker: 'Benny', line: "Now I am reading. Yesterday I read a book.", lineZh: '現在我在讀書。昨天我讀了一本書。' },
-    { speaker: 'Finn', line: "You know the past tense! Wonderful!", lineZh: '你會過去式了！太棒了！' },
+    { speaker: 'Coco', line: "So many doors behind us! Yesterday, Sunday, Sports Day!", lineZh: "我們身後好多門！昨天、星期天、運動會！" },
+    { speaker: 'Finn', line: "Yesterday I played soccer. And you, Ruby?", lineZh: "昨天我踢了足球。妳呢，Ruby？" },
+    { speaker: 'Ruby', line: "I studied, then I ate lunch. A big lunch!", lineZh: "我讀了書，然後吃午餐。大餐！" },
+    { speaker: 'Benny', line: "I went to the zoo. I saw a lion. Again!", lineZh: "我去了動物園。看到獅子。又一次！" },
+    { speaker: 'Polly', line: "And what are you doing now, Benny?", lineZh: "那你現在在做什麼，Benny？" },
+    { speaker: 'Benny', line: "Now I am reading. Shh. It's a cookie book.", lineZh: "現在我在看書。噓。是餅乾的書。" },
+    { speaker: 'Coco', line: "Past and now — we did it! Next door!", lineZh: "過去和現在——我們搞定了！下一扇門！" },
   ],
 };
 
@@ -11379,10 +11394,13 @@ const L9_M6: Mission = {
     { type: 'fill-blank', question: '中翻英：「八點時我正在讀書。」', options: ['At eight, I was reading.', 'I read at eight.', 'I will read at eight.', 'Do I read at eight?'], answer: 'At eight, I was reading.' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "At eight, I was reading. Coco was sleeping.", lineZh: '八點時，我正在讀書。Coco 正在睡覺。' },
-    { speaker: 'Coco', line: "It was raining when I woke up.", lineZh: '我醒來時正在下雨。' },
-    { speaker: 'Polly', line: "They were playing soccer at four.", lineZh: '他們四點時正在踢足球。' },
-    { speaker: 'Benny', line: "was/were + V-ing = action in the past!", lineZh: 'was/were + V-ing = 過去正在進行！' },
+    { speaker: 'Benny', line: "A big clock! It says: eight o'clock, yesterday.", lineZh: "一座大鐘！上面寫著：昨天八點。" },
+    { speaker: 'Ruby', line: "At eight, I was reading in bed. Cozy!", lineZh: "八點的時候，我正在床上看書。好舒服！" },
+    { speaker: 'Coco', line: "At eight, I was sleeping. Zzz.", lineZh: "八點的時候，我正在睡覺。呼～" },
+    { speaker: 'Finn', line: "It was raining when I woke up. Drip, drip!", lineZh: "我醒來的時候正在下雨。滴答滴答！" },
+    { speaker: 'Polly', line: "And at four? They were playing soccer!", lineZh: "那四點呢？他們正在踢足球！" },
+    { speaker: 'Benny', line: "At four, I was eating. What else?", lineZh: "四點的時候我正在吃。不然呢？" },
+    { speaker: 'Coco', line: "Benny, you were always eating. Ha ha!", lineZh: "Benny，你隨時都在吃。哈哈！" },
   ],
 };
 
@@ -11445,10 +11463,13 @@ const L9_M7: Mission = {
     { type: 'fill-blank', question: '中翻英：「會很好玩。」', options: ['It will be fun.', 'It is fun.', 'It was fun.', 'Is it fun?'], answer: 'It will be fun.' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Tomorrow I will visit my grandma.", lineZh: '明天我會去看奶奶。' },
-    { speaker: 'Coco', line: "It will rain tomorrow. Take an umbrella!", lineZh: '明天會下雨。帶把傘！' },
-    { speaker: 'Benny', line: "I will help you. Don't worry!", lineZh: '我會幫你。別擔心！' },
-    { speaker: 'Finn', line: "will + base verb for the future!", lineZh: '未來用 will + 原形動詞！' },
+    { speaker: 'Finn', line: "A window! It shows... tomorrow!", lineZh: "一扇窗！它照出……明天！" },
+    { speaker: 'Coco', line: "Tomorrow I will visit my grandma. She will be happy!", lineZh: "明天我要去看外婆。她會很開心！" },
+    { speaker: 'Polly', line: "Look at the sky. It will rain tomorrow!", lineZh: "看天空。明天會下雨！" },
+    { speaker: 'Ruby', line: "Then I will bring an umbrella. A pink one!", lineZh: "那我會帶雨傘。粉紅色的！" },
+    { speaker: 'Benny', line: "I will help you carry it. I'm strong!", lineZh: "我會幫妳拿。我很強壯！" },
+    { speaker: 'Finn', line: "Will you come to my party, Coco?", lineZh: "Coco，妳會來我的派對嗎？" },
+    { speaker: 'Coco', line: "Yes, I will! I won't be late. I promise!", lineZh: "會！我不會遲到。我保證！" },
   ],
 };
 
@@ -11510,10 +11531,13 @@ const L9_M8: Mission = {
     { type: 'match', question: 'tonight 是什麼意思？', options: ['今晚', '明天', '下個月', '週末'], answer: '今晚' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "I am going to study tonight.", lineZh: '我今晚打算讀書。' },
-    { speaker: 'Coco', line: "We are going to travel next month.", lineZh: '我們下個月打算去旅行。' },
-    { speaker: 'Benny', line: "He is going to play soccer after school.", lineZh: '他放學後打算踢足球。' },
-    { speaker: 'Ruby', line: "be going to = a plan you decided!", lineZh: 'be going to = 你決定好的計畫！' },
+    { speaker: 'Ruby', line: "I have a plan book! Look, it's full!", lineZh: "我有一本計畫本！看，寫滿了！" },
+    { speaker: 'Ruby', line: "Tonight I am going to study. It's on page one.", lineZh: "今晚我要讀書。寫在第一頁。" },
+    { speaker: 'Coco', line: "We are going to travel next month. To the sea!", lineZh: "下個月我們要去旅行。去海邊！" },
+    { speaker: 'Benny', line: "He is going to play soccer after school. Go, Finn!", lineZh: "他放學後要去踢足球。加油，Finn！" },
+    { speaker: 'Polly', line: "What are you going to do, Benny?", lineZh: "Benny，你打算做什麼？" },
+    { speaker: 'Benny', line: "I am going to buy a bike. A big one!", lineZh: "我要買一台腳踏車。大台的！" },
+    { speaker: 'Finn', line: "And we are going to watch a movie tonight. All of us!", lineZh: "今晚我們要一起看電影。所有人！" },
   ],
 };
 
@@ -11576,10 +11600,13 @@ const L9_M9: Mission = {
     { type: 'match', question: 'be going to 通常表示？', options: ['已決定的計畫', '當下臨時決定', '過去的事', '習慣'], answer: '已決定的計畫' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I am going to travel — it is my plan.", lineZh: '我打算去旅行 —— 這是我的計畫。' },
-    { speaker: 'Coco', line: "The phone is ringing. I will answer it!", lineZh: '電話在響。我來接！' },
-    { speaker: 'Polly', line: "Look at the clouds — it will rain!", lineZh: '看那些雲 —— 會下雨！' },
-    { speaker: 'Benny', line: "going to = plan. will = decide now / predict!", lineZh: 'going to = 計畫。will = 當下決定/預測！' },
+    { speaker: 'Benny', line: "I am going to travel next week. It's my plan!", lineZh: "下週我要去旅行。這是我的計畫！" },
+    { speaker: 'Coco', line: "Ring, ring! The phone! I will answer it!", lineZh: "鈴鈴！電話！我來接！" },
+    { speaker: 'Polly', line: "Look at the clouds. It will rain!", lineZh: "看那些雲。會下雨！" },
+    { speaker: 'Ruby', line: "No problem. I am going to stay inside and draw.", lineZh: "沒關係。我打算待在室內畫畫。" },
+    { speaker: 'Finn', line: "What are you going to do this weekend, Polly?", lineZh: "Polly，這週末妳打算做什麼？" },
+    { speaker: 'Polly', line: "We are going to have a party! Everyone is coming!", lineZh: "我們要辦派對！大家都會來！" },
+    { speaker: 'Benny', line: "A party? I will bring cookies. Decided!", lineZh: "派對？我會帶餅乾。決定了！" },
   ],
 };
 
@@ -11641,10 +11668,13 @@ const L9_M10: Mission = {
     { type: 'read', question: 'Will Coco pass the test?（Coco 會通過考試嗎？）', passage: 'Coco is going to study hard tonight.\nShe is ready.\nShe will pass the test!', options: ['Yes, she will', "No, she won't", 'She will fail', 'She is not ready'], answer: 'Yes, she will' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review the future!", lineZh: '來複習未來式！' },
-    { speaker: 'Coco', line: "I am going to study. I will pass the test!", lineZh: '我打算讀書。我會通過考試！' },
-    { speaker: 'Benny', line: "At eight, I was reading. Tomorrow I will read more.", lineZh: '八點時我在讀書。明天我會讀更多。' },
-    { speaker: 'Finn', line: "Past, present, future — you know them all!", lineZh: '過去、現在、未來 —— 你全會了！' },
+    { speaker: 'Coco', line: "Tomorrow I will help you, Ruby. Don't worry!", lineZh: "明天我會幫妳，Ruby。別擔心！" },
+    { speaker: 'Ruby', line: "Thanks! I am going to study tonight. Big test!", lineZh: "謝謝！今晚我要讀書。大考試！" },
+    { speaker: 'Benny', line: "Last night at eight, I was reading too. Really!", lineZh: "昨晚八點我也在看書。真的！" },
+    { speaker: 'Finn', line: "They were playing at four. I saw them!", lineZh: "他們四點的時候在玩。我看到了！" },
+    { speaker: 'Polly', line: "What are you going to do tomorrow, Finn?", lineZh: "Finn，你明天打算做什麼？" },
+    { speaker: 'Finn', line: "I am going to find the next door. Let's go!", lineZh: "我要去找下一扇門。走吧！" },
+    { speaker: 'Coco', line: "It will be a great day. I can feel it!", lineZh: "會是美好的一天。我感覺得到！" },
   ],
 };
 
@@ -11707,10 +11737,13 @@ const L9_M11: Mission = {
     { type: 'fill-blank', question: '中翻英：「她已經吃過午餐。」', options: ['She has eaten lunch.', 'She eats lunch.', 'She ate lunch.', 'Does she eat lunch?'], answer: 'She has eaten lunch.' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I have finished my homework!", lineZh: '我已經寫完作業了！' },
-    { speaker: 'Coco', line: "She has eaten lunch. She is not hungry.", lineZh: '她已經吃過午餐。她不餓。' },
-    { speaker: 'Polly', line: "They have gone home already.", lineZh: '他們已經回家了。' },
-    { speaker: 'Benny', line: "have/has + past participle (第三態)!", lineZh: 'have/has + 過去分詞（第三態）！' },
+    { speaker: 'Benny', line: "I have finished my homework! All done!", lineZh: "我寫完功課了！全部完成！" },
+    { speaker: 'Coco', line: "She has eaten lunch. She is not hungry now.", lineZh: "她吃過午餐了。她現在不餓。" },
+    { speaker: 'Ruby', line: "Me? I have eaten. Benny, have you?", lineZh: "我？我吃過了。Benny，你呢？" },
+    { speaker: 'Benny', line: "Yes... three times. I have eaten three times.", lineZh: "有……三次。我吃了三次。" },
+    { speaker: 'Polly', line: "They have gone home already. Look, no one here!", lineZh: "他們已經回家了。看，這裡沒人！" },
+    { speaker: 'Finn', line: "Have you seen that door? It's new!", lineZh: "你們看到那扇門了嗎？是新的！" },
+    { speaker: 'Coco', line: "I have seen it! It says: Done. Let's open it!", lineZh: "我看到了！上面寫著：完成。打開吧！" },
   ],
 };
 
@@ -11772,10 +11805,13 @@ const L9_M12: Mission = {
     { type: 'match', question: 'never 在完成式表示？', options: ['從未（經驗）', '剛剛', '已經', '尚未'], answer: '從未（經驗）' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "Have you ever been to Japan? Yes, I have!", lineZh: '你曾經去過日本嗎？有，我去過！' },
-    { speaker: 'Coco', line: "I have never eaten snails.", lineZh: '我從沒吃過蝸牛。' },
-    { speaker: 'Benny', line: "I have just finished. Have you finished yet?", lineZh: '我剛剛完成。你完成了嗎？' },
-    { speaker: 'Polly', line: "ever/never = experience. just/yet = time!", lineZh: 'ever/never = 經驗。just/yet = 時間！' },
+    { speaker: 'Polly', line: "Have you ever been to Japan, Finn?", lineZh: "Finn，你去過日本嗎？" },
+    { speaker: 'Finn', line: "Yes, I have! I saw Mount Fuji!", lineZh: "去過！我看到富士山！" },
+    { speaker: 'Coco', line: "I have never eaten snails. Never, never!", lineZh: "我從來沒吃過蝸牛。從來沒有！" },
+    { speaker: 'Benny', line: "I have just finished my sandwich. Just now!", lineZh: "我剛剛吃完三明治。剛剛！" },
+    { speaker: 'Ruby', line: "Have you finished the map yet? The map!", lineZh: "地圖你畫完了沒？地圖！" },
+    { speaker: 'Benny', line: "Oh! I have already finished it. Here!", lineZh: "喔！我已經畫完了。在這！" },
+    { speaker: 'Polly', line: "Have you ever seen a bear draw? Now you have!", lineZh: "你看過熊畫畫嗎？現在看過了！" },
   ],
 };
 
@@ -11837,10 +11873,13 @@ const L9_M13: Mission = {
     { type: 'match', question: '過去完成式表示？', options: ['過去某時之前已完成', '現在正在做', '未來計畫', '習慣'], answer: '過去某時之前已完成' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "When I arrived, the bus had already left.", lineZh: '我到的時候，公車已經開走了。' },
-    { speaker: 'Coco', line: "She had eaten before I came home.", lineZh: '在我回家前她已經吃過了。' },
-    { speaker: 'Polly', line: "I had never seen snow before that day.", lineZh: '在那天之前我從沒看過雪。' },
-    { speaker: 'Benny', line: "had + p.p. = the past before the past!", lineZh: 'had + p.p. = 過去的過去！' },
+    { speaker: 'Benny', line: "When I arrived, the bus had already left. Oh no!", lineZh: "我到的時候，公車已經開走了。糟糕！" },
+    { speaker: 'Coco', line: "She had eaten before I came home. No dinner for me!", lineZh: "我回家前她就吃完了。我沒晚餐！" },
+    { speaker: 'Polly', line: "I had never seen snow before that day. So white!", lineZh: "在那天之前我從沒看過雪。好白！" },
+    { speaker: 'Ruby', line: "They had finished the game when I got there.", lineZh: "我到的時候他們已經比完了。" },
+    { speaker: 'Finn', line: "He had left when I called. Nobody answered!", lineZh: "我打電話的時候他已經走了。沒人接！" },
+    { speaker: 'Benny', line: "We had already eaten dinner. Then I ate again.", lineZh: "我們已經吃過晚餐了。然後我又吃。" },
+    { speaker: 'Coco', line: "The past before the past. My head is spinning!", lineZh: "過去的過去。我頭都暈了！" },
   ],
 };
 
@@ -11902,10 +11941,13 @@ const L9_M14: Mission = {
     { type: 'match', question: 'have played 是哪個時態？', options: ['現在完成式', '過去式', '未來式', '現在進行式'], answer: '現在完成式' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's put all tenses on a timeline!", lineZh: '我們把所有時態放在時間軸上！' },
-    { speaker: 'Coco', line: "Yesterday I played. Now I am playing.", lineZh: '昨天我玩了。現在我正在玩。' },
-    { speaker: 'Benny', line: "Tomorrow I will play. I have played before.", lineZh: '明天我會玩。我以前玩過。' },
-    { speaker: 'Finn', line: "Each tense has its own place in time!", lineZh: '每個時態在時間軸上都有位置！' },
+    { speaker: 'Finn', line: "A long, long timeline on the wall! Let's walk it!", lineZh: "牆上有一條好長好長的時間線！我們走一遍！" },
+    { speaker: 'Coco', line: "I play every day. That's here, in the middle.", lineZh: "我每天都玩。在這裡，中間。" },
+    { speaker: 'Benny', line: "Yesterday I played. One step back!", lineZh: "昨天我玩了。往後一步！" },
+    { speaker: 'Ruby', line: "Now I am playing. Right here, right now!", lineZh: "現在我正在玩。就在這裡，就是現在！" },
+    { speaker: 'Polly', line: "Tomorrow I will play. One step forward!", lineZh: "明天我會玩。往前一步！" },
+    { speaker: 'Finn', line: "I have played before. Past to now, one long line!", lineZh: "我以前玩過。從過去到現在，一條長線！" },
+    { speaker: 'Benny', line: "At five, I was playing. Can I stop walking now?", lineZh: "五點的時候我正在玩。我可以不走了嗎？" },
   ],
 };
 
@@ -11967,10 +12009,13 @@ const L9_M15: Mission = {
     { type: 'read', question: 'What tense is "had left"?（had left 是哪個時態？）', passage: 'had + p.p. = past perfect.\nIt shows the past before another past.', options: ['過去完成式', '現在完成式', '過去式', '未來式'], answer: '過去完成式' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review the perfect tenses!", lineZh: '來複習完成式！' },
-    { speaker: 'Coco', line: "I have finished. She has eaten.", lineZh: '我已完成。她已吃過。' },
-    { speaker: 'Benny', line: "The bus had left when I arrived.", lineZh: '我到時公車已開走。' },
-    { speaker: 'Finn', line: "You know the perfect tenses! Amazing!", lineZh: '你會完成式了！太厲害！' },
+    { speaker: 'Coco', line: "I have finished! She has eaten! We are ready!", lineZh: "我完成了！她吃過了！我們準備好了！" },
+    { speaker: 'Polly', line: "Have you ever been to Japan, Ruby?", lineZh: "Ruby，妳去過日本嗎？" },
+    { speaker: 'Ruby', line: "No, I have never been there. One day!", lineZh: "沒有，我從來沒去過。總有一天！" },
+    { speaker: 'Benny', line: "The bus had left when I arrived. Again!", lineZh: "我到的時候公車已經走了。又來！" },
+    { speaker: 'Finn', line: "I have never seen snow. Is it cold?", lineZh: "我從沒看過雪。冷嗎？" },
+    { speaker: 'Coco', line: "Very! And they have already gone home. Brr!", lineZh: "超冷！而且他們已經回家了。好冷！" },
+    { speaker: 'Polly', line: "Three doors done! The Time Path is almost open!", lineZh: "三扇門完成！時光道快打開了！" },
   ],
 };
 
@@ -12032,10 +12077,13 @@ const L9_M16: Mission = {
     { type: 'match', question: '"already" 常搭配哪個時態？', options: ['現在完成式', '過去式', '未來式', '現在簡單式'], answer: '現在完成式' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "The time word tells you the tense!", lineZh: '時間字告訴你用哪個時態！' },
-    { speaker: 'Coco', line: "'every day' → simple. 'now' → continuous.", lineZh: '「every day」→ 簡單式。「now」→ 進行式。' },
-    { speaker: 'Polly', line: "'yesterday' → past. 'tomorrow' → future!", lineZh: '「yesterday」→ 過去。「tomorrow」→ 未來！' },
-    { speaker: 'Benny', line: "Find the time word, choose the tense!", lineZh: '找時間字，選時態！' },
+    { speaker: 'Benny', line: "Little signs everywhere! Every day, now, yesterday!", lineZh: "到處都是小牌子！每天、現在、昨天！" },
+    { speaker: 'Coco', line: "I play soccer every day. Easy!", lineZh: "我每天踢足球。簡單！" },
+    { speaker: 'Ruby', line: "I am playing now. See? I'm playing!", lineZh: "我現在正在玩。看到沒？我在玩！" },
+    { speaker: 'Polly', line: "I played yesterday. And I will play tomorrow!", lineZh: "我昨天玩了。明天也會玩！" },
+    { speaker: 'Finn', line: "I have already played. Twice!", lineZh: "我已經玩過了。兩次！" },
+    { speaker: 'Benny', line: "At five, I was playing... with my lunch.", lineZh: "五點的時候我正在玩……我的午餐。" },
+    { speaker: 'Coco', line: "Find the sign, then speak. That's the trick!", lineZh: "先找牌子，再開口。訣竅就是這樣！" },
   ],
 };
 
@@ -12097,10 +12145,13 @@ const L9_M17: Mission = {
     { type: 'match', question: 'next year 用哪個時態？', options: ['未來式', '過去式', '現在式', '完成式'], answer: '未來式' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Read a story with many tenses!", lineZh: '讀一篇有很多時態的故事！' },
-    { speaker: 'Coco', line: "Last year, Sam went to Japan. Now he lives here.", lineZh: '去年 Sam 去了日本。現在他住這裡。' },
-    { speaker: 'Polly', line: "Next year, he will visit again!", lineZh: '明年，他會再去一次！' },
-    { speaker: 'Benny', line: "You read all the tenses! Great!", lineZh: '你讀懂所有時態了！太棒了！' },
+    { speaker: 'Benny', line: "An old book on the path! It's about Sam!", lineZh: "路上有一本舊書！是關於 Sam 的！" },
+    { speaker: 'Coco', line: "Last year, Sam went to Japan.", lineZh: "去年 Sam 去了日本。" },
+    { speaker: 'Ruby', line: "Now he lives here, right on this path!", lineZh: "現在他住在這裡，就在這條路上！" },
+    { speaker: 'Polly', line: "He has learned a lot. Look at all these pages!", lineZh: "他學了好多。看這些頁數！" },
+    { speaker: 'Finn', line: "Next year, he will visit again!", lineZh: "明年他會再去一次！" },
+    { speaker: 'Benny', line: "He loves to travel. Like us!", lineZh: "他喜歡旅行。跟我們一樣！" },
+    { speaker: 'Coco', line: "Sam is very happy. And so are we!", lineZh: "Sam 很開心。我們也是！" },
   ],
 };
 
@@ -12162,10 +12213,13 @@ const L9_M18: Mission = {
     { type: 'read', question: 'What is the writer\'s dream?（作者的夢想是什麼？）', passage: 'One day, I will be a teacher.\nI will help children learn.\nThat is my dream.', options: ['to be a teacher', 'to travel', 'to be rich', 'to sleep'], answer: 'to be a teacher' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Let's write about your life in three tenses!", lineZh: '我們用三種時態寫你的人生！' },
-    { speaker: 'Coco', line: "Past: When I was little, I lived in a village.", lineZh: '過去：我小時候住在村莊。' },
-    { speaker: 'Benny', line: "Future: One day, I will be a teacher.", lineZh: '未來：有一天，我會當老師。' },
-    { speaker: 'Ruby', line: "Now write your own story! You can do it!", lineZh: '現在寫你自己的故事！你做得到！' },
+    { speaker: 'Ruby', line: "A big empty book! Let's write our stories!", lineZh: "一本空白大書！我們來寫自己的故事！" },
+    { speaker: 'Coco', line: "When I was little, I lived in a village.", lineZh: "我小時候住在一個村子裡。" },
+    { speaker: 'Coco', line: "Now I live in the city. I go to school every day.", lineZh: "現在我住在城市。我每天上學。" },
+    { speaker: 'Benny', line: "One day, I will be a teacher. A cookie teacher!", lineZh: "總有一天我會當老師。餅乾老師！" },
+    { speaker: 'Polly', line: "That is my dream too! I will work hard!", lineZh: "那也是我的夢想！我會努力！" },
+    { speaker: 'Finn', line: "Past, now, future. Three lines. One story!", lineZh: "過去、現在、未來。三行字，一個故事！" },
+    { speaker: 'Ruby', line: "Now write yours! You can do it!", lineZh: "現在換你寫！你可以的！" },
   ],
 };
 
@@ -12227,10 +12281,13 @@ const L9_M19: Mission = {
     { type: 'read', question: 'Was the hike fun?（健行好玩嗎？）', passage: 'Coco went hiking last weekend.\nIt was tiring but it was so much fun.\nShe wants to go again.', options: ['Yes, it was fun', 'No, it was boring', 'She hated it', 'She stayed home'], answer: 'Yes, it was fun' },
   ],
   videoScript: [
-    { speaker: 'Polly', line: "What did you do last weekend?", lineZh: '你上週末做了什麼？' },
-    { speaker: 'Coco', line: "I went hiking. Right now I am resting.", lineZh: '我去健行。現在我在休息。' },
-    { speaker: 'Benny', line: "What will you do next weekend?", lineZh: '你下週末會做什麼？' },
-    { speaker: 'Polly', line: "You can talk about any time now!", lineZh: '現在你什麼時間的事都能聊了！' },
+    { speaker: 'Polly', line: "What did you do last weekend, Coco?", lineZh: "Coco，妳上週末做了什麼？" },
+    { speaker: 'Coco', line: "I went hiking. Up, up, up the hill!", lineZh: "我去爬山。一路往上爬！" },
+    { speaker: 'Ruby', line: "And right now? What are you doing?", lineZh: "那現在呢？妳在做什麼？" },
+    { speaker: 'Coco', line: "Right now I am resting. My legs are tired!", lineZh: "現在我正在休息。我的腿好痠！" },
+    { speaker: 'Benny', line: "What will you do next weekend?", lineZh: "妳下週末要做什麼？" },
+    { speaker: 'Coco', line: "I will watch a movie. On the sofa. No hills!", lineZh: "我會看電影。在沙發上。不爬山！" },
+    { speaker: 'Finn', line: "It was so much fun! Let's talk again tomorrow!", lineZh: "真的好好玩！明天再聊！" },
   ],
 };
 
@@ -12292,10 +12349,13 @@ const L9_M20: Mission = {
     { type: 'read', question: 'Did the writer finish homework?（作者寫完作業了嗎？）', passage: 'I played soccer, then I studied.\nNow I have finished my homework.\nI can relax!', options: ['Yes, it is finished', 'No, not yet', 'He has no homework', 'He is still playing'], answer: 'Yes, it is finished' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Time Boss says: master every tense!", lineZh: '時光大魔王說：精通每個時態！' },
-    { speaker: 'Coco', line: "I play, played, am playing, will play, have played!", lineZh: 'I play、played、am playing、will play、have played！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Time champion!", lineZh: '你打敗大魔王了！時光冠軍！' },
-    { speaker: 'Finn', line: "On to Future Bridge! Let's read and write!", lineZh: '前進未來橋！我們來讀寫！' },
+    { speaker: 'Finn', line: "The Time Boss is here! All the clocks are spinning!", lineZh: "時光大魔王出現了！所有的鐘都在亂轉！" },
+    { speaker: 'Coco', line: "I play soccer every day! Fix the clock!", lineZh: "我每天踢足球！修好時鐘！" },
+    { speaker: 'Benny', line: "Yesterday I went to the park. Tick!", lineZh: "昨天我去了公園。滴！" },
+    { speaker: 'Ruby', line: "Right now I am reading. Tock!", lineZh: "現在我正在看書。答！" },
+    { speaker: 'Polly', line: "Tomorrow I will visit grandma. Tick!", lineZh: "明天我會去看奶奶。滴！" },
+    { speaker: 'Finn', line: "I have finished my homework! Tock! The clocks stopped!", lineZh: "我寫完功課了！答！時鐘停了！" },
+    { speaker: 'Coco', line: "We did it! The Future Bridge is open. Let's go!", lineZh: "我們做到了！未來橋打開了。出發！" },
   ],
 };
 

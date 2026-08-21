@@ -5,10 +5,17 @@
         "origins": [
           "https://app.videoexpress.ai",
           "https://app.artistly.ai",
-          "https://app.clonevoice.ai"
+          "https://app.clonevoice.ai",
+          "https://studio.youtube.com",
+          "https://www.youtube.com"
         ],
-        "methods": ["GET", "HEAD"],
-        "headers": ["*"]
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "headers": [
+          "*"
+        ]
       },
       "maxAgeSeconds": 3600
     }
