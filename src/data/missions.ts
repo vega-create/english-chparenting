@@ -12238,6 +12238,7 @@ const L9_M18: Mission = {
     { speaker: 'Finn', line: "Past, now, future. Three lines. One story!", lineZh: "過去、現在、未來。三行字，一個故事！" },
     { speaker: 'Ruby', line: "Now write yours! You can do it!", lineZh: "現在換你寫！你可以的！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m18.mp4?v=1',
 };
 
 const L9_M19: Mission = {
