@@ -11407,6 +11407,7 @@ const L9_M6: Mission = {
     { speaker: 'Benny', line: "At four, I was eating. What else?", lineZh: "四點的時候我正在吃。不然呢？" },
     { speaker: 'Coco', line: "Benny, you were always eating. Ha ha!", lineZh: "Benny，你隨時都在吃。哈哈！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m6.mp4?v=1',
 };
 
 const L9_M7: Mission = {
@@ -11476,6 +11477,7 @@ const L9_M7: Mission = {
     { speaker: 'Finn', line: "Will you come to my party, Coco?", lineZh: "Coco，妳會來我的派對嗎？" },
     { speaker: 'Coco', line: "Yes, I will! I won't be late. I promise!", lineZh: "會！我不會遲到。我保證！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m7.mp4?v=1',
 };
 
 const L9_M8: Mission = {
