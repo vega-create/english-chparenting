@@ -12169,6 +12169,7 @@ const L9_M17: Mission = {
     { speaker: 'Benny', line: "He loves to travel. Like us!", lineZh: "他喜歡旅行。跟我們一樣！" },
     { speaker: 'Coco', line: "Sam is very happy. And so are we!", lineZh: "Sam 很開心。我們也是！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L9/m17.mp4?v=1',
 };
 
 const L9_M18: Mission = {
