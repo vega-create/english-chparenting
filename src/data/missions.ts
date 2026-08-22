@@ -12859,6 +12859,7 @@ const L10_M7: Mission = {
     { speaker: 'Benny', line: "Is Max real? Can I meet him? Does he like cookies?", lineZh: "Max 是真的嗎？我可以見牠嗎？牠喜歡餅乾嗎？" },
     { speaker: 'Coco', line: "One question at a time, Benny! Ha ha!", lineZh: "一次問一個問題，Benny！哈哈！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m7.mp4?v=1',
 };
 
 const L10_M8: Mission = {
