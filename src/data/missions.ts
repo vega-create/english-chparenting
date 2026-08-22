@@ -13273,6 +13273,7 @@ const L10_M13: Mission = {
     { speaker: 'Coco', line: "Best wishes, Coco. Fold it. Into the mailbox!", lineZh: "祝福妳，Coco。摺好。投進郵筒！" },
     { speaker: 'Ruby', line: "Now write a letter to a friend! Dear...", lineZh: "現在寫一封信給朋友！親愛的……" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m13.mp4?v=1',
 };
 
 const L10_M14: Mission = {
