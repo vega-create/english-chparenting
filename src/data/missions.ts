@@ -12652,6 +12652,7 @@ const L10_M4: Mission = {
     { speaker: 'Finn', line: "Add when, where and why. The bridge gets longer!", lineZh: "加上何時、何地、為什麼。橋就變長了！" },
     { speaker: 'Ruby', line: "I have a big brown dog that loves this bridge!", lineZh: "我有一隻愛這座橋的大棕狗！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m4.mp4?v=1',
 };
 
 const L10_M5: Mission = {
