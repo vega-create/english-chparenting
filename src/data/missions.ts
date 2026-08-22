@@ -12997,6 +12997,7 @@ const L10_M9: Mission = {
     { speaker: 'Ruby', line: "So what time does it open tomorrow? Nine!", lineZh: "那明天幾點開？九點！" },
     { speaker: 'Benny', line: "Signs are useful. Especially the food ones.", lineZh: "告示很有用。尤其是關於食物的。" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m9.mp4?v=1',
 };
 
 const L10_M10: Mission = {
