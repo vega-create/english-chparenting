@@ -13135,6 +13135,7 @@ const L10_M11: Mission = {
     { speaker: 'Finn', line: "Five sentences about you. Easy and fun!", lineZh: "五句話介紹你自己。簡單又好玩！" },
     { speaker: 'Ruby', line: "Now it's your turn! Tell us about you!", lineZh: "現在換你！跟我們說說你自己！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m11.mp4?v=1',
 };
 
 const L10_M12: Mission = {
