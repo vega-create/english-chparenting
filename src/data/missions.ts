@@ -12721,6 +12721,7 @@ const L10_M5: Mission = {
     { speaker: 'Coco', line: "Before I sleep, I count the planks. Many!", lineZh: "睡前我會數橋板。好多！" },
     { speaker: 'Benny', line: "The bridge is half done, so let's keep going!", lineZh: "橋蓋了一半，所以我們繼續！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m5.mp4?v=1',
 };
 
 const L10_M6: Mission = {
