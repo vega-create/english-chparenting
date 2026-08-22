@@ -13756,6 +13756,7 @@ const L10_M20: Mission = {
     { speaker: 'Finn', line: "Dear Boss, goodbye! Best wishes, Finn! The bridge is whole!", lineZh: "親愛的魔王，再見！祝福你，Finn！橋完整了！" },
     { speaker: 'Coco', line: "We crossed the Future Bridge! The Challenge Arena is next!", lineZh: "我們走過未來橋了！下一站挑戰場！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m20.mp4?v=1',
 };
 
 // ===================== L11 挑戰場 Challenge Arena（A2+→B1・進階文法與應用） =====================
