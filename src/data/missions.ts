@@ -13342,6 +13342,7 @@ const L10_M14: Mission = {
     { speaker: 'Benny', line: "There is a picnic basket. I see sandwiches!", lineZh: "有一個野餐籃。我看到三明治！" },
     { speaker: 'Coco', line: "Say what you see, what they do, how they feel. Done!", lineZh: "說出看到什麼、他們在做什麼、感覺如何。完成！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m14.mp4?v=1',
 };
 
 const L10_M15: Mission = {
