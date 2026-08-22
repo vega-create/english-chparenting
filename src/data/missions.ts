@@ -12444,6 +12444,7 @@ const L10_M1: Mission = {
     { speaker: 'Benny', line: "I am small but strong. See? I can carry you!", lineZh: "我很小但很壯。看到沒？我可以扛你！" },
     { speaker: 'Finn', line: "And and but build the bridge. Let's walk!", lineZh: "and 跟 but 把橋蓋起來了。我們走！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m1.mp4?v=1',
 };
 
 const L10_M2: Mission = {
