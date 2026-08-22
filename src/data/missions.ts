@@ -13480,6 +13480,7 @@ const L10_M16: Mission = {
     { speaker: 'Benny', line: "Me? Funny, kind, and hungry. Three words!", lineZh: "我？好笑、善良、還有餓。三個詞！" },
     { speaker: 'Ruby', line: "Adjectives make the picture clear. Try it!", lineZh: "形容詞讓畫面更清楚。試試看！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m16.mp4?v=1',
 };
 
 const L10_M17: Mission = {
