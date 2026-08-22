@@ -13687,6 +13687,7 @@ const L10_M19: Mission = {
     { speaker: 'Benny', line: "I think trees are great because apples grow on them.", lineZh: "我覺得樹很棒，因為上面會長蘋果。" },
     { speaker: 'Coco', line: "Read it, think about it, write it. We did it!", lineZh: "讀一讀、想一想、寫一寫。我們做到了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m19.mp4?v=1',
 };
 
 const L10_M20: Mission = {
