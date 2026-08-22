@@ -12436,10 +12436,13 @@ const L10_M1: Mission = {
     { type: 'match', question: 'and 用來？', options: ['連接/並列', '表示轉折', '表示選擇', '表示原因'], answer: '連接/並列' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I like tea and coffee.", lineZh: '我喜歡茶和咖啡。' },
-    { speaker: 'Coco', line: "I like cats, but I don't like dogs.", lineZh: '我喜歡貓，但我不喜歡狗。' },
-    { speaker: 'Polly', line: "'and' joins. 'but' shows a difference!", lineZh: '「and」連接。「but」表示不同！' },
-    { speaker: 'Benny', line: "Join your ideas with and and but!", lineZh: '用 and 和 but 連接你的想法！' },
+    { speaker: 'Finn', line: "Look! A bridge made of glowing planks. Some are missing!", lineZh: "看！一座發光木板做的橋。有幾塊不見了！" },
+    { speaker: 'Benny', line: "I like tea and coffee. Oh, a plank appeared!", lineZh: "我喜歡茶和咖啡。喔，一塊橋板出現了！" },
+    { speaker: 'Coco', line: "I like cats, but I don't like dogs. Another plank!", lineZh: "我喜歡貓，但我不喜歡狗。又一塊！" },
+    { speaker: 'Ruby', line: "The bridge is cheap but nice. Ha! Plank!", lineZh: "這座橋很便宜但很棒。哈！橋板！" },
+    { speaker: 'Polly', line: "I like art, and I like music too. Two planks!", lineZh: "我喜歡藝術，我也喜歡音樂。兩塊！" },
+    { speaker: 'Benny', line: "I am small but strong. See? I can carry you!", lineZh: "我很小但很壯。看到沒？我可以扛你！" },
+    { speaker: 'Finn', line: "And and but build the bridge. Let's walk!", lineZh: "and 跟 but 把橋蓋起來了。我們走！" },
   ],
 };
 
@@ -12502,10 +12505,13 @@ const L10_M2: Mission = {
     { type: 'match', question: 'so 用來表示？', options: ['結果', '原因', '轉折', '選擇'], answer: '結果' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I am tired because I studied all night.", lineZh: '我很累因為我讀了整晚。' },
-    { speaker: 'Benny', line: "It was raining, so I took an umbrella.", lineZh: '在下雨，所以我帶了傘。' },
-    { speaker: 'Polly', line: "'because' gives a reason. 'so' gives a result!", lineZh: '「because」給原因。「so」給結果！' },
-    { speaker: 'Coco', line: "Cause and result — connect them!", lineZh: '原因和結果 —— 連起來！' },
+    { speaker: 'Coco', line: "I am tired because I studied all night. Yawn!", lineZh: "我好累，因為我讀了一整晚。哈欠！" },
+    { speaker: 'Benny', line: "It was raining, so I took an umbrella. And snacks.", lineZh: "下雨了，所以我帶了雨傘。還有零食。" },
+    { speaker: 'Ruby', line: "I am hungry because I did not eat. Benny, share!", lineZh: "我好餓，因為我沒吃東西。Benny，分我！" },
+    { speaker: 'Polly', line: "Finn was sick, so he stayed home yesterday.", lineZh: "Finn 昨天生病了，所以他待在家。" },
+    { speaker: 'Finn', line: "I'm better now! Why are you happy, Coco?", lineZh: "我現在好多了！Coco，妳為什麼這麼開心？" },
+    { speaker: 'Coco', line: "Because it is my birthday! Cake time!", lineZh: "因為今天是我生日！蛋糕時間！" },
+    { speaker: 'Benny', line: "She said cake, so I am running. Bye!", lineZh: "她說蛋糕，所以我要跑了。掰！" },
   ],
 };
 
@@ -12567,10 +12573,13 @@ const L10_M3: Mission = {
     { type: 'match', question: 'before 是什麼意思？', options: ['在…之前', '在…之後', '最後', '然後'], answer: '在…之前' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "First I got up, then I ate breakfast.", lineZh: '首先我起床，然後吃早餐。' },
-    { speaker: 'Coco', line: "I brush my teeth after I eat.", lineZh: '我吃完後刷牙。' },
-    { speaker: 'Polly', line: "Before I sleep, I read a book. Finally, I rest.", lineZh: '睡覺前我讀書。最後，我休息。' },
-    { speaker: 'Benny', line: "Use order words to tell a process!", lineZh: '用順序詞來描述流程！' },
+    { speaker: 'Benny', line: "First I got up, then I ate breakfast. A big one.", lineZh: "我先起床，然後吃早餐。一大頓。" },
+    { speaker: 'Coco', line: "I brush my teeth after I eat. Sparkle!", lineZh: "我吃完後刷牙。亮晶晶！" },
+    { speaker: 'Polly', line: "Before I sleep, I read a book. Every night!", lineZh: "睡覺前，我會看書。每天晚上！" },
+    { speaker: 'Ruby', line: "First, then, after, before... then finally!", lineZh: "先、然後、之後、之前……最後！" },
+    { speaker: 'Finn', line: "What do you do first in the morning, Benny?", lineZh: "Benny，你早上第一件事做什麼？" },
+    { speaker: 'Benny', line: "First I eat. Then I eat. Finally, I eat!", lineZh: "先吃。然後吃。最後，再吃！" },
+    { speaker: 'Coco', line: "Benny! That's not a plan. That's lunch!", lineZh: "Benny！那不是計畫，那是午餐！" },
   ],
 };
 
@@ -12632,10 +12641,13 @@ const L10_M4: Mission = {
     { type: 'match', question: 'detail 是什麼意思？', options: ['細節', '合併', '短', '長'], answer: '細節' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Short: I have a dog. Long: I have a big brown dog.", lineZh: '短：我有一隻狗。長：我有一隻大棕狗。' },
-    { speaker: 'Coco', line: "Add when and where: I play soccer at the park after school.", lineZh: '加時間地點：我放學後在公園踢足球。' },
-    { speaker: 'Benny', line: "Join two: I like tea, and I like cake because they are sweet.", lineZh: '合併：我喜歡茶和蛋糕，因為它們很甜。' },
-    { speaker: 'Ruby', line: "Add details to make longer sentences!", lineZh: '加細節讓句子變長！' },
+    { speaker: 'Ruby', line: "I have a dog. Short plank. Watch this!", lineZh: "我有一隻狗。短橋板。看好了！" },
+    { speaker: 'Ruby', line: "I have a big brown dog! Long plank!", lineZh: "我有一隻大大的棕色狗！長橋板！" },
+    { speaker: 'Coco', line: "I play soccer at the park after school. Longer!", lineZh: "我放學後在公園踢足球。更長！" },
+    { speaker: 'Benny', line: "I like tea, and I like cake because they are sweet!", lineZh: "我喜歡茶，也喜歡蛋糕，因為它們很甜！" },
+    { speaker: 'Polly', line: "Wow, Benny! That plank goes all the way across!", lineZh: "哇，Benny！那塊橋板直接跨到對岸！" },
+    { speaker: 'Finn', line: "Add when, where and why. The bridge gets longer!", lineZh: "加上何時、何地、為什麼。橋就變長了！" },
+    { speaker: 'Ruby', line: "I have a big brown dog that loves this bridge!", lineZh: "我有一隻愛這座橋的大棕狗！" },
   ],
 };
 
@@ -12697,10 +12709,13 @@ const L10_M5: Mission = {
     { type: 'match', question: 'because 用來？', options: ['給原因', '給結果', '表選擇', '表順序'], answer: '給原因' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review all the connectors!", lineZh: '來複習所有連接詞！' },
-    { speaker: 'Coco', line: "I like tea and coffee, but not milk.", lineZh: '我喜歡茶和咖啡，但不喜歡牛奶。' },
-    { speaker: 'Benny', line: "I was tired, so I slept because I studied all night.", lineZh: '我累了，所以睡覺，因為我讀了整晚。' },
-    { speaker: 'Finn', line: "You can connect ideas like a writer!", lineZh: '你能像作家一樣連接想法了！' },
+    { speaker: 'Coco', line: "I like tea and coffee, but not milk.", lineZh: "我喜歡茶和咖啡，但不喜歡牛奶。" },
+    { speaker: 'Benny', line: "I was tired, so I slept. On the bridge.", lineZh: "我很累，所以我睡了。在橋上。" },
+    { speaker: 'Ruby', line: "You slept because you ate too much, Benny!", lineZh: "你睡著是因為吃太多了，Benny！" },
+    { speaker: 'Polly', line: "First I flew, then I landed. Easy!", lineZh: "我先飛，然後降落。簡單！" },
+    { speaker: 'Finn', line: "Before I sleep, I read. And you, Coco?", lineZh: "睡前我會看書。Coco 妳呢？" },
+    { speaker: 'Coco', line: "Before I sleep, I count the planks. Many!", lineZh: "睡前我會數橋板。好多！" },
+    { speaker: 'Benny', line: "The bridge is half done, so let's keep going!", lineZh: "橋蓋了一半，所以我們繼續！" },
   ],
 };
 
@@ -12762,10 +12777,13 @@ const L10_M6: Mission = {
     { type: 'fill-blank', question: 'There ___ tall buildings.（複數 there be）', options: ['are', 'is', 'was', 'be'], answer: 'are' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Let's read a paragraph about a city!", lineZh: '我們來讀一段介紹城市的短文！' },
-    { speaker: 'Coco', line: "Taipei is a big city. Many people live there.", lineZh: '台北是大城市。很多人住那裡。' },
-    { speaker: 'Polly', line: "It has a fast train and tall buildings.", lineZh: '它有快速的火車和高大樓。' },
-    { speaker: 'Benny', line: "You read a whole paragraph! Great!", lineZh: '你讀完整段了！太棒了！' },
+    { speaker: 'Benny', line: "A big sign on the bridge! It's about a city!", lineZh: "橋上有一個大牌子！是關於一座城市！" },
+    { speaker: 'Coco', line: "Taipei is a big city. Many people live there.", lineZh: "台北是一座大城市。很多人住在那裡。" },
+    { speaker: 'Polly', line: "It has a fast train and tall buildings.", lineZh: "它有快速的火車和高樓。" },
+    { speaker: 'Ruby', line: "People visit the famous tower. Look, it's in the picture!", lineZh: "人們會去參觀那座有名的塔。看，圖裡有！" },
+    { speaker: 'Finn', line: "It is a busy and fun city. I want to go!", lineZh: "那是一座熱鬧又好玩的城市。我想去！" },
+    { speaker: 'Benny', line: "Does it have good food? That's the real question.", lineZh: "那裡有好吃的嗎？這才是重點問題。" },
+    { speaker: 'Coco', line: "Yes, Benny. Lots. Now let's read on!", lineZh: "有，Benny。很多。我們繼續讀！" },
   ],
 };
 
@@ -12827,10 +12845,13 @@ const L10_M7: Mission = {
     { type: 'fill-blank', question: 'I ___ Max after school.（遛·散步）', options: ['walk', 'read', 'eat', 'sleep'], answer: 'walk' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A new paragraph: My Pet Dog!", lineZh: '新段落：我的寵物狗！' },
-    { speaker: 'Coco', line: "I have a dog named Max. He is brown and friendly.", lineZh: '我有一隻叫 Max 的狗。他棕色又友善。' },
-    { speaker: 'Polly', line: "Every day, Max and I play in the park.", lineZh: '每天，Max 和我在公園玩。' },
-    { speaker: 'Benny', line: "You understood the whole story! Great!", lineZh: '你讀懂整個故事了！太棒了！' },
+    { speaker: 'Benny', line: "Another sign! This one says: My Pet Dog.", lineZh: "又一個牌子！這個寫著：我的寵物狗。" },
+    { speaker: 'Coco', line: "I have a dog named Max. He is brown and friendly.", lineZh: "我有一隻狗叫 Max。牠是棕色的，很友善。" },
+    { speaker: 'Polly', line: "Every day, Max and I play in the park.", lineZh: "每天，Max 和我都在公園玩。" },
+    { speaker: 'Ruby', line: "I walk Max after school. He walks me, really!", lineZh: "我放學後遛 Max。其實是牠遛我！" },
+    { speaker: 'Finn', line: "Max is my best friend. We are very happy together.", lineZh: "Max 是我最好的朋友。我們在一起很開心。" },
+    { speaker: 'Benny', line: "Is Max real? Can I meet him? Does he like cookies?", lineZh: "Max 是真的嗎？我可以見牠嗎？牠喜歡餅乾嗎？" },
+    { speaker: 'Coco', line: "One question at a time, Benny! Ha ha!", lineZh: "一次問一個問題，Benny！哈哈！" },
   ],
 };
 
@@ -12892,10 +12913,13 @@ const L10_M8: Mission = {
     { type: 'read', question: 'What is the main idea?（主旨？）', passage: 'Exercise is good for you.\nIt keeps you strong.\nIt makes you happy.', options: ['Exercise is good for you', 'You are strong', 'You are happy', 'Run fast'], answer: 'Exercise is good for you' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "The main idea is what the text is mostly about.", lineZh: '主旨是文章主要在講什麼。' },
-    { speaker: 'Coco', line: "A detail is a small fact in the text.", lineZh: '細節是文章裡的小事實。' },
-    { speaker: 'Polly', line: "The title often gives the main idea!", lineZh: '標題常常告訴你主旨！' },
-    { speaker: 'Benny', line: "Main idea = big picture. Detail = small fact!", lineZh: '主旨 = 大方向。細節 = 小事實！' },
+    { speaker: 'Benny', line: "Two signs! A big one and a small one.", lineZh: "兩個牌子！一個大，一個小。" },
+    { speaker: 'Coco', line: "The big sign is the main idea. The city is busy!", lineZh: "大牌子是主旨。這座城市很熱鬧！" },
+    { speaker: 'Polly', line: "The small sign is a detail. It has a fast train.", lineZh: "小牌子是細節。它有快速的火車。" },
+    { speaker: 'Ruby', line: "The title gives the topic. Look at the title first!", lineZh: "標題告訴你主題。先看標題！" },
+    { speaker: 'Finn', line: "What is the text about? The big picture!", lineZh: "這篇文章在講什麼？看大方向！" },
+    { speaker: 'Benny', line: "Main idea: lunch. Detail: cookies. Ha!", lineZh: "主旨：午餐。細節：餅乾。哈！" },
+    { speaker: 'Coco', line: "Benny, that's your main idea every day!", lineZh: "Benny，那是你每天的主旨！" },
   ],
 };
 
@@ -12957,10 +12981,13 @@ const L10_M9: Mission = {
     { type: 'fill-blank', question: '中翻英：「禁止飲食。」', options: ['No food or drinks.', 'Open 9 to 5.', 'The train leaves.', 'Look at the menu.'], answer: 'No food or drinks.' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "The sign says: OPEN 9 to 5.", lineZh: '告示寫：開放 9 點到 5 點。' },
-    { speaker: 'Coco', line: "This notice says: No food or drinks.", lineZh: '這告示寫：禁止飲食。' },
-    { speaker: 'Benny', line: "The schedule shows the train leaves at 3:00.", lineZh: '時刻表顯示火車 3 點開。' },
-    { speaker: 'Ruby', line: "Read signs to find useful information!", lineZh: '讀告示來找有用的資訊！' },
+    { speaker: 'Ruby', line: "A little shop on the bridge! The sign says: OPEN 9 to 5.", lineZh: "橋上有間小店！牌子寫著：9 點到 5 點營業。" },
+    { speaker: 'Coco', line: "This notice says: No food or drinks. Oh no, Benny!", lineZh: "這張告示寫著：禁止飲食。糟了，Benny！" },
+    { speaker: 'Benny', line: "No food? I... I will wait outside. Sadly.", lineZh: "不能吃？我……我在外面等。很難過。" },
+    { speaker: 'Polly', line: "The schedule shows the train leaves at 3:00.", lineZh: "時刻表顯示火車三點開。" },
+    { speaker: 'Finn', line: "The shop is closed on Sunday. Today is Sunday!", lineZh: "這家店星期天休息。今天就是星期天！" },
+    { speaker: 'Ruby', line: "So what time does it open tomorrow? Nine!", lineZh: "那明天幾點開？九點！" },
+    { speaker: 'Benny', line: "Signs are useful. Especially the food ones.", lineZh: "告示很有用。尤其是關於食物的。" },
   ],
 };
 
@@ -13022,10 +13049,13 @@ const L10_M10: Mission = {
     { type: 'read', question: 'What is this text about?（這篇關於什麼？）', passage: 'My dog Max is friendly.\nHe is brown and small.\nI love playing with him.', options: ['the writer\'s dog', 'a city', 'a train', 'a shop'], answer: 'the writer\'s dog' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review reading! Find the main idea.", lineZh: '來複習閱讀！找出主旨。' },
-    { speaker: 'Coco', line: "This text is about a big, busy city.", lineZh: '這篇文章是關於一個繁忙的大城市。' },
-    { speaker: 'Benny', line: "The sign says the shop opens at nine.", lineZh: '告示說商店九點開。' },
-    { speaker: 'Finn', line: "You are a strong reader now! Amazing!", lineZh: '你現在是很強的讀者了！太厲害！' },
+    { speaker: 'Coco', line: "This text is about a big, busy city. Main idea!", lineZh: "這篇文章在講一座熱鬧的大城市。主旨！" },
+    { speaker: 'Benny', line: "A detail: it has a famous tower. Small fact!", lineZh: "一個細節：它有一座有名的塔。小事實！" },
+    { speaker: 'Ruby', line: "The sign says the shop opens at nine.", lineZh: "牌子說店九點開門。" },
+    { speaker: 'Polly', line: "And the train leaves at 3:00. Don't be late!", lineZh: "而火車三點開。別遲到！" },
+    { speaker: 'Finn', line: "What is this text about, Benny?", lineZh: "Benny，這篇文章在講什麼？" },
+    { speaker: 'Benny', line: "A dog named Max who loves the park. Got it!", lineZh: "一隻叫 Max、喜歡公園的狗。答對了！" },
+    { speaker: 'Coco', line: "We can read anything now. Keep walking!", lineZh: "我們現在什麼都讀得懂。繼續走！" },
   ],
 };
 
@@ -13087,10 +13117,13 @@ const L10_M11: Mission = {
     { type: 'read', question: 'What does the writer want to be?（作者想當什麼？）', passage: 'I like to help people.\nI want to be a teacher.\nThat is my dream.', options: ['a teacher', 'a doctor', 'a singer', 'a pilot'], answer: 'a teacher' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Let's write about ourselves!", lineZh: '我們來寫自我介紹！' },
-    { speaker: 'Coco', line: "My name is Coco. I am nine years old.", lineZh: '我叫 Coco。我九歲。' },
-    { speaker: 'Benny', line: "I live in Taipei. I like music and reading.", lineZh: '我住台北。我喜歡音樂和閱讀。' },
-    { speaker: 'Ruby', line: "Now write 5 sentences about you!", lineZh: '現在寫 5 句關於你的話！' },
+    { speaker: 'Ruby', line: "A big empty board on the bridge. Let's write about us!", lineZh: "橋上有塊空白大板子。我們來寫自己！" },
+    { speaker: 'Coco', line: "My name is Coco. I am nine years old.", lineZh: "我叫 Coco。我九歲。" },
+    { speaker: 'Coco', line: "I live in Taipei. I like music and reading.", lineZh: "我住在台北。我喜歡音樂和閱讀。" },
+    { speaker: 'Benny', line: "My name is Benny. My favorite color is cookie. I mean, brown.", lineZh: "我叫 Benny。我最喜歡的顏色是餅乾色。我是說，棕色。" },
+    { speaker: 'Polly', line: "I want to be a teacher. A flying teacher!", lineZh: "我想當老師。會飛的老師！" },
+    { speaker: 'Finn', line: "Five sentences about you. Easy and fun!", lineZh: "五句話介紹你自己。簡單又好玩！" },
+    { speaker: 'Ruby', line: "Now it's your turn! Tell us about you!", lineZh: "現在換你！跟我們說說你自己！" },
   ],
 };
 
@@ -13152,10 +13185,13 @@ const L10_M12: Mission = {
     { type: 'match', question: '日記開頭常寫？', options: ['Dear Diary', 'Best wishes', 'The end', 'Hello sir'], answer: 'Dear Diary' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "Dear Diary, today was a great day!", lineZh: '親愛的日記，今天是美好的一天！' },
-    { speaker: 'Benny', line: "First, I went to the park. Then, I met my friends.", lineZh: '首先，我去公園。然後，我遇到朋友。' },
-    { speaker: 'Polly', line: "Finally, we ate ice cream. It was so fun!", lineZh: '最後，我們吃冰淇淋。真好玩！' },
-    { speaker: 'Coco', line: "Write your day with First, Then, Finally!", lineZh: '用 First、Then、Finally 寫你的一天！' },
+    { speaker: 'Coco', line: "Dear Diary, today was a great day on the bridge!", lineZh: "親愛的日記，今天在橋上真是美好的一天！" },
+    { speaker: 'Benny', line: "First, I went to the park. Then, I met my friends.", lineZh: "首先，我去了公園。然後，我遇到朋友。" },
+    { speaker: 'Polly', line: "Finally, we ate ice cream. It was so fun!", lineZh: "最後，我們吃了冰淇淋。超好玩！" },
+    { speaker: 'Ruby', line: "First, then, finally. A whole day in three words!", lineZh: "首先、然後、最後。三個詞就是一整天！" },
+    { speaker: 'Finn', line: "What did you do first today, Benny?", lineZh: "Benny，你今天第一件事做了什麼？" },
+    { speaker: 'Benny', line: "First, breakfast. Then, second breakfast. Finally, a nap!", lineZh: "首先，早餐。然後，第二頓早餐。最後，午睡！" },
+    { speaker: 'Coco', line: "I will remember this day. Ha ha! Write yours!", lineZh: "我會記得今天。哈哈！寫下你的！" },
   ],
 };
 
@@ -13217,10 +13253,13 @@ const L10_M13: Mission = {
     { type: 'match', question: 'Best wishes 用在信的？', options: ['結尾', '開頭', '中間', '標題'], answer: '結尾' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "A letter starts with 'Dear'.", lineZh: '信以「Dear」開頭。' },
-    { speaker: 'Coco', line: "Dear Grandma, how are you? I miss you.", lineZh: '親愛的奶奶，你好嗎？我想你。' },
-    { speaker: 'Benny', line: "End with 'Best wishes' and your name.", lineZh: '用「Best wishes」和你的名字結尾。' },
-    { speaker: 'Ruby', line: "Now write a letter to a friend!", lineZh: '現在寫一封信給朋友！' },
+    { speaker: 'Ruby', line: "A mailbox on the bridge! Let's write a letter!", lineZh: "橋上有個郵筒！我們來寫信！" },
+    { speaker: 'Coco', line: "Dear Grandma, how are you? I miss you.", lineZh: "親愛的奶奶，妳好嗎？我想妳。" },
+    { speaker: 'Polly', line: "I hope you are well. I will visit you soon.", lineZh: "希望妳一切都好。我很快就去看妳。" },
+    { speaker: 'Benny', line: "Dear Cookie, I miss you. I will eat you soon.", lineZh: "親愛的餅乾，我想你。我很快就會吃掉你。" },
+    { speaker: 'Finn', line: "Benny! That's a strange letter. Ha ha!", lineZh: "Benny！那封信好奇怪。哈哈！" },
+    { speaker: 'Coco', line: "Best wishes, Coco. Fold it. Into the mailbox!", lineZh: "祝福妳，Coco。摺好。投進郵筒！" },
+    { speaker: 'Ruby', line: "Now write a letter to a friend! Dear...", lineZh: "現在寫一封信給朋友！親愛的……" },
   ],
 };
 
@@ -13282,10 +13321,13 @@ const L10_M14: Mission = {
     { type: 'match', question: 'describe 是什麼意思？', options: ['描述', '看見', '玩', '感覺'], answer: '描述' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Look at the picture and describe it!", lineZh: '看圖並描述它！' },
-    { speaker: 'Coco', line: "In the picture, there is a park with trees.", lineZh: '圖裡有一座有樹的公園。' },
-    { speaker: 'Polly', line: "A girl is playing. She looks happy.", lineZh: '一個女孩正在玩。她看起來開心。' },
-    { speaker: 'Benny', line: "Say what you see, what they do, how they feel!", lineZh: '說你看到什麼、他們做什麼、感覺如何！' },
+    { speaker: 'Benny', line: "A giant picture frame on the bridge! Look inside!", lineZh: "橋上有一個巨大的相框！看裡面！" },
+    { speaker: 'Coco', line: "In the picture, there is a park with trees.", lineZh: "圖片裡有一座有樹的公園。" },
+    { speaker: 'Polly', line: "There are many trees. A girl is playing.", lineZh: "有很多樹。一個女孩在玩。" },
+    { speaker: 'Ruby', line: "She looks happy. It is a sunny day.", lineZh: "她看起來很開心。是個晴天。" },
+    { speaker: 'Finn', line: "The scene is peaceful. What else do you see?", lineZh: "畫面很寧靜。你們還看到什麼？" },
+    { speaker: 'Benny', line: "There is a picnic basket. I see sandwiches!", lineZh: "有一個野餐籃。我看到三明治！" },
+    { speaker: 'Coco', line: "Say what you see, what they do, how they feel. Done!", lineZh: "說出看到什麼、他們在做什麼、感覺如何。完成！" },
   ],
 };
 
@@ -13347,10 +13389,13 @@ const L10_M15: Mission = {
     { type: 'match', question: '信的結尾常寫？', options: ['Best wishes', 'Dear Diary', 'First', 'There is'], answer: 'Best wishes' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review all our writing!", lineZh: '來複習所有寫作！' },
-    { speaker: 'Coco', line: "My name is Coco, and I like to write.", lineZh: '我叫 Coco，我喜歡寫作。' },
-    { speaker: 'Benny', line: "First I plan, then I write, finally I check.", lineZh: '首先我計畫，然後寫，最後檢查。' },
-    { speaker: 'Finn', line: "You can write like an author now!", lineZh: '你現在能像作家一樣寫作了！' },
+    { speaker: 'Coco', line: "My name is Coco, and I like to write.", lineZh: "我叫 Coco，我喜歡寫作。" },
+    { speaker: 'Benny', line: "First I plan, then I write, finally I check.", lineZh: "我先計畫，然後寫，最後檢查。" },
+    { speaker: 'Ruby', line: "Dear Grandma, I miss you. Best wishes, Ruby.", lineZh: "親愛的奶奶，我想妳。祝福妳，Ruby。" },
+    { speaker: 'Polly', line: "In the picture, there is a bridge. And us!", lineZh: "圖片裡有一座橋。還有我們！" },
+    { speaker: 'Finn', line: "I like writing because it is fun. And you?", lineZh: "我喜歡寫作，因為很好玩。你呢？" },
+    { speaker: 'Benny', line: "I like writing because I can write about cookies.", lineZh: "我喜歡寫作，因為我可以寫餅乾。" },
+    { speaker: 'Coco', line: "We write like authors now! Keep going!", lineZh: "我們現在寫得像作家了！繼續！" },
   ],
 };
 
@@ -13412,10 +13457,13 @@ const L10_M16: Mission = {
     { type: 'read', question: 'Does the teacher help students?（老師幫助學生嗎？）', passage: 'My teacher is very kind.\nShe helps everyone learn.\nWe all like her.', options: ['Yes, she helps everyone', 'No, she is busy', 'She is mean', 'She is quiet'], answer: 'Yes, she helps everyone' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Let's describe a person and a place!", lineZh: '我們來描述一個人和一個地方！' },
-    { speaker: 'Coco', line: "My teacher is tall and kind. She helps everyone.", lineZh: '我的老師又高又善良。她幫助大家。' },
-    { speaker: 'Benny', line: "My favorite place is the park. It is green and quiet.", lineZh: '我最愛的地方是公園。它綠又安靜。' },
-    { speaker: 'Ruby', line: "Use adjectives to paint a picture with words!", lineZh: '用形容詞用文字畫出畫面！' },
+    { speaker: 'Ruby', line: "Let's paint pictures with words! Me first!", lineZh: "我們用文字畫畫！我先！" },
+    { speaker: 'Coco', line: "My teacher is tall and kind. She helps everyone.", lineZh: "我的老師又高又善良。她幫助每個人。" },
+    { speaker: 'Benny', line: "My favorite place is the park. It is green and quiet.", lineZh: "我最喜歡的地方是公園。又綠又安靜。" },
+    { speaker: 'Polly', line: "The city is busy but exciting. So many lights!", lineZh: "城市很忙碌但很刺激。好多燈！" },
+    { speaker: 'Finn', line: "My friend is funny and kind. That's you, Benny!", lineZh: "我的朋友又好笑又善良。就是你，Benny！" },
+    { speaker: 'Benny', line: "Me? Funny, kind, and hungry. Three words!", lineZh: "我？好笑、善良、還有餓。三個詞！" },
+    { speaker: 'Ruby', line: "Adjectives make the picture clear. Try it!", lineZh: "形容詞讓畫面更清楚。試試看！" },
   ],
 };
 
@@ -13477,10 +13525,13 @@ const L10_M17: Mission = {
     { type: 'read', question: 'Does the writer think school is important?（作者覺得學校重要嗎？）', passage: 'In my opinion, school is important.\nWe learn many things there.\nI agree that school helps us.', options: ['Yes', 'No', 'Not sure', 'School is bad'], answer: 'Yes' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I think reading is great because it is fun.", lineZh: '我覺得閱讀很棒因為它很好玩。' },
-    { speaker: 'Coco', line: "In my opinion, school is important.", lineZh: '在我看來，學校很重要。' },
-    { speaker: 'Polly', line: "I agree because we learn a lot.", lineZh: '我同意因為我們學很多。' },
-    { speaker: 'Benny', line: "Give your opinion AND a reason!", lineZh: '給出你的觀點「和」理由！' },
+    { speaker: 'Benny', line: "I think reading is great because it is fun.", lineZh: "我覺得閱讀很棒，因為很好玩。" },
+    { speaker: 'Coco', line: "In my opinion, school is important.", lineZh: "我認為學校很重要。" },
+    { speaker: 'Polly', line: "I agree because we learn a lot there.", lineZh: "我同意，因為我們在那裡學到很多。" },
+    { speaker: 'Ruby', line: "I think soccer is the best sport. What do you think?", lineZh: "我覺得足球是最棒的運動。你覺得呢？" },
+    { speaker: 'Finn', line: "I think jumping is the best sport because I'm good at it!", lineZh: "我覺得跳是最棒的運動，因為我很會跳！" },
+    { speaker: 'Benny', line: "I think eating is a sport. Because I train every day.", lineZh: "我覺得吃是一種運動。因為我每天訓練。" },
+    { speaker: 'Coco', line: "Opinion and reason. Everyone did it! Ha ha!", lineZh: "觀點加理由。大家都做到了！哈哈！" },
   ],
 };
 
@@ -13542,10 +13593,13 @@ const L10_M18: Mission = {
     { type: 'match', question: 'copy the pattern 意思是？', options: ['仿照句型', '改變主題', '刪掉', '畫圖'], answer: '仿照句型' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Read the model, then write your own!", lineZh: '讀範例，然後寫你自己的！' },
-    { speaker: 'Coco', line: "Model: My weekend was fun. I went to the beach.", lineZh: '範例：我的週末很好玩。我去了海邊。' },
-    { speaker: 'Ruby', line: "Now you: My weekend was ___. I went to ___.", lineZh: '換你：我的週末___。我去了___。' },
-    { speaker: 'Benny', line: "Read a model, then make it your own!", lineZh: '讀範例，然後改成你自己的！' },
+    { speaker: 'Benny', line: "A model text on the board! Read it first.", lineZh: "板子上有範文！先讀一遍。" },
+    { speaker: 'Coco', line: "My weekend was fun. I went to the beach.", lineZh: "我的週末很好玩。我去了海邊。" },
+    { speaker: 'Coco', line: "I swam and played. Now you try!", lineZh: "我游泳又玩耍。現在換你！" },
+    { speaker: 'Ruby', line: "My weekend was busy. I went to the market.", lineZh: "我的週末很忙。我去了市場。" },
+    { speaker: 'Polly', line: "My weekend was windy. I flew and flew!", lineZh: "我的週末風很大。我飛啊飛！" },
+    { speaker: 'Benny', line: "My weekend was yummy. I went to the kitchen.", lineZh: "我的週末很美味。我去了廚房。" },
+    { speaker: 'Finn', line: "Change the words to fit you. Great paragraphs!", lineZh: "把字換成你的版本。很棒的段落！" },
   ],
 };
 
@@ -13607,10 +13661,13 @@ const L10_M19: Mission = {
     { type: 'read', question: 'What is the main idea?（主旨？）', passage: 'Trees give us air and shade.\nThey help animals and people.\nTrees are important for the earth.', options: ['Trees are important', 'Trees are tall', 'Trees are green', 'Animals like trees'], answer: 'Trees are important' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Read, understand, and respond!", lineZh: '讀懂、理解、回應！' },
-    { speaker: 'Coco', line: "Text: Trees are important. They give us air.", lineZh: '文章：樹很重要。它們給我們空氣。' },
-    { speaker: 'Ruby', line: "Respond: I think trees are great because they help us.", lineZh: '回應：我覺得樹很棒因為它們幫我們。' },
-    { speaker: 'Benny', line: "Read it, then write what you think!", lineZh: '讀完，然後寫你的想法！' },
+    { speaker: 'Benny', line: "A text about trees! Read, then tell me what you think.", lineZh: "一篇關於樹的文章！讀完，告訴我你的想法。" },
+    { speaker: 'Coco', line: "Trees are important. They give us clean air.", lineZh: "樹很重要。它們給我們乾淨的空氣。" },
+    { speaker: 'Polly', line: "We should protect trees. I live in one!", lineZh: "我們應該保護樹。我就住在樹上！" },
+    { speaker: 'Ruby', line: "I think trees are great because they help us.", lineZh: "我覺得樹很棒，因為它們幫助我們。" },
+    { speaker: 'Finn', line: "I agree! Nature is beautiful. Let's plant one!", lineZh: "我同意！大自然很美。我們來種一棵！" },
+    { speaker: 'Benny', line: "I think trees are great because apples grow on them.", lineZh: "我覺得樹很棒，因為上面會長蘋果。" },
+    { speaker: 'Coco', line: "Read it, think about it, write it. We did it!", lineZh: "讀一讀、想一想、寫一寫。我們做到了！" },
   ],
 };
 
@@ -13672,10 +13729,13 @@ const L10_M20: Mission = {
     { type: 'read', question: 'Is this text about pets?（這篇關於寵物嗎？）', passage: 'Dogs are great pets.\nCats are good pets too.\nPets make us happy.', options: ['Yes, about pets', 'No, about cars', 'About food', 'About school'], answer: 'Yes, about pets' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Bridge Boss says: read and write!", lineZh: '未來橋大魔王說：讀寫對決！' },
-    { speaker: 'Coco', line: "I can connect ideas and write a paragraph!", lineZh: '我會連接想法也會寫段落！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Bridge champion!", lineZh: '你打敗大魔王了！未來橋冠軍！' },
-    { speaker: 'Finn', line: "On to Challenge Field! Advanced magic awaits!", lineZh: '前進挑戰場！進階魔法等著你！' },
+    { speaker: 'Finn', line: "The Bridge Boss is here! He is pulling the planks away!", lineZh: "橋大魔王來了！他在把橋板拉走！" },
+    { speaker: 'Coco', line: "I like tea and cake, but not milk! Plank back!", lineZh: "我喜歡茶和蛋糕，但不喜歡牛奶！橋板回來！" },
+    { speaker: 'Benny', line: "I was tired, so I slept! Plank back!", lineZh: "我很累，所以我睡了！橋板回來！" },
+    { speaker: 'Ruby', line: "First I plan, then I write! Plank back!", lineZh: "我先計畫，然後寫！橋板回來！" },
+    { speaker: 'Polly', line: "I think reading is great because it is fun! Back!", lineZh: "我覺得閱讀很棒，因為很好玩！回來！" },
+    { speaker: 'Finn', line: "Dear Boss, goodbye! Best wishes, Finn! The bridge is whole!", lineZh: "親愛的魔王，再見！祝福你，Finn！橋完整了！" },
+    { speaker: 'Coco', line: "We crossed the Future Bridge! The Challenge Arena is next!", lineZh: "我們走過未來橋了！下一站挑戰場！" },
   ],
 };
 
