@@ -12928,6 +12928,7 @@ const L10_M8: Mission = {
     { speaker: 'Benny', line: "Main idea: lunch. Detail: cookies. Ha!", lineZh: "主旨：午餐。細節：餅乾。哈！" },
     { speaker: 'Coco', line: "Benny, that's your main idea every day!", lineZh: "Benny，那是你每天的主旨！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m8.mp4?v=1',
 };
 
 const L10_M9: Mission = {
