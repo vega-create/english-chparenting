@@ -13411,6 +13411,7 @@ const L10_M15: Mission = {
     { speaker: 'Benny', line: "I like writing because I can write about cookies.", lineZh: "我喜歡寫作，因為我可以寫餅乾。" },
     { speaker: 'Coco', line: "We write like authors now! Keep going!", lineZh: "我們現在寫得像作家了！繼續！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m15.mp4?v=1',
 };
 
 const L10_M16: Mission = {
