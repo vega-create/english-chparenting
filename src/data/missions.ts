@@ -12514,6 +12514,7 @@ const L10_M2: Mission = {
     { speaker: 'Coco', line: "Because it is my birthday! Cake time!", lineZh: "因為今天是我生日！蛋糕時間！" },
     { speaker: 'Benny', line: "She said cake, so I am running. Bye!", lineZh: "她說蛋糕，所以我要跑了。掰！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m2.mp4?v=1',
 };
 
 const L10_M3: Mission = {
