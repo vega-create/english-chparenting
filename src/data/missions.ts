@@ -13204,6 +13204,7 @@ const L10_M12: Mission = {
     { speaker: 'Benny', line: "First, breakfast. Then, second breakfast. Finally, a nap!", lineZh: "首先，早餐。然後，第二頓早餐。最後，午睡！" },
     { speaker: 'Coco', line: "I will remember this day. Ha ha! Write yours!", lineZh: "我會記得今天。哈哈！寫下你的！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m12.mp4?v=1',
 };
 
 const L10_M13: Mission = {
