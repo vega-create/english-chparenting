@@ -12583,6 +12583,7 @@ const L10_M3: Mission = {
     { speaker: 'Benny', line: "First I eat. Then I eat. Finally, I eat!", lineZh: "先吃。然後吃。最後，再吃！" },
     { speaker: 'Coco', line: "Benny! That's not a plan. That's lunch!", lineZh: "Benny！那不是計畫，那是午餐！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m3.mp4?v=1',
 };
 
 const L10_M4: Mission = {
