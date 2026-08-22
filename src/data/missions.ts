@@ -13549,6 +13549,7 @@ const L10_M17: Mission = {
     { speaker: 'Benny', line: "I think eating is a sport. Because I train every day.", lineZh: "我覺得吃是一種運動。因為我每天訓練。" },
     { speaker: 'Coco', line: "Opinion and reason. Everyone did it! Ha ha!", lineZh: "觀點加理由。大家都做到了！哈哈！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m17.mp4?v=1',
 };
 
 const L10_M18: Mission = {
@@ -13617,6 +13618,7 @@ const L10_M18: Mission = {
     { speaker: 'Benny', line: "My weekend was yummy. I went to the kitchen.", lineZh: "我的週末很美味。我去了廚房。" },
     { speaker: 'Finn', line: "Change the words to fit you. Great paragraphs!", lineZh: "把字換成你的版本。很棒的段落！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m18.mp4?v=1',
 };
 
 const L10_M19: Mission = {
