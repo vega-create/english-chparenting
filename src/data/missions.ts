@@ -12790,6 +12790,7 @@ const L10_M6: Mission = {
     { speaker: 'Benny', line: "Does it have good food? That's the real question.", lineZh: "那裡有好吃的嗎？這才是重點問題。" },
     { speaker: 'Coco', line: "Yes, Benny. Lots. Now let's read on!", lineZh: "有，Benny。很多。我們繼續讀！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m6.mp4?v=1',
 };
 
 const L10_M7: Mission = {
