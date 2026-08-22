@@ -13066,6 +13066,7 @@ const L10_M10: Mission = {
     { speaker: 'Benny', line: "A dog named Max who loves the park. Got it!", lineZh: "一隻叫 Max、喜歡公園的狗。答對了！" },
     { speaker: 'Coco', line: "We can read anything now. Keep walking!", lineZh: "我們現在什麼都讀得懂。繼續走！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L10/m10.mp4?v=1',
 };
 
 const L10_M11: Mission = {
