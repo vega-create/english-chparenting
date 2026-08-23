@@ -15970,6 +15970,7 @@ const L12_M12: Mission = {
     { speaker: 'Benny', line: "Follow the steps in order. I followed them very fast.", lineZh: "照順序做。我做得非常快。" },
     { speaker: 'Coco', line: "Clear steps make good instructions. And good sandwiches!", lineZh: "清楚的步驟就是好說明。也是好三明治！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m12.mp4?v=1',
 };
 
 const L12_M13: Mission = {
