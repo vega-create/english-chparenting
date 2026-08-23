@@ -14173,6 +14173,7 @@ const L11_M6: Mission = {
     { speaker: 'Benny', line: "It is easy to make friends here. Hi, wall!", lineZh: "在這裡交朋友很容易。嗨，牆！" },
     { speaker: 'Coco', line: "Want to, hope to, need to. Write yours on the wall!", lineZh: "want to、hope to、need to。把你的寫上牆！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m6.mp4?v=1',
 };
 
 const L11_M7: Mission = {
