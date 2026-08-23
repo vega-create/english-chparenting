@@ -14034,6 +14034,7 @@ const L11_M4: Mission = {
     { speaker: 'Benny', line: "Which cookie is the best? This one. No, this one!", lineZh: "哪塊餅乾最好吃？這塊。不，這塊！" },
     { speaker: 'Coco', line: "Short words get -est, long words get the most. Done!", lineZh: "短字加 -est，長字加 the most。搞定！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m4.mp4?v=1',
 };
 
 const L11_M5: Mission = {
