@@ -15348,6 +15348,7 @@ const L12_M3: Mission = {
     { speaker: 'Coco', line: "I am creative. I drew our whole adventure!", lineZh: "我很有創意。我把整趟冒險都畫下來了！" },
     { speaker: 'Ruby', line: "So what are you like? Tell us at the top!", lineZh: "那你是什麼樣的人？到山頂告訴我們！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m3.mp4?v=1',
 };
 
 const L12_M4: Mission = {
