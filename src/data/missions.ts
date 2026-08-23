@@ -13824,6 +13824,7 @@ const L11_M1: Mission = {
     { speaker: 'Ruby', line: "You shouldn't eat too much candy before a challenge!", lineZh: "挑戰前你不該吃太多糖果！" },
     { speaker: 'Finn', line: "What should we do first? Let's go in!", lineZh: "我們應該先做什麼？進去吧！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m1.mp4?v=1',
 };
 
 const L11_M2: Mission = {
