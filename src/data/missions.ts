@@ -16246,6 +16246,7 @@ const L12_M16: Mission = {
     { speaker: 'Benny', line: "Once, a little bear found a giant cookie... the end. Short story!", lineZh: "從前，一隻小熊找到一塊巨大餅乾……完。短篇！" },
     { speaker: 'Ruby', line: "Bring your story to life with your voice!", lineZh: "用你的聲音讓故事活起來！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m16.mp4?v=1',
 };
 
 const L12_M17: Mission = {
