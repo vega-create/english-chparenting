@@ -15073,6 +15073,7 @@ const L11_M19: Mission = {
     { speaker: 'Benny', line: "I will recycle my cookie boxes. All of them. Many.", lineZh: "我會回收我的餅乾盒。全部。很多。" },
     { speaker: 'Coco', line: "Read, write, speak. All our skills together!", lineZh: "讀、寫、說。所有技能一起上！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m19.mp4?v=1',
 };
 
 const L11_M20: Mission = {
