@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { playClick, playStar } from '@/lib/sfx';
 import HomeButton from "@/components/HomeButton";
 import { playPageIntro } from '@/lib/vega-audio';
+import { setActiveKidAvatar } from '@/lib/kids';
 
 // 底圖已畫好 5 個玻璃卡框，內容用 % 疊進框裡（框中心 cx、上緣 34.2%、高 43.9%、寬 14%）
 const AVATARS = [
@@ -39,7 +40,7 @@ export default function ChooseCharacterPage() {
   function confirm() {
     if (!sel) return;
     playStar();
-    try { localStorage.setItem('ae_avatar', sel); } catch {}
+    try { localStorage.setItem('ae_avatar', sel); setActiveKidAvatar(sel); } catch {}
     router.push('/adventure-map');
   }
 

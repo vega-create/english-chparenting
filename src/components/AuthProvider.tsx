@@ -1,7 +1,7 @@
 'use client';
 import { createContext, useContext, useEffect, useState, useCallback } from 'react';
 import { supa } from '@/lib/supabase';
-import { toAuthUser, syncProgress, pushProgress, signInWithGoogle, signOut, type AuthUser } from '@/lib/auth';
+import { toAuthUser, syncKids, pushProgress, deleteKidCloud, signInWithGoogle, signOut, type AuthUser } from '@/lib/auth';
 import type { Progress } from '@/lib/missionProgress';
 import { setAnalyticsUser } from '@/lib/analytics';
 
@@ -29,7 +29,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
       setUser(u);
       setAnalyticsUser(u?.id ?? null);
       setLoading(false);
-      if (u) syncProgress(u.id);          // 登入狀態還在 → 把雲端與本機合併
+      if (u) syncKids(u.id);              // 登入狀態還在 → 把雲端與本機（每個孩子）合併
     });
 
     const { data: sub } = supa().auth.onAuthStateChange((event, session) => {
@@ -37,21 +37,29 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
       setUser(u);
       setAnalyticsUser(u?.id ?? null);
       setLoading(false);
-      if (u && event === 'SIGNED_IN') syncProgress(u.id);   // 剛登入 → 搬家
+      if (u && event === 'SIGNED_IN') syncKids(u.id);   // 剛登入 → 搬家
     });
 
     return () => { alive = false; sub.subscription.unsubscribe(); };
   }, []);
 
-  // 進度存檔時，有登入就同步上雲端
+  // 進度存檔時，有登入就同步「正在玩的孩子」上雲端；刪孩子也同步刪雲端
   useEffect(() => {
     if (!user) return;
     const onSave = (e: Event) => {
       const p = (e as CustomEvent<Progress>).detail;
       if (p) pushProgress(user.id, p);
     };
+    const onRemove = (e: Event) => {
+      const id = (e as CustomEvent<{ id: string }>).detail?.id;
+      if (id) deleteKidCloud(user.id, id);
+    };
     window.addEventListener('ae-progress-save', onSave);
-    return () => window.removeEventListener('ae-progress-save', onSave);
+    window.addEventListener('ae-kid-removed', onRemove);
+    return () => {
+      window.removeEventListener('ae-progress-save', onSave);
+      window.removeEventListener('ae-kid-removed', onRemove);
+    };
   }, [user]);
 
   const signIn = useCallback((redirectPath?: string) => { signInWithGoogle(redirectPath); }, []);

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useAuth } from '@/components/AuthProvider';
 import { playClick } from '@/lib/sfx';
+import KidSwitcher from '@/components/KidSwitcher';
 
 /**
  * 登入／頭像按鈕。
@@ -48,6 +49,10 @@ export default function AuthButton({ compact = false }: { compact?: boolean }) {
             <p className="text-xs font-black text-gray-700 truncate">{user.name}</p>
             <p className="text-[11px] text-gray-400 truncate">{user.email}</p>
             <p className="mt-2 text-[11px] text-green-600 font-bold">☁️ 進度已同步，換裝置也在</p>
+            <div className="mt-2 flex items-center justify-between gap-2">
+              <span className="text-[11px] font-bold text-gray-500">正在玩：</span>
+              <KidSwitcher compact />
+            </div>
             <button
               onClick={() => { playClick(); setOpen(false); logout(); }}
               className="mt-2.5 w-full rounded-full border-2 border-gray-200 py-1.5 text-xs font-bold text-gray-500 hover:bg-gray-50 active:scale-95 transition"

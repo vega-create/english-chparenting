@@ -10,6 +10,7 @@ import ResearchConsent from '@/components/ResearchConsent';
 import PlacementPrompt from '@/components/PlacementPrompt';
 import { setStartLevel } from '@/lib/progress';
 import LoginNudge from '@/components/LoginNudge';
+import KidSwitcher from '@/components/KidSwitcher';
 
 // 家長補給站
 const SUPPLY = [
@@ -89,7 +90,10 @@ export default function ParentsPage() {
       <div className="max-w-5xl mx-auto px-4 pb-16">
         {/* ===== 冒險旅程 + 數字 ===== */}
         <section className="-mt-5 relative bg-amber-50/95 backdrop-blur rounded-3xl border-4 border-amber-200 shadow-xl p-3 sm:p-4">
-          <h2 className="font-black text-amber-900 text-base sm:text-lg m-0 mb-3">孩子的冒險旅程 ⭐</h2>
+          <div className="flex items-center justify-between gap-2 mb-3">
+            <h2 className="font-black text-amber-900 text-base sm:text-lg m-0">孩子的冒險旅程 ⭐</h2>
+            <KidSwitcher />
+          </div>
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1 flex items-center justify-between gap-0.5 min-w-0">
               {WORLDS.map((w, i) => (
