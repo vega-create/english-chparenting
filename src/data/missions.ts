@@ -14382,6 +14382,7 @@ const L11_M9: Mission = {
     { speaker: 'Benny', line: "If you are kind, people will like you. And feed you.", lineZh: "如果你善良，大家會喜歡你。還會餵你。" },
     { speaker: 'Coco', line: "If plus present, will plus verb. Rain or shine!", lineZh: "if 加現在式，will 加動詞。風雨無阻！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m9.mp4?v=1',
 };
 
 const L11_M10: Mission = {
