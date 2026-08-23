@@ -15210,6 +15210,7 @@ const L12_M1: Mission = {
     { speaker: 'Benny', line: "I was eating when we started. I am eating now. I will eat at the top.", lineZh: "出發時我在吃。現在也在吃。到山頂還會吃。" },
     { speaker: 'Finn', line: "Past, present, future, perfect. One more mountain. Let's climb!", lineZh: "過去、現在、未來、完成。最後一座山。爬吧！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m1.mp4?v=1',
 };
 
 const L12_M2: Mission = {
