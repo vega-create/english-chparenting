@@ -14659,6 +14659,7 @@ const L11_M13: Mission = {
     { speaker: 'Benny', line: "The little boat was very proud. And very wet.", lineZh: "小船非常驕傲。也非常濕。" },
     { speaker: 'Coco', line: "Never give up. That's the story!", lineZh: "永不放棄。這就是故事！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m13.mp4?v=1',
 };
 
 const L11_M14: Mission = {
