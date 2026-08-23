@@ -15900,6 +15900,7 @@ const L12_M11: Mission = {
     { speaker: 'Benny', line: "That dragons can sing. And that I should write mine!", lineZh: "龍會唱歌。還有我該寫我自己的！" },
     { speaker: 'Ruby', line: "Use your imagination. Write your story tonight!", lineZh: "發揮想像力。今晚寫下你的故事！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m11.mp4?v=1',
 };
 
 const L12_M12: Mission = {
