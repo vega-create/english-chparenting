@@ -15555,6 +15555,7 @@ const L12_M6: Mission = {
     { speaker: 'Benny', line: "I love this story. It makes me want to practice... eating less.", lineZh: "我愛這個故事。它讓我想練習……少吃一點。" },
     { speaker: 'Coco', line: "Follow your dream, like Mia. Let's go!", lineZh: "像 Mia 一樣追夢。走吧！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m6.mp4?v=1',
 };
 
 const L12_M7: Mission = {
