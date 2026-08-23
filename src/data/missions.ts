@@ -15279,6 +15279,7 @@ const L12_M2: Mission = {
     { speaker: 'Benny', line: "The cookie that I packed was eaten by... me. Sorry.", lineZh: "我帶的那塊餅乾被……我吃了。抱歉。" },
     { speaker: 'Coco', line: "Long sentences, no problem. We climb on!", lineZh: "長句子，沒問題。我們繼續爬！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m2.mp4?v=1',
 };
 
 const L12_M3: Mission = {
