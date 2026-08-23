@@ -16108,6 +16108,7 @@ const L12_M14: Mission = {
     { speaker: 'Benny', line: "My hero is the first bear who climbed this mountain. Brave!", lineZh: "我的英雄是第一隻爬上這座山的熊。好勇敢！" },
     { speaker: 'Ruby', line: "Write about who inspires you and why!", lineZh: "寫下誰激勵了你、為什麼！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m14.mp4?v=1',
 };
 
 const L12_M15: Mission = {
