@@ -16384,6 +16384,7 @@ const L12_M18: Mission = {
     { speaker: 'Benny', line: "My project is about mountain snacks. Very important research.", lineZh: "我的專題是登山零食。非常重要的研究。" },
     { speaker: 'Coco', line: "Every skill, one project. Now, to the summit!", lineZh: "所有技能，一個專題。現在，往山頂！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m18.mp4?v=1',
 };
 
 const L12_M19: Mission = {
@@ -16452,6 +16453,7 @@ const L12_M19: Mission = {
     { speaker: 'Benny', line: "I am proud of myself. And a little hungry. Mostly proud.", lineZh: "我為自己驕傲。也有點餓。大部分是驕傲。" },
     { speaker: 'Coco', line: "Let's celebrate our success! One more step to the top!", lineZh: "慶祝我們的成功！再一步就到山頂！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m19.mp4?v=1',
 };
 
 const L12_M20: Mission = {
