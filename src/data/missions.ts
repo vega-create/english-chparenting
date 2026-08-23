@@ -15831,6 +15831,7 @@ const L12_M10: Mission = {
     { speaker: 'Benny', line: "Reading opens new worlds. And new menus.", lineZh: "閱讀打開新世界。還有新菜單。" },
     { speaker: 'Coco', line: "Second checkpoint passed! We're high up now!", lineZh: "第二個檢查站過了！我們爬很高了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m10.mp4?v=1',
 };
 
 const L12_M11: Mission = {
