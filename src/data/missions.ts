@@ -15142,6 +15142,7 @@ const L11_M20: Mission = {
     { speaker: 'Finn', line: "Although it was hard, we did it! The Boss is down!", lineZh: "雖然很難，我們做到了！魔王倒了！" },
     { speaker: 'Coco', line: "Challenge Arena complete! Victory Peak is next!", lineZh: "挑戰場完成！下一站勝利峰！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m20.mp4?v=1',
 };
 
 // ===================== L12 勝利峰 Victory Summit（B1・綜合精熟與創作＋畢業） =====================
