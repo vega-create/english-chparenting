@@ -15182,10 +15182,13 @@ const L12_M1: Mission = {
     { type: 'match', question: 'have studied 是哪個時態？', options: ['現在完成式', '過去式', '未來式', '進行式'], answer: '現在完成式' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Welcome to Victory Summit! The final level!", lineZh: '歡迎來到勝利峰！最後一級！' },
-    { speaker: 'Coco', line: "I have studied English for years, and I am still learning.", lineZh: '我已學英文很多年了，而且我還在學。' },
-    { speaker: 'Benny', line: "When I graduate, I will use everything I have learned.", lineZh: '當我畢業，我會用上所有學過的。' },
-    { speaker: 'Finn', line: "You can now mix tenses like a pro!", lineZh: '你現在能像高手一樣混用時態了！' },
+    { speaker: 'Finn', line: "Look up! That's Victory Summit. The top of everything!", lineZh: "抬頭看！那就是勝利峰。一切的頂端！" },
+    { speaker: 'Coco', line: "I have studied English for years, and I am still learning.", lineZh: "我學英文學了好幾年，現在還在學。" },
+    { speaker: 'Benny', line: "When I reach the top, I will use everything I have learned.", lineZh: "等我到山頂，我會用上學過的一切。" },
+    { speaker: 'Ruby', line: "I used to find English hard. Now it's my friend!", lineZh: "我以前覺得英文很難。現在它是我的朋友！" },
+    { speaker: 'Polly', line: "We have made a lot of progress. Look at our map!", lineZh: "我們進步了好多。看我們的地圖！" },
+    { speaker: 'Benny', line: "I was eating when we started. I am eating now. I will eat at the top.", lineZh: "出發時我在吃。現在也在吃。到山頂還會吃。" },
+    { speaker: 'Finn', line: "Past, present, future, perfect. One more mountain. Let's climb!", lineZh: "過去、現在、未來、完成。最後一座山。爬吧！" },
   ],
 };
 
@@ -15247,10 +15250,13 @@ const L12_M2: Mission = {
     { type: 'match', question: 'was written 是什麼語態？', options: ['被動', '主動', '進行', '完成'], answer: '被動' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "The book that I read was written by a famous author.", lineZh: '我讀的那本書是有名作家寫的。' },
-    { speaker: 'Coco', line: "If it rains tomorrow, the game which we planned will be canceled.", lineZh: '如果明天下雨，我們計畫的比賽就會取消。' },
-    { speaker: 'Polly', line: "Although the task was hard, the team who tried won.", lineZh: '雖然任務很難，努力的隊伍贏了。' },
-    { speaker: 'Benny', line: "Combine everything into rich sentences!", lineZh: '把所有東西組合成豐富的句子！' },
+    { speaker: 'Benny', line: "The map that I found was drawn by an old climber.", lineZh: "我找到的這張地圖是一位老登山家畫的。" },
+    { speaker: 'Coco', line: "If it snows tomorrow, the path which we planned will be closed.", lineZh: "如果明天下雪，我們計畫的那條路會封閉。" },
+    { speaker: 'Polly', line: "Although the climb was hard, the team who tried made it.", lineZh: "雖然很難爬，努力的那一隊成功了。" },
+    { speaker: 'Ruby', line: "The hut which was built last year is warm. Let's rest there!", lineZh: "去年蓋的那間小屋很溫暖。我們去那裡休息！" },
+    { speaker: 'Finn', line: "The girl who won the race is my friend. Hi, Ruby!", lineZh: "贏了比賽的那個女孩是我朋友。嗨，Ruby！" },
+    { speaker: 'Benny', line: "The cookie that I packed was eaten by... me. Sorry.", lineZh: "我帶的那塊餅乾被……我吃了。抱歉。" },
+    { speaker: 'Coco', line: "Long sentences, no problem. We climb on!", lineZh: "長句子，沒問題。我們繼續爬！" },
   ],
 };
 
@@ -15312,10 +15318,13 @@ const L12_M3: Mission = {
     { type: 'match', question: 'creative 是什麼意思？', options: ['有創意的', '誠實的', '勇敢的', '有耐心的'], answer: '有創意的' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "She is confident and always speaks up.", lineZh: '她很有自信，總是勇於發言。' },
-    { speaker: 'Coco', line: "He is generous. He shares everything.", lineZh: '他很慷慨。他什麼都分享。' },
-    { speaker: 'Benny', line: "I am curious. I love asking questions.", lineZh: '我很好奇。我愛問問題。' },
-    { speaker: 'Ruby', line: "Rich words describe who we really are!", lineZh: '豐富的字詞描述真正的我們！' },
+    { speaker: 'Ruby', line: "Ruby is confident and always speaks up. That's me!", lineZh: "Ruby 很自信，總是勇於發言。就是我！" },
+    { speaker: 'Coco', line: "Benny is generous. He shares everything. Even cookies.", lineZh: "Benny 很慷慨。他什麼都分享。連餅乾都是。" },
+    { speaker: 'Benny', line: "I am curious. I love asking questions. Why is snow cold?", lineZh: "我很好奇。我喜歡問問題。雪為什麼是冷的？" },
+    { speaker: 'Polly', line: "A good friend is patient and kind. Like all of you!", lineZh: "好朋友有耐心又善良。就像你們！" },
+    { speaker: 'Finn', line: "Stay calm and cheerful, even on a steep path.", lineZh: "就算路很陡，也要保持冷靜開朗。" },
+    { speaker: 'Coco', line: "I am creative. I drew our whole adventure!", lineZh: "我很有創意。我把整趟冒險都畫下來了！" },
+    { speaker: 'Ruby', line: "So what are you like? Tell us at the top!", lineZh: "那你是什麼樣的人？到山頂告訴我們！" },
   ],
 };
 
@@ -15377,10 +15386,13 @@ const L12_M4: Mission = {
     { type: 'match', question: 'ocean 是什麼意思？', options: ['海洋', '森林', '沙漠', '高山'], answer: '海洋' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Our planet has oceans, forests, and mountains.", lineZh: '我們的星球有海洋、森林和高山。' },
-    { speaker: 'Coco', line: "Every country has its own culture and traditions.", lineZh: '每個國家都有自己的文化和傳統。' },
-    { speaker: 'Polly', line: "We must protect nature for the future.", lineZh: '我們必須為未來保護大自然。' },
-    { speaker: 'Benny', line: "You can talk about the whole world now!", lineZh: '現在你能談論整個世界了！' },
+    { speaker: 'Benny', line: "From up here, our planet has oceans, forests, and mountains!", lineZh: "從這裡看，我們的星球有海洋、森林和山！" },
+    { speaker: 'Coco', line: "Every country has its own culture and traditions.", lineZh: "每個國家都有自己的文化和傳統。" },
+    { speaker: 'Polly', line: "We must protect nature for the future. Every tree!", lineZh: "我們必須為未來保護大自然。每一棵樹！" },
+    { speaker: 'Ruby', line: "The forest down there is full of life. Listen!", lineZh: "下面的森林充滿生命。聽！" },
+    { speaker: 'Finn', line: "I want to travel and learn about cultures. All of them!", lineZh: "我想去旅行、認識各種文化。全部！" },
+    { speaker: 'Benny', line: "And taste all the food. That's culture too!", lineZh: "還要嚐遍所有食物。那也是文化！" },
+    { speaker: 'Coco', line: "The world is a wonderful place. Let's take care of it.", lineZh: "世界是個美好的地方。我們要好好照顧它。" },
   ],
 };
 
@@ -15442,10 +15454,13 @@ const L12_M5: Mission = {
     { type: 'match', question: 'nature 是什麼意思？', options: ['大自然', '文化', '傳統', '節慶'], answer: '大自然' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review advanced language!", lineZh: '來複習進階語言！' },
-    { speaker: 'Coco', line: "I have learned a lot, and I will keep going.", lineZh: '我學了很多，而且我會繼續。' },
-    { speaker: 'Benny', line: "The world which we protect is our home.", lineZh: '我們保護的世界是我們的家。' },
-    { speaker: 'Finn', line: "You are almost ready to graduate! Amazing!", lineZh: '你快準備好畢業了！太厲害！' },
+    { speaker: 'Coco', line: "I have learned a lot, and I will keep going!", lineZh: "我學了很多，我會繼續！" },
+    { speaker: 'Benny', line: "The world which we protect is our home.", lineZh: "我們保護的世界是我們的家。" },
+    { speaker: 'Ruby', line: "She is confident and creative. She is... me again!", lineZh: "她自信又有創意。她是……又是我！" },
+    { speaker: 'Polly', line: "If we try, we will succeed. The top is close!", lineZh: "只要努力，我們就會成功。山頂近了！" },
+    { speaker: 'Finn', line: "Although the wind is strong, we keep climbing.", lineZh: "雖然風很大，我們繼續爬。" },
+    { speaker: 'Benny', line: "I have eaten all my snacks. I will need more at the top.", lineZh: "我吃光零食了。到山頂我需要更多。" },
+    { speaker: 'Coco', line: "First checkpoint passed! Onward and upward!", lineZh: "第一個檢查站過了！繼續往上！" },
   ],
 };
 
@@ -15507,10 +15522,13 @@ const L12_M6: Mission = {
     { type: 'fill-blank', question: 'She ___ every day to improve.（練習）', options: ['practiced', 'stopped', 'slept', 'quit'], answer: 'practiced' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A story: The Girl Who Followed Her Dream.", lineZh: '故事：追夢的女孩。' },
-    { speaker: 'Coco', line: "Mia loved music, although her family was poor.", lineZh: 'Mia 熱愛音樂，雖然家裡窮。' },
-    { speaker: 'Polly', line: "She practiced every day. Finally, she became a musician.", lineZh: '她每天練習。最後，她成了音樂家。' },
-    { speaker: 'Benny', line: "You understood a whole story! Wonderful!", lineZh: '你讀懂整個故事了！太棒了！' },
+    { speaker: 'Benny', line: "A storybook in the mountain hut: The Girl Who Followed Her Dream.", lineZh: "山屋裡有一本故事書：追夢的女孩。" },
+    { speaker: 'Coco', line: "Mia loved music, although her family was poor.", lineZh: "Mia 熱愛音樂，雖然她家很窮。" },
+    { speaker: 'Polly', line: "She never gave up. She practiced every day.", lineZh: "她從不放棄。她每天練習。" },
+    { speaker: 'Ruby', line: "Finally, she became a musician. A real one!", lineZh: "最後，她成了音樂家。真正的音樂家！" },
+    { speaker: 'Finn', line: "Her family was very proud. So am I!", lineZh: "她的家人非常驕傲。我也是！" },
+    { speaker: 'Benny', line: "I love this story. It makes me want to practice... eating less.", lineZh: "我愛這個故事。它讓我想練習……少吃一點。" },
+    { speaker: 'Coco', line: "Follow your dream, like Mia. Let's go!", lineZh: "像 Mia 一樣追夢。走吧！" },
   ],
 };
 
@@ -15572,10 +15590,13 @@ const L12_M7: Mission = {
     { type: 'read', question: 'Why is Earth able to have life?（地球為何能有生命？）', passage: 'Earth has water and air.\nIt is not too hot or too cold.\nSo it can have life.', options: ['it has water and air', 'it is the biggest', 'it is far', 'it is a star'], answer: 'it has water and air' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "An article: Our Amazing Solar System.", lineZh: '文章：我們驚人的太陽系。' },
-    { speaker: 'Coco', line: "The sun is a star. Eight planets go around it.", lineZh: '太陽是一顆星星。八顆行星繞著它轉。' },
-    { speaker: 'Polly', line: "Earth is the only planet with life that we know.", lineZh: '地球是我們所知唯一有生命的行星。' },
-    { speaker: 'Benny', line: "You learned facts from an article! Great!", lineZh: '你從文章學到知識了！太棒了！' },
+    { speaker: 'Benny', line: "The sky is so clear up here! Look, the stars!", lineZh: "這裡的天空好清澈！看，星星！" },
+    { speaker: 'Coco', line: "The sun is a star. Eight planets go around it.", lineZh: "太陽是一顆恆星。八個行星繞著它轉。" },
+    { speaker: 'Polly', line: "Earth is the only planet with life that we know.", lineZh: "地球是我們所知唯一有生命的行星。" },
+    { speaker: 'Ruby', line: "Space is huge and amazing. I feel so small!", lineZh: "太空又大又神奇。我覺得自己好小！" },
+    { speaker: 'Finn', line: "People want to explore space. Me too!", lineZh: "人們想探索太空。我也想！" },
+    { speaker: 'Benny', line: "Is there food in space? I have questions.", lineZh: "太空有食物嗎？我有問題。" },
+    { speaker: 'Coco', line: "We learn a lot from science. Now let's sleep under the stars.", lineZh: "我們從科學學到很多。現在在星空下睡覺吧。" },
   ],
 };
 
@@ -15637,10 +15658,13 @@ const L12_M8: Mission = {
     { type: 'match', question: 'rhythm 是什麼意思？', options: ['節奏', '押韻', '角色', '台詞'], answer: '節奏' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Poems use rhythm and rhyme.", lineZh: '詩使用節奏和押韻。' },
-    { speaker: 'Coco', line: "Stars so bright, in the night, shining light, pure delight.", lineZh: '星星明亮，在夜晚，閃耀光芒，純粹喜悅。' },
-    { speaker: 'Benny', line: "In a script, each character has a voice.", lineZh: '在劇本裡，每個角色有自己的語氣。' },
-    { speaker: 'Ruby', line: "Literature makes language beautiful!", lineZh: '文學讓語言變美！' },
+    { speaker: 'Ruby', line: "Listen to this poem: Stars so bright, shine in the night.", lineZh: "聽這首詩：星星好亮，夜裡閃光。" },
+    { speaker: 'Coco', line: "Bright and night rhyme! Poems use rhythm and rhyme.", lineZh: "bright 和 night 押韻！詩有節奏和韻腳。" },
+    { speaker: 'Benny', line: "Now a script. Benny: I'm hungry. Coco: We know, Benny.", lineZh: "現在來劇本。Benny：我餓了。Coco：我們知道，Benny。" },
+    { speaker: 'Polly', line: "In a script, each character has a voice. Hear mine?", lineZh: "劇本裡每個角色都有自己的聲音。聽到我的了嗎？" },
+    { speaker: 'Finn', line: "Actors read their lines with feeling. Like this!", lineZh: "演員帶著感情唸台詞。像這樣！" },
+    { speaker: 'Benny', line: "Cookies so sweet, a tasty treat. My poem!", lineZh: "餅乾好甜，美味點心。我的詩！" },
+    { speaker: 'Ruby', line: "Literature makes language beautiful. Even cookie poems.", lineZh: "文學讓語言變美。連餅乾詩也是。" },
   ],
 };
 
@@ -15702,10 +15726,13 @@ const L12_M9: Mission = {
     { type: 'read', question: 'What can we infer about the whale?（關於鯨魚能推論什麼？）', passage: 'The whale was bigger than a bus.\nEveryone stared in amazement.\nSome people had never seen anything so big.', options: ['it was very big', 'it was small', 'it was fast', 'it was scary'], answer: 'it was very big' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Good readers think beyond the words.", lineZh: '好讀者會想到字面之外。' },
-    { speaker: 'Coco', line: "She smiled and wiped her tears. She feels happy but moved.", lineZh: '她微笑著擦掉眼淚。她開心又感動。' },
-    { speaker: 'Polly', line: "Guess new words from the sentence around them.", lineZh: '從周圍句子猜新字的意思。' },
-    { speaker: 'Benny', line: "Read between the lines like a detective!", lineZh: '像偵探一樣讀出言外之意！' },
+    { speaker: 'Benny', line: "Good readers think beyond the words. Like detectives!", lineZh: "好的讀者會想得比字面更多。像偵探！" },
+    { speaker: 'Coco', line: "Listen: She smiled and wiped her tears.", lineZh: "聽：她微笑著擦掉眼淚。" },
+    { speaker: 'Ruby', line: "We can infer she feels moved. The words don't say it!", lineZh: "我們可以推論她很感動。字裡沒有直接說！" },
+    { speaker: 'Polly', line: "Guess new words from the sentence around them.", lineZh: "從前後句子猜新的字。" },
+    { speaker: 'Finn', line: "Look for clues in the sentence. Clues everywhere!", lineZh: "在句子裡找線索。到處都是線索！" },
+    { speaker: 'Benny', line: "Clue: Benny's bag is empty. Inference: he ate everything.", lineZh: "線索：Benny 的袋子空了。推論：他全吃光了。" },
+    { speaker: 'Coco', line: "Correct! Read between the lines, detectives!", lineZh: "答對！偵探們，讀出言外之意！" },
   ],
 };
 
@@ -15767,10 +15794,13 @@ const L12_M10: Mission = {
     { type: 'read', question: 'Does reading help us?（閱讀對我們有幫助嗎？）', passage: 'Reading gives us stories and facts.\nIt helps us think and imagine.\nReading opens new worlds.', options: ['Yes, it opens new worlds', 'No, it is boring', 'It is useless', 'Only for tests'], answer: 'Yes, it opens new worlds' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review advanced reading!", lineZh: '來複習進階閱讀！' },
-    { speaker: 'Coco', line: "Mia followed her dream and became a musician.", lineZh: 'Mia 追隨夢想成了音樂家。' },
-    { speaker: 'Benny', line: "Eight planets orbit the sun; Earth has life.", lineZh: '八顆行星繞太陽；地球有生命。' },
-    { speaker: 'Finn', line: "You read stories, articles, and poems! Amazing!", lineZh: '你讀了故事、文章和詩！太厲害！' },
+    { speaker: 'Coco', line: "Mia followed her dream and became a musician.", lineZh: "Mia 追隨夢想，成了音樂家。" },
+    { speaker: 'Benny', line: "Eight planets orbit the sun. Earth has life.", lineZh: "八個行星繞著太陽轉。地球有生命。" },
+    { speaker: 'Ruby', line: "Poems use rhythm and rhyme. Bright, night, light!", lineZh: "詩有節奏和韻腳。bright、night、light！" },
+    { speaker: 'Polly', line: "We can infer her feelings from the clues.", lineZh: "我們可以從線索推論她的感受。" },
+    { speaker: 'Finn', line: "The main idea is the big point. Got it!", lineZh: "主旨就是重點。懂了！" },
+    { speaker: 'Benny', line: "Reading opens new worlds. And new menus.", lineZh: "閱讀打開新世界。還有新菜單。" },
+    { speaker: 'Coco', line: "Second checkpoint passed! We're high up now!", lineZh: "第二個檢查站過了！我們爬很高了！" },
   ],
 };
 
@@ -15832,10 +15862,13 @@ const L12_M11: Mission = {
     { type: 'read', question: 'What does a good story do?（好故事會怎樣？）', passage: 'A good story is fun to read.\nIt has interesting characters.\nEvery good story teaches something.', options: ['teaches something', 'is boring', 'is short', 'has no end'], answer: 'teaches something' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "A story needs a beginning, a middle, and an end.", lineZh: '故事需要開頭、中段和結尾。' },
-    { speaker: 'Coco', line: "Beginning: Once upon a time, a dragon lived in a cave.", lineZh: '開頭：從前，一條龍住在洞穴裡。' },
-    { speaker: 'Benny', line: "Middle: a problem. End: how it is solved!", lineZh: '中段：一個問題。結尾：如何解決！' },
-    { speaker: 'Ruby', line: "Use your imagination to create a story!", lineZh: '用你的想像力創作故事！' },
+    { speaker: 'Ruby', line: "A story needs a beginning, a middle, and an end.", lineZh: "故事需要開頭、中間和結尾。" },
+    { speaker: 'Coco', line: "Beginning: Once upon a time, a dragon lived in a cave.", lineZh: "開頭：很久很久以前，一隻龍住在山洞裡。" },
+    { speaker: 'Benny', line: "Middle: the dragon had a big problem. No fire!", lineZh: "中間：龍有個大問題。沒有火！" },
+    { speaker: 'Polly', line: "End: a little bird taught him to sing instead!", lineZh: "結尾：一隻小鳥教他改用唱歌！" },
+    { speaker: 'Finn', line: "Every good story teaches something. What did this one teach?", lineZh: "每個好故事都教我們一些事。這個教了什麼？" },
+    { speaker: 'Benny', line: "That dragons can sing. And that I should write mine!", lineZh: "龍會唱歌。還有我該寫我自己的！" },
+    { speaker: 'Ruby', line: "Use your imagination. Write your story tonight!", lineZh: "發揮想像力。今晚寫下你的故事！" },
   ],
 };
 
@@ -15898,10 +15931,13 @@ const L12_M12: Mission = {
     { type: 'match', question: '說明文常用哪類詞？', options: ['順序詞(First/Next/Finally)', '疑問詞', '形容詞', '介系詞'], answer: '順序詞(First/Next/Finally)' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A how-to text explains steps clearly.", lineZh: '說明文清楚地解釋步驟。' },
-    { speaker: 'Coco', line: "How to make a sandwich: First, take two slices of bread.", lineZh: '如何做三明治：首先，拿兩片麵包。' },
-    { speaker: 'Polly', line: "Next, add cheese. Finally, enjoy your sandwich!", lineZh: '接著，加起司。最後，享用你的三明治！' },
-    { speaker: 'Benny', line: "Clear steps make good instructions!", lineZh: '清楚的步驟造就好說明！' },
+    { speaker: 'Benny', line: "How to make a mountain sandwich! Listen carefully.", lineZh: "怎麼做登山三明治！仔細聽。" },
+    { speaker: 'Coco', line: "First, take two slices of bread.", lineZh: "首先，拿兩片麵包。" },
+    { speaker: 'Polly', line: "Next, add cheese and tomato.", lineZh: "接著，加起司和番茄。" },
+    { speaker: 'Ruby', line: "Then, press it gently. Not too hard, Benny!", lineZh: "然後，輕輕壓一下。別太用力，Benny！" },
+    { speaker: 'Finn', line: "Finally, enjoy your sandwich! On the mountain!", lineZh: "最後，享用你的三明治！在山上！" },
+    { speaker: 'Benny', line: "Follow the steps in order. I followed them very fast.", lineZh: "照順序做。我做得非常快。" },
+    { speaker: 'Coco', line: "Clear steps make good instructions. And good sandwiches!", lineZh: "清楚的步驟就是好說明。也是好三明治！" },
   ],
 };
 
@@ -15963,10 +15999,13 @@ const L12_M13: Mission = {
     { type: 'match', question: 'Best regards 用在？', options: ['email 結尾', 'email 開頭', '主旨欄', '正文開始'], answer: 'email 結尾' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "An email has a subject, a greeting, a body, and a closing.", lineZh: 'email 有主旨、問候、正文和結尾。' },
-    { speaker: 'Coco', line: "Dear Mr. Lee, I am writing to ask about the class.", lineZh: '親愛的李老師，我寫信是想詢問課程。' },
-    { speaker: 'Benny', line: "Thank you for your time. Best regards, Coco.", lineZh: '謝謝您撥空。誠摯問候，Coco。' },
-    { speaker: 'Ruby', line: "Now you can write a proper email!", lineZh: '現在你會寫正式的 email 了！' },
+    { speaker: 'Ruby', line: "Let's write an email from the mountain! Subject, greeting, body, closing.", lineZh: "我們從山上寫封 email！主旨、問候、正文、結尾。" },
+    { speaker: 'Coco', line: "Dear Mr. Lee, I am writing to ask about the class.", lineZh: "親愛的李老師，我寫信是想詢問課程。" },
+    { speaker: 'Polly', line: "Could you please tell me the time?", lineZh: "可以請您告訴我時間嗎？" },
+    { speaker: 'Finn', line: "Thank you for your time. Best regards, Coco.", lineZh: "謝謝您的時間。敬祝 安好，Coco。" },
+    { speaker: 'Benny', line: "Dear Bakery, I am writing to ask about cookies. Best regards, Benny.", lineZh: "親愛的麵包店，我寫信是想問餅乾。敬祝 安好，Benny。" },
+    { speaker: 'Coco', line: "I look forward to your reply. Send!", lineZh: "期待您的回覆。送出！" },
+    { speaker: 'Ruby', line: "Now you can write a proper email. Polite and clear!", lineZh: "現在你會寫正式的 email 了。有禮又清楚！" },
   ],
 };
 
@@ -16028,10 +16067,13 @@ const L12_M14: Mission = {
     { type: 'read', question: 'Does Coco want to be like her grandma?（Coco 想像奶奶一樣嗎？）', passage: 'Coco admires her grandma very much.\nShe is her role model.\nCoco wants to be like her.', options: ['Yes, she does', 'No, she does not', 'She is not sure', 'She dislikes her'], answer: 'Yes, she does' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Let's write about a person we admire.", lineZh: '我們來寫一位我們敬佩的人。' },
-    { speaker: 'Coco', line: "My hero is my grandma. She is kind and strong.", lineZh: '我的英雄是我奶奶。她善良又堅強。' },
-    { speaker: 'Benny', line: "She inspires me to never give up.", lineZh: '她激勵我永不放棄。' },
-    { speaker: 'Ruby', line: "Write about who inspires you and why!", lineZh: '寫下誰激勵你以及為什麼！' },
+    { speaker: 'Ruby', line: "At the hut, let's write about a person we admire.", lineZh: "在山屋裡，我們來寫一個自己敬佩的人。" },
+    { speaker: 'Coco', line: "My hero is my grandma. She is kind and strong.", lineZh: "我的英雄是奶奶。她善良又堅強。" },
+    { speaker: 'Benny', line: "She inspires me to never give up. Even on steep hills.", lineZh: "她激勵我永不放棄。就算在陡坡上。" },
+    { speaker: 'Polly', line: "I admire her because she helps others every day.", lineZh: "我敬佩她，因為她每天都幫助別人。" },
+    { speaker: 'Finn', line: "She is my role model. I want to be like her.", lineZh: "她是我的榜樣。我想成為像她一樣的人。" },
+    { speaker: 'Benny', line: "My hero is the first bear who climbed this mountain. Brave!", lineZh: "我的英雄是第一隻爬上這座山的熊。好勇敢！" },
+    { speaker: 'Ruby', line: "Write about who inspires you and why!", lineZh: "寫下誰激勵了你、為什麼！" },
   ],
 };
 
@@ -16093,10 +16135,13 @@ const L12_M15: Mission = {
     { type: 'read', question: 'Is the writer ready to graduate?（作者準備好畢業了嗎？）', passage: 'I have learned so many writing skills.\nI feel confident now.\nI am ready to graduate!', options: ['Yes, ready', 'No, not yet', 'She quit', 'Not sure'], answer: 'Yes, ready' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review all our writing types!", lineZh: '來複習所有寫作類型！' },
-    { speaker: 'Coco', line: "A story has a beginning, middle, and end.", lineZh: '故事有開頭、中段和結尾。' },
-    { speaker: 'Benny', line: "An email starts with 'Dear' and ends with 'Best regards'.", lineZh: 'email 以「Dear」開頭，「Best regards」結尾。' },
-    { speaker: 'Finn', line: "You can write anything now! Ready to graduate!", lineZh: '你現在什麼都會寫了！準備畢業！' },
+    { speaker: 'Coco', line: "A story has a beginning, middle, and end. Like our climb!", lineZh: "故事有開頭、中間、結尾。就像我們的登山！" },
+    { speaker: 'Benny', line: "First, next, finally. Clear steps to the top!", lineZh: "首先、接著、最後。清楚的步驟通往山頂！" },
+    { speaker: 'Ruby', line: "An email starts with Dear and ends with Best regards.", lineZh: "email 以 Dear 開頭，以 Best regards 結尾。" },
+    { speaker: 'Polly', line: "My hero inspires me. Who is yours?", lineZh: "我的英雄激勵我。你的是誰？" },
+    { speaker: 'Finn', line: "I can write stories and essays now. Writing is my superpower!", lineZh: "我現在會寫故事和短文了。寫作是我的超能力！" },
+    { speaker: 'Benny', line: "My superpower is eating. And writing about eating.", lineZh: "我的超能力是吃。還有寫吃的。" },
+    { speaker: 'Coco', line: "Third checkpoint passed! The summit is right there!", lineZh: "第三個檢查站過了！山頂就在那裡！" },
   ],
 };
 
@@ -16158,10 +16203,13 @@ const L12_M16: Mission = {
     { type: 'match', question: '說故事時該？', options: ['用表情和聲音', '快速唸完', '不看聽眾', '很小聲'], answer: '用表情和聲音' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "A good storyteller uses expression and voice.", lineZh: '好的說書人會用表情和聲音。' },
-    { speaker: 'Coco', line: "Once, a little wolf was lost in the forest.", lineZh: '從前，一隻小狼在森林裡迷路了。' },
-    { speaker: 'Benny', line: "Speak clearly and look at your audience!", lineZh: '說清楚並看著你的聽眾！' },
-    { speaker: 'Ruby', line: "Bring your story to life with your voice!", lineZh: '用你的聲音讓故事活起來！' },
+    { speaker: 'Ruby', line: "Campfire time! A good storyteller uses expression and voice.", lineZh: "營火時間！好的說書人會用表情和聲音。" },
+    { speaker: 'Coco', line: "Once, a little wolf was lost in the forest...", lineZh: "從前，一隻小狼在森林裡迷路了……" },
+    { speaker: 'Benny', line: "Speak clearly and look at your audience. Like this!", lineZh: "說清楚，看著觀眾。像這樣！" },
+    { speaker: 'Polly', line: "Use your voice to show feelings. Scared... then happy!", lineZh: "用聲音表現感覺。害怕……然後開心！" },
+    { speaker: 'Finn', line: "The little wolf found his family. The end!", lineZh: "小狼找到了家人。完！" },
+    { speaker: 'Benny', line: "Once, a little bear found a giant cookie... the end. Short story!", lineZh: "從前，一隻小熊找到一塊巨大餅乾……完。短篇！" },
+    { speaker: 'Ruby', line: "Bring your story to life with your voice!", lineZh: "用你的聲音讓故事活起來！" },
   ],
 };
 
@@ -16223,10 +16271,13 @@ const L12_M17: Mission = {
     { type: 'match', question: '報告時該？', options: ['站直、大聲、有自信', '小聲低頭', '快速唸稿', '不看觀眾'], answer: '站直、大聲、有自信' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Hello, everyone. Today I will talk about my hobby.", lineZh: '大家好。今天我要談我的嗜好。' },
-    { speaker: 'Coco', line: "First, I will show you my paintings.", lineZh: '首先，我會給大家看我的畫。' },
-    { speaker: 'Polly', line: "Thank you for listening. Any questions?", lineZh: '謝謝聆聽。有問題嗎？' },
-    { speaker: 'Benny', line: "Stand tall, speak up, and be confident!", lineZh: '站直、大聲說、要有自信！' },
+    { speaker: 'Benny', line: "Hello, everyone. Today I will talk about my hobby: snacks.", lineZh: "大家好。今天我要講我的嗜好：零食。" },
+    { speaker: 'Coco', line: "First, I will show you my paintings. Here they are!", lineZh: "首先，我給大家看我的畫。在這裡！" },
+    { speaker: 'Ruby', line: "Stand tall, speak up, and be confident!", lineZh: "站直、大聲說、有自信！" },
+    { speaker: 'Polly', line: "Thank you for listening. Any questions?", lineZh: "謝謝大家的聆聽。有問題嗎？" },
+    { speaker: 'Finn', line: "I have a question! Can I see more paintings?", lineZh: "我有問題！我可以看更多畫嗎？" },
+    { speaker: 'Benny', line: "And I have a question. Is there snack time after this?", lineZh: "我也有問題。這之後有點心時間嗎？" },
+    { speaker: 'Coco', line: "Great presentations, everyone! You were all so confident!", lineZh: "大家報告得真好！都好有自信！" },
   ],
 };
 
@@ -16288,10 +16339,13 @@ const L12_M18: Mission = {
     { type: 'match', question: '專題結合哪些技能？', options: ['讀寫說', '只有讀', '只有寫', '只有說'], answer: '讀寫說' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A project uses reading, writing, and speaking together.", lineZh: '專題結合閱讀、寫作和口說。' },
-    { speaker: 'Coco', line: "First, I read about sea animals. Then I wrote notes.", lineZh: '首先，我讀了海洋動物。然後我寫筆記。' },
-    { speaker: 'Polly', line: "Finally, I made a poster and gave a talk.", lineZh: '最後，我做了海報並做了報告。' },
-    { speaker: 'Benny', line: "You used every skill in one project!", lineZh: '你在一個專題裡用上了所有技能！' },
+    { speaker: 'Benny', line: "A project uses reading, writing, and speaking together!", lineZh: "專題要把讀、寫、說一起用上！" },
+    { speaker: 'Coco', line: "First, I read about sea animals. Then I wrote my notes.", lineZh: "首先，我讀了海洋動物的資料。然後寫筆記。" },
+    { speaker: 'Polly', line: "Next, I made a poster. Look at my whale!", lineZh: "接著，我做了海報。看我的鯨魚！" },
+    { speaker: 'Ruby', line: "Finally, I gave a talk to the whole team.", lineZh: "最後，我對整個團隊做了報告。" },
+    { speaker: 'Finn', line: "I used all my skills in one project. Proud!", lineZh: "我在一個專題裡用上了所有技能。驕傲！" },
+    { speaker: 'Benny', line: "My project is about mountain snacks. Very important research.", lineZh: "我的專題是登山零食。非常重要的研究。" },
+    { speaker: 'Coco', line: "Every skill, one project. Now, to the summit!", lineZh: "所有技能，一個專題。現在，往山頂！" },
   ],
 };
 
@@ -16353,10 +16407,13 @@ const L12_M19: Mission = {
     { type: 'read', question: 'What should we do at the end?（結尾我們該做什麼？）', passage: 'We have all worked hard.\nWe have made great progress.\nLet\'s celebrate our success!', options: ['celebrate our success', 'give up', 'start over', 'be sad'], answer: 'celebrate our success' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Today we showcase everything we have learned!", lineZh: '今天我們展示所有學過的！' },
-    { speaker: 'Coco', line: "I can read stories, write essays, and give talks.", lineZh: '我會讀故事、寫短文、做報告。' },
-    { speaker: 'Benny', line: "I am proud of how far I have come.", lineZh: '我為自己的進步感到驕傲。' },
-    { speaker: 'Ruby', line: "Look how much you can do now!", lineZh: '看看你現在會多少事！' },
+    { speaker: 'Ruby', line: "Today we showcase everything we have learned!", lineZh: "今天我們展示學過的一切！" },
+    { speaker: 'Coco', line: "I can read stories, write essays, and give talks.", lineZh: "我會讀故事、寫短文、做報告。" },
+    { speaker: 'Benny', line: "I am proud of how far I have come. From ABC to this!", lineZh: "我為自己走了這麼遠而驕傲。從 ABC 到現在！" },
+    { speaker: 'Polly', line: "We have made a lot of progress. All of us!", lineZh: "我們進步了好多。我們全部！" },
+    { speaker: 'Finn', line: "Look how far we have come. From Letter Island to here!", lineZh: "看我們走了多遠。從字母島到這裡！" },
+    { speaker: 'Benny', line: "I am proud of myself. And a little hungry. Mostly proud.", lineZh: "我為自己驕傲。也有點餓。大部分是驕傲。" },
+    { speaker: 'Coco', line: "Let's celebrate our success! One more step to the top!", lineZh: "慶祝我們的成功！再一步就到山頂！" },
   ],
 };
 
@@ -16418,10 +16475,13 @@ const L12_M20: Mission = {
     { type: 'read', question: 'Does the adventure end at graduation?（畢業就結束冒險了嗎？）', passage: 'Graduation is not the end.\nIt is a new beginning.\nThe adventure never ends — keep exploring!', options: ['No, it never ends', 'Yes, it ends', 'The end is sad', 'No more learning'], answer: 'No, it never ends' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Congratulations! You have reached Victory Summit!", lineZh: '恭喜！你抵達了勝利峰！' },
-    { speaker: 'Coco', line: "We started at Letter Island, and now we can do so much!", lineZh: '我們從字母島出發，現在會這麼多了！' },
-    { speaker: 'Ruby', line: "Here is your certificate. You are an English adventurer!", lineZh: '這是你的結業證書。你是英語冒險家！' },
-    { speaker: 'Finn', line: "Keep learning, keep exploring. The adventure never ends!", lineZh: '繼續學習，繼續探索。冒險永不結束！' },
+    { speaker: 'Finn', line: "Congratulations! You have reached Victory Summit!", lineZh: "恭喜！你登上勝利峰了！" },
+    { speaker: 'Coco', line: "We started at Letter Island, and now we can do so much!", lineZh: "我們從字母島出發，現在會的好多！" },
+    { speaker: 'Benny', line: "Now I can read, write, and speak English. And I still love cookies.", lineZh: "現在我會讀、寫、說英語。我還是愛餅乾。" },
+    { speaker: 'Ruby', line: "Here is your certificate. You are an English adventurer!", lineZh: "這是你的證書。你是英語小勇者！" },
+    { speaker: 'Polly', line: "I am proud of our journey. Every island, every step!", lineZh: "我為我們的旅程驕傲。每座島、每一步！" },
+    { speaker: 'Benny', line: "Group hug! Then snacks. Then more English!", lineZh: "團體擁抱！然後吃點心。然後繼續學英文！" },
+    { speaker: 'Finn', line: "Keep learning, keep exploring. The adventure never ends!", lineZh: "繼續學習、繼續探索。冒險永遠不會結束！" },
   ],
 };
 
