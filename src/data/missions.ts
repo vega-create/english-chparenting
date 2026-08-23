@@ -13964,6 +13964,7 @@ const L11_M3: Mission = {
     { speaker: 'Benny', line: "The man who wears glasses is the judge. Be nice!", lineZh: "那個戴眼鏡的人是裁判。要乖！" },
     { speaker: 'Coco', line: "Who, which, that. One sentence, two ideas. Ready!", lineZh: "who、which、that。一句話，兩個意思。準備好了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m3.mp4?v=1',
 };
 
 const L11_M4: Mission = {
