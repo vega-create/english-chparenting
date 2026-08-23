@@ -14521,6 +14521,7 @@ const L11_M11: Mission = {
     { speaker: 'Benny', line: "The window was broken. Not by me! ...Okay, by me.", lineZh: "窗戶被打破了。不是我！……好吧，是我。" },
     { speaker: 'Coco', line: "Be plus past participle. That's the passive!", lineZh: "be 加過去分詞。這就是被動！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m11.mp4?v=1',
 };
 
 const L11_M12: Mission = {
@@ -14589,6 +14590,7 @@ const L11_M12: Mission = {
     { speaker: 'Benny', line: "Although he is small, he is strong. That's me again!", lineZh: "雖然他很小，他很強壯。又是我！" },
     { speaker: 'Coco', line: "Although, however, while. Our writing grew up!", lineZh: "although、however、while。我們的寫作長大了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m12.mp4?v=1',
 };
 
 const L11_M13: Mission = {
