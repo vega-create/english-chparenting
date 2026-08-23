@@ -14103,6 +14103,7 @@ const L11_M5: Mission = {
     { speaker: 'Benny', line: "Cake is the most important... snack. Fair?", lineZh: "蛋糕是最重要的……點心。公平吧？" },
     { speaker: 'Coco', line: "Fair! First challenge done. Next!", lineZh: "公平！第一關完成。下一關！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m5.mp4?v=1',
 };
 
 const L11_M6: Mission = {
