@@ -14728,6 +14728,7 @@ const L11_M14: Mission = {
     { speaker: 'Benny', line: "Don't judge by looks. I'm a bear, but I'm gentle.", lineZh: "別以貌取人。我是熊，但我很溫柔。" },
     { speaker: 'Coco', line: "Two long stories read! We are strong readers!", lineZh: "兩篇長故事讀完了！我們是厲害的讀者！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m14.mp4?v=1',
 };
 
 const L11_M15: Mission = {
