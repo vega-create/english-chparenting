@@ -14797,6 +14797,7 @@ const L11_M15: Mission = {
     { speaker: 'Benny', line: "And: do not judge by looks. Or by snacks.", lineZh: "還有：別以貌取人。也別以點心取人。" },
     { speaker: 'Coco', line: "Third challenge done! The Boss is close!", lineZh: "第三關完成！魔王快到了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m15.mp4?v=1',
 };
 
 const L11_M16: Mission = {
