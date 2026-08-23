@@ -14866,6 +14866,7 @@ const L11_M16: Mission = {
     { speaker: 'Benny', line: "In conclusion, reading is wonderful. Especially cookbooks.", lineZh: "總之，閱讀很美好。尤其是食譜。" },
     { speaker: 'Coco', line: "What is your opinion? Your turn on the stage!", lineZh: "你的看法呢？換你上台！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m16.mp4?v=1',
 };
 
 const L11_M17: Mission = {
