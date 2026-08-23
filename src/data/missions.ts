@@ -15762,6 +15762,7 @@ const L12_M9: Mission = {
     { speaker: 'Benny', line: "Clue: Benny's bag is empty. Inference: he ate everything.", lineZh: "線索：Benny 的袋子空了。推論：他全吃光了。" },
     { speaker: 'Coco', line: "Correct! Read between the lines, detectives!", lineZh: "答對！偵探們，讀出言外之意！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m9.mp4?v=1',
 };
 
 const L12_M10: Mission = {
