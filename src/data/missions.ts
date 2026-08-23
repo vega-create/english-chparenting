@@ -13816,10 +13816,13 @@ const L11_M1: Mission = {
     { type: 'match', question: 'should 表示？', options: ['建議', '能力', '義務', '禮貌'], answer: '建議' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I can swim, and I could swim when I was five.", lineZh: '我會游泳，我五歲時就會了。' },
-    { speaker: 'Coco', line: "Could you help me, please?", lineZh: '你可以幫我嗎？' },
-    { speaker: 'Polly', line: "You look tired. You should rest.", lineZh: '你看起來累了。你應該休息。' },
-    { speaker: 'Benny', line: "can = ability, could = polite, should = advice!", lineZh: 'can = 能力，could = 禮貌，should = 建議！' },
+    { speaker: 'Finn', line: "Look! A giant stadium! This is the Challenge Arena!", lineZh: "看！一座巨大的競技場！這就是挑戰場！" },
+    { speaker: 'Benny', line: "I can swim, and I could swim when I was five!", lineZh: "我會游泳，我五歲的時候就會了！" },
+    { speaker: 'Coco', line: "Could you help me with this big door, please?", lineZh: "可以請你幫我推這扇大門嗎？" },
+    { speaker: 'Polly', line: "Benny, you look tired. You should rest.", lineZh: "Benny，你看起來好累。你應該休息。" },
+    { speaker: 'Benny', line: "I can rest later. First, I should eat!", lineZh: "我晚點再休息。首先，我應該吃東西！" },
+    { speaker: 'Ruby', line: "You shouldn't eat too much candy before a challenge!", lineZh: "挑戰前你不該吃太多糖果！" },
+    { speaker: 'Finn', line: "What should we do first? Let's go in!", lineZh: "我們應該先做什麼？進去吧！" },
   ],
 };
 
@@ -13882,10 +13885,13 @@ const L11_M2: Mission = {
     { type: 'match', question: "don't have to 意思是？", options: ['不必', '必須', '絕不可以', '應該'], answer: '不必' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "You must wear a seatbelt in a car.", lineZh: '在車上你必須繫安全帶。' },
-    { speaker: 'Coco', line: "I have to go to school on Monday.", lineZh: '星期一我得去上學。' },
-    { speaker: 'Polly', line: "On Sunday, I don't have to get up early.", lineZh: '星期日我不必早起。' },
-    { speaker: 'Benny', line: "must = necessary. don't have to = not necessary!", lineZh: 'must = 必須。don\'t have to = 不必！' },
+    { speaker: 'Benny', line: "A sign! You must wear a helmet in the arena.", lineZh: "一個牌子！在競技場裡一定要戴安全帽。" },
+    { speaker: 'Coco', line: "I have to tie my shoes first. Wait for me!", lineZh: "我得先綁鞋帶。等等我！" },
+    { speaker: 'Polly', line: "On Sunday, I don't have to get up early. Today I do!", lineZh: "星期天我不用早起。今天就要！" },
+    { speaker: 'Ruby', line: "You mustn't run near the pool. Slow down, Finn!", lineZh: "泳池旁邊不准跑。慢一點，Finn！" },
+    { speaker: 'Finn', line: "We must follow the rules. Okay, okay!", lineZh: "我們必須遵守規則。好啦好啦！" },
+    { speaker: 'Benny', line: "Do I have to wear the helmet? It's squishing my ears.", lineZh: "我一定要戴安全帽嗎？它壓到我耳朵了。" },
+    { speaker: 'Coco', line: "Yes, Benny. Rules are rules. Let's start!", lineZh: "要，Benny。規則就是規則。開始吧！" },
   ],
 };
 
@@ -13948,10 +13954,13 @@ const L11_M3: Mission = {
     { type: 'match', question: 'which 用來指？', options: ['物', '人', '地方', '時間'], answer: '物' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "The boy who is running is my brother.", lineZh: '那個正在跑的男孩是我弟弟。' },
-    { speaker: 'Coco', line: "The book which is on the desk is mine.", lineZh: '桌上那本書是我的。' },
-    { speaker: 'Polly', line: "The dog that barks is friendly.", lineZh: '那隻會叫的狗很友善。' },
-    { speaker: 'Benny', line: "who = people, which = things, that = both!", lineZh: 'who = 人，which = 物，that = 都可以！' },
+    { speaker: 'Benny', line: "The boy who is running is my brother. Go, bro!", lineZh: "那個正在跑的男孩是我弟弟。加油！" },
+    { speaker: 'Coco', line: "The book which is on the bench is mine. Don't touch!", lineZh: "長椅上那本書是我的。別碰！" },
+    { speaker: 'Polly', line: "The dog that barks is friendly. Really!", lineZh: "那隻會叫的狗很友善。真的！" },
+    { speaker: 'Ruby', line: "She is the girl who won last year. Wow!", lineZh: "她是去年贏的那個女孩。哇！" },
+    { speaker: 'Finn', line: "This is the cake that I made. For the winner!", lineZh: "這是我做的蛋糕。給贏家的！" },
+    { speaker: 'Benny', line: "The man who wears glasses is the judge. Be nice!", lineZh: "那個戴眼鏡的人是裁判。要乖！" },
+    { speaker: 'Coco', line: "Who, which, that. One sentence, two ideas. Ready!", lineZh: "who、which、that。一句話，兩個意思。準備好了！" },
   ],
 };
 
@@ -14014,10 +14023,13 @@ const L11_M4: Mission = {
     { type: 'match', question: '長形容詞的最高級用？', options: ['the most + 原級', '加 -est', '加 -er', '不變'], answer: 'the most + 原級' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "The blue whale is the biggest animal.", lineZh: '藍鯨是最大的動物。' },
-    { speaker: 'Coco', line: "Mount Everest is the tallest mountain.", lineZh: '聖母峰是最高的山。' },
-    { speaker: 'Polly', line: "This is the most beautiful gem of all.", lineZh: '這是所有寶石中最美的。' },
-    { speaker: 'Benny', line: "Short words: -est. Long words: the most!", lineZh: '短字：-est。長字：the most！' },
+    { speaker: 'Benny', line: "Look at the posters! The blue whale is the biggest animal!", lineZh: "看海報！藍鯨是最大的動物！" },
+    { speaker: 'Coco', line: "Mount Everest is the tallest mountain. So high!", lineZh: "聖母峰是最高的山。好高！" },
+    { speaker: 'Polly', line: "And this is the most beautiful gem of all!", lineZh: "而這是所有寶石裡最美的！" },
+    { speaker: 'Finn', line: "He is the fastest runner in the arena. Me!", lineZh: "他是競技場裡跑最快的。就是我！" },
+    { speaker: 'Ruby', line: "Family is the most important thing. Even here.", lineZh: "家人是最重要的。就算在這裡也是。" },
+    { speaker: 'Benny', line: "Which cookie is the best? This one. No, this one!", lineZh: "哪塊餅乾最好吃？這塊。不，這塊！" },
+    { speaker: 'Coco', line: "Short words get -est, long words get the most. Done!", lineZh: "短字加 -est，長字加 the most。搞定！" },
   ],
 };
 
@@ -14079,10 +14091,13 @@ const L11_M5: Mission = {
     { type: 'match', question: 'must 表示？', options: ['必須', '建議', '禮貌', '能力'], answer: '必須' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review modals, relatives, and superlatives!", lineZh: '來複習情態、關代、最高級！' },
-    { speaker: 'Coco', line: "You should rest. You must sleep early.", lineZh: '你應該休息。你必須早睡。' },
-    { speaker: 'Benny', line: "The boy who won is the fastest runner.", lineZh: '贏的那個男孩是最快的跑者。' },
-    { speaker: 'Finn', line: "You know advanced magic sentences now! Amazing!", lineZh: '你會進階魔法句了！太厲害！' },
+    { speaker: 'Coco', line: "You should rest, Benny. You must sleep early tonight.", lineZh: "Benny 你該休息了。今晚一定要早睡。" },
+    { speaker: 'Benny', line: "Could you help me find my bed, then?", lineZh: "那可以幫我找床嗎？" },
+    { speaker: 'Ruby', line: "The boy who won today is the fastest runner!", lineZh: "今天贏的那個男孩是跑最快的！" },
+    { speaker: 'Finn', line: "That's me! And this is the best cake.", lineZh: "就是我！而這是最好吃的蛋糕。" },
+    { speaker: 'Polly', line: "Family is the most important. Cake is second.", lineZh: "家人最重要。蛋糕第二。" },
+    { speaker: 'Benny', line: "Cake is the most important... snack. Fair?", lineZh: "蛋糕是最重要的……點心。公平吧？" },
+    { speaker: 'Coco', line: "Fair! First challenge done. Next!", lineZh: "公平！第一關完成。下一關！" },
   ],
 };
 
@@ -14145,10 +14160,13 @@ const L11_M6: Mission = {
     { type: 'match', question: 'want to 後面接？', options: ['原形動詞', '過去式', '-ing', '名詞'], answer: '原形動詞' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I want to be a scientist.", lineZh: '我想成為科學家。' },
-    { speaker: 'Coco', line: "I hope to travel around the world.", lineZh: '我希望環遊世界。' },
-    { speaker: 'Polly', line: "It is fun to learn new things!", lineZh: '學新東西很好玩！' },
-    { speaker: 'Benny', line: "Some verbs take 'to + verb'!", lineZh: '有些動詞後面接「to + 動詞」！' },
+    { speaker: 'Benny', line: "A wishing wall! I want to be a scientist.", lineZh: "一面許願牆！我想當科學家。" },
+    { speaker: 'Coco', line: "I hope to travel around the world.", lineZh: "我希望環遊世界。" },
+    { speaker: 'Polly', line: "It is fun to learn new things! Every day!", lineZh: "學新東西很好玩！每天都是！" },
+    { speaker: 'Ruby', line: "I need to study tonight. The test is tomorrow.", lineZh: "我今晚需要讀書。明天考試。" },
+    { speaker: 'Finn', line: "She decided to help me. Thank you, Ruby!", lineZh: "她決定幫我。謝謝 Ruby！" },
+    { speaker: 'Benny', line: "It is easy to make friends here. Hi, wall!", lineZh: "在這裡交朋友很容易。嗨，牆！" },
+    { speaker: 'Coco', line: "Want to, hope to, need to. Write yours on the wall!", lineZh: "want to、hope to、need to。把你的寫上牆！" },
   ],
 };
 
@@ -14211,10 +14229,13 @@ const L11_M7: Mission = {
     { type: 'match', question: 'finish 後面接？', options: ['V-ing 動名詞', '原形', 'to V', '名詞'], answer: 'V-ing 動名詞' },
   ],
   videoScript: [
-    { speaker: 'Coco', line: "I enjoy swimming and reading.", lineZh: '我喜歡游泳和閱讀。' },
-    { speaker: 'Benny', line: "She finished painting the picture.", lineZh: '她畫完了那幅畫。' },
-    { speaker: 'Polly', line: "Keep trying! Don't stop practicing!", lineZh: '繼續努力！別停止練習！' },
-    { speaker: 'Coco', line: "Some verbs take 'verb + ing'!", lineZh: '有些動詞後面接「動詞 + ing」！' },
+    { speaker: 'Coco', line: "I enjoy swimming and reading. Both at once? No.", lineZh: "我喜歡游泳和閱讀。同時做？不行。" },
+    { speaker: 'Benny', line: "She finished painting the picture. Look at it!", lineZh: "她畫完那幅畫了。你看！" },
+    { speaker: 'Polly', line: "Keep trying, Finn! Don't stop practicing!", lineZh: "繼續試，Finn！別停止練習！" },
+    { speaker: 'Finn', line: "I love cooking dinner. Tonight: noodles!", lineZh: "我喜歡煮晚餐。今晚：麵！" },
+    { speaker: 'Ruby', line: "He is good at dancing. Show us, Benny!", lineZh: "他很會跳舞。Benny 跳給我們看！" },
+    { speaker: 'Benny', line: "I enjoy dancing... after eating. Noodles first!", lineZh: "我喜歡跳舞……吃完之後。先吃麵！" },
+    { speaker: 'Coco', line: "Enjoy, finish, keep, love. All plus -ing!", lineZh: "enjoy、finish、keep、love。後面都加 -ing！" },
   ],
 };
 
@@ -14276,10 +14297,13 @@ const L11_M8: Mission = {
     { type: 'match', question: 'used to 後面接？', options: ['原形動詞', '過去式', '-ing', '名詞'], answer: '原形動詞' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I used to be short, but now I am tall.", lineZh: '我以前很矮，但現在很高。' },
-    { speaker: 'Coco', line: "She used to eat a lot of candy.", lineZh: '她以前吃很多糖。' },
-    { speaker: 'Polly', line: "We used to live in a village.", lineZh: '我們以前住在村莊。' },
-    { speaker: 'Benny', line: "used to = a past habit that stopped!", lineZh: 'used to = 過去的習慣，現在停了！' },
+    { speaker: 'Benny', line: "An old photo wall! I used to be short. Now I am tall!", lineZh: "舊照片牆！我以前很矮。現在很高了！" },
+    { speaker: 'Coco', line: "She used to eat a lot of candy. Look at Ruby's teeth!", lineZh: "她以前吃很多糖。看 Ruby 的牙齒！" },
+    { speaker: 'Ruby', line: "We used to live in a village. So quiet!", lineZh: "我們以前住在村子裡。好安靜！" },
+    { speaker: 'Polly', line: "He used to play the piano. Finn, really?", lineZh: "他以前彈鋼琴。Finn，真的嗎？" },
+    { speaker: 'Finn', line: "Did you use to like it? Yes! I still do!", lineZh: "你以前喜歡嗎？喜歡！現在還是！" },
+    { speaker: 'Benny', line: "I used to eat one cookie a day. Things change.", lineZh: "我以前一天吃一塊餅乾。世事多變。" },
+    { speaker: 'Coco', line: "Things used to be different. Now we're here!", lineZh: "以前都不一樣。現在我們在這裡！" },
   ],
 };
 
@@ -14342,10 +14366,13 @@ const L11_M9: Mission = {
     { type: 'match', question: '第一條件句：If 子句用哪個時態？', options: ['現在式', '未來式', '過去式', '完成式'], answer: '現在式' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "If it rains, I will stay home.", lineZh: '如果下雨，我就待在家。' },
-    { speaker: 'Coco', line: "If you study hard, you will pass.", lineZh: '如果你努力讀書，你就會通過。' },
-    { speaker: 'Polly', line: "If we hurry, we will catch the bus.", lineZh: '如果我們趕快，就會趕上公車。' },
-    { speaker: 'Benny', line: "If + present, will + verb. A real possibility!", lineZh: 'If + 現在式，will + 動詞。真實的可能！' },
+    { speaker: 'Benny', line: "Dark clouds! If it rains, I will stay home.", lineZh: "烏雲！如果下雨，我就待在家。" },
+    { speaker: 'Coco', line: "If you study hard, you will pass the challenge.", lineZh: "如果你認真讀書，你會通過挑戰。" },
+    { speaker: 'Polly', line: "If we hurry, we will catch the arena bus!", lineZh: "如果我們快一點，就趕得上競技場巴士！" },
+    { speaker: 'Finn', line: "What will you do if it rains, Ruby?", lineZh: "Ruby，如果下雨妳要做什麼？" },
+    { speaker: 'Ruby', line: "If I have time, I will help you practice.", lineZh: "如果我有時間，我會幫你練習。" },
+    { speaker: 'Benny', line: "If you are kind, people will like you. And feed you.", lineZh: "如果你善良，大家會喜歡你。還會餵你。" },
+    { speaker: 'Coco', line: "If plus present, will plus verb. Rain or shine!", lineZh: "if 加現在式，will 加動詞。風雨無阻！" },
   ],
 };
 
@@ -14407,10 +14434,13 @@ const L11_M10: Mission = {
     { type: 'read', question: 'What will they do if it rains?（下雨會做什麼？）', passage: 'If it is sunny, they will go to the beach.\nIf it rains, they will stay home and read.', options: ['stay home and read', 'go to the beach', 'go swimming', 'go to school'], answer: 'stay home and read' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review verbals and conditionals!", lineZh: '來複習不定詞、動名詞、條件句！' },
-    { speaker: 'Coco', line: "I want to travel, and I enjoy swimming.", lineZh: '我想旅行，而且我喜歡游泳。' },
-    { speaker: 'Benny', line: "If it is sunny, we will go to the beach.", lineZh: '如果天晴，我們就去海邊。' },
-    { speaker: 'Finn', line: "You are close to B1 level! Amazing!", lineZh: '你快到 B1 程度了！太厲害！' },
+    { speaker: 'Coco', line: "I want to travel, and I enjoy swimming. Both!", lineZh: "我想旅行，我也喜歡游泳。都要！" },
+    { speaker: 'Benny', line: "I used to live in a village. Now, the arena!", lineZh: "我以前住在村子裡。現在，競技場！" },
+    { speaker: 'Ruby', line: "If it is sunny, we will go to the beach after this.", lineZh: "如果天氣好，結束後我們去海邊。" },
+    { speaker: 'Polly', line: "Keep trying and you will pass. I believe in you!", lineZh: "繼續努力你就會過關。我相信你！" },
+    { speaker: 'Finn', line: "It is fun to learn here. Hard, but fun!", lineZh: "在這裡學習很好玩。很難，但好玩！" },
+    { speaker: 'Benny', line: "If I finish, I will eat. That's my plan.", lineZh: "如果我完成，我就吃。這是我的計畫。" },
+    { speaker: 'Coco', line: "Second challenge done! We're getting strong!", lineZh: "第二關完成！我們變強了！" },
   ],
 };
 
@@ -14473,10 +14503,13 @@ const L11_M11: Mission = {
     { type: 'match', question: 'was written 是什麼語態？', options: ['被動（過去）', '主動（現在）', '進行式', '完成式'], answer: '被動（過去）' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "This table is made of wood.", lineZh: '這張桌子是木頭做的。' },
-    { speaker: 'Coco', line: "The castle was built long ago.", lineZh: '這座城堡很久以前就建成了。' },
-    { speaker: 'Polly', line: "This book was written by a famous author.", lineZh: '這本書是一位有名的作家寫的。' },
-    { speaker: 'Benny', line: "be + past participle = the passive!", lineZh: 'be + 過去分詞 = 被動語態！' },
+    { speaker: 'Benny', line: "This table is made of wood. Solid!", lineZh: "這張桌子是木頭做的。很堅固！" },
+    { speaker: 'Coco', line: "The arena was built long ago. Look at the old stones!", lineZh: "這座競技場很久以前就建好了。看那些老石頭！" },
+    { speaker: 'Polly', line: "This book was written by a famous author.", lineZh: "這本書是一位有名的作家寫的。" },
+    { speaker: 'Ruby', line: "Paper is made from trees. Thank you, trees!", lineZh: "紙是樹做的。謝謝樹！" },
+    { speaker: 'Finn', line: "English is spoken all over the world. Even here!", lineZh: "全世界都說英語。連這裡也是！" },
+    { speaker: 'Benny', line: "The window was broken. Not by me! ...Okay, by me.", lineZh: "窗戶被打破了。不是我！……好吧，是我。" },
+    { speaker: 'Coco', line: "Be plus past participle. That's the passive!", lineZh: "be 加過去分詞。這就是被動！" },
   ],
 };
 
@@ -14538,10 +14571,13 @@ const L11_M12: Mission = {
     { type: 'match', question: 'however 用來？', options: ['表示對比', '表示原因', '表示並列', '表示順序'], answer: '表示對比' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Although it was raining, we went out.", lineZh: '雖然在下雨，我們還是出門了。' },
-    { speaker: 'Coco', line: "I like the city. However, it is too busy.", lineZh: '我喜歡城市。然而，它太繁忙了。' },
-    { speaker: 'Polly', line: "While I cooked, she cleaned.", lineZh: '當我煮飯時，她打掃。' },
-    { speaker: 'Benny', line: "These connectors make your writing mature!", lineZh: '這些連接詞讓你的寫作更成熟！' },
+    { speaker: 'Benny', line: "Although it was raining, we went out. And got wet.", lineZh: "雖然下雨，我們還是出門了。然後淋濕。" },
+    { speaker: 'Coco', line: "I like the city. However, it is too busy for me.", lineZh: "我喜歡城市。然而，對我來說太忙碌了。" },
+    { speaker: 'Polly', line: "While I cooked, she cleaned. Teamwork!", lineZh: "我煮飯的時候，她打掃。團隊合作！" },
+    { speaker: 'Ruby', line: "It was hard, though. Really hard.", lineZh: "不過真的很難。非常難。" },
+    { speaker: 'Finn', line: "On the other hand, it is cheap. I like cheap!", lineZh: "另一方面，它很便宜。我喜歡便宜！" },
+    { speaker: 'Benny', line: "Although he is small, he is strong. That's me again!", lineZh: "雖然他很小，他很強壯。又是我！" },
+    { speaker: 'Coco', line: "Although, however, while. Our writing grew up!", lineZh: "although、however、while。我們的寫作長大了！" },
   ],
 };
 
@@ -14603,10 +14639,13 @@ const L11_M13: Mission = {
     { type: 'fill-blank', question: 'Finally, it ___ the shore.（抵達）', options: ['reached', 'crossed', 'gave up', 'proud'], answer: 'reached' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A long story: The Brave Little Boat!", lineZh: '一個長故事：勇敢的小船！' },
-    { speaker: 'Coco', line: "A little boat wanted to cross the big sea.", lineZh: '一艘小船想橫越大海。' },
-    { speaker: 'Polly', line: "Although the waves were big, the boat did not give up.", lineZh: '雖然浪很大，小船沒有放棄。' },
-    { speaker: 'Benny', line: "You read a long story! Wonderful!", lineZh: '你讀了長故事！太棒了！' },
+    { speaker: 'Benny', line: "A story scroll on the wall: The Brave Little Boat!", lineZh: "牆上有一捲故事卷軸：勇敢的小船！" },
+    { speaker: 'Coco', line: "A little boat wanted to cross the big sea.", lineZh: "一艘小船想要橫渡大海。" },
+    { speaker: 'Polly', line: "Although the waves were big, the boat did not give up.", lineZh: "雖然海浪很大，小船沒有放棄。" },
+    { speaker: 'Ruby', line: "A storm came, but the boat stayed brave.", lineZh: "暴風雨來了，但小船依然勇敢。" },
+    { speaker: 'Finn', line: "Finally, it reached the shore! Yes!", lineZh: "最後，它到達岸邊了！太好了！" },
+    { speaker: 'Benny', line: "The little boat was very proud. And very wet.", lineZh: "小船非常驕傲。也非常濕。" },
+    { speaker: 'Coco', line: "Never give up. That's the story!", lineZh: "永不放棄。這就是故事！" },
   ],
 };
 
@@ -14668,10 +14707,13 @@ const L11_M14: Mission = {
     { type: 'fill-blank', question: 'People ___ the giant in the end.（感謝）', options: ['thanked', 'feared', 'built', 'crossed'], answer: 'thanked' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "A new story: The Kind Giant!", lineZh: '新故事：善良的巨人！' },
-    { speaker: 'Coco', line: "People were afraid of the giant, although he was kind.", lineZh: '人們怕巨人，雖然他很善良。' },
-    { speaker: 'Polly', line: "One day, he built a bridge to help the town.", lineZh: '有一天，他蓋了一座橋幫助小鎮。' },
-    { speaker: 'Benny', line: "You understood the whole story! Great!", lineZh: '你讀懂整個故事了！太棒了！' },
+    { speaker: 'Benny', line: "A new scroll: The Kind Giant!", lineZh: "新的卷軸：善良的巨人！" },
+    { speaker: 'Coco', line: "People were afraid of the giant, although he was kind.", lineZh: "大家都怕巨人，雖然他很善良。" },
+    { speaker: 'Polly', line: "One day, he built a bridge to help the town.", lineZh: "有一天，他蓋了一座橋來幫助小鎮。" },
+    { speaker: 'Ruby', line: "The bridge helped everyone. Then people thanked him.", lineZh: "那座橋幫助了大家。然後大家謝謝他。" },
+    { speaker: 'Finn', line: "They became good friends. The end!", lineZh: "他們成了好朋友。完！" },
+    { speaker: 'Benny', line: "Don't judge by looks. I'm a bear, but I'm gentle.", lineZh: "別以貌取人。我是熊，但我很溫柔。" },
+    { speaker: 'Coco', line: "Two long stories read! We are strong readers!", lineZh: "兩篇長故事讀完了！我們是厲害的讀者！" },
   ],
 };
 
@@ -14733,10 +14775,13 @@ const L11_M15: Mission = {
     { type: 'match', question: 'although 用來？', options: ['表示讓步/對比', '表示原因', '表示並列', '表示順序'], answer: '表示讓步/對比' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "Let's review advanced reading!", lineZh: '來複習進階閱讀！' },
-    { speaker: 'Coco', line: "Although it was hard, the little boat never gave up.", lineZh: '雖然很難，小船從不放棄。' },
-    { speaker: 'Benny', line: "The bridge was built by the kind giant.", lineZh: '橋是善良的巨人蓋的。' },
-    { speaker: 'Finn', line: "You are ready for the boss! Amazing!", lineZh: '你準備好打大魔王了！太厲害！' },
+    { speaker: 'Coco', line: "Although it was hard, the little boat never gave up.", lineZh: "雖然很難，小船從不放棄。" },
+    { speaker: 'Benny', line: "The bridge was built by the kind giant.", lineZh: "那座橋是善良的巨人蓋的。" },
+    { speaker: 'Ruby', line: "The table is made of wood. The bridge, of stone.", lineZh: "桌子是木頭做的。橋是石頭做的。" },
+    { speaker: 'Polly', line: "However, the town was thankful in the end.", lineZh: "然而，小鎮最後很感謝他。" },
+    { speaker: 'Finn', line: "The lesson is: never give up!", lineZh: "故事的道理是：永不放棄！" },
+    { speaker: 'Benny', line: "And: do not judge by looks. Or by snacks.", lineZh: "還有：別以貌取人。也別以點心取人。" },
+    { speaker: 'Coco', line: "Third challenge done! The Boss is close!", lineZh: "第三關完成！魔王快到了！" },
   ],
 };
 
@@ -14798,10 +14843,13 @@ const L11_M16: Mission = {
     { type: 'match', question: '觀點段落通常包含？', options: ['觀點+理由+例子', '只有觀點', '只有故事', '只有問句'], answer: '觀點+理由+例子' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "State your opinion, then give reasons and examples.", lineZh: '說出觀點，再給理由和例子。' },
-    { speaker: 'Coco', line: "In my opinion, reading is the best hobby.", lineZh: '在我看來，閱讀是最好的嗜好。' },
-    { speaker: 'Polly', line: "It is great because it teaches us many things. For example, history.", lineZh: '它很棒因為教我們很多，例如歷史。' },
-    { speaker: 'Benny', line: "Opinion + reason + example = strong writing!", lineZh: '觀點 + 理由 + 例子 = 有力的寫作！' },
+    { speaker: 'Benny', line: "A debate stage! Opinion, reason, example. Go!", lineZh: "辯論台！觀點、理由、例子。開始！" },
+    { speaker: 'Coco', line: "In my opinion, reading is the best hobby.", lineZh: "我認為閱讀是最好的嗜好。" },
+    { speaker: 'Polly', line: "It is great because it teaches us many things.", lineZh: "它很棒，因為它教我們很多東西。" },
+    { speaker: 'Ruby', line: "For example, we learn about history. And dragons!", lineZh: "例如，我們學到歷史。還有龍！" },
+    { speaker: 'Finn', line: "I believe that everyone should read. Every day!", lineZh: "我相信每個人都應該閱讀。每天！" },
+    { speaker: 'Benny', line: "In conclusion, reading is wonderful. Especially cookbooks.", lineZh: "總之，閱讀很美好。尤其是食譜。" },
+    { speaker: 'Coco', line: "What is your opinion? Your turn on the stage!", lineZh: "你的看法呢？換你上台！" },
   ],
 };
 
@@ -14863,10 +14911,13 @@ const L11_M17: Mission = {
     { type: 'read', question: 'Was the experience good?（那經驗好嗎？）', passage: 'The beach day was peaceful and beautiful.\nIt was a wonderful experience.\nI will never forget it.', options: ['Yes, wonderful', 'No, boring', 'It was scary', 'It rained'], answer: 'Yes, wonderful' },
   ],
   videoScript: [
-    { speaker: 'Ruby', line: "Use your five senses to describe!", lineZh: '用你的五感來描寫！' },
-    { speaker: 'Coco', line: "My grandma is gentle. She has kind eyes and a warm smile.", lineZh: '我奶奶很溫柔。她有慈祥的眼睛和溫暖的笑容。' },
-    { speaker: 'Benny', line: "The beach was peaceful. I could hear the waves.", lineZh: '海灘很寧靜。我聽得到海浪。' },
-    { speaker: 'Ruby', line: "Show, don't just tell — paint with words!", lineZh: '用畫面呈現，別只是說 —— 用文字作畫！' },
+    { speaker: 'Ruby', line: "Use your five senses to describe! Me first.", lineZh: "用五感來描寫！我先。" },
+    { speaker: 'Coco', line: "My grandma is gentle. She has kind eyes and a warm smile.", lineZh: "我的奶奶很溫柔。她有善良的眼睛和溫暖的笑容。" },
+    { speaker: 'Benny', line: "The beach was peaceful. I could hear the waves.", lineZh: "海邊很寧靜。我聽得到海浪聲。" },
+    { speaker: 'Polly', line: "I could smell the salty air and feel the warm sand.", lineZh: "我聞得到鹹鹹的空氣，感覺得到溫暖的沙。" },
+    { speaker: 'Finn', line: "It was a wonderful experience. I will never forget it.", lineZh: "那是美好的經驗。我永遠不會忘記。" },
+    { speaker: 'Benny', line: "And I could taste the ice cream. Five senses, done!", lineZh: "我還嚐到了冰淇淋。五感，完成！" },
+    { speaker: 'Ruby', line: "Show, don't just tell. Paint with words!", lineZh: "用畫面呈現，不只是說。用文字畫畫！" },
   ],
 };
 
@@ -14928,10 +14979,13 @@ const L11_M18: Mission = {
     { type: 'read', question: 'How should you discuss?（該如何討論？）', passage: 'When we discuss, we share ideas.\nWe agree or disagree politely.\nWe respect others.', options: ['politely and with respect', 'by shouting', 'by ignoring', 'by leaving'], answer: 'politely and with respect' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "I think dogs are better than cats. What do you think?", lineZh: '我覺得狗比貓好。你覺得呢？' },
-    { speaker: 'Coco', line: "I agree with you. Dogs are friendly.", lineZh: '我同意你。狗很友善。' },
-    { speaker: 'Polly', line: "I disagree. In my view, cats are cuter.", lineZh: '我不同意。在我看來，貓比較可愛。' },
-    { speaker: 'Benny', line: "Share ideas politely and respect others!", lineZh: '有禮貌地分享想法並尊重別人！' },
+    { speaker: 'Benny', line: "I think dogs are better than cats. What do you think?", lineZh: "我覺得狗比貓好。你們覺得呢？" },
+    { speaker: 'Finn', line: "I agree with you. Dogs are friendly!", lineZh: "我同意你。狗很友善！" },
+    { speaker: 'Coco', line: "I disagree! In my view, cats are cuter. Obviously.", lineZh: "我不同意！在我看來，貓比較可愛。顯然。" },
+    { speaker: 'Polly', line: "That is a good point, Coco. Let us discuss it.", lineZh: "說得好，Coco。我們來討論。" },
+    { speaker: 'Ruby', line: "I think bunnies are the best. Any questions?", lineZh: "我覺得兔子最棒。有問題嗎？" },
+    { speaker: 'Benny', line: "I agree with everyone. I just love animals!", lineZh: "我同意每個人。我就是愛動物！" },
+    { speaker: 'Coco', line: "Agree, disagree, good point. Polite and strong!", lineZh: "同意、不同意、說得好。有禮又有力！" },
   ],
 };
 
@@ -14993,10 +15047,13 @@ const L11_M19: Mission = {
     { type: 'read', question: 'Can everyone help the earth?（每個人都能幫地球嗎？）', passage: 'Protecting the earth is everyone\'s job.\nEveryone can help.\nSmall actions make a big difference.', options: ['Yes, everyone can help', 'No, only adults', 'No one can', 'Only scientists'], answer: 'Yes, everyone can help' },
   ],
   videoScript: [
-    { speaker: 'Benny', line: "Read, then write, then speak — all in one!", lineZh: '讀、寫、說 —— 一次全部！' },
-    { speaker: 'Coco', line: "Text: We should protect the environment.", lineZh: '文章：我們應該保護環境。' },
-    { speaker: 'Ruby', line: "Write & say: I agree because clean air is important.", lineZh: '寫並說：我同意因為乾淨空氣很重要。' },
-    { speaker: 'Benny', line: "You used all your skills together! Great!", lineZh: '你把所有技能一起用了！太棒了！' },
+    { speaker: 'Benny', line: "The final practice! Read it, write it, say it!", lineZh: "最後一次練習！讀它、寫它、說它！" },
+    { speaker: 'Coco', line: "We should protect the environment. Pollution is a big problem.", lineZh: "我們應該保護環境。污染是大問題。" },
+    { speaker: 'Polly', line: "We should recycle and save water. Every drop!", lineZh: "我們應該回收、省水。每一滴！" },
+    { speaker: 'Ruby', line: "I agree because clean air is important.", lineZh: "我同意，因為乾淨的空氣很重要。" },
+    { speaker: 'Finn', line: "Let us take action for the future. Everyone can help!", lineZh: "讓我們為未來行動。每個人都能幫忙！" },
+    { speaker: 'Benny', line: "I will recycle my cookie boxes. All of them. Many.", lineZh: "我會回收我的餅乾盒。全部。很多。" },
+    { speaker: 'Coco', line: "Read, write, speak. All our skills together!", lineZh: "讀、寫、說。所有技能一起上！" },
   ],
 };
 
@@ -15058,10 +15115,13 @@ const L11_M20: Mission = {
     { type: 'read', question: 'Did the writer succeed?（作者成功了嗎？）', passage: 'The task was very hard.\nAlthough it was hard, I did not give up.\nFinally, I did it!', options: ['Yes, succeeded', 'No, gave up', 'It was easy', 'Not sure'], answer: 'Yes, succeeded' },
   ],
   videoScript: [
-    { speaker: 'Finn', line: "The Challenge Boss says: show your B1 skills!", lineZh: '挑戰大魔王說：展現你的 B1 實力！' },
-    { speaker: 'Coco', line: "should, who, was made, if, although — I know them!", lineZh: 'should、who、was made、if、although —— 我都會！' },
-    { speaker: 'Ruby', line: "You beat the Boss! Challenge champion!", lineZh: '你打敗大魔王了！挑戰冠軍！' },
-    { speaker: 'Finn', line: "On to Victory Peak! The final level!", lineZh: '前進勝利峰！最後一級！' },
+    { speaker: 'Finn', line: "The Challenge Boss is here! The whole arena is shaking!", lineZh: "挑戰大魔王來了！整座競技場都在震！" },
+    { speaker: 'Coco', line: "You should rest because you are tired, Boss! Ha!", lineZh: "魔王，你應該休息，因為你累了！哈！" },
+    { speaker: 'Benny', line: "The boy who won is my friend. And he's coming!", lineZh: "贏的那個男孩是我朋友。他來了！" },
+    { speaker: 'Ruby', line: "The bridge was made of stone. It still stands!", lineZh: "那座橋是石頭做的。它還在！" },
+    { speaker: 'Polly', line: "If it rains, we will stay home. But not today!", lineZh: "如果下雨，我們就待在家。但今天不會！" },
+    { speaker: 'Finn', line: "Although it was hard, we did it! The Boss is down!", lineZh: "雖然很難，我們做到了！魔王倒了！" },
+    { speaker: 'Coco', line: "Challenge Arena complete! Victory Peak is next!", lineZh: "挑戰場完成！下一站勝利峰！" },
   ],
 };
 
