@@ -16315,6 +16315,7 @@ const L12_M17: Mission = {
     { speaker: 'Benny', line: "And I have a question. Is there snack time after this?", lineZh: "我也有問題。這之後有點心時間嗎？" },
     { speaker: 'Coco', line: "Great presentations, everyone! You were all so confident!", lineZh: "大家報告得真好！都好有自信！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m17.mp4?v=1',
 };
 
 const L12_M18: Mission = {
