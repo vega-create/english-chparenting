@@ -14935,6 +14935,7 @@ const L11_M17: Mission = {
     { speaker: 'Benny', line: "And I could taste the ice cream. Five senses, done!", lineZh: "我還嚐到了冰淇淋。五感，完成！" },
     { speaker: 'Ruby', line: "Show, don't just tell. Paint with words!", lineZh: "用畫面呈現，不只是說。用文字畫畫！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m17.mp4?v=1',
 };
 
 const L11_M18: Mission = {
