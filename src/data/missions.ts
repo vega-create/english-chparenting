@@ -15417,6 +15417,7 @@ const L12_M4: Mission = {
     { speaker: 'Benny', line: "And taste all the food. That's culture too!", lineZh: "還要嚐遍所有食物。那也是文化！" },
     { speaker: 'Coco', line: "The world is a wonderful place. Let's take care of it.", lineZh: "世界是個美好的地方。我們要好好照顧它。" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m4.mp4?v=1',
 };
 
 const L12_M5: Mission = {
@@ -15485,6 +15486,7 @@ const L12_M5: Mission = {
     { speaker: 'Benny', line: "I have eaten all my snacks. I will need more at the top.", lineZh: "我吃光零食了。到山頂我需要更多。" },
     { speaker: 'Coco', line: "First checkpoint passed! Onward and upward!", lineZh: "第一個檢查站過了！繼續往上！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m5.mp4?v=1',
 };
 
 const L12_M6: Mission = {
