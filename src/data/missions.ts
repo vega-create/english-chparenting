@@ -13894,6 +13894,7 @@ const L11_M2: Mission = {
     { speaker: 'Benny', line: "Do I have to wear the helmet? It's squishing my ears.", lineZh: "我一定要戴安全帽嗎？它壓到我耳朵了。" },
     { speaker: 'Coco', line: "Yes, Benny. Rules are rules. Let's start!", lineZh: "要，Benny。規則就是規則。開始吧！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m2.mp4?v=1',
 };
 
 const L11_M3: Mission = {
