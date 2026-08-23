@@ -15004,6 +15004,7 @@ const L11_M18: Mission = {
     { speaker: 'Benny', line: "I agree with everyone. I just love animals!", lineZh: "我同意每個人。我就是愛動物！" },
     { speaker: 'Coco', line: "Agree, disagree, good point. Polite and strong!", lineZh: "同意、不同意、說得好。有禮又有力！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m18.mp4?v=1',
 };
 
 const L11_M19: Mission = {
