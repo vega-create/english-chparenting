@@ -15693,6 +15693,7 @@ const L12_M8: Mission = {
     { speaker: 'Benny', line: "Cookies so sweet, a tasty treat. My poem!", lineZh: "餅乾好甜，美味點心。我的詩！" },
     { speaker: 'Ruby', line: "Literature makes language beautiful. Even cookie poems.", lineZh: "文學讓語言變美。連餅乾詩也是。" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m8.mp4?v=1',
 };
 
 const L12_M9: Mission = {
