@@ -16177,6 +16177,7 @@ const L12_M15: Mission = {
     { speaker: 'Benny', line: "My superpower is eating. And writing about eating.", lineZh: "我的超能力是吃。還有寫吃的。" },
     { speaker: 'Coco', line: "Third checkpoint passed! The summit is right there!", lineZh: "第三個檢查站過了！山頂就在那裡！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m15.mp4?v=1',
 };
 
 const L12_M16: Mission = {
