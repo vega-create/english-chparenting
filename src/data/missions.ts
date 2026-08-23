@@ -15624,6 +15624,7 @@ const L12_M7: Mission = {
     { speaker: 'Benny', line: "Is there food in space? I have questions.", lineZh: "太空有食物嗎？我有問題。" },
     { speaker: 'Coco', line: "We learn a lot from science. Now let's sleep under the stars.", lineZh: "我們從科學學到很多。現在在星空下睡覺吧。" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L12/m7.mp4?v=1',
 };
 
 const L12_M8: Mission = {
