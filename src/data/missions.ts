@@ -14243,6 +14243,7 @@ const L11_M7: Mission = {
     { speaker: 'Benny', line: "I enjoy dancing... after eating. Noodles first!", lineZh: "我喜歡跳舞……吃完之後。先吃麵！" },
     { speaker: 'Coco', line: "Enjoy, finish, keep, love. All plus -ing!", lineZh: "enjoy、finish、keep、love。後面都加 -ing！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m7.mp4?v=1',
 };
 
 const L11_M8: Mission = {
