@@ -14312,6 +14312,7 @@ const L11_M8: Mission = {
     { speaker: 'Benny', line: "I used to eat one cookie a day. Things change.", lineZh: "我以前一天吃一塊餅乾。世事多變。" },
     { speaker: 'Coco', line: "Things used to be different. Now we're here!", lineZh: "以前都不一樣。現在我們在這裡！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m8.mp4?v=1',
 };
 
 const L11_M9: Mission = {
