@@ -14451,6 +14451,7 @@ const L11_M10: Mission = {
     { speaker: 'Benny', line: "If I finish, I will eat. That's my plan.", lineZh: "如果我完成，我就吃。這是我的計畫。" },
     { speaker: 'Coco', line: "Second challenge done! We're getting strong!", lineZh: "第二關完成！我們變強了！" },
   ],
+  videoUrl: 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/videos/L11/m10.mp4?v=1',
 };
 
 const L11_M11: Mission = {
