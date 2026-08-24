@@ -157,9 +157,7 @@ export default function LayeredBanner() {
       </div>
 
       {/* ===== Hero Banner（縮小版：與下方內容同寬的圓角卡片，比例貼近下方區塊） ===== */}
-      <div className="px-3 sm:px-4 md:px-6 pt-3 md:pt-5" style={{ background: "linear-gradient(180deg, #fef9ec 0%, #fef9ec 100%)" }}>
-      <div className="max-w-6xl mx-auto">
-      <section className="relative w-full overflow-hidden rounded-3xl md:rounded-[2.25rem] border-4 border-white/80 shadow-xl" style={{ minHeight: "min(560px, max(500px, 68vh))" }}>
+      <section className="relative w-full overflow-hidden" style={{ minHeight: "clamp(540px, calc(100vh - 112px), 940px)" }}>
         {/* Layer 1: 背景圖（不動）*/}
         <img
           src="/images/maps/bg-sky-castles.webp"
@@ -281,7 +279,7 @@ export default function LayeredBanner() {
         {/* Layer 4: 大標題 + 副標題 + 按鈕（純 CSS） */}
         <div className="absolute inset-0 flex flex-col xl:flex-row z-20">
           {/* 左側(桌機 xl+) / 上方(手機+iPad)：文字區 */}
-          <div className="w-full xl:w-[45%] px-5 sm:px-6 xl:pl-[8%] 2xl:pl-[10%] xl:pr-4 pt-6 sm:pt-8 xl:pt-[3%] flex flex-col items-center xl:items-start text-center xl:text-left relative">
+          <div className="w-full xl:w-[45%] px-5 sm:px-6 xl:pl-[8%] 2xl:pl-[10%] xl:pr-4 pt-8 sm:pt-10 xl:pt-[4%] flex flex-col items-center xl:items-start text-center xl:text-left relative">
             {/* 文字區後方的大片白色霧光（柔焦雲團，讓文字更立體）*/}
             <div
               className="absolute pointer-events-none -z-0"
@@ -309,7 +307,7 @@ export default function LayeredBanner() {
                 y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 },
                 rotate: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 },
               }}
-              className="relative z-10 w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] xl:max-w-sm 2xl:max-w-md mb-2 xl:-ml-4"
+              className="relative z-10 w-full max-w-[240px] sm:max-w-[300px] md:max-w-sm xl:max-w-lg 2xl:max-w-xl mb-3 xl:-ml-4"
               style={{
                 filter: "drop-shadow(0 0 25px rgba(255,255,255,0.95)) drop-shadow(0 0 50px rgba(255,255,255,0.8)) drop-shadow(0 0 80px rgba(255,255,255,0.5))",
               }}
@@ -335,7 +333,7 @@ export default function LayeredBanner() {
                 style={{
                   fontFamily: 'var(--font-noto), "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif',
                   fontWeight: 900,
-                  fontSize: "clamp(17px, 2.8vw, 34px)",
+                  fontSize: "clamp(19px, 3.4vw, 46px)",
                   color: "#4338ca",
                   letterSpacing: "0.02em",
                   lineHeight: 1.15,
@@ -353,7 +351,7 @@ export default function LayeredBanner() {
               style={{
                 fontFamily: 'var(--font-noto), "Noto Sans TC", "PingFang TC", sans-serif',
                 fontWeight: 600,
-                fontSize: "clamp(13px, 1.3vw, 18px)",
+                fontSize: "clamp(14px, 1.4vw, 21px)",
                 color: "#3a1f0a",
                 lineHeight: "1.7",
                 letterSpacing: "0.03em",
@@ -368,7 +366,7 @@ export default function LayeredBanner() {
               initial={false}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex flex-wrap gap-5 md:gap-6 justify-center w-full relative z-10 mt-2"
+              className="flex flex-wrap gap-4 md:gap-5 justify-center w-full relative z-10 mt-2"
             >
               <div onClick={startAdventure} className="no-underline cursor-pointer">
                 <motion.div
@@ -382,11 +380,11 @@ export default function LayeredBanner() {
                     ],
                   }}
                   transition={{ boxShadow: { duration: 2, repeat: Infinity } }}
-                  className="px-6 md:px-9 py-2 md:py-3 rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-600 text-white font-black flex items-center gap-2.5 cursor-pointer relative overflow-hidden"
+                  className="px-7 md:px-10 py-3 md:py-3.5 rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-600 text-white font-black flex items-center gap-2.5 cursor-pointer relative overflow-hidden"
                   style={{
                     fontFamily: '"Noto Sans TC", "PingFang TC", sans-serif',
                     letterSpacing: "0.05em",
-                    fontSize: "clamp(14px, 1.4vw, 19px)",
+                    fontSize: "clamp(15px, 1.6vw, 22px)",
                   }}
                 >
                   {/* 跑光 */}
@@ -407,11 +405,11 @@ export default function LayeredBanner() {
                 onClick={() => playSwoosh()}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 md:px-9 py-2 md:py-3 rounded-full bg-white/95 backdrop-blur border-2 border-purple-300 text-purple-700 font-black flex items-center gap-2.5 shadow-xl"
+                className="px-7 md:px-10 py-3 md:py-3.5 rounded-full bg-white/95 backdrop-blur border-2 border-purple-300 text-purple-700 font-black flex items-center gap-2.5 shadow-xl"
                 style={{
                   fontFamily: '"Noto Sans TC", "PingFang TC", sans-serif',
                   letterSpacing: "0.05em",
-                  fontSize: "clamp(14px, 1.4vw, 19px)",
+                  fontSize: "clamp(15px, 1.6vw, 22px)",
                 }}
               >
                 <span>觀看介紹</span>
@@ -477,8 +475,6 @@ export default function LayeredBanner() {
           <span>↓ 往下看更多</span>
         </motion.div>
       </section>
-      </div>
-      </div>
 
       {/* ===== 下方內容區（世界輪播 / 任務+夥伴 / 徽章+課程 / 收集+家長） ===== */}
       <section
