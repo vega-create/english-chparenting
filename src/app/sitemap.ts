@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
-import { COURSES } from '@/data/courses';
+import { COURSES, WORLDS } from '@/data/courses';
+import { ISLANDS } from './adventure-map/island/[slug]/page';
 import { MISSIONS } from '@/data/missions';
 import { BLOG_POSTS } from '@/data/blog-posts';
 
@@ -47,8 +48,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     });
+  }
+
+  // 島嶼頁：slug 是 island/[slug] 自己那組（sound-island、school-road…），
+  // 跟課程的 l1-letter-island 那組不一樣。之前這裡直接套課程 slug，
+  // 結果 sitemap 送出 12 個 404 給 Google。改成從路由本身的清單拿。
+  for (const island of ISLANDS) {
     entries.push({
-      url: `${BASE}/adventure-map/island/${course.slug}`,
+      url: `${BASE}/adventure-map/island/${island.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    });
+  }
+
+  // 六大世界頁
+  for (const w of WORLDS) {
+    entries.push({
+      url: `${BASE}/adventure-map/world/${w.levels[0] <= 2 ? 1 : Math.ceil(w.levels[0] / 2)}`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
