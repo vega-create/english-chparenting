@@ -5,7 +5,6 @@ import {
   loadProgress, completedCount, totalStars, currentIsland, getBadges, type Progress,
 } from '@/lib/missionProgress';
 import { WORLDS, COURSES } from '@/data/courses';
-import AutoAds from '@/components/AutoAds';
 import ResearchConsent from '@/components/ResearchConsent';
 import PlacementPrompt from '@/components/PlacementPrompt';
 import { setStartLevel } from '@/lib/progress';
@@ -69,7 +68,6 @@ export default function ParentsPage() {
 
   return (
     <main className="min-h-screen">
-      <AutoAds />
 
       {/* ===== 主視覺 ===== */}
       <section className="relative w-full overflow-hidden" style={{ aspectRatio: '3 / 2', maxHeight: '380px' }}>

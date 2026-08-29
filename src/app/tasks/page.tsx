@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import HomeButton from '@/components/HomeButton';
 import { playClick, playStar } from '@/lib/sfx';
 import { playPageIntro } from '@/lib/vega-audio';
-import AdSlot from '@/components/AdSlot';
 
 // 今日任務：每天 3 個小任務，完成拿獎勵。（進度之後接闖關紀錄）
 // 圖示不用 emoji——emoji 在每台裝置長得不一樣，跟這頁的木牌插畫也搭不起來。
@@ -106,7 +105,6 @@ export default function TasksPage() {
         </div>
       </div>
       {/* 廣告：整頁最下方，不擋內容 */}
-      <AdSlot place="tasksBottom" className="pb-6 pt-2" />
     </main>
   );
 }

@@ -1,20 +1,24 @@
 /**
  * 廣告設定
  *
- * 分區原則（2026-08-08 Vega 定）：
- * - 孩子會用的頁面「要有廣告，但不能擋到內容」→ 固定版位，一律只放在整頁最下方
- * - 家長／文章頁 → 自動廣告（收益主要來源，那裡是搜尋流量進來的地方）
- * - 課程進行中的互動畫面（電子書內頁、答題、對話）→ 完全不放
+ * 分區原則（2026-08-29 Vega 重新定：流量與體驗優先於廣告收益）：
+ * - 只留兩處固定版位：首頁最下方、課程完成後最下方
+ * - 只留兩頁自動廣告：部落格列表與內頁（搜尋流量進來的地方，讀者是大人）
+ * - 孩子在玩的頁面（冒險地圖、小屋、徽章、今日任務）→ 完全不放
+ * - 家長頁、隱私權、電子書、動詞表 → 完全不放
  *
  * 全部設非個人化廣告（兒童導向網站不該做個人化追蹤）。
  *
- * ⚠️ AdSense 後台的「自動廣告」要關掉，否則它會繞過這裡的設定，
- *    在任何載入腳本的頁面自己找位置塞。
+ * ⚠️ 蓋板／插頁廣告在程式碼裡沒有，那是 AdSense 後台的「自動廣告」自己塞的。
+ *    只要後台自動廣告開著，它就會在任何載入腳本的頁面（含固定版位的頁面）
+ *    自己找位置塞插頁、錨定、側欄。要關必須到後台：
+ *    廣告 → 依網站 → english.chparenting.com → 編輯 → 關掉「插頁廣告」等格式，
+ *    並用「網頁排除設定」排掉 /adventure-map、/cabin、/courses/* 等課程路徑。
  */
 
 export const AD_CLIENT = 'ca-pub-3493526929407874';
 
-export type AdPlace = 'lessonBottom' | 'mapBottom' | 'homeBottom' | 'cabinBottom' | 'tasksBottom' | 'badgesBottom';
+export type AdPlace = 'lessonBottom' | 'homeBottom';
 
 /**
  * AdSense 後台 →「廣告」→「依廣告單元」→ 建立「多媒體廣告」（回應式），
@@ -27,11 +31,7 @@ const DEFAULT_SLOT = '2835009870';
 
 export const AD_SLOTS: Record<AdPlace, string> = {
   lessonBottom: DEFAULT_SLOT,   // 課程頁最下方（完成按鈕之後）
-  mapBottom: DEFAULT_SLOT,      // 冒險地圖最下方
   homeBottom: DEFAULT_SLOT,     // 首頁最下方
-  cabinBottom: DEFAULT_SLOT,    // 我的小屋最下方
-  tasksBottom: DEFAULT_SLOT,    // 今日任務最下方
-  badgesBottom: DEFAULT_SLOT,   // 成就徽章最下方
 };
 
 /**

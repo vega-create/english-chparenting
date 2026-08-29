@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import AutoAds from '@/components/AutoAds';
 import { RESEARCH_CONTACT, RESEARCH_PI, RETENTION_YEARS, SITE_NAME } from '@/lib/research';
 
 export const metadata: Metadata = {
@@ -149,7 +148,6 @@ export default function PrivacyPage() {
         )}
 
         <div className="mt-10">
-          <AutoAds />
         </div>
       </div>
     </main>

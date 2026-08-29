@@ -402,7 +402,11 @@ export default function LayeredBanner() {
                 </motion.div>
               </div>
               <motion.button
-                onClick={() => playSwoosh()}
+                // 這顆本來只播音效、點了什麼都不會發生。
+                // 接 /guide：那頁就是 5 張介紹 + Vega 語音導覽，跟「觀看介紹 ▶」的預期一致。
+                // 跟隔壁的「開始冒險」不衝突——開始冒險只有第一次進 guide、之後直接跳地圖，
+                // 這顆則是隨時都能重看。
+                onClick={() => { playSwoosh(); router.push('/guide'); }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-7 md:px-10 py-3 md:py-3.5 rounded-full bg-white/95 backdrop-blur border-2 border-purple-300 text-purple-700 font-black flex items-center gap-2.5 shadow-xl"

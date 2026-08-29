@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BOOKS } from "@/data/blog-posts";
 import PageIntro from "@/components/PageIntro";
-import AutoAds from "@/components/AutoAds";
 
 export const metadata: Metadata = {
   title: "推薦書單 - 兒童英文繪本與學習書籍推薦",
@@ -27,7 +26,6 @@ const FLOW = [
 export default function BooksPage() {
   return (
     <main className="min-h-screen">
-      <AutoAds />
       <PageIntro page="books" />
 
       {/* ===== 主視覺：閱讀花園 ===== */}

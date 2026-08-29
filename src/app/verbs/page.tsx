@@ -2,7 +2,6 @@
 import { useState, useMemo } from "react";
 import { VERBS, type Verb } from "@/data/verbs";
 import { speak } from "@/lib/speech";
-import AutoAds from "@/components/AutoAds";
 
 type Filter = "all" | "irregular" | "regular";
 
@@ -34,7 +33,6 @@ export default function VerbsPage() {
 
   return (
     <main className="min-h-screen py-10 px-4">
-      <AutoAds />
       <div className="max-w-4xl mx-auto">
         {/* Hero */}
         <div className="text-center mb-6">

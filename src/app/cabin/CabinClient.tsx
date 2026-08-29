@@ -10,7 +10,6 @@ import { COURSES } from '@/data/courses';
 import { playPageIntro } from '@/lib/vega-audio';
 import { useAuth } from '@/components/AuthProvider';
 import AuthButton from '@/components/AuthButton';
-import AdSlot from '@/components/AdSlot';
 
 type Member = 'guest' | 'free' | 'vip';
 const KEY = 'ae_member';
@@ -397,7 +396,6 @@ export default function CabinClient() {
           </div>
       </div>
       {/* 廣告：整頁最下方，不擋內容 */}
-      <AdSlot place="cabinBottom" className="pb-6 pt-2" />
     </main>
   );
 }

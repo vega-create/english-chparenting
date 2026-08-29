@@ -15,7 +15,6 @@ import {
 import { playClick, playStar, playSwoosh } from "@/lib/sfx";
 import MapDialogue from "@/components/MapDialogue";
 import HomeButton from "@/components/HomeButton";
-import AdSlot from '@/components/AdSlot';
 import IslandDefense from '@/components/IslandDefense';
 import { getTodayInvasion, invasionMission, MONSTERS, type GuardState } from '@/lib/islandDefense';
 
@@ -464,7 +463,6 @@ export default function AdventureMapPage() {
         )}
       </AnimatePresence>
       {/* 廣告：整頁最下方，不擋內容 */}
-      <AdSlot place="mapBottom" className="pb-6 pt-2" />
     </div>
   );
 }

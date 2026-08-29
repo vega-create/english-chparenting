@@ -10,7 +10,6 @@ import { playPageIntro } from '@/lib/vega-audio';
 import { playClick } from '@/lib/sfx';
 import HomeButton from '@/components/HomeButton';
 import LoginNudge from '@/components/LoginNudge';
-import AdSlot from '@/components/AdSlot';
 
 const img = (key: string) => `/images/badges/ach-${key}.webp`;
 const LOCKED = '/images/badges/ach-locked.webp';
@@ -190,7 +189,6 @@ export default function BadgesPage() {
         </div>
       </div>
 
-      <AdSlot place="badgesBottom" className="pb-6 pt-2" />
     </main>
   );
 }
