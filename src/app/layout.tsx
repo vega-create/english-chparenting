@@ -67,6 +67,9 @@ export const metadata: Metadata = {
   },
 };
 
+/** GA4 評估 ID（只給冒險英語子網域用） */
+const GA_ID = 'G-N0TE2HQBQP';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -138,6 +141,28 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(familySchema) }}
+        />
+
+        {/* Google Analytics 4 — 這組 ID 只用在 english.chparenting.com，
+            媽媽站 chparenting.com 是另一組 (G-C0SFWXX8Q0)，資料不會混在一起。
+
+            ⚠️ 三個關閉項目是刻意的，因為本站是兒童導向：
+            - allow_google_signals：關掉跨裝置的人口統計與再行銷資料收集
+            - allow_ad_personalization_signals：關掉個人化廣告訊號，
+              跟 AdSense 設的非個人化廣告一致
+            - 這兩項不關的話，兒童導向網站會有 COPPA 合規疑慮 */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}', {
+  allow_google_signals: false,
+  allow_ad_personalization_signals: false
+});`,
+          }}
         />
       </head>
       <body className={`${noto.variable} ${zenMaru.variable} ${baloo.variable} font-sans antialiased`}>
