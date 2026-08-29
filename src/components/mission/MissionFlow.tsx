@@ -279,10 +279,13 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
                   }}
                   color="gold" size="lg" className="w-full block text-center"
                 >⭐ ▶ 開始任務 ⭐</GameButton>
-                <button
-                  onClick={() => setStep('complete')}
-                  className="w-full py-2.5 bg-white border-2 border-green-300 text-green-600 font-black rounded-full shadow active:scale-95 transition text-sm"
-                >✓ 完成關卡（測試用）</button>
+                {/* 開發用捷徑：正式站不能出現，不然孩子一點就跳過整關、進度還會記成完成 */}
+                {process.env.NODE_ENV === 'development' && (
+                  <button
+                    onClick={() => setStep('complete')}
+                    className="w-full py-2.5 bg-white border-2 border-green-300 text-green-600 font-black rounded-full shadow active:scale-95 transition text-sm"
+                  >✓ 完成關卡（測試用）</button>
+                )}
               </div>
             </div>
           </>

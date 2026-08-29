@@ -3855,7 +3855,7 @@ const L3_M17: Mission = {
     { type: 'fill-blank', question: 'one foot, two ___（不規則）', options: ['feet', 'foots', 'feets', 'foot'], answer: 'feet' },
   ],
   challenges: [
-    { type: 'fill-blank', question: 'one bus, two ___', options: ['buses', 'buss', 'bus', 'buss'], answer: 'buses' },
+    { type: 'fill-blank', question: 'one bus, two ___', options: ['buses', 'buss', 'bus', "bus's"], answer: 'buses' },
     { type: 'fill-blank', question: 'one dish, two ___', options: ['dishes', 'dishs', 'dish', 'dishies'], answer: 'dishes' },
     { type: 'fill-blank', question: 'one child, two ___（不規則）', options: ['children', 'childs', 'childrens', 'childes'], answer: 'children' },
     { type: 'match', question: '找出配對正確的那一組！', options: ['cat-cats', 'box-feet', 'foot-mice', 'mouse-boxes'], answer: 'cat-cats' },
@@ -9186,7 +9186,7 @@ const L7_M14: Mission = {
   reviewQuiz: [
     { type: 'match', question: 'write → 過去分詞 → ?', options: ['written', 'wrote', 'writed', 'writes'], answer: 'written' },
     { type: 'fill-blank', question: 'I ___ well last night.（sleep 過去）', options: ['slept', 'sleeped', 'sleep', 'sleeps'], answer: 'slept' },
-    { type: 'match', question: 'make → 過去 → ?', options: ['made', 'maked', 'made', 'makes'], answer: 'made' },
+    { type: 'match', question: 'make → 過去 → ?', options: ['made', 'maked', 'making', 'makes'], answer: 'made' },
   ],
   videoScript: [
     { speaker: 'Coco', line: 'Spell duel! Ready, Benny?', lineZh: '咒語對決！Benny 準備好了嗎？' },
