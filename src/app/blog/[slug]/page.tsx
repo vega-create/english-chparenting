@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/data/blog-posts";
 import AutoAds from "@/components/AutoAds";
+import InArticleAd from "@/components/InArticleAd";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map(p => ({ slug: p.slug }));
@@ -65,8 +66,14 @@ function extractTOC(md: string) {
 
 /* Markdown renderer — outputs clean HTML, styled by .article-content CSS */
 function renderMarkdown(md: string) {
-  return md
-    .split("\n\n")
+  const blocks = md.split("\n\n");
+  // 廣告插在約 70% 的位置：讀到這裡的人是真的在讀，沒讀完就走的不會被打擾。
+  // 挑「下一個段落的開頭」而不是硬切，避免插在標題與內文中間。
+  let adAt = Math.floor(blocks.length * 0.7);
+  while (adAt < blocks.length - 1 && /^#{2,4} /.test(blocks[adAt])) adAt++;
+  const showAd = blocks.length >= 8;   // 太短的文章不放，不然一進來就看到廣告
+
+  return blocks
     .map((block, i) => {
       // H4
       if (block.startsWith("#### ")) {
@@ -94,7 +101,6 @@ function renderMarkdown(md: string) {
         const rows = lines.slice(1).map(r => r.split("|").filter(Boolean).map(c => c.trim()));
         return (
           <table key={i}>
-      <AutoAds />
             <thead>
               <tr>{headers?.map((h, j) => <th key={j}>{h}</th>)}</tr>
             </thead>
@@ -139,7 +145,8 @@ function renderMarkdown(md: string) {
 
       // Paragraph
       return <p key={i}>{formatInline(block)}</p>;
-    });
+    })
+    .flatMap((el, i) => (showAd && i === adAt ? [<InArticleAd key="ad" />, el] : [el]));
 }
 
 /* Extract FAQ pairs for schema */

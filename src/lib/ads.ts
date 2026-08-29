@@ -29,6 +29,10 @@ export type AdPlace = 'lessonBottom' | 'homeBottom';
  */
 const DEFAULT_SLOT = '2835009870';
 
+/** 文章內廣告單元（AdSense 後台的 english-blog-inarticle）。
+ *  給部落格文章用：放在約 70% 處，讀者真的讀進去才會看到。 */
+export const IN_ARTICLE_SLOT = '4630580925';
+
 export const AD_SLOTS: Record<AdPlace, string> = {
   lessonBottom: DEFAULT_SLOT,   // 課程頁最下方（完成按鈕之後）
   homeBottom: DEFAULT_SLOT,     // 首頁最下方
