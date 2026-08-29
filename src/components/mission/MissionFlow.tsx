@@ -27,6 +27,7 @@ import Challenge from '@/components/mission/Challenge';
 import TalkTime from '@/components/mission/TalkTime';
 import MissionComplete from '@/components/mission/MissionComplete';
 import AdSlot from '@/components/AdSlot';
+import { bumpDaily } from '@/lib/missionProgress';
 import { track } from '@/lib/analytics';
 
 type Step = 'intro' | 'welcome' | 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'complete';
@@ -300,7 +301,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'discover' && (
-          <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onComplete={() => setStep('challenge')} />
+          <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onComplete={() => { bumpDaily('story'); setStep('challenge'); }} />
         )}
 
         {step === 'challenge' && (
@@ -308,7 +309,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'talktime' && (
-          <TalkTime prompts={mission.talkTimePrompts} level={course.level} missionId={mission.id} audioIndex={audioIndex} onComplete={() => setStep('complete')} />
+          <TalkTime prompts={mission.talkTimePrompts} level={course.level} missionId={mission.id} audioIndex={audioIndex} onComplete={() => { bumpDaily('speak'); setStep('complete'); }} />
         )}
 
         {step === 'complete' && (

@@ -1,24 +1,39 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import HomeButton from '@/components/HomeButton';
 import { playClick, playStar } from '@/lib/sfx';
 import { playPageIntro } from '@/lib/vega-audio';
+import { loadProgress, getDaily, dailyDoneCount, DAILY_GOALS, type DailyKind } from '@/lib/missionProgress';
 
 // 今日任務：每天 3 個小任務，完成拿獎勵。（進度之後接闖關紀錄）
 // 圖示不用 emoji——emoji 在每台裝置長得不一樣，跟這頁的木牌插畫也搭不起來。
 // 改用站上原本就有的技能徽章與獎勵圖。
-const TASKS = [
-  { icon: '/images/tasks/icon-speaking.webp', name: '魔法咒語', desc: '大聲念一課的句子', href: '/courses', reward: '/images/tasks/icon-star.webp', count: 2 },
-  { icon: '/images/tasks/icon-reading.webp', name: '故事解謎', desc: '讀完一課的故事書', href: '/courses', reward: '/images/tasks/icon-star.webp', count: 2 },
-  { icon: '/images/tasks/icon-writing.webp', name: '字母拼圖', desc: '拼出 5 個新單字', href: '/courses', reward: '/images/tasks/icon-gem.webp', count: 5 },
+const TASKS: { kind: DailyKind; icon: string; name: string; desc: string; href: string; reward: string }[] = [
+  { kind: 'speak', icon: '/images/tasks/icon-speaking.webp', name: '魔法咒語', desc: '大聲念一課的句子', href: '/adventure-map', reward: '/images/tasks/icon-star.webp' },
+  { kind: 'story', icon: '/images/tasks/icon-reading.webp', name: '故事解謎', desc: '讀完一課的故事書', href: '/adventure-map', reward: '/images/tasks/icon-star.webp' },
+  { kind: 'spell', icon: '/images/tasks/icon-writing.webp', name: '字母拼圖', desc: '拼出 5 個新單字', href: '/adventure-map', reward: '/images/tasks/icon-gem.webp' },
 ];
 
 export default function TasksPage() {
-  useEffect(() => { playPageIntro('tasks'); }, []);
+  // 進度存在 localStorage，只能在瀏覽器讀 → 先給 0，掛載後再補上，避免 SSR 對不起來
+  const [daily, setDaily] = useState({ speak: 0, story: 0, spell: 0 });
+  const [done, setDone] = useState(0);
 
-  const done = 0;
+  useEffect(() => {
+    playPageIntro('tasks');
+    const refresh = () => {
+      const p = loadProgress();
+      const d = getDaily(p);
+      setDaily({ speak: d.speak, story: d.story, spell: d.spell });
+      setDone(dailyDoneCount(p));
+    };
+    refresh();
+    // 從關卡回來、或雲端同步寫入時即時更新
+    window.addEventListener('ae-mission-progress-change', refresh);
+    return () => window.removeEventListener('ae-mission-progress-change', refresh);
+  }, []);
 
   return (
     <main className="relative min-h-screen">
@@ -58,7 +73,11 @@ export default function TasksPage() {
 
         {/* ===== 3 張任務卡 ===== */}
         <div className="space-y-[1.2vh] mt-[1vh]">
-          {TASKS.map((t, i) => (
+          {TASKS.map((t, i) => {
+            const goal = DAILY_GOALS[t.kind];
+            const now = Math.min(daily[t.kind], goal);
+            const finished = now >= goal;
+            return (
             <motion.div key={t.name} className="relative w-full" style={{ aspectRatio: '1400 / 304' }}
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.12 }}>
               <img src="/images/tasks/card.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />
@@ -71,19 +90,28 @@ export default function TasksPage() {
                 <p className="font-black text-amber-900 leading-tight" style={{ fontSize: 'clamp(13px,1.9vw,28px)' }}>{t.name}</p>
                 <p className="font-bold text-amber-800/80 leading-tight mt-[1.5%]" style={{ fontSize: 'clamp(9px,1.15vw,17px)' }}>{t.desc}</p>
               </div>
-              {/* 獎勵 */}
+              {/* 獎勵 + 今天做了幾次 */}
               <div className="absolute flex items-center gap-1" style={{ right: '9%', top: '20%' }}>
                 <img src={t.reward} alt="" className="object-contain" style={{ height: 'clamp(16px,2.2vw,34px)' }} />
-                <span className="font-black text-amber-900" style={{ fontSize: 'clamp(10px,1.3vw,20px)' }}>×{t.count}</span>
+                <span className="font-black text-amber-900" style={{ fontSize: 'clamp(10px,1.3vw,20px)' }}>×{goal}</span>
+                <span className="font-black text-amber-700/80" style={{ fontSize: 'clamp(9px,1.15vw,17px)' }}>（{now}/{goal}）</span>
               </div>
               {/* 去完成 */}
-              <Link href={t.href} onClick={() => playStar()}
-                className="absolute no-underline bg-gradient-to-b from-amber-400 to-orange-500 text-white font-black rounded-full border-2 border-white/80 shadow-lg flex items-center justify-center hover:from-amber-500 active:scale-95 transition whitespace-nowrap"
-                style={{ right: '7%', top: '52%', padding: '0.35em 1.1em', fontSize: 'clamp(9px,1.25vw,19px)', textShadow: '0 1px 2px rgba(150,70,0,.4)' }}>
-                去完成 →
-              </Link>
+              {finished ? (
+                <div className="absolute no-underline bg-gradient-to-b from-green-400 to-emerald-600 text-white font-black rounded-full border-2 border-white/80 shadow-lg flex items-center justify-center whitespace-nowrap"
+                  style={{ right: '7%', top: '52%', padding: '0.35em 1.1em', fontSize: 'clamp(9px,1.25vw,19px)', textShadow: '0 1px 2px rgba(20,90,50,.4)' }}>
+                  ✓ 完成
+                </div>
+              ) : (
+                <Link href={t.href} onClick={() => playStar()}
+                  className="absolute no-underline bg-gradient-to-b from-amber-400 to-orange-500 text-white font-black rounded-full border-2 border-white/80 shadow-lg flex items-center justify-center hover:from-amber-500 active:scale-95 transition whitespace-nowrap"
+                  style={{ right: '7%', top: '52%', padding: '0.35em 1.1em', fontSize: 'clamp(9px,1.25vw,19px)', textShadow: '0 1px 2px rgba(150,70,0,.4)' }}>
+                  去完成 →
+                </Link>
+              )}
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* ===== 底部橫幅 ===== */}

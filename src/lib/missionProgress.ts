@@ -12,7 +12,23 @@ export interface Progress {
   lastActive?: string;               // YYYY-M-D
   streak?: number;                   // 連續學習天數
   guard?: number;                    // 守島戰累計守成次數（登入會同步）
+  daily?: DailyTasks;                // 今日任務計數（跨日自動歸零）
 }
+
+/** 今日任務：只記「哪一天 + 三個計數」，換日就重來。
+ *  放在 Progress 裡是刻意的——這樣它跟著既有的雲端同步走，
+ *  登入的孩子換裝置也會保留，不必另外開一張表。 */
+export interface DailyTasks {
+  date: string;   // YYYY-M-D
+  speak: number;  // 魔法咒語：念完一課的句子
+  story: number;  // 故事解謎：讀完一課的故事書
+  spell: number;  // 字母拼圖：拼對的新單字
+}
+
+export type DailyKind = 'speak' | 'story' | 'spell';
+
+/** 每個任務要做幾次才算完成，跟 tasks 頁上顯示的 ×N 對齊 */
+export const DAILY_GOALS: Record<DailyKind, number> = { speak: 2, story: 2, spell: 5 };
 
 const EMPTY: Progress = { completed: {} };
 
@@ -23,7 +39,7 @@ export function loadProgress(): Progress {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { ...EMPTY };
     const p = JSON.parse(raw);
-    return { completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard };
+    return { completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard, daily: p.daily };
   } catch {
     return { ...EMPTY };
   }
@@ -60,6 +76,29 @@ export function recordMissionComplete(courseSlug: string, missionId: number, sta
     p.streak = 1;
   }
   saveProgress(p);
+}
+
+// ── 今日任務 ──
+const EMPTY_DAILY = (): DailyTasks => ({ date: todayStr(), speak: 0, story: 0, spell: 0 });
+
+/** 讀今日計數。存的是昨天以前的就當作全新的一天（不寫回，讀取不該有副作用）。 */
+export function getDaily(p: Progress): DailyTasks {
+  const d = p.daily;
+  return d && d.date === todayStr() ? d : EMPTY_DAILY();
+}
+
+/** 完成一個動作時 +1。跨日會自動從 0 重新算。 */
+export function bumpDaily(kind: DailyKind, by = 1) {
+  const p = loadProgress();
+  const d = getDaily(p);
+  p.daily = { ...d, [kind]: d[kind] + by };
+  saveProgress(p);            // 觸發 ae-progress-save → 有登入就上雲
+}
+
+/** 三個任務裡完成了幾個（tasks 頁的進度條用） */
+export function dailyDoneCount(p: Progress): number {
+  const d = getDaily(p);
+  return (Object.keys(DAILY_GOALS) as DailyKind[]).filter(k => d[k] >= DAILY_GOALS[k]).length;
 }
 
 export function resetMissionProgress() {

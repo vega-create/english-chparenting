@@ -7,6 +7,7 @@ import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio'
 import { playStar, playClick } from '@/lib/sfx';
 import { playPraise, playReward } from '@/lib/vega-audio';
 import { track } from '@/lib/analytics';
+import { bumpDaily } from '@/lib/missionProgress';
 
 interface Props {
   challenges: QuizQuestion[];
@@ -67,6 +68,8 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
       meta: { type: q.type, chose: answer },
     });
     if (correct) {
+      // 今日任務「字母拼圖」只算拼字題，選擇題不算——不然一課就破表
+      if (q.type === 'spell') bumpDaily('spell');
       playStar();
       const newCombo = combo + 1;
       // 連對 3/5/10 題播專屬獎勵語音，其餘節點播鼓勵語

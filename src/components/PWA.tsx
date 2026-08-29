@@ -19,6 +19,12 @@ export default function PWA() {
     if (typeof window === 'undefined') return;
 
     // 註冊 Service Worker
+    // 開發環境不註冊：dev 的 JS chunk 檔名沒有 hash，被 sw 的 cache-first 快取住之後
+    // 改了程式碼畫面也不會變，會白白追很久。正式站的檔名有 hash，不受影響。
+    if (process.env.NODE_ENV === 'development') {
+      navigator.serviceWorker?.getRegistrations().then(rs => rs.forEach(r => r.unregister())).catch(() => {});
+      return;
+    }
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
     }

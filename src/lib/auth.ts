@@ -63,6 +63,21 @@ export function mergeProgress(a: Progress, b: Progress): Progress {
     completed,
     lastActive: pick(a.lastActive, b.lastActive),
     streak: Math.max(a.streak ?? 0, b.streak ?? 0),
+    daily: mergeDaily(a.daily, b.daily),
+  };
+}
+
+/** 今日任務合併：同一天取各項較大值（同一天在兩台裝置各做了一些）；
+ *  不同天只留比較新的那天，舊的直接丟掉（過了就是過了，不該累加）。 */
+function mergeDaily(a?: Progress['daily'], b?: Progress['daily']): Progress['daily'] {
+  if (!a) return b;
+  if (!b) return a;
+  if (a.date !== b.date) return a.date > b.date ? a : b;
+  return {
+    date: a.date,
+    speak: Math.max(a.speak, b.speak),
+    story: Math.max(a.story, b.story),
+    spell: Math.max(a.spell, b.spell),
   };
 }
 
