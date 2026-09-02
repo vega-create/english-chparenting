@@ -169,7 +169,9 @@ export default function SentenceMic({ target, onDone, compact = false }: { targe
           className={`flex items-center gap-[2cqw] rounded-full border-[0.4cqw] border-dashed px-[1cqw] py-[0.8cqw] pr-[3cqw] font-black transition active:scale-95 disabled:opacity-80 ${pillTone[status]}`}>
           <span className={`shrink-0 rounded-full flex items-center justify-center text-white text-[3cqw] shadow ${status === 'listening' ? 'bg-red-500' : 'bg-purple-500'}`} style={{ width: '7.2cqw', height: '7.2cqw' }}>🎤</span>
           <span className="text-[3.2cqw] leading-tight text-left">
-            {status === 'idle' ? `“${target}”` : label[status].replace(/^\S+\s/, '')}
+            {/* 句子一直留著，狀態（聽你念…／念得很好）放下面一行，過關後才看得到剛剛念的是哪句 */}
+            <span className="block">“{target}”</span>
+            {status !== 'idle' && <span className="block text-[2.4cqw] font-bold opacity-80 mt-[0.3cqw]">{label[status]}</span>}
           </span>
         </button>
         {heard && status !== 'ok' && (
