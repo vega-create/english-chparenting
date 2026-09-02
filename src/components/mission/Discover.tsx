@@ -175,6 +175,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   useEffect(() => {
     if (phase !== 'story' || !bookOpen || !scene) return;
     if (storyIndex === story.length - 1) setTimeout(() => playTada(), 900);
+    setSpoken(null);
     const t = setTimeout(() => sayDialogue(storyIndex, scene.dialogue, 0.75), 450);
     return () => { clearTimeout(t); stopClip(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -194,13 +195,37 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   // ── 播音：一律先試 R2 上的真人錄音，沒有檔案才 fallback 到瀏覽器 TTS ──
   const mid = missionId ?? 1;
 
+  // 「唸到哪亮到哪」：目前正在唸的那個字（key：'d'＝對話泡泡、's3'＝第 3 句 Listen & Say）
+  const [spoken, setSpoken] = useState<{ key: string; idx: number } | null>(null);
+  // 真人錄音沒有逐字時間 → 用字長比例推算（標點多停一下）；TTS 有 onboundary 就精準對字
+  function wordTimer(text: string, key: string) {
+    const ws = text.split(' ');
+    const weights = ws.map(w => w.replace(/[^A-Za-z0-9']/g, '').length + 1.2 + (/[.,!?]$/.test(w) ? 1.5 : 0));
+    const total = weights.reduce((a, b) => a + b, 0);
+    const cum: number[] = []; weights.reduce((a, b, i) => (cum[i] = a + b), 0);
+    let last = -2;
+    const set = (idx: number) => { if (idx !== last) { last = idx; setSpoken({ key, idx }); } };
+    set(-1);
+    return {
+      onTime: (t: number, dur: number) => {
+        const frac = Math.min(1, Math.max(0, (t - 0.12) / Math.max(0.3, dur - 0.25)));
+        const idx = cum.findIndex(c => c / total > frac);
+        set(idx < 0 ? ws.length - 1 : idx);
+      },
+      onWord: (charIndex: number) => set((text.slice(0, charIndex).match(/ /g) || []).length),
+      done: () => { last = -2; setSpoken(cur => (cur?.key === key ? null : cur)); },
+    };
+  }
+
   async function sayDialogue(i: number, text: string, rate = 0.75) {
-    if (await playLesson(lessonPath.dialogue(level, mid, i))) {
+    const tm = wordTimer(text, 'd');
+    if (await playLesson(lessonPath.dialogue(level, mid, i), tm.onTime)) {
+      tm.done();
       track({ kind: 'replay', level, mission: mid, step: 'story', item: `d${i + 1}`, audioSrc: 'el' });
       return;
     }
     track({ kind: 'replay', level, mission: mid, step: 'story', item: `d${i + 1}`, audioSrc: 'tts' });
-    speak(text, rate);
+    speak(text, rate, { onWord: tm.onWord, onEnd: tm.done });
   }
   // 單字卡：先拼字母再念單字（H-E-L-L-O, hello），沒有拼字檔就退回只念單字
   async function sayWord(w: Word, rate = 0.6) {
@@ -216,12 +241,14 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     speak(w.en, rate);
   }
   async function saySentence(i: number, text: string, rate = 0.7) {
-    if (await playLesson(lessonPath.sentence(level, mid, i))) {
+    const tm = wordTimer(text, `s${i}`);
+    if (await playLesson(lessonPath.sentence(level, mid, i), tm.onTime)) {
+      tm.done();
       track({ kind: 'replay', level, mission: mid, step: 'sentences', item: `s${i + 1}`, audioSrc: 'el' });
       return;
     }
     track({ kind: 'replay', level, mission: mid, step: 'sentences', item: `s${i + 1}`, audioSrc: 'tts' });
-    speak(text, rate);
+    speak(text, rate, { onWord: tm.onWord, onEnd: tm.done });
   }
 
   /**
@@ -495,13 +522,17 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                               w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
                               hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
                             );
+                            const isNow = spoken?.key === 'd' && spoken.idx === wi;
                             return (
                               <span key={wi}>
                                 <span
-                                  className={isHighlight ? 'text-pink-500 font-black cursor-pointer underline decoration-dotted decoration-pink-300 underline-offset-4 active:bg-pink-100 rounded' : ''}
+                                  className={`relative inline-block rounded-[0.8cqw] px-[0.3cqw] transition-colors duration-150 ${
+                                    isNow ? 'bg-yellow-300 shadow-[0_0_0_0.35cqw_rgba(253,224,71,0.55)]' : ''
+                                  } ${isHighlight ? 'text-pink-500 font-black cursor-pointer underline decoration-dotted decoration-pink-300 underline-offset-4 active:bg-pink-100' : ''}`}
                                   onClick={e => { if (isHighlight) { e.stopPropagation(); sayInlineWord(w); } }}
                                 >
                                   {w}
+                                  {isNow && <span className="absolute left-1/2 -translate-x-1/2 top-[88%] text-[2.6cqw] leading-none animate-bounce pointer-events-none select-none">👆</span>}
                                 </span>{' '}
                               </span>
                             );
@@ -529,7 +560,19 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                           >
                             <span className="shrink-0 rounded-full bg-purple-500 text-white flex items-center justify-center text-[3.2cqw] shadow" style={{ width: '7.6cqw', height: '7.6cqw' }}>🔊</span>
                             <span className="min-w-0">
-                              <span className="ebook-text block text-purple-700 font-black text-[3.4cqw] leading-tight">{sen.en}</span>
+                              <span className="ebook-text block text-purple-700 font-black text-[3.4cqw] leading-tight">
+                                {sen.en.split(' ').map((w, wi) => {
+                                  const isNow = spoken?.key === `s${i}` && spoken.idx === wi;
+                                  return (
+                                    <span key={wi}>
+                                      <span className={`relative inline-block rounded-[0.8cqw] px-[0.3cqw] transition-colors duration-150 ${isNow ? 'bg-yellow-300 text-purple-900 shadow-[0_0_0_0.35cqw_rgba(253,224,71,0.55)]' : ''}`}>
+                                        {w}
+                                        {isNow && <span className="absolute left-1/2 -translate-x-1/2 top-[88%] text-[2.4cqw] leading-none animate-bounce pointer-events-none select-none">👆</span>}
+                                      </span>{' '}
+                                    </span>
+                                  );
+                                })}
+                              </span>
                               <span className="block text-gray-500 text-[2.3cqw] mt-[0.3cqw]">{sen.zh}</span>
                             </span>
                           </button>

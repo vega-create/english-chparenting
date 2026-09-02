@@ -13,7 +13,8 @@ export function stopClip(): void {
 
 // 播放單一 mp3；播完 resolve(true)，檔案不存在/失敗/被新的打斷 resolve(false)
 // 用途：課程音檔優先播錄音，沒檔才由呼叫端 fallback 到 TTS
-export function playClip(url: string): Promise<boolean> {
+// onTime：播放中每一影格回報 (目前秒數, 總長)，給「唸到哪亮到哪」用；播完或被打斷就不再回報
+export function playClip(url: string, onTime?: (t: number, dur: number) => void): Promise<boolean> {
   if (typeof window === 'undefined') return Promise.resolve(false);
   stopClip();
   stopOtherChannels('clip');   // Vega 旁白／TTS 先停，避免三個聲音疊在一起
@@ -21,12 +22,24 @@ export function playClip(url: string): Promise<boolean> {
     const a = new Audio(url);
     currentClip = a;
     let done = false;
+    // 用 setInterval 而不是 requestAnimationFrame：分頁在背景時 rAF 會整個停掉
+    let timer: ReturnType<typeof setInterval> | undefined;
     const finish = (ok: boolean) => {
       if (done) return;
       done = true;
+      if (timer) clearInterval(timer);
       if (currentClip === a) currentClip = null;
       resolve(ok);
     };
+    if (onTime) {
+      a.onplaying = () => {
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => {
+          if (done || a.paused || !a.duration) return;
+          onTime(a.currentTime, a.duration);
+        }, 50);
+      };
+    }
     a.onended = () => finish(true);
     a.onerror = () => finish(false);
     // 被 stopClip() 打斷時算「有播到」，呼叫端才不會又補一次 TTS
@@ -55,8 +68,8 @@ const LESSON_BASE = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/lessons
 const LESSON_V = '3';
 
 /** 播課文音檔；沒有檔案回 false，呼叫端自行 fallback 到 TTS */
-export function playLesson(path: string): Promise<boolean> {
-  return playClip(`${LESSON_BASE}/${path}?v=${LESSON_V}`);
+export function playLesson(path: string, onTime?: (t: number, dur: number) => void): Promise<boolean> {
+  return playClip(`${LESSON_BASE}/${path}?v=${LESSON_V}`, onTime);
 }
 
 export const lessonPath = {

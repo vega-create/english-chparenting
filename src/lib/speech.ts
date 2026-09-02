@@ -66,7 +66,8 @@ export function stopSpeaking() {
   window.speechSynthesis.cancel();
 }
 
-export function speak(text: string, rate = 0.8) {
+// onWord：瀏覽器唸到每個字時回報該字在 text 裡的起始位置（給「唸到哪亮到哪」用）；onEnd：唸完或被取消
+export function speak(text: string, rate = 0.8, hooks?: { onWord?: (charIndex: number) => void; onEnd?: () => void }) {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
 
   window.speechSynthesis.cancel();
@@ -80,6 +81,13 @@ export function speak(text: string, rate = 0.8) {
 
   if (femaleVoice) {
     u.voice = femaleVoice;
+  }
+  if (hooks?.onWord) {
+    u.onboundary = (e) => { if (e.name === 'word') hooks.onWord!(e.charIndex); };
+  }
+  if (hooks?.onEnd) {
+    u.onend = () => hooks.onEnd!();
+    u.onerror = () => hooks.onEnd!();
   }
 
   window.speechSynthesis.speak(u);
