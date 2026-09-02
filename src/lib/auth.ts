@@ -51,6 +51,13 @@ export async function signOut() {
 // ── 進度合併 ──────────────────────────────────────────────
 
 /** 兩份進度合併：同一課取星數高的；連續天數取大的 */
+function mergeLog(a?: Record<string, number>, b?: Record<string, number>) {
+  if (!a && !b) return undefined;
+  const out: Record<string, number> = { ...(a || {}) };
+  for (const [k, v] of Object.entries(b || {})) out[k] = Math.max(out[k] ?? 0, v);
+  return out;
+}
+
 export function mergeProgress(a: Progress, b: Progress): Progress {
   const completed = { ...a.completed };
   for (const [k, v] of Object.entries(b.completed ?? {})) {
@@ -64,6 +71,9 @@ export function mergeProgress(a: Progress, b: Progress): Progress {
     lastActive: pick(a.lastActive, b.lastActive),
     streak: Math.max(a.streak ?? 0, b.streak ?? 0),
     daily: mergeDaily(a.daily, b.daily),
+    // 學習計畫：取最後改的那份；每日完成數：同一天取大的
+    plan: !a.plan ? b.plan : !b.plan ? a.plan : (a.plan.updatedAt > b.plan.updatedAt ? a.plan : b.plan),
+    log: mergeLog(a.log, b.log),
   };
 }
 

@@ -2,8 +2,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import {
-  loadProgress, completedCount, totalStars, currentIsland, getBadges, type Progress,
-} from '@/lib/missionProgress';
+  loadProgress, completedCount, totalStars, currentIsland, getBadges, type Progress, setPlan, clearPlan, weekStats, planForecast } from '@/lib/missionProgress';
 import { WORLDS, COURSES } from '@/data/courses';
 import ResearchConsent from '@/components/ResearchConsent';
 import PlacementPrompt from '@/components/PlacementPrompt';
@@ -261,6 +260,9 @@ export default function ParentsPage() {
           </div>
         </section>
 
+        {/* ===== 學習計畫（Vega 2026-09-02）===== */}
+        <PlanSection />
+
         {/* ===== 家長補給站 ===== */}
         <section className="mt-6">
           <div className="flex items-baseline gap-2 mb-3">
@@ -286,5 +288,70 @@ export default function ParentsPage() {
         <p className="text-center text-xs text-gray-400 mt-6">本平台完全免費，不需要註冊帳號。</p>
       </div>
     </main>
+  );
+}
+
+
+/** 學習計畫：家長設每週幾天、每天幾課 → 本週進度條、預計完成日、落後就鼓勵 */
+function PlanSection() {
+  const [p, setP] = useState<Progress | null>(null);
+  useEffect(() => {
+    const refresh = () => setP(loadProgress());
+    refresh();
+    window.addEventListener('ae-mission-progress-change', refresh);
+    return () => window.removeEventListener('ae-mission-progress-change', refresh);
+  }, []);
+  if (!p) return null;
+  const plan = p.plan;
+  const w = weekStats(p);
+  const f = planForecast(p);
+  const pct = w.target ? Math.min(100, Math.round(w.done / w.target * 100)) : 0;
+  return (
+    <section className="mt-6 rounded-3xl border-4 border-emerald-200 bg-emerald-50/80 shadow-lg p-4 sm:p-5">
+      <div className="flex items-baseline gap-2 mb-3">
+        <h2 className="font-black text-emerald-800 text-base sm:text-lg m-0">📅 學習計畫</h2>
+        <p className="m-0 text-gray-500 font-bold text-[11px]">定個做得到的節奏，孩子沒跟上時地圖會溫柔提醒他</p>
+      </div>
+      <div className="flex flex-wrap items-center gap-3 mb-3">
+        <label className="text-sm font-bold text-gray-700">每週
+          <select value={plan?.daysPerWeek ?? 5} onChange={e => setPlan(Number(e.target.value), plan?.lessonsPerDay ?? 1)}
+            className="mx-1 rounded-xl border-2 border-emerald-200 bg-white px-2 py-1 font-black">
+            {[3, 4, 5, 6, 7].map(n => <option key={n} value={n}>{n}</option>)}
+          </select>天
+        </label>
+        <label className="text-sm font-bold text-gray-700">每天
+          <select value={plan?.lessonsPerDay ?? 1} onChange={e => setPlan(plan?.daysPerWeek ?? 5, Number(e.target.value))}
+            className="mx-1 rounded-xl border-2 border-emerald-200 bg-white px-2 py-1 font-black">
+            {[1, 2, 3].map(n => <option key={n} value={n}>{n}</option>)}
+          </select>課
+        </label>
+        {!plan ? (
+          <button onClick={() => setPlan(5, 1)} className="rounded-full bg-emerald-500 text-white text-xs font-black px-4 py-2">啟用計畫</button>
+        ) : (
+          <button onClick={clearPlan} className="text-xs font-bold text-gray-400 underline">關閉計畫</button>
+        )}
+      </div>
+      {plan && (
+        <>
+          <div className="flex items-center gap-3 mb-1">
+            <div className="flex-1 h-3 rounded-full bg-white border border-emerald-200 overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-emerald-400 to-green-500 transition-all" style={{ width: `${pct}%` }} />
+            </div>
+            <p className="m-0 text-sm font-black text-emerald-800 whitespace-nowrap">本週 {w.done} / {w.target} 課</p>
+          </div>
+          <p className="m-0 text-sm font-bold text-gray-700">
+            {w.done >= w.target ? '🎉 這週目標達成了！多做的都是加分。'
+              : w.ahead ? `👍 進度超前，還剩 ${w.daysLeft} 天、${w.gap} 課，很輕鬆。`
+              : w.behind ? `💛 到今天應該做到 ${w.expected} 課，目前 ${w.done} 課——不用補，今天做 1 課就好。`
+              : `✅ 跟上進度，還剩 ${w.daysLeft} 天、${w.gap} 課。`}
+          </p>
+          {f && (
+            <p className="m-0 mt-2 text-xs font-bold text-gray-500">
+              照這個速度：{f.island}剩 {f.leftLevel} 課，約 {f.levelDate} 完成；全部 240 課約 {f.allMonths} 個月（{f.allDate}）。登入的話計畫和進度會跟著孩子同步到其他裝置。
+            </p>
+          )}
+        </>
+      )}
+    </section>
   );
 }

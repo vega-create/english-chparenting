@@ -13,6 +13,16 @@ export interface Progress {
   streak?: number;                   // 連續學習天數
   guard?: number;                    // 守島戰累計守成次數（登入會同步）
   daily?: DailyTasks;                // 今日任務計數（跨日自動歸零）
+  plan?: LearnPlan;                  // 學習計畫（家長設定：每週幾天、每天幾課）
+  log?: Record<string, number>;      // 每天新完成的課數（YYYY-M-D → n），只留 90 天，算「這週做了幾課」用
+}
+
+/** 學習計畫（Vega 2026-09-02）：家長在家長中心設定，用來算本週目標、預計完成日、落後時的鼓勵提醒 */
+export interface LearnPlan {
+  daysPerWeek: number;   // 每週幾天（3／5／7）
+  lessonsPerDay: number; // 每天幾課（1／2）
+  since: string;         // 設定日 YYYY-M-D
+  updatedAt: string;     // ISO，雲端合併時取新的
 }
 
 /** 今日任務：只記「哪一天 + 三個計數」，換日就重來。
@@ -39,7 +49,7 @@ export function loadProgress(): Progress {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { ...EMPTY };
     const p = JSON.parse(raw);
-    return { completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard, daily: p.daily };
+    return { completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard, daily: p.daily, plan: p.plan, log: p.log };
   } catch {
     return { ...EMPTY };
   }
@@ -64,9 +74,17 @@ function todayStr(): string {
 export function recordMissionComplete(courseSlug: string, missionId: number, stars: number) {
   const p = loadProgress();
   const key = `${courseSlug}/${missionId}`;
+  const isNew = !p.completed[key];
   p.completed[key] = Math.max(p.completed[key] || 0, stars);
 
   const today = todayStr();
+  // 每天新完成的課數（重玩同一課不算）；只留 90 天
+  if (isNew) {
+    const log = { ...(p.log || {}) };
+    log[today] = (log[today] || 0) + 1;
+    const keep = Object.keys(log).sort((a, b) => toDate(b).getTime() - toDate(a).getTime()).slice(0, 90);
+    p.log = Object.fromEntries(keep.map(k => [k, log[k]]));
+  }
   if (p.lastActive !== today) {
     const y = new Date(); y.setDate(y.getDate() - 1);
     const yStr = `${y.getFullYear()}-${y.getMonth() + 1}-${y.getDate()}`;
@@ -227,4 +245,60 @@ export function currentIsland(p: Progress): string {
   }
   const c = COURSES.find(x => x.level === (maxLevel || 1));
   return c ? c.island : '字母島';
+}
+
+
+// ── 學習計畫 ──
+function toDate(key: string): Date { const [y, m, d] = key.split('-').map(Number); return new Date(y, m - 1, d); }
+function dayKey(d: Date): string { return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; }
+export const TOTAL_LESSONS = 240;
+export const LESSONS_PER_LEVEL = 20;
+
+export function setPlan(daysPerWeek: number, lessonsPerDay: number) {
+  const p = loadProgress();
+  p.plan = { daysPerWeek, lessonsPerDay, since: p.plan?.since || todayStr(), updatedAt: new Date().toISOString() };
+  saveProgress(p);
+}
+export function clearPlan() {
+  const p = loadProgress();
+  delete p.plan;
+  saveProgress(p);
+}
+
+/** 本週（週一起算）做了幾課、目標幾課、到今天為止算不算落後 */
+export function weekStats(p: Progress) {
+  const now = new Date();
+  const dow = (now.getDay() + 6) % 7;            // 週一=0 … 週日=6
+  const monday = new Date(now); monday.setDate(now.getDate() - dow); monday.setHours(0, 0, 0, 0);
+  let done = 0;
+  for (const [k, n] of Object.entries(p.log || {})) if (toDate(k) >= monday) done += n;
+  const plan = p.plan;
+  const target = plan ? plan.daysPerWeek * plan.lessonsPerDay : 0;
+  // 「到今天應該做到幾課」：目標平均攤到 7 天，四捨五入；週一不會一開始就算落後
+  const expected = plan ? Math.round(target * (dow + 1) / 7) : 0;
+  const todayDone = (p.log || {})[todayStr()] || 0;
+  return { done, target, expected, gap: Math.max(0, target - done), behind: !!plan && done < expected && !todayDone, ahead: !!plan && done > expected, daysLeft: 7 - dow, todayDone };
+}
+
+/** 依計畫速度預估：目前島嶼剩幾課、幾週後完成；全部 240 課幾週後完成 */
+export function planForecast(p: Progress) {
+  const plan = p.plan;
+  if (!plan) return null;
+  const perWeek = Math.max(1, plan.daysPerWeek * plan.lessonsPerDay);
+  const doneAll = completedCount(p);
+  const island = currentIsland(p);
+  const c = COURSES.find(x => x.island === island);
+  const doneLevel = c ? Object.keys(p.completed).filter(k => k.startsWith(c.slug + '/')).length : 0;
+  const leftLevel = Math.max(0, LESSONS_PER_LEVEL - doneLevel);
+  const leftAll = Math.max(0, TOTAL_LESSONS - doneAll);
+  const addWeeks = (w: number) => { const d = new Date(); d.setDate(d.getDate() + Math.ceil(w * 7)); return d; };
+  const fmt = (d: Date) => `${d.getMonth() + 1}/${d.getDate()}`;
+  return { island, leftLevel, leftAll, perWeek, levelDate: fmt(addWeeks(leftLevel / perWeek)), allDate: fmt(addWeeks(leftAll / perWeek)), allMonths: Math.ceil(leftAll / perWeek / 4.3) };
+}
+
+/** 幾天沒來了（0＝今天有來） */
+export function daysSinceActive(p: Progress): number {
+  if (!p.lastActive) return 999;
+  const diff = (new Date().setHours(0, 0, 0, 0) - toDate(p.lastActive).getTime()) / 86400000;
+  return Math.max(0, Math.round(diff));
 }

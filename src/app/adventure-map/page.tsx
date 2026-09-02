@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import PlanNudge from "@/components/PlanNudge";
 import { playPageIntro } from '@/lib/vega-audio';
 import {
   WORLDS,
@@ -60,6 +61,7 @@ export default function AdventureMapPage() {
     <div className="relative min-h-screen overflow-hidden" style={{
       background: "linear-gradient(180deg, #cbe6ff 0%, #ffd5e8 35%, #fff0a8 65%, #b8dec0 100%)",
     }}>
+      <PlanNudge />
       <HomeButton />
       {guardOpen && <IslandDefense onClose={() => { setGuardOpen(false); setInvasion(getTodayInvasion()); setTick(t => t + 1); }} />}
       {/* 上方工具列 */}
