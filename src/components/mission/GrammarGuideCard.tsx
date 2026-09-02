@@ -173,6 +173,14 @@ export default function GrammarGuideCard({ guide, level, missionId, onDone }: {
                       className={`ae-frame !py-2.5 font-black text-lg text-gray-800 active:scale-[0.98] transition ${wrong === opt ? 'opacity-60' : ''}`}>
                       {opt}
                       {/* 中文選項（句型配對）：小喇叭可以聽，點喇叭不算作答 */}
+                      {q.type === 'listen' && level <= 4 && (
+                        <span
+                          role="button"
+                          aria-label="唸出這個選項"
+                          onClick={e => { e.stopPropagation(); sayWord(level, opt); }}
+                          className="ml-2 inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-sm align-middle"
+                        >🔊</span>
+                      )}
                       {q.type === 'match' && (
                         <span
                           role="button"

@@ -24,6 +24,7 @@ import Welcome from '@/components/mission/Welcome';
 import WakeUp from '@/components/mission/WakeUp';
 import Discover from '@/components/mission/Discover';
 import Challenge from '@/components/mission/Challenge';
+import ParentHelp from '@/components/mission/ParentHelp';
 import TalkTime from '@/components/mission/TalkTime';
 import MissionComplete from '@/components/mission/MissionComplete';
 import AdSlot from '@/components/AdSlot';
@@ -300,14 +301,17 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
           <WakeUp questions={warmUp8} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setWarmupScore(score); setStep('discover'); }} />
         )}
 
+        {step === 'discover' && <ParentHelp stage="discover" level={course.level} />}
         {step === 'discover' && (
           <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onComplete={() => { bumpDaily('story'); setStep('challenge'); }} />
         )}
 
+        {step === 'challenge' && <ParentHelp stage="challenge" level={course.level} />}
         {step === 'challenge' && (
           <Challenge challenges={mission.challenges} praiseLevel={getLevelFromMissionId(levelSlug)} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setChallengeScore(score); setStep('talktime'); }} />
         )}
 
+        {step === 'talktime' && <ParentHelp stage="talktime" level={course.level} />}
         {step === 'talktime' && (
           <TalkTime prompts={mission.talkTimePrompts} level={course.level} missionId={mission.id} audioIndex={audioIndex} onComplete={() => { bumpDaily('speak'); setStep('complete'); }} />
         )}

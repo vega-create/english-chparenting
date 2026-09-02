@@ -236,9 +236,18 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
                   key={option}
                   onClick={() => handleAnswer(option)}
                   disabled={showResult}
-                  className={`${btnClass} rounded-2xl p-4 text-lg font-medium text-gray-700 transition-all duration-200 active:scale-95`}
+                  className={`${btnClass} rounded-2xl p-4 text-lg font-medium text-gray-700 transition-all duration-200 active:scale-95 relative`}
                 >
                   {option}
+                  {/* 低年級看不懂英文選項 → 小喇叭先聽再選（點喇叭不算作答） */}
+                  {level <= AUTO_READ_ZH_MAX_LEVEL && !showResult && (
+                    <span
+                      role="button"
+                      aria-label="唸出這個選項"
+                      onClick={e => { e.stopPropagation(); sayAnswer(option); }}
+                      className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-blue-100 text-blue-600 text-sm flex items-center justify-center shadow"
+                    >🔊</span>
+                  )}
                 </button>
               );
             })}

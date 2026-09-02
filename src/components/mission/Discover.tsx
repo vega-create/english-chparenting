@@ -219,7 +219,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
   async function sayDialogue(i: number, text: string, rate = 0.75) {
     const tm = wordTimer(text, 'd');
-    if (await playLesson(lessonPath.dialogue(level, mid, i), tm.onTime)) {
+    // 🐢 慢速：真人錄音也要真的變慢（之前 rate 只有 TTS 吃到，錄音檔按了烏龜沒差別）
+    const clipRate = rate <= 0.5 ? 0.7 : 1;
+    if (await playLesson(lessonPath.dialogue(level, mid, i), tm.onTime, clipRate)) {
       tm.done();
       track({ kind: 'replay', level, mission: mid, step: 'story', item: `d${i + 1}`, audioSrc: 'el' });
       return;
