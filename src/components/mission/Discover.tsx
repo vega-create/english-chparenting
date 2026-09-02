@@ -198,7 +198,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   // 「唸到哪亮到哪」：目前正在唸的那個字（key：'d'＝對話泡泡、's3'＝第 3 句 Listen & Say）
   const [spoken, setSpoken] = useState<{ key: string; idx: number } | null>(null);
   // 真人錄音沒有逐字時間 → 用字長比例推算（標點多停一下）；TTS 有 onboundary 就精準對字
-  function wordTimer(text: string, key: string) {
+  function wordTimer(text: string, key: string, lead = 0.12) {
     const ws = text.split(' ');
     const weights = ws.map(w => w.replace(/[^A-Za-z0-9']/g, '').length + 1.2 + (/[.,!?]$/.test(w) ? 1.5 : 0));
     const total = weights.reduce((a, b) => a + b, 0);
@@ -208,8 +208,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     set(-1);
     return {
       onTime: (t: number, dur: number) => {
-        const frac = Math.min(1, Math.max(0, (t - 0.12) / Math.max(0.3, dur - 0.25)));
-        const idx = cum.findIndex(c => c / total > frac);
+        // lead：開頭靜音／慢速處理的延遲，扣掉再算比例；再往後偏 4%，讓黃色比聲音慢半拍而不是搶先
+        const frac = Math.min(1, Math.max(0, (t - lead) / Math.max(0.3, dur - lead - 0.15)));
+        const idx = cum.findIndex(c => c / total > frac + 0.04);
         set(idx < 0 ? ws.length - 1 : idx);
       },
       onWord: (charIndex: number) => set((text.slice(0, charIndex).match(/ /g) || []).length),
@@ -218,9 +219,10 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   }
 
   async function sayDialogue(i: number, text: string, rate = 0.75) {
-    const tm = wordTimer(text, 'd');
     // 🐢 慢速：真人錄音也要真的變慢（之前 rate 只有 TTS 吃到，錄音檔按了烏龜沒差別）
-    const clipRate = rate <= 0.5 ? 0.7 : 1;
+    // 0.8 而不是 0.7：保留音高的變速在 0.7 會有機械感；慢速時聲音處理有延遲，螢光要多等一點
+    const clipRate = rate <= 0.5 ? 0.8 : 1;
+    const tm = wordTimer(text, 'd', clipRate < 1 ? 0.35 : 0.12);
     if (await playLesson(lessonPath.dialogue(level, mid, i), tm.onTime, clipRate)) {
       tm.done();
       track({ kind: 'replay', level, mission: mid, step: 'story', item: `d${i + 1}`, audioSrc: 'el' });

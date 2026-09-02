@@ -6,8 +6,31 @@ import { track } from '@/lib/analytics';
 type Status = 'idle' | 'listening' | 'ok' | 'close' | 'again' | 'denied';
 
 /** 只留字母數字，比對時忽略標點與大小寫 */
+// 比對前先正規化：小寫、去標點、把縮寫展開（I'm→i am、what's→what is…），
+// 不然辨識器回「I am Finn」對上目標「I'm Finn」就會算錯（Vega 2026-09-02 親測念對卻判錯）
+const CONTRACTIONS: Record<string, string> = {
+  "i'm": 'i am', "you're": 'you are', "we're": 'we are', "they're": 'they are', "he's": 'he is', "she's": 'she is', "it's": 'it is',
+  "that's": 'that is', "what's": 'what is', "where's": 'where is', "who's": 'who is', "how's": 'how is', "there's": 'there is', "here's": 'here is',
+  "let's": 'let us', "i've": 'i have', "you've": 'you have', "we've": 'we have', "i'll": 'i will', "you'll": 'you will', "we'll": 'we will',
+  "don't": 'do not', "doesn't": 'does not', "didn't": 'did not', "can't": 'can not', "cannot": 'can not', "isn't": 'is not', "aren't": 'are not',
+  "wasn't": 'was not', "won't": 'will not', "i'd": 'i would', "you'd": 'you would',
+};
 function norm(s: string) {
-  return s.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
+  let t = s.toLowerCase().replace(/[\u2019\u2018]/g, "'");
+  t = t.split(/\s+/).map(w => CONTRACTIONS[w.replace(/[^a-z']/g, '')] || w).join(' ');
+  return t.replace(/[^a-z0-9' ]+/g, ' ').replace(/'/g, '').replace(/\s+/g, ' ').trim();
+}
+// 一個字差一個字母也算（Finn→fin、hello→hallo），專有名詞辨識常這樣
+function close(a: string, b: string) {
+  if (a === b) return true;
+  if (Math.abs(a.length - b.length) > 1 || Math.min(a.length, b.length) < 3) return false;
+  let i = 0, j = 0, d = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) { i++; j++; continue; }
+    d++; if (d > 1) return false;
+    if (a.length > b.length) i++; else if (b.length > a.length) j++; else { i++; j++; }
+  }
+  return d + (a.length - i) + (b.length - j) <= 1;
 }
 
 /** 逐字比對，回傳念對的比例 0~1 */
@@ -18,7 +41,7 @@ function score(said: string, target: string) {
   const pool = [...a];
   let hit = 0;
   for (const w of b) {
-    const i = pool.indexOf(w);
+    const i = pool.findIndex(x => close(x, w));
     if (i >= 0) { hit++; pool.splice(i, 1); }
   }
   return hit / b.length;

@@ -21,7 +21,7 @@ export function playClip(url: string, onTime?: (t: number, dur: number) => void,
   stopOtherChannels('clip');   // Vega 旁白／TTS 先停，避免三個聲音疊在一起
   return new Promise((resolve) => {
     const a = new Audio(url);
-    if (rate !== 1) { a.playbackRate = rate; (a as HTMLAudioElement & { preservesPitch?: boolean }).preservesPitch = true; }
+    if (rate !== 1) { a.defaultPlaybackRate = rate; a.playbackRate = rate; (a as HTMLAudioElement & { preservesPitch?: boolean }).preservesPitch = true; }
     currentClip = a;
     let done = false;
     // 用 setInterval 而不是 requestAnimationFrame：分頁在背景時 rAF 會整個停掉
