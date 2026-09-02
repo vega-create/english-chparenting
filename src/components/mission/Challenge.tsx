@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { speakChinese } from '@/lib/speech';
 import GameButton from '@/components/GameButton';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
@@ -37,6 +38,13 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
   const qStart = useRef<number>(Date.now());
   const attempts = useRef<Record<number, number>>({});
   useEffect(() => { qStart.current = Date.now(); }, [current]);
+  // 低年級（L1–L4）看不懂中文題目 → 每題出現時自動唸出來（Vega 2026-09-02）；高年級不自動唸，但點題目一樣可以聽
+  const AUTO_READ_ZH_MAX_LEVEL = 4;
+  useEffect(() => {
+    if (level > AUTO_READ_ZH_MAX_LEVEL || !q?.question) return;
+    const t = setTimeout(() => speakChinese(q.question), 350);
+    return () => clearTimeout(t);
+  }, [current]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // 題目的答案多半是課文單字，先試真人錄音，沒有才用 TTS
   async function sayAnswer(text: string, rate = 0.7) {
@@ -148,7 +156,13 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
           </div>
         )}
 
-        <p className="text-xl font-bold text-center text-gray-800 mb-6">{q.question}</p>
+        <button
+          onClick={() => speakChinese(q.question)}
+          className="block w-full text-xl font-bold text-center text-gray-800 mb-6 active:scale-[0.99] transition"
+          aria-label="唸出題目"
+        >
+          {q.question} <span className="text-base align-middle text-gray-400">🔊</span>
+        </button>
 
         {/* 聽力題：加播放按鈕 */}
         {q.type === 'listen-pick' && (

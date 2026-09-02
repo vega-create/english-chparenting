@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GameButton from '@/components/GameButton';
 import { playLesson, lessonPath } from '@/lib/audio';
-import { speak } from '@/lib/speech';
+import { speak, speakChinese } from '@/lib/speech';
 import { playStar, playClick, playSuccess } from '@/lib/sfx';
 import type { GrammarGuide, GrammarPractice } from '@/data/grammarGuides';
 import SentenceMic from '@/components/mission/SentenceMic';
@@ -62,7 +62,10 @@ export default function GrammarGuideCard({ guide, level, missionId, onDone }: {
   useEffect(() => {
     if (stage === 'practice' && q?.type) {
       const t = setTimeout(() => sayItem(q), 400);
-      return () => clearTimeout(t);
+      // 低年級（L1–L4）：英文題目播完後，把中文提示也唸出來（孩子看不懂「這句是什麼意思？」）
+      const zh = q.type === 'speak' ? `${q.zh}，跟著唸唸看` : q.hint;
+      const t2 = level <= 4 && zh ? setTimeout(() => speakChinese(zh), q.type === 'listen' ? 1800 : 2600) : null;
+      return () => { clearTimeout(t); if (t2) clearTimeout(t2); };
     }
   }, [stage, pi]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -151,9 +154,13 @@ export default function GrammarGuideCard({ guide, level, missionId, onDone }: {
                   {q.prompt} 🔊
                 </button>
               )}
-              <p className="m-0 mt-1 text-sm text-gray-500 font-bold">
-                {q.type === 'speak' ? `（${q.zh}）跟著唸唸看！` : q.hint}
-              </p>
+              <button
+                onClick={() => speakChinese(q.type === 'speak' ? `${q.zh}，跟著唸唸看` : q.hint)}
+                className="m-0 mt-1 mx-auto block text-sm text-gray-500 font-bold active:scale-[0.98] transition"
+                aria-label="唸出中文提示"
+              >
+                {q.type === 'speak' ? `（${q.zh}）跟著唸唸看！` : q.hint} <span className="text-xs">🔊</span>
+              </button>
               {q.type === 'speak' ? (
                 <div className="mt-4 flex justify-center">
                   <SentenceMic target={q.prompt} onDone={() => { setTimeout(nextQ, 900); }} />
@@ -165,6 +172,15 @@ export default function GrammarGuideCard({ guide, level, missionId, onDone }: {
                       animate={wrong === opt ? { x: [0, -8, 8, -6, 6, 0] } : {}}
                       className={`ae-frame !py-2.5 font-black text-lg text-gray-800 active:scale-[0.98] transition ${wrong === opt ? 'opacity-60' : ''}`}>
                       {opt}
+                      {/* 中文選項（句型配對）：小喇叭可以聽，點喇叭不算作答 */}
+                      {q.type === 'match' && (
+                        <span
+                          role="button"
+                          aria-label="唸出這個選項"
+                          onClick={e => { e.stopPropagation(); speakChinese(opt); }}
+                          className="ml-2 inline-flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-600 text-sm align-middle"
+                        >🔊</span>
+                      )}
                     </motion.button>
                   ))}
                 </div>
