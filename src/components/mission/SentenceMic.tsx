@@ -33,7 +33,8 @@ function score(said: string, target: string) {
  *
  * iOS Safari 多半不支援語音辨識，那種情況改成手動確認的「我念完了」。
  */
-export default function SentenceMic({ target, onDone }: { target: string; onDone: () => void }) {
+export default function SentenceMic({ target, onDone, compact = false }: { target: string; onDone: () => void; compact?: boolean }) {
+  // compact：電子書內頁用的紫色藥丸（麥克風圈＋要念的句子），字級跟著書寬（cqw）縮放
   const [status, setStatus] = useState<Status>('idle');
   const [heard, setHeard] = useState('');
   const [tries, setTries] = useState(0);
@@ -94,6 +95,15 @@ export default function SentenceMic({ target, onDone }: { target: string; onDone
 
   // 不支援 or 沒權限：改成孩子自己按「我念完了」
   if (supported === false || status === 'denied') {
+    if (compact) {
+      return (
+        <button onClick={() => { playStar(); onDone(); }}
+          className="flex items-center gap-[2cqw] rounded-full border-[0.4cqw] border-dashed border-green-300 bg-green-100 text-green-700 px-[1cqw] py-[0.8cqw] pr-[3cqw] font-black transition active:scale-95">
+          <span className="shrink-0 rounded-full bg-green-500 text-white flex items-center justify-center text-[3cqw] shadow" style={{ width: '7.2cqw', height: '7.2cqw' }}>🎤</span>
+          <span className="text-[3.2cqw] leading-tight text-left">“{target}” 我念完了！</span>
+        </button>
+      );
+    }
     return (
       <div className="flex flex-col items-center gap-1.5">
         <button onClick={() => { playStar(); onDone(); }}
@@ -123,6 +133,34 @@ export default function SentenceMic({ target, onDone }: { target: string; onDone
     again: 'bg-orange-500 hover:bg-orange-600',
     denied: '',
   };
+
+  if (compact) {
+    const pillTone: Record<Status, string> = {
+      idle: 'bg-purple-100 border-purple-300 text-purple-700',
+      listening: 'bg-red-100 border-red-300 text-red-600 animate-pulse',
+      ok: 'bg-green-100 border-green-300 text-green-700',
+      close: 'bg-amber-100 border-amber-300 text-amber-700',
+      again: 'bg-orange-100 border-orange-300 text-orange-700',
+      denied: '',
+    };
+    return (
+      <div className="flex flex-col items-start gap-[0.8cqw]">
+        <button onClick={start} disabled={status === 'ok'}
+          className={`flex items-center gap-[2cqw] rounded-full border-[0.4cqw] border-dashed px-[1cqw] py-[0.8cqw] pr-[3cqw] font-black transition active:scale-95 disabled:opacity-80 ${pillTone[status]}`}>
+          <span className={`shrink-0 rounded-full flex items-center justify-center text-white text-[3cqw] shadow ${status === 'listening' ? 'bg-red-500' : 'bg-purple-500'}`} style={{ width: '7.2cqw', height: '7.2cqw' }}>🎤</span>
+          <span className="text-[3.2cqw] leading-tight text-left">
+            {status === 'idle' ? `“${target}”` : label[status].replace(/^\S+\s/, '')}
+          </span>
+        </button>
+        {heard && status !== 'ok' && (
+          <p className="m-0 text-[2.1cqw] text-gray-500">聽到你念：<span className="font-bold text-gray-700">{heard}</span></p>
+        )}
+        {tries >= 3 && status !== 'ok' && (
+          <button onClick={() => { playStar(); onDone(); }} className="text-[2.1cqw] text-gray-400 underline">先跳過這一句</button>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center gap-1.5">

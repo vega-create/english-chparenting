@@ -95,8 +95,10 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     ));
     return { title: '小挑戰！', concept: '🎧', demos: [], practice: [...listenItems, ...matchItems, ...speakItems] };
   }, [level, missionId, words]);
-  const [phase, setPhase] = useState<Phase>(hasVideo ? 'video' : 'story');
-  const [bookOpen, setBookOpen] = useState(false);
+  // 本機開發捷徑：網址加 ?ebook=1 直接跳到翻開的電子書（驗收內頁排版用，正式站不生效）
+  const devEbook = process.env.NODE_ENV === 'development' && typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('ebook') === '1';
+  const [phase, setPhase] = useState<Phase>(devEbook ? 'story' : hasVideo ? 'video' : 'story');
+  const [bookOpen, setBookOpen] = useState(devEbook);
   const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
   const [contentOk, setContentOk] = useState(true); // 每級內頁底圖：/images/ebook/l{級}-content.webp，缺圖用預設白頁
   const [charZoom, setCharZoom] = useState(false); // 點動物放大/縮回
@@ -332,6 +334,43 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
 
   if (phase === 'story') {
 
+    // ── 內頁排版用資料（Vega 2026-09-02 新版 UI）──
+    // 每頁：角色對話泡泡 → Listen & Say（本課句子分配到各頁，最多 2 句）→
+    // Magic Words（本頁重點字，最多 2 個）→ Your Turn（跟著唸）→ 小提示。
+    const ck = scene?.characterKey || 'finn';
+    const NAME_COLOR: Record<string, string> = {
+      ruby: 'text-pink-500', finn: 'text-blue-500', coco: 'text-emerald-500',
+      benny: 'text-amber-600', polly: 'text-orange-500', vega: 'text-purple-600',
+    };
+    const nameColor = NAME_COLOR[ck] || 'text-purple-600';
+    const perPage = Math.max(1, Math.ceil(sentences.length / Math.max(1, story.length)));
+    let pageSentences = sentences
+      .map((sen, i) => ({ s: sen, i }))
+      .filter(x => x.s.en && x.s.zh)
+      .slice(storyIndex * perPage, storyIndex * perPage + perPage)
+      .slice(0, 2);
+    // 每頁至少 2 句（本課句子不夠分時，往後補下一句；只有 1 句就 1 句）
+    if (pageSentences.length < 2 && sentences.length) {
+      const all = sentences.map((sen, i) => ({ s: sen, i })).filter(x => x.s.en && x.s.zh);
+      const startAt = Math.min(storyIndex * perPage, Math.max(0, all.length - 2));
+      pageSentences = all.slice(startAt, startAt + 2);
+    }
+    const norm = (t: string) => t.replace(/[.,!?'"]/g, '').toLowerCase();
+    const dialogueWords = new Set(norm(scene?.dialogue || '').split(/\s+/));
+    const hiWords = (scene?.highlightWords || []).map(norm);
+    const scored = words
+      .filter(w => w.en && w.zh)
+      .map(w => ({ w, score: hiWords.includes(norm(w.en)) ? 2 : dialogueWords.has(norm(w.en)) ? 1 : 0 }));
+    let pageWords = scored.filter(x => x.score > 0).sort((a, b) => b.score - a.score).slice(0, 2).map(x => x.w);
+    if (pageWords.length < 2 && words.length) {
+      const rest = words.filter(w => w.en && w.zh && !pageWords.includes(w));
+      const wp = Math.max(1, Math.ceil(rest.length / Math.max(1, story.length)));
+      const startAt = Math.min(storyIndex * wp, Math.max(0, rest.length - (2 - pageWords.length)));
+      pageWords = [...pageWords, ...rest.slice(startAt, startAt + (2 - pageWords.length))];
+    }
+    const speakTarget = pageSentences[0]?.s.en || scene?.dialogue || '';
+    const tipText = tip?.zh || '';
+
     const openBook = () => {
       setPageDir('next');
       setBookOpen(true);
@@ -404,13 +443,13 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
             </button>
             )
           ) : contentOk ? (
-            /* ── 內頁（固定底圖 + 內容疊在米色面板） ── */
+            /* ── 內頁（Vega 2026-09-02 新版：場景底圖 + 一張大卡片，內容分區） ── */
             <div
               key={storyIndex}
               className={`relative rounded-r-3xl rounded-l-md shadow-2xl overflow-hidden ${
                 pageDir === 'next' ? 'animate-page-next' : 'animate-page-prev'
               }`}
-              style={{ aspectRatio: '1080 / 1456' }}
+              style={{ aspectRatio: '1080 / 1456', containerType: 'inline-size' }}
             >
               <img
                 src={`/images/ebook/l${level}-content.webp`}
@@ -418,68 +457,149 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                 onError={() => setContentOk(false)}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              {/* 內容區（米色面板範圍，各級底圖框位置不同）：只放場景 + 課文 */}
-              <div className="absolute flex flex-col" style={PANEL[level] || PANEL[1]}>
-                {/* 面板頂：課名木牌＋頁碼——補掉原本空蕩蕩的上方（Vega 2026-08-15）；
-                    不放 emoji（她之前退過手勢 emoji）。 */}
-                <div className="flex items-center justify-between gap-2 pt-1">
-                  <p className="ae-name-plaque m-0 inline-block text-white font-black text-sm sm:text-lg px-1.5 py-0.5 drop-shadow">
-                    {titleEn || title}
-                  </p>
-                  <p className="m-0 text-[10px] sm:text-xs font-black text-amber-600/80 whitespace-nowrap">
-                    {storyIndex + 1} / {story.length}
-                  </p>
-                </div>
-                <div className="flex-1 flex flex-col justify-center min-h-0 pr-[14%]">
-                  <p className="text-sm sm:text-xl font-black mb-2 text-amber-600">{scene.characterName}</p>
-                  {/* 手機面板窄，字太大會一行一個字還壓到星星；手機 lg、平板 3xl、桌機才 4xl */}
-                  <p className="ebook-text text-gray-800 text-lg sm:text-3xl lg:text-4xl leading-relaxed">
-                    {scene.dialogue.split(' ').map((w, wi) => {
-                      const isHighlight = scene.highlightWords?.some(hw =>
-                        w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
-                        hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
-                      );
-                      return (
-                        <span key={wi}>
-                          <span
-                            className={isHighlight ? 'text-purple-600 bg-purple-100 px-1 rounded cursor-pointer underline decoration-dotted decoration-purple-400 underline-offset-4 active:bg-purple-200' : ''}
-                            onClick={() => { if (isHighlight) sayInlineWord(w); }}
-                          >
-                            {w}
-                          </span>{' '}
-                        </span>
-                      );
-                    })}
-                  </p>
-                  {showTranslation && (
-                    <p className="ebook-text-zh text-gray-500 text-sm sm:text-lg mt-3 animate-slide-up">{scene.dialogueZh}</p>
-                  )}
-                  {/* 讓孩子知道紫色的字可以點 —— 沒說的話多數人不會發現 */}
-                  {!!scene.highlightWords?.length && (
-                    <p className="mt-1.5 text-[10px] sm:text-xs font-bold text-purple-400">
-                      👆 點<span className="mx-0.5 rounded bg-purple-100 px-1 text-purple-600 underline decoration-dotted decoration-purple-400 underline-offset-2">紫色的字</span>，念給你聽 🔊
+              {/* 大卡片：字級全部用 cqw（跟著書的寬度縮放），手機／桌機比例一致 */}
+              <div
+                className="absolute flex flex-col rounded-[4cqw] border-[0.6cqw] border-white/80 bg-[#fff9ec]/95 shadow-[0_1cqw_3cqw_rgba(60,40,20,0.25)]"
+                style={{ left: '7%', right: '7%', top: '7%', bottom: tipText ? '17%' : '5%' }}
+              >
+                <div className="flex-1 min-h-0 flex flex-col gap-[1.6cqw] px-[3.6cqw] pt-[2.6cqw] pb-[2.4cqw] overflow-y-auto overflow-x-hidden">
+                  {/* 頂列：課名木牌 + 頁碼星星 */}
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="ae-name-plaque m-0 inline-block text-white font-black px-[2cqw] py-[0.8cqw] drop-shadow leading-tight" style={{ fontSize: '3.4cqw' }}>
+                      {titleEn || title}
                     </p>
+                    <div className="text-right shrink-0">
+                      <p className="m-0 font-black text-amber-600 text-[3cqw] leading-none">{storyIndex + 1} / {story.length}</p>
+                      <p className="m-0 mt-[0.6cqw] leading-none text-[2.4cqw] tracking-tight whitespace-nowrap">
+                        {story.map((_, i) => (
+                          <span key={i} style={{ opacity: i <= storyIndex ? 1 : 0.3, filter: i <= storyIndex ? 'none' : 'grayscale(70%)' }}>⭐</span>
+                        ))}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* 角色對話：頭像 + 名字 + 泡泡（點泡泡會唸） */}
+                  <div className="flex items-start gap-[2.4cqw]">
+                    <div className="shrink-0 rounded-full bg-white/90 border-[0.5cqw] border-pink-100 overflow-hidden shadow-sm" style={{ width: '18cqw', height: '18cqw' }}>
+                      <img src={`/characters/${ck}/${ck}-normal.png`} alt="" className="w-full h-full object-contain object-bottom" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className={`m-0 font-black text-[3.5cqw] leading-none ${nameColor}`}>{scene.characterName}</p>
+                      <button
+                        onClick={() => sayDialogue(storyIndex, scene.dialogue, 0.75)}
+                        className="mt-[1cqw] w-full text-left rounded-[3cqw] rounded-tl-none bg-white/95 border-[0.4cqw] border-pink-100 px-[2.8cqw] py-[1.8cqw] shadow-sm active:scale-[0.99] transition"
+                      >
+                        <span className="ebook-text block text-gray-800 text-[3.5cqw] leading-snug">
+                          {scene.dialogue.split(' ').map((w, wi) => {
+                            const isHighlight = scene.highlightWords?.some(hw =>
+                              w.replace(/[.,!?]/g, '').toLowerCase() === hw.toLowerCase() ||
+                              hw.toLowerCase().includes(w.replace(/[.,!?]/g, '').toLowerCase())
+                            );
+                            return (
+                              <span key={wi}>
+                                <span
+                                  className={isHighlight ? 'text-pink-500 font-black cursor-pointer underline decoration-dotted decoration-pink-300 underline-offset-4 active:bg-pink-100 rounded' : ''}
+                                  onClick={e => { if (isHighlight) { e.stopPropagation(); sayInlineWord(w); } }}
+                                >
+                                  {w}
+                                </span>{' '}
+                              </span>
+                            );
+                          })}
+                        </span>
+                        {showTranslation && (
+                          <span className="ebook-text-zh block text-gray-500 text-[2.6cqw] mt-[0.8cqw] animate-slide-up">{scene.dialogueZh}</span>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Listen & Say */}
+                  {pageSentences.length > 0 && (
+                    <div>
+                      <p className="m-0 font-black text-purple-500 text-[2.9cqw] leading-none">
+                        Listen &amp; Say 🔊 <span className="ml-[0.6cqw] text-gray-500 font-bold text-[2.2cqw]">點擊句子，聽我說！</span>
+                      </p>
+                      <div className="mt-[1.1cqw] flex flex-col gap-[1.1cqw]">
+                        {pageSentences.map(({ s: sen, i }) => (
+                          <button
+                            key={i}
+                            onClick={() => saySentence(i, sen.en)}
+                            className="flex items-center gap-[2.2cqw] w-full text-left rounded-[2.6cqw] bg-purple-100/90 border-[0.4cqw] border-purple-200 px-[2.2cqw] py-[1.4cqw] active:scale-[0.99] transition"
+                          >
+                            <span className="shrink-0 rounded-full bg-purple-500 text-white flex items-center justify-center text-[3.2cqw] shadow" style={{ width: '7.6cqw', height: '7.6cqw' }}>🔊</span>
+                            <span className="min-w-0">
+                              <span className="ebook-text block text-purple-700 font-black text-[3.4cqw] leading-tight">{sen.en}</span>
+                              <span className="block text-gray-500 text-[2.3cqw] mt-[0.3cqw]">{sen.zh}</span>
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   )}
-                </div>
-                {/* 頁數：星星表示（目前頁亮） */}
-                <div className="flex justify-center gap-0.5 sm:gap-1">
-                  {story.map((_, i) => (
-                    <span key={i} className="transition-all" style={{ fontSize: i === storyIndex ? 'clamp(14px,1.8vw,22px)' : 'clamp(10px,1.3vw,16px)', opacity: i === storyIndex ? 1 : 0.35, filter: i === storyIndex ? 'none' : 'grayscale(60%)' }}>⭐</span>
-                  ))}
+
+                  {/* Magic Words */}
+                  {pageWords.length > 0 && (
+                    <div>
+                      <p className="m-0 font-black text-purple-500 text-[2.9cqw] leading-none">✨ Magic Words</p>
+                      <div className="mt-[1.1cqw] grid grid-cols-2 gap-[1.4cqw] pr-[22%]">
+                        {pageWords.map(w => (
+                          <button
+                            key={w.en}
+                            onClick={() => sayInlineWord(w.en)}
+                            className="text-left rounded-[2.2cqw] bg-white/95 border-[0.4cqw] border-purple-100 px-[2cqw] py-[1.1cqw] active:scale-[0.98] transition"
+                          >
+                            <span className="flex items-center justify-between gap-1">
+                              <span className="font-black text-purple-600 text-[2.9cqw] truncate">{w.en}</span>
+                              <span className="text-[2.4cqw] shrink-0">⭐</span>
+                            </span>
+                            <span className="block text-gray-500 text-[2.2cqw] truncate">{w.zh}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Your Turn：跟著唸 */}
+                  <div className="rounded-[2.6cqw] bg-amber-50/95 border-[0.4cqw] border-amber-200 px-[2.8cqw] py-[1.8cqw] mt-auto mr-[22%]">
+                    <div className="flex items-start justify-between gap-[1cqw]">
+                      <div>
+                        <p className="m-0 font-black text-rose-500 text-[2.9cqw] leading-none">🎯 Your Turn!</p>
+                        <p className="m-0 mt-[0.8cqw] text-gray-700 font-bold text-[2.4cqw] leading-snug">{scene.characterName} 說完了，換你說說看：</p>
+                      </div>
+                      {/* Try it! 加油泡泡（純裝飾） */}
+                      <div className="shrink-0 rounded-full bg-amber-100 border-[0.4cqw] border-amber-300 px-[1.8cqw] py-[0.8cqw] text-center rotate-[-6deg]">
+                        <p className="m-0 font-black text-orange-500 text-[2.4cqw] leading-none">Try it!</p>
+                        <p className="m-0 mt-[0.3cqw] font-bold text-orange-400 text-[1.8cqw] leading-none">你可以的！</p>
+                      </div>
+                    </div>
+                    <div className="mt-[1cqw]">
+                      <SentenceMic key={`${storyIndex}-${speakTarget}`} target={speakTarget} onDone={() => playTada()} compact />
+                    </div>
+                  </div>
                 </div>
               </div>
-              {/* 動物：頁面右下角、眼神朝向課文（會浮動；點一下放大、再點縮回） */}
-              <div className="absolute animate-float" style={{ right: '9%', bottom: '13%', width: '24%', height: '38%', zIndex: 5 }}>
+
+              {/* 大角色：站在卡片右下角外側（點一下放大、再點縮回） */}
+              <div className="absolute animate-float" style={{ right: '1%', bottom: tipText ? '15%' : '4%', width: '30%', height: '34%', zIndex: 5 }}>
                 <div className="w-full h-full flex items-end justify-center">
                   <img
-                    src={`/characters/${scene.characterKey || 'finn'}/${scene.characterKey || 'finn'}-${scene.characterAction || 'talk'}.png`}
+                    src={`/characters/${ck}/${ck}-${scene.characterAction || 'talk'}.png`}
                     alt={scene.characterName}
                     onClick={e => { e.stopPropagation(); setCharZoom(z => !z); }}
                     className="max-w-full max-h-full object-contain object-bottom drop-shadow-[0_6px_10px_rgba(60,40,90,0.35)] cursor-pointer transition-transform duration-300"
-                    style={{ transform: charZoom ? 'scale(1.45)' : 'scale(1)', transformOrigin: 'bottom center' }}
+                    style={{ transform: charZoom ? 'scale(1.35)' : 'scale(1)', transformOrigin: 'bottom center' }}
                   />
                 </div>
               </div>
+
+              {/* 小提示 Tip：卡片下方、場景之上 */}
+              {tipText && (
+                <div className="absolute rounded-[3cqw] bg-white/85 border-[0.4cqw] border-amber-200 px-[2.8cqw] py-[1.4cqw] backdrop-blur-sm" style={{ left: '7%', right: '7%', bottom: '3%' }}>
+                  <p className="m-0 font-black text-purple-500 text-[2.5cqw] leading-none">💡 小提示 Tip</p>
+                  <p className="m-0 mt-[0.6cqw] text-gray-600 font-bold text-[2.2cqw] leading-snug">{tipText}</p>
+                </div>
+              )}
             </div>
           ) : (
             /* ── 內頁（預設白頁） ── */

@@ -360,7 +360,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <img src="/characters/ruby/ruby-star.png" alt="Ruby" className="w-10 h-10 object-contain" />
           </div>
           <h3 className="text-xl font-black mb-2">想讓孩子免費學英文？</h3>
-          <p className="text-gray-500 text-sm mb-4">Adventure English 冒險英語：288 堂課、AI 互動口說、遊戲化學習，完全免費！</p>
+          <p className="text-gray-500 text-sm mb-4">Adventure English 冒險英語：240 堂課、AI 互動口說、遊戲化學習，完全免費！</p>
           <Link href="/" className="cta-btn px-8 py-3 text-base inline-block no-underline">🚀 了解更多</Link>
         </div>
 

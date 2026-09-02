@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     default: "Adventure English 冒險英語 | 兒童美語互動自學平台",
     template: "%s | Adventure English 冒險英語",
   },
-  description: "專為台灣 5-12 歲兒童設計的免費美語自學平台。AI 互動口說、Spelling Bee、錄音回放、遊戲化學習，從 ABC 到英檢初級 288 堂課完整旅程。",
+  description: "專為台灣 5-12 歲兒童設計的免費美語自學平台。AI 互動口說、Spelling Bee、錄音回放、遊戲化學習，從 ABC 到英檢初級 240 堂課完整旅程。",
   keywords: ["兒童英文", "兒童美語", "免費英文學習", "小學英文", "phonics", "KK音標", "英檢初級", "自然發音", "英語學習", "Adventure English"],
   icons: {
     icon: "/icon.png",
@@ -60,6 +60,12 @@ export const metadata: Metadata = {
     locale: "zh_TW",
     type: "website",
     url: "https://english.chparenting.com",
+    // 分享到 FB／LINE 的預覽圖（1200×630，從首頁主視覺裁的）
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Adventure English 冒險英語 — 免費兒童美語冒險" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
