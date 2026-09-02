@@ -44,7 +44,8 @@ function kill(amb: Amb) {
 /** 依世界選環境音：海洋灣(L5+)聽海浪，其他隨機森林/溪流 */
 export function startAmbience(level: number) {
   if (typeof window === 'undefined' || isSfxMuted()) return;
-  const pool = ['ambience-forest', 'ambience-stream', 'ambience-wind', 'ambience-insects'];
+  // 風聲、蟲鳴那兩軌在喇叭上聽起來像機器嗡嗡聲（Vega 2026-09-02 反映），只留森林和溪水
+  const pool = ['ambience-forest', 'ambience-stream'];
   const name = level >= 5 ? 'ambience-beach' : pool[Math.floor(Math.random() * pool.length)];
   const src = `${R2}/${name}.mp3`;
   if (current && current.el.src === src && !current.el.paused) return; // 已在播同一首

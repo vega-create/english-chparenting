@@ -399,7 +399,10 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
       const startAt = Math.min(storyIndex * wp, Math.max(0, rest.length - (2 - pageWords.length)));
       pageWords = [...pageWords, ...rest.slice(startAt, startAt + (2 - pageWords.length))];
     }
-    const speakTarget = pageSentences[0]?.s.en || scene?.dialogue || '';
+    // Your Turn 要念什麼：L1–L2 的孩子多半只會單字 → 念這頁的 Magic Word；L3 起才念整句（Vega 2026-09-02 定案）
+    const speakTarget = level <= 2
+      ? (pageWords[0]?.en || pageSentences[0]?.s.en || scene?.dialogue || '')
+      : (pageSentences[0]?.s.en || scene?.dialogue || '');
     const tipText = tip?.zh || '';
 
     const openBook = () => {
@@ -612,7 +615,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                     <div className="flex items-start justify-between gap-[1cqw]">
                       <div>
                         <p className="m-0 font-black text-rose-500 text-[2.9cqw] leading-none">🎯 Your Turn!</p>
-                        <p className="m-0 mt-[0.8cqw] text-gray-700 font-bold text-[2.4cqw] leading-snug">{scene.characterName} 說完了，換你說說看：</p>
+                        <p className="m-0 mt-[0.8cqw] text-gray-700 font-bold text-[2.4cqw] leading-snug">
+                      {level <= 2 ? '跟著唸這個字：' : `${scene.characterName} 說完了，換你說說看：`}
+                    </p>
                       </div>
                       {/* Try it! 加油泡泡（純裝飾） */}
                       <div className="shrink-0 rounded-full bg-amber-100 border-[0.4cqw] border-amber-300 px-[1.8cqw] py-[0.8cqw] text-center rotate-[-6deg]">
