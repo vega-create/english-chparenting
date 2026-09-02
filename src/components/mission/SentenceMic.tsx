@@ -39,6 +39,14 @@ export default function SentenceMic({ target, onDone, compact = false }: { targe
   const [heard, setHeard] = useState('');
   const [tries, setTries] = useState(0);
   const [supported, setSupported] = useState<boolean | null>(null);
+  const [denyReason, setDenyReason] = useState<string>('');
+  const denyHint: Record<string, string> = {
+    'not-allowed': '瀏覽器沒開放麥克風給這個網站：點網址列左邊的鎖頭 → 麥克風 → 允許，再按「再試一次」',
+    'service-not-allowed': '這個瀏覽器的語音辨識用不了（Safari 請到設定開啟「Siri 與聽寫」；或改用 Chrome）',
+    'network': '語音辨識需要網路，請確認連線後再試一次',
+    'audio-capture': '找不到麥克風，請確認裝置有麥克風且沒被其他 App 占用',
+  };
+  const retry = () => { setDenyReason(''); setStatus('idle'); setTries(0); };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const recRef = useRef<any>(null);
 
@@ -80,8 +88,13 @@ export default function SentenceMic({ target, onDone, compact = false }: { targe
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     rec.onerror = (e: any) => {
-      // 沒給麥克風權限 → 直接改用手動確認，不要一直卡在這
-      if (e?.error === 'not-allowed' || e?.error === 'service-not-allowed') {
+      // 分清楚是哪一種（Vega 2026-09-02：她明明開了麥克風卻看到「沒有權限」）：
+      //  not-allowed         → 瀏覽器沒把麥克風給這個網站（網址列鎖頭→麥克風→允許）
+      //  service-not-allowed → 瀏覽器的語音辨識服務不能用（Safari 要開「Siri 與聽寫」、Brave／內嵌瀏覽器不支援）
+      //  network             → 語音辨識要連網
+      // 三種都改用手動確認，但提示不同，而且可以按「再試一次」，不用重新整理
+      if (e?.error === 'not-allowed' || e?.error === 'service-not-allowed' || e?.error === 'network' || e?.error === 'audio-capture') {
+        setDenyReason(e.error);
         setStatus('denied');
         return;
       }
@@ -97,11 +110,17 @@ export default function SentenceMic({ target, onDone, compact = false }: { targe
   if (supported === false || status === 'denied') {
     if (compact) {
       return (
-        <button onClick={() => { playStar(); onDone(); }}
-          className="flex items-center gap-[2cqw] rounded-full border-[0.4cqw] border-dashed border-green-300 bg-green-100 text-green-700 px-[1cqw] py-[0.8cqw] pr-[3cqw] font-black transition active:scale-95">
-          <span className="shrink-0 rounded-full bg-green-500 text-white flex items-center justify-center text-[3cqw] shadow" style={{ width: '7.2cqw', height: '7.2cqw' }}>🎤</span>
-          <span className="text-[3.2cqw] leading-tight text-left">“{target}” 我念完了！</span>
-        </button>
+        <div className="flex flex-col items-start gap-[0.8cqw]">
+          <button onClick={() => { playStar(); onDone(); }}
+            className="flex items-center gap-[2cqw] rounded-full border-[0.4cqw] border-dashed border-green-300 bg-green-100 text-green-700 px-[1cqw] py-[0.8cqw] pr-[3cqw] font-black transition active:scale-95">
+            <span className="shrink-0 rounded-full bg-green-500 text-white flex items-center justify-center text-[3cqw] shadow" style={{ width: '7.2cqw', height: '7.2cqw' }}>🎤</span>
+            <span className="text-[3.2cqw] leading-tight text-left">“{target}” 我念完了！</span>
+          </button>
+          <p className="m-0 text-[2cqw] leading-snug text-gray-500">
+            {status === 'denied' ? (denyHint[denyReason] || '麥克風暫時用不了，念完按上面就好') : '這個瀏覽器不能自動聽，念完按上面就好'}
+            {status === 'denied' && <button onClick={retry} className="ml-[1cqw] underline text-purple-500 font-bold">再試一次</button>}
+          </p>
+        </div>
       );
     }
     return (
@@ -110,8 +129,9 @@ export default function SentenceMic({ target, onDone, compact = false }: { targe
           className="bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-2xl font-bold transition active:scale-95 whitespace-nowrap">
           🎤 我念完了！
         </button>
-        <p className="text-[11px] text-gray-400">
-          {status === 'denied' ? '沒有麥克風權限，先用手動確認' : '這個瀏覽器不能自動聽，先用手動確認'}
+        <p className="text-[11px] text-gray-500 text-center max-w-xs">
+          {status === 'denied' ? (denyHint[denyReason] || '麥克風暫時用不了，先用手動確認') : '這個瀏覽器不能自動聽，先用手動確認'}
+          {status === 'denied' && <button onClick={retry} className="ml-1 underline text-purple-500 font-bold">再試一次</button>}
         </p>
       </div>
     );

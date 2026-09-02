@@ -28,6 +28,13 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
   //    改成手動確認的「我念完了」。之前的版本會默默跳過整題，看起來就像壞掉。
   const [supported, setSupported] = useState<boolean | null>(null);
   const [denied, setDenied] = useState(false);
+  const [denyReason, setDenyReason] = useState<string>('');
+  const denyHint: Record<string, string> = {
+    'not-allowed': '瀏覽器沒開放麥克風給這個網站：點網址列左邊的鎖頭 → 麥克風 → 允許，再按「再試一次」',
+    'service-not-allowed': '這個瀏覽器的語音辨識用不了（Safari 請到設定開啟「Siri 與聽寫」；或改用 Chrome）',
+    'network': '語音辨識需要網路，請確認連線後再試一次',
+    'audio-capture': '找不到麥克風，請確認裝置有麥克風且沒被其他 App 占用',
+  };
   const [missed, setMissed] = useState(false);   // 有開始聽但沒聽到聲音
 
   useEffect(() => {
@@ -71,7 +78,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onerror = (e: any) => {
       setIsListening(false);
-      if (e?.error === 'not-allowed' || e?.error === 'service-not-allowed') { setDenied(true); return; }
+      if (e?.error === 'not-allowed' || e?.error === 'service-not-allowed' || e?.error === 'network' || e?.error === 'audio-capture') { setDenyReason(e.error); setDenied(true); return; }
       setMissed(true);
     };
     recognition.onend = () => { setIsListening(false); if (!got) setMissed(true); };
@@ -165,8 +172,9 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
               <GameButton onClick={handleManualDone} color="green" size="lg">
                 🎤 我念完了！
               </GameButton>
-              <p className="text-[11px] text-gray-400">
-                {denied ? '沒有麥克風權限，念完按這裡就好' : '這個瀏覽器不能自動聽，念完按這裡就好'}
+              <p className="text-[11px] text-gray-500 text-center max-w-xs">
+                {denied ? (denyHint[denyReason] || '麥克風暫時用不了，念完按這裡就好') : '這個瀏覽器不能自動聽，念完按這裡就好'}
+                {denied && <button onClick={() => { setDenied(false); setDenyReason(''); setMissed(false); }} className="ml-1 underline text-purple-500 font-bold">再試一次</button>}
               </p>
             </>
           ) : !transcript ? (
