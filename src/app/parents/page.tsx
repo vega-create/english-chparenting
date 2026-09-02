@@ -13,6 +13,7 @@ import KidSwitcher from '@/components/KidSwitcher';
 
 // 家長補給站
 const SUPPLY = [
+  { t: '陪玩指南', d: '低年級怎麼陪？每天 10 分鐘、三個動作', href: '/parents/companion', img: '/images/parents/card-guide.webp', btn: 'from-purple-500 to-purple-700' },
   { img: '/images/parents/card-guide.webp', t: '使用指南', d: '了解課程特色與使用方式', href: '/guide', btn: 'from-purple-500 to-purple-700' },
   { img: '/images/parents/card-books.webp', t: '推薦書單', d: '精選英文繪本與橋樑書', href: '/books', btn: 'from-green-500 to-green-700' },
   { img: '/images/parents/card-blog.webp', t: '學習攻略', d: '家長必讀的英文學習方法', href: '/blog', btn: 'from-orange-500 to-orange-600' },

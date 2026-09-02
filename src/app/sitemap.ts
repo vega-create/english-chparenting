@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ['/placement', 0.7],
     ['/guide', 0.7],
     ['/parents', 0.7],
+    ['/parents/companion', 0.6],
     ['/books', 0.6],
     ['/verbs', 0.6],
     ['/badges', 0.5],

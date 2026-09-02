@@ -79,6 +79,9 @@ export default function ParentHelp({ stage, level }: { stage: keyof typeof TEXT;
       <ul className="m-0 pl-0 list-none space-y-1 leading-snug">
         {t.lines.map((l, i) => <li key={i}>{l}</li>)}
       </ul>
+      <p className="m-0 mt-2 text-xs">
+        <a href="/parents/companion" target="_blank" rel="noopener" className="font-bold text-purple-600 underline">爸媽怎麼陪？看陪玩指南 →</a>
+      </p>
     </div>
   );
 }
