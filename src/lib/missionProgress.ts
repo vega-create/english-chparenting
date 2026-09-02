@@ -292,7 +292,7 @@ export function planForecast(p: Progress) {
   const leftLevel = Math.max(0, LESSONS_PER_LEVEL - doneLevel);
   const leftAll = Math.max(0, TOTAL_LESSONS - doneAll);
   const addWeeks = (w: number) => { const d = new Date(); d.setDate(d.getDate() + Math.ceil(w * 7)); return d; };
-  const fmt = (d: Date) => `${d.getMonth() + 1}/${d.getDate()}`;
+  const fmt = (d: Date) => (d.getFullYear() !== new Date().getFullYear() ? `${d.getFullYear()}/` : '') + `${d.getMonth() + 1}/${d.getDate()}`;
   return { island, leftLevel, leftAll, perWeek, levelDate: fmt(addWeeks(leftLevel / perWeek)), allDate: fmt(addWeeks(leftAll / perWeek)), allMonths: Math.ceil(leftAll / perWeek / 4.3) };
 }
 
