@@ -42,8 +42,18 @@ function kill(amb: Amb) {
 }
 
 /** 依世界選環境音：海洋灣(L5+)聽海浪，其他隨機森林/溪流 */
+const AMB_KEY = 'ae_ambience_off';
+/** 爸媽可以把背景環境音關掉（記在這台裝置） */
+export function isAmbienceOff(): boolean {
+  try { return localStorage.getItem(AMB_KEY) === '1'; } catch { return false; }
+}
+export function setAmbienceOff(off: boolean) {
+  try { localStorage.setItem(AMB_KEY, off ? '1' : '0'); } catch {}
+  if (off) stopAmbience();
+}
+
 export function startAmbience(level: number) {
-  if (typeof window === 'undefined' || isSfxMuted()) return;
+  if (typeof window === 'undefined' || isSfxMuted() || isAmbienceOff()) return;
   // 風聲、蟲鳴那兩軌在喇叭上聽起來像機器嗡嗡聲（Vega 2026-09-02 反映），只留森林和溪水
   const pool = ['ambience-forest', 'ambience-stream'];
   const name = level >= 5 ? 'ambience-beach' : pool[Math.floor(Math.random() * pool.length)];

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { playTada } from '@/lib/sfx';
-import { startAmbience, stopAmbience } from '@/lib/ambience';
+import { startAmbience, stopAmbience, isAmbienceOff, setAmbienceOff } from '@/lib/ambience';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
@@ -102,6 +102,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
   const [contentOk, setContentOk] = useState(true); // 每級內頁底圖：/images/ebook/l{級}-content.webp，缺圖用預設白頁
   const [charZoom, setCharZoom] = useState(false); // 點動物放大/縮回
+  const [ambOff, setAmbOff] = useState(false); // 背景環境音開關（爸媽反映像機器聲，可以關）
+  useEffect(() => { setAmbOff(isAmbienceOff()); }, []);
   const [letterPlay, setLetterPlay] = useState<{ letter: string; part: 'capital' | 'lower' | 'word' } | null>(null); // 字母卡唸到哪
   const letterPlayToken = useRef(0);
   const [storyIndex, setStoryIndex] = useState(0);
@@ -755,6 +757,13 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               <button onClick={() => sayDialogue(storyIndex, scene.dialogue, 0.5)}
                 className="bg-blue-100 text-blue-600 px-4 sm:px-5 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95">
                 🐢
+              </button>
+              <button
+                onClick={() => { const next = !ambOff; setAmbOff(next); setAmbienceOff(next); if (!next) startAmbience(level); }}
+                aria-label={ambOff ? '開啟背景音' : '關閉背景音'}
+                title={ambOff ? '背景音：關（點一下開啟）' : '背景音：開（點一下關閉）'}
+                className={`px-4 sm:px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${ambOff ? 'bg-gray-100 text-gray-400' : 'bg-emerald-100 text-emerald-600 hover:bg-emerald-200'}`}>
+                {ambOff ? '🔇' : '🌿'}
               </button>
               <button onClick={() => setShowTranslation(!showTranslation)}
                 className={`px-4 sm:px-5 py-3 rounded-2xl font-bold transition active:scale-95 ${
