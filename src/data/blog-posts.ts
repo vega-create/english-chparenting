@@ -8,6 +8,20 @@ export interface BlogPost {
   readTime: number;
   cover: { emoji: string; gradient: string; subtitle: string; image?: string };
   content: string; // markdown
+  /** 這篇是哪幾個 Level 的「陪玩配套文」：課程完成頁會推給爸媽、文章尾 CTA 會直接帶去那一站 */
+  levels?: number[];
+}
+
+/** 給某個 Level 推薦的爸媽文章（最新的優先；沒有配套文就給家長指南類） */
+export function postsForLevel(level: number, limit = 1): BlogPost[] {
+  const hit = BLOG_POSTS.filter(p => p.levels?.includes(level));
+  const fallback = BLOG_POSTS.filter(p => p.category === 'parenting' && !p.levels?.includes(level));
+  return [...hit, ...fallback].slice(0, limit);
+}
+
+/** 最新文章（首頁「給爸媽的文章」區塊用） */
+export function latestPosts(limit = 3): BlogPost[] {
+  return [...BLOG_POSTS].sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, limit);
 }
 
 export const BLOG_CATEGORIES: { slug: string; name: string; emoji: string; description: string; book: string }[] = [
@@ -23,6 +37,7 @@ export const BLOG_CATEGORIES: { slug: string; name: string; emoji: string; descr
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "how-to-accompany-young-kids-learning-english",
+    levels: [1, 2, 3, 4],
     title: "低年級小孩學英文，家長怎麼陪？每天 10 分鐘、三個動作就夠",
     description: "幼兒園到小二的孩子還不認字、不習慣開口，需要爸媽坐在旁邊。但陪讀不是教英文：固定 10 分鐘、跟著唸、不糾正發音、誇具體的事，一個月後孩子會自己打開來玩。",
     date: "2026-09-02",
@@ -34,6 +49,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "phonics-vs-kk-which-is-better",
+    levels: [1, 2],
     title: "Phonics 自然發音 vs KK 音標：哪個適合你的孩子？完整比較指南",
     description: "Phonics 和 KK 音標是台灣最常見的兩種發音教學法。本文完整比較兩者的優缺點，幫助家長選擇最適合孩子的學習方式。",
     date: "2026-03-15",
@@ -208,6 +224,7 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
   },
   {
     slug: "how-to-help-kids-speak-english-at-home",
+    levels: [3, 4, 5, 6],
     title: "在家就能做！5 個讓孩子自然開口說英文的方法",
     description: "不需要花大錢上全美語班，在家就能創造英文環境。5 個經過驗證的方法，讓孩子從害怕說英文變成主動開口。",
     date: "2026-03-10",
@@ -387,6 +404,7 @@ AI 語音工具最大的優勢是什麼？**永遠不會嘲笑孩子、永遠不
   },
   {
     slug: "best-english-books-for-kids-2026",
+    levels: [1, 2, 3],
     title: "2026 年最推薦的 10 本兒童英文繪本｜按年齡分類",
     description: "精選 10 本適合 3-12 歲孩子的英文繪本，從簡單到進階，培養孩子的英文閱讀興趣和能力。附 Amazon 和博客來購買連結。",
     date: "2026-03-08",
@@ -589,6 +607,7 @@ Dog Man 的特色是幾乎全部用漫畫形式呈現，每頁的文字量很少
   },
   {
     slug: "gept-elementary-preparation-guide",
+    levels: [7, 8, 9, 10, 11, 12],
     title: "全民英檢初級（GEPT）完整準備攻略｜國小就能考過！",
     description: "全民英檢初級的考試內容、準備方法、推薦教材完整指南。告訴你國小幾年級可以開始準備，以及如何用免費資源高效備考。",
     date: "2026-03-05",
@@ -777,6 +796,7 @@ LTTC 官方建議初級需掌握約 **2,000 個單字**。但不要被這個數�
   },
   {
     slug: "screen-time-english-learning-balance",
+    levels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     title: "螢幕時間 vs 英文學習：如何讓平板成為學習工具而不是娛樂？",
     description: "擔心孩子用平板學英文會變成沉迷3C？本文分享如何設定使用規則，讓螢幕時間真正成為有效的學習時間。",
     date: "2026-03-01",

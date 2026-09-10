@@ -7,6 +7,7 @@ import GameButton from "@/components/GameButton";
 import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 import { COURSES } from "@/data/courses";
+import { latestPosts } from "@/data/blog-posts";
 import { loadProgress, getBadges, completedCount, totalStars, type Badge } from "@/lib/missionProgress";
 import { playGreeting, isMuted as isVegaMuted, setMuted as setVegaMuted, playVega, stopVega } from "@/lib/vega-audio";
 import AdSlot from '@/components/AdSlot';
@@ -695,6 +696,29 @@ export default function LayeredBanner() {
               </p>
               <GameButton href="/adventure-map" color="gold" size="lg">🗺️ 探索學習地圖 →</GameButton>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 給爸媽的文章：把首頁流量分一部分到部落格（大人看的頁面） ===== */}
+      <section className="px-3 sm:px-4 md:px-6 py-8" style={{ background: "#fdf0d5" }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-end justify-between mb-4 px-1">
+            <h2 className="text-xl md:text-2xl font-black text-purple-800 m-0">📖 給爸媽的文章</h2>
+            <Link href="/blog" onClick={() => playClick()} className="text-sm font-bold text-purple-700 no-underline hover:underline">更多文章 →</Link>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {latestPosts(3).map(p => (
+              <Link key={p.slug} href={`/blog/${p.slug}`} onClick={() => playClick()}
+                className="bg-white rounded-3xl overflow-hidden shadow-md border-2 border-amber-100 hover:-translate-y-1 hover:shadow-lg transition no-underline flex sm:flex-col">
+                <div className={`bg-gradient-to-br ${p.cover.gradient} w-24 sm:w-full sm:h-24 flex items-center justify-center text-4xl flex-shrink-0`}>{p.cover.emoji}</div>
+                <div className="p-3 sm:p-4">
+                  <p className="font-black text-gray-800 text-sm leading-snug m-0">{p.title}</p>
+                  <p className="text-xs text-gray-500 mt-1 mb-0 line-clamp-2">{p.description}</p>
+                  <p className="text-[11px] text-gray-400 mt-2 mb-0">⏱ 閱讀 {p.readTime} 分鐘</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

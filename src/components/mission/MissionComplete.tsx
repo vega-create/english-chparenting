@@ -9,6 +9,8 @@ import { track } from '@/lib/analytics';
 import LoginNudge from '@/components/LoginNudge';
 import { speak } from '@/lib/speech';
 import { recordMissionComplete } from '@/lib/missionProgress';
+import Link from 'next/link';
+import { postsForLevel } from '@/data/blog-posts';
 
 interface Props {
   missionTitle: string;
@@ -21,6 +23,8 @@ interface Props {
 }
 
 export default function MissionComplete({ missionTitle, missionTitleEn, stars, maxStars, reviewQuiz, courseSlug, missionId }: Props) {
+  const courseLevel = Number(courseSlug.match(/^l(\d+)-/)?.[1] ?? 0);
+  const parentPost = courseLevel ? postsForLevel(courseLevel, 1)[0] : undefined;
   const [quizDone, setQuizDone] = useState(false);
   const [quizCurrent, setQuizCurrent] = useState(0);
   const [quizScore, setQuizScore] = useState(0);
@@ -137,6 +141,17 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
 
           {/* 剛拿到星星，這是最有說服力的時機講「不登入會不見」 */}
           <LoginNudge variant="inline" />
+
+          {/* 給旁邊的爸媽：這個 Level 的陪玩配套文（小小的，不搶孩子的按鈕） */}
+          {parentPost && (
+            <Link href={`/blog/${parentPost.slug}`} className="no-underline text-left bg-white/80 border border-purple-100 rounded-2xl px-4 py-3 flex items-center gap-3 hover:bg-purple-50 transition">
+              <span className="text-2xl flex-shrink-0">{parentPost.cover.emoji}</span>
+              <span>
+                <span className="block text-[11px] font-bold text-purple-500">📖 給爸媽的文章</span>
+                <span className="block text-sm font-bold text-gray-700 leading-snug">{parentPost.title}</span>
+              </span>
+            </Link>
+          )}
         </div>
       </div>
     );

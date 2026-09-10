@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/data/blog-posts";
 import AutoAds from "@/components/AutoAds";
 import InArticleAd from "@/components/InArticleAd";
+import { COURSES } from "@/data/courses";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map(p => ({ slug: p.slug }));
@@ -215,7 +216,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) return <div className="min-h-screen flex items-center justify-center">文章未找到</div>;
 
   const cat = BLOG_CATEGORIES.find(c => c.slug === post.category);
-  const relatedPosts = BLOG_POSTS.filter(p => p.slug !== post.slug).slice(0, 3);
+  // 延伸閱讀：同分類優先，再補其他
+  const relatedPosts = [
+    ...BLOG_POSTS.filter(p => p.slug !== post.slug && p.category === post.category),
+    ...BLOG_POSTS.filter(p => p.slug !== post.slug && p.category !== post.category),
+  ].slice(0, 3);
+  // 文章尾 CTA：有配套 Level 就直接帶去那一站，沒有就去首頁
+  const ctaCourse = post.levels?.length ? COURSES.find(c => c.level === post.levels![0]) : undefined;
   const toc = extractTOC(post.content);
 
   const wordCount = post.content.length;
@@ -359,9 +366,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <img src="/characters/benny/benny-wave.png" alt="Benny" className="w-10 h-10 object-contain" />
             <img src="/characters/ruby/ruby-star.png" alt="Ruby" className="w-10 h-10 object-contain" />
           </div>
-          <h3 className="text-xl font-black mb-2">想讓孩子免費學英文？</h3>
-          <p className="text-gray-500 text-sm mb-4">Adventure English 冒險英語：240 堂課、AI 互動口說、遊戲化學習，完全免費！</p>
-          <Link href="/" className="cta-btn px-8 py-3 text-base inline-block no-underline">🚀 了解更多</Link>
+          <h3 className="text-xl font-black mb-2">{ctaCourse ? `讀完了，帶孩子去${ctaCourse.island}玩一課` : '想讓孩子免費學英文？'}</h3>
+          <p className="text-gray-500 text-sm mb-4">
+            {ctaCourse
+              ? `${ctaCourse.worldEmoji} ${ctaCourse.island}（Level ${ctaCourse.level}）：${ctaCourse.description}。免費、不用下載，一課 10 分鐘。`
+              : 'Adventure English 冒險英語：240 堂課、AI 互動口說、遊戲化學習，完全免費！'}
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link href={ctaCourse ? `/courses/${ctaCourse.slug}` : '/adventure-map'} className="cta-btn px-8 py-3 text-base inline-block no-underline">
+              {ctaCourse ? `🚀 去${ctaCourse.island} →` : '🚀 免費開始'}
+            </Link>
+            <Link href="/" className="px-6 py-3 text-sm font-bold text-purple-700 bg-white border border-purple-200 rounded-full inline-block no-underline hover:bg-purple-50">
+              了解冒險英語
+            </Link>
+          </div>
         </div>
 
         {/* Author — blog_content style author card */}
