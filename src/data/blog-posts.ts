@@ -1,3 +1,5 @@
+import { SCHEDULED_POSTS } from './blog-posts-scheduled';
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -11,6 +13,7 @@ export interface BlogPost {
   /** 這篇是哪幾個 Level 的「陪玩配套文」：課程完成頁會推給爸媽、文章尾 CTA 會直接帶去那一站 */
   levels?: number[];
 }
+
 
 /** 給某個 Level 推薦的爸媽文章（最新的優先；沒有配套文就給家長指南類） */
 export function postsForLevel(level: number, limit = 1): BlogPost[] {
@@ -34,7 +37,7 @@ export const BLOG_CATEGORIES: { slug: string; name: string; emoji: string; descr
   { book: "/images/blog/book-resources.webp", slug: "resources", name: "學習資源", emoji: "🎯", description: "推薦書籍、App、教材" },
 ];
 
-export const BLOG_POSTS: BlogPost[] = [
+const POSTS_2026_03_09: BlogPost[] = [
   {
     slug: "how-to-accompany-young-kids-learning-english",
     levels: [1, 2, 3, 4],
@@ -44,7 +47,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "parenting",
     tags: ["低年級英文", "親子共學", "陪讀", "英文啟蒙", "冒險英語"],
     readTime: 6,
-    cover: { emoji: "👨‍👩‍👧", gradient: "from-amber-400 via-orange-400 to-rose-400", subtitle: "每天 10 分鐘、三個動作" },
+    cover: { emoji: "👨‍👩‍👧", gradient: "from-amber-400 via-orange-400 to-rose-400", subtitle: "每天 10 分鐘、三個動作", image: "/images/blog/cover-how-to-accompany-young-kids-learning-english.webp" },
     content: "孩子幼兒園大班到小二這個階段，是最容易「喜歡上英文」也最容易「討厭英文」的時候。差別不在教材，在**旁邊那個大人怎麼陪**。\n\n我自己陪女兒的經驗是：一開始把它當功課，每次都在糾正發音、催她開口，結果她看到英文就跑。後來改成只做三件事，每天 10 分鐘，一個月後她會自己打開來玩。這篇把那三件事寫清楚。\n\n## 為什麼低年級一定要有人陪\n\n- **還不認字。** 題目、選項、按鈕對他來說都是圖案，沒人讀給他聽，他只能亂按。\n- **還不習慣開口。** 對著螢幕說英文對大人都尷尬，孩子需要看到你先做一次。\n- **注意力只有 10 分鐘。** 超過就開始亂點，越陪越氣，不如準時收。\n\n所以前兩、三週的目標很簡單：讓他覺得「英文時間是跟爸媽一起玩的時間」。\n\n## 每天 10 分鐘的固定儀式\n\n1. **固定時段**：晚餐後或睡前，同一個時間，比「有空再做」有效十倍。\n2. **一次一課或半課**：寧可短、要每天。孩子想重看影片就讓他看，重複是這個年紀最有效的學法。\n3. **你的手機收起來**：你不分心，孩子才不分心。\n\n## 三個動作（真的只有這三個）\n\n### 1. 他點什麼，你就跟著唸一次\n不用教、不用解釋文法。孩子點單字，網站會唸單字；點句子，會唸整句、唸到哪個字亮到哪。你在旁邊小小聲跟著唸，他會不自覺模仿你的嘴型——這比任何「來，跟我唸」都有效。\n\n### 2. 答錯不糾正發音，只說「再聽一次」\n低年級的目標是**聽得懂**，不是唸得標準。發音會在大量聽之後自己修正。他選錯了，你就按題目旁邊的 🔊 讓他再聽一次，然後閉嘴等他選。忍住不說「不是這個啦」。\n\n### 3. 過關就誇「具體的那一件事」\n「好棒」聽三次就沒感覺了。改成：「你剛剛 hi 唸得好清楚」「你自己找到 bye 了耶」。星星、徽章網站會自己給；你負責說出**他到底做對了什麼**。\n\n## 低年級的分工表\n\n| 誰 | 做什麼 |\n|---|---|\n| 爸媽 | 讀中文題目、Your Turn 先示範一次、按「允許麥克風」 |\n| 孩子 | 聽英文、按喇叭、選答案、跟著唸 |\n| 網站 | 唸中文題目、唸英文選項、亮字、給星星 |\n\n在冒險英語裡，字母島到學校路（L1–L4）每一題會自動唸出中文，英文選項旁邊有小喇叭可以先聽再選，每一關上方也有一張「給爸媽的說明」卡，寫這一關怎麼玩。\n\n## 什麼時候可以放手\n\n- 他開始**自己按喇叭、自己翻頁**，你就退到旁邊做自己的事。\n- 到市場街（L3）題目變成整句，大多數孩子這時已經會自己玩。\n- 之後用家長中心的學習報告看進度就好，不用盯著螢幕。\n\n## 常見狀況怎麼辦\n\n- **不肯開口** → 先只聽、只點，麥克風那關按「我念完了」也可以。開口通常在第二、三週自己發生。\n- **只想看影片** → 可以，看完影片要過 5 題小挑戰才能翻書，他會為了翻書願意答。\n- **一直按錯** → 多半是沒聽懂題目，你把中文再讀一次。\n- **唸了說不對** → 語音辨識偶爾聽不清，再念一次；三次不過會讓他跳過。\n- **越陪越火** → 今天收，明天再來。10 分鐘的意思就是 10 分鐘。\n\n## 最後\n\n陪讀不是教英文，是讓他覺得這件事跟你一起做很好玩。三個動作做一個月，你會發現他開始自己打開網站——那時候你的任務就完成了。\n\n👉 免費開始：[冒險英語 Adventure English](https://english.chparenting.com)（240 課動畫，字母島從 ABC 開始）\n👉 一頁版陪玩指南：https://english.chparenting.com/parents/companion\n",
   },
   {
@@ -1037,3 +1040,15 @@ export const BOOKS = [
     ],
   },
 ];
+
+/**
+ * 排程上架：文章的 date 超過「建置日期」就不出現（列表、內頁、sitemap、首頁都不會有）。
+ * 每天 00:10 台北時間有 GitHub Actions 檢查當天有沒有到期的文章，有就重新建置部署（.github/workflows/scheduled-publish.yml）。
+ * 想立刻看到未來的文章：本機 dev 時 NEXT_PUBLIC_BUILD_DATE 設成 2099-12-31。
+ */
+const BUILD_DATE = process.env.NEXT_PUBLIC_BUILD_DATE || new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Taipei' });
+
+/** 全部文章（含未到期），最新在前 */
+export const ALL_BLOG_POSTS: BlogPost[] = [...SCHEDULED_POSTS, ...POSTS_2026_03_09].sort((a, b) => (a.date < b.date ? 1 : -1));
+/** 已上架的文章（date <= 建置日期），最新在前。全站只用這個。 */
+export const BLOG_POSTS: BlogPost[] = ALL_BLOG_POSTS.filter(p => p.date <= BUILD_DATE);

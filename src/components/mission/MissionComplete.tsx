@@ -145,7 +145,9 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
           {/* 給旁邊的爸媽：這個 Level 的陪玩配套文（小小的，不搶孩子的按鈕） */}
           {parentPost && (
             <Link href={`/blog/${parentPost.slug}`} className="no-underline text-left bg-white/80 border border-purple-100 rounded-2xl px-4 py-3 flex items-center gap-3 hover:bg-purple-50 transition">
-              <span className="text-2xl flex-shrink-0">{parentPost.cover.emoji}</span>
+              {parentPost.cover.image
+                ? <img src={parentPost.cover.image} alt="" className="w-16 h-10 rounded-lg object-cover flex-shrink-0" />
+                : <span className="text-2xl flex-shrink-0">{parentPost.cover.emoji}</span>}
               <span>
                 <span className="block text-[11px] font-bold text-purple-500">📖 給爸媽的文章</span>
                 <span className="block text-sm font-bold text-gray-700 leading-snug">{parentPost.title}</span>

@@ -711,7 +711,11 @@ export default function LayeredBanner() {
             {latestPosts(3).map(p => (
               <Link key={p.slug} href={`/blog/${p.slug}`} onClick={() => playClick()}
                 className="bg-white rounded-3xl overflow-hidden shadow-md border-2 border-amber-100 hover:-translate-y-1 hover:shadow-lg transition no-underline flex sm:flex-col">
-                <div className={`bg-gradient-to-br ${p.cover.gradient} w-24 sm:w-full sm:h-24 flex items-center justify-center text-4xl flex-shrink-0`}>{p.cover.emoji}</div>
+                {p.cover.image ? (
+                  <img src={p.cover.image} alt="" className="w-28 sm:w-full sm:h-32 object-cover flex-shrink-0" />
+                ) : (
+                  <div className={`bg-gradient-to-br ${p.cover.gradient} w-28 sm:w-full sm:h-32 flex items-center justify-center text-4xl flex-shrink-0`}>{p.cover.emoji}</div>
+                )}
                 <div className="p-3 sm:p-4">
                   <p className="font-black text-gray-800 text-sm leading-snug m-0">{p.title}</p>
                   <p className="text-xs text-gray-500 mt-1 mb-0 line-clamp-2">{p.description}</p>

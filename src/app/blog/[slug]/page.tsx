@@ -236,7 +236,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "@type": "Article",
     headline: post.title,
     description: post.description,
-    image: `https://english.chparenting.com/og/${post.slug}.svg`,
+    image: post.cover.image ? `https://english.chparenting.com${post.cover.image}` : `https://english.chparenting.com/og/${post.slug}.svg`,
     datePublished: `${post.date}T00:00:00+08:00`,
     dateModified: `${post.date}T00:00:00+08:00`,
     author: { "@type": "Person", name: "薇佳媽媽", url: "https://aimommywisdom.com" },
@@ -284,7 +284,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <span className="text-gray-600">{cat?.name}</span>
         </div>
 
-        {/* Cover Image */}
+        {/* Cover Image：有插圖用插圖，沒有退回 emoji 漸層 */}
+        {post.cover.image ? (
+          <div className="rounded-3xl mb-8 animate-slide-up overflow-hidden shadow-md" style={{ aspectRatio: "16 / 9" }}>
+            <img src={post.cover.image} alt={post.title} className="w-full h-full object-cover" />
+          </div>
+        ) : (
         <div className={`bg-gradient-to-br ${post.cover.gradient} rounded-3xl p-10 md:p-16 text-center text-white mb-8 animate-slide-up relative overflow-hidden`}>
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-4 left-8 text-8xl rotate-12">🔤</div>
@@ -297,6 +302,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="text-sm opacity-70 mt-2">english.chparenting.com</div>
           </div>
         </div>
+        )}
 
         {/* Article Header — blog_content style */}
         <div className="article-content rounded-t-2xl rounded-b-none mb-0 pb-6" style={{ borderBottom: "2px solid #E8E5FA" }}>
@@ -401,9 +407,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {relatedPosts.map(rp => (
               <Link key={rp.slug} href={`/blog/${rp.slug}`} className="no-underline">
                 <div className="island-card rounded-2xl overflow-hidden shadow-md h-full bg-white">
-                  <div className={`bg-gradient-to-br ${rp.cover.gradient} p-5 text-center text-white`}>
-                    <div className="text-3xl">{rp.cover.emoji}</div>
-                  </div>
+                  {rp.cover.image ? (
+                    <img src={rp.cover.image} alt="" className="w-full aspect-video object-cover" />
+                  ) : (
+                    <div className={`bg-gradient-to-br ${rp.cover.gradient} p-5 text-center text-white`}>
+                      <div className="text-3xl">{rp.cover.emoji}</div>
+                    </div>
+                  )}
                   <div className="p-3">
                     <div className="text-xs text-gray-500 mb-1">{rp.date}</div>
                     <h4 className="font-bold text-xs text-gray-900 leading-snug">{rp.title}</h4>

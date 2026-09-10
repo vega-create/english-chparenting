@@ -1,0 +1,49 @@
+name: Scheduled blog publish
+
+# 文章排程上架：每天台北 00:10 檢查 src/data/blog-posts*.ts 裡有沒有 date 等於今天的文章，
+# 有就重新建置＋部署（建置時 NEXT_PUBLIC_BUILD_DATE 會是今天，那篇就會出現）。
+# 沒有到期文章就什麼都不做，不會多花建置額度。
+on:
+  schedule:
+    - cron: "10 16 * * *"   # 16:10 UTC = 00:10 Asia/Taipei
+  workflow_dispatch:
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 今天有沒有到期的文章
+        id: due
+        run: |
+          TODAY=$(TZ=Asia/Taipei date +%F)
+          echo "today=$TODAY"
+          if grep -h "date: \"$TODAY\"" src/data/blog-posts*.ts; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "due=false" >> "$GITHUB_OUTPUT"
+            echo "今天沒有排程文章，跳過"
+          fi
+
+      - if: steps.due.outputs.due == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - if: steps.due.outputs.due == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm ci
+
+      - if: steps.due.outputs.due == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm run build
+
+      - if: steps.due.outputs.due == 'true' || github.event_name == 'workflow_dispatch'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy out --project-name=english-chparenting
