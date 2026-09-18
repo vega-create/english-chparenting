@@ -95,7 +95,7 @@ export default function KidSwitcher({ compact = false }: { compact?: boolean }) 
                 <div className="flex justify-between mt-2">
                   {AVATARS.map(a => (
                     <button key={a.slug} onClick={() => { playClick(); setAvatar(a.slug); }} title={a.zh}
-                      className={`w-9 h-9 rounded-full overflow-hidden border-2 ${avatar === a.slug ? 'border-orange-500 scale-110' : 'border-transparent'} transition`}>
+                      className={`w-9 h-9 rounded-full overflow-hidden border-2 cursor-pointer ${avatar === a.slug ? 'border-orange-500 scale-110' : 'border-transparent'} transition`}>
                       <img src={`/images/avatars/${a.slug}.webp`} alt={a.zh} className="w-full h-full object-cover object-top bg-amber-100" />
                     </button>
                   ))}

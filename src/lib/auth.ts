@@ -58,6 +58,7 @@ export { mergeProgress } from './progressMerge';
 const PENDING_KEY = 'ae_sync_pending';      // '1' = 有一次上傳沒成功
 const LAST_KEY = 'ae_sync_last';            // ISO：最後一次成功同步時間
 const ERROR_KEY = 'ae_sync_error';          // 最後一次失敗的訊息（顯示用）
+const DELETE_PENDING_KEY = 'ae_kid_delete_pending';  // JSON string[]：雲端刪除沒成功、待重試的孩子 id
 
 export interface SyncStatus { pending: boolean; lastAt: string | null; error: string | null }
 
@@ -65,7 +66,7 @@ export function getSyncStatus(): SyncStatus {
   if (typeof window === 'undefined') return { pending: false, lastAt: null, error: null };
   try {
     return {
-      pending: localStorage.getItem(PENDING_KEY) === '1',
+      pending: localStorage.getItem(PENDING_KEY) === '1' || pendingDeletes().length > 0,
       lastAt: localStorage.getItem(LAST_KEY),
       error: localStorage.getItem(ERROR_KEY),
     };
@@ -79,6 +80,19 @@ function markSynced() {
     localStorage.removeItem(ERROR_KEY);
   } catch { /* ignore */ }
   window.dispatchEvent(new Event('ae-sync-change'));
+}
+
+function pendingDeletes(): string[] {
+  try {
+    const v = JSON.parse(localStorage.getItem(DELETE_PENDING_KEY) ?? '[]');
+    return Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : [];
+  } catch { return []; }
+}
+function setPendingDeletes(ids: string[]) {
+  try {
+    if (ids.length) localStorage.setItem(DELETE_PENDING_KEY, JSON.stringify(ids));
+    else localStorage.removeItem(DELETE_PENDING_KEY);
+  } catch { /* ignore */ }
 }
 
 function markSyncFailed(msg: string) {
@@ -109,7 +123,10 @@ export async function syncKids(userId: string): Promise<void> {
     .returns<KidRow[]>();
   if (error) { markSyncFailed(error.message); return; }   // 讀不到就先用本機的，不要擋住使用；標記待重試
 
-  const cloud = rows ?? [];
+  // 雲端刪除沒成功的孩子：先再刪一次，還是刪不掉就略過那列，別把已刪的孩子又合併回本機
+  await retryPendingDeletes(userId);
+  const stillPending = new Set(pendingDeletes());
+  const cloud = (rows ?? []).filter(r => !stillPending.has(r.id));
   const merged = new Map<string, { kid: Kid; data: Progress }>();
 
   for (const k of local.kids) merged.set(k.id, { kid: { ...k }, data: kidProgress(k.id) });
@@ -177,14 +194,37 @@ export async function pushProgress(userId: string, p: Progress): Promise<boolean
 
 /** 有沒同步成功的存檔就補送一次（AuthProvider 在載入與 online 事件時呼叫） */
 export async function retryPendingSync(userId: string): Promise<void> {
-  if (!getSyncStatus().pending) return;
   if (typeof navigator !== 'undefined' && navigator.onLine === false) return;
+  await retryPendingDeletes(userId);
+  if (!getSyncStatus().pending) return;
   await pushProgress(userId, loadProgress());
 }
 
-/** 刪除孩子時同步刪雲端那一列 */
-export async function deleteKidCloud(userId: string, kidId: string) {
-  try { await supa().from('ae_kids').delete().eq('user_id', userId).eq('id', kidId); } catch { /* */ }
+/** 雲端刪除沒成功的孩子再刪一次（syncKids 合併前、retryPendingSync 都會呼叫） */
+export async function retryPendingDeletes(userId: string): Promise<void> {
+  for (const id of pendingDeletes()) await deleteKidCloud(userId, id);
+}
+
+/**
+ * 刪除孩子時同步刪雲端那一列。
+ * 失敗不能靜默：記進待刪清單並標記同步失敗，否則下次 syncKids 會把雲端那列又合併回本機、孩子「復活」。
+ * 回傳 true = 雲端已刪。
+ */
+export async function deleteKidCloud(userId: string, kidId: string): Promise<boolean> {
+  const fail = (msg: string) => {
+    const ids = pendingDeletes();
+    if (!ids.includes(kidId)) setPendingDeletes([...ids, kidId]);
+    markSyncFailed(msg);
+    return false;
+  };
+  try {
+    const { error } = await supa().from('ae_kids').delete().eq('user_id', userId).eq('id', kidId);
+    if (error) return fail(error.message);
+    setPendingDeletes(pendingDeletes().filter(id => id !== kidId));
+    return true;
+  } catch (e) {
+    return fail(e instanceof Error ? e.message : 'network');
+  }
 }
 
 // 舊名稱相容（其他檔案若還引用）

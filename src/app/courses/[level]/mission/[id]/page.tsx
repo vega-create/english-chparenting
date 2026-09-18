@@ -6,8 +6,9 @@ import type { Metadata } from 'next';
 const BASE = 'https://english.chparenting.com';
 const R2_THUMBS = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/thumbs';
 /** L1–L8 有逐課封面圖（YouTube 用的同一批），其餘關卡先用站台圖示。 */
+// R2 上 L1–L12 每課都有 thumbs/L{level}-m{id}.jpg（命名一致）
 function thumbnailFor(level: number, id: number) {
-  return level <= 8 ? `${R2_THUMBS}/L${level}-m${id}.jpg` : `${BASE}/icon.png`;
+  return `${R2_THUMBS}/L${level}-m${id}.jpg`;
 }
 
 interface Props {

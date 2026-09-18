@@ -6438,7 +6438,7 @@ const L5_M14: Mission = {
 };
 
 const L5_M15: Mission = {
-  id: 15, slug: 'l5-m15-review-reading', level: 5, title: 'Review③ 閱讀理解', titleEn: 'Review: Reading', theme: '珊瑚灘・複習關', themeEmoji: '🔄',
+  id: 15, slug: 'l5-m15-review-reading', level: 5, title: 'Review③ 閱讀理解', titleEn: 'Review: Reading Comprehension', theme: '珊瑚灘・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：閱讀理解 ＋ 形容詞 ＋ 天氣時間 ＋ 星期月份',
   goal: { zh: '闖過閱讀理解的關卡。', char: 'ruby' },
   story: [
@@ -7817,7 +7817,7 @@ const L6_M14: Mission = {
 };
 
 const L6_M15: Mission = {
-  id: 15, slug: 'l6-m15-review-reading', level: 6, title: 'Review③ 長文閱讀', titleEn: 'Review: Reading', theme: '燈塔角・複習關', themeEmoji: '🔄',
+  id: 15, slug: 'l6-m15-review-reading', level: 6, title: 'Review③ 長文閱讀', titleEn: 'Review: Long Reading', theme: '燈塔角・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：長文閱讀 ＋ 描述 ＋ 意見 ＋ 感受',
   goal: { zh: '闖過長文閱讀的關卡。', char: 'ruby' },
   story: [
@@ -13000,7 +13000,7 @@ const L10_M9: Mission = {
 };
 
 const L10_M10: Mission = {
-  id: 10, slug: 'l10-m10-review-reading', level: 10, title: 'Review② 閱讀理解', titleEn: 'Review: Reading', theme: '未來橋・複習關', themeEmoji: '🔄',
+  id: 10, slug: 'l10-m10-review-reading', level: 10, title: 'Review② 閱讀理解', titleEn: 'Review: Reading ②', theme: '未來橋・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：段落閱讀 ＋ 主旨細節 ＋ 圖表告示 ＋ 中翻英',
   goal: { zh: '闖過閱讀理解的關卡。', char: 'ruby' },
   story: [
@@ -13552,7 +13552,7 @@ const L10_M17: Mission = {
 };
 
 const L10_M18: Mission = {
-  id: 18, slug: 'l10-m18-read-write', level: 10, title: '讀寫綜合', titleEn: 'Read & Write', theme: '未來橋・讀完再寫', themeEmoji: '📖',
+  id: 18, slug: 'l10-m18-read-write', level: 10, title: '讀寫綜合', titleEn: 'Integrated Read & Write', theme: '未來橋・讀完再寫', themeEmoji: '📖',
   focus: '讀寫綜合：讀一段短文，再仿寫自己的版本 ＋ 中翻英',
   goal: { zh: '讀一段短文，再仿寫出你自己的版本。', char: 'polly' },
   story: [
@@ -14730,7 +14730,7 @@ const L11_M14: Mission = {
 };
 
 const L11_M15: Mission = {
-  id: 15, slug: 'l11-m15-review-reading', level: 11, title: 'Review③ 進階閱讀', titleEn: 'Review: Reading', theme: '挑戰場・複習關', themeEmoji: '🔄',
+  id: 15, slug: 'l11-m15-review-reading', level: 11, title: 'Review③ 進階閱讀', titleEn: 'Review: Advanced Reading', theme: '挑戰場・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：長篇故事理解 ＋ 進階連接詞 ＋ 被動語態 ＋ 中翻英',
   goal: { zh: '闖過進階閱讀的關卡。', char: 'ruby' },
   story: [
@@ -14799,7 +14799,7 @@ const L11_M15: Mission = {
 };
 
 const L11_M16: Mission = {
-  id: 16, slug: 'l11-m16-opinion-writing', level: 11, title: '觀點寫作', titleEn: 'Opinion Writing', theme: '挑戰場・我的觀點', themeEmoji: '💭',
+  id: 16, slug: 'l11-m16-opinion-writing', level: 11, title: '觀點寫作', titleEn: 'Opinion Writing (Advanced)', theme: '挑戰場・我的觀點', themeEmoji: '💭',
   focus: '觀點寫作：My opinion is… because… + 例子（觀點段落結構）＋ 中翻英',
   goal: { zh: '用 My opinion is… because… 寫出你的觀點。', char: 'finn' },
   story: [
@@ -15764,7 +15764,7 @@ const L12_M9: Mission = {
 };
 
 const L12_M10: Mission = {
-  id: 10, slug: 'l12-m10-review-reading', level: 12, title: 'Review② 閱讀', titleEn: 'Review: Reading', theme: '勝利峰・複習關', themeEmoji: '🔄',
+  id: 10, slug: 'l12-m10-review-reading', level: 12, title: 'Review② 閱讀', titleEn: 'Review: Reading (Final)', theme: '勝利峰・複習關', themeEmoji: '🔄',
   focus: '螺旋複習②：故事/知識文章/詩/推論理解 ＋ 中翻英',
   goal: { zh: '闖過閱讀深化的關卡。', char: 'ruby' },
   story: [
@@ -16110,7 +16110,7 @@ const L12_M14: Mission = {
 };
 
 const L12_M15: Mission = {
-  id: 15, slug: 'l12-m15-review-writing', level: 12, title: 'Review③ 寫作（綜合）', titleEn: 'Review: Writing', theme: '勝利峰・複習關', themeEmoji: '🔄',
+  id: 15, slug: 'l12-m15-review-writing', level: 12, title: 'Review③ 寫作（綜合）', titleEn: 'Review: Writing (Integrated)', theme: '勝利峰・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：創意故事 ＋ 說明文 ＋ email ＋ 專題寫作 ＋ 中翻英',
   goal: { zh: '闖過各種寫作的關卡。', char: 'ruby' },
   story: [

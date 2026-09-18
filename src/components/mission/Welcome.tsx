@@ -224,7 +224,7 @@ export default function Welcome({ onComplete }: Props) {
               <button
                 key={char.name}
                 onClick={() => handleCharacterClick(i)}
-                className={`transition-all hover:scale-125 active:scale-95 ${
+                className={`cursor-pointer transition-all hover:scale-125 active:scale-95 ${
                   charactersClicked.has(i) ? 'opacity-100 scale-110' : 'opacity-60 grayscale'
                 }`}
               >
@@ -274,7 +274,7 @@ export default function Welcome({ onComplete }: Props) {
               <button
                 key={step.name}
                 onClick={() => handleStepClick(i)}
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center border-2 transition-all hover:scale-110 active:scale-95 ${
+                className={`w-16 h-16 rounded-2xl flex items-center justify-center border-2 cursor-pointer transition-all hover:scale-110 active:scale-95 ${
                   stepsClicked.has(i)
                     ? 'bg-green-100 border-green-400 scale-105'
                     : 'bg-gray-100 border-gray-200'
@@ -315,7 +315,7 @@ export default function Welcome({ onComplete }: Props) {
                 key={i}
                 onClick={handleStarClick}
                 disabled={starsCollected >= 3}
-                className={`text-6xl transition-all ${
+                className={`text-6xl transition-all cursor-pointer disabled:cursor-default ${
                   i <= starsCollected
                     ? 'opacity-100 scale-110'
                     : 'opacity-30 hover:opacity-60 hover:scale-110 active:scale-125'

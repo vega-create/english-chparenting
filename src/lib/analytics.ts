@@ -199,8 +199,9 @@ export async function deleteMyResearchData(): Promise<'ok' | 'not-logged-in' | '
     if (error) return 'error';
     // 撤回也要留紀錄（consented=false），跟 setConsent 走同一張表
     try { localStorage.removeItem(CONSENT_KEY); } catch { /* ignore */ }
-    await recordConsent(uid, false);
-    return 'ok';
+    // 撤回紀錄沒寫成功也算失敗：資料已刪，但審計軌跡缺一筆，讓 UI 顯示錯誤、使用者可再按一次
+    const recorded = await recordConsent(uid, false);
+    return recorded ? 'ok' : 'error';
   } catch {
     return 'error';
   }

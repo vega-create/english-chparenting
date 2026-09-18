@@ -21,6 +21,12 @@ const WORLD_ISLAND: Record<number, { zh: string; en: string; emoji: string }> = 
   6: { zh: "挑戰場", en: "Challenge Arena", emoji: "🏟️" },
 };
 
+// 世界 1（彩虹谷）沒有 NODES：字母島有自己的關卡頁，這裡只放兩座島的入口
+const WORLD1_ISLANDS = [
+  { zh: "第一座島：字母島", emoji: "🌈", href: "/adventure-map/rainbow-valley",        cls: "from-pink-400 to-rose-500" },
+  { zh: "第二座島：聲音島", emoji: "🎵", href: "/adventure-map/island/sound-island", cls: "from-sky-400 to-blue-500" },
+];
+
 // 各世界第二座島（完成第一座島後前往）
 const SECOND_ISLAND: Record<number, { zh: string; slug: string; emoji: string }> = {
   2: { zh: "學校路", slug: "school-road",      emoji: "🏫" },
@@ -84,26 +90,40 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
         </div>
       )}
 
-      {/* 地圖本身已印有名字＋關卡踏腳石，只在底部放一張不擋圖的狀態小卡 */}
-      <div className="min-h-screen flex flex-col items-center justify-end px-4 pb-8 text-center">
+      {/* 地圖本身已印有名字＋關卡踏腳石，只在底部放一張不擋圖的狀態小卡。
+          容器貼底、z-20 且不吃點擊：手機上 y≈90% 的節點（例如世界 2 的第 1、20 關）會跟它重疊，
+          節點層 z-30 在上面、照樣看得到也點得到；小卡與按鈕自己再開 pointer-events。 */}
+      <div className="absolute inset-x-0 bottom-0 z-20 pointer-events-none flex flex-col items-center px-4 pb-3 sm:pb-8 text-center">
         {unlocked ? (
-          <p className="bg-white/85 backdrop-blur rounded-full px-4 py-1 shadow text-[11px] sm:text-xs font-bold text-purple-700">
-            💡 點 <span className="font-black">數字</span> 開始闖關 · ⭐ 可複習 · 🔒 先完成前一關 · 本世界 {done}/{total}
+          <p className="pointer-events-auto bg-white/85 backdrop-blur rounded-full px-4 py-1 shadow text-[11px] sm:text-xs font-bold text-purple-700">
+            {world.id === 1
+              ? <>💡 點下面的島開始闖關 · 本世界 {done}/{total}</>
+              : <>💡 點 <span className="font-black">數字</span> 開始闖關 · ⭐ 可複習 · 🔒 先完成前一關 · 本世界 {done}/{total}</>}
           </p>
         ) : (
-          <div className="bg-black/55 backdrop-blur rounded-2xl px-6 py-3.5 shadow-xl max-w-xs border border-white/30">
+          <div className="pointer-events-auto bg-black/55 backdrop-blur rounded-2xl px-6 py-3.5 shadow-xl max-w-xs border border-white/30">
             <p className="font-black text-white text-base mb-0.5">🔒 尚未解鎖</p>
             <p className="text-xs text-white/85">先完成前一個世界，才能來這裡冒險！</p>
           </div>
         )}
+        {world.id === 1 && (
+          <div className="pointer-events-auto mt-3 flex flex-wrap justify-center gap-2.5">
+            {WORLD1_ISLANDS.map(isl => (
+              <Link key={isl.href} href={isl.href} onClick={() => playClick()}
+                className={`bg-gradient-to-r ${isl.cls} text-white font-black text-sm sm:text-base px-6 py-3 rounded-full shadow-xl border-2 border-white/70 no-underline active:scale-95 hover:scale-105 transition`}>
+                {isl.emoji} {isl.zh}
+              </Link>
+            ))}
+          </div>
+        )}
         {SECOND_ISLAND[world.id] && (
           <Link href={`/adventure-map/island/${SECOND_ISLAND[world.id].slug}`} onClick={() => playClick()}
-            className="mt-2.5 bg-sky-500/90 backdrop-blur text-white font-black text-sm px-5 py-2 rounded-full shadow-xl no-underline active:scale-95 transition">
+            className="pointer-events-auto mt-2.5 bg-sky-500/90 backdrop-blur text-white font-black text-sm px-5 py-2 rounded-full shadow-xl no-underline active:scale-95 transition">
             ⛵ 第二座島：{SECOND_ISLAND[world.id].emoji} {SECOND_ISLAND[world.id].zh}
           </Link>
         )}
         {comingSoon && (
-          <span className="mt-2 bg-white/60 backdrop-blur text-gray-500 font-bold text-[11px] px-3 py-1 rounded-full shadow">
+          <span className="pointer-events-auto mt-2 bg-white/60 backdrop-blur text-gray-500 font-bold text-[11px] px-3 py-1 rounded-full shadow">
             🔜 {comingSoon.name} · 即將推出
           </span>
         )}

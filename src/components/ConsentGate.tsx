@@ -16,6 +16,10 @@ const ASKED_KEY = 'ae_consent_asked';
  *
  * 只問一次。不管選同意或不同意都記下來，不再打擾。
  * 之後想改隨時到家長中心。
+ *
+ * 雲端寫入失敗的處理：
+ *   同意 → 本機已記，登入時 syncConsentToCloud 會補寫雲端，所以照樣標記「問過」。
+ *   不同意 → 本機沒有東西可補，就不標記「問過」，下次登入再問一次、再送一次。
  */
 export default function ConsentGate() {
   const { user } = useAuth();
@@ -29,10 +33,11 @@ export default function ConsentGate() {
     setShow(true);
   }, [user]);
 
-  function answer(agree: boolean) {
-    try { localStorage.setItem(ASKED_KEY, '1'); } catch {}
-    void setConsent(agree);
+  async function answer(agree: boolean) {
     setShow(false);
+    if (agree) { try { localStorage.setItem(ASKED_KEY, '1'); } catch {} }
+    const cloudOk = await setConsent(agree);
+    if (!agree && cloudOk) { try { localStorage.setItem(ASKED_KEY, '1'); } catch {} }
   }
 
   if (!show) return null;

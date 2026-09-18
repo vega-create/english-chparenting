@@ -253,8 +253,9 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
     >
       <HomeButton />
       {/* 頂部工具列 */}
-      <div className="fixed top-3 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 px-3">
-        <div className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs sm:text-sm font-black shadow-xl flex items-center gap-1.5">
+      {/* 手機：退到第二排（第一排是返回／回首頁），每顆藥丸不換行、寬度不夠就整顆換到下一排 */}
+      <div className="fixed top-14 sm:top-3 left-1/2 -translate-x-1/2 z-40 flex flex-wrap items-center justify-center gap-2 px-3 w-max max-w-[100vw]">
+        <div className="whitespace-nowrap bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs sm:text-sm font-black shadow-xl flex items-center gap-1.5">
           <span>🌈</span>
           <span className="text-purple-700">彩虹谷</span>
           <span className="text-gray-400">·</span>
@@ -262,14 +263,14 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
         </div>
         <button
           onClick={() => { playClick(); setShowCharSwitcher(true); }}
-          className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-purple-200 text-purple-700 active:scale-95 transition flex items-center gap-1"
+          className="whitespace-nowrap bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-purple-200 text-purple-700 active:scale-95 transition flex items-center gap-1"
         >
           🧒 角色
         </button>
         <Link
           href="/adventure-map/island/sound-island"
           onClick={() => playClick()}
-          className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-sky-200 text-sky-700 active:scale-95 transition no-underline"
+          className="whitespace-nowrap bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-sky-200 text-sky-700 active:scale-95 transition no-underline"
         >
           ⛵ 聲音島
         </Link>
