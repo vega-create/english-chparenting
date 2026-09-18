@@ -13,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ level: st
   return {
     title: `L${course.level} ${course.island} ${course.islandEn} - ${course.description}`,
     description: course.longDescription,
+    alternates: { canonical: `/courses/${course.slug}` },
   };
 }
 

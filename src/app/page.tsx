@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import LayeredHome from "./home/page";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 // 正式首頁 / = 飛船分層版（與 /home 同一個元件，單一來源）
 // 套用與 home layout 相同的覆寫，隱藏全站預設 Header/Footer，視覺與 /home 一致

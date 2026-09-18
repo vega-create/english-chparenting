@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Mission ${mission.id}: ${mission.titleEn} - ${course.islandEn}`,
     description: `${mission.title}。學習單字：${mission.words.map(w => w.en).join(', ')}。互動式五步驟教學。`,
+    alternates: { canonical: `/courses/${course.slug}/mission/${mission.id}` },
   };
 }
 

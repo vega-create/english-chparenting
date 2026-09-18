@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "冒險規則 - 如何使用 Adventure English 冒險英語",
+  alternates: { canonical: "/guide" },
   description: "Adventure English 冒險英語互動引導：認識學習流程、五位夥伴、獎勵系統，5 步驟帶你開始英語冒險。",
 };
 

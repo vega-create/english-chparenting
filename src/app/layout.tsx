@@ -8,16 +8,21 @@ import AudioRouteGuard from "@/components/AudioRouteGuard";
 import AuthProvider from "@/components/AuthProvider";
 import ConsentGate from "@/components/ConsentGate";
 
+// 中文字型（Noto Sans TC / Zen Maru Gothic）在 Google Fonts 上被切成一百多個 unicode-range 小檔，
+// next/font 預設會把每一個都 <link rel=preload>，首頁光字型就預載 241 個檔。
+// preload: false → 只留 @font-face，瀏覽器依頁面實際用到的字才下載對應切片。
 const noto = Noto_Sans_TC({
   variable: "--font-noto",
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
+  preload: false,
 });
 
 const zenMaru = Zen_Maru_Gothic({
   variable: "--font-zen-maru",
   subsets: ["latin"],
   weight: ["500", "700", "900"],
+  preload: false,
 });
 
 // 英文童趣圓體：電子書內文用（Zen Maru 的拉丁字偏一般，小朋友看不出差別）
@@ -51,10 +56,9 @@ export const metadata: Metadata = {
     title: "冒險英語",
     statusBarStyle: "default",
   },
+  // canonical 由各 route 自己宣告（相對路徑會依 metadataBase 補全）；
+  // 這裡不能寫死 "/"，否則全站 279 頁的 canonical 都會指向首頁。
   metadataBase: new URL("https://english.chparenting.com"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     siteName: "Adventure English 冒險英語",
     locale: "zh_TW",

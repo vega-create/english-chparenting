@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import IslandClient from "./IslandClient";
 
 export const ISLANDS = [
@@ -11,6 +12,17 @@ export const ISLANDS = [
 
 export function generateStaticParams() {
   return ISLANDS.map(i => ({ slug: i.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const island = ISLANDS.find(i => i.slug === slug);
+  if (!island) return { title: "找不到這座島" };
+  return {
+    title: `${island.zh} ${island.en} - ${island.world}第二座島 20 關地圖`,
+    description: `${island.world}的第二座島「${island.zh}」共 20 關：完成前一關解鎖下一關，⭐ 已完成的關卡可以隨時回來複習。`,
+    alternates: { canonical: `/adventure-map/island/${island.slug}` },
+  };
 }
 
 export default async function IslandPage({ params }: { params: Promise<{ slug: string }> }) {

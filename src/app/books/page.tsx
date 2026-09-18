@@ -5,6 +5,7 @@ import PageIntro from "@/components/PageIntro";
 
 export const metadata: Metadata = {
   title: "推薦書單 - 兒童英文繪本與學習書籍推薦",
+  alternates: { canonical: "/books" },
   description: "精選兒童英文繪本、橋樑書、章節書推薦，按年齡分類。附 Amazon 和博客來購買連結，搭配 Adventure English 學習效果加倍。",
 };
 

@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { RESEARCH_CONTACT, RESEARCH_PI, RETENTION_YEARS, SITE_NAME } from '@/lib/research';
 
 export const metadata: Metadata = {
-  title: '隱私權與資料使用說明 | 冒險英語',
+  title: '隱私權與資料使用說明',
+  alternates: { canonical: '/privacy' },
   description: '冒險英語會收集什麼、不收集什麼、廣告與 Cookie 怎麼處理，以及學習資料用於學術研究的說明。',
 };
 
