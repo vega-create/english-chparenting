@@ -3,9 +3,14 @@ import { useState, useEffect, useRef } from "react";
 import { playVega, stopVega } from '@/lib/vega-audio';
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { playClick, playStar, playSuccess, playSwoosh } from "@/lib/sfx";
+import { playClick, playStar, playSuccess } from "@/lib/sfx";
 import { wordSlug } from "@/lib/audio";
 import HomeButton from "@/components/HomeButton";
+import { useProgressState } from "@/components/IslandNodes";
+import { missionStatus, nextMissionId, islandDoneCount, isIslandCleared, type MissionStatus } from "@/lib/progress";
+
+// 這張地圖就是字母島（L1）的 20 關；進度全部從 ae_mission_progress_v1 推導，不另外存鍵
+const COURSE_SLUG = "l1-letter-island";
 
 // 單字小圖：有去背 PNG 就用圖，沒有用 emoji（emoji 從單字推不到，這裡只放圖或字）
 function WordImg({ en }: { en: string }) {
@@ -130,8 +135,7 @@ const CHARACTERS = [
   // 之後加新角色：{ key: "boy1", name: "小勇者", src: "/images/characters/boy1.webp" },
 ];
 
-type Status = "completed" | "current" | "locked";
-const LS_KEY = "rainbowValleyProgress";
+type Status = MissionStatus;
 const LS_CHAR = "rainbowValleyCharacter";
 
 interface Props {
@@ -139,7 +143,11 @@ interface Props {
 }
 
 export default function RainbowValleyMap({ onAllComplete }: Props) {
-  const [currentId, setCurrentId] = useState(1);
+  const progress = useProgressState();
+  const doneCount = islandDoneCount(progress, COURSE_SLUG);
+  const allDone = isIslandCleared(progress, COURSE_SLUG);
+  // 「目前關卡」＝已完成的最大關 + 1（人物站的位置、路徑亮到哪）
+  const currentId = allDone ? LEVELS_BASE.length + 1 : nextMissionId(progress, COURSE_SLUG);
   const [openLevel, setOpenLevel] = useState<LevelDef | null>(null);
 
   // 彈窗打開播 Coco 介紹語音；關閉即停（目標用戶識字量少，要用聽的）
@@ -199,14 +207,9 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
     y: mapCfg.positions[i].y,
   }));
 
-  // 讀 localStorage
+  // 讀 localStorage（角色與 debug 旗標；關卡進度不在這裡，見 useProgressState）
   useEffect(() => {
     try {
-      const saved = localStorage.getItem(LS_KEY);
-      if (saved) {
-        const n = parseInt(saved, 10);
-        if (!isNaN(n) && n >= 1 && n <= LEVELS.length + 1) setCurrentId(n);
-      }
       const ch = localStorage.getItem(LS_CHAR);
       if (ch && CHARACTERS.some(c => c.key === ch)) setCharacterKey(ch);
       // 選角頁選的角色（elly/sky/coco/leo/vera）→ 走關卡的主角
@@ -220,46 +223,26 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
 
   useEffect(() => {
     if (!hydrated) return;
-    try { localStorage.setItem(LS_KEY, String(currentId)); } catch {}
-  }, [currentId, hydrated]);
-
-  useEffect(() => {
-    if (!hydrated) return;
     try { localStorage.setItem(LS_CHAR, characterKey); } catch {}
   }, [characterKey, hydrated]);
 
   function statusOf(id: number): Status {
-    if (id < currentId) return "completed";
-    if (id === currentId) return "current";
-    return "locked";
+    return missionStatus(progress, COURSE_SLUG, id);
   }
+  const starsOf = (id: number) => progress.completed[`${COURSE_SLUG}/${id}`] || 0;
 
-  function completeLevel() {
-    if (!openLevel) return;
-    if (openLevel.id !== currentId) return;
+  // 20 關全破：撒花一次
+  const celebrated = useRef(false);
+  useEffect(() => {
+    if (!hydrated || !allDone || celebrated.current) return;
+    celebrated.current = true;
     playSuccess();
     setShowConfetti(true);
     setTimeout(() => setShowConfetti(false), 1500);
-
-    const next = currentId + 1;
-    if (next > LEVELS.length) {
-      setCurrentId(LEVELS.length + 1);
-      setOpenLevel(null);
-      onAllComplete?.();
-    } else {
-      setCurrentId(next);
-      setOpenLevel(null);
-    }
-  }
-
-  function resetProgress() {
-    playSwoosh();
-    setCurrentId(1);
-    setOpenLevel(null);
-  }
+    onAllComplete?.();
+  }, [allDone, hydrated, onAllComplete]);
 
   const playerLevel = LEVELS.find(l => l.id === Math.min(currentId, LEVELS.length))!;
-  const allDone = currentId > LEVELS.length;
   const currentChar = CHARACTERS.find(c => c.key === characterKey) || CHARACTERS[0];
 
   return (
@@ -275,7 +258,7 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
           <span>🌈</span>
           <span className="text-purple-700">彩虹谷</span>
           <span className="text-gray-400">·</span>
-          <span className="text-pink-600">{Math.min(currentId - 1, LEVELS.length)}/{LEVELS.length}</span>
+          <span className="text-pink-600">{doneCount}/{LEVELS.length}</span>
         </div>
         <button
           onClick={() => { playClick(); setShowCharSwitcher(true); }}
@@ -290,12 +273,6 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
         >
           ⛵ 聲音島
         </Link>
-        <button
-          onClick={resetProgress}
-          className="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border-2 border-red-200 text-red-600 active:scale-95 transition"
-        >
-          🔄
-        </button>
       </div>
 
 
@@ -725,9 +702,11 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
               >
                 {/* 永遠顯示關卡編號 */}
                 {lvl.id}
-                {/* 已完成右上角小星星 */}
+                {/* 已完成：上方顯示拿到幾顆星 */}
                 {status === "completed" && (
-                  <span className="absolute -top-1.5 -right-1.5 text-xs sm:text-sm md:text-base drop-shadow-md">⭐</span>
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[9px] sm:text-[11px] md:text-xs leading-none whitespace-nowrap drop-shadow-md">
+                    {"⭐".repeat(Math.max(1, Math.min(3, starsOf(lvl.id))))}
+                  </span>
                 )}
                 {/* 鎖住右上角小鎖頭 */}
                 {status === "locked" && (
@@ -794,13 +773,14 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
             >
               <div className="text-6xl sm:text-7xl mb-2">🏆🌈</div>
               <p className="text-xl sm:text-2xl font-black text-purple-700">恭喜征服彩虹谷！</p>
-              <p className="text-sm text-gray-600 mt-1">你已經完成所有 12 個關卡！</p>
-              <button
-                onClick={resetProgress}
-                className="mt-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black px-6 py-2.5 rounded-full text-sm shadow-lg active:scale-95"
+              <p className="text-sm text-gray-600 mt-1">字母島 20 關全部完成！⭐ 可以隨時回來複習</p>
+              <Link
+                href="/adventure-map/island/sound-island"
+                onClick={() => playStar()}
+                className="mt-4 inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black px-6 py-2.5 rounded-full text-sm shadow-lg active:scale-95 no-underline"
               >
-                🔄 再玩一次
-              </button>
+                ⛵ 前往聲音島 →
+              </Link>
             </motion.div>
           </motion.div>
         )}
@@ -826,14 +806,14 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
               transition={{ type: "spring", stiffness: 200, damping: 22 }}
               onClick={e => e.stopPropagation()}
             >
-              {/* 木牌：彩虹谷 / 字母島 / N/12 */}
+              {/* 木牌：彩虹谷 / 字母島 / 第 N 關 */}
               <div
                 className="relative mx-auto w-full max-w-[360px] h-[175px] flex flex-col items-center justify-center text-center"
                 style={{ backgroundImage: "url(/images/wood-sign.webp)", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}
               >
                 <p className="text-amber-50 text-base font-bold mb-0.5" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>✦ 彩虹谷 ✦</p>
                 <h2 className="text-5xl cute-text leading-none">字母島</h2>
-                <p className="text-amber-50 text-lg font-black mt-2" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>{openLevel.id} / 12</p>
+                <p className="text-amber-50 text-lg font-black mt-2" style={{ textShadow: "0 1px 2px rgba(90,45,10,.8)" }}>第 {openLevel.id} 關 · 共 {LEVELS.length} 關</p>
               </div>
 
               {/* Coco（大，左）+ 對話泡泡（右下） */}
@@ -847,11 +827,11 @@ export default function RainbowValleyMap({ onAllComplete }: Props) {
               {/* 按鈕 */}
               <div className="-mt-2 px-4 space-y-2">
                 {statusOf(openLevel.id) === "locked" ? (
-                  <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-3 bg-gray-300 text-gray-600 font-black rounded-full active:scale-95">🔒 先完成前一關</button>
+                  <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-3 bg-gray-300 text-gray-600 font-black rounded-full active:scale-95">🔒 先完成第 {openLevel.id - 1} 關</button>
                 ) : statusOf(openLevel.id) === "completed" ? (
-                  <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-black rounded-full shadow-lg active:scale-95">⭐ 已完成 · 之後可重新挑戰</button>
+                  <Link href={`/courses/${COURSE_SLUG}/mission/${openLevel.id}`} onClick={() => playStar()} className="block w-full py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-black rounded-full shadow-lg active:scale-95 text-center no-underline">{"⭐".repeat(Math.max(1, Math.min(3, starsOf(openLevel.id))))} 已完成 · 再挑戰一次</Link>
                 ) : (
-                  <Link href={`/courses/l1-letter-island/mission/${openLevel.id}`} onClick={() => playStar()} className="block w-full py-4 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg active:scale-95 text-xl text-center no-underline">Let&apos;s Go! 開始冒險 ⭐</Link>
+                  <Link href={`/courses/${COURSE_SLUG}/mission/${openLevel.id}`} onClick={() => playStar()} className="block w-full py-4 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-black rounded-full shadow-lg active:scale-95 text-xl text-center no-underline">Let&apos;s Go! 開始冒險 ⭐</Link>
                 )}
                 <button onClick={() => { playClick(); setOpenLevel(null); }} className="w-full py-1.5 text-sm text-white/80">關閉</button>
               </div>

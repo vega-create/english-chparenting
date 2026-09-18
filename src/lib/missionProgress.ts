@@ -1,7 +1,7 @@
 // 逐課學習進度（星數/寶石/單字圖鑑/徽章）。目前存 localStorage；
 // 之後接「登入」只要換底層 load/save 兩個函式，頁面與其他邏輯都不用動。
 // 設計：只存「已完成的課 + 最佳星數 + 連續天數」，其餘全部由此推導，避免重複計分。
-// 註：與既有的 progress.ts（世界解鎖 aeLessonProgress）分開，互不影響。
+// 註：世界／島嶼／關卡的解鎖（progress.ts）全部從這份進度推導，全站只有這一套進度。
 import { MISSIONS } from '@/data/missions';
 import { COURSES } from '@/data/courses';
 

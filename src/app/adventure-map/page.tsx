@@ -10,9 +10,10 @@ import {
   isWorldSkipped,
   getWorldCompletion,
   getCurrentWorldId,
-  resetProgress,
   type WorldDef,
 } from "@/lib/progress";
+import { resetMissionProgress } from "@/lib/missionProgress";
+import { useProgressState } from "@/components/IslandNodes";
 import { playClick, playStar, playSwoosh } from "@/lib/sfx";
 import MapDialogue from "@/components/MapDialogue";
 import HomeButton from "@/components/HomeButton";
@@ -32,23 +33,15 @@ const HOTSPOTS = [
 export default function AdventureMapPage() {
   useEffect(() => { playPageIntro('adventure-map'); }, []);
 
-  const [tick, setTick] = useState(0);                            // 重新渲染用
+  const [tick, setTick] = useState(0);                            // 守島戰後重新渲染用
   const [showLocked, setShowLocked] = useState<WorldDef | null>(null);
   const [showDebug, setShowDebug] = useState(false);
   const [guardOpen, setGuardOpen] = useState(false);
   const [invasion, setInvasion] = useState<GuardState | null>(null);
-  const [currentWorld, setCurrentWorld] = useState(1);
-  // 依 localStorage 重新渲染
-  useEffect(() => {
-    const refresh = () => { setTick(t => t + 1); setCurrentWorld(getCurrentWorldId()); setInvasion(getTodayInvasion()); };
-    refresh();
-    window.addEventListener("ae-progress-change", refresh);
-    window.addEventListener("storage", refresh);
-    return () => {
-      window.removeEventListener("ae-progress-change", refresh);
-      window.removeEventListener("storage", refresh);
-    };
-  }, []);
+  // 世界解鎖／完成度全部從課程進度（ae_mission_progress_v1）推導；進度變動自動重繪
+  const progress = useProgressState();
+  const currentWorld = getCurrentWorldId(progress);
+  useEffect(() => { setInvasion(getTodayInvasion()); }, [tick, progress]);
 
   // 從 URL 開啟 debug 模式
   useEffect(() => {
@@ -74,7 +67,7 @@ export default function AdventureMapPage() {
           <span className="text-purple-700">World {currentWorld}/{WORLDS.length}</span>
         </div>
         {showDebug && (
-          <button onClick={() => { resetProgress(); playSwoosh(); }} className="bg-red-100 px-3 py-1.5 rounded-full text-xs font-black text-red-700 shadow">
+          <button onClick={() => { if (confirm("重置這個孩子的全部課程進度？（除錯用，無法復原）")) { resetMissionProgress(); playSwoosh(); } }} className="bg-red-100 px-3 py-1.5 rounded-full text-xs font-black text-red-700 shadow">
             🔄 重置
           </button>
         )}
@@ -231,13 +224,13 @@ export default function AdventureMapPage() {
           {/* 路徑閃光：在世界與世界之間，從每個解鎖世界往下一個飄過去（中心點計算）*/}
           {HOTSPOTS.slice(0, -1).map((spot, i) => {
             const next = HOTSPOTS[i + 1];
-            const fromUnlocked = isWorldUnlocked(spot.id);
+            const fromUnlocked = isWorldUnlocked(spot.id, progress);
             if (!fromUnlocked) return null;
             const x1 = spot.x + spot.w / 2;
             const y1 = spot.y + spot.h / 2;
             const x2 = next.x + next.w / 2;
             const y2 = next.y + next.h / 2;
-            const toUnlocked = isWorldUnlocked(next.id);
+            const toUnlocked = isWorldUnlocked(next.id, progress);
             return [0, 0.3, 0.6].map((offset) => (
               <motion.div
                 key={`am-pathspark-${spot.id}-${offset}`}
@@ -273,8 +266,8 @@ export default function AdventureMapPage() {
           {/* 6 個世界 hotspot */}
           {HOTSPOTS.map((spot) => {
             const world = WORLDS.find(w => w.id === spot.id)!;
-            const unlocked = isWorldUnlocked(world.id);
-            const { done, total, isComplete } = getWorldCompletion(world.id);
+            const unlocked = isWorldUnlocked(world.id, progress);
+            const { done, total, isComplete } = getWorldCompletion(world.id, progress);
 
             return (
               <div
@@ -374,7 +367,7 @@ export default function AdventureMapPage() {
                 {/* 進度小條（已解鎖才顯示）；起點通行證跳過的世界標「已跳過」 */}
                 {unlocked && total > 0 && (
                   <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur px-2 py-0.5 rounded-full text-[10px] md:text-xs font-black shadow pointer-events-none whitespace-nowrap">
-                    {isWorldSkipped(world.id) ? `已跳過 ${done}/${total}` : `${done}/${total}`}
+                    {isWorldSkipped(world.id, progress) ? `已跳過 ${done}/${total}` : `${done}/${total}`}
                   </div>
                 )}
 
@@ -432,7 +425,7 @@ export default function AdventureMapPage() {
                 {/* 上一關進度 */}
                 {showLocked.id > 1 && (() => {
                   const prev = WORLDS[showLocked.id - 2];
-                  const prevProg = getWorldCompletion(prev.id);
+                  const prevProg = getWorldCompletion(prev.id, progress);
                   return (
                     <div className="bg-purple-50 border-2 border-purple-200 rounded-2xl p-3 mb-4">
                       <p className="text-xs text-purple-700 font-bold mb-2">先完成 → World {prev.id} {prev.name}</p>

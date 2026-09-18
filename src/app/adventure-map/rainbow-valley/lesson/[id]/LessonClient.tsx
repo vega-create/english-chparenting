@@ -438,10 +438,7 @@ function CompleteNode({ stars, goalStars }: { stars: number; goalStars: number }
   useEffect(() => {
     playSuccess();
     setTimeout(() => playPraise("low"), 500);
-    try {
-      const cur = parseInt(localStorage.getItem("rainbowValleyProgress") || "1", 10);
-      if (cur < 2) localStorage.setItem("rainbowValleyProgress", "2");
-    } catch {}
+    // 地圖進度統一由課程完成（ae_mission_progress_v1）推導，這裡不再寫舊的 rainbowValleyProgress
   }, []);
 
   return (

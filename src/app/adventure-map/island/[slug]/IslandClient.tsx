@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { playClick } from "@/lib/sfx";
 import HomeButton from "@/components/HomeButton";
+import IslandNodes, { useProgressState } from "@/components/IslandNodes";
+import { islandDoneCount, isIslandUnlocked } from "@/lib/progress";
 
 interface Island {
   slug: string; zh: string; en: string; emoji: string; world: string; backHref: string;
@@ -25,6 +27,10 @@ const NODES: Record<string, { x: number; y: number }[]> = {
 };
 
 export default function IslandClient({ island }: { island: Island }) {
+  const progress = useProgressState();
+  const courseSlug = ISLAND_COURSE[island.slug];
+  const done = courseSlug ? islandDoneCount(progress, courseSlug) : 0;
+  const open = courseSlug ? isIslandUnlocked(progress, courseSlug) : false;
   return (
     <div className="relative min-h-screen overflow-hidden bg-cover bg-center" style={{
       backgroundImage: `linear-gradient(rgba(50,35,100,0.15), rgba(50,35,100,0.25)), url(/images/islands/${island.slug}.webp)`,
@@ -42,30 +48,22 @@ export default function IslandClient({ island }: { island: Island }) {
         </div>
       </div>
 
-      {/* 20 關節點 */}
-      {NODES[island.slug] && ISLAND_COURSE[island.slug] && (
-        <div className="absolute inset-0 z-30">
-          {NODES[island.slug].map((n, i) => (
-            <Link
-              key={i}
-              href={`/courses/${ISLAND_COURSE[island.slug]}/mission/${i + 1}`}
-              onClick={() => playClick()}
-              className="absolute flex items-center justify-center rounded-full font-black text-white no-underline shadow-xl border-[3px] border-white/90 bg-gradient-to-br from-purple-500 to-pink-500 hover:scale-110 active:scale-95 transition"
-              style={{
-                left: `${n.x}%`, top: `${n.y}%`, transform: "translate(-50%,-50%)",
-                width: "clamp(28px,3.4vw,54px)", height: "clamp(28px,3.4vw,54px)",
-                fontSize: "clamp(12px,1.5vw,22px)",
-              }}
-            >{i + 1}</Link>
-          ))}
-        </div>
+      {/* 20 關節點（鎖定規則與其他島共用：完成前一關才開下一關） */}
+      {NODES[island.slug] && courseSlug && (
+        <IslandNodes courseSlug={courseSlug} nodes={NODES[island.slug]} progress={progress} />
       )}
 
       {/* 提示 */}
       <div className="min-h-screen flex flex-col items-center justify-end px-4 pb-4 text-center">
-        <p className="bg-white/85 backdrop-blur rounded-full px-4 py-1 shadow text-[11px] sm:text-xs font-bold text-purple-700">
-          💡 點 <span className="font-black">數字</span> 開始闖關 · {island.zh}共 20 關
-        </p>
+        {open ? (
+          <p className="bg-white/85 backdrop-blur rounded-full px-4 py-1 shadow text-[11px] sm:text-xs font-bold text-purple-700">
+            💡 點 <span className="font-black">數字</span> 開始闖關 · ⭐ 可複習 · 🔒 先完成前一關 · {done}/20
+          </p>
+        ) : (
+          <p className="bg-black/55 backdrop-blur rounded-full px-4 py-1 shadow text-[11px] sm:text-xs font-bold text-white">
+            🔒 先把前一座島 20 關全部完成，就能登上{island.zh}！
+          </p>
+        )}
       </div>
     </div>
   );
