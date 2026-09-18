@@ -32,7 +32,7 @@ export default function IslandClient({ island }: { island: Island }) {
   const done = courseSlug ? islandDoneCount(progress, courseSlug) : 0;
   const open = courseSlug ? isIslandUnlocked(progress, courseSlug) : false;
   return (
-    <div className="relative min-h-screen overflow-hidden bg-cover bg-center" style={{
+    <div className="relative min-h-screen overflow-hidden bg-cover bg-center flex flex-col" style={{
       backgroundImage: `linear-gradient(rgba(50,35,100,0.15), rgba(50,35,100,0.25)), url(/images/islands/${island.slug}.webp)`,
     }}>
       <HomeButton />
@@ -48,13 +48,17 @@ export default function IslandClient({ island }: { island: Island }) {
         </div>
       </div>
 
-      {/* 20 關節點（鎖定規則與其他島共用：完成前一關才開下一關） */}
-      {NODES[island.slug] && courseSlug && (
-        <IslandNodes courseSlug={courseSlug} nodes={NODES[island.slug]} progress={progress} />
-      )}
+      {/* 20 關節點（鎖定規則與其他島共用：完成前一關才開下一關）。
+          跟世界頁同一套：上下兩塊的 flex column，節點層（flex-1）只鋪在底部提示列上方，
+          y≈88% 的節點不會壓到提示。 */}
+      <div className="relative flex-1 min-h-0">
+        {NODES[island.slug] && courseSlug && (
+          <IslandNodes courseSlug={courseSlug} nodes={NODES[island.slug]} progress={progress} />
+        )}
+      </div>
 
-      {/* 提示 */}
-      <div className="min-h-screen flex flex-col items-center justify-end px-4 pb-4 text-center">
+      {/* 提示：flex column 的下半塊，固定最小高度（手機兩行提示 58px、平板以上 42px），字多時自己長高 */}
+      <div className="relative shrink-0 z-20 min-h-[64px] sm:min-h-[56px] flex flex-col items-center justify-end px-4 pb-4 text-center">
         {open ? (
           <p className="bg-white/85 backdrop-blur rounded-full px-4 py-1 shadow text-[11px] sm:text-xs font-bold text-purple-700">
             💡 點 <span className="font-black">數字</span> 開始闖關 · ⭐ 可複習 · 🔒 先完成前一關 · {done}/20

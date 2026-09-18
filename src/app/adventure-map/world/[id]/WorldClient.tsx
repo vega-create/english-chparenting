@@ -65,9 +65,10 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
   const { done, total } = getWorldCompletion(world.id, progress);
   const unlocked = isWorldUnlocked(world.id, progress);
   const comingSoon = world.lessons.find(l => l.comingSoon);
+  const hasNodes = !!(NODES[world.id] && ISLAND_COURSE[world.id]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-cover bg-center" style={{
+    <div className="relative min-h-screen overflow-hidden bg-cover bg-center flex flex-col" style={{
       backgroundImage: `linear-gradient(rgba(50,35,100,0.25), rgba(50,35,100,0.4)), url(/images/worlds/${WORLD_IMG[world.id] || "world-friendly-town"}.webp)`,
     }}>
       <HomeButton />
@@ -75,10 +76,15 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
         ← 返回地圖
       </Link>
 
-      {/* 20 關節點（沿地圖路徑；鎖定規則與其他島共用） */}
-      {NODES[world.id] && ISLAND_COURSE[world.id] && (
-        <IslandNodes courseSlug={ISLAND_COURSE[world.id]} nodes={NODES[world.id]} progress={progress} />
-      )}
+      {/* 20 關節點（沿地圖路徑；鎖定規則與其他島共用）。
+          整頁是上下兩塊的 flex column：節點層（flex-1）只鋪在「底部狀態列上方」的區域，
+          % 座標對到這塊的高度，所以 y≈90% 的節點（世界 2 的第 1、20 關）永遠落在狀態列之上，
+          不會再互相重疊；背景圖仍鋪滿整頁。 */}
+      <div className="relative flex-1 min-h-0">
+        {hasNodes && (
+          <IslandNodes courseSlug={ISLAND_COURSE[world.id]} nodes={NODES[world.id]} progress={progress} />
+        )}
+      </div>
 
       {/* 島名浮動標示（此圖＝該世界第一座島的關卡地圖） */}
       {WORLD_ISLAND[world.id] && (
@@ -90,10 +96,12 @@ export default function WorldDetailPage({ params }: { params: Promise<{ id: stri
         </div>
       )}
 
-      {/* 地圖本身已印有名字＋關卡踏腳石，只在底部放一張不擋圖的狀態小卡。
-          容器貼底、z-20 且不吃點擊：手機上 y≈90% 的節點（例如世界 2 的第 1、20 關）會跟它重疊，
-          節點層 z-30 在上面、照樣看得到也點得到；小卡與按鈕自己再開 pointer-events。 */}
-      <div className="absolute inset-x-0 bottom-0 z-20 pointer-events-none flex flex-col items-center px-4 pb-3 sm:pb-8 text-center">
+      {/* 地圖本身已印有名字＋關卡踏腳石，只在底部放一列不擋圖的狀態列。
+          它是 flex column 的下半塊（shrink-0）：有節點的世界（2～6）給固定的最小高度
+          （提示＋第二座島按鈕＋即將推出；手機 375 寬量到 133px、平板以上 137px），
+          「尚未解鎖」那張卡比較高（手機 163px）時底欄自己長高、節點層跟著縮，仍然不重疊。
+          容器不吃點擊，小卡與按鈕自己再開 pointer-events。 */}
+      <div className={`relative shrink-0 z-20 pointer-events-none flex flex-col items-center justify-end px-4 pb-3 sm:pb-8 text-center ${hasNodes ? "min-h-[136px] sm:min-h-[144px]" : ""}`}>
         {unlocked ? (
           <p className="pointer-events-auto bg-white/85 backdrop-blur rounded-full px-4 py-1 shadow text-[11px] sm:text-xs font-bold text-purple-700">
             {world.id === 1

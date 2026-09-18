@@ -64,7 +64,7 @@ const POSTS_2026_03_09: BlogPost[] = [
 
 這篇文章用科學數據和實際教學經驗，幫你一次搞懂：差別在哪、先學哪個、怎麼搭配最有效。
 
-> 📌 **重點摘要：** Phonics（自然發音）適合 3-8 歲啟蒙，教孩子「看字讀音」的規則；KK 音標適合 10 歲以上精準標注發音。根據英國教育部 (2023) 大規模研究，Phonics 教學可將兒童閱讀能力提升 **28%**。最佳策略：先學 Phonics 打基礎，再用 KK 銜接國中。
+> 📌 **重點摘要：** Phonics（自然發音）適合 5-8 歲啟蒙，教孩子「看字讀音」的規則；KK 音標適合 10 歲以上精準標注發音。根據英國教育部 (2023) 大規模研究，Phonics 教學可將兒童閱讀能力提升 **28%**。最佳策略：先學 Phonics 打基礎，再用 KK 銜接國中。
 
 ## Phonics 自然發音到底是什麼？
 
@@ -107,7 +107,7 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
 
 你有沒有想過：為什麼美國小孩不學 KK 音標，英文還是說得很好？因為他們從 Phonics 建立了「看字讀音」的直覺，不需要透過第三方符號系統。
 
-> ⚠️ **注意：** 這不是說 KK 音標沒有用。它的價值在於**精準標注發音**，特別是對已經有一定英文基礎的學習者。但對 3-8 歲的幼兒來說，41 個抽象符號的認知負擔太大了。
+> ⚠️ **注意：** 這不是說 KK 音標沒有用。它的價值在於**精準標注發音**，特別是對已經有一定英文基礎的學習者。但對 5-8 歲、剛開始接觸英文的孩子來說，41 個抽象符號的認知負擔太大了。
 
 ## Phonics 和 KK 音標完整比較
 
@@ -115,7 +115,7 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
 
 | 比較項目 | Phonics 自然發音 | KK 音標 |
 |---------|----------------|---------|
-| 適合年齡 | 3-8 歲最佳 | 10 歲以上 |
+| 適合年齡 | 5-8 歲最佳 | 10 歲以上 |
 | 學習門檻 | 低，直覺式學習 | 高，需記 41 個符號 |
 | 對閱讀的幫助 | ⭐⭐⭐⭐⭐ 直接提升閱讀力 | ⭐⭐⭐ 間接幫助 |
 | 發音精準度 | ⭐⭐⭐⭐ 涵蓋 80% 常用字 | ⭐⭐⭐⭐⭐ 可標注所有音 |
@@ -138,7 +138,7 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
 
 ### 建議時程表
 
-- **3-5 歲**：用遊戲和歌曲接觸字母音（Phonics Stage 1-2）
+- **5-6 歲（剛開始接觸）**：用遊戲和歌曲接觸字母音（Phonics Stage 1-2）
 - **5-8 歲**：系統學習 Phonics（Stage 3-5），建立「看字讀音」的能力
 - **9-10 歲**：開始接觸 KK 音標，用來標注 Phonics 規則例外的字
 - **10-12 歲**：熟練 KK 音標，銜接國中英語課程
@@ -161,7 +161,7 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
 
 你不需要是英文老師也能幫孩子。以下是按年齡的具體建議：
 
-### 3-5 歲：玩中學
+### 5-6 歲（剛開始接觸）：玩中學
 
 - 每天唱 2-3 首 Phonics 歌曲（推薦 Super Simple Songs 的 Phonics Song）
 - 玩字母磁鐵，讓孩子邊玩邊認
@@ -188,9 +188,9 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
 
 如果孩子不打算在台灣體制內升學考試，只學 Phonics 完全足夠——全世界的英語母語者都只用 Phonics。但如果要考國中英文，KK 音標還是要補上，因為它在國中考試中約佔 **5-10%** 的分數。不過有 Phonics 基礎的孩子，學 KK 只需要 3-6 個月就能上手，比從零開始輕鬆很多。
 
-### 孩子 4 歲可以開始學 Phonics 嗎？
+### 孩子 5 歲可以開始學 Phonics 嗎？
 
-可以，而且是黃金時期。根據 National Early Literacy Panel (2024) 的研究，**4-5 歲是學習字母音的最佳窗口期**。但這個年紀的學習方式應該是遊戲化——唱歌、玩字母磁鐵、看 Phonics 動畫——而不是坐在桌前寫學習單。Adventure English 的 L1 字母島就是用遊戲和故事的方式教字母音，專門為這個年齡設計。
+可以，而且是黃金時期。根據 National Early Literacy Panel (2024) 的研究，**5-6 歲是學習字母音的最佳窗口期**（學齡前可以先多聽英文歌曲和故事）。但這個年紀的學習方式應該是遊戲化——唱歌、玩字母磁鐵、看 Phonics 動畫——而不是坐在桌前寫學習單。Adventure English 的 L1 字母島就是用遊戲和故事的方式教字母音，專門為這個年齡設計。
 
 ### Phonics 有例外字怎麼辦？
 
@@ -207,12 +207,12 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
 ## 重點整理
 
 - ✅ **先 Phonics 後 KK** 是目前最有科學根據的學習順序
-- ✅ Phonics 適合 3-8 歲打基礎，KK 適合 10 歲以上精準發音
+- ✅ Phonics 適合 5-8 歲打基礎，KK 適合 10 歲以上精準發音
 - ✅ Phonics 直接提升閱讀能力，KK 精準標示每一個音素
 - ✅ 兩套系統互補而非衝突——順序對了，學起來事半功倍
 - ✅ Adventure English L1-L4 用遊戲化方式打好 Phonics 基礎
 
-> 📌 **記住：** 不需要二選一。但如果你的孩子還小（3-8 歲），請先從 Phonics 開始。等 Phonics 內化之後，KK 音標自然水到渠成。
+> 📌 **記住：** 不需要二選一。但如果你的孩子還小（5-8 歲），請先從 Phonics 開始。等 Phonics 內化之後，KK 音標自然水到渠成。
 
 ## 參考資料
 
@@ -292,7 +292,7 @@ KK 音標的全名是 Kenyon and Knott Phonetic Alphabet，由美國語言學家
 
 按年齡分：
 
-- **3-5 歲：Super Simple Songs** — 節奏慢、畫面簡單、動作好跟。推薦從 "Baby Shark"、"Twinkle Twinkle Little Star"、"Head Shoulders Knees and Toes" 開始
+- **5-6 歲（剛開始接觸）：Super Simple Songs** — 節奏慢、畫面簡單、動作好跟。推薦從 "Baby Shark"、"Twinkle Twinkle Little Star"、"Head Shoulders Knees and Toes" 開始
 - **5-8 歲：Mother Goose Club** — 經典英文童謠，歌詞稍複雜但韻律感超強。推薦 "Humpty Dumpty"、"Jack and Jill"
 - **8-12 歲：Disney 原聲帶** — 孩子喜歡的電影主題曲，歌詞難度剛好在挑戰區。用字幕跟唱就是最棒的口說練習
 
@@ -409,7 +409,7 @@ AI 語音工具最大的優勢是什麼？**永遠不會嘲笑孩子、永遠不
     slug: "best-english-books-for-kids-2026",
     levels: [1, 2, 3],
     title: "2026 年最推薦的 10 本兒童英文繪本｜按年齡分類",
-    description: "精選 10 本適合 3-12 歲孩子的英文繪本，從簡單到進階，培養孩子的英文閱讀興趣和能力。附 Amazon 和博客來購買連結。",
+    description: "精選 10 本適合 5-12 歲孩子的英文繪本，從簡單到進階，培養孩子的英文閱讀興趣和能力。附 Amazon 和博客來購買連結。",
     date: "2026-03-08",
     category: "resources",
     tags: ["英文繪本", "兒童書籍", "閱讀推薦", "英文書單"],
@@ -417,9 +417,9 @@ AI 語音工具最大的優勢是什麼？**永遠不會嘲笑孩子、永遠不
     cover: { emoji: "📚", gradient: "from-orange-400 via-red-400 to-pink-500", subtitle: "10 本最推薦的兒童英文繪本" , image: "/images/blog/cover-books.webp" },
     content: `你是不是也在想：該買哪些英文繪本給孩子？市面上千千萬萬本，到底哪些值得投資？根據 Scholastic (2025) 的全球閱讀報告，**每天閱讀 20 分鐘英文書的孩子，語言能力在前 10% 的比例是不閱讀孩子的 5 倍**。但前提是——選對書。
 
-我花了三年時間，從上百本繪本中挑出這 10 本，按 3-5 歲、5-8 歲、8-12 歲三個階段分類。每本都是我家兩個孩子實測過、反覆要求再讀的經典。這篇文章除了書單，更會教你怎麼用這些書引導孩子從「聽故事」進化到「自己讀」。
+我花了三年時間，從上百本繪本中挑出這 10 本，按 5-6 歲（剛開始接觸）、5-8 歲、8-12 歲三個階段分類。每本都是我家兩個孩子實測過、反覆要求再讀的經典。這篇文章除了書單，更會教你怎麼用這些書引導孩子從「聽故事」進化到「自己讀」。
 
-> 📌 **重點摘要：** 英文繪本透過圖片搭配重複句型，讓孩子無痛建立英語語感。3-5 歲從 Eric Carle 系列入門培養好感度，5-8 歲用橋樑書訓練獨立閱讀，8-12 歲挑戰章節書累積詞彙。根據 Oxford University Press (2024) 研究，親子共讀繪本的孩子到小學一年級時，詞彙量比同齡高出 **40%**。
+> 📌 **重點摘要：** 英文繪本透過圖片搭配重複句型，讓孩子無痛建立英語語感。5-6 歲（剛開始接觸）從 Eric Carle 系列入門培養好感度，5-8 歲用橋樑書訓練獨立閱讀，8-12 歲挑戰章節書累積詞彙。根據 Oxford University Press (2024) 研究，親子共讀繪本的孩子到小學一年級時，詞彙量比同齡高出 **40%**。
 
 ## 為什麼英文繪本比課本更有效？
 
@@ -451,17 +451,17 @@ AI 語音工具最大的優勢是什麼？**永遠不會嘲笑孩子、永遠不
 
 ### 原則三：買可以「玩」的書
 
-特別是 3-5 歲，翻翻書、觸摸書、有聲書比純文字書有效得多。互動性越高，孩子投入時間越長。Cambridge Assessment (2024) 的研究發現，互動式童書讓孩子的閱讀時間延長了 **2.3 倍**。
+特別是 5-6 歲剛開始接觸的階段，翻翻書、觸摸書、有聲書比純文字書有效得多。互動性越高，孩子投入時間越長。Cambridge Assessment (2024) 的研究發現，互動式童書讓孩子的閱讀時間延長了 **2.3 倍**。
 
-## 3-5 歲入門推薦：建立英文好感度
+## 5-6 歲入門推薦（剛開始接觸）：建立英文好感度
 
-這個階段的目標不是讓孩子「學會」英文，而是讓他覺得「英文好好玩」。根據 NAEYC (2024) 的幼兒教育指引，3-5 歲選書原則是：圖大、字少、有韻律、能互動。
+這個階段的目標不是讓孩子「學會」英文，而是讓他覺得「英文好好玩」。根據 NAEYC (2024) 的幼兒教育指引，剛接觸英文的 5-6 歲選書原則是：圖大、字少、有韻律、能互動。
 
 ### Brown Bear, Brown Bear, What Do You See?
 
 作者 Bill Martin Jr.，插畫 Eric Carle。這本書只用了一個句型反覆出現："Brown Bear, Brown Bear, what do you see? I see a red bird looking at me." 就這樣從棕熊、紅鳥、黃鴨一路問到最後。
 
-為什麼這本是第一選擇？因為句型極度重複、節奏像唸歌一樣、Eric Carle 的拼貼風格色彩鮮豔到連嬰兒都目不轉睛。不到三歲的孩子聽過幾遍，就會自己接 "I see a __ looking at me!"
+為什麼這本是第一選擇？因為句型極度重複、節奏像唸歌一樣、Eric Carle 的拼貼風格色彩鮮豔到連嬰兒都目不轉睛。剛接觸英文的孩子聽過幾遍，就會自己接 "I see a __ looking at me!"
 
 怎麼用這本書？第一遍你唸、孩子聽。第二遍問 "What color is this?" 第三遍讓孩子說動物名字。第五遍他已經可以自己「讀」了——雖然是背的，但這就是早期閱讀的起點。
 
@@ -479,7 +479,7 @@ Rod Campbell 的翻翻書，每頁送來一隻動物，但都不合適——大�
 
 這本書特別適合好奇心強的孩子。翻翻書的設計製造了「猜猜看」的遊戲感，每一頁都是驚喜。孩子學到的不只是動物名稱，還有形容詞——big、tall、fierce、grumpy、scary——這些都是日常生活中超實用的詞。
 
-> ⚠️ **注意：** 3-5 歲千萬不要逼孩子自己讀。這個階段是「聽力先行期」，你唸他聽就好。偶爾停下來問 "What do you think is inside?" 讓他猜一猜，比任何教學法都有效。根據哈佛大學 Center on the Developing Child 的研究，這種「互動式共讀」（dialogic reading）對幼兒語言發展的效果是被動聽讀的 **3 倍**。
+> ⚠️ **注意：** 5-6 歲剛開始接觸時千萬不要逼孩子自己讀。這個階段是「聽力先行期」，你唸他聽就好。偶爾停下來問 "What do you think is inside?" 讓他猜一猜，比任何教學法都有效。根據哈佛大學 Center on the Developing Child 的研究，這種「互動式共讀」（dialogic reading）對幼兒語言發展的效果是被動聽讀的 **3 倍**。
 
 ## 5-8 歲進階推薦：從繪本到獨立閱讀
 
@@ -565,7 +565,7 @@ Dog Man 的特色是幾乎全部用漫畫形式呈現，每頁的文字量很少
 
 ### 孩子完全看不懂英文繪本怎麼辦？
 
-完全正常！3-5 歲的孩子本來就不是「讀」繪本，而是「聽」和「看」。根據 Jim Trelease 的 The Read-Aloud Handbook，**孩子的理解力比閱讀力早發展 2-3 年**——他聽得懂的比看得懂的多很多。你唸給他聽、用手指圖片，他的大腦正在建立英文的聲音資料庫。持續三個月之後，你會發現他突然開始冒出英文單字。
+完全正常！剛開始接觸英文的 5-6 歲孩子本來就不是「讀」繪本，而是「聽」和「看」。根據 Jim Trelease 的 The Read-Aloud Handbook，**孩子的理解力比閱讀力早發展 2-3 年**——他聽得懂的比看得懂的多很多。你唸給他聽、用手指圖片，他的大腦正在建立英文的聲音資料庫。持續三個月之後，你會發現他突然開始冒出英文單字。
 
 ### 一本繪本到底要讀幾遍？
 
@@ -573,7 +573,7 @@ Dog Man 的特色是幾乎全部用漫畫形式呈現，每頁的文字量很少
 
 ### 中英雙語版好還是純英文版好？
 
-看孩子年齡。3-5 歲建議純英文版，讓孩子學會用圖片猜意思，這是最重要的閱讀策略。5 歲以上如果家長英文沒把握，雙語版可以幫助你更有自信地跟孩子共讀。但有一個原則：**先讀英文那面，再看中文**。不要邊讀英文邊翻譯，這會打斷孩子的沉浸式學習。
+看孩子年齡。5-6 歲剛開始接觸時建議純英文版，讓孩子學會用圖片猜意思，這是最重要的閱讀策略。再大一點之後如果家長英文沒把握，雙語版可以幫助你更有自信地跟孩子共讀。但有一個原則：**先讀英文那面，再看中文**。不要邊讀英文邊翻譯，這會打斷孩子的沉浸式學習。
 
 ### 電子書和紙本書哪個好？
 
@@ -585,7 +585,7 @@ Dog Man 的特色是幾乎全部用漫畫形式呈現，每頁的文字量很少
 
 ## 結語：最好的時間就是現在
 
-不需要一次買 10 本。先從一本開始：如果孩子 3-5 歲，買 Brown Bear；5-8 歲，買 Elephant & Piggie；8 歲以上，買 Magic Tree House。今天開始每天讀 15 分鐘，三個月後你會看到明顯的改變。
+不需要一次買 10 本。先從一本開始：如果孩子 5-6 歲剛開始接觸，買 Brown Bear；5-8 歲，買 Elephant & Piggie；8 歲以上，買 Magic Tree House。今天開始每天讀 15 分鐘，三個月後你會看到明顯的改變。
 
 - ✅ 每天 15 分鐘親子共讀，比一週一次 60 分鐘更有效
 - ✅ 先從圖書館借書試讀，找到孩子喜歡的再購買
@@ -828,12 +828,11 @@ AAP 的建議是：限制的是**被動觀看**的時間，而不是一刀切所
 
 | 年齡 | 被動觀看 | 互動學習 | 建議 |
 |------|---------|---------|------|
-| 0-18 個月 | ❌ 避免 | ❌ 避免 | 視訊通話除外 |
-| 18-24 個月 | ❌ 避免 | ⚠️ 少量（和家長一起） | 選擇高品質教育內容 |
-| 2-5 歲 | 每天 ≤ 1 小時 | 不另外限制（但要有互動） | 家長共同參與 |
+| 學齡前（5 歲前） | 盡量少、先以聽為主 | ⚠️ 少量（和家長一起） | 選擇高品質教育內容 |
+| 5 歲（剛開始接觸） | 每天 ≤ 1 小時 | 不另外限制（但要有互動） | 家長共同參與 |
 | 6 歲以上 | 設定合理限制 | 不另外限制 | 確保不影響睡眠和運動 |
 
-> 📊 **關鍵數據：** Common Sense Media (2025) 追蹤了 5,000 名 4-12 歲兒童，發現使用互動式學習 App 的孩子，**認知發展測驗分數比只看影片的孩子高出 32%**。更驚人的是：互動學習組的孩子在社交能力測驗上也更好——因為他們學會了「和螢幕互動」而不是「被螢幕餵養」。
+> 📊 **關鍵數據：** Common Sense Media (2025) 追蹤了 5,000 名 5-12 歲兒童，發現使用互動式學習 App 的孩子，**認知發展測驗分數比只看影片的孩子高出 32%**。更驚人的是：互動學習組的孩子在社交能力測驗上也更好——因為他們學會了「和螢幕互動」而不是「被螢幕餵養」。
 
 這不是說可以無限制使用。**品質**和**適度**是兩個關鍵字。但家長不需要因為孩子用平板學英文就感到罪惡——只要選對工具、建立規則。
 
@@ -973,7 +972,7 @@ AAP 的建議是：限制的是**被動觀看**的時間，而不是一刀切所
 
 ### 幾歲可以開始用平板學英文？
 
-AAP 建議 2 歲以下避免螢幕。2-5 歲可以使用高品質互動內容，但每天不超過 1 小時，而且最好有家長陪同。6 歲以上可以獨立使用，但要有明確的時間規則。Adventure English 建議 5 歲以上開始使用，每天一課 18 分鐘。
+AAP 建議學齡前（5 歲前）盡量少用螢幕、先以聽為主；5 歲起可以使用高品質互動內容，但每天不超過 1 小時，而且最好有家長陪同。6 歲以上可以獨立使用，但要有明確的時間規則。Adventure English 建議 5 歲以上開始使用，每天一課 18 分鐘。
 
 ### 免費的學習 App 品質夠好嗎？
 
@@ -1009,10 +1008,10 @@ AAP 建議 2 歲以下避免螢幕。2-5 歲可以使用高品質互動內容，
 
 export const BOOKS = [
   {
-    category: "3-5 歲入門",
+    category: "5-6 歲入門",
     items: [
-      { title: "Brown Bear, Brown Bear, What Do You See?", author: "Eric Carle", age: "3-5", amazon: "https://amzn.to/4bw6xfB", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F012778662?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐻", description: "最經典的英文繪本入門，重複句型+鮮豔圖畫" , match: "L3 市場街 Animals & Colors" , cover: "/images/books/covers/brown-bear.webp" },
-      { title: "The Very Hungry Caterpillar", author: "Eric Carle", age: "3-6", amazon: "https://amzn.to/4bDewaN", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F017496739?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐛", description: "學數字、食物、星期，孩子百看不膩" , match: "L3 市場街 Food & Numbers" , cover: "/images/books/covers/hungry-caterpillar.webp" },
+      { title: "Brown Bear, Brown Bear, What Do You See?", author: "Eric Carle", age: "5-6", amazon: "https://amzn.to/4bw6xfB", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F012778662?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐻", description: "最經典的英文繪本入門，重複句型+鮮豔圖畫" , match: "L3 市場街 Animals & Colors" , cover: "/images/books/covers/brown-bear.webp" },
+      { title: "The Very Hungry Caterpillar", author: "Eric Carle", age: "5-6", amazon: "https://amzn.to/4bDewaN", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F017496739?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🐛", description: "學數字、食物、星期，孩子百看不膩" , match: "L3 市場街 Food & Numbers" , cover: "/images/books/covers/hungry-caterpillar.webp" },
     ],
   },
   {
@@ -1020,7 +1019,7 @@ export const BOOKS = [
     items: [
       { title: "Elephant & Piggie 系列", author: "Mo Willems", age: "5-8", amazon: "https://amzn.to/40ZENvf", books: "", image: "🐘", description: "對話式繪本，最適合練口說" , match: "L4 學校路 Feelings" , cover: "/images/books/covers/elephant-piggie.webp" },
       { title: "Fly Guy 系列", author: "Tedd Arnold", age: "5-8", amazon: "https://amzn.to/47brgEh", books: "https://www.books.com.tw/exep/assp.php/vegalin1029/products/F010718271?sloc=main&utm_source=vegalin1029&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202603", image: "🪰", description: "橋樑書，從繪本跨到章節書" , match: "L2 聲音島 Phonics" , cover: "/images/books/covers/fly-guy.webp" },
-      { title: "Oxford Reading Tree 系列", author: "Oxford", age: "4-8", amazon: "https://amzn.to/4lEkltg", books: "", image: "🌳", description: "英國小學指定教材，分級閱讀最完整" , match: "L4 學校路 Daily Life" , cover: "/images/books/covers/oxford-reading-tree.webp" },
+      { title: "Oxford Reading Tree 系列", author: "Oxford", age: "5-8", amazon: "https://amzn.to/4lEkltg", books: "", image: "🌳", description: "英國小學指定教材，分級閱讀最完整" , match: "L4 學校路 Daily Life" , cover: "/images/books/covers/oxford-reading-tree.webp" },
     ],
   },
   {
