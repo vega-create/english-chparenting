@@ -14,7 +14,7 @@ export function VegaPlayButton({
       onClick={(e) => { e.preventDefault(); e.stopPropagation(); playVega(audio); }}
       title="點擊聽介紹"
       style={style}
-      className={`bg-white/90 hover:bg-white border border-purple-200 hover:border-purple-400 rounded-full text-sm shadow-sm transition active:scale-95 ${className}`}
+      className={`bg-white/90 hover:bg-white border border-purple-200 hover:border-purple-400 rounded-full text-sm shadow-sm transition active:scale-95 cursor-pointer ${className}`}
     >
       {label}
     </button>
@@ -51,7 +51,7 @@ export function CharacterPlayButton({ characterKey, className = "", style }: { c
       }}
       title="聽介紹"
       style={style}
-      className={`bg-white/90 hover:bg-white border border-purple-200 hover:border-purple-400 rounded-full text-sm shadow-sm transition active:scale-95 ${className}`}
+      className={`bg-white/90 hover:bg-white border border-purple-200 hover:border-purple-400 rounded-full text-sm shadow-sm transition active:scale-95 cursor-pointer ${className}`}
     >
       🔊
     </button>

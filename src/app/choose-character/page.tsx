@@ -67,7 +67,7 @@ export default function ChooseCharacterPage() {
           const active = sel === a.slug;
           return (
             <button key={a.slug} onClick={() => { playClick(); setSel(a.slug); }}
-              className="absolute z-10"
+              className="absolute z-10 cursor-pointer"
               style={{ left: `${a.cx}%`, top: `${FRAME.top}%`, width: '14.5%', height: `${CARD_H}%`, transform: 'translateX(-50%)' }}>
               {/* 選中：星星（無黃框） */}
               {active && <div className="absolute left-1/2 -translate-x-1/2 -top-2 text-3xl z-10 drop-shadow">⭐</div>}

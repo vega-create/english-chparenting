@@ -15,10 +15,13 @@ const MAP_LINK: Record<number, string> = {
   9: "/adventure-map/world/5", 10: "/adventure-map/island/future-bridge",
   11: "/adventure-map/world/6", 12: "/adventure-map/island/victory-peak",
 };
+// 全站主打 5–12 歲，各島建議年齡都落在這個範圍內
 const AGE: Record<number, string> = {
-  1: "3-6 歲", 2: "4-7 歲", 3: "5-8 歲", 4: "5-8 歲", 5: "6-9 歲", 6: "7-10 歲",
-  7: "8-11 歲", 8: "8-11 歲", 9: "9-12 歲", 10: "9-12 歲", 11: "10-13 歲", 12: "11-14 歲",
+  1: "5-6 歲", 2: "5-7 歲", 3: "5-8 歲", 4: "6-8 歲", 5: "6-9 歲", 6: "7-10 歲",
+  7: "8-11 歲", 8: "8-11 歲", 9: "9-12 歲", 10: "9-12 歲", 11: "10-12 歲", 12: "10-12 歲",
 };
+// 每課五個步驟（醒來→發現→挑戰→聊天→完成）大約 10–15 分鐘，估學習時間用 12 分鐘
+const MINUTES_PER_LESSON = 12;
 // 各角色原圖身形比例不同 → 用個別縮放補償，讓視覺大小一致
 const PALS = ["finn", "coco", "benny", "ruby", "polly", "vega"];
 const PAL_SCALE: Record<string, number> = { finn: 1.3, coco: 1.0, benny: 1.05, ruby: 1.0, polly: 1.28, vega: 1.0 };
@@ -43,8 +46,8 @@ const PROG_CX = [17.5, 33.8, 50.0, 66.2, 82.5];
 
 type SecItem = { img?: string; icon: string; t: string; d: string };
 
-const FEATURES = [
-  { icon: "📅", t: "40 堂課", d: "完整學習內容" },
+const featuresFor = (course: Course): SecItem[] => [
+  { icon: "📅", t: `${course.lessons} 堂課`, d: "完整學習內容" },
   { icon: "⭐", t: "300+ 互動活動", d: "豐富有趣練習" },
   { icon: "🎮", t: "遊戲闖關", d: "學習更有動力" },
   { icon: "🎤", t: "AI 發音評測", d: "即時偵測發音" },
@@ -108,7 +111,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
           {/* 三個資訊格 */}
           {[
             { icon: "👶", t: "建議年齡", v: AGE[lv] },
-            { icon: "🕐", t: "學習時間", v: `約 ${Math.round(course.lessons * 20 / 60)} 小時` },
+            { icon: "🕐", t: "學習時間", v: `約 ${Math.round(course.lessons * MINUTES_PER_LESSON / 60)} 小時` },
             { icon: "⭐", t: "學習目標", v: course.skills[0] },
           ].map((info, i) => (
             <div key={info.t} className="absolute flex items-center gap-[4%] px-[3%]" style={HERO.info[i]}>
@@ -125,7 +128,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
         <div className="grid md:grid-cols-2 gap-[1.5vw] mt-[1.5vh]">
           {[
             { tag: "我會學到", items: [...course.topics, ...course.skills].filter((v, i, a) => a.indexOf(v) === i).slice(0, 6).map((t, i): SecItem => ({ img: `/images/courses/icons/l${lv}-${i + 1}.webp`, icon: ["🔤", "🔊", "👂", "✏️", "🎵", "🎮"][i], t, d: course.skills[i % course.skills.length] })) },
-            { tag: `${course.island}特色`, items: FEATURES as SecItem[] },
+            { tag: `${course.island}特色`, items: featuresFor(course) },
           ].map(sec => (
             <div key={sec.tag} className="relative w-full" style={{ aspectRatio: "1396 / 1050" }}>
               <img src="/images/courses/frames/section.webp" alt="" className="absolute inset-0 w-full h-full object-fill" />

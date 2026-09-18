@@ -3350,7 +3350,7 @@ const L3_M9: Mission = {
   ],
   talkTimePrompts: ["How many pets do you have?", "Count the animals: two ___, three ___.", "Are they cats or dogs?", "How many students are girls?"],
   reviewQuiz: [
-    { type: 'fill-blank', question: 'one duck, two ___', options: ['ducks', 'duck', 'duckes', ' duck'], answer: 'ducks' },
+    { type: 'fill-blank', question: 'one duck, two ___', options: ['ducks', 'duck', 'duckes', "duck's"], answer: 'ducks' },
     { type: 'fill-blank', question: 'How many cats? ___ are three.', options: ['There', 'They', 'It', 'Is'], answer: 'There' },
     { type: 'match', question: '🐑 綿羊複數是？', options: ['sheep', 'sheeps', 'sheepes', 'ship'], answer: 'sheep' },
   ],
@@ -7629,7 +7629,6 @@ const L6_M12: Mission = {
     { en: 'nervous', zh: '緊張的', image: '😰', phonics: '', kk: '[ˈnɝvəs]', phonicsSound: '', exampleSentence: 'I am nervous.', exampleZh: '我好緊張。' },
     { en: 'shy', zh: '害羞的', image: '😳', phonics: '', kk: '[ʃaɪ]', phonicsSound: '', exampleSentence: 'I am shy.', exampleZh: '我很害羞。' },
     { en: 'worried', zh: '擔心的', image: '😟', phonics: '', kk: '[ˈwɝid]', phonicsSound: '', exampleSentence: 'I am worried.', exampleZh: '我很擔心。' },
-    { en: 'excited', zh: '興奮的', image: '🎊', phonics: '', kk: '[ɪkˈsaɪtɪd]', phonicsSound: '', exampleSentence: 'so excited', exampleZh: '好興奮' },
     { en: 'happy', zh: '開心的', image: '😄', phonics: '', kk: '[ˈhæpi]', phonicsSound: '', exampleSentence: 'I am happy.', exampleZh: '我很開心。' },
   ],
   sentences: [
@@ -8286,7 +8285,7 @@ const L7_M1: Mission = {
   reviewQuiz: [
     { type: 'fill-blank', question: 'We ___ English.（學·原形）', options: ['learn', 'learns', 'learning', 'learned'], answer: 'learn' },
     { type: 'fill-blank', question: 'I ___ milk every morning.（喝·原形）', options: ['drink', 'drinks', 'drinking', 'drank'], answer: 'drink' },
-    { type: 'spell', question: '拼拼看：ev _ ry day（每天）', answer: 'every', image: '✍️' },
+    { type: 'spell', question: '拼拼看：ev _ ry（每一個）', answer: 'every', image: '✍️' },
   ],
   videoScript: [
     { speaker: 'Finn', line: 'Look! The Magic Gate is opening!', lineZh: '看！魔法門打開了！' },
@@ -10997,7 +10996,7 @@ const L8_M20: Mission = {
 
 // ===================== L9 時光道 Time Travel Path（A2・時態含完成式，時間軸視覺） =====================
 const L9_M1: Mission = {
-  id: 1, slug: 'l9-m1-present-continuous', level: 9, title: '現在進行式', titleEn: 'Present Continuous', theme: '時光道・正在進行', themeEmoji: '⏳',
+  id: 1, slug: 'l9-m1-present-continuous', level: 9, title: '現在進行式（進階）', titleEn: 'Present Continuous', theme: '時光道・正在進行', themeEmoji: '⏳',
   focus: '現在進行式深化 be + V-ing（拼字：run→running, make→making）＋ 中翻英',
   goal: { zh: '用 be + V-ing 說出「現在正在」發生的事，啟動時光機。', char: 'finn' },
   tip: { zh: '進行式拼字：短母音字尾子音雙寫再加 ing：run→running、swim→swimming。', char: 'ruby' },
@@ -14613,7 +14612,6 @@ const L11_M13: Mission = {
     { en: 'reach', zh: '抵達', image: '📍', phonics: '', kk: '[ritʃ]', phonicsSound: '', exampleSentence: 'reach the shore', exampleZh: '抵達岸邊' },
     { en: 'shore', zh: '岸邊', image: '🏖️', phonics: '', kk: '[ʃɔr]', phonicsSound: '', exampleSentence: 'the far shore', exampleZh: '遠方的岸' },
     { en: 'proud', zh: '驕傲的', image: '😌', phonics: '', kk: '[praʊd]', phonicsSound: '', exampleSentence: 'very proud', exampleZh: '很驕傲' },
-    { en: 'brave', zh: '勇敢', image: '🦁', phonics: '', kk: '[brev]', phonicsSound: '', exampleSentence: 'stay brave', exampleZh: '保持勇敢' },
   ],
   sentences: [
     { en: 'A little boat wanted to cross the sea.', zh: '一艘小船想橫越大海。' }, { en: 'Although the waves were big, it did not give up.', zh: '雖然浪很大，它沒放棄。' }, { en: 'A storm came, but the boat stayed brave.', zh: '暴風雨來了，但小船保持勇敢。' }, { en: 'Finally, it reached the shore.', zh: '最後，它抵達岸邊。' }, { en: 'The little boat was very proud.', zh: '小船很驕傲。' }, { en: 'Never give up!', zh: '永不放棄！' },
@@ -16112,7 +16110,7 @@ const L12_M14: Mission = {
 };
 
 const L12_M15: Mission = {
-  id: 15, slug: 'l12-m15-review-writing', level: 12, title: 'Review③ 寫作', titleEn: 'Review: Writing', theme: '勝利峰・複習關', themeEmoji: '🔄',
+  id: 15, slug: 'l12-m15-review-writing', level: 12, title: 'Review③ 寫作（綜合）', titleEn: 'Review: Writing', theme: '勝利峰・複習關', themeEmoji: '🔄',
   focus: '螺旋複習③：創意故事 ＋ 說明文 ＋ email ＋ 專題寫作 ＋ 中翻英',
   goal: { zh: '闖過各種寫作的關卡。', char: 'ruby' },
   story: [
