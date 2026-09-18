@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { playClick, playSwoosh, playStar, playOpen, playSuccess, setSfxMuted, isSfxMuted } from "@/lib/sfx";
 import { COURSES } from "@/data/courses";
 import { latestPosts } from "@/data/blog-posts";
-import { loadProgress, getBadges, completedCount, totalStars, type Badge } from "@/lib/missionProgress";
+import { loadProgress, getBadges, completedCount, totalStars, currentStreak, type Badge } from "@/lib/missionProgress";
 import { playGreeting, isMuted as isVegaMuted, setMuted as setVegaMuted, playVega, stopVega } from "@/lib/vega-audio";
 import AdSlot from '@/components/AdSlot';
 import AuthButton from '@/components/AuthButton';
@@ -81,7 +81,7 @@ export default function LayeredBanner() {
   useEffect(() => {
     const p = loadProgress();
     setBadges(getBadges(p));
-    setStats({ done: completedCount(p), stars: totalStars(p), streak: p.streak || 0 });
+    setStats({ done: completedCount(p), stars: totalStars(p), streak: currentStreak(p) });
   }, []);
   const shelfBadges = [...badges].sort((a, b) => Number(b.got) - Number(a.got)).slice(0, 5);
   const gotCount = badges.filter(b => b.got).length;

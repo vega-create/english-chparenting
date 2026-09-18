@@ -2,13 +2,14 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import {
-  loadProgress, completedCount, totalStars, currentIsland, getBadges, type Progress, setPlan, clearPlan, weekStats, planForecast } from '@/lib/missionProgress';
+  loadProgress, completedCount, totalStars, currentIsland, getBadges, currentStreak, type Progress, setPlan, clearPlan, weekStats, planForecast } from '@/lib/missionProgress';
 import { WORLDS, COURSES } from '@/data/courses';
 import ResearchConsent from '@/components/ResearchConsent';
 import PlacementPrompt from '@/components/PlacementPrompt';
 import { setStartLevel } from '@/lib/progress';
 import LoginNudge from '@/components/LoginNudge';
 import KidSwitcher from '@/components/KidSwitcher';
+import SyncStatus from '@/components/SyncStatus';
 
 // 家長補給站
 const SUPPLY = [
@@ -36,7 +37,7 @@ export default function ParentsPage() {
 
   const done = completedCount(p);
   const stars = totalStars(p);
-  const streak = p.streak || 0;
+  const streak = currentStreak(p);   // 超過一天沒來就顯示 0，不顯示過期的連續天數
   const island = currentIsland(p);
   const badges = getBadges(p);
 
@@ -92,6 +93,7 @@ export default function ParentsPage() {
             <h2 className="font-black text-amber-900 text-base sm:text-lg m-0">孩子的冒險旅程 ⭐</h2>
             <KidSwitcher />
           </div>
+          <SyncStatus />
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1 flex items-center justify-between gap-0.5 min-w-0">
               {WORLDS.map((w, i) => (

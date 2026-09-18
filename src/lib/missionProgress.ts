@@ -9,19 +9,19 @@ const KEY = 'ae_mission_progress_v1';
 
 export interface Progress {
   completed: Record<string, number>; // "<courseSlug>/<missionId>" -> 最佳星數
-  lastActive?: string;               // YYYY-M-D
+  lastActive?: string;               // YYYY-MM-DD（舊資料可能是未補零的 YYYY-M-D，讀取時會轉正）
   streak?: number;                   // 連續學習天數
   guard?: number;                    // 守島戰累計守成次數（登入會同步）
   daily?: DailyTasks;                // 今日任務計數（跨日自動歸零）
   plan?: LearnPlan;                  // 學習計畫（家長設定：每週幾天、每天幾課）
-  log?: Record<string, number>;      // 每天新完成的課數（YYYY-M-D → n），只留 90 天，算「這週做了幾課」用
+  log?: Record<string, number>;      // 每天新完成的課數（YYYY-MM-DD → n），只留 90 天，算「這週做了幾課」用
 }
 
 /** 學習計畫（Vega 2026-09-02）：家長在家長中心設定，用來算本週目標、預計完成日、落後時的鼓勵提醒 */
 export interface LearnPlan {
   daysPerWeek: number;   // 每週幾天（3／5／7）
   lessonsPerDay: number; // 每天幾課（1／2）
-  since: string;         // 設定日 YYYY-M-D
+  since: string;         // 設定日 YYYY-MM-DD
   updatedAt: string;     // ISO，雲端合併時取新的
 }
 
@@ -29,7 +29,7 @@ export interface LearnPlan {
  *  放在 Progress 裡是刻意的——這樣它跟著既有的雲端同步走，
  *  登入的孩子換裝置也會保留，不必另外開一張表。 */
 export interface DailyTasks {
-  date: string;   // YYYY-M-D
+  date: string;   // YYYY-MM-DD
   speak: number;  // 魔法咒語：念完一課的句子
   story: number;  // 故事解謎：讀完一課的故事書
   spell: number;  // 字母拼圖：拼對的新單字
@@ -42,6 +42,44 @@ export const DAILY_GOALS: Record<DailyKind, number> = { speak: 2, story: 2, spel
 
 const EMPTY: Progress = { completed: {} };
 
+// ── 日期：一律 YYYY-MM-DD（補零），字串比較才會等於日期比較 ──
+// 2026-09 以前存的是未補零的 "2026-9-18"，字串比較會把 "2026-9-30" 排在 "2026-10-02" 後面，
+// 雲端合併時會挑錯邊。所以：輸出一律補零、讀進來的舊格式先轉正、比較用 parseDay。
+export function dayKey(d: Date): string {
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${d.getFullYear()}-${mm}-${dd}`;
+}
+/** 解析 YYYY-MM-DD 或舊的 YYYY-M-D（本地時區、當天 00:00）；壞字串回 null */
+export function parseDay(key: string | undefined | null): Date | null {
+  if (!key) return null;
+  const m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(key.trim());
+  if (!m) return null;
+  const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+/** 舊格式轉正（"2026-9-8" → "2026-09-08"）；解析不了就原樣回傳 */
+export function normalizeDay(key: string): string {
+  const d = parseDay(key);
+  return d ? dayKey(d) : key;
+}
+/** 把整份進度裡的日期全部轉成補零格式（讀取時做，之後所有比較都安全） */
+export function normalizeProgress(p: Progress): Progress {
+  const out: Progress = { ...p, completed: p.completed || {} };
+  if (out.lastActive) out.lastActive = normalizeDay(out.lastActive);
+  if (out.daily?.date) out.daily = { ...out.daily, date: normalizeDay(out.daily.date) };
+  if (out.plan?.since) out.plan = { ...out.plan, since: normalizeDay(out.plan.since) };
+  if (out.log) {
+    const log: Record<string, number> = {};
+    for (const [k, v] of Object.entries(out.log)) {
+      const nk = normalizeDay(k);
+      log[nk] = Math.max(log[nk] ?? 0, v);   // 同一天新舊兩種寫法都有就取大的
+    }
+    out.log = log;
+  }
+  return out;
+}
+
 // ── 底層存取（未來換登入 API 就改這兩個）──
 export function loadProgress(): Progress {
   if (typeof window === 'undefined') return { ...EMPTY };
@@ -49,7 +87,7 @@ export function loadProgress(): Progress {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { ...EMPTY };
     const p = JSON.parse(raw);
-    return { completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard, daily: p.daily, plan: p.plan, log: p.log };
+    return normalizeProgress({ completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard, daily: p.daily, plan: p.plan, log: p.log });
   } catch {
     return { ...EMPTY };
   }
@@ -65,10 +103,7 @@ export function saveProgress(p: Progress) {
   } catch { /* 容量問題忽略 */ }
 }
 
-function todayStr(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
-}
+export function todayStr(): string { return dayKey(new Date()); }
 
 // 完成一課時呼叫：記錄最佳星數 + 更新連續天數
 export function recordMissionComplete(courseSlug: string, missionId: number, stars: number) {
@@ -87,13 +122,25 @@ export function recordMissionComplete(courseSlug: string, missionId: number, sta
   }
   if (p.lastActive !== today) {
     const y = new Date(); y.setDate(y.getDate() - 1);
-    const yStr = `${y.getFullYear()}-${y.getMonth() + 1}-${y.getDate()}`;
-    p.streak = p.lastActive === yStr ? (p.streak || 0) + 1 : 1;
+    p.streak = p.lastActive === dayKey(y) ? (p.streak || 0) + 1 : 1;
     p.lastActive = today;
   } else if (!p.streak) {
     p.streak = 1;
   }
   saveProgress(p);
+}
+
+/**
+ * 顯示用的連續天數：lastActive 是今天或昨天才算還在連續中，否則就是 0。
+ * 存的 streak 只在完成課時更新，隔了一週沒來，家長中心不該還顯示「連續 5 天」。
+ */
+export function currentStreak(p: Progress): number {
+  if (!p.streak || !p.lastActive) return 0;
+  const last = parseDay(p.lastActive);
+  if (!last) return 0;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const diffDays = Math.round((today.getTime() - last.getTime()) / 86400000);
+  return diffDays <= 1 ? p.streak : 0;
 }
 
 // ── 今日任務 ──
@@ -249,8 +296,7 @@ export function currentIsland(p: Progress): string {
 
 
 // ── 學習計畫 ──
-function toDate(key: string): Date { const [y, m, d] = key.split('-').map(Number); return new Date(y, m - 1, d); }
-function dayKey(d: Date): string { return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; }
+function toDate(key: string): Date { return parseDay(key) ?? new Date(0); }
 export const TOTAL_LESSONS = 240;
 export const LESSONS_PER_LEVEL = 20;
 
@@ -298,7 +344,8 @@ export function planForecast(p: Progress) {
 
 /** 幾天沒來了（0＝今天有來） */
 export function daysSinceActive(p: Progress): number {
-  if (!p.lastActive) return 999;
-  const diff = (new Date().setHours(0, 0, 0, 0) - toDate(p.lastActive).getTime()) / 86400000;
+  const last = parseDay(p.lastActive);
+  if (!last) return 999;
+  const diff = (new Date().setHours(0, 0, 0, 0) - last.getTime()) / 86400000;
   return Math.max(0, Math.round(diff));
 }

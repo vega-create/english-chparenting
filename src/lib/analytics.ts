@@ -2,6 +2,7 @@
 import { supa } from './supabase';
 import { APP_VERSION } from './version';
 import { defaultBucket } from './experiment';
+import { CONSENT_VERSION } from './research';
 
 /**
  * 學習行為記錄（給日後論文用）。
@@ -51,19 +52,45 @@ export function hasConsent(): boolean {
   return localStorage.getItem(CONSENT_KEY) === '1';
 }
 
-export function setConsent(on: boolean) {
-  if (typeof window === 'undefined') return;
+/**
+ * 設定同意，並寫一筆紀錄到 ae_consents（IRB 送審時要證明有取得同意、何時、哪一版同意書）。
+ * 每次開／關都是新的一列（審計軌跡），不是覆蓋。沒登入就只存本機。
+ * 回傳 true = 雲端也寫成功了（沒登入回 false，但本機一定有記）。
+ */
+export async function setConsent(on: boolean): Promise<boolean> {
+  if (typeof window === 'undefined') return false;
   if (on) localStorage.setItem(CONSENT_KEY, '1');
   else localStorage.removeItem(CONSENT_KEY);
-  // 同步寫進資料庫留存同意紀錄（IRB 送審時要證明有取得同意）
-  supa().auth.getUser().then(({ data }) => {
+  try {
+    const { data } = await supa().auth.getUser();
     const uid = data.user?.id;
-    if (!uid) return;
-    supa().from('ae_progress').update({
-      research_consent: on,
-      consent_at: on ? new Date().toISOString() : null,
-    }).eq('user_id', uid);
-  }).catch(() => {});
+    if (!uid) return false;
+    return await recordConsent(uid, on);
+  } catch {
+    return false;
+  }
+}
+
+/** 寫一筆同意／撤回紀錄。supabase-js 不會 throw，要看回傳的 error。 */
+async function recordConsent(uid: string, on: boolean): Promise<boolean> {
+  const { error } = await supa().from('ae_consents').insert({
+    user_id: uid,
+    consented: on,
+    consent_version: CONSENT_VERSION,
+    device_id: deviceId(),
+    app_version: APP_VERSION,
+  });
+  if (error) return false;
+  try { localStorage.setItem(CONSENT_SYNCED_KEY, uid); } catch { /* ignore */ }
+  return true;
+}
+
+/** 登入前就在本機同意過 → 登入時補一筆到雲端（每個帳號只補一次） */
+const CONSENT_SYNCED_KEY = 'ae_research_consent_synced';
+export async function syncConsentToCloud(uid: string): Promise<void> {
+  if (typeof window === 'undefined' || !hasConsent()) return;
+  try { if (localStorage.getItem(CONSENT_SYNCED_KEY) === uid) return; } catch { return; }
+  try { await recordConsent(uid, true); } catch { /* 下次登入再試 */ }
 }
 
 // ── 批次送出 ────────────────────────────────────────────
@@ -73,16 +100,27 @@ let userId: string | null = null;
 
 export function setAnalyticsUser(id: string | null) { userId = id; }
 
+const MAX_QUEUE = 200;   // 離線太久就丟掉最舊的，不讓記憶體無限長
+
 async function flush() {
   timer = null;
   if (!queue.length) return;
   const batch = queue;
   queue = [];
   try {
-    await supa().from('ae_events').insert(batch);
+    const { error } = await supa().from('ae_events').insert(batch);
+    if (error) throw error;
   } catch {
-    /* 記錄失敗不影響學習，也不重試（避免累積） */
+    // 記錄失敗不影響學習；先放回佇列，恢復連線（online）或下一批時再送
+    queue = [...batch, ...queue].slice(-MAX_QUEUE);
   }
+}
+
+/** 恢復連線時把積著的事件送出（AuthProvider 監聽 online 事件呼叫） */
+export function flushPendingEvents() {
+  if (typeof window === 'undefined' || !queue.length) return;
+  if (timer) { clearTimeout(timer); timer = null; }
+  flush();
 }
 
 export function track(e: LearnEvent) {
@@ -159,9 +197,9 @@ export async function deleteMyResearchData(): Promise<'ok' | 'not-logged-in' | '
 
     const { error } = await supa().from('ae_events').delete().eq('user_id', uid);
     if (error) return 'error';
-    await supa().from('ae_progress')
-      .update({ research_consent: false, consent_at: null })
-      .eq('user_id', uid);
+    // 撤回也要留紀錄（consented=false），跟 setConsent 走同一張表
+    try { localStorage.removeItem(CONSENT_KEY); } catch { /* ignore */ }
+    await recordConsent(uid, false);
     return 'ok';
   } catch {
     return 'error';

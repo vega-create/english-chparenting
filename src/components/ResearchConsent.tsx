@@ -28,8 +28,9 @@ export default function ResearchConsent() {
     // 關掉之前先把狀態抓下來，關掉之後就查不到了
     const ctx = next ? null : await exitContext();
     setOn(next);
-    setConsent(next);
     setMsg('');
+    const cloudOk = await setConsent(next);
+    if (next && !cloudOk) setMsg('已在這台裝置記下同意。登入家長帳號後，同意紀錄也會存到雲端。');
     if (!next && ctx) setSurvey({ exitType: 'consent_off', context: ctx });
   }
 

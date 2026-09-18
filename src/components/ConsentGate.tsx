@@ -31,7 +31,7 @@ export default function ConsentGate() {
 
   function answer(agree: boolean) {
     try { localStorage.setItem(ASKED_KEY, '1'); } catch {}
-    setConsent(agree);
+    void setConsent(agree);
     setShow(false);
   }
 

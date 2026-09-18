@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import HomeButton from '@/components/HomeButton';
 import { playClick, playStar } from '@/lib/sfx';
 import type { Progress } from '@/lib/missionProgress';
-import { loadProgress, islandStats, completedCount, totalStars, totalGems, collectedWordCount, getBadges, currentIsland } from '@/lib/missionProgress';
+import { loadProgress, islandStats, completedCount, totalStars, totalGems, collectedWordCount, getBadges, currentIsland, currentStreak } from '@/lib/missionProgress';
 import { COURSES } from '@/data/courses';
 import { playPageIntro } from '@/lib/vega-audio';
 import { useAuth } from '@/components/AuthProvider';
@@ -89,7 +89,7 @@ export default function CabinClient() {
   const stars = totalStars(p);                    // 總星數
   const gems = totalGems(p);                      // 寶石
   const badges = getBadges(p);
-  const days = p.streak ?? 0;                     // 連續學習天數
+  const days = currentStreak(p);                  // 連續學習天數（過期就 0）
   const curSlug = currentIsland(p);
   const course = COURSES.find(c => c.slug === curSlug) ?? COURSES[0];
 

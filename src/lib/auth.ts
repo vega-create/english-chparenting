@@ -1,7 +1,8 @@
 'use client';
 import type { User } from '@supabase/supabase-js';
 import { supa } from './supabase';
-import { type Progress } from './missionProgress';
+import { loadProgress, type Progress } from './missionProgress';
+import { mergeProgress } from './progressMerge';
 import { ensureKids, kidProgress, replaceKids, activeKid, setKidProgress, type Kid } from './kids';
 
 /**
@@ -49,46 +50,43 @@ export async function signOut() {
 }
 
 // ── 進度合併 ──────────────────────────────────────────────
+// 純函式放在 progressMerge.ts（不碰 supabase，可單獨測）；這裡 re-export 給既有引用
+export { mergeProgress } from './progressMerge';
 
-/** 兩份進度合併：同一課取星數高的；連續天數取大的 */
-function mergeLog(a?: Record<string, number>, b?: Record<string, number>) {
-  if (!a && !b) return undefined;
-  const out: Record<string, number> = { ...(a || {}) };
-  for (const [k, v] of Object.entries(b || {})) out[k] = Math.max(out[k] ?? 0, v);
-  return out;
+// ── 同步狀態（家長中心顯示「上次同步」；失敗時標記待重試）──────────
+// 雲端寫入失敗不會打斷孩子，但也不能靜默：記一個旗標，恢復連線或下次載入時再送一次。
+const PENDING_KEY = 'ae_sync_pending';      // '1' = 有一次上傳沒成功
+const LAST_KEY = 'ae_sync_last';            // ISO：最後一次成功同步時間
+const ERROR_KEY = 'ae_sync_error';          // 最後一次失敗的訊息（顯示用）
+
+export interface SyncStatus { pending: boolean; lastAt: string | null; error: string | null }
+
+export function getSyncStatus(): SyncStatus {
+  if (typeof window === 'undefined') return { pending: false, lastAt: null, error: null };
+  try {
+    return {
+      pending: localStorage.getItem(PENDING_KEY) === '1',
+      lastAt: localStorage.getItem(LAST_KEY),
+      error: localStorage.getItem(ERROR_KEY),
+    };
+  } catch { return { pending: false, lastAt: null, error: null }; }
 }
 
-export function mergeProgress(a: Progress, b: Progress): Progress {
-  const completed = { ...a.completed };
-  for (const [k, v] of Object.entries(b.completed ?? {})) {
-    completed[k] = Math.max(completed[k] ?? 0, v);
-  }
-  const guard = Math.max(a.guard ?? 0, b.guard ?? 0);
-  const pick = (x?: string, y?: string) => (!x ? y : !y ? x : x > y ? x : y);
-  return {
-    guard,
-    completed,
-    lastActive: pick(a.lastActive, b.lastActive),
-    streak: Math.max(a.streak ?? 0, b.streak ?? 0),
-    daily: mergeDaily(a.daily, b.daily),
-    // 學習計畫：取最後改的那份；每日完成數：同一天取大的
-    plan: !a.plan ? b.plan : !b.plan ? a.plan : (a.plan.updatedAt > b.plan.updatedAt ? a.plan : b.plan),
-    log: mergeLog(a.log, b.log),
-  };
+function markSynced() {
+  try {
+    localStorage.setItem(LAST_KEY, new Date().toISOString());
+    localStorage.removeItem(PENDING_KEY);
+    localStorage.removeItem(ERROR_KEY);
+  } catch { /* ignore */ }
+  window.dispatchEvent(new Event('ae-sync-change'));
 }
 
-/** 今日任務合併：同一天取各項較大值（同一天在兩台裝置各做了一些）；
- *  不同天只留比較新的那天，舊的直接丟掉（過了就是過了，不該累加）。 */
-function mergeDaily(a?: Progress['daily'], b?: Progress['daily']): Progress['daily'] {
-  if (!a) return b;
-  if (!b) return a;
-  if (a.date !== b.date) return a.date > b.date ? a : b;
-  return {
-    date: a.date,
-    speak: Math.max(a.speak, b.speak),
-    story: Math.max(a.story, b.story),
-    spell: Math.max(a.spell, b.spell),
-  };
+function markSyncFailed(msg: string) {
+  try {
+    localStorage.setItem(PENDING_KEY, '1');
+    localStorage.setItem(ERROR_KEY, msg.slice(0, 200));
+  } catch { /* ignore */ }
+  window.dispatchEvent(new Event('ae-sync-change'));
 }
 
 type KidRow = { id: string; name: string; avatar: string | null; data: Progress; created_at: string };
@@ -109,7 +107,7 @@ export async function syncKids(userId: string): Promise<void> {
     .eq('user_id', userId)
     .order('created_at', { ascending: true })
     .returns<KidRow[]>();
-  if (error) return;                              // 讀不到就先用本機的，不要擋住使用
+  if (error) { markSyncFailed(error.message); return; }   // 讀不到就先用本機的，不要擋住使用；標記待重試
 
   const cloud = rows ?? [];
   const merged = new Map<string, { kid: Kid; data: Progress }>();
@@ -147,20 +145,41 @@ export async function syncKids(userId: string): Promise<void> {
   for (const [id, x] of merged) setKidProgress(id, x.data);
 
   // 上雲
-  await supa().from('ae_kids').upsert(
-    [...merged.values()].map(x => ({ id: x.kid.id, user_id: userId, name: x.kid.name, avatar: x.kid.avatar, data: x.data })),
-    { onConflict: 'id' },
-  );
+  try {
+    const { error: upErr } = await supa().from('ae_kids').upsert(
+      [...merged.values()].map(x => ({ id: x.kid.id, user_id: userId, name: x.kid.name, avatar: x.kid.avatar, data: x.data })),
+      { onConflict: 'id' },
+    );
+    if (upErr) markSyncFailed(upErr.message); else markSynced();
+  } catch (e) {
+    markSyncFailed(e instanceof Error ? e.message : 'network');
+  }
 }
 
-/** 進度變動時上傳「正在玩的孩子」（失敗不影響遊戲，下次登入還會再合併一次） */
-export async function pushProgress(userId: string, p: Progress) {
+/**
+ * 進度變動時上傳「正在玩的孩子」。
+ * 失敗不影響遊戲（孩子不該因為網路問題被打斷），但會標記「未同步」，
+ * 恢復連線（online）或下次載入時由 retryPendingSync 再送一次。
+ * 注意 supabase-js 不會 throw，錯誤在回傳的 error 裡——之前的 try/catch 什麼都接不到。
+ */
+export async function pushProgress(userId: string, p: Progress): Promise<boolean> {
   try {
     const k = activeKid();
-    await supa().from('ae_kids').upsert({ id: k.id, user_id: userId, name: k.name, avatar: k.avatar, data: p }, { onConflict: 'id' });
-  } catch {
-    /* 靜默失敗：孩子不該因為網路問題被打斷 */
+    const { error } = await supa().from('ae_kids').upsert({ id: k.id, user_id: userId, name: k.name, avatar: k.avatar, data: p }, { onConflict: 'id' });
+    if (error) { markSyncFailed(error.message); return false; }
+    markSynced();
+    return true;
+  } catch (e) {
+    markSyncFailed(e instanceof Error ? e.message : 'network');
+    return false;
   }
+}
+
+/** 有沒同步成功的存檔就補送一次（AuthProvider 在載入與 online 事件時呼叫） */
+export async function retryPendingSync(userId: string): Promise<void> {
+  if (!getSyncStatus().pending) return;
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) return;
+  await pushProgress(userId, loadProgress());
 }
 
 /** 刪除孩子時同步刪雲端那一列 */

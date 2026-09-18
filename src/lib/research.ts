@@ -18,3 +18,9 @@ export const RETENTION_YEARS = 5;
 
 /** 網站正式名稱 */
 export const SITE_NAME = '冒險英語 Adventure English';
+
+/**
+ * 同意書版本。同意紀錄（ae_consents）會連同這個版本一起存，
+ * 之後同意書文字有實質修改就把它往上加，才分得出家長同意的是哪一版。
+ */
+export const CONSENT_VERSION = '2026-08';
