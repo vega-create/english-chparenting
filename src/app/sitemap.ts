@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ['/cabin', 0.5],
     ['/games/word-catcher', 0.5],
     ['/games/word-whack', 0.5],
+    ['/about', 0.5],
     ['/privacy', 0.3],
   ];
 

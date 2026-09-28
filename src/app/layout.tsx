@@ -109,10 +109,11 @@ export default function RootLayout({
         },
         founder: {
           "@type": "Person",
-          name: "Vega Lin (薇佳)",
+          name: "薇佳媽媽",
+          alternateName: "Vega",
           jobTitle: "Founder",
-          url: "https://chparenting.com/about/",
-          description: "東海大學數位創新碩士在讀，8+ 年數位行銷經驗，前英文老師。",
+          url: "https://english.chparenting.com/about",
+          description: "兩個國小孩子的媽媽，東海大學數位創新碩士學程畢業，7 年數位行銷經驗，曾任英語補教與國小代課教師。",
           alumniOf: { "@type": "EducationalOrganization", name: "Tunghai University" },
         },
         parentOrganization: {
@@ -122,6 +123,7 @@ export default function RootLayout({
         },
         sameAs: [
           "https://chparenting.com",
+          "https://character.chparenting.com",
           "https://baby.chparenting.com",
           "https://pregnancy.chparenting.com",
           "https://learn.chparenting.com",

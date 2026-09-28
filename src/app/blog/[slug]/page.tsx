@@ -239,7 +239,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: post.cover.image ? `https://english.chparenting.com${post.cover.image}` : `https://english.chparenting.com/og/${post.slug}.svg`,
     datePublished: `${post.date}T00:00:00+08:00`,
     dateModified: `${post.date}T00:00:00+08:00`,
-    author: { "@type": "Person", name: "薇佳媽媽", url: "https://aimommywisdom.com" },
+    author: { "@type": "Person", name: "薇佳媽媽", alternateName: "Vega", url: "https://english.chparenting.com/about", image: "https://character.chparenting.com/src/img/author.jpg" },
     publisher: { "@type": "Organization", name: "智慧媽咪國際有限公司", url: "https://aimommywisdom.com" },
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     wordCount,
@@ -390,12 +390,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         {/* Author — blog_content style author card */}
         <div className="article-content rounded-2xl mb-8 flex items-center gap-4" style={{ padding: "24px 30px" }}>
-          <div className="text-4xl">👩‍💻</div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://character.chparenting.com/src/img/author.jpg" alt="薇佳媽媽（Vega）" width={64} height={64} loading="lazy" className="w-16 h-16 rounded-full object-cover shrink-0" />
           <div>
-            <div className="font-bold" style={{ color: "#2a2a2a" }}>薇佳媽媽</div>
-            <div className="text-xs" style={{ color: "#999" }}>智慧媽咪國際有限公司 | 兩寶媽、英語教育推廣者</div>
-            <div className="text-xs mt-1" style={{ color: "#bbb" }}>
-              也在 <a href="https://chparenting.com" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>媽媽生活復原力 Lab</a> 和 <a href="https://mommystartup.com" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>亞洲媽媽創業</a> 分享育兒日常
+            <div className="font-bold" style={{ color: "#2a2a2a" }}><Link href="/about" className="no-underline" style={{ color: "#2a2a2a" }}>薇佳媽媽（Vega）</Link></div>
+            <div className="text-xs leading-relaxed" style={{ color: "#777" }}>
+              兩個國小孩子的媽媽（五年級、一年級）。曾任英語補教與國小代課教師，7 年數位行銷經驗，東海大學數位創新碩士學程畢業。經營 chparenting 親子網站、冒險英語兒童美語自學平台，以及「原來會這樣！」品格互動繪本。
+            </div>
+            <div className="text-xs mt-1" style={{ color: "#999" }}>
+              <Link href="/about" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>關於作者</Link>
+              {" ・ "}
+              <a href="https://character.chparenting.com/" style={{ color: "#5A4BD1", borderBottom: "1px solid #E8E5FA" }}>原來會這樣！品格互動繪本</a>
             </div>
           </div>
         </div>

@@ -29,6 +29,7 @@ export default function Footer() {
           <h4 className="font-bold mb-3 text-gray-800">學習文章</h4>
           <ul className="space-y-2 text-gray-500">
             <li><Link href="/blog" className="hover:text-purple-600 no-underline">全部文章</Link></li>
+            <li><Link href="/about" className="hover:text-purple-600 no-underline">關於作者</Link></li>
             <li><Link href="/blog/phonics-vs-kk-which-is-better" className="hover:text-purple-600 no-underline">Phonics vs KK 音標</Link></li>
             <li><Link href="/blog/best-english-books-for-kids-2026" className="hover:text-purple-600 no-underline">兒童英文繪本推薦</Link></li>
             <li><Link href="/blog/gept-elementary-preparation-guide" className="hover:text-purple-600 no-underline">英檢初級攻略</Link></li>
@@ -39,6 +40,7 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-500">
             <li><a href="https://chparenting.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">媽媽生活復原力 Lab chparenting.com</a></li>
             <li><a href="https://learn.chparenting.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">親子多元學習 learn.chparenting.com</a></li>
+            <li><a href="https://character.chparenting.com/" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">原來會這樣！品格互動繪本 character.chparenting.com</a></li>
             <li><a href="https://mommywisdom.tw" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">跟著媽咪團好康 mommywisdom.tw</a></li>
             <li><a href="https://mommystartup.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">亞洲媽媽創業 mommystartup.com</a></li>
             <li><a href="https://aimommywisdom.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">官網 aimommywisdom.com</a></li>
