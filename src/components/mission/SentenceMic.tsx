@@ -44,9 +44,30 @@ const LETTER_SOUNDS: Record<string, string[]> = {
   u: ['u', 'you', 'yu', 'ew'], v: ['v', 'vee', 'we', 'vi'], w: ['w', 'double', 'doubleyou'], x: ['x', 'ex', 'eggs', 'axe'],
   y: ['y', 'why', 'wai'], z: ['z', 'zee', 'zed', 'the', 'ze'],
 };
+// 聽起來像不像：只留子音骨架、不分清濁音（g/k、d/t、b/p、v/f、z/s 視為同一個音）。
+// 辨識器對孩子的發音常差一個母音或清濁音：goat → got／coat／good／goal 都是這種。
+function soundKey(w: string) {
+  let t = w.toLowerCase().replace(/[^a-z]/g, '');
+  t = t.replace(/^gh/, 'g').replace(/gh/g, '').replace(/ph/g, 'f').replace(/ck/g, 'k').replace(/qu?/g, 'k')
+       .replace(/c(?=[eiy])/g, 's').replace(/c/g, 'k').replace(/x/g, 'ks').replace(/^wr/, 'r').replace(/^kn/, 'n');
+  t = t.replace(/g/g, 'k').replace(/d/g, 't').replace(/b/g, 'p').replace(/v/g, 'f').replace(/z/g, 's');
+  const first = t[0] || '';
+  const rest = t.slice(1).replace(/[aeiouyhw]/g, '');
+  return (/[aeiou]/.test(first) ? 'a' : first) + rest.replace(/(.)\1+/g, '$1');
+}
+function soundsLike(heard: string, target: string) {
+  if (heard.length < 2 || target.length < 3) return false;
+  // 尾音沒收到：go → goat、app → apple
+  if (target.startsWith(heard) && target.length - heard.length <= 2) return true;
+  const a = soundKey(heard), b = soundKey(target);
+  if (a.length < 2 || b.length < 2) return false;
+  if (a === b) return true;
+  // 尾巴的 l／n／s 辨識器常多聽或少聽一個：goal ↔ goat 不算，但 goats ↔ goat 算
+  return (a.length > b.length ? a : b).startsWith(a.length > b.length ? b : a) && Math.abs(a.length - b.length) === 1 && /[sn]$/.test(a.length > b.length ? a : b);
+}
 function wordHit(heard: string, target: string) {
   if (target.length === 1 && LETTER_SOUNDS[target]) return LETTER_SOUNDS[target].includes(heard);
-  return close(heard, target);
+  return close(heard, target) || soundsLike(heard, target);
 }
 
 /** 逐字比對，回傳念對的比例 0~1 */
@@ -66,7 +87,7 @@ export function score(said: string, target: string) {
   // （Vega 2026-09-28：孩子念 D is for dog，一直顯示 beautiful dog 過不了）
   if (b.length === 4 && b[0].length === 1 && b[1] === 'is' && b[2] === 'for') {
     const key = b[3];
-    if (a.length >= 2 && a.some(x => close(x, key))) s = Math.max(s, 0.8);
+    if (a.length >= 2 && a.some(x => wordHit(x, key))) s = Math.max(s, 0.8);
   }
   return s;
 }
