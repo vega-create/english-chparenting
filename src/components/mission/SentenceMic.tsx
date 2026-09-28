@@ -62,7 +62,18 @@ function soundsLike(heard: string, target: string) {
   const a = soundKey(heard), b = soundKey(target);
   return a.length >= 2 && a === b;
 }
+// 同音字：發音完全一樣，辨識器只是挑了另一個拼法（hi→high、bye→buy），不算念錯
+const HOMOPHONE_GROUPS = [
+  ['hi', 'high', 'hai'], ['bye', 'by', 'buy'], ['to', 'two', 'too'], ['for', 'four'], ['see', 'sea'], ['i', 'eye'],
+  ['no', 'know'], ['one', 'won'], ['red', 'read'], ['blue', 'blew'], ['sun', 'son'], ['here', 'hear'], ['there', 'their'],
+  ['right', 'write'], ['new', 'knew'], ['ate', 'eight'], ['be', 'bee'], ['meet', 'meat'], ['our', 'hour'],
+  ['ok', 'okay'], ['mom', 'mum'],
+];
+const HOMOPHONES: Record<string, string[]> = {};
+for (const g of HOMOPHONE_GROUPS) for (const w of g) HOMOPHONES[w] = g;
+
 function wordHit(heard: string, target: string) {
+  if (HOMOPHONES[target]?.includes(heard)) return true;
   if (target.length === 1 && LETTER_SOUNDS[target]) return LETTER_SOUNDS[target].includes(heard);
   return close(heard, target) || soundsLike(heard, target);
 }
@@ -101,7 +112,8 @@ export function score(said: string, target: string) {
  *
  * iOS Safari 多半不支援語音辨識，那種情況改成手動確認的「我念完了」。
  */
-export default function SentenceMic({ target, onDone, compact = false }: { target: string; onDone: () => void; compact?: boolean }) {
+// onSkip：試了三次按「先跳過」時呼叫；沒給就跟以前一樣當作完成（onDone）
+export default function SentenceMic({ target, onDone, onSkip, compact = false }: { target: string; onDone: () => void; onSkip?: () => void; compact?: boolean }) {
   // compact：電子書內頁用的紫色藥丸（麥克風圈＋要念的句子），字級跟著書寬（cqw）縮放
   const [status, setStatus] = useState<Status>('idle');
   const [heard, setHeard] = useState('');
@@ -253,7 +265,7 @@ export default function SentenceMic({ target, onDone, compact = false }: { targe
           <p className="m-0 text-[2.1cqw] text-gray-500">聽到你念：<span className="font-bold text-gray-700">{heard}</span></p>
         )}
         {tries >= 3 && status !== 'ok' && (
-          <button onClick={() => { playStar(); onDone(); }} className="text-[2.1cqw] text-gray-400 underline">先跳過這一句</button>
+          <button onClick={() => { if (onSkip) { playClick(); onSkip(); } else { playStar(); onDone(); } }} className="text-[2.1cqw] text-gray-400 underline cursor-pointer">先跳過這一句</button>
         )}
       </div>
     );
@@ -274,8 +286,8 @@ export default function SentenceMic({ target, onDone, compact = false }: { targe
 
       {/* 試很多次還是不行就讓他過，不要卡住 */}
       {tries >= 3 && status !== 'ok' && (
-        <button onClick={() => { playStar(); onDone(); }}
-          className="text-xs text-gray-400 underline">
+        <button onClick={() => { if (onSkip) { playClick(); onSkip(); } else { playStar(); onDone(); } }}
+          className="text-xs text-gray-400 underline cursor-pointer">
           先跳過這一句
         </button>
       )}

@@ -9,6 +9,7 @@ import { playStar, playClick } from '@/lib/sfx';
 import { playPraise, playReward } from '@/lib/vega-audio';
 import { track } from '@/lib/analytics';
 import { bumpDaily } from '@/lib/missionProgress';
+import SentenceMic from '@/components/mission/SentenceMic';
 
 interface Props {
   challenges: QuizQuestion[];
@@ -207,13 +208,16 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
             >
               🐢 慢慢聽
             </button>
-            <p className="text-sm text-gray-400 mb-3">跟著念一次，然後按下面的按鈕</p>
-            <button
-              onClick={() => handleAnswer(q.answer)}
-              className="bg-green-500 text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-green-600 transition active:scale-95"
-            >
-              🎤 我念完了！
-            </button>
+            <p className="text-sm text-gray-400 mb-3">聽完示範，按麥克風念給我聽</p>
+            {/* 真的聽孩子念（跟小挑戰、翻書一樣）；瀏覽器不支援或沒開麥克風時，SentenceMic 會自己退回「我念完了」 */}
+            {!showResult && (
+              <SentenceMic
+                key={current}
+                target={q.answer}
+                onDone={() => handleAnswer(q.answer)}
+                onSkip={() => handleAnswer('')}
+              />
+            )}
           </div>
         )}
 
