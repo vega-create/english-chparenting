@@ -4,7 +4,7 @@ import { speakChinese } from '@/lib/speech';
 import GameButton from '@/components/GameButton';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
-import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
+import { playLesson, findLessonAudio, SLOW_CLIP_RATE, SLOW_TTS_RATE, type LessonAudioIndex } from '@/lib/audio';
 import { playStar, playClick } from '@/lib/sfx';
 import { playPraise, playReward } from '@/lib/vega-audio';
 import { track } from '@/lib/analytics';
@@ -47,9 +47,11 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
   }, [current]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // 題目的答案多半是課文單字，先試真人錄音，沒有才用 TTS
-  async function sayAnswer(text: string, rate = 0.7) {
+  // slow：🐢 慢速再聽一次
+  async function sayAnswer(text: string, rate = 0.7, slow = false) {
     const path = findLessonAudio(audioIndex, level, text);
-    if (path && await playLesson(path)) {
+    if (slow) rate = SLOW_TTS_RATE;
+    if (path && await playLesson(path, undefined, slow ? SLOW_CLIP_RATE : 1)) {
       track({ kind: 'replay', level, step: 'challenge', item: text, audioSrc: 'el' });
       return;
     }
@@ -153,6 +155,12 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
             >
               🔊 聽一次（可選）
             </button>
+            <button
+              onClick={() => sayAnswer(q.passage!.replace(/\n/g, '. '), 0.7, true)}
+              className="mt-3 ml-4 text-amber-600 text-sm font-bold hover:underline cursor-pointer"
+            >
+              🐢 慢慢聽
+            </button>
           </div>
         )}
 
@@ -173,6 +181,13 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
             >
               🔊 播放音檔
             </button>
+            <button
+              onClick={() => sayAnswer(q.answer, 0.7, true)}
+              aria-label="慢速再聽一次"
+              className="ml-2 bg-blue-50 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-100 transition active:scale-95 cursor-pointer"
+            >
+              🐢 慢慢聽
+            </button>
           </div>
         )}
 
@@ -184,6 +199,13 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
               className="bg-green-100 text-green-600 px-6 py-3 rounded-2xl font-bold hover:bg-green-200 transition active:scale-95 mb-3"
             >
               🔊 先聽示範
+            </button>
+            <button
+              onClick={() => sayAnswer(q.answer, 0.7, true)}
+              aria-label="慢速示範"
+              className="ml-2 bg-green-50 text-green-600 px-5 py-3 rounded-2xl font-bold hover:bg-green-100 transition active:scale-95 mb-3 cursor-pointer"
+            >
+              🐢 慢慢聽
             </button>
             <p className="text-sm text-gray-400 mb-3">跟著念一次，然後按下面的按鈕</p>
             <button

@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { QuizQuestion } from '@/data/missions';
 import { speak } from '@/lib/speech';
-import { playLesson, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
+import { playLesson, findLessonAudio, SLOW_CLIP_RATE, SLOW_TTS_RATE, type LessonAudioIndex } from '@/lib/audio';
 import { track } from '@/lib/analytics';
 
 interface Props {
@@ -14,14 +14,14 @@ interface Props {
 
 export default function WakeUp({ questions, onComplete, level = 1, audioIndex = {} }: Props) {
   // 先播真人錄音，沒有才用 TTS
-  async function say(text: string) {
+  async function say(text: string, slow = false) {
     const path = findLessonAudio(audioIndex, level, text);
-    if (path && await playLesson(path)) {
+    if (path && await playLesson(path, undefined, slow ? SLOW_CLIP_RATE : 1)) {
       track({ kind: 'replay', level, step: 'wakeup', item: text, audioSrc: 'el' });
       return;
     }
     track({ kind: 'replay', level, step: 'wakeup', item: text, audioSrc: 'tts' });
-    speak(text);
+    speak(text, slow ? SLOW_TTS_RATE : undefined);
   }
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
@@ -101,6 +101,13 @@ export default function WakeUp({ questions, onComplete, level = 1, audioIndex = 
               className="bg-blue-100 text-blue-600 px-6 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95"
             >
               🔊 再聽一次
+            </button>
+            <button
+              onClick={() => say(q.answer, true)}
+              aria-label="慢速再聽一次"
+              className="ml-2 bg-blue-50 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-100 transition active:scale-95 cursor-pointer"
+            >
+              🐢 慢慢聽
             </button>
           </div>
         )}

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import GameButton from '@/components/GameButton';
 import { speak } from '@/lib/speech';
-import { playLesson, lessonPath, findLessonAudio, type LessonAudioIndex } from '@/lib/audio';
+import { playLesson, lessonPath, findLessonAudio, SLOW_CLIP_RATE, SLOW_TTS_RATE, type LessonAudioIndex } from '@/lib/audio';
 
 interface Props {
   prompts: string[];
@@ -14,11 +14,12 @@ interface Props {
 
 export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1, audioIndex = {} }: Props) {
   // 提示句先播 Finn 的錄音（L{級}/m{課}/t{序}.mp3），沒有才查課文表，再沒有才 TTS
-  async function sayPrompt(i: number, text: string) {
-    if (await playLesson(lessonPath.talk(level, missionId, i))) return;
+  async function sayPrompt(i: number, text: string, slow = false) {
+    const r = slow ? SLOW_CLIP_RATE : 1;
+    if (await playLesson(lessonPath.talk(level, missionId, i), undefined, r)) return;
     const path = findLessonAudio(audioIndex, level, text);
-    if (path && await playLesson(path)) return;
-    speak(text);
+    if (path && await playLesson(path, undefined, r)) return;
+    speak(text, slow ? SLOW_TTS_RATE : undefined);
   }
   const [current, setCurrent] = useState(0);
   const [isListening, setIsListening] = useState(false);
@@ -134,6 +135,13 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
               className="mt-2 text-sm text-blue-500 hover:text-blue-700 transition"
             >
               🔊 聽 Finn 說
+            </button>
+            <button
+              onClick={() => sayPrompt(current, prompt, true)}
+              aria-label="慢速再聽一次"
+              className="mt-2 ml-4 text-sm text-blue-500 hover:text-blue-700 transition cursor-pointer"
+            >
+              🐢 慢慢聽
             </button>
           </div>
         </div>

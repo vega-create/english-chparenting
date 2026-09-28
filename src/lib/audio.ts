@@ -14,6 +14,11 @@ export function stopClip(): void {
 // 播放單一 mp3；播完 resolve(true)，檔案不存在/失敗/被新的打斷 resolve(false)
 // 用途：課程音檔優先播錄音，沒檔才由呼叫端 fallback 到 TTS
 // onTime：播放中每一影格回報 (目前秒數, 總長)，給「唸到哪亮到哪」用；播完或被打斷就不再回報
+// 🐢 慢速鍵用的錄音播放速度（保留音高）。0.75：孩子聽得清楚、又不到 0.7 的機械感
+export const SLOW_CLIP_RATE = 0.75;
+// 🐢 慢速鍵用的 TTS 速度（沒有錄音時的備援）
+export const SLOW_TTS_RATE = 0.5;
+
 // rate：播放速度（🐢 慢速用 0.7；保留音高，不會變成低沉怪聲）
 export function playClip(url: string, onTime?: (t: number, dur: number) => void, rate = 1): Promise<boolean> {
   if (typeof window === 'undefined') return Promise.resolve(false);

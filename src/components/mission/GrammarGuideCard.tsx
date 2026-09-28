@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GameButton from '@/components/GameButton';
-import { playLesson, lessonPath } from '@/lib/audio';
+import { playLesson, lessonPath, SLOW_CLIP_RATE, SLOW_TTS_RATE } from '@/lib/audio';
 import { speak, speakChinese } from '@/lib/speech';
 import { playStar, playClick, playSuccess } from '@/lib/sfx';
 import type { GrammarGuide, GrammarPractice } from '@/data/grammarGuides';
@@ -14,10 +14,13 @@ import SentenceMic from '@/components/mission/SentenceMic';
  * 無中文旁白——中文只出現在畫面小字；聲音只有英文單字（真人錄音優先）。
  */
 
-async function sayWord(level: number, en: string) {
-  if (await playLesson(lessonPath.word(level, en))) return;
-  speak(en, 0.7);
+// slow：🐢 慢速再聽一次（錄音與 TTS 都會變慢）
+async function sayWord(level: number, en: string, slow = false) {
+  if (await playLesson(lessonPath.word(level, en), undefined, slow ? SLOW_CLIP_RATE : 1)) return;
+  speak(en, slow ? SLOW_TTS_RATE : 0.7);
 }
+
+const TURTLE = "inline-flex items-center justify-center gap-1 rounded-full bg-blue-100 border-2 border-blue-200 text-blue-600 font-black text-sm px-3 py-1.5 active:scale-95 transition cursor-pointer";
 
 export default function GrammarGuideCard({ guide, level, missionId, onDone }: {
   guide: GrammarGuide; level: number; missionId?: number; onDone: () => void;
@@ -49,13 +52,13 @@ export default function GrammarGuideCard({ guide, level, missionId, onDone }: {
   const q = quiz[pi];
 
   // 播題目音：聽力題播單字、句型題播整句（真人錄音優先）
-  async function sayItem(item: GrammarPractice) {
+  async function sayItem(item: GrammarPractice, slow = false) {
     if (item.si != null) {
-      if (await playLesson(lessonPath.sentence(level, missionId ?? 0, item.si))) return;
-      speak(item.prompt, 0.8);
+      if (await playLesson(lessonPath.sentence(level, missionId ?? 0, item.si), undefined, slow ? SLOW_CLIP_RATE : 1)) return;
+      speak(item.prompt, slow ? SLOW_TTS_RATE : 0.8);
       return;
     }
-    sayWord(level, item.prompt);
+    sayWord(level, item.prompt, slow);
   }
 
   // 混合題自動播音（進題就唸，聽力題不顯示字、靠耳朵）
@@ -154,6 +157,13 @@ export default function GrammarGuideCard({ guide, level, missionId, onDone }: {
                   {q.prompt} 🔊
                 </button>
               )}
+              {/* 🐢 慢速：孩子覺得太快時，慢慢再聽一次 */}
+              <div className="mt-2">
+                <button onClick={() => (q.type ? sayItem(q, true) : sayWord(level, q.prompt, true))}
+                  aria-label="慢速再聽一次" className={TURTLE}>
+                  🐢 慢慢聽
+                </button>
+              </div>
               <button
                 onClick={() => speakChinese(q.type === 'speak' ? `${q.zh}，跟著唸唸看` : q.hint)}
                 className="m-0 mt-1 mx-auto block text-sm text-gray-500 font-bold active:scale-[0.98] transition"
