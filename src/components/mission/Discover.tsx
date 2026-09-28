@@ -9,6 +9,7 @@ import { stopAllAudio } from '@/lib/audioBus';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 import { track } from '@/lib/analytics';
 import SentenceMic from '@/components/mission/SentenceMic';
+import ListenFlip, { listenFlipWords } from '@/components/mission/ListenFlip';
 import GameButton from '@/components/GameButton';
 import VideoKaraoke from '@/components/mission/VideoKaraoke';
 import StoryCritters from '@/components/mission/StoryCritters';
@@ -31,7 +32,7 @@ interface Props {
   onRegisterBack?: (fn: () => boolean) => void; // 供外層「上一步」逐層退：回傳 true=內部已處理
 }
 
-type Phase = 'video' | 'grammar' | 'story' | 'words' | 'phonics' | 'sentences';
+type Phase = 'video' | 'grammar' | 'story' | 'words' | 'listen' | 'phonics' | 'sentences';
 
 // 各級內頁底圖的米色面板範圍（世界框共用：L1-2 彩虹谷／L3-4 友善小鎮／L5-6 海洋灣／L7-8 故事城堡）
 const PANEL: Record<number, { left: string; right: string; top: string; bottom: string }> = {
@@ -73,6 +74,8 @@ function WordFace({ en, emoji }: { en: string; emoji: string }) {
 
 export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete, onRegisterBack }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
+  // 單字卡看完後的「聽力翻卡」小遊戲：這課至少要有 3 個一般單字才玩
+  const hasListenGame = listenFlipWords(words).length >= 3;
   // 每課影片後都要過「小挑戰」才能翻書（Vega 定案）：
   // 文法重點課走文法引導卡；其他課自動用本課單字生聽力挑戰（每次隨機）。
   const grammarGuide = useMemo(() => {
@@ -154,7 +157,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
         if (hasVideo) { setPhase('video'); return true; }
         return false;
       }
-      const order: Phase[] = [...(hasVideo ? ['video' as Phase] : []), 'story', 'words', ...(phonicsLetters.length ? ['phonics' as Phase] : []), 'sentences'];
+      const order: Phase[] = [...(hasVideo ? ['video' as Phase] : []), 'story', 'words', ...(hasListenGame ? ['listen' as Phase] : []), ...(phonicsLetters.length ? ['phonics' as Phase] : []), 'sentences'];
       const idx = order.indexOf(phase);
       if (idx <= 0) return false;
       const target = order[idx - 1];
@@ -162,7 +165,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
       else setPhase(target);
       return true;
     });
-  }, [onRegisterBack, phase, bookOpen, storyIndex, hasVideo, grammarGuide, phonicsLetters.length, story.length]);
+  }, [onRegisterBack, phase, bookOpen, storyIndex, hasVideo, grammarGuide, phonicsLetters.length, story.length, hasListenGame]);
 
   // 電子書自然環境音：打開書就低音量循環（海洋灣聽海浪、其他森林/溪流），闔上或離開就停
   useEffect(() => {
@@ -905,8 +908,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
             <p className="text-sm text-gray-400 mb-2">翻開全部單字就能繼續 🔓</p>
           )}
           {allSeen ? (
-            <GameButton onClick={() => setPhase('phonics')} color="green" size="md">
-            {allSeen ? '🔤 ▶' : `還有 ${words.length - seenCards.length} 張`}
+            <GameButton onClick={() => setPhase(hasListenGame ? 'listen' : 'phonics')} color="green" size="md">
+            {allSeen ? (hasListenGame ? '🎧 ▶' : '🔤 ▶') : `還有 ${words.length - seenCards.length} 張`}
           </GameButton>
           ) : (
             <button disabled className="px-8 py-3 rounded-2xl font-bold bg-gray-200 text-gray-400 cursor-not-allowed">
@@ -916,6 +919,11 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
         </div>
       </div>
     );
+  }
+
+  // ===== Phase 2.5: 聽力翻卡（聽單字、翻出對的圖） =====
+  if (phase === 'listen') {
+    return <ListenFlip words={words} level={level} missionId={missionId} onDone={() => setPhase('phonics')} />;
   }
 
   // ===== Phase 3: Phonics 字母 =====
