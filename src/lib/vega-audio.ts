@@ -3,7 +3,7 @@
 //   vega/     Vega 旁白、角色台詞、獎勵音效
 //   lessons/  課文音檔（之後放這裡）
 
-import { registerAudioChannel, stopOtherChannels } from './audioBus';
+import { registerAudioChannel, stopOtherChannels, isMicListening } from './audioBus';
 
 const R2_BASE = 'https://pub-64aaa410cb47427ea27ebe800e54daba.r2.dev/vega';
 
@@ -48,6 +48,7 @@ export function stopVega(): void {
 export function playVega(filename: string, options: { interrupt?: boolean } = {}): Promise<void> {
   if (typeof window === 'undefined') return Promise.resolve();
   if (isMuted()) return Promise.resolve();
+  if (isMicListening()) return Promise.resolve();   // 麥克風在聽的時候不播
 
   const { interrupt = true } = options;
   if (interrupt) { stopVega(); stopOtherChannels('vega'); }

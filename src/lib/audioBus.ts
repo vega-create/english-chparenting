@@ -22,3 +22,26 @@ export function stopOtherChannels(except: AudioChannel) {
 export function stopAllAudio() {
   stoppers.forEach(stop => stop());
 }
+
+/**
+ * 麥克風正在聽孩子念的時候，網站自己的聲音一律不能播。
+ *
+ * Vega 2026-09-28：孩子發現錄音時去按 🔊 示範，麥克風聽到的是網站念的，就過關了。
+ * 所以開始錄音時先把正在播的全停掉，錄音期間所有示範音（錄音檔／旁白／TTS）都播不出來。
+ * 保險：最多鎖 20 秒，避免辨識器沒回報結束時整個網站變啞巴。
+ */
+let micListening = false;
+let micTimer: ReturnType<typeof setTimeout> | undefined;
+
+export function setMicListening(on: boolean) {
+  micListening = on;
+  if (micTimer) { clearTimeout(micTimer); micTimer = undefined; }
+  if (on) {
+    stopAllAudio();
+    micTimer = setTimeout(() => { micListening = false; }, 20000);
+  }
+}
+
+export function isMicListening() {
+  return micListening;
+}

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import GameButton from '@/components/GameButton';
 import { speak } from '@/lib/speech';
 import { playLesson, lessonPath, findLessonAudio, SLOW_CLIP_RATE, SLOW_TTS_RATE, type LessonAudioIndex } from '@/lib/audio';
+import { setMicListening } from '@/lib/audioBus';
 
 interface Props {
   prompts: string[];
@@ -67,10 +68,11 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
     recognition.continuous = false;
     recognition.interimResults = false;
 
-    recognition.onstart = () => { setMissed(false); setIsListening(true); };
+    recognition.onstart = () => { setMicListening(true); setMissed(false); setIsListening(true); };   // 聽的時候不准播示範音
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onresult = (event: any) => {
       got = true;
+      setMicListening(false);
       const text = event.results[0][0].transcript;
       setTranscript(text);
       setResponses(prev => [...prev, text]);
@@ -78,12 +80,13 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onerror = (e: any) => {
+      setMicListening(false);
       setIsListening(false);
       if (e?.error === 'not-allowed' || e?.error === 'service-not-allowed' || e?.error === 'network' || e?.error === 'audio-capture') { setDenyReason(e.error); setDenied(true); return; }
       setMissed(true);
     };
-    recognition.onend = () => { setIsListening(false); if (!got) setMissed(true); };
-    try { recognition.start(); } catch { setIsListening(false); setMissed(true); }
+    recognition.onend = () => { setMicListening(false); setIsListening(false); if (!got) setMissed(true); };
+    try { recognition.start(); } catch { setMicListening(false); setIsListening(false); setMissed(true); }
   }
 
   // 手動確認：當作有回答，往下走

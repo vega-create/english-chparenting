@@ -1,4 +1,4 @@
-import { registerAudioChannel, stopOtherChannels } from './audioBus';
+import { registerAudioChannel, stopOtherChannels, isMicListening } from './audioBus';
 
 // 目前正在播的課程音檔。開新的一定先停舊的 —— 兩個同時響聽起來就像回音。
 let currentClip: HTMLAudioElement | null = null;
@@ -22,6 +22,8 @@ export const SLOW_TTS_RATE = 0.5;
 // rate：播放速度（🐢 慢速用 0.7；保留音高，不會變成低沉怪聲）
 export function playClip(url: string, onTime?: (t: number, dur: number) => void, rate = 1): Promise<boolean> {
   if (typeof window === 'undefined') return Promise.resolve(false);
+  // 麥克風在聽的時候不播（回 true：呼叫端才不會改用 TTS 補念）
+  if (isMicListening()) return Promise.resolve(true);
   stopClip();
   stopOtherChannels('clip');   // Vega 旁白／TTS 先停，避免三個聲音疊在一起
   return new Promise((resolve) => {

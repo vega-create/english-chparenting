@@ -1,4 +1,4 @@
-import { registerAudioChannel, stopOtherChannels } from './audioBus';
+import { registerAudioChannel, stopOtherChannels, isMicListening } from './audioBus';
 // 全站共用 TTS 函式 - 使用溫柔女性聲音
 
 let femaleVoice: SpeechSynthesisVoice | null = null;
@@ -69,6 +69,7 @@ export function stopSpeaking() {
 // onWord：瀏覽器唸到每個字時回報該字在 text 裡的起始位置（給「唸到哪亮到哪」用）；onEnd：唸完或被取消
 export function speak(text: string, rate = 0.8, hooks?: { onWord?: (charIndex: number) => void; onEnd?: () => void }) {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  if (isMicListening()) { hooks?.onEnd?.(); return; }   // 麥克風在聽的時候不念
 
   window.speechSynthesis.cancel();
 
@@ -96,6 +97,7 @@ export function speak(text: string, rate = 0.8, hooks?: { onWord?: (charIndex: n
 // 中文語音（用於引導說明）— 台灣腔、活潑女聲
 export function speakChinese(text: string, rate = 1.0) {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  if (isMicListening()) return;   // 麥克風在聽的時候不念
 
   window.speechSynthesis.cancel();
 

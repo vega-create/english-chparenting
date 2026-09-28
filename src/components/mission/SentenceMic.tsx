@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { playClick, playStar } from '@/lib/sfx';
 import { track } from '@/lib/analytics';
+import { setMicListening } from '@/lib/audioBus';
 
 type Status = 'idle' | 'listening' | 'ok' | 'close' | 'again' | 'denied';
 
@@ -117,11 +118,11 @@ export function score(said: string, target: string) {
 
   let pass = good >= need && extra <= extraCap;
 
-  // 「D is for dog.」這種字母句：辨識器常把前半「D is for」整段聽成別的字（例：beautiful dog）。
-  // 單字念對、念了不只一個字、也沒有多念一串，就算過關；單字沒念對一律不過。
+  // 「D is for dog.」這種字母句：規則跟一般句子一樣（4 個字要對 3 個、照順序），
+  // 另外要求最後那個單字一定要念對——不然「D is for duck」前三個字對了也會過。
+  // （曾經放寬成「beautiful dog」也算過，Vega 2026-09-28 說不行：要確實抓到。）
   if (b.length === 4 && b[0].length === 1 && b[1] === 'is' && b[2] === 'for') {
-    const keyOk = a.some(x => wordHit(x, b[3]) > 0);
-    pass = keyOk && a.length >= 2 && a.length <= b.length + 1;
+    if (!a.some(x => wordHit(x, b[3]) > 0)) pass = false;
   }
 
   const ratio = good / b.length;
@@ -150,7 +151,7 @@ export default function SentenceMic({ target, onDone, onSkip, compact = false }:
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const w = window as any;
     setSupported(!!(w.SpeechRecognition || w.webkitSpeechRecognition));
-    return () => { try { recRef.current?.abort?.(); } catch {} };
+    return () => { setMicListening(false); try { recRef.current?.abort?.(); } catch {} };
   }, []);
 
   function start() {
@@ -170,10 +171,12 @@ export default function SentenceMic({ target, onDone, onSkip, compact = false }:
     rec.interimResults = false;
     rec.maxAlternatives = 3;   // 多拿幾個候選，取跟目標最像的那個（第一候選常是聽錯的）；拿太多等於放水
 
-    rec.onstart = () => setStatus('listening');
+    // 開始聽：把正在播的示範音停掉，聽的期間也不准再播（不然麥克風聽到的是網站自己念的）
+    rec.onstart = () => { setMicListening(true); setStatus('listening'); };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     rec.onresult = (e: any) => {
       got = true;
+      setMicListening(false);
       // 在所有候選裡挑分數最高的；畫面上顯示的也是那一個
       let text = String(e.results[0][0].transcript);
       let s = score(text, target);
@@ -191,6 +194,7 @@ export default function SentenceMic({ target, onDone, onSkip, compact = false }:
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     rec.onerror = (e: any) => {
+      setMicListening(false);
       // 分清楚是哪一種（Vega 2026-09-02：她明明開了麥克風卻看到「沒有權限」）：
       //  not-allowed         → 瀏覽器沒把麥克風給這個網站（網址列鎖頭→麥克風→允許）
       //  service-not-allowed → 瀏覽器的語音辨識服務不能用（Safari 要開「Siri 與聽寫」、Brave／內嵌瀏覽器不支援）
@@ -204,9 +208,9 @@ export default function SentenceMic({ target, onDone, onSkip, compact = false }:
       setStatus('again');
       setTries(t => t + 1);   // 沒聽到聲音也算一次嘗試，但不算過關
     };
-    rec.onend = () => setStatus(st => (st === 'listening' ? (got ? st : 'again') : st));
+    rec.onend = () => { setMicListening(false); setStatus(st => (st === 'listening' ? (got ? st : 'again') : st)); };
 
-    try { rec.start(); } catch { setStatus('again'); }
+    try { rec.start(); } catch { setMicListening(false); setStatus('again'); }
   }
 
   // 不支援 or 沒權限：改成孩子自己按「我念完了」
@@ -242,7 +246,7 @@ export default function SentenceMic({ target, onDone, onSkip, compact = false }:
 
   const label: Record<Status, string> = {
     idle: '🎤 換我念',
-    listening: '🔴 聽你念…（念完會自動停）',
+    listening: '🔴 聽你念…（現在不能按示範喔）',
     ok: '⭐ 念得很好！',
     close: '👍 差一點點，再念一次',
     again: '💪 沒聽清楚，再念一次',
