@@ -20,9 +20,14 @@ interface Props {
   reviewQuiz: QuizQuestion[];
   courseSlug: string;
   missionId: number;
+  /** 沒過關時按「再挑戰一次」 */
+  onRetry?: () => void;
 }
 
-export default function MissionComplete({ missionTitle, missionTitleEn, stars, maxStars, reviewQuiz, courseSlug, missionId }: Props) {
+/** 過關標準：正確率 6 成（Vega 2026-09-28：要有標準，亂念或一直跳過不能過） */
+export const PASS_PERCENT = 60;
+
+export default function MissionComplete({ missionTitle, missionTitleEn, stars, maxStars, reviewQuiz, courseSlug, missionId, onRetry }: Props) {
   const courseLevel = Number(courseSlug.match(/^l(\d+)-/)?.[1] ?? 0);
   const parentPost = courseLevel ? postsForLevel(courseLevel, 1)[0] : undefined;
   const [quizDone, setQuizDone] = useState(false);
@@ -33,13 +38,20 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   const [showQuiz, setShowQuiz] = useState(false);
   const [spellInput, setSpellInput] = useState('');
 
-  const starPercent = Math.round((stars / maxStars) * 100);
+  const starPercent = maxStars > 0 ? Math.round((stars / maxStars) * 100) : 100;
+  const passed = starPercent >= PASS_PERCENT;
   const starCount = starPercent >= 90 ? 3 : starPercent >= 70 ? 2 : 1;
 
   // 進到結算畫面時播 Miss Vega 鼓勵語音 + 星數獎勵語音 + 記錄完成進度
   useEffect(() => {
     const lv = parseInt(String(courseSlug).match(/l?(\d+)/)?.[1] ?? '1', 10);
     stopAmbience();                               // 電子書環境音在結算畫面一定要停
+    if (!passed) {
+      // 沒過關：不放煙火、不記完成（下一關不會解鎖），只記一筆成績
+      track({ kind: 'lesson_end', level: lv, mission: missionId, score: 0,
+              meta: { percent: starPercent, stars, maxStars, passed: false } });
+      return;
+    }
     playFanfare(starCount);                       // 先響破關配樂
     // 配樂約 2.4-3.5 秒；鼓勵語開始前先把配樂尾音切掉，人聲才不會被蓋過（Vega 抓的）
     const praiseAt = starCount >= 3 ? 3900 : starCount === 2 ? 3700 : 2800;
@@ -48,10 +60,49 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
     // 鼓勵語播完接星數獎勵（reward-star-1/2/3，L5+ 用英文版）
     const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), praiseAt + 2000);
     track({ kind: 'lesson_end', level: lv, mission: missionId, score: starCount,
-            meta: { percent: starPercent, stars, maxStars } });
+            meta: { percent: starPercent, stars, maxStars, passed: true } });
     recordMissionComplete(courseSlug, missionId, starCount);
     return () => { clearTimeout(t); clearTimeout(t2); clearTimeout(tCut); stopFanfare(); };
-  }, [courseSlug, missionId, starCount]);
+  }, [courseSlug, missionId, starCount, passed]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ===== 沒過關 =====
+  if (!passed) {
+    return (
+      <div className="animate-slide-up text-center">
+        <div className="text-7xl mb-3">💪</div>
+        <h2 className="text-3xl font-black text-gray-800 mb-2">差一點點！</h2>
+        <p className="text-lg text-gray-600 mb-1">{missionTitleEn}</p>
+        <p className="text-base text-gray-500 mb-5">{missionTitle}</p>
+
+        <div className="bg-white rounded-3xl p-6 shadow-lg border-2 border-orange-200 max-w-md mx-auto mb-5">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <p className="text-3xl font-black text-yellow-500">{stars}<span className="text-base text-gray-400"> / {maxStars}</span></p>
+              <p className="text-sm text-gray-500">小星星</p>
+            </div>
+            <div>
+              <p className="text-3xl font-black text-orange-500">{starPercent}%</p>
+              <p className="text-sm text-gray-500">正確率</p>
+            </div>
+          </div>
+          <p className="mt-4 text-sm font-bold text-gray-600">正確率要 {PASS_PERCENT}% 以上才過關，下一關才會打開</p>
+          <p className="mt-1 text-xs text-gray-400">答對 1 題拿 1 顆星；口說題跳過不給星</p>
+        </div>
+
+        <div className="bg-orange-50 rounded-3xl p-4 max-w-md mx-auto mb-6 border border-orange-200">
+          <p className="text-lg">
+            <img src="/characters/finn/finn-talk.png" alt="Finn" className="inline w-24 h-24 object-contain mr-2" />
+            Finn: &ldquo;So close! Let&apos;s try again!&rdquo;
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-3 max-w-md mx-auto">
+          <GameButton onClick={() => onRetry?.()} color="gold" size="lg">🎮 再挑戰一次</GameButton>
+          <GameButton href={`/courses/${courseSlug}`} color="green" size="md" className="text-center">先回地圖</GameButton>
+        </div>
+      </div>
+    );
+  }
 
   function handleQuizAnswer(answer: string) {
     if (showResult) return;
@@ -90,7 +141,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
           </div>
         </div>
 
-        <p className="text-xs font-bold text-gray-400 mb-1">本課成績（正確率 7 成拿 2 顆、9 成拿 3 顆）</p>
+        <p className="text-xs font-bold text-gray-400 mb-1">本課成績（正確率 6 成過關、7 成 2 顆、9 成 3 顆）</p>
         <h2 className="text-3xl font-black text-gray-800 mb-2">Mission Complete!</h2>
         <p className="text-xl text-gray-600 mb-1">{missionTitleEn}</p>
         <p className="text-lg text-gray-500 mb-6">{missionTitle}</p>

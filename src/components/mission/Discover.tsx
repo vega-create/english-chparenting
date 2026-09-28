@@ -30,6 +30,8 @@ interface Props {
   missionId?: number;
   onComplete: () => void;
   onRegisterBack?: (fn: () => boolean) => void; // 供外層「上一步」逐層退：回傳 true=內部已處理
+  /** 句子練習每一句的結果：true＝真的念過關、false＝跳過（算進本課成績） */
+  onSentenceResult?: (ok: boolean) => void;
 }
 
 type Phase = 'video' | 'grammar' | 'story' | 'words' | 'listen' | 'phonics' | 'sentences';
@@ -72,7 +74,7 @@ function WordFace({ en, emoji }: { en: string; emoji: string }) {
   return <div className="text-6xl mb-1">{emoji}</div>;
 }
 
-export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete, onRegisterBack }: Props) {
+export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete, onRegisterBack, onSentenceResult }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
   // 單字卡看完後的「聽力翻卡」小遊戲：這課至少要有 3 個一般單字才玩
   const hasListenGame = listenFlipWords(words).length >= 3;
@@ -115,6 +117,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   const [seenCards, setSeenCards] = useState<number[]>([]);
   const [currentSentence, setCurrentSentence] = useState(0);
   const [sentenceRepeated, setSentenceRepeated] = useState(false);
+  const [sentenceSkipped, setSentenceSkipped] = useState(false);
   const [pageDir, setPageDir] = useState<'next' | 'prev'>('next');
 
   const scene = story[storyIndex];
@@ -1018,11 +1021,15 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               className="bg-blue-50 text-blue-500 px-5 py-4 rounded-2xl font-medium hover:bg-blue-100 transition active:scale-95 cursor-pointer">
               🐢
             </button>
-            <SentenceMic target={sentence.en} onDone={() => setSentenceRepeated(true)} />
+            <SentenceMic key={currentSentence} target={sentence.en}
+              onDone={() => { onSentenceResult?.(true); setSentenceSkipped(false); setSentenceRepeated(true); }}
+              onSkip={() => { onSentenceResult?.(false); setSentenceSkipped(true); setSentenceRepeated(true); }} />
           </div>
         ) : (
           <div className="text-center animate-slide-up">
-            <p className="text-green-600 font-bold text-lg mb-4">⭐ Great!</p>
+            {sentenceSkipped
+              ? <p className="text-gray-500 font-bold text-lg mb-4">先跳過，這句沒有拿到星星</p>
+              : <p className="text-green-600 font-bold text-lg mb-4">⭐ Great!</p>}
             <GameButton onClick={() => {
               setSentenceRepeated(false);
               if (currentSentence < sentences.length - 1) setCurrentSentence(c => c + 1);

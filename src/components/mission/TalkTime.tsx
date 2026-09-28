@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import GameButton from '@/components/GameButton';
 import { speak } from '@/lib/speech';
 import { playLesson, lessonPath, findLessonAudio, SLOW_CLIP_RATE, SLOW_TTS_RATE, type LessonAudioIndex } from '@/lib/audio';
@@ -16,7 +16,8 @@ function sayTarget(prompt: string): string | null {
 
 interface Props {
   prompts: string[];
-  onComplete: () => void;
+  /** answered：真的回答過關的題數（跳過不算） */
+  onComplete: (answered: number) => void;
   level?: number;
   missionId?: number;
   audioIndex?: LessonAudioIndex;
@@ -50,6 +51,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
   // 回答沒過的原因（Vega 2026-09-28：以前只要有聲音就「太棒了」，亂回答也過）
   const [reject, setReject] = useState<string>('');
   const [tries, setTries] = useState(0);
+  const answered = useRef(0);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -117,16 +119,18 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
   function handleManualDone() {
     setResponses(prev => [...prev, '(manual)']);
     setTranscript('');
+    answered.current += 1;
     if (current < prompts.length - 1) setCurrent(c => c + 1);
-    else onComplete();
+    else onComplete(answered.current);
   }
 
   function handleNext() {
     setTranscript(''); setReject(''); setTries(0); setMissed(false);
+    answered.current += 1;   // 走到這裡代表這題回答過關
     if (current < prompts.length - 1) {
       setCurrent(c => c + 1);
     } else {
-      onComplete();
+      onComplete(answered.current);
     }
   }
 
@@ -136,7 +140,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
     if (current < prompts.length - 1) {
       setCurrent(c => c + 1);
     } else {
-      onComplete();
+      onComplete(answered.current);
     }
   }
 

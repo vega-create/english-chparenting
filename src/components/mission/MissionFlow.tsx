@@ -55,6 +55,8 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   useEffect(() => { stopAllAudio(); }, [step]);
   const [warmupScore, setWarmupScore] = useState(0);
   const [challengeScore, setChallengeScore] = useState(0);
+  const [sentenceOk, setSentenceOk] = useState(0);   // 句子練習真的念過關的句數（跳過不算）
+  const [talkOk, setTalkOk] = useState(0);           // 聊天關真的回答的題數（跳過不算）
   const discoverBackRef = useRef<(() => boolean) | null>(null); // Discover 內部逐層退
 
   const stepKey = course && mission ? `ae_mstep_${course.level}_${mission.id}` : '';
@@ -66,8 +68,18 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
     const saved = sessionStorage.getItem(stepKey) as Step | null;
     if (saved === 'complete') { sessionStorage.removeItem(stepKey); return; }
     if (saved) setStep(saved);
+    // 分數也要跟著留著：現在有過關標準，重整後分數歸零會害孩子明明答對卻不過
+    try {
+      const sc = JSON.parse(sessionStorage.getItem(stepKey + '_sc') || 'null');
+      if (sc && saved) { setWarmupScore(sc.w || 0); setChallengeScore(sc.c || 0); setSentenceOk(sc.s || 0); setTalkOk(sc.t || 0); }
+    } catch {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stepKey]);
+
+  useEffect(() => {
+    if (!stepKey) return;
+    try { sessionStorage.setItem(stepKey + '_sc', JSON.stringify({ w: warmupScore, c: challengeScore, s: sentenceOk, t: talkOk })); } catch {}
+  }, [stepKey, warmupScore, challengeScore, sentenceOk, talkOk]);
 
   useEffect(() => {
     if (stepKey) sessionStorage.setItem(stepKey, step);
@@ -171,8 +183,11 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mission]);
 
-  const totalStars = warmupScore + challengeScore;
-  const maxStars = warmUp8.length + (mission.challenges.length);
+  // 本課成績＝暖身＋闖關＋句子練習＋聊天關（口說跳過的不給分）
+  const sentenceMax = mission.sentences.length;
+  const talkMax = mission.talkTimePrompts.length;
+  const totalStars = warmupScore + challengeScore + Math.min(sentenceOk, sentenceMax) + Math.min(talkOk, talkMax);
+  const maxStars = warmUp8.length + mission.challenges.length + sentenceMax + talkMax;
 
   return (
     <>
@@ -294,16 +309,16 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'welcome' && (
-          <Welcome onComplete={() => setStep('discover')} />
+          <Welcome onComplete={() => { setSentenceOk(0); setStep('discover'); }} />
         )}
 
         {step === 'wakeup' && (
-          <WakeUp questions={warmUp8} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setWarmupScore(score); setStep('discover'); }} />
+          <WakeUp questions={warmUp8} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setWarmupScore(score); setSentenceOk(0); setStep('discover'); }} />
         )}
 
         {step === 'discover' && <ParentHelp stage="discover" level={course.level} />}
         {step === 'discover' && (
-          <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onComplete={() => { bumpDaily('story'); setStep('challenge'); }} />
+          <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onSentenceResult={ok => { if (ok) setSentenceOk(n => n + 1); }} onComplete={() => { bumpDaily('story'); setStep('challenge'); }} />
         )}
 
         {step === 'challenge' && <ParentHelp stage="challenge" level={course.level} />}
@@ -313,11 +328,12 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
 
         {step === 'talktime' && <ParentHelp stage="talktime" level={course.level} />}
         {step === 'talktime' && (
-          <TalkTime prompts={mission.talkTimePrompts} level={course.level} missionId={mission.id} audioIndex={audioIndex} onComplete={() => { bumpDaily('speak'); setStep('complete'); }} />
+          <TalkTime prompts={mission.talkTimePrompts} level={course.level} missionId={mission.id} audioIndex={audioIndex} onComplete={(answered) => { setTalkOk(answered); bumpDaily('speak'); setStep('complete'); }} />
         )}
 
         {step === 'complete' && (
-          <MissionComplete missionTitle={mission.title} missionTitleEn={mission.titleEn} stars={totalStars} maxStars={maxStars} reviewQuiz={mission.reviewQuiz} courseSlug={course.slug} missionId={mission.id} />
+          <MissionComplete missionTitle={mission.title} missionTitleEn={mission.titleEn} stars={totalStars} maxStars={maxStars} reviewQuiz={mission.reviewQuiz} courseSlug={course.slug} missionId={mission.id}
+            onRetry={() => { setChallengeScore(0); setTalkOk(0); setStep('challenge'); }} />
         )}
       </div>
 
