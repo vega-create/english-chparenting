@@ -33,18 +33,42 @@ function close(a: string, b: string) {
   return d + (a.length - i) + (b.length - j) <= 1;
 }
 
+// 字母名稱是語音辨識最容易聽錯的東西（D 常被聽成 the／dee，B 聽成 be／bee…）。
+// 目標字是單一字母時，這些同音字都算念對。
+const LETTER_SOUNDS: Record<string, string[]> = {
+  a: ['a', 'ay', 'eh', 'hey', 'ei'], b: ['b', 'be', 'bee'], c: ['c', 'see', 'sea', 'si'], d: ['d', 'dee', 'the', 'de', 'di'],
+  e: ['e', 'ee', 'he', 'eat'], f: ['f', 'ef', 'eff', 'if'], g: ['g', 'gee', 'ji', 'jee'], h: ['h', 'age', 'aitch', 'each'],
+  i: ['i', 'eye', 'aye', 'hi'], j: ['j', 'jay', 'je'], k: ['k', 'kay', 'okay', 'ok', 'que'], l: ['l', 'el', 'elle', 'al'],
+  m: ['m', 'em', 'am', 'im'], n: ['n', 'en', 'and', 'an', 'in'], o: ['o', 'oh', 'owe'], p: ['p', 'pee', 'pea', 'pe'],
+  q: ['q', 'cue', 'queue', 'kew'], r: ['r', 'are', 'our', 'ar'], s: ['s', 'es', 'as', 'yes'], t: ['t', 'tea', 'tee', 'ti'],
+  u: ['u', 'you', 'yu', 'ew'], v: ['v', 'vee', 'we', 'vi'], w: ['w', 'double', 'doubleyou'], x: ['x', 'ex', 'eggs', 'axe'],
+  y: ['y', 'why', 'wai'], z: ['z', 'zee', 'zed', 'the', 'ze'],
+};
+function wordHit(heard: string, target: string) {
+  if (target.length === 1 && LETTER_SOUNDS[target]) return LETTER_SOUNDS[target].includes(heard);
+  return close(heard, target);
+}
+
 /** 逐字比對，回傳念對的比例 0~1 */
-function score(said: string, target: string) {
+export function score(said: string, target: string) {
   const a = norm(said).split(' ').filter(Boolean);
   const b = norm(target).split(' ').filter(Boolean);
   if (!b.length) return 0;
   const pool = [...a];
   let hit = 0;
   for (const w of b) {
-    const i = pool.findIndex(x => close(x, w));
+    const i = pool.findIndex(x => wordHit(x, w));
     if (i >= 0) { hit++; pool.splice(i, 1); }
   }
-  return hit / b.length;
+  let s = hit / b.length;
+  // 「D is for dog.」這種字母句：辨識器常把前半「D is for」整段聽成別的字（例：beautiful dog）。
+  // 這一課要學的是那個單字，所以只要單字念對、而且不是只念一個字，就算過關。
+  // （Vega 2026-09-28：孩子念 D is for dog，一直顯示 beautiful dog 過不了）
+  if (b.length === 4 && b[0].length === 1 && b[1] === 'is' && b[2] === 'for') {
+    const key = b[3];
+    if (a.length >= 2 && a.some(x => close(x, key))) s = Math.max(s, 0.8);
+  }
+  return s;
 }
 
 /**
@@ -95,14 +119,21 @@ export default function SentenceMic({ target, onDone, compact = false }: { targe
     rec.lang = 'en-US';
     rec.continuous = false;
     rec.interimResults = false;
+    rec.maxAlternatives = 5;   // 多拿幾個候選，取跟目標最像的那個（第一候選常是聽錯的）
 
     rec.onstart = () => setStatus('listening');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     rec.onresult = (e: any) => {
       got = true;
-      const text = String(e.results[0][0].transcript);
+      // 在所有候選裡挑分數最高的；畫面上顯示的也是那一個
+      let text = String(e.results[0][0].transcript);
+      let s = score(text, target);
+      for (let k = 1; k < e.results[0].length; k++) {
+        const alt = String(e.results[0][k].transcript);
+        const sk = score(alt, target);
+        if (sk > s) { s = sk; text = alt; }
+      }
       setHeard(text);
-      const s = score(text, target);
       // 只記分數，不記孩子說了什麼
       track({ kind: 'speak', item: target, score: Number(s.toFixed(2)), attempt: tries + 1, correct: s >= 0.75 });
       if (s >= 0.75) { setStatus('ok'); playStar(); onDone(); }   // 只有念得夠像才過關
