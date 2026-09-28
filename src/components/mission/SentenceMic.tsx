@@ -129,6 +129,36 @@ export function score(said: string, target: string) {
   return pass ? Math.max(0.75, ratio) : Math.min(0.74, extra > extraCap ? ratio * 0.6 : ratio);
 }
 
+/**
+ * 聊天關用：孩子的回答裡有沒有「照順序」念出指定的字（例：Can you say 'apple'? → apple）。
+ * 前後多講幾個字沒關係（"I can say apple"），但指定的字每個都要有，差一點的最多算 1 個。
+ */
+export function saidPhrase(said: string, phrase: string) {
+  const a = norm(said).split(' ').filter(Boolean);
+  const b = norm(phrase).split(' ').filter(Boolean);
+  if (!a.length || !b.length || a.length > b.length + 5) return false;
+  let j = 0, fuzzy = 0;
+  for (const w of b) {
+    let k = 0;
+    while (j < a.length && !(k = wordHit(a[j], w))) j++;
+    if (j >= a.length) return false;
+    if (k === 1) fuzzy++;
+    j++;
+  }
+  return fuzzy <= 1;
+}
+
+/** 聊天關用：是不是只是把題目照念一遍（3 個字以上、跟題目某一句幾乎一樣） */
+export function isEcho(said: string, prompt: string) {
+  if (norm(said).split(' ').filter(Boolean).length < 3) return false;
+  return prompt.split(/[.!?]+/).some(part => norm(part).split(' ').filter(Boolean).length >= 3 && score(said, part) >= 0.75);
+}
+
+/** 聊天關用：回答裡的英文字數（辨識器回空字串或只有雜訊時是 0） */
+export function wordCount(said: string) {
+  return norm(said).split(' ').filter(w => /[a-z]/.test(w)).length;
+}
+
 // onSkip：試了三次按「先跳過」時呼叫；沒給就跟以前一樣當作完成（onDone）
 export default function SentenceMic({ target, onDone, onSkip, compact = false }: { target: string; onDone: () => void; onSkip?: () => void; compact?: boolean }) {
   // compact：電子書內頁用的紫色藥丸（麥克風圈＋要念的句子），字級跟著書寬（cqw）縮放

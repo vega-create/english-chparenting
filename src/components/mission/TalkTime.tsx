@@ -4,6 +4,15 @@ import GameButton from '@/components/GameButton';
 import { speak } from '@/lib/speech';
 import { playLesson, lessonPath, findLessonAudio, SLOW_CLIP_RATE, SLOW_TTS_RATE, type LessonAudioIndex } from '@/lib/audio';
 import { setMicListening } from '@/lib/audioBus';
+import { saidPhrase, isEcho, wordCount } from '@/components/mission/SentenceMic';
+
+/** 題目有沒有指定要念的字：Can you say 'apple'? ／ Say: Big A, small a! → 回傳那個字；開放式問題回 null */
+function sayTarget(prompt: string): string | null {
+  const q = prompt.match(/\bsay\s*:?\s*['\u2018\u201c"]([^'\u2019\u201d"]+)['\u2019\u201d"]/i);
+  const c = q ? q[1] : (prompt.match(/\bsay:\s*([^.!?]+)/i)?.[1] ?? null);
+  if (!c || /_{2,}|\//.test(c)) return null;   // 「I ___ every day」這種填空不是固定答案
+  return c.trim();
+}
 
 interface Props {
   prompts: string[];
@@ -38,6 +47,9 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
     'audio-capture': '找不到麥克風，請確認裝置有麥克風且沒被其他 App 占用',
   };
   const [missed, setMissed] = useState(false);   // 有開始聽但沒聽到聲音
+  // 回答沒過的原因（Vega 2026-09-28：以前只要有聲音就「太棒了」，亂回答也過）
+  const [reject, setReject] = useState<string>('');
+  const [tries, setTries] = useState(0);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -67,16 +79,28 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
     recognition.lang = 'en-US';
     recognition.continuous = false;
     recognition.interimResults = false;
+    recognition.maxAlternatives = 3;
 
-    recognition.onstart = () => { setMicListening(true); setMissed(false); setIsListening(true); };   // 聽的時候不准播示範音
+    recognition.onstart = () => { setMicListening(true); setMissed(false); setReject(''); setIsListening(true); };   // 聽的時候不准播示範音
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onresult = (event: any) => {
       got = true;
       setMicListening(false);
-      const text = event.results[0][0].transcript;
-      setTranscript(text);
-      setResponses(prev => [...prev, text]);
       setIsListening(false);
+      const alts: string[] = [];
+      for (let k = 0; k < event.results[0].length; k++) alts.push(String(event.results[0][k].transcript));
+      const must = sayTarget(prompt);
+      // 指定要念的字：要真的念出來。開放式問題：要有英文回答，而且不能只是把題目照念一遍。
+      const okText = must
+        ? alts.find(t => saidPhrase(t, must))
+        : alts.find(t => wordCount(t) >= 1 && !isEcho(t, prompt));
+      if (!okText) {
+        setTries(n => n + 1);
+        setReject(must ? `念念看：${must}` : (wordCount(alts[0] || '') === 0 ? '沒聽清楚，用英文再說一次' : '用自己的話回答，不要照念題目喔'));
+        return;
+      }
+      setTranscript(okText);
+      setResponses(prev => [...prev, okText]);
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onerror = (e: any) => {
@@ -85,7 +109,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
       if (e?.error === 'not-allowed' || e?.error === 'service-not-allowed' || e?.error === 'network' || e?.error === 'audio-capture') { setDenyReason(e.error); setDenied(true); return; }
       setMissed(true);
     };
-    recognition.onend = () => { setMicListening(false); setIsListening(false); if (!got) setMissed(true); };
+    recognition.onend = () => { setMicListening(false); setIsListening(false); if (!got) { setMissed(true); setTries(n => n + 1); } };
     try { recognition.start(); } catch { setMicListening(false); setIsListening(false); setMissed(true); }
   }
 
@@ -98,7 +122,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
   }
 
   function handleNext() {
-    setTranscript('');
+    setTranscript(''); setReject(''); setTries(0); setMissed(false);
     if (current < prompts.length - 1) {
       setCurrent(c => c + 1);
     } else {
@@ -108,7 +132,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
 
   function handleSkip() {
     setResponses(prev => [...prev, '(skipped)']);
-    setTranscript('');
+    setTranscript(''); setReject(''); setTries(0); setMissed(false);
     if (current < prompts.length - 1) {
       setCurrent(c => c + 1);
     } else {
@@ -168,6 +192,8 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
                 </div>
                 <p className="text-red-500 font-medium">正在聽...</p>
               </div>
+            ) : reject ? (
+              <p className="text-orange-500 font-bold">{reject}</p>
             ) : (
               <p className="text-gray-400">按下面的麥克風回答吧！</p>
             )}
@@ -197,14 +223,17 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
                   isListening ? 'bg-red-500 animate-pulse' : 'bg-indigo-500 hover:bg-indigo-600'
                 } text-white px-8 py-4 rounded-full font-bold text-lg transition active:scale-95 shadow-lg`}
               >
-                {isListening ? '🔴 聽你說…' : missed ? '💪 沒聽清楚，再說一次' : '🎤 按一下開始說'}
+                {isListening ? '🔴 聽你說…' : reject ? '💪 再說一次' : missed ? '💪 沒聽清楚，再說一次' : '🎤 按一下開始說'}
               </button>
-              <button
-                onClick={handleSkip}
-                className="bg-gray-200 text-gray-500 px-6 py-4 rounded-full font-medium hover:bg-gray-300 transition"
-              >
-                跳過 ▶
-              </button>
+              {/* 跳過：試過 2 次才出現，不然孩子會一路按跳過 */}
+              {tries >= 2 && (
+                <button
+                  onClick={handleSkip}
+                  className="bg-gray-200 text-gray-500 px-6 py-4 rounded-full font-medium hover:bg-gray-300 transition cursor-pointer"
+                >
+                  跳過 ▶
+                </button>
+              )}
             </div>
           ) : (
             <GameButton onClick={handleNext} color="green" size="lg">
