@@ -72,46 +72,62 @@ const HOMOPHONE_GROUPS = [
 const HOMOPHONES: Record<string, string[]> = {};
 for (const g of HOMOPHONE_GROUPS) for (const w of g) HOMOPHONES[w] = g;
 
-function wordHit(heard: string, target: string) {
-  if (HOMOPHONES[target]?.includes(heard)) return true;
-  if (target.length === 1 && LETTER_SOUNDS[target]) return LETTER_SOUNDS[target].includes(heard);
-  return close(heard, target) || soundsLike(heard, target);
-}
-
-/** 逐字比對，回傳念對的比例 0~1 */
-export function score(said: string, target: string) {
-  const a = norm(said).split(' ').filter(Boolean);
-  const b = norm(target).split(' ').filter(Boolean);
-  if (!b.length) return 0;
-  const pool = [...a];
-  let hit = 0;
-  for (const w of b) {
-    const i = pool.findIndex(x => wordHit(x, w));
-    if (i >= 0) { hit++; pool.splice(i, 1); }
-  }
-  let s = hit / b.length;
-  // 「D is for dog.」這種字母句：辨識器常把前半「D is for」整段聽成別的字（例：beautiful dog）。
-  // 這一課要學的是那個單字，所以只要單字念對、而且不是只念一個字，就算過關。
-  // （Vega 2026-09-28：孩子念 D is for dog，一直顯示 beautiful dog 過不了）
-  if (b.length === 4 && b[0].length === 1 && b[1] === 'is' && b[2] === 'for') {
-    const key = b[3];
-    const keyOk = a.some(x => wordHit(x, key));
-    if (a.length >= 2 && keyOk) s = Math.max(s, 0.8);
-    // 反過來：單字沒念對，前面三個字全對也不算過（以前 3/4 就過關，念成別的單字也會過）
-    if (!keyOk) s = Math.min(s, 0.5);
-  }
-  return s;
+// 這個字念對了嗎：2＝完全一樣（含同音字、字母名稱）、1＝差一點但聽得出來、0＝不是這個字
+function wordHit(heard: string, target: string): 0 | 1 | 2 {
+  if (heard === target) return 2;
+  if (HOMOPHONES[target]?.includes(heard)) return 2;
+  if (target.length === 1 && LETTER_SOUNDS[target]) return LETTER_SOUNDS[target].includes(heard) ? 2 : 0;
+  return close(heard, target) || soundsLike(heard, target) ? 1 : 0;
 }
 
 /**
- * 句型錄音鈕。
+ * 念得像不像，回傳 0~1（≥0.75 過關）。
  *
- * ⚠️ 重點：只有「真的聽到孩子說話」才算完成。
- * 之前的版本在辨識失敗／瀏覽器不支援時也呼叫 onDone，
- * 結果小朋友一按就跳「Great!」，根本沒開口。
- *
- * iOS Safari 多半不支援語音辨識，那種情況改成手動確認的「我念完了」。
+ * Vega 2026-09-28：「太鬆了，句子亂念還過」「要確實抓到，不要太鬆也不要太嚴格」。
+ * 原本只看「目標的字有幾個出現過」，順序不管、多念什麼也不管，
+ * 所以亂念一串只要碰巧有那幾個字就過。現在：
+ *   1. 要照順序（in-order 比對）
+ *   2. 不能多念一堆：沒對上的字最多容許 1 個（6 個字以上的句子 2 個）
+ *   3. 短句（3 個字以內）每個字都要對；4–5 個字可以漏 1 個；更長的要 8 成
+ *   4. 「差一點」的字一句最多算 1 個（5 個字以上 2 個），不能整句都靠差不多
  */
+export function score(said: string, target: string) {
+  const a = norm(said).split(' ').filter(Boolean);
+  const b = norm(target).split(' ').filter(Boolean);
+  if (!b.length || !a.length) return 0;
+
+  // 照順序對字（LCS）：dp[i][j] = 目標前 i 個字、聽到前 j 個字，最多對上幾個（完全一樣的優先）
+  type Cell = { hit: number; fuzzy: number };
+  const better = (x: Cell, y: Cell) => ((x.hit !== y.hit ? x.hit > y.hit : x.fuzzy <= y.fuzzy) ? x : y);
+  const dp: Cell[][] = Array.from({ length: b.length + 1 }, () => Array.from({ length: a.length + 1 }, () => ({ hit: 0, fuzzy: 0 })));
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      let cell = better(dp[i - 1][j], dp[i][j - 1]);
+      const k = wordHit(a[j - 1], b[i - 1]);
+      if (k) cell = better({ hit: dp[i - 1][j - 1].hit + 1, fuzzy: dp[i - 1][j - 1].fuzzy + (k === 1 ? 1 : 0) }, cell);
+      dp[i][j] = cell;
+    }
+  }
+  const { hit, fuzzy } = dp[b.length][a.length];
+  const fuzzyCap = b.length >= 5 ? 2 : 1;
+  const good = hit - Math.max(0, fuzzy - fuzzyCap);      // 超過上限的「差一點」不算
+  const extra = a.length - hit;                          // 多念、沒對上的字
+  const extraCap = b.length >= 6 ? 2 : 1;
+  const need = b.length <= 3 ? b.length : b.length <= 5 ? b.length - 1 : Math.ceil(b.length * 0.8);
+
+  let pass = good >= need && extra <= extraCap;
+
+  // 「D is for dog.」這種字母句：辨識器常把前半「D is for」整段聽成別的字（例：beautiful dog）。
+  // 單字念對、念了不只一個字、也沒有多念一串，就算過關；單字沒念對一律不過。
+  if (b.length === 4 && b[0].length === 1 && b[1] === 'is' && b[2] === 'for') {
+    const keyOk = a.some(x => wordHit(x, b[3]) > 0);
+    pass = keyOk && a.length >= 2 && a.length <= b.length + 1;
+  }
+
+  const ratio = good / b.length;
+  return pass ? Math.max(0.75, ratio) : Math.min(0.74, extra > extraCap ? ratio * 0.6 : ratio);
+}
+
 // onSkip：試了三次按「先跳過」時呼叫；沒給就跟以前一樣當作完成（onDone）
 export default function SentenceMic({ target, onDone, onSkip, compact = false }: { target: string; onDone: () => void; onSkip?: () => void; compact?: boolean }) {
   // compact：電子書內頁用的紫色藥丸（麥克風圈＋要念的句子），字級跟著書寬（cqw）縮放
@@ -152,7 +168,7 @@ export default function SentenceMic({ target, onDone, onSkip, compact = false }:
     rec.lang = 'en-US';
     rec.continuous = false;
     rec.interimResults = false;
-    rec.maxAlternatives = 5;   // 多拿幾個候選，取跟目標最像的那個（第一候選常是聽錯的）
+    rec.maxAlternatives = 3;   // 多拿幾個候選，取跟目標最像的那個（第一候選常是聽錯的）；拿太多等於放水
 
     rec.onstart = () => setStatus('listening');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
