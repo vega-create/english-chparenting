@@ -4,7 +4,7 @@ import { playTada } from '@/lib/sfx';
 import { startAmbience, stopAmbience, isAmbienceOff, setAmbienceOff } from '@/lib/ambience';
 import type { Word, Sentence, StoryScene, VideoLine } from '@/data/missions';
 import { speak, stopSpeaking } from '@/lib/speech';
-import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip } from '@/lib/audio';
+import { playClip, playLesson, lessonPath, isLetterCard, stopClip, sleep, wordSlug, playPageFlip, SLOW_CLIP_RATE, SLOW_TTS_RATE } from '@/lib/audio';
 import { stopAllAudio } from '@/lib/audioBus';
 import VowelMommyFace from '@/components/mission/VowelMommyFace';
 import { track } from '@/lib/analytics';
@@ -246,9 +246,11 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
     track({ kind: 'replay', level, mission: mid, step: 'words', item: w.en, audioSrc: 'tts' });
     speak(w.en, rate);
   }
-  async function saySentence(i: number, text: string, rate = 0.7) {
-    const tm = wordTimer(text, `s${i}`);
-    if (await playLesson(lessonPath.sentence(level, mid, i), tm.onTime)) {
+  // slow：🐢 慢慢聽——真人錄音放慢（不是換成電子音）
+  async function saySentence(i: number, text: string, rate = 0.7, slow = false) {
+    const tm = wordTimer(text, `s${i}`, slow ? 0.35 : 0.12);
+    if (slow) rate = SLOW_TTS_RATE;
+    if (await playLesson(lessonPath.sentence(level, mid, i), tm.onTime, slow ? SLOW_CLIP_RATE : 1)) {
       tm.done();
       track({ kind: 'replay', level, mission: mid, step: 'sentences', item: `s${i + 1}`, audioSrc: 'el' });
       return;
@@ -584,6 +586,14 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
                               </span>
                               <span className="block text-gray-500 text-[2.3cqw] mt-[0.3cqw]">{sen.zh}</span>
                             </span>
+                            {/* 🐢 慢慢聽：點烏龜不會觸發整列的正常速度播放 */}
+                            <span
+                              role="button"
+                              aria-label="慢速再聽一次"
+                              onClick={e => { e.stopPropagation(); saySentence(i, sen.en, 0.7, true); }}
+                              className="ml-auto shrink-0 rounded-full bg-blue-100 border-[0.4cqw] border-blue-200 flex items-center justify-center text-[3.2cqw] cursor-pointer active:scale-95 transition"
+                              style={{ width: '7.6cqw', height: '7.6cqw' }}
+                            >🐢</span>
                           </button>
                         ))}
                       </div>
@@ -995,8 +1005,9 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               className="bg-orange-100 text-orange-600 px-6 py-4 rounded-2xl font-bold hover:bg-orange-200 transition active:scale-95">
               🔊
             </button>
-            <button onClick={() => speak(sentence.en, 0.5)}
-              className="bg-blue-50 text-blue-500 px-5 py-4 rounded-2xl font-medium hover:bg-blue-100 transition active:scale-95">
+            <button onClick={() => saySentence(currentSentence, sentence.en, 0.7, true)}
+              aria-label="慢速再聽一次"
+              className="bg-blue-50 text-blue-500 px-5 py-4 rounded-2xl font-medium hover:bg-blue-100 transition active:scale-95 cursor-pointer">
               🐢
             </button>
             <SentenceMic target={sentence.en} onDone={() => setSentenceRepeated(true)} />
