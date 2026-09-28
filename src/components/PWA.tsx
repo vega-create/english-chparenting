@@ -9,7 +9,11 @@ const DISMISS_KEY = 'ae_pwa_dismissed';
 
 /**
  * PWA：註冊 Service Worker，並在支援的裝置上顯示「加到主畫面」提示。
- * 提示只在首頁顯示、關掉之後 30 天內不再出現。
+ * 提示規則：
+ *   - 只在手機／平板（觸控為主的裝置）顯示；桌機不需要「加到主畫面」，一律不跳。
+ *   - 只在首頁顯示，孩子上課、看地圖時不打擾。
+ *   - 一出現就記時間，30 天內不再出現——不管有沒有按「以後再說」
+ *     （以前只有按了才記，孩子不理它的話每換一頁就再跳一次）。
  */
 export default function PWA() {
   const [prompt, setPrompt] = useState<InstallPrompt>(null);
@@ -32,7 +36,14 @@ export default function PWA() {
     // 已經是安裝後開啟的就不用提示
     if (window.matchMedia('(display-mode: standalone)').matches) return;
 
-    // 30 天內關過就不再顯示
+    // 桌機（滑鼠為主）不提示
+    if (!window.matchMedia('(pointer: coarse)').matches) return;
+
+    // 只在首頁提示
+    const path = window.location.pathname.replace(/\/$/, '');
+    if (path !== '' && path !== '/home') return;
+
+    // 30 天內出現過／關過就不再顯示
     try {
       const t = Number(localStorage.getItem(DISMISS_KEY) || 0);
       if (t && Date.now() - t < 30 * 24 * 3600 * 1000) return;
@@ -41,7 +52,11 @@ export default function PWA() {
     const onPrompt = (e: Event) => {
       e.preventDefault();
       setPrompt(e);
-      setTimeout(() => setShow(true), 4000);   // 讓使用者先看到內容再提示
+      setTimeout(() => {
+        setShow(true);
+        // 一出現就記，不理它也算看過
+        try { localStorage.setItem(DISMISS_KEY, String(Date.now())); } catch {}
+      }, 4000);   // 讓使用者先看到內容再提示
     };
     window.addEventListener('beforeinstallprompt', onPrompt);
     return () => window.removeEventListener('beforeinstallprompt', onPrompt);
