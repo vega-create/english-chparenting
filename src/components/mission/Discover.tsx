@@ -30,8 +30,8 @@ interface Props {
   missionId?: number;
   onComplete: () => void;
   onRegisterBack?: (fn: () => boolean) => void; // 供外層「上一步」逐層退：回傳 true=內部已處理
-  /** 句子練習每一句的結果：true＝真的念過關、false＝跳過（算進本課成績） */
-  onSentenceResult?: (ok: boolean) => void;
+  /** 句子練習每一句的結果：true＝真的念過關、false＝跳過（算進本課成績）；index＝第幾句（從 0 起） */
+  onSentenceResult?: (ok: boolean, index: number) => void;
   /** 沒過關重玩時直接從句子練習開始，不用重看影片和書 */
   startAtSentences?: boolean;
 }
@@ -1024,8 +1024,8 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
               🐢
             </button>
             <SentenceMic key={currentSentence} target={sentence.en}
-              onDone={() => { onSentenceResult?.(true); setSentenceSkipped(false); setSentenceRepeated(true); }}
-              onSkip={() => { onSentenceResult?.(false); setSentenceSkipped(true); setSentenceRepeated(true); }} />
+              onDone={() => { onSentenceResult?.(true, currentSentence); setSentenceSkipped(false); setSentenceRepeated(true); }}
+              onSkip={() => { onSentenceResult?.(false, currentSentence); setSentenceSkipped(true); setSentenceRepeated(true); }} />
           </div>
         ) : (
           <div className="text-center animate-slide-up">

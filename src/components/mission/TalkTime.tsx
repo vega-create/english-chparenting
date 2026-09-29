@@ -16,18 +16,23 @@ function sayTarget(prompt: string): string | null {
 
 interface Props {
   prompts: string[];
-  /** answered：真的回答過關的題數（跳過不算） */
-  onComplete: (answered: number) => void;
+  /** answered：真的回答過關的題數（跳過不算）；missed：跳過的題號（整課原本的題號） */
+  onComplete: (answered: number, missed: number[]) => void;
   level?: number;
   missionId?: number;
   audioIndex?: LessonAudioIndex;
+  /** 訂正回合：只傳跳過的那幾題進來時，附上原本的題號——Finn 的錄音是照原本題號存的 */
+  promptIndices?: number[];
+  /** 每題結束就回報（訂正回合用） */
+  onResult?: (index: number, ok: boolean) => void;
 }
 
-export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1, audioIndex = {} }: Props) {
+export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1, audioIndex = {}, promptIndices, onResult }: Props) {
+  const origIndex = (i: number) => promptIndices?.[i] ?? i;   // 這一題在整課裡原本是第幾題
   // 提示句先播 Finn 的錄音（L{級}/m{課}/t{序}.mp3），沒有才查課文表，再沒有才 TTS
   async function sayPrompt(i: number, text: string, slow = false) {
     const r = slow ? SLOW_CLIP_RATE : 1;
-    if (await playLesson(lessonPath.talk(level, missionId, i), undefined, r)) return;
+    if (await playLesson(lessonPath.talk(level, missionId, origIndex(i)), undefined, r)) return;
     const path = findLessonAudio(audioIndex, level, text);
     if (path && await playLesson(path, undefined, r)) return;
     speak(text, slow ? SLOW_TTS_RATE : undefined);
@@ -52,6 +57,7 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
   const [reject, setReject] = useState<string>('');
   const [tries, setTries] = useState(0);
   const answered = useRef(0);
+  const missedIdx = useRef<number[]>([]);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -120,27 +126,32 @@ export default function TalkTime({ prompts, onComplete, level = 1, missionId = 1
     setResponses(prev => [...prev, '(manual)']);
     setTranscript('');
     answered.current += 1;
+    onResult?.(origIndex(current), true);
     if (current < prompts.length - 1) setCurrent(c => c + 1);
-    else onComplete(answered.current);
+    else onComplete(answered.current, [...missedIdx.current]);
   }
 
   function handleNext() {
     setTranscript(''); setReject(''); setTries(0); setMissed(false);
     answered.current += 1;   // 走到這裡代表這題回答過關
+    onResult?.(origIndex(current), true);
     if (current < prompts.length - 1) {
       setCurrent(c => c + 1);
     } else {
-      onComplete(answered.current);
+      onComplete(answered.current, [...missedIdx.current]);
     }
   }
 
   function handleSkip() {
     setResponses(prev => [...prev, '(skipped)']);
     setTranscript(''); setReject(''); setTries(0); setMissed(false);
+    const orig = origIndex(current);
+    if (!missedIdx.current.includes(orig)) missedIdx.current.push(orig);
+    onResult?.(orig, false);
     if (current < prompts.length - 1) {
       setCurrent(c => c + 1);
     } else {
-      onComplete(answered.current);
+      onComplete(answered.current, [...missedIdx.current]);
     }
   }
 

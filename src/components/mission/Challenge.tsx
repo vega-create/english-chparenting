@@ -13,7 +13,14 @@ import SentenceMic from '@/components/mission/SentenceMic';
 
 interface Props {
   challenges: QuizQuestion[];
-  onComplete: (score: number, total: number) => void;
+  /** missed：答錯（含口說跳過）的題號，用「原本整課的題號」回報，訂正時只出這幾題 */
+  onComplete: (score: number, total: number, missed: number[]) => void;
+  /** 訂正回合：只傳錯的那幾題進來時，附上它們在整課裡原本的題號 */
+  indices?: number[];
+  /** 每答完一題就回報（訂正回合用：答對一題就先記一題，重整也不會掉） */
+  onResult?: (index: number, correct: boolean) => void;
+  /** 訂正回合：學習記錄多帶一個 fix 標記 */
+  fix?: boolean;
   praiseLevel?: 'low' | 'mid' | 'high';
   level?: number;   // 課程級別，決定獎勵語音用中文(L1-4)或英文(L5+)
   audioIndex?: LessonAudioIndex;   // 該課的「文字→錄音」對照，讓整句題目也能播真人錄音
@@ -28,8 +35,10 @@ const typeLabel: Record<string, { icon: string; label: string; characterKey: str
   'read': { icon: '📖', label: '故事解謎', characterKey: 'benny', characterAction: 'read' },
 };
 
-export default function Challenge({ challenges, onComplete, praiseLevel = 'low', level = 1, audioIndex = {} }: Props) {
+export default function Challenge({ challenges, onComplete, praiseLevel = 'low', level = 1, audioIndex = {}, indices, onResult, fix = false }: Props) {
   const [current, setCurrent] = useState(0);
+  const origIndex = (i: number) => indices?.[i] ?? i;   // 這一題在整課裡原本是第幾題
+  const missed = useRef<number[]>([]);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -70,14 +79,17 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
     setSelected(answer);
     const correct = answer.toLowerCase().trim() === q.answer.toLowerCase().trim();
     attempts.current[current] = (attempts.current[current] ?? 0) + 1;
+    const orig = origIndex(current);
     track({
       kind: 'answer', level, step: 'challenge',
-      item: `q${current + 1}:${q.answer}`,          // 題目 ID：第幾題＋答案
+      item: `q${orig + 1}:${q.answer}`,             // 題目 ID：第幾題＋答案
       correct,
       ms: Date.now() - qStart.current,              // 作答耗時
       attempt: attempts.current[current],
-      meta: { type: q.type, chose: answer },
+      meta: { type: q.type, chose: answer, ...(fix ? { fix: true } : {}) },
     });
+    if (!correct && !missed.current.includes(orig)) missed.current.push(orig);
+    onResult?.(orig, correct);
     if (correct) {
       // 今日任務「字母拼圖」只算拼字題，選擇題不算——不然一課就破表
       if (q.type === 'spell') bumpDaily('spell');
@@ -104,7 +116,7 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
         setShowResult(false);
         setSpellInput('');
       } else {
-        onComplete(score + (correct ? 1 : 0), challenges.length);
+        onComplete(score + (correct ? 1 : 0), challenges.length, [...missed.current]);
       }
     }, 1500);
   }
@@ -214,6 +226,7 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
               <SentenceMic
                 key={current}
                 target={q.answer}
+                fix={fix}
                 onDone={() => handleAnswer(q.answer)}
                 onSkip={() => handleAnswer('')}
               />

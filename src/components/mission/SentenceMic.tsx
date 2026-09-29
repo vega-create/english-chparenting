@@ -160,7 +160,8 @@ export function wordCount(said: string) {
 }
 
 // onSkip：試了三次按「先跳過」時呼叫；沒給就跟以前一樣當作完成（onDone）
-export default function SentenceMic({ target, onDone, onSkip, compact = false }: { target: string; onDone: () => void; onSkip?: () => void; compact?: boolean }) {
+// fix：訂正回合，學習記錄多帶一個標記（判分規則完全一樣）
+export default function SentenceMic({ target, onDone, onSkip, compact = false, fix = false }: { target: string; onDone: () => void; onSkip?: () => void; compact?: boolean; fix?: boolean }) {
   // compact：電子書內頁用的紫色藥丸（麥克風圈＋要念的句子），字級跟著書寬（cqw）縮放
   const [status, setStatus] = useState<Status>('idle');
   const [heard, setHeard] = useState('');
@@ -217,7 +218,7 @@ export default function SentenceMic({ target, onDone, onSkip, compact = false }:
       }
       setHeard(text);
       // 只記分數，不記孩子說了什麼
-      track({ kind: 'speak', item: target, score: Number(s.toFixed(2)), attempt: tries + 1, correct: s >= 0.75 });
+      track({ kind: 'speak', item: target, score: Number(s.toFixed(2)), attempt: tries + 1, correct: s >= 0.75, ...(fix ? { meta: { fix: true } } : {}) });
       if (s >= 0.75) { setStatus('ok'); playStar(); onDone(); }   // 只有念得夠像才過關
       else if (s >= 0.4) { setStatus('close'); setTries(t => t + 1); }
       else { setStatus('again'); setTries(t => t + 1); }

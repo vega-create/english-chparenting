@@ -23,8 +23,14 @@ interface Props {
   reviewQuiz: QuizQuestion[];
   courseSlug: string;
   missionId: number;
-  /** 沒過關時按「再挑戰一次」 */
+  /** 沒過關時按「再挑戰一次」（沒有錯題清單可以訂正時的備案：從句子練習整個重來） */
   onRetry?: () => void;
+  /** 還沒答對的題數（錯的＋跳過的），沒過關時只訂正這幾題 */
+  missedCount?: number;
+  /** 沒過關時按「訂正錯的題目」 */
+  onFix?: () => void;
+  /** 這次是靠訂正過關的：星星固定 1 顆 */
+  viaFix?: boolean;
 }
 
 /** 過關標準：正確率 7 成（Vega 2026-09-29：60 太低、80 怕打擊孩子，先 70） */
@@ -33,7 +39,16 @@ export const PASS_PERCENT = 70;
 export const STAR2_PERCENT = 80;
 export const STAR3_PERCENT = 90;
 
-export default function MissionComplete({ missionTitle, missionTitleEn, stars, scored, scoredMax, reviewQuiz, courseSlug, missionId, onRetry }: Props) {
+const percentOf = (scored: number, max: number) => (max > 0 ? Math.round((scored / max) * 100) : 100);
+
+/** 還要再答對幾題才過關（跟過關判定用同一個算法，最少 1） */
+export function moreToPass(scored: number, scoredMax: number) {
+  let n = 1;
+  while (scored + n < scoredMax && percentOf(scored + n, scoredMax) < PASS_PERCENT) n++;
+  return n;
+}
+
+export default function MissionComplete({ missionTitle, missionTitleEn, stars, scored, scoredMax, reviewQuiz, courseSlug, missionId, onRetry, missedCount = 0, onFix, viaFix = false }: Props) {
   const maxStars = scoredMax;
   const courseLevel = Number(courseSlug.match(/^l(\d+)-/)?.[1] ?? 0);
   const parentPost = courseLevel ? postsForLevel(courseLevel, 1)[0] : undefined;
@@ -45,9 +60,11 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
   const [showQuiz, setShowQuiz] = useState(false);
   const [spellInput, setSpellInput] = useState('');
 
-  const starPercent = scoredMax > 0 ? Math.round((scored / scoredMax) * 100) : 100;
+  const starPercent = percentOf(scored, scoredMax);
   const passed = starPercent >= PASS_PERCENT;
-  const starCount = starPercent >= STAR3_PERCENT ? 3 : starPercent >= STAR2_PERCENT ? 2 : 1;
+  // 訂正過關固定 1 顆星；一次就過關的照 7／8／9 成給 1／2／3 顆
+  const starCount = viaFix ? 1 : starPercent >= STAR3_PERCENT ? 3 : starPercent >= STAR2_PERCENT ? 2 : 1;
+  const needMore = moreToPass(scored, scoredMax);
 
   // 進到結算畫面時播 Miss Vega 鼓勵語音 + 星數獎勵語音 + 記錄完成進度
   useEffect(() => {
@@ -56,7 +73,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
     if (!passed) {
       // 沒過關：不放煙火、不記完成（下一關不會解鎖），只記一筆成績
       track({ kind: 'lesson_end', level: lv, mission: missionId, score: 0,
-              meta: { percent: starPercent, stars, maxStars, passed: false } });
+              meta: { percent: starPercent, stars, maxStars, passed: false, missed: missedCount, ...(viaFix ? { fix: true } : {}) } });
       return;
     }
     playFanfare(starCount);                       // 先響破關配樂
@@ -67,7 +84,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
     // 鼓勵語播完接星數獎勵（reward-star-1/2/3，L5+ 用英文版）
     const t = setTimeout(() => playReward(`reward-star-${starCount}`, lv), praiseAt + 2000);
     track({ kind: 'lesson_end', level: lv, mission: missionId, score: starCount,
-            meta: { percent: starPercent, stars, maxStars, passed: true } });
+            meta: { percent: starPercent, stars, maxStars, passed: true, ...(viaFix ? { fix: true } : {}) } });
     recordMissionComplete(courseSlug, missionId, starCount);
     return () => { clearTimeout(t); clearTimeout(t2); clearTimeout(tCut); stopFanfare(); };
   }, [courseSlug, missionId, starCount, passed]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -82,29 +99,26 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
         <p className="text-base text-gray-500 mb-5">{missionTitle}</p>
 
         <div className="bg-white rounded-3xl p-6 shadow-lg border-2 border-orange-200 max-w-md mx-auto mb-5">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p className="text-3xl font-black text-yellow-500">{scored}<span className="text-base text-gray-400"> / {scoredMax}</span></p>
-              <p className="text-sm text-gray-500">答對題數</p>
-            </div>
-            <div>
-              <p className="text-3xl font-black text-orange-500">{starPercent}%</p>
-              <p className="text-sm text-gray-500">正確率</p>
-            </div>
-          </div>
-          <p className="mt-4 text-sm font-bold text-gray-600">正確率要 {PASS_PERCENT}% 以上才過關，下一關才會打開</p>
+          <p className="text-2xl font-black text-orange-500 mb-4">再答對 {needMore} 題就過關</p>
+          <p className="text-3xl font-black text-yellow-500">{scored}<span className="text-base text-gray-400"> / {scoredMax}</span></p>
+          <p className="text-sm text-gray-500">答對題數</p>
+          <p className="mt-4 text-sm font-bold text-gray-600">答對 {scored + needMore} 題（正確率 {PASS_PERCENT}%）就過關，下一關才會打開</p>
           <p className="mt-1 text-xs text-gray-400">算句子練習、闖關遊戲、聊天關；口說跳過不給分。暖身題不算。</p>
+          {missedCount > 0 && <p className="mt-1 text-xs text-gray-400">不用整課重來，只要訂正錯的題目；訂正過關拿 1 顆星。</p>}
         </div>
 
         <div className="bg-orange-50 rounded-3xl p-4 max-w-md mx-auto mb-6 border border-orange-200">
           <p className="text-lg">
             <img src="/characters/finn/finn-talk.png" alt="Finn" className="inline w-24 h-24 object-contain mr-2" />
-            Finn: &ldquo;So close! Let&apos;s try again!&rdquo;
+            Finn: &ldquo;{missedCount > 0 ? 'So close! Let\u2019s fix them!' : 'So close! Let\u2019s try again!'}&rdquo;
           </p>
         </div>
 
         <div className="flex flex-col gap-3 max-w-md mx-auto">
-          <GameButton onClick={() => onRetry?.()} color="gold" size="lg">🎮 再挑戰一次（從句子練習開始）</GameButton>
+          {missedCount > 0 && onFix
+            ? <GameButton onClick={() => onFix()} color="gold" size="lg">✏️ 訂正錯的題目（共 {missedCount} 題）</GameButton>
+            /* 沒有錯題清單（例如改版前就開著的分頁）：退回整個重來 */
+            : <GameButton onClick={() => onRetry?.()} color="gold" size="lg">🎮 再挑戰一次（從句子練習開始）</GameButton>}
           <GameButton href={`/courses/${courseSlug}`} color="green" size="md" className="text-center">先回地圖</GameButton>
         </div>
       </div>
@@ -148,8 +162,10 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
           </div>
         </div>
 
-        <p className="text-xs font-bold text-gray-400 mb-1">本課成績（正確率 7 成過關、8 成 2 顆、9 成 3 顆）</p>
-        <h2 className="text-3xl font-black text-gray-800 mb-2">Mission Complete!</h2>
+        <p className="text-xs font-bold text-gray-400 mb-1">
+          {viaFix ? '訂正過關拿 1 顆星（一次就過關：7 成 1 顆、8 成 2 顆、9 成 3 顆）' : '本課成績（正確率 7 成過關、8 成 2 顆、9 成 3 顆）'}
+        </p>
+        <h2 className="text-3xl font-black text-gray-800 mb-2">{viaFix ? '✏️ 訂正過關！' : 'Mission Complete!'}</h2>
         <p className="text-xl text-gray-600 mb-1">{missionTitleEn}</p>
         <p className="text-lg text-gray-500 mb-6">{missionTitle}</p>
 

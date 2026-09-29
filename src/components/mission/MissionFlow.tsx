@@ -27,11 +27,18 @@ import Challenge from '@/components/mission/Challenge';
 import ParentHelp from '@/components/mission/ParentHelp';
 import TalkTime from '@/components/mission/TalkTime';
 import MissionComplete from '@/components/mission/MissionComplete';
+import FixRound, { type FixKind } from '@/components/mission/FixRound';
 import AdSlot from '@/components/AdSlot';
 import { bumpDaily } from '@/lib/missionProgress';
 import { track } from '@/lib/analytics';
 
-type Step = 'intro' | 'welcome' | 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'complete';
+// fix＝訂正回合：沒過關時只把錯的／跳過的題目再做一次（在 talktime 和 complete 之間）
+type Step = 'intro' | 'welcome' | 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'fix' | 'complete';
+
+/** sessionStorage 讀回來的題號清單：只收非負整數，壞資料當空的 */
+function idxList(v: unknown): number[] {
+  return Array.isArray(v) ? [...new Set(v.filter((x): x is number => Number.isInteger(x) && x >= 0))] : [];
+}
 
 const STEPS: { key: Step; label: string; icon: string; color: string }[] = [
   { key: 'wakeup', label: 'Wake Up!', icon: '🔔', color: 'bg-yellow-400' },
@@ -57,7 +64,13 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const [challengeScore, setChallengeScore] = useState(0);
   const [sentenceOk, setSentenceOk] = useState(0);   // 句子練習真的念過關的句數（跳過不算）
   const [talkOk, setTalkOk] = useState(0);           // 聊天關真的回答的題數（跳過不算）
-  const [retrying, setRetrying] = useState(false);   // 沒過關重玩：從句子練習開始
+  const [retrying, setRetrying] = useState(false);   // 沒過關重玩：從句子練習開始（沒有錯題清單可訂正時的備案）
+  // 還沒答對的題號（整課原本的題號）：沒過關時「只訂正錯的題目」用
+  const [missedS, setMissedS] = useState<number[]>([]);   // 句子練習跳過的
+  const [missedC, setMissedC] = useState<number[]>([]);   // 闖關答錯的（含口說跳過）
+  const [missedT, setMissedT] = useState<number[]>([]);   // 聊天關跳過的
+  // 訂正回合補回來的題號（每訂正一題加 1 分）；有值＝這次是靠訂正過關的，星星固定 1 顆
+  const [fixed, setFixed] = useState<Record<FixKind, number[]>>({ s: [], c: [], t: [] });
   const discoverBackRef = useRef<(() => boolean) | null>(null); // Discover 內部逐層退
 
   const stepKey = course && mission ? `ae_mstep_${course.level}_${mission.id}` : '';
@@ -72,15 +85,20 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
     // 分數也要跟著留著：現在有過關標準，重整後分數歸零會害孩子明明答對卻不過
     try {
       const sc = JSON.parse(sessionStorage.getItem(stepKey + '_sc') || 'null');
-      if (sc && saved) { setWarmupScore(sc.w || 0); setChallengeScore(sc.c || 0); setSentenceOk(sc.s || 0); setTalkOk(sc.t || 0); }
+      if (sc && saved) {
+        setWarmupScore(sc.w || 0); setChallengeScore(sc.c || 0); setSentenceOk(sc.s || 0); setTalkOk(sc.t || 0);
+        // 錯題清單和訂正進度也要留著，不然訂正到一半重整就不知道還剩哪幾題
+        setMissedS(idxList(sc.ms)); setMissedC(idxList(sc.mc)); setMissedT(idxList(sc.mt));
+        setFixed({ s: idxList(sc.fx?.s), c: idxList(sc.fx?.c), t: idxList(sc.fx?.t) });
+      }
     } catch {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stepKey]);
 
   useEffect(() => {
     if (!stepKey) return;
-    try { sessionStorage.setItem(stepKey + '_sc', JSON.stringify({ w: warmupScore, c: challengeScore, s: sentenceOk, t: talkOk })); } catch {}
-  }, [stepKey, warmupScore, challengeScore, sentenceOk, talkOk]);
+    try { sessionStorage.setItem(stepKey + '_sc', JSON.stringify({ w: warmupScore, c: challengeScore, s: sentenceOk, t: talkOk, ms: missedS, mc: missedC, mt: missedT, fx: fixed })); } catch {}
+  }, [stepKey, warmupScore, challengeScore, sentenceOk, talkOk, missedS, missedC, missedT, fixed]);
 
   useEffect(() => {
     if (stepKey) sessionStorage.setItem(stepKey, step);
@@ -138,7 +156,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
       challenge: CHAR_CUE_AUDIO.listen, // Coco 帶聽
       talktime: CHAR_CUE_AUDIO.speak,   // Polly 帶說
     };
-    if (step === 'intro' || step === 'welcome') return;
+    if (step === 'intro' || step === 'welcome' || step === 'fix') return;   // 訂正回合沒有專屬引導語
     let cancelled = false;
     (async () => {
       await playVega(stepAudio(step as 'wakeup' | 'discover' | 'challenge' | 'talktime' | 'complete', lang));
@@ -165,7 +183,8 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   // 該課「文字→錄音」對照：讓答案是整句的題目也能播真人錄音
   const audioIndex = buildLessonAudioIndex(mission.level, mission.id, mission.story, mission.sentences);
 
-  const currentStepIndex = STEPS.findIndex(s => s.key === step);
+  // 訂正回合在進度條上算在最後一格（⭐ 那格暫時換成 ✏️）
+  const currentStepIndex = STEPS.findIndex(s => s.key === (step === 'fix' ? 'complete' : step));
   // 暖身補到 8 題（Vega 定案）：原本 3 題不動，用本課單字自動加聽力選字題
   const warmUp8 = useMemo(() => {
     const base = [...mission.warmUpQuestions];
@@ -186,11 +205,26 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
 
   // 過關成績＝句子練習＋闖關＋聊天關（口說跳過的不給分）。
   // 暖身題在上課「前」作答，那時還沒學，所以只加小星星、不算進正確率。
+  // 訂正回合每訂正一題加 1 分，各部分都不會超過該部分的題數。
   const sentenceMax = mission.sentences.length;
   const talkMax = mission.talkTimePrompts.length;
-  const scored = challengeScore + Math.min(sentenceOk, sentenceMax) + Math.min(talkOk, talkMax);
-  const scoredMax = mission.challenges.length + sentenceMax + talkMax;
+  const challengeMax = mission.challenges.length;
+  const scored = Math.min(challengeScore + fixed.c.length, challengeMax)
+    + Math.min(sentenceOk + fixed.s.length, sentenceMax)
+    + Math.min(talkOk + fixed.t.length, talkMax);
+  const scoredMax = challengeMax + sentenceMax + talkMax;
   const totalStars = warmupScore + scored;
+  const missedCount = missedS.length + missedC.length + missedT.length;
+  const viaFix = fixed.s.length + fixed.c.length + fixed.t.length > 0;
+
+  // 從頭進句子練習：句子的成績、錯題、訂正紀錄一起歸零
+  const resetSentences = () => { setSentenceOk(0); setMissedS([]); setFixed(f => ({ ...f, s: [] })); };
+  // 訂正成功一題：從錯題清單拿掉、加 1 分（記題號，同一題不會加兩次）
+  const handleFixed = (kind: FixKind, index: number) => {
+    const drop = (list: number[]) => list.filter(i => i !== index);
+    if (kind === 's') setMissedS(drop); else if (kind === 'c') setMissedC(drop); else setMissedT(drop);
+    setFixed(f => (f[kind].includes(index) ? f : { ...f, [kind]: [...f[kind], index] }));
+  };
 
   return (
     <>
@@ -212,7 +246,8 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
                     stopSpeaking();
                     // 探索步驟內先逐層退（句型→拼讀→單字→電子書逐頁→封面→影片）
                     if (step === 'discover' && discoverBackRef.current?.()) return;
-                    const prevMap: Record<Step, Step> = { intro: 'intro', welcome: 'intro', wakeup: 'intro', discover: course.level === 1 && mission.id === 1 ? 'welcome' : 'wakeup', challenge: 'discover', talktime: 'challenge', complete: 'talktime' };
+                    // 訂正回合按上一步＝回結算畫面（已訂正的題目照算，清單只剩還沒訂正的）
+                    const prevMap: Record<Step, Step> = { intro: 'intro', welcome: 'intro', wakeup: 'intro', discover: course.level === 1 && mission.id === 1 ? 'welcome' : 'wakeup', challenge: 'discover', talktime: 'challenge', fix: 'complete', complete: 'talktime' };
                     setStep(prevMap[step]);
                   }}
                   className="text-purple-500 hover:text-purple-700 text-sm font-bold bg-purple-50 px-3 py-0.5 rounded-full"
@@ -230,10 +265,10 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
                 <div key={s.key} className="flex items-center flex-1">
                   <div className={`flex items-center justify-center w-8 h-8 rounded-full text-sm ${
                     i < currentStepIndex ? 'bg-green-400 text-white' :
-                    i === currentStepIndex ? `${s.color} text-white scale-110` :
+                    i === currentStepIndex ? `${step === 'fix' ? 'bg-orange-400' : s.color} text-white scale-110` :
                     'bg-gray-200 text-gray-400'
                   } transition-all`}>
-                    {i < currentStepIndex ? '✓' : s.icon}
+                    {i < currentStepIndex ? '✓' : step === 'fix' && s.key === 'complete' ? '✏️' : s.icon}
                   </div>
                   {i < STEPS.length - 1 && (
                     <div className={`h-1 flex-1 mx-1 rounded ${
@@ -312,31 +347,44 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'welcome' && (
-          <Welcome onComplete={() => { setSentenceOk(0); setStep('discover'); }} />
+          <Welcome onComplete={() => { resetSentences(); setStep('discover'); }} />
         )}
 
         {step === 'wakeup' && (
-          <WakeUp questions={warmUp8} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setWarmupScore(score); setSentenceOk(0); setStep('discover'); }} />
+          <WakeUp questions={warmUp8} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setWarmupScore(score); resetSentences(); setStep('discover'); }} />
         )}
 
         {step === 'discover' && <ParentHelp stage="discover" level={course.level} />}
         {step === 'discover' && (
-          <Discover key={retrying ? 'retry' : 'first'} startAtSentences={retrying} level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onSentenceResult={ok => { if (ok) setSentenceOk(n => n + 1); }} onComplete={() => { bumpDaily('story'); setStep('challenge'); }} />
+          <Discover key={retrying ? 'retry' : 'first'} startAtSentences={retrying} level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onSentenceResult={(ok, i) => {
+            if (ok) setSentenceOk(n => n + 1);
+            // 跳過的句子記進錯題清單；後來念過關就拿掉
+            setMissedS(list => ok ? list.filter(x => x !== i) : list.includes(i) ? list : [...list, i]);
+          }} onComplete={() => { bumpDaily('story'); setStep('challenge'); }} />
         )}
 
         {step === 'challenge' && <ParentHelp stage="challenge" level={course.level} />}
         {step === 'challenge' && (
-          <Challenge challenges={mission.challenges} praiseLevel={getLevelFromMissionId(levelSlug)} level={course.level} audioIndex={audioIndex} onComplete={(score) => { setChallengeScore(score); setStep('talktime'); }} />
+          <Challenge challenges={mission.challenges} praiseLevel={getLevelFromMissionId(levelSlug)} level={course.level} audioIndex={audioIndex} onComplete={(score, _total, missed) => { setChallengeScore(score); setMissedC(missed); setFixed(f => ({ ...f, c: [] })); setStep('talktime'); }} />
         )}
 
         {step === 'talktime' && <ParentHelp stage="talktime" level={course.level} />}
         {step === 'talktime' && (
-          <TalkTime prompts={mission.talkTimePrompts} level={course.level} missionId={mission.id} audioIndex={audioIndex} onComplete={(answered) => { setTalkOk(answered); bumpDaily('speak'); setStep('complete'); }} />
+          <TalkTime prompts={mission.talkTimePrompts} level={course.level} missionId={mission.id} audioIndex={audioIndex} onComplete={(answered, missed) => { setTalkOk(answered); setMissedT(missed); setFixed(f => ({ ...f, t: [] })); bumpDaily('speak'); setStep('complete'); }} />
+        )}
+
+        {step === 'fix' && (
+          <FixRound level={mission.level} missionId={mission.id} sentences={mission.sentences} challenges={mission.challenges} prompts={mission.talkTimePrompts}
+            missedS={missedS} missedC={missedC} missedT={missedT}
+            praiseLevel={getLevelFromMissionId(levelSlug)} audioIndex={audioIndex}
+            onFixed={handleFixed} onComplete={() => setStep('complete')} />
         )}
 
         {step === 'complete' && (
           <MissionComplete missionTitle={mission.title} missionTitleEn={mission.titleEn} stars={totalStars} scored={scored} scoredMax={scoredMax} reviewQuiz={mission.reviewQuiz} courseSlug={course.slug} missionId={mission.id}
-            onRetry={() => { setChallengeScore(0); setTalkOk(0); setSentenceOk(0); setRetrying(true); setStep('discover'); }} />
+            viaFix={viaFix} missedCount={missedCount}
+            onFix={() => setStep('fix')}
+            onRetry={() => { setChallengeScore(0); setTalkOk(0); setSentenceOk(0); setMissedS([]); setMissedC([]); setMissedT([]); setFixed({ s: [], c: [], t: [] }); setRetrying(true); setStep('discover'); }} />
         )}
       </div>
 
