@@ -31,6 +31,8 @@ interface Props {
   onFix?: () => void;
   /** 這次是靠訂正過關的：星星固定 1 顆 */
   viaFix?: boolean;
+  /** 沒過關畫面的「整課重新玩」：清掉成績從頭來 */
+  onRestart?: () => void;
 }
 
 /** 過關標準：正確率 7 成（Vega 2026-09-29：60 太低、80 怕打擊孩子，先 70） */
@@ -48,7 +50,7 @@ export function moreToPass(scored: number, scoredMax: number) {
   return n;
 }
 
-export default function MissionComplete({ missionTitle, missionTitleEn, stars, scored, scoredMax, reviewQuiz, courseSlug, missionId, onRetry, missedCount = 0, onFix, viaFix = false }: Props) {
+export default function MissionComplete({ missionTitle, missionTitleEn, stars, scored, scoredMax, reviewQuiz, courseSlug, missionId, onRetry, missedCount = 0, onFix, viaFix = false, onRestart }: Props) {
   const maxStars = scoredMax;
   const courseLevel = Number(courseSlug.match(/^l(\d+)-/)?.[1] ?? 0);
   const parentPost = courseLevel ? postsForLevel(courseLevel, 1)[0] : undefined;
@@ -120,6 +122,9 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
             /* 沒有錯題清單（例如改版前就開著的分頁）：退回整個重來 */
             : <GameButton onClick={() => onRetry?.()} color="gold" size="lg">🎮 再挑戰一次（從句子練習開始）</GameButton>}
           <GameButton href={`/courses/${courseSlug}`} color="green" size="md" className="text-center">先回地圖</GameButton>
+          {onRestart && (
+            <button onClick={onRestart} className="text-xs text-gray-400 underline cursor-pointer">整課重新玩一次</button>
+          )}
         </div>
       </div>
     );

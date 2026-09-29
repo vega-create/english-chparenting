@@ -26,7 +26,8 @@ import Discover from '@/components/mission/Discover';
 import Challenge from '@/components/mission/Challenge';
 import ParentHelp from '@/components/mission/ParentHelp';
 import TalkTime from '@/components/mission/TalkTime';
-import MissionComplete from '@/components/mission/MissionComplete';
+import { activeKid } from '@/lib/kids';
+import MissionComplete, { PASS_PERCENT } from '@/components/mission/MissionComplete';
 import FixRound, { type FixKind } from '@/components/mission/FixRound';
 import AdSlot from '@/components/AdSlot';
 import { bumpDaily } from '@/lib/missionProgress';
@@ -75,11 +76,41 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
 
   const stepKey = course && mission ? `ae_mstep_${course.level}_${mission.id}` : '';
 
+  // 沒過關的成績與錯題清單：存在 localStorage（每個孩子、每一課各一份），留 14 天
+  const pendingKey = () => {
+    if (!course || !mission) return '';
+    let kid = 'x';
+    try { kid = activeKid().id; } catch {}
+    return `ae_fixpending_${kid}_${course.level}_${mission.id}`;
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const readPending = (): any | null => {
+    try {
+      const k = pendingKey();
+      const v = k ? JSON.parse(localStorage.getItem(k) || 'null') : null;
+      if (!v || !v.at || Date.now() - v.at > 14 * 24 * 3600 * 1000) { if (k && v) localStorage.removeItem(k); return null; }
+      const left = idxList(v.ms).length + idxList(v.mc).length + idxList(v.mt).length;
+      return left > 0 ? v : null;
+    } catch { return null; }
+  };
+  const clearPending = () => { try { const k = pendingKey(); if (k) localStorage.removeItem(k); } catch {} };
+
   // 重整後留在同一步驟（sessionStorage，關掉分頁才清）
   // 但破關後再進來＝想重玩，從頭開始（不然會直接跳到結算畫面，Vega 抓的）
   useEffect(() => {
     if (!stepKey) return;
     const saved = sessionStorage.getItem(stepKey) as Step | null;
+    // 上次沒過關、還有題目沒訂正：隔天（或關掉分頁）再進同一課，直接回到「再答對 N 題就過關」畫面接著訂正
+    if (!saved || saved === 'complete') {
+      const pend = readPending();
+      if (pend) {
+        setWarmupScore(pend.w || 0); setChallengeScore(pend.c || 0); setSentenceOk(pend.s || 0); setTalkOk(pend.t || 0);
+        setMissedS(idxList(pend.ms)); setMissedC(idxList(pend.mc)); setMissedT(idxList(pend.mt));
+        setFixed({ s: idxList(pend.fx?.s), c: idxList(pend.fx?.c), t: idxList(pend.fx?.t) });
+        setStep('complete');
+        return;
+      }
+    }
     if (saved === 'complete') { sessionStorage.removeItem(stepKey); return; }
     if (saved) setStep(saved);
     // 分數也要跟著留著：現在有過關標準，重整後分數歸零會害孩子明明答對卻不過
@@ -216,6 +247,17 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const totalStars = warmupScore + scored;
   const missedCount = missedS.length + missedC.length + missedT.length;
   const viaFix = fixed.s.length + fixed.c.length + fixed.t.length > 0;
+  const passedNow = scoredMax > 0 ? Math.round((scored / scoredMax) * 100) >= PASS_PERCENT : true;
+
+  // 結算／訂正時：沒過關且還有錯題 → 存起來下次接著訂正；過關了就清掉
+  useEffect(() => {
+    if (step !== 'complete' && step !== 'fix') return;
+    if (passedNow || missedCount === 0) { clearPending(); return; }
+    try {
+      localStorage.setItem(pendingKey(), JSON.stringify({ at: Date.now(), w: warmupScore, c: challengeScore, s: sentenceOk, t: talkOk, ms: missedS, mc: missedC, mt: missedT, fx: fixed }));
+    } catch {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, passedNow, missedCount, warmupScore, challengeScore, sentenceOk, talkOk, missedS, missedC, missedT, fixed]);
 
   // 從頭進句子練習：句子的成績、錯題、訂正紀錄一起歸零
   const resetSentences = () => { setSentenceOk(0); setMissedS([]); setFixed(f => ({ ...f, s: [] })); };
@@ -384,6 +426,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
           <MissionComplete missionTitle={mission.title} missionTitleEn={mission.titleEn} stars={totalStars} scored={scored} scoredMax={scoredMax} reviewQuiz={mission.reviewQuiz} courseSlug={course.slug} missionId={mission.id}
             viaFix={viaFix} missedCount={missedCount}
             onFix={() => setStep('fix')}
+            onRestart={() => { clearPending(); setWarmupScore(0); setChallengeScore(0); setTalkOk(0); setSentenceOk(0); setMissedS([]); setMissedC([]); setMissedT([]); setFixed({ s: [], c: [], t: [] }); setRetrying(false); setStep('intro'); }}
             onRetry={() => { setChallengeScore(0); setTalkOk(0); setSentenceOk(0); setMissedS([]); setMissedC([]); setMissedT([]); setFixed({ s: [], c: [], t: [] }); setRetrying(true); setStep('discover'); }} />
         )}
       </div>
