@@ -36,6 +36,16 @@ function mergeDaily(a?: Progress['daily'], b?: Progress['daily']): Progress['dai
  * （用日期解析比，不用字串比——舊資料 "2026-9-30" 字串上會大於 "2026-10-02"）。
  * 兩邊先各自轉成補零格式，合併結果也一律是補零格式。
  */
+/** 訂正存檔：同一課取比較新的那份（done 記號也照時間比，所以過關後不會被舊存檔救回來） */
+function mergeFix(a?: Progress['fix'], b?: Progress['fix']): Progress['fix'] {
+  if (!a && !b) return undefined;
+  const out: NonNullable<Progress['fix']> = { ...(a || {}) };
+  for (const [k, v] of Object.entries(b || {})) {
+    if (!out[k] || (v.at ?? 0) > (out[k].at ?? 0)) out[k] = v;
+  }
+  return out;
+}
+
 export function mergeProgress(rawA: Progress, rawB: Progress): Progress {
   const a = normalizeProgress(rawA);
   const b = normalizeProgress(rawB);
@@ -53,5 +63,6 @@ export function mergeProgress(rawA: Progress, rawB: Progress): Progress {
     // 學習計畫：取最後改的那份；每日完成數：同一天取大的
     plan: !a.plan ? b.plan : !b.plan ? a.plan : (a.plan.updatedAt > b.plan.updatedAt ? a.plan : b.plan),
     log: mergeLog(a.log, b.log),
+    fix: mergeFix(a.fix, b.fix),
   };
 }

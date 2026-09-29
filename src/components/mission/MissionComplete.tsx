@@ -7,6 +7,7 @@ import { playFanfare, stopFanfare } from '@/lib/sfx';
 import { stopAmbience } from '@/lib/ambience';
 import { track } from '@/lib/analytics';
 import LoginNudge from '@/components/LoginNudge';
+import { useAuth } from '@/components/AuthProvider';
 import { speak } from '@/lib/speech';
 import { recordMissionComplete } from '@/lib/missionProgress';
 import Link from 'next/link';
@@ -67,6 +68,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
   // 訂正過關固定 1 顆星；一次就過關的照 7／8／9 成給 1／2／3 顆
   const starCount = viaFix ? 1 : starPercent >= STAR3_PERCENT ? 3 : starPercent >= STAR2_PERCENT ? 2 : 1;
   const needMore = moreToPass(scored, scoredMax);
+  const { user } = useAuth();
 
   // 進到結算畫面時播 Miss Vega 鼓勵語音 + 星數獎勵語音 + 記錄完成進度
   useEffect(() => {
@@ -115,6 +117,11 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
             Finn: &ldquo;{missedCount > 0 ? 'So close! Let\u0027s fix them!' : 'So close! Let\u0027s try again!'}&rdquo;
           </p>
         </div>
+
+        <p className="text-xs text-gray-500 max-w-md mx-auto mb-4 leading-relaxed">
+          成績會保留 14 天，下次進這一課可以接著訂正。
+          {user ? '已登入：換手機或平板也能接著訂正。' : '目前沒有登入，存檔只留在這台裝置；家長登入後，換裝置也能接著訂正。'}
+        </p>
 
         <div className="flex flex-col gap-3 max-w-md mx-auto">
           {missedCount > 0 && onFix

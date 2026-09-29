@@ -15,7 +15,20 @@ export interface Progress {
   daily?: DailyTasks;                // 今日任務計數（跨日自動歸零）
   plan?: LearnPlan;                  // 學習計畫（家長設定：每週幾天、每天幾課）
   log?: Record<string, number>;      // 每天新完成的課數（YYYY-MM-DD → n），只留 90 天，算「這週做了幾課」用
+  fix?: Record<string, FixPending>;  // 沒過關、還沒訂正完的課（"<courseSlug>/<missionId>" → 成績與錯題），留 14 天
 }
+
+/** 沒過關時留下來的成績與錯題清單，讓孩子下次（或換裝置）接著訂正。
+ *  放在 Progress 裡＝跟著既有的雲端同步走：家長有登入就跨裝置，沒登入只在這台。
+ *  done=true 是「已經過關／已放棄」的記號，合併時靠 at 比新舊，才不會被另一台的舊存檔救回來。 */
+export interface FixPending {
+  at: number;
+  done?: boolean;
+  w?: number; c?: number; s?: number; t?: number;
+  ms?: number[]; mc?: number[]; mt?: number[];
+  fx?: { s: number[]; c: number[]; t: number[] };
+}
+export const FIX_KEEP_MS = 14 * 24 * 3600 * 1000;
 
 /** 學習計畫（Vega 2026-09-02）：家長在家長中心設定，用來算本週目標、預計完成日、落後時的鼓勵提醒 */
 export interface LearnPlan {
@@ -77,6 +90,14 @@ export function normalizeProgress(p: Progress): Progress {
     }
     out.log = log;
   }
+  if (out.fix) {
+    const now = Date.now();
+    const fix: Record<string, FixPending> = {};
+    for (const [k, v] of Object.entries(out.fix)) {
+      if (v && typeof v.at === 'number' && now - v.at <= FIX_KEEP_MS) fix[k] = v;   // 過期的丟掉
+    }
+    out.fix = Object.keys(fix).length ? fix : undefined;
+  }
   return out;
 }
 
@@ -87,7 +108,7 @@ export function loadProgress(): Progress {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { ...EMPTY };
     const p = JSON.parse(raw);
-    return normalizeProgress({ completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard, daily: p.daily, plan: p.plan, log: p.log });
+    return normalizeProgress({ completed: p.completed || {}, lastActive: p.lastActive, streak: p.streak, guard: p.guard, daily: p.daily, plan: p.plan, log: p.log, fix: p.fix });
   } catch {
     return { ...EMPTY };
   }
@@ -104,6 +125,31 @@ export function saveProgress(p: Progress) {
 }
 
 export function todayStr(): string { return dayKey(new Date()); }
+
+// ── 沒過關的訂正存檔 ──
+/** 這一課有沒有還沒訂正完的存檔（過期、已完成、沒有錯題的都回 null） */
+export function getFixPending(key: string): FixPending | null {
+  const v = loadProgress().fix?.[key];
+  if (!v || v.done) return null;
+  const left = (v.ms?.length || 0) + (v.mc?.length || 0) + (v.mt?.length || 0);
+  return left > 0 ? v : null;
+}
+export function setFixPending(key: string, data: Omit<FixPending, 'at' | 'done'>) {
+  const p = loadProgress();
+  const prev = p.fix?.[key];
+  const same = prev && !prev.done && JSON.stringify({ ...prev, at: 0 }) === JSON.stringify({ at: 0, ...data });
+  if (same) return;   // 內容沒變就不重存（避免每次重繪都觸發雲端上傳）
+  p.fix = { ...(p.fix || {}), [key]: { at: Date.now(), ...data } };
+  saveProgress(p);
+}
+/** 過關或整課重玩：留一個 done 記號蓋掉存檔（另一台裝置同步時才知道這份已經結束） */
+export function clearFixPending(key: string) {
+  const p = loadProgress();
+  const prev = p.fix?.[key];
+  if (!prev || prev.done) return;
+  p.fix = { ...(p.fix || {}), [key]: { at: Date.now(), done: true } };
+  saveProgress(p);
+}
 
 // 完成一課時呼叫：記錄最佳星數 + 更新連續天數
 export function recordMissionComplete(courseSlug: string, missionId: number, stars: number) {

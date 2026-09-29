@@ -26,11 +26,10 @@ import Discover from '@/components/mission/Discover';
 import Challenge from '@/components/mission/Challenge';
 import ParentHelp from '@/components/mission/ParentHelp';
 import TalkTime from '@/components/mission/TalkTime';
-import { activeKid } from '@/lib/kids';
 import MissionComplete, { PASS_PERCENT } from '@/components/mission/MissionComplete';
 import FixRound, { type FixKind } from '@/components/mission/FixRound';
 import AdSlot from '@/components/AdSlot';
-import { bumpDaily } from '@/lib/missionProgress';
+import { bumpDaily, getFixPending, setFixPending, clearFixPending } from '@/lib/missionProgress';
 import { track } from '@/lib/analytics';
 
 // fix＝訂正回合：沒過關時只把錯的／跳過的題目再做一次（在 talktime 和 complete 之間）
@@ -76,24 +75,10 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
 
   const stepKey = course && mission ? `ae_mstep_${course.level}_${mission.id}` : '';
 
-  // 沒過關的成績與錯題清單：存在 localStorage（每個孩子、每一課各一份），留 14 天
-  const pendingKey = () => {
-    if (!course || !mission) return '';
-    let kid = 'x';
-    try { kid = activeKid().id; } catch {}
-    return `ae_fixpending_${kid}_${course.level}_${mission.id}`;
-  };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const readPending = (): any | null => {
-    try {
-      const k = pendingKey();
-      const v = k ? JSON.parse(localStorage.getItem(k) || 'null') : null;
-      if (!v || !v.at || Date.now() - v.at > 14 * 24 * 3600 * 1000) { if (k && v) localStorage.removeItem(k); return null; }
-      const left = idxList(v.ms).length + idxList(v.mc).length + idxList(v.mt).length;
-      return left > 0 ? v : null;
-    } catch { return null; }
-  };
-  const clearPending = () => { try { const k = pendingKey(); if (k) localStorage.removeItem(k); } catch {} };
+  // 沒過關的成績與錯題清單：存在進度裡（跟著雲端同步——家長有登入就跨裝置，沒登入只在這台），留 14 天
+  const fixKey = course && mission ? `${course.slug}/${mission.id}` : '';
+  const readPending = () => (fixKey ? getFixPending(fixKey) : null);
+  const clearPending = () => { if (fixKey) clearFixPending(fixKey); };
 
   // 重整後留在同一步驟（sessionStorage，關掉分頁才清）
   // 但破關後再進來＝想重玩，從頭開始（不然會直接跳到結算畫面，Vega 抓的）
@@ -125,6 +110,22 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
     } catch {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stepKey]);
+
+  // 還停在課程開頭時，雲端同步才進來（換裝置剛登入）：補查一次有沒有要接著訂正的存檔
+  useEffect(() => {
+    if (step !== 'intro') return;
+    const check = () => {
+      const pend = readPending();
+      if (!pend) return;
+      setWarmupScore(pend.w || 0); setChallengeScore(pend.c || 0); setSentenceOk(pend.s || 0); setTalkOk(pend.t || 0);
+      setMissedS(idxList(pend.ms)); setMissedC(idxList(pend.mc)); setMissedT(idxList(pend.mt));
+      setFixed({ s: idxList(pend.fx?.s), c: idxList(pend.fx?.c), t: idxList(pend.fx?.t) });
+      setStep('complete');
+    };
+    window.addEventListener('ae-mission-progress-change', check);
+    return () => window.removeEventListener('ae-mission-progress-change', check);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, fixKey]);
 
   useEffect(() => {
     if (!stepKey) return;
@@ -253,9 +254,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   useEffect(() => {
     if (step !== 'complete' && step !== 'fix') return;
     if (passedNow || missedCount === 0) { clearPending(); return; }
-    try {
-      localStorage.setItem(pendingKey(), JSON.stringify({ at: Date.now(), w: warmupScore, c: challengeScore, s: sentenceOk, t: talkOk, ms: missedS, mc: missedC, mt: missedT, fx: fixed }));
-    } catch {}
+    if (fixKey) setFixPending(fixKey, { w: warmupScore, c: challengeScore, s: sentenceOk, t: talkOk, ms: missedS, mc: missedC, mt: missedT, fx: fixed });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, passedNow, missedCount, warmupScore, challengeScore, sentenceOk, talkOk, missedS, missedC, missedT, fixed]);
 
