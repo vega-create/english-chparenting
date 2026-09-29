@@ -27,11 +27,11 @@ interface Props {
   onRetry?: () => void;
 }
 
-/** 過關標準：正確率 8 成（Vega 2026-09-29：補習班都是 80 分過，60 太低） */
-export const PASS_PERCENT = 80;
+/** 過關標準：正確率 7 成（Vega 2026-09-29：60 太低、80 怕打擊孩子，先 70） */
+export const PASS_PERCENT = 70;
 /** 2 顆星、3 顆星的門檻 */
-export const STAR2_PERCENT = 90;
-export const STAR3_PERCENT = 95;
+export const STAR2_PERCENT = 80;
+export const STAR3_PERCENT = 90;
 
 export default function MissionComplete({ missionTitle, missionTitleEn, stars, scored, scoredMax, reviewQuiz, courseSlug, missionId, onRetry }: Props) {
   const maxStars = scoredMax;
@@ -148,7 +148,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
           </div>
         </div>
 
-        <p className="text-xs font-bold text-gray-400 mb-1">本課成績（正確率 8 成過關、9 成 2 顆、9 成 5 拿 3 顆）</p>
+        <p className="text-xs font-bold text-gray-400 mb-1">本課成績（正確率 7 成過關、8 成 2 顆、9 成 3 顆）</p>
         <h2 className="text-3xl font-black text-gray-800 mb-2">Mission Complete!</h2>
         <p className="text-xl text-gray-600 mb-1">{missionTitleEn}</p>
         <p className="text-lg text-gray-500 mb-6">{missionTitle}</p>
