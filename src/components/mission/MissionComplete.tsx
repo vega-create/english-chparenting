@@ -110,7 +110,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
         <div className="bg-orange-50 rounded-3xl p-4 max-w-md mx-auto mb-6 border border-orange-200">
           <p className="text-lg">
             <img src="/characters/finn/finn-talk.png" alt="Finn" className="inline w-24 h-24 object-contain mr-2" />
-            Finn: &ldquo;{missedCount > 0 ? 'So close! Let\u2019s fix them!' : 'So close! Let\u2019s try again!'}&rdquo;
+            Finn: &ldquo;{missedCount > 0 ? 'So close! Let\u0027s fix them!' : 'So close! Let\u0027s try again!'}&rdquo;
           </p>
         </div>
 
