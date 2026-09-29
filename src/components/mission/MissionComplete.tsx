@@ -15,8 +15,11 @@ import { postsForLevel } from '@/data/blog-posts';
 interface Props {
   missionTitle: string;
   missionTitleEn: string;
+  /** 小星星總數（含暖身題的加分） */
   stars: number;
-  maxStars: number;
+  /** 算進過關成績的答對數與題數（句子練習＋闖關＋聊天關；暖身題不算） */
+  scored: number;
+  scoredMax: number;
   reviewQuiz: QuizQuestion[];
   courseSlug: string;
   missionId: number;
@@ -24,10 +27,14 @@ interface Props {
   onRetry?: () => void;
 }
 
-/** 過關標準：正確率 6 成（Vega 2026-09-28：要有標準，亂念或一直跳過不能過） */
-export const PASS_PERCENT = 60;
+/** 過關標準：正確率 8 成（Vega 2026-09-29：補習班都是 80 分過，60 太低） */
+export const PASS_PERCENT = 80;
+/** 2 顆星、3 顆星的門檻 */
+export const STAR2_PERCENT = 90;
+export const STAR3_PERCENT = 95;
 
-export default function MissionComplete({ missionTitle, missionTitleEn, stars, maxStars, reviewQuiz, courseSlug, missionId, onRetry }: Props) {
+export default function MissionComplete({ missionTitle, missionTitleEn, stars, scored, scoredMax, reviewQuiz, courseSlug, missionId, onRetry }: Props) {
+  const maxStars = scoredMax;
   const courseLevel = Number(courseSlug.match(/^l(\d+)-/)?.[1] ?? 0);
   const parentPost = courseLevel ? postsForLevel(courseLevel, 1)[0] : undefined;
   const [quizDone, setQuizDone] = useState(false);
@@ -38,9 +45,9 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
   const [showQuiz, setShowQuiz] = useState(false);
   const [spellInput, setSpellInput] = useState('');
 
-  const starPercent = maxStars > 0 ? Math.round((stars / maxStars) * 100) : 100;
+  const starPercent = scoredMax > 0 ? Math.round((scored / scoredMax) * 100) : 100;
   const passed = starPercent >= PASS_PERCENT;
-  const starCount = starPercent >= 90 ? 3 : starPercent >= 70 ? 2 : 1;
+  const starCount = starPercent >= STAR3_PERCENT ? 3 : starPercent >= STAR2_PERCENT ? 2 : 1;
 
   // 進到結算畫面時播 Miss Vega 鼓勵語音 + 星數獎勵語音 + 記錄完成進度
   useEffect(() => {
@@ -77,8 +84,8 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
         <div className="bg-white rounded-3xl p-6 shadow-lg border-2 border-orange-200 max-w-md mx-auto mb-5">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <p className="text-3xl font-black text-yellow-500">{stars}<span className="text-base text-gray-400"> / {maxStars}</span></p>
-              <p className="text-sm text-gray-500">小星星</p>
+              <p className="text-3xl font-black text-yellow-500">{scored}<span className="text-base text-gray-400"> / {scoredMax}</span></p>
+              <p className="text-sm text-gray-500">答對題數</p>
             </div>
             <div>
               <p className="text-3xl font-black text-orange-500">{starPercent}%</p>
@@ -86,7 +93,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
             </div>
           </div>
           <p className="mt-4 text-sm font-bold text-gray-600">正確率要 {PASS_PERCENT}% 以上才過關，下一關才會打開</p>
-          <p className="mt-1 text-xs text-gray-400">答對 1 題拿 1 顆星；口說題跳過不給星</p>
+          <p className="mt-1 text-xs text-gray-400">算句子練習、闖關遊戲、聊天關；口說跳過不給分。暖身題不算。</p>
         </div>
 
         <div className="bg-orange-50 rounded-3xl p-4 max-w-md mx-auto mb-6 border border-orange-200">
@@ -97,7 +104,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
         </div>
 
         <div className="flex flex-col gap-3 max-w-md mx-auto">
-          <GameButton onClick={() => onRetry?.()} color="gold" size="lg">🎮 再挑戰一次</GameButton>
+          <GameButton onClick={() => onRetry?.()} color="gold" size="lg">🎮 再挑戰一次（從句子練習開始）</GameButton>
           <GameButton href={`/courses/${courseSlug}`} color="green" size="md" className="text-center">先回地圖</GameButton>
         </div>
       </div>
@@ -141,7 +148,7 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, m
           </div>
         </div>
 
-        <p className="text-xs font-bold text-gray-400 mb-1">本課成績（正確率 6 成過關、7 成 2 顆、9 成 3 顆）</p>
+        <p className="text-xs font-bold text-gray-400 mb-1">本課成績（正確率 8 成過關、9 成 2 顆、9 成 5 拿 3 顆）</p>
         <h2 className="text-3xl font-black text-gray-800 mb-2">Mission Complete!</h2>
         <p className="text-xl text-gray-600 mb-1">{missionTitleEn}</p>
         <p className="text-lg text-gray-500 mb-6">{missionTitle}</p>

@@ -32,6 +32,8 @@ interface Props {
   onRegisterBack?: (fn: () => boolean) => void; // 供外層「上一步」逐層退：回傳 true=內部已處理
   /** 句子練習每一句的結果：true＝真的念過關、false＝跳過（算進本課成績） */
   onSentenceResult?: (ok: boolean) => void;
+  /** 沒過關重玩時直接從句子練習開始，不用重看影片和書 */
+  startAtSentences?: boolean;
 }
 
 type Phase = 'video' | 'grammar' | 'story' | 'words' | 'listen' | 'phonics' | 'sentences';
@@ -74,7 +76,7 @@ function WordFace({ en, emoji }: { en: string; emoji: string }) {
   return <div className="text-6xl mb-1">{emoji}</div>;
 }
 
-export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete, onRegisterBack, onSentenceResult }: Props) {
+export default function Discover({ level, story, words, sentences, phonicsLetters, videoScript, videoUrl, tip, title, titleEn, missionId, onComplete, onRegisterBack, onSentenceResult, startAtSentences }: Props) {
   const hasVideo = !!videoUrl || (videoScript?.length ?? 0) > 0;
   // 單字卡看完後的「聽力翻卡」小遊戲：這課至少要有 3 個一般單字才玩
   const hasListenGame = listenFlipWords(words).length >= 3;
@@ -102,7 +104,7 @@ export default function Discover({ level, story, words, sentences, phonicsLetter
   }, [level, missionId, words]);
   // 本機開發捷徑：網址加 ?ebook=1 直接跳到翻開的電子書（驗收內頁排版用，正式站不生效）
   const devEbook = process.env.NODE_ENV === 'development' && typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('ebook') === '1';
-  const [phase, setPhase] = useState<Phase>(devEbook ? 'story' : hasVideo ? 'video' : 'story');
+  const [phase, setPhase] = useState<Phase>(startAtSentences ? 'sentences' : devEbook ? 'story' : hasVideo ? 'video' : 'story');
   const [bookOpen, setBookOpen] = useState(devEbook);
   const [coverOk, setCoverOk] = useState(true); // 每課封面圖：/images/ebook/l{級}-m{課}-cover.webp，缺圖用預設設計
   const [contentOk, setContentOk] = useState(true); // 每級內頁底圖：/images/ebook/l{級}-content.webp，缺圖用預設白頁

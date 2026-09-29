@@ -57,6 +57,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
   const [challengeScore, setChallengeScore] = useState(0);
   const [sentenceOk, setSentenceOk] = useState(0);   // 句子練習真的念過關的句數（跳過不算）
   const [talkOk, setTalkOk] = useState(0);           // 聊天關真的回答的題數（跳過不算）
+  const [retrying, setRetrying] = useState(false);   // 沒過關重玩：從句子練習開始
   const discoverBackRef = useRef<(() => boolean) | null>(null); // Discover 內部逐層退
 
   const stepKey = course && mission ? `ae_mstep_${course.level}_${mission.id}` : '';
@@ -183,11 +184,13 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mission]);
 
-  // 本課成績＝暖身＋闖關＋句子練習＋聊天關（口說跳過的不給分）
+  // 過關成績＝句子練習＋闖關＋聊天關（口說跳過的不給分）。
+  // 暖身題在上課「前」作答，那時還沒學，所以只加小星星、不算進正確率。
   const sentenceMax = mission.sentences.length;
   const talkMax = mission.talkTimePrompts.length;
-  const totalStars = warmupScore + challengeScore + Math.min(sentenceOk, sentenceMax) + Math.min(talkOk, talkMax);
-  const maxStars = warmUp8.length + mission.challenges.length + sentenceMax + talkMax;
+  const scored = challengeScore + Math.min(sentenceOk, sentenceMax) + Math.min(talkOk, talkMax);
+  const scoredMax = mission.challenges.length + sentenceMax + talkMax;
+  const totalStars = warmupScore + scored;
 
   return (
     <>
@@ -318,7 +321,7 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
 
         {step === 'discover' && <ParentHelp stage="discover" level={course.level} />}
         {step === 'discover' && (
-          <Discover level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onSentenceResult={ok => { if (ok) setSentenceOk(n => n + 1); }} onComplete={() => { bumpDaily('story'); setStep('challenge'); }} />
+          <Discover key={retrying ? 'retry' : 'first'} startAtSentences={retrying} level={mission.level} story={mission.story} words={mission.words} sentences={mission.sentences} phonicsLetters={mission.phonicsLetters} videoScript={mission.videoScript} videoUrl={mission.videoUrl} tip={mission.tip} title={mission.title} titleEn={mission.titleEn} missionId={mission.id} onRegisterBack={fn => { discoverBackRef.current = fn; }} onSentenceResult={ok => { if (ok) setSentenceOk(n => n + 1); }} onComplete={() => { bumpDaily('story'); setStep('challenge'); }} />
         )}
 
         {step === 'challenge' && <ParentHelp stage="challenge" level={course.level} />}
@@ -332,8 +335,8 @@ export default function MissionFlow({ levelSlug, missionId }: Props) {
         )}
 
         {step === 'complete' && (
-          <MissionComplete missionTitle={mission.title} missionTitleEn={mission.titleEn} stars={totalStars} maxStars={maxStars} reviewQuiz={mission.reviewQuiz} courseSlug={course.slug} missionId={mission.id}
-            onRetry={() => { setChallengeScore(0); setTalkOk(0); setStep('challenge'); }} />
+          <MissionComplete missionTitle={mission.title} missionTitleEn={mission.titleEn} stars={totalStars} scored={scored} scoredMax={scoredMax} reviewQuiz={mission.reviewQuiz} courseSlug={course.slug} missionId={mission.id}
+            onRetry={() => { setChallengeScore(0); setTalkOk(0); setSentenceOk(0); setRetrying(true); setStep('discover'); }} />
         )}
       </div>
 
