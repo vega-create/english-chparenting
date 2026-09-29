@@ -1,0 +1,284 @@
+[
+ {
+  "no": 1,
+  "key": "b",
+  "grapheme": "b",
+  "example": "ball"
+ },
+ {
+  "no": 2,
+  "key": "d",
+  "grapheme": "d",
+  "example": "dog"
+ },
+ {
+  "no": 3,
+  "key": "f",
+  "grapheme": "f",
+  "example": "fish"
+ },
+ {
+  "no": 4,
+  "key": "g",
+  "grapheme": "g",
+  "example": "goat"
+ },
+ {
+  "no": 5,
+  "key": "h",
+  "grapheme": "h",
+  "example": "hat"
+ },
+ {
+  "no": 6,
+  "key": "j",
+  "grapheme": "j",
+  "example": "jam"
+ },
+ {
+  "no": 7,
+  "key": "k",
+  "grapheme": "c / k / ck",
+  "example": "cat / kite / duck"
+ },
+ {
+  "no": 8,
+  "key": "l",
+  "grapheme": "l",
+  "example": "lion"
+ },
+ {
+  "no": 9,
+  "key": "m",
+  "grapheme": "m",
+  "example": "moon"
+ },
+ {
+  "no": 10,
+  "key": "n",
+  "grapheme": "n",
+  "example": "nose"
+ },
+ {
+  "no": 11,
+  "key": "p",
+  "grapheme": "p",
+  "example": "pig"
+ },
+ {
+  "no": 12,
+  "key": "r",
+  "grapheme": "r",
+  "example": "red"
+ },
+ {
+  "no": 13,
+  "key": "s",
+  "grapheme": "s",
+  "example": "sun"
+ },
+ {
+  "no": 14,
+  "key": "t",
+  "grapheme": "t",
+  "example": "top"
+ },
+ {
+  "no": 15,
+  "key": "v",
+  "grapheme": "v",
+  "example": "van"
+ },
+ {
+  "no": 16,
+  "key": "w",
+  "grapheme": "w",
+  "example": "web"
+ },
+ {
+  "no": 17,
+  "key": "y",
+  "grapheme": "y",
+  "example": "yes"
+ },
+ {
+  "no": 18,
+  "key": "z",
+  "grapheme": "z",
+  "example": "zoo"
+ },
+ {
+  "no": 19,
+  "key": "sh",
+  "grapheme": "sh",
+  "example": "ship"
+ },
+ {
+  "no": 20,
+  "key": "ch",
+  "grapheme": "ch",
+  "example": "chip"
+ },
+ {
+  "no": 21,
+  "key": "th1",
+  "grapheme": "th（無聲）",
+  "example": "thin"
+ },
+ {
+  "no": 22,
+  "key": "th2",
+  "grapheme": "th（有聲）",
+  "example": "this"
+ },
+ {
+  "no": 23,
+  "key": "ng",
+  "grapheme": "ng",
+  "example": "ring"
+ },
+ {
+  "no": 24,
+  "key": "zh",
+  "grapheme": "s（特殊）",
+  "example": "treasure"
+ },
+ {
+  "no": 25,
+  "key": "x",
+  "grapheme": "x",
+  "example": "fox"
+ },
+ {
+  "no": 26,
+  "key": "qu",
+  "grapheme": "qu",
+  "example": "queen"
+ },
+ {
+  "no": 27,
+  "key": "a",
+  "grapheme": "a",
+  "example": "cat"
+ },
+ {
+  "no": 28,
+  "key": "e",
+  "grapheme": "e",
+  "example": "bed"
+ },
+ {
+  "no": 29,
+  "key": "i",
+  "grapheme": "i",
+  "example": "pig"
+ },
+ {
+  "no": 30,
+  "key": "o",
+  "grapheme": "o",
+  "example": "hot"
+ },
+ {
+  "no": 31,
+  "key": "u",
+  "grapheme": "u",
+  "example": "cup"
+ },
+ {
+  "no": 32,
+  "key": "a_e",
+  "grapheme": "a_e / ai / ay",
+  "example": "name / rain / day"
+ },
+ {
+  "no": 33,
+  "key": "e_e",
+  "grapheme": "ee / ea / e",
+  "example": "bee / sea / me"
+ },
+ {
+  "no": 34,
+  "key": "i_e",
+  "grapheme": "i_e / igh / y",
+  "example": "kite / night / my"
+ },
+ {
+  "no": 35,
+  "key": "o_e",
+  "grapheme": "o_e / oa / ow",
+  "example": "home / boat / snow"
+ },
+ {
+  "no": 36,
+  "key": "u_e",
+  "grapheme": "u_e / ue",
+  "example": "cute / cue"
+ },
+ {
+  "no": 37,
+  "key": "oo",
+  "grapheme": "oo（長）",
+  "example": "moon"
+ },
+ {
+  "no": 38,
+  "key": "oo2",
+  "grapheme": "oo（短）",
+  "example": "book"
+ },
+ {
+  "no": 39,
+  "key": "ar",
+  "grapheme": "ar",
+  "example": "car"
+ },
+ {
+  "no": 40,
+  "key": "or",
+  "grapheme": "or",
+  "example": "fork"
+ },
+ {
+  "no": 41,
+  "key": "er",
+  "grapheme": "er / ir / ur",
+  "example": "her / bird / turn"
+ },
+ {
+  "no": 42,
+  "key": "ow",
+  "grapheme": "ow / ou",
+  "example": "cow / out"
+ },
+ {
+  "no": 43,
+  "key": "oi",
+  "grapheme": "oi / oy",
+  "example": "coin / boy"
+ },
+ {
+  "no": 44,
+  "key": "aw",
+  "grapheme": "aw / au",
+  "example": "saw / August"
+ },
+ {
+  "no": 45,
+  "key": "air",
+  "grapheme": "air / are",
+  "example": "hair / care"
+ },
+ {
+  "no": 46,
+  "key": "ear",
+  "grapheme": "ear / eer",
+  "example": "ear / deer"
+ },
+ {
+  "no": 47,
+  "key": "uh",
+  "grapheme": "（弱音）a",
+  "example": "sofa / about"
+ }
+]
