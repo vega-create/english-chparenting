@@ -52,6 +52,13 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
   const AUTO_READ_ZH_MAX_LEVEL = 4;
   useEffect(() => {
     if (level > AUTO_READ_ZH_MAX_LEVEL || !q?.question) return;
+    // 拼字題：題目是「拼拼看：h _ l l o」，中文語音念不出底線那串（孩子按喇叭沒聲音）。
+    // 改成只念「拼拼看」，接著播那個單字的錄音——先聽到字，再拼。
+    if (q.type === 'spell') {
+      const t1 = setTimeout(() => speakChinese('拼拼看'), 350);
+      const t2 = setTimeout(() => sayAnswer(q.answer), 1500);
+      return () => { clearTimeout(t1); clearTimeout(t2); };
+    }
     const t = setTimeout(() => speakChinese(q.question), 350);
     return () => clearTimeout(t);
   }, [current]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -178,8 +185,8 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
         )}
 
         <button
-          onClick={() => speakChinese(q.question)}
-          className="block w-full text-xl font-bold text-center text-gray-800 mb-6 active:scale-[0.99] transition"
+          onClick={() => (q.type === 'spell' ? sayAnswer(q.answer) : speakChinese(q.question))}
+          className="block w-full text-xl font-bold text-center text-gray-800 mb-6 active:scale-[0.99] transition cursor-pointer"
           aria-label="唸出題目"
         >
           {q.question} <span className="text-base align-middle text-gray-400">🔊</span>
@@ -237,6 +244,23 @@ export default function Challenge({ challenges, onComplete, praiseLevel = 'low',
         {/* 拼寫題 */}
         {q.type === 'spell' && (
           <div className="text-center mb-4">
+            {/* 先聽單字再拼：喇叭播的是要拼的那個字（真人錄音），烏龜是慢速 */}
+            <div className="mb-4">
+              <button
+                onClick={() => sayAnswer(q.answer)}
+                aria-label="聽這個單字"
+                className="bg-blue-100 text-blue-600 px-6 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95 cursor-pointer"
+              >
+                🔊 聽單字
+              </button>
+              <button
+                onClick={() => sayAnswer(q.answer, 0.7, true)}
+                aria-label="慢速聽這個單字"
+                className="ml-2 bg-blue-50 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-100 transition active:scale-95 cursor-pointer"
+              >
+                🐢 慢慢聽
+              </button>
+            </div>
             <input
               type="text"
               value={spellInput}

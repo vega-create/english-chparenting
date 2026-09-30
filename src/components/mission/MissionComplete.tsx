@@ -9,6 +9,7 @@ import { track } from '@/lib/analytics';
 import LoginNudge from '@/components/LoginNudge';
 import { useAuth } from '@/components/AuthProvider';
 import { speak } from '@/lib/speech';
+import { SLOW_TTS_RATE } from '@/lib/audio';
 import { recordMissionComplete } from '@/lib/missionProgress';
 import Link from 'next/link';
 import { postsForLevel } from '@/data/blog-posts';
@@ -285,6 +286,17 @@ export default function MissionComplete({ missionTitle, missionTitleEn, stars, s
         {/* 拼寫題：打字框 */}
         {q.type === 'spell' ? (
           <div className="text-center">
+            {/* 先聽單字再拼 */}
+            <div className="mb-4">
+              <button onClick={() => speak(q.answer)} aria-label="聽這個單字"
+                className="bg-blue-100 text-blue-600 px-6 py-3 rounded-2xl font-bold hover:bg-blue-200 transition active:scale-95 cursor-pointer">
+                🔊 聽單字
+              </button>
+              <button onClick={() => speak(q.answer, SLOW_TTS_RATE)} aria-label="慢速聽這個單字"
+                className="ml-2 bg-blue-50 text-blue-600 px-5 py-3 rounded-2xl font-bold hover:bg-blue-100 transition active:scale-95 cursor-pointer">
+                🐢 慢慢聽
+              </button>
+            </div>
             <input
               type="text"
               value={spellInput}
