@@ -42,7 +42,7 @@ export default function Footer() {
             <li><a href="https://learn.chparenting.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">親子多元學習 learn.chparenting.com</a></li>
             <li><a href="https://character.chparenting.com/" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">原來會這樣！品格互動繪本 character.chparenting.com</a></li>
             <li><a href="https://mommywisdom.tw" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">跟著媽咪團好康 mommywisdom.tw</a></li>
-            <li><a href="https://mommystartup.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">亞洲媽媽創業 mommystartup.com</a></li>
+            <li><a href="https://startup.chparenting.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">亞洲媽媽創業 startup.chparenting.com</a></li>
             <li><a href="https://aimommywisdom.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">官網 aimommywisdom.com</a></li>
             <li><a href="https://vega-note.com" target="_blank" rel="noopener" className="hover:text-purple-600 no-underline">學習筆記 vega-note.com</a></li>
           </ul>

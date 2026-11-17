@@ -128,7 +128,7 @@ export default function RootLayout({
           "https://pregnancy.chparenting.com",
           "https://learn.chparenting.com",
           "https://kids.chparenting.com",
-          "https://mommystartup.com",
+          "https://startup.chparenting.com",
           "https://mommywisdom.tw",
           "https://aimommywisdom.com",
           "https://vega-note.com",
